@@ -11,12 +11,28 @@
          gtag('config', 'UA-179472407-1');
       </script>
       <title>{{ page.title }}</title>
-	   <meta name="description" content="Answers to the UiPath Certification Exam questions for both Associate and Developer RPA candidates."/>
-      <meta charset="utf-8"/>
-	   <meta name="robots" content="noindex">
-	   <meta name="keywords" content="UiPath Certification, UiPath Associate Exam, UiPath Developer Exam, UiPath Certification Questions, UiPath Certification Questions and Answers, UiPath Braindump"/>
+	   
+{% if page.canonical %}
+<link rel="canonical" href="{{ page.canonical }}" />
+{% else %}
+<!-- This is the else for if canonical -->	   
+{% endif %}
+	   
+<!-- canonical attempt: {{ page.title }} -->
+{% if page.title %}
+<meta name="description" content="page.title"/>   
+{% else %}
+<meta name="description" content="UiPath Associate Certification practice questions and answers, study guides, braindumps, mock exams, Orhcestrator overview, test objectives and online UiPath tutorials. We help you get RPA certified fast."/>   
+{% endif %}	   
+	   
+	   
+<meta name="description" content="Answers to the UiPath Certification Exam questions for both Associate and Developer RPA candidates."/>
+<meta charset="utf-8"/>
+<meta name="robots" content="noindex">
+<meta name="keywords" content="UiPath Certification, UiPath Associate Exam, UiPath Developer Exam, UiPath Certification Questions, UiPath Certification Questions and Answers, UiPath Braindump"/>
 
-      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	   
  {% include boostrap-css.html %}        
 	   
 	   <style>
