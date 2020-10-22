@@ -78,7 +78,7 @@ canonical: https://www.rpacertified.com/exam-prep.html
       <div class="card-body d-flex flex-column">
         <p class="card-text">You need to walk before you can run.</p>
         <p class="card-text">To learn UiPath, you'll need a good laptop or spare desktop with which you can install some software and play around a bit. You probably don't want to do your learning on a work machine.</p>
-        <h4>Exam Preparation Tasks</h4>
+        <h1>UiPath Associate Exam Preparation Tasks</h1>
         <p>To get started with UiPath Certification, complete the following tasks:</p>
         <ul >
           <li class="list-group-item">Prepare Windows 10 laptop or desktop for training</li>
