@@ -10,7 +10,7 @@ canonical: https://www.rpacertified.com/exam-prep.html
       <img src="/assets/prepare.jpg" class="card-img-top" alt="uipath certification">
       <div class="card-body d-flex flex-column">
         <p class="card-text">Complete these tasks to begin your UiPath Certification journey.</p>
-        <p class="text-center mt-auto"><a href="/study-guide-uipath.html#prepare" class="text-center  btn btn-outline-primary btn-sm">Learn More</a></p>
+        <p class="text-center mt-auto"><a href="https://www.rpacertified.com/study-guide-uipath.html#prepare" class="text-center  btn btn-outline-primary btn-sm">Learn More</a></p>
       </div>
     </div>
   </div>
@@ -20,7 +20,7 @@ canonical: https://www.rpacertified.com/exam-prep.html
       <img src="/assets/install.jpg" class="card-img-top" alt="uipath certification">
       <div class="card-body d-flex flex-column">
         <p class="card-text">Download and install UiPath Studio on your local machine.</p>
-        <p class="text-center mt-auto"><a href="/study-guide-uipath.html#studio" class="text-center btn btn-outline-primary btn-sm">Get Started</a></p>
+        <p class="text-center mt-auto"><a href="https://www.rpacertified.com/study-guide-uipath.html#studio" class="text-center btn btn-outline-primary btn-sm">Get Started</a></p>
       </div>
     </div>
   </div>
@@ -30,7 +30,7 @@ canonical: https://www.rpacertified.com/exam-prep.html
       <img src="/assets/orchestra.jpg" class="card-img-top" alt="uipath certification">
       <div class="card-body d-flex flex-column">
         <p class="card-text">Register for a UiPath Orchestrator trial account.</p>
-        <p class="text-center mt-auto"><a href="/study-guide-uipath.html#uipath-orchestrator" class="text-center btn btn-outline-primary btn-sm">Get Started</a></p>
+        <p class="text-center mt-auto"><a href="https://www.rpacertified.com/study-guide-uipath.html#uipath-orchestrator" class="text-center btn btn-outline-primary btn-sm">Get Started</a></p>
       </div>
     </div>
   </div>
@@ -40,7 +40,7 @@ canonical: https://www.rpacertified.com/exam-prep.html
       <img src="/assets/practice.jpg" class="card-img-top" alt="uipath certification">
       <div class="card-body d-flex flex-column">
         <p class="card-text">Print out and constantly review the UiPath Exam Objectives. That's the target you're always aiming at. </p>
-        <p class="text-center mt-auto"><a href="/associate-objectives.html" class="text-center btn btn-outline-primary btn-sm">Get Started</a></p>
+        <p class="text-center mt-auto"><a href="https://www.rpacertified.com/associate-objectives.html" class="text-center btn btn-outline-primary btn-sm">Get Started</a></p>
       </div>
     </div>
   </div>
@@ -52,7 +52,7 @@ canonical: https://www.rpacertified.com/exam-prep.html
       <img src="/assets/forum.jpg" class="card-img-top" alt="uipath certification">
       <div class="card-body d-flex flex-column">
         <p class="card-text">Register for helpful UiPath forums and follow the right people on YouTube and Twitter.</p>
-        <p class="text-center mt-auto"><a href="/youtube-linkedin-twitter.html" class="text-center btn btn-outline-primary btn-sm">Get Started</a></p>
+        <p class="text-center mt-auto"><a href="https://www.rpacertified.com/youtube-linkedin-twitter.html" class="text-center btn btn-outline-primary btn-sm">Get Started</a></p>
       </div>
     </div>
   </div>
@@ -64,7 +64,7 @@ canonical: https://www.rpacertified.com/exam-prep.html
       <img src="/assets/study-guide.jpg" class="card-img-top" alt="uipath certification">
       <div class="card-body d-flex flex-column">
         <p class="card-text">Follow our UiPath Certification study guide to learn what you need to know to pass the UiPath Exam.</p>
-        <p class="text-center mt-auto"><a href="/study-guide-uipath.html" class="text-center btn btn-outline-primary btn-sm">Get Started</a></p>
+        <p class="text-center mt-auto"><a href="https://www.rpacertified.com/study-guide-uipath.html" class="text-center btn btn-outline-primary btn-sm">Get Started</a></p>
       </div>
     </div>
   </div>
