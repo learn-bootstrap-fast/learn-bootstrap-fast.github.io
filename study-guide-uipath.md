@@ -86,7 +86,7 @@ canonical: https://www.rpacertified.com/study-guide-uipath.html
 	
 	<input class="form-check-input mr-1" type="checkbox" value="" aria-label="...">
 
-    Review the <a href="/associate-objectives.html">UiPath certification objectives</a> for the Associate exam
+    Review the <a href="https://www.rpacertified.com/associate-objectives.html">UiPath certification objectives</a> for the Associate exam
    
 
   </li>
