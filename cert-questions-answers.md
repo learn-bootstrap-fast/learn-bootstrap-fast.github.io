@@ -72,7 +72,7 @@ canonical: https://www.rpacertified.com/cert-questions-answers.html
         <p class="card-text">You will get lots of Associate Exam questions on the difference between attended and unattended UiPath robots.</p>
         <p class="card-text">There are a few key differences with regards to security and complexity that you might not be familiar with.</p>
         <p class="card-text">Make sure you are solid on this exam objective before you sit the UiPath Associate Exam.</p>
-        <p class="text-center mt-auto"><a href="/2020/01/01/attended-vs-unattened-quiz.html" class="text-center  btn btn-outline-primary btn-sm">Attended vs Unattened</a></p>
+        <p class="text-center mt-auto"><a href="https://www.rpacertified.com/2020/01/01/attended-vs-unattened-quiz.html" class="text-center  btn btn-outline-primary btn-sm">Attended vs Unattened</a></p>
       </div>
     </div>
   </div>
@@ -87,7 +87,7 @@ canonical: https://www.rpacertified.com/cert-questions-answers.html
         <p class="card-text">There are always one or two questions on UiPath Studio Community Edition.</p>
         <p class="card-text">These are easy marks lost, as many developers only work in the Enterprise Edition.</p>
         <p class="card-text">It's a small topic, but a mark lost here can be the difference between a pass or fail on the UiPath exam.</p>
-        <p class="text-center mt-auto"><a href="/2020/01/01/community-vs-enterprise-studio.html" class="text-center  btn btn-outline-primary btn-sm">Community vs Enterprise Test</a></p>
+        <p class="text-center mt-auto"><a href="https://www.rpacertified.com/2020/01/01/community-vs-enterprise-studio.html" class="text-center  btn btn-outline-primary btn-sm">Community vs Enterprise Test</a></p>
       </div>
     </div>
   </div>
@@ -98,13 +98,13 @@ canonical: https://www.rpacertified.com/cert-questions-answers.html
       <div class="card-header">UiPath, Git, DVCS and Debugging<a  ></a></div>
       <img src="/assets/background-small4.jpg" class="card-img-top" alt="uipath certification">
       <div class="card-body d-flex flex-column">
-      <a href="/2020/11/01/exam-studio-git-packages-svn-tfs-github.html" class="text-center  btn btn-outline-primary btn-sm">
+      <a href="https://www.rpacertified.com/2020/11/01/exam-studio-git-packages-svn-tfs-github.html" class="text-center  btn btn-outline-primary btn-sm">
         <div class="alert alert-danger text-center" role="alert">Difficulty: 7</div>
       </a>
         <p class="card-text">How well do you know how to debug UiPath Studio?</p>
         <p class="card-text">What about version control? UiPath, Git and GitHub? TFS, SVN and the Azure DevOps Server.</p>
         <p class="card-text">These 11 UiPath test questions and answers will evaluate you on  Studio debugging, version control and the <em>manage packages</em> sections of the UiPath Associate Exam Certification.</p>
-        <p class="text-center mt-auto"><a href="/2020/11/01/exam-studio-git-packages-svn-tfs-github.html" class="text-center  btn btn-outline-primary btn-sm">UiPath Debugging Quiz</a></p>
+        <p class="text-center mt-auto"><a href="https://www.rpacertified.com/2020/11/01/exam-studio-git-packages-svn-tfs-github.html" class="text-center  btn btn-outline-primary btn-sm">UiPath Debugging Quiz</a></p>
       </div>
     </div>
   </div>
