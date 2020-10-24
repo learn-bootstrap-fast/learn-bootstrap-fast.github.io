@@ -19,7 +19,7 @@ canonical: https://www.rpacertified.com
 		<div class="card-body  d-flex flex-column">
 			
 			<p class="card-text">Comprehensive UiPath certification question and answer sets for you.</p>
-			<p class="text-center mt-auto"><a href="/cert-questions-answers.html" class="text-center btn btn-outline-primary btn-sm">Learn More</a></p>
+			<p class="text-center mt-auto"><a href="https://www.rpacertified.com/cert-questions-answers.html" class="text-center btn btn-outline-primary btn-sm">Learn More</a></p>
 		</div>
 	</div>
  </div>
@@ -37,7 +37,7 @@ canonical: https://www.rpacertified.com
 		<div class="card-body  d-flex flex-column">
 			
 			<p class="card-text">Follow a proven UiPath Associate certification study plan.</p>
-			<p class="text-center mt-auto"><a href="/study-guide-uipath.html" class="text-center btn btn-outline-primary btn-sm">Learn More</a></p>
+			<p class="text-center mt-auto"><a href="https://www.rpacertified.com/study-guide-uipath.html" class="text-center btn btn-outline-primary btn-sm">Learn More</a></p>
 		</div>
 	</div>
  </div>
@@ -77,7 +77,7 @@ canonical: https://www.rpacertified.com
 		<div class="card-body  d-flex flex-column">
 			
 			<p class="card-text">Work within our community and help others as they help you.</p>
-			<p class="text-center mt-auto"><a href="/youtube-linkedin-twitter.html" class="text-center btn btn-outline-primary btn-sm">Learn More</a></p>
+			<p class="text-center mt-auto"><a href="https://www.rpacertified.com/youtube-linkedin-twitter.html" class="text-center btn btn-outline-primary btn-sm">Learn More</a></p>
 		</div>
 	</div>
  </div>
@@ -88,7 +88,7 @@ canonical: https://www.rpacertified.com
 		<div class="card-body  d-flex flex-column">
 			
 			<p class="card-text">Follow the plan and you'll soon be a UiPath Certified Professional!</p>
-			<p class="text-center mt-auto"><a href="/study-guide-uipath.html#finish" class="text-center btn btn-outline-primary btn-sm">Learn More</a></p>
+			<p class="text-center mt-auto"><a href="https://www.rpacertified.com/study-guide-uipath.html#finish" class="text-center btn btn-outline-primary btn-sm">Learn More</a></p>
 		</div>
 	</div>
  </div>
