@@ -50,7 +50,7 @@ canonical: https://www.rpacertified.com
 		<div class="card-body  d-flex flex-column">
 		
 			<p class="card-text">Make sure you start your UiPath Cert journey off on the right foot.</p>
-			<p class="text-center mt-auto"><a href="exam-prep.html" class="text-center btn btn-outline-primary btn-sm">Learn More</a></p>
+			<p class="text-center mt-auto"><a href="https://www.rpacertified.com/exam-prep.html" class="text-center btn btn-outline-primary btn-sm">Learn More</a></p>
 			
 		</div>
 	</div>
@@ -65,7 +65,7 @@ canonical: https://www.rpacertified.com
 		<div class="card-body  d-flex flex-column">
 			
 			<p class="card-text">Fun lessons and projects help you apply what you've learned.</p>
-			<p class="text-center mt-auto"><a href="study-guide-uipath.html#programming" class="text-center btn btn-outline-primary btn-sm">Learn More</a></p>
+			<p class="text-center mt-auto"><a href="https://www.rpacertified.com/study-guide-uipath.html#programming" class="text-center btn btn-outline-primary btn-sm">Learn More</a></p>
 		</div>
 	</div>
 			
