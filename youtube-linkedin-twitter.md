@@ -44,7 +44,7 @@ canonical: https://www.rpacertified.com/youtube-linkedin-twitter.html
       <img src="/assets/linkedin-uipath.jpg" class="card-img-top" alt="uipath linkedin">
       <div class="card-body d-flex flex-column">
         <p class="card-text">Add me to your list of contacts on <a href="https://www.linkedin.com/in/sergio-salerno-6455b831/">LinkedIn</a>. Maybe we'll work together on a UiPath Project one day?</p>
-        <p class="text-center mt-auto"><a href="https://www.linkedin.com/in/cameronwmckenzie/" class="text-center btn btn-outline-primary btn-sm">LinkedIn</a></p>
+        <p class="text-center mt-auto"><a href="https://www.linkedin.com/in/sergio-salerno-6455b831/" class="text-center btn btn-outline-primary btn-sm">LinkedIn</a></p>
       </div>
     </div>
   </div>
