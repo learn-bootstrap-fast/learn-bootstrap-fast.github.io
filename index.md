@@ -8,7 +8,7 @@ canonical: https://www.rpacertified.com
  
   <div class=" col-12 col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-2  d-flex align-items-stretch">
 						<div class="card" >
-						<div class="card-header">UiPath Practice Exams</div>
+						<div class="card-header">Practice Exams</div>
 								       <picture>
     <source srcset="/assets/practice.webp" media="(min-width: 1200px)">
     <source srcset="/assets/practice.webp" media="(min-width: 992px)">
@@ -18,7 +18,7 @@ canonical: https://www.rpacertified.com
 </picture>
 		<div class="card-body  d-flex flex-column">
 			
-			<p class="card-text">Comprehensive UiPath certification question and answer sets for you.</p>
+			<p class="card-text">Comprehensive certification question and answer sets for you.</p>
 			<p class="text-center mt-auto"><a href="https://www.rpacertified.com/cert-questions-answers.html" class="text-center btn btn-outline-primary btn-sm">Learn More</a></p>
 		</div>
 	</div>
@@ -45,7 +45,7 @@ canonical: https://www.rpacertified.com
  
  <div class=" col-12 col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-2  d-flex align-items-stretch">
 	<div class="card" >
-	<div class="card-header">UiPath Cert Prep</div>
+	<div class="card-header"> Cert Prep</div>
 	<img src="/assets/prepare.jpg" class="card-img-top" alt="uipath cert prep">
 		<div class="card-body  d-flex flex-column">
 		
@@ -101,8 +101,8 @@ canonical: https://www.rpacertified.com
                   </div>
 		  
                   <div class="card-body  d-flex flex-column">
-                     <p class="card-text">We're here to help you quickly get UiPath Certified on the Associate exam.</p>
-                     <p class="card-text">Check out our wide assortment of UiPath mock exams, certification dumps, training tutorials and pertinent advice to help you pass the UiPath Associate Certification exam.</p>
+                     <p class="card-text">We're here to help you quickly get RPA Certified on the Associate exam.</p>
+                     <p class="card-text">Check out our wide assortment of RPA mock exams, certification dumps, training tutorials and pertinent advice to help you pass the RPA Associate Certification exam.</p>
                   </div>
                </div>
 	      </div>
