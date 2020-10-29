@@ -1,7 +1,7 @@
 ---
-layout: answered-question
+layout: basic-post
 author: Serge
-title: UiPath Unattended Robots: Where and when to use them
+title: UiPath Unattended Robots - Where and when to use them
 heading: This is the heading
 blurb: What should you use for complex and repetative tasks? The UiPath Associate Exam tests you on this RPA concept.
 ---

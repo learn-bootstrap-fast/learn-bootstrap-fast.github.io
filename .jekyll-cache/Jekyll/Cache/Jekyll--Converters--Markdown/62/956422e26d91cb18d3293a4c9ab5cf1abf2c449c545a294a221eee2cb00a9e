@@ -1,0 +1,32 @@
+I"á<p>A Jakarta servlet may throw either a
+<code class="language-plaintext highlighter-rouge">ServletException</code> or an <code class="language-plaintext highlighter-rouge">UnavailableException</code> during the service of a
+request. A <code class="language-plaintext highlighter-rouge">ServletException</code> signals that some error occurred during
+the processing of the request and that the container should take
+appropriate measures to clean up the request.</p>
+
+<h2 id="jakarta-servletexception-in-java">Jakarta ServletException in Java</h2>
+
+<p>A Java servletâ€™s <code class="language-plaintext highlighter-rouge">UnavailableException</code> signals that the
+servlet is unable to handle requests either temporarily or permanently.</p>
+
+<p>If a permanent unavailability is indicated by
+the <code class="language-plaintext highlighter-rouge">UnavailableException</code>, the servlet container must remove the
+servlet from service, call its <code class="language-plaintext highlighter-rouge">destroy</code> method, and release the servlet
+instance. Any requests refused by the container by that cause must be
+returned with a <code class="language-plaintext highlighter-rouge">SC_NOT_FOUND</code> (404) response.</p>
+
+<h2 id="java-servlet-5-api-unavailableexception">Java Servlet 5 API UnavailableException</h2>
+
+<p>If temporary unavailability is indicated by
+the <code class="language-plaintext highlighter-rouge">UnavailableException</code>, the container may choose to not route any
+requests through the servlet during the time period of the temporary
+unavailability. Any requests refused by the container during this period
+must be returned with a <code class="language-plaintext highlighter-rouge">SC_SERVICE_UNAVAILABLE</code> (503) response status
+along with a <code class="language-plaintext highlighter-rouge">Retry-After</code> header indicating when the unavailability
+will terminate.</p>
+
+<p>The Java servlet container may choose to ignore the
+distinction between a permanent and temporary unavailability and treat
+all <code class="language-plaintext highlighter-rouge">UnavailableExceptions</code> as permanent, thereby removing a Jaava servlet
+that throws any <code class="language-plaintext highlighter-rouge">UnavailableException</code> from service.</p>
+:ET

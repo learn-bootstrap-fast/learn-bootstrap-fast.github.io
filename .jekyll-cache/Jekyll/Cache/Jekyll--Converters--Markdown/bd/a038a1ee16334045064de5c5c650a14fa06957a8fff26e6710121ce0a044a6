@@ -1,0 +1,62 @@
+I"�<p>A Jakarta servlet in the Servlet 5 API is managed through a well defined life cycle that defines how it is loaded and instantiated, is
+initialized, handles requests from clients, and is taken out of service. This Java Servlet life cycle is expressed in the API by the <code class="language-plaintext highlighter-rouge">init</code>, <code class="language-plaintext highlighter-rouge">service</code>, and
+<code class="language-plaintext highlighter-rouge">destroy</code> methods of the <code class="language-plaintext highlighter-rouge">jakarta.servlet.Servlet</code> interface that all servlets must implement directly or indirectly through the
+<code class="language-plaintext highlighter-rouge">GenericServlet</code> or <code class="language-plaintext highlighter-rouge">HttpServlet</code> abstract classes.</p>
+
+<h2 id="jakartas-servlet-loading--instantiation-lifecycle">Jakarta’s Servlet Loading &amp; Instantiation Lifecycle</h2>
+
+<p>The servlet container is responsible for
+loading and instantiating servlets. The loading and instantiation can
+occur when the container is started, or delayed until the container
+determines the servlet is needed to service a request.</p>
+
+<p>When the servlet engine is started, needed
+servlet classes must be located by the servlet container. The servlet
+container loads the servlet class using normal Java class loading
+facilities. The loading may be from a local file system, a remote file
+system, or other network services.</p>
+
+<p>After loading the <code class="language-plaintext highlighter-rouge">Servlet</code> class, the
+container instantiates it for use.</p>
+
+<h2 id="java-servlet-init-and-initialization">Java Servlet init and Initialization</h2>
+
+<p>After the Jakarta servlet object is instantiated, the
+servlet container must initialize the HttpServlet before it can handle requests from
+clients. Initialization is provided so that a Java servlet can read
+persistent configuration data, initialize costly resources (such as
+JDBC™ API-based connections), and perform other one-time activities. The
+container initializes the servlet instance by calling the <code class="language-plaintext highlighter-rouge">init</code> method
+of the <code class="language-plaintext highlighter-rouge">Servlet</code> interface with a unique (per Jakarta servlet declaration)
+object implementing the <code class="language-plaintext highlighter-rouge">ServletConfig</code> interface. This configuration
+object allows the servlet to access name-value initialization parameters
+from the web application’s configuration information. The configuration
+object also gives the servlet access to an object (implementing the
+<code class="language-plaintext highlighter-rouge">ServletContext</code> interface) that describes the Jakarta servlet’s runtime
+environment.</p>
+
+<h2 id="jakarta-java-serlvet-init-errors">Jakarta Java Serlvet init errors</h2>
+
+<p>During initialization, the servlet instance
+can throw an <code class="language-plaintext highlighter-rouge">UnavailableException</code> or a <code class="language-plaintext highlighter-rouge">ServletException</code>. In this
+case, the servlet must not be placed into active service and must be
+released by the servlet container. The <code class="language-plaintext highlighter-rouge">destroy</code> method is not called as
+it is considered unsuccessful initialization.</p>
+
+<p>A new instance may be instantiated and
+initialized by the container after a failed initialization. The
+exception to this rule is when an <code class="language-plaintext highlighter-rouge">UnavailableException</code> indicates a
+minimum time of unavailability, and the container must wait for the
+period to pass before creating and initializing a new servlet instance.</p>
+
+<h2 id="servlet-lifecycle-and-ejbs-jsps-jsf-and-jpa">Servlet Lifecycle and EJBs, JSPs, JSF and JPA</h2>
+
+<p>The triggering of static initialization
+methods when a tool loads and introspects a web application is to be
+distinguished from the calling of the <code class="language-plaintext highlighter-rouge">init</code> method. Developers should
+not assume a servlet is in an active container runtime until the <code class="language-plaintext highlighter-rouge">init</code>
+method of the <code class="language-plaintext highlighter-rouge">Servlet</code> interface is called. For example, a servlet
+should not try to establish connections to databases or Jakarta Enterprise
+Beans containers when only static (class) initialization methods
+have been invoked.</p>
+:ET

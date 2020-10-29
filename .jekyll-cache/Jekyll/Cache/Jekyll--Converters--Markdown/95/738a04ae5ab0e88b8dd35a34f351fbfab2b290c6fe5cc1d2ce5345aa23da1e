@@ -1,0 +1,65 @@
+I"õ<p>The Servlet interface is the central abstraction of the Jakarta Servlet API.</p>
+
+<h2>Jakarta Servlet Interface in Java</h2>
+
+<p>All Jakarta servlets implement this interface either directly, or more commonly, by extending a class that implements the Java Servlet interface. The two classes in the Jakarta Servlet API that implement the Java Servlet interface methods:</p>
+
+<ol>
+  <li>
+    <p>GenericServlet</p>
+  </li>
+  <li>
+    <p>HttpServlet</p>
+  </li>
+</ol>
+
+<p>For most purposes, developers will extend the Jakarta HttpServlet class to implement their Java servlets.</p>
+
+<h2>Request Handling Servlet Interface Methods</h2>
+
+<p>The basic Jakarta Servlet 5 interface defines a service method for handling client requests. This method is called for each request that the Java servlet container routes to an instance of a servlet.</p>
+
+<p>The handling of concurrent requests to a web application generally requires that the web developer design servlets that can deal with multiple threads executing within the service method at a particular time.</p>
+
+<p>Generally the Java web container handles concurrent requests to the same Jakarta servlet by concurrent execution of the service method on different threads.</p>
+
+<h2>List of RESTful Servlet Interface Methods in Java</h2>
+
+<p>The HttpServlet abstract subclass adds additional methods beyond the basic Java Servlet interface that are automatically called by the service method in the Jakarta HttpServlet class to aid in processing HTTP-based requests. The following is a list of the Jakarta Servlet Interface methods:</p>
+
+<ul>
+  <li>
+    <p>doGet for handling HTTP GET requests</p>
+  </li>
+  <li>
+    <p>doPost for handling HTTP POST requests</p>
+  </li>
+  <li>
+    <p>doPut for handling HTTP PUT requests</p>
+  </li>
+  <li>
+    <p>doDelete for handling HTTP DELETE requests</p>
+  </li>
+  <li>
+    <p>doHead for handling HTTP HEAD requests</p>
+  </li>
+  <li>
+    <p>doOptions for handling HTTP OPTIONS requests</p>
+  </li>
+  <li>
+    <p>doTrace for handling HTTP TRACE requests</p>
+  </li>
+</ul>
+
+<p>Typically when developing HTTP-based servlets, an Application Developer is concerned with the doGet and doPost methods. The other methods are considered to be methods for use by programmers very familiar with HTTP programming.</p>
+
+<h3>Additional Jakarta Servlet 5 API Methods in Java</h3>
+<p>The doPut and doDelete methods allow Jakarta Servlet 5 Developers to support HTTP/1.1 clients that employ these features. The doHead method in HttpServlet is a specialized form of the doGet method that returns only the headers produced by the doGet method. The doOptions method responds with which HTTP methods are supported by the servlet. The doTrace method generates a response containing all instances of the headers sent in the TRACE request.</p>
+
+<p>The CONNECT method is not supported because it applies to proxies and the Jakarta Servlet API is targeted at endpoints.</p>
+
+<h3>Conditional Java Servlet doGet() Support</h3>
+
+<p>The Jakarta HttpServlet class defines the getLastModified method to support conditional GET operations. A conditional GET operation requests a resource be sent only if it has been modified since a specified time. In appropriate situations, implementation of this method may aid efficient utilization of network resources.</p>
+
+:ET
