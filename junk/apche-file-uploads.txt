@@ -1,0 +1,212 @@
+apache file upload	390	 -18%
+	apache upload file	390	 -18%
+	apache commons fileupload	390	 0%
+	apache upload files	390	 -18%
+	apache commons fileupload maven	70	 0%
+	apache commons fileupload example	70	 0%
+	apache file upload size limit	50
+	
+Apache Commons File Upload with HTML, Ajax and HttpClients
+	
+	
+The enterprise Java community has made great strides in simplifying the task of uploading files from the web browser to the server. What was once a complicated task with many cross-platform complications is now fairly simple and straight forward, with a number of different solutions between which software developer can choose. In this example, we will compare and contrast the built in multi-part form handling capabilities of the standard Jakarta Servlet API with the facilities provided through the Apache Commons FileUpload API.
+
+All Java based file uploads start on the client, be it through an HTML form, a JavaScript method or even use of the Apache Commons HttpClient. The simplest of the three is the HTML form, as demonstrated here:
+
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title> Apache Commons File Upload Example </title> 
+</head> 
+<body>
+
+  <form method="post" action="fileuploadservlet" enctype="multipart/form-data">
+    <input type="file" name="file" />
+    <input type="submit" value="Upload" />
+  </form>
+
+</body>
+</html>
+
+
+By adding the multipart/form-data attribute to the form tag, and including an input tag with the type attribute set to file, any modern web browser will present the viewer with a folder navigator that will allow the user to choose any file on their file system to upload.
+
+The action attribute of the form, which in this case is set to fileuploadservlet, identifies the server-side responsible for handling the uploaded file and saving it to the server's file system.
+
+The simplest approach to handling a file upload is no doubt to leverage the Servlet 3.0 Part class which can process a multipart file upload and allow the file to be incrementally saved to until the file upload is complete. Here is the code required to have a servlet Servlet perform a file upload in Java:
+
+package com.mcnz.web;
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.annotation.*;
+
+
+@WebServlet(name = "FileUploadServlet", urlPatterns = { "/fileuploadservlet" })
+@MultipartConfig(
+  fileSizeThreshold = 1024 * 1024 * 1, // 1 MB
+  maxFileSize = 1024 * 1024 * 10,      // 10 MB
+  maxRequestSize = 1024 * 1024 * 100   // 100 MB
+)
+/* Simple Java File Upload Example */
+public class FileUploadServlet extends HttpServlet {
+
+  public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    /* For comparison of Servlet and Apache Commons File Upload APIs */
+    Part filePart = request.getPart("file");
+    String fileName = filePart.getSubmittedFileName();
+    for (Part part : request.getParts()) {
+      part.write("C:\\upload\\" + fileName);
+    }
+    response.getWriter().print("Sucessfully Java file upload.");
+  }
+
+}
+
+
+For projects not updated to the Servlet 3.0 release, or for developers looking for some extended functionality beyond the Java Servlet file upload capabilities, the apache commons file upload library is a compelling alternative. The following Maven coordinates will add Apache Commons file upload capabilities to any project, both old and new:
+
+<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+<dependency>
+	<groupId>commons-fileupload</groupId>
+	<artifactId>commons-fileupload</artifactId>
+	<version>1.4</version>
+</dependency>
+
+With our project linked to the Apache Commons File Upload library through the Maven POM file, we could rewrite the doPost method of our Servlet as follows:
+
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	/* Apache Commons file upload example in Java */
+	try {
+		
+		DiskFileItemFactory factory = new DiskFileItemFactory();
+		factory.setRepository(new File("C:\\temp\\"));
+		ServletFileUpload fileUpload = new ServletFileUpload(factory);
+
+		List<FileItem> fileItems = fileUpload.parseRequest(request);
+		for(FileItem fileItem : fileItems) {
+		  if(!fileItem.isFormField()) {	  
+			File file = new File(fileItem.getName());  
+			File fNew= new File("C:\\upload\\"  + file.getName());
+			fileItem.write(fNew);
+		  }
+		}
+	} catch (Exception e) {
+		String fileUploadError = "Problem with Apache Commons File Upload.";
+		System.out.println(fileUploadError);
+	} 
+}
+	
+There are a couple of notworthy features the Apache Commons File Upload example brings to the table when compared to the Sevlet based conterpart.
+
+First of all, a temporary file upload location can be configured through the DiskFileItemFactor class. Secondly, the ServletFileUpload class returns a list of uploaded files, rather than just one. As a result, this Apache Commons file upload example will work with multiple files, not just one. An HTML page like the one below, containing three file upload buttons, would work with this iteration of the doPost method just as effectively as the one shown earlier in this Java file upload tutorial.
+
+
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title> Java File Upload Servlet Example </title> 
+</head> 
+<body>
+
+  <form method="post" action="fileuploadservlet" enctype="multipart/form-data">
+    <input type="file" name="file1" />
+	<input type="file" name="file2" />
+	<input type="file" name="file3" />
+    <input type="submit" value="Upload" />
+  </form>
+
+</body>
+</html>
+
+
+For those maintaining older Apache Commons upload code, you may see a class named DiskFileUpload used to initiate file upload processing. The DiskFileUpload class is now deprecated, and the use of the DiskFileItemFactory and the ServletFileUpload classes are recommended.
+
+An HTML form is definitely the simplest way to demonstrate how the Apache Commons file uploader works. However, those working with AngularJS or even pure JavaScript prefer to invoke the Java file upload process through an Ajax call. Such an enhancement requires no change to the server side file upload component, but instead, just a little bit of change to the HTML code rendered by the browser.
+
+The following HTML file will trigger an Ajax based Apache Commons file upload:
+
+<!DOCTYPE html> 
+<html> 
+ <head> 
+  <title>Apache Commons File Uploader and Ajax</title> 
+ </head> 
+ <body>
+  <!-- HTML5 Input Form Elements -->
+  <input id="fileupload" type="file" name="fileupload" /> 
+  <button id="upload-button" onclick="uploadFile()"> Upload </button>
+
+  <!-- Ajax JavaScript File Upload Logic -->
+  <script>
+  async function uploadFile() {
+  let formData = new FormData(); 
+  formData.append("file", fileupload.files[0]);
+  await fetch('/fileuploadservlet', {
+    method: "POST", 
+    body: formData
+  }); 
+  alert('The file has been uploaded successfully.');
+  }
+  </script>
+
+ </body> 
+</html>
+	
+For even more control of how the Apache Commons File Upload Servlet is invoked, the Apache Commons HttpClient class can alternatively be used.
+
+For example, when coding a test class that is triggered by a Java based Jenkins build, it is cumbersome to script HTML and JavaScript based resources. The Apache Commons HttpClient class allows Java developers to invoke and test their web based applications without any need for HTML or a web browser.
+
+The following class uses the Apache Commons HttpClient to upload files to a Java web server where resource named fileuploadservlet is configured to process the files:
+
+package com.mcnz.web;
+
+import java.io.*;
+import org.apache.commons.httpclient.*;
+import org.apache.commons.httpclient.methods.*;
+import org.apache.commons.httpclient.methods.multipart.*;
+
+public class HttpMultiPartFileUpload {
+    private static String url =
+      "http://localhost:8080/apache-commons-file-upload/fileuploadservlet";
+
+    public static void main(String[] args) throws IOException {
+    	  File file1 = new File("C:\\_tools\\students.xml");
+    	  File file2 = new File("C:\\_tools\\rules.xml");
+    	  
+    	  PostMethod filePost = new PostMethod(url);
+    	  Part[] parts = {
+    		  new FilePart(file1.getName(), file1),
+    	      new FilePart(file2.getName(), file2)
+    	  };
+    	  filePost.setRequestEntity(
+    	      new MultipartRequestEntity(parts, filePost.getParams())
+    	      );
+    	  HttpClient client = new HttpClient();
+    	  int status = client.executeMethod(filePost);
+    	  System.out.println(status);
+    }
+}
+
+For those maintaining older Apache Commons HttpClient code, you may notice the MultipartPostMethod component being used. This MultipartPostMethod class is now deprecated. The MultipartRequestEntity and the PostMethod classes replace the functionality previosly provided by the deprecated class. 
+
+How to use Apache Commons File Upload classes
+
+In review, the basic steps to upload files with the Apache Commons File Upload library is to:
+
+1. Create an HTML form that uses HTML 5 file upload semantics
+2. Create a servlet the handle the incoming file upload
+3. Set a temp storage direcotry with the DiskFileItemFactory class
+4. Use the ServletFileUpload to get a reference to uploaded fileSizeThreshold
+5. Save each file upload to the server with the Apache Commons FileItem's write() method
+
+
+There are a variety of options available to Java developers who require the ability to handle file uploads. The standard approach since the version 3.0 release is to use the file upload facilities built into the Servlet API. But for those still mainatining older code bases, or perhaps for projects that need the extended functionality it provides, the Apache Commons File Upload library is an effective and reliable way to move files from the client to the server.
+	
+	
+	
+
+
+
+
+
