@@ -1,0 +1,30 @@
+file upload in java	1,600
+file upload in java example	170
+file upload in java servlet	210
+multiple file upload in java example	30
+
+
+Historically, browser based, HTML driven interactions were designed with the intent of taking data living on a remote server and pushing that information down to the client. Interactions initiated by the client in the browser was limited to clicking on hyperlinks and sometimes entering text into a web based form. The flow of data went primarliy from the server to the client when the HTTP protocol was involved. Other protocols and tools, such as FTP and SCP, were the prefered mechanism when a file needed to be uploaded to the server. But times have changed, and the ability to upload files to the server is a basic requirement of any mobile or desktop, web based application.
+
+For those working in the Jakarta EE space, the five most popular Java file upload alternatives include:
+
+The basic Servlet API
+Apache Commons File Upload
+Spring File Upload libraries
+Struts File Uploader
+Basic PHP and JavaScript
+
+For most modern Java EE and Jakarta EE applications, the Servlet API provides a developer everything they need to fullfill their file upload in Java requirements. Any HTML 5 form that uses multipart semantics within its form tag can invoke a Java Servlet that is capable of reassembling the file parts as they are chunked across the network, and then reliably save the file to the server. The code required to save a file upload in a Java Servlet is relatively straight forward and concise. The downside? It requires a Sevlet 3.0 implementation or newer, and sadly, a good number of stable Java web applications are tied to the Servlet 2.5 API with no plan to migrate to a newer version on the horizon.
+
+For those stuck on older implementations of the Servlet API, a viable Java file upload alternative is the Apache Commons FileUpload library. Long before the Servlet 3.0 API standarized Java file uploads, developers have relied upon Apache Commons for their data transfer needs. However, the Apache Commons FileUpload library is more than just bytecode polyfill to placate developers stuck on an older version of the Servlet API. The Apache project provides a variety of extra functions, such as the ability to set temporary storage locations for file uploads, along with clases and methods that make difficult tasks, such as looping through a collection of uploaded files, a bit easier when compared to the Jakarta standard. For both old and new Jakarta EE projects, the features and facilities Apache Commons File Upload library is worth investigating.
+
+For developers working with enterprsie Java frameworks that both compete with and compliment Jakarta EE, the choice becomes a little bit more complicated. It's possible to use Apache Commons or the Servlet API Java file upload facilities within a Struts or Spring based application, but those frameworks provide their own file upload facilities that are equally competent. Often the Java file upload facilities baked into enterprise Java frameworks are simply wrappers around the standard Servlet API, with additional hooks and attributes that allow them to integrate and be injected as dependencies.
+
+If you are using an enterprise web framework whose file upload facilities meet your needs, I would recommend against adding another layer of complexity to your application by integrating the Apache Commons File Upload library, or coding against the standard Servlet APIs. If your web framework provides you file upload facilities, the smart decision is to use them.
+
+Of course, the smartest Java file upload strategy might be not to use Java to handle file uploads at all.
+
+In a typical, layered enterprise architecture, content and digital asset management tasks typically take place in a strata that precedes Java based request processing. If the uploaded files are images or videos, which is typical of any application that peddles in social media, those resources will needed to be served and cached by edge components that live closer to the client facing Apache web server than a back end Tomcat or Jetty app server. A smart approach for handling file uploads might be to write a script on the web server where file uploads can be handled efficiently without consuming clock cycles on the back-end Java web server, where resources are best dedicated to interacting with backend resources such as JDBC databases and message queues. For those who front their web precense with an Apache web server, the development of a simple PHP file upload script that offloads file upload handling away from the backend is an all-around smart strategy.
+
+There are many ways to perform file uploads in Java. Check which frameworks you leverage, take note of which version of the Servlet API you use, and figure out where in your architecture resources can be best dedicated file upload processing. With those key points in mind, picking a Java file upload strategy that fits should be as easy as a lead-pipe cinch.
+
