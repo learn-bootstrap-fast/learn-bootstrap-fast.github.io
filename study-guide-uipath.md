@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: UiPath Certification Study Guide
-blurb: Here's a great UiPath Study Guide to help you pass the Associate exam.
+title: UiPath Online Training & Study Guide for Certification
+blurb: A proven UiPath Exam Study Guide is what everyone pursuing RPA certification needs in order to to pass the Associate Exam Cert on the first try.
 canonical: https://www.rpacertified.com/study-guide-uipath.html
 ---
 
@@ -86,7 +86,7 @@ canonical: https://www.rpacertified.com/study-guide-uipath.html
 	
 	<input class="form-check-input mr-1" type="checkbox" value="" aria-label="...">
 
-    Review the <a href="https://www.rpacertified.com/associate-objectives.html">UiPath certification objectives</a> for the Associate exam
+    Review the <a href="/associate-objectives.html">UiPath certification objectives</a> for the Associate exam
    
 
   </li>
@@ -439,7 +439,7 @@ canonical: https://www.rpacertified.com/study-guide-uipath.html
       <div class="card-header">UiPath Study Guide<a id="github-uipath"></a></div>
       <img src="/assets/background-small2.jpg" class="card-img-top" alt="UiPath GitHub">
       <div class="card-body d-flex flex-column">
-	      <h1>UiPath Certification Study Guide</h1>
+	      <h1>UiPath Associate Certification Exam Study Guide</h1>
         <p>Follow this UiPath Study Guide and Associate Exam success will be yours!</p>
       </div>
     </div>

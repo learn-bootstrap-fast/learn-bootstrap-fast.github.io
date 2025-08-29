@@ -1,102 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179472407-1"></script>
-      <script>
-         window.dataLayer = window.dataLayer || [];
-         function gtag(){dataLayer.push(arguments);}
-         gtag('js', new Date());
-         
-         gtag('config', 'UA-179472407-1');
-      </script>
-      <title>{{ page.title }}</title>
-{% if page.canonical %}
-<link rel="canonical" href="{{ page.canonical }}" />
-{% else %}
-<!-- This is the else for if canonical -->	   
-{% endif %}
+	{% include head-common.html %}  
+     
+	{% if page.canonical %}
+	<link rel="canonical" href="{{ page.canonical }}" />
+	{% else %}
+	<!-- This is the else for if canonical -->	   
+	{% endif %}
+
+	{% if page.blurb %}
+	<meta name="description" content="{{ page.blurb }}"/>   
+	{% else %}
+	<meta name="description" content="These UiPath practice exams are the best way to test if you can successfully answer all the questions on the Uipath Associate and Deveoper Certification."/>   
+	{% endif %}
 	   
-<!-- canonical attempt: {{ page.description }} -->
-{% if page.blurb %}
-<meta name="description" content="page.blurb"/>   
-{% else %}
-<meta name="description" content="Get UiPath Certified Fast with our online UiPath Practice tests, exam answers, study guides and tutorials. Learn RPA and quickly get your UiPath Associate and Developer Certification "/>   
-{% endif %}
+	<title>{{ page.title }}</title>  
+
+	{% include boostrap-css.html %}
+	{% include style-common.html %}  
 	   
-	   
-<meta name="keywords" content="UiPath Certification, UiPath Associate Exam, UiPath Developer Exam, UiPath Certification Questions, UiPath Certification Questions and Answers, UiPath Braindump"/>
-<meta name="robots" content="noindex" />
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-   
-	   
- {% include boostrap-css.html %}        
-	   
-	   <style>
-         html { font-size: 12pt; }	
-         h1 { font-size: 1.50em; }
-         h2 { font-size: 1.25em; }
-         h3 { font-size: 1.1em; }
-         h4 { font-size: 1.05em; }
-         h5 { font-size: .83em; }
-         h6 { font-size: .75em; }
-         a, u {text-decoration: none; color:#0d47a1}  
-         a:hover {
-         background-color: #f9fbfd; color #4285F4;
-         }
-         .header, .footer {
-         background: white;
-         text-align: center;
-         }
-         .main {
-         background: white;
-         text-align: left;
-         }
-         .aside-1 {
-         background: white;
-         }
-         .aside-2 {
-         background: white;
-         }
-      </style>
+   </head>		
+	
    <body>
       <div class="container">
-	      {% include common-cookie-row.html %}  
          <div class="row">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
-               <span class="navbar-toggler-icon"></span>
-               </button>
-               <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                  <ul class="navbar-nav ml-auto">
-                     <li class="nav-item active">
-                        <a class="nav-link" href="https://www.rpacertified.com/index.html">
-                        Home</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.rpacertified.com/cert-questions-answers.html">Practice Tests</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.rpacertified.com/study-guide-uipath.html">UiPath Study Guide</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.rpacertified.com/associate-objectives.html">Objectives</a>
-                     </li>
-                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown">
-                        Contact Me
-                        </a>
-                        <div class="dropdown-menu">
-                           <a class="dropdown-item" href="https://www.rpacertified.com/youtube-linkedin-twitter.html#twitter-uipath">Twitter</a>
-                           <a class="dropdown-item" href="https://www.rpacertified.com/youtube-linkedin-twitter.html#youtube-uipath">YouTube</a>
-                           <a class="dropdown-item" href="https://www.rpacertified.com/youtube-linkedin-twitter.html#linkedin-uipath">LinkedIn</a>
-                        </div>
-                     </li>
-                  </ul>
-               </div>
-            </nav>
+{% include navigation.html %}  
          </div>
+	 {% include common-cookie-row.html %}       
          <div class="row">
             <article class="main col col-12 col-sm-12  col-md-8 col-lg-9 order-1 order-sm-1 order-lg-1 mt-3">
                <!--
@@ -443,7 +374,7 @@
                      <h4 class="card-title mt-2 text-center">Follow our proven <a href="https://www.rpacertified.com/study-guide-uipath.html">study plan</a>.</h4>
                      <p class="card-text text-center">Make this badge your own.</p>
                      <a href="https://www.rpacertified.com/study-guide-uipath.html">
-                     <img src="/assets/uipath-certified-associate-badge.webp" class="img-fluid img-thumbnail mx-auto d-block" alt="uipath certified associate badge">
+                     <img src="/assets/uipath-certified-associate-badge.jpg" class="img-fluid img-thumbnail mx-auto d-block" alt="uipath certified associate badge">
                      </a>
                   </div>
                </div>
@@ -465,9 +396,9 @@
                   <div class="card-header">
                      Networking
                   </div>
-                  <img src="/assets/serge-social2.webp" class="card-img-top" alt="UiPath Studio Preparation">
+                  <img src="/assets/serge-social2.jpg" class="card-img-top" alt="UiPath Practice Test Preparation">
                   <div class="card-body">
-                     <p class="card-text">Follow me, Serge Salerno, and my UiPath friends on social media.</p>
+                     <p class="card-text">Follow me, Serge Salerno, and all my UiPath friends on social media.</p>
                      <ul class="nav flex-column">
                         <li class="nav-item">
                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-hdd-network-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -501,6 +432,7 @@
                      </ul>
                   </div>
                </div>
+
             </aside>
          </div>
       </div>
@@ -1090,6 +1022,168 @@
       "objectives":[
          "2.0", "2.1"
       ]},
+			  
+
+	  {id:51, query:"Yolla: Cloud-native, Spring Boot microservices are typically deployed as: ",  "answer":"Section 2.1", "difficulty": "5",
+			options:[
+			{text:"Executable WAR files", correct:false, selected:false}, 
+			{text:"Executable JAR files", correct:true, selected:false},
+			{text:"Executable ZIP files", correct:false, selected:false},
+			{text:"Executable EAR files", correct:false, selected:false}
+			],
+      "objectives":[
+         "3.0", "3.0"
+      ]},
+
+
+
+	  {id:52, query:"Kunjie: Annotations like @GET and @PUT are found in what alternate to Spring REST?",  "answer":"Section 1.8", "difficulty": "5",
+			options:[
+			{text:"JAX-RS", correct:true, selected:false}, 
+			{text:"JAXB", correct:false, selected:false},
+			{text:"JAX-RPC", correct:false, selected:false},
+			{text:"JAX-WS", correct:false, selected:false}
+			],
+      "objectives":[
+         "3.0", "3.0"
+      ]},	  
+	  
+	  {id:53, query:"Edward: To call a RESTful web service from within a Spring component like an MVC controller, the recommended approach is to use the:",  "answer":"Section 3.8", "difficulty": "5",
+			options:[
+			{text:"AjaxTemplate", correct:false, selected:false}, 
+			{text:"HttpTemplate", correct:false, selected:false},
+			{text:"MvcTemplate", correct:false, selected:false},
+			{text:"RestTemplate", correct:true, selected:false}
+			],
+      "objectives":[
+         "3.0", "3.0"
+      ]},	
+
+
+	  {id:54, query:"Denise: Which of the following are built-in, HTML view resolution alternatives to Thymeleaf available in the Spring Starter page?",  "answer":"Section 5.7", "difficulty": "5",
+			options:[
+			{text:"FreeMarker", correct:true, selected:false}, 
+			{text:"JSP", correct:false, selected:false},
+			{text:"Groovy", correct:true, selected:false},
+			{text:"Mustache", correct:true, selected:false}
+			],
+      "objectives":[
+         "3.0", "3.0"
+      ]},	  
+	  
+	  {id:55, query:"Tushar: Which two build tools does Spring Boot support?",  "answer":"Section 9.4", "difficulty": "5",
+			options:[
+			{text:"Jenkins", correct:false, selected:false}, 
+			{text:"Maven", correct:true, selected:false},
+			{text:"Make", correct:false, selected:false},
+			{text:"Gradle", correct:true, selected:false}
+			],
+      "objectives":[
+         "3.0", "3.0"
+      ]},	  
+	  
+	  {id:56, query:"Ayush: An alternative to the CommandLineRunner in Spring is the :",  "answer":"Section 6.6", "difficulty": "5",
+			options:[
+			{text:"MainRunner", correct:false, selected:false}, 
+			{text:"ClassRunner", correct:false, selected:false},
+			{text:"ApplicationRunner", correct:true, selected:false},
+			{text:"SpringRunner", correct:false, selected:false}
+			],
+      "objectives":[
+         "3.0", "3.0"
+      ]},	  
+	  
+	  
+	  {id:57, query:"Taoran: Instead of an OAuth token, private companies typically authticate with which type of token? ",  "answer":"Section 8.16", "difficulty": "5",
+			options:[
+			{text:"SSD", correct:false, selected:false}, 
+			{text:"SSO", correct:false, selected:false},
+			{text:"SAML", correct:true, selected:false},
+			{text:"LDAP", correct:false, selected:false}
+			],
+      "objectives":[
+         "3.0", "3.0"
+      ]},
+	  
+	  {id:58, query:"Pierre: You can avoid direct interactions with the EntityManager by instead using a class that extends:",  "answer":"Section 7.8", "difficulty": "5",
+			options:[
+			{text:"CrudRepository", correct:true, selected:false}, 
+			{text:"PersistenceRepository", correct:false, selected:false},
+			{text:"DataRepository", correct:false, selected:false},
+			{text:"HttpRepository", correct:false, selected:false}
+			],
+      "objectives":[
+         "3.0", "3.0"
+      ]},	  
+	  
+	  {id:59, query:"Moshen: Which two annotations when used together will allow you to test Spring web applications?",  "answer":"Section 10.16", "difficulty": "5",
+			options:[
+			{text:"@MvcTest and @MockMVC", correct:false, selected:false}, 
+			{text:"@WebMvcTest and @MockMVC", correct:true, selected:false},
+			{text:"@MockMvcTest and @WebMVC", correct:false, selected:false},
+			{text:"@WebMvcTest and @WebMVC", correct:false, selected:false}
+			],
+      "objectives":[
+         "3.0", "3.0"
+      ]},	  
+	  
+	  {id:60, query:"Riddhi: Spring Security extends which Jakarta EE standard?",  "answer":"Section 8.1", "difficulty": "5",
+			options:[
+			{text:"JAAS", correct:true, selected:false}, 
+			{text:"Java Security", correct:false, selected:false},
+			{text:"Java Cryptography Service", correct:false, selected:false},
+			{text:"Java SSO", correct:false, selected:false}
+			],
+      "objectives":[
+         "3.0", "3.0"
+      ]},
+	  
+	  {id:61, query:"Mohammad: What is the name of the Spring project that adds health monitoring to your applications?",  "answer":"Section 9.1", "difficulty": "5",
+			options:[
+			{text:"Spring Boot Manager", correct:false, selected:false}, 
+			{text:"Spring Boot Monitor", correct:false, selected:false},
+			{text:"Spring Boot Optimizer", correct:false, selected:false},
+			{text:"Spring Boot Actuator", correct:true, selected:false}
+			],
+      "objectives":[
+         "3.0", "3.0"
+      ]},	  
+	  
+	  {id:62, query:"Khari: What is the name of the tool used in the labs to test RESTful APIs?",  "answer":"Lab page 31", "difficulty": "5",
+			options:[
+			{text:"cUrl", correct:false, selected:false}, 
+			{text:"jQuery", correct:false, selected:false},
+			{text:"Postman", correct:true, selected:false},
+			{text:"Fiddler", correct:false, selected:false}
+			],
+      "objectives":[
+         "3.0", "3.0"
+      ]},	  
+	  
+	  {id:63, query:"Karanveer: What is the name of the OpenAPI based tool used in lab 13 to visually see and interact with RESTful APIs?",  "answer":"Lab 159", "difficulty": "5",
+			options:[
+			{text:"GraphQL", correct:false, selected:false}, 
+			{text:"Flask", correct:false, selected:false},
+			{text:"RAML", correct:false, selected:false},
+			{text:"Swagger", correct:true, selected:false}
+			],
+      "objectives":[
+         "3.0", "3.0"
+      ]},	  
+	  
+	  {id:64, query:"Evan: Which annotation should be placed on code that performs JDBC or uses an EntityManager?",  "answer":"Section 7.3", "difficulty": "5",
+			options:[
+			{text:"@Repository", correct:true, selected:false}, 
+			{text:"@Service", correct:false, selected:false},
+			{text:"@Component", correct:false, selected:false},
+			{text:"@Autowired", correct:false, selected:false}
+			],
+      "objectives":[
+         "3.0", "3.0"
+      ]},			  
+			  
+			  
+			  
 
 	  {id:39, query:"What is the name of the tool provided by UiPath Studio to compare file versions stored in a Git or GitHub repo?",  "answer":"/2020/11/11/abc.html", "difficulty": "8",
 			options:[

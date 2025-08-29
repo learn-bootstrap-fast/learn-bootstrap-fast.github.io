@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>DevOps Commands Drag and Drop Quiz</title>
+  <link rel='stylesheet' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="quiz-wrapper">
+	<p class="">Drag the command on the left to the correct option on the right.</p>
+	<p class="">When complete, copy all the commands on the right hand side into a text editor like Notepad++.</p>
+	<p class="">Then run these commands, one by one, in the Git BASH terminal window.</p>
+	<ul class="options">
+		<li class="title">Options</li>
+		<li class="option" data-target="build-war">mvn -f numberguesser/pom.xml package</li>
+		<li class="option" data-target="tomcat-start">C:\Software\apache-tomcat-9.0.8\bin\startup.bat</li>
+		<li class="option" data-target="list-branches">git branch -a</li>
+		<li class="option" data-target="ctrl">CTRL+C</li>
+		<li class="option" data-target="tomcat-deploy">xcopy numberguesser\target\numberguesser.war C:\Software\apache-tomcat-9.0.8\webapps</li>
+		<li class="option" data-target="pull-development">git checkout development</li>
+		<li class="option" data-target="maven-install">mvn -f numberguesser/pom.xml clean install</li>
+		<li class="option" data-target="run-tests">mvn -f numberguesser/pom.xml test checkstyle:checkstyle findbugs:findbugs pmd:pmd</li>
+		<li class="option" data-target="git-tag">git tag 1.0</li>
+		<li class="option" data-target="exit">q or :q</li>
+		<li class="option" data-target="git-clone">git clone https://github.com/cameronmcnz/macro-maven.git</li>
+		<li class="option" data-target="pull-feature">git switch FEATURE/experiment</li>
+		<li class="option" data-target="java-version">java -version</li>
+		<li class="option" data-target="browser-url">http://localhost:8080/playthegame (maybe http://localhost:8080/playagame)</li>
+		<li class="option" data-target="maven-compile">mvn -f numberguesser/pom.xml compile</li>
+		<li class="option" data-target="git-version">git --version</li>
+    		<li class="option" data-target="build-jar">mvn -f numberguesser/pom.xml install tomcat7:exec-war-only</li>
+    		<li class="option" data-target="run-jar">java -jar executable.jar</li>
+		<li class="option" data-target="merge">git merge FEATURE/experiment</li>
+		<li class="option" data-target="maven-version">mvn --version</li>
+		<li class="option" data-target="git-log">git log --all --decorate --oneline --graph </li>
+		<li class="option" data-target="cd">cd macro*</li>
+    
+	</ul>
+<div class="answers">
+  
+<pre>
+
+<span class="target" data-accept="exit">Exit Git BASH</span>
+
+<span class="target" data-accept="java-version">Display the Java version</span>
+        
+<span class="target" data-accept="git-version">Display the Git version</span>
+        
+<span class="target" data-accept="maven-version">Display the version of Maven</span>
+
+<span class="target" data-accept="git-clone">Clone a GitHub repo</span>
+
+<span class="target" data-accept="cd">Move into the marcro-maven directory</span>
+
+<span class="target" data-accept="list-branches">List all Git branches</span>
+
+<span class="target" data-accept="git-log">Graph the git log history</span>
+
+<span class="target" data-accept="pull-feature">Checkout the remote feature branch</span>
+		
+<span class="target" data-accept="pull-development">Make the remote development branch local</span>
+		
+<span class="target" data-accept="merge">Merge a feature branch into the current branch</span>
+        
+<span class="target" data-accept="maven-compile">Compile your Maven app</span>
+
+<span class="target" data-accept="build-war">Build the project's deployment artifact</span>
+
+<span class="target" data-accept="maven-install">Push your app to a Maven repository</span>
+
+<span class="target" data-accept="run-tests">Run your project's unit and static analysis tests</span>
+	  
+<span class="target" data-accept="build-jar">Build an embedded Tomcat JAR</span>
+
+<span class="target" data-accept="run-jar">Run an exectuable JAR file that is in the current directory</span>
+
+<span class="target" data-accept="browser-url">URL to load application</span>
+
+<span class="target" data-accept="ctrl">Terminate an app running in the Terminal window</span>
+
+<span class="target" data-accept="git-tag">Tag a Git commit</span>
+
+<span class="target" data-accept="tomcat-deploy">Move WAR file to at Tomcat server</span>
+
+<span class="target" data-accept="tomcat-start">Start Tomcat</span>
+
+</pre>
+</div>
+ <button type="submit" value="submit">Submit</button>
+ <div class="lightbox-bg"></div>
+ <div class="status confirm">
+   <p>All Answers Answered</p>
+ </div>
+ <div class="status deny">
+   <p>Answers Remain</p>
+ </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

@@ -1,104 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179472407-1"></script>
-      <script>
-         window.dataLayer = window.dataLayer || [];
-         function gtag(){dataLayer.push(arguments);}
-         gtag('js', new Date());
-         
-         gtag('config', 'UA-179472407-1');
-      </script>
-      <title>{{ page.title }}</title>
-	   
-{% if page.canonical %}
-<link rel="canonical" href="{{ page.canonical }}" />
-{% else %}
-<!-- This is the else for if canonical -->	   
-{% endif %}
-	   
-<!-- canonical attempt: {{ page.title }} -->
-{% if page.blurb %}
-<meta name="description" content="page.blurb"/>   
-{% else %}
-<meta name="description" content="UiPath Associate Certification practice questions and answers, study guides, braindumps, mock exams, Orhcestrator overview, test objectives and online UiPath tutorials. We help you get RPA certified fast."/>   
-{% endif %}	   
-	   
-	   
-<meta name="description" content="Answers to the UiPath Certification Exam questions for both Associate and Developer RPA candidates."/>
-<meta charset="utf-8"/>
-<meta name="robots" content="noindex">
-<meta name="keywords" content="UiPath Certification, UiPath Associate Exam, UiPath Developer Exam, UiPath Certification Questions, UiPath Certification Questions and Answers, UiPath Braindump"/>
+	{% include head-common.html %}  
+     
+	{% if page.canonical %}
+	<link rel="canonical" href="{{ page.canonical }}" />
+	{% else %}
+	<!-- This is the else for if canonical -->	   
+	{% endif %}
 
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	{% if page.blurb %}
+	<meta name="description" content="{{ page.blurb }}"/>   
+	{% else %}
+	<meta name="description" content="UiPath Associate Certification practice questions and answers, study guides, braindumps, mock exams, Orhcestrator overview, test objectives and online UiPath tutorials. We help you get RPA certified fast."/>   
+	{% endif %}
 	   
- {% include boostrap-css.html %}        
+	<title>{{ page.title }}</title>  
+
+	{% include boostrap-css.html %}
+	{% include style-common.html %}  
 	   
-	   <style>
-         html { font-size: 12pt; }	
-         h1 { font-size: 1.50em; }
-         h2 { font-size: 1.25em; }
-         h3 { font-size: 1.1em; }
-         h4 { font-size: 1.05em; }
-         h5 { font-size: .83em; }
-         h6 { font-size: .75em; }
-         a, u {text-decoration: none; color:#0d47a1}  
-         a:hover {
-         background-color: #f9fbfd; color #4285F4;
-         }
-         .header, .footer {
-         background: white;
-         text-align: center;
-         }
-         .main {
-         background: white;
-         text-align: left;
-         }
-         .aside-1 {
-         background: white;
-         }
-         .aside-2 {
-         background: white;
-         }
-      </style>
+   </head>
+	   
    <body>
       <div class="container">
          <div class="row">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
-               <span class="navbar-toggler-icon"></span>
-               </button>
-               <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                  <ul class="navbar-nav ml-auto">
-                     <li class="nav-item active">
-                        <a class="nav-link" href="https://www.rpacertified.com/index.html">
-                        Home</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.rpacertified.com/cert-questions-answers.html">Practice Tests</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.rpacertified.com/study-guide-uipath.html">UiPath Study Guide</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.rpacertified.com/associate-objectives.html">Objectives</a>
-                     </li>
-                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown">
-                        Contact Me
-                        </a>
-                        <div class="dropdown-menu">
-                           <a class="dropdown-item" href="https://www.rpacertified.com/youtube-linkedin-twitter.html#twitter-uipath">Twitter</a>
-                           <a class="dropdown-item" href="https://www.rpacertified.com/youtube-linkedin-twitter.html#youtube-uipath">YouTube</a>
-                           <a class="dropdown-item" href="https://www.rpacertified.com/youtube-linkedin-twitter.html#linkedin-uipath">LinkedIn</a>
-                        </div>
-                     </li>
-                  </ul>
-               </div>
-            </nav>
+		{% include navigation.html %}  
          </div>
-	      {% include common-cookie-row.html %}  
+	 {% include common-cookie-row.html %}   
          <div class="row">
             <article class="main col col-12 col-sm-12  col-md-8 col-lg-9 order-1 order-sm-1 order-lg-1 mt-3">
                <!--
@@ -112,20 +41,21 @@
                </div>
 			   -->
                      <!-- put a span in to stop the p tag from closing automatically -->
+		    <h1>{{ page.title }}</h1>
                      {{ content }}   
 
             </article>
             <aside  class="aside-2 col col-12  col-sm-12  col-md-4 col-lg-3 order-2 order-sm-2 order-lg-2 mb-3">
                <div class="card my-3" >
                   <div class="card-header">
-                     <h4>New UiPath Certification Exams!</h4>
+                     <h4>Tough UiPath Practice Tests</h4>
                   </div>
                   <picture>
                      <source srcset="/assets/uipath-exam-questions-answers.webp" media="(min-width: 1200px)">
                      <source srcset="/assets/uipath-exam-questions-answers.webp" media="(min-width: 992px)">
                      <source srcset="/assets/uipath-exam-questions-answers.webp" media="(min-width: 768px)">
-                     <source srcset="/assets/practice.webp" media="(min-width: 576px)">
-                     <img src="/assets/practice.webp" class="img-fluid" alt="UiPath Exam Questions Answers">
+                     <source srcset="/assets/practice.jpg" media="(min-width: 576px)">
+                     <img src="/assets/practice.jpg" class="img-fluid" alt="UiPath Exam Questions Answers">
                   </picture>
                   <div class="card-body">
                      <h4 class="card-title">Our toughest set of advanced UiPath question and answer tests.</h4>
@@ -141,7 +71,7 @@
                      <h4 class="card-title mt-2 text-center">Follow our proven <a href="https://www.rpacertified.com/study-guide-uipath.html">study plan</a>.</h4>
                      <p class="card-text text-center">Make this badge your own.</p>
                      <a href="https://www.rpacertified.com/study-guide-uipath.html">
-                     <img src="/assets/uipath-study-guide.webp" class="img-fluid img-thumbnail mx-auto d-block" alt="uipath certified associate badge">
+                     <img src="/assets/uipath-study-guide.gif" class="img-fluid img-thumbnail mx-auto d-block" alt="uipath certified associate badge">
                      </a>
                   </div>
                </div>
@@ -163,7 +93,7 @@
                   <div class="card-header">
                      Networking
                   </div>
-                  <img src="/assets/serge-social2.webp" class="card-img-top" alt="UiPath Studio Preparation">
+                  <img src="/assets/serge-social2.jpg" class="card-img-top" alt="UiPath Social Answered Questions">
                   <div class="card-body">
                      <p class="card-text">Follow me, Serge Salerno, and my UiPath friends on social media.</p>
                      <ul class="nav flex-column">

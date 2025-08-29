@@ -1,0 +1,71 @@
+<html>
+   <head>
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/gh/oauth-io/oauth-js@c5af4519/dist/oauth.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"  crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.12.0/bootstrap-social.min.css"  crossorigin="anonymous">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"  crossorigin="anonymous">
+   </head>
+   <body>
+      Twitter Login 6
+      <p>
+         <a id="twitter-button" class="btn btn-block btn-social btn-twitter">
+         <i class="fa fa-twitter"></i> Sign in with Twitter
+         </a>
+      </p>
+      <a href="#" onclick="playRoshambo('rock')">rock</a>
+      <script>
+         playRoshambo = function(clientGesture){
+         
+         console.log("Doing the login");
+         // Initialize with your OAuth.io app public key
+         //OAuth.initialize('S3dUX9dCQHwedq86nA5fzLCJ0');
+         OAuth.initialize('HwAr2OtSxRgEEnO2-JnYjsuA3tc');
+            
+         console.log("Initialized");
+         // Use popup for OAuth
+         OAuth.popup('twitter').then(twitter => {
+         console.log('twitter:', twitter);
+         // Prompts 'welcome' message with User's email on successful login
+         // #me() is a convenient method to retrieve user data without requiring you
+         // to know which OAuth provider url to call
+         twitter.me().then(data => {
+         console.log('data:', data);
+         alert('Twitter says your email is:' + data.email + ".\nView browser 'Console Log' for more details");
+         });
+         // Retrieves user data from OAuth provider by using #get() and
+         // OAuth provider url    
+         twitter.get('/1.1/account/verify_credentials.json?include_email=true').then(data => {
+         console.log('self data:', data);
+         })    
+         });
+         }
+         
+      </script>
+      <script>
+      
+      $('#twitter-button').on('click', function() {
+	// Initialize with your OAuth.io app public key
+	OAuth.initialize('HwAr2OtSxRgEEnO2-JnYjsuA3tc');
+  // Use popup for OAuth
+  OAuth.popup('twitter').then(twitter => {
+    console.log('twitter:', twitter);
+    // Prompts 'welcome' message with User's email on successful login
+    // #me() is a convenient method to retrieve user data without requiring you
+    // to know which OAuth provider url to call
+    twitter.me().then(data => {
+      console.log('data:', data);
+      alert('Twitter says your email is:' + data.email + ".\nView browser 'Console Log' for more details");
+	  });
+    // Retrieves user data from OAuth provider by using #get() and
+    // OAuth provider url    
+    twitter.get('/1.1/account/verify_credentials.json?include_email=true').then(data => {
+      console.log('self data:', data);
+	  })    
+	});
+})
+      
+      </script>
+      Goodbye world
+   </body>
+</html>
