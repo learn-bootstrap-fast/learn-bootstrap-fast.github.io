@@ -91,26 +91,11 @@
 
 <body id="video-detail">
   <div class="site">
-    <!-- Slim header (kept, but video-neutral) -->
-    <header class="site-head">
-      <div class="wrap">
-        <div class="brand">{{ site.title | default: "Video" }}</div>
-      </div>
-    </header>
+
 
     <!-- Centered main column, player first to emphasize watch-page intent -->
     <main>
       <div class="wrap">
-        <section class="hero" aria-label="Video heading">
-          <h1 class="title">{{ page.title }}</h1>
-          <p class="meta">
-            {% if page.upload_date %}
-              <time datetime="{{ page.upload_date }}">{{ page.upload_date | date: "%B %d, %Y" }}</time>
-            {% endif %}
-            {% if page.duration %}{% if page.upload_date %} &nbsp;·&nbsp; {% endif %} {{ page.duration }}{% endif %}
-            {% if page.in_language %}{% if page.upload_date or page.duration %} &nbsp;·&nbsp; {% endif %} {{ page.in_language | upcase }}{% endif %}
-          </p>
-        </section>
 
         <section aria-label="Video player">
           <div class="player" id="player">
@@ -131,14 +116,15 @@
             {% endif %}
             <noscript><p style="text-align:center"><a href="{{ watch_url }}">Watch this video</a></p></noscript>
           </div>
-        </section>
-
-        {% if page.description or content %}
-          <section aria-label="Description">
+		  {% if page.description or content %}
+          <div aria-label="Description">
             {% if page.description %}<p class="desc">{{ page.description }}</p>{% endif %}
             <div class="desc">{{ content }}</div>
-          </section>
+          </div>
         {% endif %}
+        </section>
+
+
       </div>
     </main>
 {% include nav-simplified.html %}
