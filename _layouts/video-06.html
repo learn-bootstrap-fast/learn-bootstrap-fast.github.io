@@ -10,21 +10,22 @@
   <meta name="description" content="{{ meta_desc | strip }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
 
-{%- assign thumb_fallback = 'https://i.ytimg.com/vi/' | append: page.video_id | append: '/maxresdefault.jpg' -%}
-{%- assign poster = page.poster_url | default: page.thumbnail_url | default: thumb_fallback -%}
+  {%- assign thumb_fallback = 'https://i.ytimg.com/vi/' | append: page.video_id | append: '/maxresdefault.jpg' -%}
+  {%- assign poster = page.poster_url | default: page.thumbnail_url | default: thumb_fallback -%}
 
-{%- assign player_w = page.player_width  | default: 1280 -%}
-{%- assign player_h = page.player_height | default: 720  -%}
+  {%- assign player_w = page.player_width  | default: 1280 -%}
+  {%- assign player_h = page.player_height | default: 720  -%}
 
-{%- assign embed_src = page.embed_url -%}
-{%- if embed_src == nil or embed_src == '' -%}
-  {%- assign embed_src = 'https://www.youtube.com/embed/' | append: page.video_id -%}
-{%- endif -%}
+  {%- assign embed_src = page.embed_url -%}
+  {%- if embed_src == nil or embed_src == '' -%}
+    {%- assign embed_src = 'https://www.youtube.com/embed/' | append: page.video_id -%}
+  {%- endif -%}
 
-{%- assign watch_url = page.content_url -%}
-{%- if watch_url == nil or watch_url == '' -%}
-  {%- assign watch_url = 'https://www.youtube.com/watch?v=' | append: page.video_id -%}
-{%- endif -%}
+  {%- assign watch_url = page.content_url -%}
+  {%- if watch_url == nil or watch_url == '' -%}
+    {%- assign watch_url = 'https://www.youtube.com/watch?v=' | append: page.video_id -%}
+  {%- endif -%}
+
   <!-- Open Graph -->
   <meta property="og:type" content="video.other">
   <meta property="og:title" content="{{ page.title }}">
@@ -68,123 +69,132 @@
   }
   </script>
 
-  <!-- Minimal CSS to replicate the large hero with background video -->
-<style>
-/* Full-viewport hero regardless of text length */
-:root { --nav-h: 0px; }          /* set to your nav height if it’s fixed, e.g. 64px */
-html, body { height: 100%; margin: 0; }
+  <!-- Minimal CSS for full-bleed hero video -->
+  <style>
+    :root { --nav-h: 0px; } /* if you have a fixed top nav, set this to its height */
+    html, body { height: 100%; margin: 0; }
+    body { background:#000; color:#e5e7eb; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
 
-.hero-wrap { position: relative; width: 100%; background: #000; }
+    /* Simple container + section helpers */
+    .container { width:100%; max-width:1200px; margin:0 auto; padding:0 16px; }
+    .section { padding:3rem 0; }
+    .dark { background:#000; color:#e5e7eb; }
 
-/* The section that must be tall: change --nav-h if you have a fixed top nav */
-.hero {
-  position: relative;
-  min-height: calc(100vh - var(--nav-h));
-  width: 100%;
-  overflow: hidden;              /* keep overflow from showing scrollbars */
-}
+    /* Hero wrapper */
+    .hero-wrap { position: relative; width: 100%; background: #000; }
+    .hero {
+      position: relative;
+      min-height: calc(100vh - var(--nav-h)); /* always viewport height */
+      width: 100%;
+      overflow: hidden;
+    }
+    /* Background layer fills the hero */
+    .hero-bg { position: absolute; inset: 0; z-index: 0; }
+    .hero-bg .poster { position:absolute; inset:0; }
+    .hero-bg .poster img { width:100%; height:100%; object-fit:cover; display:block; }
 
-/* Background layer fills the hero */
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
+    /* YouTube background: cover both axes */
+    .hero-bg .yt-cover { position:absolute; inset:0; pointer-events:none; overflow:hidden; }
+    .hero-bg .yt-cover iframe {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      /* 16:9 cover trick */
+      width: 100vw;
+      height: 56.25vw;      /* 9/16 of width */
+      min-width: 177.78vh;  /* 16/9 of height */
+      min-height: 100vh;
+      border: 0 !important;
+    }
 
-.hero-bg .poster { position:absolute; inset:0; }
-.hero-bg .poster img { width:100%; height:100%; object-fit:cover; display:block; }
-
-/* YouTube “background video” covers both axes */
-.hero-bg .yt-cover { position:absolute; inset:0; pointer-events:none; overflow:hidden; }
-.hero-bg .yt-cover iframe {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-
-  /* 16:9 cover trick */
-  width: 100vw;                  /* base on viewport width */
-  height: 56.25vw;               /* 9/16 of width */
-  min-width: 177.78vh;           /* 16/9 of height to cover tall screens */
-  min-height: 100vh;             /* always fill viewport height */
-  border: 0 !important;
-}
-
-/* Foreground content sits above the video and does NOT control the hero height */
-.hero-inner {
-  position: relative;
-  z-index: 1;
-  min-height: inherit;           /* same height as .hero */
-  display: flex;
-  align-items: center;           /* vertically center your text */
-  justify-content: center;       /* center horizontally; remove if you prefer left */
-  text-align: center;
-  padding: 2rem 1rem;
-}
-
-</style>
-
+    /* Foreground content sits above the video */
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      min-height: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .hero-title {
+      margin: 0 0 .5rem;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.1;
+      font-weight: 800;
+      color:#fff;
+      text-shadow: 0 2px 12px rgba(0,0,0,.5);
+    }
+    .hero-sub {
+      margin: 0;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color:#d1d5db;
+      text-shadow: 0 1px 8px rgba(0,0,0,.4);
+    }
+  </style>
 </head>
 <body>
 
-  <!-- OPTIONAL NAV INCLUDE -->
   {% if site.nav_include %}
     {% include {{ site.nav_include }} %}
   {% endif %}
 
-
   <!-- HERO WITH BIG BACKGROUND VIDEO -->
   <div class="hero-wrap">
     <main class="video">
-      <!-- Background video: YouTube -->
-      <div class="hero-bg">
-        <!-- Poster image (initial paint / fallback) -->
-        <div class="poster">
-          <img src="{{ poster }}" alt="">
+      <div class="hero">
+        <!-- Background -->
+        <div class="hero-bg">
+          <div class="poster">
+            <img src="{{ poster }}" alt="">
+          </div>
+
+          <div class="yt-cover" aria-hidden="true">
+            {% if page.video_host == "youtube" and page.video_id %}
+              <iframe
+                title="{{ page.title | escape }}"
+                src="https://www.youtube.com/embed/{{ page.video_id }}?autoplay=1&mute=1&playsinline=1&controls=0&loop=1&playlist={{ page.video_id }}&modestbranding=1&rel=0"
+                allow="autoplay; encrypted-media; picture-in-picture; clipboard-write; web-share"
+                referrerpolicy="origin-when-cross-origin">
+              </iframe>
+            {% elsif page.embed_url %}
+              <iframe
+                title="{{ page.title | escape }}"
+                src="{{ page.embed_url }}{% if page.video_id %}?autoplay=1&mute=1&playsinline=1&controls=0&loop=1&playlist={{ page.video_id }}&modestbranding=1&rel=0{% else %}?autoplay=1&mute=1&playsinline=1&controls=0&modestbranding=1&rel=0{% endif %}"
+                allow="autoplay; encrypted-media; picture-in-picture; clipboard-write; web-share"
+                referrerpolicy="origin-when-cross-origin">
+              </iframe>
+            {% endif %}
+            <noscript>
+              <p style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:rgba(0,0,0,.6);color:#fff;padding:.5rem 1rem;border-radius:.25rem;">
+                <a href="{{ watch_url }}" style="color:#fff;text-decoration:underline;">Watch this video</a>
+              </p>
+            </noscript>
+          </div>
         </div>
 
-        <div class="yt-cover" aria-hidden="true">
-          {% if page.video_host == "youtube" and page.video_id %}
-            <iframe
-              title="{{ page.title | escape }}"
-              src="https://www.youtube.com/embed/{{ page.video_id }}?autoplay=1&mute=1&playsinline=1&controls=0&loop=1&playlist={{ page.video_id }}&modestbranding=1&rel=0"
-              allow="autoplay; encrypted-media; picture-in-picture; clipboard-write; web-share"
-              referrerpolicy="origin-when-cross-origin">
-            </iframe>
-          {% elsif page.embed_url %}
-            <iframe
-              title="{{ page.title | escape }}"
-              src="{{ page.embed_url }}?autoplay=1&mute=1&playsinline=1&controls=0&loop=1&playlist={{ page.video_id }}&modestbranding=1&rel=0"
-              allow="autoplay; encrypted-media; picture-in-picture; clipboard-write; web-share"
-              referrerpolicy="origin-when-cross-origin">
-            </iframe>
-          {% endif %}
-          <noscript>
-            <p style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:rgba(0,0,0,.6);color:#fff;padding:.5rem 1rem;border-radius:.25rem;">
-              <a href="{{ watch_url }}" style="color:#fff;text-decoration:underline;">Watch this video</a>
-            </p>
-          </noscript>
+        <!-- Foreground text -->
+        <div class="container hero-inner">
+          <div>
+            <h1 class="hero-title">{{ page.hero_title | default: page.title }}</h1>
+            {% if page.hero_subtitle or page.description %}
+              <p class="hero-sub">{{ page.hero_subtitle | default: page.description }}</p>
+            {% endif %}
+          </div>
         </div>
-      </div>
-
-      <!-- Foreground text -->
-      <div class="container hero-inner">
-        <h1 class="hero-title">{{ page.hero_title | default: page.title }}</h1>
-        {% if page.hero_subtitle or page.description %}
-          <p class="hero-sub">{{ page.hero_subtitle | default: page.description }}</p>
-        {% endif %}
       </div>
     </main>
-	  <!-- MAIN CONTENT (kept minimal to preserve watch-page signal) -->
-  <div>
+
+    <!-- MAIN CONTENT (kept minimal to preserve watch-page signal) -->
     <section class="section dark">
       <div class="container">
         {{ content }}
       </div>
     </section>
   </div>
-  </div>
 
-{% include nav-simplified.html %}
+  {% include nav-simplified.html %}
 
 </body>
 </html>
