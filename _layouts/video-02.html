@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html class="no-js" dir="ltr" lang="en">
+<head>
+  {% include head.html %}
+  <meta charset="utf-8">
+  <title>{{ page.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {%- assign meta_desc = page.description | default: site.description | default: page.title -%}
+
+  {%- assign thumb_fallback = 'https://i.ytimg.com/vi/' | append: page.video_id | append: '/maxresdefault.jpg' -%}
+  {%- assign poster = page.thumbnail_url | default: thumb_fallback -%}
+
+  {%- assign player_w = page.player_width  | default: 1280 -%}
+  {%- assign player_h = page.player_height | default: 720  -%}
+
+  {%- assign embed_src = page.embed_url -%}
+  {%- if embed_src == nil or embed_src == '' -%}
+    {%- assign embed_src = 'https://www.youtube.com/embed/' | append: page.video_id -%}
+  {%- endif -%}
+
+  {%- assign watch_url = page.content_url -%}
+  {%- if watch_url == nil or watch_url == '' -%}
+    {%- assign watch_url = 'https://www.youtube.com/watch?v=' | append: page.video_id -%}
+  {%- endif -%}
+
+  <meta name="description" content="{{ meta_desc }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="video.other">
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:description" content="{{ meta_desc }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ poster }}">
+  {% if embed_src %}
+    <meta property="og:video" content="{{ embed_src }}">
+    <meta property="og:video:type" content="text/html">
+    <meta property="og:video:width" content="{{ player_w }}">
+    <meta property="og:video:height" content="{{ player_h }}">
+  {% endif %}
+
+  <!-- Twitter Player Card -->
+  <meta name="twitter:card" content="player">
+  <meta name="twitter:title" content="{{ page.title }}">
+  <meta name="twitter:description" content="{{ meta_desc }}">
+  <meta name="twitter:image" content="{{ poster }}">
+  {% if embed_src %}
+    <meta name="twitter:player" content="{{ embed_src }}">
+    <meta name="twitter:player:width" content="{{ player_w }}">
+    <meta name="twitter:player:height" content="{{ player_h }}">
+  {% endif %}
+
+  <!-- JSON-LD VideoObject -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": {{ page.title | jsonify }},
+    "description": {{ meta_desc | jsonify }},
+    "thumbnailUrl": [ {{ poster | jsonify }} ],
+    {% if page.upload_date %}"uploadDate": {{ page.upload_date | jsonify }},{% endif %}
+    {% if page.duration %}"duration": {{ page.duration | jsonify }},{% endif %}
+    "embedUrl": {{ embed_src | jsonify }},
+    "contentUrl": {{ watch_url | jsonify }},
+    "inLanguage": {{ page.in_language | default: "en" | jsonify }},
+    "isAccessibleForFree": {{ page.is_accessible_for_free | default: true }},
+    "publisher": {
+      "@type": "Organization",
+      "name": {{ page.publisher_name | default: site.title | jsonify }}{% if page.publisher_logo %},
+      "logo": { "@type": "ImageObject", "url": {{ page.publisher_logo | absolute_url | jsonify }} }{% endif %}
+    },
+    "potentialAction": {
+      "@type": "WatchAction",
+      "target": { "@type": "EntryPoint", "urlTemplate": {{ watch_url | jsonify }} }
+    }
+  }
+  </script>
+
+  <style>
+    /* Simple watch-page styles */
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 1rem; }
+    .title { text-align: center; margin: 0 0 0.75rem; font-size: 1.25rem; font-weight: 700; }
+    .player {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .player iframe, .player video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .desc { margin-top: 0.75rem; line-height: 1.6; }
+    .meta { color: #6c757d; font-size: .95rem; text-align: center; margin-top: .25rem; }
+  </style>
+</head>
+
+
+<body id="video-detail">
+    {% include nav-simplified.html %}
+  <div class="wrap">
+    <h1 class="title">{{ page.title }}</h1>
+
+    <!-- Player first for clear watch-page intent -->
+    <div class="player" id="player">
+      {% if page.video_host == "youtube" and page.video_id %}
+        <iframe
+          title="{{ page.title | escape }}"
+          src="https://www.youtube.com/embed/{{ page.video_id }}?modestbranding=1&rel=0&enablejsapi=1"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          referrerpolicy="origin-when-cross-origin">
+        </iframe>
+      {% elsif page.embed_url %}
+        <iframe
+          title="{{ page.title | escape }}"
+          src="{{ page.embed_url }}"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      {% elsif page.content_url %}
+        <video controls preload="metadata" poster="{{ page.thumbnail_url }}">
+          <source src="{{ page.content_url }}" type="video/mp4">
+        </video>
+      {% else %}
+        <p><strong>Video unavailable.</strong> Add <code>video_id</code> (YouTube) or <code>embed_url</code>/<code>content_url</code> in front matter.</p>
+      {% endif %}
+      <noscript>
+        {% if page.video_id %}
+          <p style="text-align:center"><a href="https://www.youtube.com/watch?v={{ page.video_id }}">Watch this video on YouTube</a></p>
+        {% elsif page.content_url %}
+          <p style="text-align:center"><a href="{{ page.content_url }}">Open the video</a></p>
+        {% endif %}
+      </noscript>
+    </div>
+
+    <!-- Optional meta line -->
+    <p class="meta">
+      {% if page.upload_date %}
+        <time datetime="{{ page.upload_date }}">{{ page.upload_date | date: "%B %d, %Y" }}</time>
+      {% endif %}
+      {% if page.duration %}{% if page.upload_date %} &nbsp;·&nbsp; {% endif %} {{ page.duration }}{% endif %}
+      {% if page.in_language %}{% if page.upload_date or page.duration %} &nbsp;·&nbsp; {% endif %} {{ page.in_language | upcase }}{% endif %}
+    </p>
+
+    <!-- Description/content directly under the player -->
+    {% if page.description or content %}
+      <div class="desc">
+        {% if page.description %}<p>{{ page.description }}</p>{% endif %}
+        {{ content }}
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>

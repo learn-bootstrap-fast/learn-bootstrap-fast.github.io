@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html class="no-js" dir="ltr" lang="en">
+<head>
+  {% include head.html %}
+  <meta charset="utf-8">
+  <title>{{ page.title }} Video</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ page.description }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="video.other">
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:description" content="{{ page.description }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ page.thumbnail_url }}">
+  {% if page.embed_url %}
+  <meta property="og:video" content="{{ page.embed_url }}">
+  <meta property="og:video:type" content="text/html">
+  <meta property="og:video:width" content="1280">
+  <meta property="og:video:height" content="720">
+  {% endif %}
+
+  <!-- Twitter Player Card -->
+  <meta name="twitter:card" content="player">
+  <meta name="twitter:title" content="{{ page.title }}">
+  <meta name="twitter:description" content="{{ page.description }} A video.">
+  <meta name="twitter:image" content="{{ page.thumbnail_url }}">
+  {% if page.embed_url %}
+  <meta name="twitter:player" content="{{ page.embed_url }}">
+  <meta name="twitter:player:width" content="1280">
+  <meta name="twitter:player:height" content="720">
+  {% endif %}
+
+  <!-- JSON-LD VideoObject -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": {{ page.title | jsonify }},
+    "description": {{ page.description | jsonify }},
+    "thumbnailUrl": [ {{ page.thumbnail_url | jsonify }} ],
+    {% if page.upload_date %}"uploadDate": {{ page.upload_date | jsonify }},{% endif %}
+    {% if page.duration %}"duration": {{ page.duration | jsonify }},{% endif %}
+    {% if page.embed_url %}"embedUrl": {{ page.embed_url | jsonify }},{% endif %}
+    {% if page.content_url %}"contentUrl": {{ page.content_url | jsonify }},{% endif %}
+    "inLanguage": {{ page.in_language | default: "en" | jsonify }},
+    "isAccessibleForFree": {{ page.is_accessible_for_free | default: true }},
+    "publisher": {
+      "@type": "Organization",
+      "name": {{ page.publisher_name | jsonify }},
+      "logo": { "@type": "ImageObject", "url": {{ page.publisher_logo | absolute_url | jsonify }} }
+    },
+    "potentialAction": {
+      "@type": "WatchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": {{ page.content_url | default: page.embed_url | jsonify }}
+      }
+    }
+  }
+  </script>
+</head>
+
+<body id="video-detail" class="video-page">
+  <style>
+    body.video-page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      margin: 0;
+      padding: 0;
+    }
+    #site-container {
+      width: 100%;
+      max-width: 1000px; /* keeps it from getting too wide on huge screens */
+      margin: 0 auto;
+      text-align: center;
+    }
+    .youtube-iframe-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      margin: 1rem 0;
+    }
+    .youtube-iframe-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .video-description {
+      margin-top: 1rem;
+      line-height: 1.6;
+    }
+h1.main-article-title {
+  margin: 1rem 0;
+  font-weight: bold;
+  font-size: 1.5rem; /* ~20px, slightly bigger than normal text */
+}
+  </style>
+
+  <div id="site-container" class="site-container">
+    {% include nav-simplified.html %}
+    <header></header>
+
+    <div id="main-content" class="main-content video main-video-content video-page">
+      <article id="content-columns" class="content-columns">
+
+        <header class="main-article-header main-article-header-noimage" id="content-header">
+          <h1 class="main-article-title fw-bold mb-2 mt-14">Video: {{ page.title }}</h1>
+        </header>
+
+        <div id="content-center" class="content-center video-page">
+          <section class="video-section video-detail main-section video-page" id="content-body">
+
+            <div class="youtube-iframe-container">
+              <iframe
+                id="ytplayer"
+                title="Video {{ page.title }}"
+                src="https://www.youtube.com/embed/{{ page.video_id }}?modestbranding=1&rel=0&enablejsapi=1"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                referrerpolicy="origin-when-cross-origin">
+              </iframe>
+            </div>
+
+            <div class="video-description">
+              {{ content }}
+            </div>
+
+            <noscript>
+              <p><a href="{{ page.content_url }}">Watch this video on YouTube</a></p>
+            </noscript>
+
+          </section>
+        </div>
+
+      </article>
+    </div>
+  </div>
+</body>
+</html>

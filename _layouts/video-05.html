@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  {% include head.html %}
+  <meta charset="utf-8">
+  <title>{{ page.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {%- assign meta_desc = page.description | default: site.description | default: page.title -%}
+  <meta name="description" content="{{ meta_desc | strip }}">
+
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+
+{%- assign thumb_fallback = 'https://i.ytimg.com/vi/' | append: page.video_id | append: '/maxresdefault.jpg' -%}
+{%- assign poster = page.poster_url | default: page.thumbnail_url | default: thumb_fallback -%}
+
+{%- assign player_w = page.player_width  | default: 1280 -%}
+{%- assign player_h = page.player_height | default: 720  -%}
+
+{%- assign embed_src = page.embed_url -%}
+{%- if embed_src == nil or embed_src == '' -%}
+  {%- assign embed_src = 'https://www.youtube.com/embed/' | append: page.video_id -%}
+{%- endif -%}
+
+{%- assign watch_url = page.content_url -%}
+{%- if watch_url == nil or watch_url == '' -%}
+  {%- assign watch_url = 'https://www.youtube.com/watch?v=' | append: page.video_id -%}
+{%- endif -%}
+  <!-- Open Graph (video essentials) -->
+  <meta property="og:type" content="video.other">
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:description" content="{{ meta_desc | strip }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ thumb }}">
+  <meta property="og:video" content="{{ embed_src }}">
+  <meta property="og:video:type" content="text/html">
+  <meta property="og:video:width" content="{{ player_w }}">
+  <meta property="og:video:height" content="{{ player_h }}">
+
+  <!-- Twitter Player -->
+  <meta name="twitter:card" content="player">
+  <meta name="twitter:title" content="{{ page.title }}">
+  <meta name="twitter:description" content="{{ meta_desc | strip }}">
+  <meta name="twitter:image" content="{{ thumb }}">
+  <meta name="twitter:player" content="{{ embed_src }}">
+  <meta name="twitter:player:width" content="{{ player_w }}">
+  <meta name="twitter:player:height" content="{{ player_h }}">
+
+  <!-- JSON-LD: VideoObject -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"VideoObject",
+    "name": {{ page.title | jsonify }},
+    "description": {{ meta_desc | jsonify }},
+    "thumbnailUrl": [ {{ thumb | jsonify }} ],
+    {% if page.upload_date %}"uploadDate": {{ page.upload_date | jsonify }},{% endif %}
+    {% if page.duration %}"duration": {{ page.duration | jsonify }},{% endif %}
+    "embedUrl": {{ embed_src | jsonify }},
+    "contentUrl": {{ watch_url | jsonify }},
+    "inLanguage": {{ page.in_language | default: "en" | jsonify }},
+    "isAccessibleForFree": {{ page.is_accessible_for_free | default: true }},
+    "publisher": {
+      "@type":"Organization",
+      "name": {{ page.publisher_name | default: site.title | jsonify }}{% if page.publisher_logo %},
+      "logo": { "@type":"ImageObject", "url": {{ page.publisher_logo | absolute_url | jsonify }} }{% endif %}
+    },
+    "potentialAction": { "@type":"WatchAction", "target": { "@type":"EntryPoint", "urlTemplate": {{ watch_url | jsonify }} } }
+  }
+  </script>
+
+  <!-- Minimal fallback styles; Bootstrap will enhance when you link it -->
+  <style>
+    .text-hero-gray .text-hero {
+      background-image: linear-gradient(rgba(241,242,242,.9), rgba(241,242,242,.9)), url('{{ hero_image }}');
+      background-size: cover; background-position: center; padding: 2.5rem 1rem; text-align: center;
+    }
+    .text-hero-gray h1 { margin: 0; font-size: 1.75rem; }
+    /* Responsive 16:9 embed; supports older Bootstrap "embed-responsive" or our fallback */
+    .embed-responsive, .ratio { position: relative; width: 100%; }
+    .embed-responsive::before { display:block; content:""; padding-top:56.25%; } /* 16:9 */
+    .embed-responsive iframe, .ratio iframe {
+      position:absolute; inset:0; width:100%; height:100%; border:0;
+    }
+    /* Simple gutters if Bootstrap not loaded */
+    .container, .container-fluid { width: 100%; margin: 0 auto; padding-left: 15px; padding-right: 15px; }
+    .row { display: flex; flex-wrap: wrap; margin-left: -15px; margin-right: -15px; }
+    [class*="col-"] { padding-left: 15px; padding-right: 15px; }
+    /* Narrow content feel like the original */
+    #generic .container { max-width: 1140px; }
+    .borderright { border-right: 1px solid #eee; }
+    .pad { padding: 1rem 0; }
+    .vidside h3 { margin-top: 0; font-size: 1rem; }
+    .vidtax { list-style: none; padding: 0; margin: .5rem 0 1rem; }
+    .vidtax li { margin: .25rem 0; }
+    #footer { padding: 2rem 0; }
+  </style>
+</head>
+
+<body class="video-page">
+  {% include nav-simplified.html %}
+  <div id="headmenu" class="container-fluid">
+    <div class="row">
+      <div class="col-md-2 d-none d-md-block">
+        <div class="logo-big">
+          {% if site.logo %}
+            <a href="{{ '/' | absolute_url }}"><img src="{{ site.logo | absolute_url }}" alt="{{ site.title | default: 'Home' }}"></a>
+          {% else %}
+            <a href="{{ '/' | absolute_url }}">{{ site.title | default: 'Home' }}</a>
+          {% endif %}
+        </div>
+      </div>
+      <div class="col-md-10">
+        <div id="mtoph" class="row">
+          <div id="mtop" class="col-md-12">
+            <div id="menutop">
+              <!-- Keep for your future Bootstrap nav -->
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 mno-pad">
+            <!-- reserved -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div class="text-hero-gray">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="text-hero">
+          <h1>{{ page.title }}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div id="generic">
+    <div class="container">
+      <div class="row">
+        <!-- Main content column -->
+        <div class="col-md-9 borderright">
+          <div id="generic-intro">
+            <div class="pad">
+              <div class="gen-heading">
+                <article role="article" class="video-article">
+
+                  <section aria-label="Video player">
+                    <!-- Use legacy Bootstrap 3/4 class; your Bootstrap will style it; we also added CSS fallback -->
+                    <div class="embed-responsive embed-responsive-16by9">
+                      {% if page.video_host == "youtube" and page.video_id %}
+                        <iframe
+                          title="{{ page.title | escape }}"
+                          src="{{ embed_src }}?modestbranding=1&rel=0&enablejsapi=1"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowfullscreen
+                          referrerpolicy="origin-when-cross-origin">
+                        </iframe>
+                      {% elsif page.embed_url %}
+                        <iframe
+                          title="{{ page.title | escape }}"
+                          src="{{ page.embed_url }}"
+                          allow="autoplay; fullscreen; picture-in-picture"
+                          allowfullscreen>
+                        </iframe>
+                      {% elsif page.content_url %}
+                        <iframe
+                          title="{{ page.title | escape }}"
+                          src="{{ page.content_url }}"
+                          allow="autoplay; fullscreen; picture-in-picture"
+                          allowfullscreen>
+                        </iframe>
+                      {% else %}
+                        <p><strong>Video unavailable.</strong> Provide <code>video_id</code> or <code>embed_url</code>/<code>content_url</code> in front matter.</p>
+                      {% endif %}
+                      <noscript>
+                        <p style="text-align:center"><a href="{{ watch_url }}">Watch this video</a></p>
+                      </noscript>
+                    </div>
+                  </section>
+
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <div id="video">
+            <!-- reserved for related videos / extra content if you add later -->
+            {{ content }}
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-md-3" id="sidebar" role="navigation">
+          <aside class="sidebar vidside">
+            <h3>CATEGORIES</h3>
+            <ul class="vidtax">
+              {%- if page.tags and page.tags.size > 0 -%}
+                {%- for tag in page.tags -%}
+                  <li><a href="{{ '/tags/' | append: tag | slugify | append: '/' | absolute_url }}">{{ tag }}</a></li>
+                {%- endfor -%}
+              {%- else -%}
+                <li><a href="{{ '/' | absolute_url }}">All Videos</a></li>
+              {%- endif -%}
+            </ul>
+            <a href="{{ '/videos/' | absolute_url }}">View All</a>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer">
+    <div class="container">
+      <hr>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# schema: http://schema.org/ sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#">
+<head>
+  {% include head.html %}
+
+  <meta charset="utf-8">
+  <title>{{ page.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  {%- assign meta_desc = page.description | default: site.description | default: page.title -%}
+  {%- assign thumb_fallback = 'https://i.ytimg.com/vi/' | append: page.video_id | append: '/hqdefault.jpg' -%}
+  {%- assign poster = page.thumbnail_url | default: thumb_fallback -%}
+
+  {%- assign embed_src = page.embed_url -%}
+  {%- if embed_src == nil or embed_src == '' -%}
+    {%- assign embed_src = 'https://www.youtube.com/embed/' | append: page.video_id -%}
+  {%- endif -%}
+
+  {%- assign watch_url = page.content_url -%}
+  {%- if watch_url == nil or watch_url == '' -%}
+    {%- assign watch_url = 'https://www.youtube.com/watch?v=' | append: page.video_id -%}
+  {%- endif -%}
+
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+
+  <!-- Minimal OG/Twitter for previews -->
+  <meta property="og:type" content="video.other">
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:description" content="{{ meta_desc }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ poster }}">
+  <meta property="og:video" content="{{ embed_src }}">
+  <meta property="og:video:type" content="text/html">
+
+  <meta name="twitter:card" content="player">
+  <meta name="twitter:title" content="{{ page.title }}">
+  <meta name="twitter:description" content="{{ meta_desc }}">
+  <meta name="twitter:image" content="{{ poster }}">
+  <meta name="twitter:player" content="{{ embed_src }}">
+
+  <!-- JSON-LD VideoObject (precomputed values referenced below) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": {{ page.title | jsonify }},
+    "description": {{ meta_desc | jsonify }},
+    "thumbnailUrl": [ {{ poster | jsonify }} ],
+    {% if page.upload_date %}"uploadDate": {{ page.upload_date | jsonify }},{% endif %}
+    {% if page.duration %}"duration": {{ page.duration | jsonify }},{% endif %}
+    "contentUrl": {{ watch_url | jsonify }},
+    "embedUrl": {{ embed_src | jsonify }},
+    "inLanguage": {{ page.in_language | default: "en" | jsonify }},
+    "isAccessibleForFree": {{ page.is_accessible_for_free | default: true }},
+    "publisher": {
+      "@type": "Organization",
+      "name": {{ page.publisher_name | default: site.title | jsonify }}{% if page.publisher_logo %},
+      "logo": { "@type": "ImageObject", "url": {{ page.publisher_logo | absolute_url | jsonify }} }{% endif %}
+    },
+    "potentialAction": {
+      "@type": "WatchAction",
+      "target": { "@type": "EntryPoint", "urlTemplate": {{ watch_url | jsonify }} }
+    }
+  }
+  </script>
+
+  <style>
+    /* Simple, consistent layout even without Bootstrap loaded */
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 12px; }
+    .row { display: flex; flex-wrap: wrap; margin-left: -12px; margin-right: -12px; }
+    .row > [class*="col-"] { padding-left: 12px; padding-right: 12px; }
+    .col-sm-12 { flex: 0 0 100%; max-width: 100%; }
+    .col-sm-2 { flex: 0 0 16.6667%; max-width: 16.6667%; }
+    .col-sm-7 { flex: 0 0 58.3333%; max-width: 58.3333%; }
+    .col-sm-3 { flex: 0 0 25%; max-width: 25%; }
+
+    @media (max-width: 767.98px) {
+      .col-sm-2, .col-sm-7, .col-sm-3 { flex: 0 0 100%; max-width: 100%; }
+    }
+
+    .main-container { padding-top: 16px; padding-bottom: 24px; }
+    h1.page-title { margin: 0 0 12px; font-size: 1.5rem; line-height: 1.2; }
+
+    /* Video wrapper mimics the example’s field block */
+    .field--name-video-url { margin: 12px 0; }
+    .video-embed { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #000; overflow: hidden; border-radius: 6px; }
+    .video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+    .video-body { margin-top: 16px; line-height: 1.6; }
+    .hp-sidebar { padding-top: 8px; }
+    .region-highlighted { min-height: 1px; } /* placeholder */
+  </style>
+</head>
+
+<body class="path-node page-node-type-video has-glyphicons dbootstrap">
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+
+    <header class="site-header">
+      <!-- keep a simple nav placeholder to mirror structure -->
+      <nav id="block-healthy-place-main-menu" class="navbar navbar-default hp-navbar navbar-expand-lg">
+        {% include nav-simplified.html %}
+      </nav>
+    </header>
+
+    <main role="main" class="main-container container js-quickedit-main-content">
+      <div class="row">
+        <div class="col-sm-12" role="heading">
+          <div class="region region-header"></div>
+        </div>
+
+        <!-- Left sidebar (empty scaffold, preserved structure) -->
+        <aside class="col-sm-2" role="complementary">
+          <div class="region region-sidebar-first hp-sidebar">
+            <nav id="block-inmentalhealthvideos" class="navbar navbar-default" aria-labelledby="block-inmentalhealthvideos-menu">
+              <div class="hp-sidebar-inner block-inmentalhealthvideos-menu"></div>
+            </nav>
+          </div>
+        </aside>
+
+        <!-- Center column: video & description -->
+        <section class="col-sm-7">
+          <div class="highlighted">
+            <div class="region region-highlighted">
+              <div data-drupal-messages-fallback class="hidden"></div>
+            </div>
+          </div>
+
+          <a id="main-content"></a>
+          <div class="region region-content">
+            <article class="video is-promoted full clearfix" role="article" about="{{ page.url | absolute_url }}">
+              <div class="row list">
+                <div class="col-sm-12">
+                  <div>
+                    <h1 class="page-title">{{ page.title }}</h1>
+                  </div>
+
+                  <div class="content clearfix">
+                    <div class="clearfix body">
+                      <div class="field field--name-video-url field--type-string field--label-hidden field--item">
+                        <div class="video-embed">
+                          <iframe
+                            src="{{ embed_src }}"
+                            title="{{ page.title | escape }}"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen
+                            referrerpolicy="origin-when-cross-origin">
+                          </iframe>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="clearfix margin-30 video-body">
+                      <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item">
+                        {{ content }}
+                      </div>
+                      <noscript>
+                        <p><a href="{{ watch_url }}">Watch this video on YouTube</a></p>
+                      </noscript>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Right sidebar (empty scaffold, preserved structure) -->
+        <aside class="col-sm-3" role="complementary">
+          <div class="region region-sidebar-second"></div>
+        </aside>
+      </div>
+    </main>
+
+  </div>
+</body>
+</html>
