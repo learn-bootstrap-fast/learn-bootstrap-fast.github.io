@@ -116,45 +116,21 @@
           </div>
 
         </div>
-      </div>
-    </section>
-
-    <!-- Watch-page copy immediately below the player -->
-    <section class="contrast" style="padding-top:1px; padding-bottom:1px;">
-      <div class="container">
-        <p class="video-meta">
-          {%- if page.upload_date -%}
-            Video upload date:
-            <time datetime="{{ page.upload_date }}">{{ page.upload_date | date: "%B %d, %Y" }}</time>
-            &nbsp;&middot;&nbsp;
-          {%- endif -%}
-          {%- if page.duration -%}
-            Duration: {{ page.duration }}
-            &nbsp;&middot;&nbsp;
-          {%- endif -%}
-          {%- if page.in_language -%}
-            Language: {{ page.in_language | upcase }}
-          {%- endif -%}
-        </p>
-
-        <h1 class="fw-bold mb-2 video-title">
+		<h1 class="fw-bold mb-2 video-title">
           {{ page.title }}
         </h1>
 
         {%- if page.description -%}
           <div class="desc">{{ page.description }}</div>
+		  <div class="desc">{{ content }}</div>
+		  
         {%- endif -%}
-
-        {%- if page.transcript_url -%}
-          <p class="desc"><a href="{{ page.transcript_url | absolute_url }}">Read transcript</a></p>
-        {%- endif -%}
-
-        <p class="visually-hidden">This is a dedicated watch page for a single video.</p>
       </div>
     </section>
 
+
     <!-- Optional additional content -->
-    {{ content }}
+    
 
     {% include footer.html %}
     {% include scripts.html %}

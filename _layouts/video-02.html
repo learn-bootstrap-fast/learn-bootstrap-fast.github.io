@@ -99,7 +99,6 @@
 <body id="video-detail">
     {% include nav-simplified.html %}
   <div class="wrap">
-    <h1 class="title">{{ page.title }}</h1>
 
     <!-- Player first for clear watch-page intent -->
     <div class="player" id="player">
@@ -134,14 +133,7 @@
       </noscript>
     </div>
 
-    <!-- Optional meta line -->
-    <p class="meta">
-      {% if page.upload_date %}
-        <time datetime="{{ page.upload_date }}">{{ page.upload_date | date: "%B %d, %Y" }}</time>
-      {% endif %}
-      {% if page.duration %}{% if page.upload_date %} &nbsp;·&nbsp; {% endif %} {{ page.duration }}{% endif %}
-      {% if page.in_language %}{% if page.upload_date or page.duration %} &nbsp;·&nbsp; {% endif %} {{ page.in_language | upcase }}{% endif %}
-    </p>
+
 
     <!-- Description/content directly under the player -->
     {% if page.description or content %}
