@@ -130,7 +130,7 @@
 {% include nav-simplified.html %}
   <!-- HERO WITH BIG BACKGROUND VIDEO -->
   <div class="hero-wrap">
-    <section class="hero">
+    <main class="video">
       <!-- Background video: YouTube -->
       <div class="hero-bg">
         <!-- Poster image (initial paint / fallback) -->
@@ -169,17 +169,18 @@
           <p class="hero-sub">{{ page.hero_subtitle | default: page.description }}</p>
         {% endif %}
       </div>
-    </section>
-  </div>
-
-  <!-- MAIN CONTENT (kept minimal to preserve watch-page signal) -->
-  <main>
+    </main>
+	  <!-- MAIN CONTENT (kept minimal to preserve watch-page signal) -->
+  <div>
     <section class="section dark">
       <div class="container">
         {{ content }}
       </div>
     </section>
-  </main>
+  </div>
+  </div>
+
+
 
   <!-- OPTIONAL FOOTER INCLUDE -->
   {% if site.footer_include %}

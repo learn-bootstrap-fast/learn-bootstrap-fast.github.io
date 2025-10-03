@@ -163,27 +163,13 @@
 
       <!-- Foreground text -->
       <div class="container hero-inner">
-        <h1 class="hero-title">{{ page.hero_title | default: page.title }}</h1>
-        {% if page.hero_subtitle or page.description %}
-          <p class="hero-sub">{{ page.hero_subtitle | default: page.description }}</p>
-        {% endif %}
+      <div class="container">
+        {{ content }}
+      </div>
       </div>
     </section>
   </div>
 
-  <!-- MAIN CONTENT (kept minimal to preserve watch-page signal) -->
-  <main>
-    <section class="section dark">
-      <div class="container">
-        {{ content }}
-      </div>
-    </section>
-  </main>
-
-  <!-- OPTIONAL FOOTER INCLUDE -->
-  {% if site.footer_include %}
-    {% include {{ site.footer_include }} %}
-  {% endif %}
   
   {% include nav-simplified.html %}
 </body>
