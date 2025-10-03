@@ -95,26 +95,11 @@
 
 <body id="video-detail">
   <div class="site">
-    <!-- top bar / brand (kept simple like the blog shell) -->
-    <header class="topbar">
-      <div class="wrap">
-        <div class="brand">{{ site.title | default: "Video" }}</div>
-      </div>
-    </header>
+
 
     <main>
       <div class="wrap">
-        <!-- simple hero/title block -->
-        <section class="hero">
-          <h1 class="title">{{ page.title }}</h1>
-          <p class="meta">
-            {% if page.upload_date %}
-              <time datetime="{{ page.upload_date }}">{{ page.upload_date | date: "%B %d, %Y" }}</time>
-            {% endif %}
-            {% if page.duration %}{% if page.upload_date %} &nbsp;·&nbsp; {% endif %} {{ page.duration }}{% endif %}
-            {% if page.in_language %}{% if page.upload_date or page.duration %} &nbsp;·&nbsp; {% endif %} {{ page.in_language | upcase }}{% endif %}
-          </p>
-        </section>
+
 
         <!-- PLAYER FIRST IN MAIN CONTENT -->
         <section aria-label="Video player">

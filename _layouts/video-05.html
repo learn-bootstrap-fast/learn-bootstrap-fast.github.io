@@ -101,15 +101,6 @@
   {% include nav-simplified.html %}
   <div id="headmenu" class="container-fluid">
     <div class="row">
-      <div class="col-md-2 d-none d-md-block">
-        <div class="logo-big">
-          {% if site.logo %}
-            <a href="{{ '/' | absolute_url }}"><img src="{{ site.logo | absolute_url }}" alt="{{ site.title | default: 'Home' }}"></a>
-          {% else %}
-            <a href="{{ '/' | absolute_url }}">{{ site.title | default: 'Home' }}</a>
-          {% endif %}
-        </div>
-      </div>
       <div class="col-md-10">
         <div id="mtoph" class="row">
           <div id="mtop" class="col-md-12">
@@ -127,16 +118,6 @@
     </div>
   </div>
 
-  <!-- Hero -->
-  <div class="text-hero-gray">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="text-hero">
-          <h1>{{ page.title }}</h1>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Main -->
   <div id="generic">
@@ -194,22 +175,7 @@
           </div>
         </div>
 
-        <!-- Sidebar -->
-        <div class="col-md-3" id="sidebar" role="navigation">
-          <aside class="sidebar vidside">
-            <h3>CATEGORIES</h3>
-            <ul class="vidtax">
-              {%- if page.tags and page.tags.size > 0 -%}
-                {%- for tag in page.tags -%}
-                  <li><a href="{{ '/tags/' | append: tag | slugify | append: '/' | absolute_url }}">{{ tag }}</a></li>
-                {%- endfor -%}
-              {%- else -%}
-                <li><a href="{{ '/' | absolute_url }}">All Videos</a></li>
-              {%- endif -%}
-            </ul>
-            <a href="{{ '/videos/' | absolute_url }}">View All</a>
-          </aside>
-        </div>
+        
       </div>
     </div>
   </div>
