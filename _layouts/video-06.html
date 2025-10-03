@@ -118,7 +118,23 @@
   .hero-title { margin:0 0 .5rem; font-size:clamp(2rem,4vw,3rem); line-height:1.1; font-weight:800; color:#fff; }
   .hero-sub { margin:0; font-size:clamp(1rem,2vw,1.25rem); color:#d1d5db; }
   
-  .hero-bg .yt-cover iframe { width:100vw !important; height:56.25vw !important; }
+.hero-bg .yt-cover iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  /* Force it to always cover both axes */
+  width: 100vw;         /* base full viewport width */
+  height: 56.25vw;      /* maintain 16:9 aspect ratio relative to width */
+  
+  min-width: 177.78vh;  /* ensures it fills height if viewport is taller */
+  min-height: 100vh;    /* ensures it fills height at minimum */
+  
+  border: 0 !important;
+  max-width: none !important;
+  max-height: none !important;
+}
 </style>
 
 </head>
@@ -129,7 +145,7 @@
     {% include {{ site.nav_include }} %}
   {% endif %}
 
-{% include nav-simplified.html %}
+
   <!-- HERO WITH BIG BACKGROUND VIDEO -->
   <div class="hero-wrap">
     <main class="video">
@@ -182,11 +198,7 @@
   </div>
   </div>
 
+{% include nav-simplified.html %}
 
-
-  <!-- OPTIONAL FOOTER INCLUDE -->
-  {% if site.footer_include %}
-    {% include {{ site.footer_include }} %}
-  {% endif %}
 </body>
 </html>
