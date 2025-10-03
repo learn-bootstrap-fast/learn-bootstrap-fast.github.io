@@ -69,56 +69,56 @@
   </script>
 
   <!-- Minimal CSS to replicate the large hero with background video -->
-  <style>
-    :root { --hero-min-h: 68vh; }
-    html, body { margin:0; padding:0; }
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; color: #e5e7eb; background:#000; }
+<style>
+  :root { --hero-min-h: 100vh; }           /* full viewport */
+  html, body { margin:0; padding:0; }
+  body { background:#000; color:#e5e7eb; }
 
-    .container { width:100%; max-width:1200px; margin:0 auto; padding:0 16px; }
+  .hero-wrap { position:relative; background:#000; }
+  .hero { position:relative; display:flex; align-items:center; min-height:var(--hero-min-h); padding:0; overflow:hidden; }
 
-    /* HERO WRAPPER */
-    .hero-wrap { position:relative; background:#000; }
-    .hero { position:relative; display:flex; align-items:center; min-height:var(--hero-min-h); padding:2rem 0; overflow:hidden; }
+  /* Background layer fills the hero */
+  .hero-bg { position:absolute; inset:0; z-index:0; overflow:hidden; }
 
-    /* BACKGROUND LAYER */
-    .hero-bg { position:absolute; inset:0; z-index:0; overflow:hidden; }
-    .hero-bg .poster { position:absolute; inset:0; }
-    .hero-bg .poster img { width:100%; height:100%; object-fit:cover; display:block; }
-    .hero-bg .yt-cover { position:absolute; inset:0; pointer-events:none; overflow:hidden; }
-    /* 16:9 cover trick */
-    .hero-bg .yt-cover iframe {
-      position:absolute; top:50%; left:50%;
-      width:177.78%; height:100%;
-      transform:translate(-50%,-50%);
-      border:0;
-    }
-    /* Optional gradient overlay for text readability */
-    .hero::after {
-      content:""; position:absolute; inset:0;
-      background:linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.55) 100%);
-      z-index:0;
-      pointer-events:none;
-    }
+  /* Poster image covers */
+  .hero-bg .poster { position:absolute; inset:0; }
+  .hero-bg .poster img { width:100%; height:100%; object-fit:cover; display:block; }
 
-    /* FOREGROUND CONTENT */
-    .hero-inner { position:relative; z-index:1; }
-    .hero-title { margin:0 0 .5rem; font-size: clamp(2rem, 4vw, 3rem); line-height:1.1; font-weight:800; color:#fff; }
-    .hero-sub { margin:0; font-size: clamp(1rem, 2vw, 1.25rem); color:#d1d5db; }
+  /* YouTube “cover” wrapper */
+  .hero-bg .yt-cover { position:absolute; inset:0; pointer-events:none; overflow:hidden; }
 
-    /* SECTIONS BELOW */
-    .section { padding:3rem 0; }
-    .section.dark { background:#000; color:#e5e7eb; }
-    .section.light { background:#111827; color:#e5e7eb; }
+  /* Force the iframe to cover like a background video */
+  .hero-bg .yt-cover iframe {
+    position:absolute; top:50%; left:50%;
+    /* 16:9 cover trick:
+       - Use vw to size the video to the viewport width
+       - 56.25vw = (9/16)*100vw -> maintains 16:9
+       - min-* ensure it always fills the hero in either axis
+    */
+    width:100vw;                /* base size */
+    height:56.25vw;             /* 16:9 of width */
+    min-width:177.78vh;         /* if taller than wide, expand to fill height */
+    min-height:100vh;           /* must at least fill height */
+    transform:translate(-50%,-50%);
+    border:0 !important;
+    /* If YouTube injects inline width/height, these still win: */
+    max-width:none !important;
+    max-height:none !important;
+  }
 
-    /* Links */
-    a { color:#93c5fd; text-decoration:none; }
-    a:hover { text-decoration:underline; }
+  /* Optional gradient for legibility */
+  .hero::after {
+    content:""; position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.55) 100%);
+    z-index:0; pointer-events:none;
+  }
 
-    /* Responsive tweak: if very short viewport, expand hero height */
-    @media (max-height: 600px) {
-      :root { --hero-min-h: 80vh; }
-    }
-  </style>
+  /* Foreground content stays above */
+  .hero-inner { position:relative; z-index:1; }
+  .hero-title { margin:0 0 .5rem; font-size:clamp(2rem,4vw,3rem); line-height:1.1; font-weight:800; color:#fff; }
+  .hero-sub { margin:0; font-size:clamp(1rem,2vw,1.25rem); color:#d1d5db; }
+</style>
+
 </head>
 <body>
 
