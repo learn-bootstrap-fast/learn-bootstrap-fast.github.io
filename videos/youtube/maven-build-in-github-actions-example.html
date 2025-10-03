@@ -68,16 +68,6 @@ jobs:
           path: target/*.jar
 </code></pre>
 
-<h3>Alternative explicit cache step</h3>
-<p>If you like full control or have a multi module repo you can use actions/cache to store the local Maven repository. Use a key that includes runner os, java version and a hash of your pom files to prevent stale dependencies.</p>
-<pre><code>      - uses: actions/cache@v3
-        with:
-          path: ~/.m2/repository
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-
-</code></pre>
-
 <h3>Practical tips that actually help</h3>
 <ul>
   <li>Use <code>mvn -B</code> for non interactive runs and consistent logs</li>
