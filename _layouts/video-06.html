@@ -1,194 +1,138 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-  {% include head.html %}
-  <meta charset="utf-8">
-  <title>{{ page.title }}</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+<html class="no-js" lang="en" data-theme="light" data-bs-theme="light">
+  <head>
+    {% include head.html %}
 
-  {%- assign meta_desc = page.description | default: site.description | default: page.title -%}
-  <meta name="description" content="{{ meta_desc | strip }}">
-  <link rel="canonical" href="{{ page.url | absolute_url }}">
+    {%- assign meta_desc = page.description | default: site.description | default: page.title -%}
+    <meta name="description" content="{{ meta_desc | strip | truncate: 200, "" }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  {%- assign thumb_fallback = 'https://i.ytimg.com/vi/' | append: page.video_id | append: '/maxresdefault.jpg' -%}
-  {%- assign poster = page.poster_url | default: page.thumbnail_url | default: thumb_fallback -%}
+    <!-- Open Graph -->
+    <meta property="og:type" content="video.other">
+    <meta property="og:title" content="{{ page.title | escape }}">
+    <meta property="og:description" content="{{ meta_desc | strip | truncate: 200, "" }}">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    <meta property="og:image" content="{{ page.thumbnail_url | absolute_url }}">
+    <meta property="og:site_name" content="{{ site.title | default: site.name }}">
 
-  {%- assign player_w = page.player_width  | default: 1280 -%}
-  {%- assign player_h = page.player_height | default: 720  -%}
+    {%- assign p_w = page.player_width  | default: 1280 -%}
+    {%- assign p_h = page.player_height | default: 720  -%}
+    {%- if page.embed_url %}
+      <meta property="og:video" content="{{ page.embed_url }}">
+      <meta property="og:video:secure_url" content="{{ page.embed_url }}">
+      <meta property="og:video:type" content="text/html">
+      <meta property="og:video:width" content="{{ p_w }}">
+      <meta property="og:video:height" content="{{ p_h }}">
+    {%- endif %}
 
-  {%- assign embed_src = page.embed_url -%}
-  {%- if embed_src == nil or embed_src == '' -%}
-    {%- assign embed_src = 'https://www.youtube.com/embed/' | append: page.video_id -%}
-  {%- endif -%}
+    <!-- Twitter -->
+    <meta name="twitter:card" content="player">
+    <meta name="twitter:title" content="{{ page.title | escape }}">
+    <meta name="twitter:description" content="{{ meta_desc | strip | truncate: 200, "" }}">
+    <meta name="twitter:image" content="{{ page.thumbnail_url | absolute_url }}">
+    {%- if page.embed_url %}
+      <meta name="twitter:player" content="{{ page.embed_url }}">
+      <meta name="twitter:player:width" content="{{ p_w }}">
+      <meta name="twitter:player:height" content="{{ p_h }}">
+    {%- endif %}
 
-  {%- assign watch_url = page.content_url -%}
-  {%- if watch_url == nil or watch_url == '' -%}
-    {%- assign watch_url = 'https://www.youtube.com/watch?v=' | append: page.video_id -%}
-  {%- endif -%}
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="video.other">
-  <meta property="og:title" content="{{ page.title }}">
-  <meta property="og:description" content="{{ meta_desc | strip }}">
-  <meta property="og:url" content="{{ page.url | absolute_url }}">
-  <meta property="og:image" content="{{ poster }}">
-  <meta property="og:video" content="{{ embed_src }}">
-  <meta property="og:video:type" content="text/html">
-  <meta property="og:video:width" content="{{ player_w }}">
-  <meta property="og:video:height" content="{{ player_h }}">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="player">
-  <meta name="twitter:title" content="{{ page.title }}">
-  <meta name="twitter:description" content="{{ meta_desc | strip }}">
-  <meta name="twitter:image" content="{{ poster }}">
-  <meta name="twitter:player" content="{{ embed_src }}">
-  <meta name="twitter:player:width" content="{{ player_w }}">
-  <meta name="twitter:player:height" content="{{ player_h }}">
-
-  <!-- JSON-LD VideoObject -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"VideoObject",
-    "name": {{ page.title | jsonify }},
-    "description": {{ meta_desc | jsonify }},
-    "thumbnailUrl": [ {{ poster | jsonify }} ],
-    {% if page.upload_date %}"uploadDate": {{ page.upload_date | jsonify }},{% endif %}
-    {% if page.duration %}"duration": {{ page.duration | jsonify }},{% endif %}
-    "embedUrl": {{ embed_src | jsonify }},
-    "contentUrl": {{ watch_url | jsonify }},
-    "inLanguage": {{ page.in_language | default: "en" | jsonify }},
-    "isAccessibleForFree": {{ page.is_accessible_for_free | default: true }},
-    "publisher": {
-      "@type":"Organization",
-      "name": {{ page.publisher_name | default: site.title | jsonify }}{% if page.publisher_logo %},
-      "logo": { "@type":"ImageObject", "url": {{ page.publisher_logo | absolute_url | jsonify }} }{% endif %}
-    },
-    "potentialAction": { "@type":"WatchAction", "target": { "@type":"EntryPoint", "urlTemplate": {{ watch_url | jsonify }} } }
-  }
-  </script>
-
-  <!-- Minimal CSS for full-bleed hero video -->
-  <style>
-    :root { --nav-h: 0px; } /* if you have a fixed top nav, set this to its height */
-    html, body { height: 100%; margin: 0; }
-    body { background:#000; color:#e5e7eb; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
-
-    /* Simple container + section helpers */
-    .container { width:100%; max-width:1200px; margin:0 auto; padding:0 16px; }
-    .section { padding:3rem 0; }
-    .dark { background:#000; color:#e5e7eb; }
-
-    /* Hero wrapper */
-    .hero-wrap { position: relative; width: 100%; background: #000; }
-    .hero {
-      position: relative;
-      min-height: calc(100vh - var(--nav-h)); /* always viewport height */
-      width: 100%;
-      overflow: hidden;
+    <!-- JSON-LD VideoObject -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": {{ page.title | jsonify }},
+      "description": {{ meta_desc | jsonify }},
+      "thumbnailUrl": [ {{ page.thumbnail_url | absolute_url | jsonify }} ],
+      {% if page.content_url %}"contentUrl": {{ page.content_url | jsonify }},{% endif %}
+      {% if page.embed_url %}"embedUrl": {{ page.embed_url | jsonify }},{% endif %}
+      {% if page.upload_date %}"uploadDate": {{ page.upload_date | jsonify }},{% endif %}
+      {% if page.duration %}"duration": {{ page.duration | jsonify }},{% endif %}
+      "inLanguage": {{ page.in_language | default: "en" | jsonify }},
+      "isAccessibleForFree": {{ page.is_accessible_for_free | default: true }},
+      {% if page.tags %}"keywords": {{ page.tags | join: ", " | jsonify }},{% endif %}
+      "publisher": {
+        "@type": "Organization",
+        "name": {{ page.publisher_name | default: site.title | jsonify }}{% if page.publisher_logo %},
+        "logo": { "@type": "ImageObject", "url": {{ page.publisher_logo | absolute_url | jsonify }} }{% endif %}
+      }{% if page.transcript_url %},
+      "transcript": {{ page.transcript_url | absolute_url | jsonify }}{% endif %}{% if page.content_url or page.embed_url %},
+      "potentialAction": { "@type": "WatchAction", "target": {{ page.content_url | default: page.embed_url | jsonify }} }{% endif %}
     }
-    /* Background layer fills the hero */
-    .hero-bg { position: absolute; inset: 0; z-index: 0; }
-    .hero-bg .poster { position:absolute; inset:0; }
-    .hero-bg .poster img { width:100%; height:100%; object-fit:cover; display:block; }
+    </script>
 
-    /* YouTube background: cover both axes */
-    .hero-bg .yt-cover { position:absolute; inset:0; pointer-events:none; overflow:hidden; }
-    .hero-bg .yt-cover iframe {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      /* 16:9 cover trick */
-      width: 100vw;
-      height: 56.25vw;      /* 9/16 of width */
-      min-width: 177.78vh;  /* 16/9 of height */
-      min-height: 100vh;
-      border: 0 !important;
-    }
+    <!-- Minimal page-local styles to keep the player visible and sized -->
+    <style>
+      .player { position: relative; aspect-ratio: 16 / 9; width: 100%; max-width: {{ p_w }}px; margin: 0 auto; }
+      .player iframe, .player video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+      .video-title { margin-top: .75rem; }
+      .video-meta { color: #6c757d; font-size: .95rem; margin-top: .25rem; }
+      .desc { margin-top: .75rem; line-height: 1.6; }
+      .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    </style>
+  </head>
 
-    /* Foreground content sits above the video */
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-      min-height: inherit;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-    .hero-title {
-      margin: 0 0 .5rem;
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.1;
-      font-weight: 800;
-      color:#fff;
-      text-shadow: 0 2px 12px rgba(0,0,0,.5);
-    }
-    .hero-sub {
-      margin: 0;
-      font-size: clamp(1rem, 2vw, 1.25rem);
-      color:#d1d5db;
-      text-shadow: 0 1px 8px rgba(0,0,0,.4);
-    }
-  </style>
-</head>
-<body>
+  <body id="video-detail">
+    {% include nav-simplified.html %}
 
-  {% if site.nav_include %}
-    {% include {{ site.nav_include }} %}
-  {% endif %}
+    <!-- Keep the video player at the top of the DOM within the main section -->
+    <section id="video-section">
+      <div class="row">
+        <div class="col-md-12 col-12">
 
-  <!-- HERO WITH BIG BACKGROUND VIDEO -->
-  <div class="hero-wrap">
-    <main class="video">
-      <div class="hero">
-        <!-- Background -->
-        <div class="hero-bg">
-          <div class="poster">
-            <img src="{{ poster }}" alt="">
-          </div>
-
-          <div class="yt-cover" aria-hidden="true">
-            {% if page.video_host == "youtube" and page.video_id %}
+          <div class="player" id="player">
+            {%- if page.video_host == "youtube" and page.video_id -%}
               <iframe
-                title="{{ page.title | escape }}"
-                src="https://www.youtube.com/embed/{{ page.video_id }}?autoplay=1&mute=1&playsinline=1&controls=0&loop=1&playlist={{ page.video_id }}&modestbranding=1&rel=0"
-                allow="autoplay; encrypted-media; picture-in-picture; clipboard-write; web-share"
-                referrerpolicy="origin-when-cross-origin">
+                src="https://www.youtube.com/embed/{{ page.video_id }}?modestbranding=1&rel=0&enablejsapi=1"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                referrerpolicy="origin-when-cross-origin"
+                title="{{ page.title | escape }}">
               </iframe>
-            {% elsif page.embed_url %}
+            {%- elsif page.embed_url -%}
               <iframe
-                title="{{ page.title | escape }}"
-                src="{{ page.embed_url }}{% if page.video_id %}?autoplay=1&mute=1&playsinline=1&controls=0&loop=1&playlist={{ page.video_id }}&modestbranding=1&rel=0{% else %}?autoplay=1&mute=1&playsinline=1&controls=0&modestbranding=1&rel=0{% endif %}"
-                allow="autoplay; encrypted-media; picture-in-picture; clipboard-write; web-share"
-                referrerpolicy="origin-when-cross-origin">
+                src="{{ page.embed_url }}"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowfullscreen
+                title="{{ page.title | escape }}">
               </iframe>
-            {% endif %}
+            {%- elsif page.content_url -%}
+              <video
+                controls
+                preload="metadata"
+                poster="{{ page.thumbnail_url | absolute_url }}">
+                <source src="{{ page.content_url }}" type="video/mp4">
+              </video>
+            {%- else -%}
+              <p><strong>Video unavailable.</strong> Add <code>video_id</code> (YouTube) or <code>embed_url</code>/<code>content_url</code> in front matter.</p>
+            {%- endif -%}
             <noscript>
-              <p style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:rgba(0,0,0,.6);color:#fff;padding:.5rem 1rem;border-radius:.25rem;">
-                <a href="{{ watch_url }}" style="color:#fff;text-decoration:underline;">Watch this video</a>
-              </p>
+              {%- if page.video_host == "youtube" and page.video_id -%}
+                <p><a href="https://www.youtube.com/watch?v={{ page.video_id }}">Watch this video on YouTube</a></p>
+              {%- elsif page.content_url -%}
+                <p><a href="{{ page.content_url }}">Download the video</a></p>
+              {%- endif -%}
             </noscript>
           </div>
-        </div>
 
-        <!-- Foreground text -->
-        <div class="container hero-inner">
-          <div>
-            <h1 class="hero-title">{{ page.hero_title | default: page.title }}</h1>
-            {% if page.hero_subtitle or page.description %}
-              <p class="hero-sub">{{ page.hero_subtitle | default: page.description }}</p>
-            {% endif %}
-          </div>
         </div>
+		<h1 class="fw-bold mb-2 video-title">
+          {{ page.title }}
+        </h1>
+
+        {%- if page.description -%}
+          <div class="desc">{{ page.description }}</div>
+
+		  
+        {%- endif -%}
       </div>
-    </main>
+    </section>
 
-  </div>
 
-  {% include nav-simplified.html %}
+    <!-- Optional additional content -->
+    
 
-</body>
+    {% include footer.html %}
+    {% include scripts.html %}
+  </body>
 </html>

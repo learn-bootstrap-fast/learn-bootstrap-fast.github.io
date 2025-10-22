@@ -1,50 +1,36 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en" dir="ltr">
+<html class="no-js" dir="ltr" lang="en">
 <head>
   {% include head.html %}
   <meta charset="utf-8">
-  <title>{{ page.title }}</title>
+  <title>{{ page.title }} Video</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {%- assign meta_desc = page.description | default: site.description | default: page.title -%}
-  <meta name="description" content="{{ meta_desc | strip }}">
-
+  <meta name="description" content="{{ page.description }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
 
-{%- assign thumb_fallback = 'https://i.ytimg.com/vi/' | append: page.video_id | append: '/maxresdefault.jpg' -%}
-{%- assign poster = page.poster_url | default: page.thumbnail_url | default: thumb_fallback -%}
-
-{%- assign player_w = page.player_width  | default: 1280 -%}
-{%- assign player_h = page.player_height | default: 720  -%}
-
-{%- assign embed_src = page.embed_url -%}
-{%- if embed_src == nil or embed_src == '' -%}
-  {%- assign embed_src = 'https://www.youtube.com/embed/' | append: page.video_id -%}
-{%- endif -%}
-
-{%- assign watch_url = page.content_url -%}
-{%- if watch_url == nil or watch_url == '' -%}
-  {%- assign watch_url = 'https://www.youtube.com/watch?v=' | append: page.video_id -%}
-{%- endif -%}
   <!-- Open Graph -->
   <meta property="og:type" content="video.other">
   <meta property="og:title" content="{{ page.title }}">
-  <meta property="og:description" content="{{ meta_desc | strip }}">
+  <meta property="og:description" content="{{ page.description }}">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
-  <meta property="og:image" content="{{ thumb }}">
-  <meta property="og:site_name" content="{{ site.title | default: site.name }}">
-  <meta property="og:video" content="{{ embed_src }}">
+  <meta property="og:image" content="{{ page.thumbnail_url }}">
+  {% if page.embed_url %}
+  <meta property="og:video" content="{{ page.embed_url }}">
   <meta property="og:video:type" content="text/html">
-  <meta property="og:video:width" content="{{ player_w }}">
-  <meta property="og:video:height" content="{{ player_h }}">
+  <meta property="og:video:width" content="1280">
+  <meta property="og:video:height" content="720">
+  {% endif %}
 
   <!-- Twitter Player Card -->
   <meta name="twitter:card" content="player">
   <meta name="twitter:title" content="{{ page.title }}">
-  <meta name="twitter:description" content="{{ meta_desc | strip }}">
-  <meta name="twitter:image" content="{{ thumb }}">
-  <meta name="twitter:player" content="{{ embed_src }}">
-  <meta name="twitter:player:width" content="{{ player_w }}">
-  <meta name="twitter:player:height" content="{{ player_h }}">
+  <meta name="twitter:description" content="{{ page.description }} A video.">
+  <meta name="twitter:image" content="{{ page.thumbnail_url }}">
+  {% if page.embed_url %}
+  <meta name="twitter:player" content="{{ page.embed_url }}">
+  <meta name="twitter:player:width" content="1280">
+  <meta name="twitter:player:height" content="720">
+  {% endif %}
 
   <!-- JSON-LD VideoObject -->
   <script type="application/ld+json">
@@ -52,96 +38,111 @@
     "@context": "https://schema.org",
     "@type": "VideoObject",
     "name": {{ page.title | jsonify }},
-    "description": {{ meta_desc | jsonify }},
-    "thumbnailUrl": [ {{ thumb | jsonify }} ],
+    "description": {{ page.description | jsonify }},
+    "thumbnailUrl": [ {{ page.thumbnail_url | jsonify }} ],
     {% if page.upload_date %}"uploadDate": {{ page.upload_date | jsonify }},{% endif %}
     {% if page.duration %}"duration": {{ page.duration | jsonify }},{% endif %}
-    "embedUrl": {{ embed_src | jsonify }},
-    "contentUrl": {{ watch_url | jsonify }},
+    {% if page.embed_url %}"embedUrl": {{ page.embed_url | jsonify }},{% endif %}
+    {% if page.content_url %}"contentUrl": {{ page.content_url | jsonify }},{% endif %}
     "inLanguage": {{ page.in_language | default: "en" | jsonify }},
     "isAccessibleForFree": {{ page.is_accessible_for_free | default: true }},
     "publisher": {
       "@type": "Organization",
-      "name": {{ page.publisher_name | default: site.title | jsonify }}{% if page.publisher_logo %},
-      "logo": { "@type": "ImageObject", "url": {{ page.publisher_logo | absolute_url | jsonify }} }{% endif %}
+      "name": {{ page.publisher_name | jsonify }},
+      "logo": { "@type": "ImageObject", "url": {{ page.publisher_logo | absolute_url | jsonify }} }
     },
-    "potentialAction": { "@type": "WatchAction", "target": { "@type": "EntryPoint", "urlTemplate": {{ watch_url | jsonify }} } }
+    "potentialAction": {
+      "@type": "WatchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": {{ page.content_url | default: page.embed_url | jsonify }}
+      }
+    }
   }
   </script>
-
-  <!-- minimal, wix-like centered column -->
-  <style>
-    :root { --wrap-max: 960px; --gutter: 16px; }
-    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; color: #111; }
-    .site { display: flex; min-height: 100svh; flex-direction: column; }
-    .topbar { padding: 16px 0; border-bottom: 1px solid #eee; }
-    .wrap { width: min(100% - 2*var(--gutter), var(--wrap-max)); margin-inline: auto; }
-    .brand { text-align: center; font-weight: 700; font-size: 1.125rem; }
-    main { flex: 1; }
-    .hero { padding: 24px 0 8px; text-align: center; }
-    .title { margin: 0 0 12px; font-size: 1.35rem; font-weight: 800; }
-    .meta { color: #6b7280; font-size: .95rem; }
-    .player {
-      position: relative; width: 100%; aspect-ratio: 16 / 9;
-      background:#000; border-radius: 8px; overflow: hidden; margin: 16px 0;
-    }
-    .player iframe, .player video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-    .desc { margin-top: 12px; line-height: 1.65; font-size: 1rem; }
-    footer { padding: 24px 0; border-top: 1px solid #eee; text-align: center; font-size: .9rem; color: #6b7280; }
-    .links a { color: inherit; text-decoration: none; margin: 0 .5rem; }
-    .links a:hover { text-decoration: underline; }
-  </style>
 </head>
 
-<body id="video-detail">
-  <div class="site">
+<body id="video-detail" class="video-page">
+  <style>
+    body.video-page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      margin: 0;
+      padding: 0;
+    }
+    #site-container {
+      width: 100%;
+      max-width: 1000px; /* keeps it from getting too wide on huge screens */
+      margin: 0 auto;
+      text-align: center;
+    }
+    .youtube-iframe-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      margin: 1rem 0;
+    }
+    .youtube-iframe-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .video-description {
+      margin-top: 1rem;
+      line-height: 1.6;
+    }
+h1.main-article-title {
+  margin: 1rem 0;
+  font-weight: bold;
+  font-size: 1.5rem; /* ~20px, slightly bigger than normal text */
+}
+  </style>
 
+  <div id="site-container" class="site-container">
+    {% include nav-simplified.html %}
+    <header></header>
 
-    <main>
-      <div class="wrap">
+    <div id="main-content" class="main-content video main-video-content video-page">
+      <article id="content-columns" class="content-columns">
 
+        <header class="main-article-header main-article-header-noimage" id="content-header">
+          <h1 class="main-article-title fw-bold mb-2 mt-14">Video: {{ page.title }}</h1>
+        </header>
 
-        <!-- PLAYER FIRST IN MAIN CONTENT -->
-        <section aria-label="Video player">
-          <div class="player" id="player">
-            {% if page.video_host == "youtube" and page.video_id %}
+        <div id="content-center" class="content-center video-page">
+          <section class="video-section video-detail main-section video-page" id="content-body">
+
+            <div class="youtube-iframe-container">
               <iframe
-                title="{{ page.title | escape }}"
-                src="{{ embed_src }}?modestbranding=1&rel=0&enablejsapi=1"
+                id="ytplayer"
+                title="Video {{ page.title }}"
+                src="https://www.youtube.com/embed/{{ page.video_id }}?modestbranding=1&rel=0&enablejsapi=1"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen
                 referrerpolicy="origin-when-cross-origin">
               </iframe>
-            {% elsif page.embed_url %}
-              <iframe title="{{ page.title | escape }}" src="{{ page.embed_url }}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-            {% elsif page.content_url %}
-              <video controls preload="metadata" poster="{{ thumb }}"><source src="{{ page.content_url }}" type="video/mp4"></video>
-            {% else %}
-              <p><strong>Video unavailable.</strong> Provide <code>video_id</code> (YouTube) or <code>embed_url</code>/<code>content_url</code> in front matter.</p>
-            {% endif %}
-            <noscript><p style="text-align:center"><a href="{{ watch_url }}">Watch this video</a></p></noscript>
-          </div>
-        </section>
+            </div>
 
-        <!-- description / content directly under the player -->
-        {% if page.description or content %}
-          <section aria-label="Description">
-            {% if page.description %}<p class="desc">{{ page.description }}</p>{% endif %}
+            <div class="video-description">
+              {{ page.description }}
+            </div>
+
+            <noscript>
+              <p><a href="{{ page.content_url }}">Watch this video on YouTube</a></p>
+            </noscript>
+
           </section>
-        {% endif %}
-      </div>
-    </main>
-{% include nav-simplified.html %}
-    <footer>
-      <div class="wrap">
-        <div class="links">
-          {% if site.privacy_url %}<a href="{{ site.privacy_url | absolute_url }}">Privacy</a>{% endif %}
-          {% if site.returns_url %}<a href="{{ site.returns_url | absolute_url }}">Returns</a>{% endif %}
-          {% if site.shipping_url %}<a href="{{ site.shipping_url | absolute_url }}">Shipping</a>{% endif %}
         </div>
-        <div class="copy">© {{ "now" | date: "%Y" }} {{ site.title | default: site.name }}</div>
-      </div>
-    </footer>
+
+      </article>
+    </div>
   </div>
 </body>
 </html>
