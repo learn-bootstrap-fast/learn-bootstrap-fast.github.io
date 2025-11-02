@@ -1,0 +1,72 @@
+---
+title: "You have a code repository that uses Amazon S3 as a dataExam"
+description: "Video for you have a code repository that uses Amazon S3 as a data store. During a recent audit of your security controls, some concerns were raised about"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have a code repository that uses Amazon S3 as a data store. During a recent audit of your security controls, some concerns were raised about maintaining the integrity of the data in the Amazon S3 bucket. Another concern was raised around securely deploying code from Amazon S3 to applications running on Amazon EC2 in a virtual private cloud. What are some measures that you can implement to mitigate these concerns? Choose two answers from the options given below."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best solutions are <b>\"Configure an S3 bucket policy requiring multi-factor authentication (MFA) for deleting items and activate versioning to help retain previous object states.\"</b> and <b>\"Establish an IAM role with necessary S3 permissions, and attach this role to every EC2 instance hosting your application.\"</b></p><ul><li><b>MFA Delete & Versioning:</b> Enabling versioning ensures object integrity by preserving every version of S3 objects. Requiring MFA for deletions protects against accidental or malicious data loss because even users with high privileges must provide an MFA code to delete contents. This combination is a best practice for safeguarding critical data integrity in S3.</li><li><b>IAM Role for EC2:</b> Assigning an IAM role to EC2 instances for S3 access is the recommended, secure way to allow applications to interact with S3 without managing or exposing long-lived credentials. This reduces the risk of credential leakage, simplifies permission management, and helps enforce least privilege.</li></ul><p>Incorrect answers:</p><ul><li><i>\"Deploy a configuration management tool to distribute IAM user credentials to your EC2 servers. Use these credentials to pull code updates from S3 securely.\"</i>—Avoid distributing permanent IAM credentials; IAM roles are more secure and scalable.</li><li><i>\"Write an S3 bucket policy to allow access solely from EC2 private (RFC 1918) IPs, and turn on versioning.\"</i>—While limiting by IP can improve security, Amazon EC2's public IPs might change and restricting by private RFC 1918 ranges does not guarantee security or that only your EC2 instances can access the bucket.</li><li><i>\"Set up AWS Data Pipeline to move bucket content into Amazon Glacier weekly for lifecycle management.\"</i>—Lifecycle policies are used for archiving, not for code deployment or integrity management.</li><li><i>\"Utilize AWS Data Pipeline, integrating MFA, to push code securely from S3 to your EC2 instances.\"</i>—MFA is not integrated into AWS Data Pipeline operations, and Data Pipeline is not appropriate for secure code deployments from S3 to EC2.</li></ul><p><b>Tip:</b> Use S3 versioning and MFA delete for robust object-level data protection, and always choose IAM roles over user credential distribution on EC2.</p>",
+  "query": "<p>You are managing a source code repository stored on Amazon S3. Following a security audit, you are asked to address concerns about both preserving the integrity of the data in your S3 bucket and securely distributing updates from S3 to applications running on Amazon EC2 inside a VPC. <br><br>Which TWO actions can help mitigate these risks?</p>",
+  "original_oid": "6793d9ba61969b416038a095",
+  "options": [
+    {
+      "correct": true,
+      "text": "Configure an S3 bucket policy requiring multi-factor authentication (MFA) for deleting items and activate versioning to help retain previous object states.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Deploy a configuration management tool to distribute IAM user credentials to your EC2 servers. Use these credentials to pull code updates from S3 securely.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Utilize AWS Data Pipeline, integrating MFA, to push code securely from S3 to your EC2 instances.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Establish an IAM role with necessary S3 permissions, and attach this role to every EC2 instance hosting your application.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Write an S3 bucket policy to allow access solely from EC2 private (RFC 1918) IPs, and turn on versioning.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up AWS Data Pipeline to move bucket content into Amazon Glacier weekly for lifecycle management.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question32",
+  "originalQuery": "You have a code repository that uses Amazon S3 as a data store.\nDuring a recent audit of your security controls, some concerns were raised about maintaining the integrity of the data in the Amazon S3 bucket.\nAnother concern was raised around securely deploying code from Amazon S3 to applications running on Amazon EC2 in a virtual private cloud.\nWhat are some measures that you can implement to mitigate these concerns? Choose two answers from the options given below.",
+  "originalOptions": "[\"A. Add an Amazon S3 bucket policy with a condition statement to allow access only from Amazon EC2 instances with RFC 1918 IP addresses and enable bucket versioning.\",\"B. Add an Amazon S3 bucket policy with a condition statement that requires multi-factor authentication to delete objects and enable bucket versioning.\",\"C. Use a configuration management service to deploy AWS Identity and Access Management user credentials to the Amazon EC2 instances. Use these credentials to access the Amazon S3 bucket when deploying code securely.\",\"D. Create an Amazon Identity and Access Management role with authorization to access the Amazon S3 bucket, and launch all of your application\\u2019s Amazon EC2 instances with this role.\",\"E. Use AWS Data Pipeline to lifecycle the data in your Amazon S3 bucket to Amazon Glacier on a weekly basis.\",\"F. Use AWS Data Pipeline with multi-factor authentication to securely deploy code from the Amazon S3 bucket to your Amazon EC2 instances.\"]",
+  "video_url": "https://certificationation.com/videos/exam-uses-amazon-s3-as-a-exam-024.html",
+  "url": "https://certificationation.com/questions/exam-uses-amazon-s3-as-a-exam-024.html"
+}

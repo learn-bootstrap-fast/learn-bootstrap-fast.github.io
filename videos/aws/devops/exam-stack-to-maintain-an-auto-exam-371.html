@@ -1,0 +1,62 @@
+---
+title: "As a DevOps engineer, you use a CloudFormation stack toExam"
+description: "Video for as a DevOps engineer, you use a CloudFormation stack to maintain an Auto Scaling group and a launch template. When there is an update in the launch"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a DevOps engineer, you use a CloudFormation stack to maintain an Auto Scaling group and a launch template. When there is an update in the launch template, you would update the stack with the new CloudFormation template. You need to ensure that the CloudFormation stack creates a new Auto Scaling group during the update and deletes the old Auto Scaling group during the cleanup process. Which of the following UpdatePolicy attributes would you configure in the CloudFormation template?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct answer is <strong>Add <code>UpdatePolicy: AutoScalingReplacingUpdate: WillReplace: true</code> so CloudFormation will create a replacement Auto Scaling group upon template update.</strong> This setting causes CloudFormation to replace (create a new one and delete the old) the Auto Scaling group during an update event, which is required when changes such as launch template modifications can't be performed in-place.</p><p>The option <i>Configure <code>UpdatePolicy: AutoScalingReplacingUpdate: WillReplace: false</code> for the Auto Scaling group.</i> is incorrect because setting <code>WillReplace: false</code> will cause CloudFormation to attempt an in-place update of the Auto Scaling group instead of replacing it, which may fail when launch templates change.</p><p>The option <i>Use <code>UpdatePolicy: AutoScalingRollingUpdate: MinInstancesInService: 0 WaitOnResourceSignals: true</code> for rolling updates of the group.</i> is also incorrect. Rolling updates refresh instances within the same Auto Scaling group, but do not handle situations where the Auto Scaling group resource itself must be replaced (such as launch template changes that require a new group).</p><p>Finally, <i>Implement <code>UpdatePolicy: AutoScalingScheduledAction: IgnoreUnmodifiedGroupSizeProperties: true</code> for your Auto Scaling group.</i> is unrelated to replacement or update strategies for launch template updates. This setting is for ignoring group size changes when only scheduled actions are being updated.</p><p><strong>Tip:</strong> Use <code>AutoScalingReplacingUpdate</code> in scenarios where an in-place update is not feasible and a new group must be created, which matches the requirements in this situation.</p>",
+  "query": "<p>You are managing an Auto Scaling group and launch template through AWS CloudFormation as a DevOps engineer. When the launch template is modified, you update the CloudFormation stack with the revised template. You must ensure that a new Auto Scaling group is created during the update and that the existing Auto Scaling group is removed during the cleanup (stack update process). Which of these <strong>UpdatePolicy</strong> attributes should you specify in your CloudFormation template to accomplish this behavior?</p>",
+  "original_oid": "6793da9061969b416038a242",
+  "options": [
+    {
+      "correct": false,
+      "text": "Configure <code>UpdatePolicy: AutoScalingReplacingUpdate: WillReplace: false</code> for the Auto Scaling group.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Add <code>UpdatePolicy: AutoScalingReplacingUpdate: WillReplace: true</code> so CloudFormation will create a replacement Auto Scaling group upon template update.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Use <code>UpdatePolicy: AutoScalingRollingUpdate: MinInstancesInService: 0 WaitOnResourceSignals: true</code> for rolling updates of the group.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Implement <code>UpdatePolicy: AutoScalingScheduledAction: IgnoreUnmodifiedGroupSizeProperties: true</code> for your Auto Scaling group.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question466",
+  "originalQuery": "As a DevOps engineer, you use a CloudFormation stack to maintain an Auto Scaling group and a launch template.\nWhen there is an update in the launch template, you would update the stack with the new CloudFormation template.\nYou need to ensure that the CloudFormation stack creates a new Auto Scaling group during the update and deletes the old Auto Scaling group during the cleanup process.\nWhich of the following UpdatePolicy attributes would you configure in the CloudFormation template?",
+  "originalOptions": "A. UpdatePolicy: AutoScalingReplacingUpdate: WillReplace: true\nB. UpdatePolicy: AutoScalingReplacingUpdate: WillReplace: false\nC. UpdatePolicy: AutoScalingRollingUpdate: MinInstancesInService: 0 WaitOnResourceSignals: true\nD. UpdatePolicy: AutoScalingScheduledAction: IgnoreUnmodifiedGroupSizeProperties: true.",
+  "video_url": "https://certificationation.com/videos/exam-stack-to-maintain-an-auto-exam-371.html",
+  "url": "https://certificationation.com/questions/exam-stack-to-maintain-an-auto-exam-371.html"
+}

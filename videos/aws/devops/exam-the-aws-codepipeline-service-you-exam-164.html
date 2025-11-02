@@ -1,0 +1,62 @@
+---
+title: "You have a pipeline configured in the AWS CodePipelineExam"
+description: "Video for you have a pipeline configured in the AWS CodePipeline service. You want to add a new stage that invokes a Lambda function to test the new build. In"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have a pipeline configured in the AWS CodePipeline service. You want to add a new stage that invokes a Lambda function to test the new build. In this CodePipeline stage, a parameter needs to be passed to the Lambda function and its value should be a valid URL such as http://mytest.com.au. Which of the following methods would you select to pass the parameter from CodePipeline to the Lambda function?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The most effective solution is to <b>set up user parameters within the new CodePipeline stage and extract the parameter from the JSON event object sent to Lambda by CodePipeline</b>. This method allows the pipeline to send dynamic values, like a new URL each time, that the Lambda function can then retrieve from the incoming event payload (<code>event['ParameterName']</code> in Python).</p><ul><li><i>\"Include the parameter in the new CodePipeline stage and access it within the Lambda function as an environment variable\"</i> is not suitable, because environment variables are static and set at Lambda deployment time, not dynamically for each invocation from CodePipeline.</li><li><i>\"Have an API Gateway accept the parameter as a query string and relay it to the Lambda function\"</i> is unnecessarily complex and introduces extra components (API Gateway) when CodePipeline natively supports parameter passing to Lambda actions.</li><li><i>\"Deploy a CloudFormation stack via the Lambda function and pass the parameter from CodePipeline to CloudFormation using the !Ref intrinsic function\"</i> is not aligned with the use case. Invoking a CloudFormation stack isn't needed just to pass runtime parameters to a Lambda invoked directly from CodePipeline.</li></ul><p><b>Tip:</b> To pass parameters dynamically from CodePipeline to Lambda, utilize UserParameters in the pipeline’s Lambda action configuration. This keeps your solution straightforward and maintainable.</p>",
+  "query": "<p>Your development team has set up an AWS CodePipeline pipeline and now wishes to introduce a new stage that triggers a Lambda function for automated build validation. In this new stage, you must pass a parameter containing a valid URL like <code>http://mytest.com.au</code> to the Lambda function for testing.</p><p>Which technique would you utilize to dynamically deliver this parameter value from CodePipeline to the Lambda function during the pipeline execution?</p>",
+  "original_oid": "6793da8c61969b416038a23b",
+  "options": [
+    {
+      "correct": false,
+      "text": "Include the parameter in the new CodePipeline stage and access it within the Lambda function as an environment variable, such as retrieving it using os.environ['Parameter_Name'] in Python.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Set up user parameters within the new CodePipeline stage, then extract the parameter from the JSON event object that CodePipeline passes to Lambda when triggered.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Have an API Gateway accept the parameter as a query string and relay it to the Lambda function, with the CodePipeline stage invoking the API Gateway.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Deploy a CloudFormation stack via the Lambda function and pass the parameter from CodePipeline to CloudFormation using the !Ref intrinsic function.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question459",
+  "originalQuery": "You have a pipeline configured in the AWS CodePipeline service.\nYou want to add a new stage that invokes a Lambda function to test the new build.\nIn this CodePipeline stage, a parameter needs to be passed to the Lambda function and its value should be a valid URL such as http://mytest.com.au.\nWhich of the following methods would you select to pass the parameter from CodePipeline to the Lambda function?",
+  "originalOptions": "A. Configure the parameter in the user parameters of the new CodePipeline stage. In the Lambda function, retrieve the parameter value from the JSON event that CodePipeline sends to Lambda.|B. Launch a CloudFormation stack in the Lambda function and the parameter is passed from CodePipeline to the CloudFormation stack through the “!Ref” function.|C. Add the parameter in the new CodePipeline stage. In the Lambda function, the parameter becomes an environment parameter. For example, if the Lambda language is Python, the value can be retrieved through “os.environ[`Parameter_Name`]”.|D. Create an API Gateway that passes a querystring to the AWS Lambda function. Configure the CodePipeline stage to invoke the API Gateway.",
+  "video_url": "https://certificationation.com/videos/exam-the-aws-codepipeline-service-you-exam-164.html",
+  "url": "https://certificationation.com/questions/exam-the-aws-codepipeline-service-you-exam-164.html"
+}

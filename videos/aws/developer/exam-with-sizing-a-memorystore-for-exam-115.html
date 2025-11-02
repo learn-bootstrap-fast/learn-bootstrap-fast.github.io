@@ -1,0 +1,79 @@
+---
+title: "A Database Engineer is tasked with sizing a MemorystoreExam"
+description: "Video for a Database Engineer is tasked with sizing a Memorystore for Redis instance for an online gaming platform. The current environment workload metrics and"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A Database Engineer is tasked with sizing a Memorystore for Redis instance for an online gaming platform. The current environment workload metrics and requirements are as follows: 30,000 requests per second during peak times 500 GB of in-memory cache storage 99.95% availability requirement Sub-millisecond response times for read and write operations The company expects a 50% increase in requests per second and a 40% increase in in-memory cache storage over the next year. Which of the following instance configurations is the most appropriate to handle the anticipated growth while optimizing costs?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A cloud database engineer at Northstar Interactive needs to right size a Google Cloud Memorystore for Redis instance that powers a live trivia feature. Peak load reaches 36,000 requests per second and the cache uses 420 GB of memory. The service must meet 99.95% availability and deliver sub millisecond latency for both reads and writes. Product planning anticipates a 60% increase in requests per second and a 50% growth in cache size over the next 12 months. Which instance configuration will best accommodate the forecast while keeping costs sensible?",
+  "options": [
+    {
+      "text": "Standard tier with 1 Gbps network throughput and 700 GB capacity",
+      "explanation": "This choice uses the Standard tier for high availability with a 1 Gbps link and allocates 700 GB of memory",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Standard tier with 5 Gbps network throughput and 650 GB capacity",
+      "explanation": "This choice uses the Standard tier for high availability with a 5 Gbps link and allocates 650 GB of memory",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Standard tier with 10 Gbps network throughput and 750 GB capacity",
+      "explanation": "This choice uses the Standard tier for high availability with a 10 Gbps link and allocates 750 GB of memory",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Basic tier with 2 Gbps network throughput and 700 GB capacity",
+      "explanation": "This choice uses the Basic tier without automatic failover and provides a 2 Gbps link and 700 GB of memory",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Standard tier with 5 Gbps network throughput and 650 GB capacity</b>.</p><p>This choice fits the one year forecast while staying cost conscious. Requests per second are expected to grow from 36,000 to 57,600 which is a 60 percent increase. A 5 Gbps network profile provides ample headroom for that level of traffic while helping preserve sub millisecond latency for both reads and writes. Cache memory is forecast to grow from 420 GB to 630 GB which this 650 GB capacity comfortably covers while leaving room for Redis overhead and operational buffers.</p><p>The Standard tier is required to meet the high availability target. It provides a highly available deployment with automatic failover across zones which aligns with a 99.95 percent availability requirement. With sufficient throughput and capacity headroom, the service can maintain low latency during peaks and during replication and failover events.</p><p><i>Standard tier with 1 Gbps network throughput and 700 GB capacity</i> does not provide enough network throughput for the projected 57,600 requests per second while sustaining sub millisecond latency, especially when accounting for replication traffic in the Standard tier.</p><p><i>Standard tier with 10 Gbps network throughput and 750 GB capacity</i> would meet performance and capacity needs but it is overprovisioned relative to the forecast and would add unnecessary cost compared to the 5 Gbps and 650 GB option.</p><p><i>Basic tier with 2 Gbps network throughput and 700 GB capacity</i> cannot meet the availability requirement because Basic tier is zonal and lacks automatic failover, so it does not provide the required reliability even if its capacity appears sufficient.</p>",
+  "batch_id": "250",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "A Database Engineer is tasked with sizing a Memorystore for Redis instance for an online gaming platform. The current environment workload metrics and requirements are as follows: 30,000 requests per second during peak times 500 GB of in-memory cache storage 99.95% availability requirement Sub-millisecond response times for read and write operations The company expects a 50% increase in requests per second and a 40% increase in in-memory cache storage over the next year. Which of the following instance configurations is the most appropriate to handle the anticipated growth while optimizing costs?",
+  "originalOptions": "A. Standard tier with 5 Gbps network bandwidth and 600 GB storage<br/>B. Standard tier with 1 Gbps network bandwidth and 700 GB storage<br/>C. Basic tier with 2 Gbps network bandwidth and 700 GB storage<br/>D. Standard tier with 5 Gbps network bandwidth and 750 GB storage",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "115",
+  "tip": "<p>Translate the stated <i>growth</i> into future load and size for both memory and throughput, then pick the <i>smallest</i> option that exceeds those needs with some <i>headroom</i>. Map the required <i>availability</i> to the correct tier and avoid <i>Basic</i> when an SLA is specified.</p>",
+  "references": [
+    "https://cloud.google.com/memorystore/docs/redis/compare-tiers",
+    "https://cloud.google.com/memorystore/docs/redis/performance",
+    "https://cloud.google.com/memorystore/sla"
+  ],
+  "url": "https://certificationation.com/questions/exam-with-sizing-a-memorystore-for-exam-115.html",
+  "video_url": "https://certificationation.com/videos/exam-with-sizing-a-memorystore-for-exam-115.html"
+}

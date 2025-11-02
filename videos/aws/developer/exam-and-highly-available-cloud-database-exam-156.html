@@ -1,0 +1,81 @@
+---
+title: "In the context of designing a scalable and highlyExam"
+description: "Video for in the context of designing a scalable and highly available cloud database solution for a global financial application with strict latency"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "In the context of designing a scalable and highly available cloud database solution for a global financial application with strict latency requirements and high read/write workloads, which of the following approaches would be the most suitable while using Google Cloud services?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A multinational payments gateway operated by Northstar Fintech needs a globally distributed transactional database that sustains very high read and write throughput with strong consistency and end user latency under 90 milliseconds in all major regions. Using Google Cloud services, which design best delivers worldwide availability, low latency and elastic scale?",
+  "options": [
+    {
+      "text": "Create a multi cluster Cloud Bigtable deployment across two continents with multi cluster routing for low latency access",
+      "explanation": "Cloud Bigtable can be configured with multi cluster routing across regions to handle large scale workloads with low latency for wide column data models.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Run a single region Cloud Spanner instance and implement application level sharding to spread hot keys",
+      "explanation": "A regional Cloud Spanner instance can scale within one region and application sharding distributes requests across logical partitions.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Deploy a multi region Cloud Spanner instance with multiple read write replicas and route clients to the nearest replicas by location",
+      "explanation": "Cloud Spanner provides multi region configurations with read write replicas that deliver strong consistency and automatic replication across regions.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use AlloyDB for PostgreSQL with cross region read replicas and route connections globally while keeping writes in one primary region",
+      "explanation": "AlloyDB for PostgreSQL supports cross region read replicas while the primary instance remains the single writable node.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Deploy a multi region Cloud Spanner instance with multiple read write replicas and route clients to the nearest replicas by location</b>.</p><p>This design places read write replicas in multiple regions and commits through a globally coordinated consensus which gives external consistency for transactions and worldwide high availability. Routing clients to the closest read write replica keeps both reads and writes under the stated latency target for major regions while all commits remain strongly consistent across the globe.</p><p>It also scales elastically by adding nodes and automatically splitting and rebalancing data to sustain very high throughput. Automatic failover and maintenance further protect availability which aligns with the needs of a global payments platform.</p><p><i>Create a multi cluster Cloud Bigtable deployment across two continents with multi cluster routing for low latency access</i> is incorrect because replication with multi cluster routing is eventually consistent and it does not provide multi row transactional semantics or globally consistent cross region writes. It is better suited to large scale key value and analytical workloads rather than a strongly consistent transactional system.</p><p><i>Run a single region Cloud Spanner instance and implement application level sharding to spread hot keys</i> is incorrect because all writes remain in one region which causes high latency for global users and offers no multi region fault tolerance. Sharding can reduce contention but it does not provide worldwide availability or sub 90 millisecond latency for users in distant regions.</p><p><i>Use AlloyDB for PostgreSQL with cross region read replicas and route connections globally while keeping writes in one primary region</i> is incorrect because read replicas are read only and writes must go to the primary region. Remote users would experience high write latency and the design does not achieve strongly consistent multi region writes.</p>",
+  "batch_id": "120",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "In the context of designing a scalable and highly available cloud database solution for a global financial application with strict latency requirements and high read/write workloads, which of the following approaches would be the most suitable while using Google Cloud services?",
+  "originalOptions": "A. Use a single regional Cloud Spanner instance and configure data sharding for horizontal scaling.<br/>B. Deploy a multi-regional Cloud Spanner instance with multiple read-write replicas and configure load balancing based on user location.<br/>C. Create a single regional Cloud SQL instance with read replicas and implement cross-region replication using Cloud Functions.<br/>D. Deploy multiple regional Firestore instances and use Firebase Realtime Database for data synchronization.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "156",
+  "tip": "<p>When a question stresses <i>global distribution</i>, <i>strong consistency</i>, and low latency for <i>both reads and writes</i> across regions, map it to multi region Cloud Spanner with read write replicas. If writes are confined to one region and replicas are only for reads, the design will not meet worldwide write latency or global transactional guarantees.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/replication",
+    "https://cloud.google.com/spanner/docs/instances#regional_and_multi-region_configurations",
+    "https://cloud.google.com/spanner/docs/true-time-external-consistency",
+    "https://cloud.google.com/bigtable/docs/replication-overview#multi-cluster",
+    "https://cloud.google.com/alloydb/docs/concepts/high-availability-and-replicas"
+  ],
+  "url": "https://certificationation.com/questions/exam-and-highly-available-cloud-database-exam-156.html",
+  "video_url": "https://certificationation.com/videos/exam-and-highly-available-cloud-database-exam-156.html"
+}

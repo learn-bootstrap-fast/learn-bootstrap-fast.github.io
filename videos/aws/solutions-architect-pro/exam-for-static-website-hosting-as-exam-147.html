@@ -1,0 +1,74 @@
+---
+title: "You decide to configure a bucket for static websiteExam"
+description: "Video for you decide to configure a bucket for static website hosting. As per the AWS documentation, you create a bucket named 'mybucket.com' You also enable"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You decide to configure a bucket for static website hosting. As per the AWS documentation, you create a bucket named 'mybucket.com' You also enable website hosting with an index document of 'index.html' and leave the error document as blank. You then upload a file named 'index.html' to the bucket. After clicking on the endpoint of mybucket.com.s3-website-us-east-1.amazonaws.com you receive 403 Forbidden error. You then change the CORS configuration on the bucket so that everyone has access. However, you still receive the 403 Forbidden error. What additional step do you need to do so that the endpoint is accessible to everyone?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d5bcf501ee1c8ade9832"
+  },
+  "quid": "0",
+  "ordinal": "233",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "Amazon S3",
+    " Amazon Route 53",
+    " AWS IAM Identity Center (AWS Single Sign-On)",
+    " AWS Security Hub",
+    " AWS WAF"
+  ],
+  "slug": "s3-configure-bucket-static-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question233",
+  "title": "AWS You Decide To Configure A Bucket Question",
+  "meta": "AWS Exam Question: You configure a bucket for static website hosting named 'mybucket.com' but face a 403 error. What is the answer? Consider S3 and CORS settings.",
+  "answer": "D",
+  "query": "A team is setting up a static site using an S3 bucket named 'exampledomain.com'. They enable website hosting and set 'index.html' as the homepage but leave the error document field empty. After uploading the 'index.html' to the bucket, users try to access the site at exampledomain.com.s3-website-us-west-2.amazonaws.com but receive a 403 Forbidden error. They modify the bucket's CORS rules to permit wide access but still get the same error. What must be done next to make the site publicly reachable?",
+  "originalQuery": "You decide to configure a bucket for static website hosting.\nAs per the AWS documentation, you create a bucket named 'mybucket.com'\nYou also enable website hosting with an index document of 'index.html' and leave the error document as blank.\nYou then upload a file named 'index.html' to the bucket.\nAfter clicking on the endpoint of mybucket.com.s3-website-us-east-1.amazonaws.com you receive 403 Forbidden error.\nYou then change the CORS configuration on the bucket so that everyone has access.\nHowever, you still receive the 403 Forbidden error.\nWhat additional step do you need to do so that the endpoint is accessible to everyone?",
+  "options": [
+    "A. Add exampledomain.com to Route 53 hosted zones",
+    "B. Allow some time for DNS updates to be visible",
+    "C. Specify a name for the error page because it is mandatory",
+    "D. Change the permissions on the index.html file also, so that everyone has access."
+  ],
+  "originalOptions": [
+    "A. Register mybucket.com on Route53",
+    "B. Wait for the DNS change to propagate",
+    "C. You need to add a name for the error document, because it is a required field",
+    "D. Change the permissions on the index.html file also, so that everyone has access."
+  ],
+  "image": "",
+  "primaryObjective": "2: Design for New Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Answer - D.\nYou are receiving the 403 Forbidden Error because you do not have the permissions to view the index.html file.\nOption A is incorrect because this is an S3 hosted website.\nRoute 53 does not come into the picture.\nOption B is incorrect because it is a static website hosted on S3\nThis issue is not related to DNS resolution.\nOption C is incorrect.\nEven if you add the error document, you will get the error because you need to set the proper permissions.\nOption D is CORRECT because it sets the appropriate permissions so that the user has access to the index.html.\nFor more information on web site hosting in S3, please visit the below link:\nhttp://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html\nNote:\nThe question is referring to Configuring a bucket for Website Hosting.\nIn this scenario, Route53 is not required.\nHowever, extra configuration in S3 is needed other than making it public.\nFor more information, please refer to:\nhttps://docs.aws.amazon.com/AmazonS3/latest/dev/IndexDocumentSupport.html\nThe 403 Forbidden error indicates that the user making the request does not have the necessary permissions to access the requested resource. In this case, you have enabled static website hosting on an S3 bucket named mybucket.com, configured the index document as index.html, and left the error document as blank. You have also uploaded an index.html file to the bucket.\nWhen you click on the endpoint of mybucket.com.s3-website-us-east-1.amazonaws.com, you receive a 403 Forbidden error, even though you have changed the CORS configuration on the bucket to allow everyone access. This suggests that the issue is not related to the CORS configuration, but rather some other permission-related issue.\nTo resolve this issue, you need to ensure that the objects in your bucket are publicly accessible. One way to achieve this is to modify the bucket policy to allow public access to the objects in the bucket.\nTo modify the bucket policy:\n1. Open the S3 console and navigate to the bucket mybucket.com.\n2. Click on the \"Permissions\" tab.\n3. Click on the \"Bucket Policy\" button.\n4. Paste the following policy into the policy editor, replacing mybucket.com with the name of your bucket:\njsonCopy code{   \"Version\":\"2012-10-17\",   \"Statement\":[     {       \"Sid\":\"PublicReadGetObject\",       \"Effect\":\"Allow\",       \"Principal\": \"*\",       \"Action\":[\"s3:GetObject\"],       \"Resource\":[\"arn:aws:s3:::mybucket.com/*\"]     }   ] } \n1. Click on \"Save changes\".\nThis policy grants public read access to all objects in the mybucket.com bucket. After saving the policy, you should be able to access the website at mybucket.com.s3-website-us-east-1.amazonaws.com without receiving a 403 Forbidden error.\nOption A (Register mybucket.com on Route53) and option B (Wait for the DNS change to propagate) are not relevant to this issue, as the issue is related to permissions rather than DNS. Option C (Add a name for the error document) is also not relevant, as leaving the error document field blank is a valid configuration for a static website hosted on S3. Option D (Change the permissions on the index.html file) may help in some cases, but in this case, it is not sufficient to resolve the issue.",
+  "chatGptExplanation": "The issue causing the 403 Forbidden error is that the 'index.html' object does not have the appropriate permissions to be accessed publicly. Even if static website hosting is enabled and the CORS configuration allows wide access, the underlying S3 object permissions must permit public read access to allow anyone to view the content. Therefore, the correct step is to adjust the permissions on the 'index.html' file (or the bucket policy) to grant public read access. \n\nOption D is correct because changing the permissions ensures that the object is accessible without authentication, which resolves the 403 error.\n\nOption A is incorrect because registering the domain in Route 53 is not necessary for accessing the S3 website endpoint; the error is not related to DNS but permissions.\n\nOption B is irrelevant because DNS propagation delays do not cause 403 errors, and the endpoint used is the direct S3 website endpoint, not a custom domain.\n\nOption C is wrong because the error document setting is optional; leaving it blank does not cause a 403 error. The problem is the lack of read permissions on the index.html file.\n\nThe primary AWS product focus in this question is Amazon Simple Storage Service, abbreviated as S3.",
+  "video_url": "https://certificationation.com/videos/exam-for-static-website-hosting-as-exam-147.html",
+  "url": "https://certificationation.com/questions/exam-for-static-website-hosting-as-exam-147.html"
+}

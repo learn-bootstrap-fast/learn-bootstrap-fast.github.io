@@ -13,8 +13,8 @@ In GitHub Actions, how is the success or failure of a step determined by its exi
 
 Which configuration lines correctly set the workflow name in a GitHub Actions workflow file? (Choose 2)
 
-* [ ] A.	name: ${{ &quot;release-flow-42&quot; }}
-* [ ] B.	name: ${{ &apos;release-flow-42&apos; }}
+* [ ] A.	name: $ &quot;release-flow-42&quot; 
+* [ ] B.	name: $ &apos;release-flow-42&apos; 
 * [ ] C.	run-name: release-flow-42
 * [ ] D.	name: release-flow-42
 
@@ -594,18 +594,18 @@ When you see options about step outcomes, anchor your reasoning to the standard 
 
 Which configuration lines correctly set the workflow name in a GitHub Actions workflow file? (Choose 2)
 
-* [*] B.	name: ${{ &apos;release-flow-42&apos; }}
+* [*] B.	name: $ &apos;release-flow-42&apos; 
 * [*] D.	name: release-flow-42
 
 ****
 
-The correct options are *name: release-flow-42* and *name: ${{ 'release-flow-42' }}*. Both set the workflow name that appears in the Actions interface and on the workflow page.
+The correct options are *name: release-flow-42* and *name: $ 'release-flow-42' *. Both set the workflow name that appears in the Actions interface and on the workflow page.
 
 The plain static name key with a simple string sets the workflow name clearly and predictably. It is the most straightforward way to define the workflow title.
 
 The expression form with a single quoted string evaluates to the same literal value. GitHub Actions accepts a string result for the workflow name, so this produces a valid name while keeping consistency with other places where expressions are used.
 
-_name: ${{ "release-flow-42" }}_ is not valid as written in this context because the inner double quotes can cause parsing issues and do not produce a clean string literal for the workflow name in this exam scenario.
+_name: $ "release-flow-42" _ is not valid as written in this context because the inner double quotes can cause parsing issues and do not produce a clean string literal for the workflow name in this exam scenario.
 
 _run-name: release-flow-42_ does not set the workflow name. It only sets the display name for each workflow run, so it does not answer the question that asks for the workflow name.
 

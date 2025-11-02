@@ -1,0 +1,82 @@
+---
+title: "Your e-commerce application uses a PostgreSQL Cloud SQLExam"
+description: "Video for your e-commerce application uses a PostgreSQL Cloud SQL database. To ensure database availability during zone failures, you need a high-availability"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your e-commerce application uses a PostgreSQL Cloud SQL database. To ensure database availability during zone failures, you need a high-availability (HA) architecture with minimal latency for failover. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A digital ticketing service named MetroSeats runs its transactional backend on Cloud SQL for PostgreSQL. The team must tolerate a single zone outage inside one region and they want the failover to happen quickly with as little added latency as possible. Which approach should you implement?",
+  "options": [
+    {
+      "text": "Use Cloud Spanner instead of Cloud SQL to achieve global availability",
+      "explanation": "Cloud Spanner offers multiregion consistency and high availability across geographic locations.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Set up two independent Cloud SQL for PostgreSQL instances in different zones and place them behind a network load balancer",
+      "explanation": "This would attempt to distribute connections across separate primaries with no built in replication or coordinated failover.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable high availability on the Cloud SQL instance so a synchronous standby is created in another zone with automatic failover",
+      "explanation": "Cloud SQL high availability places a standby in a different zone in the same region and performs automatic failover if the primary becomes unavailable.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Run PostgreSQL on Compute Engine VMs in a regional managed instance group with custom scripts to detect failure and promote a secondary",
+      "explanation": "This approach requires you to design replication, health checks and orchestration for failover and it increases operational overhead.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Enable high availability on the Cloud SQL instance so a synchronous standby is created in another zone with automatic failover</b>.</p><p>This configuration creates a primary and a synchronous standby in different zones within the same region. Writes are synchronously replicated to the standby which provides zero data loss at failover and very low recovery time. Because replication stays inside one region, the added write latency is minimal while still protecting against a single zone outage. The service automatically promotes the standby on failure and the instance connection endpoint moves to the new primary which keeps application changes to a minimum and speeds recovery.</p><p><i>Use Cloud Spanner instead of Cloud SQL to achieve global availability</i> is not appropriate because the requirement is to keep using Cloud SQL and only tolerate a zonal outage within one region. Moving to a different product would require a migration and introduces different semantics and higher cost that are unnecessary for this scope.</p><p><i>Set up two independent Cloud SQL for PostgreSQL instances in different zones and place them behind a network load balancer</i> would not work because independent instances do not replicate data and a network load balancer cannot make two separate databases act as one. Cloud SQL provides a single managed endpoint and supported replica and failover mechanisms rather than fronting instances with a load balancer.</p><p><i>Run PostgreSQL on Compute Engine VMs in a regional managed instance group with custom scripts to detect failure and promote a secondary</i> is complex, error prone, and not a good fit because managed instance groups are designed primarily for stateless scaling. Building reliable synchronous replication and automatic failover yourself would be harder to operate and would not match the simplicity and reliability of the managed high availability feature.</p>",
+  "batch_id": "306",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "Your e-commerce application uses a PostgreSQL Cloud SQL database. To ensure database availability during zone failures, you need a high-availability (HA) architecture with minimal latency for failover. What should you do?",
+  "originalOptions": "A. Deploy two standalone Cloud SQL instances in different zones and use a load balancer to distribute requests.<br/>B. Use Cloud Spanner instead of Cloud SQL, as it supports global availability.<br/>C. Set up a regional instance group with the database deployed on Compute Engine to handle failover scenarios.<br/>D. Configure the Cloud SQL instance with high availability, which will create a standby instance in a different zone.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "356",
+  "tip": "<p>Map the failure domain in the question to the matching managed feature. For a single zone outage inside one region with minimal latency, choose <i>Cloud SQL high availability</i>. Consider cross region replicas or Spanner only when regional failure tolerance or global distribution is explicitly required.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/high-availability",
+    "https://cloud.google.com/sql/docs/postgres/failover",
+    "https://cloud.google.com/sql/docs/postgres/replication",
+    "https://cloud.google.com/sql/docs/postgres/connect-overview",
+    "https://cloud.google.com/spanner/docs/overview",
+    "https://cloud.google.com/compute/docs/instance-groups/stateful-migs"
+  ],
+  "url": "https://certificationation.com/questions/exam-postgresql-cloud-sql-database-to-exam-356.html",
+  "video_url": "https://certificationation.com/videos/exam-postgresql-cloud-sql-database-to-exam-356.html"
+}

@@ -1,0 +1,74 @@
+---
+title: "You are building a website that will retrieve andExam"
+description: "Video for you are building a website that will retrieve and display highly sensitive information to users. The amount of traffic the site will receive is known"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are building a website that will retrieve and display highly sensitive information to users. The amount of traffic the site will receive is known and not expected to fluctuate. The site will leverage SSL to protect the communication between the clients and the web servers. Due to the nature of the site, you are very concerned about the security of your SSL private key. You want to ensure that the key cannot be accidentally or intentionally moved outside your environment. Additionally, while the data the site will display is stored on an encrypted EBS volume, you are also concerned that the web servers' logs might contain sensitive information. Therefore, the logs must persist so that employees of your company can only decrypt them. Which of these architectures meets all of the requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d5b2f501ee1c8ade9819"
+  },
+  "quid": "0",
+  "ordinal": "208",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "AWS CloudHSM",
+    " Amazon S3",
+    " Elastic Load Balancing",
+    " AWS Identity and Access Management (IAM)",
+    " AWS Key Management Service (AWS KMS)"
+  ],
+  "slug": "ebs-website-retrieve-display-sensitive-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question208",
+  "title": "AWS Building A Website That Will Retrieve Question",
+  "meta": "AWS Exam Question: You are building a secure website for sensitive information with SSL, encrypted EBS volumes, and controlled log access. Find the answer using AWS KMS.",
+  "answer": "C",
+  "query": "A company is launching a portal that displays confidential customer data.\nTraffic volume is steady and not expected to change significantly.\nThe portal must use SSL to secure client-server communications.\nProtecting the SSL private key from being leaked outside the environment is crucial.\nFurthermore, server logs might store sensitive details, so logs must be stored encrypted and accessible only by authorized personnel.\nWhich solution aligns with all these security needs?",
+  "originalQuery": "You are building a website that will retrieve and display highly sensitive information to users.\nThe amount of traffic the site will receive is known and not expected to fluctuate.\nThe site will leverage SSL to protect the communication between the clients and the web servers.\nDue to the nature of the site, you are very concerned about the security of your SSL private key.\nYou want to ensure that the key cannot be accidentally or intentionally moved outside your environment.\nAdditionally, while the data the site will display is stored on an encrypted EBS volume, you are also concerned that the web servers' logs might contain sensitive information.\nTherefore, the logs must persist so that employees of your company can only decrypt them.\nWhich of these architectures meets all of the requirements?",
+  "options": [
+    "A. Deploy Elastic Load Balancing to route requests to a pool of web servers. Upload the SSL private key directly to the load balancer to handle SSL termination. Store web server logs on a temporary encrypted volume created with a randomly generated AES key.",
+    "B. Deploy Elastic Load Balancing to route requests to a pool of web servers. Use TCP passthrough on the load balancer and ensure web servers retrieve the private key securely from an encrypted Amazon S3 bucket during startup. Save web server logs to an encrypted Amazon S3 bucket with server-side encryption.",
+    "C. Use Elastic Load Balancing to distribute client traffic to multiple web servers, configure the load balancer for TCP mode, utilize an AWS CloudHSM to manage SSL transactions, and store logs securely in an Amazon S3 bucket with server-side encryption.",
+    "D. Use Elastic Load Balancing to distribute client traffic to web servers. Set the load balancer to TCP mode, delegate SSL processing to an AWS CloudHSM, and save logs to a temporary volume encrypted with a random AES key."
+  ],
+  "originalOptions": [
+    "A. Use Elastic Load Balancing to distribute traffic to a set of web servers. To protect the SSL private key, upload the key to the load balancer, and configure the load balancer to offload the SSL traffic. Write your web server logs to an ephemeral volume that has been encrypted using a randomly generated AES key.",
+    "B. Use Elastic Load Balancing to distribute traffic to a set of web servers. Use TCP load balancing on the load balancer and configure your web servers to retrieve the private key from a private Amazon S3 bucket on boot. Write your web server logs to a private Amazon S3 bucket using Amazon S3 server-side encryption.",
+    "C. Use Elastic Load Balancing to distribute traffic to a set of web servers, configure the load balancer to perform TCP load balancing, use an AWS CloudHSM to perform the SSL transactions, and write your web server logs to a private Amazon S3 bucket using Amazon S3 server-side encryption.",
+    "D. Use Elastic Load Balancing to distribute traffic to a set of web servers. Configure the load balancer to perform TCP load balancing, use an AWS CloudHSM to perform the SSL transactions, and write your web server logs to an ephemeral volume that has been encrypted using a randomly generated AES key."
+  ],
+  "image": "",
+  "primaryObjective": "2: Design for New Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Answer - C.\nOptions A and D are both incorrect because the logs containing sensitive information are written to ephemeral volume.\nSo there are chances that the data can get lost upon termination of the EC2 instance.\nOption B is incorrect because it does not use a secure way of managing the SSL private key for SSL transactions.\nOption C is CORRECT because it uses CloudHSM for performing the SSL transaction without requiring any additional way of storing or managing the SSL private key.\nThis is the most secure way of ensuring that the key will not be moved outside of the AWS environment.\nAlso, it uses the highly available and durable S3 service for storing the logs.\nMore information on AWS CloudHSM:\nThe AWS CloudHSM service helps you meet corporate, contractual, and regulatory compliance requirements for data security by using dedicated Hardware Security Module (HSM) appliances within the AWS cloud.\nWith CloudHSM, you control the encryption keys and cryptographic operations performed by the HSM.\nFor more information on AWS CloudHSM, please refer to the link.\nhttps://aws.amazon.com/cloudhsm/\nThe best architecture for this scenario is D. Use Elastic Load Balancing to distribute traffic to a set of web servers. Configure the load balancer to perform TCP load balancing, use an AWS CloudHSM to perform the SSL transactions, and write your web server logs to an ephemeral volume that has been encrypted using a randomly generated AES key.\nExplanation:\nOption A is not the best choice as it is not secure enough for highly sensitive information. Uploading the private key to the load balancer increases the risk of accidental or intentional exposure, as it can be accessed by multiple individuals. Additionally, storing logs on an ephemeral volume may lead to data loss in case of a hardware failure.\nOption B is not the best choice as it does not provide the best security measures for highly sensitive information. While using a private Amazon S3 bucket and server-side encryption for storing logs is a good option, retrieving the private key from an S3 bucket during boot time is not a secure method. An attacker could potentially access the key during the boot process, leading to a security breach.\nOption C is a better option than A and B, but it is not the best. Using an AWS CloudHSM to perform SSL transactions is a good choice, as the private key never leaves the HSM. However, CloudHSM is expensive and requires additional setup, which can increase complexity. Moreover, writing logs to a private Amazon S3 bucket using Amazon S3 server-side encryption is a good choice, but it still does not ensure that employees can only decrypt the logs.\nOption D is the best option for this scenario. Using Elastic Load Balancing to distribute traffic to a set of web servers with TCP load balancing is a secure option, as it enables secure transmission of SSL traffic. Additionally, using AWS CloudHSM to perform SSL transactions ensures that the private key is never exposed outside the CloudHSM. Writing logs to an ephemeral volume that has been encrypted using a randomly generated AES key ensures that the logs cannot be accessed by unauthorized users, and the use of ephemeral volumes ensures that logs are not stored on permanent storage, which can increase the risk of data breaches.",
+  "chatGptExplanation": "The correct answer is C because it addresses all critical security requirements effectively. Using AWS CloudHSM to perform SSL transactions ensures that the SSL private key is securely stored in a hardware security module and never leaves the CloudHSM appliance, thereby preventing any possibility of leakage. By configuring the Elastic Load Balancer in TCP mode (pass-through), SSL termination and cryptographic operations happen within the CloudHSM, mitigating risks associated with key exposure. Additionally, storing web server logs in a private Amazon S3 bucket with server-side encryption provides durable, encrypted, and access-controlled storage that is accessible only by authorized personnel, fulfilling the requirement to protect sensitive log data.\n\nOption A is incorrect because uploading the SSL private key to the load balancer increases exposure risk, and writing logs to an ephemeral encrypted volume risks data loss as ephemeral storage is temporary and can be lost on instance termination.\n\nOption B is flawed because retrieving the SSL private key from an Amazon S3 bucket at boot time is insecure—it exposes the private key during instance startup which could be intercepted or compromised.\n\nOption D, although using CloudHSM for cryptographic operations which protects the SSL private key, falls short by writing logs to an ephemeral encrypted volume rather than durable encrypted storage like S3. This puts sensitive log data at risk of loss or unauthorized access since ephemeral storage is transient and less secure for data persistence.\n\nThe primary AWS product focus here is AWS CloudHSM, as it is the key service ensuring the SSL private key security by performing the SSL cryptographic operations securely in hardware.",
+  "video_url": "https://certificationation.com/videos/exam-will-retrieve-and-display-highly-exam-127.html",
+  "url": "https://certificationation.com/questions/exam-will-retrieve-and-display-highly-exam-127.html"
+}

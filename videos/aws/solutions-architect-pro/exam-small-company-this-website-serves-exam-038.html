@@ -1,0 +1,73 @@
+---
+title: "You are setting up a website for a small company. ThisExam"
+description: "Video for you are setting up a website for a small company. This website serves up images and is very resource intensive. You have decided to serve up the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are setting up a website for a small company. This website serves up images and is very resource intensive. You have decided to serve up the images using Cloudfront. There is a requirement though the content should be served up using a custom domain and should work with https."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d57cf501ee1c8ade9790"
+  },
+  "quid": "0",
+  "ordinal": "69",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "Amazon CloudFront",
+    " Amazon S3",
+    " Amazon Route 53",
+    " AWS Certificate Manager (ACM)"
+  ],
+  "slug": "cf-setting-up-website-images-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question69",
+  "title": "AWS You Are Setting Up A Website Question",
+  "meta": "AWS Exam Question: Setting up a resource-intensive website using CloudFront with a custom domain and HTTPS support for a small company. Get the answer.",
+  "answer": "B C",
+  "query": "A startup is launching a new photo gallery website that will deliver high-resolution images worldwide. The requirement is to present the content through a branded domain name and ensure secure HTTPS access.",
+  "originalQuery": "You are setting up a website for a small company.\nThis website serves up images and is very resource intensive.\nYou have decided to serve up the images using Cloudfront.\nThere is a requirement though the content should be served up using a custom domain and should work with https.",
+  "options": [
+    "A. You need to acquire and set up your own SSL certificate within Route 53 and link it to your CloudFront distribution.",
+    "B. You must provision Server Name Indication (SNI) Custom SSL for your CloudFront Distribution.",
+    "C. You have to create and set an ALIAS record in Route 53 to connect it to your CloudFront distribution.",
+    "D. You need to make an Origin Access Identity (OAI) for CloudFront and provide it permission to access your image files in the S3 bucket."
+  ],
+  "originalOptions": [
+    "A. You must provision and configure your own SSL certificate in Route 53 and associate it to your CloudFront distribution.",
+    "B. You must provision Server Name Indication (SNI) Custom SSL for your CloudFront Distribution.",
+    "C. You must provision and configure an ALIAS in Route 53 and associate it to your CloudFront distribution.",
+    "D. You must create an Origin Access Identity (OAI) for CloudFront and grant access to the objects in your S3 bucket where the images are stored."
+  ],
+  "image": "",
+  "primaryObjective": "2: Design for New Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Answer - B and C.\nCustom SSL certificate support lets you deliver content over HTTPS using your own domain name and your own SSL certificate.\nThis gives visitors to your website the security benefits of CloudFront over an SSL connection that uses your own domain name in addition to lower latency and higher reliability.\nNote: Please note that some older browsers do not support SNI and will not be able to establish a connection with CloudFront to load the HTTPS version of your content.\nhttps://aws.amazon.com/cloudfront/custom-ssl-domains/\nOption C is correct.\nIf we want to use our own domain name, we need to use Amazon Route 53 to create an alias record that points to our CloudFront distribution.\nhttps://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html\nOption A is incorrect because a custom SSL certificate or third-party certificate can not be configured in Route53.\nOption D is incorrect because Origin Access identity(OAI) does not deal with custom SSL.\nIt is only used to ensure that the origin is accessible with CloudFront distribution only.\nMore information on Custom SSL Domains:\nAWS Cloudfront can use IAM certificates.\nReference Link:\nhttps://aws.amazon.com/premiumsupport/knowledge-center/cloudfront-custom-certificate/\nAlso, there is a discussion forum on the same topic \"\"ssl certificate IAM\" in the Amazon CloudFront Discussion Forum\"\nIt is helpful in understanding this topic further.\nFor more information on CloudFront custom SSL domains, please visit the below URL-\nhttps://aws.amazon.com/cloudfront/custom-ssl-domains/\nSure, I'd be happy to explain each answer option in detail:\nA. You must provision and configure your own SSL certificate in Route 53 and associate it to your CloudFront distribution.\nThis option suggests that you would need to obtain your own SSL certificate and configure it to use with your CloudFront distribution. SSL certificates are used to secure communications between clients (such as web browsers) and servers (such as CloudFront). Route 53 is a DNS service offered by AWS, and it can be used to manage the domain name for your website.\nTo use this option, you would first need to obtain an SSL certificate from a certificate authority (CA) and upload it to AWS. Once you have the certificate, you can create a new CloudFront distribution or update an existing one to use the certificate. In addition, you would need to configure your Route 53 DNS settings to associate the custom domain name with the CloudFront distribution.\nB. You must provision Server Name Indication (SNI) Custom SSL for your CloudFront Distribution.\nThis option suggests that you should use Server Name Indication (SNI) to provide a custom SSL certificate for your CloudFront distribution. SNI is an extension to the TLS protocol (which is used to secure communications between clients and servers) that allows multiple SSL certificates to be used on a single IP address.\nTo use this option, you would need to obtain an SSL certificate and upload it to AWS. When creating or updating your CloudFront distribution, you can select the SNI Custom SSL option and choose the certificate you uploaded. You would also need to configure your Route 53 DNS settings to associate the custom domain name with the CloudFront distribution.\nC. You must provision and configure an ALIAS in Route 53 and associate it to your CloudFront distribution.\nThis option suggests that you should use an ALIAS record in Route 53 to associate your custom domain name with your CloudFront distribution. An ALIAS record is a special type of DNS record that can be used to map a domain name to another AWS resource, such as a CloudFront distribution.\nTo use this option, you would need to create an ALIAS record in Route 53 and point it to your CloudFront distribution. You would also need to ensure that your CloudFront distribution is configured to accept requests for the custom domain name.\nD. You must create an Origin Access Identity (OAI) for CloudFront and grant access to the objects in your S3 bucket where the images are stored.\nThis option suggests that you should use an Origin Access Identity (OAI) to restrict access to the objects in your S3 bucket. An OAI is a special CloudFront user that is used to access objects in an S3 bucket. By using an OAI, you can ensure that only requests from CloudFront are able to access the objects in your S3 bucket.\nTo use this option, you would need to create an OAI and grant it access to the objects in your S3 bucket. You would also need to update your CloudFront distribution to use the OAI when accessing the objects in your S3 bucket. Finally, you would need to ensure that your CloudFront distribution is configured to accept requests for the custom domain name and that the domain name is associated with the CloudFront distribution.\nIn conclusion, all of these options are valid ways to serve up images using CloudFront and a custom domain with HTTPS. The best option depends on your specific requirements and preferences.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-small-company-this-website-serves-exam-038.html",
+  "url": "https://certificationation.com/questions/exam-small-company-this-website-serves-exam-038.html"
+}

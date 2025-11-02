@@ -1,0 +1,79 @@
+---
+title: "You are a Database Engineer and you have been taskedExam"
+description: "Video for you are a Database Engineer and you have been tasked with diagnosing slow running queries in a Cloud SQL instance. Which of the following tools or"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are a Database Engineer and you have been tasked with diagnosing slow running queries in a Cloud SQL instance. Which of the following tools or techniques would you use to identify the root cause of the issue?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "At scrumtuous.com you are the Cloud Database Engineer for a production Cloud SQL for PostgreSQL instance where several reporting queries regularly take more than 90 seconds during peak load. Which method would you use to isolate the root cause within the specific query execution path?",
+  "options": [
+    {
+      "text": "Add a read replica to the Cloud SQL instance",
+      "explanation": "A read replica can distribute read traffic for scalability but it does not analyze how a single statement executes",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Run EXPLAIN ANALYZE on the problematic SQL to inspect the actual execution plan",
+      "explanation": "EXPLAIN ANALYZE displays the real plan and operator timings for the statement so you can see where time is spent",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Monitor CPU and memory charts in the Cloud Console",
+      "explanation": "These metrics show instance level resource utilization trends instead of per statement behavior",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Implement a caching layer such as Memorystore in front of the query",
+      "explanation": "Caching can serve repeated reads faster yet it does not provide visibility into query operators or indexes",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Run EXPLAIN ANALYZE on the problematic SQL to inspect the actual execution plan</b>.</p><p>This method executes the query and returns the real plan with timing and row counts for each node, which lets you pinpoint exactly where time is being spent. You can see whether a sequential scan, a nested loop, a costly sort, or a hash operation is responsible, and you can validate whether estimated rows match actual rows to uncover poor statistics or missing indexes. Running it in your client against Cloud SQL for PostgreSQL gives direct, query-path evidence so you can make targeted fixes.</p><p><i>Add a read replica to the Cloud SQL instance</i> is for scaling read workloads and improving throughput. It does not tell you which step inside the query plan is slow, and it can even hide the underlying inefficiency by distributing load rather than fixing the cause.</p><p><i>Monitor CPU and memory charts in the Cloud Console</i> provides high level instance health and confirms symptoms like high utilization, but it does not reveal where within the query plan the time is spent. It cannot isolate the root cause in the execution path.</p><p><i>Implement a caching layer such as Memorystore in front of the query</i> may improve response time by avoiding execution for cache hits, but it does not diagnose why the query is slow. It leaves the root cause unresolved and fails when the cache is cold or invalidated.</p>",
+  "batch_id": "178",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "You are a Database Engineer and you have been tasked with diagnosing slow running queries in a Cloud SQL instance. Which of the following tools or techniques would you use to identify the root cause of the issue?",
+  "originalOptions": "A. Increase the number of nodes in the Cloud SQL instance.<br/>B. Use EXPLAIN ANALYZE with the slow-running query.<br/>C. Implement caching for the slow-running query.<br/>D. Monitor CPU and memory usage in the Google Cloud Console.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "358",
+  "tip": "<p>When a question asks how to isolate the <i>root cause</i> within a query path, choose tools that show the <i>actual plan</i> and measured timings. Distinguish plan inspection from scaling, monitoring, or caching which treat symptoms rather than revealing where the time is spent.</p>",
+  "references": [
+    "https://www.postgresql.org/docs/current/sql-explain.html",
+    "https://cloud.google.com/sql/docs/postgres/query-insights-intro",
+    "https://cloud.google.com/sql/docs/postgres/extensions#auto_explain"
+  ],
+  "url": "https://certificationation.com/questions/exam-you-have-been-tasked-with-exam-358.html",
+  "video_url": "https://certificationation.com/videos/exam-you-have-been-tasked-with-exam-358.html"
+}

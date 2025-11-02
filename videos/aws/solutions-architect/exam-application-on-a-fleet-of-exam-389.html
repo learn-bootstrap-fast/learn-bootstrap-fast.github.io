@@ -1,0 +1,130 @@
+---
+title: "A company hosts a three-tier ecommerce application on aExam"
+description: "Video for a company hosts a three-tier ecommerce application on a fleet of Amazon EC2 instances. The instances run in an Auto Scaling group behind an"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company hosts a three-tier ecommerce application on a fleet of Amazon EC2 instances. The instances run in an Auto Scaling group behind an Application Load Balancer (ALB). All ecommerce data is stored in an Amazon RDS for MariaDB Multi-AZ DB instance. The company wants to optimize customer session management during transactions. The application must store session data durably. Which solutions will meet these requirements? (Choose two.)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729aeb"
+  },
+  "quid": null,
+  "ordinal": "390",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon RDS",
+    " AWS Systems Manager",
+    " Amazon Cognito",
+    " Amazon ElastiCache for Redis",
+    " AWS Auto Scaling"
+  ],
+  "slug": "ec2-three-tier-ecommerce-aws",
+  "source": "ET",
+  "title": "AWS A Company Hosts A Three-Tier Ecommerce Application Question",
+  "meta": "AWS Exam Question: A company hosts a three-tier ecommerce app on Amazon EC2 with Auto Scaling, ALB, and RDS for MariaDB. What solutions optimize session management? Answer: Amazon ElastiCache, Amazon DynamoDB.",
+  "answer": "AD",
+  "query": "An organization operates a multi-tier web application that utilizes several Amazon EC2 instances. These instances are managed within an Auto Scaling group and sit behind an Application Load Balancer (ALB). User data is saved in an Amazon RDS for PostgreSQL Multi-AZ deployment.\n\nThe organization aims to enhance session handling for users during their interactions. The application must securely retain session data.\n\nWhich two solutions will satisfy these criteria? (Choose two.)",
+  "originalQuery": "A company hosts a three-tier ecommerce application on a fleet of Amazon EC2 instances. The instances run in an Auto Scaling group behind an Application Load Balancer (ALB). All ecommerce data is stored in an Amazon RDS for MariaDB Multi-AZ DB instance.\n\nThe company wants to optimize customer session management during transactions. The application must store session data durably.\n\nWhich solutions will meet these requirements? (Choose two.)",
+  "options": [
+    "A. Turn on the sticky sessions feature (session affinity) on the ALB.",
+    "B. Utilize a DynamoDB table for session storage.",
+    "C. Deploy an Amazon Cognito user pool to manage user session information.",
+    "D. Deploy an Amazon ElastiCache for Redis cluster to store customer session information.",
+    "E. Use AWS Systems Manager Application Manager in the application to manage user session information."
+  ],
+  "originalOptions": [
+    "A. Turn on the sticky sessions feature (session affinity) on the ALB.",
+    "B. Use an Amazon DynamoDB table to store customer session information.",
+    "C. Deploy an Amazon Cognito user pool to manage user session information.",
+    "D. Deploy an Amazon ElastiCache for Redis cluster to store customer session information.",
+    "E. Use AWS Systems Manager Application Manager in the application to manage user session information."
+  ],
+  "image": null,
+  "primaryObjective": "1: Design Secure Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "The appropriate solutions to enhance customer session management during transactions while ensuring durable storage of session data are options A and D.\n\nOption A, enabling sticky sessions (session affinity) on the Application Load Balancer (ALB), allows users to maintain their session with the same EC2 instance for the duration of their interaction. This can improve the user experience by ensuring that session data remains consistent during transactions.\n\nOption D, deploying an Amazon ElastiCache for Redis cluster, provides an in-memory data store specifically designed for fast access to session information. ElastiCache enhances performance by caching session data, which can significantly reduce latency and improve the overall efficiency of session management.\n\nFor further details on session management solutions, refer to the following link:  \nhttps://aws.amazon.com/caching/session-management/",
+    "Sure thing! Let's jazz it up a bit while keeping it professional. Here we go:\n\nThanks for your inquiry! 😊 \n\nFirst, let’s chat about session durability. Sessions are like that fleeting moment when you think you can eat just one cookie—great while it lasts, but not meant to stick around forever! 🍪 So, there’s no need for a permanent database to hold onto session data after the session wraps up. Instead, what you really need is a cache to store that session info temporarily until it’s time to say goodbye. That’s why option D is a solid choice. \n\nNow, for option A, think of it as the VIP pass to the caching party! 🎉 You need to enable sticky sessions on the Application Load Balancer to get the ball rolling with the cache. This way, your customers can enjoy a smooth shopping experience without losing their session data along the way. \n\nSo, to sum it up, go for the cache and don’t forget the sticky sessions to keep things running smoothly! 🚀",
+    "It seems like the original response didn't quite hit the mark when it comes to durability. Storing session data durably is essential, especially in an ecommerce environment where every transaction counts. You wouldn't want your customers losing their shopping carts mid-purchase, right? To ensure session data is preserved, one effective approach is to leverage a DynamoDB table, which offers high availability and durability for session storage. \n\nAlternatively, using an Amazon ElastiCache for Redis cluster could also be a clever move. While it provides fast access to session data, remember to configure it with a persistence option to ensure data isn't lost during restarts. \n\nSo, if you're looking to keep those customer sessions safe and sound while they navigate their online shopping adventures, these options are definitely worth considering. After all, nobody likes a disappearing shopping cart!",
+    "When evaluating the durability needs for session management, it's important to note that session data is not intended to persist beyond the lifespan of the session itself. Therefore, there is no need for a permanent database to store session information. Instead, a caching solution is ideal, as it allows session data to expire naturally once the session concludes. This rationale supports the selection of option D as a viable solution. Additionally, option A is essential as it enables the use of session affinity, which ensures that users are directed to the same instance throughout their session, thereby enhancing performance and experience.",
+    "I’m a bit puzzled as to why option A received the most votes! The question didn't specify anything about a fixed routing target, which means the ALB would distribute traffic randomly among the servers. Instead of relying on sticky sessions, we should focus on implementing a caching solution for session management to prevent any loss of session data. 😊"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "AD",
+      "explanation": "It is A and D. Proof is in link below.\n\nhttps://aws.amazon.com/caching/session-management/",
+      "upvotes": "28"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Thanks,\nFirst consider the durability requirement of a session. It's never meant to be kept after the session terminates, tha5 said. You wouldn't need a pamanent database for a session. You would only require a catche, so that it can expire after a while when the session has already completed. That is why D is correct. A is required in the first place in order to initialize the use of the catche.",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "This doesn't say anything about durability",
+      "upvotes": "4"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "First consider the durability requirement of a session. It's never meant to be kept after the session terminates, tha5 said. You wouldn't need a pamanent database for a session. You would only require a catche, so that it can expire after a while when the session has already completed. That is why D is correct. A is required in the first place in order to initialize the use of the catche.",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "BD",
+      "explanation": "I did not get why A is most voted? The question did not mention anything about fixed routing target so the ALB should route traffic randomly to each server. Then we just need to provide cache session management to avoid session lost issue instead of using sticky session.",
+      "upvotes": "13"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "AD (40%)",
+      "votes": "45 votes."
+    },
+    {
+      "option": "AB (29%)",
+      "votes": "33 votes."
+    },
+    {
+      "option": "BD (29%)",
+      "votes": "32 votes."
+    },
+    {
+      "option": "2%",
+      "votes": "2%"
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "",
+  "video_url": "https://certificationation.com/videos/exam-application-on-a-fleet-of-exam-389.html",
+  "url": "https://certificationation.com/questions/exam-application-on-a-fleet-of-exam-389.html"
+}

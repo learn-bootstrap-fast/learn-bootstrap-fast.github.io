@@ -1,0 +1,73 @@
+---
+title: "You have an application running on an EC2 Instance whichExam"
+description: "Video for you have an application running on an EC2 Instance which will allow users to download files from a private S3 bucket using a pre-signed URL. Before"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have an application running on an EC2 Instance which will allow users to download files from a private S3 bucket using a pre-signed URL. Before generating the URL, the application should verify the existence of the file in S3 How should the application use AWS credentials to access the S3 bucket securely?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d58df501ee1c8ade97bc"
+  },
+  "quid": "0",
+  "ordinal": "113",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "AWS shared responsibility model",
+    " Amazon S3",
+    " Amazon EC2",
+    " AWS Identity and Access Management (IAM)"
+  ],
+  "slug": "ec2-s3-application-download-files-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question113",
+  "title": "AWS You Have An Application Running On An EC2 Question",
+  "meta": "AWS Exam Question: How should the application verify file existence in S3 and use AWS credentials to access the bucket securely? Find the answer with EC2 and S3.",
+  "answer": "C",
+  "query": "A development team has deployed a web application on an EC2 instance. This application needs to generate presigned URLs for files stored in a secured S3 bucket. Before creating the URLs, the application has to confirm each file exists in the bucket. What is the recommended method for the application to obtain AWS credentials to securely access the S3 bucket?",
+  "originalQuery": "You have an application running on an EC2 Instance which will allow users to download files from a private S3 bucket using a pre-signed URL.\nBefore generating the URL, the application should verify the existence of the file in S3\nHow should the application use AWS credentials to access the S3 bucket securely?",
+  "options": [
+    "A. Utilize the AWS root account access keys embedded inside the application's configuration files.",
+    "B. Establish an IAM user with permissions to read the S3 bucket contents, start the EC2 instance as this IAM user, and extract the user credentials from the EC2 instance metadata service.",
+    "C. Create an IAM role for EC2 that allows permission to list objects in the S3 bucket. Launch the instance with that role and assume the role's credentials from the EC2 Instance metadata.",
+    "D. Generate an IAM user with list access to the S3 bucket. Store its credentials in a secured file accessible only by the application process."
+  ],
+  "originalOptions": [
+    "A. Use the AWS account access Keys. The application retrieves the credentials from the source code of the application.",
+    "B. Create an IAM user for the application with permissions that allow list access to the S3 bucket, launch the instance as the IAM user, and retrieve the IAM user’s credentials from the EC2 instance user data.",
+    "C. Create an IAM role for EC2 that allows permission to list objects in the S3 bucket. Launch the instance with that role and assume the role’s credentials from the EC2 Instance metadata.",
+    "D. Create an IAM user for the application with permissions that allow list access to the S3 bucket. The application retrieves the IAM user credentials from a temporary directory with permissions that allow read access only to the application user."
+  ],
+  "image": "",
+  "primaryObjective": "3: Continuous Improvement for Existing Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Answer - C.\nAn IAM role is similar to a user.\nIn that, it is an AWS identity with permission policies that determine what the identity can perform in AWS.\nHowever, instead of being uniquely associated with one person, a role is intended to be assumable by anyone who needs it.\nIf a user is assigned a role, access keys are created dynamically and provided to the user.\nYou can use roles to delegate access to users, applications, or services that don't normally have access to your AWS resources.\nWhenever the question presents you with a scenario where an application, user, or service wants to access another service, always prefer creating IAM Role over IAM User.\nThe reason being that when an IAM User is created for the application, it has to use the security credentials such as access key and secret key to use the AWS resource/service.\nThis has security concerns.\nWhereas, when an IAM Role is created, it has all the necessary policies attached to it.\nSo, the use of the access key and the secret key is not needed.\nThis is the preferred approach.\nOption A is incorrect because you should use the IAM Role.\nSee the explanation given above.\nOption B is incorrect because instead of IAM User, you should use the IAM Role.\nSee the explanation given above.\nOption C is CORRECT because (a) it creates the IAM Role with appropriate permissions, and (b) the application accesses the AWS Resource using that role.\nOption D is incorrect because instead of IAM User, you should use the IAM Role.\nSee the explanation given above.\nFor more information on IAM roles, please visit the below URL-\nhttp://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html\nThe correct answer for this scenario is C. Create an IAM role for EC2 that allows permission to list objects in the S3 bucket. Launch the instance with that role and assume the role's credentials from the EC2 Instance metadata.\nExplanation: In this scenario, we have an application running on an EC2 Instance which will allow users to download files from a private S3 bucket using a pre-signed URL. Before generating the URL, the application should verify the existence of the file in S3. To access the S3 bucket securely, we need to follow the best practice of using IAM Roles for EC2 instances, which provides temporary AWS security credentials that the EC2 instances can use to access AWS services. IAM roles are more secure than using access keys because they are temporary, and the AWS SDK automatically retrieves them from the EC2 Instance metadata service.\nOption A: Use the AWS account access Keys. The application retrieves the credentials from the source code of the application. This option is not recommended because storing AWS access keys in source code can lead to security vulnerabilities. If a hacker gains access to the source code, they will have access to the AWS account.\nOption B: Create an IAM user for the application with permissions that allow list access to the S3 bucket, launch the instance as the IAM user, and retrieve the IAM user's credentials from the EC2 instance user data. This option is not recommended because the application would need to retrieve the IAM user's credentials from the EC2 instance user data, which is also not secure.\nOption D: Create an IAM user for the application with permissions that allow list access to the S3 bucket. The application retrieves the IAM user credentials from a temporary directory with permissions that allow read access only to the application user. This option is not recommended because the application would need to retrieve the IAM user's credentials from a temporary directory, which is not secure. Additionally, using IAM users is not the best practice for EC2 instances.\nOption C: Create an IAM role for EC2 that allows permission to list objects in the S3 bucket. Launch the instance with that role and assume the role's credentials from the EC2 Instance metadata. This is the best practice for accessing AWS services from EC2 instances. By creating an IAM role for EC2, we can assign permissions to the role to access S3, and the EC2 instance can assume the role and access S3 securely. This method eliminates the need to manage access keys or IAM user credentials on the EC2 instance. The application can simply assume the role using the AWS SDK, and the SDK will automatically retrieve the temporary security credentials from the EC2 instance metadata service.",
+  "chatGptExplanation": "The correct answer is C because using an IAM role assigned to the EC2 instance is the best security practice for granting permissions to applications running on EC2 to access other AWS services like S3. IAM roles provide temporary, automatically rotated credentials that the EC2 instance can retrieve securely from the instance metadata service. This eliminates the need for hardcoding long-term access keys in the application, which can be a security risk if leaked or compromised.\n\nOption A is incorrect because embedding AWS account access keys in application source code poses a serious security vulnerability. If the code is exposed, it can lead to unauthorized access to AWS resources.\n\nOption B is incorrect because creating an IAM user and trying to retrieve its credentials from the instance user data is not secure. IAM user credentials are long-lived and should not be stored or passed insecurely. Additionally, EC2 instances cannot be launched “as an IAM user.”\n\nOption D is incorrect for similar reasons to B — storing IAM user access keys anywhere on the instance (even in a temporary directory) risks compromise of those credentials. Using IAM users instead of IAM roles for EC2 applications is not recommended.\n\nOverall, IAM roles for EC2 instances are the recommended AWS best practice to securely provide AWS credentials to applications running on EC2, ensuring least privilege access with automatic credential management.",
+  "video_url": "https://certificationation.com/videos/exam-an-ec2-instance-which-will-exam-068.html",
+  "url": "https://certificationation.com/questions/exam-an-ec2-instance-which-will-exam-068.html"
+}

@@ -1,0 +1,56 @@
+---
+title: "You work for a city electric scooter rental companyExam"
+description: "Video for you work for a city electric scooter rental company. Your company supplies a fleet of electric scooters to different cities around the country. These"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You work for a city electric scooter rental company. Your company supplies a fleet of electric scooters to different cities around the country. These scooters need to be managed as far as their location, their rental miles, their need for maintenance, etc. The company accumulates hundreds of data points on each scooter every day. You are on the machine learning team of your company, where you have been assigned the job of building a machine learning model to track each scooter and decide when they are ready for maintenance. One would assume the decision for maintenance would be based predominantly on miles accumulated. Since you have so many features captured for a given scooter, you have decided you need to find the most predictive features in your model to avoid low model performance due to collinearity. You have built your model in SageMaker using the built-in XGBoost algorithm. Using the XGBoost Python API package, which type of booster and which API call would you use to select the most predictive features based on the total gain across all splits in which the feature is used?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d6ef7742293cac494b15"
+  },
+  "answer": "C",
+  "certification": "AWS Machine Learning Specialty",
+  "certificationKey": "AWSMLS",
+  "difficulty": "0",
+  "image": "",
+  "needsWork": "false",
+  "ordinal": "109",
+  "originalExplanation": "E.\nF.\nAnswer: C.\nOption A is incorrect.\nTo get the features based on the total gain across all splits in which the feature is used, you need to use the gbtree booster and call get_score, passing the parameter importance_type set to total_gain.\nFeature importance is defined only for the base learner, or tree boosters.\nFeature importance is not defined for linear learners.\nThe importance_type parameter is defined for the get_score API call, not the get_fscore API call.\nOption B is incorrect.\nTo get the features based on the total gain across all splits in which the feature is used, you need to use the gbtree booster and call get_score, passing the parameter importance_type set to total_gain.\nFeature importance is defined only for the base learner, or tree boosters.\nFeature importance is not defined for linear learners.\nThe importance_type parameter needs to be set to total_gain to get the total gain across all splits in which the feature is used.\nThe importance_type parameter of gain gives you the average gain across all splits in which the feature is used.\nOption C is correct.To get the features based on the total gain across all splits in which the feature is used, you need to use the gbtree booster and call get_score, passing the parameter importance_type set to total_gain.\nOption D is incorrect.\nTo get the features based on the total gain across all splits in which the feature is used, you need to use the gbtree booster and call get_score, passing the parameter importance_type set to total_gain.\nThe importance_type parameter needs to be set to total_gain to get the total gain across all splits in which the feature is used.\nThe importance_type parameter of gain gives you the average gain across all splits in which the feature is used.\nOption E is incorrect.\nTo get the features based on the total gain across all splits in which the feature is used, you need to use the gbtree booster and call get_score, passing the parameter importance_type set to total_gain.\nFeature importance is defined only for the base learner, or tree boosters.\nFeature importance is not defined for dart boosters.\nThe importance_type parameter needs to be set to total_gain to get the total gain across all splits in which the feature is used.\nThe importance_type parameter of gain gives you the average gain across all splits in which the feature is used.\nOption F is incorrect.\nTo get the features based on the total gain across all splits in which the feature is used, you need to use the gbtree booster and call get_score, passing the parameter importance_type set to total_gain.\nFeature importance is defined only for the base learner, or tree boosters.\nFeature importance is not defined for dart boosters.\nReference:\nPlease see the Amazon SageMaker developer guide titled XGBoost Algorithm, the Amazon SageMaker developer guide titled XGBoost Hyperparameters, and the XGBoost Python API Reference.\nThe correct answer is C. booster = gbtree using the get_score with importance_type parameter set to total_gain.\nExplanation:\nXGBoost is a popular algorithm for building machine learning models, particularly for tabular data. It is an ensemble learning method that combines multiple decision trees to make predictions. There are two types of boosters in XGBoost: gbtree and gblinear. Gbtree is a tree-based booster, while gblinear is a linear booster.\nTo select the most predictive features, we need to calculate the feature importance score. Feature importance indicates how much a feature contributes to the model's prediction. In XGBoost, feature importance can be calculated based on either gain or cover.\nGain: The total gain across all splits in which the feature is used. Cover: The number of times a feature is used to split the data across all trees.\nTo calculate the feature importance score, we can use the get_score() or get_fscore() function in the XGBoost Python API package. The get_score() function returns a dictionary of feature importance scores, while the get_fscore() function returns a dictionary of the number of times each feature is used to split the data.\nThe importance_type parameter specifies whether to use gain or cover to calculate the feature importance score. In this case, we need to use gain, so we set importance_type to total_gain.\nTherefore, the correct API call to select the most predictive features based on the total gain across all splits in which the feature is used is:\npythonCopy codebooster = 'gbtree' importance_type = 'total_gain' bst.get_score(importance_type=importance_type) \nOption A (booster = gblinear using the get_fscore with importance_type parameter set to total_gain) is incorrect because gblinear is a linear booster and does not support the total_gain importance_type. Instead, gblinear uses cover.\nOption B (booster = gblinear using the get_score with importance_type parameter set to gain) is incorrect because gblinear does not support gain importance_type.\nOption D (booster = gbtree using the get_fscore with importance_type parameter set to gain) is incorrect because it calculates feature importance based on the number of times each feature is used to split the data, not the total gain across all splits.\nOption E (booster = dart using the get_fscore with importance_type parameter set to gain) is incorrect because it calculates feature importance based on the number of times each feature is used to split the data, not the total gain across all splits.\nOption F (booster = dart using the get_score with importance_type parameter set to total_gain) is incorrect because it is not clear whether the dart booster supports the total_gain importance_type. Additionally, the question specifies that we are using the gbtree booster, not the dart booster.",
+  "originalOptions": [
+    "A. booster = gblinear using the get_fscore with importance_type parameter set to total_gain",
+    "B. booster = gblinear using the get_score with importance_type parameter set to gain",
+    "C. booster = gbtree using the get_score with importance_type parameter set to total_gain",
+    "D. booster = gbtree using the get_fscore with importance_type parameter set to gain",
+    "E. booster = dart using the get_fscore with importance_type parameter set to gain",
+    "F. booster = dart using the get_score with importance_type parameter set to total_gain."
+  ],
+  "originalQuery": "You work for a city electric scooter rental company.\nYour company supplies a fleet of electric scooters to different cities around the country.\nThese scooters need to be managed as far as their location, their rental miles, their need for maintenance, etc.\nThe company accumulates hundreds of data points on each scooter every day.\nYou are on the machine learning team of your company, where you have been assigned the job of building a machine learning model to track each scooter and decide when they are ready for maintenance.\nOne would assume the decision for maintenance would be based predominantly on miles accumulated.\nSince you have so many features captured for a given scooter, you have decided you need to find the most predictive features in your model to avoid low model performance due to collinearity. You have built your model in SageMaker using the built-in XGBoost algorithm.\nUsing the XGBoost Python API package, which type of booster and which API call would you use to select the most predictive features based on the total gain across all splits in which the feature is used?",
+  "primaryObjective": "",
+  "quid": "0",
+  "source": "https://www.exam-answer.com/amazon/mls-c01/question109",
+  "video_url": "https://certificationation.com/videos/exam-rental-company-your-company-supplies-exam-109.html",
+  "url": "https://certificationation.com/questions/exam-rental-company-your-company-supplies-exam-109.html"
+}

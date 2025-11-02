@@ -1,0 +1,126 @@
+---
+title: "A company is implementing a new business applicationExam"
+description: "Video for a company is implementing a new business application. The application runs on two Amazon EC2 instances and uses an Amazon S3 bucket for document"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company is implementing a new business application. The application runs on two Amazon EC2 instances and uses an Amazon S3 bucket for document storage. A solutions architect needs to ensure that the EC2 instances can access the S3 bucket. What should the solutions architect do to meet this requirement?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729976"
+  },
+  "quid": null,
+  "ordinal": "17",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon S3",
+    " Amazon EC2",
+    " AWS Identity and Access Management (IAM)"
+  ],
+  "slug": "ec2-s3-bucket-access-requirement-aws",
+  "source": "ET",
+  "title": "AWS A Company Is Implementing A New Business Question",
+  "meta": "AWS Exam Question: A company is implementing a business application using Amazon EC2 and S3. What should the architect do to ensure EC2 access to S3? Answer: IAM roles.",
+  "answer": "A",
+  "query": "A startup is launching a new mobile application that operates on a set of three Amazon EC2 instances and utilizes an Amazon S3 bucket for image storage. The solutions architect's responsibility is to ensure the EC2 instances can access the S3 bucket. What approach should the solutions architect take to achieve this?",
+  "originalQuery": "A company is implementing a new business application. The application runs on two Amazon EC2 instances and uses an Amazon S3 bucket for document storage. A solutions architect needs to ensure that the EC2 instances can access the S3 bucket.\nWhat should the solutions architect do to meet this requirement?",
+  "options": [
+    "A. Craft an IAM role to allow access to the S3 bucket and then assign this role to the EC2 units.",
+    "B. Develop an IAM policy which permits access to the S3 bucket and then dedicate this policy to the EC2 units.",
+    "C. Set up an IAM group to permit access to the S3 bucket and then link this group with the EC2 units.",
+    "D. Create an IAM user to enable access to the S3 bucket and link this user account with the EC2 units."
+  ],
+  "originalOptions": [
+    "A. Create an IAM role that grants access to the S3 bucket. Attach the role to the EC2 instances.",
+    "B. Create an IAM policy that grants access to the S3 bucket. Attach the policy to the EC2 instances.",
+    "C. Create an IAM group that grants access to the S3 bucket. Attach the group to the EC2 instances.",
+    "D. Create an IAM user that grants access to the S3 bucket. Attach the user account to the EC2 instances."
+  ],
+  "image": null,
+  "primaryObjective": "1: Design Secure Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "It is essential to associate IAM roles with EC2 instances to grant them the necessary permissions to access AWS resources securely. IAM roles provide a way to assign permissions without embedding access keys directly in the application or instance. By attaching an IAM role to an EC2 instance, the instance can assume the role and obtain temporary security credentials, allowing it to interact with services such as Amazon S3. This method enhances security and simplifies credential management, as AWS automatically handles the rotation of temporary credentials.",
+    "The winning ticket for this scenario is option A: whip up an IAM role that grants access to the S3 bucket and then attach that role to the EC2 instances. 🎉 \n\nSo, what’s an IAM role, you ask? Think of it as a VIP pass for AWS resources! It allows you to delegate access to various services without having to hand out a bunch of secret passwords. By creating this IAM role and linking it to your EC2 instances, you’re essentially saying, “Hey, my EC2 buddies, you can go ahead and dive into that S3 bucket and grab all the documents you need!” 📂✨\n\nNow, let’s clear up some confusion about the other options. Option B isn’t quite right because IAM policies are more like permission slips for IAM users or groups — not for EC2 instances. \n\nAnd Option C? Nope! IAM groups are like your book club, where you gather IAM users and policies together; they don’t get to grant access to resources on their own. \n\nLastly, Option D misses the mark as well. An IAM user is designed for representing a person or service that interacts with AWS resources, not for giving access to resources directly. \n\nSo, in this cloud circus, the role is your star performer! 🌟",
+    "The only viable option in this scenario is to utilize an IAM role. Why, you ask? Well, policies can only be assigned to IAM groups or users, and let’s face it—IAM groups can't be directly attached to resources. Plus, relying on IAM user credentials for access is a risky gamble that just isn’t worth the potential headaches. So, stick with an IAM role for a secure and straightforward solution to grant your EC2 instances access to the S3 bucket.",
+    "Absolutely! Here’s an enhanced and polished version of your response that maintains the same core message while adding a touch of positivity and professionalism:\n\n---\n\nAbsolutely! The best approach is to create an IAM role specifically designed for the EC2 instances to enable access to the S3 bucket. This method is highly effective for several reasons:\n\n**IAM Role:** These roles are intended to be assumed by AWS services like EC2 instances. By generating an IAM role with the appropriate permissions for S3 access and associating it with your EC2 instances, you facilitate secure and seamless access without the need for long-term credential management. This promotes a robust security posture.\n\n**IAM Policy:** While policies are crucial for defining permissions, they must be attached to roles or users. It's important to note that you cannot directly attach a policy to EC2 instances.\n\n**IAM Group:** Groups are designed for managing permissions across multiple users rather than instances, making them unsuitable for this scenario.\n\n**IAM User:** IAM users are meant for individual people or applications, which is not applicable for EC2 instances.\n\nBy leveraging an IAM role, you align with AWS best practices for security and ease of management. If you have any further questions or need additional clarification, don't hesitate to reach out!",
+    "Using an IAM role in conjunction with your EC2 instances is the perfect match to achieve seamless access to your S3 bucket! 🌟 This dynamic duo ensures that your instances can effortlessly interact with the bucket while keeping your security policies intact. It's a win-win for efficiency and safety!"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "A",
+      "explanation": "Always remember that you should associate IAM roles to EC2 instances",
+      "upvotes": "98"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "The correct option to meet this requirement is A: Create an IAM role that grants access to the S3 bucket and attach the role to the EC2 instances.\n\nAn IAM role is an AWS resource that allows you to delegate access to AWS resources and services. You can create an IAM role that grants access to the S3 bucket and then attach the role to the EC2 instances. This will allow the EC2 instances to access the S3 bucket and the documents stored within it.\n\nOption B is incorrect because an IAM policy is used to define permissions for an IAM user or group, not for an EC2 instance.\n\nOption C is incorrect because an IAM group is used to group together IAM users and policies, not to grant access to resources.\n\nOption D is incorrect because an IAM user is used to represent a person or service that interacts with AWS resources, not to grant access to resources.",
+      "upvotes": "65"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "Only IAM role is suitable here as policies are added to IAM groups or users. Moreover, IAM groups cannot be attached to a resource and attaching IAM user credentials to a IAM role in risky and thereby not suitable.",
+      "upvotes": "1"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "Ans. A\n\nHere's why:\n\nIAM Role: Roles are designed to be assumed by entities like EC2 instances. By creating an IAM role with the necessary permissions to access the S3 bucket and attaching this role to the EC2 instances, you ensure that the instances can securely access the S3 bucket without needing to manage long-term credentials.\nIAM Policy: While policies define permissions, they need to be attached to roles or users. Attaching a policy directly to EC2 instances is not possible.\nIAM Group: Groups are used to manage permissions for multiple users, not instances.\nIAM User: Users are intended for individual people or applications, not for EC2 instances.\nBy using an IAM role, you follow AWS best practices for security and manageability. If you have any more questions or need further clarification, feel free to ask!",
+      "upvotes": "1"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "IAM Role + EC2 instance = go-to solution",
+      "upvotes": "1"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "A (100%)",
+      "votes": "205 votes."
+    },
+    {
+      "option": "0%",
+      "votes": "1 votes."
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is A because creating an IAM role allows EC2 instances to securely access the S3 bucket without managing long-term credentials. Roles are specifically designed for services like EC2 to assume a role and gain specified permissions. In contrast:\n\n- Option B is incorrect because you cannot attach an IAM policy directly to an EC2 instance; policies must be associated with users or roles.\n- Option C is incorrect because IAM groups are meant for user management and cannot be attached to EC2 instances.\n- Option D is incorrect because IAM users are meant for human users or applications, not for services like EC2 instances, which should use roles.",
+  "video_url": "https://certificationation.com/videos/exam-business-application-the-application-runs-exam-017.html",
+  "url": "https://certificationation.com/questions/exam-business-application-the-application-runs-exam-017.html"
+}

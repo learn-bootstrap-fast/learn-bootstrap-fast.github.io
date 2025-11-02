@@ -1,0 +1,81 @@
+---
+title: "Database performance for your company's Cloud SQLExam"
+description: "Video for database performance for your company's Cloud SQL instance has been degrading, and you've been tasked with setting up a system to alert the team of"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Database performance for your company's Cloud SQL instance has been degrading, and you've been tasked with setting up a system to alert the team of long-running queries. What should you do to detect and alert on queries that run longer than a threshold?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Orion Outfitters operates a Cloud SQL for MySQL instance that has begun to slow during peak traffic. You need an automatic way to detect and notify the team whenever any query exceeds three seconds, and you prefer to use native Google Cloud features with minimal custom code. What should you implement to satisfy this requirement?",
+  "options": [
+    {
+      "text": "Instrument the application to publish a custom metric of query durations to Cloud Monitoring and set an alert when the metric is above three seconds",
+      "explanation": "This approach depends on code changes in the application to report timing and uses a standard alerting policy",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable the slow query log in Cloud SQL for MySQL and set long_query_time to three seconds, then create a metric from logs in Cloud Monitoring that filters slow query entries and configure an alerting policy to notify when matches occur",
+      "explanation": "This uses the native slow query log and a metric derived from logs so that an alert can fire when a slow query is written to Cloud Logging",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Route Cloud SQL logs to Pub Sub and process them with a Dataflow job that identifies long running statements and publishes notifications",
+      "explanation": "This designs a custom streaming pipeline for log parsing and routing alerts based on query durations",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a Cloud Function triggered by Cloud Scheduler to call the Cloud SQL Admin API every minute and scan for long running connections and send an alert",
+      "explanation": "This polls the instance on a schedule and uses custom code to check for long operations and notify the team",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Enable the slow query log in Cloud SQL for MySQL and set long_query_time to three seconds, then create a metric from logs in Cloud Monitoring that filters slow query entries and configure an alerting policy to notify when matches occur</b>.</p><p>This approach turns on the built in <b>slow query log</b> so every statement exceeding the threshold is written to Cloud Logging. By setting <b>long_query_time</b> to three seconds you get an authoritative record of slow statements at the database level without modifying applications. You can create a logs based metric that filters the mysql slow entries and then attach a Cloud Monitoring alerting policy so notifications are sent automatically when matches occur. This uses native services and keeps custom code to a minimum.</p><p><i>Instrument the application to publish a custom metric of query durations to Cloud Monitoring and set an alert when the metric is above three seconds</i> is not ideal because it requires code changes in every caller and can miss queries from tools or services that do not use your instrumentation. The database already emits the needed signals in its logs.</p><p><i>Route Cloud SQL logs to Pub Sub and process them with a Dataflow job that identifies long running statements and publishes notifications</i> adds unnecessary complexity and ongoing code to maintain. Cloud Logging and Cloud Monitoring can filter logs and alert directly so a custom pipeline is not needed.</p><p><i>Create a Cloud Function triggered by Cloud Scheduler to call the Cloud SQL Admin API every minute and scan for long running connections and send an alert</i> will not reliably detect per query execution times and the Admin API does not expose precise query duration details. Polling each minute is also too coarse for a three second threshold.</p>",
+  "batch_id": "235",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "Database performance for your company's Cloud SQL instance has been degrading, and you've been tasked with setting up a system to alert the team of long-running queries. What should you do to detect and alert on queries that run longer than a threshold?",
+  "originalOptions": "A. Implement a custom metric in Cloud Monitoring for query durations and set an alert for queries exceeding the threshold.<br/>B. Export the query logs to Cloud Storage every hour and analyze them with a Dataflow job for long-running queries.<br/>C. Create a Cloud Function to check Cloud SQL's query logs every minute for long-running queries.<br/>D. Set a log-based alert in Cloud Monitoring for the long_query_time flag in the MySQL logs.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "161",
+  "tip": "<p>When the requirement is to detect conditions found in logs prefer <i>native</i> Cloud Logging filters with <i>logs based metrics</i> or <i>log based alerts</i> before building custom pipelines or adding application instrumentation.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/flags",
+    "https://cloud.google.com/sql/docs/mysql/monitor-logging",
+    "https://cloud.google.com/logging/docs/logs-based-metrics",
+    "https://cloud.google.com/monitoring/alerts",
+    "https://cloud.google.com/logging/docs/alerting/log-based-alerts"
+  ],
+  "url": "https://certificationation.com/questions/exam-company-s-cloud-sql-instance-has-exam-161.html",
+  "video_url": "https://certificationation.com/videos/exam-company-s-cloud-sql-instance-has-exam-161.html"
+}

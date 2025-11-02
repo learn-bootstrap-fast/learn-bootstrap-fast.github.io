@@ -1,0 +1,43 @@
+---
+layout: question
+title: A company is developing an application that interacts AWS Question
+description: A company is developing an application that interacts with a DynamoDB table. There is now a security mandate that all data must be encrypted at rest. How can you achieve this requirement?
+heading: AWS Cloud Practitoner Exam Question Answer
+---
+
+{
+    "marked": false,
+    "answer": "<p>To comply with the security requirement of encrypting all data at rest in DynamoDB, you can leverage built-in server-side encryption mechanisms provided by AWS. The two correct options are:<br><br><b>Utilize encryption managed by AWS (such as an Amazon-owned encryption key)<\/b> and <b>Implement encryption using an AWS Key Management Service (KMS) managed key<\/b>. These choices enable DynamoDB to perform server-side encryption automatically, protecting your data as it's stored and removing the burden of data key management from your development team.<br><br>The option <i>Apply encryption with your own (client-side) keys before storing the data<\/i> refers to client-side encryption, which is NOT required when DynamoDB's server-side encryption is enabled. While client-side encryption is possible, it is not necessary to simply meet the requirement of encryption at rest and adds additional complexity.<br><br>The other alternative, <i>Modify your application to call the AWS SDK for decryption on read operations<\/i>, confuses data access with data protection. DynamoDB handles encryption and decryption transparently with server-side encryption, so there is no need for your application to explicitly decrypt data retrieved from the database.<br><br><b>Tip:<\/b> For most use cases, simply enabling server-side encryption in DynamoDB\u2014either with the default AWS owned key or an AWS managed (KMS) key\u2014will fully satisfy mandates for encrypting data at rest with minimal overhead or code changes.<\/p>",
+    "query": "<p>Your organization is building an application that interfaces with a DynamoDB table. Due to new security policies, all stored data must now be encrypted while at rest.<br><br>Which approaches allow you to meet this encryption requirement? (Choose TWO)<\/p>",
+    "original_oid": "6793d7bd645874102a9a1c50",
+    "options": [
+        {
+            "correct": true,
+            "text": "Utilize encryption managed by AWS (such as an Amazon-owned encryption key).",
+            "selected": false
+        },
+        {
+            "correct": true,
+            "text": "Implement encryption using an AWS Key Management Service (KMS) managed key.",
+            "selected": false
+        },
+        {
+            "correct": false,
+            "text": "Apply encryption with your own (client-side) keys before storing the data.",
+            "selected": false
+        },
+        {
+            "correct": false,
+            "text": "Modify your application to call the AWS SDK for decryption on read operations.",
+            "selected": false
+        }
+    ],
+    "source": "https://www.exam-answer.com/amazon/dva-c01/question208",
+    "originalQuery": "A company is developing an application that interacts with a DynamoDB table.\nThere is now a security mandate that all data must be encrypted at rest.\nHow can you achieve this requirement? (Select TWO)",
+    "originalOptions": "A. Enable encryption using AWS owned key.|B. Enable encryption using AWS managed key.|C. Enable encryption using client keys.|D. Enable your application to use the SDK to decrypt the data."
+}
+
+AWS Question , Cloud Practitioner, AWS Exam, AWS Certified Exam, Practitioner Exam, Exam answer, AWS Question
+
+AWS Cloud Practitioner Question
+

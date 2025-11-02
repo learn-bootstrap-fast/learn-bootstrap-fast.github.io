@@ -1,0 +1,89 @@
+---
+title: "You are a Database Engineer designing a disasterExam"
+description: "Video for you are a Database Engineer designing a disaster recovery (DR) strategy for a multi-regional e-commerce application hosted on Google Cloud. The"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are a Database Engineer designing a disaster recovery (DR) strategy for a multi-regional e-commerce application hosted on Google Cloud. The company has a strong requirement for low Recovery Time Objective (RTO) and Recovery Point Objective (RPO). Which of the following strategies would be most appropriate? (Choose two)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A travel booking startup runs a mission critical transactional service across two continents on Google Cloud and executives mandate an RTO under 5 minutes and an RPO under 1 minute for the primary database during a regional outage. Which approaches should you implement to fulfill these objectives?",
+  "options": [
+    {
+      "text": "Enable cross-region replicas for Cloud SQL and plan promotion on failure",
+      "explanation": "This sets up an asynchronous replica in another region and you can promote it if the primary becomes unavailable.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Schedule regional Persistent Disk snapshots and plan instance restores",
+      "explanation": "This creates point in time disk images on a schedule and recovery requires rebuilding the environment from a snapshot.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure Cloud Spanner as a multi-region instance with synchronous replication and automatic failover",
+      "explanation": "This distributes data across regions with synchronous writes and the service performs automatic failover to maintain continuity.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Store regular database backups in a multi-region Cloud Storage bucket and restore when needed",
+      "explanation": "This keeps durable backups in Cloud Storage and restores are performed from the stored copies during incidents.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use a single region Cloud Bigtable deployment and rely on manual exports",
+      "explanation": "This keeps data in one region and manual exports occur infrequently which increases exposure to regional failures.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct options are <b>Configure Cloud Spanner as a multi-region instance with synchronous replication and automatic failover</b> and <b>Enable cross-region replicas for Cloud SQL and plan promotion on failure</b>.</p><p>The first choice uses <b>Cloud Spanner</b> multi region replication where writes commit after a quorum across regions and failover is automatic. This design delivers an effectively zero recovery point and a very short recovery time during a regional outage which satisfies an RPO under one minute and an RTO under five minutes for a mission critical transactional workload.</p><p>The second choice relies on <b>Cloud SQL</b> <b>cross-region replicas</b> that receive changes from the primary and can be promoted during a regional failure. With careful monitoring, low replication lag, and automation for promotion and traffic cutover, <b>Cloud SQL</b> <b>cross-region replicas</b> can meet the RPO under one minute and the RTO under five minutes for many transactional deployments.</p><p><i>Schedule regional Persistent Disk snapshots and plan instance restores</i> is too slow and too coarse for these goals. Snapshots are periodic so the recovery point is tied to the snapshot interval and restores commonly exceed five minutes which fails both objectives.</p><p><i>Store regular database backups in a multi-region Cloud Storage bucket and restore when needed</i> is a backup strategy rather than a high availability design. The recovery point depends on the last backup which is usually far longer than one minute and the restore time typically exceeds five minutes.</p><p><i>Use a single region Cloud Bigtable deployment and rely on manual exports</i> does not survive a regional outage and it is not a relational transactional database for this scenario. Manual exports and imports also produce long recovery points and recovery times.</p>",
+  "batch_id": "200",
+  "answerCode": "1,3",
+  "type": "multi-select",
+  "originalQuery": "You are a Database Engineer designing a disaster recovery (DR) strategy for a multi-regional e-commerce application hosted on Google Cloud. The company has a strong requirement for low Recovery Time Objective (RTO) and Recovery Point Objective (RPO). Which of the following strategies would be most appropriate? (Choose two)",
+  "originalOptions": "A. Implement Google Cloud Spanner multi-regional configurations for automatic synchronous replication.<br/>B. Use Google Cloud SQL with cross-region replication.<br/>C. Utilize regional persistent disks with automatic snapshots for fast recovery.<br/>D. Use Cloud Storage multi-regional bucket to store regular database backups and perform restore operations when required.<br/>E. Use a single regional Cloud Bigtable instance for data storage and perform manual backups.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "241",
+  "tip": "<p>Map the required <i>RPO</i> and <i>RTO</i> to the data protection mechanism. Synchronous multi region replication supports very low RPO and fast failover while backups and snapshots imply longer restore times and larger data loss windows.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/replication",
+    "https://cloud.google.com/spanner/docs/instance-configurations",
+    "https://cloud.google.com/sql/docs/mysql/replication/about-replicas",
+    "https://cloud.google.com/sql/docs/mysql/replication/promote-replica",
+    "https://cloud.google.com/compute/docs/disks/backup-persistent-disks",
+    "https://cloud.google.com/architecture/dr-scenarios-planning-guide",
+    "https://cloud.google.com/bigtable/docs/replication-overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-disaster-recovery-dr-strategy-for-exam-241.html",
+  "video_url": "https://certificationation.com/videos/exam-disaster-recovery-dr-strategy-for-exam-241.html"
+}

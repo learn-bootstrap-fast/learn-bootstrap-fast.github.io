@@ -1,0 +1,127 @@
+---
+title: "A company hosts an application on multiple Amazon EC2Exam"
+description: "Video for a company hosts an application on multiple Amazon EC2 instances. The application processes messages from an Amazon SQS queue, writes to an Amazon RDS"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company hosts an application on multiple Amazon EC2 instances. The application processes messages from an Amazon SQS queue, writes to an Amazon RDS table, and deletes the message from the queue. Occasional duplicate records are found in the RDS table. The SQS queue does not contain any duplicate messages. What should a solutions architect do to ensure messages are being processed once only?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f7299a8"
+  },
+  "quid": null,
+  "ordinal": "67",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon RDS",
+    " Amazon SQS",
+    " AWS Lambda",
+    " AWS IAM Identity Center (AWS Single Sign-On)"
+  ],
+  "slug": "ec2-application-processes-messages-aws",
+  "source": "ET",
+  "title": "AWS A Company Hosts An Application Question",
+  "meta": "AWS Exam Question: A company hosts an app on EC2 instances, processes messages from SQS, and writes to RDS. What can ensure messages are processed once only? Answer: DynamoDB.",
+  "answer": "D",
+  "query": "An organization hosts a multi-instance application on Amazon EC2. This application pulls messages from an Amazon SQS queue, logs data into an Amazon RDS table, and subsequently removes those messages from the queue. However, duplicate records appear in the RDS table without any duplication in the SQS queue. What action should a solutions architect undertake to ensure that messages are handled only once?",
+  "originalQuery": "A company hosts an application on multiple Amazon EC2 instances. The application processes messages from an Amazon SQS queue, writes to an Amazon RDS table, and deletes the message from the queue. Occasional duplicate records are found in the RDS table. The SQS queue does not contain any duplicate messages.\nWhat should a solutions architect do to ensure messages are being processed once only?",
+  "options": [
+    "A. The CreateQueue API call should be employed to formulate a fresh queue.",
+    "B. It is necessary to use the AddPermission API call for suitable permissions.",
+    "C. Implement the ReceiveMessage API call to define a suitable wait period.",
+    "D. Use the ChangeMessageVisibility API call to increase the visibility timeout."
+  ],
+  "originalOptions": [
+    "A. Use the CreateQueue API call to create a new queue.",
+    "B. Use the AddPermission API call to add appropriate permissions.",
+    "C. Use the ReceiveMessage API call to set an appropriate wait time.",
+    "D. Use the ChangeMessageVisibility API call to increase the visibility timeout."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "In a scenario involving Amazon SQS with multiple consumers, it is possible for one consumer to pick up a message and begin processing it while another consumer simultaneously retrieves the same message. This can result in duplicate entries being created in the database. To prevent this issue, the message should be made invisible to other consumers as soon as it is retrieved for processing. Once the processing is complete, the message can then be deleted from the queue. The visibility timeout should be set appropriately to accommodate the maximum expected processing time, ensuring that no other consumers can access the message during this period. This strategy effectively mitigates the risk of duplicate records in the database.",
+    "To sprinkle a little magic on your message processing, let’s talk about the Visibility Timeout in SQS! 🎩✨ This nifty feature gives a message a chance to hide away for a while, ensuring that only the first consumer who calls the ReceiveMessage API can munch on it. 🍽️ If you need to adjust this hiding time, you can use the ChangeMessageVisibility API to change the value. Think of it like giving your message a little extra time to chill out before anyone else can take a bite! 🕒🍕",
+    "To guarantee that messages are processed just once (because, let’s face it, duplicates are so last season), a solutions architect should utilize the ChangeMessageVisibility API to extend the visibility timeout. \n\nThe visibility timeout is crucial; it dictates how long a message remains hidden from other consumers while it’s being worked on. If the processing drags on longer than the timeout, the message reappears in the queue and is ripe for another round of processing. By boosting the visibility timeout, the architect ensures that the message won’t pop back up until it’s fully processed and ready to be safely deleted from the queue.\n\nCreating a new queue with the CreateQueue API (Option A) won’t do a thing to solve the duplicate processing conundrum. \n\nAdding permissions via the AddPermission API (Option B) is completely off-topic for this particular mess. \n\nAnd let’s not even get started on the ReceiveMessage API (Option C)—setting a wait time isn’t going to help with the problem at hand either.",
+    "To ensure that messages are processed only once, it’s essential to address the occasional duplicate records found in the RDS table. This situation indicates that while the SQS queue is functioning correctly and does not contain duplicates, the message processing logic might need refinement. \n\nOne effective approach is to utilize the ChangeMessageVisibility API call to extend the visibility timeout for messages being processed. By doing so, you allow more time for the application to complete processing a message before it becomes visible again in the queue. This adjustment helps prevent scenarios where the same message is retrieved and processed multiple times, ultimately reducing the possibility of duplicate entries in the RDS table. \n\nImplementing this solution not only enhances the reliability of your application but also ensures a cleaner and more accurate data flow within your database. It's a proactive step towards improving data integrity and optimizing the overall message processing workflow!",
+    "Oh, what a delightful situation we have here! 🌈 Let’s sprinkle some clarity into this mix!\n\nThe suggestion to use the AddPermission API call isn’t quite on point for tackling the pesky duplicate records dilemma in the RDS table. This option focuses on granting access permissions for the SQS queue, which, while important in its own right, doesn’t help us solve the mystery of those duplicate entries.\n\nSimilarly, the idea of utilizing the ReceiveMessage API call to adjust the wait time also misses the mark. This option is all about determining how long the call should patiently wait for new messages to appear in the SQS queue before it decides to return an empty response. Unfortunately, this doesn’t address the underlying issue of those unwanted duplicate records in the RDS table.\n\nIn summary, while both options have their own significance, they don't quite hit the nail on the head when it comes to ensuring each message is processed just once! Let's keep the focus on finding that perfect solution! ✨"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "D",
+      "explanation": "In case of SQS - multi-consumers if one consumer has already picked the message and is processing, in meantime other consumer can pick it up and process the message there by two copies are added at the end. To avoid this the message is made invisible from the time its picked and deleted after processing. This visibility timeout is increased according to max time taken to process the message",
+      "upvotes": "53"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "To add to this \"The VisibilityTimeout in SQS is a time frame that the message can be hidden so that no others can consume it except the first consumer who calls the ReceiveMessageAPI.\" The API ChangeMesssageVisibility changes this value.",
+      "upvotes": "20"
+    },
+    {
+      "selectedAnswer": "D",
+      "explanation": "To ensure that messages are being processed only once, a solutions architect should use the ChangeMessageVisibility API call to increase the visibility timeout which is Option D.\n\nThe visibility timeout determines the amount of time that a message received from an SQS queue is hidden from other consumers while the message is being processed. If the processing of a message takes longer than the visibility timeout, the message will become visible to other consumers and may be processed again. By increasing the visibility timeout, the solutions architect can ensure that the message is not made visible to other consumers until the processing is complete and the message can be safely deleted from the queue.\n\nOption A (Use the CreateQueue API call to create a new queue) would not address the issue of duplicate message processing.\n\nOption B (Use the AddPermission API call to add appropriate permissions) is not relevant to this issue.\n\nOption C (Use the ReceiveMessage API call to set an appropriate wait time) is also not relevant to this issue.",
+      "upvotes": "17"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "not relevant to this issue. ??? what is added value",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Option B (Use the AddPermission API call to add appropriate permissions) is not relevant to this issue because it deals with setting permissions for accessing an SQS queue, which is not related to preventing duplicate records in the RDS table.\n\nOption C (Use the ReceiveMessage API call to set an appropriate wait time) is not relevant to this issue because it is related to configuring how long the ReceiveMessage API call should wait for new messages to arrive in the SQS queue before returning an empty response. It does not address the issue of duplicate records in the RDS table.",
+      "upvotes": "7"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "D (100%)",
+      "votes": "90 votes."
+    },
+    {
+      "option": "C (25%)",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is option D, which suggests using the ChangeMessageVisibility API call to increase the visibility timeout. This is essential because when messages are processed by multiple consumers, if one consumer picks a message and the processing time exceeds the visibility timeout, other consumers can also pick the same message, leading to duplication. By increasing the visibility timeout, the processing consumer can complete its work without the message becoming visible to others, thus preventing duplication. Option A is incorrect because creating a new queue does not solve the duplication issue. Option B is incorrect as it deals with permissions and does not affect message processing. Option C is also incorrect because adjusting the wait time for receiving messages does not address the issue of duplicate records caused by overlapping processing of the same message.",
+  "video_url": "https://certificationation.com/videos/exam-multiple-amazon-ec2-instances-the-exam-067.html",
+  "url": "https://certificationation.com/questions/exam-multiple-amazon-ec2-instances-the-exam-067.html"
+}

@@ -1,0 +1,79 @@
+---
+title: "A multinational company is using Datastore to storeExam"
+description: "Video for a multinational company is using Datastore to store customer information and sales data. The company needs to ensure high availability and disaster"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A multinational company is using Datastore to store customer information and sales data. The company needs to ensure high availability and disaster recovery while maintaining low-latency read and write operations. The company also needs to comply with regional data residency requirements. Which of the following options should the company choose to best meet their requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "An online insurer named Alpine Assurance stores customer profiles and policy transactions in Datastore. The platform team targets 99.99 percent availability with strong disaster recovery, and interactive workloads require read and write latency under 20 milliseconds. Regulations require that all records remain within a single Google Cloud region in one country. Which Datastore deployment approach best satisfies these needs?",
+  "options": [
+    {
+      "text": "Datastore in a multi-region location that spans continents",
+      "explanation": "A cross continent multi-region distributes data across very distant regions to maximize durability and geographic redundancy",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Datastore in a regional location with one primary node and multiple read replicas in that region",
+      "explanation": "This presumes a primary plus read replica pattern inside the region which is not how Datastore is configured or managed",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Datastore in a single regional location with cross zone replication inside that region",
+      "explanation": "A regional deployment keeps data in one region while replicating across multiple zones to provide high availability and low local latency",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Datastore in a multi-region location that replicates across several regions in the same continent",
+      "explanation": "A continental multi-region stores copies in multiple regions within the continent to improve resilience and wider read locality",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Datastore in a single regional location with cross zone replication inside that region</b>. It keeps all records within one Google Cloud region in one country, provides multi zonal redundancy that supports a 99.99 percent availability target, and allows interactive clients in the same region to achieve sub 20 millisecond read and write latency.</p><p>This regional deployment stores and replicates data across multiple zones in the chosen region, so it provides high availability and disaster recovery against zonal outages while honoring data residency. Cloud Datastore is now provided as Firestore in Datastore mode, and regional locations are designed for low latency when your application runs in the same region while offering a 99.99 percent service level agreement.</p><p><i>Datastore in a multi-region location that spans continents</i> violates the requirement to keep all records in a single region in one country and it introduces additional network distance that works against the strict latency objective.</p><p><i>Datastore in a regional location with one primary node and multiple read replicas in that region</i> does not match how Datastore operates because the service does not expose a primary with read replicas and it provides automatic multi zonal replication with a strongly consistent API.</p><p><i>Datastore in a multi-region location that replicates across several regions in the same continent</i> still places data in multiple regions which can cross country boundaries and it therefore fails the single region residency requirement even though it can deliver very high availability.</p>",
+  "batch_id": "319",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "A multinational company is using Datastore to store customer information and sales data. The company needs to ensure high availability and disaster recovery while maintaining low-latency read and write operations. The company also needs to comply with regional data residency requirements. Which of the following options should the company choose to best meet their requirements?",
+  "originalOptions": "A. Datastore in multi-region mode with replication within the same continent.<br/>B. Datastore in regional mode with a primary node and multiple read replicas within the same region.<br/>C. Datastore in regional mode with replication across multiple zones within the same region.<br/>D. Datastore in multi-region mode with replication across multiple continents.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "102",
+  "tip": "<p>When a question mentions <i>data residency</i> or a <i>single region</i> requirement, prioritize regional deployments and then verify the <i>SLA</i> and latency expectations. Be cautious of answers that describe architectures the managed service does not actually expose.</p>",
+  "references": [
+    "https://cloud.google.com/firestore/docs/locations",
+    "https://cloud.google.com/firestore/sla",
+    "https://cloud.google.com/firestore/docs/firestore-or-datastore"
+  ],
+  "url": "https://certificationation.com/questions/exam-datastore-to-store-customer-information-exam-102.html",
+  "video_url": "https://certificationation.com/videos/exam-datastore-to-store-customer-information-exam-102.html"
+}

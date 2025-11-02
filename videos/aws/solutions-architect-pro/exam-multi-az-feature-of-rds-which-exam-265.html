@@ -1,0 +1,74 @@
+---
+title: "A user is planning to set up the Multi-AZ feature ofExam"
+description: "Video for a user is planning to set up the Multi-AZ feature of RDS. Which of the below mentioned conditions won't take advantage of the Multi-AZ feature?"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A user is planning to set up the Multi-AZ feature of RDS. Which of the below mentioned conditions won't take advantage of the Multi-AZ feature?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d600f501ee1c8ade98de"
+  },
+  "quid": "0",
+  "ordinal": "406",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "AWS RDS",
+    " AWS shared responsibility model",
+    " AWS Well-Architected Framework",
+    " Benefits of migrating to the AWS Cloud",
+    " AWS Compliance"
+  ],
+  "slug": "rds-multi-az-feature-conditions-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question406",
+  "title": "AWS User Is Planning To Set Up The Multi-AZ Question",
+  "meta": "AWS Exam Question: A user is planning to set up the Multi-AZ feature of RDS. Which conditions won't take advantage of the Multi-AZ feature? Answer: RDS, Multi-AZ.",
+  "answer": "C",
+  "query": "An application requires high availability for its database using the Multi-AZ setup in RDS.\nWhich situation below does NOT benefit from the Multi-AZ deployment?",
+  "originalQuery": "A user is planning to set up the Multi-AZ feature of RDS.\nWhich of the below mentioned conditions won't take advantage of the Multi-AZ feature?",
+  "options": [
+    "A. Failure of an individual availability zone",
+    "B. Performing a manual failover via the Reboot with failover feature",
+    "C. Region outage",
+    "D. Modifying the database instance’s instance class"
+  ],
+  "originalOptions": [
+    "A. Availability zone outage",
+    "B. A manual failover of the DB instance using Reboot with failover option",
+    "C. Region outage",
+    "D. When the user changes the DB instance’s server type."
+  ],
+  "image": "",
+  "primaryObjective": "3: Continuous Improvement for Existing Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Answer - C.\nAmazon RDS handles failovers automatically so you can resume database operations as quickly as possible without administrative intervention.\nThe primary DB instance switches over automatically to the standby replica if any of the following conditions occur.\nAn Availability Zone outage.\nThe primary DB instance fails.\nThe DB instance's server type is changed.\nThe operating system of the DB instance is undergoing software patching.\nA manual failover of the DB instance was initiated using Reboot with failover.\nHence, options A, B, and D are incorrect.\nOption C is CORRECT because if there is a region-wide failure, the Multi-AZ feature may not work.\nFor more information on multiAZ RDS, please visit the link:\nhttps://aws.amazon.com/rds/details/multi-az/\nThe Multi-AZ feature of Amazon RDS (Relational Database Service) is designed to provide high availability and reliability for database instances. It uses synchronous replication to maintain a standby copy of the primary database instance in a different Availability Zone (AZ) within the same region. This standby instance is updated in real-time with the changes made to the primary instance. In case of an outage or failure of the primary instance, the standby instance can be automatically promoted to become the new primary instance.\nNow, coming to the given options:\nA. Availability zone outage - This scenario is exactly what the Multi-AZ feature is designed for. In case of an AZ outage, the standby instance in a different AZ can take over and become the new primary instance, thus providing high availability and minimal downtime.\nB. A manual failover of the DB instance using Reboot with failover option - This option initiates a manual failover, which means that the user is explicitly asking for the standby instance to be promoted as the new primary instance. This also takes advantage of the Multi-AZ feature and is a recommended method to perform maintenance activities with minimal downtime.\nC. Region outage - The Multi-AZ feature cannot protect against a region-level outage as it only replicates data within the same region. In case of a region outage, the user must have a disaster recovery plan in place, such as using Amazon RDS Read Replicas in a different region or using database backup and restore.\nD. When the user changes the DB instance's server type - Changing the server type of the DB instance does not impact the Multi-AZ feature. The standby instance will continue to be updated in real-time with the changes made to the primary instance, and can take over in case of a primary instance failure.\nTherefore, the correct answer is option C - Region outage, which cannot be protected by the Multi-AZ feature of RDS.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-multi-az-feature-of-rds-which-exam-265.html",
+  "url": "https://certificationation.com/questions/exam-multi-az-feature-of-rds-which-exam-265.html"
+}

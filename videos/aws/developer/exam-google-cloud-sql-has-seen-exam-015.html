@@ -1,0 +1,82 @@
+---
+title: "Your organization's MySQL database on Google Cloud SQLExam"
+description: "Video for your organization's MySQL database on Google Cloud SQL has seen an unexpected surge in load, leading to longer query times and complaints from users."
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your organization's MySQL database on Google Cloud SQL has seen an unexpected surge in load, leading to longer query times and complaints from users. As a Cloud Database Engineer, you need to identify and alleviate the bottleneck as efficiently as possible. What action should you take?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A subscription service at mcnz.com runs its production MySQL workload on Cloud SQL. During the last 30 minutes a sudden surge in traffic has increased query latency and customers report slow pages. As the Cloud Database Engineer you need to quickly determine the query-level root cause and take action that relieves the bottleneck with minimal disruption. What should you do?",
+  "options": [
+    {
+      "text": "Introduce Memorystore in front of the database to cache frequent lookups and reduce pressure on MySQL",
+      "explanation": "This approach adds a managed Redis layer so repeated reads can be served from memory instead of the database.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Analyze MySQL Performance Schema on the Cloud SQL instance to identify expensive statements and resource hot spots",
+      "explanation": "This uses built-in instrumentation to profile waits and queries so you can see which statements consume the most time.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Resize the Cloud SQL instance to a larger machine type to handle the spike in demand",
+      "explanation": "This increases CPU and memory resources on the instance to accommodate higher throughput.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a read replica and route read traffic to it to lower utilization on the primary instance",
+      "explanation": "This adds a replica that can serve read-only queries which can reduce load on the primary.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Analyze MySQL Performance Schema on the Cloud SQL instance to identify expensive statements and resource hot spots</b>.</p><p>Using <b>Performance Schema</b> on Cloud SQL for MySQL gives immediate query level visibility into which statements are consuming the most time, waiting on locks, or doing excessive I O. You can quickly find the worst digests and their waits and then validate execution plans with EXPLAIN and take targeted actions such as adding a missing index or rewriting an inefficient query or terminating a runaway session. This approach addresses the root cause with minimal disruption because the analysis is read only and the remediation can be narrowly applied. Cloud SQL Query Insights for MySQL builds on <b>Performance Schema</b> and can further accelerate this investigation.</p><p>The option <i>Introduce Memorystore in front of the database to cache frequent lookups and reduce pressure on MySQL</i> is not an immediate fix and does not identify the query level cause. Integrating Memorystore requires application changes and cache warmup and it will not help with write heavy traffic or with problematic queries that miss the cache. Introducing a new component during an incident also increases risk.</p><p>The option <i>Resize the Cloud SQL instance to a larger machine type to handle the spike in demand</i> increases compute and memory but does not reveal which queries are slow or blocked. Changing the machine type triggers an instance restart which introduces disruption and it can mask inefficient queries or lock contention without resolving the underlying problem.</p><p>The option <i>Create a read replica and route read traffic to it to lower utilization on the primary instance</i> takes time to provision and backfill so it cannot relieve the issue quickly. It does not reduce write load and requires application routing changes and replica lag under heavy writes can complicate consistency.</p>",
+  "batch_id": "350",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "Your organization's MySQL database on Google Cloud SQL has seen an unexpected surge in load, leading to longer query times and complaints from users. As a Cloud Database Engineer, you need to identify and alleviate the bottleneck as efficiently as possible. What action should you take?",
+  "originalOptions": "A. Implement a caching layer with Memorystore to reduce the load on the database.<br/>B. Analyze the Performance Schema in MySQL to find inefficient queries.<br/>C. Resize the Cloud SQL instance to a larger machine type to handle the increased load.<br/>D. Enable the general log in MySQL and analyze it for slow queries.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "15",
+  "tip": "<p>When a question asks for quick diagnosis with minimal disruption prefer features that give immediate visibility into query behavior such as <i>Performance Schema</i> or Query Insights before considering topology changes or scaling.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/diagnose-performance-using-performance-schema",
+    "https://cloud.google.com/sql/docs/mysql/insights-overview",
+    "https://dev.mysql.com/doc/refman/8.0/en/performance-schema.html",
+    "https://cloud.google.com/sql/docs/mysql/change-machine-type",
+    "https://cloud.google.com/sql/docs/mysql/replication/replication-overview",
+    "https://cloud.google.com/memorystore/docs/redis/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-google-cloud-sql-has-seen-exam-015.html",
+  "video_url": "https://certificationation.com/videos/exam-google-cloud-sql-has-seen-exam-015.html"
+}

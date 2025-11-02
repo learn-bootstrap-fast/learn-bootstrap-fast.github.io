@@ -1,0 +1,128 @@
+---
+title: "A company is running an online transaction processingExam"
+description: "Video for a company is running an online transaction processing (OLTP) workload on AWS. This workload uses an unencrypted Amazon RDS DB instance in a Multi-AZ"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company is running an online transaction processing (OLTP) workload on AWS. This workload uses an unencrypted Amazon RDS DB instance in a Multi-AZ deployment. Daily database snapshots are taken from this instance. What should a solutions architect do to ensure the database and snapshots are always encrypted moving forward?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f7299de"
+  },
+  "quid": null,
+  "ordinal": "121",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS Key Management Service (AWS KMS)",
+    " Amazon RDS",
+    " Amazon Elastic Block Store (Amazon EBS)",
+    " AWS Backup",
+    " AWS Lambda"
+  ],
+  "slug": "rds-online-transaction-processing-aws",
+  "source": "ET",
+  "title": "AWS A Company Is Running An Online Transaction Question",
+  "meta": "AWS Exam Question: A company runs an OLTP workload on AWS with an unencrypted Amazon RDS. Solutions architect needs to ensure encryption for the database and snapshots. Answer: Amazon RDS, Multi-AZ.",
+  "answer": "A",
+  "query": "A business operates a data processing system utilizing AWS. This setup includes an unencrypted Amazon RDS DB instance configured for Multi-AZ availability. Regular database snapshots are generated from this instance. What action should a solutions architect take to guarantee that both the database and its snapshots remain encrypted in the future?",
+  "originalQuery": "A company is running an online transaction processing (OLTP) workload on AWS. This workload uses an unencrypted Amazon RDS DB instance in a Multi-AZ deployment. Daily database snapshots are taken from this instance.\nWhat should a solutions architect do to ensure the database and snapshots are always encrypted moving forward?",
+  "options": [
+    "A. Encrypt a copy of the latest DB snapshot. Replace existing DB instance by restoring the encrypted snapshot.",
+    "B. Create an encrypted Amazon Elastic Block Store (Amazon EBS) volume and transfer the snapshots there. Activate encryption for the DB instance.",
+    "C. Copy the snapshots and enable encryption using AWS Key Management Service (AWS KMS) Restore encrypted snapshot to an existing DB instance.",
+    "D. Transfer the snapshots to an Amazon S3 bucket configured for server-side encryption using AWS Key Management Service (AWS KMS) managed keys."
+  ],
+  "originalOptions": [
+    "A. Encrypt a copy of the latest DB snapshot. Replace existing DB instance by restoring the encrypted snapshot.",
+    "B. Create a new encrypted Amazon Elastic Block Store (Amazon EBS) volume and copy the snapshots to it. Enable encryption on the DB instance.",
+    "C. Copy the snapshots and enable encryption using AWS Key Management Service (AWS KMS) Restore encrypted snapshot to an existing DB instance.",
+    "D. Copy the snapshots to an Amazon S3 bucket that is encrypted using server-side encryption with AWS Key Management Service (AWS KMS) managed keys (SSE-KMS)."
+  ],
+  "image": null,
+  "primaryObjective": "1: Design Secure Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Encryption for an Amazon RDS DB instance must be enabled at the time of creation; it cannot be added afterward. However, you can secure an unencrypted DB instance by first taking a snapshot of it and then creating an encrypted version of that snapshot. Once the encrypted snapshot is available, you can restore a new DB instance from it, resulting in an encrypted copy of your original database. This process ensures both the database and its associated backups are encrypted for enhanced security.",
+    "Wow, that's wild! It's like the more you learn, the more you realize how important encryption is! 🌟💾 Keeping your database and snapshots safe from prying eyes is crucial, especially when you're dealing with sensitive information. \n\nTo safeguard your data and ensure your snapshots are always encrypted, consider these options: \n\n- **Copying snapshots** with encryption enabled via AWS Key Management Service (KMS) is a smart move. This way, you can restore an encrypted snapshot to your existing DB instance and feel like a security guru! 🔒✨\n\n- **Creating an encrypted Amazon Elastic Block Store (EBS) volume** is another clever tactic. Just transfer your snapshots there and activate encryption for your DB instance—easy peasy! 📦🔐\n\n- Alternatively, **transferring snapshots to an Amazon S3 bucket** that's configured for server-side encryption with KMS-managed keys is a great way to keep your data safe and sound. Think of it as tucking your data into a cozy, secure blanket! ☁️🛏️\n\nRemember, a little encryption goes a long way in keeping your database and snapshots safe and secure. So, let’s get encrypting and protect that precious data like a pro! 😄🛡️",
+    "To ensure future encryption of the database and its snapshots, the first step is to take a proactive approach. Simply encrypting a copy of the latest DB snapshot and then restoring it to replace the existing DB instance can work, but let's not stop there. Instead, consider creating an encrypted Amazon Elastic Block Store (EBS) volume and moving those snapshots over. This way, you not only activate encryption for the DB instance, but you also get a shiny new EBS volume that’s all dressed up for security.\n\nAlternatively, you could copy those snapshots and enable encryption using AWS Key Management Service (AWS KMS). After all, who doesn't want a little extra protection? Restoring the encrypted snapshot to the existing DB instance will help ensure that your data is snug and secure.\n\nAnd if you’re feeling particularly adventurous, why not transfer the snapshots to an Amazon S3 bucket that's configured for server-side encryption with AWS KMS managed keys? It’s like wrapping your precious data in a cozy security blanket.\n\nIn any case, the key takeaway here is to embrace encryption as a priority, ensuring that your database and snapshots are shielded from prying eyes in the future.",
+    "After the database is encrypted, all subsequent snapshots and read replicas will automatically inherit this encryption. This ensures enhanced security for your data and helps maintain compliance with best practices for protecting sensitive information.",
+    "Absolutely! You don't need to go through the hassle of copying and encrypting every single snapshot. Just one encrypted snapshot will do the trick, and all future snapshots will automatically be encrypted! Option C is on the right track, but there's really no need to duplicate all those snapshots. \n\nTo encrypt a snapshot, simply navigate to the Amazon RDS console, find the Snapshots section, and select the snapshot you want to encrypt. Then, click on \"Copy Snapshot.\" You'll be prompted to specify the target AWS Region and give your new snapshot a name. Don't forget to check the \"Enable Encryption\" box! For the Master Key, just enter the KMS key identifier that you'd like to use for the encryption. Once you click \"Copy Snapshot,\" voila! You’re all set! 🎉 \n\nAnd just think—if you had 30 snapshots, you’d only need to do this once! What a delightful way to streamline your encryption process! 🌟"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "A",
+      "explanation": "\"You can enable encryption for an Amazon RDS DB instance when you create it, but not after it's created. However, you can add encryption to an unencrypted DB instance by creating a snapshot of your DB instance, and then creating an encrypted copy of that snapshot. You can then restore a DB instance from the encrypted snapshot to get an encrypted copy of your original DB instance.\"\nhttps://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/encrypt-an-existing-amazon-rds-for-postgresql-db-instance.html",
+      "upvotes": "63"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "thats crazy cuh the more you know ig",
+      "upvotes": "1"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "How can A gurantee future encryption?",
+      "upvotes": "4"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Once DB is encrypted, newer snapshots and read replicas will also be encrypted.",
+      "upvotes": "8"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "I agree, there is no reason to copy all of the snapshots and ecnrypt them all. You just need one encrypted snapshot, moving forward they will all be encrypted. C is close but I think there is no reason to copy all the snapshots plural. There is a wizard to go through and select the snapshot to encrypt. \"In the Amazon RDS console navigation pane, choose Snapshots, and select the DB snapshot you created. For Actions, choose Copy Snapshot. Provide the destination AWS Region and the name of the DB snapshot copy in the corresponding fields. Select the Enable Encryption checkbox. For Master Key, specify the KMS key identifier to use to encrypt the DB snapshot copy. Choose Copy Snapshot. For more information, see Copying a snapshot in the Amazon RDS documentation\". What if you had 30 snapshotS? You just need to do it once.",
+      "upvotes": "4"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "A (85%)",
+      "votes": "101 votes."
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is A because encrypting a copy of the latest DB snapshot and restoring it guarantees that both the DB instance and its future snapshots will be encrypted. You cannot enable encryption on an RDS instance after it's created, but you can create an encrypted copy of an existing snapshot. Once a DB instance is created from an encrypted snapshot, all future snapshots and any read replicas will also be encrypted. Option B is incorrect because creating an EBS volume does not directly relate to encrypting the RDS DB instance or ensuring that snapshots remain encrypted. Option C is incorrect because it mentions copying snapshots but doesn't indicate restoring an encrypted snapshot to an existing DB instance, which is essential. Option D suggests copying snapshots to an encrypted S3 bucket, but that doesn't ensure the DB instance itself is encrypted, nor does it imply future encryption of the DB snapshots.",
+  "video_url": "https://certificationation.com/videos/exam-transaction-processing-oltp-workload-on-exam-121.html",
+  "url": "https://certificationation.com/questions/exam-transaction-processing-oltp-workload-on-exam-121.html"
+}

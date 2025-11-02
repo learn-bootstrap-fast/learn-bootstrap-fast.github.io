@@ -1,0 +1,62 @@
+---
+title: "You have a task to build the AWS infrastructureExam"
+description: "Video for you have a task to build the AWS infrastructure resources for a project. In this project, there is a high-volume event source in an Amazon SQS queue."
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have a task to build the AWS infrastructure resources for a project. In this project, there is a high-volume event source in an Amazon SQS queue. Certain steps are needed to process the messages. You want to implement a state machine and visualize the workflow. The AWS resources should be managed by a configuration orchestration tool so that they can be redeployed easily in another environment. Which tools should you use for this task?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><b>Deploy a State Machine with Lambda function tasks, all defined and launched through AWS CloudFormation.</b> is the best solution because CloudFormation is designed to automate the provisioning and management of AWS resources, making it simple to recreate or redeploy the stack in new environments. By combining AWS Step Functions (to create state machines and visualize workflows) with Lambda (to implement discrete processing steps), you achieve a scalable, decoupled, and visual solution that meets the requirements.</p><p><i>Set up an Elastic Beanstalk worker environment for the SQS queue, integrating Step Functions into that environment.</i> is incorrect because Elastic Beanstalk does not provide native integration with Step Functions. This would introduce unnecessary complexity and is not the typical use case for Beanstalk worker environments.</p><p><i>Use an OpsWorks stack to automate Step Functions, allowing them to process SQS messages via a custom state machine.</i> is not recommended, as OpsWorks is tailored more toward configuration management of EC2 and on-premises resources using Chef/Puppet, and not for provisioning or automating Step Functions or other serverless constructs.</p><p><i>Use AWS CloudFormation to create Step Functions and Lambda functions, placing each Lambda in a dedicated Lambda layer.</i> is also not ideal, as Lambda layers are intended to share common code, not for separating all function code. Introducing a separate layer for each Lambda function adds unnecessary complexity without benefit, and the question does not require code sharing.</p><p><b>Tip:</b> Use AWS CloudFormation for repeatable, reliable, infrastructure as code deployments. AWS Step Functions are ideal for visualizing workflows, and Lambda functions efficiently process messages from SQS in a serverless architecture.</p>",
+  "query": "<p>A project requires handling a large volume of events sent to an Amazon SQS queue. There are multiple processing steps, and you need to visually represent the process workflow as a state machine. Additionally, all AWS resources should be provisioned by an orchestration service to allow easy deployment in additional environments. Which of the following is the most appropriate approach?</p>",
+  "original_oid": "6793da6c61969b416038a1fb",
+  "options": [
+    {
+      "correct": true,
+      "text": "Deploy a State Machine with Lambda function tasks, all defined and launched through AWS CloudFormation.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up an Elastic Beanstalk worker environment for the SQS queue, integrating Step Functions into that environment.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Use an OpsWorks stack to automate Step Functions, allowing them to process SQS messages via a custom state machine.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Use AWS CloudFormation to create Step Functions and Lambda functions, placing each Lambda in a dedicated Lambda layer.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question395",
+  "originalQuery": "You have a task to build the AWS infrastructure resources for a project.\nIn this project, there is a high-volume event source in an Amazon SQS queue.\nCertain steps are needed to process the messages.\nYou want to implement a state machine and visualize the workflow.\nThe AWS resources should be managed by a configuration orchestration tool so that they can be redeployed easily in another environment.\nWhich tools should you use for this task?",
+  "originalOptions": "A. Configure an Elastic Beanstalk worker environment for the SQS queue and include Step Functions in the environment to implement the state machine.\nB. Create a State Machine with Lambda tasks using AWS CloudFormation templates.\nC. Configure an OpsWorks stack to automate the configurations of Step Functions that pull messages from the SQS queue and process messages in a state machine.\nD. Configure an AWS CloudFormation stack to create the Step Functions using Lambda. Put each Lambda function in a separate Lambda layer.",
+  "video_url": "https://certificationation.com/videos/exam-infrastructure-resources-for-a-project-exam-178.html",
+  "url": "https://certificationation.com/questions/exam-infrastructure-resources-for-a-project-exam-178.html"
+}

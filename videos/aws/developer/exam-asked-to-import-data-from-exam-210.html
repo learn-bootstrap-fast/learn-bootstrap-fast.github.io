@@ -1,0 +1,81 @@
+---
+title: "As a Database Engineer, you are asked to import dataExam"
+description: "Video for as a Database Engineer, you are asked to import data from a CSV file stored in a Cloud Storage bucket into a Bigtable instance. You need to perform"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are asked to import data from a CSV file stored in a Cloud Storage bucket into a Bigtable instance. You need to perform this task efficiently and reliably, making sure that the import process can handle the import of large datasets. Which of the following options is the best approach to achieve this goal?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the cloud database engineer at Riverton Labs and you need to load about 320 million rows from CSV files stored in a Cloud Storage bucket into a production Cloud Bigtable instance. The job must handle roughly 750 GB of data, support parallel processing, and be resilient to worker restarts and partial failures so that the import can complete reliably. Which approach should you choose to perform this import?",
+  "options": [
+    {
+      "text": "Run a Dataproc Spark job that reads the CSV files and performs row by row writes directly into Cloud Bigtable",
+      "explanation": "Dataproc can run Spark jobs that you write to read CSV and call the Cloud Bigtable client for inserts, but you must build batching, retries, and fault tolerance yourself",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use the gcloud bigtable tables import command with a csv source flag",
+      "explanation": "This proposes a CLI that would import CSV files straight into Bigtable from Cloud Storage without a custom pipeline",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Build a Cloud Dataflow Apache Beam pipeline that reads CSV from Cloud Storage and upserts into Cloud Bigtable with autoscaling and pipeline checkpointing turned on",
+      "explanation": "Cloud Dataflow executes Apache Beam pipelines and can scale workers and maintain progress through checkpoints for long running imports",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use gsutil cp to copy the CSV objects from Cloud Storage directly into the Cloud Bigtable table",
+      "explanation": "The gsutil command copies objects between local paths and Cloud Storage locations and it does not write into databases",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct approach is <b>Build a Cloud Dataflow Apache Beam pipeline that reads CSV from Cloud Storage and upserts into Cloud Bigtable with autoscaling and pipeline checkpointing turned on</b>.</p><p>This approach is designed for large scale ingestion and provides massive parallelism so it can comfortably handle hundreds of millions of rows. Autoscaling adjusts worker count to meet throughput needs and manage 750 GB efficiently. Checkpointing and resilient execution let workers restart without losing progress so partial failures do not require restarting the entire job. Upserts through the Bigtable connector are idempotent and support batching which improves throughput and reliability for production imports.</p><p><i>Run a Dataproc Spark job that reads the CSV files and performs row by row writes directly into Cloud Bigtable</i> is not ideal because writing row by row is inefficient for Bigtable and sustaining high throughput requires careful batching and retry logic. You would also need to implement your own fault tolerance and idempotency to safely recover from worker restarts which makes it less reliable for a production scale import.</p><p><i>Use the gcloud bigtable tables import command with a csv source flag</i> is incorrect because there is no CSV source option for this command. The import command launches a Dataflow based template that expects data in the supported export format rather than raw CSV files.</p><p><i>Use gsutil cp to copy the CSV objects from Cloud Storage directly into the Cloud Bigtable table</i> is not possible because gsutil copies objects between file based storage locations and does not write into database tables. It cannot import data into Bigtable.</p>",
+  "batch_id": "340",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are asked to import data from a CSV file stored in a Cloud Storage bucket into a Bigtable instance. You need to perform this task efficiently and reliably, making sure that the import process can handle the import of large datasets. Which of the following options is the best approach to achieve this goal?",
+  "originalOptions": "A. Use the gcloud dataflow command with an Apache Beam pipeline for importing data and enable checkpointing.<br/>B. Use the gcloud bigtable import command with the --source=csv flag.<br/>C. Use the gsutil cp command to copy the data from the Cloud Storage bucket to the Bigtable instance.<br/>D. Use the gcloud dataproc command to create a Hadoop job for importing data.",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "210",
+  "tip": "<p>When a scenario requires large scale ingestion with <i>autoscaling</i> and <i>restart resilience</i>, favor Dataflow or Beam pipelines with the appropriate connectors. Verify whether a command actually supports the <i>file format</i> mentioned by the option and be wary of options that treat databases like file systems.</p>",
+  "references": [
+    "https://cloud.google.com/bigtable/docs/import-export-data",
+    "https://cloud.google.com/dataflow/docs/guides/deploying-a-pipeline#autoscaling",
+    "https://cloud.google.com/dataflow/docs/concepts/streaming-with-dataflow#checkpointing",
+    "https://cloud.google.com/sdk/gcloud/reference/bigtable/instances/tables/import",
+    "https://cloud.google.com/storage/docs/gsutil/commands/cp"
+  ],
+  "url": "https://certificationation.com/questions/exam-asked-to-import-data-from-exam-210.html",
+  "video_url": "https://certificationation.com/videos/exam-asked-to-import-data-from-exam-210.html"
+}

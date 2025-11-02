@@ -1,0 +1,87 @@
+---
+title: "You are managing a Cloud Spanner database that needs toExam"
+description: "Video for you are managing a Cloud Spanner database that needs to handle an increasing number of read and write operations due to the growing number of users."
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are managing a Cloud Spanner database that needs to handle an increasing number of read and write operations due to the growing number of users. You want to optimize the performance and scalability of the database. What should you do? (Choose two)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "mcnz.com runs a reservation platform on Cloud Spanner and daily active users have tripled over the last 90 days. You expect event day spikes with sustained growth in both reads and writes and you must keep latency predictable while preserving strong consistency. Which actions will help you scale throughput effectively?",
+  "options": [
+    {
+      "text": "Consolidate all entities into one wide table to reduce joins",
+      "explanation": "A single wide table centralizes related attributes into one structure and can simplify some queries for small datasets",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Increase the instance&apos;s node count to add serving capacity",
+      "explanation": "Adding nodes increases compute and serving capacity and allows Cloud Spanner to split and rebalance data automatically as load grows",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Disable synchronous replication to favor writes",
+      "explanation": "Turning off synchronous replication reduces coordination between replicas and changes durability and consistency characteristics",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Design transactions to touch fewer rows and commit quickly to minimize lock contention",
+      "explanation": "Short and focused transactions hold locks for less time which can improve concurrency when many clients read and write concurrently",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Manually shard application tables across multiple databases",
+      "explanation": "Application-managed sharding distributes keys across separate databases and requires client logic to route queries and updates",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct options are <b>Increase the instance's node count to add serving capacity</b> and <b>Design transactions to touch fewer rows and commit quickly to minimize lock contention</b>.</p><p><b>Increase the instance's node count to add serving capacity</b> is the most direct way to scale Cloud Spanner throughput because each node adds compute and IOPS for serving reads and writes. As you add nodes Spanner automatically splits and rebalances data which helps keep latency predictable during spikes while preserving strong consistency across replicas.</p><p><b>Design transactions to touch fewer rows and commit quickly to minimize lock contention</b> improves concurrency under heavy write and mixed workloads. Shorter transactions that update fewer rows hold locks for less time which reduces conflicts and queuing. This keeps tail latency lower as demand grows and it aligns with Spanner’s transaction model while maintaining strong consistency.</p><p><i>Consolidate all entities into one wide table to reduce joins</i> is not a scaling strategy in Spanner and can worsen performance. Very wide rows increase I O and locking scope and can create hotspots. Spanner performance depends more on good primary key and schema design than on eliminating joins.</p><p><i>Disable synchronous replication to favor writes</i> is not possible in Cloud Spanner and it would violate the requirement for strong consistency. Spanner uses synchronous replication to provide strongly consistent reads and writes which cannot be turned off.</p><p><i>Manually shard application tables across multiple databases</i> adds complexity and can break transactional guarantees because Spanner does not support cross database transactions. Spanner already shards data automatically within an instance so scaling the instance and optimizing transactions is the correct approach.</p>",
+  "batch_id": "52",
+  "answerCode": "2,4",
+  "type": "multi-select",
+  "originalQuery": "You are managing a Cloud Spanner database that needs to handle an increasing number of read and write operations due to the growing number of users. You want to optimize the performance and scalability of the database. What should you do? (Choose two)",
+  "originalOptions": "A. Implement sharding on your database tables.<br/>B. Disable replication to increase write throughput.<br/>C. Use smaller transactions to reduce lock contention.<br/>D. Increase the number of nodes in the instance.<br/>E. Store all data in a single table to simplify queries.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "222",
+  "tip": "<p>When a question stresses <i>predictable latency</i> and <i>strong consistency</i> with rising reads and writes, think of scaling Spanner compute with more <i>nodes</i> or processing units and keeping transactions small to reduce <i>lock contention</i>. Be cautious of answers that change replication mode or suggest manual sharding.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/compute-capacity",
+    "https://cloud.google.com/spanner/docs/replication",
+    "https://cloud.google.com/spanner/docs/transactions",
+    "https://cloud.google.com/spanner/docs/schema-design",
+    "https://cloud.google.com/spanner/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-database-that-needs-to-handle-exam-222.html",
+  "video_url": "https://certificationation.com/videos/exam-database-that-needs-to-handle-exam-222.html"
+}

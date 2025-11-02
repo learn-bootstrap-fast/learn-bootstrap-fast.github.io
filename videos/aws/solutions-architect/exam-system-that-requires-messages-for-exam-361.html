@@ -1,0 +1,127 @@
+---
+title: "A company uses a payment processing system that requiresExam"
+description: "Video for a company uses a payment processing system that requires messages for a particular payment ID to be received in the same order that they were sent."
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company uses a payment processing system that requires messages for a particular payment ID to be received in the same order that they were sent. Otherwise, the payments might be processed incorrectly. Which actions should a solutions architect take to meet this requirement? (Choose two.)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729acf"
+  },
+  "quid": null,
+  "ordinal": "362",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon Simple Queue Service (Amazon SQS)",
+    " AWS Step Functions"
+  ],
+  "slug": "mp-received-same-order-payments-aws",
+  "source": "ET",
+  "title": "AWS A Company Uses A Payment Processing System Question",
+  "meta": "AWS Exam Question: A company needs messages for a payment ID received in order. Which actions should a solutions architect take to ensure correct processing? Answer: SQS, Lambda.",
+  "answer": "BE",
+  "query": "An organization has an order fulfillment system that mandates requests for a specific order ID to be processed in the sequence they were received. Failing to do this could lead to order mismanagement.\n\nWhat steps should a solutions architect take to satisfy this requirement? (Select two.)",
+  "originalQuery": "A company uses a payment processing system that requires messages for a particular payment ID to be received in the same order that they were sent. Otherwise, the payments might be processed incorrectly.\n\nWhich actions should a solutions architect take to meet this requirement? (Choose two.)",
+  "options": [
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "originalOptions": [
+    "A. Write the messages to an Amazon DynamoDB table with the payment ID as the partition key.",
+    "B. Write the messages to an Amazon Kinesis data stream with the payment ID as the partition key.",
+    "C. Write the messages to an Amazon ElastiCache for Memcached cluster with the payment ID as the key.",
+    "D. Write the messages to an Amazon Simple Queue Service (Amazon SQS) queue. Set the message attribute to use the payment ID.",
+    "E. Write the messages to an Amazon Simple Queue Service (Amazon SQS) FIFO queue. Set the message group to use the payment ID."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Option B is the preferred choice over Option A due to Amazon Kinesis Data Streams' inherent ability to maintain the sequence of records within a shard. This feature is vital for ensuring that messages associated with a specific payment ID are processed in the order they were sent. By utilizing the payment ID as the partition key, all related messages will be directed to the same shard, thereby preserving their intended sequence.\n\nConversely, while Amazon DynamoDB is a highly efficient NoSQL database service known for its rapid and reliable performance and scalability, it does not guarantee the order of records within a partition. This lack of ordering is a critical consideration for the scenario at hand. Therefore, Kinesis Data Streams is more aligned with the requirement of maintaining message order for payment processing.\n\nGiven that DynamoDB does not provide ordering capabilities, the conclusion is that the combination of Kinesis Data Streams and the use of the payment ID as a partition key effectively meets the specified needs.",
+    "Well, it seems we’ve found ourselves in a bit of a pickle! The main thing to remember is that our payment processing system is like a well-choreographed dance—messages must arrive in the precise order they were sent, or else we risk stepping on some toes (and processing payments incorrectly!). 💃🕺 \n\nTo keep this dance routine smooth, using SQS FIFO (First-In-First-Out) is the way to go. It ensures that messages are queued and processed in the same order they were sent, keeping our payment IDs in line. \n\nAs for those other options like Kinesis or DynamoDB, they’re great tools in their own right, but they don’t really fit into our orderly dance floor here since we don’t have any streaming or database storage requirements to worry about. If we had to choose between options A and B, B might look better on paper, but it doesn't quite do the job for our specific needs. \n\nSo, if there's anything I've overlooked, I’d be all ears! 👂✨",
+    "To ensure that messages associated with a specific payment ID are received in the exact order they were sent—because, let’s face it, nobody wants a payment processing fiasco—consider implementing these strategies. \n\nFirst, leverage a message queuing service that guarantees message order, such as Amazon SQS with FIFO (First-In-First-Out) queues. This nifty little feature ensures that messages are processed in the sequence they were sent, preventing any potential chaos in your payment processing.\n\nSecond, adopt idempotency keys for your payment requests. By including a unique identifier with each request, you can effectively manage duplicate processing while maintaining the integrity of the order. This means that even if a message is accidentally sent twice, your system can smartly ignore the duplicate, ensuring a smooth transaction flow.\n\nIn summary, utilizing FIFO queues and idempotency keys not only keeps things orderly but also adds a layer of reliability to your payment system—because let’s be honest, who actually enjoys sorting through a mess of incorrectly processed payments?",
+    "Both options B and E effectively guarantee that messages are processed in the order they are received. However, SQS FIFO queues (E) stand out as a more straightforward, cost-efficient solution that aligns perfectly with the requirements of this scenario. Unless there are specific needs for real-time analytics or exceptionally high throughput, option E is undoubtedly the better choice. The primary reason Kinesis Data Streams (KDS) maintains order is through the sequence numbers assigned to data records when they are written to a shard. In contrast, DynamoDB does not associate a sequence number with its records, which can complicate matters. Embracing SQS FIFO queues can streamline the process and enhance the reliability of payment processing!",
+    "Both Kinesis and SQS FIFO queues ensure that messages are processed in the exact order they are received, while other options may not provide this delightful guarantee. 🌟 This is crucial for maintaining the integrity of the payment process and ensuring everything flows smoothly like a joyful dance!"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "BE",
+      "explanation": "Option B is preferred over A because Amazon Kinesis Data Streams inherently maintain the order of records within a shard, which is crucial for the given requirement of preserving the order of messages for a particular payment ID. When you use the payment ID as the partition key, all messages for that payment ID will be sent to the same shard, ensuring that the order of messages is maintained.\n\nOn the other hand, Amazon DynamoDB is a NoSQL database service that provides fast and predictable performance with seamless scalability. While it can store data with partition keys, it does not guarantee the order of records within a partition, which is essential for the given use case. Hence, using Kinesis Data Streams is more suitable for this requirement.\n\nAs DynamoDB does not keep the order, I think BE is the correct answer here.",
+      "upvotes": "29"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "I don't understand the question. The only requirement is: \" system that requires messages for a particular payment ID to be received in the same order that they were sent\"\n\nSQS FIFO (E) meets this requirement.\n\nWhy would you \"write the message\" to Kinesis or DynamoDB anymore. There is no streaming or DB storage requirement in the question. Between A/B, B is better logically but it doesn't meet any stated requirement.\n\nHappy to understand what I'm missing",
+      "upvotes": "9"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Instead of \"what actions...\", the question should say \"what are the alternatives/options that meet this requirement\".",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "BE",
+      "explanation": "Both B and E can ensure the messages being processed in the order they were received, however SQS FIFO queues (E) are simpler, more cost-effective, and better aligned with the needs of this use case compared to Kinesis. Unless you have additional real-time analytics or high-throughput requirements, E is the superior choice, the big reason why KDS can preserve the order is due to sequence number assigned to data record when it was written to shard, Dynamo DB does not have a sequence number associated with the record. https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html",
+      "upvotes": "1"
+    },
+    {
+      "selectedAnswer": "BE",
+      "explanation": "Both Kinesis and SQS FIFO queue guarantee the order, other answers don't.",
+      "upvotes": "4"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "BE (78%)",
+      "votes": "51 votes."
+    },
+    {
+      "option": "AE (18%)",
+      "votes": "12 votes."
+    },
+    {
+      "option": "3%",
+      "votes": "2 votes."
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answers are B and E. Amazon Kinesis Data Streams (B) maintains the order of records within a shard, ensuring messages related to the same payment ID are processed in the order received. Amazon SQS FIFO queues (E) also guarantee that messages are processed in order when using message groups. In contrast, DynamoDB (A) does not guarantee order within partitions, and ElastiCache (C) is not designed for ordered message processing. SQS standard queues (D) do not provide ordered processing, making them unsuitable for this requirement.",
+  "video_url": "https://certificationation.com/videos/exam-system-that-requires-messages-for-exam-361.html",
+  "url": "https://certificationation.com/questions/exam-system-that-requires-messages-for-exam-361.html"
+}

@@ -1,0 +1,80 @@
+---
+title: "A Database Engineer has been asked to size a CloudExam"
+description: "Video for a Database Engineer has been asked to size a Cloud Bigtable instance for a large-scale IoT application. The current environment workload metrics and"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A Database Engineer has been asked to size a Cloud Bigtable instance for a large-scale IoT application. The current environment workload metrics and requirements are as follows: 30,000 writes per second during peak times 20,000 reads per second during peak times 7 TB of data storage 99.999% availability requirement Low-latency responses for read operations The company expects a 60% increase in writes and reads per second and a 25% increase in data storage over the next year. Which of the following instance configurations is the most appropriate to handle the anticipated growth while optimizing costs?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "At Astra Transit you must right size a Cloud Bigtable deployment for a connected bus telemetry platform. Peak traffic reaches 36,000 writes per second and 24,000 reads per second with 9 TB of stored data. The business requires 99.999% availability and fast read response times. Projections show a 70% increase in both reads per second and writes per second and a 30% increase in storage within the next year. Which instance configuration should you choose to support the expected growth while keeping costs efficient?",
+  "options": [
+    {
+      "text": "15 node regional instance with HDD storage",
+      "explanation": "This config uses a single region with HDD disks and 15 nodes which favors throughput but has higher read latency.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Two region instance with multi cluster replication and 12 nodes per cluster on SSD",
+      "explanation": "This sets up a Bigtable instance with two clusters in different regions using SSDs and 12 nodes in each cluster.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "20 node regional instance with SSD storage",
+      "explanation": "This is a single regional cluster that uses SSDs with 20 nodes sized for higher QPS.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Two region instance with multi cluster replication and 10 nodes per cluster on HDD",
+      "explanation": "This deploys two clusters in separate regions using HDD disks with 10 nodes each.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Two region instance with multi cluster replication and 12 nodes per cluster on SSD</b>.</p><p>The business requirement of 99.999% availability points directly to multi cluster replication across two regions because this configuration is designed for very high availability and resilient failover. Using SSD meets the need for fast read response times since SSD provides lower latency and higher random read performance than HDD. With this design you can route traffic across clusters and continue serving if a region becomes unavailable.</p><p>Traffic is projected to grow to about 61,000 writes per second and 41,000 reads per second along with a storage increase from 9 TB to roughly 12 TB. Each region should be able to handle the full peak during a failover which means sizing per cluster for the entire expected workload rather than only half. Twelve nodes per cluster on SSD provides ample headroom for these read and write rates and for compactions and bursts while also comfortably covering the storage growth within recommended per node limits. This balances performance and cost and avoids overprovisioning while still meeting the stringent availability target.</p><p><i>15 node regional instance with HDD storage</i> is not suitable because it lacks multi cluster replication and cannot meet a five nines availability target. HDD also delivers higher latency and lower random read performance which conflicts with the fast read requirement.</p><p><i>20 node regional instance with SSD storage</i> offers solid performance but it is still a single region deployment and therefore does not meet the 99.999% availability requirement.</p><p><i>Two region instance with multi cluster replication and 10 nodes per cluster on HDD</i> does include replication across regions but HDD undermines fast read latency and lowers per node throughput for random workloads. Ten nodes per cluster would also be tight during a regional failover when one cluster must absorb the entire peak load and growth.</p>",
+  "batch_id": "170",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "A Database Engineer has been asked to size a Cloud Bigtable instance for a large-scale IoT application. The current environment workload metrics and requirements are as follows: 30,000 writes per second during peak times 20,000 reads per second during peak times 7 TB of data storage 99.999% availability requirement Low-latency responses for read operations The company expects a 60% increase in writes and reads per second and a 25% increase in data storage over the next year. Which of the following instance configurations is the most appropriate to handle the anticipated growth while optimizing costs?",
+  "originalOptions": "A. 25-node Multi-Regional instance with SSD storage<br/>B. 5-node Regional instance with HDD storage<br/>C. 15-node Regional instance with HDD storage<br/>D. 20-node Regional instance with SSD storage",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "254",
+  "tip": "<p>Translate business goals into design levers. If the requirement says <i>five nines</i> then think <i>multi region</i> replication. If it says <i>fast reads</i> then choose <i>SSD</i>. Size each cluster to handle the full peak during <i>failover</i> and include growth plus <i>headroom</i>.</p>",
+  "references": [
+    "https://cloud.google.com/bigtable/sla",
+    "https://cloud.google.com/bigtable/docs/replication-overview",
+    "https://cloud.google.com/bigtable/docs/storage-types",
+    "https://cloud.google.com/bigtable/docs/performance"
+  ],
+  "url": "https://certificationation.com/questions/exam-size-a-cloud-bigtable-instance-exam-254.html",
+  "video_url": "https://certificationation.com/videos/exam-size-a-cloud-bigtable-instance-exam-254.html"
+}

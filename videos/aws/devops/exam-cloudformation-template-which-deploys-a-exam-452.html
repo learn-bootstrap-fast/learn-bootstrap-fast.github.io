@@ -1,0 +1,62 @@
+---
+title: "You are in charge of designing a Cloudformation templateExam"
+description: "Video for you are in charge of designing a Cloudformation template which deploys a LAMP stack. After deploying a stack , you see that the status of the stack is"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are in charge of designing a Cloudformation template which deploys a LAMP stack. After deploying a stack , you see that the status of the stack is showing as CREATE_COMPLETE , but the apache server is still not up and running and is experiencing issues while starting up. You want to ensure that the stack creation only shows the status of CREATE_COMPLETE after all resources defined in the stack are up and running. How can you achieve this?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct solution is to <b>Attach a CreationPolicy to the EC2 instance resource in your CloudFormation template</b>. A CreationPolicy instructs CloudFormation to wait for a success signal (typically via <b>cfn-signal</b>) before marking the EC2 instance (and thus the stack) as successfully created. This ensures Apache and other software are fully set up and running before CloudFormation reports that the resource creation is complete.</p><p>Option <i>Leverage lifecycle hooks so the stack marks completion only when all underlying resources are finished provisioning</i> is incorrect because lifecycle hooks are a feature of Auto Scaling Groups, not regular CloudFormation stacks or individual resources.</p><p><i>Set a stack policy requiring all component resources to be active before the stack reflects a CREATE_COMPLETE status</i> is not correct, as stack policies only control which resources can be updated or deleted, not how resources signal readiness.</p><p><i>Utilize CloudFormation helper scripts (such as cfn-signal) to inform CloudFormation once the configuration is done</i> is an important part of the process but is incomplete by itself. Without a <b>CreationPolicy</b> attached, CloudFormation won't wait for the signal. You need both the <b>CreationPolicy</b> and use of <b>cfn-signal</b> for it to work as expected.</p><p><b>Tip:</b> Always use CreationPolicy with resources that need extra configuration time—especially when bootstrapping servers—so CloudFormation only marks the stack as complete once all initialization scripts finish and software is running as desired.</p>",
+  "query": "<p>You need to construct an AWS CloudFormation template that sets up a LAMP environment. After launching the stack, you observe that CloudFormation reports CREATE_COMPLETE, but the Apache server is not yet started and is facing startup problems. What approach should you use to guarantee that the stack's status only becomes CREATE_COMPLETE after every resource, including Apache, is fully operational?</p>",
+  "original_oid": "6793da2a61969b416038a172",
+  "options": [
+    {
+      "correct": false,
+      "text": "Leverage lifecycle hooks so the stack marks completion only when all underlying resources are finished provisioning.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Attach a CreationPolicy to the EC2 instance resource in your CloudFormation template.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set a stack policy requiring all component resources to be active before the stack reflects a CREATE_COMPLETE status.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Utilize CloudFormation helper scripts (such as cfn-signal) to inform CloudFormation once the configuration is done.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question257",
+  "originalQuery": "You are in charge of designing a Cloudformation template which deploys a LAMP stack.\nAfter deploying a stack , you see that the status of the stack is showing as CREATE_COMPLETE , but the apache server is still not up and running and is experiencing issues while starting up.\nYou want to ensure that the stack creation only shows the status of CREATE_COMPLETE after all resources defined in the stack are up and running.\nHow can you achieve this?",
+  "originalOptions": "A. Define a stack policy which defines that all underlying resources should be up and running before showing a status of CREATE_COMPLET.|B. Use lifecycle hooks to mark the completion of the creation and configuration of the underlying resource.|C. Use the CreationPolicy to ensure it is associated with the EC2 Instance resource.|D. Use the CFN helper scripts to signal once the resource configuration is complete.",
+  "video_url": "https://certificationation.com/videos/exam-cloudformation-template-which-deploys-a-exam-452.html",
+  "url": "https://certificationation.com/questions/exam-cloudformation-template-which-deploys-a-exam-452.html"
+}

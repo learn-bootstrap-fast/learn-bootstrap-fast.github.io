@@ -1,0 +1,62 @@
+---
+title: "You are running a multi-tier architecture on AWS withExam"
+description: "Video for you are running a multi-tier architecture on AWS with webserver instances running Nginx. Your users are getting errors when they use the web"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are running a multi-tier architecture on AWS with webserver instances running Nginx. Your users are getting errors when they use the web application. How can you diagnose the errors quickly and efficiently?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best solution is to <b>configure the CloudWatch Logs agent on your web servers to push Nginx access logs to CloudWatch, and set up log stream filters to search for pertinent error messages</b>. This approach is efficient, as it allows you to quickly collect, monitor, and search through application logs directly within AWS, giving you the ability to rapidly identify errors affecting users in near real-time.</p><p>Here's why the other options are not as suitable:</p><p><i>Forward error logs to AWS Config for real-time analysis</i>: AWS Config is intended for tracking configuration changes and compliance, not for log analysis or error troubleshooting, making this option ineffective for diagnosing live application issues.</p><p><i>Install the CloudWatch Logs agent and send Nginx logs to CloudWatch, then transfer those logs to an external logging and visualization service</i>: While using third-party tools for advanced analysis can be useful in some scenarios, it introduces additional complexity, cost, and latency. For immediate troubleshooting, CloudWatch's own filtering and analytics features are sufficient and much faster to set up.</p><p><i>Redirect all error messages to AWS Lambda for processing</i>: Lambda is designed for event-driven automation or custom processing, but not for direct searching or diagnosing logs. Piping web server errors there does not give quick insight into what is wrong and would add unnecessary architecture overhead.</p><p><b>Tip:</b> AWS CloudWatch Logs Insights can be leveraged for powerful querying and visualization of log data. For best results, ensure your application logs are structured and consistently formatted.</p>",
+  "query": "<p>Your web application is hosted on AWS using a multi-tier architecture, with the web server layer running Nginx. Recently, users have encountered errors while using the app. What is the most efficient and rapid way to identify and troubleshoot these errors?</p>",
+  "original_oid": "6793da3d61969b416038a19b",
+  "options": [
+    {
+      "correct": false,
+      "text": "Forward error logs to AWS Config for real-time analysis.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Configure the CloudWatch Logs agent on your web servers to push Nginx access logs to CloudWatch, and set up log stream filters to search for pertinent error messages.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Install the CloudWatch Logs agent and send Nginx logs to CloudWatch, then transfer those logs to an external logging and visualization service.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Redirect all error messages to AWS Lambda for processing.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question298",
+  "originalQuery": "You are running a multi-tier architecture on AWS with webserver instances running Nginx.\nYour users are getting errors when they use the web application.\nHow can you diagnose the errors quickly and efficiently?",
+  "originalOptions": "A. Install the CloudWatch Logs agent and send Nginx access log data to CloudWatch. From there, pipe the log data through to a third party logging and graphing tool.|B. Install the CloudWatch Logs agent and send Nginx access log data to CloudWatch. Then, filter the log streams for searching the relevant errors.|C. Send all the errors to AWS Lambda for processing.|D. Send all the errors to AWS Config for processing.",
+  "video_url": "https://certificationation.com/videos/exam-aws-with-webserver-instances-running-exam-059.html",
+  "url": "https://certificationation.com/questions/exam-aws-with-webserver-instances-running-exam-059.html"
+}

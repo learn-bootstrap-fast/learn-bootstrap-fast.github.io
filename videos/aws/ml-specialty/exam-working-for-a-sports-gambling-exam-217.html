@@ -1,0 +1,54 @@
+---
+title: "You are a machine learning specialist working for aExam"
+description: "Video for you are a machine learning specialist working for a sports gambling company where you are responsible for building a machine learning model to predict"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are a machine learning specialist working for a sports gambling company where you are responsible for building a machine learning model to predict the point spread and over/under of NCAA and NFL games. You have built your custom deep learning model using TensorFlow in SageMaker. You have attempted to train your model on a single GPU, but you have noticed that the amount of game data you need to train with exceeds the single GPU capacity. How can you change your machine learning code to get it to use multiple GPUs with the least amount of effort on your part?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d71c7742293cac494b81"
+  },
+  "answer": "C",
+  "certification": "AWS Machine Learning Specialty",
+  "certificationKey": "AWSMLS",
+  "difficulty": "0",
+  "image": "",
+  "needsWork": "false",
+  "ordinal": "217",
+  "originalExplanation": "Answer: C.\nOption A is incorrect.\nThe Factorization Machines algorithm is used for classification and regression problems, not deep learning predictions.\nOption B is incorrect.\nRewriting your model in PySpark would require more work compared to using the Horovod framework.\nOption C is correct.\nUsing the Horovod distributed deep learning training framework for TensorFlow allows you to distribute your training across many GPUs in parallel easily.\nOption D is incorrect.\nRewriting your code to use the DeepAR algorithm would require more work compared to using the Horovod framework.\nReference:\nPlease see the GitHub page titled Horovod (https://github.com/horovod/horovod), the Amazon SageMaker developer guide titled Use Amazon SageMaker built-in algorithms (https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html), and the Medium article titled 3 Methods for Parallelization in Spark (https://towardsdatascience.com/3-methods-for-parallelization-in-spark-6a1a4333b473)\nThe correct answer is C. Add Horovod to your code and use its distributed deep learning training framework for TensorFlow.\nExplanation: When training a deep learning model on large datasets, it can take a lot of time and resources to train on a single GPU. One solution to this problem is to distribute the training across multiple GPUs. To do this, you need to use a distributed training framework.\nHorovod is a popular distributed deep learning training framework that can be used with TensorFlow. It allows you to train deep learning models on multiple GPUs with minimal code changes. It uses a technique called ring-allreduce, which allows for efficient communication between GPUs during training.\nTo use Horovod, you first need to install it on your SageMaker instance. You can do this by running the following command in a terminal:\nCopy codepip install horovod \nNext, you need to modify your TensorFlow code to use Horovod. Here is an example of how to do this:\npythonCopy codeimport tensorflow as tf import horovod.tensorflow as hvd  # Initialize Horovod hvd.init()  # Pin GPU to be used to process local rank (one GPU per process) config = tf.ConfigProto() config.gpu_options.visible_device_list = str(hvd.local_rank()) tf.Session(config=config)  # Define your TensorFlow model model = tf.keras.Sequential([...])  # Wrap your optimizer with Horovod opt = tf.keras.optimizers.Adam(0.001 * hvd.size())  # Wrap your model with Horovod model = hvd.DistributedOptimizer(opt).minimize(loss)  # Train your model model.fit([...]) \nIn this example, we first import Horovod and initialize it. We then pin each GPU to a specific process using TensorFlow's ConfigProto. We define our TensorFlow model as usual, but we wrap our optimizer and model with Horovod using DistributedOptimizer. Finally, we train our model as usual with fit.\nBy using Horovod, you can distribute the training of your deep learning model across multiple GPUs, allowing you to train on much larger datasets in a reasonable amount of time.",
+  "originalOptions": [
+    "A. Rewrite your model to use the Factorization Machines algorithm.",
+    "B. Rewrite your code in PySpark and use spark to run your code across multiple GPUs.",
+    "C. Add Horovod to your code and use its distributed deep learning training framework for TensorFlow.",
+    "D. Rewrite your model to use the DeepAR Forecasting algorithm."
+  ],
+  "originalQuery": "You are a machine learning specialist working for a sports gambling company where you are responsible for building a machine learning model to predict the point spread and over/under of NCAA and NFL games.\nYou have built your custom deep learning model using TensorFlow in SageMaker.\nYou have attempted to train your model on a single GPU, but you have noticed that the amount of game data you need to train with exceeds the single GPU capacity. How can you change your machine learning code to get it to use multiple GPUs with the least amount of effort on your part?",
+  "primaryObjective": "",
+  "quid": "0",
+  "source": "https://www.exam-answer.com/amazon/mls-c01/question217",
+  "video_url": "https://certificationation.com/videos/exam-working-for-a-sports-gambling-exam-217.html",
+  "url": "https://certificationation.com/questions/exam-working-for-a-sports-gambling-exam-217.html"
+}

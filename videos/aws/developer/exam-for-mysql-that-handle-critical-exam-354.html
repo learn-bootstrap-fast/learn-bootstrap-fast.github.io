@@ -1,0 +1,81 @@
+---
+title: "You have a number of Cloud SQL instances for MySQL thatExam"
+description: "Video for you have a number of Cloud SQL instances for MySQL that handle critical transactional data for your e-commerce platform. You need to configure your"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have a number of Cloud SQL instances for MySQL that handle critical transactional data for your e-commerce platform. You need to configure your environment to reduce the risk of data loss due to regional outages. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Your team operates several Cloud SQL for MySQL instances that store mission critical transactions for the ticketing platform at scrumtuous.com, and leadership wants to reduce the chance of losing data if an entire Google Cloud region goes offline. What should you implement?",
+  "options": [
+    {
+      "text": "Enable high availability with a regional configuration for every instance",
+      "explanation": "Cloud SQL high availability provides a standby in another zone within the same region and helps with zonal outages but does not protect against a full regional failure.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Increase backup frequency by running gcloud sql backups create more often",
+      "explanation": "Taking more frequent on demand backups can narrow the recovery window but the backups remain tied to the instance region and do not mitigate a regional loss event.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a cross region read replica and plan to promote it during a regional outage",
+      "explanation": "A read replica in another region receives asynchronous replication and can be promoted to primary if the original region is unavailable which helps reduce data loss risk during a regional event.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Enable point in time recovery for all MySQL instances",
+      "explanation": "Point in time recovery retains binary logs for restoration to a specific time which is useful for corruption or user errors but it relies on data stored in the same region as the instance.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Create a cross region read replica and plan to promote it during a regional outage</b>.</p><p>This approach places a replica in a different region and uses asynchronous replication so your data is continuously copied out of the primary region. If the primary region becomes unavailable you can promote the replica to restore write availability in the surviving region. This provides a strong disaster recovery posture with low recovery time and a typically small recovery point that depends on replication lag, and it avoids the lengthy process of restoring from backups.</p><p><i>Enable high availability with a regional configuration for every instance</i> is incorrect because Cloud SQL High Availability protects against zonal failures inside a single region and it does not protect you if an entire region goes offline.</p><p><i>Increase backup frequency by running gcloud sql backups create more often</i> is incorrect because backups improve recoverability but they do not provide continuity. You would still need to restore to a new instance which increases downtime and may not meet strict recovery objectives during a regional outage.</p><p><i>Enable point in time recovery for all MySQL instances</i> is incorrect because point in time recovery helps recover from corruption or accidental changes and still requires a restore. It does not provide a ready to use instance in another region for rapid failover during a regional outage.</p>",
+  "batch_id": "93",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You have a number of Cloud SQL instances for MySQL that handle critical transactional data for your e-commerce platform. You need to configure your environment to reduce the risk of data loss due to regional outages. What should you do?",
+  "originalOptions": "A. Establish a read replica in a different region.<br/>B. Use the gcloud sql backups create command to increase backup frequency.<br/>C. Enable point-in-time recovery for your instances.<br/>D. Configure regional snapshots to occur more frequently.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "354",
+  "tip": "<p>When a question emphasizes a <i>regional outage</i>, look for cross region replication or multi region architecture. Backups and <i>PITR</i> are recovery tools while cross region replicas provide faster <i>RTO</i> with a small <i>RPO</i> when promoted.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/disaster-recovery",
+    "https://cloud.google.com/sql/docs/mysql/replication/overview",
+    "https://cloud.google.com/sql/docs/mysql/replication/promote-replica",
+    "https://cloud.google.com/sql/docs/mysql/high-availability",
+    "https://cloud.google.com/sql/docs/mysql/backup-recovery/pitr"
+  ],
+  "url": "https://certificationation.com/questions/exam-for-mysql-that-handle-critical-exam-354.html",
+  "video_url": "https://certificationation.com/videos/exam-for-mysql-that-handle-critical-exam-354.html"
+}

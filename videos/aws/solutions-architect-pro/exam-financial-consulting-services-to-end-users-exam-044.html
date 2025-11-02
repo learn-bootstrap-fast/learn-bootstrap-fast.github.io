@@ -1,0 +1,76 @@
+---
+title: "A very big company has provided financial consultingExam"
+description: "Video for a very big company has provided financial consulting services to end-users. It uses the traditional MySQL database inside EC2 t2.medium instances"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A very big company has provided financial consulting services to end-users. It uses the traditional MySQL database inside EC2 t2.medium instances which mainly deal with legacy services. As a business grows, read contention is becoming more and more frequent for the database. The AWS architect suggests using Aurora to scale as it is much cheaper and provides great read scalability. How would you use Aurora to scale up and ease the read contention issue? (Select THREE.)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d580f501ee1c8ade979b"
+  },
+  "quid": "0",
+  "ordinal": "80",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "Amazon Aurora",
+    " Amazon RDS",
+    " Amazon EC2",
+    " AWS Cost Management",
+    " AWS Well-Architected Framework"
+  ],
+  "slug": "ec2-financial-consulting-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question80",
+  "title": "AWS A Very Big Company Has Provided Financial Consulting Question",
+  "meta": "AWS Exam Question: A big company uses MySQL on EC2 t2.medium instances. To scale and ease read contention, how to implement Aurora? Answer: Aurora.",
+  "answer": "B C E",
+  "query": "An enterprise delivers digital marketing analytics using several MySQL databases hosted on EC2 m5.large instances, which have started to experience increased read query latency due to heavy demand. The solutions architect recommends leveraging Aurora to improve read throughput while controlling costs. What steps should be taken to implement scaling with Aurora for this scenario? (Choose THREE.)",
+  "originalQuery": "A very big company has provided financial consulting services to end-users.\nIt uses the traditional MySQL database inside EC2 t2.medium instances which mainly deal with legacy services.\nAs a business grows, read contention is becoming more and more frequent for the database.\nThe AWS architect suggests using Aurora to scale as it is much cheaper and provides great read scalability.\nHow would you use Aurora to scale up and ease the read contention issue? (Select THREE.)",
+  "options": [
+    "A. Launch an Amazon Aurora MySQL DB db.r5.16xlarge instance with Multi-AZ configured across availability zones. Activate Aurora global tables for multi-region read scaling.",
+    "B. Create an Amazon Aurora MySQL DB cluster. The Aurora DB cluster endpoint address will be used when referenced by the MySQL source instances to scale up.",
+    "C. Configure replication from the existing MySQL DB instance to an Amazon Aurora MySQL DB cluster. Continuously verify replication health and perform repairs as needed.",
+    "D. Due to Aurora's limitations running external MySQL, first migrate the database from EC2 MySQL to Amazon RDS MySQL, then use Aurora for read scale-out.",
+    "E. Configure the Aurora DB cluster as a read replica slave of the MySQL DB instances. This applies both to Amazon RDS MySQL instances and EC2-hosted MySQL databases."
+  ],
+  "originalOptions": [
+    "A. Create an Amazon Aurora MySQL DB db.r5.16xlarge instance. Make sure that Multi-AZ deployment is enabled in different zones. Enable Aurora global tables.",
+    "B. Create an Amazon Aurora MySQL DB cluster. The Aurora DB cluster endpoint address will be used when referenced by the MySQL source instances to scale up.",
+    "C. Set up replication between a MySQL DB instance and an Amazon Aurora MySQL DB cluster. Monitor the replication to ensure that it remains healthy and repair it if necessary.",
+    "D. As Aurora does not support MySQL database running external to Amazon RDS, migrate the database from EC2 MySQL to RDS MySQL first and then use Aurora to scale the database.",
+    "E. Make the Aurora DB a replication slave of MySQL DB instances. This applies to the Amazon RDS MySQL DB instance, or a MySQL database running in EC2."
+  ],
+  "image": "https://eaeastus2.blob.core.windows.net/optimizedimages/static/images/AWS-Certified-Solutions-Architect-Professional/answer/imgckeditor_aws_q5.jpg",
+  "primaryObjective": "2: Design for New Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "E.\nCorrect Answer - B, C, E.\nAmazon Aurora can be used with the MySQL DB instance to take advantage of the read scaling capabilities of Amazon Aurora and expand the read workload for the MySQL DB instance.\nTo use Aurora to read scale the MySQL DB instance, create an Amazon Aurora MySQL DB cluster and make it a replication slave of your MySQL DB instance.\nThis applies to an Amazon RDS MySQL DB instance, or a MySQL database running external to Amazon RDS.\nPlease refer to https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-ug.pdf.\nOne thing to note is that Aurora has the concept of DB cluster and can scale up to 15 read replicas.\nThe below is a screenshot of when DB cluster identifier is defined:\nOption A is incorrect: Because it is unnecessary to use db.r5.16xlarge which is not cost-efficient.\nAlso, Multi-AZ deployment is for availability instead of scalability.\nOption B is CORRECT: Because an Amazon Aurora MySQL DB cluster needs to be set up first so that the source MySQL database will use its endpoint.\nOption C is CORRECT: Because when replication starts, it is important to monitor if the data is successfully synchronized.\nThis is also stated in https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-ug.pdf.\nOption D is incorrect: Aurora can scale from the MySQL instances outside of RDS MySQL.\nOption E is CORRECT: The same reason as options.\nD.\nRefer to “Start Replication Between an External Master Instance and a MySQL DB Instance on Amazon RDS” in https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-ug.pdf page 575.\nThe correct answers are A, B, and C.\nAurora is a MySQL-compatible database that is built for the cloud. It is designed to be highly scalable and available, with automatic failover, and read scalability.\nTo use Aurora to scale up and ease the read contention issue, the following steps should be taken:\nA. Create an Amazon Aurora MySQL DB db.r5.16xlarge instance. Make sure that Multi-AZ deployment is enabled in different zones. Enable Aurora global tables.\nThis step involves creating an Aurora MySQL DB cluster with a large instance type to support the high read traffic. Multi-AZ deployment should be enabled to provide automatic failover in the event of a primary instance failure. Aurora global tables should also be enabled to enable read scaling across multiple regions.\nB. Create an Amazon Aurora MySQL DB cluster. The Aurora DB cluster endpoint address will be used when referenced by the MySQL source instances to scale up.\nThis step involves creating an Aurora MySQL DB cluster that will act as the read replica for the MySQL database. The Aurora DB cluster endpoint address will be used when referenced by the MySQL source instances to scale up. The read replica will be used to offload the read traffic from the MySQL database, reducing the read contention issue.\nC. Set up replication between a MySQL DB instance and an Amazon Aurora MySQL DB cluster. Monitor the replication to ensure that it remains healthy and repair it if necessary.\nThis step involves setting up replication between the MySQL database and the Aurora MySQL DB cluster. The replication should be monitored to ensure that it remains healthy, and any issues should be repaired promptly.\nD. As Aurora does not support MySQL database running external to Amazon RDS, migrate the database from EC2 MySQL to RDS MySQL first and then use Aurora to scale the database.\nThis option is incorrect because Aurora supports MySQL-compatible databases, including those running outside of Amazon RDS.\nE. Make the Aurora DB a replication slave of MySQL DB instances. This applies to the Amazon RDS MySQL DB instance, or a MySQL database running in EC2.\nThis option is incorrect because the Aurora DB cluster should be the read replica for the MySQL database, not the other way around.\nIn summary, to use Aurora to scale up and ease the read contention issue, a large Aurora MySQL DB instance should be created with Multi-AZ deployment enabled, Aurora global tables should be enabled, an Aurora MySQL DB cluster should be created to act as the read replica, and replication should be set up between the MySQL database and the Aurora MySQL DB cluster.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-financial-consulting-services-to-end-users-exam-044.html",
+  "url": "https://certificationation.com/questions/exam-financial-consulting-services-to-end-users-exam-044.html"
+}

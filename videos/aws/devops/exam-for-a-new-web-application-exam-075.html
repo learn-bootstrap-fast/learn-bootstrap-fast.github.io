@@ -1,0 +1,62 @@
+---
+title: "Your team creates a Docker image for a new webExam"
+description: "Video for your team creates a Docker image for a new web application and deploys it in an AWS ECS cluster. You want to automatically increase or decrease the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your team creates a Docker image for a new web application and deploys it in an AWS ECS cluster. You want to automatically increase or decrease the desired count of ECS tasks in the ECS service based on the average CPU utilization. The number of ECS tasks should be adjusted between 3 and 6 and the target value of CPU utilization should be 70 How would you configure this?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>Establish target tracking scaling in the ECS service, utilizing the ECSServiceAverageCPUUtilization metric for automatic scaling</b> option is correct because ECS service-level autoscaling policies support target tracking based on average service CPU utilization. By setting this up, ECS will automatically increase or decrease the number of tasks within the configured boundaries (minimum 3, maximum 6), keeping average CPU utilization around the specified target (70%). This solution directly addresses the scenario without additional components.</p><p>Option <i>Set up target tracking scaling directly within the ECS task definition and define desired scaling values using the ECSTaskAverageCPUUtilization CloudWatch metric</i> is not valid, as scaling is applied at the ECS service level, not within the task definition.</p><p>Option <i>Create a target tracking scaling policy in the Auto Scaling group associated with the ECS cluster, ensuring it tracks the ECSServiceAverageCPUUtilization metric</i> is misleading. Autoscaling groups are used for EC2 instances, not directly for ECS service scaling, which deals with the number of <b>tasks</b>.</p><p>Option <i>On the ECS service console, configure two step scaling policies under the Auto Scaling section, linking each to a CloudWatch alarm to scale in and out based on CPU averages</i> offers a possible but less streamlined alternative—target tracking is more straightforward and suited for the described use case.</p><p><b>Tip:</b> ECS service auto scaling is done at the service level, so scaling options should always be configured there for task count adjustment based on metrics like CPU utilization.</p>",
+  "query": "<p>Your development team has containerized a web application using Docker and deployed it to an Amazon ECS cluster. You want to ensure the ECS service automatically scales the number of running tasks between 3 and 6, depending on average CPU utilization, targeting 70%. What action should you take to automate this scaling behavior?</p>",
+  "original_oid": "6793da8861969b416038a231",
+  "options": [
+    {
+      "correct": true,
+      "text": "Establish target tracking scaling in the ECS service, utilizing the ECSServiceAverageCPUUtilization metric for automatic scaling.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up target tracking scaling directly within the ECS task definition and define desired scaling values using the ECSTaskAverageCPUUtilization CloudWatch metric.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Create a target tracking scaling policy in the Auto Scaling group associated with the ECS cluster, ensuring it tracks the ECSServiceAverageCPUUtilization metric.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "On the ECS service console, configure two step scaling policies under the Auto Scaling section, linking each to a CloudWatch alarm to scale in and out based on CPU averages.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question449",
+  "originalQuery": "Your team creates a Docker image for a new web application and deploys it in an AWS ECS cluster.\nYou want to automatically increase or decrease the desired count of ECS tasks in the ECS service based on the average CPU utilization.\nThe number of ECS tasks should be adjusted between 3 and 6 and the target value of CPU utilization should be 70\nHow would you configure this?",
+  "originalOptions": "[\"A. Add a target tracking scaling policy in the Auto Scaling group used by the AWS ECS cluster. Make sure that the policy uses the ECSServiceAverageCPUUtilization metric.\",\"B. In the AWS ECS service console, add two step scaling policies in the Auto Scaling tab. Set up two CloudWatch alarms to scale in and scale out based on the average CPU.\",\"C. Set up the target tracking auto scaling in the ECS task definition. Configure the minimum, desired and maximum number of tasks based on the ECSTaskAverageCPUUtilization metric in CloudWatch.\",\"D. Configure the auto scaling in the ECS service by adding a target tracking scaling policy based on the ECSServiceAverageCPUUtilization metric.\"]",
+  "video_url": "https://certificationation.com/videos/exam-for-a-new-web-application-exam-075.html",
+  "url": "https://certificationation.com/questions/exam-for-a-new-web-application-exam-075.html"
+}

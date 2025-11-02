@@ -1,0 +1,79 @@
+---
+title: "An analytics team needs to read data out of Cloud SQLExam"
+description: "Video for an analytics team needs to read data out of Cloud SQL for PostgreSQL and update a table in Cloud Bigtable. You need to create a service account and"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "An analytics team needs to read data out of Cloud SQL for PostgreSQL and update a table in Cloud Bigtable. You need to create a service account and grant least privilege access using predefined roles. What roles should you assign to the service account?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "At a logistics startup named SwiftParcel, the data engineering group runs a scheduled Dataflow job every 3 hours that reads from a Cloud SQL for PostgreSQL instance and writes updates to a Bigtable table called shipment_events_v2. You will create a dedicated service account and must grant only the predefined IAM roles required to connect to Cloud SQL and modify data in Bigtable while following least privilege. Which roles should you assign to this service account?",
+  "options": [
+    {
+      "text": "roles/cloudsql.viewer and roles/bigtable.user",
+      "explanation": "Cloud SQL Viewer allows viewing instance metadata and Bigtable User permits reading and writing table data",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "roles/cloudsql.client and roles/bigtable.user",
+      "explanation": "Cloud SQL Client permits connections to Cloud SQL instances and Bigtable User grants read and write access to tables",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "roles/cloudsql.admin and roles/bigtable.reader",
+      "explanation": "Cloud SQL Admin provides full administrative control over Cloud SQL and Bigtable Reader allows only read operations on data",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "roles/cloudsql.editor and roles/bigtable.admin",
+      "explanation": "Cloud SQL Editor enables broad modification of Cloud SQL resources and Bigtable Admin provides full administrative rights for Bigtable",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>roles/cloudsql.client and roles/bigtable.user</b> because the job must connect to Cloud SQL without managing instances and it must read and write Bigtable data without administering the Bigtable environment.</p><p>This pairing follows least privilege. The Cloud SQL client permission set enables secure connections to instances through the proxy or connectors and does not grant instance administration. The Bigtable user permission set allows reading and mutating table data such as writing shipment event updates and does not allow managing tables or instances.</p><p><i>roles/cloudsql.viewer and roles/bigtable.user</i> is not sufficient because the viewer permission set only allows viewing instance metadata and metrics rather than establishing a connection to the database even though the Bigtable user permission set would allow data writes.</p><p><i>roles/cloudsql.admin and roles/bigtable.reader</i> does not meet requirements because the Bigtable reader permission set is read only so the job cannot write updates and the Cloud SQL admin permission set is broader than needed and violates least privilege.</p><p><i>roles/cloudsql.editor and roles/bigtable.admin</i> grants excessive management privileges in both services which violates least privilege and does not provide any benefit for a pipeline that only needs to connect to Cloud SQL and modify Bigtable data.</p>",
+  "batch_id": "196",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "An analytics team needs to read data out of Cloud SQL for PostgreSQL and update a table in Cloud Bigtable. You need to create a service account and grant least privilege access using predefined roles. What roles should you assign to the service account?",
+  "originalOptions": "A. roles/cloudsql.admin and roles/bigtable.user<br/>B. roles/cloudsql.editor and roles/bigtable.admin<br/>C. roles/cloudsql.viewer and roles/bigtable.user<br/>D. roles/cloudsql.client and roles/bigtable.reader",
+  "domain": "Manage a solution that can span multiple database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "317",
+  "tip": "<p>When you see a workload that needs to connect to Cloud SQL think of the <i>Cloud SQL Client</i> role and when it must write Bigtable data look for the <i>Bigtable User</i> role. Avoid admin or editor roles when the task does not require resource management and avoid reader roles when writes are needed.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/connect-auth-proxy",
+    "https://cloud.google.com/sql/docs/mysql/project-access-control",
+    "https://cloud.google.com/bigtable/docs/access-control"
+  ],
+  "url": "https://certificationation.com/questions/exam-data-out-of-cloud-sql-exam-317.html",
+  "video_url": "https://certificationation.com/videos/exam-data-out-of-cloud-sql-exam-317.html"
+}

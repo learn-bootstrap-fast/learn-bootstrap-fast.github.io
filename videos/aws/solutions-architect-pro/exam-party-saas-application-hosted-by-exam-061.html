@@ -1,0 +1,65 @@
+---
+title: "An enterprise wants to use a 3rd party SaaS applicationExam"
+description: "Video for an enterprise wants to use a 3rd party SaaS application hosted by another AWS account. The SaaS application needs to have access to issue several API"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "An enterprise wants to use a 3rd party SaaS application hosted by another AWS account. The SaaS application needs to have access to issue several API commands to discover Amazon EC2 resources running within the enterprise's account. The enterprise has internal security policies that require any outside access to their environment must conform to the principles of least privilege. There must be controls in place to ensure that any other third party cannot use the SaaS vendor's credentials."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d589f501ee1c8ade97b2"
+  },
+  "quid": "0",
+  "ordinal": "103",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "It seems that the question and options were not provided. Could you please provide the specific question or options so I can extract the relevant items from the list?"
+  ],
+  "slug": "ec2-saas-application-access-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question103",
+  "title": "AWS An Enterprise Wants To Use A Question",
+  "meta": "AWS Exam Question: An enterprise seeks a 3rd party SaaS application on AWS, needing API access to discover Amazon EC2 resources while ensuring least privilege. Answer: IAM roles.",
+  "answer": "C",
+  "query": null,
+  "originalQuery": "An enterprise wants to use a 3rd party SaaS application hosted by another AWS account.\nThe SaaS application needs to have access to issue several API commands to discover Amazon EC2 resources running within the enterprise's account.\nThe enterprise has internal security policies that require any outside access to their environment must conform to the principles of least privilege.\nThere must be controls in place to ensure that any other third party cannot use the SaaS vendor's credentials.",
+  "options": null,
+  "originalOptions": [
+    "A. From the AWS Management Console, navigate to the Security Credentials page and retrieve the access and secret key for your account.",
+    "B. Create an IAM user within the enterprise account and assign a user policy to the IAM user that allows only the actions required by the SaaS application. Create new access and secret key for the user and provide these credentials to the SaaS provider.",
+    "C. Create an IAM role for cross-account access that allows the SaaS provider’s account to assume the role and assign it a policy that allows only the actions required by the SaaS application.",
+    "D. Create an IAM role for EC2 instances, assign it a policy that allows only the actions required for the Saas application to work, provide the role ARN to the SaaS provider to be used when launching their application instances."
+  ],
+  "image": "https://eaeastus2.blob.core.windows.net/optimizedimages/static/images/AWS-Certified-Solutions-Architect-Professional/answer/imgquestions_nhcxl7.png",
+  "primaryObjective": "1: Design Solutions for Organizational Complexity",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Answer - C.\nWhen a user, a resource, an application, or any service needs to access an AWS service or resource, always prefer creating an appropriate role with the least privileged access or only required access, rather than using any other credentials such as keys.\nOption A is incorrect because you should never share your access and secret keys.\nOption B is incorrect because (a) when a user is created, even though it may have the appropriate policy attached to it, its security credentials are stored in the EC2 which can be compromised, and (b) creation of the appropriate role is always the better solution rather than creating a user.\nOption C is CORRECT because AWS's role creation allows cross-account access to the application to access the necessary resources.\nSee the image and explanation below.\nMany SaaS platforms can access AWS resources via Cross-account access created in AWS.\nIf you go to Roles in your identity management, you will see the ability to add a cross-account role.\nOption D is incorrect because the role is to be assigned to the application and its resources, not the EC2 instances.\nFor more information on the cross-account role, please visit the below URL-\nhttp://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html\nThe correct answer is C.\nExplanation: To allow a third-party SaaS application hosted by another AWS account to access Amazon EC2 resources running within the enterprise's account, while conforming to the principles of least privilege, we should create an IAM role for cross-account access.\nThis is because using IAM roles instead of IAM users provides better security and ensures that the credentials of the SaaS vendor are not shared with any other third party. The IAM role can be assumed by the SaaS provider's account, which will provide temporary security credentials that are automatically rotated and are limited in scope to only the actions required by the SaaS application.\nOption A is incorrect because it involves retrieving the access and secret key for the enterprise account, which would mean sharing the enterprise account credentials with the SaaS provider, which goes against the principle of least privilege.\nOption B is also incorrect because it involves creating an IAM user with access and secret keys, which again would mean sharing long-term credentials with the SaaS provider.\nOption D is also incorrect because it involves creating an IAM role for EC2 instances, which is not appropriate for granting access to an external third-party SaaS application.\nTherefore, the correct answer is C. Create an IAM role for cross-account access that allows the SaaS provider's account to assume the role and assign it a policy that allows only the actions required by the SaaS application.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-party-saas-application-hosted-by-exam-061.html",
+  "url": "https://certificationation.com/questions/exam-party-saas-application-hosted-by-exam-061.html"
+}

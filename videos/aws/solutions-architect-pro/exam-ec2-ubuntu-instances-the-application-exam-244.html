@@ -1,0 +1,71 @@
+---
+title: "You are maintaining over a dozen EC2 Ubuntu instancesExam"
+description: "Video for you are maintaining over a dozen EC2 Ubuntu instances. The application installed in the instances had an issue last week, and the development team"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are maintaining over a dozen EC2 Ubuntu instances. The application installed in the instances had an issue last week, and the development team already knew the root cause. To prevent the issue from happening again, some debug logs have been added to the application. Your manager asked you to use AWS Systems Manager to send the logs to an S3 bucket every 2:00 AM for all the EC2 instances. Which AWS Systems Manager service should you use to meet this requirement? Choose 2 Options."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d5f3f501ee1c8ade98bc"
+  },
+  "quid": "0",
+  "ordinal": "372",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "AWS Systems Manager",
+    " Amazon S3"
+  ],
+  "slug": "ec2-ubuntu-instances-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question372",
+  "title": "AWS You Are Maintaining Over A Dozen EC2 Question",
+  "meta": "AWS Exam Question: You are maintaining EC2 Ubuntu instances and need to use AWS Systems Manager to send logs to S3. Which services should you use? Answer: CloudWatch, S3.",
+  "answer": "C D",
+  "query": "You manage a fleet of 15 Amazon Linux EC2 instances running a custom monitoring application. After a recent update caused intermittent errors, developers have embedded extra diagnostics into the app. Your manager requests an automated solution to collect and upload these diagnostics logs to an S3 bucket every day at 1:30 AM across all EC2 instances using AWS Systems Manager. Which AWS Systems Manager capabilities should you implement to accomplish this? Choose 2 Options.",
+  "originalQuery": "You are maintaining over a dozen EC2 Ubuntu instances.\nThe application installed in the instances had an issue last week, and the development team already knew the root cause.\nTo prevent the issue from happening again, some debug logs have been added to the application.\nYour manager asked you to use AWS Systems Manager to send the logs to an S3 bucket every 2:00 AM for all the EC2 instances.\nWhich AWS Systems Manager service should you use to meet this requirement? Choose 2 Options.",
+  "options": [
+    "A. Use the Session Manager to push the diagnostics data to the S3 bucket daily at 1:30 AM.",
+    "B. Deploy Systems Manager Distributor packages to transfer logs to S3 on every managed instance at 1:30 AM.",
+    "C. Use State Manager to execute a shell script at 1:30 AM across all EC2 instances.",
+    "D. Define a schedule in AWS Systems Manager Maintenance Windows to upload the logs to the S3 bucket daily at 1:30 AM."
+  ],
+  "originalOptions": [
+    "A. Use the Session manager to send the required logs to the S3 bucket every 2:00 AM.",
+    "B. Use Systems Manager Distributor to transfer the logs every 2:00 AM on all the AWS Systems Manager managed instances.",
+    "C. Use State Manager to run a shell script every 2:00 AM for all the EC2 instances.",
+    "D. Create a schedule in AWS Systems Manager Maintenance Windows to move the logs to the S3 bucket every 2:00 AM."
+  ],
+  "image": "https://eaeastus2.blob.core.windows.net/optimizedimages/static/images/AWS-Certified-Solutions-Architect-Professional/answer/imgckeditor_9.png",
+  "primaryObjective": "3: Continuous Improvement for Existing Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Correct Answer - C and D.\nFor this case, the State Manager should be used.\nThe “AWS-RunPowerShellScript” document can be created, and its target is all the EC2 instances.\nAWS Systems Manager State Manager is a service that automates the process of keeping the Amazon EC2 or hybrid infrastructure in the state that you desire.\nOption A is incorrect: Because Session Manager is a service to provide secure and auditable instance management, which is not a tool to execute a script or command.\nOption B is incorrect: Because Distributor packages the software to install on AWS Systems Manager managed instances.\nIt is not designed to run a script or command as a schedule.\nOption C is CORRECT: Because in State Manager, the user can design an association that contains a proper document to accomplish this mission.\nOption D is CORRECT: Configure instance permissions with IAM needed to run maintenance window tasks on your instances and Configure user permissions in your account who assigns tasks to maintenance windows.\nTo meet the requirement of sending logs from multiple EC2 instances to an S3 bucket every day at 2:00 AM, AWS Systems Manager provides different services that can be used. Two possible options that could meet the requirement are:\nOption A: Use the Session Manager to send the required logs to the S3 bucket every 2:00 AM. Option D: Create a schedule in AWS Systems Manager Maintenance Windows to move the logs to the S3 bucket every 2:00 AM.\nOption B (Use Systems Manager Distributor to transfer the logs every 2:00 AM on all the AWS Systems Manager managed instances) does not meet the requirement as it is not clear if the EC2 instances are managed by AWS Systems Manager or not. Additionally, using Distributor to transfer logs to S3 requires an additional setup process of creating packages, versions, and associations which may not be necessary.\nOption C (Use State Manager to run a shell script every 2:00 AM for all the EC2 instances) does not meet the requirement as State Manager is used for managing the configuration of EC2 instances and not for transferring logs.\nOption A: Use the Session Manager to send the required logs to the S3 bucket every 2:00 AM.\nAWS Systems Manager Session Manager allows users to securely manage instances without the need for SSH or RDP connections. It provides a simple and secure way to execute commands on EC2 instances and provides features like session history, audit logging, and access control. However, it does not have built-in functionality to send logs to S3.\nTherefore, using the Session Manager for transferring logs would require additional setup, such as writing a script that extracts the logs and sends them to the S3 bucket using AWS CLI or SDK. This approach may require additional IAM permissions and access control setup to ensure secure transfer of logs.\nOption D: Create a schedule in AWS Systems Manager Maintenance Windows to move the logs to the S3 bucket every 2:00 AM.\nAWS Systems Manager Maintenance Windows is a service that enables users to schedule AWS Systems Manager automation tasks across fleets of instances. It provides a simple and automated way to manage patching, maintenance, and other administrative tasks on EC2 instances.\nUsing Maintenance Windows to schedule the transfer of logs to S3 bucket would require creating an SSM automation document that includes a script to extract logs from the EC2 instances and copy them to the S3 bucket. This can be done using the \"AWS-RunShellScript\" document type or using a custom document that is tailored to meet the specific requirements.\nOnce the automation document is created, it can be scheduled to run at 2:00 AM using Maintenance Windows. Maintenance Windows provide a centralized and automated way to run the automation tasks across all EC2 instances in the fleet, including tagging and filtering options that can help to target specific instances.\nIn summary, both options A and D can be used to transfer logs from multiple EC2 instances to an S3 bucket every 2:00 AM. Option A requires additional setup to extract logs and send them to S3, while option D requires creating an SSM automation document that can be scheduled using Maintenance Windows. The best option would depend on the specific requirements, such as the level of automation, security, and access control required.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-ec2-ubuntu-instances-the-application-exam-244.html",
+  "url": "https://certificationation.com/questions/exam-ec2-ubuntu-instances-the-application-exam-244.html"
+}

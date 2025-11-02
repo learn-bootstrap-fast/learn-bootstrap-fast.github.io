@@ -1,0 +1,82 @@
+---
+title: "You are a Database Engineer working on optimizing aExam"
+description: "Video for you are a Database Engineer working on optimizing a slow-running query in a Bigtable instance. Which of the following approaches would be the most"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are a Database Engineer working on optimizing a slow-running query in a Bigtable instance. Which of the following approaches would be the most effective to address the issue?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are a data platform engineer at a retail analytics firm that uses Cloud Bigtable for time series inventory data, and a read query against the inventory_events table is experiencing high latency and inconsistent performance during peak usage. What is the best approach to diagnose and address the underlying bottleneck?",
+  "options": [
+    {
+      "text": "Monitor the cluster&apos;s CPU and memory metrics in Cloud Monitoring",
+      "explanation": "This option focuses on observing infrastructure resource utilization through Cloud Monitoring to understand overall system load.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Add a secondary index on frequently filtered columns",
+      "explanation": "This option proposes creating an additional index to speed lookups based on specific fields used in filters.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use the Bigtable Key Visualizer to inspect row key access patterns and hotspots",
+      "explanation": "This option leverages a visualization tool that shows access heatmaps and load distribution across the row key space over time.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Migrate the Bigtable cluster to SSD storage",
+      "explanation": "This option changes the storage type to SSD which can reduce storage latency for certain workloads.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Use the Bigtable Key Visualizer to inspect row key access patterns and hotspots</b>.</p><p><b>Key Visualizer</b> is built to diagnose uneven access and storage patterns that cause latency spikes in Cloud Bigtable. It provides a heatmap of key ranges over time so you can see read pressure, write pressure, and hotspots that often arise with time series schemas where keys grow monotonically. With <b>Key Visualizer</b> you can confirm whether a small set of tablets or key ranges are overloaded during peak usage and then address the issue by redesigning row keys through techniques like hashing or bucketing timestamps, by increasing parallelism, or by adjusting splits.</p><p><i>Monitor the cluster's CPU and memory metrics in Cloud Monitoring</i> is helpful for general health but it does not reveal skewed row key distribution or pinpoint hot key ranges. You might see elevated utilization yet still not understand which keys are causing contention, so this does not directly address the root cause of inconsistent read latency.</p><p><i>Add a secondary index on frequently filtered columns</i> is not feasible with Cloud Bigtable because it does not support secondary indexes. You would need to design additional tables or adjust the row key to support your access patterns.</p><p><i>Migrate the Bigtable cluster to SSD storage</i> is not the right first step because storage media changes do not resolve hotspotting or poor key distribution. Many production deployments already use SSD and even if not, the primary issue for spiky latency in read queries is often uneven access across key ranges, which <b>Key Visualizer</b> helps you detect and fix.</p>",
+  "batch_id": "34",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are a Database Engineer working on optimizing a slow-running query in a Bigtable instance. Which of the following approaches would be the most effective to address the issue?",
+  "originalOptions": "A. Use the Bigtable Key Visualizer to analyze access patterns and hotspots.<br/>B. Add a secondary index on the queried columns.<br/>C. Monitor the Bigtable instance's CPU and memory usage in the Google Cloud Console.<br/>D. Configure the Bigtable instance to use SSD storage.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "219",
+  "tip": "<p>When a Bigtable question mentions <i>hotspots</i> or inconsistent latency, think about <i>row key distribution</i> and reach for the <i>Key Visualizer</i> to confirm before changing capacity or storage.</p>",
+  "references": [
+    "https://cloud.google.com/bigtable/docs/keyvis-overview",
+    "https://cloud.google.com/bigtable/docs/performance#stop-hotspots",
+    "https://cloud.google.com/bigtable/docs/schema-design-time-series",
+    "https://cloud.google.com/bigtable/docs/monitoring-performance",
+    "https://cloud.google.com/bigtable/docs/faq#secondary-indexes",
+    "https://cloud.google.com/bigtable/docs/choosing-ssd-hdd"
+  ],
+  "url": "https://certificationation.com/questions/exam-optimizing-a-slow-running-query-in-exam-219.html",
+  "video_url": "https://certificationation.com/videos/exam-optimizing-a-slow-running-query-in-exam-219.html"
+}

@@ -1,0 +1,62 @@
+---
+title: "A big IT company started using AWS CodeCommit to manageExam"
+description: "Video for a big IT company started using AWS CodeCommit to manage its source code. There are hundreds of developers and new Git repositories are added in"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A big IT company started using AWS CodeCommit to manage its source code. There are hundreds of developers and new Git repositories are added in CodeCommit frequently. The DevOps team was told to design an approach to create a new repository by running a script and after the script has run, some init code such as template and README can be added into the repository automatically. Which approach is the best to be managed?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best solution is to <b>use a CloudFormation template to define a CodeCommit repository, alongside a Lambda function that commits the desired starter files after the repository is created</b>. CloudFormation can efficiently create AWS resources in a repeatable, manageable way, but it cannot initially populate a CodeCommit repo with code on its own. The Lambda function is needed to programmatically add the initial code after repository creation, offering a scalable, automated process suitable for frequent repository provisioning.</p><p>The option <i>Switch to GitHub, as CodeCommit does not offer the required capabilities</i> is incorrect because CodeCommit is fully capable of supporting repository creation and scripted code initialization with additional automation (such as Lambda invocations).</p><p><i>Prepare a shell script with Git commands to initialize and submit code to a new repository as needed</i> is workable, but less manageable at scale and less integrated into AWS's automation ecosystem, making it inferior for ongoing governance by a DevOps team.</p><p><i>Upload the code to an S3 bucket, then use a CloudFormation template to create a repository with AWS::CodeCommit::Repository and specify a property to include code from S3 during provisioning</i> is incorrect because AWS::CodeCommit::Repository does not natively support seeding a repository directly with S3 content in CloudFormation at creation time, so this approach would not work as described.</p><p><b>Tip:</b> When standardizing cloud resource creation, always favor infrastructure-as-code approaches (like CloudFormation) complemented with event-driven automation (such as Lambda) to handle tasks not natively supported during initial resource deployment.</p>",
+  "query": "<p>An enterprise IT organization has begun using AWS CodeCommit for version control across hundreds of developers. New repositories are regularly created, and the DevOps team needs to establish a method to programmatically create a new CodeCommit repository and automatically initialize it with some starter files like a README and template, all via script execution. Which solution is the best fit for ongoing management?</p>",
+  "original_oid": "6793da3461969b416038a188",
+  "options": [
+    {
+      "correct": true,
+      "text": "Use a CloudFormation template to define an AWS::CodeCommit::Repository resource, and deploy a Lambda function that automatically commits the initial code to the new repository after creation.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Switch to GitHub, as CodeCommit does not offer the required capabilities.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Prepare a shell script with Git commands to initialize and submit code to a new repository as needed.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Upload the code to an S3 bucket, then use a CloudFormation template to create a repository with AWS::CodeCommit::Repository and specify a property to include code from S3 during provisioning.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question279",
+  "originalQuery": "A big IT company started using AWS CodeCommit to manage its source code.\nThere are hundreds of developers and new Git repositories are added in CodeCommit frequently.\nThe DevOps team was told to design an approach to create a new repository by running a script and after the script has run, some init code such as template and README can be added into the repository automatically.\nWhich approach is the best to be managed?",
+  "originalOptions": "A. Design a shell script using Git commands to create a new repository and submit the init code.\nB. Put the code into S3 bucket. Design a CloudFormation template to create a repository with the resource type AWS::CodeCommit::Repository. Add a property to include the code. Create a CloudFormation stack when needed.\nC. Design a CloudFormation template to create a repository with the resource type AWS::CodeCommit::Repository. Design a Lambda function to commit the initial code to the new repository.\nD. CodeCommit does not support this. Use GitHub instead.",
+  "video_url": "https://certificationation.com/videos/exam-aws-codecommit-to-manage-its-exam-239.html",
+  "url": "https://certificationation.com/questions/exam-aws-codecommit-to-manage-its-exam-239.html"
+}

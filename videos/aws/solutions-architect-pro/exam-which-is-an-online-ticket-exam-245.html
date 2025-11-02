@@ -1,0 +1,76 @@
+---
+title: "Your team has owned a web application which is an onlineExam"
+description: "Video for your team has owned a web application which is an online ticket booking system. You are trying to use another m4.xlarge EC2 instance as a backup. You"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your team has owned a web application which is an online ticket booking system. You are trying to use another m4.xlarge EC2 instance as a backup. You want to stop the instance to save some cost unless it needs to bring up. However, it takes a long time for the bootstrap process to bring the system up, which is unacceptable. The company's cloud architect has suggested hibernating the instance so that it can start up very quickly. To hibernate the instance, which below prerequisites are needed?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d5f4f501ee1c8ade98be"
+  },
+  "quid": "0",
+  "ordinal": "374",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "Amazon EC2",
+    " Amazon Elastic Block Store (Amazon EBS)",
+    " AWS Auto Scaling",
+    " AWS Elastic Beanstalk",
+    " AWS Lambda"
+  ],
+  "slug": "ec2-hibernate-instance-backup-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question374",
+  "title": "AWS Your Team Has Owned A Web Application Question",
+  "meta": "AWS Exam Question: Your team has an online ticket booking system using an m4.xlarge EC2 instance as backup. Hibernation prerequisites? Find the answer.",
+  "answer": "B C E",
+  "query": "A company runs an internal analytics platform on an m5.large EC2 instance. To reduce expenses during off-hours, the operator wants to halt the instance instead of terminating it. Boot times are lengthy, impacting productivity when restarting. The cloud engineer suggests using the hibernate feature to resume faster. What prerequisites must be fulfilled to enable hibernation on this instance?",
+  "originalQuery": "Your team has owned a web application which is an online ticket booking system.\nYou are trying to use another m4.xlarge EC2 instance as a backup.\nYou want to stop the instance to save some cost unless it needs to bring up.\nHowever, it takes a long time for the bootstrap process to bring the system up, which is unacceptable.\nThe company's cloud architect has suggested hibernating the instance so that it can start up very quickly.\nTo hibernate the instance, which below prerequisites are needed?",
+  "options": [
+    "A. The AMI of Mac OS EC2 instances must support hibernation.",
+    "B. The instance root volume must be an Amazon EBS volume, not an instance store volume.",
+    "C. The instance cannot be part of an Auto Scaling group or orchestrated by Amazon ECS.",
+    "D. The root volume should not be unencrypted; otherwise, hibernation will fail due to memory data transfer issues.",
+    "E. The root volume must be sufficiently sized to store the RAM data."
+  ],
+  "originalOptions": [
+    "A. The AMI of Mac OS EC2 instances must support hibernation.",
+    "B. The instance root volume must be an Amazon EBS volume, not an instance store volume.",
+    "C. The instance cannot be in an Auto Scaling group or used by Amazon ECS.",
+    "D. The root volume must not be encrypted; otherwise, it will cause an issue to transfer data from RAM.",
+    "E. The root volume must be large enough so that the RAM contents can be stored."
+  ],
+  "image": "https://eaeastus2.blob.core.windows.net/optimizedimages/static/images/AWS-Certified-Solutions-Architect-Professional/answer/imgckeditor_awsq4-7.1.jpg",
+  "primaryObjective": "3: Continuous Improvement for Existing Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "E.\nCorrect Answer - B, C, E.\nRefer to the below for the hibernating process:\nIt is a process of transferring data inside and outside RAM to Amazon EBS root volume.\nHowever, some prerequisites have to be met.\nRefer to https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html for the details.\nOption A is incorrect: Because only Windows and Linux are supported for EC2 hibernation.\nPlease read the description given under 'Important' in the page under the below link.\nhttps://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/Hibernate.html\nOption B is CORRECT: Because instance store volume will lose data when stopped and is not supported for EC2 hibernation.\nOption C is CORRECT: Because when the instance is in an Auto Scaling group, and you try to hibernate it, the Amazon EC2 Auto Scaling service marks the stopped instance as unhealthy and may terminate it and launch a replacement instance.\nOption D is incorrect: Because in order to use hibernation, the root volume must be encrypted to ensure the protection of sensitive content that is in memory at the time of hibernation.\nOption E is CORRECT: If the root volume is not enough to store the data from RAM, the following message may appear: hibinit-agent: Insufficient disk space.\nCannot create setup for hibernation.\nPlease allocate a larger root device.\nTo hibernate an EC2 instance, the following prerequisites must be met:\nA. The AMI of Mac OS EC2 instances must support hibernation. Hibernation is not supported for macOS instances, so this option is not relevant to the scenario.\nB. The instance root volume must be an Amazon EBS volume, not an instance store volume. Hibernation requires an EBS-backed instance, not an instance store-backed instance. EBS volumes persist independently of the lifecycle of the instance, allowing the instance to be stopped and started again while preserving its state.\nC. The instance cannot be in an Auto Scaling group or used by Amazon ECS. An instance in an Auto Scaling group or used by Amazon ECS cannot be hibernated because these services are designed to scale up or down dynamically, and hibernation is not supported in this scenario.\nD. The root volume must not be encrypted; otherwise, it will cause an issue to transfer data from RAM. If the root volume is encrypted, hibernation will not be successful because the instance cannot write the contents of RAM to the encrypted disk. Therefore, the root volume must not be encrypted.\nE. The root volume must be large enough so that the RAM contents can be stored. During hibernation, the instance saves its memory contents to the root volume, and when it starts up again, it restores the memory contents from the root volume. Therefore, the root volume must be large enough to store the contents of the instance's RAM.\nIn summary, to hibernate an EC2 instance, it must be EBS-backed, not in an Auto Scaling group or used by Amazon ECS, the root volume must not be encrypted, and the root volume must be large enough to store the contents of the instance's RAM.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-which-is-an-online-ticket-exam-245.html",
+  "url": "https://certificationation.com/questions/exam-which-is-an-online-ticket-exam-245.html"
+}

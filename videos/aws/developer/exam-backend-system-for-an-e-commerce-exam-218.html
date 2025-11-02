@@ -1,0 +1,82 @@
+---
+title: "You are tasked with designing a backend system for anExam"
+description: "Video for you are tasked with designing a backend system for an e-commerce platform that handles inventory management, order processing, and real-time inventory"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are tasked with designing a backend system for an e-commerce platform that handles inventory management, order processing, and real-time inventory updates. The system must scale automatically to handle varying loads and maintain high availability. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Northwind Events is building a new online ticketing backend that must manage seat inventory, process orders, and broadcast live seat availability to clients. Demand can spike to tens of thousands of concurrent users during a 3 minute on-sale window, and the platform must scale automatically and remain highly available. Which architecture should you implement?",
+  "options": [
+    {
+      "text": "Deploy Google Kubernetes Engine for microservices and persist data in Cloud SQL while using Memorystore to cache hot seat data",
+      "explanation": "This approach uses container orchestration with a managed relational database and an in-memory cache to reduce read latency.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Implement event-driven services using Cloud Functions for purchase and inventory workflows and store seat inventory in Firestore to deliver real-time updates to clients",
+      "explanation": "This design uses fully managed serverless functions that auto-scale and a NoSQL database with built-in realtime listeners to push updates to clients.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Provision Compute Engine managed instance groups for application servers and use Cloud Spanner to store orders and inventory",
+      "explanation": "This solution relies on autoscaling virtual machines paired with a horizontally scalable relational database for strong consistency across regions.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure App Engine Flexible with automatic scaling for the application and use Cloud SQL for order and inventory storage",
+      "explanation": "This configuration uses a managed application platform that scales instances and a managed relational database for transactional data.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct architecture is <b>Implement event-driven services using Cloud Functions for purchase and inventory workflows and store seat inventory in Firestore to deliver real-time updates to clients</b>.</p><p>This serverless event-driven design scales quickly during short bursts and remains highly available without manual capacity planning. Cloud Functions scales automatically as requests and events arrive so it can absorb a three minute surge to tens of thousands of users. Firestore provides low latency reads and writes with transactional updates to prevent overselling and it offers native real-time listeners so clients receive seat availability changes immediately.</p><p>With this approach, purchase workflows run in lightweight functions that write inventory changes in Firestore using transactions, while Firestore change events can drive downstream updates and aggregates. Clients subscribe to seat documents or queries and stay synchronized throughout the on-sale window without custom polling or additional messaging layers.</p><p><i>Deploy Google Kubernetes Engine for microservices and persist data in Cloud SQL while using Memorystore to cache hot seat data</i> is not the best fit because Cloud SQL can become a connection and write throughput bottleneck during extreme spikes and caching introduces staleness risks for inventory. Delivering live updates to clients would also require building and operating additional messaging or WebSocket infrastructure, which increases complexity compared to a managed real-time datastore.</p><p><i>Provision Compute Engine managed instance groups for application servers and use Cloud Spanner to store orders and inventory</i> adds significant operational overhead and slower scale-up for instances during a short on-sale window. While Spanner is highly scalable and strongly consistent, this stack does not provide native real-time client updates and is likely over engineered and more costly than needed when Firestore can satisfy the requirements with built-in real-time capabilities.</p><p><i>Configure App Engine Flexible with automatic scaling for the application and use Cloud SQL for order and inventory storage</i> is less suitable because App Engine Flexible has slower startup and scaling characteristics that do not align with sudden three minute bursts. Cloud SQL can again be a bottleneck under heavy write contention and the stack lacks native real-time update delivery to clients.</p>",
+  "batch_id": "98",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "You are tasked with designing a backend system for an e-commerce platform that handles inventory management, order processing, and real-time inventory updates. The system must scale automatically to handle varying loads and maintain high availability. What should you do?",
+  "originalOptions": "A. Use Compute Engine to host virtual machines that run the e-commerce platform, with Cloud Spanner for data storage.<br/>B. Set up App Engine with automatic scaling for the e-commerce application and use Firestore for inventory data management.<br/>C. Deploy a Kubernetes Engine cluster with microservices for each function and use Cloud SQL for data persistence.<br/>D. Implement Cloud Functions to handle inventory and order processing, with Firestore for real-time data storage and updates.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "218",
+  "tip": "<p>Scan for clues like <i>real-time</i> updates and <i>bursty</i> load. Prefer <i>serverless</i> event-driven compute with a datastore that supports native subscriptions so clients receive updates without custom polling.</p>",
+  "references": [
+    "https://cloud.google.com/functions/docs",
+    "https://cloud.google.com/firestore/docs/listen",
+    "https://cloud.google.com/firestore/docs/transactions",
+    "https://cloud.google.com/sql/docs/quotas",
+    "https://cloud.google.com/appengine/docs/flexible/reference/faq",
+    "https://cloud.google.com/kubernetes-engine/docs/concepts/kubernetes-engine-overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-backend-system-for-an-e-commerce-exam-218.html",
+  "video_url": "https://certificationation.com/videos/exam-backend-system-for-an-e-commerce-exam-218.html"
+}

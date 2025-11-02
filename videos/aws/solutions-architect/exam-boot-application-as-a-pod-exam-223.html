@@ -1,0 +1,127 @@
+---
+title: "A company has deployed a Java Spring Boot application asExam"
+description: "Video for a company has deployed a Java Spring Boot application as a pod that runs on Amazon Elastic Kubernetes Service (Amazon EKS) in private subnets. The"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company has deployed a Java Spring Boot application as a pod that runs on Amazon Elastic Kubernetes Service (Amazon EKS) in private subnets. The application needs to write data to an Amazon DynamoDB table. A solutions architect must ensure that the application can interact with the DynamoDB table without exposing traffic to the internet. Which combination of steps should the solutions architect take to accomplish this goal? (Choose two.)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729a44"
+  },
+  "quid": null,
+  "ordinal": "223",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon RDS",
+    " Amazon Elastic Kubernetes Service (Amazon EKS)"
+  ],
+  "slug": "eks-java-spring-boot-application-aws",
+  "source": "ET",
+  "title": "AWS A Company Has Deployed A Java Spring Boot Application Question",
+  "meta": "AWS Exam Question: A Java Spring Boot app on Amazon EKS in private subnets needs access to DynamoDB without internet exposure. Find the answer using VPC and IAM.",
+  "answer": "AD",
+  "query": "An organization has deployed a Python Flask application as a container in Amazon Elastic Kubernetes Service (Amazon EKS) within private subnets. The application requires the ability to read data from an Amazon RDS database. A solutions architect needs to guarantee that the application can access the RDS database while keeping network traffic private.\n\nWhat steps should the solutions architect implement to achieve this goal? (Choose two.)",
+  "originalQuery": "A company has deployed a Java Spring Boot application as a pod that runs on Amazon Elastic Kubernetes Service (Amazon EKS) in private subnets. The application needs to write data to an Amazon DynamoDB table. A solutions architect must ensure that the application can interact with the DynamoDB table without exposing traffic to the internet.\n\nWhich combination of steps should the solutions architect take to accomplish this goal? (Choose two.)",
+  "options": [
+    "A. Attach an IAM role that has sufficient privileges to the EKS pod.",
+    "B. Attach an IAM user that has sufficient privileges to the EKS pod.",
+    "C. Enable outbound access to the RDS database using NACL settings in the private subnet.",
+    "D. Create a VPC endpoint for DynamoDB.",
+    "E. Embed access keys directly into the Flask application."
+  ],
+  "originalOptions": [
+    "A. Attach an IAM role that has sufficient privileges to the EKS pod.",
+    "B. Attach an IAM user that has sufficient privileges to the EKS pod.",
+    "C. Allow outbound connectivity to the DynamoDB table through the private subnets’ network ACLs.",
+    "D. Create a VPC endpoint for DynamoDB.",
+    "E. Embed the access keys in the Java Spring Boot code."
+  ],
+  "image": null,
+  "primaryObjective": "1: Design Secure Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "After reviewing option D, I did not consider option E further, as option D is indeed the correct choice.",
+    "B: Nope! You can't use an IAM user for EKS pods. That's like trying to use a cat to catch mice—just doesn’t work! 🐱\n\nC: Not quite! NACLs are a bit picky; they need specific destination CIDR blocks and ports. This approach won’t get you to DynamoDB, so let’s not go that route! 🚫\n\nE: Yikes! Embedding access keys directly in your application is like leaving the front door wide open while you go on vacation—definitely not secure! 🔑🏡\n\nA and D are the dynamic duo you need! By attaching an IAM role, you grant the necessary permissions for the EKS pod, and creating a VPC endpoint for DynamoDB keeps your traffic cozy and private, away from the wild, wild internet. 🛡️🌐 So, go team!",
+    "To ensure our Java Spring Boot application can gracefully write data to an Amazon DynamoDB table without throwing a tantrum and exposing traffic to the internet, we’ll need to take a couple of smart steps. First, let’s strap an IAM role with the necessary write permissions onto the EKS pod. This way, the pod can securely communicate with DynamoDB like a well-mannered guest at a party. \n\nNext, to keep our traffic cozy and private, we should set up a VPC endpoint for DynamoDB. This nifty little feature allows the application to talk to DynamoDB without ever needing to venture out into the wild, unpredictable world of the internet. Think of it as a VIP lounge for your data traffic—exclusive access, no outside interference.",
+    "To enable the application to write data to an Amazon DynamoDB table, it is essential to attach an IAM role to the EKS pod that grants the necessary write permissions. This ensures that the application has the appropriate access to interact with the DynamoDB service securely. \n\nAdditionally, creating a VPC endpoint for DynamoDB is crucial for maintaining the integrity of the network. This setup allows the application to communicate with DynamoDB without exposing any traffic to the internet, thereby enhancing security and ensuring a more reliable connection. By implementing these steps, the application can efficiently interact with DynamoDB while adhering to best practices for security and network architecture.",
+    "A. By linking an IAM role to the EKS pod, you can bestow it with the essential permissions needed to interact with DynamoDB. This IAM role should be equipped with the right policies that grant access to the desired DynamoDB table. 🌟\n\nD. Setting up a VPC endpoint for DynamoDB enables the EKS pod to access DynamoDB in a cozy, private manner within the VPC, bypassing the need for internet connectivity altogether. This VPC endpoint establishes a direct and secure connection to DynamoDB, ensuring that traffic remains safely within the confines of your network. 🚀"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "",
+      "explanation": "After seeing D, I didn't even look at option E. its AD correct",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "AD",
+      "explanation": "B: Wrong, cannot be a user for EKS\nC: Not possible as NACL need destination CIDR/ports etc. This is not correct way to connect to DynamoDB\nE: Not secure\nAD is correct because you need roles for allowing service permissions and accessing DynamoDB with VPC endpoint is the correct way",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "The application needs to write data to an Amazon DynamoDB table = Attach an IAM role that has write privileges to the EKS pod\nWithout exposing traffic to the internet = VPC endpoint for DynamoDB",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "AD",
+      "explanation": "The application needs to write data to an Amazon DynamoDB table = Attach an IAM role that has write privileges to the EKS pod\nWithout exposing traffic to the internet = VPC endpoint for DynamoDB",
+      "upvotes": "4"
+    },
+    {
+      "selectedAnswer": "AD",
+      "explanation": "A. By attaching an IAM role to the EKS pod, you can grant the necessary permissions for the pod to access DynamoDB. The IAM role should have appropriate policies allowing access to the DynamoDB table.\n\nD. Creating a VPC endpoint for DynamoDB allows the EKS pod to access DynamoDB privately within the VPC, without the need for internet connectivity. The VPC endpoint provides a direct and secure connection to DynamoDB, eliminating the need for traffic to flow over the internet.",
+      "upvotes": "3"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "AD (100%)",
+      "votes": "27 votes."
+    },
+    {
+      "option": "C (25%)",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answers are A and D. Option A is correct because attaching an IAM role to the EKS pod provides it with the necessary permissions to interact with DynamoDB securely. IAM roles use temporary security credentials, which are more secure than embedding access keys. Option D is correct as creating a VPC endpoint for DynamoDB ensures that the application communicates with the database privately over the Amazon network without going over the public internet. \n\nOption B is incorrect because IAM users cannot be assigned directly to EKS pods, which require IAM roles for permissions. Option C is incorrect because relying on Network ACLs for outbound traffic to a database does not ensure secure, private connectivity; the VPC endpoint is the proper solution. Option E is insecure as embedding access keys in code can lead to security vulnerabilities and should be avoided.",
+  "video_url": "https://certificationation.com/videos/exam-boot-application-as-a-pod-exam-223.html",
+  "url": "https://certificationation.com/questions/exam-boot-application-as-a-pod-exam-223.html"
+}

@@ -1,0 +1,80 @@
+---
+title: "You have a customer support application hosted on GoogleExam"
+description: "Video for you have a customer support application hosted on Google Cloud, with the application residing in a single region. The Cloud SQL database is utilized"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have a customer support application hosted on Google Cloud, with the application residing in a single region. The Cloud SQL database is utilized for storing customer support tickets. Your support team operates within the same time zone and uses the application from Monday to Friday, 8 AM to 6 PM. You aim to carry out routine maintenance updates to the Cloud SQL instance without causing any downtime for your support team. What steps should you take to accomplish this?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Orion Outfitters runs a helpdesk platform on Google Cloud in a single region and the system uses Cloud SQL to store ticket data. The agents work in the same time zone and typically use the application Monday to Friday from 9 AM to 5 PM. You need to perform routine Cloud SQL maintenance without interrupting the support team. What should you do?",
+  "options": [
+    {
+      "text": "Turn on maintenance notifications for the team and postpone updates until after notices are sent",
+      "explanation": "This approach informs users ahead of time and shifts the timing of updates, yet it does not guarantee that user sessions will be unaffected during business hours.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure the Cloud SQL instance with high availability enabled",
+      "explanation": "High availability reduces maintenance impact through failover to a standby instance, although a brief switchover can still cause a short interruption.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Define a weekend maintenance window when the team is offline, set lower environments to update first, and schedule production to update later",
+      "explanation": "A maintenance window outside business hours prevents user impact and updating nonproduction first acts as a canary before promoting changes to production.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Create a cross region failover replica to handle maintenance updates",
+      "explanation": "A cross region failover replica is designed primarily for disaster recovery across regions and is not the standard solution for avoiding maintenance impact in a single region.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Define a weekend maintenance window when the team is offline, set lower environments to update first, and schedule production to update later</b>.</p><p>Cloud SQL allows you to set a preferred maintenance window by day and hour so you can choose a time when users are not active. Since the helpdesk operates Monday to Friday during business hours, running maintenance on the weekend prevents disruption. Rolling changes through development and staging first gives you a safe place to validate updates and then scheduling production afterward minimizes the chance of impacting the support team.</p><p><i>Turn on maintenance notifications for the team and postpone updates until after notices are sent</i> is not sufficient because notifications do not control when maintenance occurs. You still need to define a maintenance window and plan the rollout order across environments to avoid user impact.</p><p><i>Configure the Cloud SQL instance with high availability enabled</i> does not guarantee a maintenance experience without interruption. HA can reduce disruption by failing over to a standby but there is still a brief failover event and it does not let you choose a user friendly time for the work.</p><p><i>Create a cross region failover replica to handle maintenance updates</i> is not appropriate because cross region replicas in Cloud SQL are read only and are not automatic failover targets. Promoting a replica is manual and introduces downtime and it adds unnecessary complexity for routine maintenance.</p>",
+  "batch_id": "294",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You have a customer support application hosted on Google Cloud, with the application residing in a single region. The Cloud SQL database is utilized for storing customer support tickets. Your support team operates within the same time zone and uses the application from Monday to Friday, 8 AM to 6 PM. You aim to carry out routine maintenance updates to the Cloud SQL instance without causing any downtime for your support team. What steps should you take to accomplish this?",
+  "originalOptions": "A. Set up a failover replica in a different region to handle maintenance updates.<br/>B. Enable maintenance notifications for the support team, and reschedule maintenance activities to a specific time after notifications have been sent.<br/>C. Configure your Cloud SQL instance with high availability enabled.<br/>D. Configure a maintenance window during the weekend when the support team is not using the system. Set non-production instances to update earlier and production instances to update later.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "99",
+  "tip": "<p>Look for workloads with predictable usage patterns and prefer a defined <i>maintenance window</i> during off hours. Validate changes in lower environments first and promote to production only after you confirm stability.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/maintenance",
+    "https://cloud.google.com/sql/docs/mysql/maintenance-notifications",
+    "https://cloud.google.com/sql/docs/mysql/high-availability",
+    "https://cloud.google.com/sql/docs/mysql/replication/replication-overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-hosted-on-google-cloud-with-exam-099.html",
+  "video_url": "https://certificationation.com/videos/exam-hosted-on-google-cloud-with-exam-099.html"
+}

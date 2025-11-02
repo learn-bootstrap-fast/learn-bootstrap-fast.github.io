@@ -1,0 +1,82 @@
+---
+title: "As a Database Engineer, you need to design a solutionExam"
+description: "Video for as a Database Engineer, you need to design a solution for exporting and importing data between a Cloud Spanner database and a Cloud Storage bucket."
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you need to design a solution for exporting and importing data between a Cloud Spanner database and a Cloud Storage bucket. The export and import processes must be fault-tolerant, efficient, and support a variety of data formats. Which of the following options best meets these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the lead database engineer at mcnz.com and you need to design a reliable process to export and import data between a Cloud Spanner database and a Cloud Storage bucket. The workflows must recover from failures and must scale efficiently for approximately 36 TB of data, and the solution must produce and consume multiple file formats for downstream analytics. Which approach should you implement?",
+  "options": [
+    {
+      "text": "Configure Cloud Data Fusion pipelines to move data from Cloud Spanner to Cloud Storage and set up a separate pipeline to load files back into Cloud Spanner",
+      "explanation": "Cloud Data Fusion offers managed pipelines and connectors that can orchestrate batch movement between services",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create two Cloud Functions so that one function exports data from Cloud Spanner to Cloud Storage and another function imports data when objects appear in the bucket",
+      "explanation": "Cloud Functions can respond to Cloud Storage events and run custom code for simple event driven tasks",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Build Apache Beam pipelines on Cloud Dataflow that read from Cloud Spanner apply transformations and write to Cloud Storage in the required formats and use matching pipelines to import data",
+      "explanation": "Cloud Dataflow running Apache Beam provides scalable and fault tolerant processing and supports writing to many file formats",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use the gcloud spanner export command to write data to a Cloud Storage bucket and use the gcloud spanner import command to bring data back into the database",
+      "explanation": "The gcloud export and import utilities perform managed data movement but they focus on fixed behaviors and specific formats",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Build Apache Beam pipelines on Cloud Dataflow that read from Cloud Spanner apply transformations and write to Cloud Storage in the required formats and use matching pipelines to import data</b>.</p><p>This approach gives you horizontally scalable batch pipelines that can process approximately 36 TB reliably. It supports robust failure recovery with automatic retries and checkpointing, and it reads consistently from Cloud Spanner while writing to Cloud Storage in parallel. You can branch the workflow to produce multiple file formats such as Avro Parquet or CSV so downstream analytics can consume what they need without extra conversion steps.</p><p>For the import path you can create a companion pipeline that reads files from the bucket and writes back into Cloud Spanner at high throughput. This design isolates partial failures and can resume progress, and it provides the control you need over schemas, transformations, and end to end validation.</p><p><i>Configure Cloud Data Fusion pipelines to move data from Cloud Spanner to Cloud Storage and set up a separate pipeline to load files back into Cloud Spanner</i> is not the best fit for tens of terabytes with complex multi format outputs. It can orchestrate connectors, yet it does not offer the same fine grained control and elasticity for custom transformations and multi sink writes that large Apache Beam pipelines provide.</p><p><i>Create two Cloud Functions so that one function exports data from Cloud Spanner to Cloud Storage and another function imports data when objects appear in the bucket</i> is unsuitable for 36 TB because functions are not designed to stream or batch process massive datasets. They have execution and resource constraints and they are better used to trigger or coordinate jobs rather than perform heavy data movement and transformation.</p><p><i>Use the gcloud spanner export command to write data to a Cloud Storage bucket and use the gcloud spanner import command to bring data back into the database</i> is oriented to point in time exports and bulk imports and it does not meet the requirement to produce and consume multiple analytics oriented file formats or to apply custom transformations. It is less flexible for building a recoverable and scalable end to end workflow for this use case.</p>",
+  "batch_id": "251",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you need to design a solution for exporting and importing data between a Cloud Spanner database and a Cloud Storage bucket. The export and import processes must be fault-tolerant, efficient, and support a variety of data formats. Which of the following options best meets these requirements?",
+  "originalOptions": "A. Use a Cloud Function triggered by Cloud Spanner events to export data to Cloud Storage and another Cloud Function triggered by Cloud Storage events to import data.<br/>B. Set up a Data Fusion pipeline to export data from Cloud Spanner to Cloud Storage and another pipeline for importing data.<br/>C. Implement an Apache Beam pipeline with Cloud Dataflow to read data from Cloud Spanner, transform it, and write it to Cloud Storage, and vice versa for importing data.<br/>D. Use the gcloud spanner export command to export data to a Cloud Storage bucket and the gcloud spanner import command to import data from the bucket.",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "172",
+  "tip": "<p>Watch for cues like very large data volumes, need for failure recovery, and multiple file formats. These often point to <i>Dataflow with Apache Beam</i> because it provides scalable pipelines, robust retries, and flexible sinks and sources.</p>",
+  "references": [
+    "https://cloud.google.com/dataflow/docs/concepts/dataflow-model",
+    "https://beam.apache.org/releases/javadoc/current/org/apache/beam/sdk/io/gcp/spanner/SpannerIO.html",
+    "https://beam.apache.org/documentation/io/built-in/",
+    "https://cloud.google.com/spanner/docs/import-export",
+    "https://cloud.google.com/functions/docs/concepts/exec",
+    "https://cloud.google.com/data-fusion/docs/concepts/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-design-a-solution-for-exporting-exam-172.html",
+  "video_url": "https://certificationation.com/videos/exam-design-a-solution-for-exporting-exam-172.html"
+}

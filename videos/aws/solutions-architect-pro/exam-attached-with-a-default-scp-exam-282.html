@@ -1,0 +1,72 @@
+---
+title: "In an AWS Organization, the Root is attached with aExam"
+description: "Video for in an AWS Organization, the Root is attached with a default SCP that allows all actions on all resources. And other OUs or AWS accounts are attached"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "In an AWS Organization, the Root is attached with a default SCP that allows all actions on all resources. And other OUs or AWS accounts are attached with SCPs that contain Deny lists. For example, an SCP that denies cloudtrail:StopLogging is attached to an OU. However, you think that the Deny lists can be improved to contain more services such as those that are not used. How would you find out the AWS services that are allowed by the SCP but are never used?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d60bf501ee1c8ade98f8"
+  },
+  "quid": "0",
+  "ordinal": "432",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "AWS Organizations",
+    " AWS IAM Identity Center (AWS Single Sign-On)",
+    " AWS Config"
+  ],
+  "slug": "ao-organization-root-attached-scp-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question432",
+  "title": "AWS Organization The Root Is Attached Question",
+  "meta": "AWS Exam Question: In an AWS Organization, the Root has a default SCP allowing all actions, while OUs have Deny lists. How to identify unused allowed services? Answer: CloudTrail.",
+  "answer": "D",
+  "query": "Within an AWS Organization, the Root has a default SCP permitting all permissions on every resource. Other accounts or OUs have SCPs attached that block specific services. For instance, an SCP restricting s3:DeleteObject is linked to an OU. You suspect these SCPs could be enhanced by adding services that remain unused. What is the most effective method to detect services that are permitted by SCPs but never utilized?",
+  "originalQuery": "In an AWS Organization, the Root is attached with a default SCP that allows all actions on all resources.\nAnd other OUs or AWS accounts are attached with SCPs that contain Deny lists.\nFor example, an SCP that denies cloudtrail:StopLogging is attached to an OU.\nHowever, you think that the Deny lists can be improved to contain more services such as those that are not used.\nHow would you find out the AWS services that are allowed by the SCP but are never used?",
+  "options": [
+    "A. Use the AWS Organizations console to find allowed services that remain unused by member accounts.",
+    "B. Check the IAM credential reports across AWS accounts to find services not necessary to permit in SCPs.",
+    "C. Utilize AWS Config resource inventories to detect AWS services unused by IAM identities.",
+    "D. In the IAM console, click the Service Control Policies and check the last accessed data to identify services that are never used."
+  ],
+  "originalOptions": [
+    "A. In the AWS Organization console, identify allowed services that are never used by AWS accounts.",
+    "B. In the IAM credential report of AWS accounts, examine those services that are not required to be allowed by SCPs.",
+    "C. In AWS Config Resources, list the AWS services that are not used by IAM users.",
+    "D. In the IAM console, click the Service Control Policies and check the last accessed data to identify services that are never used."
+  ],
+  "image": "https://eaeastus2.blob.core.windows.net/optimizedimages/static/images/AWS-Certified-Solutions-Architect-Professional/answer/imgckeditor_7.png",
+  "primaryObjective": "3: Continuous Improvement for Existing Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Correct Answer - D.\nRefer to.\nhttps://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html\non how to improve SCPs by checking access data.\nOption A is incorrect because the AWS Organization console does not contain the last access data.\nOption B is incorrect because the IAM credential report provides IAM user information.\nThere is no access data for AWS Organization.\nOption C is incorrect because AWS Config Resources do not show resource information related to the Organization.\nThe user cannot identify which services are not used in AWS Config.\nOption D is CORRECT because the service report in Organization Activity can help identify the AWS services to be included in the Deny lists.\nTake below screenshot as an example:\nThe correct answer to the question is B. In the IAM credential report of AWS accounts, examine those services that are not required to be allowed by SCPs.\nService Control Policies (SCPs) are used to enforce organization-wide policies and prevent non-compliant actions. The default SCP attached to the root of an AWS organization allows all actions on all resources, but it can be overridden by attaching more restrictive policies to individual OUs or accounts.\nTo improve the SCPs and contain more services that are not used, it is essential to identify the AWS services that are allowed but never used. The best way to achieve this is by examining the IAM credential report of AWS accounts.\nThe IAM credential report is a detailed report that provides information about IAM users, groups, and roles. It includes information such as the user's access key age, access key last used date, and the permissions associated with the user. By examining the credential report, you can identify which services are allowed by the SCP but are never used.\nTo generate the IAM credential report, follow these steps:\n1. Sign in to the AWS Management Console as an IAM user with sufficient permissions.\n2. Open the IAM console.\n3. In the navigation pane, choose \"Credential Report.\"\n4. Click the \"Generate Report\" button.\nAfter the report is generated, you can download it as a CSV file and open it in a spreadsheet program like Microsoft Excel. Then, you can sort the data by service name and identify which services are allowed but never used.\nBy examining the IAM credential report of AWS accounts, you can identify the services that are not required to be allowed by SCPs and update the SCPs accordingly. This helps to improve the security of the organization and prevent non-compliant actions.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-attached-with-a-default-scp-exam-282.html",
+  "url": "https://certificationation.com/questions/exam-attached-with-a-default-scp-exam-282.html"
+}

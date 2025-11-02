@@ -1,0 +1,71 @@
+---
+title: "A user has created a VPC with CIDR 20.0.0.0/24 The userExam"
+description: "Video for a user has created a VPC with CIDR 20.0.0.0/24 The user has created a public subnet with CIDR 20.0.0.0/25 and a private subnet with CIDR 20.0.0.128/25"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A user has created a VPC with CIDR 20.0.0.0/24 The user has created a public subnet with CIDR 20.0.0.0/25 and a private subnet with CIDR 20.0.0.128/25 The user has launched one instance each in the private and public subnet. Which of the below mentioned options cannot be the correct IP address (private IP) assigned to an instance in the public or private subnet?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d5fff501ee1c8ade98d9"
+  },
+  "quid": "0",
+  "ordinal": "401",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "Amazon VPC",
+    " AWS global infrastructure"
+  ],
+  "slug": "vpc-created-public-private-subnet-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question401",
+  "title": "AWS User Has Created A VPC Question",
+  "meta": "AWS Exam Question: A user has created a VPC with CIDR 20.0.0.0/24, a public subnet 20.0.0.0/25, and a private subnet 20.0.0.128/25. Which IP can't be assigned? Answer: VPC, CIDR.",
+  "answer": "A",
+  "query": "An organization set up a VPC with the CIDR 20.0.0.0/24. They created a public subnet with the CIDR 20.0.0.0/25 and a private subnet using 20.0.0.128/25. Each subnet runs one instance. Which IP address below would not be a valid private IP address assigned to any of those instances?",
+  "originalQuery": "A user has created a VPC with CIDR 20.0.0.0/24\nThe user has created a public subnet with CIDR 20.0.0.0/25 and a private subnet with CIDR 20.0.0.128/25\nThe user has launched one instance each in the private and public subnet.\nWhich of the below mentioned options cannot be the correct IP address (private IP) assigned to an instance in the public or private subnet?",
+  "options": [
+    "A. 20.0.0.255",
+    "B. 20.0.0.132",
+    "C. 20.0.0.122",
+    "D. 20.0.0.55"
+  ],
+  "originalOptions": [
+    "A. 20.0.0.255",
+    "B. 20.0.0.132",
+    "C. 20.0.0.122",
+    "D. 20.0.0.55"
+  ],
+  "image": "",
+  "primaryObjective": "1: Design Solutions for Organizational Complexity",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Answer - A.\nIn Amazon VPC, the first four IP addresses and the last IP address in each subnet CIDR block are not available for the user to assign to an instance.\nFor example: In this VPC, the following five IP addresses are reserved for a subnet with CIDR block 20.0.0.0/25:\n20.0.0.0: Network address.\n20.0.0.1: Reserved by AWS for the VPC router.\n20.0.0.2: Reserved by AWS.\nThe IP address of the DNS server is always the base of the VPC network range plus two; however, we also reserve the base of each subnet range plus two.\n20.0.0.3: Reserved by AWS for future use.\n20.0.0.3:Reserved by AWS for future use.\n20.0.0.255: Network broadcast address.\nWe do not support broadcast in a VPC.\nTherefore we reserve this address.\nFor more information on IP Reservation, please visit the link.\nhttp://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html\nAs per the given scenario, the user has created a VPC with CIDR 20.0.0.0/24, which provides 256 IP addresses for use. The user has created a public subnet with CIDR 20.0.0.0/25, which gives 128 IP addresses (20.0.0.0 - 20.0.0.127), and a private subnet with CIDR 20.0.0.128/25, which also gives 128 IP addresses (20.0.0.128 - 20.0.0.255). The user has launched one instance each in the private and public subnet.\nNow let's check each option one by one:\nA. 20.0.0.255 - This IP address is not valid for any instance as it's the broadcast address of the subnet. In the given scenario, the public subnet's broadcast address is 20.0.0.127 and the private subnet's broadcast address is 20.0.0.255. Therefore, Option A cannot be the correct IP address for any instance.\nB. 20.0.0.132 - This IP address is a valid IP address for an instance in the private subnet because it falls within the CIDR range of 20.0.0.128/25.\nC. 20.0.0.122 - This IP address is a valid IP address for an instance in the public subnet because it falls within the CIDR range of 20.0.0.0/25.\nD. 20.0.0.55 - This IP address is a valid IP address for an instance in the public subnet because it falls within the CIDR range of 20.0.0.0/25.\nTherefore, the answer is option A (20.0.0.255) because it is not a valid IP address for any instance in the given scenario.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-20-0-0-0-24-the-user-has-created-exam-262.html",
+  "url": "https://certificationation.com/questions/exam-20-0-0-0-24-the-user-has-created-exam-262.html"
+}

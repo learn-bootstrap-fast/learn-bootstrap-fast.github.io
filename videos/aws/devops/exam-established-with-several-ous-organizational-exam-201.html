@@ -1,0 +1,62 @@
+---
+title: "In a large corporation, an AWS organization isExam"
+description: "Video for in a large corporation, an AWS organization is established with several OUs (organizational units) Because of several new security requirements, the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "In a large corporation, an AWS organization is established with several OUs (organizational units) Because of several new security requirements, the security operator needs to create several CloudWatch Events rules. For one rule, the requirement is that if certain AWS services have not been used by an OU for 6 months but are suddenly used recently, an SNS notification will be triggered. How would you quickly get the service-last-accessed information to identify the potential services to add to the CloudWatch Event rule?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>IAM access advisor</b> feature enables you to review service-last-accessed information at the entity level, such as users, roles, and groups. This is particularly useful for determining which AWS services have or have not been utilized recently. For organizational units, using the IAM access advisor provides direct visibility and helps identify services that have been unused for a specified period, allowing you to set precise CloudWatch Events rules.</p> <p>Looking at the incorrect choices:</p> <ul> <li><i>Use the AWS Organization console to examine each OU and check the last service access details.</i> &mdash; The AWS Organizations console does not provide service-last-accessed data directly at the OU level.</li> <li><i>Query AWS Config via CLI to retrieve service-last-accessed information for every organizational unit.</i> &mdash; AWS Config tracks resource configuration changes, not service-last-accessed details. It does not natively track when an OU last used specific services.</li> <li><i>Create a resource group in the AWS Resource Groups service containing the services of interest, then check last access information from that group.</i> &mdash; AWS Resource Groups do not provide service-last-accessed analytics or reporting.</li> </ul> <p><b>Tip:</b> When you need access history information, IAM access advisor is designed for this use case. Be sure to scope your review to roles, users or groups, as OUs aggregate these entities. Knowing this distinction will help you leverage AWS tools more effectively for auditing and security automation.</p>",
+  "query": "<p>An enterprise has set up multiple organizational units (OUs) within its AWS Organization. Due to updated security policies, the security team must create CloudWatch Events rules. For one particular rule, the requirement is to send an SNS alert if specific AWS services, which haven&rsquo;t been used by an OU in at least 6 months, are accessed again. How can the security team efficiently determine the service-last-accessed data to help select which services to include in their CloudWatch Event rules?</p>",
+  "original_oid": "6793da1861969b416038a14c",
+  "options": [
+    {
+      "correct": false,
+      "text": "Use the AWS Organization console to examine each OU and check the last service access details.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Query AWS Config via CLI to retrieve service-last-accessed information for every organizational unit.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Utilize IAM access advisor to review which services were last accessed by each OU in order to identify candidates for the CloudWatch Event rule.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Create a resource group in the AWS Resource Groups service containing the services of interest, then check last access information from that group.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question219",
+  "originalQuery": "In a large corporation, an AWS organization is established with several OUs (organizational units)\nBecause of several new security requirements, the security operator needs to create several CloudWatch Events rules.\nFor one rule, the requirement is that if certain AWS services have not been used by an OU for 6 months but are suddenly used recently, an SNS notification will be triggered.\nHow would you quickly get the service-last-accessed information to identify the potential services to add to the CloudWatch Event rule?",
+  "originalOptions": "[\"A. In the AWS Organization console, click each OU and view the service-last-accessed information.\",\"B. Send an AWS CLI command to the AWS Config service to get the service-last-accessed information for each organizational unit.\",\"C. In the AWS Resource Groups service, add a resource group for the candidate AWS services. View the last-accessed information for the group.\",\"D. In the IAM access advisor, view the service-last-accessed information for each OU to help identify which services should be added in the CloudWatch Event rule.\"]",
+  "video_url": "https://certificationation.com/videos/exam-established-with-several-ous-organizational-exam-201.html",
+  "url": "https://certificationation.com/questions/exam-established-with-several-ous-organizational-exam-201.html"
+}

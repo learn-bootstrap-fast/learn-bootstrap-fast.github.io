@@ -1,0 +1,62 @@
+---
+title: "Your application's Auto Scaling Group scales up too muchExam"
+description: "Video for your application's Auto Scaling Group scales up too much and stays scaled up even when traffic decreases. What should you do to fix this?"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your application's Auto Scaling Group scales up too much and stays scaled up even when traffic decreases. What should you do to fix this?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct answer is <b>Identify the compute bottleneck, use that as the scaling metric, and set CloudWatch alarm thresholds to values that trigger scaling only when performance starts to degrade.</b> This approach ensures that scaling actions are based on the specific metric that accurately reflects system performance bottlenecks rather than arbitrary metrics such as CPU utilization alone, which may not fully capture the workload nature. Setting thresholds aligned to when user-facing latency or performance issues first arise provides responsive yet stable scaling behavior.</p> <p>Here's why the other options are less effective:</p> <ul><li><i>Increase the Auto Scaling cooldown period to ensure additional instances have more startup time before new scaling actions occur.</i> — While cooldowns prevent repeated scale-outs before new instances are ready, they don’t directly address the root problem: scaling decisions based on inappropriate or overly sensitive metrics, which still causes over-provisioning or sluggish scale-down.</li> <li><i>Switch to larger EC2 instance types so fewer are needed and the Auto Scaling Group doesn't scale out as frequently.</i> — This can sometimes reduce the total number of instances, but the fundamental issue is still there if scaling is triggered for the wrong reasons; you might just have more powerful idle resources wasting cost.</li> <li><i>Raise the CloudWatch alarm thresholds on your auto scaling group to require much higher demand before scaling up.</i> — Raising thresholds only delays scaling action, which could lead to slow responses during actual spikes, and only masks rather than solves the underlying metric-related problems.</li></ul> <p><b>Tip:</b> Choosing metrics like application response time, request queue length, or specific resource limitations helps ensure the Auto Scaling Group reacts proportionally to real load, reducing the risk of unnecessary over-scaling and cost.</p>",
+  "query": "<p>An application's Auto Scaling Group is over-provisioning resources: during periods of high traffic, it scales up rapidly and remains at a high capacity even after traffic drops. What is the best way to address this behavior?</p>",
+  "original_oid": "6793d9e561969b416038a0e9",
+  "options": [
+    {
+      "correct": true,
+      "text": "Identify the compute bottleneck, use that as the scaling metric, and set CloudWatch alarm thresholds to values that trigger scaling only when performance starts to degrade.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Switch to larger EC2 instance types so fewer are needed and the Auto Scaling Group doesn't scale out as frequently.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Increase the Auto Scaling cooldown period to ensure additional instances have more startup time before new scaling actions occur.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Raise the CloudWatch alarm thresholds on your auto scaling group to require much higher demand before scaling up.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question118",
+  "originalQuery": "Your application's Auto Scaling Group scales up too much and stays scaled up even when traffic decreases.\nWhat should you do to fix this?",
+  "originalOptions": "A. Set a longer cooldown period on the Group, so the system stops overshooting the target capacity. The issue is that the scaling system doesn’t allow enough time for new instances to begin servicing requests before measuring aggregate load again.|B. Calculate the bottleneck or constraint on the compute layer, select that as the new metric, and set the CloudWatch metric thresholds to the bounding values that begin to affect response latency.|C. Raise the CloudWatch Alarms threshold associated with your autoscaling group, so the scaling takes more of an increase in demand before beginning.|D. Use larger instances instead of lots of smaller ones, so the Group stops scaling out so much and wasting resources at the OS level, since the OS uses a higher proportion of resources on smaller instances.",
+  "video_url": "https://certificationation.com/videos/exam-group-scales-up-too-much-exam-136.html",
+  "url": "https://certificationation.com/questions/exam-group-scales-up-too-much-exam-136.html"
+}

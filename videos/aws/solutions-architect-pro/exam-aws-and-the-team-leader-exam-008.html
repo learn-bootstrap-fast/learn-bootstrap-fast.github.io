@@ -1,0 +1,73 @@
+---
+title: "An agile team just starts using AWS, and the team leaderExam"
+description: "Video for an agile team just starts using AWS, and the team leader wants them to move the legacy Java-based software to the AWS platform in 2 weeks. The"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "An agile team just starts using AWS, and the team leader wants them to move the legacy Java-based software to the AWS platform in 2 weeks. The requirement is that the new environment must be highly available, and the infrastructure is managed as code and version controlled. Besides, the team has good experiences of Chef, so they want to use that knowledge during the migration. Which actions should the team perform to meet the needs? Select 2."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d567f501ee1c8ade975d"
+  },
+  "quid": "0",
+  "ordinal": "17",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "AWS CloudFormation",
+    " Amazon EC2"
+  ],
+  "slug": "aw-move-legacy-java-software-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question17",
+  "title": "AWS An Agile Team Just Starts Using Question",
+  "meta": "AWS Exam Question: An agile team must migrate legacy Java software to AWS in 2 weeks, ensuring high availability and managed infrastructure. Answer: Chef, AWS CloudFormation.",
+  "answer": "A D",
+  "query": "A development group is tasked with migrating their existing Java-based application to the cloud within a short timeframe. They require the deployment to be fault-tolerant, and the infrastructure setup must be handled as code with proper version control. The team is proficient with Chef for configuration management and intends to leverage that expertise in the migration. What steps should the team take to fulfill these requirements? Select 2.",
+  "originalQuery": "An agile team just starts using AWS, and the team leader wants them to move the legacy Java-based software to the AWS platform in 2 weeks.\nThe requirement is that the new environment must be highly available, and the infrastructure is managed as code and version controlled.\nBesides, the team has good experiences of Chef, so they want to use that knowledge during the migration.\nWhich actions should the team perform to meet the needs? Select 2.",
+  "options": [
+    "A. Use several CloudFormation templates to build up infrastructure such as VPC, NAT Gateway, Bastion, and Route53. Version control it using CodeCommit.",
+    "B. Create custom Chef recipes on EC2 instances to deploy web services, incorporating an auto-scaling group setup to maintain high availability.",
+    "C. Deploy AWS resources including VPC, NAT Gateway, Bastion hosts, Security Groups, and EC2 instances via CloudFormation templates. Use GitHub for version control.",
+    "D. Use a nested CloudFormation template to create an OpsWorks stack. The resource type is “AWS::OpsWorks::Stack”. Add a Java layer in the stack. Make sure that the Scaling configuration is turned on.",
+    "E. Employ OpsWorks for deploying Java web applications with existing cookbooks, but do not integrate OpsWorks into CloudFormation templates as it lacks support."
+  ],
+  "originalOptions": [
+    "A. Use several CloudFormation templates to build up infrastructure such as VPC, NAT Gateway, Bastion, and Route53. Version control it using CodeCommit.",
+    "B. As CloudFormation does not support the OpsWorks service, use Chef in EC2 to build up the web services. Existing cookbooks can be used. Add an auto-scaling group with a proper auto-scaling configuration to ensure high availability.",
+    "C. AWS infrastructure such as VPC, NAT Gateway, Bastion host, Security Groups, and EC2 instances are created using CloudFormation templates. Version control it using GitHub.",
+    "D. Use a nested CloudFormation template to create an OpsWorks stack. The resource type is “AWS::OpsWorks::Stack”. Add a Java layer in the stack. Make sure that the Scaling configuration is turned on.",
+    "E. Use OpsWorks to build up the Java web services. Existing cookbooks can be used. However, OpsWorks cannot be put into the CloudFormation template as CloudFormation does not support it."
+  ],
+  "image": "",
+  "primaryObjective": "4: Accelerate Workload Migration and Modernization",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "E.\nCorrect Answer - A, D.\nOptions A, D are Correct:\nFirstly, OpsWorks is a supported service in CloudFormation according to https://aws.amazon.com/about-aws/whats-new/2014/03/03/aws-cloudformation-supports-aws-opsworks/\nThe AWS OpsWorks Resource Types in CloudFormation includes:\nAWS::OpsWorks::App.\nAWS::OpsWorks::ElasticLoadBalancerAttachment.\nAWS::OpsWorks::Instance.\nAWS::OpsWorks::Layer.\nAWS::OpsWorks::Stack.\nAWS::OpsWorks::UserProfile.\nAWS::OpsWorks::Volume.\nSecondly, EC2 application instances should be managed inside OpsWorks, and they do not belong to infrastructure preparations.\nOption A is more accurate than Option.\nC.Option A is CORRECT: Because infrastructure should be done via CloudFormation, and it can be easily version controlled.\nEither CodeCommit or GitHub is ok.\nOption B is incorrect: Because CloudFormation supports OpsWorks service.\nA nested template could be utilized to maintain OpsWorks related resources.\nOption C is incorrect: Because infrastructure refers to the resources which do not change frequently, such as VPC subnets and Bastion hosts.\nEC2 instances are application related and should be maintained within OpsWorks stacks.\nOption D is CORRECT: Because the team can use the Chef experiences in OpsWorks to build up the application.\nTogether with.\nOption A, a highly available environment can be built.\nOption E is incorrect: Because the OpsWorks service is supported in CloudFormation.\nIt makes more sense to create an OpsWorks stack as a CloudFormation resource.\nThe team's goal is to migrate their legacy Java-based software to AWS while ensuring high availability, infrastructure as code, and version control. Additionally, they have prior experience with Chef and would like to utilize it during the migration process.\nOut of the five options given, the two most suitable actions the team should perform are A and B.\nOption A recommends using CloudFormation templates to build up infrastructure such as VPC, NAT Gateway, Bastion, and Route53. Using infrastructure as code will enable the team to automate their infrastructure deployment and management. Version controlling the templates using CodeCommit will help them track changes made to the infrastructure over time, and they can also revert to earlier versions if needed.\nOption B suggests using Chef in EC2 to build up the web services. As the team has prior experience with Chef, it would be easier for them to manage and configure their application using existing cookbooks. They can add an auto-scaling group with an appropriate configuration to ensure high availability.\nOption C is similar to option A, where AWS infrastructure such as VPC, NAT Gateway, Bastion host, Security Groups, and EC2 instances are created using CloudFormation templates. However, this option suggests using GitHub for version control instead of CodeCommit.\nOption D recommends using a nested CloudFormation template to create an OpsWorks stack with a Java layer. Although this option meets the requirements, it might not be the best approach as it adds complexity to the infrastructure.\nOption E suggests using OpsWorks to build up the Java web services. However, as OpsWorks cannot be put into the CloudFormation template, it would be difficult to manage the infrastructure as code and version control it.\nIn summary, the team should use CloudFormation templates for infrastructure deployment and version control it using CodeCommit. They should also use Chef in EC2 to build up the web services and add an auto-scaling group for high availability.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-aws-and-the-team-leader-exam-008.html",
+  "url": "https://certificationation.com/questions/exam-aws-and-the-team-leader-exam-008.html"
+}

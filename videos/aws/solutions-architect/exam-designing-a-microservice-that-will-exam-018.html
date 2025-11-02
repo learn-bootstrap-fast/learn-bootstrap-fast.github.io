@@ -1,0 +1,93 @@
+---
+title: "An application development team is designing aExam"
+description: "Video for an application development team is designing a microservice that will convert large images to smaller, compressed images. When a user uploads an image"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "An application development team is designing a microservice that will convert large images to smaller, compressed images. When a user uploads an image through the web interface, the microservice should store the image in an Amazon S3 bucket, process and compress the image with an AWS Lambda function, and store the image in its compressed form in a different S3 bucket. A solutions architect needs to design a solution that uses durable, stateless components to process the images automatically. Which combination of actions will meet these requirements? (Choose two.)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729977"
+  },
+  "quid": null,
+  "ordinal": "18",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS Lambda",
+    " Amazon S3",
+    " Amazon Simple Queue Service (Amazon SQS)",
+    " Amazon Simple Notification Service (Amazon SNS)",
+    " Amazon EventBridge"
+  ],
+  "slug": "s3-large-images-compress-aws",
+  "source": "ET",
+  "title": "AWS An Application Development Team Is Designing A Question",
+  "meta": "AWS Exam Question: An application development team designs a microservice to convert large images using Amazon S3 and AWS Lambda. Find the answer to process images automatically.",
+  "answer": "AB",
+  "query": "A development team is creating a microservice responsible for resizing large images. When a user submits an image through the web interface, it should be stored in an Amazon S3 bucket, and an AWS Lambda function will handle the transformation and compression. The processed image will then be stored in another S3 bucket. The solutions architect's task is to devise a design that employs reliable, stateless components for automatic image processing. Which combination of steps should be implemented to fulfill these requirements? (Select two.)",
+  "originalQuery": "An application development team is designing a microservice that will convert large images to smaller, compressed images. When a user uploads an image through the web interface, the microservice should store the image in an Amazon S3 bucket, process and compress the image with an AWS Lambda function, and store the image in its compressed form in a different S3 bucket.\nA solutions architect needs to design a solution that uses durable, stateless components to process the images automatically.\nWhich combination of actions will meet these requirements? (Choose two.)",
+  "options": [
+    "A. Set up an Amazon Simple Queue Service (Amazon SQS) queue. Adjust the S3 bucket settings to trigger a notification to the SQS queue whenever an image is uploaded.",
+    "B. Configure the Lambda function to use the Amazon Simple Queue Service (Amazon SQS) queue as the invocation source. Once the SQS message is correctly processed, the message in the queue should be removed.",
+    "C. Modify the Lambda function to observe the S3 bucket for new uploads. Upon detecting a new image upload, maintain a record of the filename in an in-memory text file to track processed images.",
+    "D. Deploy an Amazon Elastic Compute Cloud (Amazon EC2) instance to track an Amazon Simple Queue Service (Amazon SQS) queue. When new items enter the queue, note the filename in a text document on the EC2 instance and trigger the Lambda function.",
+    "E. Set an Amazon EventBridge (previously CloudWatch Events) event monitor for the S3 bucket. Send an alert to an Amazon Simple Notification Service (Amazon SNS) topic with the email ID of the application owner for later processing when an image is uploaded."
+  ],
+  "originalOptions": [
+    "A. Create an Amazon Simple Queue Service (Amazon SQS) queue. Configure the S3 bucket to send a notification to the SQS queue when an image is uploaded to the S3 bucket.",
+    "B. Configure the Lambda function to use the Amazon Simple Queue Service (Amazon SQS) queue as the invocation source. When the SQS message is successfully processed, delete the message in the queue.",
+    "C. Configure the Lambda function to monitor the S3 bucket for new uploads. When an uploaded image is detected, write the file name to a text file in memory and use the text file to keep track of the images that were processed.",
+    "D. Launch an Amazon EC2 instance to monitor an Amazon Simple Queue Service (Amazon SQS) queue. When items are added to the queue, log the file name in a text file on the EC2 instance and invoke the Lambda function.",
+    "E. Configure an Amazon EventBridge (Amazon CloudWatch Events) event to monitor the S3 bucket. When an image is uploaded, send an alert to an Amazon ample Notification Service (Amazon SNS) topic with the application owner's email address for further processing."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [],
+  "originalComments": [],
+  "voteDistribution": [
+    {
+      "option": "AB (99%)",
+      "votes": "115 votes."
+    },
+    {
+      "option": "1%",
+      "votes": "1 votes."
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answers are A and B. Option A involves creating an Amazon SQS queue and configuring the S3 bucket to notify this queue upon image upload. This setup ensures that image processing is decoupled: the image upload triggers the queue, which can buffer the workload. Option B uses the SQS queue as the invocation source for the Lambda function, enabling the function to process messages reliably in a stateless manner. Once processed, the function deletes the message from the queue, maintaining clean message processing. \n\nOption C is incorrect because keeping track of processed images in memory is not reliable or durable, as memory is transient. \nOption D is incorrect because using an EC2 instance to monitor the SQS queue adds unnecessary complexity and overhead for such a stateless solution. \nOption E is incorrect as it involves sending an alert via SNS, which does not fulfill the requirement for automatic image processing without human intervention.",
+  "video_url": "https://certificationation.com/videos/exam-designing-a-microservice-that-will-exam-018.html",
+  "url": "https://certificationation.com/questions/exam-designing-a-microservice-that-will-exam-018.html"
+}

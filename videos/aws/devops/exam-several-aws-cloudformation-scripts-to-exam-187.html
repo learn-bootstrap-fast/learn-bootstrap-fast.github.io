@@ -1,0 +1,62 @@
+---
+title: "As a DevOps engineer, you are updating several AWSExam"
+description: "Video for as a DevOps engineer, you are updating several AWS CloudFormation scripts to make them resilient against unexpected updates and overwritten passwords."
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a DevOps engineer, you are updating several AWS CloudFormation scripts to make them resilient against unexpected updates and overwritten passwords. What ideas are considered recommended practices when it comes to solve these sorts of automation scenarios?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct approach is <b>Generate a change set using create-change-set, invoke list-change-sets to fetch the change set ID for a stack, and then use describe-change-set to review the Changes field detailing the modifications AWS CloudFormation would apply upon execution. To safeguard specific resources, apply a stack policy via either StackPolicyBody or StackPolicyURL to restrict updates. To prevent credentials from being overwritten, make sure to set the UsePreviousValue parameter to true when creating the change set.</b></p><p>This method aligns with AWS CloudFormation automation best practices: generating and reviewing a change set before execution helps prevent undesired updates, stack policies enforce protections for specific resources, and the UsePreviousValue flag ensures sensitive values like passwords are retained instead of being overwritten by template defaults.</p><p>The option <i>First, execute create-change-set, then use list-change-sets to access the Changes field (displaying items CloudFormation would modify if the change set runs). Implement a stack policy referencing StackPolicyBody or StackPolicyURL to block undesired updates. When creating the change set, set the UseCurrentValue parameter to false to ensure passwords are not overwritten.</i> incorrectly refers to UseCurrentValue with a value of false, which doesn't have the intended effect; UsePreviousValue should be set to true to keep current passwords.</p><p>The option <i>Start with create-change-set, call describe-change-set to get the ID of the change set for the intended stack, then execute list-change-sets to review the pending modifications in the Changes field. Configure a stack policy by specifying StackPolicyBody or StackPolicyURL to limit resource modifications, and set the UsePreviousValue argument to true in the change set to avoid overwriting confidential credentials.</i> mixes up the correct sequence for gathering the change set details; list-change-sets does not provide the full Changes information—that comes from describe-change-set.</p><p>The option <i>After issuing create-change-set, call describe-change-set to obtain the change set ID and see how CloudFormation would alter resources if the change set proceeds. Add a policy to the stack by providing either StackPolicyBody or StackPolicyURL, which prevents certain resources from being updated. To avert accidental password resets, use the UseCurrentValue parameter set to false in the change set creation.</i> also misuses UseCurrentValue=false, which fails to prevent overwriting passwords.</p><p><b>Tip:</b> Always use UsePreviousValue=true for parameters you want to preserve, like credentials, and use stack policies to guard sensitive resources from unwanted modifications.</p>",
+  "query": "<p>You are a DevOps engineer responsible for revising AWS CloudFormation templates to protect stacks from unintentional resource modifications and prevent passwords from being accidentally reset. Which of the following approaches incorporates recommended best practices for managing such automation scenarios?</p>",
+  "original_oid": "6793da2e61969b416038a17a",
+  "options": [
+    {
+      "correct": true,
+      "text": "Generate a change set using create-change-set, invoke list-change-sets to fetch the change set ID for a stack, and then use describe-change-set to review the Changes field detailing the modifications AWS CloudFormation would apply upon execution. To safeguard specific resources, apply a stack policy via either StackPolicyBody or StackPolicyURL to restrict updates. To prevent credentials from being overwritten, make sure to set the UsePreviousValue parameter to true when creating the change set.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "First, execute create-change-set, then use list-change-sets to access the Changes field (displaying items CloudFormation would modify if the change set runs). Implement a stack policy referencing StackPolicyBody or StackPolicyURL to block undesired updates. When creating the change set, set the UseCurrentValue parameter to false to ensure passwords are not overwritten.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Start with create-change-set, call describe-change-set to get the ID of the change set for the intended stack, then execute list-change-sets to review the pending modifications in the Changes field. Configure a stack policy by specifying StackPolicyBody or StackPolicyURL to limit resource modifications, and set the UsePreviousValue argument to true in the change set to avoid overwriting confidential credentials.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "After issuing create-change-set, call describe-change-set to obtain the change set ID and see how CloudFormation would alter resources if the change set proceeds. Add a policy to the stack by providing either StackPolicyBody or StackPolicyURL, which prevents certain resources from being updated. To avert accidental password resets, use the UseCurrentValue parameter set to false in the change set creation.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question265",
+  "originalQuery": "As a DevOps engineer, you are updating several AWS CloudFormation scripts to make them resilient against unexpected updates and overwritten passwords.\nWhat ideas are considered recommended practices when it comes to solve these sorts of automation scenarios?",
+  "originalOptions": "[\"A. Create a change set with create-change-set, run list-change-sets to get the ID of the change set for a stack, call a describe-change-set operation to get the Changes field containing the list that describes the resources AWS CloudFormation changes if you execute the change set. Set a stack policy for the stack specifying either the StackPolicyBody or the StackPolicyURL parameters to prevent updates to the stack resources. To avoid overwritten passwords, specify the UsePreviousValue input parameter for the change set in the create-change-set operation to true.\",\"B. Create a change set with create-change-set, run list-change-sets to get the Changes field containing the list that describes the resources AWS CloudFormation changes if you execute the change set. Set a stack policy for the stack specifying either the StackPolicyBody or the StackPolicyURL parameters to prevent updates to the stack resources. To avoid overwritten passwords, specify the UseCurrentValue input parameter for the change set in the create-change-set operation to false.\",\"C. Create a change set with create-change-set, call a describe-change-set to get the ID of the change set for a stack operation, run list-change-sets to get the Changes field containing the list that describes the resources AWS CloudFormation changes if you execute the change set. Set a stack policy for the stack specifying either the StackPolicyBody or the StackPolicyURL parameters to prevent updates to the stack resources. To avoid overwritten passwords, specify the UsePreviousValue input parameter for the change set in the create-change-set operation to true.\",\"D. Create a change set with create-change-set, call a describe-change-set operation to get the ID of the change set for a stack operation that describes the resources AWS CloudFormation changes if you execute the change set. Set a stack policy for the stack specifying either the StackPolicyBody or the StackPolicyURL parameters to prevent updates to the stack resources. To avoid overwritten passwords, specify the UseCurrentValue input parameter for the change set in the create-change-set operation to false.\"]",
+  "video_url": "https://certificationation.com/videos/exam-several-aws-cloudformation-scripts-to-exam-187.html",
+  "url": "https://certificationation.com/questions/exam-several-aws-cloudformation-scripts-to-exam-187.html"
+}

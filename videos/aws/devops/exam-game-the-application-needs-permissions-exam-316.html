@@ -1,0 +1,62 @@
+---
+title: "You're building a mobile application game. TheExam"
+description: "Video for you're building a mobile application game. The application needs permissions for each user to communicate and store data in DynamoDB tables. What is"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You're building a mobile application game. The application needs permissions for each user to communicate and store data in DynamoDB tables. What is the best method for granting each mobile device that installs your application to access DynamoDB tables for storage when required? Choose the correct answer from the options below."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best practice for granting mobile app users access to DynamoDB is to use <b>web identity federation to assume a role via AssumeRoleWithWebIdentity and issue short-lived credentials with STS</b>. This approach lets users authenticate with external identities (e.g., Amazon, Facebook, Google), receive temporary permissions, and avoids distributing long-term AWS credentials. It is scalable, secure, and recommended by AWS for mobile apps.<br><br>Let's look at the other options:<br><br><i>\"Configure an IAM group to grant only your app and required DynamoDB tables access. Identify users using their device's unique ID while saving records.\"</i> – This does not scale well for a mobile environment since managing IAM groups and credentials for every device/user is insecure and creates overhead. IAM users/groups are intended for trusted users, not customer-facing apps.<br><br><i>\"At installation, instruct each user to create an IAM credential and assign them to a group that permits DynamoDB access.\"</i> – This is highly insecure and impractical, as end users should never receive direct IAM credentials. It risks exposure of your AWS environment if credentials are lost or misused.<br><br><i>\"Implement an Active Directory server for the app and provision an AD user for everyone; allow sign-ins via AD and use SAML-based federation with IAM role assignment.\"</i> – Deploying AD and managing SAML for each mobile user introduces unnecessary complexity and cost, and is more suitable for enterprise workforce authentication, not customer-facing mobile gaming apps.<br><br><b>Tip: Use identity federation and temporary credentials whenever your app requires scalable, secure access for large numbers of users.</b></p>",
+  "query": "<p>You are developing a mobile gaming application. Your app requires users to have permission to interact with DynamoDB tables for data storage. Which of the following methods is the most appropriate and secure way to let every mobile device that installs your app access the required DynamoDB tables?</p>",
+  "original_oid": "6793da0c61969b416038a135",
+  "options": [
+    {
+      "correct": false,
+      "text": "Configure an IAM group to grant only your app and required DynamoDB tables access. Identify users using their device's unique ID while saving records.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Set up web identity federation to allow the app to assume an IAM role with DynamoDB rights, giving each signed-in user temporary credentials using STS.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "At installation, instruct each user to create an IAM credential and assign them to a group that permits DynamoDB access.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Implement an Active Directory server for the app and provision an AD user for everyone; allow sign-ins via AD and use SAML-based federation with IAM role assignment.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question195",
+  "originalQuery": "You're building a mobile application game.\nThe application needs permissions for each user to communicate and store data in DynamoDB tables.\nWhat is the best method for granting each mobile device that installs your application to access DynamoDB tables for storage when required? Choose the correct answer from the options below.",
+  "originalOptions": "[\"A. During the install and game configuration process, each user creates an IAM credential and assigns the IAM user to a group with proper permissions to communicate with DynamoD.\",\"B. Create an IAM group that only gives access to your application and the DynamoDB tables. When writing to DynamoDB, include the unique device ID to associate the data with that specific user.\",\"C. Create an IAM role with the proper permission policy to communicate with the DynamoDB table. Use web identity federation, which assumes the IAM role using AssumeRoleWithWebIdentity, when the user signs in, granting temporary security credentials using STS.\",\"D. Create an Active Directory server and an AD user for each mobile application user. When the user signs in to the AD sign-on, allow the AD server to federate using SAML 2.0 to IAM and assign a role to the AD user assumed with AssumeRoleWithSAML.\"]",
+  "video_url": "https://certificationation.com/videos/exam-game-the-application-needs-permissions-exam-316.html",
+  "url": "https://certificationation.com/questions/exam-game-the-application-needs-permissions-exam-316.html"
+}

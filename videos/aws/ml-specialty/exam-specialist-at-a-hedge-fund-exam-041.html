@@ -1,0 +1,56 @@
+---
+title: "You work as a machine learning specialist at a hedgeExam"
+description: "Video for you work as a machine learning specialist at a hedge fund. You are working on a time-series price prediction model for the firm, and you have set up a"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You work as a machine learning specialist at a hedge fund. You are working on a time-series price prediction model for the firm, and you have set up a data delivery stream using Amazon Kinesis Data Streams. You are creating the data producer application code to take trade data from your trade system and send the trade records to your Kinesis Data Stream. Your python code is structured as follows: import boto3 import requests import json client =boto3.client(‘kinesis', region_name='us-east1') while True: r = requests.get(‘https://trading-applicatio-url') data = json.dumps(r.json()) client.put_record( parameters needed for put_record api call ) ... Which of the following options are valid put_record request parameters? Select 3."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d6d37742293cac494ad1"
+  },
+  "answer": "Answers A C E",
+  "certification": "AWS Machine Learning Specialty",
+  "certificationKey": "AWSMLS",
+  "difficulty": "0",
+  "image": "",
+  "needsWork": "false",
+  "ordinal": "41",
+  "originalExplanation": "E.\nF.\nAnswers: A, C, and E.\nOptions A, C and E are correct.\nAs documented in the Amazon Kinesis Data Streams API reference guide titled PutRecord, “The request accepts the following data in JSON format: Data, ExplicitHashKey, PartitionKey, SequenceNumberForOrdering, and StreamName”.\nOption B is incorrect.\nThere is no ImplicitHashKey request parameter.\n(See the Amazon Kinesis Data Streams API reference guide titled PutRecord)\nOption D is incorrect.\nThere is no PartitionKeys request parameter.\nHowever, there is a PartitionKey request parameter.\n(See the Amazon Kinesis Data Streams API reference guide titled PutRecord)\nOption F is incorrect.\nThere is no ShardId request parameter.\nHowever, there is a ShardId response element.\n(See the Amazon Kinesis Data Streams API reference guide titled PutRecord)\nReference:\nPlease see the Amazon Kinesis Data Streams developers guide titled Kinesis Data Stream Producers and the Amazon Kinesis Data Streams API reference guide titled PutRecord.\nSure, I'll be happy to explain the parameters that can be used in a put_record request to Kinesis Data Streams.\n1.\nData: This parameter is mandatory and refers to the data that needs to be sent to the Kinesis Data Stream. The data must be in bytes, and the maximum size of data that can be sent in a single put_record request is 1 MB.\n2.\nPartitionKey: This parameter is mandatory and is used to determine the partition in which the record will be stored. Each partition key maps to a specific shard in the stream. The partition key is also used to group records that need to be processed together.\n3.\nExplicitHashKey: This parameter is optional and can be used to explicitly specify the shard in which the record should be stored. This parameter is useful when you need to override the default hash key calculation that is used to determine the shard in which the record should be stored.\n4.\nImplicitHashKey: This parameter is optional and is used when you want to enable Kinesis Data Streams to automatically determine the shard in which the record should be stored based on the partition key. This parameter is useful when you don't want to explicitly specify the shard in which the record should be stored.\n5.\nSequenceNumberForOrdering: This parameter is optional and is used when you want to enforce strict ordering of records within a shard. Each record that is sent to a shard is assigned a unique sequence number that is used to order the records within the shard.\n6.\nShardId: This parameter is optional and is used to specify the shard ID to which the record should be sent. This parameter is useful when you want to explicitly send the record to a specific shard.\nSo, in the given code snippet, the valid put_record request parameters are Data, PartitionKeys, and ExplicitHashKey. These parameters are mandatory, and they are used to send data to a specific shard in a Kinesis Data Stream. The other parameters, ImplicitHashKey, SequenceNumberForOrdering, and ShardId are optional and are used to fine-tune the record placement and ordering within the shard.",
+  "originalOptions": [
+    "A. Data",
+    "B. ImplicitHashKey",
+    "C. ExplicitHashKey",
+    "D. PartitionKeys",
+    "E. SequenceNumberForOrdering",
+    "F. ShardId."
+  ],
+  "originalQuery": "You work as a machine learning specialist at a hedge fund.\nYou are working on a time-series price prediction model for the firm, and you have set up a data delivery stream using Amazon Kinesis Data Streams.\nYou are creating the data producer application code to take trade data from your trade system and send the trade records to your Kinesis Data Stream.\nYour python code is structured as follows: import boto3 import requests import json client =boto3.client(‘kinesis', region_name='us-east1') while True: r = requests.get(‘https://trading-applicatio-url') data = json.dumps(r.json()) client.put_record( parameters needed for put_record api call ) ... Which of the following options are valid put_record request parameters? Select 3.",
+  "primaryObjective": "",
+  "quid": "0",
+  "source": "https://www.exam-answer.com/amazon/mls-c01/question41",
+  "video_url": "https://certificationation.com/videos/exam-specialist-at-a-hedge-fund-exam-041.html",
+  "url": "https://certificationation.com/questions/exam-specialist-at-a-hedge-fund-exam-041.html"
+}

@@ -1,0 +1,74 @@
+---
+title: "You have been tasked with creating file-level restore onExam"
+description: "Video for you have been tasked with creating file-level restore on your EC2 instances. You already have access to all the frequent snapshots of the EBS volume."
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have been tasked with creating file-level restore on your EC2 instances. You already have access to all the frequent snapshots of the EBS volume. You need to be able to restore an individual lost file on an EC2 instance within 15 minutes of a reported loss of information. The acceptable RPO is several hours. How would you perform this on an EC2 instance? Choose an answer from the options below."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d569f501ee1c8ade9761"
+  },
+  "quid": "0",
+  "ordinal": "21",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "AWS Elastic Block Store (Amazon EBS)",
+    " Amazon EC2",
+    " AWS Backup",
+    " AWS CloudFormation",
+    " AWS Lambda"
+  ],
+  "slug": "ec2-file-level-restore-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question21",
+  "title": "AWS You Have Been Tasked With Creating File-Level Restore Question",
+  "meta": "AWS Exam Question: You need to restore an individual file on EC2 instances using EBS snapshots. Choose an answer. AWS technologies: EC2, EBS.",
+  "answer": "C",
+  "query": "Your team needs a process to restore specific files on existing EC2 instances quickly after accidental deletion. You have regular snapshots available of your EC2 instance EBS volumes. The objective is to recover individual files within 20 minutes following a reported data loss event. The recovery point objective (RPO) allows a timeframe of a few hours. What is the most effective method to retrieve a single missing file on the EC2 instance?",
+  "originalQuery": "You have been tasked with creating file-level restore on your EC2 instances.\nYou already have access to all the frequent snapshots of the EBS volume.\nYou need to be able to restore an individual lost file on an EC2 instance within 15 minutes of a reported loss of information.\nThe acceptable RPO is several hours.\nHow would you perform this on an EC2 instance? Choose an answer from the options below.",
+  "options": [
+    "A. Schedule a background job that runs aws s3 cp to transfer EBS volume data into S3 storage.",
+    "B. Stop creating frequent EBS snapshots. Generate a volume from an EBS snapshot, mount it on the EC2 instance with a different device name, redirect the application to this new volume, then delete the original EBS volume.",
+    "C. Create a volume from the snapshot to be restored and attach the EBS volume to the same EC2 instance at a different mount location, browse the file system on the newly attached volume and select the file that needs to be restored, copy it from the new volume to the original source volume.",
+    "D. Launch a fresh EC2 instance using the latest snapshot and transfer all necessary system files from that instance back to the previous EC2 instance."
+  ],
+  "originalOptions": [
+    "A. Set up a cron that runs aws s3 cp on the files and copy the EBS volume files to S3.",
+    "B. Turn off the frequent snapshots of EBS volumes. Create a volume from an EBS snapshot, attach the EBS volume to the EC2 instance at a different mount location, cutover the application to look at the new backup volume and remove the old volume.",
+    "C. Create a volume from the snapshot to be restored and attach the EBS volume to the same EC2 instance at a different mount location, browse the file system on the newly attached volume and select the file that needs to be restored, copy it from the new volume to the original source volume.",
+    "D. Create a new EC2 instance from the recent snapshot and copy all the system files from the new EC2 instance to the old EC2 instance."
+  ],
+  "image": "",
+  "primaryObjective": "3: Continuous Improvement for Existing Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Answer - C.\nOption A is incorrect because there is an assumption that the EC2 instance can read files from S3.\nOption B is incorrect because the old volume connected to the EC2 could have different files compared to the snapshot that we are recovering from (i.e., some files may have been removed, some may have been newly added)\nIf that volume is removed, we may lose some files and the final volume will not be in the latest state.\nSo, the best solution is to copy the file from the recovery volume and add it to the old connected/backup volume.\nOption C is CORRECT because it mounts the EBS snapshot containing the file - as a volume and copies the file to the already attached volume.\nThis way, the already attached volume always stays up-to-date.\nOnce the file is copied, the volume - that was attached for copying the file - can be removed.\nWith this option, you can restore the individual lost files without removing any new files that the snapshot does not have.\nOption D is INCORRECT because the recent snapshot may not contain the lost file.\nAnd we only need to restore the lost file so that there is no need to copy all the system files.\nFor more information on EBS snapshots, please visit the below URL-\nhttp://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html\nThe correct answer to the question is C.\nTo restore an individual lost file on an EC2 instance within 15 minutes of a reported loss of information, and given that frequent snapshots of the EBS volume are available, the following steps can be taken:\n1.\nCreate a new EBS volume from the snapshot that contains the lost file. This can be done using the AWS Management Console or the AWS CLI.\n2.\nAttach the new EBS volume to the same EC2 instance that experienced the data loss, but at a different mount location. This is important as the original volume may still be in use by the application or operating system.\n3.\nBrowse the file system on the newly attached volume and select the lost file that needs to be restored.\n4.\nCopy the lost file from the new EBS volume to the original source volume. This can be done using a command-line tool like cp or a graphical file manager.\n5.\nVerify that the restored file is accessible and functional.\nNote that the acceptable RPO is several hours, which means that the frequency of the EBS snapshots can be adjusted to meet this requirement. It is also important to periodically test the restore process to ensure that it works as expected.\nOption A, setting up a cron job to copy files to S3, is not an ideal solution as it would require frequent copying of all files on the volume, which may not be practical or efficient. Option B, turning off frequent snapshots and creating a new volume from an old snapshot, would result in a longer RPO and potentially longer downtime for the application. Option D, creating a new EC2 instance and copying all system files, is also not an ideal solution as it would require more resources and time than necessary to restore a single lost file.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-file-level-restore-on-your-ec2-exam-010.html",
+  "url": "https://certificationation.com/questions/exam-file-level-restore-on-your-ec2-exam-010.html"
+}

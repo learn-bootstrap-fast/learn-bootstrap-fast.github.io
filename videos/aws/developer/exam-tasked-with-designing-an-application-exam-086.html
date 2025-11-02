@@ -1,0 +1,81 @@
+---
+title: "As a Database Engineer, you are tasked with designing anExam"
+description: "Video for as a Database Engineer, you are tasked with designing an application that connects to a database hosted on Google Cloud Platform. Which method would"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are tasked with designing an application that connects to a database hosted on Google Cloud Platform. Which method would provide the most secure and efficient connection to the database while maintaining optimum performance?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "BluePeak Analytics runs a microservice in a GKE cluster in Project app-core that must connect to a PostgreSQL database on Compute Engine in Project data-store, and both VPC networks are in us-central1. The team requires private RFC 1918 connectivity with no internet exposure and wants sub 3 ms latency without deploying proxies or load balancers. Which connectivity approach should you choose to provide the most secure and efficient path while meeting the performance target?",
+  "options": [
+    {
+      "text": "Use Cloud VPN with IPsec between the two VPC networks",
+      "explanation": "This sets up an encrypted tunnel over the public internet between the networks and enables private access to internal IPs across VPCs.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Establish VPC peering between the application VPC and the database VPC",
+      "explanation": "This provides private RFC 1918 routing between the VPCs over Google&apos;s backbone and avoids traversal of the public internet.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Publish the database behind an internal TCP load balancer and connect using Private Service Connect",
+      "explanation": "This exposes the database through a private consumer endpoint and requires an internal load balancer in front of the service.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Cloud Interconnect to reach the database from the application VPC",
+      "explanation": "This service offers private high bandwidth links from on-premises networks into Google Cloud rather than between two GCP VPCs.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Establish VPC peering between the application VPC and the database VPC</b>. It provides private RFC 1918 connectivity over the Google backbone and delivers very low regional latency without introducing proxies or load balancers.</p><p><b>VPC peering</b> enables direct routing between VPC subnets while keeping traffic inside the Google network which means no public IPs and no internet exposure. It works across projects and lets the GKE workloads in app-core reach the Compute Engine database in data-store using only internal addresses. In the same region such as us-central1 the path is short and typically within a few milliseconds which satisfies the sub 3 ms requirement.</p><p><i>Use Cloud VPN with IPsec between the two VPC networks</i> is not suitable because it terminates on public IP endpoints and traverses the public internet which violates the no internet exposure requirement and adds overhead that can prevent sub 3 ms latency.</p><p><i>Publish the database behind an internal TCP load balancer and connect using Private Service Connect</i> does not meet the constraint because it explicitly introduces a load balancer and a service endpoint that the team wants to avoid. It also adds extra hops and complexity that are unnecessary for simple private connectivity between VPCs.</p><p><i>Use Cloud Interconnect to reach the database from the application VPC</i> is intended for connecting on premises networks to Google Cloud rather than connecting two VPC networks. It would not provide a direct in region VPC to VPC path and would add cost and operational overhead without benefit.</p>",
+  "batch_id": "43",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are tasked with designing an application that connects to a database hosted on Google Cloud Platform. Which method would provide the most secure and efficient connection to the database while maintaining optimum performance?",
+  "originalOptions": "A. Connecting the application to the database using Cloud Interconnect over the public internet<br/>B. Implementing an API gateway with OAuth 2.0 authentication and connecting the application to the database through it<br/>C. Using Cloud VPN with IPsec to create an encrypted tunnel for the application to connect to the database<br/>D. Establishing a VPC peering connection between the application and the database",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "86",
+  "tip": "<p>When you need <i>private</i> VPC to VPC connectivity with <i>no internet exposure</i> and very <i>low latency</i> inside Google Cloud, think of VPC Network Peering first, then confirm non overlapping IP ranges and the required firewall rules.</p>",
+  "references": [
+    "https://cloud.google.com/vpc/docs/vpc-peering",
+    "https://cloud.google.com/network-connectivity/docs/vpn/concepts/overview",
+    "https://cloud.google.com/vpc/docs/private-service-connect",
+    "https://cloud.google.com/load-balancing/docs/internal",
+    "https://cloud.google.com/network-connectivity/docs/interconnect/concepts/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-tasked-with-designing-an-application-exam-086.html",
+  "video_url": "https://certificationation.com/videos/exam-tasked-with-designing-an-application-exam-086.html"
+}

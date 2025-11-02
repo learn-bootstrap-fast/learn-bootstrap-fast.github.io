@@ -1,0 +1,80 @@
+---
+title: "You are tasked with transitioning a monolithic orderExam"
+description: "Video for you are tasked with transitioning a monolithic order management application to a microservices architecture. The application uses a single Cloud SQL"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are tasked with transitioning a monolithic order management application to a microservices architecture. The application uses a single Cloud SQL database that stores all data, including customer, order, and product information. To optimize for microservices, you want to eventually split the database into smaller service-specific databases. However, you need a solution that supports gradual migration with minimal disruption to the live application. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Your company runs a retail platform named NimbusCart that still relies on a monolithic order processing service with a single Cloud SQL instance that stores customer, order, and catalog data. The team plans to move to microservices and to break out service scoped databases over the next three releases, and you need a path that enables an incremental migration with minimal impact on production. Which approach should you take?",
+  "options": [
+    {
+      "text": "Refactor the single database into separate schemas that map to each service and allocate distinct connection pools for those schemas",
+      "explanation": "This approach keeps one shared database but introduces logical boundaries by schema and isolates connections per schema.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a dedicated data access service that mediates all database interactions and incrementally reroute calls to new service specific Cloud SQL databases",
+      "explanation": "A data access service centralizes query logic and can progressively direct requests to different backends as migrations proceed.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Migrate the monolithic Cloud SQL database to Cloud Spanner and have every microservice share the same Spanner database to reduce contention",
+      "explanation": "This moves the workload to a different managed database while still concentrating all data in one shared system.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Perform an immediate split of customer, order, and product tables into separate Cloud SQL instances and update the application to use them",
+      "explanation": "This option attempts a single cutover to multiple databases which requires coordinated changes and adds operational risk.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct answer is <b>Create a dedicated data access service that mediates all database interactions and incrementally reroute calls to new service specific Cloud SQL databases</b>.</p><p><b>The data access service</b> creates a single boundary through which the monolith and new microservices interact with the database. You can gradually redirect specific operations to new service scoped Cloud SQL databases while keeping the rest on the original instance. This supports incremental decomposition with feature by feature cutovers, reduces risk through easy rollback, and lets you enforce service ownership of data without breaking existing functionality.</p><p><b>This approach</b> aligns with the strangler pattern because it allows you to introduce new data stores alongside the legacy database and to progressively move reads and writes. It also enables compatibility layers such as request level routing, dual writes with verification, and phased migration of tables or aggregates which helps minimize production impact.</p><p><i>Refactor the single database into separate schemas that map to each service and allocate distinct connection pools for those schemas</i> is not sufficient because it preserves a single database instance and a shared failure domain. Teams remain tightly coupled on schema changes and resource contention and you do not achieve true service level data ownership or independent scaling.</p><p><i>Migrate the monolithic Cloud SQL database to Cloud Spanner and have every microservice share the same Spanner database to reduce contention</i> is a heavy migration that does not solve the core coupling since all services still share one database. Moving to Spanner adds complexity and cost and it is unnecessary for an incremental path that seeks minimal impact.</p><p><i>Perform an immediate split of customer, order, and product tables into separate Cloud SQL instances and update the application to use them</i> is a big bang change with high risk. Cross database joins and transactions become difficult to manage and the blast radius is large, which conflicts with the requirement for an incremental migration with minimal production impact.</p>",
+  "batch_id": "71",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "You are tasked with transitioning a monolithic order management application to a microservices architecture. The application uses a single Cloud SQL database that stores all data, including customer, order, and product information. To optimize for microservices, you want to eventually split the database into smaller service-specific databases. However, you need a solution that supports gradual migration with minimal disruption to the live application. What should you do?",
+  "originalOptions": "A. Refactor the database to include separate schemas for each microservice and ensure each schema has a dedicated connection pool.<br/>B. Immediately migrate customer, order, and product data to separate Cloud SQL databases. Update the application to use these new databases.<br/>C. Retain the existing monolithic database and connect each microservice directly to it while limiting queries to only their respective data.<br/>D. Introduce a data access layer (DAL) service that handles database interactions and route all microservice requests through this service.",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "55",
+  "tip": "<p>Look for options that introduce a small <i>seam</i> or facade in front of the legacy system so you can migrate <i>incrementally</i> and keep a safe <i>rollback</i> path.</p>",
+  "references": [
+    "https://cloud.google.com/architecture/migrating-a-monolith-to-microservices",
+    "https://cloud.google.com/architecture/strangler-application-pattern",
+    "https://cloud.google.com/sql/docs/introduction",
+    "https://cloud.google.com/architecture/microservices-architecture-on-google-cloud"
+  ],
+  "url": "https://certificationation.com/questions/exam-monolithic-order-management-application-to-exam-055.html",
+  "video_url": "https://certificationation.com/videos/exam-monolithic-order-management-application-to-exam-055.html"
+}

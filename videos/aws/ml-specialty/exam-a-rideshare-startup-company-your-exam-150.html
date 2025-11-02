@@ -1,0 +1,54 @@
+---
+title: "You are a machine learning specialist at a rideshareExam"
+description: "Video for you are a machine learning specialist at a rideshare startup company. Your team supports developers who are using SageMaker notebook instances in a"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are a machine learning specialist at a rideshare startup company. Your team supports developers who are using SageMaker notebook instances in a private subnet of your corporate VPC. Your developers have important customer data stored on the SageMaker notebook instance's EBS volume, and so they wish to take a snapshot of that EBS volume. When your developers attempt to locate the SageMaker notebook EC2 instance and its EBS volume within your corporate VPC, they don't find them. What is the reason they don't see the instance or its EBS volume in the corporate VPC?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d7007742293cac494b3e"
+  },
+  "answer": "B",
+  "certification": "AWS Machine Learning Specialty",
+  "certificationKey": "AWSMLS",
+  "difficulty": "0",
+  "image": "",
+  "needsWork": "false",
+  "ordinal": "150",
+  "originalExplanation": "Correct Answer: B.\nOption A is incorrect.\nSageMaker notebook instances run in an AWS service account (not in customer accounts), but they run on EC2 instances, not in EKS containers.\nOption B is correct.\nSageMaker runs its notebook instances on EC2 in an AWS service account, not in customer accounts.\nTherefore, you can't access the EC2 instance EBS volumes.\nOption C is incorrect.\nSageMaker notebook instances run in an AWS service account (not in customer accounts), and they run on EC2 instances, not in ECS containers.\nOption D is incorrect.\nSageMaker runs its notebook instances on EC2 in an AWS service account, not in customer accounts.\nReferences:\nPlease see the Amazon SageMaker developer guide titled Connect SageMaker Studio Notebooks to Resources in a VPC (https://docs.aws.amazon.com/sagemaker/latest/dg/studio-notebooks-and-internet-access.html),\nThe Amazon EC2 Auto Scaling FAQs page (https://aws.amazon.com/ec2/autoscaling/faqs/),\nThe AWS Machine Learning blog titled Understanding Amazon SageMaker notebook instance networking configurations and advanced routing options (https://aws.amazon.com/blogs/machine-learning/understanding-amazon-sagemaker-notebook-instance-networking-configurations-and-advanced-routing-options/)\nThe reason why the developers cannot locate the SageMaker notebook EC2 instance and its EBS volume within the corporate VPC is because SageMaker notebook instances run on a separate AWS service account, which is different from the corporate account.\nOption B is the correct answer as SageMaker notebook instances run on EC2 instances running within an AWS service account. This means that SageMaker notebook instances are launched in a separate AWS account created specifically for SageMaker. This allows SageMaker to manage the underlying infrastructure and resources required to run the notebook instances, including the creation and management of the EC2 instances and EBS volumes used by the notebooks.\nBy default, SageMaker notebook instances are launched in a private subnet within the VPC of the AWS service account, which is separate from the VPC of the corporate account. This ensures that the notebook instances and their associated resources are isolated and secure.\nTo access the data stored on the EBS volume of the SageMaker notebook instance, the developers can take a snapshot of the volume and copy it to their corporate account. Alternatively, they can create a cross-account VPC peering connection between the SageMaker service account and the corporate account, which allows them to access the resources in the SageMaker account from the corporate VPC.\nOption A is incorrect because SageMaker notebook instances do not run on EKS containers. EKS is a service that enables running Kubernetes clusters on AWS, while SageMaker is a managed service for building, training, and deploying machine learning models.\nOption C is incorrect because SageMaker notebook instances do not run on containers within the ECS service. ECS is a container management service that allows running Docker containers on AWS.\nOption D is incorrect because SageMaker notebook instances do not run on EC2 instances within the corporate account. They run on EC2 instances within a separate AWS service account created specifically for SageMaker.",
+  "originalOptions": [
+    "A. SageMaker notebook instances run on EKS containers running within an AWS service account.",
+    "B. SageMaker notebook instances run on EC2 instances running within an AWS service account.",
+    "C. SageMaker notebook instances run on the container in the ECS service within your corporate account.",
+    "D. SageMaker notebook instances run on the EC2 instances within your corporate account, but they run outside of a VP."
+  ],
+  "originalQuery": "You are a machine learning specialist at a rideshare startup company.\nYour team supports developers who are using SageMaker notebook instances in a private subnet of your corporate VPC.\nYour developers have important customer data stored on the SageMaker notebook instance's EBS volume, and so they wish to take a snapshot of that EBS volume.\nWhen your developers attempt to locate the SageMaker notebook EC2 instance and its EBS volume within your corporate VPC, they don't find them.\nWhat is the reason they don't see the instance or its EBS volume in the corporate VPC?",
+  "primaryObjective": "",
+  "quid": "0",
+  "source": "https://www.exam-answer.com/amazon/mls-c01/question150",
+  "video_url": "https://certificationation.com/videos/exam-a-rideshare-startup-company-your-exam-150.html",
+  "url": "https://certificationation.com/questions/exam-a-rideshare-startup-company-your-exam-150.html"
+}

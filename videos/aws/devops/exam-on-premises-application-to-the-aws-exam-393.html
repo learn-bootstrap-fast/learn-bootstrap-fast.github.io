@@ -1,0 +1,62 @@
+---
+title: "You were assigned a task to migrate an on-premisesExam"
+description: "Video for you were assigned a task to migrate an on-premises application to the AWS Elastic Beanstalk environment. The operating system is Amazon Linux and"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You were assigned a task to migrate an on-premises application to the AWS Elastic Beanstalk environment. The operating system is Amazon Linux and package managers yum and RubyGems are required in order to install all necessary packages for the application. You have created config files in .ebextensions. In the config files, you added a Package section to install software packages. Which statement is correct for the Package section in the configuration file?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct statement is: <strong>For the Amazon Linux OS, Elastic Beanstalk only lets you use the yum package manager within the Packages section. RubyGems isn't supported.</strong></p><p>Elastic Beanstalk supports several package managers in its configuration files depending on the underlying platform. For Amazon Linux, only yum and a few others (like rpm) are supported in the <code>Packages</code> section, but not RubyGems. If you want to install Ruby gems, you need to do so using <code>commands</code> or <code>container_commands</code> sections instead of directly via the <code>Packages</code> block.</p><ul><li><i>Elastic Beanstalk enforces that only one type of package manager (either yum or RubyGems) is allowed per config file, meaning you'll need separate files for each manager.</i> – This is not correct because you can include multiple package manager blocks in a single YAML config file if the platform supports them.</li><li><i>Within a given package manager, the sequence in which packages are installed in the config file is not guaranteed.</i> – This is misleading, as the install order within the same package manager is not always guaranteed, but the main limitation here is on manager support, not sequencing. This is not the most direct or relevant answer for this scenario.</li><li><i>The configuration only installs the newest available version of a package and does not let you specify exact versions in the file.</i> – This is incorrect; you can specify the desired package version in the config file with the syntax <code>package: version</code> in the <code>Packages</code> section.</li></ul><p><strong>Tip:</strong> Always double-check the documentation for the list of supported package managers for your chosen Elastic Beanstalk platform. If a package manager isn't supported natively, use custom commands or scripts in other config file sections.</p>",
+  "query": "<p>You need to migrate a locally hosted application to AWS Elastic Beanstalk, using Amazon Linux as the OS. The app requires both <strong>yum</strong> and <strong>RubyGems</strong> package managers to install various dependencies. You've put together configuration files under <code>.ebextensions</code> with a <code>Package</code> section to handle package installations.</p><p>Which statement accurately reflects behavior or limitations associated with the <code>Package</code> section in these configuration files?</p>",
+  "original_oid": "6793da0e61969b416038a139",
+  "options": [
+    {
+      "correct": true,
+      "text": "For the Amazon Linux OS, Elastic Beanstalk only lets you use the yum package manager within the Packages section. RubyGems isn't supported.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Elastic Beanstalk enforces that only one type of package manager (either yum or RubyGems) is allowed per config file, meaning you'll need separate files for each manager.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Within a given package manager, the sequence in which packages are installed in the config file is not guaranteed.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "The configuration only installs the newest available version of a package and does not let you specify exact versions in the file.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question199",
+  "originalQuery": "You were assigned a task to migrate an on-premises application to the AWS Elastic Beanstalk environment.\nThe operating system is Amazon Linux and package managers yum and RubyGems are required in order to install all necessary packages for the application.\nYou have created config files in .ebextensions.\nIn the config files, you added a Package section to install software packages.\nWhich statement is correct for the Package section in the configuration file?",
+  "originalOptions": "A. Within each package manager, package installation order isn`t guaranteed.,B. For Amazon Linux operating system, only the package manager yum is supported in the Package section. Elastic Beanstalk does not support RubyGems.,C. Only the latest supported version is installed. The version number cannot be specified in the configuration file.,D. Elastic Beanstalk only supports one package manager per config file. So at least two config files are needed. One for yum and the other for RubyGems.",
+  "video_url": "https://certificationation.com/videos/exam-on-premises-application-to-the-aws-exam-393.html",
+  "url": "https://certificationation.com/questions/exam-on-premises-application-to-the-aws-exam-393.html"
+}

@@ -1,0 +1,74 @@
+---
+title: "You are developing an application using a microservicesExam"
+description: "Video for you are developing an application using a microservices architecture. Some serverless AWS services such as Lambda, SQS and DynamoDB are used. One"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are developing an application using a microservices architecture. Some serverless AWS services such as Lambda, SQS and DynamoDB are used. One Lambda Function is deployed to reset users' passwords, but it does not run frequently. When the function is inactive and called, it may take a longer time to handle the requests. You want to minimize the processing time for the function. Which of the following Lambda \"features\" you can use to get greater control over the performance of your serverless applications at any scale?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d619f501ee1c8ade9919"
+  },
+  "quid": "0",
+  "ordinal": "465",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "AWS Lambda",
+    " Amazon SQS",
+    " Amazon DynamoDB",
+    " Amazon CloudWatch",
+    " AWS Well-Architected Framework"
+  ],
+  "slug": "l-application-microservices-architecture-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question465",
+  "title": "AWS Developing An Application Using A Microservices Architecture Question",
+  "meta": "AWS Exam Question: You are developing an application using a microservices architecture with Lambda, SQS, and DynamoDB. Which Lambda features can optimize performance? Answer: Provisioned Concurrency.",
+  "answer": "C",
+  "query": "A development team is building an event-driven application with multiple serverless components including Lambda, SQS, and DynamoDB. One particular Lambda function handles infrequent billing report generation. When this function is triggered after long idle periods, it experiences increased latency. What Lambda feature should the team use to ensure consistent fast response times for this function?",
+  "originalQuery": "You are developing an application using a microservices architecture.\nSome serverless AWS services such as Lambda, SQS and DynamoDB are used.\nOne Lambda Function is deployed to reset users' passwords, but it does not run frequently.\nWhen the function is inactive and called, it may take a longer time to handle the requests.\nYou want to minimize the processing time for the function.\nWhich of the following Lambda \"features\" you can use to get greater control over the performance of your serverless applications at any scale?",
+  "options": [
+    "A. Avoid languages like Java that have lengthy startup times; prefer Node.js or Python.",
+    "B. Set up a CloudWatch Event to run the Lambda every 2 minutes to keep it warm.",
+    "C. Configure the Lambda Function to use \"Provisioned Concurrency\" always to stay active so that the Lambda container does not get reused by AWS.",
+    "D. Use a CloudWatch alarm to invoke the Lambda after an hour of inactivity to keep it warm."
+  ],
+  "originalOptions": [
+    "A. For the Lambda Function, avoid using languages such as Java that need a long compilation time. Use Node.js or Python instead.",
+    "B. Configure a CloudWatch Event rule and select the Lambda Function as its target. The event is executed every minute to warm up the function so that the function stays active.",
+    "C. Configure the Lambda Function to use \"Provisioned Concurrency\" always to stay active so that the Lambda container does not get reused by AWS.",
+    "D. Create a CloudWatch alarm to monitor the invocations of the function. If there are no invocations for 1 hour, trigger the alarm to call the Lambda Function so that the function stays warm."
+  ],
+  "image": "https://eaeastus2.blob.core.windows.net/optimizedimages/static/images/AWS-Certified-Solutions-Architect-Professional/answer/imgckeditor_68457.png",
+  "primaryObjective": "3: Continuous Improvement for Existing Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Correct Answer - C.\nIf the Lambda Function is not used for a long time, AWS may recycle the container.\nAnd if there are new requests to the function, AWS needs to deploy the container again for the function.\nIn order to pre-warm the Lambda function, the best way is to use the \"Provisioned Concurrency\" which is a \"feature\" of the Lambda function.\nhttps://aws.amazon.com/about-aws/whats-new/2019/12/aws-lambda-announces-provisioned-concurrency/\nOptions A, B and D are incorrect: Because these are NOT a \"feature\" of the Lambda function.\nThe correct answer is option C: Configure the Lambda Function to use \"Provisioned Concurrency\" always to stay active so that the Lambda container does not get reused by AWS.\nExplanation:\nIn a microservices architecture, it's essential to ensure that each service is optimized for maximum performance. In this case, we want to minimize the processing time for the Lambda Function that resets users' passwords, especially when the function is inactive.\nProvisioned Concurrency is a feature that allows you to pre-warm a set number of Lambda containers to handle incoming requests. It's different from On-Demand Concurrency, where AWS manages the number of containers needed to handle requests. With Provisioned Concurrency, you have control over the number of containers that are running, and they remain warm and ready to handle requests at all times.\nUsing Provisioned Concurrency, we can keep the Lambda Function warm and active even when it's not in use. This ensures that the function is always ready to handle incoming requests, minimizing the processing time. Additionally, because the containers remain warm, there is no additional cold start time when the function is invoked, which further improves performance.\nOption A is incorrect because the language used by the function does not affect its performance. However, some languages may have longer cold start times than others, which could affect the function's performance when it's not in use.\nOption B is incorrect because while warming up a function with CloudWatch events can help reduce the cold start time, it does not keep the function active when it's not in use.\nOption D is incorrect because triggering a CloudWatch alarm to call the Lambda Function defeats the purpose of using serverless architecture, where resources are only provisioned when needed. Additionally, it could result in unnecessary charges for unused resources.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-using-a-microservices-architecture-some-exam-310.html",
+  "url": "https://certificationation.com/questions/exam-using-a-microservices-architecture-some-exam-310.html"
+}

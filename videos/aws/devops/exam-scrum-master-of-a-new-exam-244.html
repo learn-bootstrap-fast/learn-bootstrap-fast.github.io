@@ -1,0 +1,62 @@
+---
+title: "You are just promoted to be the Scrum Master of a newExam"
+description: "Video for you are just promoted to be the Scrum Master of a new team. You want to try something new and start using CodeStar because of its wonderful project"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are just promoted to be the Scrum Master of a new team. You want to try something new and start using CodeStar because of its wonderful project management features. You plan to create a sample project using Node.js template which CodeStar provides and demo to other team members. You create the demo project successfully and the Node.js project is deployed smoothly in Lambda. The project code is in CodeCommit. Later on you want to change the lambda resource name from “XXX-GetHelloWorld” to “XXX-DemoProject” What option should you use?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The right way to change the Lambda resource name is to update the <b>template.yml</b> file in your CodeCommit repository. This file represents the AWS CloudFormation stack, which defines and provisions all required resources including the Lambda function. After modifying the name in <b>template.yml</b>, committing and pushing your change will let the pipeline (triggered by CodeBuild and CodeStar) redeploy the Lambda resource with the new name. <br><br>Option <i>\"Since CodeStar created the Lambda with a preset name, you need to visit the Lambda console and manually re-upload your function using the new name.\"</i> is incorrect because best practice is to manage all infrastructure through the same code base; manual changes in the Lambda console can drift from your source of truth and break automation.<br><br>Option <i>\"As the Node.js project sample template is available only in read-only demo mode, changing the Lambda name is not permitted.\"</i> is inaccurate; once the template is provisioned in your own repository, it is fully editable.<br><br>Option <i>\"The correct procedure is to check out the code from CodeCommit and change the buildspec.yml file through a commit, which instructs CodeBuild to redeploy the Lambda function using your new chosen name.\"</i> is also incorrect. The <code>buildspec.yml</code> file manages build-related steps, not infrastructure resource names, which are controlled by the CloudFormation template (<b>template.yml</b>).<br><br><b>Tip:</b> Always manage resource properties such as names within the CloudFormation template in your pipeline, not through post-deployment manual edits or buildspec changes. This ensures consistency and repeatability in your deployments.</p>",
+  "query": "<p>You have recently stepped up as Scrum Master for a new squad and are experimenting with AWS CodeStar to utilize its project management strengths. After setting up a sample Node.js project using CodeStar's provided template, deployment to Lambda succeeds with CodeCommit managing the source repository. Now, you need to rename your Lambda resource from “XXX-GetHelloWorld” to “XXX-DemoProject”. What is the correct approach to make this update?</p>",
+  "original_oid": "6793da7e61969b416038a21e",
+  "options": [
+    {
+      "correct": true,
+      "text": "You can modify the Lambda resource’s name directly within the <code>template.yml</code> file found in the CodeCommit repository. This file defines your application’s environment via AWS CloudFormation.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Since CodeStar created the Lambda with a preset name, you need to visit the Lambda console and manually re-upload your function using the new name.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "As the Node.js project sample template is available only in read-only demo mode, changing the Lambda name is not permitted.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "The correct procedure is to check out the code from CodeCommit and change the buildspec.yml file through a commit, which instructs CodeBuild to redeploy the Lambda function using your new chosen name.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question430",
+  "originalQuery": "You are just promoted to be the Scrum Master of a new team.\nYou want to try something new and start using CodeStar because of its wonderful project management features.\nYou plan to create a sample project using Node.js template which CodeStar provides and demo to other team members.\nYou create the demo project successfully and the Node.js project is deployed smoothly in Lambda.\nThe project code is in CodeCommit.\nLater on you want to change the lambda resource name from “XXX-GetHelloWorld” to “XXX-DemoProject”\nWhat option should you use?",
+  "originalOptions": "[\"A. As CodeStar has used CodeCommit as its Git repo, you should pull the code from CodeCommit and make relevant changes in buildspec.yml via a Git Commit. Then CodeBuild is able to rebuild the Lambda using the updated name and CodeStar will take care of the following deployment.\",\"B. Unfortunately, you could not change the Lambda name as you chose to use the sample template which is read-only for demo purpose.\",\"C. In this case, as CodeStar has used CodeCommit to manage the code repo, you can modify application resource name in the template.yml file in the CodeCommit Repo. This is also the AWS CloudFormation file that models your application`s runtime environment.\",\"D. The CodeStar template has created resources including lambda using its predefined name. To change the lambda name, you have to go to the lambda console and re-upload the code directly with the updated name.\"]",
+  "video_url": "https://certificationation.com/videos/exam-scrum-master-of-a-new-exam-244.html",
+  "url": "https://certificationation.com/questions/exam-scrum-master-of-a-new-exam-244.html"
+}

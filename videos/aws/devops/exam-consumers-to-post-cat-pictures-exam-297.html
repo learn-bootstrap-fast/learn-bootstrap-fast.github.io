@@ -1,0 +1,62 @@
+---
+title: "You are building a mobile app for consumers to post catExam"
+description: "Video for you are building a mobile app for consumers to post cat pictures online. You will be storing the images in AWS S3 You want to run the system very"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are building a mobile app for consumers to post cat pictures online. You will be storing the images in AWS S3 You want to run the system very cheaply and simply. Which one of these options allows you to build a photo-sharing application with the right authentication/authorization implementation?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The most suitable method is to <b>Utilize AWS Cognito alongside web identity federation, enabling authentication with services like Google or Facebook, and then pass a secure token to grant users access to AWS S3</b>. This approach is cost-effective, highly scalable, and securely delegates AWS resource access through proven managed services. Users authenticate with well-known providers and receive temporary credentials, simplifying identity federation while avoiding the need to manage login infrastructure.</p><p>Let's analyze why the other choices are suboptimal:</p> <ul><li><i>Implement JWT or SAML authentication...</i> lacks built-in AWS integration for temporary credential exchange, and issuing long-lived tokens can create security risks due to overprivileged or unexpired access. The indefinite access noted here does not follow security best practices.</li> <li><i>Establish an AWS oAuth Service Domain...</i> is not an actual AWS service or industry-accepted authentication pattern for this use case. There is no 'AWS oAuth Service Domain', and the description is not technically correct or supported by AWS documentation.</li><li><i>Leverage AWS API Gateway with a regularly rotated API Key...</i> is not meant for user-level authentication/authorization and cannot easily handle per-user access control for AWS S3 resources. API keys are more appropriate for controlling broad API access by service rather than by user, and do not provide identity federation with social providers.</li></ul><p>Tip: For public consumer apps where simplicity, security, and the use of social logins are desired, AWS Cognito with web identity federation is the industry-standard solution. It interacts smoothly with S3 and eliminates custom backend identity logic.</p>",
+  "query": "<p>You are developing a mobile app designed for users to upload cat images to the cloud. The application will save these photos in Amazon S3, and your main goals are to implement basic authentication/authorization and keep the system cost-effective and straightforward. Which approach below enables you to build this photo-sharing platform with the correct security implementation?</p>",
+  "original_oid": "6793d9ec61969b416038a0f7",
+  "options": [
+    {
+      "correct": false,
+      "text": "Implement JWT or SAML authentication so users log in with a username and password, receiving a token that grants them unlimited access to the photo upload service.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Utilize AWS Cognito alongside web identity federation, enabling authentication with services like Google or Facebook, and then pass a secure token to grant users access to AWS S3.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Establish an AWS oAuth Service Domain that permits public registration, incorporating at least one major social platform as an Identity Provider for account creation and sign-in.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Leverage AWS API Gateway with a regularly rotated API Key to permit direct access from clients, embedding S3 operations into a custom SDK.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question132",
+  "originalQuery": "You are building a mobile app for consumers to post cat pictures online.\nYou will be storing the images in AWS S3\nYou want to run the system very cheaply and simply.\nWhich one of these options allows you to build a photo-sharing application with the right authentication/authorization implementation?",
+  "originalOptions": "[\"A. Build the application out using AWS Cognito and web identity federation to allow users to log in using Facebook or Google Accounts. Once they are logged in, the secret token passed to that user is used to access resources on AWS, like AWS S3 directly.\",\"B. Use JWT or SAML compliant systems to build authorization policies.Users log in with a username and password, and are given a token they can use indefinitely to make calls against the photo infrastructure.\",\"C. Use AWS API Gateway with a constantly rotating API Key to allow access from the client-side.Construct a custom build of the SDK and include S3 access in it.\",\"D. Create an AWS oAuth Service Domain ad grant public signup and access to the domain. During setup, add at least one major social media site as a trusted Identity Provider for users.\"]",
+  "video_url": "https://certificationation.com/videos/exam-consumers-to-post-cat-pictures-exam-297.html",
+  "url": "https://certificationation.com/questions/exam-consumers-to-post-cat-pictures-exam-297.html"
+}

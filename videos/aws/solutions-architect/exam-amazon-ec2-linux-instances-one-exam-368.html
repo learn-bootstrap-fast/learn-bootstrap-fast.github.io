@@ -1,0 +1,128 @@
+---
+title: "A company has migrated an application to Amazon EC2Exam"
+description: "Video for a company has migrated an application to Amazon EC2 Linux instances. One of these EC2 instances runs several 1-hour tasks on a schedule. These tasks"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company has migrated an application to Amazon EC2 Linux instances. One of these EC2 instances runs several 1-hour tasks on a schedule. These tasks were written by different teams and have no common programming language. The company is concerned about performance and scalability while these tasks run on a single instance. A solutions architect needs to implement a solution to resolve these concerns. Which solution will meet these requirements with the LEAST operational overhead?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729ad6"
+  },
+  "quid": null,
+  "ordinal": "369",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS Batch",
+    " Amazon EventBridge",
+    " AWS Lambda",
+    " Amazon Machine Image (AMI)",
+    " Auto Scaling"
+  ],
+  "slug": "ec2-migrated-application-tasks-aws",
+  "source": "ET",
+  "title": "AWS A Company Has Migrated An Application Question",
+  "meta": "AWS Exam Question: A company migrated an app to EC2 Linux instances. A solutions architect seeks a solution for performance and scalability. Find the answer.",
+  "answer": "A",
+  "query": "An organization has moved a legacy application to Amazon EC2 instances running Linux. One of the instances is tasked with executing multiple scheduled jobs that each take around one hour. These jobs were developed by various teams and utilize different programming languages. The organization is worried about the efficiency and ability to scale since all jobs are currently executed on a single EC2 instance. A solutions architect is tasked with finding a way to address these issues.\n\nWhat solution will fulfill these requirements while minimizing operational overhead?",
+  "originalQuery": "A company has migrated an application to Amazon EC2 Linux instances. One of these EC2 instances runs several 1-hour tasks on a schedule. These tasks were written by different teams and have no common programming language. The company is concerned about performance and scalability while these tasks run on a single instance. A solutions architect needs to implement a solution to resolve these concerns.\n\nWhich solution will meet these requirements with the LEAST operational overhead?",
+  "options": [
+    "A. Use AWS Batch to run the tasks as jobs. Schedule the jobs by using Amazon EventBridge (Amazon CloudWatch Events).",
+    "B. Change the EC2 instance into a container. Utilize AWS App Runner to generate the container when needed to execute the tasks.",
+    "C. Copy the tasks into AWS Lambda functions. Schedule the Lambda functions by using Amazon EventBridge (Amazon CloudWatch Events).",
+    "D. Create an Amazon Machine Image (AMI) from the EC2 instance responsible for the tasks. Establish an Auto Scaling group using the AMI to manage multiple instance copies."
+  ],
+  "originalOptions": [
+    "A. Use AWS Batch to run the tasks as jobs. Schedule the jobs by using Amazon EventBridge (Amazon CloudWatch Events).",
+    "B. Convert the EC2 instance to a container. Use AWS App Runner to create the container on demand to run the tasks as jobs.",
+    "C. Copy the tasks into AWS Lambda functions. Schedule the Lambda functions by using Amazon EventBridge (Amazon CloudWatch Events).",
+    "D. Create an Amazon Machine Image (AMI) of the EC2 instance that runs the tasks. Create an Auto Scaling group with the AMI to run multiple copies of the instance."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "The tasks have been developed by various teams and utilize different programming languages, presenting a challenge for unifying their execution. AWS Lambda is uniquely positioned to address these concerns, as it supports multiple programming languages and offers inherent scalability. This means that regardless of the language used for each task, Lambda can execute them in a serverless environment, automatically scaling resources based on demand. This capability significantly reduces operational overhead and enhances performance, allowing for efficient management of scheduled tasks without the need for manual intervention or resource provisioning.",
+    "Ah, the tricky little detail about AWS Lambda! 🕵️‍♂️ While it’s a fantastic tool for running code without the hassle of managing servers, it does have a tiny limitation: it can only run jobs that last up to 15 minutes. ⏳ So, option C is unfortunately out of the running! Let's keep our options open for something that can handle those 1-hour tasks with ease! 🚀",
+    "Ah, the age-old puzzle of juggling multiple one-hour tasks on a single instance—like trying to balance flaming swords while riding a unicycle. The mention of \"several 1-hour tasks on a schedule\" raises an eyebrow when considering AWS Lambda, which has a rather strict 15-minute limit on execution time. So, it’s safe to say that Lambda wouldn’t be the knight in shining armor for this scenario. No way can we go with that option.",
+    "Option C is not the best choice for this scenario. While copying the tasks into AWS Lambda functions could potentially streamline execution, it may not effectively address the performance and scalability concerns associated with running multiple tasks written in various programming languages. Instead, a more efficient solution would allow for better management of workloads while minimizing operational complexity. It's essential to consider alternatives that provide robust support for diverse programming environments and can efficiently handle scheduled tasks without compromising performance.",
+    "The reason is that AWS Lambda has a maximum execution time of just 15 minutes. 🌈"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "C",
+      "explanation": "question said \"These tasks were written by different teams and have no common programming language\", and key word \"scalable\". Only Lambda can fulfil these. Lambda can be done in different programming languages, and it is scalable",
+      "upvotes": "10"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Lambda can only execute job under 15 mins* so C can't be the answer",
+      "upvotes": "5"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "But the question states \"several 1-hour tasks on a schedule\", and the maximum runtime for Lambda is 15 minutes, so it can't be A.",
+      "upvotes": "31"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "can't be C",
+      "upvotes": "9"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "It’s not because time limit of lambda is 15 minutes",
+      "upvotes": "12"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "A (72%)",
+      "votes": "54 votes."
+    },
+    {
+      "option": "C (16%)",
+      "votes": "12 votes."
+    },
+    {
+      "option": "9%",
+      "votes": "9%"
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is A, which involves using AWS Batch to manage the execution of the scheduled tasks and leveraging Amazon EventBridge to schedule them. AWS Batch is designed to efficiently run batch computing workloads, allowing multiple jobs to be executed in parallel, increasing efficiency and scalability. Since the tasks utilize different programming languages and the organization is focused on minimizing operational overhead, AWS Batch abstracts much of the infrastructure management, making it easier for operations.\n\nOption B, using AWS App Runner, is not tailored for batch processing and would involve unnecessary complexity for running multiple long-running jobs. \n\nOption C is incorrect because AWS Lambda has a maximum execution time of 15 minutes, making it unsuitable for tasks that run for an hour. \n\nOption D, while feasible, would still require managing multiple EC2 instances through Auto Scaling, which increases operational overhead compared to the fully managed solution of AWS Batch.",
+  "video_url": "https://certificationation.com/videos/exam-amazon-ec2-linux-instances-one-exam-368.html",
+  "url": "https://certificationation.com/questions/exam-amazon-ec2-linux-instances-one-exam-368.html"
+}

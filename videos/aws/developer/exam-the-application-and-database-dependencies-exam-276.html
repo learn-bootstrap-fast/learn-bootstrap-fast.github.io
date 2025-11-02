@@ -1,0 +1,81 @@
+---
+title: "You have been tasked with assessing the application andExam"
+description: "Video for you have been tasked with assessing the application and database dependencies of a multi-tier web application running on-premises before migrating it"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have been tasked with assessing the application and database dependencies of a multi-tier web application running on-premises before migrating it to Google Cloud Platform (GCP). Which of the following approaches would be the most effective for identifying and documenting these dependencies?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are preparing to move a legacy three tier customer portal hosted in an on premises data center at scrumtuous.com to Google Cloud and leadership needs a clear view of how the web tier, service layer, and databases interact so teams can plan cutovers and testing. What is the most effective way to identify and document these application and database dependencies before any migration happens?",
+  "options": [
+    {
+      "text": "Move the workloads first and rely on Cloud Monitoring metrics and logs to discover any broken calls and database couplings after cutover",
+      "explanation": "This approach migrates the system before analysis and depends on operational telemetry to uncover issues afterward.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a comprehensive inventory of components and review source code, service configuration, and database queries to map all interactions and data flows",
+      "explanation": "This method builds a full catalog and examines code and SQL so you can document how tiers and data stores communicate.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use Database Migration Service to replicate the on premises database into Cloud SQL and review the Cloud SQL instance to infer application ties",
+      "explanation": "This suggests moving the database into Cloud SQL with replication and then trying to deduce relationships from the migrated system.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Examine only the database schema and foreign key relationships because most dependencies originate in the database",
+      "explanation": "This focuses solely on schema structure and ignores cross service calls and configuration that also create dependencies.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Create a comprehensive inventory of components and review source code, service configuration, and database queries to map all interactions and data flows</b>. This approach provides a thorough and proactive understanding of how the web tier, service layer, and databases communicate so you can plan cutovers and testing with confidence.</p><p>This option works because it captures reality at the points where coupling is defined. Reviewing code reveals service calls, libraries, and external integrations. Examining configuration surfaces connection strings, environment variables, feature flags, and service endpoints. Analyzing database queries and jobs shows actual data access patterns and cross system dependencies. Building a comprehensive inventory from these artifacts produces an accurate map of interactions so teams can design test plans, sequence cutovers, and mitigate risks before any move.</p><p><i>Move the workloads first and rely on Cloud Monitoring metrics and logs to discover any broken calls and database couplings after cutover</i> is incorrect because it is reactive and risks outages and data integrity issues. Discovery should happen before migration so you can remediate and test in advance rather than learning about failures in production.</p><p><i>Use Database Migration Service to replicate the on premises database into Cloud SQL and review the Cloud SQL instance to infer application ties</i> is incorrect because Database Migration Service is meant for moving data and not for discovering application dependencies. Replicating the database does not expose service to service interactions, middleware behavior, or configuration driven couplings and it can introduce risk if you have not mapped consumers and changes.</p><p><i>Examine only the database schema and foreign key relationships because most dependencies originate in the database</i> is incorrect because it ignores critical dependencies in code, configuration, caches, queues, messaging systems, and external APIs. Schemas and keys describe data relationships but they do not reveal runtime call paths or operational behaviors that affect cutover and testing.</p>",
+  "batch_id": "292",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "You have been tasked with assessing the application and database dependencies of a multi-tier web application running on-premises before migrating it to Google Cloud Platform (GCP). Which of the following approaches would be the most effective for identifying and documenting these dependencies?",
+  "originalOptions": "A. Perform an inventory of the application components, analyze the application code, and evaluate SQL queries to identify dependencies.<br/>B. Migrate the application and database first, then troubleshoot any issues that arise during the migration process.<br/>C. Use Google Cloud SQL to import the on-premises database schema and data, then analyze the dependencies.<br/>D. Only analyze the database schema and table relationships, as they are the primary source of dependencies.",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "276",
+  "tip": "<p>Start with <i>discovery</i> and <i>assessment</i> before migration. Map dependencies from code, configuration, and queries to build a complete interaction view, then validate with observability in a pre production environment.</p>",
+  "references": [
+    "https://cloud.google.com/architecture/migrating-to-gcp-assessing-and-discovering-your-workloads",
+    "https://cloud.google.com/migrate/migration-center/docs/overview",
+    "https://cloud.google.com/migrate/migration-center/docs/discovery-overview",
+    "https://cloud.google.com/database-migration/docs/overview",
+    "https://cloud.google.com/monitoring"
+  ],
+  "url": "https://certificationation.com/questions/exam-the-application-and-database-dependencies-exam-276.html",
+  "video_url": "https://certificationation.com/videos/exam-the-application-and-database-dependencies-exam-276.html"
+}

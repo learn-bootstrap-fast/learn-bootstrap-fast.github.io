@@ -1,0 +1,62 @@
+---
+title: "You currently have an application deployed via ElasticExam"
+description: "Video for you currently have an application deployed via Elastic Beanstalk. You are now deploying a new application. In Elastic Beanstalk, the current instances"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You currently have an application deployed via Elastic Beanstalk. You are now deploying a new application. In Elastic Beanstalk, the current instances are detached, and new instances are deployed and reattached. But the new instances are still not receiving any sort of traffic immediately. Why does this happen?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct answer is <b>The Elastic Load Balancer (ELB) requires some time to recognize and begin routing traffic to the newly attached instances.</b> When new EC2 instances are launched and registered with the ELB during an Elastic Beanstalk deployment, the ELB performs health checks on these instances before sending any traffic. There is a short period during which traffic is not routed to new instances until they pass health checks, causing the observed delay.</p> <p>The other options are incorrect for the following reasons:</p> <ul><li><i>The Elastic Beanstalk environment must be completely recreated since detached instances cannot be reattached within the same Beanstalk application.</i> – This is false since you can update applications and manage instance rotation without rebuilding the entire environment.</li><li><i>Instances need to be manually reattached to the ELB before deploying the updated application version.</i> – This is not required, as Elastic Beanstalk manages instance registration and deregistration with ELB automatically during deployments.</li><li><i>The new instances are running an incompatible Amazon Machine Image (AMI) which prevents ELB registration.</i> – Incompatibility would prevent the instances from ever being registered, not just delay traffic routing. Here, the main issue is a short transition timing, not an incompatibility.</li></ul><p><b>Tip</b>: Wait for new instances to successfully pass health checks after deployments so that the ELB can start routing traffic. Understanding ELB health check behavior is crucial for troubleshooting deployment issues in Elastic Beanstalk.</p>",
+  "query": "<p>You have deployed an application using AWS Elastic Beanstalk. When updating to a new application release, the current EC2 instances are detached and new instances are spun up and attached. However, immediately after this update, the new EC2 instances do not start receiving traffic right away. What is the primary reason for this brief delay?</p>",
+  "original_oid": "6793d9f561969b416038a107",
+  "options": [
+    {
+      "correct": true,
+      "text": "The Elastic Load Balancer (ELB) requires some time to recognize and begin routing traffic to the newly attached instances.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "The Elastic Beanstalk environment must be completely recreated since detached instances cannot be reattached within the same Beanstalk application.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Instances need to be manually reattached to the ELB before deploying the updated application version.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "The new instances are running an incompatible Amazon Machine Image (AMI) which prevents ELB registration.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question148",
+  "originalQuery": "You currently have an application deployed via Elastic Beanstalk.\nYou are now deploying a new application.\nIn Elastic Beanstalk, the current instances are detached, and new instances are deployed and reattached.\nBut the new instances are still not receiving any sort of traffic immediately.\nWhy does this happen?",
+  "originalOptions": "A. The instances are of the wrong AMI. Hence they are not detected by the EL.\nB. It takes time for the ELB to register the instances. Hence there is a small time frame before your instances can start receiving traffic.\nC. You need to create a new Elastic Beanstalk application, because you cannot detach and then reattach instances to an ELB within the same Elastic Beanstalk application.\nD. The instances need to be reattached before the new application version is deployed.",
+  "video_url": "https://certificationation.com/videos/exam-deployed-via-elastic-beanstalk-you-exam-328.html",
+  "url": "https://certificationation.com/questions/exam-deployed-via-elastic-beanstalk-you-exam-328.html"
+}

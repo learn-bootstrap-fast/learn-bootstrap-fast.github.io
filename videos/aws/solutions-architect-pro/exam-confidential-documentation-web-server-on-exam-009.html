@@ -1,0 +1,74 @@
+---
+title: "You are building a large-scale confidentialExam"
+description: "Video for you are building a large-scale confidential documentation web server on AWS, and all of the documentation for it will be stored on S3 One of the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are building a large-scale confidential documentation web server on AWS, and all of the documentation for it will be stored on S3 One of the requirements is that it cannot be publicly accessible from S3 directly. You will need to use CloudFront to accomplish this. Which of the methods listed below would satisfy the requirements as outlined? Choose an answer from the options below."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d568f501ee1c8ade975f"
+  },
+  "quid": "0",
+  "ordinal": "19",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "AWS Identity and Access Management (IAM)",
+    " Amazon S3",
+    " Amazon CloudFront",
+    " AWS Secrets Manager",
+    " AWS Security Hub"
+  ],
+  "slug": "s3-large-scale-documentation-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question19",
+  "title": "AWS Building A Large-Scale Confidential Documentation Question",
+  "meta": "AWS Exam Question: You are building a large-scale confidential documentation web server on AWS, using S3 and CloudFront. Choose an answer.",
+  "answer": "B",
+  "query": "Your organization is deploying a highly secure online portal, with all sensitive files stored in an S3 bucket. The security policy mandates that users must not be able to retrieve files directly from S3 but only through a distribution service. CloudFront will be used to distribute the content. Which solution meets these security needs?",
+  "originalQuery": "You are building a large-scale confidential documentation web server on AWS, and all of the documentation for it will be stored on S3\nOne of the requirements is that it cannot be publicly accessible from S3 directly.\nYou will need to use CloudFront to accomplish this.\nWhich of the methods listed below would satisfy the requirements as outlined? Choose an answer from the options below.",
+  "options": [
+    "A. Set up an Identity and Access Management (IAM) role for CloudFront and authorize that role to access your S3 bucket objects.",
+    "B. Create an Origin Access Identity (OAI) for CloudFront and grant access to the objects in your S3 bucket to that OAI only.",
+    "C. Assign specific policies for every bucket holding files such that only CloudFront is granted access.",
+    "D. Put a bucket policy on S3 that specifies the CloudFront distribution ID as the Principal and target bucket as the Amazon Resource Name (ARN)."
+  ],
+  "originalOptions": [
+    "A. Create an Identity and Access Management (IAM) user for CloudFront and grant access to the objects in your S3 bucket to that IAM User.",
+    "B. Create an Origin Access Identity (OAI) for CloudFront and grant access to the objects in your S3 bucket to that OAI only.",
+    "C. Create individual policies for each bucket that stores documents and in that policy grant access to only CloudFront.",
+    "D. Create an S3 bucket policy that lists the CloudFront distribution ID as the Principal and the target bucket as the Amazon Resource Name (ARN)."
+  ],
+  "image": "https://eaeastus2.blob.core.windows.net/optimizedimages/static/images/AWS-Certified-Solutions-Architect-Professional/answer/imgquestions_soifjb.png",
+  "primaryObjective": "1: Design Solutions for Organizational Complexity",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Answer - B.\nThere are two main points (1) the files should not be accessed directly via S3 as they are confidential, and (2) the files should be accessible via CloudFront.\nIf you want to use CloudFront signed URLs or signed cookies to provide access to objects in your Amazon S3 bucket, you probably also want to prevent users from accessing your Amazon S3 objects using Amazon S3 URLs.\nIf users access your objects directly in Amazon S3, they bypass the controls provided by CloudFront signed URLs or signed cookies, for example, control over the date and time that a user can no longer access your content and control over which IP addresses can be used to access the content.\nIn addition, if users access objects both through CloudFront and directly by using Amazon S3 URLs, CloudFront access logs are less useful because they're incomplete.\nSee the image below:\nOption A is incorrect because it does not give CloudFront exclusive access to the S3 bucket.\nOption B is CORRECT because it gives CloudFront exclusive access to the S3 bucket and prevents other users from accessing the public content of S3 directly via S3 URL.\nOption C is incorrect because you do not need to create any individual policies for each bucket.\nOption D is incorrect because (a) creating a bucket policy is unnecessary and (b) it does not prevent other users from accessing the public content of S3 directly via S3 URL.\nFor more information on Origin Access Identity, please see the below link-\nhttp://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html\nThe correct answer is B. Create an Origin Access Identity (OAI) for CloudFront and grant access to the objects in your S3 bucket to that OAI only.\nHere is a detailed explanation of why this is the correct answer and why the other options are incorrect:\nA. Creating an Identity and Access Management (IAM) user for CloudFront and granting access to the objects in your S3 bucket to that IAM User does not provide a secure method of restricting access to S3 objects from CloudFront. This is because IAM users are intended for authentication of people or services accessing AWS resources, while CloudFront is a service that needs to access S3 objects on behalf of users who access your web server through CloudFront. Also, IAM users are intended to authenticate for AWS Management Console or AWS API calls and not for a public website.\nC. Creating individual policies for each bucket that stores documents and granting access to only CloudFront is not practical for large-scale environments, as you would need to create a new policy for every new S3 bucket that stores documents, making the process cumbersome and difficult to manage.\nD. Creating an S3 bucket policy that lists the CloudFront distribution ID as the Principal and the target bucket as the Amazon Resource Name (ARN) is not sufficient as it does not provide a secure method of restricting access to S3 objects from CloudFront. With this policy, anyone with knowledge of the CloudFront distribution ID could access the objects in your S3 bucket.\nB. Creating an Origin Access Identity (OAI) for CloudFront and granting access to the objects in your S3 bucket to that OAI only, is the best way to restrict access to the objects in your S3 bucket. When you create an OAI, you provide CloudFront with a special user that CloudFront can use to access the objects in your S3 bucket. This user can only be used by CloudFront, and not by anyone else. By granting access to the objects in your S3 bucket to this special user only, you ensure that the objects can only be accessed through CloudFront, and not directly from S3.\nIn summary, creating an Origin Access Identity (OAI) for CloudFront and granting access to the objects in your S3 bucket to that OAI only is the best way to restrict access to the objects in your S3 bucket and satisfy the requirement of not being publicly accessible from S3 directly.",
+  "chatGptExplanation": "The correct answer is B: \"Create an Origin Access Identity (OAI) for CloudFront and grant access to the objects in your S3 bucket to that OAI only.\" This is the best practice for restricting direct access to your S3 bucket while allowing CloudFront to serve the content securely. An OAI is a special CloudFront user identity that you associate with your distribution. When you grant access to the OAI in your S3 bucket policy, only CloudFront (via the OAI) can access the objects, preventing users from bypassing CloudFront and accessing S3 objects directly through their URLs. This protects your sensitive content from direct exposure and allows you to leverage CloudFront features such as signed URLs and signed cookies to control access.\n\nWhy the other options are incorrect:\n\nA. Creating an IAM user for CloudFront is not a secure or practical method because IAM users are for authenticating human or service access to AWS resources and are not designed to be associated with CloudFront distributions. CloudFront requires a mechanism like OAI to securely retrieve private content.\n\nC. Creating individual bucket policies for each bucket to grant access only to CloudFront is not scalable or practical in a large environment. It complicates management and does not inherently enforce the restriction to CloudFront only, unlike using OAIs.\n\nD. Setting a bucket policy with the CloudFront distribution ID as the Principal is invalid because bucket policies require AWS principals (like users, roles, or service identities such as OAIs), and CloudFront distribution IDs are not recognized principals. This option does not prevent direct access to S3 objects by users who know the URLs.\n\nPrimary AWS product focus: CloudFront (CF)\n",
+  "video_url": "https://certificationation.com/videos/exam-confidential-documentation-web-server-on-exam-009.html",
+  "url": "https://certificationation.com/questions/exam-confidential-documentation-web-server-on-exam-009.html"
+}

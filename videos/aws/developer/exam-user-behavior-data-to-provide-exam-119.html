@@ -1,0 +1,82 @@
+---
+title: "Your social media platform analyzes user behavior dataExam"
+description: "Video for your social media platform analyzes user behavior data to provide personalized content and recommendations. As a Database Engineer, you plan to"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your social media platform analyzes user behavior data to provide personalized content and recommendations. As a Database Engineer, you plan to analyze this data using big data tools and you need a low-latency solution that can store 12 TB of data and can scale to millions of read and write requests per second. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "An online gaming company at example.com captures gameplay and clickstream events to personalize user experiences. As the Cloud Database Engineer you plan to run analytics with Google Cloud big data services and you require a low latency store that can retain 20 TB of data and scale to tens of millions of read and write operations per second. Which approach should you choose?",
+  "options": [
+    {
+      "text": "Stream events into BigQuery and use Dataproc with the BigQuery Storage API to process large datasets",
+      "explanation": "This approach ingests data directly into BigQuery and uses Dataproc to read it through the BigQuery Storage API for scalable processing.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Cloud Bigtable for the low latency workload and perform real time analytics on the same data",
+      "explanation": "This option adopts a wide column datastore that delivers very high throughput and integrates with streaming and batch analytics pipelines.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Deploy Cloud Spanner with a regional configuration and use Dataflow to export to Cloud Storage for Dataproc analysis",
+      "explanation": "This sets up a transactional relational database and moves data into Cloud Storage where Dataproc can process it using the connector.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Store events in Firestore and use Dataflow with Firestore connectors to analyze the data",
+      "explanation": "This uses a document database and connects Dataflow pipelines to read and process records from Firestore.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Use Cloud Bigtable for the low latency workload and perform real time analytics on the same data</b>.</p><p><b>Cloud Bigtable</b> is designed for very high throughput and low latency workloads and it can scale to tens of millions of reads and writes per second while sustaining single digit millisecond response times. It can easily retain tens of terabytes of event and time series data in a wide column schema that matches clickstream and gameplay patterns. You can run streaming and batch analytics directly on the same dataset by connecting Dataflow or Spark to <b>Cloud Bigtable</b> or by using change streams to power real time derived views without moving the primary store.</p><p><i>Stream events into BigQuery and use Dataproc with the BigQuery Storage API to process large datasets</i> is not appropriate for a low latency event store. <i>BigQuery</i> is an analytical warehouse and its streaming ingestion and serving model include latency and quota constraints that do not meet tens of millions of operations per second with millisecond access.</p><p><i>Deploy Cloud Spanner with a regional configuration and use Dataflow to export to Cloud Storage for Dataproc analysis</i> does not fit the requirement. <i>Cloud Spanner</i> excels at globally consistent relational workloads and SQL but it is not the best choice for ultra high throughput key value style event ingestion at this scale. Exporting to files for analysis adds processing delay and prevents real time analytics on the same store.</p><p><i>Store events in Firestore and use Dataflow with Firestore connectors to analyze the data</i> cannot meet the target throughput and latency. <i>Firestore</i> is a document database optimized for application development and it has write patterns and quota limits that are not intended for tens of millions of operations per second or for very large hot partitions.</p>",
+  "batch_id": "280",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "Your social media platform analyzes user behavior data to provide personalized content and recommendations. As a Database Engineer, you plan to analyze this data using big data tools and you need a low-latency solution that can store 12 TB of data and can scale to millions of read and write requests per second. What should you do?",
+  "originalOptions": "A. Deploy a Cloud Spanner environment with regional instances for improved performance. Use Dataflow to export data to Cloud Storage and analyze with Dataproc and the Cloud Storage connector.<br/>B. Stream your data into BigQuery and use Dataproc and the BigQuery Storage API to analyze large volumes of data.<br/>C. Write your data into Firestore and use Dataflow and the Firestore libraries for analysis.<br/>D. Use Cloud Bigtable to handle your low-latency requirements and for real-time analytics.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "119",
+  "tip": "<p>Start by mapping the stated requirements to product capabilities. When you see <i>low latency</i> with <i>tens of millions of operations per second</i> and large time series or key value data, think of <i>Cloud Bigtable</i>. When you see warehouse style analytics without strict latency, think of <i>BigQuery</i>.</p>",
+  "references": [
+    "https://cloud.google.com/bigtable/docs/overview",
+    "https://cloud.google.com/bigtable/docs/performance",
+    "https://cloud.google.com/bigtable/docs/change-streams/overview",
+    "https://cloud.google.com/bigquery/quotas#streaming_inserts",
+    "https://cloud.google.com/spanner/docs/overview",
+    "https://cloud.google.com/firestore/quotas"
+  ],
+  "url": "https://certificationation.com/questions/exam-user-behavior-data-to-provide-exam-119.html",
+  "video_url": "https://certificationation.com/videos/exam-user-behavior-data-to-provide-exam-119.html"
+}

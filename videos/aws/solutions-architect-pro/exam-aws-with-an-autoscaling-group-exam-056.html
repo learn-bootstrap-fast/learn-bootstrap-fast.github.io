@@ -1,0 +1,66 @@
+---
+title: "Your company is hosting a web application on AWS (withExam"
+description: "Video for your company is hosting a web application on AWS (with an autoscaling group already in place) According to the architectural best practices, the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company is hosting a web application on AWS (with an autoscaling group already in place) According to the architectural best practices, the application must be highly available, scalable, cost-effective, with high-performance, and require minimal human intervention. You have deployed the web servers and database servers in the public and private subnet of the VPC, respectively. While testing the application via a web browser, you noticed that the application is not accessible."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d586f501ee1c8ade97ab"
+  },
+  "quid": "0",
+  "ordinal": "96",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "It seems that there is no specific question or options provided in your prompt. Could you please provide the AWS question and the related options so that I can identify which topics to include in the response?"
+  ],
+  "slug": "hg-application-hosting-scalable-aw.aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question96",
+  "title": "AWS Your Company Is Hosting A Web Application Question",
+  "meta": "AWS Exam Question: Your web application on AWS needs high availability and scalability. Investigate VPC configuration for accessibility. Find the answer using EC2 and Autoscaling.",
+  "answer": "Answers C",
+  "query": null,
+  "originalQuery": "Your company is hosting a web application on AWS (with an autoscaling group already in place)\nAccording to the architectural best practices, the application must be highly available, scalable, cost-effective, with high-performance, and require minimal human intervention.\nYou have deployed the web servers and database servers in the public and private subnet of the VPC, respectively.\nWhile testing the application via a web browser, you noticed that the application is not accessible.",
+  "options": null,
+  "originalOptions": [
+    "A. Configure a NAT instance in your VPC and create a default route via the NAT instance and associate it with all subnets. Configure a DNS A record that points to the NAT instance public IP address.",
+    "B. Configure a CloudFront distribution and configure the origin to point to the private IP addresses of your Web servers. Configure a Route53 CNAME record to your CloudFront distribution.",
+    "C. Place all your web servers behind EL.",
+    "D. Configure a Route53 ALIAS-Record to point to the ELB DNS name.",
+    "E. Assign EIP`s to all web servers. Configure a Route53 A-Record set with all EIPs with health checks and DNS failover."
+  ],
+  "image": "https://eaeastus2.blob.core.windows.net/optimizedimages/static/images/AWS-Certified-Solutions-Architect-Professional/answer/imgquestions_q5rxpd.png",
+  "primaryObjective": "1: Design Solutions for Organizational Complexity",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "E.\nAnswers - C.\nOption A is incorrect because (a) NAT instance is ideally used to route traffic from a private subnet to the internet via a public subnet, (b) NAT instance is not managed by AWS and requires to be configured and maintained by the user; hence, adding to the overhead, and (c) if not scaled, can cause a performance bottleneck.\nNAT Gateway is a preferred option over NAT instances.\nOption B recommends using AWS CloudFront and configure the distributions Origin to the web server and then use an AWS Route 53 ‘CNAME' for the CloudFront Distribution.\nCloudFront is highly available and accessible to the Internet.\nIt would work better if the Origin for the AWS CloudFront Distribution were pointed to an AWS ELB rather than the Web Server itself.\nCloudFront doesn´t support IPs as origins.\nSince the Origin would only be a Web Server, if this server goes offline for a period of time, the website would become unavailable.\nThe content is not cached at the Edge location or if the TTL for the content expires.\nSo, Option B is incorrect as well.\nOption C is CORRECT.\nBecause, (a) if the web servers are behind an ELB, the load on the web servers will be uniformly distributed.\nHence, if any of the web servers goes offline or becomes non-responsive, the traffic would be routed to other online web servers; making the application highly available, and (b) You can use Route53 to set the ALIAS record that points to the ELB endpoint.\nOption D is incorrect.\nBecause the Auto Scaling group may terminate and relaunch a new instance.\nIt is not suitable to configure the recordset that points to EIPs.\nSure, I'd be happy to explain the options for resolving the issue you are facing with the web application not being accessible.\nOption A: Configure a NAT instance in your VPC and create a default route via the NAT instance and associate it with all subnets. Configure a DNS A record that points to the NAT instance public IP address.\nIn this option, a NAT instance will be deployed in your VPC and all traffic from the private subnet to the Internet will be routed through this NAT instance. A default route will be configured to point to the NAT instance, and all subnets will be associated with this route. In addition, a DNS A record will be created that points to the public IP address of the NAT instance.\nThis option will enable the web application to access the Internet and provide external users with access to the application. However, it does not provide a high level of availability since the NAT instance can be a single point of failure. Moreover, it may not be the most cost-effective option since you will need to pay for the NAT instance.\nOption B: Configure a CloudFront distribution and configure the origin to point to the private IP addresses of your Web servers. Configure a Route53 CNAME record to your CloudFront distribution.\nIn this option, a CloudFront distribution will be created to cache and serve static content from the web application. The origin for the CloudFront distribution will be configured to point to the private IP addresses of the web servers. A Route53 CNAME record will be created to point to the CloudFront distribution.\nThis option provides a high level of availability since the CloudFront distribution is replicated across multiple availability zones. It also improves the performance of the application by caching static content closer to the users. However, it may not be the most cost-effective option since you will need to pay for the CloudFront distribution.\nOption C: Place all your web servers behind ELB.\nIn this option, all web servers will be placed behind an Elastic Load Balancer (ELB). The ELB will distribute incoming traffic across all web servers and provide health checks to ensure that only healthy web servers receive traffic.\nThis option provides a high level of availability since the ELB is replicated across multiple availability zones. It also improves the performance of the application by distributing traffic across multiple web servers. However, it may not be the most cost-effective option since you will need to pay for the ELB.\nOption D: Configure a Route53 ALIAS-Record to point to the ELB DNS name.\nIn this option, a Route53 ALIAS record will be created to point to the DNS name of the ELB. The ALIAS record will resolve to the IP address of the ELB, and traffic will be distributed across all web servers.\nThis option provides a high level of availability since the ELB is replicated across multiple availability zones. It also simplifies DNS management since the Route53 ALIAS record automatically resolves to the IP address of the ELB. However, it may not be the most cost-effective option since you will need to pay for the ELB.\nOption E: Assign EIPs to all web servers. Configure a Route53 A-Record set with all EIPs with health checks and DNS failover.\nIn this option, Elastic IP addresses (EIPs) will be assigned to all web servers. A Route53 A-Record set will be created with all EIPs and health checks will be configured to monitor the health of the web servers. DNS failover will be configured to automatically route traffic to healthy web servers in the event of a failure.\nThis option provides a high level of availability since it ensures that traffic is always routed to a healthy web server. It also provides cost savings since there is no need to pay for additional services like ELB or CloudFront.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-aws-with-an-autoscaling-group-exam-056.html",
+  "url": "https://certificationation.com/questions/exam-aws-with-an-autoscaling-group-exam-056.html"
+}

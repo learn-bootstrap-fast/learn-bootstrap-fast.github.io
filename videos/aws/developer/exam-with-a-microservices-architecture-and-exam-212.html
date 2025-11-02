@@ -1,0 +1,80 @@
+---
+title: "Your application is designed with a microservicesExam"
+description: "Video for your application is designed with a microservices architecture and currently relies on a single large Cloud SQL instance. However, as your application"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your application is designed with a microservices architecture and currently relies on a single large Cloud SQL instance. However, as your application expands, you have started experiencing performance problems. The Cloud Monitoring dashboard consistently indicates high latency for database operations. To address and prevent these performance issues, you intend to adhere to Google's recommended practices. It is important to find a solution without undergoing any significant refactoring of your application. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "An online retailer at example.com runs a microservices platform that all point to a single large Cloud SQL for PostgreSQL instance. As traffic has grown, Cloud Monitoring shows the 95th percentile latency for database calls hovering around 280 milliseconds during peak hours. You want to follow Google recommended practices to mitigate the current slowness and reduce the chance of future problems, and you must do so without major changes to the services. What should you do?",
+  "options": [
+    {
+      "text": "Increase the machine type of the Cloud SQL instance to add more vCPUs and memory",
+      "explanation": "This vertically scales the database server with more compute and RAM",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Add one or more read replicas for the Cloud SQL primary to serve read requests",
+      "explanation": "This introduces replica instances that handle read queries while the primary continues to process writes",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Migrate the database to Cloud Spanner",
+      "explanation": "This moves the workload to a different managed database service that supports horizontal scalability",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Split the schema across several smaller Cloud SQL instances and route traffic accordingly",
+      "explanation": "This shards data across multiple instances and requires services to direct queries to the right shard",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Add one or more read replicas for the Cloud SQL primary to serve read requests</b>.</p><p>This approach addresses the current high read load by offloading queries from the primary, which reduces contention and can lower tail latency during peak hours. Cloud SQL for PostgreSQL supports asynchronous replicas that can be added to scale out reads, which improves throughput and provides headroom as traffic grows. It follows Google recommended practices for scaling databases while keeping the primary focused on writes and critical transactional work.</p><p>This solution also aligns with the requirement to avoid major changes. Many applications can introduce a read only connection for safe queries with minimal code updates, or can route read heavy paths to the replicas. As demand increases you can add more replicas, which reduces the chance of future problems by allowing horizontal scaling rather than repeatedly pushing the limits of a single primary.</p><p><i>Increase the machine type of the Cloud SQL instance to add more vCPUs and memory</i> may offer short term relief but it is vertical scaling that does not address read scalability and will eventually hit limits. It also does not directly reduce tail latency caused by read contention and it offers less protection against future load growth than scaling out.</p><p><i>Migrate the database to Cloud Spanner</i> would be a major architectural change and would require significant application and schema work. It does not meet the constraint to avoid major changes and is unnecessary for the immediate need to mitigate read driven slowness.</p><p><i>Split the schema across several smaller Cloud SQL instances and route traffic accordingly</i> is effectively manual sharding, which introduces substantial application complexity and routing logic. It violates the requirement to avoid major changes and can complicate transactions and consistency without solving the problem as cleanly as replicas.</p>",
+  "batch_id": "258",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "Your application is designed with a microservices architecture and currently relies on a single large Cloud SQL instance. However, as your application expands, you have started experiencing performance problems. The Cloud Monitoring dashboard consistently indicates high latency for database operations. To address and prevent these performance issues, you intend to adhere to Google's recommended practices. It is important to find a solution without undergoing any significant refactoring of your application. What should you do?",
+  "originalOptions": "A. Increase the storage size for the instance.<br/>B. Use many smaller Cloud SQL instances.<br/>C. Add read replicas to your Cloud SQL instance.<br/>D. Use Cloud Spanner instead of Cloud SQL.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "212",
+  "tip": "<p>When a single Cloud SQL instance shows increasing read latency, think of <i>scaling reads</i> first with read replicas. Be wary of choices that imply <i>major changes</i> such as replatforming or sharding when the question asks for minimal impact.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/replication/configure-replicas",
+    "https://cloud.google.com/sql/docs/best-practices",
+    "https://cloud.google.com/sql/docs/postgres/performance",
+    "https://cloud.google.com/databases/docs/choose-sql-spanner"
+  ],
+  "url": "https://certificationation.com/questions/exam-with-a-microservices-architecture-and-exam-212.html",
+  "video_url": "https://certificationation.com/videos/exam-with-a-microservices-architecture-and-exam-212.html"
+}

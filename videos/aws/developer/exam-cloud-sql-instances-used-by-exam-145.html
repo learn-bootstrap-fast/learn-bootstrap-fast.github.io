@@ -1,0 +1,80 @@
+---
+title: "Your organization has a number of Cloud SQL instancesExam"
+description: "Video for your organization has a number of Cloud SQL instances used by developers and testers for individual learning and testing purposes. The team works from"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your organization has a number of Cloud SQL instances used by developers and testers for individual learning and testing purposes. The team works from 8 AM to 5 PM, Monday through Friday. You want to minimize costs associated with these Cloud SQL instances while keeping the maintenance effort low. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Northwind Games operates several Cloud SQL instances that individual engineers use for training and test workloads, and the staff works from 9 AM to 6 PM Monday to Friday. You want to lower the spend on these instances while keeping day to day administration simple. What should you implement?",
+  "options": [
+    {
+      "text": "Run a small Compute Engine VM with a cron job that uses gcloud to start and stop the Cloud SQL instances at the beginning and end of the workday",
+      "explanation": "This approach relies on a persistent virtual machine that executes scheduled commands to control instance lifecycle.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a Cloud Function that starts and stops the Cloud SQL instances and schedule it with Cloud Scheduler to match the team&apos;s working hours",
+      "explanation": "This solution uses a serverless function that is invoked on a fixed timetable by Cloud Scheduler to toggle instance state.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Enable high availability on the Cloud SQL instances and set the maintenance window to evenings outside working hours",
+      "explanation": "This configuration improves resilience and sets maintenance timing but it does not reduce the number of billed hours.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Add a read replica for every sandbox Cloud SQL instance and set a maintenance window outside business hours",
+      "explanation": "This adds replicas for read scaling and maintenance separation but it leaves primaries running continuously.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct answer is <b>Create a Cloud Function that starts and stops the Cloud SQL instances and schedule it with Cloud Scheduler to match the team&apos;s working hours</b>.</p><p>This solution automatically pauses compute charges outside business hours while keeping storage available and it removes the need to manage servers or cron processes. Cloud Scheduler provides reliable time based triggers and the function can call the Cloud SQL Admin API to stop or start instances with least privilege IAM. This keeps administration simple and scales easily as engineers add or remove sandbox databases.</p><p><i>Run a small Compute Engine VM with a cron job that uses gcloud to start and stop the Cloud SQL instances at the beginning and end of the workday</i> is not ideal because you pay for a VM that exists only to run a schedule and you add patching and reliability overhead. A serverless schedule is simpler and more cost effective.</p><p><i>Enable high availability on the Cloud SQL instances and set the maintenance window to evenings outside working hours</i> does not reduce daily compute cost and actually increases spend due to HA replicas. Maintenance windows control planned updates and they do not stop instances.</p><p><i>Add a read replica for every sandbox Cloud SQL instance and set a maintenance window outside business hours</i> increases cost and does not address turning off instances when they are not needed. Replicas improve read scalability and availability rather than cost savings.</p>",
+  "batch_id": "128",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "Your organization has a number of Cloud SQL instances used by developers and testers for individual learning and testing purposes. The team works from 8 AM to 5 PM, Monday through Friday. You want to minimize costs associated with these Cloud SQL instances while keeping the maintenance effort low. What should you do?",
+  "originalOptions": "A. Create a virtual machine (VM) on Compute Engine, and create a cron job to schedule the start and stop of the Cloud SQL instances based on the team's working hours.<br/>B. Configure a read replica for each independent Cloud SQL instance, and then set a maintenance window outside of the team's working hours.<br/>C. Write a Cloud Function to start and stop the Cloud SQL instances, and use Cloud Scheduler to call the function according to the team's working hours.<br/>D. Configure high availability for the Cloud SQL instances and set a maintenance window outside of the team's working hours.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "145",
+  "tip": "<p>When a question is about saving money during off hours, look for a serverless schedule that uses <i>Cloud Scheduler</i> to call a lightweight action such as a <i>Cloud Function</i> or Cloud Run that uses the Admin API. Features like HA, replicas, and maintenance windows are usually about availability and reliability rather than cost optimization.</p>",
+  "references": [
+    "https://cloud.google.com/functions/docs/calling/cloud-scheduler",
+    "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances/stop",
+    "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances/start",
+    "https://cloud.google.com/sql/docs/mysql/high-availability"
+  ],
+  "url": "https://certificationation.com/questions/exam-cloud-sql-instances-used-by-exam-145.html",
+  "video_url": "https://certificationation.com/videos/exam-cloud-sql-instances-used-by-exam-145.html"
+}

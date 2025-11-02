@@ -1,0 +1,128 @@
+---
+title: "A company runs an on-premises application that isExam"
+description: "Video for a company runs an on-premises application that is powered by a MySQL database. The company is migrating the application to AWS to increase the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company runs an on-premises application that is powered by a MySQL database. The company is migrating the application to AWS to increase the application's elasticity and availability. The current architecture shows heavy read activity on the database during times of normal operation. Every 4 hours, the company's development team pulls a full export of the production database to populate a database in the staging environment. During this period, users experience unacceptable application latency. The development team is unable to use the staging environment until the procedure completes. A solutions architect must recommend replacement architecture that alleviates the application latency issue. The replacement architecture also must give the development team the ability to continue using the staging environment without delay. Which solution meets these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f7299c2"
+  },
+  "quid": null,
+  "ordinal": "93",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon Aurora",
+    " Amazon RDS",
+    " Databases",
+    " AWS Well-Architected Framework",
+    " Benefits of migrating to the AWS Cloud"
+  ],
+  "slug": "m-s-migrating-application-to-aws",
+  "source": "ET",
+  "title": "AWS A Company Runs An On-Premises Application Question",
+  "meta": "AWS Exam Question: A company migrates a MySQL database to AWS for better elasticity and availability, addressing latency issues. Explore Aurora and RDS for the answer.",
+  "answer": "B",
+  "query": "A streaming service has an application reliant on a MySQL database currently hosted in their local data center. The organization plans to transition this application to AWS to benefit from better scalability and reliability. During peak times, the database sees significant read activity. A comprehensive backup of the production database must be made every 5 hours, to fill a database for the development environment. This leads to considerable slowdowns that users cannot tolerate. Additionally, the development environment is inaccessible until the backup is fully finished. The solutions architect needs to suggest a new architecture that resolves this performance issue while ensuring the development environment is usable throughout. Which of the following solutions addresses these needs?",
+  "originalQuery": "A company runs an on-premises application that is powered by a MySQL database. The company is migrating the application to AWS to increase the application's elasticity and availability.\nThe current architecture shows heavy read activity on the database during times of normal operation. Every 4 hours, the company's development team pulls a full export of the production database to populate a database in the staging environment. During this period, users experience unacceptable application latency. The development team is unable to use the staging environment until the procedure completes.\nA solutions architect must recommend replacement architecture that alleviates the application latency issue. The replacement architecture also must give the development team the ability to continue using the staging environment without delay.\nWhich solution meets these requirements?",
+  "options": [
+    "A. Put into operation Amazon Aurora MySQL with Multi-AZ Aurora Replicas for the live environment. For populating the testing environment database, form a backup-and-restore procedure utilizing the mysqldump software.",
+    "B. Make use of Amazon Aurora MySQL along with Multi-AZ Aurora Replicas for the production environment. Form a testing environment by cloning the database on-demand.",
+    "C. Implement Amazon RDS for MySQL with a Multi-AZ configuration and read replicas for live environment. The standby instance should be utilized for the testing environment database.",
+    "D. Deploy Amazon RDS for MySQL with a Multi-AZ configuration and read replicas for the production environment. Populate the testing database using a backup-and-restore process that utilizes the mysqldump tool."
+  ],
+  "originalOptions": [
+    "A. Use Amazon Aurora MySQL with Multi-AZ Aurora Replicas for production. Populate the staging database by implementing a backup and restore process that uses the mysqldump utility.",
+    "B. Use Amazon Aurora MySQL with Multi-AZ Aurora Replicas for production. Use database cloning to create the staging database on-demand.",
+    "C. Use Amazon RDS for MySQL with a Multi-AZ deployment and read replicas for production. Use the standby instance for the staging database.",
+    "D. Use Amazon RDS for MySQL with a Multi-AZ deployment and read replicas for production. Populate the staging database by implementing a backup and restore process that uses the mysqldump utility."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "The optimal solution involves implementing Amazon Aurora MySQL with Multi-AZ Aurora Replicas for the production environment, along with utilizing on-demand database cloning to establish the staging database. This approach effectively mitigates application latency issues by leveraging the scalability and high availability of Amazon Aurora. Furthermore, it enables the development team to access the staging environment without interruptions, ensuring they can perform necessary testing and development tasks efficiently.\n\nAs a result, Options A, C, and D are not suitable for addressing the requirements of this scenario.",
+    "**Option A:** Let's jazz things up with Amazon Aurora MySQL, complete with Multi-AZ Aurora Replicas for our production needs! 🎉 Now, as for populating that staging database, using the mysqldump tool for a full export of the production database might sound tempting, but beware! This method can lead to some serious application latency issues—talk about a party pooper! 🚫 So, let’s steer clear of that roadblock.\n\n**Option C:** How about we roll with Amazon RDS for MySQL, sporting a Multi-AZ setup and some shiny read replicas for our production environment? 🌟 Now, while it might be tempting to think about using the standby instance for the staging database, hold your horses! 🐴 This standby is like a superhero—ready to swoop in during a production failure, but not meant to be the sidekick for our development team. We need a solution that keeps the staging environment accessible and speedy, not one that puts the brakes on progress! 🚀",
+    "Option D suggests utilizing Amazon RDS for MySQL with a Multi-AZ setup and read replicas for the production environment. However, relying on a backup-and-restore process using the mysqldump utility to populate the staging database isn't the best choice. Why? Because this approach requires a full export of the production database, leading to frustrating application latency that no one wants to deal with. Instead, it's a better idea to keep the production environment running smoothly while finding a way to efficiently populate the staging environment without causing delays. After all, we want to ensure that developers can keep their productivity flowing, not stuck waiting for exports to finish.",
+    "Absolutely, the most suitable solution appears to be option B!\n\n1) Given the company's desire for enhanced \"elasticity and availability,\" it makes sense to focus on the two alternatives involving Amazon Aurora, while setting aside the RDS for MySQL options.\n  \n2) As highlighted in AWS documentation, \"Aurora cloning is particularly advantageous for rapidly establishing test environments with your production data, all while minimizing the risk of data corruption.\" This capability allows the development team to efficiently create a staging environment without impacting the live application, thus resolving the latency issues experienced during database exports. \n\nThis approach ensures a seamless transition to AWS while optimizing performance and productivity!",
+    "Amazon Aurora MySQL offers lightning-fast cloning capabilities that outshine traditional RDS options. With Aurora, you can seamlessly create a clone of your database, and even clone a clone while still working on your original! This delightful feature ensures that the development team can continue their work uninterrupted during the cloning process. 🌟 For more details, check out the official AWS blog on fast database cloning!"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "B",
+      "explanation": "The recommended solution is Option B: Use Amazon Aurora MySQL with Multi-AZ Aurora Replicas for production. Use database cloning to create the staging database on-demand.\n\nTo alleviate the application latency issue, the recommended solution is to use Amazon Aurora MySQL with Multi-AZ Aurora Replicas for production, and use database cloning to create the staging database on-demand. This allows the development team to continue using the staging environment without delay, while also providing elasticity and availability for the production application.\n\nTherefore, Options A, C, and D are not recommended",
+      "upvotes": "23"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Option A: Use Amazon Aurora MySQL with Multi-AZ Aurora Replicas for production. Populating the staging database by implementing a backup and restore process that uses the mysqldump utility is not the recommended solution because it involves taking a full export of the production database, which can cause unacceptable application latency.\n\nOption C: Use Amazon RDS for MySQL with a Multi-AZ deployment and read replicas for production. Using the standby instance for the staging database is not the recommended solution because it does not give the development team the ability to continue using the staging environment without delay. The standby instance is used for failover in case of a production instance failure, and it is not intended for use as a staging environment.",
+      "upvotes": "18"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Option D: Use Amazon RDS for MySQL with a Multi-AZ deployment and read replicas for production. Populating the staging database by implementing a backup and restore process that uses the mysqqldump utility is not the recommended solution because it involves taking a full export of the production database, which can cause unacceptable application latency.",
+      "upvotes": "8"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Agree, solution it seems to be the B)\n1) Because the company wants \"elasticity and availability\" as the question mentioned, so I think this leaves us in the two questions related to Aurora discarding the RDS Mysql solution.\n2) Accoding AWS documentation (https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Clone.html)\n\"Aurora cloning is especially useful for quickly setting up test environments using your production data, without risking data corruption\"",
+      "upvotes": "8"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "Aura MySQL is very fast in comparison to RDS for creating a clone of DB, you can create a even clone of a clone while you still work on your own clone, this will allow the dev team continue working during cloning step.\nhttps://aws.amazon.com/blogs/aws/amazon-aurora-fast-database-cloning/",
+      "upvotes": "9"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "B (91%)",
+      "votes": "59 votes."
+    },
+    {
+      "option": "9%",
+      "votes": "6 votes."
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is B, as it utilizes Amazon Aurora MySQL with Multi-AZ Aurora Replicas, allowing for high availability and performance. Additionally, using database cloning enables on-demand creation of the staging database without performance degradation or extended downtime, thus solving the latency issues during backups. \n- Option A is incorrect because it relies on a backup and restore process, which introduces unacceptable latency during database exports and limits the availability of the staging environment. \n- Option C is incorrect because using the standby instance as a staging environment is not advisable due to its intended purpose for failover, leading to potential duty constraints on performance and usability. \n- Option D faces the same issue as A, where mysqldump will cause latency problems while exporting the production database.",
+  "video_url": "https://certificationation.com/videos/exam-that-is-powered-by-a-exam-093.html",
+  "url": "https://certificationation.com/questions/exam-that-is-powered-by-a-exam-093.html"
+}

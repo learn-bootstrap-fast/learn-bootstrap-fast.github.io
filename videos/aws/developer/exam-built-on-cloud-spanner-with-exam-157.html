@@ -1,0 +1,80 @@
+---
+title: "Your company's inventory system is built on CloudExam"
+description: "Video for your company's inventory system is built on Cloud Spanner, with each item having an itemId and associated warehouseId . Analysts need to perform"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company's inventory system is built on Cloud Spanner, with each item having an itemId and associated warehouseId . Analysts need to perform regular checks on item stock levels at specific warehouses. You are tasked with writing a parameterized query that will be used frequently to check stock for different items in a specific warehouse. How should you structure your query?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "HarborPoint Retail operates its inventory on Cloud Spanner and each row in the stock_ledger table includes product_code and site_id. Analysts often need to retrieve the current qty_on_hand for a specific product at a particular site and you must provide a parameterized statement that can be reused for many product and site combinations. How should you write this query?",
+  "options": [
+    {
+      "text": "SELECT qty_on_hand FROM stock_ledger WHERE product_code=@product_code OR site_id=@site_id",
+      "explanation": "This statement returns any rows where either the product_code matches or the site_id matches the provided parameter values.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "SELECT qty_on_hand FROM stock_ledger@{FORCE_INDEX=Idx_Site} WHERE product_code=@product_code AND site_id=&apos;SITE-310&apos; AND TRUE",
+      "explanation": "This statement adds a table hint to force an index and uses a literal value for site_id along with a parameter for product_code.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "SELECT qty_on_hand FROM stock_ledger WHERE product_code=@product_code AND site_id=@site_id",
+      "explanation": "This statement filters results by both product_code and site_id using parameters that can be supplied at execution time.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "SELECT qty_on_hand FROM stock_ledger WHERE product_code LIKE @product_code AND site_id=&apos;SITE-310&apos; AND TRUE",
+      "explanation": "This statement uses a pattern match for product_code and sets site_id to a fixed literal value.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>SELECT qty_on_hand FROM stock_ledger WHERE product_code=@product_code AND site_id=@site_id</b>.</p><p>This query uses named parameters for both product_code and site_id which satisfies the requirement to reuse the statement across many product and site combinations. It also uses equality predicates on both columns so it retrieves the exact row for a specific product at a particular site and it can efficiently use indexes if they exist.</p><p><i>SELECT qty_on_hand FROM stock_ledger WHERE product_code=@product_code OR site_id=@site_id</i> is incorrect because the OR condition returns rows that match either the product or the site. That would include other sites for the product or other products for the site which does not meet the requirement to fetch the specific product at the specific site.</p><p><i>SELECT qty_on_hand FROM stock_ledger@{FORCE_INDEX=Idx_Site} WHERE product_code=@product_code AND site_id='SITE-310' AND TRUE</i> is incorrect because site_id is hard coded which prevents reuse across different sites. The FORCE_INDEX hint is unnecessary for the requirement and AND TRUE adds no functional value.</p><p><i>SELECT qty_on_hand FROM stock_ledger WHERE product_code LIKE @product_code AND site_id='SITE-310' AND TRUE</i> is incorrect because LIKE performs pattern matching rather than exact equality and site_id is hard coded which again prevents reuse. The AND TRUE clause is also superfluous.</p>",
+  "batch_id": "64",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "Your company's inventory system is built on Cloud Spanner, with each item having an itemId and associated warehouseId . Analysts need to perform regular checks on item stock levels at specific warehouses. You are tasked with writing a parameterized query that will be used frequently to check stock for different items in a specific warehouse. How should you structure your query?",
+  "originalOptions": "A. SELECT stockLevel FROM inventory WHERE itemId=@itemId OR warehouseId=@warehouseId<br/>B. SELECT stockLevel FROM inventory WHERE itemId LIKE @itemId AND warehouseId='WH1000'<br/>C. SELECT stockLevel FROM inventory WHERE itemId=@itemId AND warehouseId=@warehouseId<br/>D. SELECT stockLevel FROM inventory WHERE itemId=@itemId AND warehouseId='WH1000'",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "157",
+  "tip": "<p>When a question asks for a reusable query across many values, look for <i>named parameters</i> on every required filter and prefer exact matches joined with <i>AND</i> unless pattern matching is explicitly needed.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/parameters",
+    "https://cloud.google.com/spanner/docs/reference/standard-sql/functions-and-operators#comparison_operators",
+    "https://cloud.google.com/spanner/docs/reference/standard-sql/functions-and-operators#like",
+    "https://cloud.google.com/spanner/docs/query-optimizer-hints"
+  ],
+  "url": "https://certificationation.com/questions/exam-built-on-cloud-spanner-with-exam-157.html",
+  "video_url": "https://certificationation.com/videos/exam-built-on-cloud-spanner-with-exam-157.html"
+}

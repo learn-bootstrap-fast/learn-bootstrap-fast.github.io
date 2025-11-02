@@ -1,0 +1,62 @@
+---
+title: "A company offering AI solutions has built an applicationExam"
+description: "Video for a company offering AI solutions has built an application that relies on AWS SageMaker and AWS DeepLens which integrate with Amazon Rekognition for"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company offering AI solutions has built an application that relies on AWS SageMaker and AWS DeepLens which integrate with Amazon Rekognition for advanced image analysis. Amazon SageMaker is training its models. They plan to orchestrate all processes with several, existing AWS Lambda functions, automate the build and deployment of their machine learning models, and respond automatically as new images are added to an Amazon S3 bucket. As a DevOps engineer, you have to design an automated solution compatible with the current architecture to deal with this use case. Which automation option is the most appropriate in this application?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>first option</b> is the most suitable solution as it uses AWS Step Functions—a serverless orchestration service that makes it easy to coordinate multiple AWS services such as AWS Lambda and SageMaker into serverless workflows. With Step Functions, you can design complex workflows involving Lambda functions and automate the SageMaker model's build and deployment using state machines. It also allows easy integration with CloudWatch Events (now called EventBridge) for automated triggering when new images are added to S3 buckets. CloudTrail ensures auditing and traceability of all triggered events.</p><p><i>The second and fourth options</i> involve using AWS Data Pipeline, which is not recommended in modern serverless architectures, particularly when orchestrating Lambda and SageMaker. Data Pipeline does not natively integrate with many serverless workflows now optimized by Step Functions.</p><p><i>The third option</i> relies only on Lambda for orchestration, which can lead to complicated code and makes workflow management, error handling, and state management more difficult compared to using Step Functions. Step Functions are purpose-built for such orchestration needs.</p><ul><li><b>Tip:</b> For orchestration of serverless solutions and ML workflows, <b>Step Functions</b> are a best practice.</li><li><b>Tip:</b> AWS Data Pipeline is typically used for batch-driven data movement and transformation, not for orchestrating event-driven serverless workflows.</li></ul>",
+  "query": "<p>A company that provides AI solutions utilizes AWS SageMaker and AWS DeepLens integrated with Amazon Rekognition for advanced image analysis. SageMaker is used for training models. The company wants to automate the orchestration of various existing AWS Lambda functions and streamline the build and deployment of their machine learning models, while ensuring the system reacts to new images added in an Amazon S3 bucket. As a DevOps engineer, what is the optimal approach to automate and coordinate this workflow, given the existing architecture?</p>",
+  "original_oid": "6793da3461969b416038a187",
+  "options": [
+    {
+      "correct": true,
+      "text": "Set up a state machine as the target for a CloudWatch Events rule, enable an AWS CloudTrail trail for those events, and add another layer using AWS Step Functions to coordinate all Lambda functions, including the one that handles S3 bucket events. Use AWS Step Functions to automate and deploy SageMaker models.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up an AWS Lambda function as the target of a CloudWatch Events rule, enable CloudTrail to log those events, and use a layer of AWS Data Pipeline to coordinate all Lambda functions, including the function that reacts to S3 bucket events. Rely on AWS Lambda functions for automating SageMaker model deployment.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Configure an AWS Lambda function as the recipient for CloudWatch Events, enable a CloudTrail trail to log the events, and add additional AWS Lambda functions to coordinate the existing Lambda functions and the one triggered by S3 events. Use AWS Lambda to automate and deploy models in SageMaker.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Use a state machine as the target for a CloudWatch Events rule, record those events with a CloudTrail trail, and add an orchestration layer using AWS Data Pipeline to coordinate Lambda functions as well as the function handling S3 bucket events. Automate and deploy SageMaker models using AWS Step Functions.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question278",
+  "originalQuery": "A company offering AI solutions has built an application that relies on AWS SageMaker and AWS DeepLens which integrate with Amazon Rekognition for advanced image analysis.\nAmazon SageMaker is training its models.\nThey plan to orchestrate all processes with several, existing AWS Lambda functions, automate the build and deployment of their machine learning models, and respond automatically as new images are added to an Amazon S3 bucket.\nAs a DevOps engineer, you have to design an automated solution compatible with the current architecture to deal with this use case.\nWhich automation option is the most appropriate in this application?",
+  "originalOptions": "A. Configure a state machine as a target for a CloudWatch Events rule, configure a trail in AWS CloudTrail to receive those events. Add a layer of AWS Data Pipeline that orchestrates all existing AWS Lambda functions along with the serverless function that responds to Amazon S3 bucket events. Automation and deployment of Amazon SageMaker models can be managed by AWS Step Functions.|B. Configure an AWS Lambda function as a target for a CloudWatch Events rules, configure a trail in AWS CloudTrail to receive those events. Add another layer of AWS Lambda functions that orchestrates all existing AWS Lambda functions along with the serverless function that responds to Amazon S3 bucket events. Automation and deployment of Amazon SageMaker models can be managed by AWS Lambda functions.|C. Configure an AWS Lambda function as a target for a CloudWatch Events rules, configure a trail in AWS CloudTrail to receive those events. Add a layer of AWS Data Pipeline that orchestrates all existing AWS Lambda functions along with the serverless function that responds to Amazon S3 bucket events. Automation and deployment of Amazon SageMaker models can be managed by AWS Lambda functions.|D. Configure a state machine as a target for a CloudWatch Events rule, configure a trail in AWS CloudTrail to receive those events. Add another layer of AWS Step Functions that orchestrates all existing AWS Lambda functions along with the serverless function that responds to Amazon S3 bucket events. Automation and deployment of Amazon SageMaker models can be managed by AWS Step Functions.",
+  "video_url": "https://certificationation.com/videos/exam-has-built-an-application-that-exam-188.html",
+  "url": "https://certificationation.com/questions/exam-has-built-an-application-that-exam-188.html"
+}

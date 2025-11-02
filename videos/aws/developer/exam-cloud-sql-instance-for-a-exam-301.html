@@ -1,0 +1,84 @@
+---
+title: "Your organization uses a single Cloud SQL instance for aExam"
+description: "Video for your organization uses a single Cloud SQL instance for a staging environment, which is used primarily for testing new features. The environment is"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your organization uses a single Cloud SQL instance for a staging environment, which is used primarily for testing new features. The environment is active during business hours on weekdays but remains idle during the weekends and evenings. You need to optimize costs while ensuring the instance is available during working hours. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Cobalt Metrics runs a single Cloud SQL instance for a preproduction quality assurance database that is used to validate new releases. The team works from 9 a.m. to 5 p.m. Monday through Friday and the instance is idle overnight and on weekends. You want to lower costs while keeping the database ready during working hours. What should you implement?",
+  "options": [
+    {
+      "text": "Enable high availability on the Cloud SQL instance and move the maintenance window to Saturday nights",
+      "explanation": "This adds a standby in another zone and adjusts maintenance to a weekend window for planned updates",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Set up Cloud Scheduler to trigger a Cloud Function that uses the Cloud SQL Admin API to start the instance before work begins and stop it after business hours",
+      "explanation": "This uses serverless scheduling with a function to automate instance lifecycle based on time",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Purchase a three year committed use contract for Cloud SQL vCPU and memory to reduce the hourly rate regardless of usage",
+      "explanation": "This lowers the price through a long term commitment without changing when the instance runs",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Run a small Compute Engine VM that uses a cron job to call gcloud commands to stop the instance after hours and start it each morning",
+      "explanation": "This approach relies on a persistent VM to execute scheduled scripts that call the Cloud SQL Admin API",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Set up Cloud Scheduler to trigger a Cloud Function that uses the Cloud SQL Admin API to start the instance before work begins and stop it after business hours</b>.</p><p>This approach aligns with the predictable nine to five schedule and turns the instance on only when needed. It reduces compute charges during nights and weekends while keeping the database available to testers during working hours. It also uses managed services that eliminate server maintenance and keeps operations simple and reliable.</p><p><i>Enable high availability on the Cloud SQL instance and move the maintenance window to Saturday nights</i> does not reduce cost for an idle instance. High availability increases cost and a maintenance window only controls when maintenance occurs rather than when the instance runs.</p><p><i>Purchase a three year committed use contract for Cloud SQL vCPU and memory to reduce the hourly rate regardless of usage</i> may lower the unit price yet it still charges for running resources even when the database is idle. It also introduces a long commitment that is not ideal for a preproduction environment that benefits more from starting and stopping.</p><p><i>Run a small Compute Engine VM that uses a cron job to call gcloud commands to stop the instance after hours and start it each morning</i> can work but it adds cost and operational overhead to run and secure a persistent VM. A managed schedule and serverless function avoids this extra management.</p>",
+  "batch_id": "7",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "Your organization uses a single Cloud SQL instance for a staging environment, which is used primarily for testing new features. The environment is active during business hours on weekdays but remains idle during the weekends and evenings. You need to optimize costs while ensuring the instance is available during working hours. What should you do?",
+  "originalOptions": "A. Configure high availability for the Cloud SQL instance and adjust the maintenance window to weekends.<br/>B. Use Cloud Scheduler to trigger a Cloud Function that starts and stops the Cloud SQL instance based on a schedule.<br/>C. Create a Compute Engine VM to run a script that automatically shuts down the instance during idle hours.<br/>D. Configure read replicas and load balancing to handle variable usage patterns throughout the week.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "301",
+  "tip": "<p>When a nonproduction instance is <i>idle</i> outside fixed hours, prefer automation that <i>starts and stops</i> it and choose <i>serverless</i> and managed services over running your own VM.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/start-stop-restart-instance",
+    "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances/start",
+    "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances/stop",
+    "https://cloud.google.com/scheduler/docs",
+    "https://cloud.google.com/functions/docs/calling",
+    "https://cloud.google.com/sql/docs/mysql/pricing#committed-use-discounts",
+    "https://cloud.google.com/sql/docs/mysql/high-availability",
+    "https://cloud.google.com/sql/docs/mysql/maintenance"
+  ],
+  "url": "https://certificationation.com/questions/exam-cloud-sql-instance-for-a-exam-301.html",
+  "video_url": "https://certificationation.com/videos/exam-cloud-sql-instance-for-a-exam-301.html"
+}

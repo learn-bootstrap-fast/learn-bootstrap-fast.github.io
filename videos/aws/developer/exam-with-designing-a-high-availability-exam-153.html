@@ -1,0 +1,80 @@
+---
+title: "A Database Engineer is tasked with designing a highExam"
+description: "Video for a Database Engineer is tasked with designing a high availability and disaster recovery solution for a large-scale analytics application using"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A Database Engineer is tasked with designing a high availability and disaster recovery solution for a large-scale analytics application using Bigtable. The application has strict RPO (Recovery Point Objective) and RTO (Recovery Time Objective) requirements: RPO should be less than 3 minutes, and RTO should be less than 8 minutes. The solution must be able to tolerate regional outages and provide low latency for users distributed across different regions. Which of the following configurations should the engineer choose to fulfill these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A data platform team at scrumtuous.com is building a global clickstream analytics service on Cloud Bigtable. The service requires an RPO under 4 minutes and an RTO under 9 minutes. The architecture must withstand the loss of an entire region and must keep latency low for users in North America and Europe. Which deployment strategy should they adopt?",
+  "options": [
+    {
+      "text": "Create a single regional Bigtable cluster and stream writes to another region using Dataflow jobs",
+      "explanation": "This approach uses a custom pipeline to mirror data to a second region which adds replication lag and operational overhead for failover",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure a Bigtable instance with clusters in three regions with multi cluster routing and replication turned on",
+      "explanation": "This configuration places clusters in multiple regions and replicates data across them so traffic can be served locally and failover can occur automatically",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Provision a single Bigtable cluster in one region and schedule snapshots every 20 minutes",
+      "explanation": "This relies on periodic point in time copies that must be restored before serving traffic and therefore does not provide active serving in another region",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Run a lone Bigtable cluster in one region and rely on cross regional backups",
+      "explanation": "This method protects data with backups in another region which requires restore operations and does not provide low latency reads and writes during a regional outage",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Configure a Bigtable instance with clusters in three regions with multi cluster routing and replication turned on</b>. This design provides automatic failover across regions and keeps write replication delays very low which supports an RPO under 4 minutes and an RTO under 9 minutes. It also allows traffic to be served from clusters close to users in North America and Europe which keeps latency low while tolerating the loss of a region.</p><p>This approach uses multi cluster replication to replicate data between clusters in different regions and it uses multi cluster routing so clients are automatically directed to the nearest healthy cluster. Replication typically occurs within seconds which supports a sub four minute RPO. Because no restore is required and traffic can be routed to a surviving cluster, failover is quick which keeps RTO well below nine minutes. Placing clusters in North America and Europe satisfies the latency requirement while the third region adds resilience to regional outages.</p><p><i>Create a single regional Bigtable cluster and stream writes to another region using Dataflow jobs</i> is not appropriate because replication would be application managed with additional lag and operational complexity. There is no native automatic failover and recovery would likely exceed the RTO target while the RPO would depend on pipeline delay which is not guaranteed to be under four minutes.</p><p><i>Provision a single Bigtable cluster in one region and schedule snapshots every 20 minutes</i> cannot meet the RPO requirement because a 20 minute snapshot interval yields a 20 minute potential data loss window. Restoring from snapshots also takes time, which makes it unlikely to meet the nine minute RTO and it does not maintain low latency for users in multiple continents during an outage.</p><p><i>Run a lone Bigtable cluster in one region and rely on cross regional backups</i> is a disaster recovery pattern rather than a high availability one. Backups do not provide continuous replication or automatic failover, so both RPO and RTO would exceed the targets. This setup also cannot deliver low latency to both North America and Europe during a regional failure.</p>",
+  "batch_id": "341",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "A Database Engineer is tasked with designing a high availability and disaster recovery solution for a large-scale analytics application using Bigtable. The application has strict RPO (Recovery Point Objective) and RTO (Recovery Time Objective) requirements: RPO should be less than 3 minutes, and RTO should be less than 8 minutes. The solution must be able to tolerate regional outages and provide low latency for users distributed across different regions. Which of the following configurations should the engineer choose to fulfill these requirements?",
+  "originalOptions": "A. Deploy Bigtable with a single cluster in a single region and configure periodic snapshots.<br/>B. Deploy Bigtable with a single cluster in a single region and use Dataflow for data replication to another region.<br/>C. Deploy Bigtable with a multi-cluster routing configuration and configure replication across multiple regions.<br/>D. Deploy Bigtable with a single cluster in a single region and configure cross-regional backups.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "153",
+  "tip": "<p>Prioritize native multi region replication with automatic failover when the question asks for both regional resilience and tight <i>RPO</i> and <i>RTO</i>. Backups or snapshots protect data but they do not provide high availability or low latency during an outage.</p>",
+  "references": [
+    "https://cloud.google.com/bigtable/docs/replication-overview",
+    "https://cloud.google.com/bigtable/docs/multicluster-routing",
+    "https://cloud.google.com/bigtable/docs/backups-intro",
+    "https://cloud.google.com/bigtable/docs/instances-clusters-nodes"
+  ],
+  "url": "https://certificationation.com/questions/exam-with-designing-a-high-availability-exam-153.html",
+  "video_url": "https://certificationation.com/videos/exam-with-designing-a-high-availability-exam-153.html"
+}

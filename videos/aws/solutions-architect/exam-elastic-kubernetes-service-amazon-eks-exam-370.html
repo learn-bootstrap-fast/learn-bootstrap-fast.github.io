@@ -1,0 +1,128 @@
+---
+title: "A company needs to create an Amazon Elastic KubernetesExam"
+description: "Video for a company needs to create an Amazon Elastic Kubernetes Service (Amazon EKS) cluster to host a digital media streaming application. The EKS cluster"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company needs to create an Amazon Elastic Kubernetes Service (Amazon EKS) cluster to host a digital media streaming application. The EKS cluster will use a managed node group that is backed by Amazon Elastic Block Store (Amazon EBS) volumes for storage. The company must encrypt all data at rest by using a customer managed key that is stored in AWS Key Management Service (AWS KMS). Which combination of actions will meet this requirement with the LEAST operational overhead? (Choose two.)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729ad8"
+  },
+  "quid": null,
+  "ordinal": "371",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon Elastic Kubernetes Service (Amazon EKS)",
+    " Amazon Elastic Block Store (Amazon EBS)",
+    " AWS Key Management Service (AWS KMS)"
+  ],
+  "slug": "eks-create-digital-media-streaming-aws",
+  "source": "ET",
+  "title": "AWS A Company Needs To Create An Amazon EKS Question",
+  "meta": "AWS Exam Question: A company needs to create an Amazon EKS cluster for a streaming app, using Amazon EBS and AWS KMS for data encryption. Answer: AWS KMS, Amazon EBS.",
+  "answer": "CD",
+  "query": "An organization is planning to set up an Amazon Elastic Kubernetes Service (Amazon EKS) cluster to run a video-on-demand application. This EKS cluster should utilize a managed node group that relies on Amazon Elastic Block Store (Amazon EBS) volumes for its storage needs. The organization requires that all data at rest be encrypted using a customer managed key that is available in AWS Key Management Service (AWS KMS). Which actions taken together will fulfill this mandate with the MINIMUM operational effort? (Choose two.)",
+  "originalQuery": "A company needs to create an Amazon Elastic Kubernetes Service (Amazon EKS) cluster to host a digital media streaming application. The EKS cluster will use a managed node group that is backed by Amazon Elastic Block Store (Amazon EBS) volumes for storage. The company must encrypt all data at rest by using a customer managed key that is stored in AWS Key Management Service (AWS KMS).\n\nWhich combination of actions will meet this requirement with the LEAST operational overhead? (Choose two.)",
+  "options": [
+    "A. Use a Kubernetes plugin that utilizes the customer managed key for data encryption.",
+    "B. Once the EKS cluster is created, find the EBS volumes and enable encryption with the customer managed key.",
+    "C. Enable EBS encryption by default in the AWS Region where the EKS cluster will be created. Select the customer managed key as the default key.",
+    "D. Create the EKS cluster. Create an IAM role that has a policy that grants permission to the customer managed key. Associate the role with the EKS cluster.",
+    "E. Store the customer managed key securely within the EKS cluster as a Kubernetes secret. Use it to encrypt the EBS volumes."
+  ],
+  "originalOptions": [
+    "A. Use a Kubernetes plugin that uses the customer managed key to perform data encryption.",
+    "B. After creation of the EKS cluster, locate the EBS volumes. Enable encryption by using the customer managed key.",
+    "C. Enable EBS encryption by default in the AWS Region where the EKS cluster will be created. Select the customer managed key as the default key.",
+    "D. Create the EKS cluster. Create an IAM role that has a policy that grants permission to the customer managed key. Associate the role with the EKS cluster.",
+    "E. Store the customer managed key as a Kubernetes secret in the EKS cluster. Use the customer managed key to encrypt the EBS volumes."
+  ],
+  "image": null,
+  "primaryObjective": "1: Design Secure Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "To fulfill the requirement of encrypting all data at rest using a customer-managed key stored in AWS Key Management Service (AWS KMS) for an Amazon Elastic Kubernetes Service (EKS) cluster that supports a digital media streaming application, it is essential to minimize operational overhead. \n\nUtilizing the default encryption settings for Amazon Elastic Block Store (Amazon EBS) volumes in the AWS Region where the EKS cluster is set up is a highly effective strategy. By enabling EBS encryption by default and selecting the customer-managed key as the default encryption key, all new EBS volumes created within that Region will automatically be encrypted without the need for additional configuration steps each time a new volume is provisioned.\n\nFurthermore, creating an IAM role with permissions to access the customer-managed key is crucial. This role should be associated with the EKS cluster to ensure that Kubernetes workloads running within the cluster have the necessary permissions to interact with the KMS key for encryption and decryption processes. This setup simplifies key management and enhances security by ensuring that only authorized applications can access the encryption keys.\n\nBy leveraging these practices, the company can effectively ensure that all data at rest is encrypted while maintaining a low operational burden.",
+    "To keep your Amazon EBS volumes on the nodes as secure as a vault, you can roll out the nodes using a launch template—it's like giving your application a superhero cape! 🦸‍♂️ But if you prefer to skip the launch template drama and still want your managed nodes sporting encrypted EBS volumes, just make sure that all new Amazon EBS volumes created in your account are encrypted by default. It’s like putting a \"Do Not Enter\" sign on your data! 🚫🔒 For more details, you might want to check out the \"Encryption by Default\" section in the Amazon EC2 User Guide for Linux Instances. It’s full of great info and will help you keep things safe and sound! 📚✨",
+    "Let’s sift through these options with a critical eye, shall we? Right off the bat, we can dismiss A—seriously, which plugin are we even talking about? That just sounds like a recipe for extra overhead. And let's not even get started on E; storing sensitive keys as Kubernetes secrets? Not the best practice. \n\nNow, turning to B, C, and D: B and C are pretty much in the same boat functionally, so we’re left choosing between them, while D remains a solid contender. \n\nWhen we compare B and C, C raises a red flag by defaulting EBS encryption for every volume in the region. That’s a bit excessive, don't you think? What about other applications that might have their own encryption requirements? That could lead to a messy situation. So, C is out, leaving us with the more tailored approach of B.",
+    "Option C is a great choice! By enabling EBS encryption by default in the AWS Region where the EKS cluster will be established and selecting the customer-managed key as the default, you ensure that all EBS volumes created for your cluster will be automatically encrypted. This approach is efficient because it doesn't impact EBS volumes associated with other applications in the region, as the IAM role will restrict access to the encryption key specifically to the EKS cluster. This means you can maintain a high level of security while minimizing operational overhead.",
+    "Oh, what a delightful conundrum we have here! 🌈 Let's sprinkle some clarity and magic dust on these options, shall we?\n\nIt seems there's a little mix-up in the understanding of option B. You see, once an EBS volume is created without encryption, it can't simply be turned into an encrypted one. Instead, the proper way to go about this is to take a snapshot of the existing volume, encrypt that snapshot, and then create a shiny new EBS volume from the encrypted snapshot. So, unfortunately, option B doesn’t quite hit the mark.\n\nNow, moving on to option C! While it does suggest enabling encryption by default for all EBS volumes in the desired AWS Region, it’s important to note that this would mean every new EBS volume created in that account would automatically have encryption. That could lead to some confusion if another user spins up a new volume unaware of this setting, thus making it somewhat questionable as well.\n\nIn summary, while there are some solid ideas here, the execution could use a sprinkle of extra care to ensure everything flows smoothly! ✨"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "CD",
+      "explanation": "https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html#:~:text=encrypted%20Amazon%20EBS%20volumes%20without%20using%20a%20launch%20template%2C%20encrypt%20all%20new%20Amazon%20EBS%20volumes%20created%20in%20your%20account.",
+      "upvotes": "16"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "If you want to encrypt Amazon EBS volumes for your nodes, you can deploy the nodes using a launch template. To deploy managed nodes with encrypted Amazon EBS volumes without using a launch template, encrypt all new Amazon EBS volumes created in your account. For more information, see Encryption by default in the Amazon EC2 User Guide for Linux Instances.",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "BD",
+      "explanation": "Quickly rule out A (which plugin? > overhead) and E because of bad practice\n\nAmong B,C,D: B and C are functionally similar > choice must be between B or C, D is fixed\n\nBetween B and C: C is out since it set default for all EBS volume in the region, which is more than required and even wrong, say what if other EBS volumes of other applications in the region have different requirement?",
+      "upvotes": "12"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "(C) is correct; the EBS volumes of other applications in the region will not be affected bc an IAM role will limit the encryption key to the EKS cluster.",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "CD\nThis options are wrongly stated in my understanding. B is wrong because you can not encrypt an unencrypted created ebs volume. You need to take a snapshot of the volume, encrypt the snapshot ,creat new ebs volume from snapshot. You can also enable encryption during creation. So the statement is wrong. The next available option can only be C, except that in that account all ebs volumes created would be encrypted, this is also questionable. Because if another person create a new ebs volumes it's automatically encrypted.",
+      "upvotes": "2"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "CD (53%)",
+      "votes": "41 votes."
+    },
+    {
+      "option": "BD (45%)",
+      "votes": "35 votes."
+    },
+    {
+      "option": "3%",
+      "votes": "2 votes."
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is CD because enabling EBS encryption by default in the AWS Region satisfies the requirement of using a customer managed key for all new EBS volumes created as part of the EKS cluster, resulting in minimal operational overhead (C). Additionally, creating an IAM role with a policy that grants permission to the customer managed key and associating it with the EKS cluster ensures the cluster has the necessary permissions to use the key for encryption (D). Option A is incorrect as it involves using a plugin, which adds overhead and may complicate operations. Option B is not viable because enabling encryption for existing unencrypted EBS volumes is not allowed directly; a snapshot must be used instead. Option E suggests storing the key as a Kubernetes secret, which is not a recommended practice for managing encryption keys securely.",
+  "video_url": "https://certificationation.com/videos/exam-elastic-kubernetes-service-amazon-eks-exam-370.html",
+  "url": "https://certificationation.com/questions/exam-elastic-kubernetes-service-amazon-eks-exam-370.html"
+}

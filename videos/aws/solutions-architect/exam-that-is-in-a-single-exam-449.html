@@ -1,0 +1,132 @@
+---
+title: "A company has a three-tier web application that is in aExam"
+description: "Video for a company has a three-tier web application that is in a single server. The company wants to migrate the application to the AWS Cloud. The company also"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company has a three-tier web application that is in a single server. The company wants to migrate the application to the AWS Cloud. The company also wants the application to align with the AWS Well-Architected Framework and to be consistent with AWS recommended best practices for security, scalability, and resiliency. Which combination of solutions will meet these requirements? (Choose three.)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729b27"
+  },
+  "quid": null,
+  "ordinal": "450",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS Well-Architected Framework",
+    " Amazon EC2",
+    " Amazon RDS",
+    " AWS Auto Scaling",
+    " AWS Security"
+  ],
+  "slug": "ec-migrate-three-tier-web-aws",
+  "source": "ET",
+  "title": "AWS A Company Has A Three-Tier Web Application Question",
+  "meta": "AWS Exam Question: A company seeks to migrate a three-tier web application to AWS, ensuring security, scalability, and resiliency. Find the answer, including AWS Well-Architected Framework.",
+  "answer": "CEF",
+  "query": "An organization operates a web application built around three tiers, currently hosted on a single instance. They aim to transition this application to AWS while adhering to the AWS Well-Architected Framework and incorporating AWS best practices for security, scalability, and durability.\n\nWhat combination of strategies will fulfill these objectives? (Choose three.)",
+  "originalQuery": "A company has a three-tier web application that is in a single server. The company wants to migrate the application to the AWS Cloud. The company also wants the application to align with the AWS Well-Architected Framework and to be consistent with AWS recommended best practices for security, scalability, and resiliency.\n\nWhich combination of solutions will meet these requirements? (Choose three.)",
+  "options": [
+    "A. Set up a VPC spanning two Availability Zones and retain the application's current architecture. Deploy the application on Amazon EC2 instances within private subnets of both Availability Zones, utilizing EC2 Auto Scaling groups. Safeguard the EC2 instances using security groups and network access rules.",
+    "B. Establish security groups and network access rules to manage database access. Deploy a singular Amazon RDS database in a private subnet.",
+    "C. Create a VPC with two Availability Zones. Adapt the application to separate the web, application, and database tiers. Assign each tier to dedicated private subnets and utilize Auto Scaling for the web and application layers.",
+    "D. Use a single Amazon RDS database. Allow database access only from the application tier security group.",
+    "E. Deploy Elastic Load Balancers to manage the web tier's traffic. Use security group rules referencing security groups of each layer to manage access.",
+    "F. Use an Amazon RDS database Multi-AZ cluster deployment in private subnets. Allow database access only from application tier security groups."
+  ],
+  "originalOptions": [
+    "A. Create a VPC across two Availability Zones with the application's existing architecture. Host the application with existing architecture on an Amazon EC2 instance in a private subnet in each Availability Zone with EC2 Auto Scaling groups. Secure the EC2 instance with security groups and network access control lists (network ACLs).",
+    "B. Set up security groups and network access control lists (network ACLs) to control access to the database layer. Set up a single Amazon RDS database in a private subnet.",
+    "C. Create a VPC across two Availability Zones. Refactor the application to host the web tier, application tier, and database tier. Host each tier on its own private subnet with Auto Scaling groups for the web tier and application tier.",
+    "D. Use a single Amazon RDS database. Allow database access only from the application tier security group.",
+    "E. Use Elastic Load Balancers in front of the web tier. Control access by using security groups containing references to each layer's security groups.",
+    "F. Use an Amazon RDS database Multi-AZ cluster deployment in private subnets. Allow database access only from application tier security groups."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "The phrasing in the question introduces some ambiguity regarding option C. However, it is important to adhere to the principles of the Well-Architected Framework. \n\nOption A is not optimal, as it implies maintaining the existing architecture while merely adding EC2 Auto Scaling. This approach does not enhance scalability or reliability for each tier of the application.\n\nOption B, which involves deploying a single Amazon RDS instance, does not align with best practices in terms of availability and fault tolerance.\n\nOption D also relies on a single RDS instance, which fails to meet the standards for a well-architected solution.\n\nOptions E and F are sound choices, as they incorporate best practices for managing traffic and database access, respectively. Therefore, option C remains the only other viable choice, as it promotes the separation of the web, application, and database tiers across dedicated private subnets, facilitating better scalability and reliability.",
+    "Option C could use a little TLC, as the phrasing leaves something to be desired. That part about \"refactoring the application to host the web tier, application tier, and database tier\" can really throw you for a loop! 🤔 When you glance at options E and F, it’s easy to get tangled up in the terminology. So let's tidy that up a bit, shall we? \n\nIt's essential to clearly define the roles of each tier without creating a tier-ception situation! We want to keep things straightforward and ensure everyone knows which layer is which. A little clarity goes a long way in cloud architecture! ☁️✨",
+    "Ah, the quest for scalability and resilience in the cloud! It’s a noble pursuit indeed. \n\nFirst up, let’s talk about C—because who doesn’t love a good architecture tweak? By separating the web, application, and database tiers into their own dedicated private subnets, you’re setting the stage for a more organized and efficient system. And don't forget the sweet touch of Auto Scaling for the web and application layers; it’s like having a personal trainer for your application—always ready to help it grow when the demand spikes.\n\nThen there's E—because high availability is the name of the game. Deploying Elastic Load Balancers to handle traffic for the web tier ensures that no single point of failure can bring your application down. Talk about a safety net!\n\nLastly, we have F, which brings in the Multi-AZ configuration for the database. This isn’t just a fancy term; it’s your insurance policy against downtime. With a Multi-AZ setup, you’re not just crossing your fingers and hoping for the best; you’re actively preparing for the worst, allowing your database to stay up and running even when life throws a curveball.\n\nSo, in a nutshell, embrace scalability with tier separation, ensure high availability with load balancers, and protect your database with a Multi-AZ setup. It’s a trifecta of cloud goodness that will keep your application robust and ready for anything.",
+    "A company is excited about migrating its three-tier web application to the AWS Cloud, aiming to enhance its architecture in accordance with the AWS Well-Architected Framework. This initiative will ensure improved security, scalability, and resiliency.\n\nTo achieve these objectives, here are three outstanding solutions:\n\n1. Establish a Virtual Private Cloud (VPC) that spans two Availability Zones while maintaining the existing architecture of the application. Deploy the application on Amazon EC2 instances located within private subnets across both Availability Zones, leveraging EC2 Auto Scaling groups. Protect the EC2 instances with security groups and precise access controls.\n\n2. Implement security groups to effectively manage access to the database. Deploy an Amazon RDS database within a private subnet to enhance security and isolate it from direct internet access.\n\n3. Design a VPC that encompasses two Availability Zones and refactor the application to distinctly separate the web, application, and database tiers. Assign each of these tiers to dedicated private subnets, and utilize Auto Scaling for both the web and application layers to ensure optimal performance and resource management.\n\nThese strategies will not only align with best practices but also foster a robust, scalable, and secure application environment in the AWS Cloud.",
+    "I would recommend marking this for later consideration and tackling it after addressing other questions. 🌈"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "CEF",
+      "explanation": "The wording on this question makes things ambiguous for C. But, remember well-architected so:\nA: Not ideal as it is suggesting using existing architecture but with autoscaling EC2. Doesn't leave room for improvement on scaling or reliability on each tier.\nB: Single RDS, not well-architected\nD: Again, single RDS\nE,F are good options and C is only remaining good one.",
+      "upvotes": "8"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "C is badly worded IMHO because of this part \" Refactor the application to host the web tier, application tier, and database tier.\" The database tier tier just makes it confusing when you don't read E and F.",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "CEF",
+      "explanation": "C-scalable and resilient\nE-high availability of the application\nF-Multi-AZ configuration provides high availability",
+      "upvotes": "6"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "remove singles and remove network ACLs",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "i would flag this on the test and do it last.",
+      "upvotes": "5"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "CEF (100%)",
+      "votes": "25 votes."
+    },
+    {
+      "option": "C (25%)",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is CEF because these options effectively promote scalability, security, and availability which align with AWS best practices and the Well-Architected Framework. Option C provides a well-structured multi-tier architecture with isolated subnets and auto-scaling, enhancing the application's scalability and resilience. Option E uses Elastic Load Balancers to manage traffic, ensuring high availability and effective security protocols via security groups. Option F employs a Multi-AZ deployment for Amazon RDS, improving database availability and durability, making it a secure choice for data handling. \n\nOption A is incorrect because it aims to retain the existing architecture without enough modernization, potentially limiting scalability and reliability. Option B opts for a single RDS instance, which may not provide high availability and is contrary to the principles of the Well-Architected Framework. Option D also presents a single RDS without adequate provision for scalability or resilience. Therefore, the combination of C, E, and F is optimal for achieving the stated objectives.",
+  "video_url": "https://certificationation.com/videos/exam-that-is-in-a-single-exam-449.html",
+  "url": "https://certificationation.com/questions/exam-that-is-in-a-single-exam-449.html"
+}

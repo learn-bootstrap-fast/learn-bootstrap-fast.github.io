@@ -1,0 +1,62 @@
+---
+title: "A new employee joined a company where AWS CodeCommitExam"
+description: "Video for a new employee joined a company where AWS CodeCommit manages code repositories in several AWS regions. In order to connect with CodeCommit by SSH, he"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A new employee joined a company where AWS CodeCommit manages code repositories in several AWS regions. In order to connect with CodeCommit by SSH, he installed the latest version of GIT in a Linux machine, created a key pair via ssh-keygen and uploaded the public key to the security credentials of his IAM user. However, he still cannot git clone any repositories using SSH. Which config file in ~/.ssh/ does he need to create in his Linux machine?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct entry for connecting to a specific CodeCommit regional endpoint is <b>Host git-codecommit.ap-south-1.amazonaws.com User APKAXXXXXXXXXEXAMPLE IdentityFile ~/.ssh/id_rsa</b>. This format matches the required hostname structure for CodeCommit in a given region, paired with the IAM SSH username (the SSH key ID) and the correct private key.<br><br>Let's examine why the others don't work:</p><ul><li><i>Host * User IAMUSREIDEXAMPLE IdentityFile ~/.ssh/id_rsa</i>: This would apply to all SSH connections but 'IAMUSREIDEXAMPLE' is not a valid CodeCommit IAM SSH username (which must match the SSH key ID).</li><li><i>Host git-codecommit.*.amazonaws.com User IAMUSREIDEXAMPLE IdentityFile ~/.ssh/id_rsa.pub.</i>: The wildcard host is not supported by CodeCommit and the identity file must be the private key (not the .pub public key). 'IAMUSREIDEXAMPLE' is also not accepted unless it matches the actual upload ID.</li><li><i>Host git-codecommit.*.amazonaws.com User APKAXXXXXXXXXEXAMPLE IdentityFile ~/.ssh/id_rsa</i>: Again, CodeCommit does not accept wildcards for regional endpoints. You must specify the correct region per entry.</li></ul><p><b>Tips:</b> Always match the CodeCommit regional hostname and use the SSH username generated in IAM. Set IdentityFile to your private key. Wildcard hosts and incorrect usernames will result in authentication errors.</p>",
+  "query": "<p>A new team member recently joined an organization where AWS CodeCommit repositories span multiple AWS regions. The employee set up GIT on a Linux system, generated SSH keys using ssh-keygen, and uploaded the public key to their IAM profile. Despite these steps, they are still unable to clone repositories from CodeCommit via SSH.<br>Which configuration file entry should be added to <code>~/.ssh/config</code> to allow proper access to CodeCommit repositories?</p>",
+  "original_oid": "6793da0161969b416038a11f",
+  "options": [
+    {
+      "correct": true,
+      "text": "Host git-codecommit.ap-south-1.amazonaws.com User APKAXXXXXXXXXEXAMPLE IdentityFile ~/.ssh/id_rsa",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Host * User IAMUSREIDEXAMPLE IdentityFile ~/.ssh/id_rsa",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Host git-codecommit.*.amazonaws.com User IAMUSREIDEXAMPLE IdentityFile ~/.ssh/id_rsa.pub.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Host git-codecommit.*.amazonaws.com User APKAXXXXXXXXXEXAMPLE IdentityFile ~/.ssh/id_rsa",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question173",
+  "originalQuery": "A new employee joined a company where AWS CodeCommit manages code repositories in several AWS regions.\nIn order to connect with CodeCommit by SSH, he installed the latest version of GIT in a Linux machine, created a key pair via ssh-keygen and uploaded the public key to the security credentials of his IAM user.\nHowever, he still cannot git clone any repositories using SSH.\nWhich config file in ~/.ssh/ does he need to create in his Linux machine?",
+  "originalOptions": "A. Host * User IAMUSREIDEXAMPLE IdentityFile ~/.ssh/id_rsa,B. Host git-codecommit.ap-south-1.amazonaws.com User APKAXXXXXXXXXEXAMPLE IdentityFile ~/.ssh/id_rsa,C. Host git-codecommit.*.amazonaws.com User APKAXXXXXXXXXEXAMPLE IdentityFile ~/.ssh/id_rsa,D. Host git-codecommit.*.amazonaws.com User IAMUSREIDEXAMPLE IdentityFile ~/.ssh/id_rsa.pub.",
+  "video_url": "https://certificationation.com/videos/exam-where-aws-codecommit-manages-code-exam-358.html",
+  "url": "https://certificationation.com/questions/exam-where-aws-codecommit-manages-code-exam-358.html"
+}

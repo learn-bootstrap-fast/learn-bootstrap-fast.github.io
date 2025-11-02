@@ -1,0 +1,128 @@
+---
+title: "A company has a stateless web application that runs onExam"
+description: "Video for a company has a stateless web application that runs on AWS Lambda functions that are invoked by Amazon API Gateway. The company wants to deploy the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company has a stateless web application that runs on AWS Lambda functions that are invoked by Amazon API Gateway. The company wants to deploy the application across multiple AWS Regions to provide Regional failover capabilities. What should a solutions architect do to route traffic to multiple Regions?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729b24"
+  },
+  "quid": null,
+  "ordinal": "447",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon API Gateway",
+    " Amazon Route 53",
+    " AWS Lambda",
+    " Amazon CloudFront",
+    " Amazon Elastic Load Balancing"
+  ],
+  "slug": "l-api-gateway-stateless-web-apps-aws",
+  "source": "ET",
+  "title": "AWS A Company Has A Stateless Web Application Question",
+  "meta": "AWS Exam Question: A company has a stateless web application on AWS Lambda and API Gateway, seeking to deploy across Regions for failover. Find the answer using Route 53.",
+  "answer": "A",
+  "query": "An organization operates a microservices-based web application using AWS Lambda functions triggered by Amazon API Gateway. To enhance availability and support disaster recovery, they intend to replicate the application across different AWS Regions.\n\nWhat action should a solutions architect take to manage traffic across these Regions?",
+  "originalQuery": "A company has a stateless web application that runs on AWS Lambda functions that are invoked by Amazon API Gateway. The company wants to deploy the application across multiple AWS Regions to provide Regional failover capabilities.\n\nWhat should a solutions architect do to route traffic to multiple Regions?",
+  "options": [
+    "A. Create Amazon Route 53 health checks for each Region. Use an active-active failover configuration.",
+    "B. Set up an Amazon CloudFront distribution with origins for each Region. Use health checks for traffic management.",
+    "C. Create a transit gateway. Attach the transit gateway to the API Gateway endpoint in each Region. Configure the transit gateway to route requests.",
+    "D. Create an Application Load Balancer in the primary Region. Set the target group to point to the API Gateway endpoint hostnames in each Region."
+  ],
+  "originalOptions": [
+    "A. Create Amazon Route 53 health checks for each Region. Use an active-active failover configuration.",
+    "B. Create an Amazon CloudFront distribution with an origin for each Region. Use CloudFront health checks to route traffic.",
+    "C. Create a transit gateway. Attach the transit gateway to the API Gateway endpoint in each Region. Configure the transit gateway to route requests.",
+    "D. Create an Application Load Balancer in the primary Region. Set the target group to point to the API Gateway endpoint hostnames in each Region."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "To achieve global reach and minimize latency for a stateless web application that operates on AWS Lambda functions, leveraging Amazon CloudFront is advantageous. CloudFront can serve as a content delivery network (CDN), effectively reducing latency while enabling health checks to monitor the availability of resources. However, it does not inherently provide failover capabilities.\n\nOn the other hand, Amazon Route 53 excels in both global traffic management and failover. By implementing health checks, Route 53 can intelligently route traffic to healthy endpoints across multiple regions, ensuring high availability and resilience.\n\nIn evaluating the available options, the approach utilizing Route 53 is more robust due to its integrated failover capabilities. This allows for seamless traffic routing in case of regional outages, enhancing the application's overall reliability. Thus, prioritizing the option that incorporates Amazon Route 53 would be the more strategic choice for managing traffic across multiple regions.",
+    "CloudFront certainly has some nifty failover features! 🌥️ If one origin takes a nap, CloudFront can seamlessly redirect traffic to a backup origin without skipping a beat. It's like having a superhero sidekick ready to swoop in when needed! 🦸‍♂️ For more details, check out the official doc on high availability origin failover [here](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/high_availability_origin_failover.html#:~:text=the%20secondary%20origin.-,Note,Choose%20Create%20origin%20group). Just remember, with great power comes great responsibility (and maybe some extra configuration)! 😉",
+    "To ensure seamless traffic routing across multiple AWS Regions for your stateless web application running on Lambda functions invoked by API Gateway, there are several options that you can consider. \n\nFirst off, you could create health checks in Amazon Route 53 for each Region and set up an active-active failover configuration. This way, if one Region decides to take a vacation, your traffic can still be directed elsewhere without a hitch. \n\nAlternatively, you might want to consider using Amazon CloudFront. By setting up a distribution with origins in each Region, you can manage traffic more intelligently while utilizing health checks to keep an eye on the health of your endpoints. \n\nAnother option, albeit a bit more complex, involves creating a transit gateway. You'd attach this gateway to the API Gateway endpoints across Regions and configure it to handle the traffic routing. Just be prepared for some additional overhead, as this might not be the simplest path to take.\n\nLastly, there’s the idea of spinning up an Application Load Balancer in your primary Region. You can point the target group to the API Gateway endpoint hostnames in each Region. While this solution has its merits, it's worth noting that it could lead to a single point of failure if your primary Region experiences issues. \n\nIn the end, each of these approaches comes with its own set of benefits and trade-offs. Choose wisely, and may the odds be ever in your favor when it comes to maintaining availability and resilience across your application.",
+    "While I may not be a specialist in this particular domain, I would like to share my thoughts. After thoroughly considering the scenario and reflecting on it for some time, I find myself uncertain about the rationale behind the choices presented. As I mentioned earlier, my expertise in this area is limited, but I appreciate the complexity of the topic.",
+    "For a delightful exploration of option A and to dive into the wonderful world of multi-region deployment, check out this informative article: [Building a Multi-Region Serverless Application with Amazon API Gateway and AWS Lambda](https://aws.amazon.com/blogs/compute/building-a-multi-region-serverless-application-with-amazon-api-gateway-and-aws-lambda/). It’s a treasure trove of insights that will guide you through the intricacies of setting up Amazon Route 53 health checks for each region while embracing an active-active failover configuration. 🌈 Happy reading!"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "A",
+      "explanation": "Global, Reduce latency, health checks, no failover = Amazon CloudFront\nGlobal ,Reduce latency, health checks, failover, Route traffic = Amazon Route 53\noption A has more weight.",
+      "upvotes": "30"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Cloud front does have failover capabilities.\nhttps://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/high_availability_origin_failover.html#:~:text=the%20secondary%20origin.-,Note,Choose%20Create%20origin%20group.",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "nicley explained",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "A. I'm not an expert in this area, but I still want to express my opinion. After carefully reviewing the question and thinking about it for a long time, I actually don't know the reason. As I mentioned at the beginning, I'm not an expert in this field.",
+      "upvotes": "18"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "All the explanation you need for this question and option A is in this article:\nhttps://aws.amazon.com/blogs/compute/building-a-multi-region-serverless-application-with-amazon-api-gateway-and-aws-lambda/",
+      "upvotes": "3"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "A (89%)",
+      "votes": "81 votes."
+    },
+    {
+      "option": "11%",
+      "votes": "10 votes."
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "Option A is correct because Amazon Route 53 health checks combined with an active-active failover configuration allow for monitoring the health of each Regional deployment and directing traffic only to healthy Regions. This approach increases availability and provides disaster recovery support across multiple AWS Regions. Option B is incorrect because while Amazon CloudFront can help manage traffic, it does not provide the active failover capability as effectively as Route 53. Option C is incorrect as a transit gateway is primarily used for routing traffic in more complex networking scenarios and does not provide health checks or failover. Option D is also incorrect because using an Application Load Balancer in a single region with target groups does not adequately manage traffic across multiple regions, nor does it address failover effectively.",
+  "video_url": "https://certificationation.com/videos/exam-that-runs-on-aws-lambda-exam-446.html",
+  "url": "https://certificationation.com/questions/exam-that-runs-on-aws-lambda-exam-446.html"
+}

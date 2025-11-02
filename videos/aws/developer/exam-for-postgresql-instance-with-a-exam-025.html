@@ -1,0 +1,80 @@
+---
+title: "Your team is running a Cloud SQL for PostgreSQL instanceExam"
+description: "Video for your team is running a Cloud SQL for PostgreSQL instance with a 4 TB database that must be available 24/7. You need to save database backups on object"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your team is running a Cloud SQL for PostgreSQL instance with a 4 TB database that must be available 24/7. You need to save database backups on object storage with minimal operational overhead or risk to your production workloads. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "At Riverbend Retail you operate a Cloud SQL for PostgreSQL instance that holds about 6 TB of data and it must remain available around the clock. You need to store recurring backups in Cloud Storage with the least operational effort and minimal impact on the production system. What should you do?",
+  "options": [
+    {
+      "text": "Run the pg_dump utility on the primary instance and export directly to a Cloud Storage bucket",
+      "explanation": "This uses the client tool from the primary and creates a logical dump while the primary handles both workload and export activity",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a read replica and execute pg_dump against the replica to export the database",
+      "explanation": "This offloads the dump workload to a replica and produces a logical export created by a client connected to the replica",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Cloud SQL serverless export to write the data to Cloud Storage",
+      "explanation": "This uses the managed export capability of Cloud SQL that writes data directly to Cloud Storage without running a client on the instance",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use Cloud SQL automated backups and copy them to Cloud Storage using Storage Transfer Service",
+      "explanation": "This relies on internal automated backups created by Cloud SQL and assumes a transfer service can move them to object storage",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Use Cloud SQL serverless export to write the data to Cloud Storage</b>.</p><p>This feature runs the export as a managed job outside your database instance which keeps CPU and I O impact off the primary. It writes directly to Cloud Storage and can be automated with simple scheduling so it meets the goals of minimal operational effort and minimal impact. It is well suited for large datasets where you need recurring backups without affecting availability.</p><p><i>Run the pg_dump utility on the primary instance and export directly to a Cloud Storage bucket</i> is not appropriate because pg_dump would consume resources on the primary and can significantly affect performance when exporting multiple terabytes. It also requires you to manage the compute environment and data movement which increases operational effort.</p><p><i>Create a read replica and execute pg_dump against the replica to export the database</i> reduces load on the primary but still requires you to provision and operate a replica and to manage long running dumps. Large exports can cause replica lag and the process remains operationally heavy compared to a managed export job.</p><p><i>Use Cloud SQL automated backups and copy them to Cloud Storage using Storage Transfer Service</i> is not feasible because automated backups are managed by Cloud SQL and are not exposed as files that you can copy with Storage Transfer Service. You cannot directly move those backups into your buckets.</p>",
+  "batch_id": "118",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "Your team is running a Cloud SQL for PostgreSQL instance with a 4 TB database that must be available 24/7. You need to save database backups on object storage with minimal operational overhead or risk to your production workloads. What should you do?",
+  "originalOptions": "A. Use the pg_dump utility on the primary database instance to export the backup.<br/>B. Use Cloud SQL serverless exports.<br/>C. Clone the Cloud SQL instance, and then use the pg_dump utility to export the data.<br/>D. Create a read replica, and then use the pg_dump utility to export each table.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "25",
+  "tip": "<p>When a question emphasizes <i>least operational effort</i> and <i>minimal impact</i> on production, look for a managed or <i>serverless</i> capability that runs outside the instance and integrates natively with Cloud Storage.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/serverless-export",
+    "https://cloud.google.com/sql/docs/postgres/export-data",
+    "https://cloud.google.com/sql/docs/postgres/backup-recovery/backups",
+    "https://cloud.google.com/blog/products/databases/introducing-serverless-export-and-import-for-cloud-sql"
+  ],
+  "url": "https://certificationation.com/questions/exam-for-postgresql-instance-with-a-exam-025.html",
+  "video_url": "https://certificationation.com/videos/exam-for-postgresql-instance-with-a-exam-025.html"
+}

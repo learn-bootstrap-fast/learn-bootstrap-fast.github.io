@@ -1,0 +1,54 @@
+---
+title: "You work as a machine learning specialist for aExam"
+description: "Video for you work as a machine learning specialist for a financial services firm. Your firm contracts with market data generation services that deliver 5 TB of"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You work as a machine learning specialist for a financial services firm. Your firm contracts with market data generation services that deliver 5 TB of market activity record data every minute. To prepare this data for your machine learning models, your team queries the data using Athena. However, the queries perform poorly because they are operating on such a large data stream. You need to find a more performant option. Which file format for your market data records on S3 will give you the best performance?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d7047742293cac494b47"
+  },
+  "answer": "C",
+  "certification": "AWS Machine Learning Specialty",
+  "certificationKey": "AWSMLS",
+  "difficulty": "0",
+  "image": "",
+  "needsWork": "false",
+  "ordinal": "159",
+  "originalExplanation": "Correct Answer: C.\nOption A is incorrect.\nThe TSV file format uses a row-based file structure that uses tabs as an attribute separator.\nWhen Athena reads from these types of files, it must read the entire row for every row versus reading in a column when only the attribute in that column is needed for your query.\nColumnar-based file processing is much more efficient for queries of large datasets.\nAlso, the TSV file format does not support the partitioning of your data.\nOption B is incorrect.\nCompressed LZO Files do not support columnar processing nor partitioning.\nTherefore they will perform poorly when compared to columnar file formats like Parquet.\nOption C is correct.\nThe Parquet file format is a columnar-based format, and it supports partitioning.\nThe other columnar-based file format supported by Athena is ORC.\nThese columnar-based file formats outperform the tabular formats such as CSV and TSV when Athena works with very large datasets.\nOption D is incorrect.\nThe CSV file format uses a row-based file structure that uses commas as an attribute separator.\nWhen Athena reads from these types of files, it must read the entire row for every row versus reading in a column (columnar-based processing) when only the attribute in that column is needed for your query.\nColumnar-based file processing is much more efficient for queries of large datasets.\nAlso, the CSV file format does not support the partitioning of your data.\nReferences:\nPlease see the Amazon Athena FAQs (refer to the question “How do I improve the performance of my query?”) (https://aws.amazon.com/athena/faqs/#:~:text=Amazon%20Athena%20supports%20a%20wide,%2C%20LZO%2C%20and%20GZIP%20formats.),\nThe AWS Big Data blog titled Top 10 Performance Tuning Tips for Amazon Athena (https://aws.amazon.com/blogs/big-data/top-10-performance-tuning-tips-for-amazon-athena/),\nThe Amazon Athena user guide titled Compression Formats (https://docs.aws.amazon.com/athena/latest/ug/compression-formats.html)\nGiven the scenario where the financial services firm deals with a large amount of market activity record data every minute, the team queries the data using Athena. Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL. However, the queries are performing poorly due to the large data stream. Therefore, the team needs to find a more performant option to prepare the data for their machine learning models.\nOne way to address this issue is by using a more performant file format for the market data records on S3. Different file formats have different performance characteristics, and the choice of file format can impact the query performance significantly.\nAmong the given options, Parquet files are generally considered to provide the best performance for big data analytics use cases.\nParquet is a columnar storage format that is optimized for large-scale data processing. It is designed to store and process large amounts of data efficiently and supports advanced features like compression, encoding, and predicate pushdown.\nCompared to row-based file formats like CSV and TSV, Parquet is more efficient because it only reads the columns that are required for a particular query, reducing the amount of data that needs to be read from disk. Also, since the columns are stored in a compressed and encoded format, it requires less disk space and network bandwidth.\nLZO compressed files may be efficient for data compression, but it can only compress data but does not address the issue of columnar processing. Thus, it may not be the most optimal choice for this scenario.\nTherefore, in this case, the best option for file format for market data records on S3 that gives the best performance is C. Parquet files.",
+  "originalOptions": [
+    "A. TSV files",
+    "B. Compressed LZO files",
+    "C. Parquet files",
+    "D. CSV files."
+  ],
+  "originalQuery": "You work as a machine learning specialist for a financial services firm.\nYour firm contracts with market data generation services that deliver 5 TB of market activity record data every minute.\nTo prepare this data for your machine learning models, your team queries the data using Athena.\nHowever, the queries perform poorly because they are operating on such a large data stream.\nYou need to find a more performant option.\nWhich file format for your market data records on S3 will give you the best performance?",
+  "primaryObjective": "",
+  "quid": "0",
+  "source": "https://www.exam-answer.com/amazon/mls-c01/question159",
+  "video_url": "https://certificationation.com/videos/exam-specialist-for-a-financial-services-exam-159.html",
+  "url": "https://certificationation.com/questions/exam-specialist-for-a-financial-services-exam-159.html"
+}

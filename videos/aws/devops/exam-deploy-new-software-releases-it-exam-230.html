@@ -1,0 +1,67 @@
+---
+title: "A bank has adopted a strict IT process to deploy newExam"
+description: "Video for a bank has adopted a strict IT process to deploy new software releases. It uses AWS CodeDeploy to manage several deployment stages including Feature"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A bank has adopted a strict IT process to deploy new software releases. It uses AWS CodeDeploy to manage several deployment stages including Feature Test, System Integration Test and Production. Each stage has a Deployment Group in CodeDeploy. And relevant targets are added into each group using Tags. For example, the servers that contain the Production tag will only be deployed when a new deployment is created for the Production Deployment Group. Which targets can NOT be added to Deployment Group by Tags or list in AWS CodeDeploy? (Select TWO.)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><strong>Lambda function created in Python 3.6</strong> and <strong>Red Hat Enterprise Linux (RHEL) running on on-premises servers</strong> are the correct answers.</p><p><strong>Explanation:</strong><br/>AWS CodeDeploy supports targeting EC2 instances and on-premises servers using Amazon Machine Images (AMI) (Amazon Linux, Ubuntu, or Windows) or tags, and also supports deployment to Lambda functions and ECS services. However, there are restrictions on how targets can be managed, particularly with tags or instance lists:</p><ul><li><strong>Lambda function created in Python 3.6</strong>: CodeDeploy can deploy to Lambda functions, but these are managed through aliases, not tags or instance lists. You specify the Lambda function and the alias in the deployment, not by tagging them. Thus, you cannot add Lambda functions to CodeDeploy Deployment Groups by tag or instance list.</li><li><strong>Red Hat Enterprise Linux (RHEL) running on on-premises servers</strong>: CodeDeploy can deploy to on-premises instances, but support is for Amazon Linux, Ubuntu, or Windows Server on-premises. RHEL on-premises is <strong>not</strong> supported as a direct target. Thus, you cannot add RHEL on-premises instances by tags or by instance name to a deployment group.</li><li><em>ECS cluster utilizing Amazon Linux AMI</em>: CodeDeploy supports ECS blue/green deployments, so ECS can be used as a deployment target.</li><li><em>Auto Scaling group with EC2 instances</em>: EC2 instances in Auto Scaling groups can be tagged and used as targets in CodeDeploy. You can add/tag them in deployment groups directly.</li><li><em>Microsoft Windows Server 2016 EC2 instance</em>: CodeDeploy supports Windows Server 2016 as a managed instance, and these EC2 instances can be targeted via tags in deployment groups.</li></ul><p><strong>Tip:</strong> Always pay attention to what types of deployment groups are supported by AWS CodeDeploy, and how resources are grouped (via tags, lists, or aliases).</p>",
+  "query": "<p>A financial institution enforces a rigid IT workflow for rolling out new application versions. It leverages AWS CodeDeploy to coordinate deployments across multiple phases like Feature Testing, System Integration Testing, and Production. Each phase corresponds to a Deployment Group within CodeDeploy, with servers assigned by using tags. For instance, only servers tagged as Production are targeted during a production deployment. <br/><br/>Which two of the following resources <strong>cannot</strong> be added to a Deployment Group via tags or instance list in AWS CodeDeploy? (Choose TWO.)</p>",
+  "original_oid": "6793d9fd61969b416038a117",
+  "options": [
+    {
+      "correct": true,
+      "text": "Lambda function created in Python 3.6",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "ECS cluster utilizing Amazon Linux AMI",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Red Hat Enterprise Linux (RHEL) running on on-premises servers",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Auto Scaling group with EC2 instances",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Microsoft Windows Server 2016 EC2 instance",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question165",
+  "originalQuery": "A bank has adopted a strict IT process to deploy new software releases.\nIt uses AWS CodeDeploy to manage several deployment stages including Feature Test, System Integration Test and Production.\nEach stage has a Deployment Group in CodeDeploy.\nAnd relevant targets are added into each group using Tags.\nFor example, the servers that contain the Production tag will only be deployed when a new deployment is created for the Production Deployment Group.\nWhich targets can NOT be added to Deployment Group by Tags or list in AWS CodeDeploy? (Select TWO.)",
+  "originalOptions": "[\"A. ECS Cluster with an Amazon Linux AMI\",\"B. EC2 Auto Scaling groups\",\"C. Lambda function written in Python 3.6\",\"D. EC2 instance (Microsoft Windows Server 2016)\",\"E. Red Hat Enterprise Linux (RHEL) on-premises instances.\"]",
+  "video_url": "https://certificationation.com/videos/exam-deploy-new-software-releases-it-exam-230.html",
+  "url": "https://certificationation.com/questions/exam-deploy-new-software-releases-it-exam-230.html"
+}

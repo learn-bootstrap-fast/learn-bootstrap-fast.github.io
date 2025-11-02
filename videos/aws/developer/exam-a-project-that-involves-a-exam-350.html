@@ -1,0 +1,82 @@
+---
+title: "A Database Engineer is working on a project thatExam"
+description: "Video for a Database Engineer is working on a project that involves a large-scale analytics application processing vast amounts of structured data. The"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A Database Engineer is working on a project that involves a large-scale analytics application processing vast amounts of structured data. The application is currently using BigQuery, and the engineer is tasked with optimizing cost and performance. Which of the following strategies should the engineer implement to best achieve these objectives?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "The data engineering team at scrumtuous.com runs a BigQuery warehouse that ingests about 28 TB of structured clickstream events each day. The fact tables are partitioned by event_date and most analysts filter on customer_id and country in their queries. The team needs to reduce query costs and speed up execution while staying on BigQuery. What should they implement?",
+  "options": [
+    {
+      "text": "Move the workload to Cloud Spanner to benefit from global relational scaling",
+      "explanation": "Cloud Spanner is a distributed relational database that provides strong consistency for transactional workloads across regions",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use BigQuery Reservations to buy dedicated slots for the project",
+      "explanation": "BigQuery Reservations offers committed compute capacity that can deliver predictable performance for eligible jobs",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable clustering on the BigQuery tables using customer_id and country columns",
+      "explanation": "Clustering sorts data by selected columns which can reduce scanned bytes for frequent filters and improve query performance",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Migrate the datasets to Cloud SQL to control spend with smaller instances",
+      "explanation": "Cloud SQL is a managed relational database service that allows instance sizing and storage adjustments for transactional workloads",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Enable clustering on the BigQuery tables using customer_id and country columns</b>.</p><p>This choice aligns the storage layout with how analysts filter the data. The tables are already partitioned by event_date and adding <b>clustering</b> on customer_id and country lets BigQuery prune data more aggressively which reduces bytes scanned and lowers query cost. Queries that filter or group by these columns will scan fewer blocks and complete faster while staying on the same platform.</p><p><b>Clustering</b> works especially well with large daily ingestion because it continuously organizes data within each partition based on the specified keys. This improves performance for selective predicates and common joins on those keys and it directly targets the cost driver which is the amount of data read.</p><p><i>Move the workload to Cloud Spanner to benefit from global relational scaling</i> is not appropriate because that product is designed for transactional workloads and not for large scale analytical scans. Moving off the warehouse would not address scan costs for analytical queries and would add migration complexity.</p><p><i>Use BigQuery Reservations to buy dedicated slots for the project</i> can improve performance predictability and throughput but it does not reduce the amount of data scanned by each query. Without very high and steady utilization it may not reduce overall cost and it does not exploit the query patterns that benefit from data pruning.</p><p><i>Migrate the datasets to Cloud SQL to control spend with smaller instances</i> is not suitable for tens of terabytes per day or for columnar analytics. That service is optimized for transactional workloads and would not scale or perform well for warehouse style queries.</p>",
+  "batch_id": "354",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "A Database Engineer is working on a project that involves a large-scale analytics application processing vast amounts of structured data. The application is currently using BigQuery, and the engineer is tasked with optimizing cost and performance. Which of the following strategies should the engineer implement to best achieve these objectives?",
+  "originalOptions": "A. Use Cloud Spanner instead of BigQuery to take advantage of its horizontal scaling capabilities<br/>B. Implement clustering on the tables to optimize query performance<br/>C. Use BigQuery Storage API to load data in real-time<br/>D. Migrate the data to Cloud SQL for better cost management",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "350",
+  "tip": "<p>When most queries filter on the same columns think of <i>partitioning</i> for time based slicing and add <i>clustering</i> on the other selective keys to reduce <i>bytes scanned</i> and improve speed.</p>",
+  "references": [
+    "https://cloud.google.com/bigquery/docs/clustered-tables",
+    "https://cloud.google.com/bigquery/docs/partitioned-tables",
+    "https://cloud.google.com/bigquery/docs/best-practices-costs#partitioning_and_clustering",
+    "https://cloud.google.com/bigquery/docs/reservations-intro",
+    "https://cloud.google.com/spanner/docs/overview",
+    "https://cloud.google.com/sql/docs/introduction"
+  ],
+  "url": "https://certificationation.com/questions/exam-a-project-that-involves-a-exam-350.html",
+  "video_url": "https://certificationation.com/videos/exam-a-project-that-involves-a-exam-350.html"
+}

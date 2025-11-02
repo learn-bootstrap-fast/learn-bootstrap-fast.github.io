@@ -1,0 +1,62 @@
+---
+title: "You have a web application that's developed in Node.jsExam"
+description: "Video for you have a web application that's developed in Node.js. The code is hosted in the Git repository. You want to deploy this application to AWS. Which of"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have a web application that's developed in Node.js. The code is hosted in the Git repository. You want to deploy this application to AWS. Which of the below 2 options can fulfill this requirement?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The two valid methods to deploy a Node.js web application residing in a Git repository to AWS are:<br><br><b>Set up a Dockerfile that installs Node.js and fetches your application from Git. Build a Docker image and upload it to Amazon ECR, then deploy the container using a new AWS Elastic Beanstalk environment.</b> This workflow leverages Docker containers and Elastic Beanstalk's support for running Docker images. It allows automated deployments via ECR and is a best practice for Node.js web apps.<br><br><b>Create a CloudFormation script to launch an Auto Scaling group and configure UserData on the instances to retrieve and start the Node.js application from your Git repository.</b> With this approach, you use infrastructure as code with CloudFormation, and automation via UserData to pull the application from your Git source and start it. This is a common, scalable deployment technique.<br><br>Why the other answers are incorrect:<br><br><i>Build an AWS CloudFormation template to provision an EC2 instance with the AWS::EC2::Container resource. Use UserData to install Git, fetch the Node.js app, and handle the setup process.</i> - The AWS::EC2::Container resource type does not exist in CloudFormation. The actual resource type for containers is not directly available. This makes the solution invalid as described.<br><br><i>Create an Elastic Beanstalk project with a Dockerfile that installs Node.js, and use the command \"aws git.push\" to deploy your app from the Git repo.</i> - The command \"aws git.push\" does not exist in the AWS CLI or deployment tools. Deployments to Beanstalk should use the Elastic Beanstalk CLI, AWS CLI, or the AWS Management Console—not the fictitious \"aws git.push\" command.<br><br><b>Tip:</b> Always check if the CLI commands or CloudFormation resources mentioned genuinely exist and are supported by AWS services. For Node.js, using a Dockerfile with ECR and Elastic Beanstalk, or deploying via an Auto Scaling group with UserData scripts, are robust and scalable ways to deploy.</p>",
+  "query": "<p>You are managing a web app built using Node.js, with the code stored in a Git repository. You wish to deploy this Node.js application to AWS. Which two of the following approaches would successfully allow you to do this deployment?</p>",
+  "original_oid": "6793d9ca61969b416038a0b3",
+  "options": [
+    {
+      "correct": true,
+      "text": "Set up a Dockerfile that installs Node.js and fetches your application from Git. Build a Docker image and upload it to Amazon ECR, then deploy the container using a new AWS Elastic Beanstalk environment.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Create a CloudFormation script to launch an Auto Scaling group and configure UserData on the instances to retrieve and start the Node.js application from your Git repository.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Build an AWS CloudFormation template to provision an EC2 instance with the AWS::EC2::Container resource. Use UserData to install Git, fetch the Node.js app, and handle the setup process.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Create an Elastic Beanstalk project with a Dockerfile that installs Node.js, and use the command \"aws git.push\" to deploy your app from the Git repo.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question62",
+  "originalQuery": "You have a web application that's developed in Node.js.\nThe code is hosted in the Git repository.\nYou want to deploy this application to AWS.\nWhich of the below 2 options can fulfill this requirement?",
+  "originalOptions": "[\"A. Create an Elastic Beanstalk application. Create a Docker file to install Node.js. Get the code from Git. Use the command \\\"aws git.push\\\" to deploy the application.\",\"B. Create an AWS CloudFormation template that creates an instance with the AWS::EC2::Container resources type. With UserData, install Git to download the Node.js application and then set it up.\",\"C. Create a Dockerfile to install Node.js. and get the code from Git. Create a Docker image with the Dockerfile and push the image to ECR. Perform the deployment on a new AWS Elastic Beanstalk application.\",\"D. Create an AWS CloudFormation template that creates an Auto Scaling group. In UserData, get the Node.js application and start the application.\"]",
+  "video_url": "https://certificationation.com/videos/exam-developed-in-node-js-the-code-exam-065.html",
+  "url": "https://certificationation.com/questions/exam-developed-in-node-js-the-code-exam-065.html"
+}

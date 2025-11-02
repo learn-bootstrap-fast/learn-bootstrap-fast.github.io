@@ -1,0 +1,80 @@
+---
+title: "Your team is currently running a Cloud SQL for MySQLExam"
+description: "Video for your team is currently running a Cloud SQL for MySQL instance with a 6 TB database, which requires continuous availability throughout the day. Your"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your team is currently running a Cloud SQL for MySQL instance with a 6 TB database, which requires continuous availability throughout the day. Your objective is to securely store database backups on object storage with minimal operational burden and minimal impact on your production workloads. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A regional logistics company named NorthStar Freight operates a mission critical Cloud SQL for MySQL deployment with an 8 TB database, and the application must remain available at all hours. You need to keep secure backups in Cloud Storage while keeping operational effort and performance impact on the production instance as low as possible. What should you do?",
+  "options": [
+    {
+      "text": "Create a read replica and run mysqldump from the replica",
+      "explanation": "This approach performs a logical export from a secondary instance that you manage separately and schedule for backup operations.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Cloud SQL serverless export to write the backup to a Cloud Storage bucket",
+      "explanation": "This uses a managed export that runs outside the database VM and writes the backup directly to Cloud Storage.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Clone the instance and run mysqldump on the clone",
+      "explanation": "This creates a full copy of the database instance and then executes a logical export against that cloned environment.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Set up Datastream to capture changes from the database into Cloud Storage",
+      "explanation": "This captures change data from MySQL and streams events into Cloud Storage for downstream processing or analytics.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Use Cloud SQL serverless export to write the backup to a Cloud Storage bucket</b>.</p><p>This method offloads the export from the database instance to a managed Cloud SQL service that reads data without consuming the instance compute resources and writes directly to Cloud Storage. It is designed for large datasets like an 8 TB MySQL database and it keeps the application available while minimizing performance impact. It also reduces operational effort because it is a fully managed workflow that integrates with IAM and Cloud Storage so you can secure the artifacts with encryption and access controls.</p><p><i>Create a read replica and run mysqldump from the replica</i> is not ideal for an 8 TB database because a logical dump is slow and resource intensive which can cause significant replica lag and still requires you to manage dumping and transferring data to Cloud Storage. This adds operational overhead and does not minimize performance impact as effectively as the managed export feature.</p><p><i>Clone the instance and run mysqldump on the clone</i> increases cost and operational effort because cloning an 8 TB instance takes time and storage and you still need to run a long and heavy logical dump. This approach provides little benefit compared to a managed export that avoids the need for an extra instance.</p><p><i>Set up Datastream to capture changes from the database into Cloud Storage</i> provides change data capture for integration and analytics but it does not produce a consistent full snapshot that you can restore as a backup. It is meant for replication of changes rather than backup and restore.</p>",
+  "batch_id": "198",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "Your team is currently running a Cloud SQL for MySQL instance with a 6 TB database, which requires continuous availability throughout the day. Your objective is to securely store database backups on object storage with minimal operational burden and minimal impact on your production workloads. What should you do?",
+  "originalOptions": "A. Set up a read replica, and then use the mysqldump utility to export each table.<br/>B. Clone the Cloud SQL instance, and then use the mysqldump utility to export the data.<br/>C. Leverage the mysqldump utility on the primary database instance to export the backup.<br/>D. Utilize Cloud SQL serverless exports.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "1",
+  "tip": "<p>When you see very large databases and a requirement for minimal performance impact on an always on system look for managed features that <i>offload</i> work from the instance such as <i>serverless export</i> directly to Cloud Storage.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/exporting",
+    "https://cloud.google.com/sdk/gcloud/reference/sql/export/sql",
+    "https://cloud.google.com/sql/docs/mysql/clone-instance",
+    "https://cloud.google.com/datastream/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-cloud-sql-for-mysql-instance-exam-001.html",
+  "video_url": "https://certificationation.com/videos/exam-cloud-sql-for-mysql-instance-exam-001.html"
+}

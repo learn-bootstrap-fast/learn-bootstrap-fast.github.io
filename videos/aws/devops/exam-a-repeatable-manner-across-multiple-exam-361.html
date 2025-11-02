@@ -1,0 +1,62 @@
+---
+title: "You need to deploy an AWS stack in a repeatable mannerExam"
+description: "Video for you need to deploy an AWS stack in a repeatable manner across multiple environments. You have selected CloudFormation as the right tool to accomplish"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You need to deploy an AWS stack in a repeatable manner across multiple environments. You have selected CloudFormation as the right tool to accomplish this. You have found that there is a resource type you need to create and model, but it is unsupported by CloudFormation. How should you overcome this challenge?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The preferred approach is to implement a <b>CloudFormation Custom Resource Type with your own create, update, and delete handlers, via Lambda or SNS</b>. This lets you seamlessly extend CloudFormation’s capabilities by invoking Lambda functions or integrating with custom providers when unsupported resources are needed. <br><br>Here's why the other options aren’t ideal:<ul><li><i>Request the addition of your required resource type by submitting a ticket to the AWS Forums, where AWS engineers can provide tools through AWS Labs on GitHub...</i> – This is not an established or reliable process for extending CloudFormation functionality, and there’s no guaranteed response or fulfillment time.</li><li><i>Build a CloudFormation Custom Resource Template by configuring automated API calls for necessary actions...</i> – Custom resources are defined by implementing create/update/delete logic, typically using Lambda or SNS, not by proxying through the SDK or CLI natively within a template.</li><li><i>Adopt third-party configuration management tools such as Chef, Puppet, or Ansible to write Heat templates...</i> – Heat templates are specific to OpenStack and do not apply to AWS. Chef, Puppet, and Ansible are alternatives to CloudFormation but do not extend its resource types.</li></ul>This approach allows your CloudFormation stacks to remain declarative, consistent, and repeatable, even as you handle resources outside the built-in support— a useful solution for many real-world AWS scenarios.</p>",
+  "query": "<p>You must deploy AWS infrastructure stacks consistently across different environments. You've chosen AWS CloudFormation for this purpose. However, one of the required resource types isn't natively available in CloudFormation. <br><br>What is the best approach for handling this situation?</p>",
+  "original_oid": "6793d9ee61969b416038a0fb",
+  "options": [
+    {
+      "correct": true,
+      "text": "Design a CloudFormation Custom Resource Type with your own logic for create, update, and delete operations, using either AWS Lambda functions for the logic or connecting a Custom Resource Provider via SNS topics.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Request the addition of your required resource type by submitting a ticket to the AWS Forums, where AWS engineers can provide tools through AWS Labs on GitHub, typically addressing requests within a few days.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Build a CloudFormation Custom Resource Template by configuring automated API calls for necessary actions, letting CloudFormation invoke the AWS CLI or SDK on your behalf for state management.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Adopt third-party configuration management tools such as Chef, Puppet, or Ansible to write Heat templates for defining the desired infrastructure stack over OpenStack.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question136",
+  "originalQuery": "You need to deploy an AWS stack in a repeatable manner across multiple environments.\nYou have selected CloudFormation as the right tool to accomplish this.\nYou have found that there is a resource type you need to create and model, but it is unsupported by CloudFormation.\nHow should you overcome this challenge?",
+  "originalOptions": "A. Use a CloudFormation Custom Resource Template by selecting an API call to proxy for create, update, and delete actions.CloudFormation will use the AWS SDK, CLI, or API method of your choosing as the state transition function for the resource type you are modeling.|B. Submit a ticket to the AWS Forums. AWS extends CloudFormation Resource Types by releasing tooling to the AWS Labs organization on GitHub. Their response time is usually 1 day, and they complete requests within a week or two.|C. Instead of depending on CloudFormation, use Chef, Puppet, or Ansible to author Heat templates, which are declarative stack resource definitions that operate over the OpenStack hypervisor and cloud environment.|D. Create a CloudFormation Custom Resource Type by implementing create, update, and delete functionality, either by subscribing a Custom Resource Provider to an SNS topic, or by implementing the logic in AWS Lambda.",
+  "video_url": "https://certificationation.com/videos/exam-a-repeatable-manner-across-multiple-exam-361.html",
+  "url": "https://certificationation.com/questions/exam-a-repeatable-manner-across-multiple-exam-361.html"
+}

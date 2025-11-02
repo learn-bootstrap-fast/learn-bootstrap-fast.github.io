@@ -1,0 +1,62 @@
+---
+title: "As part of your continuous deployment process, yourExam"
+description: "Video for as part of your continuous deployment process, your application undergoes an I/O load performance test before being deployed to production using new"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As part of your continuous deployment process, your application undergoes an I/O load performance test before being deployed to production using new AMIs. The application uses one Amazon Elastic Block Store (EBS) PIOPS volume per instance and requires consistent I/O performance. Which of the following must be carried out to ensure that I/O load performance tests yield the correct results in a repeatable manner?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct step is to <b>read every block on EBS volumes restored from snapshots to pre-warm them before running your tests</b>. Amazon EBS volumes restored from snapshots are lazy-loaded, meaning that only data requested is loaded on first access, causing initial read operations to experience higher latency. By pre-warming (reading all blocks), you ensure that your I/O performance test measures the actual, steady-state performance of the volume, not the initial slowness caused by lazy loading.<br/><br/>Why other options are incorrect:</p><ul><li><i>Randomize the selection of I/O block sizes in each test run</i>: This introduces variability, which makes your performance tests less repeatable. Consistency in test parameters is vital to obtain reliable results.</li><li><i>Back up EBS volumes by creating snapshots prior to each test</i>: While snapshotting is useful for data backup, it does not impact the I/O performance characteristics of the volume during testing, nor does it resolve issues related to lazy loading.</li><li><i>Encrypt the underlying EBS volume before testing to ensure stability</i>: Encryption does not guarantee consistent I/O performance, and it is not required for accurate performance benchmarking unless part of your workflow involves encrypted volumes specifically.</li></ul><p><b>Tip:</b> For accurate and repeatable I/O performance tests with EBS volumes, always ensure volumes are fully initialized and pre-warmed prior to running benchmarks, especially after restoring from a snapshot.</p>",
+  "query": "<p>During your continuous deployment workflow, every time new AMIs are produced, your application is subjected to an I/O load performance test before advancing to production. Each instance uses a dedicated Amazon EBS Provisioned IOPS volume, and stable, repeatable I/O performance is critical for your workload. What steps should you take to ensure the I/O performance tests produce accurate, consistent results?</p>",
+  "original_oid": "6793d9c461969b416038a0a8",
+  "options": [
+    {
+      "correct": false,
+      "text": "Randomize the selection of I/O block sizes in each test run.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Read every block on EBS volumes restored from snapshots to pre-warm them before running your tests.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Encrypt the underlying EBS volume before testing to ensure stability.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Back up EBS volumes by creating snapshots prior to each test.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question51",
+  "originalQuery": "As part of your continuous deployment process, your application undergoes an I/O load performance test before being deployed to production using new AMIs.\nThe application uses one Amazon Elastic Block Store (EBS) PIOPS volume per instance and requires consistent I/O performance.\nWhich of the following must be carried out to ensure that I/O load performance tests yield the correct results in a repeatable manner?",
+  "originalOptions": "[\"A. Ensure that the I/O block sizes for the test are randomly selected.\",\"B. Ensure that the Amazon EBS volumes restored from snapshots have been pre-warmed by reading all the blocks before the test.\",\"C. Ensure that snapshots of the Amazon EBS volumes are created as a backup.\",\"D. Ensure that the Amazon EBS volume is encrypted.\"]",
+  "video_url": "https://certificationation.com/videos/exam-process-your-application-undergoes-an-exam-388.html",
+  "url": "https://certificationation.com/questions/exam-process-your-application-undergoes-an-exam-388.html"
+}

@@ -1,0 +1,82 @@
+---
+title: "When designing a scalable and highly available cloudExam"
+description: "Video for when designing a scalable and highly available cloud database solution using Google Cloud Spanner, which of the following strategies would be most"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "When designing a scalable and highly available cloud database solution using Google Cloud Spanner, which of the following strategies would be most effective in ensuring optimal performance and consistency for a global e-commerce application with high read and write requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "SkyVoyage, a worldwide travel booking platform, is adopting Cloud Spanner to power its reservations system. Customers operate from North America, Europe, and Asia, and the system must handle sustained heavy reads and writes while maintaining strong consistency and high availability. Which deployment approach should you implement to deliver consistent performance and reliability across these regions?",
+  "options": [
+    {
+      "text": "Operate multiple regional Cloud Spanner instances and replicate data between them with Cloud Dataflow",
+      "explanation": "This uses streaming pipelines to copy changes between separate regional databases in different locations.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Deploy a single multi-region Cloud Spanner instance and add read-only replicas to serve most queries",
+      "explanation": "This adds read-only replicas in a multi-region setup so that low-latency reads can be served from nearby locations.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create one multi-region Cloud Spanner instance with read write replicas across regions and have clients route to the closest replicas by user location",
+      "explanation": "This uses a multi-region configuration that maintains read write replicas and lets clients select nearby replicas for requests.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Provision a single regional Cloud Spanner instance and front it with Cloud CDN to cache hot records",
+      "explanation": "This places a caching layer in front of a single-region database to speed up frequently accessed content.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct approach is <b>Create one multi-region Cloud Spanner instance with read write replicas across regions and have clients route to the closest replicas by user location</b>. This configuration provides globally distributed read write replicas with synchronous replication and quorum that delivers strong consistency and automatic regional failover for high availability.</p><p>A multi region Cloud Spanner deployment with read write replicas ensures every write is synchronously replicated and committed by a majority of replicas. This preserves global transactional consistency and delivers predictable performance during sustained heavy reads and writes. Spanner automatically fails over if a region becomes unavailable which maintains service continuity.</p><p>Routing clients to the nearest read write replica reduces read latency and spreads load across regions. Spanner coordinates writes through a leader but the system is designed to minimize the impact of interregional coordination and you can use leader placement to align with where most writes originate.</p><p><i>Operate multiple regional Cloud Spanner instances and replicate data between them with Cloud Dataflow</i> is incorrect because it would rely on asynchronous pipelines that cannot preserve global transactional semantics. It introduces eventual consistency, complex conflict resolution, and operational risk during failover.</p><p><i>Deploy a single multi-region Cloud Spanner instance and add read-only replicas to serve most queries</i> is incorrect because read only replicas do not serve zero staleness strong reads and they cannot process writes. This fails the requirement for strong consistency for most queries and does not address heavy write workloads.</p><p><i>Provision a single regional Cloud Spanner instance and front it with Cloud CDN to cache hot records</i> is incorrect because a CDN caches HTTP content and cannot guarantee transactional correctness or timely invalidation for frequent writes. A single region instance also cannot provide the global availability and latency needed across North America, Europe, and Asia.</p>",
+  "batch_id": "54",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "When designing a scalable and highly available cloud database solution using Google Cloud Spanner, which of the following strategies would be most effective in ensuring optimal performance and consistency for a global e-commerce application with high read and write requirements?",
+  "originalOptions": "A. Create a single Cloud Spanner instance with multi-regional configuration, and use read replicas for read-heavy workloads.<br/>B. Create a multi-regional Cloud Spanner instance with multiple read-write replicas and configure load balancing based on user location.<br/>C. Use multiple regional Cloud Spanner instances with read replicas and configure synchronization between instances.<br/>D. Create a single Cloud Spanner instance with one regional configuration, and enable Cloud CDN for caching.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "316",
+  "tip": "<p>When a question asks for global strong consistency and high availability under heavy reads and writes, look for multi region <i>read write</i> replicas in Cloud Spanner. Be cautious when you see <i>read only replicas</i> or external replication tools because they typically imply staleness or eventual consistency.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/instance-configurations",
+    "https://cloud.google.com/spanner/docs/replication",
+    "https://cloud.google.com/spanner/docs/overview#high-availability",
+    "https://cloud.google.com/spanner/docs/leader-placement",
+    "https://cloud.google.com/spanner/docs/reads#stale_reads",
+    "https://cloud.google.com/cdn/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-highly-available-cloud-database-solution-exam-316.html",
+  "video_url": "https://certificationation.com/videos/exam-highly-available-cloud-database-solution-exam-316.html"
+}

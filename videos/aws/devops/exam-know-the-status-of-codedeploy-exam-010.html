@@ -1,0 +1,62 @@
+---
+title: "The Development Lead wants to know the status ofExam"
+description: "Video for the Development Lead wants to know the status of CodeDeploy in time such as DeploymentStart, DeploymentSuccess or DeploymentFailure for the deployment"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "The Development Lead wants to know the status of CodeDeploy in time such as DeploymentStart, DeploymentSuccess or DeploymentFailure for the deployment of an autoscaling group. One DevOps engineer is in charge of this task. He needs to make sure that most of the major CodeDeploy activities are monitored and the Development Lead is notified in a suitable manner. What below method should the DevOps engineer use to meet the Development Lead's need in a straightforward way?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The most straightforward method is to use <b>AWS CodeDeploy triggers with SNS topics</b>, as described in the first option. CodeDeploy natively supports event-based triggers that can be set for events like DeploymentStart, DeploymentSuccess, and DeploymentFailure. These triggers can notify an SNS topic, which then forwards alerts directly to subscribers via SMS or email, ensuring the development lead gets real-time updates in a simple setup.</p><p>The other options are not ideal for this scenario:</p><ul><li><i>Establish a new AWS CloudTrail to log CodeDeploy API invocations, allowing the development lead to review deployment status by filtering for relevant events in the CloudTrail console or CLI.</i> - While CloudTrail records API calls, it is designed for audit trails rather than real-time notifications. The development lead would need to manually filter and interpret logs, making this solution inefficient for immediate alerts.</li><li><i>Configure AWS Config to monitor all CodeDeploy events and subscribe an SNS topic to these configuration changes so the development lead is informed of deployment activities.</i> - AWS Config tracks resource configurations and compliance, but it does not granularly monitor deployment events like CodeDeploy triggers do. It's not intended for real-time operational event tracking.</li><li><i>Enable CodeDeploy metrics to be sent to CloudWatch, set up an alarm that triggers upon deployment failures, and have the alarm notify the development lead through an attached SNS topic.</i> - CloudWatch can notify on certain metrics, but won't cover specific deployment stages like DeploymentStart or DeploymentSuccess, making this less comprehensive and direct compared to CodeDeploy triggers.</li></ul><p><b>Tip:</b> For real-time tracking and notifications of deployment events in CodeDeploy, always consider leveraging CodeDeploy triggers with SNS, as it requires fewer steps and provides native support for notification workflows.</p>",
+  "query": "<p>A software development lead requires timely updates on events such as DeploymentStart, DeploymentSuccess, or DeploymentFailure when CodeDeploy is used to deploy applications to an autoscaling group.<br/>A DevOps engineer is assigned the task and must guarantee the major CodeDeploy actions are tracked and that the development lead receives timely notifications through a convenient channel.<br/>Which of the following is the simplest and most direct approach the DevOps engineer should take?</p>",
+  "original_oid": "6793da7961969b416038a214",
+  "options": [
+    {
+      "correct": true,
+      "text": "Set up an AWS CodeDeploy trigger that sends notifications to an Amazon SNS topic for relevant deployment events. The development lead can subscribe to this topic and get alerts via their preferred communication method such as email or SMS.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Establish a new AWS CloudTrail to log CodeDeploy API invocations, allowing the development lead to review deployment status by filtering for relevant events in the CloudTrail console or CLI.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Configure AWS Config to monitor all CodeDeploy events and subscribe an SNS topic to these configuration changes so the development lead is informed of deployment activities.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Enable CodeDeploy metrics to be sent to CloudWatch, set up an alarm that triggers upon deployment failures, and have the alarm notify the development lead through an attached SNS topic.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question420",
+  "originalQuery": "The Development Lead wants to know the status of CodeDeploy in time such as DeploymentStart, DeploymentSuccess or DeploymentFailure for the deployment of an autoscaling group.\nOne DevOps engineer is in charge of this task.\nHe needs to make sure that most of the major CodeDeploy activities are monitored and the Development Lead is notified in a suitable manner.\nWhat below method should the DevOps engineer use to meet the Development Lead's need in a straightforward way?",
+  "originalOptions": "[\"A. AWS Config should be used as it is able to show the status of every CodeDeploy activity. One SNS topic can be used to subscribe to the CodeDeploy activities in AWS Config to get the development lead notified.\",\"B. CodeDeploy is able to pass all its status to Cloudwatch metrics including CodeDeploy start, stop or pause. Create an alarm in the CodeDeploy metrics such as when a CodeDeploy failure happens. And then subscribe this alarm to an existing SNS topic. The SNS topic is responsible for notifying the development lead by email or SMS.\",\"C. Create a new Cloudtrail and use it to record all the CodeDeploy API calls. When a CodeDeploy activity happens, the development lead will be able to see the details for the CodeDeploy status. He can then filter the CodeDeploy specific events in the Cloudtrail console/CLI and understand the running status.\",\"D. The DevOps engineer should create a trigger in AWS CodeDeploy that publishes an Amazon Simple Notification Service (Amazon SNS) topic for the relevant AWS CodeDeploy deployment event. Then, when that event occurs, all subscribers to the associated topic will receive notifications through the endpoint specified in the topic, such as an SMS message or email message to the development lead.\"]",
+  "video_url": "https://certificationation.com/videos/exam-know-the-status-of-codedeploy-exam-010.html",
+  "url": "https://certificationation.com/questions/exam-know-the-status-of-codedeploy-exam-010.html"
+}

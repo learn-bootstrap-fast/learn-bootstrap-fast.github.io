@@ -1,0 +1,73 @@
+---
+title: "Your customer is willing to consolidate their logExam"
+description: "Video for your customer is willing to consolidate their log streams, access logs, application logs, security logs, etc. in one single system. Once consolidated,"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your customer is willing to consolidate their log streams, access logs, application logs, security logs, etc. in one single system. Once consolidated, the customer wants to analyze these logs in real-time based on heuristics. From time to time, the customer needs to validate heuristics, which requires going back to data samples extracted from the last 12 hours? What is the best approach to meet your customer's requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d595f501ee1c8ade97d1"
+  },
+  "quid": "0",
+  "ordinal": "134",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "Amazon Kinesis",
+    " Amazon EMR",
+    " Amazon S3",
+    " Amazon EC2"
+  ],
+  "slug": "cl-analyze-log-streams-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question134",
+  "title": "AWS Your Customer Is Willing To Consolidate Question",
+  "meta": "AWS Exam Question: Your customer wants to consolidate and analyze logs in real-time and validate heuristics with data samples from the last 12 hours. Answer: AWS CloudWatch.",
+  "answer": "B",
+  "query": "A company wants to aggregate logs from various sources including database logs, network logs, and application logs into a unified platform. They need to perform immediate analysis using heuristics and occasionally revert to log data from the preceding 10 hours for verification. Which solution best fulfills these requirements?",
+  "originalQuery": "Your customer is willing to consolidate their log streams, access logs, application logs, security logs, etc.\nin one single system.\nOnce consolidated, the customer wants to analyze these logs in real-time based on heuristics.\nFrom time to time, the customer needs to validate heuristics, which requires going back to data samples extracted from the last 12 hours? What is the best approach to meet your customer's requirements?",
+  "options": [
+    "A. Dispatch every log event to Amazon SQS. Deploy an Auto Scaling cluster of EC2 instances to consume and analyze the logs using heuristics.",
+    "B. Send all the log events to Amazon Kinesis. Develop a client process to apply heuristics to the logs.",
+    "C. Use Amazon CloudTrail for collecting custom logs and utilize EMR for heuristic analysis on these logs.",
+    "D. Establish an Auto Scaling group of EC2 servers for Syslog collection, store logs on S3, and run heuristic analysis via EMR."
+  ],
+  "originalOptions": [
+    "A. Send all the log events to Amazon SQS. Setup an Auto Scaling group of EC2 servers to consume the logs and apply the heuristics.",
+    "B. Send all the log events to Amazon Kinesis. Develop a client process to apply heuristics to the logs.",
+    "C. Configure Amazon Cloud Trail to receive custom logs and use EMR to apply heuristics to the logs.",
+    "D. Setup Auto Scaling group of EC2 Syslog servers and store the logs S3 use EMR to apply heuristics on the logs."
+  ],
+  "image": "https://eaeastus2.blob.core.windows.net/optimizedimages/static/images/AWS-Certified-Solutions-Architect-Professional/answer/imgquestions_gr5jch.png",
+  "primaryObjective": "2: Design for New Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Answer - B.\nWhenever the scenario - just like this one - wants to do real-time processing of a stream of data, always think about Amazon Kinesis.\nAlso, remember that the records of the stream are available for 24 hours.\nOption A is incorrect because SQS is not used for real-time processing of the stream of data.\nOption B is CORRECT because Amazon Kinesis is best suited for applying the real-time processing of the stream of data.\nAlso, the records of the stream are available for 24 hours in Kinesis.\nOption C is incorrect because CloudTrail is not used to process the real-time data processing, and EMR is used for batch-processing.\nOption D is incorrect because setting autoscaling of EC2 instances is not cost-effective, and EMR is used for batch-processing.\nMore information on Amazon Kinesis:\nAmazon Kinesis is a platform for streaming data on AWS, making it easy to load and analyze streaming data and provide the ability to build custom streaming data applications for specialized needs.\nUse Amazon Kinesis Streams to collect and process large streams of data records in real-time.\nUse Amazon Kinesis Firehose to deliver real-time streaming data to destinations such as Amazon S3 and Amazon Redshift.\nUse Amazon Kinesis Analytics to process and analyze streaming data with standard SQL.\nFor more information on Kinesis, please visit the below URL-\nhttps://aws.amazon.com/documentation/kinesis/\nThe best approach to meet the customer's requirements is option B, which is to send all the log events to Amazon Kinesis and develop a client process to apply heuristics to the logs.\nAmazon Kinesis is a fully managed service that can handle large volumes of streaming data in real-time. It can receive and process data continuously from various sources, such as log files, IoT devices, social media feeds, and more. Kinesis can also store the data for up to 7 days and provide real-time analytics for the incoming data streams.\nSending all the log events to Amazon Kinesis will allow the customer to consolidate their log streams into one single system. The Kinesis client process can apply heuristics to the logs in real-time, allowing for immediate analysis and detection of any issues or anomalies. Kinesis can also scale automatically based on the incoming data volume, ensuring that the customer can handle any spikes in data traffic.\nIn addition, Kinesis can be used to store the logs for up to 7 days, which can be accessed for further analysis or validation of heuristics. This meets the customer's requirement of going back to data samples extracted from the last 12 hours, as they can retrieve the necessary logs from Kinesis.\nOption A, sending all the log events to Amazon SQS and setting up an Auto Scaling group of EC2 servers to consume the logs and apply the heuristics, is not the best approach because SQS is a message queuing service, and is not designed for real-time processing of streaming data. Using EC2 servers to consume the logs can also be inefficient and costly.\nOption C, configuring Amazon Cloud Trail to receive custom logs and using EMR to apply heuristics to the logs, is not the best approach because Cloud Trail is primarily used for auditing and monitoring API calls made in AWS, and not for collecting and processing application logs or other types of logs.\nOption D, setting up an Auto Scaling group of EC2 Syslog servers and storing the logs in S3, and using EMR to apply heuristics on the logs, is not the best approach because it requires managing and scaling the EC2 servers manually, which can be time-consuming and costly. In addition, S3 is not designed for real-time processing of streaming data, and EMR may not be the best tool for real-time analysis of logs.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-their-log-streams-access-logs-exam-081.html",
+  "url": "https://certificationation.com/questions/exam-their-log-streams-access-logs-exam-081.html"
+}

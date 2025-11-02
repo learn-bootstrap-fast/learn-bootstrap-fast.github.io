@@ -1,0 +1,80 @@
+---
+title: "Your company has recently experienced a significantExam"
+description: "Video for your company has recently experienced a significant increase in database read requests, which has led to slower response times and occasional"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company has recently experienced a significant increase in database read requests, which has led to slower response times and occasional timeouts. You want to quickly identify and address such issues in the future. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "An online retailer at example.com runs its production workload on Cloud SQL for PostgreSQL. During a weekend promotion the volume of read queries tripled and users saw slow pages and some timeouts. You want a rapid way to detect this condition as it starts so that engineers can respond before it worsens. What should you do?",
+  "options": [
+    {
+      "text": "Create a Cloud Function that polls the database every minute and writes high read latency values to logs",
+      "explanation": "This uses a scheduled serverless function to query a latency metric and record the results for later review",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable Cloud SQL Insights and rely on its dashboards to spot spikes in read latency",
+      "explanation": "This activates performance insights for Cloud SQL to visualize query behavior and timing inside the console",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure a Cloud Monitoring alert on read latency with a defined threshold",
+      "explanation": "This sets an alerting policy that fires when the database read latency metric exceeds the chosen limit and can notify on-call staff",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Increase the database instance size to handle additional read operations",
+      "explanation": "This scales up the resources of the Cloud SQL instance to provide more CPU and memory for heavier read traffic",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct answer is <b>Configure a Cloud Monitoring alert on read latency with a defined threshold</b>.</p><p>This approach gives you proactive and fast detection. It evaluates the Cloud SQL read latency metric against a threshold and triggers notifications when the condition starts to breach. Engineers are alerted quickly and can act before slow pages and timeouts become widespread.</p><p><i>Enable Cloud SQL Insights and rely on its dashboards to spot spikes in read latency</i> is not sufficient for rapid detection. Insights helps with query performance analysis and dashboards but it requires someone to be watching and it does not notify on its own.</p><p><i>Create a Cloud Function that polls the database every minute and writes high read latency values to logs</i> is a custom and fragile solution. It adds overhead to the database and introduces delays and logs alone do not alert anyone unless you also build and maintain separate alerting which duplicates what managed monitoring already provides.</p><p><i>Increase the database instance size to handle additional read operations</i> attempts to mitigate load rather than detect it early. It does not provide proactive notification and it may be unnecessary if other strategies like read replicas or caching are used. The question asks for rapid detection so this does not meet the requirement.</p>",
+  "batch_id": "233",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "Your company has recently experienced a significant increase in database read requests, which has led to slower response times and occasional timeouts. You want to quickly identify and address such issues in the future. What should you do?",
+  "originalOptions": "A. Export database logs to Cloud Storage and analyze them daily for high read latency events.<br/>B. Configure a Cloud Monitoring alert that triggers when the database read latency exceeds a specified threshold.<br/>C. Use Cloud Functions to periodically check the database read latency and log any high values.<br/>D. Increase the provisioned capacity of the database to accommodate the increased read requests.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "198",
+  "tip": "<p>When a question asks for rapid detection prefer a native <i>alert</i> on the most relevant metric with a clear <i>threshold</i>. Dashboards and custom polling help analysis but are not <i>proactive</i>.</p>",
+  "references": [
+    "https://cloud.google.com/monitoring/alerts/using-alerting-policy",
+    "https://cloud.google.com/monitoring/api/metrics_sql",
+    "https://cloud.google.com/sql/docs/monitoring",
+    "https://cloud.google.com/sql/docs/postgres/insights/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-significant-increase-in-database-read-exam-198.html",
+  "video_url": "https://certificationation.com/videos/exam-significant-increase-in-database-read-exam-198.html"
+}

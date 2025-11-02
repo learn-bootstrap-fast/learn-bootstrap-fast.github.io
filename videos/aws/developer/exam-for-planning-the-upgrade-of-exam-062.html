@@ -1,0 +1,81 @@
+---
+title: "A Database Engineer is responsible for planning theExam"
+description: "Video for a Database Engineer is responsible for planning the upgrade of a Cloud Memorystore for Redis instance to meet new performance requirements. The"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A Database Engineer is responsible for planning the upgrade of a Cloud Memorystore for Redis instance to meet new performance requirements. The engineer must ensure that the upgrade results in a minimum performance improvement of 50% while maintaining data consistency and minimizing downtime. Which of the following strategies is the most appropriate for achieving these objectives?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "At Riverbend Games a database engineer must plan a capacity change for a Cloud Memorystore for Redis Standard Tier instance to satisfy new performance objectives. The plan must deliver at least a 60% increase in throughput while preserving data consistency and keeping downtime to a minimum. Which approach should be used?",
+  "options": [
+    {
+      "text": "Create a new Cloud Memorystore for Redis instance in a larger tier migrate the data to it and then point the application to the new endpoint",
+      "explanation": "This option builds a separate larger instance and transfers keys before switching clients to the new service endpoint",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable read replicas on the current Cloud Memorystore for Redis instance to distribute read traffic while keeping the same tier",
+      "explanation": "This approach adds replicas to offload read operations from the primary instance without changing the original instance tier",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Resize the existing Cloud Memorystore for Redis instance to a higher capacity tier in place during a planned maintenance window",
+      "explanation": "This method increases the resources of the same managed instance through an in place scale up that is orchestrated by the service",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Export data to Cloud Storage create a larger Cloud Memorystore for Redis instance import the data into it and then cut over the application",
+      "explanation": "This path uses an export and import workflow around a newly provisioned instance followed by an application endpoint change",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct approach is <b>Resize the existing Cloud Memorystore for Redis instance to a higher capacity tier in place during a planned maintenance window</b>.</p><p>This approach vertically scales the managed Redis instance which increases available CPU and network resources and raises connection limits. That directly boosts throughput to meet the new objective while Memorystore orchestrates the change on the same endpoint. Performing the change during a maintenance window lets you control timing and minimize the brief disruption while preserving data consistency because the service manages failover and state.</p><p><i>Create a new Cloud Memorystore for Redis instance in a larger tier migrate the data to it and then point the application to the new endpoint</i> introduces a cutover to a new endpoint and requires data migration that is not natively replicated between instances. This increases downtime risk and complicates consistency during the switch.</p><p><i>Enable read replicas on the current Cloud Memorystore for Redis instance to distribute read traffic while keeping the same tier</i> is not viable because Memorystore for Redis does not offer user accessible read replicas. The high availability replica in Standard Tier is not readable and therefore this would not deliver the required throughput increase.</p><p><i>Export data to Cloud Storage create a larger Cloud Memorystore for Redis instance import the data into it and then cut over the application</i> relies on export and import workflows that are disruptive and typically require application write pauses or downtime to maintain consistency. This does not meet the requirement to keep downtime to a minimum.</p>",
+  "batch_id": "324",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "A Database Engineer is responsible for planning the upgrade of a Cloud Memorystore for Redis instance to meet new performance requirements. The engineer must ensure that the upgrade results in a minimum performance improvement of 50% while maintaining data consistency and minimizing downtime. Which of the following strategies is the most appropriate for achieving these objectives?",
+  "originalOptions": "A. Export the data from the Cloud Memorystore for Redis instance, create a new instance with a larger capacity tier, import the data, and then switch the application to use the new instance.<br/>B. Create a new Cloud Memorystore for Redis instance with a larger capacity tier, migrate the data, and then switch the application to use the new instance.<br/>C. Implement horizontal partitioning in the existing Cloud Memorystore for Redis instance to distribute the data across multiple keys.<br/>D. Upgrade the Cloud Memorystore for Redis instance to a larger capacity tier.",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "62",
+  "tip": "<p>When a question asks for a large performance increase with minimal downtime and consistent data, favor managed <i>in place</i> scaling that keeps the same endpoint. Be wary of answers that require export and import or enabling <i>read replicas</i> on services that do not support them.</p>",
+  "references": [
+    "https://cloud.google.com/memorystore/docs/redis/overview",
+    "https://cloud.google.com/memorystore/docs/redis/tiers",
+    "https://cloud.google.com/memorystore/docs/redis/quotas-limits",
+    "https://cloud.google.com/memorystore/docs/redis/import-export",
+    "https://cloud.google.com/memorystore/docs/redis/update-instance"
+  ],
+  "url": "https://certificationation.com/questions/exam-for-planning-the-upgrade-of-exam-062.html",
+  "video_url": "https://certificationation.com/videos/exam-for-planning-the-upgrade-of-exam-062.html"
+}

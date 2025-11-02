@@ -1,0 +1,80 @@
+---
+title: "In a Google Cloud environment, you are tasked withExam"
+description: "Video for in a Google Cloud environment, you are tasked with deploying a highly available database system for an e-commerce application. Which of the following"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "In a Google Cloud environment, you are tasked with deploying a highly available database system for an e-commerce application. Which of the following options is the best method to achieve high availability for your database?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Your team at scrumtuous.com is migrating a MySQL backend for an online ticketing service to Google Cloud. You need high availability within a single region with automatic failover across zones, an RPO of zero, and about 99.95% uptime while keeping operational work minimal. Which approach should you implement?",
+  "options": [
+    {
+      "text": "Use Cloud Firestore in Datastore mode with a multi-region configuration",
+      "explanation": "This is a fully managed NoSQL document database that can distribute data across regions and abstracts replica management",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Cloud Bigtable configured as a multi-cluster instance in one region",
+      "explanation": "This is a managed wide column store that supports very large scale workloads and offers replication features for throughput and availability",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a Cloud SQL for MySQL instance configured as a regional high availability deployment that uses synchronous replication and automatic failover",
+      "explanation": "This provides a managed MySQL service with a primary and standby in different zones that use synchronous replication for zero RPO and automatic failover",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Run MySQL on Compute Engine with self-managed replicas and a custom failover process",
+      "explanation": "This gives full control of the database servers but requires you to design, maintain, and test replication and failover procedures",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Create a Cloud SQL for MySQL instance configured as a regional high availability deployment that uses synchronous replication and automatic failover</b>.</p><p><b>Cloud SQL regional high availability for MySQL</b> places a primary and standby in separate zones within the same region and uses synchronous replication so committed transactions are on both nodes. This gives an RPO of zero. The service provides automatic failover which minimizes downtime and the managed nature of the service keeps operational work low. Google offers a 99.95 percent monthly uptime SLA for <b>Cloud SQL high availability</b> which matches the requirement.</p><p><i>Use Cloud Firestore in Datastore mode with a multi-region configuration</i> is not appropriate because it is a NoSQL document database and not a MySQL compatible relational engine. It would require significant application changes and does not meet the requirement to migrate a MySQL backend.</p><p><i>Use Cloud Bigtable configured as a multi-cluster instance in one region</i> is not suitable because Bigtable is a wide column NoSQL database and does not support MySQL or SQL semantics. Its replication is eventually consistent which does not guarantee an RPO of zero.</p><p><i>Run MySQL on Compute Engine with self-managed replicas and a custom failover process</i> increases operational burden and complexity. Achieving synchronous replication with reliable automatic failover is difficult to build and maintain and there is no managed SLA comparable to the 99.95 percent target from the managed service.</p>",
+  "batch_id": "123",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "In a Google Cloud environment, you are tasked with deploying a highly available database system for an e-commerce application. Which of the following options is the best method to achieve high availability for your database?",
+  "originalOptions": "A. Use Cloud Firestore in Datastore mode for a fully managed NoSQL database.<br/>B. Deploy a self-managed MySQL instance on a Compute Engine instance with manual replication and failover.<br/>C. Deploy a Cloud SQL instance with synchronous replication and automatic failover.<br/>D. Use Cloud Bigtable with regional replication for a managed wide-column database.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "118",
+  "tip": "<p>Look for keywords like <i>RPO of zero</i>, <i>automatic failover across zones</i>, and <i>minimal operations</i>. These usually point to a managed regional HA service such as <i>Cloud SQL HA for MySQL</i> rather than self managed or NoSQL options.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/high-availability",
+    "https://cloud.google.com/sql/sla",
+    "https://cloud.google.com/bigtable/docs/replication-overview",
+    "https://cloud.google.com/firestore/docs/datastore-mode"
+  ],
+  "url": "https://certificationation.com/questions/exam-you-are-tasked-with-deploying-exam-118.html",
+  "video_url": "https://certificationation.com/videos/exam-you-are-tasked-with-deploying-exam-118.html"
+}

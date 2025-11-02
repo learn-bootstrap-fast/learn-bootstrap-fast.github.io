@@ -1,0 +1,128 @@
+---
+title: "A company recently deployed a new auditing system toExam"
+description: "Video for a company recently deployed a new auditing system to centralize information about operating system versions, patching, and installed software for"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company recently deployed a new auditing system to centralize information about operating system versions, patching, and installed software for Amazon EC2 instances. A solutions architect must ensure all instances provisioned through EC2 Auto Scaling groups successfully send reports to the auditing system as soon as they are launched and terminated. Which solution achieves these goals MOST efficiently?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729ade"
+  },
+  "quid": null,
+  "ordinal": "377",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS Lambda",
+    " EC2 Auto Scaling",
+    " Amazon EC2",
+    " AWS Auto Scaling",
+    " AWS Systems Manager"
+  ],
+  "slug": "ec2-deployed-auditing-system-aws",
+  "source": "ET",
+  "title": "AWS A Company Recently Deployed A New Auditing Question",
+  "meta": "AWS Exam Question: A company deployed an auditing system for EC2 instances. How can Auto Scaling groups efficiently send reports? Find the answer.",
+  "answer": "B",
+  "query": "An organization has introduced a new monitoring system to collect details on software versions, updates, and system configurations for its Amazon EC2 instances. A solutions architect needs to guarantee that all instances created via EC2 Auto Scaling groups promptly report to the monitoring system when they are started and stopped.\n\nWhat is the MOST efficient solution to accomplish this?",
+  "originalQuery": "A company recently deployed a new auditing system to centralize information about operating system versions, patching, and installed software for Amazon EC2 instances. A solutions architect must ensure all instances provisioned through EC2 Auto Scaling groups successfully send reports to the auditing system as soon as they are launched and terminated.\n\nWhich solution achieves these goals MOST efficiently?",
+  "options": [
+    "A. Schedule an AWS Lambda function to execute a script on all EC2 instances to report data to the auditing system.",
+    "B. Use EC2 Auto Scaling lifecycle hooks to run a custom script to send data to the audit system when instances are launched and terminated.",
+    "C. Apply an EC2 Auto Scaling launch configuration to execute a script via user data for sending data to the audit system.",
+    "D. Execute a custom script on the operating system of the instance to report data to the audit system, having it triggered by the EC2 Auto Scaling group upon instance start and termination."
+  ],
+  "originalOptions": [
+    "A. Use a scheduled AWS Lambda function and run a script remotely on all EC2 instances to send data to the audit system.",
+    "B. Use EC2 Auto Scaling lifecycle hooks to run a custom script to send data to the audit system when instances are launched and terminated.",
+    "C. Use an EC2 Auto Scaling launch configuration to run a custom script through user data to send data to the audit system when instances are launched and terminated.",
+    "D. Run a custom script on the instance operating system to send data to the audit system. Configure the script to be invoked by the EC2 Auto Scaling group when the instance starts and is terminated."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "The optimal approach for this scenario involves utilizing EC2 Auto Scaling lifecycle hooks to execute a custom script that transmits data to the auditing system during instance launch and termination events. Lifecycle hooks facilitate a controlled delay in instance termination, allowing sufficient time for the script to complete its execution and ensuring that all relevant data is transmitted to the auditing system before the instance is shut down. \n\nThis method surpasses the efficiency of scheduling an AWS Lambda function, which operates on a periodic basis and may miss instances that are launched or terminated between function executions. Additionally, leveraging user data to execute a custom script does not guarantee comprehensive data reporting, as it relies on the successful completion of the script at startup without a mechanism to confirm data transmission before termination. \n\nThus, employing lifecycle hooks provides a more reliable and efficient solution for ensuring that all EC2 instances effectively report data to the auditing system.",
+    "Amazon EC2 Auto Scaling provides a nifty feature known as lifecycle hooks! 🎉 These hooks allow you to craft solutions that respond to events within the lifecycle of your Auto Scaling instances. When a specific lifecycle event occurs, you can trigger a custom action on the instances, ensuring that your system is always in the loop. So, whether you’re launching or terminating instances, these hooks help you keep everything organized and informed! 🌟 For more details, check out the AWS documentation on lifecycle hooks. (https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html)",
+    "Option C, involving a launch configuration, isn't exactly the superhero solution we need here. It has a notable Achilles' heel: it can’t automatically manage instance termination. So while it might get the job done when launching new instances, it leaves us hanging when it's time to say goodbye. To ensure that both the launch and termination of instances are seamlessly reported to the auditing system, we need a more comprehensive approach.",
+    "Leverage EC2 Auto Scaling lifecycle hooks to execute a custom script that transmits data to the auditing system whenever instances are launched or terminated. This approach ensures real-time reporting and enhances the efficiency of the auditing process, allowing for seamless integration and timely updates to the centralized information system. It's an excellent way to maintain accurate oversight of operations while optimizing resource management!",
+    "EC2 Auto Scaling lifecycle hooks provide a delightful way to execute custom actions whenever instances are launched or terminated. By leveraging these hooks, you can efficiently initiate the auditing script right at the moment an instance comes to life or bids farewell. It's a smart and seamless approach to keep everything in sync with your auditing system! 🌟"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "B",
+      "explanation": "The most efficient solution for this scenario is to use EC2 Auto Scaling lifecycle hooks to run a custom script to send data to the audit system when instances are launched and terminated. The lifecycle hook can be used to delay instance termination until the script has completed, ensuring that all data is sent to the audit system before the instance is terminated. This solution is more efficient than using a scheduled AWS Lambda function, which would require running the function periodically and may not capture all instances launched and terminated within the interval. Running a custom script through user data is also not an optimal solution, as it may not guarantee that all instances send data to the audit system. Therefore, option B is the correct answer.",
+      "upvotes": "11"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "Amazon EC2 Auto Scaling offers the ability to add lifecycle hooks to your Auto Scaling groups. These hooks let you create solutions that are aware of events in the Auto Scaling instance lifecycle, and then perform a custom action on instances when the corresponding lifecycle event occurs. (https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html)",
+      "upvotes": "5"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "C: a **launch** configuration CANNOT handle instance termination automatically.",
+      "upvotes": "1"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "Use EC2 Auto Scaling lifecycle hooks to run a custom script to send data to the audit system when instances are launched and terminated",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "EC2 Auto Scaling lifecycle hooks allow you to perform custom actions as instances launch and terminate. This is the most efficient way to trigger the auditing script execution at instance launch and termination.",
+      "upvotes": "5"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "B (100%)",
+      "votes": "28 votes."
+    },
+    {
+      "option": "C (25%)",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "Option B is correct because EC2 Auto Scaling lifecycle hooks provide a built-in mechanism to perform custom actions on instances when they are launched and terminated. Using lifecycle hooks allows for delaying instance termination until the data reporting script has completed, ensuring reliable data transmission to the audit system. Option A is incorrect as scheduling a Lambda function does not guarantee all instances are reported, as it runs based on time intervals. Option C is incorrect because user data scripts only run at instance launch; they won't help with instance termination. Option D could work but lacks the efficiency and reliability provided by lifecycle hooks, as it relies heavily on the instance's operating system settings rather than Auto Scaling's built-in features.",
+  "video_url": "https://certificationation.com/videos/exam-new-auditing-system-to-centralize-exam-376.html",
+  "url": "https://certificationation.com/questions/exam-new-auditing-system-to-centralize-exam-376.html"
+}

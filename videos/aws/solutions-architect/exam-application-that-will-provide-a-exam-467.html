@@ -1,0 +1,126 @@
+---
+title: "A company is developing a microservices application thatExam"
+description: "Video for a company is developing a microservices application that will provide a search catalog for customers. The company must use REST APIs to present the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company is developing a microservices application that will provide a search catalog for customers. The company must use REST APIs to present the frontend of the application to users. The REST APIs must access the backend services that the company hosts in containers in private VPC subnets. Which solution will meet these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729b39"
+  },
+  "quid": null,
+  "ordinal": "468",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon API Gateway",
+    " Amazon Elastic Container Service (Amazon ECS)",
+    " AWS VPC"
+  ],
+  "slug": "m-app-search-catalog-rest-aws",
+  "source": "ET",
+  "title": "AWS A Company Is Developing A Microservices Application Question",
+  "meta": "AWS Exam Question: A company needs a microservices app with REST APIs accessing backend services in private VPC subnets. What is the answer? Consider ECS and API Gateway.",
+  "answer": "B",
+  "query": "A startup is creating a microservices-based application to offer an inventory management system for its clients. The solution requires the use of REST APIs to deliver the frontend to its users. The REST APIs need to connect with backend services running in containers within private VPC subnets.\n\nWhat solution will fulfill these requirements?",
+  "originalQuery": "A company is developing a microservices application that will provide a search catalog for customers. The company must use REST APIs to present the frontend of the application to users. The REST APIs must access the backend services that the company hosts in containers in private VPC subnets.\n\nWhich solution will meet these requirements?",
+  "options": [
+    "A. Design a WebSocket API by using Amazon API Gateway. Host the application in Amazon Elastic Container Service (Amazon ECS) in a private subnet. Create a private VPC link for API Gateway to access Amazon ECS.",
+    "B. Design a REST API by using Amazon API Gateway. Host the application in Amazon Elastic Container Service (Amazon ECS) in a private subnet. Create a private VPC link for API Gateway to access Amazon ECS.",
+    "C. Create a WebSocket API via Amazon API Gateway. Host the application in Amazon Elastic Container Service (Amazon ECS) within a private subnet. Establish a new security group for API access.",
+    "D. Create a REST API via Amazon API Gateway. Use Amazon Elastic Container Service (Amazon ECS) within a private subnet for hosting the application. Establish a security group for API Gateway to connect to Amazon ECS."
+  ],
+  "originalOptions": [
+    "A. Design a WebSocket API by using Amazon API Gateway. Host the application in Amazon Elastic Container Service (Amazon ECS) in a private subnet. Create a private VPC link for API Gateway to access Amazon ECS.",
+    "B. Design a REST API by using Amazon API Gateway. Host the application in Amazon Elastic Container Service (Amazon ECS) in a private subnet. Create a private VPC link for API Gateway to access Amazon ECS.",
+    "C. Design a WebSocket API by using Amazon API Gateway. Host the application in Amazon Elastic Container Service (Amazon ECS) in a private subnet. Create a security group for API Gateway to access Amazon ECS.",
+    "D. Design a REST API by using Amazon API Gateway. Host the application in Amazon Elastic Container Service (Amazon ECS) in a private subnet. Create a security group for API Gateway to access Amazon ECS."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Utilizing REST APIs with Amazon API Gateway is the optimal approach for implementing the frontend of a microservices application. Amazon API Gateway facilitates the design, deployment, and management of REST APIs, enabling scalability and efficient handling of requests.\n\nDeploying the application within Amazon Elastic Container Service (Amazon ECS) in a private subnet guarantees that the containers are securely maintained within the Virtual Private Cloud (VPC) and are not directly accessible from the public internet, enhancing security measures.\n\nTo allow the REST API in Amazon API Gateway to communicate effectively with the backend services hosted in Amazon ECS, a private VPC link can be established. This VPC link creates a secure, private network connection between the API Gateway and the ECS containers, ensuring that all data transfers occur within the private network without exposure to the public internet, thus maintaining the integrity and confidentiality of the communication.",
+    "Alright, let's clear up this little conundrum! Since the company is required to use REST APIs, we can toss out the WebSocket options faster than you can say \"microservices!\" 🚀 So, options involving WebSocket APIs are not in the running. \n\nNow, let’s focus on the REST API options. The company can host their application in Amazon Elastic Container Service (ECS) within a private subnet, which is a cozy little nook for their backend services. 🌐🛠️ To make sure the API Gateway can access ECS smoothly, they'll need to set up a private VPC link. This way, everything stays secure while still being user-friendly! \n\nIn short, while some options may have tried to sneak in, it’s clear that sticking with the REST API route is the best way to go! 😄",
+    "VPC links are your ticket to crafting private integrations that seamlessly connect your HTTP API routes to hidden gems within a VPC, like Application Load Balancers or applications running on Amazon ECS containers. Think of it as a secret passageway that keeps your backend services secure while still allowing your frontend to strut its stuff.",
+    "The connection should be established from the application to the Amazon Elastic Container Service (ECS) located in the private VPC, rather than from the API Gateway directly to the ECS. The primary role of the API Gateway is to connect to the application, facilitating communication while ensuring that backend services remain secure within the private network. This approach not only simplifies the architecture but also enhances security and performance by maintaining a clear separation between the frontend and backend components.",
+    "Options A and C miss the mark because they focus on WebSocket APIs instead of REST APIs, which is essential for this application. As for option D, it's important to note that rather than creating a security group for the API Gateway to connect directly to Amazon ECS, you should establish a VPC Link for seamless communication. For more insights on setting up VPC Links, you can check out the AWS documentation [here](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-vpc-links.html). 🌟"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "B",
+      "explanation": "REST API with Amazon API Gateway: REST APIs are the appropriate choice for providing the frontend of the microservices application. Amazon API Gateway allows you to design, deploy, and manage REST APIs at scale.\n\nAmazon ECS in a Private Subnet: Hosting the application in Amazon ECS in a private subnet ensures that the containers are securely deployed within the VPC and not directly exposed to the public internet.\n\nPrivate VPC Link: To enable the REST API in API Gateway to access the backend services hosted in Amazon ECS, you can create a private VPC link. This establishes a private network connection between the API Gateway and ECS containers, allowing secure communication without traversing the public internet.",
+      "upvotes": "14"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Question itself says: \"The company must use REST APIs\", hence WebSocket APIs are not applicable and such options are eliminated straight away.",
+      "upvotes": "9"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "\"VPC links enable you to create private integrations that connect your HTTP API routes to private resources in a VPC, such as Application Load Balancers or Amazon ECS container-based applications.\"",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "I think the connection should be from the application to the ECS in the private VPC, instead of from the API Gateway to the ECS in the private VPC. API Gateway only needs to connect to the application...",
+      "upvotes": "1"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "AC are wrong as they are not REST API\nD, you don't make SG for API Gateway to EC2, you have to make a VPC Link. More details at\nhttps://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-vpc-links.html",
+      "upvotes": "5"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "B (100%)",
+      "votes": "36 votes."
+    },
+    {
+      "option": "C (25%)",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is B because it specifically mentions creating a REST API using Amazon API Gateway, which is necessary as the application explicitly requires REST APIs for communication. Additionally, hosting the application on Amazon ECS in a private subnet provides required security by not exposing the containers to the public internet. Lastly, creating a private VPC link allows the API Gateway to communicate securely with ECS backend services. Option A and C incorrectly suggest using WebSocket APIs, which are not suitable for this scenario. Option D is also flawed because it incorrectly mentions using a security group for direct API Gateway access to ECS, instead of utilizing a private VPC link, which is the recommended approach for secure communication.",
+  "video_url": "https://certificationation.com/videos/exam-application-that-will-provide-a-exam-467.html",
+  "url": "https://certificationation.com/questions/exam-application-that-will-provide-a-exam-467.html"
+}

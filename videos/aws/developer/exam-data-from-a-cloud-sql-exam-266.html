@@ -1,0 +1,82 @@
+---
+title: "You have been tasked with replicating data from a CloudExam"
+description: "Video for you have been tasked with replicating data from a Cloud SQL for MySQL instance to a secondary location for disaster recovery purposes. The data in the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have been tasked with replicating data from a Cloud SQL for MySQL instance to a secondary location for disaster recovery purposes. The data in the primary instance is sensitive, and you need to ensure data integrity and encryption during the replication process. Which of the following options should you select?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A compliance lead at mcnz.com needs disaster recovery for a Cloud SQL for MySQL database that runs in us-central1. The dataset is highly sensitive so the replication must protect integrity and use encryption while it copies to a standby instance in europe-west4. What should you implement to meet these requirements?",
+  "options": [
+    {
+      "text": "Use Pub/Sub with Cloud Functions to write changes to a second database",
+      "explanation": "This approach streams messages and has functions insert records into another database but it does not provide database level replication features",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure Cloud SQL native replication and use CMEK",
+      "explanation": "This sets up a Cloud SQL replica in another region using the built in replication capability while using a customer managed key for encryption at rest",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Enable CMEK on the primary Cloud SQL for MySQL instance",
+      "explanation": "This applies customer managed encryption to the storage of the source database but it does not establish any replica",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Datastream",
+      "explanation": "This service captures changes from MySQL and streams them to targets like BigQuery or Cloud Storage rather than creating a Cloud SQL replica",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Configure Cloud SQL native replication and use CMEK</b>.</p><p>Cloud SQL for MySQL supports cross region read replicas that you can place in europe-west4 while the primary remains in us-central1. This native replication keeps data integrity through managed MySQL replication and the service encrypts data in transit. Using customer managed encryption keys ensures that data at rest and backups are encrypted with your own keys in both regions. You create the replica in europe-west4 and supply a key in that region so the standby remains encrypted under your control. This approach gives you a straightforward path to disaster recovery because you can promote the replica if the primary region is unavailable.</p><p><i>Use Pub/Sub with Cloud Functions to write changes to a second database</i> is not a supported or reliable mechanism for MySQL replication. It does not provide ordered transactional consistency and it cannot act as a managed standby for Cloud SQL, which risks data loss and integrity issues.</p><p><i>Enable CMEK on the primary Cloud SQL for MySQL instance</i> does not meet the disaster recovery requirement because it does not create a standby in europe-west4. In addition, CMEK must be configured when an instance is created, so you cannot simply turn it on later for an existing primary, and enabling it on the primary alone would not set up replication.</p><p><i>Datastream</i> is a change data capture service that is commonly used for migrations or analytics pipelines. It does not create a managed MySQL standby in Cloud SQL and it does not provide the simple promotion and failover workflow you need for disaster recovery.</p>",
+  "batch_id": "304",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "You have been tasked with replicating data from a Cloud SQL for MySQL instance to a secondary location for disaster recovery purposes. The data in the primary instance is sensitive, and you need to ensure data integrity and encryption during the replication process. Which of the following options should you select?",
+  "originalOptions": "A. Set up Cloud SQL for MySQL with Customer-Managed Encryption Keys (CMEK).<br/>B. Use Cloud SQL's built-in replication with CMEK.<br/>C. Use Pub/Sub with a Cloud Function to insert data into a secondary database.<br/>D. Use BigQuery Data Transfer Service.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "266",
+  "tip": "<p>When you see cross region disaster recovery for Cloud SQL, look for native read replicas and think about promotion during a regional outage. If the question stresses sensitive data, pair the replica with <i>CMEK</i> and remember CMEK must be chosen at instance creation.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/replication",
+    "https://cloud.google.com/sql/docs/mysql/replication/create-replica",
+    "https://cloud.google.com/sql/docs/mysql/cmek",
+    "https://cloud.google.com/sql/docs/mysql/security-overview",
+    "https://cloud.google.com/sql/docs/mysql/disaster-recovery",
+    "https://cloud.google.com/datastream/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-data-from-a-cloud-sql-exam-266.html",
+  "video_url": "https://certificationation.com/videos/exam-data-from-a-cloud-sql-exam-266.html"
+}

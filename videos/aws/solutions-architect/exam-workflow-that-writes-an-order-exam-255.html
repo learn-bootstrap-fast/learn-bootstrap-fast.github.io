@@ -1,0 +1,128 @@
+---
+title: "A company has an ecommerce checkout workflow that writesExam"
+description: "Video for a company has an ecommerce checkout workflow that writes an order to a database and calls a service to process the payment. Users are experiencing"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company has an ecommerce checkout workflow that writes an order to a database and calls a service to process the payment. Users are experiencing timeouts during the checkout process. When users resubmit the checkout form, multiple unique orders are created for the same desired transaction. How should a solutions architect refactor this workflow to prevent the creation of multiple orders?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729a64"
+  },
+  "quid": null,
+  "ordinal": "255",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS Step Functions",
+    " Amazon Simple Queue Service (Amazon SQS)",
+    " AWS Lambda",
+    " Amazon DynamoDB",
+    " AWS AppConfig"
+  ],
+  "slug": "db-checkout-workflow-timeouts-aws",
+  "source": "ET",
+  "title": "AWS A Company Has An Ecommerce Checkout Workflow Question",
+  "meta": "AWS Exam Question: A company’s ecommerce checkout workflow suffers timeouts and duplicate orders. How should a solutions architect refactor this workflow to prevent duplicates? Answer: AWS Lambda, Amazon RDS.",
+  "answer": "D",
+  "query": "An online retailer has a checkout process that records an order in a database while simultaneously invoking a payment processing service. Customers have reported experiencing delays and timeouts during this process. As a result, when customers attempt to submit the checkout form again, it leads to the creation of duplicate orders for a single transaction.\n\nWhat is the best solution for a solutions architect to redesign this workflow to ensure that only one order is created for each transaction?",
+  "originalQuery": "A company has an ecommerce checkout workflow that writes an order to a database and calls a service to process the payment. Users are experiencing timeouts during the checkout process. When users resubmit the checkout form, multiple unique orders are created for the same desired transaction.\n\nHow should a solutions architect refactor this workflow to prevent the creation of multiple orders?",
+  "options": [
+    "",
+    "",
+    "",
+    ""
+  ],
+  "originalOptions": [
+    "A. Configure the web application to send an order message to Amazon Kinesis Data Firehose. Set the payment service to retrieve the message from Kinesis Data Firehose and process the order.",
+    "B. Create a rule in AWS CloudTrail to invoke an AWS Lambda function based on the logged application path request. Use Lambda to query the database, call the payment service, and pass in the order information.",
+    "C. Store the order in the database. Send a message that includes the order number to Amazon Simple Notification Service (Amazon SNS). Set the payment service to poll Amazon SNS, retrieve the message, and process the order.",
+    "D. Store the order in the database. Send a message that includes the order number to an Amazon Simple Queue Service (Amazon SQS) FIFO queue. Set the payment service to retrieve the message and process the order. Delete the message from the queue."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "To address the challenge of preventing multiple orders from being created during the checkout process, it is advisable to implement a solution that involves storing the order in a database and then sending a message containing the order number to an Amazon Simple Queue Service (Amazon SQS) FIFO queue. The payment processing service should be configured to retrieve messages from this queue for order processing, and subsequently delete the message once processing is complete.\n\nThis methodology effectively decouples the order creation and payment processing stages, ensuring that both actions remain atomic. By utilizing an SQS FIFO queue, the payment service can handle orders sequentially and in the order they were received. In scenarios where the payment service encounters an issue and is unable to process an order immediately, the system can automatically retry processing later, thereby mitigating the risk of generating duplicate orders. \n\nThe deletion of the message from the queue post-processing is crucial, as it prevents the same message from being processed multiple times. It is important to highlight that FIFO queues provide guarantees for message ordering and eliminate the possibility of duplicates, thereby enhancing the reliability of the checkout workflow. This approach not only improves user experience by reducing timeouts and order duplication but also ensures a robust transaction processing system.",
+    "A. Not quite the knight in shining armor for preventing multiple orders! This method doesn't guarantee that orders will be processed in the right order, which is key to keeping things tidy. 🚫⚔️\n\nB. This one's a bit like bringing a butter knife to a sword fight! While CloudTrail is excellent for logging and auditing API activities, triggering a Lambda function based on those logs doesn’t ensure that orders will be processed correctly. 🐢🔍\n\nC. This solution isn't going to win any awards either. While SNS is a nifty publish-subscribe messaging service, relying on it with polling could lead to delays and, you guessed it, those pesky duplicate orders. 📬⏳\n\nD. Now we’re talking! Implementing SQS FIFO is like putting on a seatbelt for your orders. It guarantees that they’re processed in a sequential and reliable manner, ensuring you don’t end up with multiple orders for the same transaction. Buckle up for smooth sailing! 🚀📦",
+    "When the backend is struggling to keep pace, it might be time to introduce a task queue into the mix. This way, instead of overwhelming the system in a frenzy of simultaneous requests, you can gracefully manage the checkout flow. By implementing a queue, each order can be processed in a controlled manner, reducing the risk of timeouts and ensuring that pesky duplicate orders don’t rear their ugly heads. This approach not only boosts reliability but also enhances user experience, allowing for a smoother transaction process without the chaos of multiple submissions.",
+    "To enhance the checkout workflow, first, save the order in the database. Next, send a message containing the order number to an Amazon Simple Queue Service (Amazon SQS) FIFO queue. Configure the payment service to retrieve this message and process the corresponding order. Once the order is processed, the message should be deleted from the queue. This approach ensures that each order is uniquely tracked, effectively preventing duplicate orders while streamlining the payment process.",
+    "To tackle this delightful challenge, we can sprinkle some magic into the workflow! 🌟 By integrating Amazon SQS (Simple Queue Service), we can elegantly decouple the order creation from the payment processing. This means that when a user submits their order, it will be placed in a queue instead of directly writing to the database. The payment service can then gracefully pick up these requests at its own pace, ensuring that no multiple orders are created from a single checkout attempt.\n\nAdditionally, we can introduce a unique order identifier that is generated at the start of the checkout process. This identifier will help keep track of each order and prevent duplicates from sneaking in during those pesky timeouts. Meanwhile, the database will still be there to securely store the order information once the payment is successfully processed. With this cheerful setup, users can enjoy a smoother checkout experience without the worry of multiple orders! 🎉"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "D",
+      "explanation": "D. Store the order in the database. Send a message that includes the order number to an Amazon Simple Queue Service (Amazon SQS) FIFO queue. Set the payment service to retrieve the message and process the order. Delete the message from the queue.\nThis approach ensures that the order creation and payment processing steps are separate and atomic. By sending the order information to an SQS FIFO queue, the payment service can process the order one at a time and in the order they were received. If the payment service is unable to process an order, it can be retried later, preventing the creation of multiple orders. The deletion of the message from the queue after it is processed will prevent the same message from being processed multiple times.\nIt's worth noting that FIFO queues guarantee that messages are processed in the order they are received, and prevent duplicates.",
+      "upvotes": "10"
+    },
+    {
+      "selectedAnswer": "D",
+      "explanation": "A. is not a suitable solution for preventing the creation of multiple orders. This approach does not guarantee the sequential and reliable processing of orders.\n\nB. is not an appropriate solution for preventing the creation of multiple orders. CloudTrail is primarily used for logging and auditing API activity, and invoking a Lambda based on the logged request does not ensure the correct order processing.\n\nC. is not a suitable solution. SNS is a publish-subscribe messaging service, and polling it may result in delayed processing and potential order duplication.\n\nD. is the correct solution. Using an SQS FIFO ensures that the orders are processed in a sequential and reliable manner, preventing the creation of multiple orders for the same transaction.",
+      "upvotes": "7"
+    },
+    {
+      "selectedAnswer": "D",
+      "explanation": "if the backend can not keep up, queue the tasks.",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "D",
+      "explanation": "D. Store the order in the database. Send a message that includes the order number to an Amazon Simple Queue Service (Amazon SQS) FIFO queue. Set the payment service to retrieve the message and process the order. Delete the message from the queue.",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "D",
+      "explanation": "The question is related in breaking down the flow. SQS is go-to choice to decouple & DB will be used to store",
+      "upvotes": "2"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "D (100%)",
+      "votes": "32 votes."
+    },
+    {
+      "option": "C (25%)",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "Option D is the best solution as it utilizes Amazon SQS FIFO queues, which are designed to handle message ordering and duplication prevention. By having the order processing decoupled from the order creation, it reduces the risk of duplicate orders during payment processing failures. The FIFO queue allows for sequential processing of messages and ensures that a message is only processed once, thus preventing duplicate order creation. \n\nOption A is incorrect because Amazon Kinesis Data Firehose does not provide the same guarantees for message ordering or deduplication, making it unsuitable for this scenario. \n\nOption B is incorrect as AWS CloudTrail is primarily for logging API activity and does not handle workflow orchestration directly, leading to potential race conditions and duplicated orders. \n\nOption C is incorrect as Amazon SNS does not provide guaranteed message processing in order and can lead to duplicate processing if messages are not acknowledged properly.",
+  "video_url": "https://certificationation.com/videos/exam-workflow-that-writes-an-order-exam-255.html",
+  "url": "https://certificationation.com/questions/exam-workflow-that-writes-an-order-exam-255.html"
+}

@@ -1,0 +1,62 @@
+---
+title: "The operations team and the development team want aExam"
+description: "Video for the operations team and the development team want a single place to view both operating system and application logs. How should you implement this"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "The operations team and the development team want a single place to view both operating system and application logs. How should you implement this using AWS services?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>Leverage AWS CloudFormation to create a CloudWatch Logs group and configure the CloudWatch Logs Agent on servers to forward both OS and app logs</b> option is the best practice for enabling centralized log visibility for both application and system logs in AWS. With Amazon CloudWatch Logs, you can easily aggregate, monitor, and grant team-based access to your data, while CloudFormation automates setup for consistency and repeatability.</p><p>Let's review why the other choices are not ideal:</p><ul><li><i>Set up remote logging to stream events into Amazon Kinesis, then route these logs to either CloudWatch Events or Amazon Redshift based on analytics needs.</i> — While technically feasible, this option adds unnecessary complexity, does not focus on centralized log viewing, and Kinesis is more suited for real-time streaming analytics than basic log aggregation and viewing.</li><li><i>Utilize AWS CloudFormation in combination with configuration management tools to enable remote logging, sending log events to AWS CloudTrail via UDP.</i> — CloudTrail is designed for API call auditing, not general log aggregation. Additionally, sending events to CloudTrail through UDP isn't a supported mechanism and would not fulfill the requirement.</li><li><i>With AWS CloudFormation, consolidate application logs and system logs, and grant both teams access to log data output via EC2 console using IAM Roles.</i> — Merging logs and accessing them from the EC2 console is neither practical nor scalable and lacks the sophisticated features for searching, alerting, and monitoring that CloudWatch Logs provides.</li></ul><p><b>Tip:</b> Use CloudFormation for resource automation and CloudWatch Logs for centralizing collection and team-based access. Ensure both teams get the right IAM permissions for secure and convenient log access.</p>",
+  "query": "<p>Both your Dev and Ops teams need a centralized location to view operating system and application logs. Which AWS-native approach would allow you to implement this requirement effectively?</p>",
+  "original_oid": "6793d9bb61969b416038a097",
+  "options": [
+    {
+      "correct": false,
+      "text": "Set up remote logging to stream events into Amazon Kinesis, then route these logs to either CloudWatch Events or Amazon Redshift based on analytics needs.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Utilize AWS CloudFormation in combination with configuration management tools to enable remote logging, sending log events to AWS CloudTrail via UDP.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "With AWS CloudFormation, consolidate application logs and system logs, and grant both teams access to log data output via EC2 console using IAM Roles.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Leverage AWS CloudFormation to create a CloudWatch Logs group and configure the CloudWatch Logs Agent on servers to forward both OS and app logs.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question34",
+  "originalQuery": "The operations team and the development team want a single place to view both operating system and application logs.\nHow should you implement this using AWS services?",
+  "originalOptions": "A. Using AWS CloudFormation, create a CloudWatch Logs group and send the operating system and application logs using the CloudWatch Logs Agent.|B. Using AWS CloudFormation and configuration management, set up remote logging to send events via UDP packets to CloudTrail.|C. Set up remote logging to send events to an Amazon Kinesis stream and forward these logs into Amazon CloudWatch Event or Amazon Redshift, depending on available analytic tools.|D. Using AWS CloudFormation, merge the application logs with the operating system logs, and use IAM Roles to allow both teams to have access to view the output from Amazon EC2 console.",
+  "video_url": "https://certificationation.com/videos/exam-team-want-a-single-place-exam-262.html",
+  "url": "https://certificationation.com/questions/exam-team-want-a-single-place-exam-262.html"
+}

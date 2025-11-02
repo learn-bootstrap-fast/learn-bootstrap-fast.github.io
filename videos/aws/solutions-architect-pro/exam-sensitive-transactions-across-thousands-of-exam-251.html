@@ -1,0 +1,76 @@
+---
+title: "Your company stores millions of sensitive transactionsExam"
+description: "Video for your company stores millions of sensitive transactions across thousands of 100-GB files that must be encrypted in-transit and at-rest. Analysts"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company stores millions of sensitive transactions across thousands of 100-GB files that must be encrypted in-transit and at-rest. Analysts concurrently depend on subsets of files, which can consume up to 35 TB of space, to generate simulations that can be used to steer business decisions. You are required to design an AWS solution that can cost-effectively accommodate the long-term storage and in-flight subsets of data. Which one would you choose?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d5f7f501ee1c8ade98c7"
+  },
+  "quid": "0",
+  "ordinal": "383",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "Amazon S3",
+    " Amazon EC2",
+    " Amazon EMR",
+    " Amazon Elastic Block Store (Amazon EBS)",
+    " AWS Backup"
+  ],
+  "slug": "s3-sensitive-transactions-storage-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question383",
+  "title": "AWS Your Company Stores Millions Of Sensitive Transactions Question",
+  "meta": "AWS Exam Question: Design a cost-effective AWS solution for storing millions of sensitive transactions securely in-transit and at-rest. Answer: S3, KMS.",
+  "answer": "D",
+  "query": "A financial firm needs to store billions of encrypted records spread across thousands of 120-GB files. Analysts frequently process subsets totaling as much as 40 TB for predictive modeling to guide company strategy. You must craft a scalable and economic AWS architecture that supports secure, long-term storage and efficient processing of these subsets. What approach should you adopt?",
+  "originalQuery": "Your company stores millions of sensitive transactions across thousands of 100-GB files that must be encrypted in-transit and at-rest.\nAnalysts concurrently depend on subsets of files, which can consume up to 35 TB of space, to generate simulations that can be used to steer business decisions.\nYou are required to design an AWS solution that can cost-effectively accommodate the long-term storage and in-flight subsets of data.\nWhich one would you choose?",
+  "options": [
+    "A. Use Amazon Simple Storage Service (S3) with client-side encryption, and execute simulations on temporary storage on Amazon EC2.",
+    "B. Use Amazon S3 with server-side encryption, and perform analysis on data subsets held in EC2 instance memory.",
+    "C. Use HDFS on Amazon EMR, and execute modeling tasks on temporary storage on Amazon EC2.",
+    "D. Use HDFS on Amazon Elastic MapReduce File System (EMRFS) in conjunction with AWS S3.",
+    "E. Store the full data set in encrypted Amazon Elastic Block Store (EBS) volumes and regularly capture snapshots that can be cloned to EC2 workstations."
+  ],
+  "originalOptions": [
+    "A. Use Amazon Simple Storage Service (S3) with server-side encryption, and run simulations on subsets in ephemeral drives on Amazon EC2.",
+    "B. Use Amazon S3 with server-side encryption, and run simulations on subsets in-memory on Amazon EC2.",
+    "C. Use HDFS on Amazon EMR, and run simulations on subsets in ephemeral drives on Amazon EC2.",
+    "D. Use HDFS on Amazon Elastic MapReduce File System (EMRFS) in conjunction with AWS S3.",
+    "E. Store the full data set in encrypted Amazon Elastic Block Store (EBS) volumes and regularly capture snapshots that can be cloned to EC2 workstations."
+  ],
+  "image": "",
+  "primaryObjective": "2: Design for New Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "E.\nAnswer - D.\nThe main considerations of this scenario are: (1) the solution must be cost-effective, (2) provide long-term storage, and (3) encrypt in-transit as well as at-rest data.\nOption A is incorrect because (a) server-side encryption does not apply to in-transit data, and (b) ephemeral volumes are not encrypted at rest.\nOption B is incorrect.\nYes, Amazon S3 supports server-side encryption, but 35TB in memory not possible because the largest instances have only 25 TB of capacity.\nDue to this, we have to mark this option wrong.\nOption C is incorrect because the ephemeral drive is not long term storage.\nOption D is CORRECT because (a) EMR File system supports both in-transit and at-rest data encryption, and (b) S3 provides the long term storage.\nOption E is incorrect because this is not a cost-effective solution.\nFor more information on EMR, please visit the link below:\nhttps://aws.amazon.com/blogs/aws/new-at-rest-and-in-transit-encryption-for-amazon-emr/ https://d0.awsstatic.com/whitepapers/aws-amazon-emr-best-practices.pdf https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-data-encryption-options.html\nThis question requires designing an AWS solution that can accommodate the long-term storage and in-flight subsets of data that are both sensitive and large in size. The solution must also be cost-effective. Let's examine each answer option in detail and see which one is the best fit for the requirements:\nA. Use Amazon Simple Storage Service (S3) with server-side encryption, and run simulations on subsets in ephemeral drives on Amazon EC2.\nAmazon S3 is an object storage service that provides industry-leading scalability, durability, and performance. It is designed for long-term data storage, and its server-side encryption ensures that the data is encrypted at rest. However, running simulations on subsets in ephemeral drives on Amazon EC2 can lead to data loss if the instance fails or terminates. Therefore, this option is not ideal.\nB. Use Amazon S3 with server-side encryption, and run simulations on subsets in-memory on Amazon EC2.\nRunning simulations in-memory on Amazon EC2 can be fast and efficient, but it can also be expensive and may not be cost-effective for large datasets. Moreover, storing data in-memory can lead to data loss if the instance fails or terminates. Therefore, this option is also not ideal.\nC. Use HDFS on Amazon EMR, and run simulations on subsets in ephemeral drives on Amazon EC2.\nAmazon EMR is a managed Hadoop framework that can run big data processing workloads on scalable EC2 instances. Hadoop Distributed File System (HDFS) is a distributed file system that can store and manage large datasets across multiple nodes. Running simulations on subsets in ephemeral drives on Amazon EC2 can be fast and efficient, but it can also lead to data loss if the instance fails or terminates. Therefore, this option is not ideal.\nD. Use HDFS on Amazon Elastic MapReduce File System (EMRFS) in conjunction with AWS S3.\nAmazon EMRFS is a distributed file system that enables Hadoop jobs to directly access data stored in Amazon S3. HDFS on Amazon EMRFS can provide a cost-effective solution for long-term storage of large datasets. Running simulations on subsets in ephemeral drives on Amazon EC2 can be fast and efficient, but it can also lead to data loss if the instance fails or terminates. Therefore, this option is also not ideal.\nE. Store the full data set in encrypted Amazon Elastic Block Store (EBS) volumes and regularly capture snapshots that can be cloned to EC2 workstations.\nAmazon EBS provides persistent block-level storage volumes for EC2 instances. Storing the full dataset in encrypted Amazon EBS volumes ensures that the data is encrypted at rest. Regularly capturing snapshots of the data allows analysts to create clones of the data on EC2 workstations for simulations. This option provides a cost-effective solution for long-term storage of large datasets, and cloning snapshots for simulations ensures that the original data remains intact. Therefore, this option is the best fit for the requirements.\nIn conclusion, option E is the best solution for storing sensitive, large datasets in AWS cost-effectively, with both in-transit and at-rest encryption, and accommodating concurrent simulation workloads.",
+  "chatGptExplanation": "The correct answer is option D: \"Use HDFS on Amazon Elastic MapReduce File System (EMRFS) in conjunction with AWS S3.\" \n\nExplanation:\nThis question primarily focuses on Amazon EMR and its integration with Amazon S3 using EMRFS, which is the product abbreviation: EMR.\n\n- Option D is correct because EMRFS enables Amazon EMR clusters to access data stored in Amazon S3 as if it were HDFS data. EMR provides the scalability required to handle large-scale data processing (billions of records and multiple terabytes of data). Amazon S3 provides durable, cost-effective, and secure long-term storage with server-side encryption, and EMRFS supports encryption in transit and at rest. This setup enables efficient processing of large subsets without the need to move data excessively, meeting both security and scalability requirements economically.\n\nWhy the other options are incorrect:\n- Option A: While S3 with server-side encryption secures data at rest, ephemeral storage on EC2 instances is not encrypted by default, and data on ephemeral drives is lost if the instance fails or terminates, making it unsuitable for reliable processing of critical data.\n\n- Option B: Processing large subsets (up to 40 TB) in-memory on EC2 is impractical and cost-prohibitive considering instance memory limits. This option cannot scale economically for the dataset size described.\n\n- Option C: Using HDFS directly on EMR clusters only stores data locally (on ephemeral storage), which does not provide cost-effective long-term storage. Data stored on ephemeral drives is transient and not durable.\n\n- Option E: Storing the entire dataset on EBS volumes is expensive and not scalable for multi-petabyte data sizes. Frequent snapshotting and cloning for simulations is operationally complex and costly compared to using S3 with EMRFS.\n\nTherefore, option D offers the best balance of scalable, secure long-term storage with cost-effective, efficient data processing for large datasets.",
+  "video_url": "https://certificationation.com/videos/exam-sensitive-transactions-across-thousands-of-exam-251.html",
+  "url": "https://certificationation.com/questions/exam-sensitive-transactions-across-thousands-of-exam-251.html"
+}

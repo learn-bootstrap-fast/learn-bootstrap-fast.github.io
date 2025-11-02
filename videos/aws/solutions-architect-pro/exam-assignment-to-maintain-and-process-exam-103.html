@@ -1,0 +1,74 @@
+---
+title: "A development team has got a new assignment to maintainExam"
+description: "Video for a development team has got a new assignment to maintain and process data in several DynamoDb tables and S3 buckets. They need to perform sophisticated"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A development team has got a new assignment to maintain and process data in several DynamoDb tables and S3 buckets. They need to perform sophisticated queries and operations across DynamoDB and S3 For example, they would export rarely used data from DynamoDB to Amazon S3 to reduce the storage costs while preserving low latency access required for high-velocity data. The team has rich Hadoop and SQL knowledge. What is the best way to accomplish the assignment?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d5a2f501ee1c8ade97f2"
+  },
+  "quid": "0",
+  "ordinal": "169",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "Amazon DynamoDB",
+    " Amazon S3",
+    " Amazon EMR",
+    " Amazon Elastic Block Store (Amazon EBS)",
+    " AWS Lambda"
+  ],
+  "slug": "dd-maintain-process-data-dynamodb-s3-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question169",
+  "title": "AWS Development Team Assignment Question",
+  "meta": "AWS Exam Question: A team must maintain and process data in DynamoDB and S3, performing queries and exporting data for cost reduction. Find the answer using AWS technologies like Hadoop and SQL.",
+  "answer": "B",
+  "query": "A data analytics group needs to handle and analyze datasets stored in multiple DynamoDB tables and Amazon S3 locations. They aim to run complex SQL queries and perform data movement between DynamoDB and S3 efficiently. For instance, they want to archive less-frequent DynamoDB records to S3 to cut expenses while ensuring rapid access to more active entries. The team is proficient in Hadoop and SQL tools. What is the most effective method to meet these requirements?",
+  "originalQuery": "A development team has got a new assignment to maintain and process data in several DynamoDb tables and S3 buckets.\nThey need to perform sophisticated queries and operations across DynamoDB and S3\nFor example, they would export rarely used data from DynamoDB to Amazon S3 to reduce the storage costs while preserving low latency access required for high-velocity data.\nThe team has rich Hadoop and SQL knowledge.\nWhat is the best way to accomplish the assignment?",
+  "options": [
+    "A. Deploy a compute-optimized EC2 instance via Elastic Beanstalk to enhance performance when running SQL queries or transferring data.",
+    "B. Use an EMR cluster as it uses Hadoop Hive which is a SQL-based engine. Create external tables in EMR for DynamoDB table and S3 buckets. Use a SQL-based command to export/import data.",
+    "C. Automate SQL query execution by creating Lambda functions with sufficient memory allocation, considering SQL commands' high resource demand.",
+    "D. Implement multiple data pipelines configured to transfer data from DynamoDB to S3 based on custom rules, adjusting pipeline settings as needed."
+  ],
+  "originalOptions": [
+    "A. Use an Elastic Beanstalk environment to set up a compute-optimized EC2 instance so that the instance has better performance for SQL commands to query tables or export/import data.",
+    "B. Use an EMR cluster as it uses Hadoop Hive which is a SQL-based engine. Create external tables in EMR for DynamoDB table and S3 buckets. Use a SQL-based command to export/import data.",
+    "C. Use a CloudFormation template to utilize a lambda to run SQL commands. Make sure the lambda has enough memory allocated as SQL commands consume high memory resources",
+    "D. Set up several data pipelines to automatically move data from DynamoDB to S3 if the data has met user-defined conditions such as the items are older than a year. Modify data pipeline configurations when needed."
+  ],
+  "image": "https://eaeastus2.blob.core.windows.net/optimizedimages/static/images/AWS-Certified-Solutions-Architect-Professional/answer/imgckeditor_awsq2-12.jpg",
+  "primaryObjective": "2: Design for New Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Correct Answer - B.\nFor the scenarios that Hadoop or Hive is mentioned, the first AWS service to think about should be EMR as it uses a SQL-based engine for Hadoop called Hive.\nOne thing to note is that outside data sources are referenced in the Hive cluster by creating an EXTERNAL TABLE such as:\nDetails on using EMR to efficiently export DynamoDB tables to S3 or import S3 data into DynamoDB are in https://aws.amazon.com/articles/using-dynamodb-with-amazon-elastic-mapreduce/?tag=articles%23keywords%23elastic-mapreduce.\nOption A is incorrect: Because although this option may work, it is more complicated as it needs to maintain the EC2 cluster, install Hadoop, etc.\nOption B is CORRECT: Because by using an EMR cluster, the team can use its Hadoop and SQL experience while EMR takes care of the infrastructure setup.\nOption C is incorrect: Because EMR is better than lambda as EMR provides native Hadoop support.\nOption D is incorrect: Because data pipelines cannot perform complicated SQL commands and unsuitable for this task.\nThe best way to accomplish this assignment would be to use an EMR cluster with Hadoop Hive, as it is a SQL-based engine that supports sophisticated queries and operations across DynamoDB and S3. By creating external tables in EMR for both DynamoDB and S3 buckets, the development team can use SQL-based commands to export and import data. This approach would leverage the team's existing Hadoop and SQL knowledge.\nOption A is not the best choice because Elastic Beanstalk is a Platform-as-a-Service (PaaS) offering that simplifies the deployment and management of web applications. It does not provide the required capabilities for querying tables or processing data.\nOption C is also not the best choice because Lambda is a serverless compute service that is primarily used for event-driven computing. While Lambda can be used to run SQL commands, it may not be the most efficient or cost-effective approach.\nOption D is not the best choice because it involves setting up several data pipelines to move data from DynamoDB to S3. While this approach may work for some use cases, it may not be the most efficient or scalable approach for performing sophisticated queries and operations across multiple DynamoDB tables and S3 buckets.\nIn summary, option B using an EMR cluster with Hadoop Hive and external tables for DynamoDB and S3 is the best way to accomplish the assignment given the team's rich Hadoop and SQL knowledge and the requirements for sophisticated queries and operations across multiple data sources.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-assignment-to-maintain-and-process-exam-103.html",
+  "url": "https://certificationation.com/questions/exam-assignment-to-maintain-and-process-exam-103.html"
+}

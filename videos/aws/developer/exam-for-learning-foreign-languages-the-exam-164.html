@@ -1,0 +1,81 @@
+---
+title: "Your customer is building an application for learningExam"
+description: "Video for your customer is building an application for learning foreign languages. The data schema for different language learning levels is different."
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your customer is building an application for learning foreign languages. The data schema for different language learning levels is different. Followers of a user are notified in real time of progress made by the user. The application's users are also able to interact with each other; interactions may contain emojis, gifs, and voice notes. You want to use a database that supports flexible schema and real-time notifications. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "An edtech startup called LingoWave plans to launch a social language practice platform. Beginner intermediate and advanced tracks store different attributes per lesson that can change as the curriculum evolves. When a learner finishes an activity their followers should see the update almost immediately. Users can reply with emojis animated gifs and short voice clips of up to 45 seconds. You need a managed database that provides a flexible schema and real time notifications to clients. What should you choose?",
+  "options": [
+    {
+      "text": "Cloud Spanner with interleaved tables using learners as parent rows",
+      "explanation": "This choice uses a horizontally scalable relational database with hierarchical table design.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Choose Firestore using Native mode",
+      "explanation": "This option uses a document database that supports real time listeners and flexible collections.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Cloud SQL for PostgreSQL with LISTEN and NOTIFY",
+      "explanation": "This relies on a managed PostgreSQL instance that can emit notifications to connected clients.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Firestore in Datastore mode",
+      "explanation": "This configuration provides a schemaless NoSQL service optimized for server workloads without real time streams.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Choose Firestore using Native mode</b>.</p><p>This choice fits a schema that changes as the curriculum evolves because documents can hold varying fields per lesson and you can evolve them without schema migrations. It also provides real time listeners in the client SDKs so followers can see updates almost immediately when a learner finishes an activity. It is fully managed and is designed for mobile and web applications that need low latency synchronization and offline support. Media such as emojis animated gifs and short voice clips can be stored in a bucket while the database stores metadata and references to those assets which keeps the feed responsive.</p><p><i>Cloud Spanner with interleaved tables using learners as parent rows</i> is a relational service that expects a defined schema and it is optimized for strong consistency and global scale rather than frequent flexible attribute changes. It does not provide built in real time client subscriptions so you would need to build additional infrastructure to push updates to followers which adds complexity that is unnecessary here.</p><p><i>Cloud SQL for PostgreSQL with LISTEN and NOTIFY</i> can signal server side sessions but it is not a client facing real time sync solution and it does not offer the mobile or web SDK features that automatically propagate changes to end users. It also relies on a rigid relational schema and LISTEN and NOTIFY are not designed for high fan out notification patterns to many followers across devices.</p><p><i>Firestore in Datastore mode</i> is optimized for server centric workloads and does not offer the real time client listeners and offline capabilities that are central to this use case. It is less suitable when you need immediate updates in user interfaces for mobile or web clients.</p>",
+  "batch_id": "140",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "Your customer is building an application for learning foreign languages. The data schema for different language learning levels is different. Followers of a user are notified in real time of progress made by the user. The application's users are also able to interact with each other; interactions may contain emojis, gifs, and voice notes. You want to use a database that supports flexible schema and real-time notifications. What should you do?",
+  "originalOptions": "A. Use Firestore in Datastore mode.<br/>B. Use Cloud Spanner, and create interleaved rows with customers as root rows.<br/>C. Use federated queries between Cloud SQL and BigQuery.<br/>D. Use Firestore in Native mode.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "164",
+  "tip": "<p>When a question highlights <i>flexible schema</i> and <i>real time updates to clients</i> think document databases with client listeners. On Google Cloud that strongly suggests using <i>Firestore in Native mode</i> rather than relational databases or Datastore mode.</p>",
+  "references": [
+    "https://cloud.google.com/firestore/docs/overview",
+    "https://cloud.google.com/firestore/docs/query-data/listen",
+    "https://cloud.google.com/firestore/docs/firestore-or-datastore",
+    "https://cloud.google.com/spanner/docs/schema-design#interleaved_tables",
+    "https://www.postgresql.org/docs/current/sql-notify.html"
+  ],
+  "url": "https://certificationation.com/questions/exam-for-learning-foreign-languages-the-exam-164.html",
+  "video_url": "https://certificationation.com/videos/exam-for-learning-foreign-languages-the-exam-164.html"
+}

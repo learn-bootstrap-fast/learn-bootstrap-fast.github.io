@@ -1,0 +1,73 @@
+---
+title: "A Node.js software team has developed a recipeExam"
+description: "Video for a Node.js software team has developed a recipe application that end-users can search and share recipes. The team deployed the app in AWS EC2 instances"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A Node.js software team has developed a recipe application that end-users can search and share recipes. The team deployed the app in AWS EC2 instances with a network load balancer. A recent security audit has discovered an issue that the load balancer listener is not using TLS. That means the application is at a security risk and is prone to be threatened by man in the middle attack. Which below choices are correct to help fix this issue? Select 2."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d5c8f501ee1c8ade9853"
+  },
+  "quid": "0",
+  "ordinal": "266",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "AWS Certificate Manager (ACM)",
+    " AWS Key Management Service (AWS KMS)"
+  ],
+  "slug": "ec2-recipe-app-security-risk-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question266",
+  "title": "AWS Node.js Software Team Has Developed A Recipe Question",
+  "meta": "AWS Exam Question: A Node.js recipe app on AWS EC2 with a network load balancer faces security risks due to lack of TLS. What’s the answer? Include AWS EC2 and TLS.",
+  "answer": "A C",
+  "query": "A development team created a photo-sharing web app running on EC2 instances behind a network load balancer (NLB). A recent penetration test found that the load balancer listener does not use TLS encryption, exposing user data to interception risks. What are the valid actions to secure the load balancer listener? Select 2.",
+  "originalQuery": "A Node.js software team has developed a recipe application that end-users can search and share recipes.\nThe team deployed the app in AWS EC2 instances with a network load balancer.\nA recent security audit has discovered an issue that the load balancer listener is not using TLS.\nThat means the application is at a security risk and is prone to be threatened by man in the middle attack.\nWhich below choices are correct to help fix this issue? Select 2.",
+  "options": [
+    "A. Modify the listener protocol to TLS and choose an existing certificate in ACM (AWS Certificate Manager).",
+    "B. Switch the listener protocol to HTTPS. Import a fresh certificate into ACM and apply it to the load balancer's listener.",
+    "C. Edit the listener by changing the protocol to TLS. Use an existing certificate from IAM.",
+    "D. Change the listener protocol to SSL and select a certificate stored in KMS (AWS Key Management Service).",
+    "E. Edit the listener protocol to TLS. Upload a key to Secrets Manager and associate it with the listener."
+  ],
+  "originalOptions": [
+    "A. Modify the listener protocol to TLS and choose an existing certificate in ACM (AWS Certificate Manager).",
+    "B. Change the listener protocol to HTTPS. Import a new certificate to ACM (AWS Certificate Manager) and use it in the load balancer listener.",
+    "C. Edit the listener by changing the protocol to TLS. Use an existing certificate from IAM.",
+    "D. Modify the listener protocol to SSL and choose an existing certificate in KMS (AWS Key Management Service).",
+    "E. Edit the listener by changing the protocol to TLS. Upload a new key to the Secrets Manager and link the key for the listener to use."
+  ],
+  "image": "https://eaeastus2.blob.core.windows.net/optimizedimages/static/images/AWS-Certified-Solutions-Architect-Professional/answer/imgckeditor_awsq4-2.jpg",
+  "primaryObjective": "3: Continuous Improvement for Existing Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "E.\nCorrect Answer - A, C.\nFor network load balancer, if TLS is used for the listener, a certificate must be identified for the listener to use as below.\nThe certificate can come from ACM or IAM.\nACM integrates with Elastic Load Balancing so that you can deploy the certificate on your load balancer.\nHowever, there are regions that ACM is not supported.\nA certificate in IAM would be another alternative.\nDetails can be found in https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html.\nOption A is CORRECT because configuring a certificate in ACM is a recommended method when TLS is chosen for the listener.\nOption B is incorrect because HTTPS is for an application load balancer rather than a network load balancer.\nOption C is CORRECT because a certificate in IAM can be used for TLS listeners.\nOption D is incorrect because KMS is not a valid service to provide a certificate for TLS listeners.\nAnd the protocol of SSL is inaccurate for network load balancer as well.\nOption E is incorrect because the Secrets Manager cannot provide a certificate for TLS listeners.\nThe correct options to fix the issue of a Node.js application deployed in AWS EC2 instances with a network load balancer, where the load balancer listener is not using TLS and is at security risk and prone to man-in-the-middle attacks, are A and B.\nOption A: Modify the listener protocol to TLS and choose an existing certificate in ACM (AWS Certificate Manager).\nThis option modifies the listener protocol to TLS, which is a more secure protocol than HTTP or SSL. TLS provides encryption and authentication mechanisms to ensure that data transmitted over the network is secure and cannot be intercepted by attackers. Choosing an existing certificate from ACM (AWS Certificate Manager) ensures that the certificate is valid and trusted by clients. This option is a good choice for applications that require high security.\nOption B: Change the listener protocol to HTTPS. Import a new certificate to ACM (AWS Certificate Manager) and use it in the load balancer listener.\nThis option changes the listener protocol to HTTPS, which is a combination of HTTP and TLS. HTTPS provides authentication, encryption, and integrity protection mechanisms, making it a more secure protocol than HTTP or SSL. Importing a new certificate to ACM ensures that the certificate is valid and trusted by clients. This option is a good choice for applications that require high security.\nOption C: Edit the listener by changing the protocol to TLS. Use an existing certificate from IAM.\nThis option modifies the listener protocol to TLS, which is a more secure protocol than HTTP or SSL. However, using a certificate from IAM is not recommended as IAM is not a certificate authority and does not provide certificate management services. This option is not a good choice for applications that require high security.\nOption D: Modify the listener protocol to SSL and choose an existing certificate in KMS (AWS Key Management Service).\nThis option modifies the listener protocol to SSL, which is an older protocol that has been deprecated in favor of TLS. SSL is less secure than TLS and is no longer recommended for use. Choosing an existing certificate from KMS is also not recommended as KMS is a key management service and does not provide certificate management services. This option is not a good choice for applications that require high security.\nOption E: Edit the listener by changing the protocol to TLS. Upload a new key to the Secrets Manager and link the key for the listener to use.\nThis option modifies the listener protocol to TLS, which is a more secure protocol than HTTP or SSL. However, uploading a new key to the Secrets Manager is not recommended as Secrets Manager is a secrets management service and does not provide certificate management services. This option is not a good choice for applications that require high security.\nIn summary, options A and B are the best choices to fix the issue of a Node.js application deployed in AWS EC2 instances with a network load balancer, where the load balancer listener is not using TLS and is at security risk and prone to man-in-the-middle attacks. These options provide a more secure protocol (TLS or HTTPS) and ensure that the certificate is valid and trusted by clients.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-recipe-application-that-end-users-can-exam-173.html",
+  "url": "https://certificationation.com/questions/exam-recipe-application-that-end-users-can-exam-173.html"
+}

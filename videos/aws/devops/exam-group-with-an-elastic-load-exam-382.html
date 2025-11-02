@@ -1,0 +1,67 @@
+---
+title: "You currently have an Auto Scaling group with an ElasticExam"
+description: "Video for you currently have an Auto Scaling group with an Elastic Load Balancer and need to phase out all instances and replace them with a new instance type."
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You currently have an Auto Scaling group with an Elastic Load Balancer and need to phase out all instances and replace them with a new instance type. What are 2 ways by which this can be achieved?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>To phase out all running instances in an Auto Scaling group and replace them with a different instance type, there are two main approaches:</p><ul><li><b>Apply the OldestLaunchConfiguration policy</b>: This method ensures that instances created with the outdated setup are replaced first, promoting a smooth transition to the new configuration and removing all instances derived from the earlier launch configuration.</li><li><b>Introduce another Auto Scaling group under the existing ELB</b>: By adding a fresh Auto Scaling group with the new instance type and attaching it to the same Elastic Load Balancer, you can gradually increase the desired capacity of the new group while reducing it in the old group, seamlessly migrating all serving capacity to the updated instances.</li></ul><p><i>Apply the NewestInstance strategy</i> is incorrect because this approach targets the most recently created instances, not necessarily those using the previous configuration, which could leave older instances unchanged.<br /><i>Connect an extra Elastic Load Balancer to the Auto Scaling group...</i> is not a recognized method for phasing out specific instance types or effectively managing instance replacement.</p><p><b>Tip</b>: Use rolling upgrades or multiple Auto Scaling groups with careful ELB management for safe, zero-downtime instance transitions.</p>",
+  "query": "<p>You have an Auto Scaling group connected to an Elastic Load Balancer and need to replace all its current instances with a new instance type. What are two methods you could use to accomplish this replacement?</p>",
+  "original_oid": "6793d9cf61969b416038a0bf",
+  "options": [
+    {
+      "correct": true,
+      "text": "Apply the OldestLaunchConfiguration policy to systematically remove all instances built with the prior setup.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Connect an extra Elastic Load Balancer to the Auto Scaling group and incrementally add the new instances while decommissioning the old ones.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Apply the NewestInstance strategy to decommission instances using the outdated configuration.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Introduce another Auto Scaling group under the existing ELB and gradually replace old instances with the new configuration.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question74",
+  "originalQuery": "You currently have an Auto Scaling group with an Elastic Load Balancer and need to phase out all instances and replace them with a new instance type.\nWhat are 2 ways by which this can be achieved?",
+  "originalOptions": [
+    "A. Use NewestInstance to phase out all instances that use the previous configuration.",
+    "B. Attach an additional ELB to your Auto Scaling configuration and phase in newer instances while removing older instances.",
+    "C. Use OldestLaunchConfiguration to phase out all instances that use the previous configuration.",
+    "D. Attach an additional Auto Scaling configuration behind the ELB and phase in newer instances while removing older instances."
+  ],
+  "video_url": "https://certificationation.com/videos/exam-group-with-an-elastic-load-exam-382.html",
+  "url": "https://certificationation.com/questions/exam-group-with-an-elastic-load-exam-382.html"
+}

@@ -1,0 +1,80 @@
+---
+title: "As a Database Engineer, you are tasked with designing aExam"
+description: "Video for as a Database Engineer, you are tasked with designing a backup and recovery solution for a Bigtable instance. Your solution should ensure data"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are tasked with designing a backup and recovery solution for a Bigtable instance. Your solution should ensure data durability and minimize recovery time in case of data loss or corruption. Which of the following approaches would best meet these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the lead database engineer for StreamForge, a media streaming startup that uses Cloud Bigtable for real time session telemetry. The business requires very high durability and an objective to restore service in under 10 minutes if data is deleted or becomes corrupted. Which approach should you implement to meet these goals?",
+  "options": [
+    {
+      "text": "Schedule daily Cloud Bigtable exports to Cloud Storage and restore with the Bigtable import tool when needed",
+      "explanation": "This approach relies on periodic full exports to object storage and uses the native import utility for table restoration.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable Cloud Bigtable replication with two or more clusters in different zones and direct traffic to a hot standby cluster during recovery",
+      "explanation": "This approach establishes multi cluster replication so applications can quickly fail over to a prewarmed cluster if the primary is impaired.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Periodically copy Cloud Bigtable data into Cloud SQL and use the Cloud SQL copy as the recovery source",
+      "explanation": "This approach moves NoSQL data into a relational service to maintain a separate copy for restoration.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Dataflow with Cloud Bigtable change streams to continuously write mutations to Cloud Storage and recover by replaying files",
+      "explanation": "This approach streams row level changes to files in object storage that can be replayed to rebuild a dataset.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Enable Cloud Bigtable replication with two or more clusters in different zones and direct traffic to a hot standby cluster during recovery</b>.</p><p>Bigtable replication stores your tables in multiple clusters across zones which increases durability because there are independent copies of the data. During an outage you can meet a ten minute recovery time objective by routing traffic to the standby cluster using multi cluster routing or by updating your clients to target the healthy cluster. This approach restores service quickly because there is no bulk data movement during failover.</p><p><i>Schedule daily Cloud Bigtable exports to Cloud Storage and restore with the Bigtable import tool when needed</i> is too slow for a ten minute objective. Exports introduce a recovery point of up to a day and imports of large tables take far longer than a few minutes.</p><p><i>Periodically copy Cloud Bigtable data into Cloud SQL and use the Cloud SQL copy as the recovery source</i> is a poor fit because Cloud SQL is a relational service and does not match Bigtable scale or access patterns. The copy process and any cutover would exceed a ten minute objective.</p><p><i>Use Dataflow with Cloud Bigtable change streams to continuously write mutations to Cloud Storage and recover by replaying files</i> adds durability outside Bigtable but replaying mutations from files at scale is complex and usually cannot restore service within ten minutes.</p>",
+  "batch_id": "188",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are tasked with designing a backup and recovery solution for a Bigtable instance. Your solution should ensure data durability and minimize recovery time in case of data loss or corruption. Which of the following approaches would best meet these requirements?",
+  "originalOptions": "A. Use Cloud Pub/Sub to publish changes from Bigtable to Cloud Storage and use Cloud Storage Transfer Service for recovery<br/>B. Enable continuous data protection using Bigtable replication with multiple clusters and use a hot standby cluster for recovery<br/>C. Periodically export data from Bigtable to a Cloud SQL instance and use Cloud SQL as a backup for recovery<br/>D. Perform full daily backups to Google Cloud Storage and use the Bigtable import feature for recovery",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "359",
+  "tip": "<p>When you see a very tight <i>recovery time objective</i> look for native replication that allows quick traffic rerouting. Export and replay based strategies usually miss an <i>under ten minutes</i> target at real Bigtable scales.</p>",
+  "references": [
+    "https://cloud.google.com/bigtable/docs/replication-overview",
+    "https://cloud.google.com/bigtable/docs/cluster-routing#multi-cluster_routing",
+    "https://cloud.google.com/bigtable/docs/exporting-data",
+    "https://cloud.google.com/bigtable/docs/change-streams-overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-tasked-with-designing-a-backup-exam-359.html",
+  "video_url": "https://certificationation.com/videos/exam-tasked-with-designing-a-backup-exam-359.html"
+}

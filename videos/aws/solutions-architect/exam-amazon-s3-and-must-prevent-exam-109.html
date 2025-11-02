@@ -1,0 +1,128 @@
+---
+title: "A company needs to store data in Amazon S3 and mustExam"
+description: "Video for a company needs to store data in Amazon S3 and must prevent the data from being changed. The company wants new objects that are uploaded to Amazon S3"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company needs to store data in Amazon S3 and must prevent the data from being changed. The company wants new objects that are uploaded to Amazon S3 to remain unchangeable for a nonspecific amount of time until the company decides to modify the objects. Only specific users in the company's AWS account can have the ability 10 delete the objects. What should a solutions architect do to meet these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f7299d2"
+  },
+  "quid": null,
+  "ordinal": "109",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon S3",
+    " AWS Identity and Access Management (IAM)",
+    " AWS CloudTrail",
+    " S3 Object Lock",
+    " Amazon S3 Glacier"
+  ],
+  "slug": "s3-store-data-prevent-change-aws",
+  "source": "ET",
+  "title": "AWS A Company Needs To Store Data Question",
+  "meta": "AWS Exam Question: A company needs to store data in Amazon S3 unchangeable for a time. Only specific users can delete objects. What is the answer? S3 Object Lock.",
+  "answer": "D",
+  "query": "An organization needs to archive sensitive information in Amazon S3 and requires that this data cannot be altered. They want any new data uploaded to remain immutable until a designated time frame is chosen by the organization. Only select users within their AWS account should have permission to delete the objects. What steps should a solutions architect take to ensure these needs are fulfilled?",
+  "originalQuery": "A company needs to store data in Amazon S3 and must prevent the data from being changed. The company wants new objects that are uploaded to Amazon S3 to remain unchangeable for a nonspecific amount of time until the company decides to modify the objects. Only specific users in the company's AWS account can have the ability 10 delete the objects.\nWhat should a solutions architect do to meet these requirements?",
+  "options": [
+    "A. Create an S3 Glacier vault. Apply a write-once, read-many (WORM) vault lock policy to the objects.",
+    "B. Set up an S3 bucket with Object Lock and enable versioning for new uploads. Use governance mode to ensure object retention.",
+    "C. Create an S3 bucket. Utilize AWS CloudTrail to monitor modifications to S3 API events. Restore modified objects from any existing backups.",
+    "D. Create an S3 bucket with S3 Object Lock enabled. Enable versioning. Add a legal hold to the objects. Add the s3:PutObjectLegalHold permission to the IAM policies of users who need to delete the objects."
+  ],
+  "originalOptions": [
+    "A. Create an S3 Glacier vault. Apply a write-once, read-many (WORM) vault lock policy to the objects.",
+    "B. Create an S3 bucket with S3 Object Lock enabled. Enable versioning. Set a retention period of 100 years. Use governance mode as the S3 bucket’s default retention mode for new objects.",
+    "C. Create an S3 bucket. Use AWS CloudTrail to track any S3 API events that modify the objects. Upon notification, restore the modified objects from any backup versions that the company has.",
+    "D. Create an S3 bucket with S3 Object Lock enabled. Enable versioning. Add a legal hold to the objects. Add the s3:PutObjectLegalHold permission to the IAM policies of users who need to delete the objects."
+  ],
+  "image": null,
+  "primaryObjective": "1: Design Secure Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "A - This option is not suitable because it allows for deletion by specific users.\n\nB - This option does not align with the requirement for an unspecified retention duration.\n\nC - This option does not fulfill the requirement to prevent changes to the data.\n\nD - This is the correct choice: The Object Lock legal hold feature allows you to impose a legal hold on an object version. Similar to setting a retention period, applying a legal hold prevents the version from being overwritten or deleted. However, unlike a retention period, a legal hold does not have a defined duration and remains active until it is explicitly removed. For further details, refer to the AWS documentation on legal holds: https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops-legal-hold.html.",
+    "The Object Lock legal hold feature allows you to impose a legal hold on a specific version of an object. Think of it as putting a \"Do Not Disturb\" sign on your favorite cake—no one can touch it! 🍰 Just like a retention period, a legal hold keeps an object version safe from being overwritten or deleted. The twist? Unlike a retention period, a legal hold doesn’t come with a timer. It stays in place until you decide it’s time to let go. So, once you’ve locked it down, it’s there until you say otherwise! 🔒✨",
+    "To tackle the challenge of ensuring that data stored in Amazon S3 remains untouchable, the best approach is to set up an S3 bucket with Object Lock functionality. By enabling versioning for new uploads and utilizing governance mode, you can enforce a retention policy that keeps those precious objects safe from modifications until the company decides otherwise. \n\nBut wait, there’s more! You’ll want to ensure that only select individuals in your AWS account possess the mystical powers to delete these objects. By adding the necessary permissions, like s3:PutObjectLegalHold, to the IAM policies of those chosen few, you can maintain control over your data while still allowing for the occasional modification when absolutely necessary. \n\nThis solution is particularly useful in scenarios where compliance and data integrity are paramount. S3 Object Lock, coupled with versioning, offers a robust safeguard against accidental deletions or unwarranted changes, keeping your data as unchangeable as that stubborn piece of gum stuck to the bottom of your shoe. So, embrace the power of S3 Object Lock; your future self will thank you for it!",
+    "It seems they were attempting to communicate in a highly technical manner, like speaking in binary! It's always fascinating to see how people express complex ideas through different formats. Embracing such diversity in communication can lead to richer discussions and innovative solutions.",
+    "A company needs to securely store data in Amazon S3 while ensuring that the data remains unchanged for an indefinite period. The company wishes to keep newly uploaded objects immutable until a decision is made to modify them. Additionally, only select users within the AWS account should possess the authority to delete these objects.\n\nTo fulfill these requirements, a solutions architect could take the following approach:\n\n1. Set up an S3 bucket with Object Lock enabled and activate versioning for any new uploads. This will allow the company to utilize governance mode, which ensures that objects are retained and cannot be altered or deleted without proper permission. \n   \n2. Consider implementing a legal hold on the objects once they are uploaded. This additional layer of protection ensures that they remain untouched until the company decides otherwise. Furthermore, it’s important to grant the `s3:PutObjectLegalHold` permission to the IAM policies of users entrusted with the ability to delete objects. \n\nBy following this plan, the company can enjoy the peace of mind that their data is safe and sound, ready to be modified only when they wish! 🌟"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "D",
+      "explanation": "A - No as \"specific users can delete\"\nB - No as \"nonspecific amount of time\"\nC - No as \"prevent the data from being change\"\nD - The answer: \"The Object Lock legal hold operation enables you to place a legal hold on an object version. Like setting a retention period, a legal hold prevents an object version from being overwritten or deleted. However, a legal hold doesn't have an associated retention period and remains in effect until removed.\" https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops-legal-hold.html",
+      "upvotes": "38"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "The Object Lock legal hold operation enables you to place a legal hold on an object version. Like setting a retention period, a legal hold prevents an object version from being overwritten or deleted. However, a legal hold doesn't have an associated retention period and remains in effect until removed.\n\nCorrect",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "typo -- 10 delete the objects => TO delete the objects",
+      "upvotes": "19"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "they were trying to speak in binary lol",
+      "upvotes": "7"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "HAHAHA",
+      "upvotes": "1"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "D (79%)",
+      "votes": "69 votes."
+    },
+    {
+      "option": "B (21%)",
+      "votes": "18 votes."
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is D because using S3 Object Lock with a legal hold allows an organization to prevent the deletion or modification of data. This is crucial for compliance with regulations requiring data immutability. The legal hold can be applied indefinitely until it is explicitly removed, meeting the requirement of having control over when data is deletable. \n\nA is incorrect because while Glacier offers a form of WORM storage, its purpose is for archival and doesn't directly address the requirement for specific user permissions to delete objects once they are uploaded. \n\nB is incorrect because while it sets a long retention period, governance mode does not meet the organization's need for specific users to delete objects. \n\nC is incorrect since merely monitoring API events and restoring from backups does not guarantee data immutability, which is required here.",
+  "video_url": "https://certificationation.com/videos/exam-amazon-s3-and-must-prevent-exam-109.html",
+  "url": "https://certificationation.com/questions/exam-amazon-s3-and-must-prevent-exam-109.html"
+}

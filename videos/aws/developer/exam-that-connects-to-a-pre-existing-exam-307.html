@@ -1,0 +1,79 @@
+---
+title: "You are setting up a new application that connects to aExam"
+description: "Video for you are setting up a new application that connects to a pre-existing Cloud Firestore database. The purpose of this application is to retrieve data"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are setting up a new application that connects to a pre-existing Cloud Firestore database. The purpose of this application is to retrieve data from the database in order to generate statistics for a dashboard. Your goal is to adhere to the recommended practices outlined by Google when assigning Identity and Access Management (IAM) permissions. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "At Riverbend Analytics you are launching a small backend service that will query an existing Firestore in Native mode database to compute summary metrics for a reporting page, and you want to follow Google recommended IAM practices by granting only the minimum access required for this task, so what should you do?",
+  "options": [
+    {
+      "text": "Create a new service account and grant it the Firestore Editor role",
+      "explanation": "This grants broad permissions that include creating updating and deleting Firestore data and configuration",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a new service account and grant it the Firestore Data Viewer role",
+      "explanation": "This grants read only access to Firestore documents and related metadata which is appropriate for applications that only fetch data",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Reuse the existing service account that writes data into the same database",
+      "explanation": "This uses an account that is already tied to ingestion and typically has write capabilities that exceed read only needs",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Grant the Project Viewer role to the Compute Engine default service account",
+      "explanation": "This relies on the default service account and a basic project level role that provides broad viewing rights across many services",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Create a new service account and grant it the Firestore Data Viewer role</b>.</p><p>This follows the principle of least privilege because a dedicated service account isolates the backend from other workloads and a read only permission set grants only what is needed to run queries and read documents. It lets the service compute summary metrics from Firestore while preventing any writes updates or deletes and it avoids project wide permissions.</p><p><i>Create a new service account and grant it the Firestore Editor role</i> is overly permissive for a read only workload. This role includes write and delete capabilities on entities and indexes which are unnecessary and increase risk.</p><p><i>Reuse the existing service account that writes data into the same database</i> violates separation of duties and least privilege because it carries write permissions that the reporting service does not need. Using separate identities simplifies auditing and key rotation and limits blast radius.</p><p><i>Grant the Project Viewer role to the Compute Engine default service account</i> is both too broad and also does not provide Firestore document access because Firestore data requires the product specific data roles. Relying on the default service account is discouraged in production and it does not meet the goal of granting only the minimum access.</p>",
+  "batch_id": "284",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "You are setting up a new application that connects to a pre-existing Cloud Firestore database. The purpose of this application is to retrieve data from the database in order to generate statistics for a dashboard. Your goal is to adhere to the recommended practices outlined by Google when assigning Identity and Access Management (IAM) permissions. What should you do?",
+  "originalOptions": "A. Create a new service account, and grant it the Firestore Editor role.<br/>B. Reuse the existing service account that populates this database.<br/>C. Create a new service account, and grant it the Firestore Data Viewer role.<br/>D. Create a new service account, and grant it the Firestore Data Reader role.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "307",
+  "tip": "<p>Map the action to the <i>data plane</i> and choose the narrowest predefined role that satisfies it. For read only access to Firestore choose a read only data role on a <i>dedicated</i> service account and avoid primitive roles and default service accounts.</p>",
+  "references": [
+    "https://cloud.google.com/firestore/docs/security/iam#roles",
+    "https://cloud.google.com/iam/docs/using-iam-securely",
+    "https://cloud.google.com/compute/docs/access/service-accounts#default_service_account"
+  ],
+  "url": "https://certificationation.com/questions/exam-that-connects-to-a-pre-existing-exam-307.html",
+  "video_url": "https://certificationation.com/videos/exam-that-connects-to-a-pre-existing-exam-307.html"
+}

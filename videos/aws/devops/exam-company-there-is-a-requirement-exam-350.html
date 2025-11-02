@@ -1,0 +1,62 @@
+---
+title: "You are a DevOps Engineer in your company. There is aExam"
+description: "Video for you are a DevOps Engineer in your company. There is a requirement to send customized notifications whenever an EC2 Instance is scaled in or scaled out"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are a DevOps Engineer in your company. There is a requirement to send customized notifications whenever an EC2 Instance is scaled in or scaled out in an Auto Scaling Group. Which of the following steps can be implemented to fulfil this requirement? Each step forms part of the solution."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The most effective and AWS-recommended approach to send personalized notifications for EC2 scaling events in an Auto Scaling Group is to use a combination of CloudWatch event rules and Lambda functions. The process involves these steps:</p><ul><li><b>Establish a Lambda function responsible for delivering customized alerts.</b>: A Lambda function allows for running custom code that can shape the notification message to your exact requirements, such as formatting details, adding metadata, or integrating with other services.</li><li><b>Provision a CloudWatch event rule to activate the Lambda function upon scaling events.</b>: CloudWatch event rules (also known as EventBridge rules) can detect scaling activity in your Auto Scaling group—either scale-in or scale-out—and trigger your Lambda function automatically.</li></ul><p>The other options do not fulfill the end-to-end customized notification requirement:</p><ul><li><i>Set up an SQS queue configured to forward events into CloudWatch Logs.</i>: This would simply capture events and log them, not send customized notifications.</li><li><i>Configure a CloudWatch event rule that pushes events directly into an SQS queue.</i>: Delivering events to an SQS queue does not result in notifications; you'd still need an additional process to process the queue and notify users.</li></ul><p><strong>Tips:</strong> For fine-grained control and extensibility, always prefer event-driven architectures (CloudWatch Events/EventBridge + Lambda) for reacting to AWS infrastructure changes, as this pattern allows customization and integration with many notification and messaging platforms.</p>",
+  "query": "<p>As a DevOps Engineer at your organization, you need to ensure that tailored notifications are sent every time an EC2 instance is either added or removed from an Auto Scaling Group. Which actions below collectively accomplish this goal? Each action represents part of the complete solution.</p>",
+  "original_oid": "6793da6f61969b416038a201",
+  "options": [
+    {
+      "correct": true,
+      "text": "Establish a Lambda function responsible for delivering customized alerts.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up an SQS queue configured to forward events into CloudWatch Logs.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Provision a CloudWatch event rule to activate the Lambda function upon scaling events.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Configure a CloudWatch event rule that pushes events directly into an SQS queue.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question401",
+  "originalQuery": "You are a DevOps Engineer in your company.\nThere is a requirement to send customized notifications whenever an EC2 Instance is scaled in or scaled out in an Auto Scaling Group.\nWhich of the following steps can be implemented to fulfil this requirement? Each step forms part of the solution.",
+  "originalOptions": "[\"A. Create a Lambda function that sends customized notifications.\",\"B. Create a CloudWatch event rule that triggers the Lambda function.\",\"C. Create an SQS queue that writes the events to CloudWatch Logs.\",\"D. Create a CloudWatch event rule that triggers the SQS queue.\"]",
+  "video_url": "https://certificationation.com/videos/exam-company-there-is-a-requirement-exam-350.html",
+  "url": "https://certificationation.com/questions/exam-company-there-is-a-requirement-exam-350.html"
+}

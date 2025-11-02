@@ -1,0 +1,85 @@
+---
+title: "You are designing a scalable and highly availableExam"
+description: "Video for you are designing a scalable and highly available database solution for a global e-commerce platform using Google Cloud. The platform experiences"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are designing a scalable and highly available database solution for a global e-commerce platform using Google Cloud. The platform experiences variable traffic, with peaks during holidays and sales events. Which Google Cloud database solution and configuration would you choose to ensure high availability and performance while optimizing costs?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are building the database layer for a multinational ticketing marketplace on Google Cloud. Traffic is unpredictable and can spike by 8x during global presales and seasonal campaigns. The system must deliver strongly consistent transactions, sub second reads for users on three continents, and a 99.999% availability target while still keeping spend under control. Which Google Cloud database service and configuration should you choose to meet these goals?",
+  "options": [
+    {
+      "text": "Cloud Bigtable with multi-cluster replication across two regions",
+      "explanation": "This is a wide column NoSQL service that can replicate across clusters for availability and read locality but it does not support relational transactions.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud SQL for PostgreSQL with regional HA and cross-region read replicas using SSD",
+      "explanation": "This offers a managed PostgreSQL deployment with a regional primary and optional read replicas in other regions to improve read performance.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud Spanner with multi-regional configuration and SSD storage",
+      "explanation": "This provides globally distributed strongly consistent transactions, automatic horizontal scaling, and a multi regional availability SLO.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Cloud Firestore in Native mode with regional configuration",
+      "explanation": "This serverless document database scales automatically at low cost for bursty workloads but regional placement limits global latency and it is not designed for relational schemas.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Cloud Spanner with multi-regional configuration and SSD storage</b>.</p><p><b>Cloud Spanner</b> meets the requirement for strongly consistent transactions through externally consistent reads and writes, which allows you to process OLTP workloads without violating correctness during spikes. The multi-regional configuration provides a five nines availability target through synchronous replication and automatic failover, which aligns with the 99.999 percent requirement. SSD storage underpins low latency performance.</p><p>For users on three continents, a global multi-region such as a configuration that spans North America, Europe, and Asia enables sub second reads from nearby replicas using bounded staleness, while transactions remain strongly consistent by committing through the leader. <b>Cloud Spanner</b> also scales horizontally and can use processing units and compute autoscaling so you can expand capacity during 8x surges and reduce it when demand subsides to help keep spend under control.</p><p><i>Cloud Bigtable with multi-cluster replication across two regions</i> cannot satisfy strongly consistent cross-region transactions and multi-cluster replication is eventually consistent across clusters. It is optimized for wide column analytics and key value workloads rather than globally consistent transactional workloads, and two regions will not deliver sub second reads for users on three continents or a five nines relational availability target.</p><p><i>Cloud SQL for PostgreSQL with regional HA and cross-region read replicas using SSD</i> uses asynchronous cross-region replicas, so reads outside the primary region are not strongly consistent. It is a single primary architecture with vertical scaling limits, which makes handling 8x traffic spikes difficult, and it does not offer a five nines multi-regional SLA.</p><p><i>Cloud Firestore in Native mode with regional configuration</i> is confined to one region in this option, so it cannot provide low latency reads for users on three continents or a five nines multi-regional availability target. While Firestore supports ACID transactions at the document level and can scale, the regional setup in this choice does not meet the global availability and latency goals.</p>",
+  "batch_id": "83",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are designing a scalable and highly available database solution for a global e-commerce platform using Google Cloud. The platform experiences variable traffic, with peaks during holidays and sales events. Which Google Cloud database solution and configuration would you choose to ensure high availability and performance while optimizing costs?",
+  "originalOptions": "A. Google Cloud Spanner with regional configuration<br/>B. Google Cloud Firestore with regional configuration and HDD storage<br/>C. Google Cloud SQL with multi-regional configuration and SSD storage<br/>D. Google Cloud Spanner with multi-regional configuration and SSD storage",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "174",
+  "tip": "<p>Map hard requirements to product guarantees. If you see <i>global availability</i>, <i>five nines</i>, and <i>strongly consistent transactions</i> together, think of globally distributed relational options first. Then confirm latency and cost controls such as <i>read locality</i> features and <i>autoscaling</i>.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/sla",
+    "https://cloud.google.com/spanner/docs/instances#configurations",
+    "https://cloud.google.com/spanner/docs/reads#strong",
+    "https://cloud.google.com/spanner/docs/compute-autoscaling",
+    "https://cloud.google.com/bigtable/docs/replication-overview",
+    "https://cloud.google.com/sql/docs/postgres/replication/about-replicas",
+    "https://cloud.google.com/sql/sla",
+    "https://cloud.google.com/firestore/docs/locations",
+    "https://cloud.google.com/firestore/sla"
+  ],
+  "url": "https://certificationation.com/questions/exam-highly-available-database-solution-for-exam-174.html",
+  "video_url": "https://certificationation.com/videos/exam-highly-available-database-solution-for-exam-174.html"
+}

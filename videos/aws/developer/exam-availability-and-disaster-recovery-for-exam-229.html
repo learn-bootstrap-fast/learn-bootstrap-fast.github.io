@@ -1,0 +1,87 @@
+---
+title: "You are tasked with ensuring high availability andExam"
+description: "Video for you are tasked with ensuring high availability and disaster recovery for a critical Cloud Bigtable database. The database must be resilient to"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are tasked with ensuring high availability and disaster recovery for a critical Cloud Bigtable database. The database must be resilient to regional outages. What actions should you take? (Choose two)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "BlueRiver Media operates a mission critical workload on Cloud Bigtable and leadership requires that the service continue during a full regional outage and that data can be restored if an entire region is lost. Which actions should you implement to meet these high availability and disaster recovery goals?",
+  "options": [
+    {
+      "text": "Provision a failover cluster in the same region as the primary",
+      "explanation": "This creates a standby cluster located in the same region as the primary and can help with certain zonal disruptions.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Add a second Bigtable cluster in another region and enable replication",
+      "explanation": "This adds a cluster in a different region and uses Bigtable replication so traffic can fail over during a regional event.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Operate a single cluster Bigtable instance for reduced complexity",
+      "explanation": "This keeps the deployment simple and uses one cluster for all reads and writes.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Turn on Bigtable table backups on the primary instance only",
+      "explanation": "This uses the built in backups capability on the instance to capture point in time copies.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Schedule recurring exports of tables to a multi region Cloud Storage bucket",
+      "explanation": "This regularly writes table data to Cloud Storage in a bucket that spans multiple regions so the data is stored outside the primary region.",
+      "correct": true,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct options are <b>Add a second Bigtable cluster in another region and enable replication</b> and <b>Schedule recurring exports of tables to a multi region Cloud Storage bucket</b>.</p><p><b>Add a second Bigtable cluster in another region and enable replication</b> ensures the application can keep serving during a full regional outage. Bigtable multi cluster replication keeps data in sync across regions and you can use an application profile with multi cluster routing so traffic automatically fails over to a healthy cluster when one region becomes unavailable.</p><p><b>Schedule recurring exports of tables to a multi region Cloud Storage bucket</b> provides disaster recovery for an extreme event where an entire region and its clusters are lost. Regular exports give you restorable snapshots stored with geographic redundancy so you can import the data into a new Bigtable instance in another region.</p><p><i>Provision a failover cluster in the same region as the primary</i> does not meet the requirement because a regional outage would take down both clusters at the same time.</p><p><i>Operate a single cluster Bigtable instance for reduced complexity</i> cannot provide high availability or disaster recovery when a region fails because there is no secondary serving location.</p><p><i>Turn on Bigtable table backups on the primary instance only</i> does not protect against regional loss since backups are tied to the cluster and region where they are created and could be lost with that region.</p>",
+  "batch_id": "77",
+  "answerCode": "2,5",
+  "type": "multi-select",
+  "originalQuery": "You are tasked with ensuring high availability and disaster recovery for a critical Cloud Bigtable database. The database must be resilient to regional outages. What actions should you take? (Choose two)",
+  "originalOptions": "A. Enable automatic replication to another region.<br/>B. Use a single-cluster instance to simplify management.<br/>C. Implement strong consistency for all write operations.<br/>D. Create a failover instance in the same region.<br/>E. Regularly export data to Cloud Storage for backup.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "229",
+  "tip": "<p>Map requirements to capabilities. For continued serving during a <i>regional outage</i> think cross region <i>replication</i>. For the ability to restore data after a region is lost think independent, cross regional copies such as exports to a <i>multi region</i> Cloud Storage bucket. Remember that Bigtable <i>backups</i> are per cluster unless you copy them elsewhere.</p>",
+  "references": [
+    "https://cloud.google.com/bigtable/docs/replication-overview",
+    "https://cloud.google.com/bigtable/docs/exporting-data",
+    "https://cloud.google.com/bigtable/docs/importing-data",
+    "https://cloud.google.com/bigtable/docs/backups",
+    "https://cloud.google.com/storage/docs/locations"
+  ],
+  "url": "https://certificationation.com/questions/exam-availability-and-disaster-recovery-for-exam-229.html",
+  "video_url": "https://certificationation.com/videos/exam-availability-and-disaster-recovery-for-exam-229.html"
+}

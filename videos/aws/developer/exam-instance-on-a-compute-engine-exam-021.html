@@ -1,0 +1,82 @@
+---
+title: "You are managing a MySQL database instance on a ComputeExam"
+description: "Video for you are managing a MySQL database instance on a Compute Engine virtual machine (VM). Users report that database queries are running slower than usual."
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are managing a MySQL database instance on a Compute Engine virtual machine (VM). Users report that database queries are running slower than usual. You want to identify whether resource contention on the database server is contributing to the issue. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You administer a MySQL server that runs on a Compute Engine VM for a mid sized ticketing platform. Analysts report that reports and API requests backed by the database have slowed down over the past two days. You want to verify whether CPU, I O or lock contention on the MySQL host is contributing to the slowdown. What should you do?",
+  "options": [
+    {
+      "text": "Install the Ops Agent on the VM and review CPU, memory and disk metrics in Cloud Monitoring dashboards",
+      "explanation": "This approach uses the Ops Agent to collect system level telemetry from the VM and surfaces it in Cloud Monitoring for visualization and alerting",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable the MySQL Performance Schema and analyze wait events and lock contention using the events_waits_summary_global_by_event_name and events_statements_summary_by_digest tables",
+      "explanation": "This enables MySQL&apos;s internal instrumentation so you can inspect waits, locks and aggregated statement metrics that indicate contention inside the database",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Enable the general_log in MySQL to capture every SQL statement and then parse the log for slow operations",
+      "explanation": "This writes all executed statements to a log file that you can later parse for timing and frequency patterns",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Migrate the database to Cloud SQL and use Query Insights to review query activity and latency",
+      "explanation": "This moves the workload to a managed service where Query Insights can visualize query behavior and latency characteristics",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Enable the MySQL Performance Schema and analyze wait events and lock contention using the events_waits_summary_global_by_event_name and events_statements_summary_by_digest tables</b>.</p><p>This method provides in process instrumentation of waits and statements so you can see whether time is being spent on disk I O waits, on row or table locks, or on CPU execution inside MySQL. The events_waits_summary_global_by_event_name table aggregates waits by event type which lets you identify contention on file I O and various lock types. The events_statements_summary_by_digest table summarizes statements by digest with total and average latency and related counters so you can distinguish time spent executing from time spent waiting and quickly pinpoint the main offenders.</p><p>The option <i>Install the Ops Agent on the VM and review CPU, memory and disk metrics in Cloud Monitoring dashboards</i> is not sufficient because it only exposes operating system level utilization and cannot reveal MySQL wait events or lock contention. It can help you see a busy host but it does not verify database level contention.</p><p>The option <i>Enable the general_log in MySQL to capture every SQL statement and then parse the log for slow operations</i> is unsuitable for diagnosis of this issue because it records every statement and adds significant overhead while providing no insight into wait categories such as locks and I O. It is noisy and lacks the structured wait and latency breakdown you need.</p><p>The option <i>Migrate the database to Cloud SQL and use Query Insights to review query activity and latency</i> is unnecessary and disruptive for an urgent investigation on a Compute Engine VM. It would require a migration and does not address the immediate need to verify contention on the current host.</p>",
+  "batch_id": "109",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "You are managing a MySQL database instance on a Compute Engine virtual machine (VM). Users report that database queries are running slower than usual. You want to identify whether resource contention on the database server is contributing to the issue. What should you do?",
+  "originalOptions": "A. Use Cloud Logging to monitor query execution times in the MySQL logs.<br/>B. Set the general_log flag in MySQL to log all queries, then analyze the logs.<br/>C. Migrate the MySQL database to Cloud SQL and use Query Insights for analysis.<br/>D. Enable the Performance Schema in MySQL and analyze the events_statements_summary_by_digest table.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "21",
+  "tip": "<p>When a question asks you to diagnose MySQL waits or lock contention on a VM, prefer <i>in engine</i> tooling such as the <i>Performance Schema</i>. Use host metrics from Monitoring to corroborate symptoms but choose the tool that directly shows <i>waits</i> and <i>locks</i>.</p>",
+  "references": [
+    "https://dev.mysql.com/doc/refman/8.0/en/performance-schema.html",
+    "https://dev.mysql.com/doc/refman/8.0/en/performance-schema-summary-tables.html",
+    "https://dev.mysql.com/doc/refman/8.0/en/performance-schema-statement-summary-tables.html",
+    "https://dev.mysql.com/doc/refman/8.0/en/server-logs.html#general-query-log",
+    "https://cloud.google.com/monitoring/agent/ops-agent",
+    "https://cloud.google.com/sql/docs/mysql/query-insights"
+  ],
+  "url": "https://certificationation.com/questions/exam-instance-on-a-compute-engine-exam-021.html",
+  "video_url": "https://certificationation.com/videos/exam-instance-on-a-compute-engine-exam-021.html"
+}

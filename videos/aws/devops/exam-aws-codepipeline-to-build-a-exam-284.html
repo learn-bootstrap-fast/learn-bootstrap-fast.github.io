@@ -1,0 +1,67 @@
+---
+title: "As a DevOps engineer, you create an AWS CodePipeline toExam"
+description: "Video for as a DevOps engineer, you create an AWS CodePipeline to build a Docker image and deploy the application to AWS ECS. The build stage is implemented"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a DevOps engineer, you create an AWS CodePipeline to build a Docker image and deploy the application to AWS ECS. The build stage is implemented using AWS CodeBuild where the Docker image is built and tagged. In the CodeBuild post_build phase, the Docker image is pushed to the ECR repository. You create the buildspec.yml file as follows:"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><strong>The correct answers are:</strong></p><ul><li><strong>The post_build phase is the appropriate place to perform the Docker push to Amazon ECR.</strong> In CodeBuild, it's standard practice to structure your buildspec.yml to build and tag the Docker image during the <b>build</b> phase, and then push it to Amazon ECR during <b>post_build</b>. This ensures the image is only pushed if the build succeeds.</li><li><strong>The aws ecr get-login-password command simply gives a token, but you also need to use it to authenticate Docker to ECR.</strong> Running <b>aws ecr get-login-password</b> by itself will only retrieve the authentication token. To log Docker in to Amazon ECR, you must use that token in the Docker login command.</li><li><strong>In the post_build phase, before pushing the Docker image, you must execute aws ecr get-login-password to log in.</strong> Before issuing <b>docker push</b> in the post_build phase, you have to authenticate Docker against ECR by using the <b>aws ecr get-login-password</b> in a Docker login command. Failing to do so will result in authentication errors when pushing your image.</li></ul><p><em>‘No authentication is needed if the IAM role grants ECR read-only permissions; CodeBuild automatically handles ECR access’</em> is incorrect because while the IAM role needs the proper permissions, Docker still requires explicit login—CodeBuild does not log Docker in to ECR automatically for you. <em>‘You should place the docker push command in the build stage, since post_build is only for cleanup activities’</em> is also incorrect—the build stage is intended for compiling, testing, and building artifacts. The post_build phase is designed for publishing outputs, such as pushing images. <br> <br> <strong>Tip:</strong> Always ensure your buildspec.yml has the necessary authentication and correct phase for pushing artifacts. Remember to use the output of <b>aws ecr get-login-password</b> with Docker login before any ECR push command in each build or deployment session.</p>",
+  "query": "<p>As an AWS DevOps engineer, you're designing a pipeline in AWS CodePipeline that creates a Docker image and deploys an application into Amazon ECS. The Docker image is built and tagged within an AWS CodeBuild project's build phase. In your buildspec.yml, the Docker image is pushed to Amazon ECR during the post_build phase. Considering this setup, which statements about the workflow and ECR authentication in CodeBuild are accurate?</p>",
+  "original_oid": "6793d9c761969b416038a0af",
+  "options": [
+    {
+      "correct": true,
+      "text": "The post_build phase is the appropriate place to perform the Docker push to Amazon ECR.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "No authentication is needed if the IAM role grants ECR read-only permissions; CodeBuild automatically handles ECR access.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "You should place the docker push command in the build stage, since post_build is only for cleanup activities.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "The aws ecr get-login-password command simply gives a token, but you also need to use it to authenticate Docker to ECR.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "In the post_build phase, before pushing the Docker image, you must execute aws ecr get-login-password to log in.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question58",
+  "originalQuery": "As a DevOps engineer, you create an AWS CodePipeline to build a Docker image and deploy the application to AWS ECS.\nThe build stage is implemented using AWS CodeBuild where the Docker image is built and tagged.\nIn the CodeBuild post_build phase, the Docker image is pushed to the ECR repository.\nYou create the buildspec.yml file as follows:",
+  "originalOptions": "[\"A. The docker image with $IMAGE_TAG should be pushed in the post_build phase.\",\"B. CodeBuild can automatically log in to ECR if the IAM role has the ECR read access. There is no need to execute \\u201caws ecr get-login-password\\u201d.\",\"C. The docker push command should be put in the build stage as the post_build stage is only used for resource cleanup.\",\"D. \\u201caws ecr get-login-password\\u201d only retrieves a token to log in to ECR. You need to execute the printed command to log in to the registry with Docker.\",\"E. Before docker push, you also need to do \\u201caws ecr get-login-password\\u201d in the post_build stage.\"]",
+  "video_url": "https://certificationation.com/videos/exam-aws-codepipeline-to-build-a-exam-284.html",
+  "url": "https://certificationation.com/questions/exam-aws-codepipeline-to-build-a-exam-284.html"
+}

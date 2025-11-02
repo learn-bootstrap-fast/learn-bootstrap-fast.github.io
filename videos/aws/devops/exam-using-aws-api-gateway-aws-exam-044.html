@@ -1,0 +1,62 @@
+---
+title: "Your serverless architecture using AWS API Gateway, AWSExam"
+description: "Video for your serverless architecture using AWS API Gateway, AWS Lambda, and AWS DynamoDB experienced a large increase in traffic to a sustained 3000 requests"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your serverless architecture using AWS API Gateway, AWS Lambda, and AWS DynamoDB experienced a large increase in traffic to a sustained 3000 requests per second, and the failure rates increased dramatically. The usage of your DynamoDB table did not exceed 50% of the provisioned throughput, and the primary key is also designed properly. What is the most likely reason to cause the issue?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The most probable cause is that you reached the default AWS Lambda concurrency limit because a request for higher concurrent executions was not submitted. When demand suddenly escalates, such as to 3000 requests per second, and you haven't increased your Lambda's concurrency quota, AWS will throttle new invocations, resulting in elevated failure rates. This fits with why DynamoDB's consumed capacity and primary key design are not the source.<br /><br /><strong>You did not request an increase for the maximum concurrent executions allowed for Lambda functions.</strong>: This is correct. By default, AWS imposes a concurrency limit (e.g., 1,000 per account per region), which you must proactively increase for high-traffic workloads. Until you do, the platform will reject requests above this threshold, impacting system reliability during spikes.<br /><br /><em>API Gateway was applying throttling to incoming requests.</em>: This is unlikely. While API Gateway can throttle, it would limit ALL incoming requests and you’d typically see errors at the API Gateway level, not Lambda invocation errors. Your usage profile points to Lambda being the bottleneck, not the gateway.<br /><br /><em>There was a bottleneck in API Gateway while serializing and deserializing requests.</em>: API Gateway is designed to efficiently handle request (de)serialization at these volumes. This would be rare without a more complex transformation pipeline, and you would see a throughput bottleneck at API Gateway rather than Lambda.<br /><br /><em>Semaphore lock contention was causing issues in the DynamoDB table.</em>: The scenario states that DynamoDB’s throughput is under 50%, and the primary key structure is not at fault. Semaphore lock contention is thus very unlikely, as is any DynamoDB performance issue.<br /><br /><u>Tip</u>: Always monitor the Lambda concurrency metrics and request a soft-limit (quota) increase in advance when scaling up serverless workloads.</p>",
+  "query": "<p>Your system built with AWS API Gateway, Lambda functions, and DynamoDB suddenly encounters a significant spike, sustaining 3000 requests every second. As a result, the rate of failures sharply rises. Despite this, DynamoDB’s utilized throughput remains below half of what’s provisioned, and your primary key schema is optimal. <br> What is the most probable underlying cause for this issue?</p>",
+  "original_oid": "6793d9f161969b416038a0ff",
+  "options": [
+    {
+      "correct": true,
+      "text": "You did not request an increase for the maximum concurrent executions allowed for Lambda functions.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "API Gateway was applying throttling to incoming requests.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "There was a bottleneck in API Gateway while serializing and deserializing requests.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Semaphore lock contention was causing issues in the DynamoDB table.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question140",
+  "originalQuery": "Your serverless architecture using AWS API Gateway, AWS Lambda, and AWS DynamoDB experienced a large increase in traffic to a sustained 3000 requests per second, and the failure rates increased dramatically.\nThe usage of your DynamoDB table did not exceed 50% of the provisioned throughput, and the primary key is also designed properly.\nWhat is the most likely reason to cause the issue?",
+  "originalOptions": "[\"A. Your API Gateway was throttling your requests.\",\"B. Your AWS API Gateway was bottlenecking on request (de)serialization.\",\"C. You did not request a limit increase on concurrent Lambda function executions.\",\"D. The DynamoDB table was experiencing the semaphore lock.\"]",
+  "video_url": "https://certificationation.com/videos/exam-using-aws-api-gateway-aws-exam-044.html",
+  "url": "https://certificationation.com/questions/exam-using-aws-api-gateway-aws-exam-044.html"
+}

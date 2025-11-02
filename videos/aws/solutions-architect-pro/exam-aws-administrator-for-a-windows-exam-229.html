@@ -1,0 +1,76 @@
+---
+title: "In a large company, you work as an AWS administratorExam"
+description: "Video for in a large company, you work as an AWS administrator. For a Windows SQL server instance, there is already a daily task to regularly transfer the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "In a large company, you work as an AWS administrator. For a Windows SQL server instance, there is already a daily task to regularly transfer the database backup files to an S3 bucket (DB_Backup_1) in AWS account 111111111111 One data scientist asks you if it is possible to copy the latest backup file to another S3 bucket (DB_Backup_2) in his AWS account 222222222222 You plan to use AWS S3 CLI to do this. Which combinations of methods can accomplish this mission? (Select TWO.)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d5ecf501ee1c8ade98aa"
+  },
+  "quid": "0",
+  "ordinal": "354",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "AWS IAM Identity Center (AWS Single Sign-On)",
+    " Amazon S3",
+    " AWS CLI",
+    " AWS Identity and Access Management (IAM)",
+    " AWS Resource Access Manager (AWS RAM)"
+  ],
+  "slug": "s3-transfer-backup-files-to-s3-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question354",
+  "title": "AWS In A Large Company You Work As An AWS Question",
+  "meta": "AWS Exam Question: As an AWS administrator, can you copy the latest backup file from DB_Backup_1 to DB_Backup_2 using AWS S3 CLI? Find the answer using IAM and roles.",
+  "answer": "A C",
+  "query": "You are an AWS administrator at a large enterprise. A Linux-based PostgreSQL database performs daily backups that are stored in an S3 bucket named DB_Backups_Main in AWS account 333333333333. A data analyst requests to transfer the most recent backup file to a different S3 bucket called DB_Backups_Archive in their separate AWS account 444444444444. You will use the AWS CLI for the file transfer. Which of the following combinations of policies and permissions will enable this operation? (Choose TWO.)",
+  "originalQuery": "In a large company, you work as an AWS administrator.\nFor a Windows SQL server instance, there is already a daily task to regularly transfer the database backup files to an S3 bucket (DB_Backup_1) in AWS account 111111111111\nOne data scientist asks you if it is possible to copy the latest backup file to another S3 bucket (DB_Backup_2) in his AWS account 222222222222\nYou plan to use AWS S3 CLI to do this.\nWhich combinations of methods can accomplish this mission? (Select TWO.)",
+  "options": [
+    "A. In account 333333333333, attach a bucket policy to DB_Backups_Main that allows the destination account 444444444444 to do the actions of \"s3:ListBucket\" and \"s3:GetObject\".",
+    "B. In account 333333333333, apply an Access Control List (ACL) to DB_Backups_Main granting the destination account 444444444444 permission for \"s3:ListBucket\" and \"s3:PutObject\" operations.",
+    "C. In account 444444444444, attach an IAM policy to the IAM user or group that allows the data analyst user to copy objects from source bucket DB_Backups_Main to bucket DB_Backups_Archive.",
+    "D. In account 444444444444, configure a bucket policy on DB_Backups_Archive that permits the account 444444444444 to perform \"s3:ListBucket\" and \"s3:PutObject\" actions.",
+    "E. In account 444444444444, grant an Access Control List (ACL) policy on DB_Backups_Archive that authorizes the source account 333333333333 to carry out \"s3:ListBucket\", \"s3:GetObject\" and \"s3:ListObject\"."
+  ],
+  "originalOptions": [
+    "A. In account 111111111111, attach a bucket policy to DB_Backup_1 that allows the destination account 222222222222 to do the actions of \"s3:ListBucket\" and \"s3:GetObject\".",
+    "B. In account 111111111111, attach an Access Control List (ACL) policy to DB_Backup_1 that allows the destination account 222222222222 to do the actions of \"s3:ListBucket\" and \"s3:PutObject\".",
+    "C. In account 222222222222, attach an IAM policy to the IAM user or group that allows the data scientist user to copy objects from source bucket DB_Backup_1 to bucket DB_Backup_2.",
+    "D. In account 222222222222, attach a bucket policy to DB_Backup_2 that allows the destination account 222222222222 to do the actions of \"s3:ListBucket\" and \"s3:PutObject\".",
+    "E. In account 222222222222, attach an Access Control List (ACL) policy to DB_Backup_2 that allows the source account 111111111111 to do the actions of \"s3:ListBucket\", \"s3:GetObject\" and \"s3:ListObject\"."
+  ],
+  "image": "",
+  "primaryObjective": "1: Design Solutions for Organizational Complexity",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "E.\nCorrect Answer - A, C.\nTwo items are required to enable the copy from an S3 bucket in the source account to another S3 bucket in the target account.\n1, In the source AWS account, there is a bucket policy to allow the target account to ListBucket and GetObject.\n2, In the target AWS account, there is an IAM policy for the IAM user (or group) to allow the user to copy the file from the source bucket (in source AWS account) to the target bucket (in target AWS account).\nOption A is CORRECT: One example of this bucket policy is as below.\n{\n\"Version\": \"2012-10-17\",\n\"Statement\": [\n{\n\"Sid\": \"DelegateS3Access\",\n\"Effect\": \"Allow\",\n\"Principal\": {\"AWS\": \"222222222222\"},\n\"Action\": [\"s3:ListBucket\",\"s3:GetObject\"],\n\"Resource\": [\n\"arn:aws:s3:::sourcebucket/*\",\n\"arn:aws:s3:::sourcebucket\"\n]\n}\n]\n}\nSome more details can be found in https://aws.amazon.com/premiumsupport/knowledge-center/copy-s3-objects-account/.\nOption B is incorrect: Because it should be a bucket policy rather than an ACL policy.\nBesides, s3:GetObject is needed instead of s3:PutObject.\nOption C is CORRECT: Because this allows the data scientist user to copy files (GetObject ) from the source bucket and put files (PutObject) in the target bucket.\nOption D is incorrect: Because there is no need in the target account to put a bucket policy.\nOption E is incorrect: Because in the target account, no Access Control List (ACL) policy is required.\nInstead, an IAM policy should exist to allow the file copy.\nTo copy the latest backup file from the DB_Backup_1 bucket in account 111111111111 to the DB_Backup_2 bucket in account 222222222222, we need to ensure that the destination account has the necessary permissions to access and copy the objects.\nOption A: In account 111111111111, attach a bucket policy to DB_Backup_1 that allows the destination account 222222222222 to do the actions of \"s3:ListBucket\" and \"s3:GetObject\". This option will allow the destination account to list the contents of the DB_Backup_1 bucket and retrieve the latest backup file. However, it does not provide permissions to copy the file to another bucket. Therefore, this option alone cannot accomplish the mission.\nOption B: In account 111111111111, attach an Access Control List (ACL) policy to DB_Backup_1 that allows the destination account 222222222222 to do the actions of \"s3:ListBucket\" and \"s3:PutObject\". This option will allow the destination account to list the contents of the DB_Backup_1 bucket, retrieve the latest backup file, and copy it to the DB_Backup_2 bucket. Therefore, this option, in combination with option C or D, can accomplish the mission.\nOption C: In account 222222222222, attach an IAM policy to the IAM user or group that allows the data scientist user to copy objects from source bucket DB_Backup_1 to bucket DB_Backup_2. This option will grant the IAM user or group in the destination account permissions to copy objects from the source bucket DB_Backup_1 to the destination bucket DB_Backup_2. Therefore, this option, in combination with option B or D, can accomplish the mission.\nOption D: In account 222222222222, attach a bucket policy to DB_Backup_2 that allows the destination account 222222222222 to do the actions of \"s3:ListBucket\" and \"s3:PutObject\". This option will allow the destination account to list the contents of the DB_Backup_2 bucket and copy the latest backup file to it. Therefore, this option, in combination with option B or C, can accomplish the mission.\nOption E: In account 222222222222, attach an Access Control List (ACL) policy to DB_Backup_2 that allows the source account 111111111111 to do the actions of \"s3:ListBucket\", \"s3:GetObject\" and \"s3:ListObject\". This option grants permissions to the source account to list the contents of the destination bucket and retrieve the latest backup file. However, it does not provide permissions to copy the file to another bucket. Therefore, this option alone cannot accomplish the mission.\nTherefore, the correct combinations of methods that can accomplish this mission are B and C, or B and D.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-aws-administrator-for-a-windows-exam-229.html",
+  "url": "https://certificationation.com/questions/exam-aws-administrator-for-a-windows-exam-229.html"
+}

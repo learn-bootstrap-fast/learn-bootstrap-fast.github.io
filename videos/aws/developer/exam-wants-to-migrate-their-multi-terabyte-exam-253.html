@@ -1,0 +1,79 @@
+---
+title: "A financial services company wants to migrate theirExam"
+description: "Video for a financial services company wants to migrate their multi-terabyte Oracle Database from their on-premises data center to Google Cloud. They need a"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A financial services company wants to migrate their multi-terabyte Oracle Database from their on-premises data center to Google Cloud. They need a solution that ensures minimal downtime, supports schema changes during the migration process, and provides data validation and rollback capabilities. In addition, they require a managed database service that supports Oracle Database workloads. Which combination of the following Google Cloud database migration tools and managed database services is most appropriate for this scenario?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "An insurance brokerage plans to move a 28 TB Oracle database from its colocation facility to Google Cloud. They need an approach that keeps cutover downtime very low, permits ongoing schema changes while replication runs, and includes features for data validation and the ability to roll back if needed. They also want to host Oracle on a managed offering in Google Cloud that is built for Oracle workloads. Which combination of Google Cloud migration tooling and managed database service should they choose?",
+  "options": [
+    {
+      "text": "Cloud Dataflow and Cloud SQL for PostgreSQL",
+      "explanation": "This pairing uses Dataflow to process and load data into a managed PostgreSQL service on Google Cloud.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Database Migration Service with Bare Metal Solution for Oracle",
+      "explanation": "This approach uses a managed migration service together with a managed bare metal environment that is designed to run Oracle in Google Cloud.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Datastream and BigQuery",
+      "explanation": "This choice relies on change data capture to stream source changes into BigQuery for analytics workloads.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud Storage Transfer Service and Cloud Bigtable",
+      "explanation": "This option copies data to Cloud Storage and then stores it in Bigtable which is a wide column NoSQL service.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Database Migration Service with Bare Metal Solution for Oracle</b>. This pairing delivers continuous replication for very low cutover downtime, supports ongoing schema changes while replication runs, and provides built-in data validation with the ability to revert the cutover plan if needed. Bare Metal Solution gives you a managed environment purpose built for Oracle workloads in Google Cloud.</p><p>The migration service continuously replicates changes from the source Oracle database which allows you to keep the target closely synchronized until you are ready to cut over. Because it is designed for Oracle sources it can handle ongoing schema changes during replication so development can continue while the migration proceeds. The service also includes validation features so you can verify data consistency before cutover and you can plan a safe rollback by retaining the source as the system of record until validation is complete.</p><p>Bare Metal Solution provides dedicated hardware in Google Cloud that is tuned for Oracle performance and supportability. It is a managed offering that meets Oracle licensing and architectural needs so you can run Oracle databases with predictable performance and enterprise integrations while staying in close proximity to native Google Cloud services.</p><p><i>Cloud Dataflow and Cloud SQL for PostgreSQL</i> is not suitable because Cloud SQL for PostgreSQL is not an Oracle compatible destination and moving a large Oracle database into PostgreSQL requires engine conversion rather than low downtime replication. Dataflow is a data processing service and does not provide the end to end database migration capabilities and rollback controls required here.</p><p><i>Datastream and BigQuery</i> does not fit because BigQuery is an analytics warehouse rather than a transactional database platform for hosting Oracle workloads. While the change data capture service can ingest from Oracle into analytics targets it does not provide a managed Oracle runtime or a straightforward rollback path for a database cutover.</p><p><i>Cloud Storage Transfer Service and Cloud Bigtable</i> is incorrect because the transfer service moves files and objects rather than live database state and Bigtable is a NoSQL wide column store that does not host Oracle databases or support relational features needed by Oracle workloads.</p>",
+  "batch_id": "237",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "A financial services company wants to migrate their multi-terabyte Oracle Database from their on-premises data center to Google Cloud. They need a solution that ensures minimal downtime, supports schema changes during the migration process, and provides data validation and rollback capabilities. In addition, they require a managed database service that supports Oracle Database workloads. Which combination of the following Google Cloud database migration tools and managed database services is most appropriate for this scenario?",
+  "originalOptions": "A. Cloud Storage Transfer Service and Cloud Bigtable<br/>B. Database Migration Service (DMS) and Cloud SQL for Oracle<br/>C. Cloud Dataflow and Cloud SQL for PostgreSQL<br/>D. Database Migration Service (DMS) and Bare Metal Solution for Oracle",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "253",
+  "tip": "<p>Scan for the destination that matches the source engine and workload first. If you see Oracle as the source and the need for <i>very low downtime</i> with <i>ongoing schema changes</i> then look for Bare Metal Solution and a migration tool that offers <i>continuous replication</i> and <i>validation</i> rather than batch copy or analytics ingestion.</p>",
+  "references": [
+    "https://cloud.google.com/database-migration/docs/overview",
+    "https://cloud.google.com/bare-metal/docs/overview",
+    "https://cloud.google.com/datastream/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-wants-to-migrate-their-multi-terabyte-exam-253.html",
+  "video_url": "https://certificationation.com/videos/exam-wants-to-migrate-their-multi-terabyte-exam-253.html"
+}

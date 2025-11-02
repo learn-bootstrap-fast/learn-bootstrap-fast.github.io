@@ -1,0 +1,62 @@
+---
+title: "Your company has the requirement to set up instancesExam"
+description: "Video for your company has the requirement to set up instances running as part of an Autoscaling Group. Part of the requirement is to use Lifecycle hooks to set"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company has the requirement to set up instances running as part of an Autoscaling Group. Part of the requirement is to use Lifecycle hooks to set up custom-based software and do the necessary configuration on the instances. The time required for this setup might take more than an hour or might finish before the hour is up. How should you set up lifecycle hooks for the Autoscaling Group? Choose 2 ideal actions you would include as part of the lifecycle hook."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><b>Set the Lifecycle hook to periodically send heartbeats. If the software setup is not finished when the hook's timeout is reached, reset the timer to extend the wait period</b> and <b>Configure the Lifecycle hook so that, if the software setup and configuration are done, a complete signal is sent to let the instance proceed past the hook</b> are the best choices.</p><p>With Auto Scaling Lifecycle hooks, it's crucial to manage the timing so that you can complete all necessary customizations:</p><ul><li>By using heartbeats, you can extend the Lifecycle hook's waiting period. This is essential if your configuration sometimes takes longer than anticipated, letting your process continue without being forced to move to the next Lifecycle hook action too early.</li><li>Once all setup and configuration tasks are completed, sending a completion signal immediately allows the instance to enter service without unnecessary delays. This approach optimizes resource readiness and reduces wait times.</li></ul><p>Why not the others? <i>Design the Lifecycle hook to automatically terminate and replace the instance if an hour passes, regardless of installation status</i> causes wasted compute resources and potential downtime when software setup just needs more time; it's better to extend the time using heartbeats. <i>Set up the Lifecycle hook to restart its time period as soon as the software installation is complete</i> doesn't make sense, as you should move the instance forward when configuration is done – there's no value in starting the waiting period over at that point.</p><p><b>Tip:</b> Always use heartbeats during long configuration phases and send the completion signal once all tasks are finished for smooth, reliable scaling events in AWS Auto Scaling Groups.</p>",
+  "query": "<p>Your organization is deploying EC2 instances within an Auto Scaling Group and needs to perform custom software setup and configuration using Lifecycle hooks. The setup duration can sometimes exceed an hour or finish earlier. What are the two best steps to configure the Lifecycle hooks for this situation?</p>",
+  "original_oid": "6793da0861969b416038a12e",
+  "options": [
+    {
+      "correct": true,
+      "text": "Set the Lifecycle hook to periodically send heartbeats. If the software setup is not finished when the hook's timeout is reached, reset the timer to extend the wait period.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Configure the Lifecycle hook so that, if the software setup and configuration are done, a complete signal is sent to let the instance proceed past the hook.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Design the Lifecycle hook to automatically terminate and replace the instance if an hour passes, regardless of installation status.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up the Lifecycle hook to restart its time period as soon as the software installation is complete.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question188",
+  "originalQuery": "Your company has the requirement to set up instances running as part of an Autoscaling Group.\nPart of the requirement is to use Lifecycle hooks to set up custom-based software and do the necessary configuration on the instances.\nThe time required for this setup might take more than an hour or might finish before the hour is up.\nHow should you set up lifecycle hooks for the Autoscaling Group? Choose 2 ideal actions you would include as part of the lifecycle hook.",
+  "originalOptions": "A. Configure the lifecycle hook to record heartbeats. If the hour is up, restart the timeout period.|B. Configure the lifecycle hook to record heartbeats. If the hour is up, choose to terminate the current instance and start a new one.|C. If the software installation and configuration are complete, then restart the time period.|D. If the software installation and configuration are complete, then send a signal to complete the launch of the instance.",
+  "video_url": "https://certificationation.com/videos/exam-set-up-instances-running-as-exam-238.html",
+  "url": "https://certificationation.com/questions/exam-set-up-instances-running-as-exam-238.html"
+}

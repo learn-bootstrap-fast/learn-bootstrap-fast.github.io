@@ -1,0 +1,74 @@
+---
+title: "You are managing a legacy application inside VPC withExam"
+description: "Video for you are managing a legacy application inside VPC with hard-coded IP addresses in its configuration. Which mechanisms will allow the application to"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are managing a legacy application inside VPC with hard-coded IP addresses in its configuration. Which mechanisms will allow the application to failover to new instances without much reconfiguration?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d5c1f501ee1c8ade9840"
+  },
+  "quid": "0",
+  "ordinal": "247",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "Amazon Route 53",
+    " Amazon VPC",
+    " AWS Elastic Network Interface (ENI)",
+    " AWS global infrastructure",
+    " AWS Well-Architected Framework"
+  ],
+  "slug": "vc-failover-legacy-application-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question247",
+  "title": "AWS You Are Managing A Legacy Application Question",
+  "meta": "AWS Exam Question: You are managing a legacy application inside VPC with hard-coded IP addresses. What mechanisms allow failover to new instances? Answer: Route 53, Elastic Load Balancing.",
+  "answer": "B D",
+  "query": "Your team is supporting a legacy system operating inside a VPC, which relies on static IP addresses coded within its setup. What approaches will facilitate automatic failover to backup instances with minimal changes to the system configuration?",
+  "originalQuery": "You are managing a legacy application inside VPC with hard-coded IP addresses in its configuration.\nWhich mechanisms will allow the application to failover to new instances without much reconfiguration?",
+  "options": [
+    "A. Utilize a traffic controller to direct data to backup instances.",
+    "B. Create a secondary ENI that can be moved to the failover instance.",
+    "C. Configure Route53 health checks to change traffic to backup instances.",
+    "D. Assign a secondary private IP address to the primary ENI of the failover instance."
+  ],
+  "originalOptions": [
+    "A. Use the traffic manager to route the traffic to the failover instances.",
+    "B. Create a secondary ENI that can be moved to the failover instance.",
+    "C. Use Route53 health checks to reroute the traffic to the failover instance.",
+    "D. Assign a secondary private IP address to the primary ENI of the failover instance."
+  ],
+  "image": "",
+  "primaryObjective": "3: Continuous Improvement for Existing Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Answer - B and D.\nOption A is incorrect because rerouting to a failover instance cannot be done through a Traffic Manager.\nOption B is CORRECT because the attributes of a network interface follow it as it's attached or detached from an instance and reattached to another instance.\nWhen you move a network interface from one instance to another, network traffic is redirected to the new instance.\nOption C is incorrect because Route 53 cannot reroute the traffic to the failover instance with the same IP address.\nOption D is CORRECT because you can have a secondary IP address that can be configured on the primary ENI of the failover instance.\nBest Practices for Configuring Network Interfaces.\nYou can attach a network interface to an instance when it's running (hot attach), when it's stopped (warm attach), or when the instance is being launched (cold attach).\nYou can detach secondary (ethN) network interfaces when the instance is running or stopped.\nHowever, you can't detach the primary (eth0) interface.\nYou can attach a network interface in one subnet to an instance in another subnet in the same VPC; however, both the network interface and the instance must reside in the same Availability Zone.\nWhen launching an instance from the CLI or API, you can specify the network interfaces to attach to the instance for both the primary (eth0) and additional network interfaces.\nLaunching an Amazon Linux or Windows Server instance with multiple network interfaces automatically configures interfaces, private IPv4 addresses, and route tables on the operating system of the instance.\nA warm or hot attach of an additional network interface may require you to manually bring up the second interface, configure the private IPv4 address, and modify the route table accordingly.\nInstances running Amazon Linux or Windows Server automatically recognize the warm or hot attach and configure themselves.\nAttaching another network interface to an instance (for example, a NIC teaming configuration) cannot be used as a method to increase or double the network bandwidth to or from the dual-homed instance.\nIf you attach two or more network interfaces from the same subnet to an instance, you may encounter networking issues such as asymmetric routing.\nIf possible, use a secondary private IPv4 address on the primary network interface instead.\nFor more information, see Assigning a Secondary Private IPv4 Address.\nFor more information on Network Interfaces, please visit the below URL-\nhttp://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html\nThe best answer for this scenario would be option B, which suggests creating a secondary Elastic Network Interface (ENI) that can be moved to the failover instance.\nExplanation: When managing a legacy application inside a Virtual Private Cloud (VPC) with hard-coded IP addresses in its configuration, the goal is to provide high availability without changing the existing configuration. To achieve this, the failover mechanism should involve minimal reconfiguration.\nOption A, which suggests using a traffic manager, may not be suitable in this case as it would require changing the configuration to include the traffic manager's endpoint. Additionally, if the application has hard-coded IP addresses, it may not be possible to change the configuration easily.\nOption C, which suggests using Route53 health checks, can help reroute the traffic to the failover instance in case of a failure. However, it requires changing the DNS configuration, which may not be possible in a legacy application with hard-coded IP addresses.\nOption D, which suggests assigning a secondary private IP address to the primary ENI of the failover instance, may not be the best solution as it still requires changing the configuration to include the secondary IP address.\nTherefore, option B is the best choice as it involves creating a secondary ENI that can be moved to the failover instance. This allows the failover instance to have the same IP address as the primary instance, which means that the application can continue to operate without any reconfiguration. In case of a failure, the secondary ENI can be moved to the failover instance, and the traffic will automatically start flowing to the failover instance, ensuring high availability without any significant changes to the existing configuration.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-inside-vpc-with-hard-coded-ip-exam-156.html",
+  "url": "https://certificationation.com/questions/exam-inside-vpc-with-hard-coded-ip-exam-156.html"
+}

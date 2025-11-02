@@ -1,0 +1,128 @@
+---
+title: "A company wants to use the AWS Cloud to make an existingExam"
+description: "Video for a company wants to use the AWS Cloud to make an existing application highly available and resilient. The current version of the application resides in"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company wants to use the AWS Cloud to make an existing application highly available and resilient. The current version of the application resides in the company's data center. The application recently experienced data loss after a database server crashed because of an unexpected power outage. The company needs a solution that avoids any single points of failure. The solution must give the application the ability to scale to meet user demand. Which solution will meet these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729af6"
+  },
+  "quid": null,
+  "ordinal": "401",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon EC2",
+    " Amazon RDS",
+    " AWS Auto Scaling",
+    " Amazon Elastic Block Store (Amazon EBS)",
+    " AWS Well-Architected Framework"
+  ],
+  "slug": "ca-application-highly-available-aws",
+  "source": "ET",
+  "title": "AWS Company Wants To Use The Question",
+  "meta": "AWS Exam Question: A company seeks a highly available and resilient AWS Cloud solution to prevent data loss and avoid single points of failure. Answer: RDS, EC2.",
+  "answer": "A",
+  "query": "An organization is planning to migrate its on-premises application to the AWS Cloud to ensure high availability and durability. This application has previously faced issues due to server failures in its local environment, leading to data loss. The company aims to establish a system that eliminates single points of failure while also allowing for growth in user demand.\n\nWhat solution can they implement to achieve these objectives?",
+  "originalQuery": "A company wants to use the AWS Cloud to make an existing application highly available and resilient. The current version of the application resides in the company's data center. The application recently experienced data loss after a database server crashed because of an unexpected power outage.\n\nThe company needs a solution that avoids any single points of failure. The solution must give the application the ability to scale to meet user demand.\n\nWhich solution will meet these requirements?",
+  "options": [
+    "A. Deploy the application servers by using Amazon EC2 instances in an Auto Scaling group across multiple Availability Zones. Use an Amazon RDS DB instance in a Multi-AZ configuration.",
+    "B. Use Amazon EC2 instances in an Auto Scaling group placed in one Availability Zone. Deploy the database within an EC2 instance. Activate EC2's Auto Recovery feature.",
+    "C. Deploy the application servers by using Amazon EC2 instances in an Auto Scaling group across multiple Availability Zones. Use an Amazon RDS DB instance with a read replica in a single Availability Zone. Promote the read replica to replace the primary DB instance if the primary DB instance fails.",
+    "D. Deploy application servers using Amazon EC2 instances across several Availability Zones in an Auto Scaling group. Implement primary and secondary databases on EC2 instances spanning multiple Availability Zones. Use Amazon Elastic Block Store (Amazon EBS) Multi-Attach for shared storage."
+  ],
+  "originalOptions": [
+    "A. Deploy the application servers by using Amazon EC2 instances in an Auto Scaling group across multiple Availability Zones. Use an Amazon RDS DB instance in a Multi-AZ configuration.",
+    "B. Deploy the application servers by using Amazon EC2 instances in an Auto Scaling group in a single Availability Zone. Deploy the database on an EC2 instance. Enable EC2 Auto Recovery.",
+    "C. Deploy the application servers by using Amazon EC2 instances in an Auto Scaling group across multiple Availability Zones. Use an Amazon RDS DB instance with a read replica in a single Availability Zone. Promote the read replica to replace the primary DB instance if the primary DB instance fails.",
+    "D. Deploy the application servers by using Amazon EC2 instances in an Auto Scaling group across multiple Availability Zones. Deploy the primary and secondary database servers on EC2 instances across multiple Availability Zones. Use Amazon Elastic Block Store (Amazon EBS) Multi-Attach to create shared storage between the instances."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Option B deploys application servers within a single Availability Zone (AZ) and relies on a database hosted on a single instance, which creates a vulnerability to failure since both components are not distributed across multiple AZs.\n\nOption C also places both database replicas in a single AZ, which fails to eliminate the risk of single points of failure, as the entire setup remains susceptible to an AZ-level outage.\n\nOption D is not a viable solution because Amazon Elastic Block Store (EBS) Multi-Attach requires all EC2 instances to be within the same AZ. Even if this configuration were feasible, it would still result in a single point of failure for the EBS volume, as all instances sharing the volume would be impacted by any issues affecting that AZ. \n\nA robust solution must ensure that both application servers and the database are distributed across multiple AZs to enhance availability and resilience, thereby addressing potential vulnerabilities effectively.",
+    "To ensure your application is as robust as a superhero and can withstand the unexpected villain of downtime, set up your application servers using Amazon EC2 instances within an Auto Scaling group that spans multiple Availability Zones. This way, if one zone decides to take a nap, your application will keep running smoothly elsewhere! 🌤️ For your database needs, opt for an Amazon RDS DB instance configured for Multi-AZ. This setup provides a failover mechanism that swoops in to save the day if your primary database goes on a surprise vacation. 🦸‍♂️ With this arrangement, you'll be well-equipped to handle user demand without a single point of failure in sight! 🎉",
+    "Option C, while it has some merits, is not the golden ticket we're looking for. Sure, deploying application servers across multiple Availability Zones with an Amazon EC2 Auto Scaling group sounds great. And yes, using an RDS instance with a read replica is a nice touch. However, promoting that read replica to take over as the primary database in case of failure introduces a delay and potential data loss. In a world where uptime is king and data integrity is paramount, relying solely on a read replica for failover isn’t quite the robust solution we need. The real aim here is to eliminate single points of failure entirely and ensure seamless scalability. So, while option C is a decent plan B, it's not the all-star lineup we should be aiming for.",
+    "Option C is not suitable because the read replica is located within a single Availability Zone, which does not provide the necessary high availability and resilience needed to mitigate potential failures. It's essential to ensure that both the primary and replica databases are deployed across multiple Availability Zones to avoid any single points of failure and to maintain uninterrupted service.",
+    "Absolutely! 🌟 \n\nA company is excited to leverage the AWS Cloud to elevate its existing application to new heights of availability and resilience. Currently, the application is housed in the company’s data center, but it recently faced a hiccup—a database server experienced data loss due to an unexpected power outage.\n\nTo ensure a robust solution that eliminates any single points of failure, the company seeks a setup that can effortlessly scale to accommodate user demand.\n\nHere are some delightful options to consider: \n\n1. **Deploy application servers using Amazon EC2 instances in an Auto Scaling group across multiple Availability Zones, complemented by an Amazon RDS DB instance configured for Multi-AZ availability.** This approach ensures that both the application and database are resilient and can handle load fluctuations seamlessly.\n\n2. **Utilize Amazon EC2 instances in an Auto Scaling group within a single Availability Zone, hosting the database on an EC2 instance and activating EC2's Auto Recovery feature.** While this option is simple, it lacks the redundancy needed for high availability.\n\n3. **Set up application servers with Amazon EC2 instances in an Auto Scaling group across various Availability Zones, featuring an Amazon RDS DB instance with a read replica in one Availability Zone.** If the primary database falters, the read replica can be promoted to take its place, adding a layer of protection.\n\n4. **Deploy application servers using Amazon EC2 instances spread across several Availability Zones in an Auto Scaling group, with primary and secondary databases on EC2 instances across multiple Availability Zones.** This option can utilize Amazon Elastic Block Store (EBS) Multi-Attach for shared storage, enhancing data durability and availability.\n\nEach of these options brings its own flair to the table, ensuring that the application can bounce back and thrive in the cloud! 😊"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "A",
+      "explanation": "B has app servers in a single AZ and a database on a single instance\nC has both DB replicas in a single AZ\nD does not work (EBS Multi-Attach requires EC2 instances in same AZ), and if it would work then the EBS volume would be an SPOF",
+      "upvotes": "7"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "Deploy the application servers by using Amazon EC2 instances in an Auto Scaling group across multiple Availability Zones. Use an Amazon RDS DB instance in a Multi-AZ configuration",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Why is C incorrect ?",
+      "upvotes": "1"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "C is incorrect because the read replica also resides in a single AZ",
+      "upvotes": "4"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "A most def.",
+      "upvotes": "3"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "A (93%)",
+      "votes": "27 votes."
+    },
+    {
+      "option": "3%",
+      "votes": "3%"
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is A because it leverages Amazon EC2 instances in an Auto Scaling group across multiple Availability Zones, which provides high availability and fault tolerance by distributing the application across different locations. The use of an Amazon RDS DB instance in a Multi-AZ configuration allows for the database to remain available and durable, preventing data loss in case of a failure. Option B incorrectly places the application and database in a single Availability Zone, introducing a single point of failure. Option C also incorrectly suggests using a read replica in a single Availability Zone, which would not provide the required high availability. Option D is incorrect because Amazon EBS Multi-Attach requires EC2 instances to be in the same Availability Zone, which introduces a single point of failure if one AZ goes down.",
+  "video_url": "https://certificationation.com/videos/exam-make-an-existing-application-highly-exam-400.html",
+  "url": "https://certificationation.com/questions/exam-make-an-existing-application-highly-exam-400.html"
+}

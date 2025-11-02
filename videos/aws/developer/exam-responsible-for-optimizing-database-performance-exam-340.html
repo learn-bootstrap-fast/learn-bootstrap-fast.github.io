@@ -1,0 +1,81 @@
+---
+title: "As a Database Engineer, you are responsible forExam"
+description: "Video for as a Database Engineer, you are responsible for optimizing database performance in a Cloud SQL environment for a latency-sensitive application. You"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are responsible for optimizing database performance in a Cloud SQL environment for a latency-sensitive application. You have decided to use a session pooler service to manage database connections. Which of the following configurations for the session pooler service will provide the most significant improvement in database performance by reducing latency?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "HarborSky Travel runs a latency critical booking API on Cloud Run that connects to Cloud SQL for PostgreSQL, and the team needs to keep the p95 latency under 90 milliseconds during spikes of about 1,000 requests per second. You plan to introduce a session pooling layer between the service and the database to manage connections and to minimize connection overhead. Which configuration of the session pooler will most effectively reduce latency?",
+  "options": [
+    {
+      "text": "Set an aggressive health check interval and configure the minimum pool size to 0",
+      "explanation": "This configuration makes the pooler probe connections frequently and allows the pool to scale down completely when idle",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Increase the maximum pool size substantially and turn off connection multiplexing",
+      "explanation": "This configuration permits many client sessions to keep dedicated server connections while disabling the ability to share server connections",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable connection multiplexing and use a short health check interval",
+      "explanation": "This configuration lets many client connections share a smaller set of database backends and uses frequent checks to detect unhealthy connections quickly",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Enable connection multiplexing and set a long idle connection timeout",
+      "explanation": "This configuration keeps idle sessions around for an extended period while still allowing multiple clients to share server connections",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Enable connection multiplexing and use a short health check interval</b>.</p><p>This configuration lets many client requests share a small set of database connections so it removes the overhead of creating and tearing down connections during bursts. It is well suited to Cloud Run workloads because it smooths sudden spikes in concurrency and keeps the number of active database backends low which reduces queuing and tail latency. A short health check interval quickly detects dead or slow backends so the pool stops routing traffic to them and avoids expensive retries that inflate p95 latency.</p><p><i>Set an aggressive health check interval and configure the minimum pool size to 0</i> is not effective because a zero minimum allows the pool to drop to no warm connections and that forces new connections to be created during spikes which adds handshake cost and increases tail latency. Very aggressive checks also add overhead without addressing the root cause of connection churn.</p><p><i>Increase the maximum pool size substantially and turn off connection multiplexing</i> is counterproductive for a bursty serverless service because binding one client to one server connection consumes many backends and can hit connection limits or cause queuing. Creating more physical connections during spikes increases contention and handshake latency rather than reducing it.</p><p><i>Enable connection multiplexing and set a long idle connection timeout</i> does not directly improve tail latency during spikes because holding idle backends for too long wastes server capacity that could be recycled to healthier or busier clients. It can also keep stale connections around and delay detection of issues, which does not help reduce p95 latency.</p>",
+  "batch_id": "138",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are responsible for optimizing database performance in a Cloud SQL environment for a latency-sensitive application. You have decided to use a session pooler service to manage database connections. Which of the following configurations for the session pooler service will provide the most significant improvement in database performance by reducing latency?",
+  "originalOptions": "A. Configure a short connection health check frequency and set the minimum pool size to zero.<br/>B. Enable connection multiplexing and configure a short connection health check frequency.<br/>C. Enable connection multiplexing and configure a large idle connection timeout value.<br/>D. Set a low value for the maximum pool size and enable aggressive connection eviction.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "340",
+  "tip": "<p>When a question mentions serverless bursts to Cloud SQL, think about <i>reducing connection churn</i>. Prefer pooling modes that <i>multiplex</i> work across fewer backends and use <i>fast failure detection</i> rather than only increasing pool sizes or keeping many idle connections.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/connect-run",
+    "https://cloud.google.com/sql/docs/postgres/manage-connections",
+    "https://cloud.google.com/sql/docs/postgres/pgbouncer",
+    "https://www.pgbouncer.org/features.html",
+    "https://www.pgbouncer.org/config.html"
+  ],
+  "url": "https://certificationation.com/questions/exam-responsible-for-optimizing-database-performance-exam-340.html",
+  "video_url": "https://certificationation.com/videos/exam-responsible-for-optimizing-database-performance-exam-340.html"
+}

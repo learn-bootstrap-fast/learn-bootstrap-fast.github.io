@@ -1,0 +1,67 @@
+---
+title: "In a financial company, AWS CodePipeline has been usedExam"
+description: "Video for in a financial company, AWS CodePipeline has been used as the orchestration tool to manage pipelines. Some other AWS services are configured in the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "In a financial company, AWS CodePipeline has been used as the orchestration tool to manage pipelines. Some other AWS services are configured in the pipelines, including CodeCommit, CodeBuild, CodeDeploy, etc. There is a security policy that all artifacts generated during pipeline execution should be managed in a highly available and durable place. Which statements are correct about how AWS CodePipeline manages artifacts? (Select TWO.)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><b>It is possible for a user to pick a custom S3 bucket as the artifact storage location during pipeline creation</b> and <b>A user is allowed to set up a default S3 bucket in the same AWS region and account as the pipeline to serve as the artifact store</b> are correct.</p><p>Explanation and Tips:<br>Amazon S3 is the primary, and in practice the only, storage backend for artifacts in AWS CodePipeline. Using Amazon S3 ensures artifacts are securely managed with high durability and availability, aligning with most security policies for regulated industries.<br><ul><li><b>Custom S3 buckets</b> can be created or selected for each pipeline, giving you flexibility and allowing you to align with security best practices (e.g., KMS encryption, versioning, and bucket policies).</li><li>A <b>default S3 bucket</b> can automatically be created by CodePipeline in the same AWS region and account to store your pipeline artifacts if you opt not to specify a custom bucket. Artifacts <b>must</b> reside in a bucket in the <b>same region and account</b> as the pipeline.</li></ul></p><p>Why Other Answers Are Incorrect:<br><ul><li><i>Pipeline artifacts can be stored on either Amazon S3 or Amazon EC2 EBS volumes.</i> — This is incorrect because only Amazon S3 is supported for artifact storage; EBS is not used or supported for this purpose.</li><li><i>When storing artifacts in S3, the bucket may be situated in another AWS region.</i> — This is not allowed. CodePipeline requires that the artifact bucket be in the same region as the pipeline for security and latency reasons.</li><li><i>If CodeBuild is utilized for building, the user cannot specify output artifacts, only input artifacts.</i> — This is incorrect. With CodeBuild actions, you can define both input and output artifacts, enabling you to pass files or build results between stages.</li></ul></p><p><b>Exam tip:</b> When dealing with artifact storage, always link it back to S3, not EBS or other services. Remember S3's durability, regional restrictions, and the ability to specify custom or default buckets.</p>",
+  "query": "<p>An investment firm is utilizing AWS CodePipeline for orchestrating software delivery and employs services such as CodeCommit, CodeBuild, and CodeDeploy within its pipeline stages.<br>They require that all artifacts produced at various stages are kept in a location that is both highly durable and highly available, in accordance with security guidelines.<br>Which of the following statements accurately describe how AWS CodePipeline manages pipeline artifacts? (Choose TWO correct answers.)</p>",
+  "original_oid": "6793da0b61969b416038a132",
+  "options": [
+    {
+      "correct": true,
+      "text": "It is possible for a user to pick a custom S3 bucket as the artifact storage location during pipeline creation.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Pipeline artifacts can be stored on either Amazon S3 or Amazon EC2 EBS volumes.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "A user is allowed to set up a default S3 bucket in the same AWS region and account as the pipeline to serve as the artifact store.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "When storing artifacts in S3, the bucket may be situated in another AWS region.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "If CodeBuild is utilized for building, the user cannot specify output artifacts, only input artifacts.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question192",
+  "originalQuery": "In a financial company, AWS CodePipeline has been used as the orchestration tool to manage pipelines.\nSome other AWS services are configured in the pipelines, including CodeCommit, CodeBuild, CodeDeploy, etc.\nThere is a security policy that all artifacts generated during pipeline execution should be managed in a highly available and durable place.\nWhich statements are correct about how AWS CodePipeline manages artifacts? (Select TWO.)",
+  "originalOptions": "A. User can select a custom S3 bucket as the artifact store while creating a new pipeline.\nB. Artifact can be stored in S3 or EC2 EBS.\nC. User can configure a default S3 bucket as the artifact store in the same region and account as the pipeline.\nD. When artifacts are saved in an S3 bucket, the bucket can belong to a different region.\nE. When CodeBuild is used in the build stage, user can only configure input artifacts but not output artifacts.",
+  "video_url": "https://certificationation.com/videos/exam-has-been-used-as-the-exam-213.html",
+  "url": "https://certificationation.com/questions/exam-has-been-used-as-the-exam-213.html"
+}

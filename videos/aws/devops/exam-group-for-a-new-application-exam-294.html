@@ -1,0 +1,62 @@
+---
+title: "You have created a new Auto Scaling group for a newExam"
+description: "Video for you have created a new Auto Scaling group for a new application which sets the minimum capacity as 1 and the maximum capacity as 20 The ASG is running"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have created a new Auto Scaling group for a new application which sets the minimum capacity as 1 and the maximum capacity as 20 The ASG is running well for two weeks. However, recently there were cases that some instances were not terminated successfully. You need to work out a way to notify the team via email whenever any instance fails to terminate. What is the simplest way to implement this?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>Set up a CloudWatch alarm to monitor the metric 'Terminate Failed', and trigger an SNS email notification upon entering the ALARM state</b> option is correct. Auto Scaling activities generate metrics that can be monitored with CloudWatch. By creating a CloudWatch alarm on the 'Terminate Failed' metric, you can automatically send notifications—such as email alerts via SNS—to the team as soon as a termination failure occurs.</p><p>Option <i>Configure the Auto Scaling policy to send a message to an SNS topic when termination fails for an instance</i> is incorrect because there is no direct ASG policy configuration that notifies on termination failure alone; notification types are more general and won't specifically alert on just failures.</p><p>Option <i>Define a CloudWatch Event rule that detects 'Terminate Unsuccessful' events and calls a Lambda function to contact the team</i> would work, but it is more complex. It involves building an extra Lambda function when CloudWatch alarms and SNS would suffice in a much simpler way.</p><p>Option <i>Make the Auto Scaling group send notifications to an SNS topic any time instance termination fails</i> is also incorrect for the same reason as the first: such granular notification is not natively available through ASG notification settings alone without involving CloudWatch alarms.</p><p><b>Tips:</b> Prefer native, straightforward solutions that require the fewest components, especially when built-in metrics and notification integrations (like CloudWatch alarms and SNS) exist. CloudWatch alarms are simple and scalable for this use case.</p>",
+  "query": "<p>An Auto Scaling group (ASG) was set up for a new application, maintaining between 1 and 20 instances. After two weeks of stable operation, some instances have failed to terminate as expected. What is the most straightforward way to ensure the team receives an email alert whenever an ASG instance termination attempt is unsuccessful?</p>",
+  "original_oid": "6793d9e061969b416038a0df",
+  "options": [
+    {
+      "correct": false,
+      "text": "Configure the Auto Scaling policy to send a message to an SNS topic when termination fails for an instance.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Set up a CloudWatch alarm to monitor the metric 'Terminate Failed', and trigger an SNS email notification upon entering the ALARM state.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Define a CloudWatch Event rule that detects 'Terminate Unsuccessful' events and calls a Lambda function to contact the team.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Make the Auto Scaling group send notifications to an SNS topic any time instance termination fails.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question108",
+  "originalQuery": "You have created a new Auto Scaling group for a new application which sets the minimum capacity as 1 and the maximum capacity as 20\nThe ASG is running well for two weeks.\nHowever, recently there were cases that some instances were not terminated successfully.\nYou need to work out a way to notify the team via email whenever any instance fails to terminate.\nWhat is the simplest way to implement this?",
+  "originalOptions": "A. Configure the Auto Scaling group to send a notification to an SNS topic whenever instances fail to terminate.|B. Configure the related Auto Scaling configuration to send a notification to an SNS topic whenever instances fail to terminate.|C. Create a CloudWatch Event. When an event of “Terminate Unsuccessful” happens, invoke a Lambda function to notify the team.|D. Create a CloudWatch alarm based on the metric of “Terminate Failed”. Send a notification to an SNS topic when the alarm state is “ALARM”.",
+  "video_url": "https://certificationation.com/videos/exam-group-for-a-new-application-exam-294.html",
+  "url": "https://certificationation.com/questions/exam-group-for-a-new-application-exam-294.html"
+}

@@ -1,0 +1,84 @@
+---
+title: "You have been asked to size a database solution for anExam"
+description: "Video for you have been asked to size a database solution for an e-commerce application on Google Cloud Platform (GCP). The application currently has an average"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have been asked to size a database solution for an e-commerce application on Google Cloud Platform (GCP). The application currently has an average of 5,000 transactions per second (TPS), but you expect this to increase to 15,000 TPS over the next two years. You need to design a database solution that can handle the current workload and scale to meet future requirements. Which of the following options would be the most appropriate choice?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "An online ticketing startup running on Google Cloud needs to size its primary database for a transactional checkout service. The system sustains about 6,500 transactions per second today and forecasts indicate growth to approximately 18,000 TPS in the next 30 months. You must select a managed database platform on GCP that can handle the current demand and scale horizontally as usage increases while maintaining high availability. What should you implement?",
+  "options": [
+    {
+      "text": "Use AlloyDB for PostgreSQL with one primary instance and several read pool instances",
+      "explanation": "AlloyDB for PostgreSQL provides a managed PostgreSQL service that can add read pool instances for read scalability while writes go to a single primary instance",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Cloud SQL for PostgreSQL with a single instance and increase the machine size as load grows",
+      "explanation": "Cloud SQL offers managed relational databases that primarily scale by vertically resizing the instance and storage",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Cloud Spanner in a multi‑region configuration and scale throughput by adding nodes with a primary key design that avoids hotspots",
+      "explanation": "Cloud Spanner is a horizontally scalable relational database that supports multi‑region availability and can increase capacity by adding nodes",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use Cloud Bigtable with three nodes per cluster and enable autoscaling on the instance",
+      "explanation": "Cloud Bigtable is a wide column store that can scale with autoscaling policies and node counts for high throughput workloads",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Use Cloud Spanner in a multi‑region configuration and scale throughput by adding nodes with a primary key design that avoids hotspots</b>. This option meets the current and projected transaction rates while providing horizontal scale and high availability.</p><p>This service is a fully managed relational database that scales horizontally by adding nodes which increases compute capacity and splits data automatically. It offers strong consistency and high availability with synchronous replication across regions in a multi region deployment. With an appropriate primary key that avoids monotonically increasing values the system prevents write hotspots and sustains high write throughput as usage grows.</p><p>The <i>Use AlloyDB for PostgreSQL with one primary instance and several read pool instances</i> option is not suitable because read pools serve only reads and all writes go to the primary. A checkout workload is write heavy so <i>AlloyDB</i> cannot scale writes horizontally and the primary becomes a bottleneck.</p><p>The <i>Use Cloud SQL for PostgreSQL with a single instance and increase the machine size as load grows</i> option relies on vertical scaling which does not provide horizontal write scale. It remains constrained by a single writer and can hit performance ceilings as demand approaches the projected level.</p><p>The <i>Use Cloud Bigtable with three nodes per cluster and enable autoscaling on the instance</i> option is a NoSQL wide column store that does not provide relational transactions or SQL. A checkout service typically requires strong transactional guarantees so <i>Cloud Bigtable</i> is not an appropriate primary system of record.</p>",
+  "batch_id": "28",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You have been asked to size a database solution for an e-commerce application on Google Cloud Platform (GCP). The application currently has an average of 5,000 transactions per second (TPS), but you expect this to increase to 15,000 TPS over the next two years. You need to design a database solution that can handle the current workload and scale to meet future requirements. Which of the following options would be the most appropriate choice?",
+  "originalOptions": "A. Use Cloud Bigtable with a replication factor of 3 and enable autoscaling based on the workload.<br/>B. Use Cloud SQL with a single instance and increase the instance size when needed.<br/>C. Migrate the database to Cloud Datastore and enable automatic scaling.<br/>D. Deploy Cloud Spanner with a multi-regional instance and use partitioned tables to distribute the data.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "238",
+  "tip": "<p>Map keywords to capabilities. When you see <i>horizontal scaling</i>, <i>high availability across regions</i>, and <i>transactional</i> requirements for a primary system of record, think of Cloud Spanner. Be cautious of options that only add read replicas or only scale up a single instance for write heavy workloads.</p>",
+  "references": [
+    "https://cloud.google.com/spanner",
+    "https://cloud.google.com/spanner/docs/instances",
+    "https://cloud.google.com/spanner/docs/compute-capacity",
+    "https://cloud.google.com/spanner/docs/schema-design",
+    "https://cloud.google.com/alloydb/docs/cluster-read-pools",
+    "https://cloud.google.com/sql/docs/postgres/replication",
+    "https://cloud.google.com/bigtable/docs/overview",
+    "https://cloud.google.com/bigtable/docs/when-to-use-bigtable"
+  ],
+  "url": "https://certificationation.com/questions/exam-solution-for-an-e-commerce-application-exam-238.html",
+  "video_url": "https://certificationation.com/videos/exam-solution-for-an-e-commerce-application-exam-238.html"
+}

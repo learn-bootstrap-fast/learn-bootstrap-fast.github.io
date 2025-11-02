@@ -1,0 +1,82 @@
+---
+title: "After a recent performance review, you are tasked withExam"
+description: "Video for after a recent performance review, you are tasked with improving the backup and restore processes for a set of Cloud SQL for MySQL instances. You need"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "After a recent performance review, you are tasked with improving the backup and restore processes for a set of Cloud SQL for MySQL instances. You need a solution that minimizes downtime during restores. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "After an internal audit at NorthBay Freight, you must modernize the backup and recovery strategy for multiple Cloud SQL for MySQL instances. Leadership wants any restoration to keep the application unavailable for less than 15 minutes. Which approach should you implement?",
+  "options": [
+    {
+      "text": "Enable Cloud SQL high availability on the primary instances",
+      "explanation": "This configuration adds a standby in another zone so failover can occur automatically during zonal disruptions and planned maintenance",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Export each instance to Cloud Storage and import when recovery is needed",
+      "explanation": "This method relies on exporting data to Cloud Storage and performing manual imports to rebuild instances from artifacts",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Turn on automated backups and point-in-time recovery",
+      "explanation": "This enables managed backups and binary logging so a restore can be performed to a specific timestamp within the retention period",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Configure a cross-region replica for every database instance",
+      "explanation": "This creates an asynchronous replica in a second region that can be promoted if the primary region becomes unavailable",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct approach is <b>Turn on automated backups and point-in-time recovery</b> because it lets you restore to a specific moment just before an incident and keeps application downtime to a brief cutover window that can be under fifteen minutes.</p><p><b>Point-in-time recovery</b> uses <b>automated backups</b> together with transaction logs to recreate the database state at a chosen timestamp within the retention window. You can initiate the restore to a new instance while production continues to run. When the target is ready you switch connections to the restored instance which limits unavailability to the cutover period. This directly supports a strict recovery time requirement while also providing protection against accidental deletes or data corruption.</p><p><i>Enable Cloud SQL high availability on the primary instances</i> improves resilience for zonal outages and maintenance events but it does not let you roll the database back to an earlier state. If data is corrupted or deleted then that state is replicated to the standby so it does not meet the restoration objective.</p><p><i>Export each instance to Cloud Storage and import when recovery is needed</i> is a manual process that is slower and scales poorly for larger datasets. It does not provide granular recovery to a moment in time and the export and import steps commonly exceed a fifteen minute recovery window.</p><p><i>Configure a cross-region replica for every database instance</i> helps with disaster recovery for regional failures and read scaling but it does not restore data to a previous point since corruption and deletes are replicated. It addresses availability rather than precise recovery needs.</p>",
+  "batch_id": "337",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "After a recent performance review, you are tasked with improving the backup and restore processes for a set of Cloud SQL for MySQL instances. You need a solution that minimizes downtime during restores. What should you do?",
+  "originalOptions": "A. Create a Cloud Function to trigger backups every hour.<br/>B. Export data to Cloud Storage and import when needed.<br/>C. Set up a cross-region replica for each instance.<br/>D. Use automated backups with point-in-time recovery.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "160",
+  "tip": "<p>Map the requirement to the capability. If you see a strict recovery time and the need to undo mistakes then think <i>point in time</i> and <i>automated backups</i>. If the scenario emphasizes surviving outages rather than reversing bad changes then think <i>high availability</i> or <i>replicas</i>.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/backup-recovery/point-in-time-recovery",
+    "https://cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+    "https://cloud.google.com/sql/docs/mysql/high-availability",
+    "https://cloud.google.com/sql/docs/mysql/replication",
+    "https://cloud.google.com/sql/docs/mysql/export",
+    "https://cloud.google.com/sql/docs/mysql/import"
+  ],
+  "url": "https://certificationation.com/questions/exam-you-are-tasked-with-improving-exam-160.html",
+  "video_url": "https://certificationation.com/videos/exam-you-are-tasked-with-improving-exam-160.html"
+}

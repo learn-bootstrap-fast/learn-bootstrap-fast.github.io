@@ -1,0 +1,80 @@
+---
+title: "As a Database Engineer, you are developing anExam"
+description: "Video for as a Database Engineer, you are developing an application that utilizes a Cloud SQL database in the backend. Currently, the database is installed in a"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are developing an application that utilizes a Cloud SQL database in the backend. Currently, the database is installed in a single zone, but your task is to design a robust database architecture that ensures high availability (HA). What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the database engineer for Everpeak Travel and your booking API uses Cloud SQL for PostgreSQL as its data store. The instance currently runs in a single zone and leadership wants a 99.95% availability target with minimal disruption during a zonal outage while keeping one write endpoint. What should you implement?",
+  "options": [
+    {
+      "text": "Schedule a job with Cloud Scheduler that restores a fresh instance from backup in another zone when the primary becomes unavailable",
+      "explanation": "This approach depends on backups and an automated creation process triggered by a scheduled job during failures.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a cross zone read replica and rely on automatic promotion to make it primary when the zone fails",
+      "explanation": "This uses a read replica in a different zone and assumes it can switch to primary without manual steps.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Turn on Cloud SQL high availability for the instance so a regional standby is created and automatic failover handles a zonal outage",
+      "explanation": "This uses the Cloud SQL high availability configuration that maintains a synchronous standby in another zone and performs automatic failover during outages.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use two standalone Cloud SQL instances in different regions and configure the app to write to both at the same time",
+      "explanation": "This sets up dual write patterns across regions without built in conflict handling or primary coordination.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Turn on Cloud SQL high availability for the instance so a regional standby is created and automatic failover handles a zonal outage</b>.</p><p><b>Cloud SQL high availability</b> creates a standby in a different zone within the same region and uses synchronous storage replication so failover during a zonal outage is automatic and fast. This configuration meets the 99.95 percent availability target and maintains a single write endpoint because the instance connection name and IP continue to serve the database after failover which minimizes disruption to the application.</p><p><i>Schedule a job with Cloud Scheduler that restores a fresh instance from backup in another zone when the primary becomes unavailable</i> is wrong because restores from backups are manual recovery actions that take significant time and require app reconfiguration which does not meet a high availability target and does not provide minimal disruption.</p><p><i>Create a cross zone read replica and rely on automatic promotion to make it primary when the zone fails</i> is wrong because Cloud SQL read replicas are asynchronous and are not automatically promoted during failures. Promotion is a manual operation and may incur data loss and application downtime which fails the availability requirement.</p><p><i>Use two standalone Cloud SQL instances in different regions and configure the app to write to both at the same time</i> is wrong because dual writes to independent primaries are not supported and cause consistency conflicts. It also violates the requirement to keep one write endpoint and adds complexity without providing automatic failover.</p>",
+  "batch_id": "159",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are developing an application that utilizes a Cloud SQL database in the backend. Currently, the database is installed in a single zone, but your task is to design a robust database architecture that ensures high availability (HA). What should you do?",
+  "originalOptions": "A. Create two separate instances of the database in different regions, and write to each of them separately and simultaneously.<br/>B. Use Cloud Scheduler to create a new database instance in another zone from a backup if there is an instance failure.<br/>C. Configure an instance for high availability, and fail over to the HA instance if there is a zonal failure.<br/>D. Create two separate instances of the database in different zones, and write to each of them separately and simultaneously.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "294",
+  "tip": "<p>When a question asks for a single write endpoint and resilience to a zonal outage, map that to <i>Cloud SQL high availability</i> with <i>automatic failover</i>. Remember that <i>read replicas</i> are for scaling reads and are not automatically promoted, and backup restores do not meet an <i>availability</i> target.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/high-availability",
+    "https://cloud.google.com/sql/docs/postgres/failover",
+    "https://cloud.google.com/sql/docs/postgres/replication/configure-managed-replicas",
+    "https://cloud.google.com/sql/sla"
+  ],
+  "url": "https://certificationation.com/questions/exam-developing-an-application-that-utilizes-exam-294.html",
+  "video_url": "https://certificationation.com/videos/exam-developing-an-application-that-utilizes-exam-294.html"
+}

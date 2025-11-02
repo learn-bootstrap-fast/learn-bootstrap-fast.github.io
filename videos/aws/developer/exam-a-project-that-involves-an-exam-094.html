@@ -1,0 +1,89 @@
+---
+title: "A Database Engineer is working on a project thatExam"
+description: "Video for a Database Engineer is working on a project that involves an e-commerce application that requires high availability, fault tolerance, and fast"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A Database Engineer is working on a project that involves an e-commerce application that requires high availability, fault tolerance, and fast read/write performance. The application is currently using Cloud SQL, and the engineer is tasked with optimizing cost and performance. Which of the following strategies should the engineer implement to best achieve these objectives? (Choose two)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A data platform engineer at a retail startup that runs its storefront on example.com needs to raise availability to 99.95% and improve resilience while keeping read and write latency low during promotions that can spike traffic to eight times normal. The application currently uses Cloud SQL and leadership wants better performance and reliability without a large increase in cost. Which actions should be prioritized to meet these goals?",
+  "options": [
+    {
+      "text": "Add a caching layer with Cloud Memorystore",
+      "explanation": "Introducing a managed cache such as Redis or Memcached in front of Cloud SQL can serve frequently requested data from memory and reduce database load.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Migrate the database to Cloud Spanner",
+      "explanation": "Cloud Spanner provides horizontally scalable relational storage with strong consistency and high availability across regions.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create Cloud SQL read replicas in one or more regions",
+      "explanation": "Cloud SQL read replicas allow read queries to be served by additional instances in the same or different regions which can reduce latency and distribute load.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Replace Cloud SQL with BigQuery",
+      "explanation": "BigQuery is a serverless analytics warehouse that is designed for large scale analytical queries rather than transactional workloads.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Move the workload to Cloud Bigtable",
+      "explanation": "Cloud Bigtable is a wide column NoSQL database suited for very large key value or time series workloads rather than relational transactions.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct options are <b>Add a caching layer with Cloud Memorystore</b> and <b>Create Cloud SQL read replicas in one or more regions</b>.</p><p><b>Add a caching layer with Cloud Memorystore</b> reduces read load on the primary database by serving hot keys from memory which keeps read latency low during promotions that drive traffic to many times normal. Offloading frequent reads to <b>Memorystore</b> is typically a cost effective way to boost performance and absorb spikes without resizing the database and it improves user experience by returning data quickly.</p><p><b>Create Cloud SQL read replicas in one or more regions</b> helps scale out read traffic and improves resilience. Placing <b>read replicas</b> close to users lowers read latency and offloads the primary during peak demand. Replicas can be promoted if needed which supports recovery scenarios. When paired with Cloud SQL high availability for the primary instance this pattern aligns with the 99.95 percent availability target and controls cost better than a wholesale platform migration.</p><p><i>Migrate the database to Cloud Spanner</i> is not the best first step because although <i>Cloud Spanner</i> delivers strong consistency and very high availability it usually increases cost and adds migration complexity. The requirements favor keeping latency low and improving reliability without a large increase in cost which is better met by caching and replicas on Cloud SQL.</p><p><i>Replace Cloud SQL with BigQuery</i> is incorrect because <i>BigQuery</i> is an analytical data warehouse and it is not designed for low latency transactional reads and writes that power a storefront.</p><p><i>Move the workload to Cloud Bigtable</i> is also incorrect because <i>Cloud Bigtable</i> is a wide column NoSQL store that lacks relational transactions and SQL features. Moving a transactional retail database to it would require major redesign and is unlikely to meet the stated goals with minimal cost increase.</p>",
+  "batch_id": "89",
+  "answerCode": "1,3",
+  "type": "multi-select",
+  "originalQuery": "A Database Engineer is working on a project that involves an e-commerce application that requires high availability, fault tolerance, and fast read/write performance. The application is currently using Cloud SQL, and the engineer is tasked with optimizing cost and performance. Which of the following strategies should the engineer implement to best achieve these objectives? (Choose two)",
+  "originalOptions": "A. Use Firestore instead of Cloud SQL for its low-latency read and write capabilities<br/>B. Implement read replicas to distribute read queries across multiple instances<br/>C. Implement a caching layer using Cloud Memorystore for frequently accessed data<br/>D. Migrate the application data to Cloud Spanner for better horizontal scalability<br/>E. Use BigQuery instead of Cloud SQL to take advantage of its large-scale data analytics capabilities",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "94",
+  "tip": "<p>Match the service to the workload. For transactional web apps think <i>cache first</i> for hot reads and scale reads with <i>replicas</i> before changing the primary database engine. Reserve platform migrations like <i>Spanner</i> for cases that truly need global scale and strong consistency and verify the <i>SLA</i> and <i>latency</i> requirements against cost.</p>",
+  "references": [
+    "https://cloud.google.com/memorystore/docs/redis/overview",
+    "https://cloud.google.com/sql/docs/replication",
+    "https://cloud.google.com/sql/docs/mysql/high-availability",
+    "https://cloud.google.com/sql/sla",
+    "https://cloud.google.com/spanner/docs/overview",
+    "https://cloud.google.com/bigquery/docs/introduction",
+    "https://cloud.google.com/bigtable/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-a-project-that-involves-an-exam-094.html",
+  "video_url": "https://certificationation.com/videos/exam-a-project-that-involves-an-exam-094.html"
+}

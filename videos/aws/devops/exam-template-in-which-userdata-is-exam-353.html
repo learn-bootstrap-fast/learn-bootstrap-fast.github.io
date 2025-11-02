@@ -1,0 +1,62 @@
+---
+title: "You are creating a Cloudformation template in whichExam"
+description: "Video for you are creating a Cloudformation template in which Userdata is going to be passed to underlying EC2 Instance. Which of the below functions is"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are creating a Cloudformation template in which Userdata is going to be passed to underlying EC2 Instance. Which of the below functions is normally used to pass data to the UserData section in the Cloudformation template?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>\"UserData\": {\"Fn::Base64\": {</b> function is commonly used in CloudFormation templates for the <code>UserData</code> section when launching EC2 instances. UserData scripts or configuration data must be Base64-encoded for EC2, and the Fn::Base64 intrinsic function enables this encoding within the template. This ensures your script or initialization content is properly accepted by the EC2 instance.</p><p>The other options are not appropriate for this scenario. <i>\"UserData\": { \"Fn::Ref\": {</i> merely returns the value of a resource or parameter reference, which does not provide the encoding required for UserData. <i>\"UserData\": { \"Fn::GetAtt\": {</i> fetches resource attributes and is not intended for encoding scripts. <i>\"UserData\": { \"Fn::FindInMap\": {</i> is for looking up values from a mapping, not for serializing or encoding UserData content. Always ensure UserData content is properly Base64-encoded as expected by AWS EC2 resources.</p><p><b>Tip:</b> If you have a shell script or cloud-init configuration for your EC2 instance, wrap it with <code>Fn::Base64</code> in CloudFormation so it is correctly delivered and executed on your instance at startup.</p>",
+  "query": "<p>When designing an AWS CloudFormation template that includes user data to configure an EC2 instance at launch, which function should you typically use to pass content into the <code>UserData</code> property of the EC2 resource?</p>",
+  "original_oid": "6793da3061969b416038a17f",
+  "options": [
+    {
+      "correct": false,
+      "text": "\"UserData\": { \"Fn::Ref\": {",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "\"UserData\": { \"Fn::GetAtt\": {",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "\"UserData\": { \"Fn::FindInMap\": {",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "\"UserData\": {\"Fn::Base64\": {",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question270",
+  "originalQuery": "You are creating a Cloudformation template in which Userdata is going to be passed to underlying EC2 Instance.\nWhich of the below functions is normally used to pass data to the UserData section in the Cloudformation template?",
+  "originalOptions": "A. \"UserData\": {\"Fn::Base64\": {,B. \"UserData\": { \"Fn::Ref\": {,C. \"UserData\": { \"Fn::GetAtt\": {,D. \"UserData\": { \"Fn::FindInMap\": {",
+  "video_url": "https://certificationation.com/videos/exam-template-in-which-userdata-is-exam-353.html",
+  "url": "https://certificationation.com/questions/exam-template-in-which-userdata-is-exam-353.html"
+}

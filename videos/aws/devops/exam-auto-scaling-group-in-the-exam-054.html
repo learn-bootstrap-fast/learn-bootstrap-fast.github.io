@@ -1,0 +1,62 @@
+---
+title: "You use CloudFormation to launch an Auto Scaling groupExam"
+description: "Video for you use CloudFormation to launch an Auto Scaling group. In the CloudFormation stack, you create a lifecycle hook in the ASG that puts a new instance"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You use CloudFormation to launch an Auto Scaling group. In the CloudFormation stack, you create a lifecycle hook in the ASG that puts a new instance in the Wait state while the custom script of the user data is running. The script installs the web application, initializes customer data and performs a health check of the instance. After the health check has passed, how would you put the instance back to the InService state in the Auto Scaling group?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct way to move an instance from the 'Wait' state to 'InService' after your custom initialization is complete (such as after a user data script successfully passes a health check) is to have your script call the <strong>complete-lifecycle-action</strong> command. This tells the Auto Scaling lifecycle hook that your custom actions have finished and the lifecycle hook can conclude. This returns the instance to normal ASG operation and marks it as 'InService'.</p> <p>Why the other options are incorrect:</p><ul><li><i>Invoke the CLI command put-lifecycle-hook within the script...</i> – The <code>put-lifecycle-hook</code> command is for creating or updating lifecycle hooks, <strong>not for completing</strong> a lifecycle action for a specific instance. It does not move an instance out of the Wait state.</li> <li><i>Make use of attach-instances from the AWS CLI...</i> – The <code>attach-instances</code> command is meant for manually adding existing EC2 instances to an Auto Scaling group. It does not affect lifecycle hooks or the specific ASG lifecycle state transitions resulting from hooks.</li> <li><i>Configure your script to run record-lifecycle-action-heartbeat...</i> – The command <code>record-lifecycle-action-heartbeat</code> is used to keep an instance in the Wait state longer by heartbeating, but does not end the wait or complete the lifecycle action. You still need to call <strong>complete-lifecycle-action</strong> to finish the hook and bring the instance into service.</li></ul> <p><strong>Tip:</strong> Always use 'complete-lifecycle-action' at the end of your initialization logic to ensure Auto Scaling recognizes that your instance is ready for traffic.</p>",
+  "query": "<p>You deployed an Auto Scaling group using AWS CloudFormation, and within your stack, you've configured a lifecycle hook to set any new instance to 'Wait' while its user data script runs. The script's tasks include deploying a web app, initializing customer data, and running a health check. Once the health check passes, what action should your script take so that the instance is marked as 'InService' by the Auto Scaling group?</p>",
+  "original_oid": "6793da8b61969b416038a239",
+  "options": [
+    {
+      "correct": true,
+      "text": "Have your script call the CLI command <code>complete-lifecycle-action</code> to finalize the lifecycle hook operation and allow the instance to move to the InService state.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Invoke the CLI command <code>put-lifecycle-hook</code> within the script to return the instance to normal operation within the Auto Scaling group.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Make use of <code>attach-instances</code> from the AWS CLI in the script, which attaches the instance to the Auto Scaling group and transitions the state from Wait to InService.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Configure your script to run <code>record-lifecycle-action-heartbeat</code> or the corresponding RecordLifecycleActionHeartbeat API operation in order to reactivate the instance.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question457",
+  "originalQuery": "You use CloudFormation to launch an Auto Scaling group.\nIn the CloudFormation stack, you create a lifecycle hook in the ASG that puts a new instance in the Wait state while the custom script of the user data is running.\nThe script installs the web application, initializes customer data and performs a health check of the instance.\nAfter the health check has passed, how would you put the instance back to the InService state in the Auto Scaling group?",
+  "originalOptions": "A. Use the record-lifecycle-action-heartbeat CLI command or the RecordLifecycleActionHeartbeat operation in the script.\nB. In the script, use the AWS CLI command complete-lifecycle-action to finish the lifecycle hook customer actions.\nC. Use the AWS CLI command put-lifecycle-hook to complete the lifecycle actions and put the instance back to the normal process of the Auto Scaling group.\nD. In the script, use the AWS CLI command attach-instances to attach the instance to the ASG, which completes the lifecycle action and modifies the instance state from Wait to InService.",
+  "video_url": "https://certificationation.com/videos/exam-auto-scaling-group-in-the-exam-054.html",
+  "url": "https://certificationation.com/questions/exam-auto-scaling-group-in-the-exam-054.html"
+}

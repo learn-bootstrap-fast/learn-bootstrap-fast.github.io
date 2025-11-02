@@ -1,0 +1,74 @@
+---
+title: "You currently have 9 EC2 instances running in a ClusterExam"
+description: "Video for you currently have 9 EC2 instances running in a Cluster Placement Group. All these nine instances were initially launched at the same time and seemed"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You currently have 9 EC2 instances running in a Cluster Placement Group. All these nine instances were initially launched at the same time and seemed to be performing as expected. You decide that you need to add two new instances to the group. However, when you attempt to do this, you receive a 'capacity error.' Which of the following actions will most likely fix this problem? Choose the correct answer from the options below."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d576f501ee1c8ade9782"
+  },
+  "quid": "0",
+  "ordinal": "55",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "Amazon EC2 instance types",
+    " AWS global infrastructure",
+    " AWS Support",
+    " AWS Well-Architected Framework",
+    " Compute"
+  ],
+  "slug": "ec2-instances-cluster-placement-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question55",
+  "title": "AWS You Currently Have 9 EC2 Instances Question",
+  "meta": "AWS Exam Question: You have 9 EC2 instances in a Cluster Placement Group. Adding 2 new instances causes a 'capacity error.' What will fix this? Answer: EC2.",
+  "answer": "B",
+  "query": "An organization runs 7 EC2 instances within a Cluster Placement Group for a high-performance computing workload. The team now wishes to add three more instances to this group to handle increased load. When trying to launch the additional instances, a 'capacity error' is encountered. What action should be taken to resolve this issue? Select the best answer from the options below.",
+  "originalQuery": "You currently have 9 EC2 instances running in a Cluster Placement Group.\nAll these nine instances were initially launched at the same time and seemed to be performing as expected.\nYou decide that you need to add two new instances to the group.\nHowever, when you attempt to do this, you receive a 'capacity error.' Which of the following actions will most likely fix this problem? Choose the correct answer from the options below.",
+  "options": [
+    "A. Set up a different placement group and deploy the new instances there, ensuring both placement groups share the same availability zone.",
+    "B. Stop and restart all the instances in the Placement Group and then try the launch again.",
+    "C. Request a capacity increase from AWS as you are initially limited to 10 instances per Placement Group.",
+    "D. Confirm that every instance is of identical type before attempting the launch once more."
+  ],
+  "originalOptions": [
+    "A. Create another placement group and launch new instances in that group. Make sure that both the placement groups are in the same subnet.",
+    "B. Stop and restart all the instances in the Placement Group and then try the launch again.",
+    "C. Request a capacity increase from AWS as you are initially limited to 10 instances per Placement Group.",
+    "D. Make sure all the instances are the same size and then try the launch again."
+  ],
+  "image": "",
+  "primaryObjective": "1: Design Solutions for Organizational Complexity",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Answer - B.\nOption A is incorrect because to benefit from the enhanced networking, all the instances should be in the same Placement Group.\nLaunching the new ones in a new Placement Group will not work in this case.\nOption B is CORRECT because the most likely reason for the \"Capacity Error\" is that the underlying hardware may not have the capacity to launch any additional instances on it.\nIf the instances are stopped and restarted, AWS may move the instances to a hardware that has the capacity for all the requested instances.\nOption C is incorrect because there is no such limit on the number of instances in a Placement Group (however, you can not exceed your EC2 instance limit allocated to your account per region).\nOption D is incorrect because the capacity error is not related to the instance size and ensures that the instances are of the same size will not resolve the capacity error.\nMore information on Cluster Placement Group.\nIf you receive a capacity error when launching an instance in a placement group that already has running instances, stop and start all of the instances in the placement group, and try the launch again.\nRestarting the instances may migrate them to hardware that has the capacity for all the requested instances.\nCluster Placement Groups.\nA cluster placement group is a logical grouping of instances within a single Availability Zone.\nA placement group can span peered VPCs in the same region.\nCluster placement groups are recommended for applications that benefit from low network latency, high network throughput, or both.\nThe majority of the network traffic is between the instances in the group.\nTo provide the lowest latency and the highest packet-per-second network performance for your placement group, choose an instance type supporting enhanced networking.\nFor more information, see Enhanced Networking.\nWe recommend that you launch the number of instances you need in the placement group in a single launch request and use the same instance type for all instances in the placement group.\nIf you try to add more instances to the placement group later or try to launch more than one instance type in the placement group, you increase your chances of getting an insufficient capacity error.\nIf you stop an instance in a placement group and then start it again, it still runs in the placement group.\nHowever, the start fails if there isn't enough capacity for the instance.\nIf you receive a capacity error when launching an instance in a placement group that already has running instances, stop and start all of the instances in the placement group and try the launch again.\nRestarting the instances may migrate them to hardware that has capacity for all the requested instances.\nFor more information on this, please refer to the below URL.\nhttp://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html\nNote:\nIn this scenario, we are discussing the insufficient capacity error happening within a placement group.\nAs per AWS docs,\n\"If you receive a capacity error when launching an instance in a placement group that already has running instances, stop and start all of the instances in the placement group, and try the launch again.\nRestarting the instances may migrate them to hardware that has capacity for all the requested instances.\"\nIn our scenario, we already have 9 EC2 instances running on a placement group.\nWhen we tried to add 2 more to the group, we have encountered this error.\nSo if we stop and restart all the instances, it will help resolve this issue as the restarting instances will migrate to a new hardware that will have the capacity for all the instances.\nFor more information, please refer to:\nhttps://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html\nThe correct answer to this question is C. Request a capacity increase from AWS as you are initially limited to 10 instances per Placement Group.\nExplanation:\nA Cluster Placement Group is a logical grouping of instances within a single Availability Zone. Instances in a placement group benefit from low-latency, high-bandwidth network connections to other instances in the same placement group.\nIn AWS, there is a limit of 10 instances per placement group, and this limit cannot be increased by default. Therefore, when attempting to add two new instances to a placement group that already has 9 instances, a capacity error will occur.\nOption A, creating another placement group and launching new instances in that group, will not resolve the issue because there is still a limit of 10 instances per placement group.\nOption B, stopping and restarting all instances in the placement group, will not resolve the issue because it will not increase the capacity of the placement group.\nOption D, ensuring that all instances are the same size, will not resolve the issue because it will not increase the capacity of the placement group.\nOption C, requesting a capacity increase from AWS, is the correct solution to the problem. You can request an increase in the limit by contacting AWS support. Once the limit is increased, you will be able to add the additional instances to the placement group.\nIn summary, the correct solution to the problem is to request a capacity increase from AWS, as there is a limit of 10 instances per placement group in AWS, and this limit cannot be increased by default.",
+  "chatGptExplanation": "The correct answer is option B: 'Stop and restart all the instances in the Placement Group and then try the launch again.' This is because when launching additional instances into an existing Cluster Placement Group, a capacity error often means the underlying physical hardware does not have enough available capacity to host the new instances alongside the currently running ones. By stopping and restarting all existing instances in the placement group, AWS can migrate them to different physical hosts that have sufficient capacity to accommodate all instances, including the new ones. This resolves the capacity error without requiring changes such as creating new placement groups or requesting limits increase. Option A is incorrect because creating another placement group does not solve the capacity issue within a single placement group's underlying hardware, and the question specifically requires instances within the same Cluster Placement Group to ensure low network latency. Option C is incorrect because AWS does not enforce a strict limit of 10 instances per Cluster Placement Group that requires a capacity increase request; the capacity error is related to hardware availability rather than account limits. Option D is incorrect because ensuring all instances are the same size does not influence the capacity availability of the physical hosts in the placement group. The primary focus of this question is the AWS Elastic Compute Cloud service's Cluster Placement Groups feature.",
+  "video_url": "https://certificationation.com/videos/exam-running-in-a-cluster-placement-exam-030.html",
+  "url": "https://certificationation.com/questions/exam-running-in-a-cluster-placement-exam-030.html"
+}

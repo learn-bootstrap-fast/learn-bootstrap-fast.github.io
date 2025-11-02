@@ -1,0 +1,74 @@
+---
+title: "You have created a mobile application that serves dataExam"
+description: "Video for you have created a mobile application that serves data stored in an Amazon DynamoDB table. Your primary concern is scalability of the application and"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have created a mobile application that serves data stored in an Amazon DynamoDB table. Your primary concern is scalability of the application and ability to handle millions of visitors and data requests. As part of your application, the customer needs access to the data located in the DynamoDB table. Given the application requirements, what would be the best method to design the application? Choose the correct answer from the options below."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d57bf501ee1c8ade978d"
+  },
+  "quid": "0",
+  "ordinal": "66",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "Amazon DynamoDB",
+    " AWS SDKs",
+    " Amazon S3",
+    " AssumeRoleWithWebIdentity API",
+    " AWS Identity and Access Management (IAM)"
+  ],
+  "slug": "db-mobile-application-scalability-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question66",
+  "title": "AWS You Have Created A Mobile Application Question",
+  "meta": "AWS Exam Question: You have created a mobile application that serves data stored in an Amazon DynamoDB table. Choose the correct answer to ensure scalability and handle millions of visitors. Answer: AWS Lambda.",
+  "answer": "D",
+  "query": "A company is developing a single-page web app that accesses user data stored in an Amazon DynamoDB table. The application must efficiently support tens of millions of users and ensure secure data access. What is the optimal way to architect this application for scalability and secure user access?",
+  "originalQuery": "You have created a mobile application that serves data stored in an Amazon DynamoDB table.\nYour primary concern is scalability of the application and ability to handle millions of visitors and data requests.\nAs part of your application, the customer needs access to the data located in the DynamoDB table.\nGiven the application requirements, what would be the best method to design the application? Choose the correct answer from the options below.",
+  "options": [
+    "A. Set up an on-premises Active Directory with SAML 2.0 for user management and write code that authenticates to the LDAP server. Assign an STS role with permissions for DynamoDB access corresponding to the user token.",
+    "B. Enable users to authenticate through external identity providers like Google, Facebook, or Amazon. Use the AssumeRole API call to apply a role with permissions to access the DynamoDB table. Implement the client side in JavaScript and deploy the static app on an S3 bucket.",
+    "C. Enable users to sign in using third-party providers including Google, Facebook, or Amazon. Use the AssumeRoleWithWebIdentity API to bind the role with necessary DynamoDB permissions. Develop the backend in a server-side language using AWS SDK but still host the app in an S3 bucket for scaling.",
+    "D. Let the users sign in to the app using a third-party identity provider such as Amazon, Google, or Facebook. Use the AssumeRoleWithWebIdentity API call to assume the role containing the proper permissions to communicate with the DynamoDB table. Write the application in JavaScript and host the static webpage in an S3 bucket."
+  ],
+  "originalOptions": [
+    "A. Configure an on-premise AD server utilizing SAML 2.0 to manage the application users inside the on-premise AD server and write code that authenticates against the LD serves. Grant a role assigned to the STS token to allow the end-user to access the required data in the DynamoDB table.",
+    "B. Let the users sign into the app using a third-party identity provider such as Amazon, Google, or Facebook. Use the AssumeRoleWith API call to assume the role containing the proper permissions to communicate with the DynamoDB table. Write the application in JavaScript and host the static webpage in an S3 bucket.",
+    "C. Let the users sign into the app using a third-party identity provider such as Amazon, Google, or Facebook. Use the AssumeRoleWithWebIdentity API call to assume the role containing the proper permissions to communicate with the DynamoDB table. Write the application in a server-side language using the AWS SDK and host the application in an S3 bucket for scalability.",
+    "D. Let the users sign in to the app using a third-party identity provider such as Amazon, Google, or Facebook. Use the AssumeRoleWithWebIdentity API call to assume the role containing the proper permissions to communicate with the DynamoDB table. Write the application in JavaScript and host the static webpage in an S3 bucket."
+  ],
+  "image": "https://eaeastus2.blob.core.windows.net/optimizedimages/static/images/AWS-Certified-Solutions-Architect-Professional/answer/imgquestions_qwvkc5.png",
+  "primaryObjective": "2: Design for New Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Answer - D.\nThe AssumeRolewithWebIdentity returns a set of temporary security credentials for users who have been authenticated in a mobile or web application with a web identity provider, such as Amazon Cognito, Login with Amazon, Facebook, Google, or any OpenID Connect-compatible identity provider.\nOut of options C and D, Option C is invalid because S3 is used to host static websites and not server side language websites.\nFor more information on AssumeRolewithWebIdentity, please visit the below URL-\nhttp://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html\nThe best method to design the application, given the requirements of scalability and ability to handle millions of visitors and data requests, would be option D:\nD. Let the users sign in to the app using a third-party identity provider such as Amazon, Google, or Facebook. Use the AssumeRoleWithWebIdentity API call to assume the role containing the proper permissions to communicate with the DynamoDB table. Write the application in JavaScript and host the static webpage in an S3 bucket.\nThis option allows for a scalable and secure approach to accessing data stored in an Amazon DynamoDB table through a mobile application. Here's why:\n1.\nThird-party identity provider: Using a third-party identity provider like Amazon, Google, or Facebook allows users to authenticate with the application without needing to create a separate set of credentials. This provides a streamlined user experience and reduces the risk of password-related security issues.\n2.\nAssumeRoleWithWebIdentity API: This API allows the mobile application to request temporary security credentials for the user, based on the identity provider they used to authenticate. These temporary credentials can be used to access the DynamoDB table while still maintaining the security of the application and data.\n3.\nJavaScript and S3: Writing the application in JavaScript and hosting it in an S3 bucket provides a scalable solution that can handle millions of visitors and data requests. S3 can also be configured to serve the static content via CloudFront, which provides a content delivery network (CDN) for increased performance and availability.\nOverall, this solution leverages the security and scalability of AWS services to provide a reliable and secure mobile application that can handle a large volume of traffic and data requests.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-that-serves-data-stored-in-exam-037.html",
+  "url": "https://certificationation.com/questions/exam-that-serves-data-stored-in-exam-037.html"
+}

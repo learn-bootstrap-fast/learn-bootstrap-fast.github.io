@@ -1,0 +1,62 @@
+---
+title: "You have deployed an application in an Auto ScalingExam"
+description: "Video for you have deployed an application in an Auto Scaling Group. You now want to change the instance type of the instances as the new instance type can"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have deployed an application in an Auto Scaling Group. You now want to change the instance type of the instances as the new instance type can improve the application performance. During the change, there should be no service impact. How can you achieve this requirement in the most appropriate way?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <strong>second option</strong> is the most effective and non-disruptive method to update the instance type in an Auto Scaling Group (ASG). By creating a <strong>new launch configuration with the updated instance type, associating it with the existing ASG, and then incrementally increasing the desired capacity</strong>, new instances with the correct type will be provisioned. After verifying that these units are healthy and properly serving traffic, you can decrease the desired capacity back to its original value, causing ASG to terminate the outdated instances. This process ensures continuous availability and zero downtime.</p><p>Why not the others?</p><ul><li><em>'Deploy the application to Elastic Beanstalk, specifying the updated instance type.'</em>—This introduces unnecessary complexity since the current solution already uses an ASG. Migrating to Elastic Beanstalk is not required just to change the instance type.</li><li><em>'Terminate the previous Auto Scaling Group and provision a new one through CloudFormation that uses the updated instance type.'</em>—Deleting the original ASG can interrupt service, especially if traffic isn't cut over cleanly, resulting in a potential service impact.</li><li><em>'Provision new EC2 instances with the intended instance type and manually add them to the current Auto Scaling Group.'</em>—EC2 instances cannot be manually attached to an ASG; new instances must be launched by the ASG itself per the settings in its launch configuration or template.</li></ul><p><strong>Tip:</strong> Always use updated launch configurations or launch templates for instance type changes. Increase desired capacity for rolling replacements to ensure zero downtime. This technique is frequently tested in AWS Solution Architect exams.</p>",
+  "query": "<p>Your application is running in an AWS Auto Scaling Group. You need to switch to a new EC2 instance type to boost performance, but it’s critical that there is zero downtime during this upgrade. What approach should you take to accomplish this with minimal service impact?</p>",
+  "original_oid": "6793d9f261969b416038a102",
+  "options": [
+    {
+      "correct": false,
+      "text": "Deploy the application to Elastic Beanstalk, specifying the updated instance type.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Generate a new launch configuration using the new instance type, associate it with the current Auto Scaling Group, and scale up the group's desired capacity. Once the new instances are operational and healthy, reduce the desired capacity to terminate the outdated instances.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Terminate the previous Auto Scaling Group and provision a new one through CloudFormation that uses the updated instance type.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Provision new EC2 instances with the intended instance type and manually add them to the current Auto Scaling Group.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question143",
+  "originalQuery": "You have deployed an application in an Auto Scaling Group.\nYou now want to change the instance type of the instances as the new instance type can improve the application performance.\nDuring the change, there should be no service impact.\nHow can you achieve this requirement in the most appropriate way?",
+  "originalOptions": "A. Switch to Elastic Beanstalk to deploy the application with the new instance type.|B. Delete the old Auto Scaling group and use Cloudformation to deploy the new Auto Scaling group with the new instance type.|C. Create a new launch configuration with the new instance type, attach it to the existing autoscaling group and increase the number of desired instances of ASG to launch new instances. When new instances are in healthy status, decrease the number of desired instances to delete instances with the old instance type.|D. Create new EC2 instances with the new instance type and attach them to the Auto Scaling Group.",
+  "video_url": "https://certificationation.com/videos/exam-an-auto-scaling-group-you-exam-126.html",
+  "url": "https://certificationation.com/questions/exam-an-auto-scaling-group-you-exam-126.html"
+}

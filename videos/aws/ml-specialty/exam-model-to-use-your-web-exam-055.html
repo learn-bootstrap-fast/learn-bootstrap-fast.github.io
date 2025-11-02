@@ -1,0 +1,54 @@
+---
+title: "You are building a machine learning model to use yourExam"
+description: "Video for you are building a machine learning model to use your web server logs to predict which users are most likely to buy a given product. Using your"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are building a machine learning model to use your web server logs to predict which users are most likely to buy a given product. Using your company's unstructured web server log data stored in S3, you want to get your data into CSV format and load it into another S3 bucket so that you can use it for your machine learning algorithm. Which of the following architectures will be the most efficient way to achieve this?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d6d87742293cac494adf"
+  },
+  "answer": "B",
+  "certification": "AWS Machine Learning Specialty",
+  "certificationKey": "AWSMLS",
+  "difficulty": "0",
+  "image": "",
+  "needsWork": "false",
+  "ordinal": "55",
+  "originalExplanation": "Answer: B.\nOption A is incorrect.\nUsing Redshift as an intermediary step in this architecture is an expensive, in terms of implementation effort, an extraneous design decision that makes this option less efficient than Option.\nB.Option B is correct.\nAWS Glue has built-in classifiers designed specifically for web server log crawling.\nThe crawler will generate CSV formatted data and output it to your ML S3 bucket.\nThis option is the simplest to implement, and therefore the most efficient.\nOption C is incorrect.\nThe AWS Schema Conversion tool is used to convert a database from one database engine to another database engine, such as from PostgreSQL to MySQL.\nThe AWS Schema Conversion tool will not work with unstructured web log data.\nOption D is incorrect.\nAWS Snowball Edge is used to move data into and out of AWS.\nIt would not be the most efficient way to transform your web log data to CSV and store it in your ML S3 bucket.\nReference:\nPlease see the Amazon Redshift Database developer guide titled Unloading Data, and Amazon Machine Learning developer guide titled Creating an Amazon ML Datasource from Data in Amazon Redshift, the AWS Schema Conversion Tool user guide titled What is the AWS Schema Conversion Tool?, and the Cloud Data Migration Guide, specifically the section on AWS Snowball Edge, and the AWS Glue developer guide titled Adding Classifiers to a Crawler.\nThe most efficient way to convert unstructured web server logs stored in S3 into CSV format and load it into another S3 bucket for use with a machine learning algorithm depends on several factors, including data size, data complexity, and data processing requirements. Here are the detailed explanations of the four options presented in the question:\nA. Load the log data into a Redshift cluster; use the UNLOAD Redshift command with a select statement to unload the data in CSV format to S3; SageMaker model uses the data to produce product purchase predictions.\nThis option involves loading the unstructured web server logs into a Redshift cluster, which is an OLAP (Online Analytical Processing) database that can handle large volumes of structured and semi-structured data. Once the data is in Redshift, the UNLOAD command with a select statement can be used to extract the data in CSV format and store it in S3. The SageMaker model can then use this CSV-formatted data to produce product purchase predictions.\nThis option is suitable when the web server logs data is large and complex and requires significant data processing before it can be used with the machine learning algorithm. Redshift's data warehousing capabilities allow for efficient storage and management of large volumes of data, while the UNLOAD command can quickly convert and store the data in the required CSV format.\nB. Use a built-in classifier in an AWS Glue crawler that crawls the web server logs and outputs the log data to CSV format on your ML S3 bucket; SageMaker model uses the data to produce product purchase predictions.\nThis option involves using an AWS Glue crawler, a managed service that automatically discovers and categorizes data stored in S3, to crawl the unstructured web server logs and output the data in CSV format to an ML S3 bucket. The SageMaker model can then use this CSV-formatted data to produce product purchase predictions.\nThis option is suitable when the web server logs data is less complex and requires less data processing before it can be used with the machine learning algorithm. The built-in classifier in the AWS Glue crawler can identify the data structure and format and output it in the required CSV format, making the process of converting and loading the data more automated and less time-consuming.\nC. Use AWS Schema Conversion tool to convert your web log data to CSV format and output it to your ML S3 bucket; run your SageMaker model on the new data to produce product purchase predictions.\nThis option involves using the AWS Schema Conversion tool, a managed service that helps convert database schema from one format to another, to convert the unstructured web server logs to CSV format and output it to an ML S3 bucket. The SageMaker model can then use this CSV-formatted data to produce product purchase predictions.\nThis option is suitable when the web server logs data requires some data processing before it can be used with the machine learning algorithm. The Schema Conversion tool can help automate the process of converting the data to the required CSV format, making it easier to load into the ML S3 bucket.\nD. Use AWS Snowball Edge and its lambda function capability to convert and then move the web log to S3 in CSV format; run your SageMaker model on the new data to produce product purchase predictions.\nThis option involves using AWS Snowball Edge, a petabyte-scale data transport solution that uses secure appliances to transfer large amounts of data into and out of AWS, to convert the unstructured web server logs to CSV format and move it to an S3 bucket. A Lambda function can be used to convert the data to the required CSV format before it is moved to S3. The SageMaker model can then use this CSV-formatted data to produce product purchase predictions.\nThis option is suitable when the web server logs data is large and complex and requires significant data processing before",
+  "originalOptions": [
+    "A. Load the log data into a Redshift cluster; use the UNLOAD Redshift command with a select statement to unload the data in CSV format to S3; SageMaker model uses the data to produce product purchase predictions.",
+    "B. Use a built-in classifier in an AWS Glue crawler that crawls the web server logs and outputs the log data to CSV format on your ML S3 bucket; SageMaker model uses the data to produce product purchase predictions.",
+    "C. Use AWS Schema Conversion tool to convert your web log data to CSV format and output it to your ML S3 bucket; run your SageMaker model on the new data to produce product purchase predictions.",
+    "D. Use AWS Snowball Edge and its lambda function capability to convert and then move the web log to S3 in CSV format; run your SageMaker model on the new data to produce product purchase predictions."
+  ],
+  "originalQuery": "You are building a machine learning model to use your web server logs to predict which users are most likely to buy a given product.\nUsing your company's unstructured web server log data stored in S3, you want to get your data into CSV format and load it into another S3 bucket so that you can use it for your machine learning algorithm. Which of the following architectures will be the most efficient way to achieve this?",
+  "primaryObjective": "",
+  "quid": "0",
+  "source": "https://www.exam-answer.com/amazon/mls-c01/question55",
+  "video_url": "https://certificationation.com/videos/exam-model-to-use-your-web-exam-055.html",
+  "url": "https://certificationation.com/questions/exam-model-to-use-your-web-exam-055.html"
+}

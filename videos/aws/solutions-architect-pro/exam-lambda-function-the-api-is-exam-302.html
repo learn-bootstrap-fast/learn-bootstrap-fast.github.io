@@ -1,0 +1,74 @@
+---
+title: "You implement a REST API using a Lambda Function. TheExam"
+description: "Video for you implement a REST API using a Lambda Function. The API is exposed through the AWS API gateway. The Lambda Function calls a third-party service to"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You implement a REST API using a Lambda Function. The API is exposed through the AWS API gateway. The Lambda Function calls a third-party service to retrieve the data. But this third-party service may not respond in time. You already increased the timeout of the Lambda Function to be 15 minutes. However, sometimes users still get an HTTP 504 error after about 30 seconds. Which of the following options is the most possible reason?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d615f501ee1c8ade9910"
+  },
+  "quid": "0",
+  "ordinal": "456",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "AWS API Gateway",
+    " AWS Lambda",
+    " Amazon CloudWatch",
+    " AWS Well-Architected Framework",
+    " AWS Management Console"
+  ],
+  "slug": "lf-implement-rest-api-lambda-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question456",
+  "title": "AWS You Implement A REST API Using A Lambda Function Question",
+  "meta": "AWS Exam Question: You implement a REST API using a Lambda Function and API Gateway. Users experience HTTP 504 errors despite a 15-minute timeout. What’s the answer?",
+  "answer": "C",
+  "query": "A company creates a RESTful API that uses a Lambda Function as the backend.\nThe API is exposed through the AWS API Gateway.\nThe Lambda Function fetches information from an external service which occasionally responds slowly.\nThe Lambda timeout has been extended to 900 seconds.\nDespite this, clients sometimes receive HTTP 504 Gateway Timeout errors roughly after 27 seconds.\nWhat is the most plausible cause for these timeout errors?",
+  "originalQuery": "You implement a REST API using a Lambda Function.\nThe API is exposed through the AWS API gateway.\nThe Lambda Function calls a third-party service to retrieve the data.\nBut this third-party service may not respond in time.\nYou already increased the timeout of the Lambda Function to be 15 minutes.\nHowever, sometimes users still get an HTTP 504 error after about 30 seconds.\nWhich of the following options is the most possible reason?",
+  "options": [
+    "A. The 504 error indicates an Internal Server failure. Investigate the Lambda's CloudWatch Logs.",
+    "B. The external API returns HTTP 504 after 35 seconds and the Lambda Function relays it to API Gateway.",
+    "C. The maximum of integration timeout for AWS API Gateway is 29 seconds. Although the timer for Lambda Function does not expire yet, the API Gateway already hits its limitation.",
+    "D. Integrating Lambda with API Gateway limits execution time to 30 seconds even though Lambda allows 15 minutes."
+  ],
+  "originalOptions": [
+    "A. The error code indicates that there is an Internal Server Error. Check the CloudWatch Logs of the Lambda Function.",
+    "B. The third-party service has returned an HTTP 504 error after 30 seconds to the Lambda Function. Then the Lambda Function forwards the error to the API Gateway.",
+    "C. The maximum of integration timeout for AWS API Gateway is 29 seconds. Although the timer for Lambda Function does not expire yet, the API Gateway already hits its limitation.",
+    "D. When Lambda Function integrates with API Gateway, the effective Lambda Function execution time limit is 30 seconds although the limit is set to 15 minutes."
+  ],
+  "image": "",
+  "primaryObjective": "3: Continuous Improvement for Existing Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Correct Answer - C.\nPlease check https://docs.aws.amazon.com/apigateway/latest/developerguide/limits.html for the Amazon API Gateway limits.\nThe integration timeout is 50 milliseconds - 29 seconds for all integration types.\nAnd the limit cannot be increased.\nOption A is incorrect: Because HTTP 504 is Gateway Timeout instead of Internal Server Error.\nOption B is incorrect: When the third-party service does not respond in time, the API Gateway reaches its limit after 29 seconds.\nIt is not the third-party service that returns the HTTP 504 error code in this scenario.\nOption C is CORRECT: Because the API call through API Gateway cannot exceed 29 seconds due to the limits.\nThis is the most possible reason to cause the issue.\nOption D is incorrect: Because the limit of Lambda Function can be 15 minutes according to https://aws.amazon.com/about-aws/whats-new/2018/10/aws-lambda-supports-functions-that-can-run-up-to-15-minutes/\nThe limit of API Gateway has caused the issue.\nThe most possible reason for users still getting an HTTP 504 error after about 30 seconds, despite having increased the timeout of the Lambda Function to 15 minutes, is that the maximum integration timeout for AWS API Gateway is 29 seconds.\nOption A is incorrect because an HTTP 504 error indicates a Gateway Timeout error, not an Internal Server Error. Checking the CloudWatch Logs of the Lambda Function would not provide any additional information in this case.\nOption B is partially correct, as the third-party service may indeed be returning an HTTP 504 error after 30 seconds, but the Lambda Function is not simply forwarding the error to the API Gateway. The Lambda Function is timing out after 15 minutes, but the API Gateway is hitting its maximum integration timeout of 29 seconds, resulting in the HTTP 504 error being returned to the user.\nOption C is the most likely reason for the HTTP 504 error, as the maximum integration timeout for AWS API Gateway is 29 seconds. This means that even though the timer for the Lambda Function has not yet expired, the API Gateway has already hit its limitation and returned the HTTP 504 error to the user.\nOption D is incorrect because when a Lambda Function integrates with API Gateway, the effective Lambda Function execution time limit is equal to the timeout set for the API Gateway integration. In this case, the maximum integration timeout for the API Gateway is the limiting factor, not the Lambda Function execution time limit.\nTo resolve the issue, the integration timeout for the AWS API Gateway needs to be increased to a value higher than the expected response time of the third-party service. Alternatively, caching or other performance optimization techniques may be used to reduce the response time of the third-party service.",
+  "chatGptExplanation": "The correct answer is C. AWS API Gateway has a hard limit of 29 seconds for integration timeout, meaning that it will timeout any backend integration request (such as a Lambda function invocation) that takes longer than 29 seconds to respond. Although the Lambda Function's timeout has been extended to 900 seconds (15 minutes), the API Gateway will return an HTTP 504 Gateway Timeout error if the backend does not respond within its 29-second timeout window. This is why clients receive the 504 error roughly after 27 seconds, which is within this limit.\n\nOption A is incorrect because an HTTP 504 error is a Gateway Timeout error, not an Internal Server Error (which would be HTTP 500). Checking CloudWatch Logs is useful for debugging, but the error isn’t due to an internal Lambda failure.\n\nOption B is incorrect because the third-party service itself is not returning the 504 error to the Lambda. Instead, it likely just delays or times out. The 504 error is generated by the API Gateway when it doesn't get a timely response from the backend (the Lambda function).\n\nOption D is incorrect because Lambda Functions can run up to 15 minutes. The 30-second limit is not on the Lambda execution but on the API Gateway integration timeout, so setting Lambda timeout higher does not affect this API Gateway limitation.\n\nTherefore, the root cause of the HTTP 504 errors is that the API Gateway integration timeout cannot exceed 29 seconds, imposing a limit on how long the backend Lambda invocation has to respond, regardless of the Lambda timeout setting.",
+  "video_url": "https://certificationation.com/videos/exam-lambda-function-the-api-is-exam-302.html",
+  "url": "https://certificationation.com/questions/exam-lambda-function-the-api-is-exam-302.html"
+}

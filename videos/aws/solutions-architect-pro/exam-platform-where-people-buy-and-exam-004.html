@@ -1,0 +1,72 @@
+---
+title: "A company has run a major auction platform where peopleExam"
+description: "Video for a company has run a major auction platform where people buy and sell a wide range of products. The platform requires that transactions from buyers and"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company has run a major auction platform where people buy and sell a wide range of products. The platform requires that transactions from buyers and sellers get processed in exactly the order received. At the moment, the platform is implemented using RabbitMQ which is a light-weighted queue system. The company consulted you to migrate the on-premise platform to AWS. How should you design the migration plan? (Select TWO)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d564f501ee1c8ade9755"
+  },
+  "quid": "0",
+  "ordinal": "8",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "Amazon Simple Queue Service (Amazon SQS)",
+    " AWS Lambda",
+    " Amazon EC2"
+  ],
+  "slug": "rmq-auction-platform-transaction-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question8",
+  "title": "AWS A Company Has Run A Major Auction Platform Question",
+  "meta": "AWS Exam Question: A company needs to migrate its auction platform from RabbitMQ to AWS. How should you design the migration plan? Answer: SQS, Lambda.",
+  "answer": "A C",
+  "query": "An online marketplace manages real-time offers where users place bids on items they wish to purchase. The system must guarantee that each bid is handled strictly in the sequence it was submitted. Currently, the platform operates using RabbitMQ as its messaging backbone. The company is planning to shift this infrastructure to AWS. What is the best approach to ensure bid submissions are processed in the correct order with the new AWS architecture? (Select TWO)",
+  "originalQuery": "A company has run a major auction platform where people buy and sell a wide range of products.\nThe platform requires that transactions from buyers and sellers get processed in exactly the order received.\nAt the moment, the platform is implemented using RabbitMQ which is a light-weighted queue system.\nThe company consulted you to migrate the on-premise platform to AWS.\nHow should you design the migration plan? (Select TWO)",
+  "options": [
+    "A. When the bids are received, send the bids to an SQS FIFO queue before they are processed.",
+    "B. Upon receiving bids from the client app, the backend forwards the messages to a standard SQS queue.",
+    "C. Assign a message group ID to each message prior to sending them to the SQS queue so processing maintains strict order.",
+    "D. Utilize an EC2 instance or Lambda function to append a deduplication ID before pushing messages to the SQS queue to preserve order of bids."
+  ],
+  "originalOptions": [
+    "A. When the bids are received, send the bids to an SQS FIFO queue before they are processed.",
+    "B. When the users have submitted the bids from the frontend, the backend service delivers the messages to an SQS standard queue.",
+    "C. Add a message group ID to the messages before they are sent to the SQS queue so that the message processing is in a strict order.",
+    "D. Use an EC2 or Lambda to add a deduplication ID to the messages before the messages are sent to the SQS queue to ensure that bids are processed in the right order."
+  ],
+  "image": "https://eaeastus2.blob.core.windows.net/optimizedimages/static/images/AWS-Certified-Solutions-Architect-Professional/answer/imgckeditor_2.png",
+  "primaryObjective": "2: Design for New Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Correct Answer - A, C.\nSQS has 2 types - standard queue and FIFO queue.\nIn this case, the FIFO queue should be chosen as the order of message processing is critical to the application.\nFIFO queue has the below key features.\nOption A is CORRECT: Because the SQS FIFO queue can help with the message processing in the right order.\nOption B is incorrect: Because the SQS standard queue may have an issue that some messages are handled in the wrong sequence.\nOption C is CORRECT: Because the message group ID is a feature to help with the FIFO delivery.\nMessages that belong to the same message group are always processed one by one, in a strict order relative to the message group.\nOption D is incorrect: Because deduplication ID is a method to help on preventing messages to be processed duplicately, which is not used to guarantee the message order.\nSure, I'd be happy to help!\nWhen it comes to migrating the on-premise auction platform to AWS, there are a few things to consider in terms of maintaining the requirement that transactions are processed in the exact order received.\nOne of the main considerations is the choice of messaging service. RabbitMQ, the current messaging system being used, is a lightweight queue system that can be used to manage message queues. In AWS, there are two types of message queues that can be used to process messages: SQS standard and SQS FIFO.\nSQS standard is a distributed queue system that offers high throughput, allowing for multiple consumers to receive messages simultaneously. This means that messages can be processed in a different order than they were received. Therefore, it's not a good fit for this use case.\nOn the other hand, SQS FIFO is designed to guarantee that messages are processed in the order they are received. This makes it a good fit for the requirements of the auction platform.\nWith that in mind, here are the two correct options for designing the migration plan:\nA. When the bids are received, send the bids to an SQS FIFO queue before they are processed.\nThis option is a good solution because it utilizes SQS FIFO, which ensures that messages are processed in the order they are received. By sending the bids to the SQS FIFO queue before they are processed, the company can be sure that transactions will be processed in the exact order received.\nB. When the users have submitted the bids from the frontend, the backend service delivers the messages to an SQS standard queue.\nThis option is not a good solution because, as mentioned earlier, SQS standard is not designed to guarantee message processing order. If the company were to use SQS standard, there would be no way to ensure that transactions were processed in the exact order received. Therefore, this option should not be chosen.\nC. Add a message group ID to the messages before they are sent to the SQS queue so that the message processing is in a strict order.\nThis option is a feature of SQS FIFO and is not an alternative solution. SQS FIFO automatically orders messages based on their message group ID and ensures that messages within the same group are processed in the order they were received. While this option could be useful in combination with option A, it is not a separate solution.\nD. Use an EC2 or Lambda to add a deduplication ID to the messages before the messages are sent to the SQS queue to ensure that bids are processed in the right order.\nThis option is not a good solution because it doesn't address the requirement to process transactions in the exact order received. While deduplication IDs can help prevent duplicate messages from being processed, they don't have any impact on the order in which messages are processed. Therefore, this option should not be chosen.\nIn summary, the two correct options for designing the migration plan are to send bids to an SQS FIFO queue before they are processed and to add a message group ID to messages before they are sent to the SQS queue. By utilizing SQS FIFO and message group IDs, the company can ensure that transactions are processed in the exact order received.",
+  "chatGptExplanation": "The primary AWS product this question focuses on is Amazon Simple Queue Service (Amazon SQS).\n\nExplanation for Correct Answers:\nA. Sending bids to an SQS FIFO queue before processing ensures that the order of messages (bids) is maintained. FIFO queues in SQS are specifically designed to preserve the exact order of messages, unlike standard queues which do not guarantee order.\n\nC. Assigning a message group ID is essential in SQS FIFO queues to ensure that messages within the same group are processed sequentially. Messages sharing the same MessageGroupId are guaranteed to be processed in order, one at a time.\n\nExplanation for Incorrect Options:\nB. Using an SQS standard queue does not guarantee the order of message processing. SQS standard queues offer high throughput and best-effort ordering, but in scenarios where strict ordering is required (like bids in an auction), they are not suitable because messages might be processed out of order.\n\nD. Adding a deduplication ID helps prevent duplicate message processing but does not guarantee message order. Deduplication ensures exactly-once processing but does not manage sequencing. Using EC2 or Lambda to add deduplication IDs addresses duplicates, not ordering.\n\nTherefore, the combination of using an SQS FIFO queue (Option A) and assigning a message group ID (Option C) best meets the requirement of processing bids strictly in the order they are received.",
+  "video_url": "https://certificationation.com/videos/exam-platform-where-people-buy-and-exam-004.html",
+  "url": "https://certificationation.com/questions/exam-platform-where-people-buy-and-exam-004.html"
+}

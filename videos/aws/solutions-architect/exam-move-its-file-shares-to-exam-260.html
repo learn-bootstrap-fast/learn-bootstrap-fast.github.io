@@ -1,0 +1,128 @@
+---
+title: "A company’s compliance team needs to move its fileExam"
+description: "Video for a company’s compliance team needs to move its file shares to AWS. The shares run on a Windows Server SMB file share. A self-managed on-premises Active"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company’s compliance team needs to move its file shares to AWS. The shares run on a Windows Server SMB file share. A self-managed on-premises Active Directory controls access to the files and folders. The company wants to use Amazon FSx for Windows File Server as part of the solution. The company must ensure that the on-premises Active Directory groups restrict access to the FSx for Windows File Server SMB compliance shares, folders, and files after the move to AWS. The company has created an FSx for Windows File Server file system. Which solution will meet these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729a69"
+  },
+  "quid": null,
+  "ordinal": "260",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS shared responsibility model",
+    " AWS Directory Service",
+    " Amazon FSx",
+    " AWS Identity and Access Management (IAM)",
+    " AWS Compliance"
+  ],
+  "slug": "fsx-move-file-shares-to-aws",
+  "source": "ET",
+  "title": "AWS Company’s Compliance Team Needs To Move Question",
+  "meta": "AWS Exam Question: A company needs to move file shares to AWS using Amazon FSx for Windows File Server while ensuring Active Directory access control. Answer: FSx, SMB.",
+  "answer": "D",
+  "query": "An organization needs to migrate its file storage to AWS while maintaining control through its existing on-premises Active Directory. The files are currently stored on a Windows Server using SMB protocols. The organization has established an Amazon FSx for Windows File Server to facilitate this transition. To ensure compliance, it is crucial that the existing Active Directory groups manage permissions for access to these SMB shares and their contents after the migration to AWS.\n\nWhat approach will satisfy these requirements?",
+  "originalQuery": "A company’s compliance team needs to move its file shares to AWS. The shares run on a Windows Server SMB file share. A self-managed on-premises Active Directory controls access to the files and folders.\n\nThe company wants to use Amazon FSx for Windows File Server as part of the solution. The company must ensure that the on-premises Active Directory groups restrict access to the FSx for Windows File Server SMB compliance shares, folders, and files after the move to AWS. The company has created an FSx for Windows File Server file system.\n\nWhich solution will meet these requirements?",
+  "options": [
+    "A. Create an Active Directory Connector to connect to the Active Directory. Map the Active Directory groups to IAM groups to restrict access.",
+    "B. Use a tag with the Restrict key and Compliance value. Map the Active Directory groups to IAM groups for access limits.",
+    "C. Create an IAM service-linked role that is linked directly to FSx for Windows File Server to restrict access.",
+    "D. Join the file system to the Active Directory to restrict access."
+  ],
+  "originalOptions": [
+    "A. Create an Active Directory Connector to connect to the Active Directory. Map the Active Directory groups to IAM groups to restrict access.",
+    "B. Assign a tag with a Restrict tag key and a Compliance tag value. Map the Active Directory groups to IAM groups to restrict access.",
+    "C. Create an IAM service-linked role that is linked directly to FSx for Windows File Server to restrict access.",
+    "D. Join the file system to the Active Directory to restrict access."
+  ],
+  "image": null,
+  "primaryObjective": "1: Design Secure Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Joining the FSx for Windows File Server file system to the on-premises Active Directory enables the organization to leverage its current Active Directory groups for access control over file shares, folders, and files following the migration to AWS. This approach facilitates the continued application of existing access management protocols, thereby ensuring a smooth transition to the cloud environment while maintaining established security measures.",
+    "D. This option cleverly taps into the existing Active Directory setup, allowing the file system to use it for authentication and access control. It’s like having your cake and eating it too—no need to reinvent the wheel! 🎂\n\nNow, let’s take a look at why the other options aren’t quite the right fit:\n\nOption A misses the mark because mapping Active Directory groups to IAM groups just doesn’t work here. IAM is primarily for managing access within AWS, while our friend Active Directory is the gatekeeper for our on-premises access. It's like trying to use a cat door to let in a Great Dane—just not going to happen! 🐶🚪\n\nOption B is a bit misguided too. Throwing a tag with a Restrict key and a Compliance value won’t cut it when it comes to integrating with on-premises AD for access control. Tags are handy for organizing things, like sorting your sock drawer, but they won’t help you unlock any doors! 🧦🔑\n\nAs for Option C, well, creating an IAM service-linked role directly tied to FSx for Windows File Server doesn’t do the trick either. IAM roles are like the backstage pass to AWS, but they don’t connect with your on-premises Active Directory. It's like trying to use a backstage pass for a concert to get into a different show entirely—no access! 🎤🚫 \n\nSo, in this case, sticking with option D is the way to go! Keep it simple and let the Active Directory do its thing! 🎉",
+    "To meet the needs of a company looking to transition its file shares to AWS while maintaining control over access through its on-premises Active Directory, the solution is surprisingly straightforward. The best course of action is to simply join the FSx for Windows File Server file system to the existing Active Directory. This clever move ensures that the same access restrictions applied to the on-premises file shares will seamlessly transfer to the FSx shares.\n\nBy integrating the file system with Active Directory, permissions tied to groups can effectively govern access to the compliance shares, folders, and files, just as they did before the big move to the cloud. It's like taking the familiar old lock on your door and swapping it for a shiny new one that fits perfectly, ensuring only the right people can still get in.\n\nThis approach not only simplifies management but also maintains the security protocols that the company relies on. So, while there may be multiple ways to tackle this issue, joining the FSx file system to Active Directory stands out as the most sensible and efficient option, ensuring compliance without reinventing the wheel.",
+    "When you set up a file system using Amazon FSx, it's essential to integrate it with your Active Directory domain. This integration allows for seamless user authentication and ensures effective control over access to files and folders at a granular level. By joining the file system to your Active Directory, you can confidently manage permissions and maintain compliance with your organization's access policies.",
+    "Absolutely! Let’s sprinkle some cheer into this response while keeping it professional and informative. 🌟\n\nThe option D is indeed a relevant and accurate choice when we take into account the integration details provided in the AWS documentation. \n\n\"When establishing a new FSx for Windows File Server file system, you have the wonderful opportunity to seamlessly integrate it with your self-managed Microsoft Active Directory domain. To accomplish this, simply supply the necessary information for your Microsoft Active Directory setup. This delightful integration ensures that access controls remain intact, allowing for smooth and secure file sharing in your cloud environment!\""
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "D",
+      "explanation": "D. Join the file system to the Active Directory to restrict access.\n\nJoining the FSx for Windows File Server file system to the on-premises Active Directory will allow the company to use the existing Active Directory groups to restrict access to the file shares, folders, and files after the move to AWS. This option allows the company to continue using their existing access controls and management structure, making the transition to AWS more seamless.",
+      "upvotes": "21"
+    },
+    {
+      "selectedAnswer": "D",
+      "explanation": "D. allows the file system to leverage the existing AD infrastructure for authentication and access control.\n\nOption A is incorrect because mapping the AD groups to IAM groups is not applicable in this scenario. IAM is primarily used for managing access to AWS resources, while the requirement is to integrate with the on-premises AD for access control.\n\nOption B is incorrect because assigning a tag with a Restrict tag key and a Compliance tag value does not provide the necessary integration with the on-premises AD for access control. Tags are used for organizing and categorizing resources and do not provide authentication or access control mechanisms.\n\nOption C is incorrect because creating an IAM service-linked role linked directly to FSx for Windows File Server does not integrate with the on-premises AD. IAM roles are used within AWS for managing permissions and do not provide the necessary integration with external AD systems.",
+      "upvotes": "7"
+    },
+    {
+      "selectedAnswer": "D",
+      "explanation": "https://aws.amazon.com/blogs/storage/using-amazon-fsx-for-windows-file-server-with-an-on-premises-active-directory/#:~:text=Perform%20the%20following%20steps:,shown%20in%20the%20following%20screenshot).",
+      "upvotes": "1"
+    },
+    {
+      "selectedAnswer": "D",
+      "explanation": "When you create a file system with Amazon FSx, you join it to your Active Directory domain to provide user authentication and file- and folder-level access control.",
+      "upvotes": "4"
+    },
+    {
+      "selectedAnswer": "D",
+      "explanation": "D is relevent and accurate answer when we consider this:\nhttps://docs.aws.amazon.com/fsx/latest/WindowsGuide/creating-joined-ad-file-systems.html\n\n\"When you create a new FSx for Windows File Server file system, you can configure Microsoft Active Directory integration so that it joins to your self-managed Microsoft Active Directory domain. To do this, provide the following information for your Microsoft Active Directory\"",
+      "upvotes": "3"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "D (90%)",
+      "votes": "71 votes."
+    },
+    {
+      "option": "10%",
+      "votes": "8 votes."
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is D, as joining the file system to an Active Directory allows the organization to utilize their existing Active Directory groups for managing permissions on SMB shares within FSx for Windows File Server. This ensures a seamless transition by maintaining established access control practices. \n\nOption A is incorrect because mapping Active Directory groups to IAM groups wouldn't fulfill the requirement of utilizing existing AD groups for permission management. Option B is incorrect as tagging does not enable necessary authentication and access control. Option C is also incorrect; IAM roles are intended for AWS resource permissions and do not integrate with on-premises AD, which is essential in this scenario.",
+  "video_url": "https://certificationation.com/videos/exam-move-its-file-shares-to-exam-260.html",
+  "url": "https://certificationation.com/questions/exam-move-its-file-shares-to-exam-260.html"
+}

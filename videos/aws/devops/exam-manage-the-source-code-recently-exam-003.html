@@ -1,0 +1,62 @@
+---
+title: "Your team uses AWS CodeCommit to manage the source codeExam"
+description: "Video for your team uses AWS CodeCommit to manage the source code. Recently, some incorrect code has been merged to the master branch and caused application"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your team uses AWS CodeCommit to manage the source code. Recently, some incorrect code has been merged to the master branch and caused application issues. The related pull requests were approved by some junior developers. You need to create an approval rule to require that the approvals for a pull request must come from the IAM users of senior developers. This approval rule should be applied to all existing CodeCommit repositories. How would you achieve this requirement?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best solution is to <b>develop an approval rule template in CodeCommit, assign senior developers as the approval pool members, and apply the template to every CodeCommit repository</b>. This enables you to centrally manage approval rules and automatically enforce that only senior IAM users can approve pull requests for all repositories.<br><br><b>Why this is correct:</b> CodeCommit allows administrators to create approval rule templates and associate them with one or multiple repositories. By designating specific IAM users (in this case, senior developers) as 'approval pool members', only those users can satisfy approval requirements for merging pull requests. Associating the template with all repositories ensures compliance across the organization with minimal ongoing operational effort.<br><br><b>Why the other options are inadequate:</b><br><i>Add an IAM policy granting the 'codecommit:UpdatePullRequestApprovalState' action exclusively to the IAM users representing senior developers</i>: This does grant the necessary permissions, but it does not enforce approvals at the CodeCommit repository or pull request level—it's more about access, rather than structured review and rule enforcement.<br><i>Set up a pull request template in CodeCommit and specify that only senior developers can give their approval. Use this template for each new pull request</i>: CodeCommit pull request templates are for consistent formatting of PR descriptions and cannot enforce approval restrictions or automate reviewer assignment.<br><i>Provide senior developers the AWSCodeCommitPowerUser managed policy and restrict all others from using the 'codecommit:CreatePullRequest' action</i>: This configuration restricts who can create pull requests, but not who can approve them—which does not meet the business requirement. The AWSCodeCommitPowerUser role is broader than necessary and potentially grants more privilege than just approval rights.<br><br><b>Tip:</b> Approval rule templates are scalable and ensure compliance with organizational approval requirements across all CodeCommit repositories with ease.</p>",
+  "query": "<p>Your development team leverages AWS CodeCommit for source control management. Recently, there were incidents where inadvertent code was merged into the main branch, resulting from pull requests approved by less experienced team members. To mitigate this, you want to enforce a policy where only senior developers can approve pull requests. This requirement must cover all current CodeCommit repositories managed by your team.<br><br>What is the most appropriate way to ensure that only senior developers (IAM users) can approve pull requests across all repositories?</p>",
+  "original_oid": "6793da9961969b416038a254",
+  "options": [
+    {
+      "correct": false,
+      "text": "Add an IAM policy granting the 'codecommit:UpdatePullRequestApprovalState' action exclusively to the IAM users representing senior developers.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Develop an approval rule template in CodeCommit, assign senior developers as the approval pool members, and apply the template to every CodeCommit repository.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up a pull request template in CodeCommit and specify that only senior developers can give their approval. Use this template for each new pull request.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Provide senior developers the AWSCodeCommitPowerUser managed policy and restrict all others from using the 'codecommit:CreatePullRequest' action.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question484",
+  "originalQuery": "Your team uses AWS CodeCommit to manage the source code.\nRecently, some incorrect code has been merged to the master branch and caused application issues.\nThe related pull requests were approved by some junior developers.\nYou need to create an approval rule to require that the approvals for a pull request must come from the IAM users of senior developers.\nThis approval rule should be applied to all existing CodeCommit repositories.\nHow would you achieve this requirement?",
+  "originalOptions": "A. Create an approval rule template in CodeCommit, add the IAM users of senior developers in “Approval pool members” and associate the template with all CodeCommit repositories.|B. Create a pull request template in CodeCommit and only allow the IAM users of senior developers to approve. Use the pull request template for any new pull request.|C. For the IAM users of senior developers, add an IAM policy to allow the \"codecommit:UpdatePullRequestApprovalState\" action.|D. For the IAM users of senior developers, add the AWSCodeCommitPowerUser managed policy. Make sure that other IAM users are not permitted to perform the \"codecommit:CreatePullRequest\" action.",
+  "video_url": "https://certificationation.com/videos/exam-manage-the-source-code-recently-exam-003.html",
+  "url": "https://certificationation.com/questions/exam-manage-the-source-code-recently-exam-003.html"
+}

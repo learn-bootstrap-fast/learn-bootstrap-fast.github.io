@@ -1,0 +1,67 @@
+---
+title: "You have an on-premise virtual machine and you create aExam"
+description: "Video for you have an on-premise virtual machine and you create a replication job in AWS Server Migration Service (SMS) to migrate the VM to AWS. Whenever an"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have an on-premise virtual machine and you create a replication job in AWS Server Migration Service (SMS) to migrate the VM to AWS. Whenever an AMI is created from the SMS job, you need to launch an EC2 instance with the AMI and trigger a Jenkins job to perform the automation testing. Which method would you use to create the EC2 instance automatically for the testing?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best solution is to <b>configure a CloudWatch Event rule to monitor AWS SMS job state changes, and invoke a Lambda function to retrieve the new AMI ID and provision an EC2 instance</b>. By monitoring the state changes of SMS jobs, you can detect when a new AMI is produced, use a Lambda function to launch a new EC2 instance based on that AMI, and then integrate the instance launch with Jenkins to start automated testing. This approach is highly automated, event-driven, and gives you fine-grained control over the workflow. </p><p>The other options are not suitable for the following reasons: <i>Set up the Server Migration Service replication job to automatically launch an EC2 instance via a launch template upon completion</i> is incorrect because SMS replication jobs do not natively support launching EC2 instances automatically; manual steps or additional automation are needed. <i>Configure the Server Migration Service to deliver a message with the AMI ID to an SNS topic</i> alone does not automate the EC2 instance launch, as additional processing is required. <i>Establish a Lambda function as an SNS subscriber that launches an EC2 instance when notified</i> depends on the preceding SNS message configuration, and SMS does not directly publish to SNS on AMI creation. <i>Define a CloudWatch Event that detects new AMIs with the AWS:SMS tag, using a Lambda function to initiate an EC2 instance and send the instance ID to Jenkins</i> is close, but CloudWatch Events for tags on AMIs is not granular enough or directly supported for this use case, and tracking SMS job state changes is more reliable. </p><p><b>Tip:</b> Trigger automation based on observable state changes or events related to the migration workflow, rather than relying solely on resource tags or notifications that may require extra configuration. Direct integration with Lambda also facilitates seamless integration with Jenkins or other tools for follow-up actions.</p>",
+  "query": "<p>You need to migrate an on-premises virtual machine to AWS using the Server Migration Service (SMS). Each time SMS creates a new AMI from the migration job, you want to automatically launch an EC2 instance using that AMI and trigger a Jenkins job for automated testing. Which approach should you take to automate the EC2 creation and Jenkins test execution whenever a new AMI becomes available from SMS?</p>",
+  "original_oid": "6793da6661969b416038a1ee",
+  "options": [
+    {
+      "correct": true,
+      "text": "Configure a CloudWatch Event rule to monitor AWS SMS job state changes, and invoke a Lambda function to retrieve the new AMI ID and provision an EC2 instance.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up the Server Migration Service replication job to automatically launch an EC2 instance via a launch template upon completion.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Configure the Server Migration Service to deliver a message with the AMI ID to an SNS topic.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Establish a Lambda function as an SNS subscriber that launches an EC2 instance when notified.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Define a CloudWatch Event that detects new AMIs with the AWS:SMS tag, using a Lambda function to initiate an EC2 instance and send the instance ID to Jenkins.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question381",
+  "originalQuery": "You have an on-premise virtual machine and you create a replication job in AWS Server Migration Service (SMS) to migrate the VM to AWS.\nWhenever an AMI is created from the SMS job, you need to launch an EC2 instance with the AMI and trigger a Jenkins job to perform the automation testing.\nWhich method would you use to create the EC2 instance automatically for the testing?",
+  "originalOptions": "A. Configure the Server Migration Service replication job to automatically launch an EC2 instance with a launch template when the job finishes.|B. Configure the Server Migration Service to send a message to an SNS notification with the AMI I.|C. Set up a Lambda function as the subscriber to launch an EC2 instance.|D. Configure a CloudWatch Event to monitor newly generated AMIs with the tag AWS:SMS. Use a Lambda function to create an EC2 instance and pass the instance ID to the Jenkins job.|E. Create a CloudWatch Event rule to monitor the AWS SMS job state changes. Use a Lambda function to get the new AMI ID and launch an EC2 instance.",
+  "video_url": "https://certificationation.com/videos/exam-machine-and-you-create-a-exam-491.html",
+  "url": "https://certificationation.com/questions/exam-machine-and-you-create-a-exam-491.html"
+}

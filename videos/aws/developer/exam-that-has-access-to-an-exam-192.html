@@ -1,0 +1,80 @@
+---
+title: "You are configuring a new application that has access toExam"
+description: "Video for you are configuring a new application that has access to an existing Cloud SQL for PostgreSQL database. The new application reads from this database"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are configuring a new application that has access to an existing Cloud SQL for PostgreSQL database. The new application reads from this database to gather statistics for a dashboard. You want to follow Google-recommended practices when granting Identity and Access Management (IAM) permissions. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "At Nimbus Retail you are launching a reporting microservice that must read from an existing Cloud SQL for PostgreSQL instance to build an internal analytics dashboard. You want to follow Google best practices for Identity and Access Management when granting this microservice access to the database. What should you do?",
+  "options": [
+    {
+      "text": "Create a new service account and grant it the Cloud SQL Viewer role",
+      "explanation": "This role permits viewing Cloud SQL resources and configuration details through the API and console",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Reuse the existing service account that is used by the batch data loader for this instance",
+      "explanation": "Sharing a single service account across multiple applications concentrates privileges and reduces isolation between workloads",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a dedicated service account for the microservice and assign the Cloud SQL Client role",
+      "explanation": "This role authorizes a principal to connect to Cloud SQL instances by obtaining the required credentials or certificates",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Create a new service account and grant it the Cloud SQL Editor role",
+      "explanation": "This role allows making changes to Cloud SQL instance settings and managing resources beyond simple connectivity",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Create a dedicated service account for the microservice and assign the Cloud SQL Client role</b>.</p><p>This choice follows the principle of least privilege and good workload isolation. Giving the microservice its own service account limits blast radius and improves auditing and revocation. The client role provides the minimal IAM permissions needed to connect to Cloud SQL through the connectors or the Auth Proxy without granting administrative abilities. You would still manage database user access at the PostgreSQL level or use IAM database authentication as appropriate.</p><p><i>Create a new service account and grant it the Cloud SQL Viewer role</i> is incorrect because the viewer role only allows viewing instance metadata and logs. It does not permit establishing a connection to the database through the proxy or connectors.</p><p><i>Reuse the existing service account that is used by the batch data loader for this instance</i> is incorrect because sharing service accounts across workloads violates least privilege and separation of duties. It increases blast radius, complicates auditing, and makes lifecycle management harder.</p><p><i>Create a new service account and grant it the Cloud SQL Editor role</i> is incorrect because the editor role includes permissions to modify Cloud SQL instances and configurations. That is unnecessary for a reporting microservice that only needs to connect and read, and it grants excessive privileges.</p>",
+  "batch_id": "6",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are configuring a new application that has access to an existing Cloud SQL for PostgreSQL database. The new application reads from this database to gather statistics for a dashboard. You want to follow Google-recommended practices when granting Identity and Access Management (IAM) permissions. What should you do?",
+  "originalOptions": "A. Reuse the existing service account that populates this database.<br/>B. Create a new service account, and grant it the Cloud SQL Client role.<br/>C. Create a new service account, and grant it the Cloud SQL Viewer role.<br/>D. Create a new service account, and grant it the Cloud SQL Instance Admin role.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "192",
+  "tip": "<p>When an IAM question targets a new workload, default to <i>least privilege</i> and a <i>dedicated service account</i> for that service, then pick the smallest role that enables the action. For Cloud SQL connectivity this is the client role.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/iam-roles",
+    "https://cloud.google.com/sql/docs/postgres/connect-instance-auth-proxy#roles",
+    "https://cloud.google.com/sql/docs/postgres/connect-connectors#required-roles",
+    "https://cloud.google.com/iam/docs/best-practices-service-accounts"
+  ],
+  "url": "https://certificationation.com/questions/exam-that-has-access-to-an-exam-192.html",
+  "video_url": "https://certificationation.com/videos/exam-that-has-access-to-an-exam-192.html"
+}

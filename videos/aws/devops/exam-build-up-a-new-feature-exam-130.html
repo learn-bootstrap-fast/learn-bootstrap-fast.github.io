@@ -1,0 +1,62 @@
+---
+title: "A development team is using Java/Tomcat to build up aExam"
+description: "Video for a development team is using Java/Tomcat to build up a new feature for an IOT project. They decided to create a new autoscaling group using a launch"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A development team is using Java/Tomcat to build up a new feature for an IOT project. They decided to create a new autoscaling group using a launch configuration that contained the latest AMI. And then they attached the new autoscaling group to the existing Classic ELB with a HTTP health check. After ELB passed the health check, they removed the old autoscaling group. Using this way, they were trying to implement the Blue/Green deployment. However, they found that the new autoscaling did not service properly and there were lots of Tomcat errors. Which below action should be done to reduce Tomcat errors?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best step is to <b>configure the health check of the Classic ELB to point to the application or a webpage that clearly reflects when Tomcat is fully initialized and ready to serve traffic</b>. Often, Classic ELB's default HTTP health check only validates whether the HTTP port responds, not whether the actual application on the instance is ready. With Tomcat (or other Java applications), it can take several seconds or minutes for the application server to fully start and deploy all web apps. If the ELB health check points to a simple endpoint that returns a success response before Tomcat (and your app) is fully ready, traffic will be sent too soon, causing <b>Tomcat errors</b> until initialization completes.<br><br>Why the other options are not recommended:<br><i>\"Extend the waiting period\"</i> doesn't guarantee the application is ready, as initialization time can vary -- using an accurate health check is more reliable.<br><i>\"Deploy Application Load Balancer with HTTPS health checks\"</i> is not required; Classic ELB supports URL health checks as well. Switching load balancers adds unnecessary complexity for this problem.<br><i>\"Switch to Application Load Balancer since only it can truly confirm status\"</i> is incorrect. Classic ELB can point health checks to any application-specific URL. The key is to ensure that the health check endpoint returns success <b>only</b> when all components (including Tomcat and the application) are ready, regardless of the load balancer type.<br><br><b>Tip:</b> Design your health check endpoint in Tomcat to return a healthy response only after all dependencies are loaded and the app is operational. This prevents premature routing of traffic and the associated errors.</p>",
+  "query": "<p>A team of developers is rolling out a new Java/Tomcat feature for an IoT platform. They established a brand new Auto Scaling group (ASG) with an updated AMI and linked it to an existing Classic ELB using an HTTP health check. Once the ELB health check was satisfied, the previous ASG was detached. This was done as part of a Blue/Green deployment. Nevertheless, significant Tomcat errors occurred after the cutover. <strong>What step should the team take to reduce these Tomcat errors?</strong></p>",
+  "original_oid": "6793da7861969b416038a211",
+  "options": [
+    {
+      "correct": true,
+      "text": "The HTTP health check configured for the Classic ELB is insufficient. The check should target the application or a specific webpage that signals when Tomcat is ready to process requests.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Extend the waiting period after the new Auto Scaling group is created, allowing applications more time to initialize before attaching it to the ELB.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Deploy an Application Load Balancer with HTTPS health checks instead of relying on Classic or Network ELB.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Switch to an Application Load Balancer since only it can truly confirm the application status; the Classic ELB or Network ELB is inadequate as the app might not be ready when health checks pass.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question417",
+  "originalQuery": "A development team is using Java/Tomcat to build up a new feature for an IOT project.\nThey decided to create a new autoscaling group using a launch configuration that contained the latest AMI.\nAnd then they attached the new autoscaling group to the existing Classic ELB with a HTTP health check.\nAfter ELB passed the health check, they removed the old autoscaling group.\nUsing this way, they were trying to implement the Blue/Green deployment.\nHowever, they found that the new autoscaling did not service properly and there were lots of Tomcat errors.\nWhich below action should be done to reduce Tomcat errors?",
+  "originalOptions": "A. The health check is not accurate. The Classic ELB health check should point to a endpoint or a webpage in the application to indicate when the instances are ready to receive traffic.|B. The health check is not configured properly. The classic ELB should be replaced using an application load balancer and the HTTPS health check is required.|C. The classic ELB or network ELB cannot meet the need. The application load balancer should be used as it is able to check the application status. In this case, the application is not ready yet when the ELB health check passed.|D. After the new autoscaling group is created, wait for a longer time firstly so that the instances are ready to service the traffic. Then attach the autoscaling group to the EL.",
+  "video_url": "https://certificationation.com/videos/exam-build-up-a-new-feature-exam-130.html",
+  "url": "https://certificationation.com/questions/exam-build-up-a-new-feature-exam-130.html"
+}

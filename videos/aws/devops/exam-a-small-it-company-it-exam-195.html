@@ -1,0 +1,62 @@
+---
+title: "You are a DevOps engineer working in a small IT companyExam"
+description: "Video for you are a DevOps engineer working in a small IT company. It has a limited operation budget for AWS resources. So spot EC2 instances are always"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are a DevOps engineer working in a small IT company. It has a limited operation budget for AWS resources. So spot EC2 instances are always suggested. There is a new application that will be deployed via a Load Balancer and Auto Scaling Group. However, as this application controls the authentication for all other company products, it is inappropriate to use only spot instances for this. The best way is to use a combination of On-Demand and Spot instances for the Auto Scaling Group if possible. What is the best way to implement this?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best way to create a blended group of On-Demand and Spot instances inside an Auto Scaling Group (ASG) is to use a <b>Launch Template</b>—as shown in option 3. When you define your ASG using a Launch Template, AWS lets you specify the percentage (or absolute amount) of your desired instance mix between On-Demand and Spot. </p><p>Let's break down the alternatives:</p><ul><li><i>Set up the ASG by utilizing an Auto Scaling Launch Configuration, adjusting the On-Demand and Spot capacity percentage settings, and then launch the ASG with this Launch Configuration.</i>: This is inaccurate because support for mixing On-Demand and Spot capacity in Launch Configurations is very limited, and newer AWS features for mixed instance policies are only accessible via Launch Templates—not Launch Configurations.</li><li><i>Provision two separate Auto Scaling Groups: one dedicated to On-Demand instances and the other dedicated to Spot instances.</i>: Although feasible, this approach complicates management and scaling policies since you have to handle two groups and split the load balancer. AWS natively supports running mixed instances within a single group using Launch Templates, making this method unnecessary.</li><li><b>Employ a Launch Template to create your Auto Scaling Group, specifying your desired On-Demand and Spot instance proportions in the configuration.</b>: This is correct. With Launch Templates, you can use ASG's MixedInstancesPolicy to combine On-Demand and Spot capacity according to your application requirements. This grants flexibility and manages costs while maintaining reliability for your authentication service.</li><li><i>It's not possible to mix On-Demand and Spot instances within a single Auto Scaling Group; only one instance type can be set up per ASG.</i>: This is incorrect. AWS supports combining Spot and On-Demand instances inside a single ASG when using MixedInstancesPolicy with Launch Templates.</li></ul><p><b>Tip:</b> Always prefer Launch Templates over Launch Configurations for new ASGs, especially when you require advanced features like mixed instance types and flexible capacity allocation.</p>",
+  "query": "<p>You are the DevOps engineer for a small tech organization with a constrained budget for AWS services. Although using Spot EC2 instances is encouraged for cost reduction, you must deploy a critical application (used for authentication) via a Load Balancer and an Auto Scaling Group (ASG). Given the application's significance, only Spot instances cannot be relied upon. What is the most effective method to configure your ASG so it includes a mix of On-Demand and Spot EC2 instances?</p>",
+  "original_oid": "6793d9e461969b416038a0e7",
+  "options": [
+    {
+      "correct": false,
+      "text": "Set up the ASG by utilizing an Auto Scaling Launch Configuration, adjusting the On-Demand and Spot capacity percentage settings, and then launch the ASG with this Launch Configuration.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Provision two separate Auto Scaling Groups: one dedicated to On-Demand instances and the other dedicated to Spot instances.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Employ a Launch Template to create your Auto Scaling Group, specifying your desired On-Demand and Spot instance proportions in the configuration.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "It's not possible to mix On-Demand and Spot instances within a single Auto Scaling Group; only one instance type can be set up per ASG.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question116",
+  "originalQuery": "You are a DevOps engineer working in a small IT company.\nIt has a limited operation budget for AWS resources.\nSo spot EC2 instances are always suggested.\nThere is a new application that will be deployed via a Load Balancer and Auto Scaling Group.\nHowever, as this application controls the authentication for all other company products, it is inappropriate to use only spot instances for this.\nThe best way is to use a combination of On-Demand and Spot instances for the Auto Scaling Group if possible.\nWhat is the best way to implement this?",
+  "originalOptions": "A. Create two ASGs. One for On-Demand instances and one for Spot instances.|B. Create the ASG by a Launch Template and configure the On-Demand/Spot percentage accordingly.|C. In Auto Scaling Launch Configuration, configure a suitable On-Demand/Spot percentage and then create the ASG with this Launch Configuration.|D. It is impossible to create a combination of On-Demand and Spot instances for this case. Only one type is allowed for an ASG configuration.",
+  "video_url": "https://certificationation.com/videos/exam-a-small-it-company-it-exam-195.html",
+  "url": "https://certificationation.com/questions/exam-a-small-it-company-it-exam-195.html"
+}

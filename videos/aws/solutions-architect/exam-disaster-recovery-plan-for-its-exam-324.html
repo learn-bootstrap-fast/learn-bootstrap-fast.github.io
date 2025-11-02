@@ -1,0 +1,89 @@
+---
+title: "A company wants to implement a disaster recovery planExam"
+description: "Video for a company wants to implement a disaster recovery plan for its primary on-premises file storage volume. The file storage volume is mounted from an"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company wants to implement a disaster recovery plan for its primary on-premises file storage volume. The file storage volume is mounted from an Internet Small Computer Systems Interface (iSCSI) device on a local storage server. The file storage volume holds hundreds of terabytes (TB) of data. The company wants to ensure that end users retain immediate access to all file types from the on-premises systems without experiencing latency. Which solution will meet these requirements with the LEAST amount of change to the company's existing infrastructure?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729aa9"
+  },
+  "quid": null,
+  "ordinal": "324",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS Storage Gateway",
+    " Amazon EC2",
+    " Amazon Elastic Block Store (Amazon EBS)"
+  ],
+  "slug": "iscsi-disaster-recovery-plan-aws",
+  "source": "ET",
+  "title": "AWS A Company Wants To Implement A Disaster Recovery Question",
+  "meta": "AWS Exam Question: A company seeks a disaster recovery plan for its on-premises iSCSI file storage. The solution must ensure immediate access with minimal changes. Answer: AWS Storage Gateway.",
+  "answer": "D",
+  "query": "An organization needs to design a reliable recovery strategy for its main on-premises file storage. The current file system is connected via an Internet Small Computer Systems Interface (iSCSI) configuration on a local server. This storage system consists of several hundred terabytes (TB) of critical data.\n\nThe organization aims to provide users with seamless access to all file types from the local infrastructure while avoiding delays in performance.\n\nWhat solution can achieve these goals while minimizing alterations to the current setup?",
+  "originalQuery": "A company wants to implement a disaster recovery plan for its primary on-premises file storage volume. The file storage volume is mounted from an Internet Small Computer Systems Interface (iSCSI) device on a local storage server. The file storage volume holds hundreds of terabytes (TB) of data.\n\nThe company wants to ensure that end users retain immediate access to all file types from the on-premises systems without experiencing latency.\n\nWhich solution will meet these requirements with the LEAST amount of change to the company's existing infrastructure?",
+  "options": [
+    "A. Provision an Amazon S3 File Gateway as a virtual machine (VM) that is hosted on premises. Set the local cache to 10 TB. Modify existing applications to access the files through the NFS protocol. To recover from a disaster, provision an Amazon EC2 instance and mount the S3 bucket that contains the files.",
+    "B. Provision an AWS Storage Gateway tape gateway. Use a backup tool to store current data to a virtual tape library. Schedule the backup tool to run overnight following the initial backup's completion. To recover from a disaster, provision an Amazon EC2 instance and restore the data to an Amazon Elastic Block Store (Amazon EBS) volume from the volumes in the virtual tape library.",
+    "C. Provision an AWS Storage Gateway Volume Gateway cached volume. Set the local cache to 10 TB. Mount the Volume Gateway cached volume to the existing file server by using iSCSI, and copy all files to the storage volume. Configure scheduled snapshots of the storage volume. To recover from a disaster, restore a snapshot to an Amazon Elastic Block Store (Amazon EBS) volume and attach the EBS volume to an Amazon EC2 instance.",
+    "D. Provision an AWS Storage Gateway Volume Gateway stored volume with the same amount of disk space as the existing file storage volume. Mount the Volume Gateway stored volume to the existing file server by using iSCSI, and copy all files to the storage volume. Configure scheduled snapshots of the storage volume. To recover from a disaster, restore a snapshot to an Amazon Elastic Block Store (Amazon EBS) volume and attach the EBS volume to an Amazon EC2 instance."
+  ],
+  "originalOptions": [
+    "A. Provision an Amazon S3 File Gateway as a virtual machine (VM) that is hosted on premises. Set the local cache to 10 TB. Modify existing applications to access the files through the NFS protocol. To recover from a disaster, provision an Amazon EC2 instance and mount the S3 bucket that contains the files.",
+    "B. Provision an AWS Storage Gateway tape gateway. Use a data backup solution to back up all existing data to a virtual tape library. Configure the data backup solution to run nightly after the initial backup is complete. To recover from a disaster, provision an Amazon EC2 instance and restore the data to an Amazon Elastic Block Store (Amazon EBS) volume from the volumes in the virtual tape library.",
+    "C. Provision an AWS Storage Gateway Volume Gateway cached volume. Set the local cache to 10 TB. Mount the Volume Gateway cached volume to the existing file server by using iSCSI, and copy all files to the storage volume. Configure scheduled snapshots of the storage volume. To recover from a disaster, restore a snapshot to an Amazon Elastic Block Store (Amazon EBS) volume and attach the EBS volume to an Amazon EC2 instance.",
+    "D. Provision an AWS Storage Gateway Volume Gateway stored volume with the same amount of disk space as the existing file storage volume. Mount the Volume Gateway stored volume to the existing file server by using iSCSI, and copy all files to the storage volume. Configure scheduled snapshots of the storage volume. To recover from a disaster, restore a snapshot to an Amazon Elastic Block Store (Amazon EBS) volume and attach the EBS volume to an Amazon EC2 instance."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [],
+  "originalComments": [],
+  "voteDistribution": [
+    {
+      "option": "D (83%)",
+      "votes": "49 votes."
+    },
+    {
+      "option": "C (17%)",
+      "votes": "10 votes."
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "Option D is correct because it uses AWS Storage Gateway as a stored volume, which allows for seamless integration with existing iSCSI configurations. It minimizes changes to the current on-premises infrastructure, allowing users to access data without experiencing latency. It provides a reliable disaster recovery mechanism through the snapshots that can be restored to Amazon EBS, thus supporting the critical data requirements.\n\nOption A is incorrect because while it suggests using an Amazon S3 File Gateway, it would require modifications to existing applications to access files through the NFS protocol, which goes against the requirement of minimizing changes. Additionally, users may experience latency when accessing files in S3 compared to the on-premises solution.\n\nOption B is also incorrect as it involves using a tape gateway for backups, which does not provide the low-latency access to files needed for the user experience. Moreover, users would have to wait for data to be restored from a backup solution, which is not ideal for immediate access.\n\nOption C, while using an AWS Storage Gateway, proposes a cached volume configuration which may still lead to performance issues as it involves storing and managing cache, and does not provide a fully stored copy of the data in the cloud. This can introduce latency, which is a concern mentioned in the scenario.",
+  "video_url": "https://certificationation.com/videos/exam-disaster-recovery-plan-for-its-exam-324.html",
+  "url": "https://certificationation.com/questions/exam-disaster-recovery-plan-for-its-exam-324.html"
+}

@@ -1,0 +1,82 @@
+---
+title: "You have a Dedicated Interconnect connection betweenExam"
+description: "Video for you have a Dedicated Interconnect connection between your on-premises network and a Google Cloud region. You also have a Bare Metal Solution for"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have a Dedicated Interconnect connection between your on-premises network and a Google Cloud region. You also have a Bare Metal Solution for Oracle machine in the same region but on a different VPC network. You want to ensure low-latency, private connectivity between the Bare Metal Solution and a Cloud SQL instance hosted in the same region. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Ridgeway Retail operates a 20 Gbps Dedicated Interconnect from its primary data center to Google Cloud in us-east4. The company also runs an Oracle workload on Bare Metal Solution in the same region, and it resides in a different VPC than the VPC that hosts a Cloud SQL instance that uses a private IP. You need private and low latency connectivity from the Bare Metal Solution host to the Cloud SQL database without using the public internet. What should you do?",
+  "options": [
+    {
+      "text": "Set up VPC Network Peering between the Bare Metal Solution VPC and the VPC where Cloud SQL is deployed",
+      "explanation": "This links two VPCs for private RFC 1918 connectivity but it cannot be used to reach a managed service&apos;s producer network behind private services access.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Attach the Bare Metal Solution environment to the VPC that contains Cloud SQL by creating redundant VLAN attachments with Cloud Router and use the instance&apos;s private IP",
+      "explanation": "This connects the Bare Metal Solution network directly to the same VPC as the database so the instance&apos;s private IP is reachable with minimal latency.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Create a Cloud VPN tunnel between the two VPC networks and route traffic to the Cloud SQL private IP",
+      "explanation": "This builds an IPsec tunnel over the internet which increases latency and does not change private services access constraints.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable Private Google Access on the Bare Metal Solution subnet",
+      "explanation": "This allows private IP VMs to reach Google APIs over internal addresses but it does not apply to Cloud SQL private IP endpoints.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct answer is <b>Attach the Bare Metal Solution environment to the VPC that contains Cloud SQL by creating redundant VLAN attachments with Cloud Router and use the instance's private IP</b>.</p><p>Connecting the Bare Metal Solution environment directly to the VPC that hosts Cloud SQL through redundant Interconnect VLAN attachments and Cloud Router provides private routing and low latency. This keeps traffic on Google’s private backbone and lets the Bare Metal Solution host reach the Cloud SQL private IP without traversing the public internet. Redundant attachments and dynamic routing also meet availability and resiliency best practices.</p><p><i>Set up VPC Network Peering between the Bare Metal Solution VPC and the VPC where Cloud SQL is deployed</i> is not suitable because Cloud SQL private IP uses private services access and those producer endpoints are not reachable across VPC Network Peering. Peering also does not provide transitive access to managed service producer networks.</p><p><i>Create a Cloud VPN tunnel between the two VPC networks and route traffic to the Cloud SQL private IP</i> does not meet the requirement to avoid the public internet. Cloud VPN uses public IP addresses for the IPsec tunnels and it does not guarantee the low latency that Interconnect provides.</p><p><i>Enable Private Google Access on the Bare Metal Solution subnet</i> is irrelevant to this need. Private Google Access lets VMs without external IPs reach Google APIs and services, but it does not provide private connectivity to a Cloud SQL instance’s private address in your VPC, and it does not apply to Bare Metal Solution hosts.</p>",
+  "batch_id": "180",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "You have a Dedicated Interconnect connection between your on-premises network and a Google Cloud region. You also have a Bare Metal Solution for Oracle machine in the same region but on a different VPC network. You want to ensure low-latency, private connectivity between the Bare Metal Solution and a Cloud SQL instance hosted in the same region. What should you do?",
+  "originalOptions": "A. Enable Shared VPC and move the Bare Metal Solution's VPC under the same host project as the Cloud SQL instance.<br/>B. Set up Private Google Access on the Bare Metal Solution's subnet.<br/>C. Configure VPC Network Peering between the Bare Metal Solution's VPC and the Cloud SQL instance's VPC.<br/>D. Use a Cloud VPN to establish a secure tunnel between the Bare Metal Solution and the Cloud SQL instance.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "28",
+  "tip": "<p>When you see requirements for private and low latency connectivity, prefer <i>Interconnect with VLAN attachments and Cloud Router</i> into the target VPC. If an option mentions <i>VPN</i> or relies on <i>VPC Peering</i> to reach a managed service’s private IP, it usually does not satisfy these constraints.</p>",
+  "references": [
+    "https://cloud.google.com/bare-metal/docs/networking",
+    "https://cloud.google.com/network-connectivity/docs/interconnect/concepts/overview",
+    "https://cloud.google.com/sql/docs/mysql/private-ip",
+    "https://cloud.google.com/vpc/docs/vpc-peering#restrictions",
+    "https://cloud.google.com/network-connectivity/docs/vpn/concepts/overview",
+    "https://cloud.google.com/vpc/docs/private-google-access"
+  ],
+  "url": "https://certificationation.com/questions/exam-connection-between-your-on-premises-network-exam-028.html",
+  "video_url": "https://certificationation.com/videos/exam-connection-between-your-on-premises-network-exam-028.html"
+}

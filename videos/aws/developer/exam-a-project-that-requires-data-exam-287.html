@@ -1,0 +1,81 @@
+---
+title: "You are a Database Engineer working on a project thatExam"
+description: "Video for you are a Database Engineer working on a project that requires data synchronization between a Firestore database and a BigQuery dataset. The"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are a Database Engineer working on a project that requires data synchronization between a Firestore database and a BigQuery dataset. The synchronization should be performed in real-time, and the data should be transformed into a denormalized format before being inserted into BigQuery. Which of the following options is the most appropriate solution to achieve this goal?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Arbor Eats runs its order tracking on Firestore and needs to stream changes into BigQuery in near real time with under 45 seconds end to end latency. The incoming documents include nested arrays and maps that must be flattened into a denormalized schema before landing in the BigQuery table marketing_analytics_09.sales_events_flat. You want a low maintenance approach that processes events as they occur and performs the transformation prior to insert. Which approach should you implement?",
+  "options": [
+    {
+      "text": "Set up a Cloud Data Fusion pipeline to move data from Firestore to BigQuery in streaming mode",
+      "explanation": "Cloud Data Fusion can build pipelines and apply transforms for supported sources and it can write to BigQuery",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Export Firestore collections to Cloud Storage and load them into BigQuery with recurring load jobs",
+      "explanation": "You can export snapshots from Firestore to a bucket and then configure BigQuery to load the exported files in batches",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create Cloud Functions that trigger on Firestore document writes and updates and insert a denormalized row into BigQuery with low latency",
+      "explanation": "Cloud Functions can listen to Firestore change events and then run code to reshape data and write rows to BigQuery quickly",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use BigQuery Data Transfer Service to schedule transfers from Firestore into BigQuery",
+      "explanation": "BigQuery Data Transfer Service runs managed imports on a schedule from several data sources into BigQuery",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Create Cloud Functions that trigger on Firestore document writes and updates and insert a denormalized row into BigQuery with low latency</b>. This processes changes as they happen and flattens nested arrays and maps before inserting each row into marketing_analytics_09.sales_events_flat which satisfies the near real time requirement of under 45 seconds and keeps operations simple.</p><p>This approach is event driven so each document write or update immediately invokes managed compute that scales automatically. You can implement the transformation logic in code to denormalize the document and then use the BigQuery client library to perform streaming inserts which delivers second level latency. It is low maintenance because there are no servers to manage and no pipelines to orchestrate and it naturally handles per event processing.</p><p><i>Set up a Cloud Data Fusion pipeline to move data from Firestore to BigQuery in streaming mode</i> is not ideal because there is no native Firestore change stream source for true event driven streaming and it commonly relies on batch connectors. It would require additional components to capture changes and to flatten nested structures which increases operational overhead and risks missing the sub minute latency target.</p><p><i>Export Firestore collections to Cloud Storage and load them into BigQuery with recurring load jobs</i> is batch oriented and not event driven. Export and load schedules cannot achieve consistent under 45 seconds end to end latency and the denormalization would require extra processing stages which adds maintenance.</p><p><i>Use BigQuery Data Transfer Service to schedule transfers from Firestore into BigQuery</i> is not applicable because the service runs scheduled transfers and does not support Firestore as a source. It is batch and cannot meet near real time latency.</p>",
+  "batch_id": "124",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are a Database Engineer working on a project that requires data synchronization between a Firestore database and a BigQuery dataset. The synchronization should be performed in real-time, and the data should be transformed into a denormalized format before being inserted into BigQuery. Which of the following options is the most appropriate solution to achieve this goal?",
+  "originalOptions": "A. Set up a Data Fusion pipeline to synchronize Firestore and BigQuery in real-time.<br/>B. Use the gcloud firestore export command and the gcloud bigquery import command in a Cloud Scheduler job.<br/>C. Configure a Firestore export to a Cloud Storage bucket and set up a BigQuery import from the bucket.<br/>D. Use Cloud Functions to trigger on Firestore document updates and insert transformed data into BigQuery.",
+  "domain": "Manage a solution that can span multiple database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "287",
+  "tip": "<p>When you see <i>near real time</i> with per event transformation and <i>low maintenance</i> needs, favor an <i>event driven</i> service that can perform logic and stream directly into BigQuery. Options that mention <i>batch</i> or <i>scheduled</i> movement usually will not meet strict latency targets.</p>",
+  "references": [
+    "https://cloud.google.com/functions/docs/calling/cloud-firestore",
+    "https://cloud.google.com/bigquery/streaming-data-into-bigquery",
+    "https://cloud.google.com/firestore/docs/manage-data/export-import",
+    "https://cloud.google.com/bigquery-transfer/docs/supported-data-sources",
+    "https://docs.cdap.io/cdap/current/en/integrations/plugins/batch-plugins/firestore-plugins.html"
+  ],
+  "url": "https://certificationation.com/questions/exam-a-project-that-requires-data-exam-287.html",
+  "video_url": "https://certificationation.com/videos/exam-a-project-that-requires-data-exam-287.html"
+}

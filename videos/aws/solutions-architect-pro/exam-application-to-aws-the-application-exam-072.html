@@ -1,0 +1,74 @@
+---
+title: "You are migrating a legacy client-server application toExam"
+description: "Video for you are migrating a legacy client-server application to AWS. The application responds to a specific DNS domain (e.g., www.example.com) and has a"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are migrating a legacy client-server application to AWS. The application responds to a specific DNS domain (e.g., www.example.com) and has a 2-tier architecture, with multiple application servers and a database server. Remote clients use TCP to connect to the application servers. The application servers need to know the clients' IP address to function properly and are currently taking that information from the TCP socket. A decision is made to use a multi-AZ RDS MySQL instance for the database. During the migration, you can change the application code. But you have to file a change request."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d58ff501ee1c8ade97c1"
+  },
+  "quid": "0",
+  "ordinal": "118",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "AWS RDS",
+    " Amazon Route 53",
+    " AWS Elastic Load Balancing (ELB)",
+    " AWS Multi-AZ",
+    " TCP Load Balancing"
+  ],
+  "slug": "aws-migrating-legacy-client-server-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question118",
+  "title": "AWS Migrating A Legacy ClientServer Application Question",
+  "meta": "AWS Exam Question: You are migrating a legacy client-server application to AWS with a 2-tier architecture, using multi-AZ RDS MySQL. Find the answer!",
+  "answer": "A",
+  "query": "Your company is shifting a legacy TCP-based monitoring system to AWS. The system operates under a certain DNS name (such as monitor.example.net) and includes multiple processing nodes plus a database backend. Clients connect via TCP, and the processing nodes must capture the original client IP address directly from the connection. The database will be migrated to a multi-AZ RDS PostgreSQL setup. Changes to the application code are allowed but require formal approval.",
+  "originalQuery": "You are migrating a legacy client-server application to AWS.\nThe application responds to a specific DNS domain (e.g., www.example.com) and has a 2-tier architecture, with multiple application servers and a database server.\nRemote clients use TCP to connect to the application servers.\nThe application servers need to know the clients' IP address to function properly and are currently taking that information from the TCP socket.\nA decision is made to use a multi-AZ RDS MySQL instance for the database.\nDuring the migration, you can change the application code.\nBut you have to file a change request.",
+  "options": [
+    "A. File a change request to implement Proxy Protocol Support in the application. Use an ELB with a TCP Listener and Proxy Protocol enabled to distribute the load on two application servers in different AZs.",
+    "B. Submit a change request to adopt Cross-AZ Load Balancing feature with a TCP Listener on the ELB to balance traffic between processing nodes.",
+    "C. Request implementing Latency Routing with Route 53 to direct client connections to the lowest latency application endpoint across multiple AZs.",
+    "D. Propose using Route 53 Alias Resource Record routing to spread client load among the application instances across AZs."
+  ],
+  "originalOptions": [
+    "A. File a change request to implement Proxy Protocol Support in the application. Use an ELB with a TCP Listener and Proxy Protocol enabled to distribute the load on two application servers in different AZs.",
+    "B. File a change request to Implement Cross-Zone support in the application. Use an ELB with a TCP Listener and Cross-Zone Load Balancing enabled to distribute the load on two application servers in different AZs.",
+    "C. File a change request to implement Latency Based Routing support in the application. Use Route 53 with Latency Based Routing enabled to distribute the load on two application servers in different AZs.",
+    "D. File a change request to implement Alias Resource Support in the application. Use a Route 53 Alias Resource Record to distribute the load on two application servers in different AZs."
+  ],
+  "image": "",
+  "primaryObjective": "4: Accelerate Workload Migration and Modernization",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Answer - A.\nAWS ELB has support for Proxy Protocol.\nIt simply depends on a humanly readable header with the client's connection information to the TCP data sent to your server.\nAs per the AWS documentation, the Proxy Protocol header helps you identify the IP address of a client when you have a load balancer that uses TCP for back-end connections.\nBecause load balancers intercept traffic between clients and your instances, the access logs from your instance contain the load balancer's IP address instead of the originating client.\nYou can parse the first line of the request to retrieve your client's IP address and the port number.\nOption A is CORRECT because it implements the proxy protocol and uses ELB with a TCP listener.\nA change request is needed to support the proxy protocol in the application.\nWith the proxy protocol in ELB, the backend servers can get the IP addresses of the clients.\nOption B is incorrect because, although implementing cross-zone load balancing provides high availability, it states to use TCP forwarding, which does not support X-Forwarded-For.\nOption C is incorrect because Route53 latency-based routing does not give the IP address of the clients.\nOption D is incorrect because the Route53 Alias record does not give the IP address of the clients.\nFor more information on ELB enabling support for TCP, please refer to the links given below.\nhttps://aws.amazon.com/blogs/aws/elastic-load-balancing-adds-support-for-proxy-protocol/ https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-proxy-protocol.html\nThe best answer for this question would be A. File a change request to implement Proxy Protocol Support in the application. Use an ELB with a TCP Listener and Proxy Protocol enabled to distribute the load on two application servers in different AZs.\nExplanation: When migrating a legacy client-server application to AWS, it is important to consider the new infrastructure in place and how it will affect the application's behavior. In this scenario, the application needs to know the clients' IP address to function properly and is currently taking that information from the TCP socket.\nWith the migration to AWS, a decision is made to use a multi-AZ RDS MySQL instance for the database. Therefore, to distribute the load on two application servers in different AZs, we need to implement an Elastic Load Balancer (ELB). An ELB is a service that automatically distributes incoming application traffic across multiple targets, such as EC2 instances, containers, and IP addresses, in one or more Availability Zones.\nFor this scenario, we need to use a TCP listener with Proxy Protocol enabled to ensure that the application servers receive the clients' IP addresses. Proxy Protocol is a Layer 4 protocol that is supported by many load balancers and allows the load balancer to pass the client's IP address to the application server in a TCP packet.\nOption A recommends using a TCP listener with Proxy Protocol enabled to distribute the load on two application servers in different AZs. This approach ensures that the application servers receive the clients' IP addresses and enables the use of a multi-AZ RDS MySQL instance for the database.\nOption B suggests implementing Cross-Zone support in the application. This approach is used to distribute traffic evenly across all instances in all AZs. However, it does not address the issue of the application server needing to know the clients' IP address.\nOption C suggests implementing Latency-Based Routing support in the application. This approach is used to route traffic to the AWS region that provides the lowest latency for the client. However, it does not address the issue of the application server needing to know the clients' IP address.\nOption D suggests implementing Alias Resource Support in the application. This approach is used to route traffic to an Amazon S3 bucket or another AWS resource by using a friendly DNS name. However, it does not address the issue of the application server needing to know the clients' IP address.\nIn conclusion, option A is the best answer as it addresses the main issue of the application server needing to know the clients' IP address and enables the use of a multi-AZ RDS MySQL instance for the database.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-application-to-aws-the-application-exam-072.html",
+  "url": "https://certificationation.com/questions/exam-application-to-aws-the-application-exam-072.html"
+}

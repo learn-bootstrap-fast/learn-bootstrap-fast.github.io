@@ -1,0 +1,66 @@
+---
+title: "A company is building a voting system for a popular TVExam"
+description: "Video for a company is building a voting system for a popular TV show. Viewers watch the performances then visit the show's website to vote for their favorite"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company is building a voting system for a popular TV show. Viewers watch the performances then visit the show's website to vote for their favorite performer. It is expected that the site will receive millions of visitors in a short period of time after the show is finished. The visitors will first login to the site using their Amazon.com credentials and then submit their votes. After the voting is completed, the page will display the vote totals. The company needs to build a site to handle the rapid influx of traffic while maintaining good performance."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d594f501ee1c8ade97cd"
+  },
+  "quid": "0",
+  "ordinal": "130",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "It appears that there is no question or options provided in your prompt. Please provide the specific question or options",
+    " and I will be happy to help you identify the relevant topics from the list."
+  ],
+  "slug": "voting-system-popular-tv-show-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question130",
+  "title": "AWS A Company Is Building A Voting System Question",
+  "meta": "AWS Exam Question: A company is building a voting system for a popular TV show, expecting millions of visitors. Learn how to maintain performance. Answer: EC2, RDS.",
+  "answer": "D",
+  "query": null,
+  "originalQuery": "A company is building a voting system for a popular TV show.\nViewers watch the performances then visit the show's website to vote for their favorite performer.\nIt is expected that the site will receive millions of visitors in a short period of time after the show is finished.\nThe visitors will first login to the site using their Amazon.com credentials and then submit their votes.\nAfter the voting is completed, the page will display the vote totals.\nThe company needs to build a site to handle the rapid influx of traffic while maintaining good performance.",
+  "options": null,
+  "originalOptions": [
+    "A. Use CloudFront and an Elastic Load balancer in front of an auto-scaled set of web servers. The web servers will first login with the Amazon service to authenticate the users, then process the users` votes and store the votes into a multi-AZ Relational Database Service instance.",
+    "B. Use CloudFront and the static website hosting feature of S3 with the Javascript SDK to call the login with Amazon service to authenticate the user. Configure IAM users to gain permissions to a DynamoDB table to store the users` votes.",
+    "C. Use CloudFront and an Elastic Load Balancer in front of an auto-scaled set of web servers. The web servers will first login with Amazon service to authenticate the user. The web servers will process the users` votes and store the votes into a DynamoDB table that has a large read capacity unit.",
+    "D. Use CloudFront and an Elastic Load Balancer in front of an auto-scaled set of web servers. The web servers will first login with Amazon service to authenticate the user. The web servers will process the users` votes and store the votes into an SQS queue using IAM Roles for EC2 Instances to gain permissions to the SQS queue. A set of application servers will then retrieve the items from the queue and update the `vote totals` into a DynamoDB table."
+  ],
+  "image": "",
+  "primaryObjective": "1: Design Solutions for Organizational Complexity",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Answer - D.\nThis scenario has the following architectural considerations: (1) the application needs to be scalable to handle traffic coming from millions of users, (2) the application should handle the rapid influx of traffic, maintaining good performance.\nWhen the application needs to handle the data coming from millions of users, always think about using DynamoDB.\nAlso, to provide the global users with high-performance content access, you need to consider CloudFront.\nYou need to set the appropriate IAM Role for the front end/web servers to access DynamoDB tables.\nOption A is incorrect because multi-AZ RDS is not a preferable solution compared to DynamoDB.Option B is incorrect because IAM roles should be used to provide permissions to write the DynamoDB table.\nOption C is incorrect because DynamoDB needs a high write capacity unit.\nWith this option, DynamoDB may have a performance issue.\nOption D is CORRECT because (a) it is highly scalable, (b) creates appropriate IAM Role to access the DynamoDB database, and (c) more importantly uses SQS to hold the user data/votes such that the application does not consume read and write provisioned capacity of DynamoDB.\nAs per the scenario, once the user completes the voting, the web page should display the total number of votes submitted online.\nOption D also includes an Autoscaling group of EC2 instances to handle the traffic.\nHence option D is optimal.\nThe best answer for the company to build a site to handle the rapid influx of traffic while maintaining good performance is:\nC. Use CloudFront and an Elastic Load Balancer in front of an auto-scaled set of web servers. The web servers will first login with the Amazon service to authenticate the user. The web servers will process the users' votes and store the votes into a DynamoDB table that has a large read capacity unit.\nExplanation: The key requirements for this system are to handle millions of visitors and maintain good performance while ensuring security and reliability. The proposed architecture should be able to handle the expected traffic, provide a secure login process, and store user votes in a reliable and scalable way.\nOption A suggests using CloudFront and an Elastic Load Balancer in front of an auto-scaled set of web servers. This approach can handle high traffic, but storing the votes in a multi-AZ Relational Database Service instance may not be the best choice since it could become a bottleneck in the system. Furthermore, this option doesn't address how to authenticate users before processing their votes.\nOption B suggests using CloudFront and the static website hosting feature of S3 to serve the website and calling the login with Amazon service to authenticate users. While this approach can also handle high traffic, storing user votes in DynamoDB would be a better choice since DynamoDB is a highly scalable, NoSQL database service. However, using IAM users to gain permissions to a DynamoDB table can be complex to manage and maintain, especially when dealing with millions of visitors.\nOption D proposes using CloudFront and an Elastic Load Balancer in front of auto-scaled web servers, and storing the votes in an SQS queue. While this approach can handle high traffic, using an SQS queue to store votes can introduce a delay in updating the vote totals. This option also requires additional application servers to retrieve the items from the queue and update the vote totals into a DynamoDB table.\nOption C is the best choice since it uses CloudFront and an Elastic Load Balancer to handle high traffic, and stores votes directly in a DynamoDB table. DynamoDB provides high availability, scalability, and performance, and a DynamoDB table with a large read capacity unit can handle millions of reads per second. Using Amazon's login service to authenticate users before processing their votes also ensures security and reliability.\nIn summary, Option C provides a scalable, reliable, and secure architecture to handle millions of visitors and maintain good performance for the TV voting system.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-system-for-a-popular-tv-exam-077.html",
+  "url": "https://certificationation.com/questions/exam-system-for-a-popular-tv-exam-077.html"
+}

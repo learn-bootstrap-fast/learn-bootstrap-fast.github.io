@@ -1,0 +1,79 @@
+---
+title: "Your application uses Google Cloud Bigtable for storingExam"
+description: "Video for your application uses Google Cloud Bigtable for storing large amounts of time-series data. To optimize performance and cost, you need to choose the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your application uses Google Cloud Bigtable for storing large amounts of time-series data. To optimize performance and cost, you need to choose the appropriate storage option. Which of the following would you select to meet these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "An analytics team at scrumtuous.com stores high volume telemetry in Cloud Bigtable. Most dashboards query the most recent 21 days and must return in milliseconds, while data older than 270 days is retained mostly for compliance and is rarely read. You want to keep costs in check without hurting interactive performance for the user facing workload. Which storage choice in Bigtable should you use for the instance that serves these queries?",
+  "options": [
+    {
+      "text": "Configure HDD storage for the primary cluster that handles live user reads",
+      "explanation": "HDD storage reduces cost per gigabyte but provides lower throughput and higher latency compared to SSD for interactive workloads.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Deploy Bigtable with cross region replication to multiple regions for faster reads",
+      "explanation": "Cross region replication can improve availability and locality for reads but it does not change the storage media characteristics.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use SSD storage for the Bigtable cluster that powers dashboard queries",
+      "explanation": "SSD storage delivers high throughput and low latency which suits frequent reads and writes to recent time series data.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Enable automatic tiering between SSD and HDD within one Bigtable instance",
+      "explanation": "Storage tiering within a single Bigtable instance would mix media types to balance cost and performance for the same table.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Use SSD storage for the Bigtable cluster that powers dashboard queries</b>. The other choices either reduce performance, increase cost without benefit, or are not supported.</p><p>Interactive dashboards that must return in milliseconds rely on low latency random reads, and this storage type is recommended by Google Cloud for production user facing workloads. It provides the throughput and tail latency characteristics needed for the hot 21 day working set. Retaining older data for compliance does not change the requirement for fast access to recent data, and you can keep costs in control by right sizing nodes and using garbage collection policies rather than selecting a slower medium.</p><p><i>Configure HDD storage for the primary cluster that handles live user reads</i> is not appropriate because that medium is optimized for large sequential scans and has significantly higher read latency. It would harm the interactive experience for dashboard users.</p><p><i>Deploy Bigtable with cross region replication to multiple regions for faster reads</i> does not address the latency requirement for a single region dashboard and it adds substantial cost and operational overhead. Replication is primarily for availability and disaster recovery and it can also add write latency.</p><p><i>Enable automatic tiering between SSD and HDD within one Bigtable instance</i> is not possible in Bigtable. The storage type is chosen at cluster creation and you cannot mix or automatically tier storage types within the same instance.</p>",
+  "batch_id": "315",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "Your application uses Google Cloud Bigtable for storing large amounts of time-series data. To optimize performance and cost, you need to choose the appropriate storage option. Which of the following would you select to meet these requirements?",
+  "originalOptions": "A. Implement a multi-regional Bigtable instance to provide redundancy and low-latency access.<br/>B. Use SSD storage in Bigtable for high throughput and low latency access to recent data.<br/>C. Set up automatic data archiving for Bigtable to move older data to Cloud Storage for cost savings.<br/>D. Opt for HDD storage in Bigtable for less frequently accessed, historical time-series data.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "261",
+  "tip": "<p>Match the workload to the storage type. Choose <i>SSD</i> when you see <i>latency sensitive random reads</i> and avoid options that add cost without a clear performance benefit or that describe a <i>feature that does not exist</i>.</p>",
+  "references": [
+    "https://cloud.google.com/bigtable/docs/storage-types",
+    "https://cloud.google.com/bigtable/docs/performance",
+    "https://cloud.google.com/bigtable/docs/replication-overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-cloud-bigtable-for-storing-large-exam-261.html",
+  "video_url": "https://certificationation.com/videos/exam-cloud-bigtable-for-storing-large-exam-261.html"
+}

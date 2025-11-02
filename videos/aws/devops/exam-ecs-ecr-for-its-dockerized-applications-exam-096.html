@@ -1,0 +1,62 @@
+---
+title: "A company just started to use AWS ECS/ECR for itsExam"
+description: "Video for a company just started to use AWS ECS/ECR for its dockerized applications. They are looking for a pipeline service with a source stage that can deploy"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company just started to use AWS ECS/ECR for its dockerized applications. They are looking for a pipeline service with a source stage that can deploy a container application to the ECS cluster using a blue/green deployment. At the moment, all docker images are already stored in the ECR service which will be used in the pipelines as artifactories. What is the quickest way to implement this pipeline?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best answer is <b>Implement AWS CodePipeline with ECR as the source and ECS as the deployment target, leveraging a CodeDeploy application and deployment group to manage blue/green updates.</b> This approach natively integrates with AWS-managed CI/CD services and utilizes CodeDeploy's native blue/green deployment capabilities for ECS, greatly simplifying management and automation. CodePipeline natively supports ECR image triggers as sources and can orchestrate deployments through CodeDeploy without the need for custom scripting or self-managed infrastructure.</p><p><i>Set up a Jenkins server on an EC2 instance, configure a Jenkins job with a source stage that pulls the image from ECR and a deployment stage to ECS by running AWS CLI commands</i> is incorrect because hosting Jenkins adds operational overhead, requires manual integration effort, and does not utilize the managed blue/green features that CodeDeploy offers for ECS.</p><p><i>Use AWS CodePipeline with ECR configured as the source stage, CodeBuild to build the docker image, and CloudFormation to automate the ECS cluster deployment</i> is not the quickest solution, as the Docker images already reside in ECR so a build stage with CodeBuild is unnecessary. Furthermore, CloudFormation is typically for infrastructure setup rather than orchestrating blue/green app deployments.</p><p><i>Create a CodeDeploy application and assign a deployment group to enable blue/green deployment from ECR directly to the ECS cluster</i> misses the orchestration provided by a pipeline service—CodeDeploy does not offer a full end-to-end pipeline experience and lacks integration steps such as source artifact tracking that are available in CodePipeline.</p><p><b>Tip:</b> To deploy containers on ECS using blue/green deployment, use CodePipeline with ECR and CodeDeploy integration. This lets you orchestrate the entire flow with native AWS services, reduces manual setup, and supports automation. Always avoid unnecessary custom tooling when managed options are available.</p>",
+  "query": "<p>A company has recently adopted AWS ECS and ECR to manage its containerized workloads. They want to set up a CI/CD pipeline that uses an existing ECR image as the source, and deploys this image to an ECS cluster utilizing a blue/green deployment approach.</p><p>Given that their Docker images are already available in ECR, what is the most efficient way to establish this deployment pipeline?</p>",
+  "original_oid": "6793da2561969b416038a168",
+  "options": [
+    {
+      "correct": false,
+      "text": "Set up a Jenkins server on an EC2 instance, configure a Jenkins job with a source stage that pulls the image from ECR and a deployment stage to ECS by running AWS CLI commands.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Implement AWS CodePipeline with ECR as the source and ECS as the deployment target, leveraging a CodeDeploy application and deployment group to manage blue/green updates.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Use AWS CodePipeline with ECR configured as the source stage, CodeBuild to build the docker image, and CloudFormation to automate the ECS cluster deployment.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Create a CodeDeploy application and assign a deployment group to enable blue/green deployment from ECR directly to the ECS cluster.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question247",
+  "originalQuery": "A company just started to use AWS ECS/ECR for its dockerized applications.\nThey are looking for a pipeline service with a source stage that can deploy a container application to the ECS cluster using a blue/green deployment.\nAt the moment, all docker images are already stored in the ECR service which will be used in the pipelines as artifactories.\nWhat is the quickest way to implement this pipeline?",
+  "originalOptions": "A. Create a Jenkins server in the EC2 instance. In the Jenkins job, add a source stage for the ECR docker image and a deployment stage for the ECS cluster using AWS CLI commands.|B. In AWS CodePipeline, configure a source stage for ECR, a build stage with CodeBuild for the docker image and a deployment stage using CloudFormation to deploy the ECS cluster.|C. In AWS CodeDeploy, create a CodeDeploy application and a deployment group to configure the blue/green deployment to the ECS cluster using the image in the ECR repository.|D. In AWS CodePipeline, add a source stage for ECR docker image and a deployment stage for ECS where the deployment runs with a CodeDeploy application and deployment group.",
+  "video_url": "https://certificationation.com/videos/exam-ecs-ecr-for-its-dockerized-applications-exam-096.html",
+  "url": "https://certificationation.com/questions/exam-ecs-ecr-for-its-dockerized-applications-exam-096.html"
+}

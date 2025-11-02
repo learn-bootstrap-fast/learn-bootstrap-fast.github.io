@@ -1,0 +1,62 @@
+---
+title: "Your company is planning to develop an application whereExam"
+description: "Video for your company is planning to develop an application where the front end is in .Net and the backend is in DynamoDB. There is an expectation of a high"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company is planning to develop an application where the front end is in .Net and the backend is in DynamoDB. There is an expectation of a high load on the application. How could you ensure the scalability of the application to reduce the load on the DynamoDB database? Choose an answer from the options below."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct answer is <b>\"Use Amazon SQS to queue incoming requests and have your application retrieve these messages before performing database writes to DynamoDB.\"</b> By introducing Amazon SQS as a buffer, application traffic spikes are smoothed out, which limits the number of concurrent operations on DynamoDB and helps maintain stability and scalability. This approach decouples request generation from processing and is especially effective during workload surges.</p><p>Let's review why the other options are incorrect:</p><ul><li><i>\"Scale horizontally by deploying multiple independent DynamoDB tables.\"</i> — DynamoDB tables can't simply be deployed in parallel this way for load distribution without complex changes to your data model and application logic, and this isn't a recommended scaling approach.</li><li><i>\"Enable DynamoDB Global Tables in a Multi-AZ setup to distribute write operations.\"</i> — While Global Tables provide multi-region availability and disaster recovery, they do not distribute writes across AZs for scaling and are primarily useful for cross-region replication and resilience, not load balancing on writes.</li><li><i>\"Simply increase the write capacity units for your DynamoDB table whenever high load is expected.\"</i> — Although raising capacity can handle more writes, this is a reactive approach and might not be cost-efficient or quick enough during sudden spikes. It's also harder to predict peak loads precisely, and alone doesn't buffer or smooth request bursts.</li></ul><p><b>Tips:</b> Integrate SQS (or similar message queues) to absorb sudden request bursts and allow DynamoDB to keep up with a steady rate of writes. Also consider using DynamoDB Auto Scaling for dynamically adjusting throughput.</p>",
+  "query": "<p>A software company is building a new application, with the front end written in .NET and using DynamoDB as its backend data store. The development team expects the application to experience significant traffic and workload. Which of the following actions is the most effective for improving scalability and minimizing pressure on DynamoDB during high demand periods?</p>",
+  "original_oid": "6793da1161969b416038a13f",
+  "options": [
+    {
+      "correct": true,
+      "text": "Use Amazon SQS to queue incoming requests and have your application retrieve these messages before performing database writes to DynamoDB.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Scale horizontally by deploying multiple independent DynamoDB tables.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Enable DynamoDB Global Tables in a Multi-AZ setup to distribute write operations.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Simply increase the write capacity units for your DynamoDB table whenever high load is expected.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question205",
+  "originalQuery": "Your company is planning to develop an application where the front end is in .Net and the backend is in DynamoDB.\nThere is an expectation of a high load on the application.\nHow could you ensure the scalability of the application to reduce the load on the DynamoDB database? Choose an answer from the options below.",
+  "originalOptions": "A. Add more DynamoDB databases to handle the load.|B. Increase write capacity of Dynamo DB to meet the peak loads.|C. Use SQS to assist and let the application pull messages and then perform the relevant operation in DynamoD.|D. Launch DynamoDB in Multi-AZ configuration with a global index to balance writes.",
+  "video_url": "https://certificationation.com/videos/exam-application-where-the-front-end-exam-117.html",
+  "url": "https://certificationation.com/questions/exam-application-where-the-front-end-exam-117.html"
+}

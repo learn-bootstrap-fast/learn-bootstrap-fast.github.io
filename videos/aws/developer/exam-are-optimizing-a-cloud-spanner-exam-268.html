@@ -1,0 +1,80 @@
+---
+title: "As a Cloud Database Engineer, you are optimizing a CloudExam"
+description: "Video for as a Cloud Database Engineer, you are optimizing a Cloud Spanner database for a transportation company. Ride details are stored in a table with a"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Cloud Database Engineer, you are optimizing a Cloud Spanner database for a transportation company. Ride details are stored in a table with a rideId and driverId . The application needs to fetch ride information based on the driver and specific date ranges. You are tasked with creating an efficient, parameterized query. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are supporting a Cloud Spanner workload for a scooter rental startup named MetroScoot, where each trip is stored in a table named trip_ledger with trip_id and courier_id columns, and the application must retrieve trips for a specific courier within a caller supplied start and end date window, so which parameterized SQL statement should you use to make the query efficient and reusable?",
+  "options": [
+    {
+      "text": "SELECT * FROM trip_ledger WHERE courier_id LIKE @courierId AND trip_date>=@fromDate AND trip_date<=@toDate",
+      "explanation": "This statement uses a LIKE comparison on the courier identifier while also applying parameterized lower and upper bounds for the date range",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "SELECT * FROM trip_ledger WHERE courier_id=@courierId AND trip_date BETWEEN &apos;2022-02-01&apos; AND &apos;2022-02-28&apos;",
+      "explanation": "This statement mixes a parameter for the courier with hard coded literal dates for the time window",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "SELECT * FROM trip_ledger WHERE courier_id=@courierId AND trip_date BETWEEN @fromDate AND @toDate",
+      "explanation": "This statement uses parameters for the courier and both date boundaries so the application can supply values at runtime",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "SELECT * FROM trip_ledger WHERE courier_id=&apos;dr-7788&apos; AND trip_date BETWEEN @fromDate AND @toDate",
+      "explanation": "This statement hard codes the courier identifier while parameterizing the date range",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>SELECT * FROM trip_ledger WHERE courier_id=@courierId AND trip_date BETWEEN @fromDate AND @toDate</b> because it uses named parameters for both the courier identifier and the start and end dates which makes the query reusable and it expresses the date window efficiently with an inclusive range.</p><p>This statement uses Cloud Spanner named parameters with the at symbol which allows the database to reuse query plans and helps avoid SQL injection. Using BETWEEN on the trip_date column matches a caller supplied start and end window in a single sargable predicate that can take advantage of indexing. Using equality on courier_id is appropriate for an exact courier lookup and is also index friendly.</p><p><i>SELECT * FROM trip_ledger WHERE courier_id LIKE @courierId AND trip_date>=@fromDate AND trip_date<=@toDate</i> is not ideal because LIKE is intended for pattern matching and can disable efficient index use when wildcards are present. The requirement is an exact courier match so equality is preferable.</p><p><i>SELECT * FROM trip_ledger WHERE courier_id=@courierId AND trip_date BETWEEN &apos;2022-02-01&apos; AND &apos;2022-02-28&apos;</i> hardcodes the date range which violates the requirement for a caller supplied window and reduces reusability. Parameters should be used for the dates to keep the query efficient and safe.</p><p><i>SELECT * FROM trip_ledger WHERE courier_id=&apos;dr-7788&apos; AND trip_date BETWEEN @fromDate AND @toDate</i> hardcodes the courier identifier which makes the statement unusable for other couriers and is not aligned with parameterization best practices.</p>",
+  "batch_id": "127",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "As a Cloud Database Engineer, you are optimizing a Cloud Spanner database for a transportation company. Ride details are stored in a table with a rideId and driverId . The application needs to fetch ride information based on the driver and specific date ranges. You are tasked with creating an efficient, parameterized query. What should you do?",
+  "originalOptions": "A. SELECT * FROM rides WHERE driverId LIKE @driverId AND date>=@startDate AND date<=@endDate<br/>B. SELECT * FROM rides WHERE driverId=@driverId AND date BETWEEN '2021-01-01' AND '2021-01-31'<br/>C. SELECT * FROM rides WHERE driverId='driver123' AND date BETWEEN @startDate AND @endDate<br/>D. SELECT * FROM rides WHERE driverId=@driverId AND date BETWEEN @startDate AND @endDate",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "268",
+  "tip": "<p>Look for <i>parameterized</i> queries that replace user provided values with named parameters and prefer equality for exact lookups and range predicates for date windows. Ask yourself whether the query would be easy to <i>reuse</i> across callers and whether the predicates are <i>index</i> friendly.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/use-nodejs#use_parameterized_queries",
+    "https://cloud.google.com/spanner/docs/use-python#use_parameterized_queries",
+    "https://cloud.google.com/spanner/docs/reference/standard-sql/operators#comparison_operators",
+    "https://cloud.google.com/spanner/docs/reference/standard-sql/data-types#date_type"
+  ],
+  "url": "https://certificationation.com/questions/exam-are-optimizing-a-cloud-spanner-exam-268.html",
+  "video_url": "https://certificationation.com/videos/exam-are-optimizing-a-cloud-spanner-exam-268.html"
+}

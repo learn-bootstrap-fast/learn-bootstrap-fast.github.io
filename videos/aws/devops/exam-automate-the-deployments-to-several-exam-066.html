@@ -1,0 +1,62 @@
+---
+title: "Your team uses AWS CodeDeploy to automate theExam"
+description: "Video for your team uses AWS CodeDeploy to automate the deployments to several AWS EC2 instances and on-premises instances. A deployment group is used to define"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your team uses AWS CodeDeploy to automate the deployments to several AWS EC2 instances and on-premises instances. A deployment group is used to define which individual instances are included. For some testing activities, you need to remove one on-premises instance from the deployment group for two weeks. During the time, AWS CodeDeploy should not deploy any new revisions to this particular instance. Which of the following methods is the most appropriate?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The most fitting method is to remove the deployment group tag from the on-premises instance, as represented by the <b>\"Consult the deployment group's tag and employ the AWS CLI command 'aws deploy remove-tags-from-on-premises-instances' to detach that specific tag from the identified server.\"</b> option. This action effectively excludes the instance from the deployment group, so it won't receive further deployments until the tag is re-applied—making it easy to temporarily suspend and later restore deployment eligibility. </p><p>The option <i>\"Leverage the AWS CLI command 'aws deploy uninstall' to uninstall the CodeDeploy agent and erase its configuration from the target on-premises server.\"</i> is excessive and disruptive, as it removes the agent entirely, requiring reinstallation and configuration to rejoin the environment.  <i>\"Register a new deployment group with a distinct tag not associated with all on-premises servers, then update your CodeDeploy application to use this fresh group.\"</i> requires unnecessary changes to your deployment grouping logic and risks disrupting deployments for the rest of your infrastructure. The choice <i>\"Use the AWS CLI 'aws deploy deregister' function to deregister the on-premises device from AWS CodeDeploy.\"</i> is also overkill, as deregistration removes the instance from CodeDeploy management altogether, necessitating a full re-registration process to resume deployments in the future. </p><p><b>Tip:</b> Temporarily adjusting tags offers a controlled, easily reversible method to manage deployment group membership without significant administrative overhead or configuration changes.</p>",
+  "query": "<p>Your company utilizes AWS CodeDeploy to orchestrate deployment processes across both EC2 instances and on-premises servers. Deployment groups determine which hosts receive updates. For quality assurance purposes, you must temporarily remove one on-premises server from receiving deployments via its group for a period of two weeks, ensuring that it does not receive any new application revisions during that time. What is the best strategy to achieve this outcome?</p>",
+  "original_oid": "6793da8661969b416038a22e",
+  "options": [
+    {
+      "correct": true,
+      "text": "Consult the deployment group's tag and employ the AWS CLI command \"aws deploy remove-tags-from-on-premises-instances\" to detach that specific tag from the identified server.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Leverage the AWS CLI command \"aws deploy uninstall\" to uninstall the CodeDeploy agent and erase its configuration from the target on-premises server.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Register a new deployment group with a distinct tag not associated with all on-premises servers, then update your CodeDeploy application to use this fresh group.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Use the AWS CLI \"aws deploy deregister\" function to deregister the on-premises device from AWS CodeDeploy.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question446",
+  "originalQuery": "Your team uses AWS CodeDeploy to automate the deployments to several AWS EC2 instances and on-premises instances.\nA deployment group is used to define which individual instances are included.\nFor some testing activities, you need to remove one on-premises instance from the deployment group for two weeks.\nDuring the time, AWS CodeDeploy should not deploy any new revisions to this particular instance.\nWhich of the following methods is the most appropriate?",
+  "originalOptions": "[\"A. Use the AWS CLI command aws deploy uninstall to uninstall the CodeDeploy agent and remove the configuration file from the on-premises instance.\",\"B. Use the AWS CLI command aws deploy deregister to deregister the on-premises instance from the AWS CodeDeploy service.\",\"C. Create another deployment group with a new tag that is not used by all the on-premises instances. Modify the CodeDeploy application to use this new deployment group.\",\"D. Check the tag used by the deployment group and use the AWS CLI \\\"aws deploy remove-tags-from-on-premises-instances\\\" to remove the tag from the particular on-premises instance.\"]",
+  "video_url": "https://certificationation.com/videos/exam-automate-the-deployments-to-several-exam-066.html",
+  "url": "https://certificationation.com/questions/exam-automate-the-deployments-to-several-exam-066.html"
+}

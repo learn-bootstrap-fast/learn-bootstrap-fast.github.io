@@ -1,0 +1,62 @@
+---
+title: "You use an ECS cluster to host a web application with anExam"
+description: "Video for you use an ECS cluster to host a web application with an Application Load Balancer. You also build a pipeline to perform the rolling update of the ECS"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You use an ECS cluster to host a web application with an Application Load Balancer. You also build a pipeline to perform the rolling update of the ECS service using the AWS ECS CLI command “ecs-cli compose” Everytime when you update the ECS service with a new task, it takes 5 minutes for the old ECS task to drain the connections before the task is stopped. There is a requirement to increase the timer to 10 minutes. How would you achieve this requirement?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct approach is to <b>edit the target group associated with your ECS cluster's Application Load Balancer and set the Deregistration delay to 600 seconds (10 minutes)</b>. The Deregistration delay defines how long the load balancer will wait for in-flight requests to complete after a target is deregistered. This setting ensures the old task is given a 10-minute window to drain connections before termination, matching your updated requirement.<br><br>Why the other options are incorrect:<br><ul><li><i>Access the Application Load Balancer attached to your ECS cluster in the AWS Console and change the default value of the connection draining timer from 5 to 10 minutes.</i> – Connection draining is actually managed via the target group settings, not directly on the load balancer resource.</li><li><i>Use the ECS CLI command <code>ecs-cli compose</code> with the parameter <code>--Deregistration delay=600</code> to extend the connection draining duration to 10 minutes.</i> – The ECS CLI does not offer a <code>--Deregistration delay</code> parameter for controlling the ALB draining timeout during deployments.</li><li><i>Navigate to the ECS service settings in the AWS Console and adjust the connection draining timeout in the Deployment tab from 5 minutes to 10 minutes.</i> – ECS service console settings do not expose a connection draining timeout for Application Load Balancers; this is configured within the target group.</li></ul><br><b>Tip:</b> Always configure the connection draining or deregistration delay where it is managed; for ALB, this is specifically within the target group settings.</p>",
+  "query": "<p>You have a web application running on an ECS cluster that uses an Application Load Balancer. For rolling updates, you initiate deployments using the AWS ECS CLI command <code>ecs-cli compose</code>. Currently, after launching a new task, it takes 5 minutes for old ECS tasks to finish draining connections before they are terminated. The business now requires this draining period to extend to 10 minutes. <br><br>What is the correct method to accomplish this adjustment?</p>",
+  "original_oid": "6793da8861969b416038a232",
+  "options": [
+    {
+      "correct": false,
+      "text": "Access the Application Load Balancer attached to your ECS cluster in the AWS Console and change the default value of the connection draining timer from 5 to 10 minutes.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Edit the target group associated with your ECS cluster's Application Load Balancer and set the Deregistration delay to 600 seconds (10 minutes).",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Use the ECS CLI command <code>ecs-cli compose</code> with the parameter <code>--Deregistration delay=600</code> to extend the connection draining duration to 10 minutes.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Navigate to the ECS service settings in the AWS Console and adjust the connection draining timeout in the Deployment tab from 5 minutes to 10 minutes.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question450",
+  "originalQuery": "You use an ECS cluster to host a web application with an Application Load Balancer.\nYou also build a pipeline to perform the rolling update of the ECS service using the AWS ECS CLI command “ecs-cli compose”\nEverytime when you update the ECS service with a new task, it takes 5 minutes for the old ECS task to drain the connections before the task is stopped.\nThere is a requirement to increase the timer to 10 minutes.\nHow would you achieve this requirement?",
+  "originalOptions": "A. Click the ECS service in the AWS Console and check the timeout of connection draining in the Deployment tab. Modify the timeout from 5 minutes to 10 minutes.|B. Click the Application Load Balancer used by the ECS cluster in the AWS Console and modify its default draining timer from 5 minutes to 10 minutes.|C. Find the target group of the Application Load Balancer used by the ECS cluster and check the value of Deregistration delay. Increase the value to 600 seconds (10 minutes).|D. In the ECS CLI command “ecs-cli compose”, add the option “--Deregistration delay=600” to increase the default timer of connection draining.",
+  "video_url": "https://certificationation.com/videos/exam-web-application-with-an-application-exam-023.html",
+  "url": "https://certificationation.com/questions/exam-web-application-with-an-application-exam-023.html"
+}

@@ -1,0 +1,54 @@
+---
+title: "You work as a machine learning specialist at a retailExam"
+description: "Video for you work as a machine learning specialist at a retail clothing chain. Your team builds a model that uses Kinesis Data Firehose to ingest transaction"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You work as a machine learning specialist at a retail clothing chain. Your team builds a model that uses Kinesis Data Firehose to ingest transaction records from the chain's many (50,000) stores throughout the country. You are building your training data store using your streaming transactions received from Kinesis Data Firehose. The transaction records used for training require simple transformations, and you need to combine some attributes and drop other attributes. Also, you need to retrain the model daily. Which option will meet your requirements with the least effort?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d7047742293cac494b46"
+  },
+  "answer": "A",
+  "certification": "AWS Machine Learning Specialty",
+  "certificationKey": "AWSMLS",
+  "difficulty": "0",
+  "image": "",
+  "needsWork": "false",
+  "ordinal": "158",
+  "originalExplanation": "Correct Answer: A.\nOption A is correct.\nWith this option, you can transform and combine attributes on your records in Kinesis Data Analytics using Apache Flink using Flink's built-in operators.\nUsing file sink integrations, Kinesis Data Analytics can store the transformed records to S3 for use in your model training.\nThis option requires the least amount of effort on your part.\nOption B is incorrect.\nThis option requires the effort of writing transformation code to run on your ECS containers as well as administration effort to launch and maintain the ECS containers and tasks.\nOption C is incorrect.\nThis option requires significantly more effort due to the launching and maintaining of the EMR cluster.\nYou would also have to create the Apache Hadoop map/reduce logic and Apache Presto scripts to do the transformations.\nOption D is incorrect.\nUsing Kinesis Data Streams instead of Kinesis Data Firehose would require you to write a Kinesis Client Library application and run it on EC2 instances, which you would have to launch and maintain to transform your data and then write the transformed data to S3\nThis would be significantly more effort than writing Apache Flink using Flink's built-in operators.\nReferences:\nPlease see the Amazon Kinesis Data Analytics FAQs (refer to the question “What integrations are supported in a Kinesis Data Analytics for Apache Flink application?”) (https://aws.amazon.com/kinesis/data-analytics/faqs/),\nThe Amazon Kinesis Data Analytics developer guide titled Example: Writing to an Amazon S3 Bucket (https://docs.aws.amazon.com/kinesisanalytics/latest/java/examples-s3.html),\nThe Amazon EMR page titled Apache Hadoop on Amazon EMR (https://aws.amazon.com/emr/features/hadoop/),\nThe Amazon EMR management guide titled What is EMR? (https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-what-is-emr.html)\nThe correct answer for this scenario is option B, which involves streaming the transaction records from Kinesis Data Firehose to S3 and launching an ECS cluster to perform the transformation logic as tasks that transform and combine/drop attributes on the data records on S3.\nOption A is incorrect because it involves sending the transaction records to Kinesis Data Analytics, where you can use Apache Flink to transform and combine/drop attributes. While this is a viable option, it requires setting up and managing a Kinesis Data Analytics application and may involve more effort than necessary for this use case.\nOption C is also incorrect because it involves running an EMR cluster with Apache Hadoop and Apache Presto to perform the transformation logic. This option can be overkill for simple transformations and may involve more effort than necessary. Additionally, running an EMR cluster every day to transform and combine attributes can be resource-intensive and may not be the most cost-effective option.\nOption D is incorrect because it involves using Kinesis Data Streams instead of Kinesis Data Firehose. While Kinesis Data Streams can be used for real-time data ingestion and processing, it requires additional setup and management. Using Glue ETL to transform and combine attributes can also be more complex than necessary for simple transformations.\nOption B is the best option because it involves streaming the transaction records from Kinesis Data Firehose to S3, which is a simple and cost-effective solution. The transformation logic can then be performed using an ECS cluster that runs as tasks to transform and combine/drop attributes on the data records on S3. This approach allows for a flexible and scalable solution that can easily be retrained daily without incurring excessive costs.",
+  "originalOptions": [
+    "A. Have the Kinesis Data Firehose stream your transaction records to Kinesis Data Analytics, where you transform the transaction records and combine/drop attributes using Apache Flink and store the transformed records to S3.",
+    "B. Have the Kinesis Data Firehose stream your transaction records to S3. Launch an ECS cluster that runs the transformation logic as tasks that transform and combine/drop attributes on the data records on Amazon S3",
+    "C. Have the Kinesis Data Firehose stream your transaction records to S3. Run an EMR cluster with Apache Hadoop and Apache Presto performing the transformation logic. Run the cluster every day to transform and combine attributes of the records on S3.",
+    "D. Use Kinesis Data Streams instead of Kinesis Data Firehose to stream the transaction records to S3.Then transform and combine attributes using a Glue ETL job and store the results on S3."
+  ],
+  "originalQuery": "You work as a machine learning specialist at a retail clothing chain.\nYour team builds a model that uses Kinesis Data Firehose to ingest transaction records from the chain's many (50,000) stores throughout the country.\nYou are building your training data store using your streaming transactions received from Kinesis Data Firehose.\nThe transaction records used for training require simple transformations, and you need to combine some attributes and drop other attributes.\nAlso, you need to retrain the model daily.\nWhich option will meet your requirements with the least effort?",
+  "primaryObjective": "",
+  "quid": "0",
+  "source": "https://www.exam-answer.com/amazon/mls-c01/question158",
+  "video_url": "https://certificationation.com/videos/exam-specialist-at-a-retail-clothing-exam-158.html",
+  "url": "https://certificationation.com/questions/exam-specialist-at-a-retail-clothing-exam-158.html"
+}

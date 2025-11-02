@@ -1,0 +1,81 @@
+---
+title: "Your organization is using Google Cloud BigQuery forExam"
+description: "Video for your organization is using Google Cloud BigQuery for analytics and wants to provide access to external business partners without exposing the full"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your organization is using Google Cloud BigQuery for analytics and wants to provide access to external business partners without exposing the full dataset. You need to ensure that partners can run queries on their data only. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Riverbend Logistics runs its analytics in BigQuery and plans to let contracted carriers query only their own shipment data. The security team requires that you must not grant these external users any permissions on the base tables or on the production dataset, yet they still need to run SQL against approved objects. How should you provide this access?",
+  "options": [
+    {
+      "text": "Share the source dataset with all carriers and define BigQuery row access policies for each carrier",
+      "explanation": "This approach uses row level security to limit what rows each partner can see while they query the tables directly",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create authorized views in a separate dataset that filter by carrier identifier and grant carriers access only to the views",
+      "explanation": "Authorized views allow users to run queries against filtered results without requiring any direct permissions on the underlying tables",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Export each carrier&apos;s rows to Cloud Storage and let carriers retrieve their data files",
+      "explanation": "This method shifts data out of BigQuery and provides file access rather than controlled interactive SQL access within BigQuery",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Apply Data Catalog policy tags to sensitive columns and give carriers read access to the dataset",
+      "explanation": "Policy tags manage column level governance but they do not restrict row visibility per partner",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Create authorized views in a separate dataset that filter by carrier identifier and grant carriers access only to the views</b>.</p><p><b>Authorized views</b> let you expose queryable results without giving users any permission on the underlying tables or on the production dataset. You place the <b>views</b> in a separate dataset and grant carriers access only to those <b>views</b>, while you authorize the <b>views</b> to read from the base tables. This meets the requirement because carriers can run SQL against approved objects and they never receive privileges on the base tables or the production dataset.</p><p><i>Share the source dataset with all carriers and define BigQuery row access policies for each carrier</i> is incorrect because sharing the dataset grants permissions on the production dataset and potentially the base tables, which violates the stated constraint. Row access policies control which rows are visible but they do not remove the need to grant table or dataset permissions to the users.</p><p><i>Export each carrier&apos;s rows to Cloud Storage and let carriers retrieve their data files</i> is incorrect because the users need to run SQL against approved objects. Files in Cloud Storage are not queryable in BigQuery without additional setup and this approach adds operational overhead and does not satisfy the requirement to run SQL directly.</p><p><i>Apply Data Catalog policy tags to sensitive columns and give carriers read access to the dataset</i> is incorrect because policy tags provide column level controls and do not restrict access by row for each carrier. Granting dataset read access would also give permissions on the production dataset, which the requirement forbids.</p>",
+  "batch_id": "78",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "Your organization is using Google Cloud BigQuery for analytics and wants to provide access to external business partners without exposing the full dataset. You need to ensure that partners can run queries on their data only. What should you do?",
+  "originalOptions": "A. Create views that filter data based on the partner's access rights and share those views with the respective partners.<br/>B. Copy the relevant data to a new dataset and provide access to each partner to their respective dataset.<br/>C. Export the partner-specific data to Google Cloud Storage and give each partner access to their exported data.<br/>D. Share the dataset with all external partners and rely on BigQuery's built-in row-level security.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "8",
+  "tip": "<p>When a question requires users to query data without any access to base tables or the production dataset, think of <i>authorized views</i> in a separate dataset. If the option still grants dataset or table access to external users, it likely violates the constraint.</p>",
+  "references": [
+    "https://cloud.google.com/bigquery/docs/share-access-views",
+    "https://cloud.google.com/bigquery/docs/row-level-security-intro",
+    "https://cloud.google.com/bigquery/docs/dataset-access-controls",
+    "https://cloud.google.com/bigquery/docs/exporting-data",
+    "https://cloud.google.com/bigquery/docs/column-level-security-intro"
+  ],
+  "url": "https://certificationation.com/questions/exam-cloud-bigquery-for-analytics-and-exam-008.html",
+  "video_url": "https://certificationation.com/videos/exam-cloud-bigquery-for-analytics-and-exam-008.html"
+}

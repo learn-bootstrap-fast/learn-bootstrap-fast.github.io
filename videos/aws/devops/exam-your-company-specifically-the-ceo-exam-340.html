@@ -1,0 +1,62 @@
+---
+title: "You have been asked to de-risk deployments at yourExam"
+description: "Video for you have been asked to de-risk deployments at your company. Specifically, the CEO is concerned about outages that occur because of accidental"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have been asked to de-risk deployments at your company. Specifically, the CEO is concerned about outages that occur because of accidental inconsistencies between Staging and Production, which sometimes cause unexpected behaviors in Production even when Staging tests pass. You already use Docker to get high consistency between Staging and Production for the application environment on your EC2 instances. How do you further de-risk the rest of the execution environment, since, in AWS, there are many service components you may use beyond EC2 virtual machines?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The most reliable way to ensure environmental consistency between Staging and Production—beyond application-level parity provided by Docker—is to <b>Leverage AWS CloudFormation to define and manage environment templates for your entire cloud setup, applying them in both Staging and Production to maximize matching infrastructure.</b> By codifying your infrastructure, CloudFormation eliminates configuration drift at all layers (including resources like load balancers, databases, IAM roles, and more), leading to predictable and repeatable deployments. This approach directly addresses accidental differences by ensuring that every environment is launched from the same templates.</p><p>The other options are less effective:<br /><i>Implement AMIs to maintain full-machine consistency, even down to the Linux kernel, as Docker operates on top of LXC internals. This approach ensures the underlying container runtime is identical everywhere.</i> – While AMIs provide consistency for EC2 instances, they don’t manage or synchronize AWS service configurations outside the instance.<br /><i>Adopt AWS Config to enforce configuration similarity, triggering alerts for any discrepancies so you’re instantly notified of possible risks.</i> – AWS Config can detect and highlight differences, but it doesn’t actively make environments identical or solve the root cause of drifts.<br /><i>Depend on Amazon ECS and Docker clusters, which will automatically guarantee that machine images and compute instance types stay in sync between environments.</i> – ECS helps manage containers, but ensuring parity for other AWS services still falls to infrastructure management tools like CloudFormation.<br /></p><p><b>Tip:</b> Always use infrastructure-as-code solutions to model your cloud environments for safety, repeatability, and fast recovery from errors.</p>",
+  "query": "<p>Your CEO wants to reduce the risk of production outages caused by unintentional differences between Staging and Production. You already use Docker to guarantee the app-level environment matches across your EC2 instances. What else can you do to increase consistency throughout your entire cloud architecture, considering that AWS has many components outside of EC2 itself?</p>",
+  "original_oid": "6793d9d261969b416038a0c4",
+  "options": [
+    {
+      "correct": true,
+      "text": "Leverage AWS CloudFormation to define and manage environment templates for your entire cloud setup, applying them in both Staging and Production to maximize matching infrastructure.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Depend on Amazon ECS and Docker clusters, which will automatically guarantee that machine images and compute instance types stay in sync between environments.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Implement AMIs to maintain full-machine consistency, even down to the Linux kernel, as Docker operates on top of LXC internals. This approach ensures the underlying container runtime is identical everywhere.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Adopt AWS Config to enforce configuration similarity, triggering alerts for any discrepancies so you’re instantly notified of possible risks.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question79",
+  "originalQuery": "You have been asked to de-risk deployments at your company.\nSpecifically, the CEO is concerned about outages that occur because of accidental inconsistencies between Staging and Production, which sometimes cause unexpected behaviors in Production even when Staging tests pass.\nYou already use Docker to get high consistency between Staging and Production for the application environment on your EC2 instances.\nHow do you further de-risk the rest of the execution environment, since, in AWS, there are many service components you may use beyond EC2 virtual machines?",
+  "originalOptions": "A. Develop models of your entire cloud system in CloudFormation. Use this model in Staging and Production to achieve greater parity.|B. Use AWS Config to force the Staging and Production stacks to have configuration parity. Any differences will be detected for you, so you are aware of risks.|C. Use AMIs to ensure the whole machine, including the kernel of the virtual machines, is consistent since Docker uses Linux Container (LXC) technology. We need to make sure the container environment is consistent.|D. Use AWS ECS and Docker clustering. This will make sure that the AMIs and machine sizes are the same across both environments.",
+  "video_url": "https://certificationation.com/videos/exam-your-company-specifically-the-ceo-exam-340.html",
+  "url": "https://certificationation.com/questions/exam-your-company-specifically-the-ceo-exam-340.html"
+}

@@ -1,0 +1,62 @@
+---
+title: "You work in the security team, and you need to ensureExam"
+description: "Video for you work in the security team, and you need to ensure that all EC2 instances have installed certain latest security patches in time. However, the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You work in the security team, and you need to ensure that all EC2 instances have installed certain latest security patches in time. However, the requirement is that the patches are installed in the dev and test environments for a week before they are installed in production instances. All EC2 instances can be differentiated via Tags. What is the best way to implement this using AWS Systems Manager?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The optimal solution in this scenario is to <b>Develop a custom Patch Baseline and define different Patch Groups for each environment (dev, test, production) by tagging instances appropriately. Link the Patch Groups to your custom Patch Baseline, and use maintenance windows to schedule patch deployments for each group.</b> This approach leverages AWS Systems Manager Patch Manager features to automate and separate patching workflows for different environments. You can control the timing of patches via maintenance windows, ensuring dev and test receive the latest updates before production, as the scenario requires.</p><p>The option <i>Apply environment tags (dev, test, production) to each instance. Then, in Systems Manager, schedule the 'AWS-InstallPatches' document for each tag group to control patch timing.</i> does allow for some level of automation, but does not make use of Patch Groups or custom baselines, making it less flexible and more error-prone if patch rules differ per environment.</p><p>Choosing <i>Employ a default Patch Baseline and assign dev, test, or production tags to your instances. Use the tags to establish Patch Baseline associations and build patching schedules.</i> does not account for different requirements per environment nor allows you to create feature-rich, environment-specific patching rules that Patch Groups and custom Patch Baselines enable.</p><p>The method <i>Utilize Systems Manager Session Manager to log in to each EC2 instance and manually patch servers according to their environment requirement.</i> is highly inefficient and does not scale, negating the advantages of automation and centralized management that AWS Systems Manager provides.</p><p><b>Tip:</b> To implement staged patching in AWS, combine Patch Groups (using tags) and custom Patch Baselines with maintenance windows. This automation is best practice and reduces risk by allowing verification in lower environments before production deployment.</p>",
+  "query": "<p>Your security team must guarantee that EC2 instances receive critical security patches promptly, with the additional requirement that these patches are deployed to development and test servers a week ahead of production servers. EC2 instances are categorized by tags designating their environment (dev, test, or production).<br>What is the most efficient way to accomplish this using AWS Systems Manager?</p>",
+  "original_oid": "6793d9fb61969b416038a113",
+  "options": [
+    {
+      "correct": false,
+      "text": "Apply environment tags (dev, test, production) to each instance. Then, in Systems Manager, schedule the 'AWS-InstallPatches' document for each tag group to control patch timing.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Develop a custom Patch Baseline and define different Patch Groups for each environment (dev, test, production) by tagging instances appropriately. Link the Patch Groups to your custom Patch Baseline, and use maintenance windows to schedule patch deployments for each group.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Employ a default Patch Baseline and assign dev, test, or production tags to your instances. Use the tags to establish Patch Baseline associations and build patching schedules.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Utilize Systems Manager Session Manager to log in to each EC2 instance and manually patch servers according to their environment requirement.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question161",
+  "originalQuery": "You work in the security team, and you need to ensure that all EC2 instances have installed certain latest security patches in time.\nHowever, the requirement is that the patches are installed in the dev and test environments for a week before they are installed in production instances.\nAll EC2 instances can be differentiated via Tags.\nWhat is the best way to implement this using AWS Systems Manager?",
+  "originalOptions": "A. Create a customized Patch Baseline. Create several Patch Groups for dev, test, and production instances and tag the instances. Associate the Patch Groups with the new Patch Baseline. Schedule the patching in a maintenance window as required.|B. Tag the instances using dev, test, and production. In Systems Manager, run the command of “AWS-InstallPatches” based on the tags.|C. Use a predefined default Patch Baseline. Add tags of dev, test, and production to relevant EC2 instances. Associate the Patch Baseline with EC2 instances via tags.|D. Use Systems Manager session manager to configure the patching for EC2 instances. Apply required patches accordingly after you remote login into the server.",
+  "video_url": "https://certificationation.com/videos/exam-you-need-to-ensure-that-exam-036.html",
+  "url": "https://certificationation.com/questions/exam-you-need-to-ensure-that-exam-036.html"
+}

@@ -1,0 +1,67 @@
+---
+title: "You have configured the following AWS services in yourExam"
+description: "Video for you have configured the following AWS services in your organization - Auto Scaling group, Elastic Load Balancer, and EC2 instances. You have been"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have configured the following AWS services in your organization - Auto Scaling group, Elastic Load Balancer, and EC2 instances. You have been requested to terminate an instance from the Autoscaling Group when the CPU utilization is less than 30% How can you achieve this."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct procedure is to <b>Configure a CloudWatch alarm to send a notification to the Auto Scaling group when CPU usage is less than 30%, and adjust the Auto Scaling policy to decrease the number of instances by one</b>. This makes use of the integration between CloudWatch alarms and Auto Scaling policies. When the monitored metric (here, aggregated CPU utilization) falls below your threshold, the alarm triggers the Auto Scaling policy, which then performs the scale-in action (removes one instance automatically).</p> <p>Option <i>\"Set up a CloudWatch alarm to trigger when average CPU utilization falls below 30%, and have it notify the admin team for manual instance removal from the Auto Scaling group\"</i> is incorrect because it requires manual intervention, which is inefficient and not automated. Option <i>\"Create a CloudWatch alarm that sends a notification to an SQS queue, which then initiates removal of a single instance from the Auto Scaling group\"</i> is both convoluted and not directly supported; SQS cannot directly manage Auto Scaling activities. Option <i>\"Set up a CloudWatch alarm to send a notification to the Elastic Load Balancer, which can then remove an instance from the Auto Scaling group\"</i> and option <i>\"Have the Elastic Load Balancer directly terminate an instance from the Auto Scaling group when notified by CloudWatch\"</i> are both incorrect because the Elastic Load Balancer (ELB) does not control or terminate EC2 instances within an Auto Scaling group; its role is only to distribute incoming traffic across instances.</p> <p><b>Tip:</b> For automated scaling actions based on CloudWatch metrics, always link CloudWatch alarms to Auto Scaling policies to achieve seamless scaling (up or down) in response to workloads.</p>",
+  "query": "<p>Your company leverages Auto Scaling groups, Elastic Load Balancers, and EC2 instances in AWS. You are tasked with ensuring that whenever the average CPU utilization drops below 30%, one instance is terminated from the Auto Scaling group. How should you configure this behavior?</p>",
+  "original_oid": "6793da3e61969b416038a19c",
+  "options": [
+    {
+      "correct": false,
+      "text": "Set up a CloudWatch alarm to trigger when average CPU utilization falls below 30%, and have it notify the admin team for manual instance removal from the Auto Scaling group.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Configure a CloudWatch alarm to send a notification to the Auto Scaling group when CPU usage is less than 30%, and adjust the Auto Scaling policy to decrease the number of instances by one.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Create a CloudWatch alarm that sends a notification to an SQS queue, which then initiates removal of a single instance from the Auto Scaling group.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up a CloudWatch alarm to send a notification to the Elastic Load Balancer, which can then remove an instance from the Auto Scaling group.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Have the Elastic Load Balancer directly terminate an instance from the Auto Scaling group when notified by CloudWatch.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question299",
+  "originalQuery": "You have configured the following AWS services in your organization - Auto Scaling group, Elastic Load Balancer, and EC2 instances.\nYou have been requested to terminate an instance from the Autoscaling Group when the CPU utilization is less than 30%\nHow can you achieve this.",
+  "originalOptions": "A. Create a CloudWatch alarm to send a notification to SQS. SQS can then remove one instance from the Autoscaling Group.,B. Create a CloudWatch alarm to send a notification to the Auto Scaling group when the aggregated CPU utilization is less than 30% and configure the Auto Scaling policy to remove one instance.,C. Create a CloudWatch alarm to send a notification to the EL.,D. The ELB can then remove one instance from the Autoscaling Group.,E. Create a CloudWatch alarm to send a notification to the admin team. The admin team can then manually terminate an instance from the Autoscaling Group.",
+  "video_url": "https://certificationation.com/videos/exam-aws-services-in-your-organization-exam-476.html",
+  "url": "https://certificationation.com/questions/exam-aws-services-in-your-organization-exam-476.html"
+}

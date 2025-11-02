@@ -1,0 +1,54 @@
+---
+title: "You work as a machine learning specialist for a mobileExam"
+description: "Video for you work as a machine learning specialist for a mobile network operator who builds an analytics platform to analyze and optimize its operations by"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You work as a machine learning specialist for a mobile network operator who builds an analytics platform to analyze and optimize its operations by leveraging machine learning. You receive your data from source systems that send data in CSV format in real-time. You require to transform the data to the parquet format before storing it on S3 From there, you plan to use the data in SageMaker AutoPilot to help you find the best machine learning pipeline for your analytics problem. Which option solves your data analysis machine learning problem in the most efficient manner?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d7227742293cac494b90"
+  },
+  "answer": "D",
+  "certification": "AWS Machine Learning Specialty",
+  "certificationKey": "AWSMLS",
+  "difficulty": "0",
+  "image": "",
+  "needsWork": "false",
+  "ordinal": "232",
+  "originalExplanation": "Answer: D.\nOption A is incorrect.\nImplementing the solution using MSK on EC2 instances requires more work than the other options.\nOption B is incorrect.\nUnless you are using Glue streaming ETL, which is not explicitly stated in the question, you should not use Glue on streaming data.\nOption C is incorrect.\nThis option also requires more work (spinning up an EMR cluster) than simply using Kinesis Data Streams, Kinesis Data Firehose, and Lambda (all managed services).\nOption D is CORRECT.\nYou can ingest the streaming CSV data using Kinesis Data Streams, a managed service.\nThen use Kinesis Data Firehose and Lambda (also both managed services) to first convert the data from CSV to JSON (Kinesis Data Firehose transformation requires that the data be in the JSON format) then use the Kinesis Data Firehose parquet transformation to convert the data to parquet.\nReference:\nPlease see the AWS blog titled Stream Real-Time Data in Apache Parquet or ORC Format Using Amazon Kinesis Data Firehose.\nPlease refer to the Kinesis Data Firehose developer guide titled Converting Your Input Record Format in Kinesis Data Firehose.\nThe most efficient option for solving the mobile network operator's machine learning problem is option C: Ingest the CSV data using Spark Structured Streaming in an EMR cluster. Convert data to the parquet format using Spark.\nOption C is the best option because it leverages the power of Spark, a fast and scalable distributed computing framework that can process large amounts of data in real-time. Spark Structured Streaming can ingest the CSV data in real-time, which is important because the source systems are sending data in real-time. EMR cluster provides an easy way to set up and manage Spark clusters.\nParquet format is a columnar storage format that is optimized for use in big data environments. It is designed to be highly efficient for reading and writing large amounts of data, which makes it a good choice for storing data that will be used in machine learning. Spark has built-in support for converting data to the parquet format, which makes it easy to transform the CSV data to the desired format.\nOption A, ingesting the CSV data using MSK running on EC2 instances and using Kafka Connect S3 to convert the data to the parquet format, is not the best option because it requires more setup and maintenance than option C. MSK and Kafka Connect S3 are additional services that need to be configured, which adds complexity to the solution.\nOption B, ingesting the CSV data using Kinesis Data Streams and converting the data to the parquet format using Glue, is not the best option because Glue is not as efficient as Spark for data processing. Glue is a managed ETL service that is useful for transforming and cleaning data, but it may not be able to handle the large amounts of data in real-time that the mobile network operator is dealing with.\nOption D, ingesting the CSV data using Kinesis Data Streams and using Kinesis Data Firehose, leveraging a Lambda function to transform the data from CSV to JSON, then convert the data to the parquet format, is not the best option because it adds unnecessary complexity to the solution. Converting the data from CSV to JSON and then to the parquet format requires additional processing and storage, which may not be necessary for the mobile network operator's use case.",
+  "originalOptions": [
+    "A. Ingest the CSV data using MSK running on EC2 instances and use Kafka Connect S3 to convert the data to the parquet format.",
+    "B. Ingest the CSV data using Kinesis Data Streams. Convert the data to the parquet format using Glue.",
+    "C. Ingest the CSV data using Spark Structured Streaming in an EMR cluster. Convert data to the parquet format using Spark.",
+    "D. Ingest the CSV data using Kinesis Data Streams and use Kinesis Data Firehose, leveraging a Lambda function to transform the data from CSV to JSON, then convert the data to the parquet format."
+  ],
+  "originalQuery": "You work as a machine learning specialist for a mobile network operator who builds an analytics platform to analyze and optimize its operations by leveraging machine learning. You receive your data from source systems that send data in CSV format in real-time.\nYou require to transform the data to the parquet format before storing it on S3\nFrom there, you plan to use the data in SageMaker AutoPilot to help you find the best machine learning pipeline for your analytics problem. Which option solves your data analysis machine learning problem in the most efficient manner?",
+  "primaryObjective": "",
+  "quid": "0",
+  "source": "https://www.exam-answer.com/amazon/mls-c01/question232",
+  "video_url": "https://certificationation.com/videos/exam-specialist-for-a-mobile-network-exam-232.html",
+  "url": "https://certificationation.com/questions/exam-specialist-for-a-mobile-network-exam-232.html"
+}

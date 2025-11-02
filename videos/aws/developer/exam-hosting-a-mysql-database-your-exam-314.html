@@ -1,0 +1,81 @@
+---
+title: "You are managing a Cloud SQL instance hosting a MySQLExam"
+description: "Video for you are managing a Cloud SQL instance hosting a MySQL database. Your company recently shifted its workload pattern, resulting in frequent spikes in"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are managing a Cloud SQL instance hosting a MySQL database. Your company recently shifted its workload pattern, resulting in frequent spikes in database usage. You are tasked with ensuring performance stability while optimizing costs. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You oversee a Cloud SQL for MySQL instance that supports a customer activity service for mcnz.com. After a new promotion launched, the database sees short bursts of heavy connections and queries several times a day, and you must keep response times consistent while controlling monthly costs. What should you do?",
+  "options": [
+    {
+      "text": "Enable autoscaling for compute resources on the Cloud SQL instance to expand and shrink capacity during traffic spikes",
+      "explanation": "This approach aims to adjust CPU and memory automatically so that the instance grows with demand and contracts during quiet periods",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create read replicas and route read traffic through a proxy so that the primary handles fewer queries during bursts",
+      "explanation": "This setup offloads read workloads from the primary by sending them to replicas which can help reduce contention on the main instance",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Apply Cloud SQL rightsizing recommendations to tune CPU and memory based on recent utilization patterns",
+      "explanation": "This uses the Cloud SQL rightsizing recommender to suggest an instance configuration that better matches observed workload behavior",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Migrate the database to a multi-regional deployment so that peak load is distributed across multiple regions",
+      "explanation": "This change attempts to spread user traffic geographically so that request spikes are absorbed by resources in more than one region",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Apply Cloud SQL rightsizing recommendations to tune CPU and memory based on recent utilization patterns</b>. This aligns capacity with observed demand so you can maintain steady response times during bursts while avoiding unnecessary monthly spend.</p><p>Cloud SQL rightsizing uses recent utilization metrics to recommend an instance configuration that matches your workload. By adjusting CPU and memory based on actual peaks and sustained usage, you can keep latency consistent when promotions drive short spikes in connections and queries and still control costs during normal periods. You can schedule the change to minimize impact and you avoid overprovisioning for the entire month.</p><p><i>Enable autoscaling for compute resources on the Cloud SQL instance to expand and shrink capacity during traffic spikes</i> is not viable because Cloud SQL does not support automatic scaling of CPU or memory. Cloud SQL offers automatic storage increase which does not help with transient compute spikes.</p><p><i>Create read replicas and route read traffic through a proxy so that the primary handles fewer queries during bursts</i> is not the best fit because it only helps read heavy patterns and does nothing for writes. It also adds cost and replication lag risks, and Cloud SQL does not provide a proxy that automatically splits reads from writes for you.</p><p><i>Migrate the database to a multi-regional deployment so that peak load is distributed across multiple regions</i> is not applicable because Cloud SQL instances are regional. You can use cross region replicas for reads and disaster recovery, yet there is no multi regional primary to distribute write load and this approach would increase cost without addressing short daily bursts effectively.</p>",
+  "batch_id": "210",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are managing a Cloud SQL instance hosting a MySQL database. Your company recently shifted its workload pattern, resulting in frequent spikes in database usage. You are tasked with ensuring performance stability while optimizing costs. What should you do?",
+  "originalOptions": "A. Use Cloud Monitoring dashboards to manually resize the instance during off-peak hours.<br/>B. Apply recommendations from the Cloud SQL rightsizing recommender.<br/>C. Switch the instance to a multi-regional configuration for better load distribution.<br/>D. Enable autoscaling for the instance to handle fluctuating workloads.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "314",
+  "tip": "<p>When you see short bursts and a need to control cost, look for data driven <i>rightsizing</i> rather than features that Cloud SQL does not offer like compute <i>autoscaling</i> or multi regional primaries. Confirm whether the workload is read heavy before considering replicas.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/recommendations",
+    "https://cloud.google.com/sql/docs/mysql/instance-settings",
+    "https://cloud.google.com/sql/docs/mysql/replication",
+    "https://cloud.google.com/sql/docs/mysql/instance-locations",
+    "https://cloud.google.com/sql/docs/mysql/connect-auth-proxy"
+  ],
+  "url": "https://certificationation.com/questions/exam-hosting-a-mysql-database-your-exam-314.html",
+  "video_url": "https://certificationation.com/videos/exam-hosting-a-mysql-database-your-exam-314.html"
+}

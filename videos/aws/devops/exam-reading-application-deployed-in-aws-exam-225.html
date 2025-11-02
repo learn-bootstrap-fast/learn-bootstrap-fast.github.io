@@ -1,0 +1,62 @@
+---
+title: "A company has developed a book reading applicationExam"
+description: "Video for a company has developed a book reading application deployed in AWS. As the number of users grows, there is an increasing need to add a search feature"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company has developed a book reading application deployed in AWS. As the number of users grows, there is an increasing need to add a search feature for the application. The team needs to create this feature as soon as possible under an independent pipeline in AWS CodePipeline. In the new pipeline, the source stage is a CodeCommit repository which contains the JSON format data used for the search service. The build stage has used AWS CodeBuild to configure the data. What is the best way to implement the search feature in AWS?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The recommended AWS-native solution is to <b>Implement AWS CloudSearch for the search functionality, using AWS CLI in the build stage to configure and import the data into the CloudSearch domain</b>. AWS CloudSearch is a managed, scalable, and cost-efficient search service that supports rapid deployment and allows easy ingestion of data directly from services like AWS CodeBuild via the CLI.<br><br>The source data in JSON can be seamlessly uploaded to CloudSearch, and since CodeBuild already prepares the data, automating the indexing process with the CLI ensures efficiency and independence for the pipeline.<br><br>Let's review the other options:<br><br><i>Utilize AWS Lambda to oversee deployment and management of an EC2-based Elasticsearch cluster for search needs, with the build phase constructing the Lambda function</i>: Although this uses AWS native services, it adds unnecessary complexity. Managing Elasticsearch on EC2 requires manual scaling, patching, and high operational overhead, which goes against the requirement for a rapid and managed solution.<br><br><i>Set up and operate SOLR search software on a fleet of Amazon EC2 instances, with AMIs prepared in the build stage</i>: This option involves significant administrative and maintenance overhead, and is not a managed solution, making it slower and less cost-efficient. SOLR on EC2 is better suited for bespoke or legacy requirements, not rapid cloud-native deployments.<br><br><i>Employ AWS CloudSearch and use AWS CloudFormation during the build stage to create templates, adding an extra deployment stage for launching the CloudSearch domain stack</i>: While CloudSearch is a good fit, introducing CloudFormation templates and an extra deployment stage adds unnecessary pipeline complexity. It's recommended to automate CloudSearch configuration and data ingestion directly via the CLI for faster deployment.<br><br><b>Tip:</b> For search features that need quick deployment, easy scalability, and minimal management, AWS CloudSearch (or OpenSearch Service, if full Elasticsearch compatibility is needed) is the preferred option. Integrating with AWS CLI allows smooth automation with services like CodeBuild.<br></p>",
+  "query": "<p>A business has launched a cloud-based book reader on AWS and is experiencing user growth that necessitates adding a scalable search feature quickly. The team must develop this search capability in a dedicated AWS CodePipeline. The new pipeline uses a CodeCommit repository as its source, containing the search service's data in JSON format. The build phase is handled by AWS CodeBuild, which prepares the data. What is the most suitable AWS-native method to efficiently implement search functionality in this scenario?</p>",
+  "original_oid": "6793da3261969b416038a183",
+  "options": [
+    {
+      "correct": false,
+      "text": "Utilize AWS Lambda to oversee deployment and management of an EC2-based Elasticsearch cluster for search needs, with the build phase constructing the Lambda function.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Implement AWS CloudSearch for the search functionality, using AWS CLI in the build stage to configure and import the data into the CloudSearch domain.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up and operate SOLR search software on a fleet of Amazon EC2 instances, with AMIs prepared in the build stage.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Employ AWS CloudSearch and use AWS CloudFormation during the build stage to create templates, adding an extra deployment stage for launching the CloudSearch domain stack.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question274",
+  "originalQuery": "A company has developed a book reading application deployed in AWS.\nAs the number of users grows, there is an increasing need to add a search feature for the application.\nThe team needs to create this feature as soon as possible under an independent pipeline in AWS CodePipeline.\nIn the new pipeline, the source stage is a CodeCommit repository which contains the JSON format data used for the search service.\nThe build stage has used AWS CodeBuild to configure the data.\nWhat is the best way to implement the search feature in AWS?",
+  "originalOptions": "A. Use AWS CloudSearch to implement this search function. The build stage builds a CloudFormation template. Add another deploy stage to deploy the CloudFormation stack for the CloudSearch search domain.|B. Use AWS EC2 to provision and manage a cluster of servers running SOLR applications for the search feature. The build stage is responsible for baking an AMI.|C. Use AWS CloudSearch to implement this feature. The build stage uses AWS CLI to configure the data in the search domain of CloudSearch.|D. Use AWS Lambda to manage an EC2 Elasticsearch application for the search feature. The build stage is responsible for building the Lambda function.",
+  "video_url": "https://certificationation.com/videos/exam-reading-application-deployed-in-aws-exam-225.html",
+  "url": "https://certificationation.com/questions/exam-reading-application-deployed-in-aws-exam-225.html"
+}

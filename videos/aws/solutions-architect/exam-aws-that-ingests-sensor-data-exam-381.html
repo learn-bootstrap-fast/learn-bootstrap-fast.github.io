@@ -1,0 +1,128 @@
+---
+title: "A company has a three-tier application on AWS thatExam"
+description: "Video for a company has a three-tier application on AWS that ingests sensor data from its users’ devices. The traffic flows through a Network Load Balancer"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company has a three-tier application on AWS that ingests sensor data from its users’ devices. The traffic flows through a Network Load Balancer (NLB), then to Amazon EC2 instances for the web tier, and finally to EC2 instances for the application tier. The application tier makes calls to a database. What should a solutions architect do to improve the security of the data in transit?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729ae3"
+  },
+  "quid": null,
+  "ordinal": "382",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS Key Management Service (AWS KMS)",
+    " AWS WAF",
+    " AWS Shield",
+    " Amazon Elastic Block Store (Amazon EBS)",
+    " Network services"
+  ],
+  "slug": "nlb-three-tier-application-aws",
+  "source": "ET",
+  "title": "AWS A Company Has A Three-Tier Application Question",
+  "meta": "AWS Exam Question: A company has a three-tier application on AWS with NLB, EC2 instances, and a database. What can improve data in transit security? Answer: RDS.",
+  "answer": "A",
+  "query": "An organization operates a multi-tier web application on AWS that processes real-time data from user devices. The incoming traffic is managed by a Network Load Balancer (NLB), which routes to Amazon EC2 instances in the web layer, and subsequently to EC2 instances in the application layer. The application layer interacts with a database.\n\nWhat action should a solutions architect take to enhance the security of the data as it travels across these layers?",
+  "originalQuery": "A company has a three-tier application on AWS that ingests sensor data from its users’ devices. The traffic flows through a Network Load Balancer (NLB), then to Amazon EC2 instances for the web tier, and finally to EC2 instances for the application tier. The application tier makes calls to a database.\n\nWhat should a solutions architect do to improve the security of the data in transit?",
+  "options": [
+    "A. Configure a TLS listener. Deploy the server certificate on the NLB.",
+    "B. Utilize AWS Shield Advanced. Activate AWS WAF to protect the NLB.",
+    "C. Switch the load balancer to an Application Load Balancer (ALB) and enable AWS WAF.",
+    "D. Encrypt the Amazon Elastic Block Store (Amazon EBS) volume on the EC2 instances by using AWS Key Management Service (AWS KMS)."
+  ],
+  "originalOptions": [
+    "A. Configure a TLS listener. Deploy the server certificate on the NLB.",
+    "B. Configure AWS Shield Advanced. Enable AWS WAF on the NLB.",
+    "C. Change the load balancer to an Application Load Balancer (ALB). Enable AWS WAF on the ALB.",
+    "D. Encrypt the Amazon Elastic Block Store (Amazon EBS) volume on the EC2 instances by using AWS Key Management Service (AWS KMS)."
+  ],
+  "image": null,
+  "primaryObjective": "1: Design Secure Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Network Load Balancers (NLBs) now offer support for the TLS protocol, enabling organizations to offload the computationally intensive tasks of encryption and decryption from their application servers to a high-throughput, low-latency NLB. This enhancement allows the NLB to terminate TLS traffic effectively while establishing secure connections with backend targets using either TCP or TLS protocols. By implementing a TLS listener on the NLB, you can significantly bolster the security of data in transit, ensuring that sensitive information is encrypted before it traverses the network.\n\nFor further details on configuring a TLS listener for your Network Load Balancer, you can refer to the official AWS documentation: [Create a TLS Listener for a Network Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html).\n\nAdditionally, for practical demonstrations and use cases, you may find this resource useful: [NLB TLS Demo](https://exampleloadbalancer.com/nlbtls_demo.html).",
+    "When it comes to keeping your data safe while it's on the move, think of SSL/TLS as your trusty shield! 🛡️ So, first things first: yes, the Network Load Balancer (NLB) can support TLS. If you're curious, you can check out the details right here: [AWS NLB TLS Listener](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html).\n\nNow, while option B is all about fending off those pesky DDoS attacks, and option C tackles threats like SQL injection (cue the dramatic music! 🎶), let's not forget option D, which is focused on securing your data when it's lounging around at rest on Amazon Elastic Block Store (EBS). \n\nSo, remember, to secure your data in transit, it's all about that shiny TLS listener magic! ✨💻",
+    "To enhance the security of the data as it travels through the digital highways, implementing TLS is the way to go. By configuring a TLS listener and deploying the server certificate on the Network Load Balancer, you can create a secure tunnel for your data, shielding it from prying eyes. While options like AWS Shield Advanced and WAF are great for protecting against external threats, they don't directly secure the data itself during transit. Similarly, swapping to an Application Load Balancer or encrypting EBS volumes with AWS KMS certainly has its merits, but let’s face it: if your data isn’t encrypted on the way to its destination, you’re just putting a fancy lock on an open door. So, let’s prioritize that TLS – it’s the essential guardrail on the data highway!",
+    "Implementing TLS is an excellent way to ensure that data in transit is encrypted, safeguarding it from eavesdropping and tampering. By using a valid server certificate issued by a trusted Certificate Authority (CA), you can enhance the security of your application even further. This approach not only protects sensitive information but also fosters trust among users by ensuring secure communications.",
+    "To enhance the security of data while it's on the move, a delightful approach involves setting up a TLS listener on the Network Load Balancer (NLB) and installing the server certificate. This charming little setup will encrypt the traffic flowing between clients and the NLB, ensuring that sensitive information stays under wraps! 🌟 Plus, you can take advantage of AWS Certificate Manager (ACM) to easily provision, manage, and deploy those all-important SSL/TLS certificates for both AWS services and your internal connected resources.\n\nAlternatively, you might consider switching to an Application Load Balancer (ALB) and enabling AWS WAF. This wonderful web application firewall acts as a shield, protecting your web applications from common web exploits that could jeopardize application availability, compromise security, or drain resources. It’s like having a trusty guardian for your digital fortress! \n\nIn summary, implementing SSL/TLS certificates and using AWS WAF are fantastic ways to keep your data safe while it travels through the clouds! ☁️✨"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "A",
+      "explanation": "Network Load Balancers now support TLS protocol. With this launch, you can now offload resource intensive decryption/encryption from your application servers to a high throughput, and low latency Network Load Balancer. Network Load Balancer is now able to terminate TLS traffic and set up connections with your targets either over TCP or TLS protocol.\n\nhttps://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html\n\nhttps://exampleloadbalancer.com/nlbtls_demo.html",
+      "upvotes": "21"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "security of data in transit -> think of SSL/TLS. Check: NLB supports TLS\nhttps://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html\n\nB (DDoS), C (SQL Injection), D (EBS) is for data at rest.",
+      "upvotes": "17"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "secure data in transit = TLS",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "TLS provides encryption for data in motion over the network, protecting against eavesdropping and tampering. A valid server certificate signed by a trusted CA will provide further security.",
+      "upvotes": "6"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "To improve the security of data in transit, you can configure a TLS listener on the Network Load Balancer (NLB) and deploy the server certificate on it. This will encrypt traffic between clients and the NLB. You can also use AWS Certificate Manager (ACM) to provision, manage, and deploy SSL/TLS certificates for use with AWS services and your internal connected resources1.\n\nYou can also change the load balancer to an Application Load Balancer (ALB) and enable AWS WAF on it. AWS WAF is a web application firewall that helps protect your web applications from common web exploits that could affect application availability, compromise security, or consume excessive resources3.\n\nthe A and C correct without transit but the need to improve the security of the data in transit? so he need SSL/TLS certificates",
+      "upvotes": "3"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "A (100%)",
+      "votes": "53 votes."
+    },
+    {
+      "option": "C (25%)",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is option A, which involves configuring a TLS listener and deploying the server certificate on the NLB. This is crucial for enhancing security because using TLS (Transport Layer Security) encrypts data as it travels over the network, protecting it from eavesdropping and tampering by malicious actors. Since the application deals with real-time data from user devices, ensuring data privacy and integrity during transmission is paramount. \n\nOption B suggests utilizing AWS Shield Advanced and enabling AWS WAF on the NLB for DDoS protection, which is important but does not directly address the encryption of data in transit.  \n\nOption C, switching to an Application Load Balancer (ALB) and enabling AWS WAF, also focuses on application-level security rather than on encrypting data in transit, which is specifically the concern of the question.  \n\nOption D, encrypting EBS volumes, relates to data at rest and does not secure data while it is being transmitted across the network layers, making it irrelevant to the question's focus on improving security during data transit.",
+  "video_url": "https://certificationation.com/videos/exam-aws-that-ingests-sensor-data-exam-381.html",
+  "url": "https://certificationation.com/questions/exam-aws-that-ingests-sensor-data-exam-381.html"
+}

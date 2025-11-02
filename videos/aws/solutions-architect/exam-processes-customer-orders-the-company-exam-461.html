@@ -1,0 +1,128 @@
+---
+title: "A company has an application that processes customerExam"
+description: "Video for a company has an application that processes customer orders. The company hosts the application on an Amazon EC2 instance that saves the orders to an"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company has an application that processes customer orders. The company hosts the application on an Amazon EC2 instance that saves the orders to an Amazon Aurora database. Occasionally when traffic is high the workload does not process orders fast enough. What should a solutions architect do to write the orders reliably to the database as quickly as possible?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729b33"
+  },
+  "quid": null,
+  "ordinal": "462",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon EC2",
+    " Amazon RDS",
+    " Amazon Simple Queue Service (Amazon SQS)",
+    " AWS Auto Scaling",
+    " AWS Lambda"
+  ],
+  "slug": "ec2-application-process-orders-aws",
+  "source": "ET",
+  "title": "AWS A Company Has An Application Question",
+  "meta": "AWS Exam Question: A company hosts an app on EC2 and saves orders to Aurora. What should a solutions architect do to ensure quick order processing? answer.",
+  "answer": "B",
+  "query": "A startup has an application that manages online bookings. The application runs on an Amazon EC2 instance that records the bookings into an Amazon RDS database. During peak usage, the system struggles to handle the number of bookings being processed efficiently.\n\nWhat action should a solutions architect take to ensure bookings are recorded reliably into the database quickly?",
+  "originalQuery": "A company has an application that processes customer orders. The company hosts the application on an Amazon EC2 instance that saves the orders to an Amazon Aurora database. Occasionally when traffic is high the workload does not process orders fast enough.\n\nWhat should a solutions architect do to write the orders reliably to the database as quickly as possible?",
+  "options": [
+    "A. Increase the size of the EC2 instance during high demand times. Write bookings to Amazon Simple Notification Service (Amazon SNS). Subscribe the database instance to the SNS topic.",
+    "B. Write bookings to an Amazon Simple Queue Service (Amazon SQS) queue. Use EC2 instances in an Auto Scaling group behind an Application Load Balancer to read from the SQS queue and process bookings into the database.",
+    "C. Write bookings to Amazon Simple Notification Service (Amazon SNS). Subscribe the database instance to the SNS topic. Use EC2 instances in an Auto Scaling group to read from the SNS topic.",
+    "D. Write bookings to an Amazon Simple Queue Service (Amazon SQS) queue when the EC2 instance reaches CPU usage thresholds. Use scheduled scaling of EC2 instances in an Auto Scaling group behind an Application Load Balancer to read from the SQS queue and manage bookings into the database."
+  ],
+  "originalOptions": [
+    "A. Increase the instance size of the EC2 instance when traffic is high. Write orders to Amazon Simple Notification Service (Amazon SNS). Subscribe the database endpoint to the SNS topic.",
+    "B. Write orders to an Amazon Simple Queue Service (Amazon SQS) queue. Use EC2 instances in an Auto Scaling group behind an Application Load Balancer to read from the SQS queue and process orders into the database.",
+    "C. Write orders to Amazon Simple Notification Service (Amazon SNS). Subscribe the database endpoint to the SNS topic. Use EC2 instances in an Auto Scaling group behind an Application Load Balancer to read from the SNS topic.",
+    "D. Write orders to an Amazon Simple Queue Service (Amazon SQS) queue when the EC2 instance reaches CPU threshold limits. Use scheduled scaling of EC2 instances in an Auto Scaling group behind an Application Load Balancer to read from the SQS queue and process orders into the database."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Decoupling the write operation from the processing task by utilizing Amazon Simple Queue Service (SQS) ensures that orders are consistently and reliably stored in the queue, independent of the processing capacity of the EC2 instances. This approach enables the processing to occur at a scalable rate, dictated by the number of available EC2 instances. As a result, this enhances both the reliability and efficiency of the order processing workflow, allowing the system to better handle fluctuations in demand and maintain optimal performance during peak traffic periods.",
+    "To ensure that orders are processed quickly and reliably during peak traffic, it's important to implement a robust and scalable solution. Here’s a fun and friendly breakdown of your options:\n\n**Option A:** Cranking up the size of your EC2 instance when demand surges might seem like a quick fix, but it’s like trying to fit a giraffe in a Mini Cooper! 🦒🚗 Plus, using Amazon SNS to send orders directly to the database can lead to some hiccups if the database gets overwhelmed.\n\n**Option B:** Now we’re talking! Writing orders to an Amazon SQS queue is like putting your orders in a virtual waiting line—no rush, no fuss! 📜✨ Deploying EC2 instances in an Auto Scaling group behind an Application Load Balancer to pull from that SQS queue means you can scale up when the orders come pouring in. It’s a win-win!\n\n**Option C:** While using Amazon SNS sounds nice, having your database subscribe to the topic can be risky. Imagine a group of hungry squirrels fighting over acorns! 🐿️🌰 You want to keep your database calm and collected, not overwhelmed by a sudden influx of messages.\n\n**Option D:** Writing orders to an SQS queue when CPU usage hits the roof is like calling for backup when the party gets too wild! 🎉📈 Scheduled scaling of your EC2 instances ensures that you have enough processing power to handle the excitement, all while managing the bookings smoothly.\n\nIn summary, embracing the power of Amazon SQS with an Auto Scaling group is your best bet for keeping up with the crowd while ensuring your database stays happy and healthy. Cheers to hassle-free order processing! 🍻🎊",
+    "Separating order processing from the application by utilizing Amazon SQS and employing Auto Scaling to manage the order workload is undoubtedly the smartest and most scalable strategy. This setup effectively tackles reliability and performance issues during those pesky traffic surges, ensuring that orders are processed swiftly and efficiently without breaking a sweat.",
+    "Utilize Amazon Simple Queue Service (Amazon SQS) to store orders. Implement EC2 instances within an Auto Scaling group, positioned behind an Application Load Balancer, to efficiently retrieve and process these orders into the database. This approach ensures that the system can handle high traffic volumes effectively, maintaining reliable order processing and enhancing overall performance.",
+    "Absolutely, let’s sprinkle some joy on this response! 🌟 \n\nThe best approach is to utilize Amazon Simple Queue Service (Amazon SQS) for managing bookings. By writing orders to an SQS queue, we can ensure that they are stored reliably and processed efficiently, even during peak traffic times. To handle the workload, we can deploy a fleet of EC2 instances in an Auto Scaling group, all skillfully balanced by an Application Load Balancer. These instances will eagerly pull messages from the SQS queue and swiftly process them into the database. This delightful setup not only enhances performance but also guarantees that every order is captured and processed without a hitch! 🎉"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "B",
+      "explanation": "By decoupling the write operation from the processing operation using SQS, you ensure that the orders are reliably stored in the queue, regardless of the processing capacity of the EC2 instances. This allows the processing to be performed at a scalable rate based on the available EC2 instances, improving the overall reliability and speed of order processing.",
+      "upvotes": "12"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "IN MY EXAM",
+      "upvotes": "8"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "Decoupling the order processing from the application using Amazon SQS and leveraging Auto Scaling to handle the processing of orders based on the workload in the SQS queue is indeed the most efficient and scalable approach. This architecture addresses both reliability and performance concerns during traffic spikes.",
+      "upvotes": "4"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "Write orders to an Amazon Simple Queue Service (Amazon SQS) queue. Use EC2 instances in an Auto Scaling group behind an Application Load Balancer to read from the SQS queue and process orders into the database.",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "100% B.",
+      "upvotes": "3"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "B (100%)",
+      "votes": "22 votes."
+    },
+    {
+      "option": "C (25%)",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is B. Using Amazon SQS to decouple the order processing from the application allows you to buffer the incoming requests, which helps manage peak loads without overwhelming the database. This allows EC2 instances in an Auto Scaling group to scale up when the load increases, thus improving the reliability and speed of processing. \n\nOption A is incorrect because simply increasing the instance size does not address the fundamental issue of capacity vs. traffic spikes and does not provide a decoupled solution. Additionally, using SNS to directly notify the database may lead to data loss if the database is overwhelmed and unable to process the notifications quickly enough. \n\nOption C is also incorrect because it suggests using SNS for orders directly tied to the database, which can create bottlenecks and potential data loss during high traffic, unlike the buffering mechanism provided by SQS. \n\nOption D introduces SQS but only activates it when the EC2 instance CPU reaches a threshold. This does not proactively manage traffic load, and the delayed reaction of waiting for CPU limits to be reached can lead to slower processing times and potential order loss during peak usage.",
+  "video_url": "https://certificationation.com/videos/exam-processes-customer-orders-the-company-exam-461.html",
+  "url": "https://certificationation.com/questions/exam-processes-customer-orders-the-company-exam-461.html"
+}

@@ -1,0 +1,80 @@
+---
+title: "As a Database Engineer, you are required to optimize theExam"
+description: "Video for as a Database Engineer, you are required to optimize the performance of a Cloud SQL instance in your organization. You decide to implement a session"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are required to optimize the performance of a Cloud SQL instance in your organization. You decide to implement a session pooler service to manage database connections. Which of the following configuration options will maximize the performance and efficiency of the session pooler service?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the Cloud Database Engineer for Northwind Outfitters and you are tuning a Cloud SQL for PostgreSQL instance that serves an inventory microservice. You plan to introduce a session pooling layer to manage client connections and to reduce backend connection churn. Which configuration choice will most effectively improve the pooler&apos;s performance and efficiency?",
+  "options": [
+    {
+      "text": "Set the minimum pool size equal to the maximum pool size",
+      "explanation": "This setting keeps the pool at a fixed size which keeps all connections allocated at all times",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure the maximum pool size below the application&apos;s expected concurrent connections",
+      "explanation": "This limits how many simultaneous sessions the pool can provide to the application",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure the maximum pool size slightly higher than the application&apos;s peak concurrent connection demand",
+      "explanation": "This allows the pool to absorb bursts of activity while avoiding excessive backend connections",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Disable connection eviction and schedule health checks to run very frequently",
+      "explanation": "This approach turns off idle cleanup and causes the pool to probe connections at short intervals",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Configure the maximum pool size slightly higher than the application's peak concurrent connection demand</b>.</p><p>Right sizing the maximum pool size with a small amount of headroom over measured peak concurrency lets the pooler absorb brief spikes without creating excessive queuing. It keeps connection reuse efficient and reduces churn while helping you stay within the database instance connection limits. This approach improves throughput and latency because the pool is large enough to avoid backlog yet not so large that it overwhelms the backend or wastes resources.</p><p>Cloud SQL for PostgreSQL enforces a finite connection limit. A slightly higher pool ceiling protects the database by avoiding oversubscription while leaving capacity for administrative connections and maintenance tasks. It also keeps memory and CPU overhead from the pooler under control which improves overall efficiency.</p><p><i>Set the minimum pool size equal to the maximum pool size</i> is ineffective because it pins all connections open even when idle which wastes memory and can consume valuable database connection slots. It removes elasticity and can increase backend pressure during quiet periods.</p><p><i>Configure the maximum pool size below the application's expected concurrent connections</i> forces requests to queue behind the pool which increases latency and risks timeouts under load. The pooler becomes the bottleneck rather than smoothing demand.</p><p><i>Disable connection eviction and schedule health checks to run very frequently</i> reduces pool health and increases overhead. Eviction is needed to recycle stale or unhealthy connections and very frequent health checks add unnecessary work and do not replace a sound eviction policy.</p>",
+  "batch_id": "333",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are required to optimize the performance of a Cloud SQL instance in your organization. You decide to implement a session pooler service to manage database connections. Which of the following configuration options will maximize the performance and efficiency of the session pooler service?",
+  "originalOptions": "A. Set the maximum pool size to a value greater than the number of concurrent connections required by the application.<br/>B. Set the maximum pool size to a value smaller than the number of concurrent connections required by the application.<br/>C. Disable connection eviction and set the connection health check frequency to a high value.<br/>D. Set the minimum pool size to the same value as the maximum pool size.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "77",
+  "tip": "<p>Size pools from measured <i>peak concurrency</i> then add modest <i>headroom</i> and verify against the database <i>max_connections</i> so you avoid queuing and also avoid oversubscription.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/pgbouncer",
+    "https://cloud.google.com/sql/docs/postgres/optimizing-connections",
+    "https://cloud.google.com/sql/docs/postgres/limits",
+    "https://cloud.google.com/sql/docs/postgres/best-practices"
+  ],
+  "url": "https://certificationation.com/questions/exam-required-to-optimize-the-performance-exam-077.html",
+  "video_url": "https://certificationation.com/videos/exam-required-to-optimize-the-performance-exam-077.html"
+}

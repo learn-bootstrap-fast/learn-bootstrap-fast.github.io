@@ -1,0 +1,81 @@
+---
+title: "In the process of assessing application and databaseExam"
+description: "Video for in the process of assessing application and database dependencies for a Google Cloud Platform (GCP) migration, you come across a multi-tier"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "In the process of assessing application and database dependencies for a Google Cloud Platform (GCP) migration, you come across a multi-tier application with a relational database. Which of the following steps would be most appropriate to identify dependencies and ensure a smooth migration?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are assessing interservice and database dependencies for a three-tier billing platform at Cedar Grove Retail that will move from an on-premises data center to Google Cloud. The system relies on a relational database. Which action is the most appropriate to uncover dependencies and reduce migration risk?",
+  "options": [
+    {
+      "text": "Use Cloud Asset Inventory to export a list of resources and treat that output as the application dependency map",
+      "explanation": "Cloud Asset Inventory provides inventories of GCP resources and IAM relationships but it does not trace runtime application call paths.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Review the services codebase database schemas stored routines and SQL statements to enumerate direct and indirect dependencies",
+      "explanation": "Analyzing code and database objects reveals which components call which queries and procedures and how the application interacts with the data layer.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Migrate only the database using Database Migration Service and refactor the application after cutover",
+      "explanation": "Moving the data layer first and adjusting the application later postpones dependency discovery until after migration.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Cloud Data Fusion to produce an automatic diagram of application and database dependencies",
+      "explanation": "Cloud Data Fusion focuses on building and orchestrating data integration pipelines and not on mapping application dependencies.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct action is <b>Review the services codebase database schemas stored routines and SQL statements to enumerate direct and indirect dependencies</b>.</p><p>This approach surfaces how services call each other and how they interact with the relational database. By reading the code and inspecting schemas and stored routines you can identify connection patterns, hard coded endpoints, transaction boundaries, triggers, and procedural logic that the application relies on. This produces a reliable dependency map that informs sequencing, compatibility checks, and testing plans which directly reduces migration risk for a three tier billing platform.</p><p><i>Use Cloud Asset Inventory to export a list of resources and treat that output as the application dependency map</i> is not appropriate because it inventories Google Cloud resources and policies rather than application call flows or SQL touchpoints. It does not analyze on premises systems or code, so it would miss most runtime and database dependencies.</p><p><i>Migrate only the database using Database Migration Service and refactor the application after cutover</i> increases risk because it defers discovery and design until after the move. Database Migration Service moves data but it does not validate application compatibility or uncover hidden dependencies, so you could face breakage at cutover.</p><p><i>Use Cloud Data Fusion to produce an automatic diagram of application and database dependencies</i> is not suitable because Data Fusion is a managed data integration service for building pipelines. It does not reverse engineer application architectures or enumerate SQL and stored procedure dependencies across services.</p>",
+  "batch_id": "182",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "In the process of assessing application and database dependencies for a Google Cloud Platform (GCP) migration, you come across a multi-tier application with a relational database. Which of the following steps would be most appropriate to identify dependencies and ensure a smooth migration?",
+  "originalOptions": "A. Analyze the application code, schemas, and SQL queries for direct and indirect dependencies<br/>B. Migrate the entire application and database at once, without identifying dependencies<br/>C. Migrate only the database, and then refactor the application to work with the new database<br/>D. Use the Cloud Data Fusion service to create a dependency map",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "129",
+  "tip": "<p>When asked how to uncover <i>dependencies</i> choose methods that examine the <i>code</i> and database <i>schemas</i> and <i>SQL</i> rather than inventory or migration tools. These options reveal real coupling and sequencing needs that reduce risk.</p>",
+  "references": [
+    "https://cloud.google.com/asset-inventory/docs/overview",
+    "https://cloud.google.com/database-migration/docs/overview",
+    "https://cloud.google.com/data-fusion/docs/overview",
+    "https://cloud.google.com/architecture/database-migration-concepts-principles-and-patterns",
+    "https://cloud.google.com/architecture/cloud-migration-fundamentals-discovery-and-assessment"
+  ],
+  "url": "https://certificationation.com/questions/exam-and-database-dependencies-for-a-exam-129.html",
+  "video_url": "https://certificationation.com/videos/exam-and-database-dependencies-for-a-exam-129.html"
+}

@@ -1,0 +1,128 @@
+---
+title: "A serverless application uses Amazon API Gateway, AWSExam"
+description: "Video for a serverless application uses Amazon API Gateway, AWS Lambda, and Amazon DynamoDB. The Lambda function needs permissions to read and write to the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A serverless application uses Amazon API Gateway, AWS Lambda, and Amazon DynamoDB. The Lambda function needs permissions to read and write to the DynamoDB table. Which solution will give the Lambda function access to the DynamoDB table MOST securely?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729b11"
+  },
+  "quid": null,
+  "ordinal": "428",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS Lambda",
+    " Amazon RDS",
+    " AWS Identity and Access Management (IAM)",
+    " AWS Systems Manager",
+    " Amazon DynamoDB"
+  ],
+  "slug": "apg-lambda-function-access-dynamodb-aws",
+  "source": "ET",
+  "title": "AWS Serverless Application Uses Amazon API Gateway Question",
+  "meta": "AWS Exam Question: A serverless app uses Amazon API Gateway, AWS Lambda, and DynamoDB. What solution grants Lambda secure access to DynamoDB? Find the answer.",
+  "answer": "B",
+  "query": "An event-driven architecture leverages Amazon EventBridge, AWS Lambda, and Amazon RDS. The Lambda function requires privileges to interact securely with the RDS instance.\n\nWhat is the most secure approach to grant the Lambda function access to the RDS instance?",
+  "originalQuery": "A serverless application uses Amazon API Gateway, AWS Lambda, and Amazon DynamoDB. The Lambda function needs permissions to read and write to the DynamoDB table.\n\nWhich solution will give the Lambda function access to the DynamoDB table MOST securely?",
+  "options": [
+    "A. Create an IAM user with programmatic access to the Lambda function. Attach a policy that provides permissions for the RDS instance. Store the access credentials securely within the Lambda environment.",
+    "B. Create an IAM role that includes Lambda as a trusted service. Attach a policy to the role that allows read and write access to the DynamoDB table. Update the configuration of the Lambda function to use the new role as the execution role.",
+    "C. Create an IAM user with programmatic access to the Lambda function. Attach a policy to the user that allows read and write access to the DynamoDB table. Store the access keys in AWS Systems Manager Parameter Store and update the function to access them securely.",
+    "D. Create an IAM role that includes DynamoDB as a trusted service. Attach a policy to the role that allows read and write access from the Lambda function. Update the code of the Lambda function to attach to the new role as an execution role."
+  ],
+  "originalOptions": [
+    "A. Create an IAM user with programmatic access to the Lambda function. Attach a policy to the user that allows read and write access to the DynamoDB table. Store the access_key_id and secret_access_key parameters as part of the Lambda environment variables. Ensure that other AWS users do not have read and write access to the Lambda function configuration.",
+    "B. Create an IAM role that includes Lambda as a trusted service. Attach a policy to the role that allows read and write access to the DynamoDB table. Update the configuration of the Lambda function to use the new role as the execution role.",
+    "C. Create an IAM user with programmatic access to the Lambda function. Attach a policy to the user that allows read and write access to the DynamoDB table. Store the access_key_id and secret_access_key parameters in AWS Systems Manager Parameter Store as secure string parameters. Update the Lambda function code to retrieve the secure string parameters before connecting to the DynamoDB table.",
+    "D. Create an IAM role that includes DynamoDB as a trusted service. Attach a policy to the role that allows read and write access from the Lambda function. Update the code of the Lambda function to attach to the new role as an execution role."
+  ],
+  "image": null,
+  "primaryObjective": "1: Design Secure Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "For optimal security, the Lambda function should assume an IAM role that designates Lambda as a trusted entity, allowing it to interact seamlessly with Amazon DynamoDB. This configuration ensures that the permissions required for accessing the DynamoDB table are granted securely through the role rather than embedding credentials within the Lambda function itself.\n\nThe correct approach is to create an IAM role that specifies AWS Lambda as a trusted service. This role should have an attached policy that permits both read and write access to the DynamoDB table. By updating the Lambda function's configuration to utilize this IAM role as its execution role, you maintain a secure environment where access is managed through the AWS Identity and Access Management (IAM) system.\n\nIt's critical to understand that the trust relationship is established in the direction of Lambda trusting DynamoDB, not the reverse. This ensures that the Lambda function operates under the principle of least privilege, accessing only the resources it requires while adhering to best practices for security and access management in cloud architectures.",
+    "Let's break it down with a sprinkle of humor and some emojis! 🎉 \n\nOption B is your golden ticket! 🏆 It involves creating an IAM role that trusts our friendly neighborhood Lambda function. You'll want to attach a policy that grants it the necessary read and write privileges to the DynamoDB table. Then, just update the Lambda function's configuration to use this shiny new role as its execution role. \n\nNow, option D? Well, it seems to have a little mix-up! Instead of saying that DynamoDB is a trusted service, we should be keeping our eyes on Lambda! Remember, we're all about roles here, not users. So let’s keep it straight—it's all about roles that trust Lambda, not vice versa! 😄 \n\nBy following this approach, you’ll ensure that your Lambda function can securely access the DynamoDB table without leaving a trail of access keys behind. That's how you keep your cloud environment not just functional, but also fabulously secure! 🌥️🔒",
+    "When it comes to granting Lambda functions access to the DynamoDB table, let’s set the record straight: it’s all about using an IAM role—not an IAM user. Seriously, giving Lambda a direct line to your DynamoDB with an IAM user is like inviting a raccoon into your kitchen—you might get some snacks out of it, but it’s a total mess waiting to happen.\n\nBy creating an IAM role that designates Lambda as a trusted entity, you can attach a policy that grants the necessary read and write permissions to the DynamoDB table. This is not just secure; it’s the gold standard for keeping your architecture tidy and your permissions well-managed. Just update the Lambda function’s configuration to utilize this shiny new role, and you’re good to go. \n\nSo, remember: when it’s about Lambda accessing DynamoDB, an IAM role is your friend—your very secure friend.",
+    "Option B is the most secure choice! By creating an IAM role that designates Lambda as a trusted entity, you can effectively manage access to your DynamoDB table. Attaching a policy that grants read and write permissions ensures that the Lambda function can interact with the database as needed. Furthermore, updating the Lambda function's configuration to use this new role as its execution role enhances security, as it eliminates the need for hardcoded credentials and allows for better management of permissions. This approach not only streamlines access but also follows best practices for security in cloud environments. Great decision!",
+    "In a delightful world of serverless applications, where Amazon API Gateway, AWS Lambda, and Amazon DynamoDB come together in perfect harmony, the Lambda function needs a special pass to read and write to the DynamoDB table. 🌟\n\nTo grant the Lambda function the most secure access to DynamoDB, the best approach is to create an IAM role that designates Lambda as a trusted service. By attaching a policy to this role that permits read and write access to the DynamoDB table, you'll ensure that your function has the necessary permissions while keeping everything safe and sound. Don't forget to update the Lambda function's configuration to use this shiny new role as its execution role, and voilà, you're all set for a secure and joyful journey through the cloud! 🎉"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "B",
+      "explanation": "DynamoDB needs to trust Lambda. NOT the other way around. So Lambda must be configured as a trusted service. Role for service which gives B and D options. D is setting up (somehow?) to allow Lambda to trust DynamoDB... or the wording makes no sense.",
+      "upvotes": "8"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "Keyword B. \" IAM role that includes Lambda as a trusted service\", not \"IAM role that includes DynamoDB as a trusted service\" in D. It is IAM role, not IAM user.",
+      "upvotes": "6"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "IAM Role for access to DynamoDB, not for access Lambda",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "B sounds better.",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "BBBBBBBBBB",
+      "upvotes": "2"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "B (100%)",
+      "votes": "26 votes."
+    },
+    {
+      "option": "C (25%)",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is B because it implements the principle of least privilege by using an IAM role that allows Lambda to securely assume the permissions required to access the RDS instance. By making Lambda a trusted service in the role, it can obtain temporary credentials without exposing any static access keys, which enhances security. \n\nOption A is incorrect because it suggests using an IAM user with static access credentials stored as environment variables. This method is less secure as it can lead to credential leakage. \n\nOption C is also incorrect. While storing credentials in AWS Systems Manager Parameter Store is a step toward security, using IAM roles is a more secure and recommended approach for granting permissions to AWS services. Moreover, it references DynamoDB rather than RDS, which does not match the requirements of the question.\n\nOption D is incorrect because it wrongly states that DynamoDB should be a trusted service instead of Lambda. The role must trust Lambda to execute, not vice versa. Additionally, it mentions attaching the role in an unclear way, which may cause confusion regarding the trust relationship.",
+  "video_url": "https://certificationation.com/videos/exam-amazon-api-gateway-aws-lambda-exam-427.html",
+  "url": "https://certificationation.com/questions/exam-amazon-api-gateway-aws-lambda-exam-427.html"
+}

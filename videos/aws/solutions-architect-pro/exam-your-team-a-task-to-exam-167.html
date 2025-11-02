@@ -1,0 +1,65 @@
+---
+title: "Another team just transferred your team a task toExam"
+description: "Video for another team just transferred your team a task to maintain an AWS CodeBuild project that aims to create a docker image for the QA lab environment."
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Another team just transferred your team a task to maintain an AWS CodeBuild project that aims to create a docker image for the QA lab environment. Previously, this CodeBuild project was triggered manually at about 20:00 every working day (Mon to Fri) by a QA engineer, which is not quite appropriate. You are considering setting up an automatic trigger for the project. At the same time, when the job runs, using an SNS topic to notify the team by email. Which procedures should you use?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d5c6f501ee1c8ade984d"
+  },
+  "quid": "0",
+  "ordinal": "260",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "It seems that the question and options are not provided. Please provide the question and its corresponding options so I can assist you in identifying the relevant topics or products mentioned."
+  ],
+  "slug": "cb-create-docker-image-qa-lab-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question260",
+  "title": "AWS Another Team Just Transferred Your Team A Question",
+  "meta": "AWS Exam Question: How to automate an AWS CodeBuild project for creating a Docker image and notify your team via SNS? Discover the optimal answer and solutions.",
+  "answer": "B",
+  "query": null,
+  "originalQuery": "Another team just transferred your team a task to maintain an AWS CodeBuild project that aims to create a docker image for the QA lab environment.\nPreviously, this CodeBuild project was triggered manually at about 20:00 every working day (Mon to Fri) by a QA engineer, which is not quite appropriate.\nYou are considering setting up an automatic trigger for the project.\nAt the same time, when the job runs, using an SNS topic to notify the team by email.\nWhich procedures should you use?",
+  "options": null,
+  "originalOptions": [
+    "A. Configure a newly created CloudWatch Events rule that has a cron expression of “0 20 ? * * *”. The targets for the rule include the CodeBuild project name and the SNS topic.",
+    "B. Create a new CloudWatch Events rule that has a cron expression of “0 20 ? * MON-FRI *”. The targets for this rule are the CodeBuild project ARN and the SNS topic name.",
+    "C. Configure two new CloudWatch Events that have a cron expression of “0 20 ? * MON-FRI *”. The target for the first rule is the CodeBuild project ARN and the trigger for the second rule is the SNS topic.",
+    "D. As AWS CloudWatch Events rule does not support CodeBuild service, an EC2 or an on-premise lightweight server is required to schedule the docker image build of the project. Use a new CloudWatch Events rule to schedule the SNS notification."
+  ],
+  "image": "https://eaeastus2.blob.core.windows.net/optimizedimages/static/images/AWS-Certified-Solutions-Architect-Professional/answer/imgckeditor_7.png",
+  "primaryObjective": "1: Design Solutions for Organizational Complexity",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Correct Answer- B.\nOption A is incorrect because the CodeBuild project needs to be scheduled every working day (Mon to Fri)\nThe cron expression of “0 20 ? * * *” is incorrect.\nOption B is CORRECT because, in order to schedule the CodeBuild project, the ARN is needed instead of the project name.\nOption C is incorrect because a rule can have 5 targets synchronously.\nOne rule is sufficient.\nhttps://docs.aws.amazon.com/AmazonCloudWatch/latest/events/cloudwatch_limits_cwe.html.\nOption D is incorrect because CodeBuild is a supported target for AWS CloudWatch Events.\nPlease refer to the below reference on how to schedule automated builds using CodeBuild.\nhttps://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatch-Events-tutorial-codebuild.html\nSure, I'd be happy to explain each answer choice and help you understand the best approach for setting up an automatic trigger for the CodeBuild project and configuring SNS notifications.\nAnswer A suggests configuring a new CloudWatch Events rule with a cron expression of \"0 20 ? * * *\", and including the CodeBuild project name and SNS topic as targets. This option is not ideal because it will trigger the CodeBuild project every day at 8:00 PM UTC, regardless of whether it's a weekday or not. This may not be desirable if the project is only meant to run on weekdays.\nAnswer B suggests creating a new CloudWatch Events rule with a cron expression of \"0 20 ? * MON-FRI *\", targeting the CodeBuild project ARN and the SNS topic name. This option is a better approach because it only triggers the CodeBuild project on weekdays at 8:00 PM UTC, and it also sends a notification to the specified SNS topic. This ensures that the team is notified of the build status and can take appropriate action if necessary.\nAnswer C suggests configuring two new CloudWatch Events rules with a cron expression of \"0 20 ? * MON-FRI *\". The first rule targets the CodeBuild project ARN, and the second rule triggers the SNS topic. This approach is not necessary because a single CloudWatch Events rule with both targets can accomplish the same result.\nAnswer D is incorrect because CloudWatch Events does support triggering CodeBuild projects, so an EC2 or on-premise server is not required. Additionally, scheduling the SNS notification separately from the CodeBuild project trigger is not necessary because a single CloudWatch Events rule can accomplish both tasks.\nIn summary, the best approach is to create a new CloudWatch Events rule with a cron expression of \"0 20 ? * MON-FRI *\", targeting the CodeBuild project ARN and the SNS topic name. This will trigger the CodeBuild project at 8:00 PM UTC on weekdays and notify the team of the build status via email.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-your-team-a-task-to-exam-167.html",
+  "url": "https://certificationation.com/questions/exam-your-team-a-task-to-exam-167.html"
+}

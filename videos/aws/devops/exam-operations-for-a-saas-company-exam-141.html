@@ -1,0 +1,62 @@
+---
+title: "You are hired as the new head of operations for a SaaSExam"
+description: "Video for you are hired as the new head of operations for a SaaS company. Your CTO has asked you to make debugging any part of your entire operation simpler and"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are hired as the new head of operations for a SaaS company. Your CTO has asked you to make debugging any part of your entire operation simpler and as fast as possible. She complains that she has no idea what is going on in the complex, service-oriented architecture because the developers log to disk. It's tough to find errors in logs on so many services. How can you best meet this requirement and satisfy your CTO?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best option is to use <b>CloudWatch Logs for all services, streaming all log groups to an AWS Elasticsearch Service Domain with Kibana 4 and utilizing the search cluster for log analysis</b>. This solution allows for near real-time, centralized log ingestion, instant search, and powerful visualization. Your CTO and team will gain immediate, consolidated visibility into all system logs, enabling them to find, investigate, and resolve issues much faster.</p><p>The other choices are less ideal:</p><ul><li><i>Set up cron jobs on each server to sync logs into S3, configure S3 notifications for PutBucket events to invoke AWS Lambda, which analyzes logs on arrival and flags any detected problems</i>: This approach is batch-oriented, not near real-time. It also distributes analysis across Lambda functions, which isn't optimized for large volumes of log data and search.</li><li><i>Activate CloudWatch Logs on every service and stream all log records into S3. Use AWS EMR clusters to run occasional MapReduce jobs for analysis and create new queries as needed</i>: Using EMR MapReduce is powerful for large data sets but is not optimized for ad hoc, interactive debugging or quick searches, as jobs can have significant startup latency and require technical expertise to maintain queries.</li><li><i>Transfer logs to AWS S3 with cron jobs per instance, then use S3 event notifications to trigger AWS Kinesis and process data chunks using Apache Spark on EMR for scalable stream analysis</i>: This option adds unnecessary complexity, combining S3, Kinesis, EMR, and Spark. It is better suited for complex data processing or analytics, not quick operational debugging and searching.</li></ul><p><b>Tip:</b> Use managed log aggregation and visualization tools like CloudWatch Logs and Elasticsearch with Kibana for the fastest, most scalable, and user-friendly operational insight.</p>",
+  "query": "<p>You have joined a SaaS company as head of operations. The CTO needs you to simplify and speed up system-wide debugging. The current situation: logs are written to disk across many services, making it hard to spot issues and track errors. What is the most effective AWS-based approach to improve visibility and meet the CTO's needs?</p>",
+  "original_oid": "6793d9d561969b416038a0cb",
+  "options": [
+    {
+      "correct": true,
+      "text": "Utilize CloudWatch Logs for all services, direct all Log Groups to an AWS Elasticsearch Service Domain integrated with Kibana 4, and perform log searches and analysis using the search cluster.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up cron jobs on each server to sync logs into S3, configure S3 notifications for PutBucket events to invoke AWS Lambda, which analyzes logs on arrival and flags any detected problems.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Activate CloudWatch Logs on every service and stream all log records into S3. Use AWS EMR clusters to run occasional MapReduce jobs for analysis and create new queries as needed.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Transfer logs to AWS S3 with cron jobs per instance, then use S3 event notifications to trigger AWS Kinesis and process data chunks using Apache Spark on EMR for scalable stream analysis.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question86",
+  "originalQuery": "You are hired as the new head of operations for a SaaS company.\nYour CTO has asked you to make debugging any part of your entire operation simpler and as fast as possible.\nShe complains that she has no idea what is going on in the complex, service-oriented architecture because the developers log to disk.\nIt's tough to find errors in logs on so many services.\nHow can you best meet this requirement and satisfy your CTO?",
+  "originalOptions": "A. Copy all log files into AWS S3 using a cron job on each instance. Use an S3 Notification Configuration on the PutBucket event and publish events to AWS Lambda. Use the Lambda to analyze logs as soon as they come in and flag issues.|B. Begin using CloudWatch Logs on every service. Stream all Log Groups into S3 objects. Use AWS EMR cluster jobs to perform adhoc MapReduce analysis and write new queries when needed.|C. Copy all log files into AWS S3 using a cron job on each instance. Use an S3 Notification Configuration on the PutBucket event and publish events to AWS Kinesis. Use Apache Spark on AWS EMR to perform at-scale stream processing queries on the log chunks and flag issues.|D. Begin using CloudWatch Logs on every service. Stream all Log Groups into an AWS Elasticsearch Service Domain running Kibana 4 and perform log analysis on a search cluster.",
+  "video_url": "https://certificationation.com/videos/exam-operations-for-a-saas-company-exam-141.html",
+  "url": "https://certificationation.com/questions/exam-operations-for-a-saas-company-exam-141.html"
+}

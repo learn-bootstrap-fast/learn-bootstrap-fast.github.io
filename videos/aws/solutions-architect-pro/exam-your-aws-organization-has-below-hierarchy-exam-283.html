@@ -1,0 +1,74 @@
+---
+title: "Your AWS Organization has below hierarchyExam"
+description: "Video for your AWS Organization has below hierarchy."
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your AWS Organization has below hierarchy."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d60bf501ee1c8ade98f9"
+  },
+  "quid": "0",
+  "ordinal": "433",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "AWS Organizations",
+    " AWS Identity and Access Management (IAM)",
+    " Amazon S3",
+    " AWS Service Catalog",
+    " AWS Resource Access Manager (AWS RAM)"
+  ],
+  "slug": "org-hierarchy-below-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question433",
+  "title": "AWS Your Organization Has Below Hierarchy Question",
+  "meta": "AWS Exam Question: Your AWS Organization has below hierarchy. Explore best practices for managing accounts, resources, and security. Find the answer using AWS IAM, CloudFormation.",
+  "answer": "A",
+  "query": "Consider an AWS Organization with the following structure.",
+  "originalQuery": "Your AWS Organization has below hierarchy.",
+  "options": [
+    "A. The operation will be blocked due to the SCP linked to Admin_OU preventing it.",
+    "B. The operation will proceed because the root SCP grants all AWS permissions, and Bob has complete S3 rights.",
+    "C. The operation is declined since the SCP assigned to DEV1_OU forbids S3 actions and takes precedence.",
+    "D. The operation will succeed because the SCP assigned to DEV2_OU explicitly allows S3 operations."
+  ],
+  "originalOptions": [
+    "A. The action will be denied as the SCP in Admin_OU denies the operation.",
+    "B. The action will be allowed as the SCP in the root has full AWS access, and Bob is attached with full S3 permissions.",
+    "C. The action will be denied as SCP in DEV1_OU has an S3 Deny policy, which takes priority.",
+    "D. The action will be allowed as DEV2_OU is attached with an S3 Allow SCP policy, which takes priority."
+  ],
+  "image": "",
+  "primaryObjective": "1: Design Solutions for Organizational Complexity",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Correct Answer - A.\nAbout how SCPs work, please refer to the documentation in.\nhttps://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html.\nOne rule is that any action that has an explicit Deny always takes priority.\nOption A is CORRECT because DEV2_OU inherits the SCP in Admin_OU which contains a Deny policy.\nThe policy overrides any Allow that other SCPs might grant.\nOption B is incorrect: because other SCPs that the OU has inherited should also be considered.\nOption C is incorrect because the SCP in DEV1_OU does not need to be considered as it is not a parent node for user Bob.\nOption D is incorrect: because the Allow policy does not override a Deny policy if it exists.\nTo answer this question, we need to understand the AWS Organizations hierarchy and how Service Control Policies (SCP) work.\nAWS Organizations is a service that enables you to consolidate multiple AWS accounts into an organization that you create and centrally manage. The organization consists of one or more accounts, and you can organize those accounts into groups called Organizational Units (OU).\nSCP is a type of policy that you can use to manage permissions across accounts in your organization. SCPs allow you to specify which AWS services and actions are allowed or denied for accounts and OUs in your organization. When you attach an SCP to an OU or an account, the policy affects all the entities in that container.\nNow, let's look at the AWS Organizations hierarchy given in the question:\nmarkdownCopy code- Root     - Admin_OU     - DEV1_OU         - DEV1_Account     - DEV2_OU         - DEV2_Account \nBob is trying to perform an S3 operation in the DEV2_Account. Let's look at each answer option one by one:\nA. The action will be denied as the SCP in Admin_OU denies the operation.\nThis answer is incorrect because the SCP attached to the Admin_OU has not been mentioned in the question. Therefore, we cannot assume that it denies the S3 operation.\nB. The action will be allowed as the SCP in the root has full AWS access, and Bob is attached with full S3 permissions.\nThis answer is incorrect because SCPs are evaluated from the closest container to the farthest container. In this case, the SCP in DEV2_OU, where Bob's account is, will take priority over the SCP in the Root.\nC. The action will be denied as SCP in DEV1_OU has an S3 Deny policy, which takes priority.\nThis answer is incorrect because the SCP in DEV1_OU is not relevant to the question since Bob is trying to perform the operation in the DEV2_Account, which is not part of the DEV1_OU.\nD. The action will be allowed as DEV2_OU is attached with an S3 Allow SCP policy, which takes priority.\nThis answer is correct because the SCP in DEV2_OU will take priority over any SCP in higher-level OUs. Since the SCP in DEV2_OU allows S3 operations, Bob will be able to perform the S3 operation in the DEV2_Account.\nIn conclusion, the correct answer is D.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-your-aws-organization-has-below-hierarchy-exam-283.html",
+  "url": "https://certificationation.com/questions/exam-your-aws-organization-has-below-hierarchy-exam-283.html"
+}

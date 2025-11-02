@@ -1,0 +1,80 @@
+---
+title: "A Database Engineer is tasked with planning an upgradeExam"
+description: "Video for a Database Engineer is tasked with planning an upgrade for a Google Cloud-managed database. The current setup consists of a Cloud SQL instance running"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A Database Engineer is tasked with planning an upgrade for a Google Cloud-managed database. The current setup consists of a Cloud SQL instance running MySQL 5.7. The engineer needs to upgrade the instance to MySQL 8.0 with minimal downtime while ensuring data consistency. Which of the following approaches is the best option to achieve this goal?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Orion Payments operates a production Cloud SQL for MySQL 5.7 instance in us-central1 and must move to MySQL 8.0 while keeping the application outage under 3 minutes and preserving transactional integrity throughout the upgrade. What approach should be taken to meet these requirements?",
+  "options": [
+    {
+      "text": "Create a Cloud SQL read replica of the MySQL 5.7 instance and promote the replica during a maintenance window to minimize downtime",
+      "explanation": "This option attempts to reduce downtime by promoting a synchronized replica to primary after replication catches up",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Provision a new Cloud SQL for MySQL 8.0 instance, run Database Migration Service in continuous mode to replicate from the 5.7 source, then perform a brief cutover",
+      "explanation": "This option sets up a new target on the desired version and continuously replicates changes until a short switchover is performed",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Export a logical dump from the MySQL 5.7 instance, create a new MySQL 8.0 instance, import the dump, and point the application to the new endpoint",
+      "explanation": "This option migrates data using an offline export and import process before redirecting application traffic",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Migrate the workload to Cloud Spanner and decommission the Cloud SQL instance after the data is moved",
+      "explanation": "This option replaces the current database engine with a different managed service and requires a platform migration",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Provision a new Cloud SQL for MySQL 8.0 instance, run Database Migration Service in continuous mode to replicate from the 5.7 source, then perform a brief cutover</b>.</p><p>Using <b>DMS in continuous mode</b> performs an initial load and then streams ongoing changes from the MySQL 5.7 source using binary logs so the MySQL 8.0 destination stays nearly caught up. At cutover you pause writes on the source, wait for replication to reach zero lag, and then update the application to point to the new Cloud SQL instance. This approach routinely achieves a few minutes of downtime and preserves transactional integrity because changes are replayed in order.</p><p><i>Create a Cloud SQL read replica of the MySQL 5.7 instance and promote the replica during a maintenance window to minimize downtime</i> is incorrect because a read replica shares the same major version as its primary. Promotion does not change the version, so you would still be on MySQL 5.7 and you would not meet the requirement to upgrade to 8.0.</p><p><i>Export a logical dump from the MySQL 5.7 instance, create a new MySQL 8.0 instance, import the dump, and point the application to the new endpoint</i> is incorrect because a dump and restore requires either a lengthy write freeze or additional tooling to capture changes during the import. This makes it difficult to hold downtime under three minutes and risks transactional gaps unless writes are fully stopped for the entire duration.</p><p><i>Migrate the workload to Cloud Spanner and decommission the Cloud SQL instance after the data is moved</i> is incorrect because this changes the database engine and typically requires application and schema changes. It does not satisfy the requirement to upgrade the existing MySQL deployment to version 8.0.</p>",
+  "batch_id": "41",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "A Database Engineer is tasked with planning an upgrade for a Google Cloud-managed database. The current setup consists of a Cloud SQL instance running MySQL 5.7. The engineer needs to upgrade the instance to MySQL 8.0 with minimal downtime while ensuring data consistency. Which of the following approaches is the best option to achieve this goal?",
+  "originalOptions": "A. Use Cloud Spanner instead of Cloud SQL to upgrade the database and then migrate the data.<br/>B. Perform a rolling update on the Cloud SQL instance to upgrade it from MySQL 5.7 to 8.0.<br/>C. Export the data from the Cloud SQL instance, create a new Cloud SQL instance with MySQL 8.0, import the data, and then switch the application to use the new instance.<br/>D. Create a new Cloud SQL instance running MySQL 8.0, use Cloud SQL Data Migration Service to migrate the data, and then switch the application to use the new instance.",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "260",
+  "tip": "<p>When a scenario requires <i>minimal downtime</i> and <i>transactional integrity</i> during a version upgrade, look for continuous replication with a planned <i>cutover</i> rather than one time exports or replica promotion.</p>",
+  "references": [
+    "https://cloud.google.com/database-migration/docs/mysql/overview",
+    "https://cloud.google.com/database-migration/docs/mysql/create-migration-job",
+    "https://cloud.google.com/sql/docs/mysql/upgrade-mysql",
+    "https://cloud.google.com/sql/docs/mysql/replication/replication-overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-with-planning-an-upgrade-for-exam-260.html",
+  "video_url": "https://certificationation.com/videos/exam-with-planning-an-upgrade-for-exam-260.html"
+}

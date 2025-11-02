@@ -1,0 +1,62 @@
+---
+title: "As an AWS specialist in a big organization, you areExam"
+description: "Video for as an AWS specialist in a big organization, you are managing a large number of Linux-based EC2 instances in several AWS accounts. In order to follow"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As an AWS specialist in a big organization, you are managing a large number of Linux-based EC2 instances in several AWS accounts. In order to follow the company security policies, you are looking for a method to automatically detect whether the instances are configured securely. The method should be able to check if root login over SSH and password authentication over SSH are disabled. Which of the following methods is the easiest one?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><b>Use Amazon Inspector to run an assessment with the 'Security Best Practices-1.0' rule package, which can verify if root login and password-based SSH authentication are disabled.</b> This is the most straightforward method because Amazon Inspector is designed for automated security assessments, offers a simple setup, and targets best practices for EC2 instances, including SSH settings.</p><p><i>Set up an AWS Config rule to validate that password authentication and root SSH login are deactivated for EC2 instances, triggering an SNS alert if a non-compliant resource is detected.</i> is incorrect because AWS Config lacks the direct capability to access or evaluate OS-level configurations such as SSHD settings within EC2 instances. Config rules typically assess resource configurations available via AWS APIs, not detailed in-instance files.</p><p><i>Limit deployments to EC2 instances using only official Amazon Linux AMIs, since these by default have root SSH login and password authentication disabled.</i> is not a sufficient solution on its own. While these AMIs are secure by default, post-deployment changes on running instances or use of alternative AMIs could reintroduce security risks. There must be consistent, automated validation.</p><p><i>Develop a Lambda function that iterates through all Linux instances and manually checks /etc/ssh/sshd_config to confirm SSH root login and password authentication are both off.</i> is possible but significantly more complex and less scalable. Custom scripts require ongoing maintenance, secure instance connectivity, and error handling, making this approach more difficult compared to using built-in AWS tools like Inspector.</p><p>Tip: Leverage native AWS security and compliance tools like Inspector for ongoing assessments of instance-level configuration. Inspector is designed to check a range of best practices and requires much less effort than developing and maintaining custom code. Always verify what each AWS management tool is capable of checking, as not all can assess configurations inside operating systems.</p>",
+  "query": "<p>You are tasked with overseeing a large fleet of Linux-based EC2 virtual machines across multiple AWS accounts and must comply with company security policies. What method provides the simplest way to automatically check if SSH root login and password authentication via SSH are turned off?</p>",
+  "original_oid": "6793da9a61969b416038a257",
+  "options": [
+    {
+      "correct": false,
+      "text": "Set up an AWS Config rule to validate that password authentication and root SSH login are deactivated for EC2 instances, triggering an SNS alert if a non-compliant resource is detected.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Use Amazon Inspector to run an assessment with the 'Security Best Practices-1.0' rule package, which can verify if root login and password-based SSH authentication are disabled.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Limit deployments to EC2 instances using only official Amazon Linux AMIs, since these by default have root SSH login and password authentication disabled.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Develop a Lambda function that iterates through all Linux instances and manually checks /etc/ssh/sshd_config to confirm SSH root login and password authentication are both off.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question487",
+  "originalQuery": "As an AWS specialist in a big organization, you are managing a large number of Linux-based EC2 instances in several AWS accounts.\nIn order to follow the company security policies, you are looking for a method to automatically detect whether the instances are configured securely.\nThe method should be able to check if root login over SSH and password authentication over SSH are disabled.\nWhich of the following methods is the easiest one?",
+  "originalOptions": "A. Create a Lambda function that loops through all Linux-based instances and checks the file /etc/ssh/sshd_config to see if SSH root login and password authentication over SSH are disabled.|B. Create an Amazon Inspector assessment and include the “Security Best Practices-1.0 rule package” which can determine if root login over SSH and password authentication over SSH are disabled.|C. Configure a rule in AWS Config to check if root login over SSH and password authentication over SSH are disabled in EC2 instances. Raise an SNS notification if the rule is not-compliant.|D. Make sure that the Amazon Linux AMIs are used for EC2 instances. By default, root login over SSH and password authentication over SSH are disabled in Amazon issued AMIs.",
+  "video_url": "https://certificationation.com/videos/exam-you-are-managing-a-large-exam-032.html",
+  "url": "https://certificationation.com/questions/exam-you-are-managing-a-large-exam-032.html"
+}

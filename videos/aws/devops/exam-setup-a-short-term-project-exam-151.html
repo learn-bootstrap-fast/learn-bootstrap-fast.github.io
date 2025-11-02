@@ -1,0 +1,62 @@
+---
+title: "OpsWorks is being used by a developer to setup a shortExam"
+description: "Video for opsWorks is being used by a developer to setup a short term project. Basically, this project is about an independent component that needs to talk with"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "OpsWorks is being used by a developer to setup a short term project. Basically, this project is about an independent component that needs to talk with other domains that are owned by other teams. One of them is a RDS MySQL database that records some important information such as user states. This database is owned and maintained by the operation team."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>correct option</b> allows associating the Amazon RDS server with the app either when it is first created or later by editing the application. This provides flexibility, especially in dynamic environments where application requirements might change or integrations are set up after initial deployment. Once the app is deployed, AWS OpsWorks Stacks automatically generates a file on each instance with the connection data; a custom recipe can then extract these details for the application's use.</p><p>The other options are inaccurate: <i>The RDS database server can only be associated when creating the application; after that, the entire OpsWorks stack must be rebuilt to add it. Once linked this way, OpsWorks provides a connection file for the application to use.</i> and <i>The Amazon RDS can be connected to the application stack only during initial app setup; otherwise, a rebuild is necessary. Once set up, EC2 instances in the stack can automatically access the MySQL database as long as the necessary roles are attached.</i> are both incorrect because you are not required to rebuild the stack to add or associate the RDS database. <i>If the database is not linked at app creation, you can modify the app later and associate it. During the Configure lifecycle event, OpsWorks places the connection info on the instance, which can then be handled by a custom recipe for the app to access.</i> is slightly off because the standard event for this information is 'deploy', not 'configure', and referencing connection data in configure attributes is not fully accurate. <br/><br/><b>Tip:</b> When using OpsWorks, connections to external resources like RDS can be managed flexibly at both creation and at later stages, maximizing adaptability. Always check the specific lifecycle hooks (such as deploy) for when connection files become available on your instances.</p>",
+  "query": "<p>A developer is using AWS OpsWorks to quickly set up an application for a temporary project. This application needs to communicate with a MySQL database on Amazon RDS, which is managed by a different operations team. What is the best method to connect the app to the external RDS database using OpsWorks?</p>",
+  "original_oid": "6793da7f61969b416038a220",
+  "options": [
+    {
+      "correct": true,
+      "text": "You can link the Amazon RDS server either during app creation or later by editing the application's settings. Once deployed, OpsWorks places a file containing the database connection details on each app server instance, and a custom recipe can access these details for the application.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "The RDS database server can only be associated when creating the application; after that, the entire OpsWorks stack must be rebuilt to add it. Once linked this way, OpsWorks provides a connection file for the application to use.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "If the database is not linked at app creation, you can modify the app later and associate it. During the Configure lifecycle event, OpsWorks places the connection info on the instance, which can then be handled by a custom recipe for the app to access.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "The Amazon RDS can be connected to the application stack only during initial app setup; otherwise, a rebuild is necessary. Once set up, EC2 instances in the stack can automatically access the MySQL database as long as the necessary roles are attached.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question432",
+  "originalQuery": "OpsWorks is being used by a developer to setup a short term project.\nBasically, this project is about an independent component that needs to talk with other domains that are owned by other teams.\nOne of them is a RDS MySQL database that records some important information such as user states.\nThis database is owned and maintained by the operation team.",
+  "originalOptions": "[\"A. Associate the Amazon RDS database server when the developer create the app or later by editing the app. When the app is deployed, AWS OpsWorks Stacks creates a file on each of the built-in application server instances containing the connection data. Then a custom recipe can be used to extract the connection information from the deploy attributes and put it in a file that can be read by the application.\",\"B. The developer can only associate the Amazon RDS database server with an app when the app is created otherwise he has to rebuild the whole stack. When the app is deployed, AWS OpsWorks Stacks creates a file on each of the built-in application server instances containing the connection data. The application can read the deploy attributes and use them to connect to the database server.\",\"C. The developer can edit the app if he does not associate the database when creating the app. Under the lifecycle of Configure, AWS OpsWorks Stacks creates a file on each of the built-in application server instances containing the connection data. Then a recipe can be used to extract the connection information from the configure attributes and put it in a file that can be read by the application.\",\"D. The developer can only associate the Amazon RDS database server with an app when the app is created otherwise he has to rebuild the whole stack. After the RDS is associated, EC2 instances are able to connect with MySQL database automatically as long as proper roles have been attached to the application stack.\"]",
+  "video_url": "https://certificationation.com/videos/exam-setup-a-short-term-project-exam-151.html",
+  "url": "https://certificationation.com/questions/exam-setup-a-short-term-project-exam-151.html"
+}

@@ -1,0 +1,128 @@
+---
+title: "A company has an AWS Glue extract, transform, and loadExam"
+description: "Video for a company has an AWS Glue extract, transform, and load (ETL) job that runs every day at the same time. The job processes XML data that is in an Amazon"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company has an AWS Glue extract, transform, and load (ETL) job that runs every day at the same time. The job processes XML data that is in an Amazon S3 bucket. New data is added to the S3 bucket every day. A solutions architect notices that AWS Glue is processing all the data during each run. What should the solutions architect do to prevent AWS Glue from reprocessing old data?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f7299cc"
+  },
+  "quid": null,
+  "ordinal": "103",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS Glue",
+    " Amazon S3",
+    " Machine learning",
+    " AWS Well-Architected Framework",
+    " AWS Data Exchange"
+  ],
+  "slug": "gl-extract-transform-load-aws",
+  "source": "ET",
+  "title": "AWS Glue Extract Transform And Load Job Question",
+  "meta": "AWS Exam Question: A company’s AWS Glue ETL job processes XML data in an S3 bucket daily. How can the architect prevent reprocessing? Discover the answer using AWS Glue and S3.",
+  "answer": "A",
+  "query": "An organization runs an AWS Glue ETL job daily at a specified time, processing JSON data stored in an Amazon S3 bucket. Each day, fresh data is uploaded to the S3 bucket. A solutions architect observes that the AWS Glue job processes all the existing data on every execution. What can the solutions architect implement to avoid reprocessing previously handled data?",
+  "originalQuery": "A company has an AWS Glue extract, transform, and load (ETL) job that runs every day at the same time. The job processes XML data that is in an Amazon S3 bucket. New data is added to the S3 bucket every day. A solutions architect notices that AWS Glue is processing all the data during each run.\nWhat should the solutions architect do to prevent AWS Glue from reprocessing old data?",
+  "options": [
+    "A. Edit the job to use job bookmarks.",
+    "B. Modify the job to remove data after processing.",
+    "C. Adjust the job settings to have just a single worker.",
+    "D. Use a FindMatches machine learning (ML) transform."
+  ],
+  "originalOptions": [
+    "A. Edit the job to use job bookmarks.",
+    "B. Edit the job to delete data after the data is processed.",
+    "C. Edit the job by setting the NumberOfWorkers field to 1.",
+    "D. Use a FindMatches machine learning (ML) transform."
+  ],
+  "image": null,
+  "primaryObjective": "1: Design Secure Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Bookmarks in AWS Glue serve a critical function in managing data processing within ETL jobs. They enable AWS Glue to keep track of data that has already been processed in previous job executions by storing state information from those runs. This stored state, known as a job bookmark, ensures that AWS Glue can maintain continuity in its operations and effectively avoid the reprocessing of previously handled data. By utilizing job bookmarks, organizations can optimize their data workflows and improve efficiency by processing only new or modified data during each execution of the ETL job.",
+    "A. Job bookmarks in AWS Glue are like a trusty bookmark in a good book—they help you keep track of where you left off! By enabling job bookmarks, Glue remembers which data has already been processed, allowing it to pick up right where it stopped during the next run. 📚✨\n\nB. If you modify the job to remove data after processing, it’s like throwing away your favorite dessert after one bite—sad and unnecessary! This approach would permanently delete the data from S3, making it impossible to retrieve for future jobs or analyses. 🍰🚫\n\nC. Adjusting the job settings to have only one worker is akin to trying to run a marathon with just one leg—sure, it’s an option, but it won’t solve the issue of reprocessing old data. This change only impacts how many tasks can be done simultaneously, not how Glue tracks or skips previously processed data. 🏃‍♂️🦵\n\nD. The FindMatches machine learning transform isn’t the superhero you need for this particular problem. While it’s great for finding and matching duplicate records, it doesn’t help prevent Glue from reprocessing old data. Think of it as a detective searching for duplicates when you’re really just trying to avoid re-reading the same chapter over and over. 🕵️‍♂️🔍",
+    "Option B suggests that Glue has the capability to delete datasets, but it lacks the specificity necessary for practical implementation. It's a bit like saying you can clean your house without specifying which room you should start in. \n\nOption C is a misguided approach; reducing the number of workers won't solve the issue of repeated ETL processes. This setting merely impacts parallel execution and does nothing to tackle the core problem of reprocessing old data.\n\nAs for Option D, it’s equally ambiguous—while using a machine learning transform like FindMatches sounds sophisticated, it doesn’t directly address the need to avoid reprocessing data. Without clear guidance, it’s hard to see how this would provide any real solution. \n\nIn summary, a more effective strategy is needed to ensure that only new data gets processed, rather than letting AWS Glue run amok with the entire dataset each time.",
+    "To optimize the AWS Glue ETL job and enhance its efficiency, implementing job bookmarks is a fantastic solution! By enabling job bookmarks, AWS Glue can keep track of the data that has already been processed during previous runs. This means that during each execution, only the new data added to the S3 bucket will be processed, significantly reducing processing time and costs. \n\nLeveraging job bookmarks not only streamlines the ETL process but also ensures that your workflows are more efficient and resource-friendly. This approach empowers your team to focus on analyzing the new data without the redundancy of reprocessing old records. It’s a smart way to enhance performance and maintain data integrity in your ETL operations!",
+    "The most delightful approach is to tweak the AWS Glue job by enabling job bookmarks! 🌟\n\nJob bookmarks are like magical little notes that help AWS Glue ETL jobs remember which data has already been processed in past runs. This nifty feature ensures that old data doesn’t get processed again, keeping everything fresh and efficient!\n\nNow, if one were to delete the data after processing, that would be akin to tossing out a lovely meal you might want to savor later—definitely not the best idea! While scaling down the number of workers could enhance performance, it wouldn't solve the issue of reprocessing old data. And let’s not forget, using a FindMatches machine learning transform is meant for matching records, not for dodging the reprocessing dilemma.\n\nSo, the savvy solutions architect should enable those fabulous job bookmarks in the AWS Glue configuration. This clever move will allow the ETL job to effortlessly track which data has been processed and focus solely on the new treasures added since the last run. Happy data processing! 🎉"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "A",
+      "explanation": "This is the purpose of bookmarks: \"AWS Glue tracks data that has already been processed during a previous run of an ETL job by persisting state information from the job run. This persisted state information is called a job bookmark. Job bookmarks help AWS Glue maintain state information and prevent the reprocessing of old data.\"\nhttps://docs.aws.amazon.com/glue/latest/dg/monitor-continuations.html",
+      "upvotes": "48"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "A. Job bookmarks in Glue allow you to track the last-processed data in a job. By enabling job bookmarks, Glue keeps track of the processed data and automatically resumes processing from where it left off in subsequent job runs.\n\nB. Results in the permanent removal of the data from the S3, making it unavailable for future job runs. This is not desirable if the data needs to be retained or used for subsequent analysis.\n\nC.It would only affect the parallelism of the job but would not address the issue of reprocessing old data. It does not provide a mechanism to track the processed data or skip already processed data.\n\nD. It is not directly related to preventing Glue from reprocessing old data. The FindMatches transform is used for identifying and matching duplicate or matching records in a dataset. While it can be used in data processing pipelines, it does not address the specific requirement of avoiding reprocessing old data in this scenario.",
+      "upvotes": "10"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "B: Glue can delete DataSet but this option is too vague to consider or too open to mean anything\nC: Won't help with repeated ETL. This property affects parallelism\nD: Too vague",
+      "upvotes": "1"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "https://docs.aws.amazon.com/glue/latest/dg/monitor-continuations.html",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "The best solution is to edit the AWS Glue job to use job bookmarks.\n\nJob bookmarks allow AWS Glue ETL jobs to track which data has already been processed during previous runs. This prevents reprocessing of old data.\n\nDeleting the data after processing would cause the data to be lost and unavailable for future processing. Reducing the number of workers may improve performance but does not prevent reprocessing of old data. Using a FindMatches ML transform is used for record matching, not preventing reprocessing.\n\nSo the solutions architect should enable job bookmarks in the AWS Glue job configuration. This will allow the ETL job to keep track of processed data and only transform the new data added since the last run.",
+      "upvotes": "1"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "A (100%)",
+      "votes": "74 votes."
+    },
+    {
+      "option": "C (25%)",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is A, which suggests enabling job bookmarks in AWS Glue. This feature actively tracks which data has already been processed, allowing the ETL job to only process new data uploaded since the last run, thus preventing reprocessing of old data. The other options do not fulfill the requirement adequately: B would remove the data permanently after processing, which could be undesirable for future analyses; C affects job parallelism and does not address data reprocessing; D is not relevant for avoiding reprocessing as it pertains to matching records rather than tracking processed data.",
+  "video_url": "https://certificationation.com/videos/exam-transform-and-load-etl-job-exam-103.html",
+  "url": "https://certificationation.com/questions/exam-transform-and-load-etl-job-exam-103.html"
+}

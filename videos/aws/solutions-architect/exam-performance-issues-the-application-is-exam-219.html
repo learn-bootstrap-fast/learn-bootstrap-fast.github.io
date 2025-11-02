@@ -1,0 +1,128 @@
+---
+title: "A company’s application is having performance issuesExam"
+description: "Video for a company’s application is having performance issues. The application is stateful and needs to complete in-memory tasks on Amazon EC2 instances. The"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company’s application is having performance issues. The application is stateful and needs to complete in-memory tasks on Amazon EC2 instances. The company used AWS CloudFormation to deploy infrastructure and used the M5 EC2 instance family. As traffic increased, the application performance degraded. Users are reporting delays when the users attempt to access the application. Which solution will resolve these issues in the MOST operationally efficient way?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729a40"
+  },
+  "quid": null,
+  "ordinal": "219",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS CloudFormation",
+    " Amazon CloudWatch",
+    " Amazon EC2 instance types",
+    " Auto Scaling",
+    " Management and governance"
+  ],
+  "slug": "ec2-application-performance-issues-aws",
+  "source": "ET",
+  "title": "AWS A Company’s Application Is Having Performance Issues Question",
+  "meta": "AWS Exam Question: A company’s stateful application on Amazon EC2 faces performance issues. What solution resolves this efficiently? Answer: AWS CloudFormation, M5 EC2.",
+  "answer": "D",
+  "query": "An organization is experiencing latency problems with its application. The application retains its state and requires efficient in-memory processing on Amazon EC2 instances. The infrastructure was deployed using AWS CloudFormation and utilizes the M5 instance type. As the user traffic grew, the performance of the application suffered significantly, leading to reported congestion when users try to access the service.\n\nWhat is the best solution to address these performance issues with maximum operational efficiency?",
+  "originalQuery": "A company’s application is having performance issues. The application is stateful and needs to complete in-memory tasks on Amazon EC2 instances. The company used AWS CloudFormation to deploy infrastructure and used the M5 EC2 instance family. As traffic increased, the application performance degraded. Users are reporting delays when the users attempt to access the application.\n\nWhich solution will resolve these issues in the MOST operationally efficient way?",
+  "options": [
+    "A. Swap the existing EC2 instances with T3 instances in an Auto Scaling group using the Management Console.",
+    "B. Adjust the CloudFormation templates to deploy the EC2 instances within an Auto Scaling group, manually setting the desired and maximum capacities as needed.",
+    "C. Change the CloudFormation templates to deploy R5 EC2 instances, leveraging Amazon CloudWatch's memory metrics for enhanced application performance monitoring.",
+    "D. Modify the CloudFormation templates. Replace the EC2 instances with R5 EC2 instances. Deploy the Amazon CloudWatch agent on the EC2 instances to generate custom application latency metrics for future capacity planning."
+  ],
+  "originalOptions": [
+    "A. Replace the EC2 instances with T3 EC2 instances that run in an Auto Scaling group. Make the changes by using the AWS Management Console.",
+    "B. Modify the CloudFormation templates to run the EC2 instances in an Auto Scaling group. Increase the desired capacity and the maximum capacity of the Auto Scaling group manually when an increase is necessary.",
+    "C. Modify the CloudFormation templates. Replace the EC2 instances with R5 EC2 instances. Use Amazon CloudWatch built-in EC2 memory metrics to track the application performance for future capacity planning.",
+    "D. Modify the CloudFormation templates. Replace the EC2 instances with R5 EC2 instances. Deploy the Amazon CloudWatch agent on the EC2 instances to generate custom application latency metrics for future capacity planning."
+  ],
+  "image": null,
+  "primaryObjective": "3: Design High-Performing Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "The most effective solution is option D.\n\nTo optimize memory performance for the application, it is essential to utilize the R series EC2 instances, which are specifically designed for memory-intensive tasks. This leads to a consideration of options C and D. However, since EC2 instances do not automatically provide memory metrics to Amazon CloudWatch, it is necessary to deploy the CloudWatch agent on these instances. This installation allows for the collection of custom application latency metrics, which is crucial for future capacity planning and performance monitoring. By making these adjustments, the application can better handle increased traffic and improve overall performance.",
+    "The best choice here is option D! 🎉 Why, you ask? Well, EC2 instances don’t automatically send memory metrics to CloudWatch. You’ll need to install the CloudWatch Agent on your instances to keep an eye on that memory usage! 📊 By doing so, you can gain valuable insights into application performance and capacity planning, which is a win-win for everyone involved! 🙌 For more details, check this out: https://aws.amazon.com/premiumsupport/knowledge-center/cloudwatch-memory-metrics-ec2/",
+    "To tackle performance challenges effectively, future capacity planning and vertical scaling are essential for enhancing the application’s responsiveness. The absence of an Auto Scaling group for the existing EC2 instances suggests they are operating independently, which likely contributes to the performance bottlenecks as traffic surges. Among the options provided, the first choice appears to be the most fitting solution. \n\nSwitching to T3 instances in an Auto Scaling group could potentially offer a more cost-effective solution while addressing the increasing demand, but it’s crucial to consider the specific needs of a stateful application. In this case, leveraging appropriately sized instances like the R5 family may provide the necessary memory and compute resources. However, without the ability to automatically scale, merely swapping instance types might not fully resolve the underlying issues. \n\nIn summary, while the first option sounds appealing, it’s important to ensure that any alterations made to the architecture support both performance and future growth. After all, the goal is to keep users happy and the application running smoothly, not to leave them waiting in a digital queue!",
+    "Option B offers a solution that streamlines operations and enhances efficiency compared to repeatedly switching instance families. Additionally, it’s unlikely that specific knowledge of instance families such as M5 and R5 will be necessary for understanding this scenario.",
+    "A company is experiencing performance hiccups with its application, which is stateful and requires in-memory tasks on Amazon EC2 instances. They deployed their infrastructure using AWS CloudFormation and opted for the M5 EC2 instance family. However, as traffic surged, the application began to lag, causing users to experience frustrating delays when trying to access it.\n\nTo tackle these challenges in the most efficient manner, there are a few delightful options to consider! 🎉 One approach would be to update the CloudFormation templates to incorporate an Auto Scaling group for the EC2 instances, allowing for dynamic adjustments based on demand. Another fantastic option involves replacing the existing instances with R5 EC2 instances, while also deploying the Amazon CloudWatch agent to gather custom latency metrics, enhancing both performance monitoring and future capacity planning.\n\nWhichever path you choose, the goal is to turn those frowns upside down and ensure users enjoy a smooth and speedy experience! 🌟"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "D",
+      "explanation": "D is the correct answer.\n\n\"in-memory tasks\" => need the \"R\" EC2 instance type to archive memory optimization. So we are concerned about C & D.\nBecause EC2 instances don't have built-in memory metrics to CW by default. As a result, we have to install the CW agent to archive the purpose.",
+      "upvotes": "37"
+    },
+    {
+      "selectedAnswer": "D",
+      "explanation": "It's D, EC2 do not provide by default memory metrics to CloudWatch and require the CloudWatch Agent to be installed on the monitored instances : https://aws.amazon.com/premiumsupport/knowledge-center/cloudwatch-memory-metrics-ec2/",
+      "upvotes": "13"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "how future capacity planning and just do verticall scalling will improve the performance. Question doesn't specify if these EC2 are behind auto scalling so it means they are not. out of all A seems more close to the solution",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "B will reduce operational overhead and better solution than keep changing the family. Also, I don't think the exam will require you to remember instance families like M5 and R5",
+      "upvotes": "1"
+    },
+    {
+      "selectedAnswer": "D",
+      "explanation": "D .....",
+      "upvotes": "2"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "D (95%)",
+      "votes": "70 votes."
+    },
+    {
+      "option": "4%",
+      "votes": "4%"
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "Option D is the best solution because it addresses both memory optimization and the need for custom metrics monitoring. R5 instances are optimized for memory-intensive applications, which is suitable for the in-memory processing required by the application. Additionally, while EC2 instances do not provide memory metrics to CloudWatch by default, installing the Amazon CloudWatch agent allows for the collection of custom memory metrics, which can be used for better capacity planning in the future. \n\nOption A suggests replacing instances with T3 type, which are not optimized for memory tasks. Furthermore, it does not address the requirement for in-memory processing and custom metric monitoring. \n\nOption B involves manually adjusting the Auto Scaling group's capacity but lacks the necessary focus on optimizing instance types for memory-intensive workloads. \n\nOption C mentions using built-in memory metrics; however, these metrics are not available by default, thus, requiring the CloudWatch agent as mentioned in Option D for true monitoring and capacity planning.",
+  "video_url": "https://certificationation.com/videos/exam-performance-issues-the-application-is-exam-219.html",
+  "url": "https://certificationation.com/questions/exam-performance-issues-the-application-is-exam-219.html"
+}

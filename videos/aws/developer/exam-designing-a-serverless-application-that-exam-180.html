@@ -1,0 +1,80 @@
+---
+title: "As a Database Engineer, you are designing a serverlessExam"
+description: "Video for as a Database Engineer, you are designing a serverless application that will interact with a Firestore database. To ensure optimal database"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are designing a serverless application that will interact with a Firestore database. To ensure optimal database performance and scalability, which of the following strategies should you use for the application's database connections?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the Cloud Database Engineer at BrightParcel and you are deploying a stateless API on Cloud Run that stores and retrieves data from Firestore in Native mode. You want the application to scale quickly with traffic while keeping latency low and avoiding unnecessary networking complexity. How should the application manage its connectivity to Firestore?",
+  "options": [
+    {
+      "text": "Configure Private Service Connect or VPC peering and open region specific connections from Cloud Run to Firestore",
+      "explanation": "This option suggests adding private networking between the service and Firestore and maintaining dedicated connections per region.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Proxy all database calls through a Cloud Functions service that caches Firestore connections using Cloud Memorystore",
+      "explanation": "This approach forwards all requests through an intermediary layer that attempts to reuse connections via an external cache.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use the official Firestore client libraries in the application to perform operations and rely on their managed connection handling",
+      "explanation": "This uses the Firestore SDKs which provide efficient transports, retries, and resource reuse for application access to Firestore.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Issue HTTP requests to the Firestore REST endpoint and create and close a new connection for each request",
+      "explanation": "This has the application construct raw REST calls and handle connection lifecycle on every operation.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct answer is <b>Use the official Firestore client libraries in the application to perform operations and rely on their managed connection handling</b>.</p><p><b>The client libraries</b> are designed for Firestore and they handle persistent connections using efficient protocols and manage retries and backoff. This lets each Cloud Run instance initialize a Firestore client once and reuse it across requests which reduces connection overhead and keeps latency low. Authentication uses application default credentials so you avoid extra networking setup. This approach aligns with stateless Cloud Run scaling because new instances spin up quickly and immediately benefit from <b>the client libraries</b> connection management.</p><p><i>Configure Private Service Connect or VPC peering and open region specific connections from Cloud Run to Firestore</i> is unnecessary for this use case. Firestore is exposed as a Google API and Cloud Run can reach it directly without private networking. Adding Private Service Connect or peering adds complexity and does not improve latency for this scenario.</p><p><i>Proxy all database calls through a Cloud Functions service that caches Firestore connections using Cloud Memorystore</i> is counterproductive. A proxy adds an extra hop and more latency and Memorystore cannot cache logical database connections. The better pattern is to call Firestore directly from Cloud Run with <b>the client libraries</b>.</p><p><i>Issue HTTP requests to the Firestore REST endpoint and create and close a new connection for each request</i> increases overhead due to repeated TLS handshakes and lack of connection reuse. It also bypasses the efficiencies and resiliency that <b>the client libraries</b> provide.</p>",
+  "batch_id": "209",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are designing a serverless application that will interact with a Firestore database. To ensure optimal database performance and scalability, which of the following strategies should you use for the application's database connections?",
+  "originalOptions": "A. Utilize Cloud Functions to interact with Firestore and cache connections in Cloud Memorystore<br/>B. Use Firestore client libraries to manage connections and perform database operations<br/>C. Establish VPC peering connections between the application and Firestore for each region<br/>D. Directly connect the application instances to Firestore using the Firestore REST API",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "180",
+  "tip": "<p>When a managed service offers <i>official client libraries</i> that handle auth, retries, and connection reuse, prefer them for serverless workloads. For <i>Google APIs</i> from Cloud Run, avoid adding <i>private networking</i> unless there is a strict requirement, and focus on minimizing per request connection overhead.</p>",
+  "references": [
+    "https://cloud.google.com/firestore/docs/reference/libraries",
+    "https://cloud.google.com/apis/docs/client-libraries-explained",
+    "https://cloud.google.com/run/docs/accessing/google-apis",
+    "https://cloud.google.com/firestore/docs/best-practices"
+  ],
+  "url": "https://certificationation.com/questions/exam-designing-a-serverless-application-that-exam-180.html",
+  "video_url": "https://certificationation.com/videos/exam-designing-a-serverless-application-that-exam-180.html"
+}

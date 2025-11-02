@@ -1,0 +1,62 @@
+---
+title: "You have an asynchronous processing application using anExam"
+description: "Video for you have an asynchronous processing application using an Auto Scaling Group and an SQS Queue. The Auto Scaling Group scales according to the depth of"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have an asynchronous processing application using an Auto Scaling Group and an SQS Queue. The Auto Scaling Group scales according to the depth of the job queue. The completion velocity of the jobs has gone down, the Auto Scaling Group size has maxed out, but the inbound job velocity did not increase. What is a possible issue?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The most likely explanation for this scenario is that <b>There was a change to the IAM Role Policy for the worker instances, resulting in a loss of permissions to interact with the queue.</b> If the worker nodes are missing the permissions needed to receive messages from SQS, they cannot process jobs even though the Auto Scaling Group is at maximum capacity and the queue depth remains high. This causes a slowdown in completion rates, with available workers unable to perform the actual work.</p><p><i>The routing configurations changed and now no worker can handle incoming events</i> would typically result in workers not being able to receive or process any jobs at all, which could be visible in different metrics and is less likely unless there was a dramatic system misconfiguration. <i>Incorrectly formed new jobs are now arriving that cannot be processed successfully</i> might explain some job failures, but unless all jobs are malformed, some should still process—plus the question implies jobs are simply not being completed, not failing. <i>There is a problem with the scaling metric itself; it is malfunctioning</i> would result in the ASG possibly not scaling correctly. However, the scenario states the group has already maxed out, so scaling is working as expected.</p><p><b>Tip:</b> When troubleshooting ASG and queue-based systems, always verify instance permissions to required AWS services, especially if you see plenty of instances but low throughput.</p>",
+  "query": "<p>An asynchronous processing system utilizes an Auto Scaling Group (ASG) and an SQS Queue. The ASG adjusts capacity based on how full the queue is. Recently, job completion speed has slowed down, the ASG has reached its upper limit, yet the rate of incoming jobs remains steady. Which situation could explain this behavior?</p>",
+  "original_oid": "6793d9e961969b416038a0f0",
+  "options": [
+    {
+      "correct": false,
+      "text": "The routing configurations changed and now no worker can handle incoming events.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Incorrectly formed new jobs are now arriving that cannot be processed successfully.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "There was a change to the IAM Role Policy for the worker instances, resulting in a loss of permissions to interact with the queue.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "There is a problem with the scaling metric itself; it is malfunctioning.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question125",
+  "originalQuery": "You have an asynchronous processing application using an Auto Scaling Group and an SQS Queue.\nThe Auto Scaling Group scales according to the depth of the job queue.\nThe completion velocity of the jobs has gone down, the Auto Scaling Group size has maxed out, but the inbound job velocity did not increase.\nWhat is a possible issue?",
+  "originalOptions": "A. Some of the new jobs coming in are malformed and unprocessable.|B. The routing tables changed and none of the workers can process events anymore.|C. Someone changed the IAM Role Policy on the instances in the worker group and broke permissions to access the queue.|D. The scaling metric is not functioning correctly.",
+  "video_url": "https://certificationation.com/videos/exam-application-using-an-auto-scaling-exam-415.html",
+  "url": "https://certificationation.com/questions/exam-application-using-an-auto-scaling-exam-415.html"
+}

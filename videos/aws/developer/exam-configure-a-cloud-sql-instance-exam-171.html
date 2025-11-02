@@ -1,0 +1,79 @@
+---
+title: "A Database Engineer is required to configure a Cloud SQLExam"
+description: "Video for a Database Engineer is required to configure a Cloud SQL instance with customer-managed encryption keys (CMEK) to comply with the company's data"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A Database Engineer is required to configure a Cloud SQL instance with customer-managed encryption keys (CMEK) to comply with the company's data protection policies. Which of the following steps should the engineer take to ensure that the CMEK configuration is correctly implemented?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "At Luma Travel, a database engineer must provision a new Cloud SQL for PostgreSQL instance in us-central1 that uses customer managed encryption keys to satisfy strict compliance requirements. The key ring will reside in us-central1 and keys rotate every 90 days. What steps should be performed so that the instance is correctly set up to use the intended CMEK key?",
+  "options": [
+    {
+      "text": "Create a Cloud KMS key ring in us-central1 and a key then configure the Cloud SQL instance to use customer supplied encryption keys and reference that key",
+      "explanation": "This proposes configuring CSEK and pointing to a key that was created inside a Cloud KMS key ring in the same region.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Generate a key in an external third party key manager then enable CMEK on the Cloud SQL instance and point the instance at that external key",
+      "explanation": "This uses a non Google key management system to provide the encryption key to the database instance.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a Cloud KMS key ring in us-central1 and a key then set the Cloud SQL instance to use CMEK and explicitly select the created key",
+      "explanation": "This binds a specific Cloud KMS key from the designated key ring to the Cloud SQL instance configuration.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Create a Cloud KMS key ring and key in us-central1 and enable CMEK on the Cloud SQL instance but do not attach any key",
+      "explanation": "This enables CMEK settings while leaving the instance without a specific key selected for encryption.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Create a Cloud KMS key ring in us-central1 and a key then set the Cloud SQL instance to use CMEK and explicitly select the created key</b>.</p><p>Cloud SQL for PostgreSQL requires the CMEK key to be in the same region as the instance, so creating the key ring and key in us-central1 is mandatory. You then grant the Cloud SQL service agent the CryptoKey Encrypter Decrypter role on that key, configure rotation to 90 days in Cloud KMS to meet the policy, and create the Cloud SQL instance in us-central1 while choosing Customer managed encryption key and selecting that specific key. CMEK must be chosen at instance creation and Cloud SQL will use the current primary key version for new writes after each rotation which aligns with regular rotation practices.</p><p><i>Create a Cloud KMS key ring in us-central1 and a key then configure the Cloud SQL instance to use customer supplied encryption keys and reference that key</i> is incorrect because Cloud SQL does not support customer supplied encryption keys. It supports customer managed encryption keys using Cloud KMS instead.</p><p><i>Generate a key in an external third party key manager then enable CMEK on the Cloud SQL instance and point the instance at that external key</i> is incorrect because Cloud SQL does not integrate with external key managers for CMEK. It requires keys that are created and managed in Cloud KMS.</p><p><i>Create a Cloud KMS key ring and key in us-central1 and enable CMEK on the Cloud SQL instance but do not attach any key</i> is incorrect because enabling CMEK requires you to select a specific key at instance creation. Without attaching a key the instance cannot be created with CMEK.</p>",
+  "batch_id": "167",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "A Database Engineer is required to configure a Cloud SQL instance with customer-managed encryption keys (CMEK) to comply with the company's data protection policies. Which of the following steps should the engineer take to ensure that the CMEK configuration is correctly implemented?",
+  "originalOptions": "A. Create a Cloud KMS key ring and key, then configure the Cloud SQL instance to use customer-supplied encryption keys (CSEK) and reference the created key.<br/>B. Create a Cloud KMS key ring and key, then configure the Cloud SQL instance to use customer-managed encryption keys (CMEK), but do not reference the created key.<br/>C. Create a third-party key management service key, then configure the Cloud SQL instance to use customer-managed encryption keys (CMEK) and reference the created key.<br/>D. Create a Cloud KMS key ring and key, then configure the Cloud SQL instance to use customer-managed encryption keys (CMEK) and reference the created key.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "171",
+  "tip": "<p>When you see <i>CMEK</i> for Cloud SQL, verify the <i>key location</i> matches the instance region and that the Cloud SQL <i>service agent</i> has the CryptoKey Encrypter Decrypter role on the key. Remember that CMEK must be set during <i>instance creation</i>.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/configure-cmek",
+    "https://cloud.google.com/kms/docs/key-rotation",
+    "https://cloud.google.com/kms/docs/ekm#supported"
+  ],
+  "url": "https://certificationation.com/questions/exam-configure-a-cloud-sql-instance-exam-171.html",
+  "video_url": "https://certificationation.com/videos/exam-configure-a-cloud-sql-instance-exam-171.html"
+}

@@ -1,0 +1,128 @@
+---
+title: "A company stores call transcript files on a monthlyExam"
+description: "Video for a company stores call transcript files on a monthly basis. Users access the files randomly within 1 year of the call, but users access the files"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company stores call transcript files on a monthly basis. Users access the files randomly within 1 year of the call, but users access the files infrequently after 1 year. The company wants to optimize its solution by giving users the ability to query and retrieve files that are less than 1-year-old as quickly as possible. A delay in retrieving older files is acceptable. Which solution will meet these requirements MOST cost-effectively?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729996"
+  },
+  "quid": null,
+  "ordinal": "49",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon S3 Intelligent-Tiering",
+    " Amazon S3 Glacier Flexible Retrieval",
+    " Amazon Athena",
+    " Amazon S3",
+    " Amazon RDS"
+  ],
+  "slug": "s3-store-call-transcript-files-aws",
+  "source": "ET",
+  "title": "AWS A Company Stores Call Transcript Files Question",
+  "meta": "AWS Exam Question: A company needs to optimize access to call transcripts, prioritizing files under 1 year old. What is the most cost-effective answer? S3, Glacier.",
+  "answer": "B",
+  "query": "A business collects server logs on a monthly basis. The team actively uses this data for the first 18 months, but the frequency of access declines significantly after that period. The organization is looking for an economical way to enable quick access to logs that are under 18 months old, while longer retrieval times for older logs are acceptable. What is the most cost-effective approach to satisfy these criteria?",
+  "originalQuery": "A company stores call transcript files on a monthly basis. Users access the files randomly within 1 year of the call, but users access the files infrequently after 1 year. The company wants to optimize its solution by giving users the ability to query and retrieve files that are less than 1-year-old as quickly as possible. A delay in retrieving older files is acceptable.\nWhich solution will meet these requirements MOST cost-effectively?",
+  "options": [
+    "A. Keep individual files along with tags inside Amazon S3 Glacier Instant Retrieval. Utilize the tags for querying and acquiring the files from S3 Glacier Instant Retrieval.",
+    "B. Store individual files in Amazon S3 Intelligent-Tiering. Use S3 Lifecycle policies to move the files to S3 Glacier Flexible Retrieval after 1 year. Query and retrieve the files that are in Amazon S3 by using Amazon Athena. Query and retrieve the files that are in S3 Glacier by using S3 Glacier Select.",
+    "C. Save individual files with tags in Amazon S3 Standard storage. Maintain a search metadata archive for each record in Amazon S3 Standard storage. Implement S3 Lifecycle rules to transfer these files to S3 Glacier Instant Retrieval after one year. Execute searches for metadata from Amazon S3 to query and fetch files.",
+    "D. Store individual data logs within Amazon S3 Standard storage. Apply S3 Lifecycle policies which will move these logs to S3 Glacier Deep Archive after 1 year. Maintain search metadata on Amazon RDS. Utilize Amazon RDS to query these files and retrieve files from S3 Glacier Deep Archive."
+  ],
+  "originalOptions": [
+    "A. Store individual files with tags in Amazon S3 Glacier Instant Retrieval. Query the tags to retrieve the files from S3 Glacier Instant Retrieval.",
+    "B. Store individual files in Amazon S3 Intelligent-Tiering. Use S3 Lifecycle policies to move the files to S3 Glacier Flexible Retrieval after 1 year. Query and retrieve the files that are in Amazon S3 by using Amazon Athena. Query and retrieve the files that are in S3 Glacier by using S3 Glacier Select.",
+    "C. Store individual files with tags in Amazon S3 Standard storage. Store search metadata for each archive in Amazon S3 Standard storage. Use S3 Lifecycle policies to move the files to S3 Glacier Instant Retrieval after 1 year. Query and retrieve the files by searching for metadata from Amazon S3.",
+    "D. Store individual files in Amazon S3 Standard storage. Use S3 Lifecycle policies to move the files to S3 Glacier Deep Archive after 1 year. Store search metadata in Amazon RDS. Query the files from Amazon RDS. Retrieve the files from S3 Glacier Deep Archive."
+  ],
+  "image": null,
+  "primaryObjective": "4: Design Cost-Optimized Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "The most suitable option is B. \n\nGiven that users access the files sporadically, Amazon S3 Intelligent-Tiering is well-suited for handling data with unpredictable access patterns, regardless of the size or retention duration of the objects. This storage class automatically optimizes costs by moving data between two access tiers—frequent and infrequent access—based on changing access patterns. It can be effectively utilized as the default storage solution for a variety of workloads, including data lakes, data analytics, newly developed applications, and user-generated content.\n\nFor files accessed less frequently after one year, S3 Lifecycle policies can be implemented to transition those files to S3 Glacier Flexible Retrieval, ensuring that older data is stored cost-effectively while still being retrievable when needed. Additionally, the integration of Amazon Athena allows for efficient querying of the files stored in Amazon S3, while S3 Glacier Select enables similar capabilities for data stored in S3 Glacier. This approach balances cost management with access speed for recent files, aligning with the company's requirements. \n\nFor further details on S3 Intelligent-Tiering, refer to the official AWS documentation.",
+    "Absolutely! S3 Intelligent-Tiering is the superstar of this scenario! 🌟 The key factor here is ensuring that files from the past year are readily accessible. To achieve this, make sure that the \"Archive Access\" and \"Deep Archive Access\" options are not enabled in the \"Archive rule actions\" section of the \"Intelligent-Tiering Archive configurations\" for the bucket. These options aren’t turned on by default, so you can rest easy knowing this approach will do the trick! 🎉 Just think of it as giving your recent files a VIP pass while the older ones enjoy a leisurely vacation in the archives! 🏖️",
+    "Imagine this: you've left a file untouched for 360 days, and thanks to the intelligent tiering, it’s already been whisked away to Glacier. Now, on day 364, you suddenly need to access that file right away. Talk about a nail-biter!\n\nI believe option C is the best choice here.",
+    "It's essential to consider cost-effectiveness in this scenario. Storing data in S3 Standard for one year can be more expensive than utilizing S3 Intelligent-Tiering. By leveraging S3 Intelligent-Tiering, the company can optimize costs while still meeting the access requirements for call transcripts effectively. This approach ensures that the company maximizes its budget while providing swift access to recent files and a reasonable retrieval process for older files.",
+    "The S3 Intelligent-Tiering storage class is a fantastic choice for data with access patterns that are uncertain, fluctuating, or unpredictable! 🌟 However, in this scenario, it seems we have a bit of a mismatch since the access pattern appears to be quite predictable. The information indicates that files are accessed frequently within the first year, which suggests a more stable access pattern than what Intelligent-Tiering is designed to address. So, while Intelligent-Tiering is a great option for many situations, this particular case showcases a clearer access pattern that could be better served by another solution! 😊"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "B",
+      "explanation": "I think the answer is B:\nUsers access the files randomly\n\nS3 Intelligent-Tiering is the ideal storage class for data with unknown, changing, or unpredictable access patterns, independent of object size or retention period. You can use S3 Intelligent-Tiering as the default storage class for virtually any workload, especially data lakes, data analytics, new applications, and user-generated content.\n\nhttps://aws.amazon.com/fr/s3/storage-classes/intelligent-tiering/",
+      "upvotes": "44"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Agree, S3 Intelligent-Tiering meets all the requirements. The very important/crucial consideration here to satisfy that all files withing a year are instantly accessible is that the two options \"Archive Access\" and \"Deep Archive Access\" are not enabled in the \"Archive rule actions\" section present in the \"Intelligent-Tiering Archive configurations\" of the bucket. Those options are not enabled by default so this answer will work.",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "What about if the file you have not accessed 360 days and intelligent tier moved the file to Glacier and on 364 day you want to access the file instantly ?\n\nI think C is right choice",
+      "upvotes": "6"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "bro u r forgetting cost effectiveness which is the requirement 1 yr in s3 standard will cost more than s3 intelligent tire.",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "It says \"S3 Intelligent-Tiering is the ideal storage class for data with unknown, changing, or unpredictable access patterns\".\nHowever, the statement says access pattern is predictable. It says there is frequent access about 1year.",
+      "upvotes": "1"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "B (69%)",
+      "votes": "99 votes."
+    },
+    {
+      "option": "C (24%)",
+      "votes": "34 votes."
+    },
+    {
+      "option": "5%",
+      "votes": "5%"
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is B because Amazon S3 Intelligent-Tiering is optimized for data with unpredictable or changing access patterns. In this case, the company needs fast access for files that are less than 18 months old and can tolerate longer retrieval times for older files. S3 Intelligent-Tiering automatically moves objects between two access tiers when access patterns change, making it a cost-effective solution. After 1 year, the S3 Lifecycle policies can transition data to S3 Glacier Flexible Retrieval, which suits the requirement for older, less frequently accessed files.\n\nOption A is incorrect because S3 Glacier Instant Retrieval is not designed for frequently accessed data and may incur higher costs due to instant retrieval requirements. Option C is incorrect because moving files to S3 Glacier Instant Retrieval after one year does not effectively utilize Intelligent-Tiering, which is specifically designed for unpredictable access patterns. Lastly, option D is inappropriate since storing logs in S3 Glacier Deep Archive after one year would lead to much longer retrieval times, which does not align with the requirement for quicker access to the data less than 18 months old.",
+  "video_url": "https://certificationation.com/videos/exam-files-on-a-monthly-basis-exam-049.html",
+  "url": "https://certificationation.com/questions/exam-files-on-a-monthly-basis-exam-049.html"
+}

@@ -1,0 +1,62 @@
+---
+title: "A startup company has a new feature which is used toExam"
+description: "Video for a startup company has a new feature which is used to track the customers' feedback on its main website. On the website, there are product"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A startup company has a new feature which is used to track the customers' feedback on its main website. On the website, there are product introductions and also customers are able to purchase the products and get them delivered. The development team has utilized Elastic Beanstalk to deploy the new feedback system. One developer just made a big change to the survey format and deployed the feature to a totally new Elastic Beanstalk Environment. Then he used the “Swap URL” function to switch to the new one. After monitoring the site for a day, by tracing the logs, the developer found that there were still few cases that old survey format was used even after about 12 hours. Which below explanation is correct?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The root cause is most likely related to DNS propagation delay after using the <b>“Swap URL”</b> feature in Elastic Beanstalk. When you swap URLs between environments, Elastic Beanstalk updates CNAME records, but DNS resolvers and clients across the internet may still cache the old CNAME due to the DNS Time-To-Live (TTL) value. Some clients or DNS servers may also ignore TTL settings set by your application, causing them to keep using cached, outdated survey endpoints beyond the expected duration, even after 12 hours.<br><br><b>The correct answer</b> highlights the role of Elastic Beanstalk in DNS management and addresses that TTL settings or client compliance issues can prolong access to legacy endpoints. This aligns with AWS documentation and is a common behavior after DNS changes.<br><br><i>The first incorrect option</i> fails to address the real problem, as merely rolling back or redeploying in Elastic Beanstalk does not update or invalidate global DNS caches.<br><br><i>The other two distractors</i> incorrectly attribute the \"Swap URL\" feature to Route 53, but it is specific to Elastic Beanstalk environment management.<br><br><b>Tip:</b> Always consider DNS TTL values and how client-side or resolver caching might affect the timely rollout of application changes that rely on DNS updates.</p>",
+  "query": "<p>A tech startup has launched a fresh customer feedback tool on its central website, allowing shoppers to leave opinions after exploring products and placing orders. The team used AWS Elastic Beanstalk to manage the deployment. Recently, a developer introduced major updates to the survey format, deploying it to a new Elastic Beanstalk environment and utilizing the “Swap URL” feature to redirect traffic to the new setup. However, even 12 hours later, some users are still routed to the outdated survey. What could best explain this situation?</p>",
+  "original_oid": "6793da7761969b416038a210",
+  "options": [
+    {
+      "correct": true,
+      "text": "\"Swap URL\" is a function within Elastic Beanstalk to quickly switch DNS settings for your application. The persistent use of the old survey could be due to DNS Time-To-Live (TTL) values set too high, and certain DNS clients may not respect updated TTLs.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "It's possible the original Elastic Beanstalk environment is still serving previous code, leading to the older survey being used. Rolling back the environment or performing a fresh deployment might solve the issue.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "\"Swap URL\" is a Route 53 feature that points DNS records to different websites. If the incorrect CNAME configuration remains, visitors may continue accessing the previous survey. DNS settings in Route 53 should be verified.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "\"Swap URL\" is available through Route 53 for DNS changes. A possible cause is a high DNS TTL value, which results in visitors seeing the old survey for longer. The DNS settings in Route 53 may need adjustment.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question416",
+  "originalQuery": "A startup company has a new feature which is used to track the customers' feedback on its main website.\nOn the website, there are product introductions and also customers are able to purchase the products and get them delivered.\nThe development team has utilized Elastic Beanstalk to deploy the new feedback system.\nOne developer just made a big change to the survey format and deployed the feature to a totally new Elastic Beanstalk Environment.\nThen he used the “Swap URL” function to switch to the new one.\nAfter monitoring the site for a day, by tracing the logs, the developer found that there were still few cases that old survey format was used even after about 12 hours.\nWhich below explanation is correct?",
+  "originalOptions": "A. There is a possibility that the Elastic BeanStalk environment is still using the code related to the old survery format. Rollback the Elastic Beanstalk environment and deploy it newly,B. \"Swap URL\" is a feature of Route53 to change the DNS settings of website. There is a possibility that the CNAME used is wrong and therefore the old survey format still exists. ROute53 configurations needs to be checked and modified,C. \"Swap URL\" is a feature of Route53 to change the DNS settings of website. There is a possibility that the TTL settings for the website is too high and therefore the old survey format still exists. ROute53 configurations needs to be checked and modified,D. \"Swap URL\" is a feature of Elastic Beanstalk to change the DNS settings of website. There is a possibility that there is an issue with the TTL settings and the DNS clients does not comply with the TTL settings.",
+  "video_url": "https://certificationation.com/videos/exam-which-is-used-to-track-exam-442.html",
+  "url": "https://certificationation.com/questions/exam-which-is-used-to-track-exam-442.html"
+}

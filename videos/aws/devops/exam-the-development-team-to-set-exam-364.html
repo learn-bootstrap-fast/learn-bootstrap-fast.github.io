@@ -1,0 +1,62 @@
+---
+title: "As a DevOps engineer, you are helping the developmentExam"
+description: "Video for as a DevOps engineer, you are helping the development team to set up a CI/CD pipeline. The new application should be deployed in an ECS cluster with a"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a DevOps engineer, you are helping the development team to set up a CI/CD pipeline. The new application should be deployed in an ECS cluster with a CloudFormation stack. In the CloudFormation YAML file, you need to include AWS resources of an ECS Cluster, a Launch template, an Auto Scaling group and so on. The Auto Scaling group instances should be registered in the ECS Cluster.How would you configure the ASG in the CloudFormation template?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct approach is to <b>define the <code>ECS_CLUSTER</code> environment parameter within the Launch Template’s user data or in the <code>/etc/ecs/ecs.config</code> file</b>. This setting explicitly tells the ECS agent on each launched instance which cluster to join, allowing the Auto Scaling Group's EC2 instances to auto-register with your desired ECS Cluster.<br/><br/>Let’s review why the other options are incorrect:</p><ul><li><i>\"Add a 'DependsOn: ECSCluster' property to the Auto Scaling group to link the ASG with the ECS cluster in CloudFormation.\"</i> — 'DependsOn' only controls creation order and does not establish any registration or logical link between an ASG and an ECS cluster.</li><li><i>\"Choose an ECS Fargate resource in CloudFormation so the ASG instances auto-register with the ECS cluster.\"</i> — Fargate is a serverless compute engine for containers and does not use EC2-backed ASG-managed instances, hence this method doesn't apply to the scenario described.</li><li><i>\"Set the ECS Cluster property directly on the Auto Scaling group resource (ECS_CLUSTER: ${ECSCluster}) to perform registration.\"</i> — There is no native 'ECS_CLUSTER' property on an ASG resource in CloudFormation; the correct method is by configuring the EC2 instances themselves.</li></ul><p><b>Tip:</b> Always remember, for Amazon ECS on EC2 launch type, EC2 instance registration to an ECS cluster relies on properly setting the <code>ECS_CLUSTER</code> parameter, never through direct ASG properties or creation dependencies.</p>",
+  "query": "<p>You are assisting your team in setting up a deployment pipeline for a new application. The app needs to run within an ECS cluster, provisioned using a CloudFormation template. The template includes resources such as an ECS Cluster, a Launch Template, and an Auto Scaling Group (ASG). It is crucial that instances launched by the ASG are registered with the ECS cluster automatically. <br/>What is the proper way to configure this registration in your CloudFormation template?</p>",
+  "original_oid": "6793da7661969b416038a20f",
+  "options": [
+    {
+      "correct": true,
+      "text": "Define the ECS_CLUSTER setting inside the Launch Template's ec2 user data script or via the /etc/ecs/ecs.config to ensure instances connect to the ECS cluster upon launch.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Add a 'DependsOn: ECSCluster' property to the Auto Scaling group to link the ASG with the ECS cluster in CloudFormation.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Choose an ECS Fargate resource in CloudFormation so the ASG instances auto-register with the ECS cluster.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set the ECS Cluster property directly on the Auto Scaling group resource (ECS_CLUSTER: ${ECSCluster}) to perform registration.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question415",
+  "originalQuery": "As a DevOps engineer, you are helping the development team to set up a CI/CD pipeline.\nThe new application should be deployed in an ECS cluster with a CloudFormation stack.\nIn the CloudFormation YAML file, you need to include AWS resources of an ECS Cluster, a Launch template, an Auto Scaling group and so on.\nThe Auto Scaling group instances should be registered in the ECS Cluster.How would you configure the ASG in the CloudFormation template?",
+  "originalOptions": "[\"A. Use the ECS Fargate resource in CloudFormation to register the ASG instances automatically with the ECS Cluster.\",\"B. In the Auto Scaling group resource, add the ECS Cluster property (ECS_CLUSTER: ${ECSCluster})to register the ASG with the ECS Cluster.\",\"C. In the Launch template Metadata, add the ECS_CLUSTER environment parameter in the /etc/ecs/ecs.config file to register the instances.\",\"D. In the Auto Scaling group resource, add the property of \\u201cDependsOn: ECSCluster\\u201d to associate the ASG with the ECS Cluster.\"]",
+  "video_url": "https://certificationation.com/videos/exam-the-development-team-to-set-exam-364.html",
+  "url": "https://certificationation.com/questions/exam-the-development-team-to-set-exam-364.html"
+}

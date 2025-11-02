@@ -1,0 +1,87 @@
+---
+title: "You have a Cloud SQL instance supporting a productionExam"
+description: "Video for you have a Cloud SQL instance supporting a production application. Customers have experienced downtime during maintenance events in the past. You want"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have a Cloud SQL instance supporting a production application. Customers have experienced downtime during maintenance events in the past. You want to minimize the impact of future maintenance events. What should you do? (Choose two)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "The payments team at example.com operates a Cloud SQL instance that powers a mission critical checkout API. During recent automatic maintenance events customers observed about eight minutes of unavailability and the business now wants to reduce the impact of future maintenance on uptime. What actions should you take to lessen maintenance effects while maintaining service availability?",
+  "options": [
+    {
+      "text": "Opt in to maintenance notifications",
+      "explanation": "This provides advance alerts about scheduled maintenance so teams can plan operational responses",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure the Cloud SQL instance for high availability",
+      "explanation": "This enables regional availability with automatic failover between zones to reduce disruption",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Disable automated backups",
+      "explanation": "This stops automated backups from running which removes backup overhead but increases recovery risk",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Set a preferred maintenance window",
+      "explanation": "This allows you to select when maintenance occurs so you place it in a low demand period",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Add a read replica and plan to promote it during maintenance",
+      "explanation": "This creates an asynchronous read only replica that requires manual promotion and does not automatically take over during maintenance",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct options are <b>Configure the Cloud SQL instance for high availability</b> and <b>Set a preferred maintenance window</b>.</p><p><b>Configure the Cloud SQL instance for high availability</b> ensures a primary and standby instance in different zones with automatic failover during maintenance or zonal issues. This minimizes write downtime and keeps the checkout API available because failover is quick and managed by the service.</p><p><b>Set a preferred maintenance window</b> allows you to schedule maintenance during low traffic periods. This does not remove maintenance but it places it when impact is lowest and when combined with automatic failover the customer effect is greatly reduced.</p><p><i>Opt in to maintenance notifications</i> only informs you that maintenance is coming. It does not change when maintenance occurs and it does not preserve availability during the event.</p><p><i>Disable automated backups</i> reduces your recovery options and does not lessen maintenance impact. Backups are essential for recovery and their removal does not prevent restarts or shorten maintenance operations.</p><p><i>Add a read replica and plan to promote it during maintenance</i> is not a good strategy for availability. Read replicas are asynchronous and promotion is manual and disruptive which can cause write downtime and potential data loss. This does not provide seamless failover during maintenance.</p>",
+  "batch_id": "356",
+  "answerCode": "2,4",
+  "type": "multi-select",
+  "originalQuery": "You have a Cloud SQL instance supporting a production application. Customers have experienced downtime during maintenance events in the past. You want to minimize the impact of future maintenance events. What should you do? (Choose two)",
+  "originalOptions": "A. Disable automated backups.<br/>B. Enable high availability for the Cloud SQL instance.<br/>C. Configure a custom maintenance window.<br/>D. Opt in to maintenance notifications.<br/>E. Use connection pools.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "69",
+  "tip": "<p>When a question asks how to reduce maintenance impact think of <i>high availability</i> for automatic failover and a <i>maintenance window</i> to control timing. Be cautious of answers that only notify you or that remove safety features like backups since they do not improve uptime.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/high-availability",
+    "https://cloud.google.com/sql/docs/mysql/maintenance",
+    "https://cloud.google.com/sql/docs/mysql/set-maintenance-window",
+    "https://cloud.google.com/sql/docs/mysql/replication/learn-about-replicas",
+    "https://cloud.google.com/sql/docs/mysql/backup-recovery/backups"
+  ],
+  "url": "https://certificationation.com/questions/exam-production-application-customers-have-experienced-exam-069.html",
+  "video_url": "https://certificationation.com/videos/exam-production-application-customers-have-experienced-exam-069.html"
+}

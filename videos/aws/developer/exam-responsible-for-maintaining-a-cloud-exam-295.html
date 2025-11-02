@@ -1,0 +1,82 @@
+---
+title: "As a Database Engineer, you are responsible forExam"
+description: "Video for as a Database Engineer, you are responsible for maintaining a Cloud SQL for PostgreSQL instance. Users have been experiencing slow response times"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are responsible for maintaining a Cloud SQL for PostgreSQL instance. Users have been experiencing slow response times during peak hours. You need to optimize database performance without increasing costs significantly. Which of the following strategies should you consider?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You manage a Cloud SQL for PostgreSQL instance for BlueOrbit Tours and users report sluggish queries during a busy 2 hour evening window. Leadership wants better performance while keeping any extra spend under 15 percent of the current monthly budget. What should you do?",
+  "options": [
+    {
+      "text": "Create a read replica to offload read only workloads during peak traffic",
+      "explanation": "This adds a replica that serves select queries so that the primary instance handles fewer reads",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Refactor the schema and add or adjust indexes to optimize query performance",
+      "explanation": "This focuses on query plan improvements by aligning schema design and indexes with the most common access patterns",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Migrate the workload to Cloud Spanner for global scale",
+      "explanation": "This moves the database to a horizontally scalable managed relational service that provides high availability",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Resize the Cloud SQL instance to a larger vCPU and memory configuration",
+      "explanation": "This increases compute and memory resources of the instance to provide more headroom for concurrent workloads",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Refactor the schema and add or adjust indexes to optimize query performance</b>. This approach targets the bottlenecks inside PostgreSQL and can deliver significant speedups with minimal ongoing cloud cost, which aligns with the requirement to keep extra spend under fifteen percent.</p><p><b>Index and schema optimization</b> reduces I O and CPU by allowing the planner to avoid full scans and to use selective access paths. You can analyze slow queries with EXPLAIN ANALYZE and add composite or covering indexes that match common predicates and sort orders. You can use partial indexes if the two hour peak concentrates on a subset of rows. You can also remove unused or redundant indexes that slow writes and ensure autovacuum and ANALYZE keep statistics current. These changes usually add only modest storage overhead and little to no extra instance cost while improving throughput during peak hours.</p><p><i>Create a read replica to offload read only workloads during peak traffic</i> is not the best first step because it only helps read traffic and requires application changes to route reads. A replica adds another instance that increases monthly cost and it does not improve write performance or badly tuned queries. Replica lag during a busy window can also reduce its usefulness.</p><p><i>Migrate the workload to Cloud Spanner for global scale</i> is a large migration to a different service with a different pricing model and feature set. It is intended for global scale and high availability needs rather than a short daily peak on a single Cloud SQL database. It would likely exceed the budget target and add significant complexity.</p><p><i>Resize the Cloud SQL instance to a larger vCPU and memory configuration</i> increases compute cost for the whole billing period even though the peak lasts only two hours. It can require a maintenance operation and it does not fix inefficient queries. It is less cost effective than tuning indexes and queries for the stated budget constraint.</p>",
+  "batch_id": "290",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are responsible for maintaining a Cloud SQL for PostgreSQL instance. Users have been experiencing slow response times during peak hours. You need to optimize database performance without increasing costs significantly. Which of the following strategies should you consider?",
+  "originalOptions": "A. Increase the number of vCPUs and memory allocated to the Cloud SQL instance.<br/>B. Set up read replicas for read-heavy workloads.<br/>C. Migrate the database to a Cloud Spanner instance.<br/>D. Optimize the database schema and create necessary indexes.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "295",
+  "tip": "<p>Match the remedy to the constraint. When you see tight <i>cost</i> limits and a short peak window, prefer query and <i>index</i> tuning before scaling infrastructure or migrating services. Confirm whether the workload is read heavy or write heavy and whether the change requires application updates.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/troubleshoot-performance",
+    "https://cloud.google.com/sql/docs/best-practices",
+    "https://cloud.google.com/sql/docs/postgres/replication",
+    "https://cloud.google.com/sql/docs/postgres/change-machine-type",
+    "https://cloud.google.com/spanner/docs/overview",
+    "https://www.postgresql.org/docs/current/indexes.html"
+  ],
+  "url": "https://certificationation.com/questions/exam-responsible-for-maintaining-a-cloud-exam-295.html",
+  "video_url": "https://certificationation.com/videos/exam-responsible-for-maintaining-a-cloud-exam-295.html"
+}

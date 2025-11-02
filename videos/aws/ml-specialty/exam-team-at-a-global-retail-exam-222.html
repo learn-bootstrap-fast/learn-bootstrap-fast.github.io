@@ -1,0 +1,54 @@
+---
+title: "You work for a machine learning team at a global retailExam"
+description: "Video for you work for a machine learning team at a global retail auto parts chain. Your team ingests purchasing data from its 100,000 global auto parts stores"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You work for a machine learning team at a global retail auto parts chain. Your team ingests purchasing data from its 100,000 global auto parts stores to S3 using Kinesis Data Firehose. You are now ready to start training an improved machine learning model that will be used to predict purchasing patterns by global region. The training data requires additional simple transformations. Also, you will need to combine some data attributes. Finally, your team expects to train the model on a daily basis. Based on a large number of stores plus changing data ingestion, which of the following options will require the least amount of administration and development effort?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d71e7742293cac494b86"
+  },
+  "answer": "D",
+  "certification": "AWS Machine Learning Specialty",
+  "certificationKey": "AWSMLS",
+  "difficulty": "0",
+  "image": "",
+  "needsWork": "false",
+  "ordinal": "222",
+  "originalExplanation": "Answer: D.\nOption A is incorrect.\nHaving 100,000 stores use Storage Gateway to move the data to S3 would require a tremendous administrative effort.\nOption B is incorrect.\nUsing EMR for this solution would require administrative cost to build and maintain EMR.\nAlso, your development team would have to write the Apache Spark code to perform the transformations.\nOption C is incorrect.\nUsing a fleet of EC2 instances would require the administrative cost of creating and maintaining the EC2 instances.\nAlso, your development team would have to write the transformation logic that runs on the EC2 instances.\nOption D is CORRECT.\nKinesis Data Analytics can receive your data from Kinesis Data Firehose, transform it, and then write it to S3\nThe code needed to perform the transformations in Kinesis Data Analytics would be much simpler than the coding suggested in the other options.\nYour machine learning model can then use the transformed data in S3 for training.\nReference:\nPlease see the Amazon Kinesis Data Analytics developer guide titled Example: Writing to an Amazon S3 Bucket.\nPlease refer to the Amazon Kinesis Data Firehose developer guide titled Using Amazon Kinesis Data Analytics.\nThe option that would require the least amount of administration and development effort is D. Create a Kinesis Data Analytics stream and use it as the destination of the Kinesis Data Firehose stream. Use Kinesis Data Analytics to transform the raw purchasing data attributes into transformed values using SQL and write the transformed data to S3.\nHere's why:\nOption A, having the stores capture their purchasing data locally on Storage Gateway and then load the data into S3 and transforming the data using Glue, requires the stores to capture their own data, which could lead to inconsistencies in data quality and format. Additionally, using Glue to transform the data requires development effort to create the transformations and to ensure they are running correctly.\nOption B, creating an EMR cluster with Apache Spark installed to perform the transformation logic, is a more complex option that would require a significant amount of administration and development effort. The team would need to set up and maintain an EMR cluster, develop the transformation logic in Spark, and ensure the cluster is running correctly and efficiently.\nOption C, creating a fleet of EC2 instances that run the transformation logic which transforms the incremental data records on S3 and write the transformed records to S3, is similar to Option B in that it requires significant administration and development effort to set up and maintain the EC2 instances, develop the transformation logic, and ensure everything is running correctly and efficiently.\nOption D, creating a Kinesis Data Analytics stream and using it as the destination of the Kinesis Data Firehose stream, is the best option because it requires minimal administration and development effort. The team can use SQL to perform the necessary transformations on the incoming data, and Kinesis Data Analytics will automatically scale the processing capacity to handle the data volume. Additionally, since Kinesis Data Analytics is a managed service, there is minimal administration required to ensure it is running correctly. Overall, this option provides the necessary functionality with minimal development and administration effort.",
+  "originalOptions": [
+    "A. Have the stores capture their purchasing data locally on Storage Gateway and then load the data into S3. Transform the data using Glue.",
+    "B. Create an EMR cluster with Apache Spark installed to perform the transformation logic. Run the cluster each day on the incremental records in S3, and write the transformed records to S3.",
+    "C. Create a fleet of EC2 instances that run the transformation logic which transforms the incremental data records on S3, and write the transformed records to S3.",
+    "D. Create a Kinesis Data Analytics stream and use it as the destination of the Kinesis Data Firehose stream. Use Kinesis Data Analytics to transform the raw purchasing data attributes into transformed values using SQL and write the transformed data to S3."
+  ],
+  "originalQuery": "You work for a machine learning team at a global retail auto parts chain.\nYour team ingests purchasing data from its 100,000 global auto parts stores to S3 using Kinesis Data Firehose.\nYou are now ready to start training an improved machine learning model that will be used to predict purchasing patterns by global region.\nThe training data requires additional simple transformations.\nAlso, you will need to combine some data attributes.\nFinally, your team expects to train the model on a daily basis. Based on a large number of stores plus changing data ingestion, which of the following options will require the least amount of administration and development effort?",
+  "primaryObjective": "",
+  "quid": "0",
+  "source": "https://www.exam-answer.com/amazon/mls-c01/question222",
+  "video_url": "https://certificationation.com/videos/exam-team-at-a-global-retail-exam-222.html",
+  "url": "https://certificationation.com/questions/exam-team-at-a-global-retail-exam-222.html"
+}

@@ -1,0 +1,128 @@
+---
+title: "A company sells ringtones created from clips of popularExam"
+description: "Video for a company sells ringtones created from clips of popular songs. The files containing the ringtones are stored in Amazon S3 Standard and are at least"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company sells ringtones created from clips of popular songs. The files containing the ringtones are stored in Amazon S3 Standard and are at least 128 KB in size. The company has millions of files, but downloads are infrequent for ringtones older than 90 days. The company needs to save money on storage while keeping the most accessed files readily available for its users. Which action should the company take to meet these requirements MOST cost-effectively?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f7299fe"
+  },
+  "quid": null,
+  "ordinal": "153",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon S3",
+    " AWS Storage Gateway",
+    " AWS Backup",
+    " AWS Cost Explorer",
+    " AWS Budgets"
+  ],
+  "slug": "s3-save-money-storage-accessed-files-aws",
+  "source": "ET",
+  "title": "AWS A Company Sells Ringtones Question",
+  "meta": "AWS Exam Question: A company sells ringtones stored in Amazon S3 Standard. How can they save on storage while keeping accessed files available? Answer: S3 Lifecycle Management.",
+  "answer": "D",
+  "query": "A business offers short audio snippets of well-known tracks as ringtones. These audio files are kept in Amazon S3 Standard storage and are typically around 128 KB each. With millions of these files, the business sees limited downloads for ringtones that are more than 90 days old. To reduce storage costs while ensuring accessible files for users, what strategy should the business implement?",
+  "originalQuery": "A company sells ringtones created from clips of popular songs. The files containing the ringtones are stored in Amazon S3 Standard and are at least 128 KB in size. The company has millions of files, but downloads are infrequent for ringtones older than 90 days. The company needs to save money on storage while keeping the most accessed files readily available for its users.\nWhich action should the company take to meet these requirements MOST cost-effectively?",
+  "options": [
+    "A. Configure S3 Standard-Infrequent Access (S3 Standard-IA) storage for the initial storage tier of the objects.",
+    "B. Move the files to S3 Intelligent-Tiering and configure it to move objects to a less expensive storage tier after 90 days.",
+    "C. Set up S3 inventory to organize files and transition to S3 Standard-Infrequent Access (S3 Standard-1A) after 90 days.",
+    "D. Implement an S3 Lifecycle policy that moves the objects from S3 Standard to S3 Standard-Infrequent Access (S3 Standard-1A) after 90 days."
+  ],
+  "originalOptions": [
+    "A. Configure S3 Standard-Infrequent Access (S3 Standard-IA) storage for the initial storage tier of the objects.",
+    "B. Move the files to S3 Intelligent-Tiering and configure it to move objects to a less expensive storage tier after 90 days.",
+    "C. Configure S3 inventory to manage objects and move them to S3 Standard-Infrequent Access (S3 Standard-1A) after 90 days.",
+    "D. Implement an S3 Lifecycle policy that moves the objects from S3 Standard to S3 Standard-Infrequent Access (S3 Standard-1A) after 90 days."
+  ],
+  "image": null,
+  "primaryObjective": "4: Design Cost-Optimized Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Choosing Option D is the most suitable approach for the company's storage needs.\n\nThe context indicates that files younger than 90 days are accessed regularly, while those older than 90 days see infrequent downloads. S3 Standard-Infrequent Access (S3 Standard-IA) has a minimum storage duration of 30 days, and switching to this tier too early can lead to increased costs.\n\nTo optimize for frequent access, the company should retain the ringtones in S3 Standard for the first 90 days. Once the 90-day mark is reached and the likelihood of access decreases, transitioning the files to S3 Standard-Infrequent Access (S3 Standard-IA) is a prudent decision. This strategy allows the company to reduce storage costs effectively while ensuring that the most frequently accessed files remain readily available in S3 Standard. \n\nImplementing an S3 Lifecycle policy to automate this transition will streamline the management of storage tiers and further enhance cost efficiency. This approach leverages the capabilities of Amazon S3 to optimize storage costs while maintaining performance for frequently accessed content.",
+    "I must respectfully disagree! The most cost-effective option here is option B. Here's why: \n\nWith option D, those files older than 90 days are destined to hang out in the S3 Standard-Infrequent Access tier for a cozy $0.0125/GB. 💤 \n\nOn the other hand, option B swoops in like a superhero! 🦸‍♂️ By utilizing Intelligent-Tiering, files that age like fine wine (or maybe just a tad stale) after 90 days can be whisked away directly to the “Archive access tier” (Glacier instant retrieval) for just $0.004/GB! That’s like finding a hidden treasure chest in your backyard! 🏴‍☠️\n\nThe question hints at this clever strategy, suggesting that it can be set to shift objects to a less expensive storage tier after 90 days. So, why settle for a more expensive option when you can save a pretty penny instead? 💰✨ \n\nFor a closer look at the pricing, you can check out the AWS S3 pricing page [here](https://aws.amazon.com/s3/pricing/?nc=sn&loc=4). Happy saving! 🎉",
+    "I retract my previous response—option D is the way to go. The \"Archive access tier\" setting in the \"Intelligent-Tiering Archive configurations\" pertains to \"S3 Glacier flexible retrieval,\" which, let's be honest, isn't exactly known for its instant access. So, if you want a cost-effective solution while still keeping your most-used ringtones easily accessible, moving to S3 Standard-Infrequent Access after 90 days is the smart play here. It’s all about balancing those pesky storage costs with user convenience.",
+    "When an object remains unused for a continuous period of 90 days, it automatically transitions to the Archive Instant Access tier. This tier is designed to offer both low latency and high-throughput performance, ensuring quick access to the files when needed. Moreover, the pricing for this tier is more economical than that of Standard-Infrequent Access. Therefore, the recommended approach is option B.",
+    "Both options D and B appear to be potential solutions, but I’m leaning towards B with a cheerful nod! 🌟\n\nWhen we take a closer look at the delightful world of S3 pricing, S3 Intelligent-Tiering often proves to be more cost-effective compared to S3 Standard. You can check out the pricing details on the official AWS page for a clearer picture. Additionally, the mention of \"128 KB\" hints at the compatibility of the files with S3 Intelligent-Tiering, making it a fabulous fit for the company’s needs! Happy storage decisions! 🎉"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "D",
+      "explanation": "Answer D\nWhy Optoin D ?\nThe Question talks about downloads are infrequent older than 90 days which means files less than 90 days are accessed frequently. Standard-Infrequent Access (S3 Standard-IA) needs a minimum 30 days if accessed before, it costs more.\nSo to access the files frequently you need a S3 Standard . After 90 days you can move it to Standard-Infrequent Access (S3 Standard-IA) as its going to be less frequently accessed",
+      "upvotes": "40"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "I do not agree. The MOST cheaper option is B, because by choosing:\nD) Files older than 90 days will live eternally in the S3 Infrequently access layer at $0.0125/GB.\nB) Using Intelligent-Tiering files older than 90 days can be moved DIRECTLY to the \"Archive access tier\" (Glacier instant retrieval) at $0.004/GB, avoiding/skipping the \"S3 Infrequently access layer\". The question also seems to be according this assuption as says \"and configure it to move objects to a less expensive storage tier after 90 days\".\n\nhttps://aws.amazon.com/s3/pricing/?nc=sn&loc=4",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "I am taking back my answer, the right is D) as the \"Archive access tier\" check present in the \"Intelligent-Tiering Archive configurations\" is for \"S3 Glacier flexible retrieval\" which is not instant retrieval.",
+      "upvotes": "8"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Archive Instant Access tier (automatic)\nIf an object is not accessed for 90 consecutive days, the object moves to the Archive Instant Access tier. The Archive Instant Access tier provides low latency and high-throughput performance. --- This says it moves to instant retrieval class. Price for this is lesser than standard IA. Answer should be B",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "B/D seems possible answer. But, I'll go with \"B\".\nIn the following table, S3 Intelligent-Tiering seems not so expansive than S3 Standard.\nhttps://aws.amazon.com/s3/pricing/?nc1=h_ls\nAnd, in the question \"128KB\" size is talking about S3 Intelligent-Tiering stuff.",
+      "upvotes": "16"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "D (66%)",
+      "votes": "95 votes."
+    },
+    {
+      "option": "B (34%)",
+      "votes": "49 votes."
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is D because implementing an S3 Lifecycle policy allows the business to automate the transition of infrequently accessed ringtones (older than 90 days) from S3 Standard to S3 Standard-Infrequent Access (S3 Standard-IA). This approach optimizes storage costs while keeping more frequently accessed files readily available in S3 Standard. The lifecycle management feature is designed specifically for this type of scenario. \n\n- Option A is incorrect because configuring S3 Standard-IA for the initial storage tier does not address the requirement of moving files after 90 days; it is not a lifecycle management solution. \n- Option B is less suitable in this context because S3 Intelligent-Tiering is designed for objects with unknown or unpredictable access patterns rather than well-defined timelines, and it can incur costs for having the object in the tier. Additionally, it may not directly address the need to move files after 90 days. \n- Option C incorrectly suggests using S3 inventory to manage objects and does not provide an automatic way to transition them to S3 Standard-IA after 90 days, as inventory reports only provide details about existing objects but do not trigger actions. \nOverall, option D best meets the requirements and utilizes the capabilities of S3 Lifecycle policies effectively.",
+  "video_url": "https://certificationation.com/videos/exam-from-clips-of-popular-songs-exam-153.html",
+  "url": "https://certificationation.com/questions/exam-from-clips-of-popular-songs-exam-153.html"
+}

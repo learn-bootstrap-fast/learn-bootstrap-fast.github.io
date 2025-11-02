@@ -1,0 +1,55 @@
+---
+title: "You are working as a machine learning specialist at aExam"
+description: "Video for you are working as a machine learning specialist at a medical research facility. You have set up a data pipeline delivery stream using Amazon Kinesis"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are working as a machine learning specialist at a medical research facility. You have set up a data pipeline delivery stream using Amazon Kinesis Data Firehose as your data streaming service and Amazon Redshift as your data warehouse. Your researchers have set up the S3 bucket in their own account that you have used for your Kinesis Data Firehose. Your researchers need to access the data using BI tools such as Amazon QuickSight to build dashboards and use metrics in their research. However, when you implement your solution, you notice that your streaming data does not load into your Redshift data warehouse. What could be a reason why this is happening? Choose 2 answers."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d6d27742293cac494ad0"
+  },
+  "answer": "Answers A E",
+  "certification": "AWS Machine Learning Specialty",
+  "certificationKey": "AWSMLS",
+  "difficulty": "0",
+  "image": "",
+  "needsWork": "false",
+  "ordinal": "40",
+  "originalExplanation": "E.\nAnswers: A and E.\nOption A is correct.\nAs documented in the Amazon Kinesis Data Firehose developer guide, “Kinesis Data Firehose uses the specified Amazon Redshift user name and password to access your cluster and uses an IAM role to access the specified bucket, key, CloudWatch log group, and streams.\nYou are required to have an IAM role when creating a delivery stream.”\nOption B is incorrect.\nThe cluster security group is used to grant users inbound access to the Redshift cluster.\nDefining a cluster security group would not prevent Kinesis Firehose from accessing your Redshift cluster.\n(See the Amazon Redshift database developer guide titled Amazon Redshift Security Overview)\nOption C is incorrect.\nSince you are not using the Lambda function feature of Kinesis Data Firehose, this Lambda action is not needed in the access policy.\nOption D is incorrect.\nSince you are not using the data encryption feature of Kinesis Data Firehose, this KMS action is not needed in the access policy.\nOption E is correct.\nSince you are not the owner of the S3 bucket used by Kinesis Data Firehose, you need to specify the S3:PutObjectAcl in the S3 actions of the access policy.\n(See the Amazon Kinesis Data Firehose developers guide titled Grant Kinesis Data Firehose Access to Amazon Redshift Destination)\nReference:\nPlease see the Amazon Kinesis Data Firehose developers guide titled Grant Kinesis Data Firehose Access to Amazon Redshift Destination, and the Amazon Kinesis Data Firehose overview page, and the Amazon Redshift database developer guide titled Amazon Redshift Security Overview.\nThe issue is that the data streaming from Amazon Kinesis Data Firehose is not loading into Amazon Redshift data warehouse.\nThere could be several reasons why this is happening, but the question asks for two answers, so let's look at the possible causes:\nA. You have not created an IAM role for your Kinesis Firehose to access the S3 bucket.\nOne possible reason could be that you have not created an IAM role for your Kinesis Firehose to access the S3 bucket where your researchers have set up the bucket. The IAM role defines the permissions for Kinesis Firehose to access the S3 bucket, so without it, the Firehose cannot deliver data to the S3 bucket. Therefore, if the S3 bucket is not receiving any data, it will not be possible for Redshift to load data from the S3 bucket.\nB. You defined a cluster security group and associated it with your Redshift cluster.\nAnother possible reason could be that you have defined a cluster security group and associated it with your Redshift cluster. The security group defines the inbound and outbound traffic for the cluster, so if it is not properly configured, it may prevent Kinesis Firehose from delivering data to Redshift. Therefore, if the streaming data cannot be delivered to Redshift, it will not be possible for the data warehouse to load the data.\nC. The access policy associated with your Kinesis Firehose does not have lambda:InvokeFunction specified in the Allow Action section of the Lambda actions.\nThis answer is incorrect because lambda:InvokeFunction is not related to the Kinesis Firehose's access policy. This permission is required to invoke a Lambda function from another AWS service, but it is not related to the delivery of data to Redshift.\nD. The access policy associated with your Kinesis Firehose does not have kms:GenerateDataKey specified in the Allow Action section of the KMS actions.\nThis answer is also incorrect because kms:GenerateDataKey is not related to the Kinesis Firehose's access policy. This permission is required to generate a new data encryption key from a KMS key, but it is not related to the delivery of data to Redshift.\nE. The access policy associated with your Kinesis Firehose does not have S3:PutObjectAcl specified in the Allow Action section of the S3 actions.\nThis answer is also incorrect because S3:PutObjectAcl is not related to the Kinesis Firehose's access policy. This permission is required to set the access control list (ACL) for an S3 object, but it is not related to the delivery of data to Redshift.\nIn summary, the two possible reasons why the streaming data is not loading into Redshift are:\nA. You have not created an IAM role for your Kinesis Firehose to access the S3 bucket where the data is stored. B. You have defined a cluster security group and associated it with your Redshift cluster that is preventing the data from being delivered.",
+  "originalOptions": [
+    "A. You have not created an IAM role for your Kinesis Firehose to access the S3 bucket.",
+    "B. You defined a cluster security group and associated it with your Redshift cluster.",
+    "C. The access policy associated with your Kinesis Firehose does not have lambda:InvokeFunction specified in the Allow Action section of the Lambda actions.",
+    "D. The access policy associated with your Kinesis Firehose does not have kms:GenerateDataKey specified in the Allow Action section of the KMS actions.",
+    "E. The access policy associated with your Kinesis Firehose does not have S3:PutObjectAcl specified in the Allow Action section of the S3 actions."
+  ],
+  "originalQuery": "You are working as a machine learning specialist at a medical research facility.\nYou have set up a data pipeline delivery stream using Amazon Kinesis Data Firehose as your data streaming service and Amazon Redshift as your data warehouse.\nYour researchers have set up the S3 bucket in their own account that you have used for your Kinesis Data Firehose.\nYour researchers need to access the data using BI tools such as Amazon QuickSight to build dashboards and use metrics in their research.\nHowever, when you implement your solution, you notice that your streaming data does not load into your Redshift data warehouse.\nWhat could be a reason why this is happening? Choose 2 answers.",
+  "primaryObjective": "",
+  "quid": "0",
+  "source": "https://www.exam-answer.com/amazon/mls-c01/question40",
+  "video_url": "https://certificationation.com/videos/exam-specialist-at-a-medical-research-exam-040.html",
+  "url": "https://certificationation.com/questions/exam-specialist-at-a-medical-research-exam-040.html"
+}

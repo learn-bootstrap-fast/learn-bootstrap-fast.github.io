@@ -1,0 +1,74 @@
+---
+title: "A user uses CloudFormation to launch an EC2 instance andExam"
+description: "Video for a user uses CloudFormation to launch an EC2 instance and plans to configure an application after the instance is launched. The user wants to"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A user uses CloudFormation to launch an EC2 instance and plans to configure an application after the instance is launched. The user wants to coordinate stack resource creation with configuration actions that are external to the stack creation. How can the user configure this?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d5daf501ee1c8ade987e"
+  },
+  "quid": "0",
+  "ordinal": "310",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "AWS CloudFormation",
+    " Amazon RDS",
+    " AWS Well-Architected Framework",
+    " AWS Systems Manager",
+    " AWS Lambda"
+  ],
+  "slug": "cf-launch-ec2-instance-configure-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question310",
+  "title": "AWS User Uses CloudFormation To Launch An EC2 Question",
+  "meta": "AWS Exam Question: A user uses CloudFormation to launch an EC2 instance and coordinate stack resource creation with external configuration actions. Answer: CloudFormation, EC2.",
+  "answer": "D",
+  "query": "An engineer needs to deploy a CloudFormation stack that includes launching an Amazon RDS database instance and then performing database post-deployment setup outside the stack. The engineer wants to coordinate the stack deployment process with these external setup steps. How can this be accomplished?",
+  "originalQuery": "A user uses CloudFormation to launch an EC2 instance and plans to configure an application after the instance is launched.\nThe user wants to coordinate stack resource creation with configuration actions that are external to the stack creation.\nHow can the user configure this?",
+  "options": [
+    "A. CloudFormation stack deployment cannot await the launch of a single service before proceeding.",
+    "B. The engineer can implement a HoldCondition resource to pause creation until dependent resources are ready.",
+    "C. The engineer might try a DependentCondition resource to delay creation of linked resources.",
+    "D. Associate a CreationPolicy attribute with the wait condition."
+  ],
+  "originalOptions": [
+    "A. It is not possible that the stack creation will wait until one service is created and launched.",
+    "B. The user can use the HoldCondition resource to wait for the creation of the other dependent resources.",
+    "C. The user can use the DependentCondition resource to hold the creation of the other dependent resources.",
+    "D. Associate a CreationPolicy attribute with the wait condition."
+  ],
+  "image": "",
+  "primaryObjective": "1: Design Solutions for Organizational Complexity",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Answer - D.\nYou can use a wait condition for situations like the following.\nTo coordinate stack resource creation with configuration actions that are external to the stack creation.\nTo track the status of a configuration process.\nFor more information on Cloudformation Wait condition, please visit the link.\nhttp://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitcondition.html\nWhen launching an EC2 instance using CloudFormation, the user may need to coordinate the stack resource creation with configuration actions that are external to the stack creation. For example, the user may want to run a script or install software on the instance after it is launched.\nIn this scenario, the user can use a CreationPolicy attribute to ensure that the instance is fully configured before the stack creation is considered complete. The CreationPolicy attribute is used to specify a wait condition that CloudFormation monitors during stack creation. CloudFormation will not consider the stack creation complete until the wait condition is satisfied.\nTo use a CreationPolicy attribute, the user can define a WaitCondition resource in the CloudFormation template. The WaitCondition resource specifies a URL that the user's configuration actions can send a signal to when they are complete. The signal can include a status value that indicates whether the configuration actions succeeded or failed.\nThe user can then associate the WaitCondition resource with the EC2 instance using a CreationPolicy attribute. This tells CloudFormation to monitor the wait condition specified by the WaitCondition resource and wait until it receives a signal indicating that the configuration actions are complete.\nOption A is incorrect because it is possible to wait for the creation and launch of other dependent resources. Option B is incorrect because there is no HoldCondition resource in CloudFormation. Option C is incorrect because there is no DependentCondition resource in CloudFormation. Option D is incorrect because there is no WaitCondition attribute in CloudFormation, but there is a CreationPolicy attribute that can be used to achieve the desired result.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-launch-an-ec2-instance-and-exam-205.html",
+  "url": "https://certificationation.com/questions/exam-launch-an-ec2-instance-and-exam-205.html"
+}

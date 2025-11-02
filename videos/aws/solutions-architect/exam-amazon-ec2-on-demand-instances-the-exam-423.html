@@ -1,0 +1,128 @@
+---
+title: "A company is running a custom application on Amazon EC2Exam"
+description: "Video for a company is running a custom application on Amazon EC2 On-Demand Instances. The application has frontend nodes that need to run 24 hours a day, 7"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company is running a custom application on Amazon EC2 On-Demand Instances. The application has frontend nodes that need to run 24 hours a day, 7 days a week and backend nodes that need to run only for a short time based on workload. The number of backend nodes varies during the day. The company needs to scale out and scale in more instances based on workload. Which solution will meet these requirements MOST cost-effectively?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729b0d"
+  },
+  "quid": null,
+  "ordinal": "424",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS Fargate",
+    " Amazon EC2",
+    " Reserved Instances",
+    " Spot Instances",
+    " Cost management"
+  ],
+  "slug": "ec2-custom-application-scale-out-aws",
+  "source": "ET",
+  "title": "AWS A Company Is Running A Custom Application Question",
+  "meta": "AWS Exam Question: A company running a custom app on EC2 needs to scale instances based on workload. What is the MOST cost-effective solution? Answer: Auto Scaling.",
+  "answer": "B",
+  "query": "A business operates a tailored application on Amazon EC2 On-Demand Instances. The application features frontend nodes that must operate continuously, while backend nodes require operation only intermittently based on demand. The quantity of backend nodes fluctuates throughout the day.\n\nThe business seeks to efficiently adjust the number of instances to accommodate varying workloads.\n\nWhat approach will satisfy these needs MOST cost-effectively?",
+  "originalQuery": "A company is running a custom application on Amazon EC2 On-Demand Instances. The application has frontend nodes that need to run 24 hours a day, 7 days a week and backend nodes that need to run only for a short time based on workload. The number of backend nodes varies during the day.\n\nThe company needs to scale out and scale in more instances based on workload.\n\nWhich solution will meet these requirements MOST cost-effectively?",
+  "options": [
+    "A. Use Reserved Instances for the frontend nodes. Use AWS Fargate for the backend nodes.",
+    "B. Use Reserved Instances for the frontend nodes. Use Spot Instances for the backend nodes.",
+    "C. Use Spot Instances for frontend nodes. Allocate Reserved Instances for backend nodes.",
+    "D. Use Spot Instances for the frontend nodes. Use AWS Fargate for backend nodes."
+  ],
+  "originalOptions": [
+    "A. Use Reserved Instances for the frontend nodes. Use AWS Fargate for the backend nodes.",
+    "B. Use Reserved Instances for the frontend nodes. Use Spot Instances for the backend nodes.",
+    "C. Use Spot Instances for the frontend nodes. Use Reserved Instances for the backend nodes.",
+    "D. Use Spot Instances for the frontend nodes. Use AWS Fargate for the backend nodes."
+  ],
+  "image": null,
+  "primaryObjective": "4: Design Cost-Optimized Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "The optimal solution is option A. It allows for dynamic scaling, enabling the backend to scale down as needed, and with AWS Fargate, costs are incurred only for the resources utilized. Furthermore, the requirement for backend nodes to remain operational without downtime eliminates the use of Spot Instances, despite their lower cost. Reliability is crucial for backend processes, and using Fargate ensures that the application can handle varying workloads without interruptions. This approach effectively balances cost efficiency and operational stability, aligning with the company's needs.",
+    "Fargate is like the superhero of AWS, swooping in to save the day without needing to manage any EC2 nodes! 🦸‍♂️✨ It's serverless, which means you can focus on your application while Fargate takes care of the heavy lifting for those backend tasks. Just think of it as a magical potion that automatically scales up or down based on your workload needs—no capes or fancy gadgets required! So, if you’re looking to keep things light and breezy while your backend nodes come and go like a fleeting summer breeze, Fargate’s got your back! ☁️💨",
+    "When it comes to optimizing costs while juggling a custom application on EC2, the approach is quite the balancing act. For the frontend nodes that demand a constant presence—like that one friend who insists on being included in every group chat—Reserved Instances are the way to go. They provide a stable, predictable cost for resources you absolutely need around the clock. \n\nNow, for the backend nodes that only need to spring into action based on fluctuating workloads—think of them as the occasional party guests who show up just for the snacks—Spot Instances can swoop in to save the day (and your budget). They allow you to take advantage of unused capacity at a lower cost, perfect for those unpredictable bursts of demand.\n\nAlternatively, if you want to embrace a more hands-off approach, consider using AWS Fargate for your backend nodes. This serverless solution automatically manages the infrastructure, allowing you to focus on application development rather than worrying about provisioning and scaling.\n\nIn summary, a mix of Reserved Instances for your always-on frontend nodes and either Spot Instances or AWS Fargate for the backend can help you scale effectively without burning a hole in your pocket. It’s all about finding that sweet spot—pun intended—between cost efficiency and operational flexibility.",
+    "I would choose option A! It's important to note that the question does not specify that interruptions in workload are acceptable. This consideration is crucial when determining the best solution for optimizing costs while ensuring that the application runs smoothly and efficiently.",
+    "The cheerful choice here is option B! By utilizing Reserved Instances for the frontend nodes, which require consistent operation around the clock, and opting for Spot Instances for the backend nodes that only need to run during peak times, the company can achieve significant savings and flexibility. Spot Instances are a delightful way to handle fluctuating workloads since they allow you to take advantage of unused EC2 capacity at reduced rates. This combination not only meets the needs of the application but does so in a wonderfully cost-effective manner! 🌟"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "A",
+      "explanation": "Has to be A, It can scale down if required and you will be charged for what you use with fargate. Secondly they have not said the backend can have timeouts or can be down for a little period of time or something. So it has to rule out any spot instances even though they are cheaper.",
+      "upvotes": "15"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Fargate is serverless EKS so it cannot manage EC2 nodes",
+      "upvotes": "6"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "Reserved+ spot .\nFargate for serverless",
+      "upvotes": "15"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "I will go with A.\nWhere does the question mentions that the workload interruptions are accepted.",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "B) because firegate is containser",
+      "upvotes": "3"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "B (66%)",
+      "votes": "47 votes."
+    },
+    {
+      "option": "A (34%)",
+      "votes": "24 votes."
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is B. Using Reserved Instances for the frontend nodes ensures continuous availability and cost savings for nodes that need to run at all times. Spot Instances for the backend nodes allows the business to take advantage of lower costs when backend operation is required intermittently. This combination is the most cost-effective, considering the fluctuating needs of the backend workloads. \n\nOption A is incorrect because AWS Fargate is not suitable for managing EC2 instances directly; it's a serverless compute engine for containers and may not align with the requirement for direct EC2 management. \n\nOption C is incorrect as using Spot Instances for frontend nodes could lead to potential interruptions in service, which is not acceptable per the requirement for continuous operation. \n\nOption D is also incorrect because Fargate is not designed to handle EC2 nodes directly in this scenario and using Spot Instances for frontend nodes may lead to service disruptions.",
+  "video_url": "https://certificationation.com/videos/exam-amazon-ec2-on-demand-instances-the-exam-423.html",
+  "url": "https://certificationation.com/questions/exam-amazon-ec2-on-demand-instances-the-exam-423.html"
+}

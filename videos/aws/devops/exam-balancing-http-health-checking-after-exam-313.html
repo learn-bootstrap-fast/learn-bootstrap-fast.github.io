@@ -1,0 +1,62 @@
+---
+title: "You have enabled Elastic Load Balancing HTTP healthExam"
+description: "Video for you have enabled Elastic Load Balancing HTTP health checking. After looking at the AWS Management Console, you see that all instances are passing"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have enabled Elastic Load Balancing HTTP health checking. After looking at the AWS Management Console, you see that all instances are passing health checks. But your customers are reporting that your site is not responding. What is the reason?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best answer is <b>The current health check is not properly verifying the real functionality of the application</b>.</p><p>This is a common issue: health checks that only verify HTTP status, or that use a basic endpoint, might return healthy even if the application is not actually functioning. For example, the health check might only look at the web server, not deeper application errors or backend problems. Tips: Always ensure health check URLs represent actual user experience!</p><p>Why are the other options incorrect?</p><ul><li><i>The HTTP health checker is reporting incorrect status because of slow inter-instance metadata updates</i>: ELB health checks do not depend on syncing metadata between instances, so latency here wouldn't cause false healthy statuses.</li><li><i>The application is responding to health check requests before the AWS Console can process them</i>: The timing of console refresh doesn't affect actual health checks or instance status from ELB's perspective.</li><li><i>There is a delay in DNS resolution, causing issues with Amazon EC2 metadata access</i>: DNS delays don't usually interfere with ELB health checks or how EC2 metadata is fetched, and wouldn't explain all instances showing healthy.</li></ul><p><b>Pro tip:</b> Design health checks that test actual end-to-end application paths and return failures when the site is not truly working, not just when the web server is up.</p>",
+  "query": "<p>You have set up Elastic Load Balancing (ELB) with HTTP health checks enabled. According to the AWS Management Console, all your backend instances are showing as healthy. However, customers say they can't access your site. What is the likely cause of this apparent contradiction?</p>",
+  "original_oid": "6793d9c661969b416038a0ad",
+  "options": [
+    {
+      "correct": true,
+      "text": "The current health check is not properly verifying the real functionality of the application.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "There is a delay in DNS resolution, causing issues with Amazon EC2 metadata access.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "The HTTP health checker is reporting incorrect status because of slow inter-instance metadata updates.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "The application is responding to health check requests before the AWS Console can process them.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question56",
+  "originalQuery": "You have enabled Elastic Load Balancing HTTP health checking.\nAfter looking at the AWS Management Console, you see that all instances are passing health checks.\nBut your customers are reporting that your site is not responding.\nWhat is the reason?",
+  "originalOptions": "A. The HTTP health checking system is misreporting due to latency in inter-instance metadata synchronization.|B. The health check in place is not sufficiently evaluating the application function.|C. The application is returning a positive health check too quickly for the AWS Management Console to respond.|D. Latency in DNS resolution is interfering with Amazon EC2 metadata retrieval.",
+  "video_url": "https://certificationation.com/videos/exam-balancing-http-health-checking-after-exam-313.html",
+  "url": "https://certificationation.com/questions/exam-balancing-http-health-checking-after-exam-313.html"
+}

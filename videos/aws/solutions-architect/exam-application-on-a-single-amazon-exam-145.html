@@ -1,0 +1,128 @@
+---
+title: "A company hosts a website analytics application on aExam"
+description: "Video for a company hosts a website analytics application on a single Amazon EC2 On-Demand Instance. The analytics software is written in PHP and uses a MySQL"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company hosts a website analytics application on a single Amazon EC2 On-Demand Instance. The analytics software is written in PHP and uses a MySQL database. The analytics software, the web server that provides PHP, and the database server are all hosted on the EC2 instance. The application is showing signs of performance degradation during busy times and is presenting 5xx errors. The company needs to make the application scale seamlessly. Which solution will meet these requirements MOST cost-effectively?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f7299f6"
+  },
+  "quid": null,
+  "ordinal": "145",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon RDS",
+    " Amazon Aurora",
+    " Amazon EC2",
+    " AWS Lambda",
+    " Amazon CloudWatch"
+  ],
+  "slug": "ec2-website-analytics-performance-aws",
+  "source": "ET",
+  "title": "AWS A Company Hosts A Website Analytics Question",
+  "meta": "AWS Exam Question: A company has a PHP analytics app on EC2 with MySQL, facing performance issues. What cost-effective solution ensures seamless scaling? Answer: RDS.",
+  "answer": "D",
+  "query": "A startup runs a data analysis platform on a single Amazon EC2 On-Demand Instance. The analysis tool is developed in Java and connects to a MySQL database. Both the analysis software and the database are set up on this EC2 instance. The platform faces performance issues during peak loads and experiences server errors. The startup needs to ensure the application can scale without interruptions. Which solution will fulfill these needs in the MOST cost-effective way?",
+  "originalQuery": "A company hosts a website analytics application on a single Amazon EC2 On-Demand Instance. The analytics software is written in PHP and uses a MySQL database. The analytics software, the web server that provides PHP, and the database server are all hosted on the EC2 instance. The application is showing signs of performance degradation during busy times and is presenting 5xx errors. The company needs to make the application scale seamlessly.\nWhich solution will meet these requirements MOST cost-effectively?",
+  "options": [
+    "A. Migrate the database to an Amazon RDS for MySQL DB instance. Create an AMI of the web application. Use the AMI to launch a second EC2 On-Demand Instance. Use an Application Load Balancer to distribute the load to each EC2 instance.",
+    "B. Transfer the database to Amazon RDS for MySQL. Generate an AMI of the application and utilize it to launch another EC2 instance. Implement Amazon Route 53 to handle traffic between the instances.",
+    "C. Migrate the database to an Amazon Aurora MySQL DB instance. Create an AWS Lambda function to stop the EC2 instance and change the instance type. Create an Amazon CloudWatch alarm to invoke the Lambda function when CPU utilization surpasses 75%.",
+    "D. Migrate the database to an Amazon Aurora MySQL DB instance. Create an AMI of the web application. Apply the AMI to a launch template. Create an Auto Scaling group with the launch template Configure the launch template to use a Spot Fleet. Attach an Application Load Balancer to the Auto Scaling group."
+  ],
+  "originalOptions": [
+    "A. Migrate the database to an Amazon RDS for MySQL DB instance. Create an AMI of the web application. Use the AMI to launch a second EC2 On-Demand Instance. Use an Application Load Balancer to distribute the load to each EC2 instance.",
+    "B. Migrate the database to an Amazon RDS for MySQL DB instance. Create an AMI of the web application. Use the AMI to launch a second EC2 On-Demand Instance. Use Amazon Route 53 weighted routing to distribute the load across the two EC2 instances.",
+    "C. Migrate the database to an Amazon Aurora MySQL DB instance. Create an AWS Lambda function to stop the EC2 instance and change the instance type. Create an Amazon CloudWatch alarm to invoke the Lambda function when CPU utilization surpasses 75%.",
+    "D. Migrate the database to an Amazon Aurora MySQL DB instance. Create an AMI of the web application. Apply the AMI to a launch template. Create an Auto Scaling group with the launch template Configure the launch template to use a Spot Fleet. Attach an Application Load Balancer to the Auto Scaling group."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "While option A initially appeared appealing, it became clear that two critical requirements must be addressed: seamless scalability and cost-effectiveness.\n\nOptions A through C do not adequately provide for seamless scalability. Both A and B involve adding a second EC2 instance, which does not align with the concept of truly seamless scaling. Option C focuses on changing the instance type, which does not address the underlying need for automatic scaling during varying loads.\n\nConsequently, option D emerges as the only viable solution that effectively meets the requirement for seamless scalability. By migrating the database to an Amazon Aurora MySQL DB instance and utilizing a launch template with an Auto Scaling group, this approach ensures that the application can dynamically adjust to traffic demands. Additionally, incorporating an Application Load Balancer allows for efficient distribution of incoming traffic, enhancing both performance and reliability.",
+    "While Aurora may be a bit more of a splurge than MySQL, I’d still lean towards option D. With Auto Scaling Groups (ASG) and Aurora working together, you're setting yourself up for smooth sailing, even during those hectic peak times! 🚀 On the other hand, option A might leave you feeling a bit underwhelmed in the scalability department. So, let’s go with the power duo of ASG and Aurora for a robust and flexible solution! 😄",
+    "Oh, the classic case of overthinking! I initially chose option A, but then I spotted D and took a moment to reevaluate the whole \"scale seamlessly\" concept. Turns out, D is the real winner here. It’s all about migrating the database to an Amazon Aurora MySQL instance, creating an AMI of your web application, and leveraging a launch template for an Auto Scaling group—because who doesn’t love a little automation? Plus, with a Spot Fleet and an Application Load Balancer in the mix, you’re not just scaling; you’re doing it in style. So, when it comes to cost-effectiveness and seamless scaling, D truly takes the cake.",
+    "Absolutely, Amazon RDS is designed to scale effectively, making it a fantastic choice for handling increased database loads. It offers features like automated backups, replication, and read replicas, which enhance performance and availability. On the other hand, while Spot Instances can provide significant cost savings, they do come with the potential for interruptions, which could impact the application's reliability during peak usage. Therefore, it's crucial to carefully evaluate the trade-offs when considering Spot Instances for your architecture. Overall, RDS presents a robust solution for scaling, while balancing cost, performance, and reliability is key to maintaining a seamless user experience.",
+    "Oh, what a delightful day for cloud computing! ☁️ While spot instances can be a whimsical choice for some, they come with the unpredictable risk of termination, which simply won't do for a critical analytics application. Stability is key here! Additionally, utilizing Route 53 for load balancing between just two instances seems a bit extravagant, don’t you think? For these reasons, I’d happily choose option A. It's a splendid way to ensure a seamless experience while keeping things cost-effective! 🌟"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "D",
+      "explanation": "I was tempted to pick A but then I realized there are two key requirements:\n- scale seamlessly\n- cost-effectively\n\nNone of A-C give seamless scalability. A and B are about adding second instance (which I assume does not match to \"scale seamlessly\"). C is about changing instance type.\n\nTherefore D is only workable solution to the scalability requirement",
+      "upvotes": "21"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Aurora is way more expensive than MySQL. but . I would still pick option D because it will scale seamlessly with ASG and Aurora . A is not scale at all",
+      "upvotes": "1"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Yup. Got me too. I picked A, saw D, and then reread the \"scale seamlessly\" part. D is correct.",
+      "upvotes": "6"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "But wouldn't RDS scale as well? Also Spot instances seems like a bit of a risky decision",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "I wouldn't run my website on spot instances. Spot instances might be terminated at any time, and since I need to run analytics application it's not an option for me. And using route 53 for load balancing of 2 instances is an overkill. I go with A.",
+      "upvotes": "11"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "D (78%)",
+      "votes": "68 votes."
+    },
+    {
+      "option": "A (20%)",
+      "votes": "17 votes."
+    },
+    {
+      "option": "2%",
+      "votes": "2 votes."
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "Option D is the correct answer because it utilizes Amazon Aurora MySQL, which provides better scalability and performance for handling peak loads compared to Aurora. Moreover, the use of an Auto Scaling group allows the application to scale seamlessly in response to demand, while an Application Load Balancer distributes traffic effectively among instances. This solution fulfills the requirement for cost-effectiveness and seamless scaling. \n\nOption A is incorrect because while it proposes using an Application Load Balancer, it only creates a second EC2 instance, which may not provide the necessary seamless scalability during high traffic. It also lacks the automated scaling capabilities. \n\nOption B is also incorrect for similar reasons; it applies Route 53 for load balancing but does not address the need for seamless scaling and efficiency like the Auto Scaling group in Option D. \n\nOption C is not suitable as it relies on a manual adjustment approach using a Lambda function and CloudWatch, which does not provide the needed immediate scaling during peak loads and may result in potential downtime during the transition.",
+  "video_url": "https://certificationation.com/videos/exam-application-on-a-single-amazon-exam-145.html",
+  "url": "https://certificationation.com/questions/exam-application-on-a-single-amazon-exam-145.html"
+}

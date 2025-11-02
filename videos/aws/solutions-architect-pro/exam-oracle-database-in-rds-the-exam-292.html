@@ -1,0 +1,74 @@
+---
+title: "You are in charge of maintaining an Oracle database inExam"
+description: "Video for you are in charge of maintaining an Oracle database in RDS. The development team tells you that the database instance needs to communicate with a new"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are in charge of maintaining an Oracle database in RDS. The development team tells you that the database instance needs to communicate with a new S3 bucket. For example, it should be able to save the backup files to S3, and at the same time, it can fetch Oracle Data Pump files from the same bucket when required. To connect the database instance with the particular S3 bucket successfully, which options are the prerequisites? (Select TWO.)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d611f501ee1c8ade9906"
+  },
+  "quid": "0",
+  "ordinal": "446",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "Amazon RDS",
+    " Amazon S3",
+    " AWS Identity and Access Management (IAM)"
+  ],
+  "slug": "rds-maintaining-oracle-database-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question446",
+  "title": "AWS You Are In Charge Of Maintaining An Oracle Question",
+  "meta": "AWS Exam Question: You must connect an RDS Oracle database instance to an S3 bucket for backups and data retrieval. What are the prerequisites? Answer: IAM roles, VPC endpoints.",
+  "answer": "A E",
+  "query": "You manage an Oracle DB instance on RDS that needs to interact with an S3 bucket for storing export data and retrieving import files. What steps must you perform to enable this integration? (Select TWO.)",
+  "originalQuery": "You are in charge of maintaining an Oracle database in RDS.\nThe development team tells you that the database instance needs to communicate with a new S3 bucket.\nFor example, it should be able to save the backup files to S3, and at the same time, it can fetch Oracle Data Pump files from the same bucket when required.\nTo connect the database instance with the particular S3 bucket successfully, which options are the prerequisites? (Select TWO.)",
+  "options": [
+    "A. Configure an IAM role with a policy that allows to read and write the S3 bucket objects. Associate the role with the RDS instance.",
+    "B. Set up a DB parameter group containing the IAM S3 role name parameter and assign it to the database instance.",
+    "C. Define a fresh DB subnet group and connect the database instance to it.",
+    "D. Disable Block Public Access on the S3 bucket. Activate public access or configure the S3 endpoint in the VPC.",
+    "E. Create an option group that includes the S3_INTEGRATION option. Associate the DB instance with the option group."
+  ],
+  "originalOptions": [
+    "A. Configure an IAM role with a policy that allows to read and write the S3 bucket objects. Associate the role with the RDS instance.",
+    "B. Create a parameter group that includes the parameter of the IAM S3 service role name. Attach the parameter group with the DB instance.",
+    "C. Configure a new DB subnet group. Link the DB instance with the subnet group.",
+    "D. For the new S3 bucket, ensure the Block Public Access settings are turned off. Enable the public access for the S3 bucket or add the S3 endpoint for the bucket.",
+    "E. Create an option group that includes the S3_INTEGRATION option. Associate the DB instance with the option group."
+  ],
+  "image": "https://eaeastus2.blob.core.windows.net/optimizedimages/static/images/AWS-Certified-Solutions-Architect-Professional/answer/imgckeditor_1.png",
+  "primaryObjective": "2: Design for New Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "E.\nCorrect Answer - A, E.\nAbout how to transfer files between RDS Oracle and S3, please refer to the reference in https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-s3-integration.html.\nOption A is CORRECT: Because the IAM role is required to allow the DB instance to interact with the S3 bucket.\nOption B is incorrect: Because parameter group is not a necessary condition for this scenario.\nOption C is incorrect: Because a new subnet group is not required.\nThe default subnet group also works.\nOption D is incorrect: Because the S3 bucket does not need public access.\nThe RDS and S3 can communicate with each other under the same VPC.Option E is CORRECT: Because an option group that includes the S3_INTEGRATION option should be attached with the DB instance.\nCheck the below screenshot on how to add the S3_INTEGRATION option to the option group:\nTo connect an Oracle database instance in Amazon RDS to an S3 bucket, you need to configure several prerequisites. These are:\nA. Configure an IAM role with a policy that allows to read and write the S3 bucket objects. Associate the role with the RDS instance.\nYou need to create an IAM role that allows the RDS instance to read and write objects in the S3 bucket. The policy should grant permissions to access the bucket, list objects in the bucket, and perform read and write operations on the objects. Once the role and policy are created, you need to associate the role with the RDS instance.\nB. Create a parameter group that includes the parameter of the IAM S3 service role name. Attach the parameter group with the DB instance.\nYou also need to create a parameter group that includes the parameter of the IAM S3 service role name. This parameter specifies the IAM role that allows RDS to access the S3 bucket. After creating the parameter group, you need to attach it to the DB instance.\nC. Configure a new DB subnet group. Link the DB instance with the subnet group.\nIf the RDS instance is not already linked to a DB subnet group, you need to create a new one and associate it with the RDS instance. The DB subnet group defines the subnets in which the RDS instance is located. The subnets must be in the same VPC as the S3 bucket.\nD. For the new S3 bucket, ensure the Block Public Access settings are turned off. Enable the public access for the S3 bucket or add the S3 endpoint for the bucket.\nYou also need to ensure that the Block Public Access settings are turned off for the S3 bucket. This allows the RDS instance to access the bucket. If you don't want to enable public access, you can add the S3 endpoint for the bucket to the VPC route table.\nE. Create an option group that includes the S3_INTEGRATION option. Associate the DB instance with the option group.\nFinally, you need to create an option group that includes the S3_INTEGRATION option. This option enables the RDS instance to access the S3 bucket. After creating the option group, you need to associate it with the DB instance.\nIn summary, to connect an Oracle database instance in RDS to an S3 bucket, you need to create an IAM role with a policy that allows access to the bucket, create a parameter group that includes the IAM S3 service role name, link the DB instance with a DB subnet group, ensure that Block Public Access is turned off for the S3 bucket, and create an option group that includes the S3_INTEGRATION option and associate it with the DB instance.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-oracle-database-in-rds-the-exam-292.html",
+  "url": "https://certificationation.com/questions/exam-oracle-database-in-rds-the-exam-292.html"
+}

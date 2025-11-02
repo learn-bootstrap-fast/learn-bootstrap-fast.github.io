@@ -1,0 +1,86 @@
+---
+title: "Your company's web application allows users to submitExam"
+description: "Video for your company's web application allows users to submit text feedback, which is then automatically analyzed for sentiment and categorized. The results"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company's web application allows users to submit text feedback, which is then automatically analyzed for sentiment and categorized. The results are stored, and a monthly sentiment report is generated for product improvement discussions. You need to design a solution that is cost-effective and easy to maintain. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "The team at example.com collects open ended customer reviews in their app and wants the text to be analyzed for sentiment and labeled, then retained so that a consolidated sentiment summary can be produced every quarter for product planning. You want a design that is inexpensive and simple to operate. What should you implement?",
+  "options": [
+    {
+      "text": "Set up Cloud SQL to store the feedback data and run custom sentiment scripts on Compute Engine instances and schedule the jobs every 90 days with Cloud Scheduler",
+      "explanation": "This uses a managed relational database with virtual machines that execute batch analysis on a fixed timetable.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Keep the raw reviews in Cloud Storage use Cloud Natural Language API for sentiment and trigger a Cloud Function on a schedule via Cloud Scheduler to generate a quarterly report",
+      "explanation": "This relies on object storage and a fully managed NLP API and a serverless function that is invoked on a recurring schedule.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Load feedback into BigQuery train or use sentiment models with BigQuery ML and run scheduled queries every 90 days to produce the summary",
+      "explanation": "This centralizes data in the analytics warehouse and uses in-database machine learning with periodic reporting.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Store reviews in Firestore in Datastore mode build a custom sentiment model on Vertex AI and use App Engine Cron to create the quarterly report",
+      "explanation": "This combines a NoSQL document store with a bespoke model hosted on a managed AI service and uses a built-in cron to orchestrate reporting.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Keep the raw reviews in Cloud Storage use Cloud Natural Language API for sentiment and trigger a Cloud Function on a schedule via Cloud Scheduler to generate a quarterly report</b>.</p><p>This approach uses fully managed services that minimize operational overhead and cost. Cloud Storage is inexpensive and durable for keeping raw text. The Natural Language API provides managed sentiment analysis and text classification without the need to build or train a model. A Cloud Function can orchestrate processing and aggregation, and Cloud Scheduler provides the quarterly trigger. The function can write the summarized results back to Cloud Storage which keeps the design simple and low cost.</p><p><i>Set up Cloud SQL to store the feedback data and run custom sentiment scripts on Compute Engine instances and schedule the jobs every 90 days with Cloud Scheduler</i> is heavier to operate and more expensive for this use case. Managing a relational database and virtual machine instances adds maintenance and scaling work, and object storage is a better fit for raw unstructured text.</p><p><i>Load feedback into BigQuery train or use sentiment models with BigQuery ML and run scheduled queries every 90 days to produce the summary</i> adds unnecessary complexity. BigQuery is excellent for analytics, yet training or importing sentiment models with BigQuery ML increases cost and operational effort compared to calling a managed API that already provides sentiment. This is not the simplest path for basic sentiment labeling and scheduled summaries.</p><p><i>Store reviews in Firestore in Datastore mode build a custom sentiment model on Vertex AI and use App Engine Cron to create the quarterly report</i> is over engineered for the requirement. Building a custom model is unnecessary when a managed sentiment API exists, and Firestore in Datastore mode is not ideal for storing large volumes of raw text meant for batch analysis. App Engine Cron is older and project specific while Cloud Scheduler is the general scheduling service that fits better for this pattern, which makes this option less suitable and less likely on newer exams.</p>",
+  "batch_id": "53",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "Your company's web application allows users to submit text feedback, which is then automatically analyzed for sentiment and categorized. The results are stored, and a monthly sentiment report is generated for product improvement discussions. You need to design a solution that is cost-effective and easy to maintain. What should you do?",
+  "originalOptions": "A. Employ BigQuery to store feedback, use its ML capabilities for sentiment analysis, and BigQuery scheduled queries for monthly reporting.<br/>B. Utilize Datastore for storing feedback, deploy sentiment analysis models on AI Platform, and use App Engine cron service for monthly report generation.<br/>C. Use Cloud Storage to hold the feedback, Cloud Natural Language API for sentiment analysis, and Cloud Functions to generate monthly reports.<br/>D. Implement Cloud SQL to store feedback, use Compute Engine instances to run sentiment analysis scripts, and schedule instances with Cloud Scheduler for monthly reporting.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "83",
+  "tip": "<p>When a question stresses inexpensive and simple, prefer managed storage for raw data, a fully managed API for analysis, and a serverless orchestration with a managed scheduler. Look for <i>serverless</i> and <i>managed</i> keywords to narrow choices quickly.</p>",
+  "references": [
+    "https://cloud.google.com/storage/docs",
+    "https://cloud.google.com/natural-language/docs/overview",
+    "https://cloud.google.com/functions/docs",
+    "https://cloud.google.com/scheduler/docs",
+    "https://cloud.google.com/bigquery-ml/docs",
+    "https://cloud.google.com/sql/docs",
+    "https://cloud.google.com/compute/docs",
+    "https://cloud.google.com/datastore/docs",
+    "https://cloud.google.com/vertex-ai/docs",
+    "https://cloud.google.com/appengine/docs/standard/cron-service"
+  ],
+  "url": "https://certificationation.com/questions/exam-allows-users-to-submit-text-exam-083.html",
+  "video_url": "https://certificationation.com/videos/exam-allows-users-to-submit-text-exam-083.html"
+}

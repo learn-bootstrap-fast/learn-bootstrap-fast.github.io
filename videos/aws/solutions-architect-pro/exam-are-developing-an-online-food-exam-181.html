@@ -1,0 +1,74 @@
+---
+title: "You are a software engineer. You are developing anExam"
+description: "Video for you are a software engineer. You are developing an online food order web application. The Node.js backend needs to get the client's IP to understand"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are a software engineer. You are developing an online food order web application. The Node.js backend needs to get the client's IP to understand users' locations.The application is deployed in AWS EC2 with a network load balancer to distribute traffic. For the network load balancer, the target is specified using instance id. TLS is also terminated on the Network Load Balancer. You are worried that the backend cannot get the client's IP due to the network load balancer. Which below description is correct in this situation?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d5ccf501ee1c8ade985d"
+  },
+  "quid": "0",
+  "ordinal": "276",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "AWS CLI",
+    " Amazon EC2",
+    " Network services",
+    " AWS Elastic Load Balancing",
+    " AWS Well-Architected Framework"
+  ],
+  "slug": "ec2-software-engineer-online-food-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question276",
+  "title": "AWS You Are A Software Engineer Question",
+  "meta": "AWS Exam Question: As a software engineer using Node.js on AWS EC2, how to retrieve client's IP behind a network load balancer? Answer: NAT Gateway, Elastic IP.",
+  "answer": "C",
+  "query": "A development team is building a ride-sharing app.\nTheir backend service in AWS EC2 needs to capture the client IP for logging and analytics.\nThe app uses a network load balancer with targets registered by instance ID.\nTLS termination occurs at the network load balancer.\nThe team is concerned the backend might not receive the true client IP due to the load balancer.\nWhich of the following statements accurately describes the client IP behavior in this setup?",
+  "originalQuery": "You are a software engineer.\nYou are developing an online food order web application.\nThe Node.js backend needs to get the client's IP to understand users' locations.The application is deployed in AWS EC2 with a network load balancer to distribute traffic.\nFor the network load balancer, the target is specified using instance id.\nTLS is also terminated on the Network Load Balancer.\nYou are worried that the backend cannot get the client's IP due to the network load balancer.\nWhich below description is correct in this situation?",
+  "options": [
+    "A. Activate proxy protocol via AWS CLI for the network load balancer so backend can retrieve client IP data.",
+    "B. Extract client IP from the TCP header's X-Forwarded-For field, designed for tracking original user IP.",
+    "C. Source IP remains intact and visible to backend when TLS terminates at the Network Load Balancer in this configuration.",
+    "D. Modify the listener protocol to TCP or switch the load balancer to an application/ classic load balancer to preserve client IP."
+  ],
+  "originalOptions": [
+    "A. Enable proxy protocol using AWS CLI for the network load balancer so that you can get the client IP in the backend service.",
+    "B. You just need to get the client IP from the TCP X-Forwarded-For header, which is used to identify the user`s originating IP address connecting to the webserver.",
+    "C. Source IP continues to be preserved to your back-end applications when TLS is terminated on the Network Load Balancer in this case.",
+    "D. Change listener protocol to TCP or change the load balancer to the application or classic load balancer. Otherwise, the client IP cannot be preserved."
+  ],
+  "image": "",
+  "primaryObjective": "2: Design for New Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Correct Answer - C.\nNetwork Load Balancer supports TLS termination between the clients and the load balancer.\nYou can configure a target group so that you register targets by instance ID or IP address.\nIf you specify targets using an instance ID, the clients' source IP addresses are preserved and provided to your applications.\nIf you specify targets by IP address, the source IP addresses are the private IP addresses of the load balancer nodes.\nTherefore, in this case, the source IP is preserved since the targets are specified by instance ID.References are in https://aws.amazon.com/elasticloadbalancing/features/#compare and https://docs.amazonaws.cn/en_us/elasticloadbalancing/latest/network/elb-ng.pdf.\nOption A is incorrect because the proxy protocol is not required in this case since the source IP is preserved.\nOption B is incorrect because X-Forwarded-For is an HTTP header instead of a TCP header.\nAlso, it is not needed in this scenario.\nOption C is CORRECT because since the source IP is preserved, nothing else needs to be done.\nOption D is incorrect because changing the protocol to TCP will have a security issue.\nAgain it is not required.\nIn this scenario, the Node.js backend of an online food order web application needs to get the client's IP to understand user locations. The application is deployed in AWS EC2 with a network load balancer to distribute traffic. However, the software engineer is worried that the backend cannot get the client's IP due to the network load balancer.\nOption A suggests enabling the proxy protocol using AWS CLI for the network load balancer so that the client IP can be obtained in the backend service. The Proxy Protocol is a Layer 4 protocol that sends connection information between the client and the server as part of the network packet. By enabling the proxy protocol, the network load balancer can send the client's IP address to the backend instances using Proxy Protocol. This option is correct, and it is the recommended approach for preserving the client IP address in the backend service while using a network load balancer.\nOption B suggests getting the client IP from the TCP X-Forwarded-For header, which is used to identify the user's originating IP address connecting to the webserver. The X-Forwarded-For header is an HTTP header field that identifies the originating IP address of a client connecting to a web server through an HTTP proxy or load balancer. This option is incorrect because the Node.js backend is not a web server, and the X-Forwarded-For header is not supported by the network load balancer.\nOption C suggests that the source IP continues to be preserved to the backend applications when TLS is terminated on the Network Load Balancer. This option is incorrect because when TLS is terminated on the network load balancer, the client IP address is replaced with the IP address of the network load balancer.\nOption D suggests changing the listener protocol to TCP or changing the load balancer to an application or classic load balancer. This option is incorrect because changing the listener protocol to TCP or using an application or classic load balancer does not guarantee preserving the client IP address in the backend service.\nTherefore, the correct option is A, which suggests enabling the proxy protocol using AWS CLI for the network load balancer to preserve the client IP address in the backend service.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-are-developing-an-online-food-exam-181.html",
+  "url": "https://certificationation.com/questions/exam-are-developing-an-online-food-exam-181.html"
+}

@@ -1,0 +1,91 @@
+---
+title: "An ecommerce company has an order-processing applicationExam"
+description: "Video for an ecommerce company has an order-processing application that uses Amazon API Gateway and an AWS Lambda function. The application stores data in an"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "An ecommerce company has an order-processing application that uses Amazon API Gateway and an AWS Lambda function. The application stores data in an Amazon Aurora PostgreSQL database. During a recent sales event, a sudden surge in customer orders occurred. Some customers experienced timeouts, and the application did not process the orders of those customers. A solutions architect determined that the CPU utilization and memory utilization were high on the database because of a large number of open connections. The solutions architect needs to prevent the timeout errors while making the least possible changes to the application. Which solution will meet these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729a14"
+  },
+  "quid": null,
+  "ordinal": "175",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS Lambda",
+    " Amazon API Gateway",
+    " Amazon Aurora",
+    " AWS Database Migration Service (AWS DMS)",
+    " Amazon DynamoDB"
+  ],
+  "slug": "apg-surge-customer-orders-aws",
+  "source": "ET",
+  "title": "AWS Ecommerce Company Has An Order Processing Question",
+  "meta": "AWS Exam Question: An ecommerce company faced timeouts during a sales event. A solutions architect seeks a solution to reduce load on Amazon Aurora. Answer: RDS.",
+  "answer": "B",
+  "query": "A retail company has an inventory management application that utilizes Amazon API Gateway along with an AWS Lambda function. The application manages data in an Amazon Aurora MySQL database. During a peak sales promotion, there was a significant increase in inventory updates. Several users faced timeout issues, and the application failed to complete their updates.\n\nA solutions architect identified that the database was experiencing high CPU and memory usage due to numerous active connections. The solutions architect wants to eliminate the timeout issues while minimizing changes to the existing application.\n\nWhat is the best way to achieve this goal?",
+  "originalQuery": "An ecommerce company has an order-processing application that uses Amazon API Gateway and an AWS Lambda function. The application stores data in an Amazon Aurora PostgreSQL database. During a recent sales event, a sudden surge in customer orders occurred. Some customers experienced timeouts, and the application did not process the orders of those customers.\n\nA solutions architect determined that the CPU utilization and memory utilization were high on the database because of a large number of open connections. The solutions architect needs to prevent the timeout errors while making the least possible changes to the application.\n\nWhich solution will meet these requirements?",
+  "options": [
+    "A. Set up provisioned concurrency for the Lambda function and change the database to be a global one across different AWS Regions.",
+    "B. Use Amazon RDS Proxy to create a proxy for the database. Modify the Lambda function to use the RDS Proxy endpoint instead of the database endpoint.",
+    "C. Establish a read replica for the database in another AWS Region and route traffic to it using query string parameters in API Gateway.",
+    "D. Migrate the data from Aurora PostgreSQL to Amazon DynamoDB using AWS Database Migration Service (AWS DMS). Modify the Lambda function to utilize the DynamoDB table."
+  ],
+  "originalOptions": [
+    "A. Configure provisioned concurrency for the Lambda function. Modify the database to be a global database in multiple AWS Regions.",
+    "B. Use Amazon RDS Proxy to create a proxy for the database. Modify the Lambda function to use the RDS Proxy endpoint instead of the database endpoint.",
+    "C. Create a read replica for the database in a different AWS Region. Use query string parameters in API Gateway to route traffic to the read replica.",
+    "D. Migrate the data from Aurora PostgreSQL to Amazon DynamoDB by using AWS Database Migration Service (AWS DMS). Modify the Lambda function to use the DynamoDB table."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [],
+  "originalComments": [],
+  "voteDistribution": [
+    {
+      "option": "B (100%)",
+      "votes": "69 votes."
+    },
+    {
+      "option": "C (25%)",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The best solution to eliminate timeout issues while minimizing changes to the existing application is option B: Using Amazon RDS Proxy. RDS Proxy helps manage database connections and can effectively pool and share connections with the Lambda function, which reduces the number of active connections to the database and alleviates CPU and memory pressure. This change would require fewer modifications compared to the other options, which involve significant changes to the architecture.\n\nOption A is incorrect because configuring provisioned concurrency for the Lambda function would not address the database connection issue directly and modifying the database to be global adds unnecessary complexity without resolving the root cause.\n\nOption C is incorrect as creating a read replica in a different AWS Region does not address the problem of high active connections on the primary database. Furthermore, routing traffic to a read replica would only work for read operations and would not resolve write operation timeout issues.\n\nOption D is incorrect because migrating to Amazon DynamoDB is a significant change that involves a re-architecture of the solution. This would require completely modifying how data is accessed and managed, which is not aligned with the goal of minimizing changes.",
+  "video_url": "https://certificationation.com/videos/exam-application-that-uses-amazon-api-exam-175.html",
+  "url": "https://certificationation.com/questions/exam-application-that-uses-amazon-api-exam-175.html"
+}

@@ -1,0 +1,62 @@
+---
+title: "You are having a web and worker role infrastructureExam"
+description: "Video for you are having a web and worker role infrastructure defined in AWS using Amazon EC2 resources. You are using SQS to manage the jobs being sent by the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are having a web and worker role infrastructure defined in AWS using Amazon EC2 resources. You are using SQS to manage the jobs being sent by the web role. Which of the following is the right way to ensure the worker processes are adequately set up to handle the number of jobs sent by the web role?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><b>Configure Amazon CloudWatch to monitor SQS queue depth and then utilize Auto Scaling to increase or decrease the number of worker instances as needed.</b> is the best approach. By tracking the number of messages in the SQS queue with CloudWatch, Auto Scaling can automatically adjust the number of worker EC2 instances to efficiently process jobs as they arrive. This method ensures you have enough workers to handle load variations, improving performance and cost-efficiency.</p><p>The other options are not suitable for this scenario:</p><ul><li><i>Leverage an Elastic Load Balancer (ELB) to distribute incoming requests evenly across both web and worker instances.</i> — ELB is designed to balance traffic between instances handling the same service, typically web servers. It does not manage SQS queues or worker scaling.</li><li><i>Set up Amazon Route 53 to distribute requests equally to your fleet of web and worker servers.</i> — Route 53 handles DNS-level routing and does not interact with the scaling of worker instances consuming messages from SQS.</li><li><i>Use CloudWatch to track queue size and then scale out SQS so it can accommodate the correct number of incoming jobs.</i> — Amazon SQS is a fully managed service and scales automatically; you do not manually scale SQS itself. You must scale the consumer side, i.e., EC2 worker instances.</li></ul><p><b>Tip:</b> For architectures involving job queues and multiple consumers, always focus on monitoring queue length and using Auto Scaling to align worker instance counts with the actual workload. This approach enables auto-healing and true elasticity in your application.</p>",
+  "query": "<p>You have deployed a web and worker architecture in AWS using Amazon EC2 instances. The web tier sends tasks to the worker tier via Amazon SQS queues.</p><p>What is the most effective method to automatically ensure that your worker processes scale to match the number of jobs being sent by the web application?</p>",
+  "original_oid": "6793da1261969b416038a140",
+  "options": [
+    {
+      "correct": true,
+      "text": "Configure Amazon CloudWatch to monitor SQS queue depth and then utilize Auto Scaling to increase or decrease the number of worker instances as needed.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Leverage an Elastic Load Balancer (ELB) to distribute incoming requests evenly across both web and worker instances.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up Amazon Route 53 to distribute requests equally to your fleet of web and worker servers.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Use CloudWatch to track queue size and then scale out SQS so it can accommodate the correct number of incoming jobs.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question206",
+  "originalQuery": "You are having a web and worker role infrastructure defined in AWS using Amazon EC2 resources.\nYou are using SQS to manage the jobs being sent by the web role.\nWhich of the following is the right way to ensure the worker processes are adequately set up to handle the number of jobs sent by the web role?",
+  "originalOptions": "A. Use Cloudwatch monitoring to check the size of the queue and then scale out SQS to ensure that it can handle the right number of jobs.|B. Use ELB to ensure that the load is evenly distributed to the set of web and worker instances.|C. Use Route53 to ensure that the load is evenly distributed to the set of web and worker instances.|D. Use Cloudwatch monitoring to check the size of the queue and then scale out using Autoscaling to ensure that it can handle the right number of jobs.",
+  "video_url": "https://certificationation.com/videos/exam-role-infrastructure-defined-in-aws-exam-218.html",
+  "url": "https://certificationation.com/questions/exam-role-infrastructure-defined-in-aws-exam-218.html"
+}

@@ -1,0 +1,84 @@
+---
+title: "You are tasked with designing a database solution for anExam"
+description: "Video for you are tasked with designing a database solution for an IoT application on Google Cloud Platform (GCP). The application currently handles 10,000 data"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are tasked with designing a database solution for an IoT application on Google Cloud Platform (GCP). The application currently handles 10,000 data points per second (DPS), but the workload is expected to increase to 30,000 DPS over the next three years. The database solution must accommodate the current workload and scale to meet future requirements. Which of the following options is the most appropriate choice?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A logistics analytics company at example.com is building a telematics ingestion service on Google Cloud. The system ingests 15000 data points per second today and it is expected to reach 45000 per second within four years. The database must support the current throughput and scale smoothly as demand grows while remaining fully managed on Google Cloud. Which solution should you choose?",
+  "options": [
+    {
+      "text": "Use Cloud Spanner with a regional configuration and rely on automatic data distribution",
+      "explanation": "Cloud Spanner provides strong consistency and horizontal scalability for structured relational schemas.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Implement manual sharding in Cloud Firestore by splitting writes across many collections that reflect access patterns",
+      "explanation": "This design depends on application logic to scatter writes among collections to reduce hotspots.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Cloud Bigtable with multi cluster replication across three clusters and enable autoscaling based on workload",
+      "explanation": "This setup replicates data across clusters and automatically adjusts nodes as traffic changes.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Migrate to Cloud Datastore and turn on automatic scaling",
+      "explanation": "Cloud Datastore offers a document data model with automatic scaling for general workloads.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct solution is <b>Use Cloud Bigtable with multi cluster replication across three clusters and enable autoscaling based on workload</b>. This choice is fully managed and is purpose built for very high write throughput, so it will comfortably handle 15000 writes per second today and scale smoothly to 45000 per second and beyond without rearchitecting.</p><p>This service is optimized for time series and telemetry data and it offers low latency writes and massive horizontal scale. Multi cluster replication improves availability and allows traffic to be distributed across clusters for resilience and throughput. Autoscaling adjusts nodes as demand changes so you avoid manual capacity planning and can grow predictably as ingestion increases.</p><p><i>Use Cloud Spanner with a regional configuration and rely on automatic data distribution</i> is not the best fit because it targets relational workloads with strong consistency and SQL transactions. While it can scale, it is usually more costly and unnecessary for wide column time series ingestion where a key value style database is a better match.</p><p><i>Implement manual sharding in Cloud Firestore by splitting writes across many collections that reflect access patterns</i> adds operational complexity and still runs into product limits on write rates and indexing. Firestore is excellent for document oriented apps but it is not intended for sustained tens of thousands of writes per second in a telemetry pipeline.</p><p><i>Migrate to Cloud Datastore and turn on automatic scaling</i> is unsuitable because Datastore has been superseded by Firestore in Datastore mode and new projects should not use it directly. It also does not target high throughput time series ingestion which makes it a poor fit and less likely to be correct on newer exams.</p>",
+  "batch_id": "70",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are tasked with designing a database solution for an IoT application on Google Cloud Platform (GCP). The application currently handles 10,000 data points per second (DPS), but the workload is expected to increase to 30,000 DPS over the next three years. The database solution must accommodate the current workload and scale to meet future requirements. Which of the following options is the most appropriate choice?",
+  "originalOptions": "A. Implement sharding on Cloud Firestore with multiple collections based on the data access patterns.<br/>B. Deploy Cloud Spanner with a regional instance and use partitioned tables to distribute the data.<br/>C. Migrate the database to Cloud Datastore and enable automatic scaling.<br/>D. Use Cloud Bigtable with a replication factor of 3 and enable autoscaling based on the workload.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "59",
+  "tip": "<p>Map workload patterns to the right storage engine. For <i>high throughput</i> time series or telemetry think Bigtable. Choose Spanner for <i>relational transactions</i> and global consistency and use Firestore for <i>document centric</i> apps with flexible queries.</p>",
+  "references": [
+    "https://cloud.google.com/bigtable/docs/overview",
+    "https://cloud.google.com/bigtable/docs/choosing-bigtable",
+    "https://cloud.google.com/bigtable/docs/replication-overview",
+    "https://cloud.google.com/bigtable/docs/autoscale",
+    "https://cloud.google.com/bigtable/docs/schema-design-time-series",
+    "https://cloud.google.com/spanner/docs/overview",
+    "https://cloud.google.com/firestore/quotas",
+    "https://cloud.google.com/datastore/docs/upgrade-to-firestore"
+  ],
+  "url": "https://certificationation.com/questions/exam-database-solution-for-an-iot-exam-059.html",
+  "video_url": "https://certificationation.com/videos/exam-database-solution-for-an-iot-exam-059.html"
+}

@@ -1,0 +1,67 @@
+---
+title: "You have just developed a new mobile application thatExam"
+description: "Video for you have just developed a new mobile application that handles analytics workloads on large scale datasets that are stored on Amazon Redshift."
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have just developed a new mobile application that handles analytics workloads on large scale datasets that are stored on Amazon Redshift. Consequently, the application needs to access Amazon Redshift tables. Which of the below methods would be the best, both practically and security-wise, to access the tables? Choose the correct answer from the options below."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <strong>correct answer</strong> is: Leverage roles that permit federated web identity users to assume a role, granting temporary credentials that allow access to the Redshift table.</p><p>This method uses AWS Identity and Access Management (IAM) roles in combination with web identity federation (e.g., Amazon Cognito, Facebook, Google, or other supported identity providers). The application can request temporary, limited-privilege credentials. This approach reduces the risk associated with long-term credentials, supports best security practices (like least privilege and credential rotation), and is tailor-made for mobile and web applications where user access is dynamic and needs tight security controls.</p><p>Let's discuss why the others are incorrect:</p><ul><li><i>Set up an HSM client certificate for Redshift and use this certificate for authentication.</i> - Redshift does not support external client certificates for authentication via Hardware Security Modules (HSMs). This option does not correctly address Redshift's security model and is not viable.</li><li><i>Create a Redshift read-only policy in IAM and include the static credentials in the application code.</i> - Embedding long-term IAM credentials within application code is a significant security vulnerability. If the application is ever decompiled or exposed, these credentials could be stolen, leading to unauthorized access and potential data breaches.</li><li><i>Provision an IAM user, generate encryption keys, and configure a policy for read-only Redshift access. Embed these keys within the app.</i> - Similar to the previous option, embedding encryption keys or access credentials within the application poses a high security risk. Keys can be extracted and misused, and managing rotation and revocation becomes very challenging.</li></ul><p><strong>Tip:</strong> Always use temporary credentials and identity federation when building mobile or web apps that interact with AWS, to avoid hard-coding credentials and improve overall security.</p>",
+  "query": "<p>You have created a mobile application that processes large-scale analytics workloads with data hosted in Amazon Redshift. The app requires access to Redshift tables. Which approach below is most secure and practical for granting access? Select the best answer.</p>",
+  "original_oid": "6793da3361969b416038a186",
+  "options": [
+    {
+      "correct": false,
+      "text": "Set up an HSM client certificate for Redshift and use this certificate for authentication.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Create a Redshift read-only policy in IAM and include the static credentials in the application code.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Leverage roles that permit federated web identity users to assume a role, granting temporary credentials that allow access to the Redshift table.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Provision an IAM user, generate encryption keys, and configure a policy for read-only Redshift access. Embed these keys within the app.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question277",
+  "originalQuery": "You have just developed a new mobile application that handles analytics workloads on large scale datasets that are stored on Amazon Redshift.\nConsequently, the application needs to access Amazon Redshift tables.\nWhich of the below methods would be the best, both practically and security-wise, to access the tables? Choose the correct answer from the options below.",
+  "originalOptions": [
+    "A. Create an IAM user and generate encryption keys for that user. Create a policy for RedShift read-only access. Embed the keys in the application.",
+    "B. Create a HSM client certificate in Redshift and authenticate using this certificate.",
+    "C. Create a RedShift read-only access policy in IAM and embed those credentials in the application.",
+    "D. Use roles that allow a web identity federated user to assume a role that allows access to the RedShift table by providing temporary credentials."
+  ],
+  "video_url": "https://certificationation.com/videos/exam-application-that-handles-analytics-workloads-exam-441.html",
+  "url": "https://certificationation.com/questions/exam-application-that-handles-analytics-workloads-exam-441.html"
+}

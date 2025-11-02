@@ -1,0 +1,80 @@
+---
+title: "Your company streams TV shows to audiences around theExam"
+description: "Video for your company streams TV shows to audiences around the world. Each show has a landing page that provides a quick overview and an available episode"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company streams TV shows to audiences around the world. Each show has a landing page that provides a quick overview and an available episode listing that is updated monthly. The website data is stored in a Cloud Spanner database. You need to have a performant way to retrieve the data. You want to design the schema using Google-recommended practices. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "BrightWave Audio publishes podcasts for a global audience. Each podcast has a detail page that shows a short summary and a list of episodes that is refreshed every three weeks. All site content resides in a Cloud Spanner database. You must retrieve a podcast and its episode list efficiently and you want to align with Google recommended data modeling practices. How should you design the schema?",
+  "options": [
+    {
+      "text": "Increase the number of nodes and raise processing capacity",
+      "explanation": "This approach focuses on scaling compute resources in Spanner rather than improving the data model for locality and access patterns",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Model Podcast as the parent table and interleave Episode rows beneath it",
+      "explanation": "This design colocates child rows with the parent using Spanner interleaving so queries that fetch a podcast and its episodes benefit from locality and efficient access",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Create a composite secondary index on Episode using podcast_id and publish_date and join at query time",
+      "explanation": "This relies on indexing and joins which can help some queries but it does not guarantee data locality between parent and child rows",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Denormalize and store all podcast and episode data in a single wide row",
+      "explanation": "This collapses the hierarchy into one row which can lead to large rows hot spotting and update contention",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct answer is <b>Model Podcast as the parent table and interleave Episode rows beneath it</b>.</p><p>This design follows Cloud Spanner guidance for one to many hierarchical relationships where child rows are almost always read with their parent. Interleaving physically colocates Episode rows under their Podcast parent using the parent key prefix. A read of a podcast and its episodes becomes a single efficient range scan with strong locality which minimizes cross partition work and network hops. The content changes infrequently and the set of children per podcast is naturally bounded which makes interleaving a good fit for predictable performance.</p><p>Using interleaving also simplifies queries because you can fetch the parent and children together without additional joins or index lookups. It aligns with recommended schema modeling for read heavy patterns that require parent with children access and it preserves transactional consistency within the same locality.</p><p><i>Increase the number of nodes and raise processing capacity</i> is not a data modeling solution and it does not address per request latency or reduce the need for cross partition joins. More nodes can increase throughput but it does not make fetching a podcast and its episodes more efficient when the data is not colocated.</p><p><i>Create a composite secondary index on Episode using podcast_id and publish_date and join at query time</i> can help list episodes by podcast and date. However you still need to join to the Podcast table to fetch the podcast details and you may perform additional lookups unless the index is fully covering. This adds complexity and may still span partitions. Interleaving is the recommended approach when you frequently read the parent with its children together.</p><p><i>Denormalize and store all podcast and episode data in a single wide row</i> does not fit Spanner well because episodes can grow without bound and this risks row size limits and large write amplification. It also complicates partial updates and increases contention. The relational model with an interleaved child table is the recommended and scalable pattern.</p>",
+  "batch_id": "347",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "Your company streams TV shows to audiences around the world. Each show has a landing page that provides a quick overview and an available episode listing that is updated monthly. The website data is stored in a Cloud Spanner database. You need to have a performant way to retrieve the data. You want to design the schema using Google-recommended practices. What should you do?",
+  "originalOptions": "A. Increase the number of nodes and the capacity of each node.<br/>B. Denormalize the table, and store all the data in a single row.<br/>C. Store the show data in a root row, and interleave the episodes with the root row.<br/>D. Execute two parallel queries on the show data and the episodes, and then merge the data.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "134",
+  "tip": "<p>When a parent and its children are read together most of the time, think about <i>interleaving</i>. If you need alternate sort orders or to read children without the parent, think about <i>secondary indexes</i>. Match the schema to the dominant access pattern.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/schema-and-data-model#interleaved-tables",
+    "https://cloud.google.com/spanner/docs/best-practices#interleaving-tables",
+    "https://cloud.google.com/spanner/docs/secondary-indexes",
+    "https://cloud.google.com/spanner/docs/schema-and-data-model#size-limits"
+  ],
+  "url": "https://certificationation.com/questions/exam-audiences-around-the-world-each-exam-134.html",
+  "video_url": "https://certificationation.com/videos/exam-audiences-around-the-world-each-exam-134.html"
+}

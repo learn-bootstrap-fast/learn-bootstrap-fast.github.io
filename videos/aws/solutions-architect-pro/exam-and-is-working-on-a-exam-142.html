@@ -1,0 +1,76 @@
+---
+title: "John is a software contractor and is working on a webExam"
+description: "Video for john is a software contractor and is working on a web application. Since the budget is limited and the schedule is tight, he decides to implement it"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "John is a software contractor and is working on a web application. Since the budget is limited and the schedule is tight, he decides to implement it using API gateway and Lambda so that he does not need to consider the server management, scalability, etc. The customer has raised concerns that the APIs should be kept secure and there should be mechanisms to control the access to API endpoints. Which below method can be used to help secure the API?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d5baf501ee1c8ade982d"
+  },
+  "quid": "0",
+  "ordinal": "228",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "AWS Lambda",
+    " Amazon API Gateway",
+    " AWS Identity and Access Management (IAM)",
+    " Amazon Cognito",
+    " AWS Security"
+  ],
+  "slug": "apigateway-lambda-web-application-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question228",
+  "title": "AWS John Is A Software Contractor Question",
+  "meta": "AWS Exam Question: John implements a web app using API Gateway and Lambda to avoid server management. How can he secure API endpoints? Find the answer using IAM.",
+  "answer": "E",
+  "query": "Samantha is developing a backend service using API Gateway and AWS Lambda to handle requests due to its serverless nature and scalability. Her client requires stringent security measures to ensure only authorized users can access certain API endpoints. Which technique could be employed to safeguard the API?",
+  "originalQuery": "John is a software contractor and is working on a web application.\nSince the budget is limited and the schedule is tight, he decides to implement it using API gateway and Lambda so that he does not need to consider the server management, scalability, etc.\nThe customer has raised concerns that the APIs should be kept secure and there should be mechanisms to control the access to API endpoints.\nWhich below method can be used to help secure the API?",
+  "options": [
+    "A. Attach a resource policy to the API Gateway that manages access to its resources. Access restrictions can leverage IAM condition keys, such as AWS account IDs, source VPCs, among others.",
+    "B. Enforce permissions through IAM roles to restrict access to the API Gateway elements. For calling an API, users need specific IAM privileges for actions that the API Gateway execution supports.",
+    "C. Implement a Lambda authorizer function. When the API is invoked, the gateway retrieves the authorization token from a particular request header for token-based authorizers or forwards request parameters to the Lambda for parameter-based authorizers.",
+    "D. Use an Amazon Cognito user pool as an access control mechanism for the API Gateway. Create the user pool via AWS Management Console, CLI, or API, then configure the API Gateway with this user pool as an authorizer.",
+    "E. All the above options are correct."
+  ],
+  "originalOptions": [
+    "A. Attach a resource policy to the API Gateway API, which controls access to the API Gateway resources. Access can be controlled by IAM condition elements, including conditions on AWS account, source VPC, etc.",
+    "B. Use IAM permissions to control access to the API Gateway component. For example, in order to call a deployed API, the API caller must be granted permission to perform required IAM actions supported by the API execution component of API Gateway.",
+    "C. Use a Lambda function as the authorizer. When a client calls the API, the API Gateway either supplies the authorization token that is extracted from a specified request header for the token-based authorizer or it passes in the incoming request parameters as the input to the request parameters-based authorizer Lambda function.",
+    "D. Use an Amazon Cognito user pool to control who can access the API in Amazon API Gateway. You need to use the Amazon Cognito console, CLI/SDK, or API to create a user pool. Then, in the API Gateway, create an API Gateway authorizer with the chosen user pool.",
+    "E. All the above options are correct."
+  ],
+  "image": "https://eaeastus2.blob.core.windows.net/optimizedimages/static/images/AWS-Certified-Solutions-Architect-Professional/answer/imgckeditor_awsq3-8.jpg",
+  "primaryObjective": "1: Design Solutions for Organizational Complexity",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "E.\nCorrect Answer - E.\nMultiple mechanisms can be used to control access to the API in the API gateway.\nAnd several methods can be used together to implement a very granular and secure application.\nhttps://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-control-access-to-api.html\nThe below mechanisms can be chosen.\nResource policies let you create resource-based policies to allow or deny access to your APIs and methods from the specified source IP addresses or VPC endpoints.\nIt can be configured in the API Gateway console:\nStandard AWS IAM roles and policies offer flexible and robust access controls that can be applied to an entire API or individual methods.\nThe below is an IAM policy example of calling the Lambda function:\nLambda authorizers are Lambda functions that control access to REST API methods using bearer token authentication and information described by headers, paths, query strings, stage variables, or context variables request parameters.\nIn the API Gateway console, lambda authorizers can be created in the below place.\nAmazon Cognito user pools let you create customizable authentication and authorization solutions for your REST APIs.\nAs a result, option E is correct.\nSure, I'd be happy to explain the answer to this question in detail!\nTo recap, John is developing a web application using API Gateway and Lambda, and the customer is concerned about security and controlling access to API endpoints. The question asks which method can be used to help secure the API, and provides five possible answers. Let's go through each option and explain what it entails.\nA. Attach a resource policy to the API Gateway API, which controls access to the API Gateway resources. Access can be controlled by IAM condition elements, including conditions on AWS account, source VPC, etc.\nThis answer suggests using a resource policy to control access to the API Gateway API. A resource policy is a JSON document that specifies who has access to the API Gateway resources, and what actions they can perform. It can be used to control access based on a variety of conditions, including the AWS account making the request, the IP address of the client, the HTTP method being used, and more. Resource policies can be attached to API Gateway APIs, stages, and methods, and can be used to grant or deny access.\nIn this case, the answer suggests using IAM condition elements to control access. IAM condition elements allow you to specify additional conditions that must be met before a request is allowed. For example, you could require that the request come from a specific IP address range, or that the request includes a certain header or query string parameter. By using IAM condition elements in conjunction with a resource policy, you can create very granular access control rules.\nB. Use IAM permissions to control access to the API Gateway component. For example, in order to call a deployed API, the API caller must be granted permission to perform required IAM actions supported by the API execution component of API Gateway.\nThis answer suggests using IAM permissions to control access to the API Gateway component. IAM permissions are used to control access to AWS resources, including API Gateway. By default, IAM users do not have access to API Gateway, so you will need to grant them permissions in order to use it.\nTo control access to API Gateway using IAM permissions, you can create an IAM policy that grants or denies access to specific API Gateway resources. For example, you could create a policy that allows a user to call a specific API, but not to create or delete APIs. IAM policies can be very granular, allowing you to specify exactly what actions a user is allowed to perform on a given resource.\nC. Use a Lambda function as the authorizer. When a client calls the API, the API Gateway either supplies the authorization token that is extracted from a specified request header for the token-based authorizer or it passes in the incoming request parameters as the input to the request parameters-based authorizer Lambda function.\nThis answer suggests using a Lambda function as the authorizer for the API. An authorizer is a Lambda function that authenticates and authorizes incoming API requests. When a client makes a request to the API, the authorizer function is invoked to determine whether the client is allowed to access the requested resource.\nThere are two types of authorizers in API Gateway: token-based and request parameter-based. Token-based authorizers extract a token from a specified header in the request and pass it to the authorizer function, while request parameter-based authorizers pass the entire request to the function. The authorizer function then returns an IAM policy document that specifies whether the client is authorized to access the requested resource.\nUsing a Lambda function as an authorizer allows you to implement custom authentication and authorization logic. For example, you could use a Lambda function to authenticate users against a database, or to check whether they have the necessary permissions to access a resource.\nD. Use an Amazon Cognito user pool to control who can access the API in Amazon API Gateway. You need to use the Amazon",
+  "chatGptExplanation": "The correct answer is E. All the above options are correct because multiple mechanisms exist within Amazon API Gateway to secure APIs, and all listed methods are valid ways to control access to API endpoints:\n\nA. Resource policies: These attach directly to an API Gateway API and provide a way to restrict API access at a resource level based on conditions such as AWS account IDs, IP address ranges, or VPC endpoints. This is a network-level or resource-level access control.\n\nB. IAM permissions: API Gateway integrates with AWS Identity and Access Management for authenticating and authorizing users. IAM roles and policies can grant or restrict the ability of users or services to invoke or manage API Gateway methods, giving fine-grained access control.\n\nC. Lambda authorizers: These allow custom authentication and authorization logic using Lambda functions. The authorizer function can validate bearer tokens or other request parameters and return IAM policies to allow or deny access dynamically. This supports custom and complex security needs.\n\nD. Amazon Cognito user pools: This fully managed user directory service integrates with API Gateway to provide user authentication, sign-up, and sign-in features. OAuth tokens from Cognito user pools can be used by API Gateway to authorize users.\n\nSince the scenario involves API Gateway and Lambda for serverless backend services with a strong requirement for securing access, employing any or all of these mechanisms can help meet the security needs in a layered, granular manner.\n\nWhy the other options alone are insufficient:\n- Option A alone controls access by IP, VPC, or accounts but doesn't provide user-level authentication.\n- Option B alone covers IAM permission control but does not support custom authentication mechanisms or identity federation.\n- Option C alone allows custom auth but requires implementing and maintaining the Lambda function.\n- Option D alone manages user authentication via Cognito but does not cover network-level or IAM-based fine controls.\n\nHence, to achieve stringent security, combining these techniques is often appropriate, making \"E. All the above options are correct\" the best comprehensive answer.\n\nPrimary AWS product focus: API Gateway (abbreviated as APIGW).",
+  "video_url": "https://certificationation.com/videos/exam-and-is-working-on-a-exam-142.html",
+  "url": "https://certificationation.com/questions/exam-and-is-working-on-a-exam-142.html"
+}

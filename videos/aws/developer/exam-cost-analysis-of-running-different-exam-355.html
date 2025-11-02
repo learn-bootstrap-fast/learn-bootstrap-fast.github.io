@@ -1,0 +1,81 @@
+---
+title: "When performing a comparative cost analysis of runningExam"
+description: "Video for when performing a comparative cost analysis of running different database solutions in Google Cloud, which of the following factors should you"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "When performing a comparative cost analysis of running different database solutions in Google Cloud, which of the following factors should you prioritize to ensure an accurate comparison?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A retail analytics team at scrumtuous.com is evaluating the projected spend for Cloud SQL, AlloyDB and Cloud Spanner deployments in two Google Cloud regions over the next 18 months. To ensure the cost comparison is fair and accurate, which factor should they focus on first?",
+  "options": [
+    {
+      "text": "Chosen region and whether resources are regional or multi regional",
+      "explanation": "Different regions have different price points and multi regional placements can change storage and network costs.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Projected scalability goals and latency or throughput targets",
+      "explanation": "Performance objectives drive capacity choices and can influence cost planning.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Aligning instance classes and service pricing tiers across the databases",
+      "explanation": "Using equivalent machine sizes or node counts and matching service tiers allows a like for like price evaluation.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Expected network egress and any cross region replication traffic",
+      "explanation": "Traffic leaving a region or replicating data between regions can add variable charges that influence the bill.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct answer is <b>Aligning instance classes and service pricing tiers across the databases</b>.</p><p>This is the first thing to do because each managed database offers different unit economics and capacity abstractions. Cloud Spanner uses nodes or processing units, AlloyDB uses primary and read pool nodes, and Cloud SQL uses machine types and storage classes. If you do not first normalize the compute shape, memory, and storage tier across services then any regional or workload assumptions will skew the comparison. Establishing equivalent capacity and pricing tiers creates an apples to apples baseline for an accurate projection. After this alignment you can add regional pricing, network, storage growth, and high availability choices.</p><p><i>Chosen region and whether resources are regional or multi regional</i> is important for final costing yet it is not the first step to ensure fairness. Region pricing varies and service capabilities differ across regions, and some products support multi region in different ways, so starting here can mask mismatches in capacity between services and lead to a misleading comparison.</p><p><i>Projected scalability goals and latency or throughput targets</i> inform architecture and sizing, but they should be applied after you have normalized instance classes and tiers. Otherwise performance goals might drive different shapes that are not comparable and you would not achieve a fair baseline.</p><p><i>Expected network egress and any cross region replication traffic</i> often affects the total bill, but it should be layered on once you have matched service tiers and capacity. Egress differs by region and topology and can distort the comparison if you have not first aligned the underlying instances.</p>",
+  "batch_id": "97",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "When performing a comparative cost analysis of running different database solutions in Google Cloud, which of the following factors should you prioritize to ensure an accurate comparison?",
+  "originalOptions": "A. Geographical region of data storage<br/>B. Database instance types and pricing tiers<br/>C. Backup and retention policy<br/>D. Scalability and performance requirements",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "355",
+  "tip": "<p>When a question asks how to make a cost comparison fair, look for the option that tells you to <i>normalize capacity and pricing tiers</i> across services first. Add region, egress, and growth assumptions only after you have that apples to apples baseline.</p>",
+  "references": [
+    "https://cloud.google.com/sql/pricing",
+    "https://cloud.google.com/alloydb/pricing",
+    "https://cloud.google.com/spanner/pricing",
+    "https://cloud.google.com/spanner/docs/instances",
+    "https://cloud.google.com/vpc/network-pricing"
+  ],
+  "url": "https://certificationation.com/questions/exam-cost-analysis-of-running-different-exam-355.html",
+  "video_url": "https://certificationation.com/videos/exam-cost-analysis-of-running-different-exam-355.html"
+}

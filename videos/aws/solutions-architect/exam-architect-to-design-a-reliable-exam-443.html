@@ -1,0 +1,128 @@
+---
+title: "A company has hired a solutions architect to design aExam"
+description: "Video for a company has hired a solutions architect to design a reliable architecture for its application. The application consists of one Amazon RDS DB"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company has hired a solutions architect to design a reliable architecture for its application. The application consists of one Amazon RDS DB instance and two manually provisioned Amazon EC2 instances that run web servers. The EC2 instances are located in a single Availability Zone. An employee recently deleted the DB instance, and the application was unavailable for 24 hours as a result. The company is concerned with the overall reliability of its environment. What should the solutions architect do to maximize reliability of the application's infrastructure?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729b21"
+  },
+  "quid": null,
+  "ordinal": "444",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS Well-Architected Framework",
+    " Amazon RDS",
+    " Amazon EC2",
+    " AWS Auto Scaling",
+    " Amazon CloudWatch"
+  ],
+  "slug": "rds-ec2-design-reliable-architecture-aws",
+  "source": "ET",
+  "title": "AWS A Company Has Hired A Solutions Architect Question",
+  "meta": "AWS Exam Question: A company needs a reliable architecture with Amazon RDS and Amazon EC2 instances. What can a solutions architect do to maximize reliability? Answer: AWS technologies include Availability Zones.",
+  "answer": "B",
+  "query": "A startup is seeking to enhance the reliability of its web application infrastructure. The application uses a single Amazon RDS instance for the database and runs two EC2 instances as web servers, all located in only one Availability Zone. Recently, an incident occurred where the DB instance was mistakenly removed, leading to a downtime of nearly 24 hours. The startup is now focused on improving the resilience of its system.\n\nWhat steps should the solutions architect take to ensure the application's infrastructure is more reliable?",
+  "originalQuery": "A company has hired a solutions architect to design a reliable architecture for its application. The application consists of one Amazon RDS DB instance and two manually provisioned Amazon EC2 instances that run web servers. The EC2 instances are located in a single Availability Zone.\n\nAn employee recently deleted the DB instance, and the application was unavailable for 24 hours as a result. The company is concerned with the overall reliability of its environment.\n\nWhat should the solutions architect do to maximize reliability of the application's infrastructure?",
+  "options": [
+    "A. Terminate one EC2 instance and set termination protection on another instance. Upgrade the DB instance to Multi-AZ and enable deletion protection.",
+    "B. Update the DB instance to be Multi-AZ, and enable deletion protection. Place the EC2 instances behind an Application Load Balancer, and run them in an EC2 Auto Scaling group across multiple Availability Zones.",
+    "C. Deploy an extra DB instance with an Amazon API Gateway and AWS Lambda function. Connect the Lambda function to API Gateway and write data to both DB instances.",
+    "D. Configure the EC2 instances in an EC2 Auto Scaling group with multiple subnets across multiple Availability Zones. Opt for Spot Instances instead of On-Demand Instances. Implement Amazon CloudWatch alarms for instance health monitoring and update the DB instance to be Multi-AZ, and enable deletion protection."
+  ],
+  "originalOptions": [
+    "A. Delete one EC2 instance and enable termination protection on the other EC2 instance. Update the DB instance to be Multi-AZ, and enable deletion protection.",
+    "B. Update the DB instance to be Multi-AZ, and enable deletion protection. Place the EC2 instances behind an Application Load Balancer, and run them in an EC2 Auto Scaling group across multiple Availability Zones.",
+    "C. Create an additional DB instance along with an Amazon API Gateway and an AWS Lambda function. Configure the application to invoke the Lambda function through API Gateway. Have the Lambda function write the data to the two DB instances.",
+    "D. Place the EC2 instances in an EC2 Auto Scaling group that has multiple subnets located in multiple Availability Zones. Use Spot Instances instead of On-Demand Instances. Set up Amazon CloudWatch alarms to monitor the health of the instances Update the DB instance to be Multi-AZ, and enable deletion protection."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "To enhance the reliability of the application's infrastructure, it is essential to implement several key strategies. \n\nFirst, upgrading the Amazon RDS DB instance to a Multi-AZ configuration will ensure high availability and automatic failover, thereby minimizing downtime in the event of an instance failure. Additionally, enabling deletion protection on the DB instance will prevent accidental deletions, safeguarding critical data.\n\nFor the EC2 instances, it is advisable to place them behind an Application Load Balancer, which will distribute incoming traffic evenly and improve fault tolerance. Furthermore, configuring the EC2 instances within an Auto Scaling group across multiple Availability Zones will enhance resilience. This setup allows for automatic scaling of instances based on demand and provides redundancy, ensuring that if one Availability Zone experiences issues, the application can continue to operate using instances in other zones.\n\nIncorporating Amazon CloudWatch for monitoring instance health is also crucial. This enables proactive management and alerts for any potential issues, allowing for swift remediation. \n\nBy implementing these measures, the overall reliability and availability of the application's infrastructure will be significantly improved, ensuring business continuity and a better user experience.",
+    "Option B is the winner! 🎉 By upgrading the database to Multi-AZ, you're not just adding a safety net; you're throwing a party for high availability! 🥳 Plus, placing the EC2 instances behind an Application Load Balancer and running them in an Auto Scaling group across multiple Availability Zones is like giving your application a superhero cape—ready to fly high and tackle any outages with style! 🦸‍♂️ With this setup, you can rest easy knowing your application is resilient and always ready to serve your users, even when the unexpected strikes! 🌟",
+    "A: Terminating one EC2 instance? Really? While that might help with the DB instance's reliability, it does nothing for the EC2 side of things. \n\nB: Now we're talking! This option effectively enhances the reliability of both the EC2 instances and the DB instance, hitting all the right notes. \n\nC: This one misses the mark on the DB instance's reliability, so it’s not quite a winner. \n\nD: This option appears to be juggling cost efficiency while trying to boost the reliability of both the EC2 instances and the DB. It's a bit of a balancing act that could work, but does it really address the core reliability issues?",
+    "Option A is not a viable solution, as terminating one EC2 instance does not enhance reliability and could potentially worsen the situation.\n\nOption C, while incorporating services like API Gateway and AWS Lambda, fails to address the core issue of the DB instance deletion. These tools are beneficial but do not provide a safeguard against losing the database instance.\n\nOption D focuses heavily on configuring EC2 instances within subnets, which is more related to networking than directly addressing reliability concerns. The primary issue here is enhancing the resilience of the application, not just the network configuration.\n\nOption B stands out as the most effective choice. It directly addresses the risk of DB instance deletion by upgrading to a Multi-AZ deployment, ensuring high availability. Additionally, placing the EC2 instances behind an Application Load Balancer and utilizing an Auto Scaling group across multiple Availability Zones significantly enhances the overall reliability of the architecture. This comprehensive approach not only mitigates the risk of downtime but also optimizes the performance of the application.",
+    "Here are the essential highlights to consider:  \n🌟  \n- Implementing RDS in Multi-AZ mode along with deletion protection enhances the database's availability significantly.  \n- Utilizing an Application Load Balancer and an Auto Scaling group across multiple Availability Zones ensures that your EC2 instances maintain high availability.  \n- Options A, C, and D come with certain constraints that could compromise reliability, making option B the superior choice.  \n\nIsn’t it delightful to put a little extra sparkle in our architecture? 💫"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "",
+      "explanation": "Option E: Sack the employee who did this :)",
+      "upvotes": "8"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "B is correct. HA ensured by DB in Mutli-AZ and EC2 in AG",
+      "upvotes": "5"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "A: delete one instance, why?. Although takes care of reliability of DB instance however not EC2.\nB. seems perfect as takes care of reliability of both EC2 as well as DB\nC. DB instance's reliability is not taken care of\nD. seems to be trying to address cost alongside reliability of EC2 and DB.",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "A: Deleting one EC2 instance makes no sense. Why would you do that?\nC: API Gateway, Lambda etc are all nice but they don't solve the problem of DB instance deletion\nD: EC2 subnet blah blah, what? The problem is reliability, not networking!\n\nB is correct as it solves the DB deletion issue and increases reliability by Multi AZ scaling of EC2 instances",
+      "upvotes": "5"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "The key points:\n° RDS Multi-AZ and deletion protection provide high availability for the database.\n° The load balancer and Auto Scaling group across AZs give high availability for EC2.\n° Options A, C, D have limitations that would reduce reliability vs option B.",
+      "upvotes": "3"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "B (100%)",
+      "votes": "22 votes."
+    },
+    {
+      "option": "C (25%)",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "Option B is the correct answer because it implements a Multi-AZ deployment for the Amazon RDS instance, providing High Availability (HA) through automatic failover to a standby instance in case the primary instance fails. Additionally, it introduces an Application Load Balancer and an EC2 Auto Scaling group, which ensures that the EC2 instances are distributed across multiple Availability Zones (AZs). This setup not only enhances the reliability of the database but also ensures that the web server layer can handle traffic even if one of the instances becomes unavailable. \n\nOption A is incorrect because deleting one EC2 instance reduces capacity and does not solve the redundancy issue; it only focuses on the database instance. \nOption C does not address the reliability of the existing DB instance and introduces unnecessary complexity. \nOption D, while it does increase EC2 availability, seems to misprioritize cost-saving measures (Spot Instances) over reliability optimizations, and lacks an effective load balancing solution that option B has.",
+  "video_url": "https://certificationation.com/videos/exam-architect-to-design-a-reliable-exam-443.html",
+  "url": "https://certificationation.com/questions/exam-architect-to-design-a-reliable-exam-443.html"
+}

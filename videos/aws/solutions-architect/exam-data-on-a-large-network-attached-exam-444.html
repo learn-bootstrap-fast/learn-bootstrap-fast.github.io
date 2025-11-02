@@ -1,0 +1,128 @@
+---
+title: "A company is storing 700 terabytes of data on a largeExam"
+description: "Video for a company is storing 700 terabytes of data on a large network-attached storage (NAS) system in its corporate data center. The company has a hybrid"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company is storing 700 terabytes of data on a large network-attached storage (NAS) system in its corporate data center. The company has a hybrid environment with a 10 Gbps AWS Direct Connect connection. After an audit from a regulator, the company has 90 days to move the data to the cloud. The company needs to move the data efficiently and without disruption. The company still needs to be able to access and update the data during the transfer window. Which solution will meet these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729b22"
+  },
+  "quid": null,
+  "ordinal": "445",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS DataSync",
+    " AWS Snowball Edge",
+    " Amazon S3",
+    " AWS Direct Connect",
+    " AWS Storage Gateway"
+  ],
+  "slug": "dc-move-data-cloud-hybrid-environment-aws",
+  "source": "ET",
+  "title": "AWS A Company Is Storing 700 Terabytes Question",
+  "meta": "AWS Exam Question: A company must efficiently move 700 TB of NAS data to the cloud within 90 days using AWS Direct Connect. What is the answer? Consider AWS Snowball and S3.",
+  "answer": "A",
+  "query": "A retail organization is currently keeping 800 terabytes of data on a centralized NAS system located in its headquarters. This organization operates in a hybrid environment connected via a 10 Gbps AWS Direct Connect link.\n\nFollowing a compliance review, the organization must transfer this data to the cloud within 75 days. It's crucial that the data transfer process does not interrupt access or changes to the data during this transition.\n\nWhat is the best approach to fulfill these needs?",
+  "originalQuery": "A company is storing 700 terabytes of data on a large network-attached storage (NAS) system in its corporate data center. The company has a hybrid environment with a 10 Gbps AWS Direct Connect connection.\n\nAfter an audit from a regulator, the company has 90 days to move the data to the cloud. The company needs to move the data efficiently and without disruption. The company still needs to be able to access and update the data during the transfer window.\n\nWhich solution will meet these requirements?",
+  "options": [
+    "A. Create an AWS DataSync agent in the corporate data center. Create a data transfer task Start the transfer to an Amazon S3 bucket.",
+    "B. Transfer the data using AWS Snowball Edge devices. Send the devices to an AWS data center for processing.",
+    "C. Use rsync to copy the data directly from local storage to a designated Amazon S3 bucket over the Direct Connect connection.",
+    "D. Store the data on tapes and transport them to an AWS data center. Attach an Amazon S3 bucket to the local file system."
+  ],
+  "originalOptions": [
+    "A. Create an AWS DataSync agent in the corporate data center. Create a data transfer task Start the transfer to an Amazon S3 bucket.",
+    "B. Back up the data to AWS Snowball Edge Storage Optimized devices. Ship the devices to an AWS data center. Mount a target Amazon S3 bucket on the on-premises file system.",
+    "C. Use rsync to copy the data directly from local storage to a designated Amazon S3 bucket over the Direct Connect connection.",
+    "D. Back up the data on tapes. Ship the tapes to an AWS data center. Mount a target Amazon S3 bucket on the on-premises file system."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "For those considering why option B may not be suitable, it's important to note that the AWS Snowball Edge device, specifically the Storage Optimized variant, has a maximum capacity of 100 TB per device. Given the company's need to transfer 700 TB of data, multiple devices would be required, which could complicate the logistics of the transfer and extend the overall timeline. This method may also introduce potential delays in data availability during the transfer process, as the data would need to be loaded onto the devices and then physically shipped to an AWS data center for processing. For efficient and continuous access to the data throughout the transfer period, this option may not align with the company's requirements. More information on the differences between Snowball devices can be found in the official AWS documentation: https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html.",
+    "Looks like we’ve got a bit of a data migration challenge on our hands! 🏃‍♂️💨 The question made a point about \"devices,\" and yes, those Snowball Edge Storage Optimized devices can hold up to 80TB each. So, while it’s feasible to use them, the real winner here is option A. Why, you ask? Because with AWS DataSync, we can zip through the transfer in just about 6.5 days—talk about efficiency! 🚀✨ Plus, this method allows for seamless access and updates to the data while the transfer is underway, keeping everything running smoothly. So, let’s get those bits and bytes moving without missing a beat! 🎉💻",
+    "With a 10 Gbps connection, you've got a theoretical data transfer rate that can handle about 864,000 GB in a day—yes, that's a whopping 864 TB if you're counting. So, in just two days, you could theoretically move all that 700 TB of data over to the cloud. However, if you're leaning towards using AWS Snowball Edge devices, don't get too excited just yet. You’ll need to factor in at least four days for the devices to be delivered to the AWS data center. So, while direct transfer might seem like a breeze, Snowball might leave you waiting a bit longer than anticipated.",
+    "Thank you for sharing your perspective! However, there seems to be a misunderstanding. The distinction between 10 Gbps (gigabits per second) and 10 GBps (gigabytes per second) is important to note. To clarify, when calculating the data transfer capacity, we find that 10 Gbps equates to approximately 1.25 GBps. Consequently, over the course of a day, the system can transfer around 108 TB of data (calculated as 864 TB divided by 8). This means that within just one week, the entire dataset could be successfully transferred to the cloud. It's an exciting opportunity to efficiently move the data while maintaining access and updates throughout the process!",
+    "When contemplating data transfers of this magnitude, it's essential to keep in mind the usual TCP overhead that can impact the process. This overhead can sometimes consume up to 70% of the total available bandwidth, influenced by various factors. So, as you embark on this data journey, remember to factor in these nuances for a smooth and efficient transfer! 🌟"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "",
+      "explanation": "For those who wonders why not B. Snowball Edge Storage Optimized device for data transfer is up to 100TB\nhttps://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html",
+      "upvotes": "11"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "The question explicitly mentioned \"devices\", also Snowball Edge Storage Optimized is 80TB HDD. So it is possible, but the answer is A because we can transfer with DataSync in 6.5 days.",
+      "upvotes": "4"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "10GBs * 24*60*60 =864,000 GB estimate around 864 TB a day, 2 days will transfer all data. But for snowball at least 4 days for delivery to the data center.",
+      "upvotes": "1"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "This account is wrong but I get your point. It is wrong cause 10Gb/s is not the same as 10GB/s (Gigabits vs Gigabytes). However, the correct count is 864Tb/8 = 108TB per day. In one week you should've transferred all the data.",
+      "upvotes": "8"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "folks, you had to consider the typical TCP overheads for such over-the-wire data transfers.... it could be as high as 70% of the total available bandwidth due to a wide variety of factors",
+      "upvotes": "1"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "A (100%)",
+      "votes": "36 votes."
+    },
+    {
+      "option": "C (25%)",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is A because AWS DataSync allows for efficient, high-speed transfer of data from on-premises storage to Amazon S3, while managing the continuous access and updates during the transfer process. DataSync can operate without interrupting operations, making it ideal for the organization's requirement to keep the NAS system active during the migration. \n\nOption B is incorrect because AWS Snowball Edge has a limited capacity (up to 100TB), which would require multiple devices and time for shipping, making it impractical given the 75-day compliance window. \n\nOption C is also not optimal as using rsync could disrupt access during the transfer and would take longer than DataSync for such large data sizes, especially considering the data’s size and the overhead involved in TCP transfers. \n\nOption D is inefficient because tape storage and shipping takes too much time and lacks the flexibility for continuous data access, further violating the requirement of uninterrupted access and updates during the migration.",
+  "video_url": "https://certificationation.com/videos/exam-data-on-a-large-network-attached-exam-444.html",
+  "url": "https://certificationation.com/questions/exam-data-on-a-large-network-attached-exam-444.html"
+}

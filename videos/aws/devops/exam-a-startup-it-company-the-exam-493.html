@@ -1,0 +1,67 @@
+---
+title: "You are an AWS consultant working in a startup ITExam"
+description: "Video for you are an AWS consultant working in a startup IT company. The company wanted to increase visibility into its user and resource activity in AWS. So"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are an AWS consultant working in a startup IT company. The company wanted to increase visibility into its user and resource activity in AWS. So CloudTrail was turned on. As most resources were used in region ap-south-1, the trail was only configured to collect the activities in that region. The CloudTrail is saved in an S3 bucket. However, the customer is worried that if some disaster in region ap-south-1 happens, the CloudTrail data may get lost. Which actions should you take to address the concern?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct answer is <b>Configure an S3 Cross-Region Replication policy on the CloudTrail log bucket to copy logs to another bucket located in a different region.</b></p><p><b>Explanation:</b><br>Cross-Region Replication (CRR) for Amazon S3 buckets ensures the automatic and continuous copying of CloudTrail logs from their source bucket in one region to a target bucket in another region. This provides redundancy and disaster recovery capabilities: even if an entire region fails, critical audit trails and security information remain accessible in a separate region, protecting the organization from data loss.</p><p>Here's why the other options are not appropriate:</p><ul><li><i>Turn on SSE-KMS encryption for the S3 bucket holding CloudTrail logs.</i> — While encryption is important for securing data at rest, enabling SSE-KMS does NOT address regional outages or improve availability in the event of a disaster affecting the entire region.</li><li><i>Add a new S3 bucket in another AWS region directly from the CloudTrail console as an additional destination for the trail.</i> — CloudTrail trails can only be configured with one destination S3 bucket per trail; you cannot specify multiple buckets (especially in different regions) directly from the console. This is a common misconception.</li><li><i>Deploy an AWS Lambda function that reads log files from the trail S3 bucket and manually copies the logs to another bucket in a different AWS region.</i> — Although technically possible, this is a much more complex, less reliable, and less automated approach compared to simply using S3's built-in cross-region replication feature.</li></ul><p><b>Tip:</b> Use S3 Cross-Region Replication for critical log and audit data to enhance durability and compliance, especially when regional disasters or AWS region outages are a concern.</p>",
+  "query": "<p>You have been hired as an AWS consultant for a growing tech startup. The company wants better insight into who is doing what within their AWS environment, so AWS CloudTrail has been enabled. Since most resources are located in the ap-south-1 region, CloudTrail has only been configured to track activity in this region, and logs are being sent to an Amazon S3 bucket located in ap-south-1. The client is now concerned about potential data loss if a disaster strikes the ap-south-1 AWS region. What can you do to ensure CloudTrail logs remain available even if the ap-south-1 region experiences a major outage or becomes unavailable?</p>",
+  "original_oid": "6793da1661969b416038a148",
+  "options": [
+    {
+      "correct": true,
+      "text": "Configure an S3 Cross-Region Replication policy on the CloudTrail log bucket to copy logs to another bucket located in a different region.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Turn on SSE-KMS encryption for the S3 bucket holding CloudTrail logs.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Add a new S3 bucket in another AWS region directly from the CloudTrail console as an additional destination for the trail.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Deploy an AWS Lambda function that reads log files from the trail S3 bucket and manually copies the logs to another bucket in a different AWS region.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question215",
+  "originalQuery": "You are an AWS consultant working in a startup IT company.\nThe company wanted to increase visibility into its user and resource activity in AWS.\nSo CloudTrail was turned on.\nAs most resources were used in region ap-south-1, the trail was only configured to collect the activities in that region.\nThe CloudTrail is saved in an S3 bucket.\nHowever, the customer is worried that if some disaster in region ap-south-1 happens, the CloudTrail data may get lost.\nWhich actions should you take to address the concern?",
+  "originalOptions": [
+    "A. Enable the encryption with SSE-KMS for the S3 bucket of the CloudTrail.",
+    "B. In the CloudTrail console, add another S3 bucket in a different region as the target for the trail.",
+    "C. Enable Cross-Region Replication for the trail S3 bucket to automatically copy objects in a different AWS Region.",
+    "D. Create a Lambda Function that can read files in the trail S3 bucket and copy the log files to an S3 bucket in another region."
+  ],
+  "video_url": "https://certificationation.com/videos/exam-a-startup-it-company-the-exam-493.html",
+  "url": "https://certificationation.com/questions/exam-a-startup-it-company-the-exam-493.html"
+}

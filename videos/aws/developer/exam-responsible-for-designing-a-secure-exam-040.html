@@ -1,0 +1,82 @@
+---
+title: "As a Database Engineer, you are responsible forExam"
+description: "Video for as a Database Engineer, you are responsible for designing a secure and efficient connection strategy for a multi-cloud environment where an"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are responsible for designing a secure and efficient connection strategy for a multi-cloud environment where an application hosted on Amazon Web Services (AWS) needs to interact with a Cloud SQL database on Google Cloud Platform (GCP). Which of the following strategies should you use to achieve this goal while maintaining optimal performance?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the lead database engineer at Aurora Outfitters and you must enable a payments service running in AWS us-east-2 to connect to a Cloud SQL for PostgreSQL instance that uses a private IP in Google Cloud in us-central1. The company requires encrypted traffic and wants under 25 milliseconds of latency for roughly 400 Mbps of steady throughput, and the database must not be reachable over the public internet. Which connectivity approach should you implement?",
+  "options": [
+    {
+      "text": "Configure AWS Direct Connect to attach the AWS VPC directly to the Google Cloud VPC",
+      "explanation": "AWS Direct Connect provides a dedicated link from AWS to customer or partner locations and is designed to connect AWS to networks outside AWS",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Publish Cloud SQL with a public IP and require the Cloud SQL Auth Proxy on the AWS service",
+      "explanation": "The Cloud SQL Auth Proxy runs alongside clients and uses strong authentication and TLS when connecting to a Cloud SQL public endpoint",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Establish an IPsec HA VPN between the AWS VPC and the Google Cloud VPC and route to the Cloud SQL private IP",
+      "explanation": "A site to site HA VPN creates encrypted tunnels between VPC networks so that private IP subnets can communicate securely",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Set up VPC peering between the AWS VPC and the Google Cloud VPC",
+      "explanation": "VPC peering provides private connectivity between networks within the same cloud provider and is not designed to span different clouds",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct answer is <b>Establish an IPsec HA VPN between the AWS VPC and the Google Cloud VPC and route to the Cloud SQL private IP</b>.</p><p><b>HA VPN</b> meets the encryption requirement because it uses IPsec tunnels and it avoids any public exposure since traffic stays on private networks end to end. Its documented throughput per tunnel is sufficient for 400 Mbps and typical regional paths between us-east-2 and us-central1 can meet the 25 millisecond target. With <b>HA VPN</b>, routes to the instance’s <b>Cloud SQL private IP</b> are advertised so the AWS service can connect privately without a public endpoint.</p><p><i>Configure AWS Direct Connect to attach the AWS VPC directly to the Google Cloud VPC</i> is not feasible because Direct Connect connects to AWS and does not attach an AWS VPC to a Google Cloud VPC. It also does not provide encryption by default which violates the encrypted traffic requirement.</p><p><i>Publish Cloud SQL with a public IP and require the Cloud SQL Auth Proxy on the AWS service</i> violates the requirement that the database must not be reachable over the public internet. The proxy can encrypt traffic yet the instance would still expose a public endpoint which is disallowed here.</p><p><i>Set up VPC peering between the AWS VPC and the Google Cloud VPC</i> is not possible because Google Cloud VPC Network Peering works only between Google Cloud VPC networks and does not peer with AWS VPCs. Even if it did, this option would not inherently provide the required IPsec encryption.</p>",
+  "batch_id": "100",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are responsible for designing a secure and efficient connection strategy for a multi-cloud environment where an application hosted on Amazon Web Services (AWS) needs to interact with a Cloud SQL database on Google Cloud Platform (GCP). Which of the following strategies should you use to achieve this goal while maintaining optimal performance?",
+  "originalOptions": "A. Use a Google Cloud VPN with IPsec to create an encrypted tunnel between the AWS VPC and the GCP VPC<br/>B. Implement an API gateway with OAuth 2.0 authentication to manage connections between the application instances and the Cloud SQL database<br/>C. Utilize AWS Direct Connect to establish a direct connection between the AWS VPC and the GCP VPC<br/>D. Implement VPC peering between the AWS VPC and the GCP VPC",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "40",
+  "tip": "<p>When you see <i>private IP only</i>, <i>no public internet</i>, and a clear <i>encryption</i> requirement, prefer <i>Cloud VPN</i> or <i>Cloud Interconnect plus VPN</i> patterns. Validate feasibility with region-to-region <i>latency</i> and required <i>throughput</i> to ensure the design meets the service level target.</p>",
+  "references": [
+    "https://cloud.google.com/network-connectivity/docs/vpn/concepts/overview",
+    "https://cloud.google.com/network-connectivity/docs/vpn/concepts/overview#ha-vpn",
+    "https://cloud.google.com/sql/docs/postgres/connect-private-ip",
+    "https://cloud.google.com/sql/docs/postgres/choose-ip",
+    "https://cloud.google.com/vpc/docs/using-vpc-peering",
+    "https://docs.aws.amazon.com/directconnect/latest/UserGuide/Welcome.html"
+  ],
+  "url": "https://certificationation.com/questions/exam-responsible-for-designing-a-secure-exam-040.html",
+  "video_url": "https://certificationation.com/videos/exam-responsible-for-designing-a-secure-exam-040.html"
+}

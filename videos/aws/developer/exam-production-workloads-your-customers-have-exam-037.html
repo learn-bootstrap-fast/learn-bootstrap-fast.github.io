@@ -1,0 +1,86 @@
+---
+title: "You have a Cloud SQL instance serving productionExam"
+description: "Video for you have a Cloud SQL instance serving production workloads. Your customers have noticed non-availability issues during maintenance events. You want to"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have a Cloud SQL instance serving production workloads. Your customers have noticed non-availability issues during maintenance events. You want to minimize the impact of such maintenance issues in the future. What should you do? (Choose two)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Apex Ledger runs a payments platform on a single Cloud SQL for PostgreSQL instance. During two recent automatic maintenance events within the past 90 days, customers experienced brief outages and dropped connections. You need to reduce user impact when Google performs maintenance on this instance in the future while keeping the solution simple to operate. What should you do?",
+  "options": [
+    {
+      "text": "Subscribe to Cloud SQL maintenance notifications",
+      "explanation": "This provides advance notice of upcoming maintenance through alerts so teams can plan operational responses.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable high availability for the Cloud SQL instance with automatic failover",
+      "explanation": "This creates a standby in a separate zone and can fail over during maintenance or disruptions to keep the service available.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Configure a preferred maintenance window during off peak hours",
+      "explanation": "This schedules maintenance to occur at a time you choose that aligns with the lowest expected traffic.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Create a read replica and route read only queries to it during maintenance",
+      "explanation": "This adds a replica to handle read workloads which can improve scalability but does not prevent primary unavailability during maintenance.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Add exponential backoff and retry logic to the application database client",
+      "explanation": "This causes clients to retry transient failures with increasing delays which can smooth brief connection issues.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct answers are: <b>Enable high availability for the Cloud SQL instance with automatic failover</b> and <b>Configure a preferred maintenance window during off peak hours</b>.</p><p>With <b>high availability</b> Cloud SQL runs a primary and a standby in different zones with synchronous replication and automatic failover. During maintenance Google can update the standby first and then perform a controlled failover so connections experience only a brief switchover. This greatly reduces visible downtime while remaining simple to operate because Cloud SQL manages the replication and failover.</p><p>A <b>preferred maintenance window</b> lets you choose when maintenance is performed so it occurs during off peak hours. When combined with <b>high availability</b> it minimizes both the duration and the user impact of maintenance events while keeping administration straightforward.</p><p><i>Subscribe to Cloud SQL maintenance notifications</i> only informs you about upcoming work and does not change maintenance behavior or prevent dropped connections. This is useful for planning but it does not reduce impact by itself.</p><p><i>Create a read replica and route read only queries to it during maintenance</i> does not protect write traffic and replicas are not an automatic failover target for maintenance in Cloud SQL. This adds complexity and still leaves the primary write workload exposed.</p><p><i>Add exponential backoff and retry logic to the application database client</i> can help clients recover from transient errors but it does not avoid the brief outage during maintenance. It is complementary to <b>high availability</b> and a <b>preferred maintenance window</b> rather than a replacement.</p>",
+  "batch_id": "137",
+  "answerCode": "2,3",
+  "type": "multi-select",
+  "originalQuery": "You have a Cloud SQL instance serving production workloads. Your customers have noticed non-availability issues during maintenance events. You want to minimize the impact of such maintenance issues in the future. What should you do? (Choose two)",
+  "originalOptions": "A. Use connection pools.<br/>B. Implement high availability for the Cloud SQL instance.<br/>C. Opt in to maintenance notifications.<br/>D. Use exponential backoff.<br/>E. Set a custom maintenance window.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "37",
+  "tip": "<p>When a scenario mentions Cloud SQL maintenance impact think first about enabling <i>high availability</i> and setting a <i>preferred maintenance window</i>. Treat notifications and client retries as supporting measures rather than the primary mitigation.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/high-availability",
+    "https://cloud.google.com/sql/docs/postgres/maintenance",
+    "https://cloud.google.com/sql/docs/postgres/set-maintenance-window",
+    "https://cloud.google.com/sql/docs/postgres/replication"
+  ],
+  "url": "https://certificationation.com/questions/exam-production-workloads-your-customers-have-exam-037.html",
+  "video_url": "https://certificationation.com/videos/exam-production-workloads-your-customers-have-exam-037.html"
+}

@@ -1,0 +1,130 @@
+---
+title: "A company has a multi-tier application deployed onExam"
+description: "Video for a company has a multi-tier application deployed on several Amazon EC2 instances in an Auto Scaling group. An Amazon RDS for Oracle instance is the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company has a multi-tier application deployed on several Amazon EC2 instances in an Auto Scaling group. An Amazon RDS for Oracle instance is the application’ s data layer that uses Oracle-specific PL/SQL functions. Traffic to the application has been steadily increasing. This is causing the EC2 instances to become overloaded and the RDS instance to run out of storage. The Auto Scaling group does not have any scaling metrics and defines the minimum healthy instance count only. The company predicts that traffic will continue to increase at a steady but unpredictable rate before leveling off. What should a solutions architect do to ensure the system can automatically scale for the increased traffic? (Choose two.)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729a79"
+  },
+  "quid": null,
+  "ordinal": "276",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon RDS",
+    " AWS Auto Scaling",
+    " Amazon Aurora",
+    " AWS Lambda",
+    " AWS Elastic Beanstalk"
+  ],
+  "slug": "ec2-rds-multi-tier-application-aws",
+  "source": "ET",
+  "title": "AWS A Company Has A Multi-Tier Application Question",
+  "meta": "AWS Exam Question: A company has a multi-tier application with EC2, RDS for Oracle, and Auto Scaling. What should a solutions architect do to ensure automatic scaling? Answer: metrics, Auto Scaling.",
+  "answer": "AD",
+  "query": "A business operates a multi-tier architecture on various Amazon EC2 instances within an Auto Scaling group. The data layer comprises an Amazon RDS for Oracle instance that utilizes Oracle-specific PL/SQL functions. A surge in traffic is leading to resource strain on the EC2 instances and the RDS instance is nearing its storage limits. Currently, the Auto Scaling group lacks defined scaling metrics and only specifies a minimum number of healthy instances. The organization expects continued traffic growth at a consistent but variable rate before it stabilizes.\n\nWhat actions should a solutions architect take to ensure that the system can scale automatically in response to the increasing traffic? (Select two.)",
+  "originalQuery": "A company has a multi-tier application deployed on several Amazon EC2 instances in an Auto Scaling group. An Amazon RDS for Oracle instance is the application’ s data layer that uses Oracle-specific PL/SQL functions. Traffic to the application has been steadily increasing. This is causing the EC2 instances to become overloaded and the RDS instance to run out of storage. The Auto Scaling group does not have any scaling metrics and defines the minimum healthy instance count only. The company predicts that traffic will continue to increase at a steady but unpredictable rate before leveling off.\n\nWhat should a solutions architect do to ensure the system can automatically scale for the increased traffic? (Choose two.)",
+  "options": [
+    "A. Configure storage Auto Scaling on the RDS for Oracle instance.",
+    "B. Transition the database to Amazon Aurora for accessing Auto Scaling options.",
+    "C. Create an alert on the RDS for Oracle instance for low available storage space.",
+    "D. Configure the Auto Scaling group to use the average CPU as the scaling metric.",
+    "E. Set the Auto Scaling group to use the average free memory as the scaling metric."
+  ],
+  "originalOptions": [
+    "A. Configure storage Auto Scaling on the RDS for Oracle instance.",
+    "B. Migrate the database to Amazon Aurora to use Auto Scaling storage.",
+    "C. Configure an alarm on the RDS for Oracle instance for low free storage space.",
+    "D. Configure the Auto Scaling group to use the average CPU as the scaling metric.",
+    "E. Configure the Auto Scaling group to use the average free memory as the scaling metric."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "A) Implement storage Auto Scaling for the RDS for Oracle instance.  \n= This is a practical solution. By enabling RDS Storage Auto Scaling, you can set a maximum storage limit, and the system will automatically adjust the storage capacity as needed, ensuring that the database can accommodate increased data demands without manual intervention.\n\nB) Transition the database to Amazon Aurora to leverage Auto Scaling storage capabilities.  \n= The scenario indicates that the application's data layer relies on Oracle-specific PL/SQL functions, which complicates direct migration to Aurora. This dependency must be addressed before considering a transition, as it may not be feasible without significant rework of the application logic.\n\nC) Set up an alert on the RDS for Oracle instance to monitor low available storage space.  \n= While configuring an alert can provide visibility into storage constraints, it does not address the underlying issue. A CloudWatch notification will inform you of low storage but will not automatically resolve the problem, leaving the database vulnerable to outages.\n\nD) Adjust the Auto Scaling group to utilize average CPU utilization as the scaling metric.  \n= This is a sound approach. Monitoring CPU utilization is critical, as high CPU usage on EC2 instances often precedes storage limitations on the RDS instance. By scaling the EC2 instances in response to CPU load, you can alleviate pressure on the database and help prevent storage capacity issues.",
+    "A company has a multi-tier application running on multiple Amazon EC2 instances within an Auto Scaling group. The data layer relies on an Amazon RDS for Oracle instance, which employs Oracle-specific PL/SQL functions. As traffic to the application continues to rise like a hot air balloon 🎈, the EC2 instances are feeling the strain, and the RDS instance is running dangerously low on storage. Unfortunately, the Auto Scaling group is a bit clueless — it only knows about the minimum healthy instance count and has no scaling metrics in place. The company expects traffic to keep ramping up at an unpredictable pace before finally settling down.\n\nTo ensure the system can flexibly adjust to the increasing traffic, a solutions architect should take a couple of smart steps. First, implementing storage Auto Scaling on the RDS for Oracle instance will help prevent it from running out of space faster than a teenager devouring pizza at a party 🍕. Second, transitioning the database to Amazon Aurora will open up a whole new world of Auto Scaling possibilities, making it easier to adapt to those unpredictable traffic spikes. With these changes, the system will be able to handle the influx of users like a pro! 🚀",
+    "Ah, the joys of managing a multi-tier application on AWS! It seems our EC2 instances are feeling the heat, and the RDS for Oracle is on the brink of a storage crisis. Now, as for your choices, let’s break them down.\n\nOption B suggests migrating the database. While that might sound appealing, remember that only Oracle-specific commands can be used, which limits our flexibility. \n\nOption C? Well, that's just a glorified notification service. It won't magically grant us high availability; it merely informs us when things are going south.\n\nNow, here’s where it gets tricky. We have options D and E to consider. D measures CPU utilization, while E looks at free memory. Given that we’re witnessing overloaded EC2 instances and our RDS running out of storage, it seems prudent to lean toward option E, focusing on memory as a scaling metric. After all, when resources are stretched thin, it could be the memory that’s waving the white flag first. \n\nIn summary, while all choices have their merits, relying on memory usage for auto-scaling might just be the wise choice in this scenario.",
+    "To effectively support your system's ability to scale automatically in response to increasing traffic, consider implementing the following strategies:\n\nA. Enable storage Auto Scaling on the RDS for Oracle instance.\n\nActivating storage Auto Scaling on your RDS instance ensures that additional storage is automatically provisioned when the current capacity is nearing its limit. This proactive measure helps maintain performance and prevents the database from running out of storage as traffic and data volumes grow.\n\nC. Set up an alert for low available storage space on the RDS for Oracle instance.\n\nBy configuring an alert for low available storage on the RDS instance, you can receive timely notifications as your storage approaches its thresholds. This level of proactive monitoring empowers you to take necessary actions—such as expanding storage or adjusting resources—before any performance impact occurs on your application.",
+    "Oh, what a delightful challenge we have here! 🌟 Let's sprinkle a little magic on this response:\n\nOption B isn't feasible since the application relies on Oracle-specific PL/SQL functions, making a transition to Amazon Aurora a no-go. As for option C, while it’s always wise to keep an eye on low available storage space, it doesn’t quite align with the need for automatic scaling. And option E? Well, it would necessitate an agent on the hosts that we may not have in place. Plus, using CPU as a metric is often a more reliable indicator of performance than memory usage. \n\nLet’s keep things running smoothly and joyfully, shall we? 😊"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "AD",
+      "explanation": "A) Configure storage Auto Scaling on the RDS for Oracle instance.\n= Makes sense. With RDS Storage Auto Scaling, you simply set your desired maximum storage limit, and Auto Scaling takes care of the rest.\n\nB) Migrate the database to Amazon Aurora to use Auto Scaling storage.\n= Scenario specifies application's data layer uses Oracle-specific PL/SQL functions. This rules out migration to Aurora.\n\nC) Configure an alarm on the RDS for Oracle instance for low free storage space.\n= You could do this but what does it fix? Nothing. The CW notification isn't going to trigger anything.\n\nD) Configure the Auto Scaling group to use the average CPU as the scaling metric.\n= Makes sense. The CPU utilization is the precursor to the storage outage. When the ec2 instances are overloaded, the RDS instance storage hits its limits, too.",
+      "upvotes": "28"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Nicely Explained.",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "AE",
+      "explanation": "B mean db migration and only oracle specfic commands are allowed\nC is just notification not High avalibilty\nNow the toss up is between D and E since D is measuring CPU % and E is measuring memory and the question states \"This is causing the EC2 instances to become overloaded and the RDS instance to run out of storage\" i will err on the side of option E",
+      "upvotes": "1"
+    },
+    {
+      "selectedAnswer": "AC",
+      "explanation": "To ensure the system can automatically scale for the increased traffic, you can take the following steps:\nA. Configure storage Auto Scaling on the RDS for Oracle instance.\n\nBy enabling storage Auto Scaling on the RDS instance, you ensure that additional storage is provisioned automatically when the existing storage reaches capacity. This helps prevent the RDS instance from running out of storage due to increased traffic and data growth.\n\nC. Configure an alarm on the RDS for Oracle instance for low free storage space.\n\nSetting up an alarm for low free storage space on the RDS instance allows you to receive notifications when the storage capacity is approaching its limits. This proactive monitoring helps you take necessary actions, such as adding more storage or scaling resources, before it affects the application's performance.",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "AD",
+      "explanation": "B is not possible because the application \"uses Oracle-specific PL/SQL functions\"\nC does not meet the \"automatically scale\" requirement\nE would require an agent on the hosts which we might not have, plus CPU is a better indicator than memory",
+      "upvotes": "2"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "AD (89%)",
+      "votes": "59 votes."
+    },
+    {
+      "option": "5%",
+      "votes": "5%"
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer consists of options A and D. Option A, 'Configure storage Auto Scaling on the RDS for Oracle instance', is correct because implementing storage Auto Scaling allows the RDS instance to automatically increase its storage capacity as it approaches its limits, effectively mitigating the risk of running out of storage. Option D, 'Configure the Auto Scaling group to use the average CPU as the scaling metric', is appropriate as CPU utilization often correlates with the performance of the application. High CPU usage indicates that the EC2 instances are under stress and can lead to increased data load on the RDS. \n\nOption B is incorrect because migrating to Amazon Aurora is not viable due to the existing use of Oracle-specific PL/SQL functions, making it incompatible with Aurora. Option C provides a notification mechanism but does not offer an automatic solution to scale resources when limits are reached. Option E, measuring average free memory, is less effective than monitoring CPU, as CPU utilization is a more reliable metric for scaling based on application load.",
+  "video_url": "https://certificationation.com/videos/exam-deployed-on-several-amazon-ec2-exam-276.html",
+  "url": "https://certificationation.com/questions/exam-deployed-on-several-amazon-ec2-exam-276.html"
+}

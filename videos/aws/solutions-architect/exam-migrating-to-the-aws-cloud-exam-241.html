@@ -1,0 +1,128 @@
+---
+title: "An online learning company is migrating to the AWSExam"
+description: "Video for an online learning company is migrating to the AWS Cloud. The company maintains its student records in a PostgreSQL database. The company needs a"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "An online learning company is migrating to the AWS Cloud. The company maintains its student records in a PostgreSQL database. The company needs a solution in which its data is available and online across multiple AWS Regions at all times. Which solution will meet these requirements with the LEAST amount of operational overhead?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729a56"
+  },
+  "quid": null,
+  "ordinal": "241",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon RDS",
+    " Databases",
+    " Amazon EC2",
+    " AWS global infrastructure",
+    " Migration and data transfer"
+  ],
+  "slug": "pg-online-learning-migrating-aws",
+  "source": "ET",
+  "title": "AWS An Online Learning Company Is Migrating To The Question",
+  "meta": "AWS Exam Question: An online learning company is migrating to AWS Cloud with a PostgreSQL database for student records. What is the best solution? Answer: Aurora, RDS.",
+  "answer": "C",
+  "query": "A global educational platform is transitioning to the AWS Cloud. This platform stores its user information in a PostgreSQL database and requires that this data remains accessible and online across several AWS Regions continuously.\n\nWhat is the best solution to achieve this with minimal operational complexity?",
+  "originalQuery": "An online learning company is migrating to the AWS Cloud. The company maintains its student records in a PostgreSQL database. The company needs a solution in which its data is available and online across multiple AWS Regions at all times.\n\nWhich solution will meet these requirements with the LEAST amount of operational overhead?",
+  "options": [
+    "A. Migrate the PostgreSQL database to a PostgreSQL cluster on Amazon EC2 instances.",
+    "B. Migrate the PostgreSQL database to an Amazon RDS for PostgreSQL DB instance with the Multi-AZ feature turned on.",
+    "C. Migrate the PostgreSQL database to an Amazon RDS for PostgreSQL DB instance. Create a read replica in another Region.",
+    "D. Transfer the PostgreSQL database to an Amazon RDS for PostgreSQL instance and configure snapshots to another Region."
+  ],
+  "originalOptions": [
+    "A. Migrate the PostgreSQL database to a PostgreSQL cluster on Amazon EC2 instances.",
+    "B. Migrate the PostgreSQL database to an Amazon RDS for PostgreSQL DB instance with the Multi-AZ feature turned on.",
+    "C. Migrate the PostgreSQL database to an Amazon RDS for PostgreSQL DB instance. Create a read replica in another Region.",
+    "D. Migrate the PostgreSQL database to an Amazon RDS for PostgreSQL DB instance. Set up DB snapshots to be copied to another Region."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Multi-AZ (Availability Zone) deployments are distinct from multi-regional configurations. Multi-AZ setups ensure high availability and fault tolerance within a single region by replicating data across multiple availability zones. In contrast, multi-regional solutions provide data availability across different geographic regions, enhancing resilience against regional outages and ensuring quicker access for global users. While Multi-AZ can improve uptime and reliability within a region, it does not address the need for data accessibility across multiple AWS Regions. For true cross-region availability, additional strategies such as read replicas or cross-region snapshots must be implemented.",
+    "Option B shines like a glittering diamond on a cloudless day! 💎 With the Amazon RDS Multi-AZ feature, your PostgreSQL database gets a trusty sidekick in the form of a synchronized replica nestled in another availability zone. If a hiccup occurs, it seamlessly fails over to this replica, ensuring your data remains high and mighty in terms of availability and durability across multiple AWS regions. Talk about a superhero for your data! 🦸‍♂️\n\nNow, while option C may seem tempting, it comes with a bit of a catch. Managing and monitoring the asynchronous read replicas can feel like herding cats—fun at first, but potentially chaotic! 🐱🐱 There’s a lag between the primary database and the read replica, so keeping everything perfectly in sync is a bit of a juggling act. You’ll need to keep an eye out for any replication errors that could lead to data inconsistencies, and don’t forget the extra steps required for a smooth failover to that read replica. So, while it’s a good option, it might just add a sprinkle of extra work to your plate! 🍽️\n\nIn conclusion, if you’re looking for a low-maintenance solution that keeps your data happily dancing across regions without the hassle, B is your best bet! 🎉",
+    "I’d lean towards option B for a couple of reasons: \n\nFirst off, the Multi-AZ feature is all about ensuring high availability, which is crucial for keeping your student records accessible at all times. On the other hand, read replicas are great for reducing latency, but they’re not necessarily the best solution for guaranteeing constant availability across multiple regions. \n\nThe emphasis in the scenario is on having the data consistently online, so sticking with Multi-AZ gives you the reliability you need without adding unnecessary complexity to your operations. It’s a straightforward approach that minimizes your operational headaches while keeping your database up and running.",
+    "It's important to note that the requirement for data availability across multiple AWS Regions is not fulfilled by the Multi-AZ feature alone. Multi-AZ is designed to enhance availability within a single Region by automatically replicating the database to a standby instance in a different Availability Zone. However, for true cross-Region accessibility, a different approach is necessary to ensure that data remains online and readily available across multiple geographic locations.",
+    "It seems like the inquiry is all about ensuring data availability across multiple regions! 🌍 While the Multi-AZ feature is fantastic for high availability within a single region, it doesn't quite stretch its wings to cover multiple regions. So, when it comes to spreading the joy of accessibility and uptime across various AWS Regions, we need a solution that truly embraces that multi-regional spirit!"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "C",
+      "explanation": "Multi az is not the same as multi regional",
+      "upvotes": "47"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "B: Amazon RDS Multi-AZ feature automatically creates a synchronous replica in another availability zone and failover to the replica in the event of an outage. This will provide high availability and data durability across multiple AWS regions which fit the requirements.\n\nThough C may sound good, it in fact requires manual management and monitoring of the replication process due to the fact that Amazon RDS read replicas are asynchronous, meaning there is a delay between the primary and read replica. Therefore, there will be a need to ensure that the read replica is constantly up-to-date and someone still has to fix any read replica errors during the replication process which may cause data inconsistency. Lastly, you still have to configure additional steps to make it fail over to the read replica.",
+      "upvotes": "16"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "I go with option B because:\nMulti-AZ is for high availiblity\nRead replicas are for low-latency\nin question they talk about available online",
+      "upvotes": "4"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "They also ask for multiple regions which is not covered by Multi AZ",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "But the question is clearly asking for Multiple Regions. Multi-AZ is not across Regions.",
+      "upvotes": "22"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "C (82%)",
+      "votes": "132 votes."
+    },
+    {
+      "option": "B (18%)",
+      "votes": "29 votes."
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is C because it provides a way to have a PostgreSQL database available continuously across multiple AWS Regions using Amazon RDS and read replicas. Although read replicas have some operational overhead in managing asynchronous replication, they can effectively scale read operations while ensuring data is available in another region.\n\nOption A is incorrect because running PostgreSQL on EC2 instances requires significant management overhead, as you are responsible for everything from patching to scaling, making it less ideal for minimizing operational complexity.\n\nOption B is incorrect as the Multi-AZ feature is designed for high availability but does not provide a solution that spans multiple regions; hence it does not meet the requirement of being accessible across several regions continuously.\n\nOption D, while it allows data to be copied to another Region via snapshots, does not provide continuous access or availability, as it relies on point-in-time database snapshots, which can lead to data loss between snapshot intervals.",
+  "video_url": "https://certificationation.com/videos/exam-migrating-to-the-aws-cloud-exam-241.html",
+  "url": "https://certificationation.com/questions/exam-migrating-to-the-aws-cloud-exam-241.html"
+}

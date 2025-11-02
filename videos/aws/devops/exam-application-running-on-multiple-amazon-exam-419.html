@@ -1,0 +1,67 @@
+---
+title: "You have an I/O and network-intensive applicationExam"
+description: "Video for you have an I/O and network-intensive application running on multiple Amazon EC2 instances that cannot handle a large ongoing increase in traffic."
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have an I/O and network-intensive application running on multiple Amazon EC2 instances that cannot handle a large ongoing increase in traffic. Each Amazon EC2 instance uses two Amazon EBS Provisioned IOPS volumes. All the instances are identical."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The recommended method is to <b>stop each EC2 instance, upgrade it to a larger instance type with enhanced networking and EBS optimization, and ensure that RAID striping is employed across the storage devices</b>. Enhanced networking increases network performance and reduces latency, while EBS-optimization ensures dedicated throughput for the EBS volumes. RAID striping will help to maximize disk I/O. This solution directly addresses both the network and storage bottlenecks, improving the capacity to handle more traffic.</p><p><i>Scale the environment horizontally by creating an AMI...</i> and <i>Develop an AMI from an existing EC2 instance and deploy via Auto Scaling...</i> (Options A and E) both suggest using Auto Scaling; however, simply creating new instances or scaling is not sufficient unless the instances themselves are modified to address I/O and networking, and this approach doesn't make it clear that all the necessary enhancements (RAID, enhanced networking, EBS optimization) will be consistently applied. <i>For each running EC2 instance, attach an instance-store volume and configure RAID</i> (Option C) is not optimal as instance-store volumes are ephemeral, and data persistence cannot be guaranteed—plus, it ignores leveraging the existing EBS Provisioned IOPS volumes. <i>Implement RAID striping using additional EBS volumes...</i> (Option D) might improve disk throughput but doesn't address underlying networking bottlenecks and misses out on optimizing the instance's network performance and EBS throughput. Always be sure to select instance types compatible with the desired networking and storage features.</p>",
+  "query": "<p>You are running a demanding workload that heavily utilizes both network and I/O resources across a fleet of identical Amazon EC2 instances. Each instance is currently using two Amazon EBS Provisioned IOPS volumes. With a substantial and ongoing surge in incoming traffic, the application is no longer able to keep up. What is the most effective approach to enhance performance and maintain availability during traffic spikes?</p>",
+  "original_oid": "6793da4c61969b416038a1b8",
+  "options": [
+    {
+      "correct": false,
+      "text": "Scale the environment horizontally by creating an AMI from one EC2 instance, then set up an Auto Scaling group with a larger, enhanced networking–enabled, and Amazon EBS-optimized instance type.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Stop each EC2 instance and transition it to a higher-tier instance that is both enhanced networking capable and EBS-optimized. Also, ensure RAID striping is used on each instance.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "For each running EC2 instance, attach an instance-store volume and configure RAID striping to help boost input/output performance.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Implement RAID striping using additional EBS volumes attached to every active EC2 instance to improve I/O throughput.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Develop an AMI from an existing EC2 instance and deploy it via an Auto Scaling group using an instance type that supports enhanced networking and is EBS-optimized.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question327",
+  "originalQuery": "You have an I/O and network-intensive application running on multiple Amazon EC2 instances that cannot handle a large ongoing increase in traffic.\nEach Amazon EC2 instance uses two Amazon EBS Provisioned IOPS volumes.\nAll the instances are identical.",
+  "originalOptions": "A. Create an AMI from each instance, and set up severral Auto Scaling groups with a larger instance type that has enhanced networking enabled.|B. Stop each instance and change each instance to a larger Amazon EC2 instance type that has enhanced networking enabled and is Amazon EBS-optimized. Ensure that RAID striping is also set up on each instance.|C. Add an instance-store volume for each running Amazon EC2 instance and implement RAID striping to improve I/O performance.|D. Add an Amazon EBS volume for each running Amazon EC2 instance and implement RAID striping to improve I/O performance.|E. Create an AMI from an instance, and set up an Auto Scaling group with an instance type that has enhanced networking enabled and is Amazon EBS-optimized.",
+  "video_url": "https://certificationation.com/videos/exam-application-running-on-multiple-amazon-exam-419.html",
+  "url": "https://certificationation.com/questions/exam-application-running-on-multiple-amazon-exam-419.html"
+}

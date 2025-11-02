@@ -1,0 +1,62 @@
+---
+title: "You are the cloud DevOps engineer for a forensicExam"
+description: "Video for you are the cloud DevOps engineer for a forensic research company that wants to implement web ACL logging to analyze AWS WAF rules compliance and"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are the cloud DevOps engineer for a forensic research company that wants to implement web ACL logging to analyze AWS WAF rules compliance and track changes to stored secrets for rotation. Which statement describes the best approach to deal with this scenario?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>first option</b> is the most suitable approach for this scenario. This solution leverages a custom AWS Config rule to detect changes in a WAF Web ACL, then invokes a Lambda function via an automation playbook to enable logging as required. Furthermore, the usage of the AWS Config managed rule <b>secretsmanager-rotation-enabled-check</b> automates the monitoring of secrets’ rotation compliance, allowing for effective tracking out-of-the-box.</p><p>The <i>second option</i> talks about configuration changes and manipulation of timeout settings in playbooks but does not clearly address the mechanism for invoking Lambda or system automation to enable logging, making it less comprehensive for the stated goals. <i>Option three</i> proposes creating an extra custom rule to track secrets instead of leveraging the managed AWS Config rule, resulting in unnecessary duplication of existing AWS functionality. Finally, the <i>fourth option</i> focuses on timeout settings and workflow control rather than making use of existing managed AWS Config rules, once again missing the most streamlined and AWS-recommended solution. </p><p><b>Tips: </b> Always utilize AWS managed rules wherever possible, especially for compliance monitoring like secrets rotation. When automation is needed for infrastructure configuration (such as enabling web ACL logging), use custom Config rules combined with Lambda and Systems Manager Automation for maximum flexibility and control.</p>",
+  "query": "<p>You are working as a cloud DevOps engineer for a research firm specializing in forensics. The company is seeking to activate logging on its AWS WAF web ACLs to monitor compliance and also wants a solution to track any updates to secrets stored in AWS Secrets Manager, ensuring that all secrets are scheduled for rotation. <br/> Which approach most efficiently meets these requirements?</p>",
+  "original_oid": "6793da2261969b416038a160",
+  "options": [
+    {
+      "correct": true,
+      "text": "Set up a custom AWS Config rule that responds to configuration changes in an AWS::WAF::WebACL resource by invoking an AWS Lambda function. Utilize AWS::Config::RemediationConfiguration with a Systems Manager automation playbook that triggers another Lambda to enable logging on the web ACL. Employ the AWS Config managed rule secretsmanager-rotation-enabled-check to monitor secret rotation, marking NON_COMPLIANT if rotation is not scheduled.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Implement a configuration change in an AWS::WAF::WebACL resource that triggers a custom AWS Config rule blueprint. Assign the timeoutSeconds property for each operational playbook action to regulate execution timeout, and adjust the impact of timeouts on workflow status. For secret tracking, rely on the AWS Config managed rule secretsmanager-rotation-enabled-check to detect if secrets are set for rotation.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up a configuration change in AWS::WAF::WebACL that starts a custom AWS Config rule blueprint. Execute an automation workflow through AWS::Config::RemediationConfiguration, using a Systems Manager operational playbook that calls a Lambda to auto-enable web ACL logging. Add another custom AWS Config rule to monitor changes to stored secrets, marking them NON_COMPLIANT if not scheduled for rotation.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Configure a custom AWS Config rule to detect changes in an AWS::WAF::WebACL resource and trigger a Lambda. For each playbook action, set the timeoutSeconds property and change how operational workflow timeouts affect execution. Add an extra custom AWS Config rule to track updates to stored secrets, labeling a secret as NON_COMPLIANT if rotation is not enabled.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question239",
+  "originalQuery": "You are the cloud DevOps engineer for a forensic research company that wants to implement web ACL logging to analyze AWS WAF rules compliance and track changes to stored secrets for rotation.\nWhich statement describes the best approach to deal with this scenario?",
+  "originalOptions": "A. Define a configuration change in an AWS::WAF::WebACL resource that triggers a custom AWS Config rule blueprint. Set the timeoutSeconds property shared by all operational playbook actions to specify the execution timeout value for the action. Further, you can change how an action timing out affects the Automation workflow and overall execution status. To track changes to secrets, it is possible to rely on the AWS Config managed rule secretsmanager-rotation-enabled-check which is NON_COMPLIANT if the secret is not scheduled for rotation.|B. Define a configuration change in an AWS::WAF::WebACL resource that triggers a custom AWS Config rule blueprint. Run an automation workflow through AWS::Config::RemediationConfiguration whose TargetType is a Systems Manager operational playbook that calls another AWS Lambda function that will attempt to enable logging on the web ACL automatically. Create another custom AWS Config rule to track changes to stored secrets which is NON_COMPLIANT if the secret is not scheduled for rotation.|C. Configure a custom AWS Config rule to invoke an AWS Lambda function in response to a configuration change in an AWS::WAF::WebACL resource. Run an automation workflow through AWS::Config::RemediationConfiguration whose TargetType is a Systems Manager operational playbook that calls another AWS Lambda function that will attempt to automatically enable logging on the web ACL. To track changes to secrets, it is possible to rely on the AWS Config managed rule secretsmanager-rotation-enabled-check which is NON_COMPLIANT if the secret is not scheduled for rotation.|D. Configure a custom AWS Config rule to invoke an AWS Lambda function in response to a configuration change in an AWS::WAF::WebACL resource. Set the timeoutSeconds property shared by all operational playbook actions to specify the execution timeout value for an action. Further, you can change how an action timing out affects the Automation workflow and overall execution status. Create another custom AWS Config rule to track changes to stored secrets which is NON_COMPLIANT if the secret is not scheduled for rotation.",
+  "video_url": "https://certificationation.com/videos/exam-for-a-forensic-research-company-exam-453.html",
+  "url": "https://certificationation.com/questions/exam-for-a-forensic-research-company-exam-453.html"
+}

@@ -1,0 +1,62 @@
+---
+title: "Your team creates a Docker image for a new webExam"
+description: "Video for your team creates a Docker image for a new web application and deploys it in an AWS ECS cluster. You want to automatically increase or decrease the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your team creates a Docker image for a new web application and deploys it in an AWS ECS cluster. You want to automatically increase or decrease the desired count of ECS tasks in the ECS service based on the average CPU utilization. The number of ECS tasks should be adjusted between 3 and 6 and the target value of CPU utilization should be 70 How would you configure this?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct answer is <b>\"Set up a target tracking scaling policy in the ECS service configuration, using the ECSServiceAverageCPUUtilization metric with the desired CPU threshold.\"</b> This approach configures auto scaling at the service level, precisely where ECS manages desired task counts. A target tracking policy monitors the ECSServiceAverageCPUUtilization metric and adjusts the running task total between the specified minimum (3) and maximum (6), keeping the average CPU utilization close to the 70% target.</p><p><i>\"Add a target tracking scaling policy in the Auto Scaling group associated with the ECS cluster, ensuring it references the ECSServiceAverageCPUUtilization.\"</i> is incorrect because Auto Scaling groups control the number of EC2 instances, not the number of ECS tasks. Task scaling must be managed at the ECS service level, not the infrastructure level.</p><p><i>\"Define two step scaling policies on the service's Auto Scaling tab in the ECS console, each triggered by a CloudWatch alarm for average CPU utilization.\"</i> is a feasible (though more complex) approach, but the scenario specifically asks for a target value (70%), which is best fulfilled by target tracking rather than step scaling, which is threshold-based and requires more manual configuration.</p><p><i>\"Configure automatic scaling directly in the ECS task definition, specifying minimum, maximum, and desired replica counts based on the ECSTaskAverageCPUUtilization metric.\"</i> is not valid because ECS task definitions do not support auto scaling settings. Scaling policies are attached to the ECS service, not included within the task definition.</p><p><b>Tip:</b> For most ECS service scaling scenarios, target tracking policies are simpler to set up and maintain than step scaling, especially when you want to keep a specific metric value (such as CPU utilization).</p>",
+  "query": "<p>Your development team has built a new web application, packaged it into a Docker image, and deployed it on AWS ECS. To maintain optimal performance and resource cost, you want the ECS service to automatically increase or decrease its number of running tasks in response to varying CPU usage. The task count should fluctuate between 3 and 6, aiming to keep average CPU utilization at 70%. What is the best way to configure this auto scaling behavior?</p>",
+  "original_oid": "6793da8f61969b416038a240",
+  "options": [
+    {
+      "correct": true,
+      "text": "Set up a target tracking scaling policy in the ECS service configuration, using the ECSServiceAverageCPUUtilization metric with the desired CPU threshold.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Add a target tracking scaling policy in the Auto Scaling group associated with the ECS cluster, ensuring it references the ECSServiceAverageCPUUtilization.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Define two step scaling policies on the service's Auto Scaling tab in the ECS console, each triggered by a CloudWatch alarm for average CPU utilization.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Configure automatic scaling directly in the ECS task definition, specifying minimum, maximum, and desired replica counts based on the ECSTaskAverageCPUUtilization metric.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question464",
+  "originalQuery": "Your team creates a Docker image for a new web application and deploys it in an AWS ECS cluster.\nYou want to automatically increase or decrease the desired count of ECS tasks in the ECS service based on the average CPU utilization.\nThe number of ECS tasks should be adjusted between 3 and 6 and the target value of CPU utilization should be 70\nHow would you configure this?",
+  "originalOptions": "A. Add a target tracking scaling policy in the Auto Scaling group used by the AWS ECS cluster. Make sure that the policy uses the ECSServiceAverageCPUUtilization metric.|B. In the AWS ECS service console, add two step scaling policies in the Auto Scaling tab. Set up two CloudWatch alarms to scale in and scale out based on the average CPU.|C. Set up the target tracking auto scaling in the ECS task definition. Configure the minimum, desired and maximum number of tasks based on the ECSTaskAverageCPUUtilization metric in CloudWatch.|D. Configure the auto scaling in the ECS service by adding a target tracking scaling policy based on the ECSServiceAverageCPUUtilization metric.",
+  "video_url": "https://certificationation.com/videos/exam-for-a-new-web-application-exam-463.html",
+  "url": "https://certificationation.com/questions/exam-for-a-new-web-application-exam-463.html"
+}

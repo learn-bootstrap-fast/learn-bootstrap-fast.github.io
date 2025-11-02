@@ -1,0 +1,79 @@
+---
+title: "You work with a media company that uses Cloud Spanner toExam"
+description: "Video for you work with a media company that uses Cloud Spanner to store viewer data. Each viewer has a unique viewerId and subscriptionType . There's a need to"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You work with a media company that uses Cloud Spanner to store viewer data. Each viewer has a unique viewerId and subscriptionType . There's a need to generate reports on viewer preferences segmented by subscription type for targeted marketing. You need to write a parameterized query to retrieve viewer preferences efficiently. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Your team supports a music streaming startup that stores listener records in Cloud Spanner in a table named members. Each row has a unique user_id and a plan_tier field. Marketing needs to run reports that analyze listening preferences by plan tier for targeted campaigns. You must write a parameterized SQL statement that retrieves the prefs column efficiently while filtering by both the listener and the plan tier. What should you do?",
+  "options": [
+    {
+      "text": "SELECT prefs FROM members WHERE user_id=&apos;U4567&apos; AND plan_tier=@plan_tier",
+      "explanation": "This uses a literal for the user identifier and uses a parameter for the plan tier.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "SELECT prefs FROM members WHERE user_id LIKE @user_id AND plan_tier=@plan_tier",
+      "explanation": "This uses a pattern match for the user identifier and a parameter for the plan tier.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "SELECT prefs FROM members WHERE user_id=@user_id AND plan_tier=@plan_tier",
+      "explanation": "This uses parameters for both the user identifier and the plan tier to filter the results.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "SELECT prefs FROM members WHERE user_id=@user_id AND plan_tier=&apos;GOLD&apos;",
+      "explanation": "This uses a parameter for the user identifier and a fixed literal value for the plan tier.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct answer is <b>SELECT prefs FROM members WHERE user_id=@user_id AND plan_tier=@plan_tier</b>.</p><p>This statement parameterizes both filters and uses equality on the unique user_id which allows Cloud Spanner to perform a precise lookup and then apply the plan_tier predicate without scanning unnecessary rows. Parameterizing both inputs keeps the query reusable for any listener and any tier and also enables plan caching and protects against SQL injection.</p><p><i>SELECT prefs FROM members WHERE user_id='U4567' AND plan_tier=@plan_tier</i> is not fully parameterized because the user_id is hard coded. This makes the query less reusable and does not meet the requirement to parameterize the filters for both the listener and the plan tier.</p><p><i>SELECT prefs FROM members WHERE user_id LIKE @user_id AND plan_tier=@plan_tier</i> uses LIKE on the key which may match multiple users and is less efficient than an equality predicate. It can prevent a direct point lookup on the primary key and can lead to broader scans.</p><p><i>SELECT prefs FROM members WHERE user_id=@user_id AND plan_tier='GOLD'</i> hard codes the plan tier so it is not fully parameterized and is not flexible for different tiers that marketing may need to analyze.</p>",
+  "batch_id": "291",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You work with a media company that uses Cloud Spanner to store viewer data. Each viewer has a unique viewerId and subscriptionType . There's a need to generate reports on viewer preferences segmented by subscription type for targeted marketing. You need to write a parameterized query to retrieve viewer preferences efficiently. What should you do?",
+  "originalOptions": "A. SELECT preferences FROM viewers WHERE viewerId=@viewerId AND subscriptionType='PREMIUM'<br/>B. SELECT preferences FROM viewers WHERE viewerId LIKE @viewerId AND subscriptionType=@subscriptionType<br/>C. SELECT preferences FROM viewers WHERE viewerId=@viewerId AND subscriptionType=@subscriptionType<br/>D. SELECT preferences FROM viewers WHERE viewerId='V123' AND subscriptionType=@subscriptionType",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "70",
+  "tip": "<p>When a question emphasizes an efficient and <i>parameterized</i> Spanner query, prefer <i>equality</i> on key columns and ensure every user supplied filter is parameterized to enable plan reuse and reduce scans.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/query-syntax#parameters",
+    "https://cloud.google.com/spanner/docs/sql-best-practices#use_parameterized_queries",
+    "https://cloud.google.com/spanner/docs/functions-and-operators#spanner_like"
+  ],
+  "url": "https://certificationation.com/questions/exam-uses-cloud-spanner-to-store-exam-070.html",
+  "video_url": "https://certificationation.com/videos/exam-uses-cloud-spanner-to-store-exam-070.html"
+}

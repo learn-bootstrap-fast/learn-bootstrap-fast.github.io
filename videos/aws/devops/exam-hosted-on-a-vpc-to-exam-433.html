@@ -1,0 +1,62 @@
+---
+title: "There is a requirement for an application hosted on aExam"
+description: "Video for there is a requirement for an application hosted on a VPC to access the On-premises LDAP server. The VPC and the On-premises location are connected"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "There is a requirement for an application hosted on a VPC to access the On-premises LDAP server. The VPC and the On-premises location are connected via an IPSec VPN. Which of the below are the right options for the application to authenticate each user. Choose 2 answers from the options below."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct approaches are <b>\"The application verifies users with LDAP and obtains the name of an IAM role mapped to the user. By calling the IAM Security Token Service to assume the IAM role, it retrieves temporary credentials to access AWS resources.\"</b> and <b>\"Set up an identity broker that first authenticates users against LDAP, then requests temporary federated credentials from the IAM Security Token Service. The application gets those federated credentials through the identity broker to interact with AWS services.\"</b></p><p>Both methods enable proper authentication using the on-premises LDAP and leverage AWS IAM Security Token Service (STS) to obtain temporary credentials, promoting secure, scalable, and standards-aligned access.</p><ul><li><b>Option 1</b> is correct because after authenticating against LDAP, the application retrieves the corresponding IAM role for the user and uses STS to generate temporary credentials—following best practices for identity federation and access control.</li><li><b>Option 3</b> is also correct as using a dedicated identity broker to authenticate against LDAP and then obtain federated credentials with STS is a common enterprise integration pattern and recommended by AWS.</li><li><i>\"Build an identity broker service which authenticates users with the IAM Security Token Service, enabling the broker to assume an IAM role and obtain temporary AWS credentials. The application obtains those temporary credentials from the broker.\"</i> (Option 2) is incorrect because STS itself cannot perform user authentication; it only issues credentials to trusted entities after authentication—thus, there's no direct authentication against STS.</li><li><i>\"Have the application authenticate each user directly using LDAP credentials when calling the AWS Identity and Access Management (IAM) Security service, and use any resulting IAM temporary credentials for AWS resource access.\"</i> (Option 4) is invalid as IAM does not support LDAP credentials for direct authentication; a federation mechanism is required for LDAP to interact with AWS IAM.</li></ul><p><b>Tip:</b> For hybrid cloud authentication, always remember that AWS IAM is federated when integrating with on-premises directories—direct login with LDAP credentials is not possible.</p>",
+  "query": "<p>An application deployed in an AWS VPC requires authentication for users via an on-premises LDAP directory. The VPC is connected to the local network through an IPSec VPN tunnel. Which of the following methods should be used to properly authenticate each user from the application? <b>Select TWO answers.</b></p>",
+  "original_oid": "6793da1461969b416038a143",
+  "options": [
+    {
+      "correct": true,
+      "text": "The application verifies users with LDAP and obtains the name of an IAM role mapped to the user. By calling the IAM Security Token Service to assume the IAM role, it retrieves temporary credentials to access AWS resources.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Build an identity broker service which authenticates users with the IAM Security Token Service, enabling the broker to assume an IAM role and obtain temporary AWS credentials. The application obtains those temporary credentials from the broker.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Set up an identity broker that first authenticates users against LDAP, then requests temporary federated credentials from the IAM Security Token Service. The application gets those federated credentials through the identity broker to interact with AWS services.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Have the application authenticate each user directly using LDAP credentials when calling the AWS Identity and Access Management (IAM) Security service, and use any resulting IAM temporary credentials for AWS resource access.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question210",
+  "originalQuery": "There is a requirement for an application hosted on a VPC to access the On-premises LDAP server.\nThe VPC and the On-premises location are connected via an IPSec VPN.\nWhich of the below are the right options for the application to authenticate each user.\nChoose 2 answers from the options below.",
+  "originalOptions": "[\"A. Develop an identity broker that authenticates against the IAM security Token service to assume the IAM role to get temporary AWS security credentials. The application calls the identity broker to get AWS temporary security credentials.\",\"B. The application authenticates against LDAP and retrieves the name of an IAM role associated with the user. The application then calls the IAM Security Token Service to assume that IAM role. The application can use the temporary credentials to access any AWS resources.\",\"C. Develop an identity broker that authenticates against LDAP and then calls IAM Security Token Service to get IAM federated user credentials. The application calls the identity broker to get IAM federated user credentials to access the appropriate AWS service.\",\"D. The application authenticates against LDAP. The application then calls the AWS identity and Access Management (IAM) Security service to log in to IAM using the LDAP credentials. The application can use the IAM temporary credentials to access the appropriate AWS service.\"]",
+  "video_url": "https://certificationation.com/videos/exam-hosted-on-a-vpc-to-exam-433.html",
+  "url": "https://certificationation.com/questions/exam-hosted-on-a-vpc-to-exam-433.html"
+}

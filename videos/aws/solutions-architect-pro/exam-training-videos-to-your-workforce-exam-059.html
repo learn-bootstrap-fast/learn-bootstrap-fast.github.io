@@ -1,0 +1,74 @@
+---
+title: "Your website is serving on-demand training videos toExam"
+description: "Video for your website is serving on-demand training videos to your workforce. Videos are uploaded monthly in high-resolution MP4 format. Your workforce is"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your website is serving on-demand training videos to your workforce. Videos are uploaded monthly in high-resolution MP4 format. Your workforce is distributed globally, often on the move and using company-provided tablets that require the HTTP Live Streaming (HLS) protocol to watch a video. Your company has no video transcoding expertise, and it required that you may need to pay for a consultant. How would you implement the most cost-efficient architecture without compromising the high availability and quality of video delivery?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d588f501ee1c8ade97af"
+  },
+  "quid": "0",
+  "ordinal": "100",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "Elastic Transcoder",
+    " Amazon S3",
+    " Amazon CloudFront",
+    " Amazon EC2",
+    " Amazon Elastic Block Store (Amazon EBS)"
+  ],
+  "slug": "hls-on-demand-training-videos-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question100",
+  "title": "AWS Your Website Is Serving On-Demand Training Question",
+  "meta": "AWS Exam Question: Your website serves on-demand training videos in high-res MP4 format using HLS for global workforce access. What is the best cost-efficient answer? AWS Media Services.",
+  "answer": "A",
+  "query": "A global educational platform provides weekly high-quality MP4 webinars to remote learners. These webinars must be accessible on various mobile devices that only support HTTP Live Streaming (HLS). The company lacks in-house video conversion skills and prefers not to engage external consultants. What solution offers the best balance of cost-efficiency, high availability, and streaming quality?",
+  "originalQuery": "Your website is serving on-demand training videos to your workforce.\nVideos are uploaded monthly in high-resolution MP4 format.\nYour workforce is distributed globally, often on the move and using company-provided tablets that require the HTTP Live Streaming (HLS) protocol to watch a video.\nYour company has no video transcoding expertise, and it required that you may need to pay for a consultant.\nHow would you implement the most cost-efficient architecture without compromising the high availability and quality of video delivery?",
+  "options": [
+    "A. Elastic Transcoder to transcode original high-resolution MP4 videos to HLS. Use S3 to host videos and use CloudFront to serve HLS transcoded videos from S3.",
+    "B. Build a video processing system on EC2 instances, distributing jobs via SQS and scaling capacity based on queue size. Store videos in S3 with Lifecycle policies moving files to Glacier after several days. Deliver HLS streams from Glacier through CloudFront.",
+    "C. Elastic Transcoder to transcode original high-resolution MP4 videos to HLS. Utilize EBS for video storage and back up originals incrementally with EBS snapshots after a few days. Provide HLS streams via CloudFront from EC2.",
+    "D. Develop a video encoding pipeline on EC2 with SQS managing task distribution and Auto Scaling adjusting compute resources by queue depth. Host videos on EBS volumes with incremental backups using EBS snapshots after several days. Serve HLS content using CloudFront from EC2."
+  ],
+  "originalOptions": [
+    "A. Elastic Transcoder to transcode original high-resolution MP4 videos to HLS. Use S3 to host videos and use CloudFront to serve HLS transcoded videos from S3.",
+    "B. A video transcoding pipeline running on EC2 using SQS to distribute tasks and Auto Scaling to adjust the number of nodes depending on the length of the queue. Use S3 to host videos with Lifecycle Management to archive all files to Glacier after a few days. Use CloudFront to serve HLS transcoding videos from Glacier.",
+    "C. Elastic Transcoder to transcode original high-resolution MP4 videos to HLS. EBS volumes to host videos and EBS snapshots to incrementally backup original rues after a few days. Use CloudFront to serve HLS transcoded videos from EC2.",
+    "D. A video transcoding pipeline running on EC2 using SQS to distribute tasks and Auto Scaling to adjust the number of nodes depending on the length of the queue. EBS volumes to host videos and EBS snapshots to incrementally backup original files after a few days. Use CloudFront to serve HLS transcoded videos from EC2."
+  ],
+  "image": "",
+  "primaryObjective": "2: Design for New Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Answer - A.\nThere are four most important design considerations here: (a) video transcoding expertise, (b) global distribution of the content, (c) cost-effective solution, and (d) no compromise with the high availability and quality of the video delivery.\nAmazon Elastic Transcoder is a media transcoding service in the cloud.\nIt is designed to be a highly scalable, easy-to-use, and cost-effective way for developers and businesses to convert (or “transcode”) media files from their source format into versions that will playback on various devices like smartphones, tablets, and PCs.\nOption A is CORRECT because (a) it uses Amazon Elastic Transcoder that converts from MP4 to HLS, (b) S3 Object Lifecycle Management reduces the cost by archiving the files to Glacier, and (c) CloudFront - which is a highly available service - enables the global delivery of the video without compromising the video delivery speed or quality.\nOption B is incorrect because (a) it necessitates the overhead of infrastructure provisioning.\ni.e, deploying of EC2 instances, auto-scaling, SQS queue/pipeline, (b) setting up of EC2 instances to handle global delivery of content is not a cost-efficient solution.\nOption C is incorrect because the use of EBS snapshots is not a cost-effective solution compared to S3 Object Lifecycle Management.\nOption D is incorrect because (a) it necessitates the overhead of infrastructure provisioning.\ni.e, deploying EC2 instances, auto-scaling, SQS queue/pipeline, (b) setting up of EC2 instances to handle global delivery of content is not a cost-efficient solution, and (d) the use of EBS snapshots is not a cost-effective solution compared to S3 Object Lifecycle Management.\nFor more information on Elastic transcoder, please visit the below URL-\nhttps://aws.amazon.com/elastictranscoder/\nCloudFront can then be used to deliver the content to the users from its various edge locations.\nOption A is the most cost-efficient and effective architecture for delivering high-quality videos to a globally distributed workforce using company-provided tablets that require the HTTP Live Streaming (HLS) protocol to watch videos.\nThe Elastic Transcoder service can be used to transcode the original high-resolution MP4 videos to HLS format, which is optimized for streaming and can adapt to varying network conditions, device capabilities, and screen sizes. This avoids the need for any video transcoding expertise and the cost of hiring a consultant.\nThe videos can be hosted in Amazon S3, which is a highly scalable and durable object storage service. S3 can automatically replicate data across multiple availability zones within a region for high availability and durability. This ensures that the videos are easily accessible and can be delivered reliably to users around the world.\nCloudFront can be used as a content delivery network (CDN) to serve the HLS transcoded videos from S3. CloudFront can cache the videos in edge locations around the world, reducing latency and improving the user experience. CloudFront also supports secure video streaming using SSL/TLS encryption and signed URLs, which can prevent unauthorized access and distribution of the videos.\nOverall, this architecture provides a highly scalable, available, and cost-efficient solution for delivering high-quality videos to a global workforce using HLS-enabled tablets without compromising on the user experience.\nOption B is not the best architecture as it requires a video transcoding pipeline running on EC2, which increases the cost and complexity of the solution. Additionally, archiving all files to Glacier after a few days can lead to longer retrieval times and higher costs, which may not be suitable for delivering on-demand videos to a global workforce.\nOption C is also not ideal as hosting videos on EBS volumes can limit the scalability and availability of the solution, and using EBS snapshots to incrementally backup original files can increase costs and complexity.\nOption D is similar to Option B, but hosting videos on EBS volumes instead of S3 can limit the scalability and availability of the solution, and using EBS snapshots to incrementally backup original files can increase costs and complexity.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-training-videos-to-your-workforce-exam-059.html",
+  "url": "https://certificationation.com/questions/exam-training-videos-to-your-workforce-exam-059.html"
+}

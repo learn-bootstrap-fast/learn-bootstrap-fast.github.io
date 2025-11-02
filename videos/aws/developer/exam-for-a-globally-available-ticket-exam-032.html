@@ -1,0 +1,80 @@
+---
+title: "Your company uses Cloud Spanner for a globally availableExam"
+description: "Video for your company uses Cloud Spanner for a globally available ticket reservation system. You recently loaded data from an event management company"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company uses Cloud Spanner for a globally available ticket reservation system. You recently loaded data from an event management company acquisition and observed hotspots in the Cloud Spanner database. You want to follow Google-recommended schema design practices to avoid performance degradation. What should you do? (Choose two)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A travel booking marketplace named WanderWorld runs a globally distributed reservation service on Cloud Spanner. After importing about 25 million historical records from an acquired partner you started to see write hotspots in the database. You want to apply Google recommended Cloud Spanner schema design patterns to prevent performance degradation while keeping related data efficient to query. What should you do?",
+  "options": [
+    {
+      "text": "Choose a composite key whose first column has few distinct values to keep the index small",
+      "explanation": "This design places a low-cardinality attribute at the beginning of the primary key and influences how rows are laid out on storage nodes",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use interleaved tables so that child rows are stored with their parent rows to keep related data co-located",
+      "explanation": "Interleaving organizes child tables under their parent keys so that related rows are physically clustered together",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Make a timestamp-based column the first part of the primary key to simplify sorting",
+      "explanation": "Using a time column as the leading key creates monotonically increasing values that order data by time of insertion",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Define a composite primary key that starts with a high-cardinality column to distribute writes evenly",
+      "explanation": "A high-cardinality leading key increases the diversity of key prefixes which spreads storage and write traffic across splits",
+      "correct": true,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct options are <b>Use interleaved tables so that child rows are stored with their parent rows to keep related data co-located</b> and <b>Define a composite primary key that starts with a high-cardinality column to distribute writes evenly</b>.</p><p><b>Use interleaved tables so that child rows are stored with their parent rows to keep related data co-located</b> aligns with Cloud Spanner guidance for modeling hierarchical relationships where queries frequently access parent and child together. Interleaving physically co-locates related rows which reduces cross-partition lookups and improves transactional locality for operations like retrieving a reservation with its line items or payments. When used appropriately with one to few or controlled one to many relationships this pattern keeps related data efficient to query.</p><p><b>Define a composite primary key that starts with a high-cardinality column to distribute writes evenly</b> addresses the write hotspot issue. Spanner partitions data by key ranges and concentrates writes to the leader of the affected ranges. A high-cardinality leading key spreads incoming writes across many ranges and leaders which helps avoid hotspots and preserves write throughput during large imports and steady traffic.</p><p><i>Choose a composite key whose first column has few distinct values to keep the index small</i> is wrong because a low-cardinality leading key concentrates many rows into a few ranges which increases the risk of hotspots. Index size is less important than ensuring even key distribution for write scalability.</p><p><i>Make a timestamp-based column the first part of the primary key to simplify sorting</i> is incorrect because monotonically increasing keys such as timestamps funnel writes to the same end of the keyspace which creates hotspots. Spanner recommends avoiding sequential leading key parts for high write workloads.</p>",
+  "batch_id": "183",
+  "answerCode": "2,4",
+  "type": "multi-select",
+  "originalQuery": "Your company uses Cloud Spanner for a globally available ticket reservation system. You recently loaded data from an event management company acquisition and observed hotspots in the Cloud Spanner database. You want to follow Google-recommended schema design practices to avoid performance degradation. What should you do? (Choose two)",
+  "originalOptions": "A. Use a composite key with low-cardinality attributes first.<br/>B. Use a composite key with high-cardinality attributes first.<br/>C. Use interleaved tables to co-locate related data.<br/>D. Use a timestamp-based primary key.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "32",
+  "tip": "<p>When you see Cloud Spanner hotspot symptoms think first about the <i>leading key column</i> and whether it spreads writes. Use <i>interleaved tables</i> when you need locality for parent child access patterns and avoid <i>monotonic</i> or low-cardinality leading keys.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/schema-design",
+    "https://cloud.google.com/spanner/docs/schema-and-data-model#primary-keys",
+    "https://cloud.google.com/spanner/docs/schema-and-data-model#interleaved-tables",
+    "https://cloud.google.com/spanner/docs/whitepapers/optimizing-schema-design"
+  ],
+  "url": "https://certificationation.com/questions/exam-for-a-globally-available-ticket-exam-032.html",
+  "video_url": "https://certificationation.com/videos/exam-for-a-globally-available-ticket-exam-032.html"
+}

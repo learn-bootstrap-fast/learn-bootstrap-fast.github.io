@@ -1,0 +1,62 @@
+---
+title: "You have a Jenkins pipeline to update a CloudFormationExam"
+description: "Video for you have a Jenkins pipeline to update a CloudFormation stack. The pipeline uses AWS CloudFormation CLI update-stack. Sometimes when the Jenkins job"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have a Jenkins pipeline to update a CloudFormation stack. The pipeline uses AWS CloudFormation CLI update-stack. Sometimes when the Jenkins job runs, certain AWS resources are recreated, which is not as expected. Your manager asks you to add a step in the pipeline to list the changes that will be applied to the stack. The Jenkins job continues only after the changes are reviewed. How would you modify the Jenkins pipeline?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The recommended action is to use the <b>CloudFormation CLI create-change-set command</b>. By doing this, you generate a <b>change set</b> that lets you preview all the proposed modifications (such as creation, modification, or replacement of resources) before you actually apply them. This feature allows deeper insight into impending changes—precisely what’s needed to avoid unpleasant surprises like resource recreation.<br><br>Why the other choices are less suitable:<br><br><i>Integrate the AWS CLI --dry-run parameter...</i>—There is no --dry-run flag for AWS CloudFormation CLI update-stack; this parameter simply doesn't exist for this service.<br><br><i>Upload the revised CloudFormation template through the CloudFormation CLI drift detection process...</i>—CloudFormation drift detection only identifies differences between stack resources and the current template, not between your template and potential stack updates. It does not preview the changes about to be made.<br><br><i>Replace your stack update process with Terraform...</i>—Switching to Terraform is not necessary or practical if you're already using CloudFormation. Plus, the AWS exam expects familiarity with native AWS services and their features.<br><br>Tip: The creation and review of change sets is a best practice for safer CI/CD CloudFormation deployments, as it gives you visibility and control over proposed changes before they impact your infrastructure.</p>",
+  "query": "<p>You are managing a Jenkins pipeline that updates AWS CloudFormation stacks. Your workflow currently uses the CloudFormation CLI's update-stack command. However, unexpected resource replacement sometimes occurs during updates. Your manager has requested that, before any changes are applied, you insert a review step to preview and approve the modifications CloudFormation will make to the stack. What update should you make to the Jenkins pipeline to enable this change-preview and approval process?</p>",
+  "original_oid": "6793da5461969b416038a1c9",
+  "options": [
+    {
+      "correct": true,
+      "text": "Incorporate a CloudFormation CLI create-change-set command in the new Jenkins step. This will produce a detailed change set, allowing you to see exactly what changes CloudFormation will make to your stack before proceeding. Ensure that the Jenkins job only continues once these changes have been reviewed and approved.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Integrate the AWS CLI --dry-run parameter into the Jenkins step to output a JSON file of the planned stack changes. Manually review this document prior to completing the update.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Upload the revised CloudFormation template through the CloudFormation CLI drift detection process in your new step. Examine the reported drift and proceed with the update only if these changes are approved.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Replace your stack update process with Terraform. Use terraform plan to preview the changes, then deploy with terraform apply if the changes are confirmed.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question344",
+  "originalQuery": "You have a Jenkins pipeline to update a CloudFormation stack.\nThe pipeline uses AWS CloudFormation CLI update-stack.\nSometimes when the Jenkins job runs, certain AWS resources are recreated, which is not as expected.\nYour manager asks you to add a step in the pipeline to list the changes that will be applied to the stack.\nThe Jenkins job continues only after the changes are reviewed.\nHow would you modify the Jenkins pipeline?",
+  "originalOptions": "A. In the new Jenkins step, use AWS CLI --dry-run option to generate a JSON output of the stack update. Review the JSON document before executing the update.|B. Use CloudFormation CLI to detect the drift by uploading the updated template. Review the drift and only update the stack after the drift is approved.|C. As CloudFormation does not have a CLI command to determine the changes, use terraform plan to print the changes and terraform apply to deploy the changes.|D. In the new step, use CloudFormation CLI create-change-set to generate the list of changes that will be applied in the stack. Review the changes before continuing the Jenkins job.",
+  "video_url": "https://certificationation.com/videos/exam-update-a-cloudformation-stack-the-exam-185.html",
+  "url": "https://certificationation.com/questions/exam-update-a-cloudformation-stack-the-exam-185.html"
+}

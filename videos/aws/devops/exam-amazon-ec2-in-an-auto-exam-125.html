@@ -1,0 +1,62 @@
+---
+title: "You have an application running on Amazon EC2 in an AutoExam"
+description: "Video for you have an application running on Amazon EC2 in an Auto Scaling group. Instances are being bootstrapped dynamically, and the bootstrapping takes over"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have an application running on Amazon EC2 in an Auto Scaling group. Instances are being bootstrapped dynamically, and the bootstrapping takes over 15 minutes to complete. You find that instances are reported by Auto Scaling as being In Service before bootstrapping has been completed. You are receiving application alarms related to new instances before they have completed bootstrapping, which is confusing. You find the cause: your application monitoring tool is polling the Auto Scaling Service API for instances in Service and creating alarms for new previously unknown instances. Which of the following will ensure that new instances are not added to your application monitoring tool before bootstrapping is completed?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <strong>Auto Scaling lifecycle hook</strong> option is the correct choice. By configuring a lifecycle hook, instances are paused in a <strong>Pending:Wait</strong> state while bootstrapping activities are performed. Only when the bootstrapping process completes successfully do you signal Auto Scaling to move the instance to <strong>In Service</strong>, thus preventing your monitoring tool from mistakenly registering the not-yet-ready instances. </p> <p>The option <i>Monitor application health using pre-configured Amazon CloudWatch metrics and configure an SNS topic to relay alarms to the team</i> doesn't address the underlying problem: it only notifies once alarms are triggered and doesn't prevent early registration of incomplete instances. The choice <i>Tag instances upon creation to reflect their pending status, update your monitoring solution to check for this tag before adding new instances, and use the API to set the instance state to 'pending' until setup is done</i> suggests an overly manual and custom solution. This would require changes in both instance tagging processes and the monitoring tool, and does not leverage native AWS features designed for this scenario. The option <i>Increase the desired capacity in your Auto Scaling group settings to minimize the time needed for future bootstrapping of instances</i> does not solve the primary issue—instances will still be marked <strong>In Service</strong> and monitored before they are prepared. </p> <p>Tip: AWS Auto Scaling lifecycle hooks are purpose-built to pause instance transitions and ensure that setup tasks can complete before the instance is counted as fully active. Rely on these hooks for robust, maintainable, and scalable bootstrapping management.</p>",
+  "query": "<p>Your application runs on Amazon EC2 instances that are part of an Auto Scaling group. During initialization, each instance is dynamically bootstrapped, which takes about 15 minutes. You observe that instances appear as <strong>In Service</strong> in Auto Scaling before the bootstrapping finishes, causing your monitoring system to generate alarms for these new, not-yet-ready instances. The reason is that your monitoring solution polls the Auto Scaling API for <strong>In Service</strong> instances and assumes them healthy. How can you prevent your monitoring tool from registering and alarming on new instances before they finish bootstrapping and are truly ready?</p>",
+  "original_oid": "6793d9cd61969b416038a0ba",
+  "options": [
+    {
+      "correct": false,
+      "text": "Monitor application health using pre-configured Amazon CloudWatch metrics and configure an SNS topic to relay alarms to the team.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Tag instances upon creation to reflect their pending status, update your monitoring solution to check for this tag before adding new instances, and use the API to set the instance state to 'pending' until setup is done.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Establish an Auto Scaling lifecycle hook that holds each new instance in a pending state while bootstrapping completes. After the process, send a notification to Auto Scaling so it proceeds to mark the instance as active.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Increase the desired capacity in your Auto Scaling group settings to minimize the time needed for future bootstrapping of instances.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question69",
+  "originalQuery": "You have an application running on Amazon EC2 in an Auto Scaling group.\nInstances are being bootstrapped dynamically, and the bootstrapping takes over 15 minutes to complete.\nYou find that instances are reported by Auto Scaling as being In Service before bootstrapping has been completed.\nYou are receiving application alarms related to new instances before they have completed bootstrapping, which is confusing.\nYou find the cause: your application monitoring tool is polling the Auto Scaling Service API for instances in Service and creating alarms for new previously unknown instances.\nWhich of the following will ensure that new instances are not added to your application monitoring tool before bootstrapping is completed?",
+  "originalOptions": "A. Create an Auto Scaling group lifecycle hook to hold the instance in a pending: wait state until your bootstrapping is complete.Once bootstrapping is complete, notify Auto Scaling to complete the lifecycle hook and move the instance into a pending:proceed state.|B. Use the default Amazon CloudWatch application metrics to monitor your application’s health. Configure an Amazon SNS topic to send these CloudWatch alarms to the correct recipients.|C. Tag all instances on launch to identify that they are in a pending state.Change your application monitoring tool to look for this tag before adding new instances, and use the Amazon API to set the instance state to ‘pending’ until bootstrapping is complete.|D. Increase the desired number of instances in your Auto Scaling group configuration to reduce the time it takes to bootstrap future instances.",
+  "video_url": "https://certificationation.com/videos/exam-amazon-ec2-in-an-auto-exam-125.html",
+  "url": "https://certificationation.com/questions/exam-amazon-ec2-in-an-auto-exam-125.html"
+}

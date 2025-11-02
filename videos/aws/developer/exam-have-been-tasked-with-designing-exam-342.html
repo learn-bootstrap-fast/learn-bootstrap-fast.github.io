@@ -1,0 +1,81 @@
+---
+title: "You are a Database Engineer and have been tasked withExam"
+description: "Video for you are a Database Engineer and have been tasked with designing a database backup and recovery solution for a critical application running on Google"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are a Database Engineer and have been tasked with designing a database backup and recovery solution for a critical application running on Google Cloud Platform. The application uses Cloud Spanner and Cloud SQL (PostgreSQL) as its primary data stores. Which of the following backup and recovery strategies would best meet the requirements for minimizing data loss and ensuring quick recovery in case of a disaster, while also providing a cost-effective solution?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Solstice Logistics runs an online ordering platform on Google Cloud and you need to design a resilient and cost aware data protection plan. Orders are stored in Cloud Spanner and user profiles are kept in Cloud SQL for PostgreSQL. The business wants a recovery point objective under five minutes and a restore time under thirty minutes while keeping ongoing costs reasonable. Which backup and recovery approach should you choose?",
+  "options": [
+    {
+      "text": "Schedule daily exports of both databases to Cloud Storage using Storage Transfer Service",
+      "explanation": "This copies exported data to a Cloud Storage bucket on a timer and relies on periodic export jobs.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure Cloud Spanner regional replication and enable Point in Time Recovery for Cloud SQL for PostgreSQL",
+      "explanation": "This uses Spanner replication across zones and relies on Cloud SQL log based recovery to offer recent restore points.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Turn on automated backups for both services and store them in a Coldline bucket",
+      "explanation": "This depends on scheduled backups and uses a lower cost storage class to retain backup files.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable Point in Time Recovery on Cloud SQL and create manual Cloud Spanner backups twice per day",
+      "explanation": "This sets up log based recovery for Cloud SQL and uses scheduled Spanner backups to create recovery checkpoints.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Configure Cloud Spanner regional replication and enable Point in Time Recovery for Cloud SQL for PostgreSQL</b>.</p><p>For orders in Spanner, <b>Cloud Spanner regional replication</b> provides synchronous replicas across multiple zones in a region, which delivers near zero data loss for zonal outages and fast automatic failover well within the thirty minute restore time objective. It also keeps costs lower than a multi region deployment while still meeting the under five minute recovery point target for the most likely failure scenarios.</p><p>For user profiles in Cloud SQL, <b>Point in Time Recovery for Cloud SQL for PostgreSQL</b> continuously archives transaction logs so you can restore to a specific timestamp within the retention window. This supports an RPO of a few minutes and the service can create a new instance and apply logs in well under thirty minutes in typical environments, which satisfies both objectives while keeping ongoing costs reasonable.</p><p><i>Schedule daily exports of both databases to Cloud Storage using Storage Transfer Service</i> is not sufficient because daily exports leave you with an RPO of up to twenty four hours and the orchestrator named is not how you initiate database exports from these services. Restores from exports also tend to exceed a thirty minute target.</p><p><i>Turn on automated backups for both services and store them in a Coldline bucket</i> is incorrect because Cloud Spanner backups are a managed feature that you do not store in your own bucket or choose a storage class for, and daily automated backups alone do not meet an under five minute RPO. Coldline would not help restore speed and is not applicable to Spanner backups.</p><p><i>Enable Point in Time Recovery on Cloud SQL and create manual Cloud Spanner backups twice per day</i> misses the RPO for Spanner because twice daily backups can lose up to twelve hours of data, and a restore from backups risks overshooting the thirty minute RTO.</p>",
+  "batch_id": "172",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "You are a Database Engineer and have been tasked with designing a database backup and recovery solution for a critical application running on Google Cloud Platform. The application uses Cloud Spanner and Cloud SQL (PostgreSQL) as its primary data stores. Which of the following backup and recovery strategies would best meet the requirements for minimizing data loss and ensuring quick recovery in case of a disaster, while also providing a cost-effective solution?",
+  "originalOptions": "A. Use Cloud Storage Transfer Service to create daily snapshots of Cloud Spanner and Cloud SQL instances.<br/>B. Configure regional replication for Cloud Spanner instances and enable Point-in-Time Recovery for Cloud SQL instances.<br/>C. Enable automated backups for both Cloud Spanner and Cloud SQL, and use Cloud Storage for storing backups.<br/>D. Enable Point-in-Time Recovery for Cloud SQL and create periodic on-demand backups for Cloud Spanner.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "342",
+  "tip": "<p>Translate the <i>RPO</i> into the need for <i>continuous</i> protection such as replication or <i>Point in Time Recovery</i> and map the <i>RTO</i> to fast failover or restore. Be wary of answers that rely on infrequent exports or storage classes like <i>Coldline</i> for databases because these rarely meet minute level objectives.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/instances#regional_and_multi-region_instances",
+    "https://cloud.google.com/spanner/docs/replication",
+    "https://cloud.google.com/spanner/docs/backup",
+    "https://cloud.google.com/sql/docs/postgres/point-in-time-recovery",
+    "https://cloud.google.com/sql/docs/postgres/backup-recovery/backups"
+  ],
+  "url": "https://certificationation.com/questions/exam-have-been-tasked-with-designing-exam-342.html",
+  "video_url": "https://certificationation.com/videos/exam-have-been-tasked-with-designing-exam-342.html"
+}

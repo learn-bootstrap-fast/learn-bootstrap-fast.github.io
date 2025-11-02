@@ -1,0 +1,55 @@
+---
+title: "You work as a machine learning specialist for a pollingExam"
+description: "Video for you work as a machine learning specialist for a polling research company. You have national polling data for the last 10 presidential elections that"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You work as a machine learning specialist for a polling research company. You have national polling data for the last 10 presidential elections that you have engineered, randomized, partitioned into various training and test datasets, and stored on S3 You have selected a SageMaker built-in algorithm to use for your model. Your training datasets are very large. As you repeatedly run your training job with different large datasets, you find your training takes a very long time. How can you improve the performance of your training runs? (Select TWO)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d6de7742293cac494aeb"
+  },
+  "answer": "Answers A C",
+  "certification": "AWS Machine Learning Specialty",
+  "certificationKey": "AWSMLS",
+  "difficulty": "0",
+  "image": "",
+  "needsWork": "false",
+  "ordinal": "67",
+  "originalExplanation": "E.\nAnswers: A, C.\nOption A is correct.\nThe protobuf recordIO format, used for training data, is the optimal way to load data into your model for training.\n(See the Amazon SageMaker developer guide titled Common Data Formats for Training)\nOption B is incorrect.\nXML is not a supported data format for training in SageMaker.\n(See the Amazon SageMaker developer guide titled Common Data Formats for Training)\nOption C is correct.\nWhen you use the protobuf recordIO format, you can also take advantage of pipe mode when training your model.\nPipe mode, used together with the protobuf recordIO format, gives you the best data load performance by streaming your data directly from S3 to your EBS volumes used by your training instance.\n(See the Amazon SageMaker developer guide titled Common Data Formats for Training)\nOption D is incorrect.\nWhen you use the CSV format and file mode, all of your data is loaded from S3 to the EBS volumes used by your training instance.\nThis is much less efficient from a performance perspective than streaming the training data directly from S3 to your EBS volumes used by your training instance.\n(See the Amazon SageMaker developer guide titled Common Data Formats for Training)\nOption E is incorrect.\nElastic Inference is used to speed up the throughput of retrieving real-time inferences from models deployed as SageMaker hosted models.\nElastic Inference accelerators accelerate your inference calls; they aren't used while training.\n(See the Amazon SageMaker developer guide titled Amazon SageMaker Elastic Inference (EI))\nReference:\nPlease see the Amazon SageMaker developer guide titled Common Data Formats for Built-in Algorithms and the AWS FAQ titled Amazon Elastic Inference FAQs.\nTo improve the performance of the training runs with large datasets in Amazon SageMaker, the following two options can be used:\nA. Use the protobuf recordIO format: The protobuf recordIO format is a binary format that can be used to efficiently serialize structured data, such as machine learning datasets, and store them in a compressed form. Using this format can significantly reduce the data loading time during training, as the data can be read directly from disk without needing to decompress it first. Additionally, the binary format allows for faster data transfer over the network, which can be particularly useful when working with large datasets. Therefore, using the protobuf recordIO format can improve the performance of training jobs with large datasets.\nC. Use pipe mode to stream the training data directly to your EBS training instance volumes: Pipe mode is a feature in Amazon SageMaker that allows you to stream training data directly to your EBS training instance volumes, rather than having to load the entire dataset into memory first. This can be particularly useful when working with large datasets that cannot fit into memory. Using pipe mode can reduce the amount of time it takes to load the data into memory and start the training job, as well as reduce the storage requirements on the instance volumes. Additionally, pipe mode can enable continuous training, where new data is streamed in real-time to the training job, allowing the model to adapt and learn from new data as it becomes available.\nB. Convert your data to XML and use file mode to load your data to the EBS training instance volumes: This option is not recommended because XML is a text-based format that is not as efficient for machine learning datasets as the protobuf recordIO format. Additionally, using file mode to load the data can be slower than using pipe mode to stream the data directly to the instance volumes.\nD. Convert your data to CSV and use file mode to load your data to the EBS training instance volumes: This option is not recommended because CSV is also a text-based format that is less efficient than the protobuf recordIO format for machine learning datasets. Additionally, using file mode to load the data can be slower than using pipe mode to stream the data directly to the instance volumes.\nE. Change your Elastic Inference accelerator type to a larger instance type: This option is not relevant for improving the performance of the training runs with large datasets. Elastic Inference accelerators are used for inference, not training, and changing the accelerator type will not impact the training performance.",
+  "originalOptions": [
+    "A. Use the protobuf recordIO format.",
+    "B. Convert your data to XML and use file mode to load your data to the EBS training instance volumes.",
+    "C. Use pipe mode to stream the training data directly to your EBS training instance volumes.",
+    "D. Convert your data to CSV and use file mode to load your data to the EBS training instance volumes.",
+    "E. Change your Elastic Inference accelerator type to a larger instance type."
+  ],
+  "originalQuery": "You work as a machine learning specialist for a polling research company.\nYou have national polling data for the last 10 presidential elections that you have engineered, randomized, partitioned into various training and test datasets, and stored on S3\nYou have selected a SageMaker built-in algorithm to use for your model.\nYour training datasets are very large.\nAs you repeatedly run your training job with different large datasets, you find your training takes a very long time. How can you improve the performance of your training runs? (Select TWO)",
+  "primaryObjective": "",
+  "quid": "0",
+  "source": "https://www.exam-answer.com/amazon/mls-c01/question67",
+  "video_url": "https://certificationation.com/videos/exam-specialist-for-a-polling-research-exam-067.html",
+  "url": "https://certificationation.com/questions/exam-specialist-for-a-polling-research-exam-067.html"
+}

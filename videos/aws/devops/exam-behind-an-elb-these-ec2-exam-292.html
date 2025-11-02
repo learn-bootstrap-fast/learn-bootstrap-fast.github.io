@@ -1,0 +1,62 @@
+---
+title: "You have a set of EC2 Instances running behind an ELBExam"
+description: "Video for you have a set of EC2 Instances running behind an ELB. These EC2 Instances are launched via an Autoscaling Group. There is a requirement to ensure"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have a set of EC2 Instances running behind an ELB. These EC2 Instances are launched via an Autoscaling Group. There is a requirement to ensure that the logs from the server are stored in a durable storage layer. This is so that log data can be analyzed by staff in the future. Which of the following steps can be implemented to ensure this requirement is fulfilled. Choose 2 answers from the options given below."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct solutions are: <strong>configure your instances to rotate and upload logs to Amazon S3</strong> and <strong>use AWS Data Pipeline to transfer logs from S3 to Redshift</strong>. Here’s why:</p><ul><li>Storing logs in Amazon S3 is reliable and durable, which means your log files are safely kept even if instances terminate. Using a scheduled script ensures logs are pushed regularly and not lost during scaling events.</li><li>Transferring logs from S3 into Redshift using Data Pipeline enables future analysis and allows the staff to run SQL queries against the data for reporting.</li></ul><p>Why not the others?</p><ul><li><i>Set up scheduled jobs ... into Amazon Glacier</i>: Though Glacier is durable and cost-effective for archiving, it is not suitable for logs that need ongoing or interactive analysis. Retrieving data from Glacier can also take hours, making it impractical here.</li><li><i>Use AWS Data Pipeline ... into Amazon SQS</i>: SQS is a queuing service, not designed for log storage or reporting. Moving data into SQS is not suitable for long-term analysis or storage.</li></ul><p><strong>Tip:</strong> For log storage and future querying, always use a durable, query-friendly service like S3 and Redshift. Glacier is for deep archive, and SQS is for ephemeral messaging.</p>",
+  "query": "<p>Your EC2 instances are deployed behind a load balancer and are managed by an Auto Scaling Group. There is a need to store server logs securely in a long-lasting location so that the logs can be reviewed and analyzed by your team in the future. Which two actions can you take to meet this requirement?</p><p>Select <strong>two</strong> options from those listed below.</p>",
+  "original_oid": "6793da6961969b416038a1f5",
+  "options": [
+    {
+      "correct": true,
+      "text": "Use AWS Data Pipeline to transfer logs from Amazon S3 to Redshift for reporting and analytics purposes.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Configure your EC2 instances to regularly rotate and upload logs to an Amazon S3 bucket by scheduling a script.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up scheduled jobs on your EC2 instances to rotate logs and ship them directly into Amazon Glacier.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Use AWS Data Pipeline to move logs from Amazon S3 into Amazon SQS for later processing and reporting.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question388",
+  "originalQuery": "You have a set of EC2 Instances running behind an ELB.\nThese EC2 Instances are launched via an Autoscaling Group.\nThere is a requirement to ensure that the logs from the server are stored in a durable storage layer.\nThis is so that log data can be analyzed by staff in the future.\nWhich of the following steps can be implemented to ensure this requirement is fulfilled.\nChoose 2 answers from the options given below.",
+  "originalOptions": "[\"A. On the web servers, create a scheduled task that executes a script to rotate and transmit the logs to an Amazon S3 bucket.\",\"B. Use AWS Data Pipeline to move log data from the Amazon S3 bucket to Amazon Redshift in order to process and run reports\",\"C. On the web servers, create a scheduled task that executes a script to rotate and transmit the logs to Amazon Glacier.\",\"D. Use AWS Data Pipeline to move log data from the Amazon S3 bucket to Amazon SQS in order to process and run reports.\"]",
+  "video_url": "https://certificationation.com/videos/exam-behind-an-elb-these-ec2-exam-292.html",
+  "url": "https://certificationation.com/questions/exam-behind-an-elb-these-ec2-exam-292.html"
+}

@@ -1,0 +1,83 @@
+---
+title: "You are migrating an on-premises application to GoogleExam"
+description: "Video for you are migrating an on-premises application to Google Cloud. The application requires a high availability (HA) MySQL database to support"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are migrating an on-premises application to Google Cloud. The application requires a high availability (HA) MySQL database to support business-critical functions. Your company's disaster recovery strategy requires a recovery time objective (RTO) and recovery point objective (RPO) within 15 minutes of failure. You plan to use a Google Cloud managed service. What should you do to maximize uptime for your application?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "BrightTrail Outfitters is moving an order processing platform from its data center to Google Cloud. The application depends on a MySQL backend that must remain highly available because it supports mission critical transactions. The business requires a recovery time objective and a recovery point objective of no more than 12 minutes during a regional incident. You will use a Google managed database service. What should you implement to achieve the highest possible uptime for this workload?",
+  "options": [
+    {
+      "text": "Migrate the database to multi region Cloud Spanner and refactor the schema and application so that a regional outage does not interrupt service",
+      "explanation": "This proposes replatforming to Cloud Spanner for global availability but it requires significant redesign.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Set up Cloud SQL for MySQL with regional high availability and rely on scheduled backups to restore a new instance in a different region when a disaster occurs",
+      "explanation": "This uses HA for zone failures and uses backups for cross region recovery.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Provision Cloud SQL for MySQL with regional high availability and create a cross region read replica that you can promote to primary if the region fails",
+      "explanation": "This combines automatic zonal failover with a replica in another region that can be promoted during a regional event.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Deploy Cloud SQL for MySQL as a single zone instance and add a read replica in another zone and a second replica in a distant region for disaster recovery",
+      "explanation": "This uses replicas for scaling and potential recovery but the primary lacks automatic failover within the region.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Provision Cloud SQL for MySQL with regional high availability and create a cross region read replica that you can promote to primary if the region fails</b>.</p><p>This approach gives you automatic failover within the region to cover zonal outages and it provides a ready to use replica in another region for disaster recovery. You can promote the replica if the entire region becomes unavailable. Replication lag is usually small which helps keep the recovery point objective within the required window and promotion can be performed quickly which supports the recovery time objective. This design therefore maximizes uptime by addressing both local and regional failure scenarios while staying on a managed MySQL service.</p><p><i>Migrate the database to multi region Cloud Spanner and refactor the schema and application so that a regional outage does not interrupt service</i> is incorrect because it replaces MySQL with a different database engine and demands significant refactoring of schema and code. While it offers strong availability, it does not align with a lift and shift of a MySQL workload and would add time and risk rather than meeting the stated goal.</p><p><i>Set up Cloud SQL for MySQL with regional high availability and rely on scheduled backups to restore a new instance in a different region when a disaster occurs</i> is incorrect because restores from scheduled backups typically exceed a twelve minute recovery time objective and the recovery point objective would be as old as the last backup. This would not meet the business requirement for minimal downtime and data loss during a regional incident.</p><p><i>Deploy Cloud SQL for MySQL as a single zone instance and add a read replica in another zone and a second replica in a distant region for disaster recovery</i> is incorrect because a single zone primary lacks automatic failover and does not deliver the highest availability. Read replicas do not fail over automatically and promoting them during an incident is manual and slower, which makes it difficult to meet tight recovery objectives.</p>",
+  "batch_id": "249",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are migrating an on-premises application to Google Cloud. The application requires a high availability (HA) MySQL database to support business-critical functions. Your company's disaster recovery strategy requires a recovery time objective (RTO) and recovery point objective (RPO) within 15 minutes of failure. You plan to use a Google Cloud managed service. What should you do to maximize uptime for your application?",
+  "originalOptions": "A. Deploy Cloud SQL for MySQL in a regional configuration with HA enabled. Take periodic backups, and use this backup to restore to a new Cloud SQL for MySQL instance in another region during a disaster recovery event.<br/>B. Deploy Cloud SQL for MySQL in a regional configuration with HA enabled. Create a cross-region read replica, and promote the read replica as the primary node for disaster recovery.<br/>C. Deploy Cloud SQL for MySQL in a regional configuration. Create a read replica in a different zone in the same region and a read replica in another region for disaster recovery.<br/>D. Migrate the MySQL database to multi-regional Cloud Spanner so that a single region outage will not affect your application. Update the schema to support Cloud Spanner data types, and refactor the application.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "162",
+  "tip": "<p>When a question specifies MySQL and tight <i>RTO</i> and <i>RPO</i>, prefer Cloud SQL high availability within a region plus a <i>cross region read replica</i> for disaster recovery, and be cautious of answers that rely only on backups.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/high-availability",
+    "https://cloud.google.com/sql/docs/mysql/replication/replication-between-regions",
+    "https://cloud.google.com/sql/docs/mysql/promote-replica",
+    "https://cloud.google.com/sql/docs/mysql/disaster-recovery",
+    "https://cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+    "https://cloud.google.com/sql/sla",
+    "https://cloud.google.com/spanner/docs/instances#configurations"
+  ],
+  "url": "https://certificationation.com/questions/exam-application-to-google-cloud-the-exam-162.html",
+  "video_url": "https://certificationation.com/videos/exam-application-to-google-cloud-the-exam-162.html"
+}

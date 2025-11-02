@@ -1,0 +1,54 @@
+---
+title: "You are deploying your data streaming pipeline for yourExam"
+description: "Video for you are deploying your data streaming pipeline for your machine learning environment. Your cloud formation stack has a Kinesis Data Firehose using the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are deploying your data streaming pipeline for your machine learning environment. Your cloud formation stack has a Kinesis Data Firehose using the Data Transformation feature where you have configured Firehose to write to your S3 data lake. When you stream data through your Kinesis Firehose, you notice that no data is arriving your S3 bucket. What might be the problem that is causing the failure?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d6d17742293cac494ace"
+  },
+  "answer": "D",
+  "certification": "AWS Machine Learning Specialty",
+  "certificationKey": "AWSMLS",
+  "difficulty": "0",
+  "image": "",
+  "needsWork": "false",
+  "ordinal": "38",
+  "originalExplanation": "Answer: D.\nOption A is incorrect.\nThe maximum memory setting for lambda is 3 GB.\nUsing the maximum memory would not cause Firehose to fail to write to S3\nIt will increase the cost of your solution.\nHowever, since per the AWS documentation, “Lambda allocates CPU power linearly in proportion to the amount of memory configured.”\nOption B is incorrect.\nYour S3 bucket used by Kinesis Data Firehose to output your data must be in the same region as your Firehose.\nSince they are in the same region, this would not cause a failure to write to the S3 bucket.\nOption C is incorrect.\nThe Kinesis Data Firehose documentation states that “Kinesis Data Firehose buffers incoming data before delivering it to Amazon S3\nYou can choose a buffer size (1-128 MBs) or buffer interval (60-900 seconds)\nThe condition that is satisfied first triggers data delivery to Amazon S3.” Using the default setting would not prevent Firehose from writing to S3.\nOption D is correct.\nThe lambda timeout value default is 3 seconds.\nFor many Kinesis Data Firehose implementations, 3 seconds is not enough time to execute the transformation function.\nReference:\nPlease see the Amazon Kinesis Data Firehose developer guide documentation titled Configure Settings, the Amazon Kinesis Data Firehose developer guide documentation titled Amazon Kinesis Data Firehose Data Transformation, and the AWS Lambda developer guide documentation titled AWS Lambda Function Configuration.\nBased on the information provided, it is difficult to determine the exact cause of the issue. However, we can analyze each option and its potential impact on the Kinesis Data Firehose and S3 data lake pipeline.\nOption A: Your lambda memory setting is set to the maximum value allowed.\nThe memory setting of a lambda function determines the amount of memory allocated to the function. If the function requires more memory than what is allocated, it can lead to performance issues or even function failure. However, the memory setting is unlikely to be the cause of the issue since the question is focused on the Kinesis Data Firehose and S3 pipeline and not the lambda function.\nOption B: Your S3 bucket is in the same region as your Kinesis Data Firehose.\nThis is an important requirement for the Kinesis Data Firehose to write data to an S3 bucket. If the S3 bucket is not in the same region as the Kinesis Data Firehose, the pipeline will fail. However, since the question states that the pipeline was configured to write to the S3 data lake, it is unlikely that this is the cause of the issue.\nOption C: Your Kinesis Data Firehose buffer setting is set to the default value.\nThe Kinesis Data Firehose buffer setting determines the amount of data that can be buffered before being written to the destination. If the buffer size is too small, it can cause the pipeline to become slow or even fail. However, it is unlikely that this is the cause of the issue since a default buffer size is usually sufficient for most use cases.\nOption D: Your lambda timeout value is set to the default value.\nThe timeout value of a lambda function determines the maximum amount of time that the function can run before it is terminated. If the function takes longer than the timeout value to complete, it can cause the pipeline to become slow or even fail. However, similar to option A, the timeout value is unlikely to be the cause of the issue since the question is focused on the Kinesis Data Firehose and S3 pipeline and not the lambda function.\nIn conclusion, based on the information provided, it is difficult to determine the exact cause of the issue. However, options A, C, and D are unlikely to be the cause of the issue. Option B is an important requirement for the pipeline to work, but since the pipeline was configured to write to the S3 data lake, it is unlikely to be the cause of the issue.",
+  "originalOptions": [
+    "A. Your lambda memory setting is set to the maximum value allowed.",
+    "B. Your S3 bucket is in the same region as your Kinesis Data Firehose.",
+    "C. Your Kinesis Data Firehose buffer setting is set to the default value.",
+    "D. Your lambda timeout value is set to the default value."
+  ],
+  "originalQuery": "You are deploying your data streaming pipeline for your machine learning environment.\nYour cloud formation stack has a Kinesis Data Firehose using the Data Transformation feature where you have configured Firehose to write to your S3 data lake.\nWhen you stream data through your Kinesis Firehose, you notice that no data is arriving your S3 bucket.\nWhat might be the problem that is causing the failure?",
+  "primaryObjective": "",
+  "quid": "0",
+  "source": "https://www.exam-answer.com/amazon/mls-c01/question38",
+  "video_url": "https://certificationation.com/videos/exam-pipeline-for-your-machine-learning-exam-038.html",
+  "url": "https://certificationation.com/questions/exam-pipeline-for-your-machine-learning-exam-038.html"
+}

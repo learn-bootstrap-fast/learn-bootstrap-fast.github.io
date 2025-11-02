@@ -1,0 +1,80 @@
+---
+title: "You have created an instance of Cloud SQL. The dataExam"
+description: "Video for you have created an instance of Cloud SQL. The data stored in the instance is expected to increase rapidly up to 60 TB. You need to ensure that the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have created an instance of Cloud SQL. The data stored in the instance is expected to increase rapidly up to 60 TB. You need to ensure that the database instance is reliable and can increase capacity with minimal intervention. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You have provisioned a new Cloud SQL instance for scrumtuous.com and forecasts indicate the dataset will grow rapidly to about 58 TB within a short period. You want the deployment to remain dependable and to expand storage capacity with minimal manual effort. What should you do?",
+  "options": [
+    {
+      "text": "Use local SSD for the database storage",
+      "explanation": "This uses locally attached ephemeral SSDs to provide very high IOPS but they are not durable across host events and have fixed capacity characteristics",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable high availability configuration for the instance",
+      "explanation": "This sets up a standby instance in another zone and provides automatic failover to improve uptime",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Turn on automatic storage increase for the instance",
+      "explanation": "This setting allows Cloud SQL to expand the data disk automatically when free space becomes low",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Create a Cloud Scheduler job that calls the Cloud SQL Admin API to grow disk size on alerts",
+      "explanation": "This approach uses a scheduled task and monitoring signals to programmatically request disk resizing through the API",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Turn on automatic storage increase for the instance</b>.</p><p>Automatic storage increase allows Cloud SQL to expand disk capacity when free space becomes low. This occurs without operator intervention which keeps the environment dependable during rapid growth. It scales incrementally up to the maximum supported storage for the database engine so a target around 58 TB can be accommodated when the chosen engine and instance settings support that size.</p><p><i>Use local SSD for the database storage</i> is not supported by Cloud SQL and local SSD is ephemeral which is not suitable for durable managed database storage. It would not provide automatic capacity growth and would reduce dependability.</p><p><i>Enable high availability configuration for the instance</i> improves resilience and failover but it does not increase storage capacity and it does not automate storage growth.</p><p><i>Create a Cloud Scheduler job that calls the Cloud SQL Admin API to grow disk size on alerts</i> adds unnecessary operational complexity and risk. The built in automatic storage increase already performs this function more reliably and with less manual effort.</p>",
+  "batch_id": "69",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You have created an instance of Cloud SQL. The data stored in the instance is expected to increase rapidly up to 60 TB. You need to ensure that the database instance is reliable and can increase capacity with minimal intervention. What should you do?",
+  "originalOptions": "A. Use a cron script to increase storage when required.<br/>B. Use local SSD.<br/>C. Enable automatic storage increases.<br/>D. Enable high availability failover.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "209",
+  "tip": "<p>When a question stresses <i>minimal manual effort</i> for Cloud SQL storage expansion, look for the built in <i>automatic storage increase</i> feature. Remember that <i>high availability</i> is about uptime and failover while it does not change capacity.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/instance-settings#automatic-storage-increase",
+    "https://cloud.google.com/sql/docs/postgres/instance-settings#automatic_storage_increase",
+    "https://cloud.google.com/sql/docs/quotas#storage",
+    "https://cloud.google.com/sql/docs/mysql/high-availability"
+  ],
+  "url": "https://certificationation.com/questions/exam-cloud-sql-the-data-stored-exam-209.html",
+  "video_url": "https://certificationation.com/videos/exam-cloud-sql-the-data-stored-exam-209.html"
+}

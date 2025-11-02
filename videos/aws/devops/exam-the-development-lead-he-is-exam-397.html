@@ -1,0 +1,62 @@
+---
+title: "A designer is preparing for a demo to the developmentExam"
+description: "Video for a designer is preparing for a demo to the development lead. He is using a Cloudformation template as the template could be version controlled. He"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A designer is preparing for a demo to the development lead. He is using a Cloudformation template as the template could be version controlled. He wants the template to be able to get the SSH Key as a user input in order to SSH to an EC2 instance that will be created by the Cloudformation stack later on. Which below approach is the proper one to make this happen?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct approach is to <b>use a text editor to create a CloudFormation template in YAML or JSON, add a Parameter for the SSH Key (for example, 'MyKeyPair'), and then use <code>Ref</code> to supply this parameter's value to the EC2 instance's KeyName property</b>. Storing the template in S3 and uploading it during stack creation is a standard practice to ensure reusability and versioning.</p><p><i>Design the template with XML format and include a user input parameter for the SSH Key. Reference this parameter in the creation of new EC2 instances.</i> is incorrect because CloudFormation does not support XML – only JSON and YAML formats are accepted.</p><p><i>Utilize the AWS template editor, building the template with JSON or YAML, and create a parameter called 'MyKeyPair'. Reference this parameter in the instance section using the term 'Reference' to assign the SSH Key.</i> is close, but the correct function is <code>Ref</code>, not 'Reference'. The template editor only assists with creating supported JSON/YAML files and doesn't change this requirement.</p><p><i>Construct the template with XML and add a parameter titled 'MyKeyPair' with the type set to 'Key'. For instances, use 'Ref' when referring to this parameter in the Metadata block. Upload the template to S3 and provide its link during stack creation.</i> is wrong for two reasons: CloudFormation doesn't use XML, and referencing in the Metadata section does not set the SSH Key for the EC2 instance directly.</p><p><b>Tip:</b> Always use the Parameters section in your CloudFormation template to capture user inputs and the <code>Ref</code> intrinsic function to pass these values into your resources. Only YAML and JSON are supported formats for templates.</p>",
+  "query": "<p>A developer is getting ready to demonstrate an application and wants to ensure an EC2 Key Pair can be dynamically provided by the user when launching a CloudFormation stack. This way, the EC2 instance launched by the stack is accessible via SSH. Which of the following methods is best for making the SSH Key pair a configurable input in your CloudFormation template?</p>",
+  "original_oid": "6793da7d61969b416038a21c",
+  "options": [
+    {
+      "correct": true,
+      "text": "Use a text editor to create a CloudFormation template in YAML or JSON. Add a Parameter section for the SSH Key, such as 'MyKeyPair'. When defining the EC2 instance, use the <code>Ref</code> function to pass this key to the KeyName property. Store the template in S3 and upload it when initiating the stack.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Design the template with XML format and include a user input parameter for the SSH Key. Reference this parameter in the creation of new EC2 instances.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Utilize the AWS template editor, building the template with JSON or YAML, and create a parameter called 'MyKeyPair'. Reference this parameter in the instance section using the term 'Reference' to assign the SSH Key.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Construct the template with XML and add a parameter titled 'MyKeyPair' with the type set to 'Key'. For instances, use 'Ref' when referring to this parameter in the Metadata block. Upload the template to S3 and provide its link during stack creation.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question428",
+  "originalQuery": "A designer is preparing for a demo to the development lead.\nHe is using a Cloudformation template as the template could be version controlled.\nHe wants the template to be able to get the SSH Key as a user input in order to SSH to an EC2 instance that will be created by the Cloudformation stack later on.\nWhich below approach is the proper one to make this happen?",
+  "originalOptions": "A. Design the template using XML format and add a parameter as the SSH Key. Refer to this parameter for new EC2 instances.|B. Use an editor to write a template using JSON or YAML. Add a parameter section for the SSH Key such as “MyKeyPair”. For new instances, use the keyword of “Ref” to use this parameter. Save the template in S3 and upload it during stack creation.|C. In the template editor that has been provided by AWS, design the template using JSON or YAML. Add a parameter for the SSH Key such as “MyKeyPair”. For new instances, use the keyword “Reference” to link to the “key” parameter.|D. Design the template using XML format. Add a parameter called “MyKeyPair” with the “Type” as “Key”. For new EC2 instances, use the keyword of “Ref” to refer to this parameter in the Metadata section. Save the template in a S3 and refer to the S3 link during stack creation.",
+  "video_url": "https://certificationation.com/videos/exam-the-development-lead-he-is-exam-397.html",
+  "url": "https://certificationation.com/questions/exam-the-development-lead-he-is-exam-397.html"
+}

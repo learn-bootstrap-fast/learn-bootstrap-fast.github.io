@@ -1,0 +1,80 @@
+---
+title: "As a Database Engineer, you have been asked to design aExam"
+description: "Video for as a Database Engineer, you have been asked to design a solution to import a large dataset stored in a series of Avro files in a Cloud Storage bucket"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you have been asked to design a solution to import a large dataset stored in a series of Avro files in a Cloud Storage bucket into a Bigtable instance. The import process should be fault-tolerant, efficient, and capable of handling large datasets. Which of the following options best meets these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You work for a logistics startup named BrightCrate and you need to bulk load roughly 32 TB of historical records that are stored as about 16,000 Avro files in a Cloud Storage bucket into a Cloud Bigtable instance. The process must tolerate failures, run at large scale, and finish efficiently with minimal manual intervention. What should you build?",
+  "options": [
+    {
+      "text": "Set up a Cloud Function that triggers on Cloud Storage finalization events and writes rows to Cloud Bigtable for each Avro file",
+      "explanation": "This uses an event driven function that runs for each new object and writes data to Cloud Bigtable through a client library",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Build an Apache Beam pipeline running on Cloud Dataflow that reads the Avro files from Cloud Storage and writes to Cloud Bigtable using the connector",
+      "explanation": "This creates a managed distributed pipeline that reads from Cloud Storage and writes directly into Cloud Bigtable with parallel workers",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Run gsutil cp to copy the Avro objects from the bucket to the Cloud Bigtable instance",
+      "explanation": "This uses a command line tool that transfers files between storage locations or local paths",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a Dataproc Spark job that reads Avro from Cloud Storage and writes to Cloud Bigtable via the HBase client library",
+      "explanation": "This provisions a Spark cluster to process Avro files and send mutations to Cloud Bigtable through a connector",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Build an Apache Beam pipeline running on Cloud Dataflow that reads the Avro files from Cloud Storage and writes to Cloud Bigtable using the connector</b>.</p><p><b>Dataflow with the Bigtable connector</b> is designed for large scale batch ingestion. It can read many Avro files from Cloud Storage in parallel and it provides automatic scaling, checkpointing, and retries so the job can tolerate failures and complete with minimal manual intervention. The Bigtable IO in Beam batches mutations, applies flow control, and retries transient errors which helps you achieve high throughput while protecting the cluster.</p><p><i>Set up a Cloud Function that triggers on Cloud Storage finalization events and writes rows to Cloud Bigtable for each Avro file</i> is not appropriate because per file invocations are not efficient for tens of terabytes and the function model does not provide the sustained throughput, batching, and orchestration needed for bulk loading.</p><p><i>Run gsutil cp to copy the Avro objects from the bucket to the Cloud Bigtable instance</i> is invalid because gsutil copies files between local filesystems and Cloud Storage and Cloud Bigtable is not an object store and cannot be a gsutil destination.</p><p><i>Create a Dataproc Spark job that reads Avro from Cloud Storage and writes to Cloud Bigtable via the HBase client library</i> can be made to work but it requires more custom code and operational management for batching, retries, and tuning while <b>Dataflow</b> offers a managed, fault tolerant pipeline that better fits the requirement for minimal manual intervention.</p>",
+  "batch_id": "149",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you have been asked to design a solution to import a large dataset stored in a series of Avro files in a Cloud Storage bucket into a Bigtable instance. The import process should be fault-tolerant, efficient, and capable of handling large datasets. Which of the following options best meets these requirements?",
+  "originalOptions": "A. Implement a Cloud Function triggered by Cloud Storage events to import data from Avro files into Bigtable.<br/>B. Use an Apache Beam pipeline with Cloud Dataflow to read the Avro files, transform the data, and write it to Bigtable.<br/>C. Use the gsutil cp command to copy the data from the Cloud Storage bucket to the Bigtable instance.<br/>D. Use the gcloud bigtable import command with the --source=avro flag.",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "313",
+  "tip": "<p>When the requirement is bulk ingestion from Cloud Storage into Cloud Bigtable with high scale and failure tolerance, look for <i>Apache Beam on Dataflow with BigtableIO</i> and be cautious of options that rely on per file triggers or generic file copy tools.</p>",
+  "references": [
+    "https://cloud.google.com/bigtable/docs/import-export-dataflow",
+    "https://beam.apache.org/releases/javadoc/current/org/apache/beam/sdk/io/gcp/bigtable/BigtableIO.html",
+    "https://cloud.google.com/storage/docs/gsutil/commands/cp",
+    "https://cloud.google.com/functions/docs/calling/storage"
+  ],
+  "url": "https://certificationation.com/questions/exam-been-asked-to-design-a-exam-313.html",
+  "video_url": "https://certificationation.com/videos/exam-been-asked-to-design-a-exam-313.html"
+}

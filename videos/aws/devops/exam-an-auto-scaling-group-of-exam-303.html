@@ -1,0 +1,62 @@
+---
+title: "You have a web application composed of an Auto ScalingExam"
+description: "Video for you have a web application composed of an Auto Scaling group of web servers behind a load balancer. For each new release, you have a new AMI for the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have a web application composed of an Auto Scaling group of web servers behind a load balancer. For each new release, you have a new AMI for the Auto Scaling group and you need to deploy it in a controlled manner."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best approach here is to <b>create a new Auto Scaling launch configuration with the new AMI, then stand up a new Auto Scaling group using this configuration. By attaching both groups to the same load balancer, and carefully adjusting the desired capacity in each group, you can shift traffic to new instances at your own pace and roll back easily if issues arise</b>. This method gives you maximum control and the ability to quickly revert if necessary.</p> <p><i>Update the existing Auto Scaling group’s launch configuration with the updated AMI and rely on Auto Scaling’s rolling update feature for migration</i> can work, but classic Auto Scaling groups don't directly support rolling updates at the AWS console level (unless integrated through tools like CodeDeploy); also, swapping launch configurations does not automatically replace existing instances. You'd need to manually terminate them or trigger a scaling event, which isn't as smooth or controlled as the double-group approach.</p> <p><i>Create a new launch configuration using the updated AMI and attach it directly to the original Auto Scaling group, letting the group cycle between old and new instances</i> is not valid because an Auto Scaling group can only have one launch configuration at a time (though launch templates support versions, this option describes launch configurations). Also, there is no built-in mechanism to control the mix of instances launched from both configurations.</p> <p><i>Deploy a new load balancer, then launch a new Auto Scaling group with the new AMI behind it. Use Route 53 weighted routing to direct different proportions of traffic to each load balancer as you go</i> involves unnecessary complexity. Unless you need dramatically different traffic or region-specific configurations, you generally want to keep one load balancer and one DNS name for seamless user experience.</p> <p><b>Tip:</b> Managing blue/green deployments using dual Auto Scaling groups behind the same load balancer provides robust safeguards and easy rollback. Avoid approaches that introduce DNS or infrastructure complexity unless absolutely necessary.</p>",
+  "query": "<p>Your team manages a web app that runs behind a load balancer and uses an Auto Scaling group for the web servers. Whenever a new version is released, you receive an updated AMI for the group. What is the recommended way to roll out the new AMI to production gradually, providing control over the deployment process?</p>",
+  "original_oid": "6793da4b61969b416038a1b7",
+  "options": [
+    {
+      "correct": true,
+      "text": "Create a new Auto Scaling launch configuration with the new AMI, then make a new Auto Scaling group using this configuration. Attach both groups to the same load balancer and adjust each group’s desired capacity during the cutover.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Update the existing Auto Scaling group’s launch configuration with the updated AMI and rely on Auto Scaling’s rolling update feature for migration.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Create a new launch configuration using the updated AMI and attach it directly to the original Auto Scaling group, letting the group cycle between old and new instances.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Deploy a new load balancer, then launch a new Auto Scaling group with the new AMI behind it. Use Route 53 weighted routing to direct different proportions of traffic to each load balancer as you go.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question326",
+  "originalQuery": "You have a web application composed of an Auto Scaling group of web servers behind a load balancer.\nFor each new release, you have a new AMI for the Auto Scaling group and you need to deploy it in a controlled manner.",
+  "originalOptions": "A. Modify the Autoscaling launch configuration with the new AMI. Use the Auto Scaling rolling updates feature to migrate to the new version.|B. Create an Auto Scaling launch configuration with the new AMI. Create an Auto Scaling group with the new launch configuration and register the Auto Scaling group with the same load balancer. Modify the desired capacity of each group to migrate.|C. Create an Autoscaling launch configuration with the new AMI. Attach the new launch configuration to the same Auto Scaling group. Configure the Auto Scaling group to vary the proportion of instances launched from two launch configurations.|D. Create a new load balancer. Create an Auto Scaling group with the new AMI and register instances with the new load balancer. Use Amazon Route53 weighted Round Robin to vary the proportion of requests sent to the load balancers.",
+  "video_url": "https://certificationation.com/videos/exam-an-auto-scaling-group-of-exam-303.html",
+  "url": "https://certificationation.com/questions/exam-an-auto-scaling-group-of-exam-303.html"
+}

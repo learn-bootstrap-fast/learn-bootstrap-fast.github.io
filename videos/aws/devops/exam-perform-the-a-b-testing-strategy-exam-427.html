@@ -1,0 +1,67 @@
+---
+title: "The DevOps team is using Lambda@Edge to perform the A/BExam"
+description: "Video for the DevOps team is using Lambda@Edge to perform the A/B testing strategy for a Web application. By Lambda@Edge, logic can be added in the CloudFront"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "The DevOps team is using Lambda@Edge to perform the A/B testing strategy for a Web application. By Lambda@Edge, logic can be added in the CloudFront CDN in order to choose which content to deliver without the need to touch the application code. Two versions of application contents can be easily tested and analyzed. Lambda functions can change CloudFront contents at below points:"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>Lambda@Edge functions can be triggered at four primary CloudFront lifecycle events: <b>Viewer request</b>, <b>Origin request</b>, <b>Origin response</b>, and <b>Viewer response</b>. These trigger points allow developers to execute code at the edge, enabling dynamic selection of A/B test content without changing the web application's core codebase.</p>\n<p><b>Why the correct choices are right:</b></p>\n<ul>\n  <li><b>Viewer request</b>: Occurs when CloudFront receives a request from an end user—ideal for handling content selection before the cache or origin is consulted.</li>\n  <li><b>Origin request</b>: Triggered when CloudFront forwards a request to your origin (web server, etc.), useful when modifying headers or selecting content after cache miss.</li>\n  <li><b>Origin response</b>: Initiated when CloudFront receives a response from the origin, which enables content modification right before it's cached or sent back to the user.</li>\n  <li><b>Viewer response</b>: Happens just as CloudFront sends a response to the user, allowing final alterations or header manipulations before content delivery.</li>\n</ul>\n<p><i>CloudFront cache</i> is <i>not</i> a supported Lambda@Edge event. It does not represent a trigger point for Lambda execution; it's a storage mechanism where files are cached, but no code execution occurs directly at this phase.</p>\n<p><b>Tip:</b> To perform advanced content personalization or A/B testing at the edge, use Lambda@Edge at the appropriate event hook that matches the logic you wish to apply. Understanding where these hooks fit into the CloudFront request/response cycle is crucial for optimizing performance and capability.</p>",
+  "query": "<p>The DevOps group aims to implement A/B testing for a web application and leverages Lambda@Edge to update CloudFront's behavior without modifying the backend application code.<br>This approach involves deploying Lambda functions at various stages within Amazon CloudFront's request and response workflow.<br>Which of the following events in CloudFront's architecture can trigger a Lambda@Edge function and thereby facilitate content variation for testing purposes?</p>",
+  "original_oid": "6793da2f61969b416038a17c",
+  "options": [
+    {
+      "correct": false,
+      "text": "CloudFront cache",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Viewer request",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Origin response",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Viewer response",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Origin request",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question267",
+  "originalQuery": "The DevOps team is using Lambda@Edge to perform the A/B testing strategy for a Web application.\nBy Lambda@Edge, logic can be added in the CloudFront CDN in order to choose which content to deliver without the need to touch the application code.\nTwo versions of application contents can be easily tested and analyzed.\nLambda functions can change CloudFront contents at below points:",
+  "originalOptions": "A. CloudFront cache,B. Viewer request,C. Origin request,D. Origin response,E. Viewer response.",
+  "video_url": "https://certificationation.com/videos/exam-perform-the-a-b-testing-strategy-exam-427.html",
+  "url": "https://certificationation.com/questions/exam-perform-the-a-b-testing-strategy-exam-427.html"
+}

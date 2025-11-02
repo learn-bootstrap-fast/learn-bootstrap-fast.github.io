@@ -1,0 +1,128 @@
+---
+title: "A company is using AWS to design a web application thatExam"
+description: "Video for a company is using AWS to design a web application that will process insurance quotes. Users will request quotes from the application. Quotes must be"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company is using AWS to design a web application that will process insurance quotes. Users will request quotes from the application. Quotes must be separated by quote type, must be responded to within 24 hours, and must not get lost. The solution must maximize operational efficiency and must minimize maintenance. Which solution meets these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729a9c"
+  },
+  "quid": null,
+  "ordinal": "311",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS Lambda",
+    " Amazon Simple Queue Service (Amazon SQS)",
+    " Amazon API Gateway",
+    " AWS Step Functions",
+    " Amazon DynamoDB"
+  ],
+  "slug": "awsi-web-application-process-quotes-aws",
+  "source": "ET",
+  "title": "AWS A Company Is Using AWS To Design A Web Question",
+  "meta": "AWS Exam Question: A company designs a web app for processing insurance quotes, ensuring timely responses and operational efficiency. Answer: AWS Lambda, Amazon RDS.",
+  "answer": "C",
+  "query": "An organization intends to build a web application on AWS for processing different types of insurance quotes. The application should ensure that each quote is categorized by type, must respond to user requests in under 24 hours, and guarantee that no quotes are lost. Additionally, the solution should aim for high operational efficiency while reducing maintenance overhead.\n\nWhat is the best solution to fulfill these criteria?",
+  "originalQuery": "A company is using AWS to design a web application that will process insurance quotes. Users will request quotes from the application. Quotes must be separated by quote type, must be responded to within 24 hours, and must not get lost. The solution must maximize operational efficiency and must minimize maintenance.\n\nWhich solution meets these requirements?",
+  "options": [
+    "",
+    "",
+    "",
+    ""
+  ],
+  "originalOptions": [
+    "A. Create multiple Amazon Kinesis data streams based on the quote type. Configure the web application to send messages to the proper data stream. Configure each backend group of application servers to use the Kinesis Client Library (KCL) to pool messages from its own data stream.",
+    "B. Create an AWS Lambda function and an Amazon Simple Notification Service (Amazon SNS) topic for each quote type. Subscribe the Lambda function to its associated SNS topic. Configure the application to publish requests for quotes to the appropriate SNS topic.",
+    "C. Create a single Amazon Simple Notification Service (Amazon SNS) topic. Subscribe Amazon Simple Queue Service (Amazon SQS) queues to the SNS topic. Configure SNS message filtering to publish messages to the proper SQS queue based on the quote type. Configure each backend application server to use its own SQS queue.",
+    "D. Create multiple Amazon Kinesis Data Firehose delivery streams based on the quote type to deliver data streams to an Amazon OpenSearch Service cluster. Configure the application to send messages to the proper delivery stream. Configure each backend group of application servers to search for the messages from OpenSearch Service and process them accordingly."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "To effectively separate quote types, Amazon Simple Notification Service (SNS) message filtering can be employed to direct messages to the corresponding Amazon Simple Queue Service (SQS) queues based on the specific quote type. This ensures that each quote is categorized appropriately, allowing for organized processing.\n\nTo guarantee that quotes are addressed within a 24-hour timeframe and are not lost, SQS offers a robust and scalable messaging queuing system. This system ensures reliable message delivery, allowing quotes to be processed efficiently and without risk of loss. Furthermore, each application server can utilize its own dedicated SQS queue, which enhances processing efficiency and minimizes any potential delays.\n\nFor optimizing operational efficiency and reducing maintenance overhead, implementing a single SNS topic with multiple SQS queues creates a scalable and cost-effective architecture. Both SNS and SQS are fully managed services, alleviating the company from concerns related to maintenance activities such as software updates, hardware management, or infrastructure scaling. This setup not only streamlines operations but also allows the organization to focus on core business objectives rather than IT management.",
+    "When it comes to finding the perfect solution, option C is the real MVP! 🏆 It's like the superhero of the AWS world, swooping in to save the day while effortlessly managing those insurance quotes. With its ability to categorize quotes by type, respond within a speedy 24 hours, and ensure that no quote gets lost in the shuffle, it’s a true champion of operational efficiency. Plus, it keeps maintenance to a minimum, meaning more time for cake breaks! 🎂 So, if you want a solution that works as hard as you do (and maybe even a little harder), C is definitely the way to go! 🚀",
+    "So, let's do a little math here: if you combine SQS with SNS, you get a delightful fanout scenario. This dynamic duo allows you to efficiently manage your insurance quote requests by distributing them across multiple processing instances. With SQS (Simple Queue Service) handling the incoming requests, you can ensure that no quote request goes missing in action—like that one sock in the laundry. Meanwhile, SNS (Simple Notification Service) can alert the relevant services or users as soon as a quote is ready, keeping everything in the loop without unnecessary complications. This setup not only keeps things running smoothly but also reduces the maintenance headache, as you won't be constantly babysitting your application. In short, it's a match made in cloud computing heaven.",
+    "The chosen solution is an excellent fit for fulfilling the project requirements while enhancing operational efficiency and minimizing maintenance efforts.\n\nBy utilizing Amazon SNS (Simple Notification Service), you can create a single topic that accommodates multiple subscribers, effectively categorizing each quote type as a subscriber. In this configuration, Amazon SQS (Simple Queue Service) queues can be linked to the SNS topic, allowing for seamless message filtering to ensure that messages are routed to the correct SQS queue based on the specific quote type. This approach guarantees that quotes are organized by type and securely managed to prevent any loss.\n\nEach backend application server will be able to poll its designated SQS queue to retrieve and process the messages efficiently. This architecture not only promotes a streamlined and scalable solution but also minimizes maintenance requirements by leveraging AWS’s managed services. This means you can focus on delivering exceptional service without the burden of complex custom code or infrastructure management. Overall, this solution embodies a proactive and effective strategy for processing insurance quotes in a timely manner!",
+    "I initially leaned towards option D because of its search capabilities, but I realized that OpenSearch is primarily designed for analytics and log management. It doesn't really cater to the needs of processing data from streams as outlined in this scenario. 🌟"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "C",
+      "explanation": "Quote types need to be separated: SNS message filtering can be used to publish messages to the appropriate SQS queue based on the quote type, ensuring that quotes are separated by type.\nQuotes must be responded to within 24 hours and must not get lost: SQS provides reliable and scalable queuing for messages, ensuring that quotes will not get lost and can be processed in a timely manner. Additionally, each backend application server can use its own SQS queue, ensuring that quotes are processed efficiently without any delay.\nOperational efficiency and minimizing maintenance: Using a single SNS topic and multiple SQS queues is a scalable and cost-effective approach, which can help to maximize operational efficiency and minimize maintenance. Additionally, SNS and SQS are fully managed services, which means that the company will not need to worry about maintenance tasks such as software updates, hardware upgrades, or scaling the infrastructure.",
+      "upvotes": "19"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "C is the best option",
+      "upvotes": "9"
+    },
+    {
+      "selectedAnswer": "C",
+      "explanation": "SQS + SNS = fanout",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Option C would be the most suitable solution to meet the requirements while maximizing operational efficiency and minimizing maintenance.\n\nExplanation:\n\nAmazon SNS (Simple Notification Service) allows for the creation of a single topic to which multiple subscribers can be attached. In this scenario, each quote type can be considered a subscriber. Amazon SQS (Simple Queue Service) queues can be subscribed to the SNS topic, and SNS message filtering can be used to direct messages to the appropriate SQS queue based on the quote type. This setup ensures that quotes are separated by quote type and that they are not lost. Each backend application server can then poll its own SQS queue to retrieve and process messages. This architecture is efficient, scalable, and requires minimal maintenance, as it leverages managed AWS services without the need for complex custom code or infrastructure setup.",
+      "upvotes": "4"
+    },
+    {
+      "selectedAnswer": "C",
+      "explanation": "I originally went for D due to searching requirements but Open Search is for analytics and logs and nothing to do with data coming from streams as in this question.",
+      "upvotes": "2"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "C (100%)",
+      "votes": "47 votes."
+    },
+    {
+      "option": "C (25%)",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is C because it effectively categorizes quotes by type using SNS message filtering, ensuring that the right messages are directed to the appropriate SQS queues. This guarantees none of the quotes are lost and that they can be processed within the required 24-hour timeframe. Additionally, SQS is designed for reliability and scalability, which meets operational efficiency with minimal maintenance needs since both SNS and SQS are fully managed services. \n\nOption A is incorrect because using multiple Kinesis data streams would complicate the architecture and lead to increased maintenance overhead. Each stream would require separate management, reducing operational efficiency.\n\nOption B, involving AWS Lambda and separate SNS topics per quote type, could process requests properly but lacks the decoupling and reliable message handling provided by SQS, which ensures message persistence and scalability under load. \n\nOption D uses Kinesis Data Firehose and OpenSearch Service, which is not optimal for routing messages for quote processing and would introduce unnecessary complexity with real-time streaming that is inappropriate for the given requirements.",
+  "video_url": "https://certificationation.com/videos/exam-web-application-that-will-process-exam-311.html",
+  "url": "https://certificationation.com/questions/exam-web-application-that-will-process-exam-311.html"
+}

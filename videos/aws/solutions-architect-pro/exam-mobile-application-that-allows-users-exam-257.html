@@ -1,0 +1,76 @@
+---
+title: "Your company recently launched a mobile application thatExam"
+description: "Video for your company recently launched a mobile application that allows users to take pictures of what they are eating daily, share with others, and get"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company recently launched a mobile application that allows users to take pictures of what they are eating daily, share with others, and get feedback to maintain a healthy diet routine. These pictures are stored in S3 and served via the CloudFront. The CEO of the company thinks the storage is not well optimized by looking at the bill. He has asked to generate the access log reports and shift the images to different storage if they are not frequently used. It is not very clear which images will be accessed frequently, but as per the past data analysis, the usage becomes low after the initial 3-4 weeks. Please select the best option to optimize the cost and also maintain accessibility."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d5fcf501ee1c8ade98d3"
+  },
+  "quid": "0",
+  "ordinal": "395",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "Amazon S3",
+    " Amazon CloudFront",
+    " AWS Storage Gateway",
+    " AWS Cost Explorer",
+    " AWS Budgets"
+  ],
+  "slug": "s3-mobile-app-pictures-share-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question395",
+  "title": "AWS Your Company Recently Launched A Mobile Application Question",
+  "meta": "AWS Exam Question: Optimize storage costs for a mobile app using S3 and CloudFront with access logs for infrequently accessed images. Find the best answer using AWS services.",
+  "answer": "D",
+  "query": "A streaming platform allows users to upload short video clips, which are stored in S3 and delivered through CloudFront to viewers. The operations team has noticed frequent spikes in storage costs and suspects that many videos are not viewed after the first month. They want a solution that automatically adjusts storage costs by changing storage tiers without compromising availability for videos that regain popularity. Which approach should be implemented to manage storage efficiently while keeping videos accessible as needed?",
+  "originalQuery": "Your company recently launched a mobile application that allows users to take pictures of what they are eating daily, share with others, and get feedback to maintain a healthy diet routine.\nThese pictures are stored in S3 and served via the CloudFront.\nThe CEO of the company thinks the storage is not well optimized by looking at the bill.\nHe has asked to generate the access log reports and shift the images to different storage if they are not frequently used.\nIt is not very clear which images will be accessed frequently, but as per the past data analysis, the usage becomes low after the initial 3-4 weeks.\nPlease select the best option to optimize the cost and also maintain accessibility.",
+  "options": [
+    "A. Enable access logging on CloudFront and use Edge Locations to adjust the cache based on user interaction.",
+    "B. Configure Lifecycle rules to transfer videos from S3 Standard to Glacier after 20 days of no access.",
+    "C. Set up an elastic load balancer before the CloudFront distribution, enable logging, and use Kinesis Analytics to move videos with low traffic to S3 Standard-Infrequent Access.",
+    "D. Store the images with S3 Intelligent Tier. It will automatically select the best storage class depending on the access pattern.",
+    "E. Save the videos on EC2 EBS volumes and serve them directly. Later, use lifecycle policies to transfer unused clips to S3 after a month."
+  ],
+  "originalOptions": [
+    "A. Use CloudFront Edge Locations and enable access logs. It will automatically optimize the storage cache based on the access pattern.",
+    "B. Apply Lifecycle event to migrate from S3 Standard to Glacier after 3 weeks.",
+    "C. Create an elastic load balancer, point to the CloudFront distribution, and enable the Access Logs. Use Kinesis to process the logs and shift the images to S3 Infrequent Access based on low usage.",
+    "D. Store the images with S3 Intelligent Tier. It will automatically select the best storage class depending on the access pattern.",
+    "E. Store the images on EC2 EBS and serve it from there. EBS is highly optimized and cheap compared to S3. Put a lifecycle event to shift the unused images to S3 after 30 days."
+  ],
+  "image": "https://eaeastus2.blob.core.windows.net/optimizedimages/static/images/AWS-Certified-Solutions-Architect-Professional/answer/imgckeditor_aws5-1.jpg",
+  "primaryObjective": "3: Continuous Improvement for Existing Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "E.\nCorrect Answer: D.\nOption A is INCORRECT because the CloudFront is used to deliver the images to end users to reduce the latency lag.\nEdge Locations work as caching servers, and it saves the images based on the frequency of use.\nHowever, CloudFront still loads the content from the origin S3 Bucket.\nOption B is INCORRECT because migrating the images to Glacier will make it almost inaccessible after 3 weeks.\nGlacier retrieval time is between 3-5 hours, and per the requirement, the application still needs to maintain accessibility.\nOption C is INCORRECT because the CloudFront already geo-distributes the load and putting an elastic load balancer in front of it is not viable.\nOption D is CORRECT because S3 Intelligent Tier automatically shifts content between Standard and Infrequent Access tier based on the usage pattern.\nIf the content is not used for 30 consecutive days, it will automatically be moved to the Infrequent Access tier.\nUpon use, it will be transferred back to the Standard tier without any additional cost.\nOption E is INCORRECT because serving images from EBS is not very scalable as compared to S3 storage.\nThere is no lifecycle event for EBS volumes.\nSource: https://aws.amazon.com/s3/storage-classes/\nThe best option to optimize the cost and maintain accessibility for the mobile application's images stored in S3 is to use S3 Intelligent Tiering. This storage class automatically moves objects between two access tiers, one for frequent access and another for infrequent access, based on changing access patterns. It is cost-effective and ensures that frequently accessed objects are readily available, while infrequently accessed objects are stored in a more cost-effective storage class.\nOption A is incorrect because while CloudFront Edge Locations and access logs can optimize the storage cache based on the access pattern, it will not shift images to a different storage class as requested by the CEO. Additionally, it may not be clear which images will be accessed frequently and which will be infrequently accessed.\nOption B is incorrect because Glacier is a long-term storage solution, and while it is cost-effective, it may not be optimal for images that users may want to access frequently.\nOption C is also incorrect because it involves creating an elastic load balancer, which adds additional complexity and cost to the solution. It also requires setting up Kinesis to process logs, which adds additional setup and management overhead. This option may work in some cases, but it is not the best solution for this specific use case.\nOption E is incorrect because it suggests storing the images on EC2 EBS, which is a block storage solution intended for use with EC2 instances. It would be more expensive to store the images on EC2 EBS, and it would require additional setup and management overhead. Moreover, it would not optimize the storage cost effectively as requested.\nTherefore, the best option for optimizing the cost and maintaining accessibility of the images stored in S3 is to use S3 Intelligent Tiering, which automatically moves objects between two access tiers, based on changing access patterns, to provide cost-effective storage for the images.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-mobile-application-that-allows-users-exam-257.html",
+  "url": "https://certificationation.com/questions/exam-mobile-application-that-allows-users-exam-257.html"
+}

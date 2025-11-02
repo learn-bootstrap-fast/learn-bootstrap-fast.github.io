@@ -1,0 +1,81 @@
+---
+title: "As a Database Engineer, you need to design a solution toExam"
+description: "Video for as a Database Engineer, you need to design a solution to import data from a set of JSON files stored in a Cloud Storage bucket into a Cloud Spanner"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you need to design a solution to import data from a set of JSON files stored in a Cloud Storage bucket into a Cloud Spanner instance. The import process must be fault-tolerant, efficient, and capable of handling large datasets. Which of the following options best meets these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "At a media analytics firm named SilverWave, you must load about 24 TB of JSON files that reside in a regional Cloud Storage bucket into a Cloud Spanner database. The process must tolerate failures and restarts, scale efficiently for very large datasets, and allow optional transformations during ingestion while keeping high throughput. What should you implement?",
+  "options": [
+    {
+      "text": "Create a Cloud Function triggered by Cloud Storage object finalize events that reads each JSON file and writes rows to Cloud Spanner",
+      "explanation": "This uses an event driven function that runs when a file lands in the bucket and then inserts data into the target database.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use an Apache Beam pipeline running on Cloud Dataflow to read JSON from Cloud Storage apply transforms as needed and write to Cloud Spanner",
+      "explanation": "This builds a managed parallel pipeline that can read files from Cloud Storage perform transformations and persist results to the database with scalable workers.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Schedule a BigQuery Data Transfer Service job to move the JSON files from Cloud Storage into Cloud Spanner",
+      "explanation": "This configures a managed transfer workflow that orchestrates periodic data movement for supported destinations.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Run a gcloud spanner import command to load the JSON files from Cloud Storage directly into the Cloud Spanner database",
+      "explanation": "This attempts to use a command line tool to directly import files stored in Cloud Storage into the target database.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Use an Apache Beam pipeline running on Cloud Dataflow to read JSON from Cloud Storage apply transforms as needed and write to Cloud Spanner</b>.</p><p><b>Apache Beam</b> on <b>Dataflow</b> provides distributed parallel processing with autoscaling and checkpointing so the job can tolerate worker failures and restarts without reprocessing all data. It can read JSON from Cloud Storage, apply parse and transform steps, and write to Cloud Spanner using the Spanner connector. The service can batch mutations and coordinate throughput so it is well suited for high volume loads like 24 TB while preserving correctness and performance.</p><p><i>Create a Cloud Function triggered by Cloud Storage object finalize events that reads each JSON file and writes rows to Cloud Spanner</i> is not appropriate for multi terabyte batch ingestion because it fires per file and lacks pipeline level checkpointing and orchestration. It can produce many short lived invocations with cold starts and limited control over end to end throughput and complex transformations.</p><p><i>Schedule a BigQuery Data Transfer Service job to move the JSON files from Cloud Storage into Cloud Spanner</i> is incorrect because Data Transfer Service moves data into BigQuery and does not support Cloud Spanner as a destination.</p><p><i>Run a gcloud spanner import command to load the JSON files from Cloud Storage directly into the Cloud Spanner database</i> is not valid for this use case because there is no direct CLI import from JSON in Cloud Storage into Spanner. Google provides import using Dataflow templates or custom Beam pipelines which also allow transformations.</p>",
+  "batch_id": "55",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you need to design a solution to import data from a set of JSON files stored in a Cloud Storage bucket into a Cloud Spanner instance. The import process must be fault-tolerant, efficient, and capable of handling large datasets. Which of the following options best meets these requirements?",
+  "originalOptions": "A. Set up a streaming Data Transfer Service (DTS) job to import data from the Cloud Storage bucket to the Cloud Spanner instance.<br/>B. Use the gcloud spanner import command to import data from the Cloud Storage bucket directly into the Cloud Spanner instance.<br/>C. Implement a Cloud Function triggered by Cloud Storage events to import data from the JSON files and write it to the Cloud Spanner instance.<br/>D. Use an Apache Beam pipeline with Cloud Dataflow to read data from the JSON files in the Cloud Storage bucket, transform it if needed, and write it to the Cloud Spanner instance.",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "20",
+  "tip": "<p>When the scenario highlights <i>very large datasets</i>, <i>fault tolerance</i>, <i>restarts</i>, and <i>optional transformations</i>, map it to a managed pipeline such as Apache Beam on Dataflow rather than event driven functions or services that do not target the required destination.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/import-export",
+    "https://cloud.google.com/dataflow/docs/guides/templates/provided-cloud-spanner",
+    "https://cloud.google.com/dataflow/docs/guides/reliability",
+    "https://cloud.google.com/bigquery-transfer/docs/overview",
+    "https://cloud.google.com/functions/docs/concepts/exec"
+  ],
+  "url": "https://certificationation.com/questions/exam-design-a-solution-to-import-exam-020.html",
+  "video_url": "https://certificationation.com/videos/exam-design-a-solution-to-import-exam-020.html"
+}

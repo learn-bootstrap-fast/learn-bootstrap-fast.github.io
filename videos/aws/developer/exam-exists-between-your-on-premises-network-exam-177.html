@@ -1,0 +1,82 @@
+---
+title: "A Dedicated Interconnect connection exists between yourExam"
+description: "Video for a Dedicated Interconnect connection exists between your on-premises network and a nearby Google Cloud region. A Bare Metal Solution for Oracle machine"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A Dedicated Interconnect connection exists between your on-premises network and a nearby Google Cloud region. A Bare Metal Solution for Oracle machine has been set up in another region. You want to use the Bare Metal machine's IP address to connect to the Oracle database. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "mcnz.com runs a Dedicated Interconnect from its on premises data center to one Google Cloud region. A Bare Metal Solution for Oracle server resides in a separate region. You must reach the Oracle host by its IP address from on premises through your existing connectivity. What change should you make in your VPC network?",
+  "options": [
+    {
+      "text": "Create an HA VPN tunnel between the two regions",
+      "explanation": "This option establishes a site to site VPN that is typically used to connect separate networks rather than different regions of the same VPC.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable global dynamic routing on the VPC",
+      "explanation": "This setting allows Cloud Routers to propagate learned routes across all regions in the same VPC so routes are shared globally.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Configure VPC Network Peering with a VPC in the other region",
+      "explanation": "This connects two distinct VPC networks so they can exchange traffic privately without using a gateway.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Change the VPC dynamic routing mode to regional",
+      "explanation": "This limits Cloud Router route propagation to the local region so learned routes are not shared globally.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Enable global dynamic routing on the VPC</b>.</p><p>Dedicated Interconnect terminates in one region and learns on premises routes through Cloud Router. If the VPC uses regional dynamic routing then those learned routes are only available to subnets and resources in the same region as the Cloud Router. A Bare Metal Solution environment connects to your VPC in its own region, so on premises traffic will not reach it when routing is regional. Enabling <b>global dynamic routing on the VPC</b> makes the Cloud Router learned routes available to all regions of that VPC which allows your on premises network to reach the Oracle host IP in the other region using the existing interconnect.</p><p><i>Create an HA VPN tunnel between the two regions</i> is unnecessary and does not meet the requirement. HA VPN connects a VPC to an external network and you do not build VPNs between regions of the same VPC. The issue is the scope of route propagation, not the absence of a tunnel.</p><p><i>Configure VPC Network Peering with a VPC in the other region</i> does not apply because the scenario involves one VPC spanning multiple regions. Peering is used between different VPCs and even then it does not provide transitive reachability for routes learned from on premises through Cloud Router, so it would not solve this path.</p><p><i>Change the VPC dynamic routing mode to regional</i> would make the problem worse because it restricts learned routes to the region of the Cloud Router and would block on premises traffic from reaching resources in other regions.</p>",
+  "batch_id": "279",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "A Dedicated Interconnect connection exists between your on-premises network and a nearby Google Cloud region. A Bare Metal Solution for Oracle machine has been set up in another region. You want to use the Bare Metal machine's IP address to connect to the Oracle database. What should you do?",
+  "originalOptions": "A. In your VPC network, set the dynamic routing mode to global.<br/>B. In your VPC network, add a high availability VPN connection between the two regions.<br/>C. In your VPC network, set the dynamic routing mode to regional.<br/>D. In your VPC network, add a VPC peering connection between the two regions.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "177",
+  "tip": "<p>When you see a requirement to reach resources in a different region using Dedicated Interconnect, think about the scope of route propagation. If on premises prefixes must be usable in all regions of a VPC, enable <i>global dynamic routing</i>. If isolation by region is needed, use <i>regional</i> routing.</p>",
+  "references": [
+    "https://cloud.google.com/vpc/docs/dynamic-routing",
+    "https://cloud.google.com/network-connectivity/docs/router/concepts/overview#dynamic-routing",
+    "https://cloud.google.com/bare-metal/docs/networking-overview",
+    "https://cloud.google.com/network-connectivity/docs/interconnect/concepts/dedicated-overview",
+    "https://cloud.google.com/vpc/docs/vpc-peering#restrictions_and_guidelines",
+    "https://cloud.google.com/network-connectivity/docs/vpn/concepts/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-exists-between-your-on-premises-network-exam-177.html",
+  "video_url": "https://certificationation.com/videos/exam-exists-between-your-on-premises-network-exam-177.html"
+}

@@ -1,0 +1,128 @@
+---
+title: "A company has a multi-tier application that runs sixExam"
+description: "Video for a company has a multi-tier application that runs six front-end web servers in an Amazon EC2 Auto Scaling group in a single Availability Zone behind an"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company has a multi-tier application that runs six front-end web servers in an Amazon EC2 Auto Scaling group in a single Availability Zone behind an Application Load Balancer (ALB). A solutions architect needs to modify the infrastructure to be highly available without modifying the application. Which architecture should the solutions architect choose that provides high availability?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729a13"
+  },
+  "quid": null,
+  "ordinal": "174",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS global infrastructure",
+    " Amazon EC2",
+    " AWS Auto Scaling",
+    " Application Load Balancer (ALB)",
+    " Amazon EC2 Auto Scaling group"
+  ],
+  "slug": "ec2-multi-tier-application-high-aws",
+  "source": "ET",
+  "title": "AWS A Company Has A Multi-Tier Application Question",
+  "meta": "AWS Exam Question: A company needs high availability for a multi-tier application with EC2 Auto Scaling, ALB. What architecture should be chosen for the answer?",
+  "answer": "B",
+  "query": "An organization operates a multi-tier application with four backend servers in an Amazon EC2 Auto Scaling group located within a single Availability Zone, supported by an Application Load Balancer (ALB). A solutions architect is tasked with enhancing the infrastructure to ensure high availability without altering the application itself.\n\nWhat architecture should the solutions architect implement to achieve high availability?",
+  "originalQuery": "A company has a multi-tier application that runs six front-end web servers in an Amazon EC2 Auto Scaling group in a single Availability Zone behind an Application Load Balancer (ALB). A solutions architect needs to modify the infrastructure to be highly available without modifying the application.\n\nWhich architecture should the solutions architect choose that provides high availability?",
+  "options": [
+    "A. Establish an Auto Scaling group utilizing three instances across two Regions.",
+    "B. Modify the Auto Scaling group to use three instances across each of two Availability Zones.",
+    "C. Develop an Auto Scaling template for efficient instance creation in a secondary Region.",
+    "D. Adjust the ALB configuration to effectively distribute traffic to web servers."
+  ],
+  "originalOptions": [
+    "A. Create an Auto Scaling group that uses three instances across each of two Regions.",
+    "B. Modify the Auto Scaling group to use three instances across each of two Availability Zones.",
+    "C. Create an Auto Scaling template that can be used to quickly create more instances in another Region.",
+    "D. Change the ALB in front of the Amazon EC2 instances in a round-robin configuration to balance traffic to the web tier."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Auto Scaling groups are designed to operate within a single AWS Region and cannot be configured to span multiple Regions. To achieve high availability, it is essential to utilize multiple Availability Zones within the same Region. By distributing instances across at least two Availability Zones, you can ensure that if one zone experiences an outage, the other zone can continue to serve traffic, thereby maintaining application availability. This approach minimizes the risk of a single point of failure and leverages the built-in redundancy provided by AWS infrastructure.",
+    "Option A, which involves creating an Auto Scaling group across two Regions, could lead to a circus of complexities and replication headaches that aren't really needed when you're just trying to achieve high availability in a single Region. 🎪\n\nOption C, on the other hand, is all about crafting an Auto Scaling template for a secondary Region. While that sounds fancy and could be great for redundancy, it might just be overkill when you want to keep things simple and high available without tweaking the application. 🤷‍♂️\n\nAnd let’s talk about Option D! Changing the ALB to a round-robin configuration may sound like a fun party trick, but it doesn’t quite cut the mustard when it comes to ensuring high availability. Just spinning the traffic around doesn’t provide the fault tolerance needed, nor does it take advantage of multiple Availability Zones for added resilience. 🎢\n\nSo, the winning move here is to modify the Auto Scaling group to utilize three instances across two Availability Zones. This strategy strikes the perfect balance, delivering high availability while keeping things straightforward and effective for your multi-tier application! 🎉",
+    "Revamp the Auto Scaling group to deploy three instances in each of two Availability Zones. This nifty little adjustment will not only enhance your application's resilience but also ensure that if one Availability Zone decides to take a nap, the other can still keep the lights on. With this setup, you’ll be embracing high availability like a warm, fuzzy blanket on a chilly day—minus the need for a hot cocoa. Distributing your instances across multiple Availability Zones helps you sidestep the pitfalls of localized outages and keeps your application humming along smoothly. It's a straightforward yet effective strategy that doesn't require a complete overhaul of your existing infrastructure.",
+    "One excellent approach is to enhance the Auto Scaling group by deploying three instances in each of two Availability Zones. This configuration not only boosts the application's resilience but also ensures that your infrastructure remains highly available. By distributing the instances across multiple Availability Zones, you reduce the risk of downtime caused by a single point of failure, ultimately providing a more robust and reliable experience for your users. This strategic adjustment is a fantastic way to optimize your architecture while maintaining the existing application seamlessly!",
+    "Oh, what a delightful conundrum! 🌟 While it’s true that Auto Scaling groups have their limits, they simply cannot stretch their wings across multiple Regions. Instead, they are designed to work their magic within a single Region, ensuring your instances are well-managed and scalable. So, let's keep our focus on making the most of those Availability Zones to achieve that wonderful high availability we’re after! 😊"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "",
+      "explanation": "B. auto scaling groups can not span multi region",
+      "upvotes": "29"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "Option A (creating an Auto Scaling group across two Regions) introduces additional complexity and potential replication challenges, which may not be necessary for achieving high availability within a single Region.\n\nOption C (creating an Auto Scaling template for another Region) suggests multi-region redundancy, which may not be the most straightforward solution for achieving high availability without modifying the application.\n\nOption D (changing the ALB to a round-robin configuration) does not provide the desired high availability. Round-robin configuration alone does not ensure fault tolerance and does not leverage multiple Availability Zones for resilience.\n\nHence, modifying the Auto Scaling group to use three instances across each of two Availability Zones is the appropriate choice to provide high availability for the multi-tier application.",
+      "upvotes": "10"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "Modify the Auto Scaling group to use three instances across each of two Availability Zones",
+      "upvotes": "4"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "Option B. Modify the Auto Scaling group to use three instances across each of the two Availability Zones.",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "B. auto scaling groups cannot span multi region",
+      "upvotes": "6"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "B (100%)",
+      "votes": "26 votes."
+    },
+    {
+      "option": "C (25%)",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is B: Modify the Auto Scaling group to use three instances across each of two Availability Zones. This approach ensures high availability by distributing instances across multiple Availability Zones (AZs), allowing the application to remain operational even if one AZ experiences an outage. \n\nOption A is incorrect because creating an Auto Scaling group across two Regions introduces complexity without necessarily improving availability for a single application that is functioning properly in one Region. \n\nOption C also introduces unnecessary complexity by suggesting availability in another Region, which doesn't directly address the need for high availability within the existing infrastructure setup. \n\nOption D's suggestion to change the ALB to a round-robin configuration does not inherently provide high availability. Round-robin alone does not distribute load across multiple Availability Zones, limiting fault tolerance.",
+  "video_url": "https://certificationation.com/videos/exam-that-runs-six-front-end-web-exam-174.html",
+  "url": "https://certificationation.com/questions/exam-that-runs-six-front-end-web-exam-174.html"
+}

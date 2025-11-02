@@ -1,0 +1,62 @@
+---
+title: "Your team needs to create CloudFormation stacks forExam"
+description: "Video for your team needs to create CloudFormation stacks for multiple web applications. There are some common AWS resources that are used by most applications"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your team needs to create CloudFormation stacks for multiple web applications. There are some common AWS resources that are used by most applications such as security groups. These resources are not frequently modified after being created. You want to manage these common AWS resources separately and other application stacks can easily reuse them when needed. How would you achieve this requirement?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The most effective way to achieve this is to <b>use a CloudFormation stack for the shared AWS resources and export their outputs. Other stacks can reference these with the Fn::ImportValue function.</b> This method enables you to centrally maintain common resources and let other stacks reliably import just the needed outputs, supporting easier management and modular architecture.</p><p>The option <i>Create a CloudFormation stack for the shared resources and have other stacks access them through the Fn::GetAttr function</i> is incorrect because <code>Fn::GetAttr</code> can only reference resources within the same stack or nested stacks, not between independent stacks. The <i>Launch a base stack with shared resources and include it as a nested stack within application stacks using the AWS::CloudFormation::Stack resource</i> approach would tightly couple the stacks, making it harder to manage the resources independently; also, nesting is generally best for parent/child relationships rather than common/shared components. Similarly, <i>Manage the common resources within a CloudFormation stack, then use the AWS Console’s “Import resources into stack” feature to allow other stacks to reuse them</i> is not designed for this use case—‘Import resources into stack’ is for importing existing resources into management under CloudFormation, not for sharing resources across stacks.</p><p><b>Tip:</b> Use the <code>Export</code> and <code>ImportValue</code> capabilities of CloudFormation outputs to share values easily and consistently between multiple stacks, especially for resources that change infrequently.</p>",
+  "query": "<p>Your team is responsible for deploying CloudFormation stacks for various web applications. Several AWS resources, such as security groups, are shared across these applications and rarely change after their initial creation. You would like to manage these shared resources independently while allowing other application stacks to easily reference and use them as needed. What is the best way to accomplish this?</p>",
+  "original_oid": "6793da8e61969b416038a23f",
+  "options": [
+    {
+      "correct": true,
+      "text": "Use a CloudFormation stack for the shared AWS resources and export their outputs. Other stacks can reference these with the Fn::ImportValue function.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Create a CloudFormation stack for the shared resources and have other stacks access them through the Fn::GetAttr function.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Launch a base stack with shared resources and include it as a nested stack within application stacks using the AWS::CloudFormation::Stack resource.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Manage the common resources within a CloudFormation stack, then use the AWS Console’s “Import resources into stack” feature to allow other stacks to reuse them.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question463",
+  "originalQuery": "Your team needs to create CloudFormation stacks for multiple web applications.\nThere are some common AWS resources that are used by most applications such as security groups.\nThese resources are not frequently modified after being created.\nYou want to manage these common AWS resources separately and other application stacks can easily reuse them when needed.\nHow would you achieve this requirement?",
+  "originalOptions": "[\"A. Use a CloudFormation stack to create these resources and export the output values. Other CloudFormation stacks can import the resources through the Fn::ImportValue function.\",\"B. Use a CloudFormation stack to include these commonly used resources and export the output values. Other CloudFormation stacks can import the resources through the Fn::GetAttr function.\",\"C. Launch a CloudFormation stack to include the common resources and the stack is nested within other application CloudFormation stacks using the AWS::CloudFormation::Stack resource.\",\"D. Use a CloudFormation stack to manage the common resources. In the AWS Console, choose \\u201cImport resources into stack\\u201d for other CloudFormation stacks to reuse its AWS resources.\"]",
+  "video_url": "https://certificationation.com/videos/exam-stacks-for-multiple-web-applications-exam-396.html",
+  "url": "https://certificationation.com/questions/exam-stacks-for-multiple-web-applications-exam-396.html"
+}

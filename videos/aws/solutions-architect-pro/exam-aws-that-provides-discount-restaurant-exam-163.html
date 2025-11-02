@@ -1,0 +1,76 @@
+---
+title: "An IT company owns a web product in AWS that providesExam"
+description: "Video for an IT company owns a web product in AWS that provides discount restaurant information to customers. It has used one S3 Bucket (my-bucket) to store"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "An IT company owns a web product in AWS that provides discount restaurant information to customers. It has used one S3 Bucket (my-bucket) to store restaurant data such as pictures, menus, etc. The product is deployed in VPC subnets. The company's Cloud Architect decides to configure a VPC endpoint for this S3 bucket to enhance the performance. To be compliant with security rules, it is required that the new VPC endpoint is only used to communicate with this specific S3 Bucket. On the other hand, the S3 bucket allows the read/write operations to come from this VPC endpoint. Which two options should the Cloud Architect choose to meet the security needs?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d5c4f501ee1c8ade9847"
+  },
+  "quid": "0",
+  "ordinal": "254",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "Amazon S3",
+    " Amazon VPC",
+    " AWS IAM Identity Center (AWS Single Sign-On)",
+    " AWS Network Firewall",
+    " AWS Security Hub"
+  ],
+  "slug": "s3-bucket-restaurant-data-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question254",
+  "title": "AWS An IT Company Owns A Web Product Question",
+  "meta": "AWS Exam Question: An IT company uses AWS S3 for restaurant data in VPC subnets. The Cloud Architect must configure a VPC endpoint for security. Answer: VPC endpoint, AWS S3.",
+  "answer": "A D",
+  "query": "A retail company hosts its product image and metadata on a single S3 bucket named \"retail-assets\". The application runs within private subnets of a VPC. To optimize network latency, the company's cloud team wants to set up a VPC endpoint specifically for this bucket. To comply with security policies, traffic through this VPC endpoint must be confined strictly to the \"retail-assets\" bucket. Additionally, the bucket should permit read and write operations only when accessed via this endpoint. What combination of security measures ensures these requirements are met?",
+  "originalQuery": "An IT company owns a web product in AWS that provides discount restaurant information to customers.\nIt has used one S3 Bucket (my-bucket) to store restaurant data such as pictures, menus, etc.\nThe product is deployed in VPC subnets.\nThe company's Cloud Architect decides to configure a VPC endpoint for this S3 bucket to enhance the performance.\nTo be compliant with security rules, it is required that the new VPC endpoint is only used to communicate with this specific S3 Bucket.\nOn the other hand, the S3 bucket allows the read/write operations to come from this VPC endpoint.\nWhich two options should the Cloud Architect choose to meet the security needs?",
+  "options": [
+    "A. Use a VPC Endpoint policy for Amazon S3 to restrict access to the S3 Bucket “my-bucket” so that the VPC Endpoint is only allowed to perform S3 actions on “my-bucket”.",
+    "B. Change the EC2 instance’s security group to block all outbound connections except those to the VPC Endpoint targeting the S3 bucket.",
+    "C. Configure an S3 bucket policy in “retail-assets” that blocks all requests if the requester’s IP address does not match the EC2 instance’s public IP using a NotIpAddress condition.",
+    "D. For the S3 bucket “my-bucket”, use an S3 bucket policy that denies all actions if the source VPC Endpoint is not equal to the endpoint ID that is created.",
+    "E. Add a bucket policy on “retail-assets” that forbids all actions unless the source IP corresponds with the EC2 instance’s public IP using the IpAddress condition."
+  ],
+  "originalOptions": [
+    "A. Use a VPC Endpoint policy for Amazon S3 to restrict access to the S3 Bucket “my-bucket” so that the VPC Endpoint is only allowed to perform S3 actions on “my-bucket”.",
+    "B. Modify the security group of the EC2 instance to limit the outbound actions to the VPC Endpoint by denying the outgoing traffic to the destination S3 bucket “my-bucket”.",
+    "C. In the S3 bucket “my-bucket”, add an S3 bucket policy in which all actions are denied if the source IP address is not equal to the EC2 public IP (use “NotIpAddress” condition).",
+    "D. For the S3 bucket “my-bucket”, use an S3 bucket policy that denies all actions if the source VPC Endpoint is not equal to the endpoint ID that is created.",
+    "E. Create an S3 bucket policy in the S3 bucket “my-bucket” which denies all actions unless the source IP address is equal to the EC2 public IP (use “IpAddress” condition)."
+  ],
+  "image": "",
+  "primaryObjective": "3: Continuous Improvement for Existing Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "E.\nCorrect Answer - A, D.\nIn this case, two restrictions are required.\n1, For the VPC endpoint, restricting access to the specific S3 Bucket “my-bucket”\nA VPC Endpoint policy is needed.\n{\n\"Statement\": [\n{\n\"Sid\": \"Access-to-my-bucket-only\",\n\"Principal\": \"*\",\n\"Action\": [\n\"s3:GetObject\",\n\"s3:PutObject\"\n],\n\"Effect\": \"Allow\",\n\"Resource\": [\"arn:aws:s3:::my-bucket\",\n\"arn:aws:s3:::my-bucket/*\"]\n}\n]\n}\n2, For the S3 bucket “my-bucket”, restricting access to the new VPC Endpoint.\nS3 Bucket policy is required.\n{\n\"Version\": \"2012-10-17\",\n\"Id\": \"Policy1415115909152\",\n\"Statement\": [\n{\n\"Sid\": \"Access-to-specific-VPCE-only\",\n\"Principal\": \"*\",\n\"Action\": \"s3:*\",\n\"Effect\": \"Deny\",\n\"Resource\": [\"arn:aws:s3:::my-bucket\",\n\"arn:aws:s3:::my-bucket/*\"],\n\"Condition\": {\n\"StringNotEquals\": {\n\"aws:sourceVpce\": \"vpce-1a2b3c4d\"\n}\n}\n}\n]\n}\nIn terms of the S3 bucket policy for VPC Endpoint, the aws:SourceIp condition can not be used as for either NotIpAddress or IpAddress, the condition fails to match any specified IP address or IP address range.\nInstead, the specific endpoint ID should be used for the S3 bucket policy.\nOption A is CORRECT because the VPC Endpoint policy helps to restrict which entity can use the VPC Endpoint.\nIt is an IAM resource policy that you attach to an endpoint when you create or modify the endpoint.\nOption B is incorrect because users cannot configure a \"deny\" for the outbound traffic in a security group.\nOption C is incorrect because, for the S3 bucket policy, the NotIpAddress condition is always met for the VPC endpoint so that it cannot help restrict the traffic from the VPC endpoint.\nOption D is CORRECT because, in the S3 bucket policy, a rule can be set up to deny all actions if the incoming traffic is not from the VPC Endpoint ID.Option E is incorrect: Same reason as option.\nC.\nOption A is the correct answer.\nExplanation: To enhance performance and improve security, the company's Cloud Architect wants to configure a VPC endpoint for the S3 bucket that is only used to communicate with the specific S3 bucket. This will provide a more secure and efficient way to access the S3 bucket from the VPC subnets.\nOption A suggests using a VPC endpoint policy for Amazon S3 to restrict access to the S3 bucket \"my-bucket\" so that the VPC endpoint is only allowed to perform S3 actions on \"my-bucket\". This option is the most appropriate because it restricts the VPC endpoint access to the specific S3 bucket while allowing read/write operations to come from the VPC endpoint.\nOption B suggests modifying the security group of the EC2 instance to limit the outbound actions to the VPC endpoint by denying the outgoing traffic to the destination S3 bucket \"my-bucket\". This option is not correct because it does not address the requirement of allowing read/write operations to come from the VPC endpoint.\nOption C suggests adding an S3 bucket policy to deny all actions if the source IP address is not equal to the EC2 public IP. This option is not correct because it does not address the requirement of allowing the VPC endpoint to perform S3 actions on the S3 bucket.\nOption D suggests using an S3 bucket policy that denies all actions if the source VPC endpoint is not equal to the endpoint ID that is created. This option is not correct because it does not allow the VPC endpoint to perform S3 actions on the S3 bucket.\nOption E suggests creating an S3 bucket policy that denies all actions unless the source IP address is equal to the EC2 public IP. This option is not correct because it does not allow the VPC endpoint to perform S3 actions on the S3 bucket.\nIn summary, option A is the correct answer because it meets the security needs of the company by restricting access to the S3 bucket only to the VPC endpoint while allowing read/write operations to come from the VPC endpoint.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-aws-that-provides-discount-restaurant-exam-163.html",
+  "url": "https://certificationation.com/questions/exam-aws-that-provides-discount-restaurant-exam-163.html"
+}

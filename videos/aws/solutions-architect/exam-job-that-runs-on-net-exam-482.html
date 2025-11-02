@@ -1,0 +1,128 @@
+---
+title: "A company containerized a Windows job that runs on .NETExam"
+description: "Video for a company containerized a Windows job that runs on .NET 6 Framework under a Windows container. The company wants to run this job in the AWS Cloud. The"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company containerized a Windows job that runs on .NET 6 Framework under a Windows container. The company wants to run this job in the AWS Cloud. The job runs every 10 minutes. The job’s runtime varies between 1 minute and 3 minutes. Which solution will meet these requirements MOST cost-effectively?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729b48"
+  },
+  "quid": null,
+  "ordinal": "483",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS Fargate",
+    " AWS Lambda",
+    " Amazon Elastic Container Service (Amazon ECS)",
+    " Amazon EventBridge",
+    " AWS Batch"
+  ],
+  "slug": "cw-windows-job-aws",
+  "source": "ET",
+  "title": "AWS A Company Containerized A Windows Job Question",
+  "meta": "AWS Exam Question: A company containerized a Windows job on .NET 6 under a Windows container to run in the AWS Cloud every 10 minutes. Answer: ECS, Fargate.",
+  "answer": "C",
+  "query": "A business has a Linux-based job that executes within a Docker container and runs a Node.js application. The job is scheduled to execute in the AWS Cloud every 15 minutes, taking approximately 2 to 4 minutes to complete.\n\nWhat would be the MOST economical solution to meet these requirements?",
+  "originalQuery": "A company containerized a Windows job that runs on .NET 6 Framework under a Windows container. The company wants to run this job in the AWS Cloud. The job runs every 10 minutes. The job’s runtime varies between 1 minute and 3 minutes.\n\nWhich solution will meet these requirements MOST cost-effectively?",
+  "options": [
+    "A. Create an AWS Lambda function based on the container image of the job. Configure Amazon EventBridge to invoke the function every 10 minutes.",
+    "B. Use AWS Batch to create a job utilizing AWS Fargate resources while scheduling it every 15 minutes.",
+    "C. Use Amazon Elastic Container Service (Amazon ECS) on AWS Fargate to run the job. Create a scheduled task based on the container image of the job to run every 10 minutes.",
+    "D. Use Amazon Elastic Container Service (Amazon ECS) to manage the job. Initiate a separate task from the container image. Employ a Windows task scheduler to execute the job at 15-minute intervals."
+  ],
+  "originalOptions": [
+    "A. Create an AWS Lambda function based on the container image of the job. Configure Amazon EventBridge to invoke the function every 10 minutes.",
+    "B. Use AWS Batch to create a job that uses AWS Fargate resources. Configure the job scheduling to run every 10 minutes.",
+    "C. Use Amazon Elastic Container Service (Amazon ECS) on AWS Fargate to run the job. Create a scheduled task based on the container image of the job to run every 10 minutes.",
+    "D. Use Amazon Elastic Container Service (Amazon ECS) on AWS Fargate to run the job. Create a standalone task based on the container image of the job. Use Windows task scheduler to run the job every\n10 minutes."
+  ],
+  "image": null,
+  "primaryObjective": "4: Design Cost-Optimized Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "AWS Lambda exclusively supports container images that are based on Linux. Consequently, utilizing AWS Lambda for a Windows-based job running on the .NET 6 Framework would not be feasible. This limitation is crucial when considering deployment options, as it directly impacts the ability to run a Windows container workload within a serverless architecture.\n\nFor workloads that require Windows containers, options such as Amazon Elastic Container Service (ECS) running on AWS Fargate or AWS Batch are more appropriate. These services enable the orchestration of containerized applications, including those based on Windows, and allow for the scheduling of tasks at specified intervals. \n\nWhen evaluating cost-effectiveness and operational efficiency, it is important to consider factors such as the runtime variability of the job, resource allocation, and the frequency of execution. By leveraging ECS or AWS Batch, organizations can optimize resource usage while ensuring that their containerized Windows applications operate smoothly in the cloud environment. \n\nFor detailed guidelines on working with AWS Lambda container images, refer to the official AWS documentation: [AWS Lambda Container Images](https://docs.aws.amazon.com/lambda/latest/dg/images-create.html).",
+    "Well, not quite! AWS Lambda actually has built-in support for .NET 6, making it a perfect fit for your containerized job. 🎉 You can check out this link for more details: https://aws.amazon.com/blogs/compute/introducing-the-net-6-runtime-for-aws-lambda/. So, you can dance your way into the cloud while Lambda takes care of executing your job every 10 minutes without breaking the bank! 💃🕺",
+    "Opting for Amazon ECS on AWS Fargate lets you execute your job in a snazzy containerized setup, all while enjoying the perks of Fargate's serverless framework. You’ll only shell out cash for the resources consumed during the job's runtime—it's like paying only for the snacks you actually eat at a buffet. By setting up a scheduled task that utilizes the container image, you ensure your job ticks along every 10 minutes, perfectly aligning with your timing needs. This approach not only offers flexibility and scalability but also does so in a way that won’t make your budget scream.",
+    "Option B, while AWS Batch has no associated costs, is better suited for large-scale or more complex workloads rather than lightweight, periodic tasks. Therefore, it may not be the most economical choice for this scenario. The expenses incurred depend on the compute resources allocated for job execution, and the term \"cost-effective\" also encompasses the idea of minimizing operational overhead along with financial expenditure.\n\nIf your needs include queuing for task prioritization, managing a backlog of tasks, or handling data processing across extensive datasets, AWS Batch would be an excellent fit!",
+    "A company has successfully containerized a Windows job that operates on the .NET 6 Framework within a Windows container. Now, they’re excited to run this job in the AWS Cloud! The job performs its magic every 10 minutes, with a runtime that dances between 1 and 3 minutes. \n\nTo find the most cost-effective solution, let’s explore some delightful options! 🌟 \n\n1. One approach is to create an AWS Lambda function using the container image of the job, and then configure Amazon EventBridge to trigger this function every 10 minutes. This could be a nifty way to keep things running smoothly without breaking the bank! \n\n2. Alternatively, we could consider using AWS Batch to set up a job that leverages AWS Fargate resources, scheduled to run every 15 minutes. This would allow for efficient job management but might not align perfectly with the desired timing. \n\n3. Another exciting option is to utilize Amazon Elastic Container Service (Amazon ECS) on AWS Fargate to run the job. By creating a scheduled task based on the job's container image, we could have it run every 10 minutes, ensuring it’s right on time! \n\n4. Lastly, we could manage the job with Amazon ECS and initiate a separate task from the container image, employing a Windows task scheduler to run the job at 15-minute intervals. While this provides a solid solution, it may not be the most efficient for the company’s needs. \n\nChoosing the right path will help the company achieve their goals while keeping costs in check. Happy cloud adventuring! ☁️✨"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "",
+      "explanation": "Lambda supports only Linux-based container images.\n\nhttps://docs.aws.amazon.com/lambda/latest/dg/images-create.html",
+      "upvotes": "15"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Not really. Lambda supports .Net 6 directly: https://aws.amazon.com/blogs/compute/introducing-the-net-6-runtime-for-aws-lambda/",
+      "upvotes": "7"
+    },
+    {
+      "selectedAnswer": "C",
+      "explanation": "By using Amazon ECS on AWS Fargate, you can run the job in a containerized environment while benefiting from the serverless nature of Fargate, where you only pay for the resources used during the job's execution. Creating a scheduled task based on the container image of the job ensures that it runs every 10 minutes, meeting the required schedule. This solution provides flexibility, scalability, and cost-effectiveness.",
+      "upvotes": "8"
+    },
+    {
+      "selectedAnswer": "C",
+      "explanation": "For B: Even though AWS Batch is free, I think it's more suitable for large-scale or relatively complex workloads, not lightweight periodic jobs. So B is not cost-effective (The cost depends on the compute resources you provision to execute the jobs, and maybe \"cost-effective\" somewhat involves less operational overhead because you have spent your money)\n\nIf you require queueing for task prioritization or processing a backlog of tasks, or work on data processing over datasets where Batch excels, AWS Batch would be better!",
+      "upvotes": "1"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "A A A A A A",
+      "upvotes": "2"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "C (53%)",
+      "votes": "26 votes."
+    },
+    {
+      "option": "B (31%)",
+      "votes": "15 votes."
+    },
+    {
+      "option": "A (16%)",
+      "votes": "8 votes."
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is C because using Amazon Elastic Container Service (ECS) with AWS Fargate allows the job to run in a serverless container environment, which is cost-effective as you only pay for the resources utilized during the job's execution. Setting up a scheduled task ensures the job runs as required without the need for additional management or provisioning. \n\nOption A is incorrect because while AWS Lambda can run on Linux-based container images, it is not the best fit here due to Lambda's limitations on execution time and is more suited for events that trigger the function rather than periodic scheduled jobs of this nature. \n\nOption B is less economical because AWS Batch is designed for larger scale workloads and while it is free to use, it incurs costs through the compute resources used, which may be higher than needed for this lightweight job. \n\nOption D is also incorrect because it suggests using a Windows task scheduler which is not suitable in a cloud environment where flexibility and serverless architecture are desired. Additionally, this adds unnecessary operational overhead for every job execution.",
+  "video_url": "https://certificationation.com/videos/exam-job-that-runs-on-net-exam-482.html",
+  "url": "https://certificationation.com/questions/exam-job-that-runs-on-net-exam-482.html"
+}

@@ -1,0 +1,80 @@
+---
+title: "In a hybrid configuration, you are utilizing GoogleExam"
+description: "Video for in a hybrid configuration, you are utilizing Google Cloud's Compute Engine along with your data center to manage a set of MySQL databases. In order to"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "In a hybrid configuration, you are utilizing Google Cloud's Compute Engine along with your data center to manage a set of MySQL databases. In order to enhance read scalability it is necessary to create replicas. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "At scrumtuous.com you run a hybrid environment where twelve MySQL primaries remain in your colocated data center while your application tier runs on Google Compute Engine and you need to scale out reads in Google Cloud with minimal maintenance by adding replicas that follow the on-premises writers. What should you implement?",
+  "options": [
+    {
+      "text": "Use Datastream to capture changes into BigQuery for reporting",
+      "explanation": "Datastream can stream database change events into analytics destinations like BigQuery to support reporting workloads rather than creating transactional read replicas.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure Cloud SQL for MySQL as an external replica of the on-premises primary",
+      "explanation": "Cloud SQL for MySQL can be configured to replicate from an external MySQL primary so that a managed Cloud SQL instance serves read traffic in Google Cloud.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Set up external server replication from Cloud SQL back to the data center",
+      "explanation": "External server replication makes a Cloud SQL instance the primary and an external MySQL server the replica which sends changes out of Cloud SQL rather than into it.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Database Migration Service for continuous migration and keep it running",
+      "explanation": "Database Migration Service is designed to move databases into Cloud SQL and can stream changes temporarily until cutover rather than providing a long-term read replica topology.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Configure Cloud SQL for MySQL as an external replica of the on-premises primary</b>. This gives you managed MySQL replicas in Google Cloud that follow your data center primaries and it keeps operational overhead low.</p><p>In this approach the managed instance connects to the primary over a secure network and uses native MySQL binary log replication to stay in sync. You can deploy multiple managed replicas in Google Cloud to serve read traffic for your application tier and the service handles patching and routine maintenance which aligns with the need for minimal maintenance.</p><p><i>Use Datastream to capture changes into BigQuery for reporting</i> is designed for change data capture into analytics destinations and it does not create MySQL replicas that applications can read from, so it does not solve read scaling for transactional workloads.</p><p><i>Set up external server replication from Cloud SQL back to the data center</i> reverses the data flow and would create replicas on premises from a Cloud primary, which does not add read capacity in Google Cloud as required.</p><p><i>Use Database Migration Service for continuous migration and keep it running</i> is intended to minimize cutover downtime during migrations and is not a long-lived replication solution for serving production reads, so it does not meet the goal of ongoing read scaling.</p>",
+  "batch_id": "334",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "In a hybrid configuration, you are utilizing Google Cloud's Compute Engine along with your data center to manage a set of MySQL databases. In order to enhance read scalability it is necessary to create replicas. What should you do?",
+  "originalOptions": "A. Use the mysqldump utility and binary logs.<br/>B. Use Data Migration Service.<br/>C. Use external server replication.<br/>D. Use Cloud SQL for MySQL external replica.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "64",
+  "tip": "<p>Match the requirement to the replication pattern. If writes stay on premises and you need read scaling in Google Cloud, prefer a managed <i>external replica</i> that provides native <i>read replicas</i>. Be cautious when choices mention <i>analytics</i> or <i>migration</i> tools because those usually do not provide application-serving replicas.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/replication/configure-external-replica",
+    "https://cloud.google.com/sql/docs/mysql/replication",
+    "https://cloud.google.com/datastream/docs/bigquery",
+    "https://cloud.google.com/database-migration/docs/mysql/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-are-utilizing-google-cloud-s-compute-exam-064.html",
+  "video_url": "https://certificationation.com/videos/exam-are-utilizing-google-cloud-s-compute-exam-064.html"
+}

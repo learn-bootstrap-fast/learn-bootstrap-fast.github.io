@@ -1,0 +1,81 @@
+---
+title: "As a Database Engineer, how can you minimize Cloud SQLExam"
+description: "Video for as a Database Engineer, how can you minimize Cloud SQL instance expenditure with minimal effort when each developer and tester has their own instance"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, how can you minimize Cloud SQL instance expenditure with minimal effort when each developer and tester has their own instance for learning and experimentation purposes, and the team operates from Monday morning to Friday evening?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the database lead at NovaPay where each engineer and QA tester has a personal Cloud SQL instance for training and sandbox activities. The team works only on weekdays from 8.30 a.m. to 7.00 p.m. local time and you want to reduce spend with very little operational effort by ensuring instances do not run outside those hours. What should you implement?",
+  "options": [
+    {
+      "text": "Enable high availability on the Cloud SQL instances and configure a preferred maintenance window",
+      "explanation": "This adds a standby instance for failover and sets when patches are applied",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Purchase Cloud SQL committed use discounts for a one year term for all developer and test instances",
+      "explanation": "This applies discounted rates to Cloud SQL usage in exchange for a billing commitment",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a Cloud Function that calls the Cloud SQL Admin API to start and stop instances and invoke it with Cloud Scheduler on weekday mornings and evenings",
+      "explanation": "This uses serverless scheduling and API calls to control instance runtime without managing servers",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Provision a small Compute Engine VM and run a cron job that uses gcloud to start and stop the Cloud SQL instances on a weekday schedule",
+      "explanation": "This keeps a VM running to execute scheduled CLI commands that manage instance state",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Create a Cloud Function that calls the Cloud SQL Admin API to start and stop instances and invoke it with Cloud Scheduler on weekday mornings and evenings</b>.</p><p>This approach uses the supported start and stop operations in the Cloud SQL Admin API so you can pause compute charges outside working hours while still paying for storage and backups. Pairing the API with a scheduled trigger allows you to align with the weekday 8.30 a.m. to 7.00 p.m. local time window. It has very little operational effort because the components are serverless and managed and Cloud Scheduler supports time zones so you can run the jobs at the correct local times without maintaining any servers.</p><p><i>Enable high availability on the Cloud SQL instances and configure a preferred maintenance window</i> is not relevant because high availability addresses failover and maintenance timing and it does not control when instances run or stop. It will not reduce costs during off hours.</p><p><i>Purchase Cloud SQL committed use discounts for a one year term for all developer and test instances</i> is not a fit because commitments favor steady and predictable usage. These sandboxes are idle most evenings and weekends so a commitment would not turn off resources and can lead to paying for capacity you do not use.</p><p><i>Provision a small Compute Engine VM and run a cron job that uses gcloud to start and stop the Cloud SQL instances on a weekday schedule</i> could work but it increases operational overhead and risk because you must patch and monitor a VM and manage service accounts. The question asks for very little operational effort which the serverless scheduling solution achieves more effectively.</p>",
+  "batch_id": "42",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, how can you minimize Cloud SQL instance expenditure with minimal effort when each developer and tester has their own instance for learning and experimentation purposes, and the team operates from Monday morning to Friday evening?",
+  "originalOptions": "A. Enable high availability for the Cloud SQL instances and set up a maintenance window for them.<br/>B. Create a virtual machine (VM) on Compute Engine and set up a cron job to automate the starting and stopping of the Cloud SQL instances.<br/>C. Implement a Cloud Function that starts and stops the Cloud SQL instances, and schedule its execution using Cloud Scheduler as needed.<br/>D. Configure a read replica for each individual Cloud SQL instance and establish a maintenance window for them.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "181",
+  "tip": "<p>When you see a need to stop and start resources on a schedule with <i>minimal operational effort</i> think of pairing <i>Cloud Scheduler</i> with a serverless function that calls the service <i>Admin API</i>. Consider commitment plans only when usage is steady and predictable.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/instance-actions#stop-start",
+    "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances/start",
+    "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances/stop",
+    "https://cloud.google.com/scheduler/docs/configuring/cron-job-schedules",
+    "https://cloud.google.com/sql/docs/editions/commitment-plans"
+  ],
+  "url": "https://certificationation.com/questions/exam-you-minimize-cloud-sql-instance-exam-181.html",
+  "video_url": "https://certificationation.com/videos/exam-you-minimize-cloud-sql-instance-exam-181.html"
+}

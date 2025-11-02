@@ -1,0 +1,62 @@
+---
+title: "A developer wants to use CodeBuild to build a dockerExam"
+description: "Video for a developer wants to use CodeBuild to build a docker image and push the image to ECR. Then CodePipeline uses CodeDeploy to deploy the latest docker"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A developer wants to use CodeBuild to build a docker image and push the image to ECR. Then CodePipeline uses CodeDeploy to deploy the latest docker image on EC2 clusters via ECS."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><b>Pre-build phase: Authenticate to ECR using \"aws ecr get-login\" command and establish the repository URI. Post-build phase: Push the Docker image to the repository using \"docker push $REPOSITORY_URI:latest\".</b> is the correct approach.</p><p>Authentication to Amazon ECR is mandatory before you can push images, which is why you need to perform the login process in the pre-build stage. The <b>\"aws ecr get-login\"</b> (or preferably, <b>\"aws ecr get-login-password\"</b> in recent best practices) command provides a Docker login password, allowing CodeBuild to interact with the private ECR repository securely. Once authenticated and the URI is set, the built Docker image can be pushed in the post-build stage using the standard Docker push command. This aligns with AWS best practices for integrating CodeBuild, CodePipeline, and ECR.</p><p>Here's why the other options are incorrect:</p><ul><li><i>Pre-build phase: Set up the repository URI and optionally assign an image tag. Post-build phase: Push the image using \"docker push $REPOSITORY_URI:latest\".</i> — This fails to perform ECR authentication, making the Docker push command unsuccessful due to lack of permissions.</li><li><i>Pre-build phase: No actions are needed; simply push the image to ECR in the post-build phase using \"docker push $REPOSITORY_URI:latest\".</i> — Without prior authentication to ECR, trying to push will result in a permissions error.</li><li><i>Pre-build phase: Authenticate to ECR and set the repository URI. Post-build phase: Attempt to push the image to ECR using \"aws ecr push $REPOSITORY_URI:latest\".</i> — There is no such \"aws ecr push\" command; Docker's native \"docker push\" should be used to upload images to ECR.</li></ul><p><b>Tips & Tricks:</b><br>Ensure you always perform Docker login to ECR prior to pushing, and be aware that the command has evolved; newer environments use <b>aws ecr get-login-password</b>.</p>",
+  "query": "<p>A developer is configuring AWS CodeBuild to construct a Docker image and then push it to Amazon ECR. After this, CodePipeline will use CodeDeploy to release the latest Docker image onto EC2-based ECS clusters. Which setup should be used in the buildspec file for the pre-build and post-build stages to ensure the Docker image is correctly pushed to ECR?</p>",
+  "original_oid": "6793da8361969b416038a228",
+  "options": [
+    {
+      "correct": false,
+      "text": "Pre-build phase: Set up the repository URI and optionally assign an image tag. Post-build phase: Push the image using \"docker push $REPOSITORY_URI:latest\".",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Pre-build phase: Authenticate to ECR using \"aws ecr get-login\" command and establish the repository URI. Post-build phase: Push the Docker image to the repository using \"docker push $REPOSITORY_URI:latest\".",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Pre-build phase: No actions are needed; simply push the image to ECR in the post-build phase using \"docker push $REPOSITORY_URI:latest\".",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Pre-build phase: Authenticate to ECR and set the repository URI. Post-build phase: Attempt to push the image to ECR using \"aws ecr push $REPOSITORY_URI:latest\".",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question440",
+  "originalQuery": "A developer wants to use CodeBuild to build a docker image and push the image to ECR.\nThen CodePipeline uses CodeDeploy to deploy the latest docker image on EC2 clusters via ECS.",
+  "originalOptions": "A. Pre-build stage: Nothing needs to be done as what you need to do is just push the image to ECR, which will be done in Post-build stage. Post-build stage: Push the image to your ECR repository such as “docker push $REPOSITORY_URI:latest”.,B. Pre-build stage: Login into ECR using “aws ecr get-login” and set the repository URI. Post-build stage: Push the image to your ECR repository such as “docker push $REPOSITORY_URI:latest”.,C. Pre-build stage: Set the repository URI and an image tag if needed. Post-build stage: Push the image to your ECR repository such as “docker push $REPOSITORY_URI:latest”.,D. Pre-build stage: Login into ECR using “aws ecr get-login” and set the repository URI. Post-build stage: Push the image to your ECR repository such as “aws ecr push $REPOSITORY_URI:latest”.",
+  "video_url": "https://certificationation.com/videos/exam-build-a-docker-image-and-exam-199.html",
+  "url": "https://certificationation.com/questions/exam-build-a-docker-image-and-exam-199.html"
+}

@@ -1,0 +1,128 @@
+---
+title: "An ecommerce company needs to run a scheduled daily jobExam"
+description: "Video for an ecommerce company needs to run a scheduled daily job to aggregate and filter sales records for analytics. The company stores the sales records in"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "An ecommerce company needs to run a scheduled daily job to aggregate and filter sales records for analytics. The company stores the sales records in an Amazon S3 bucket. Each object can be up to 10 GB in size. Based on the number of sales events, the job can take up to an hour to complete. The CPU and memory usage of the job are constant and are known in advance. A solutions architect needs to minimize the amount of operational effort that is needed for the job to run. Which solution meets these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729af2"
+  },
+  "quid": null,
+  "ordinal": "397",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS Fargate",
+    " Amazon Elastic Container Service (Amazon ECS)",
+    " Amazon EventBridge",
+    " AWS Lambda",
+    " Amazon S3"
+  ],
+  "slug": "s3-aggregate-filter-sales-analytics-aws",
+  "source": "ET",
+  "title": "AWS An Ecommerce Company Needs To Run A Question",
+  "meta": "AWS Exam Question: An ecommerce company needs to run a scheduled daily job for analytics using Amazon S3. Which solution minimizes operational effort? Answer: AWS Lambda, AWS Glue.",
+  "answer": "C",
+  "query": "A retail organization wants to execute a daily scheduled process to consolidate and process transaction logs for reporting purposes. The transaction logs are stored in an Amazon S3 bucket, with each file reaching sizes of up to 12 GB. Depending on the volume of transactions, this process could take around an hour to finish. The resource consumption required for this task is stable and predictable.\n\nA solutions architect aims to reduce the operational complexity involved in executing this process.\n\nWhat is the best approach to achieve this?",
+  "originalQuery": "An ecommerce company needs to run a scheduled daily job to aggregate and filter sales records for analytics. The company stores the sales records in an Amazon S3 bucket. Each object can be up to 10 GB in size. Based on the number of sales events, the job can take up to an hour to complete. The CPU and memory usage of the job are constant and are known in advance.\n\nA solutions architect needs to minimize the amount of operational effort that is needed for the job to run.\n\nWhich solution meets these requirements?",
+  "options": [
+    "A. Create an AWS Lambda function that has an Amazon EventBridge notification. Schedule the EventBridge event to run once a day.",
+    "B. Set up an AWS Lambda function and an Amazon API Gateway HTTP API that links to the function. Schedule an Amazon EventBridge event to trigger the API and execute the function.",
+    "C. Create an Amazon Elastic Container Service (Amazon ECS) cluster with an AWS Fargate launch type. Create an Amazon EventBridge scheduled event that launches an ECS task on the cluster to run the job.",
+    "D. Establish an Amazon Elastic Container Service (Amazon ECS) cluster using an Amazon EC2 launch type and an Auto Scaling group with a minimum of one EC2 instance. Set an Amazon EventBridge scheduled event to start an ECS task on the cluster for the job."
+  ],
+  "originalOptions": [
+    "A. Create an AWS Lambda function that has an Amazon EventBridge notification. Schedule the EventBridge event to run once a day.",
+    "B. Create an AWS Lambda function. Create an Amazon API Gateway HTTP API, and integrate the API with the function. Create an Amazon EventBridge scheduled event that calls the API and invokes the function.",
+    "C. Create an Amazon Elastic Container Service (Amazon ECS) cluster with an AWS Fargate launch type. Create an Amazon EventBridge scheduled event that launches an ECS task on the cluster to run the job.",
+    "D. Create an Amazon Elastic Container Service (Amazon ECS) cluster with an Amazon EC2 launch type and an Auto Scaling group with at least one EC2 instance. Create an Amazon EventBridge scheduled event that launches an ECS task on the cluster to run the job."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "The task at hand involves executing a daily scheduled job to aggregate and filter sales records for analytics in the most efficient manner. Given the requirements, options A and B can be discounted, as they utilize AWS Lambda, which has a maximum execution time of 15 minutes. This limitation is insufficient considering that the job may take up to an hour to complete.\n\nWhen comparing options C and D, option C emerges as the superior choice. It leverages AWS Fargate, a serverless compute engine for containers that removes the need to manage the underlying EC2 instances. This results in a solution that requires minimal operational effort. Furthermore, Fargate offers immediate scaling capabilities, allowing for efficient resource management to accommodate the scheduled job's requirements.\n\nIn conclusion, the most appropriate solution is as follows:\n\nC. Create an Amazon Elastic Container Service (Amazon ECS) cluster with an AWS Fargate launch type. Create an Amazon EventBridge scheduled event that launches an ECS task on the cluster to execute the job.",
+    "When it comes to running a daily job that aggregates and filters sales records, we need to keep a few things in mind. First off, our job can take up to an hour, and we know that AWS Lambda functions have a maximum runtime of 15 minutes. So, options A and B are like trying to fit a giraffe in a Mini Cooper—just not going to work! 🚗🦒\n\nNow, we’re left with options C and D. If we want to keep operational effort to a minimum, AWS Fargate is our best buddy here. It allows us to run our containers without the need to manage the underlying infrastructure, so we can sip our coffee while it does the heavy lifting. ☕💪 Therefore, option C is the way to go for an efficient and hassle-free solution! 🎉",
+    "Options A and B are off the table due to AWS Lambda's pesky 15-minute execution time limit—definitely not ideal for a job that can take up to an hour. Now, when it comes to options C and D, option C takes the cake for simplicity. Using Amazon ECS with the Fargate launch type means you get a managed service, which means less hassle for you. In contrast, option D, which involves an EC2 launch type, brings a whole lot more configuration complexity to the table. So, if you're looking to minimize operational effort while still getting the job done, option C is clearly the way to go.",
+    "Option C involves setting up an Amazon Elastic Container Service (ECS) cluster utilizing the AWS Fargate launch type. This approach allows for seamless deployment and management of your containers without the need for server management. By configuring an Amazon EventBridge scheduled event, you can effortlessly trigger an ECS task on the cluster to execute the job daily. This solution not only minimizes operational overhead but also leverages the scalability and flexibility of Fargate, ensuring that your analytics jobs run efficiently and reliably. It's a fantastic way to streamline your processes and enhance productivity!",
+    "The most suitable choice is C! 🌟 \n\nSince the job can take up to an hour to finish, AWS Lambda won't work here, as it has a maximum execution time of 15 minutes. So, we can happily wave goodbye to options A and B! \n\nAdditionally, given that the CPU and memory usage remains steady and predictable, there's no need for autoscaling, which makes option D less than ideal. With option C, creating an Amazon Elastic Container Service (ECS) cluster with AWS Fargate allows for a seamless and efficient execution of the job without unnecessary operational overhead. It's a delightful solution that keeps everything running smoothly! 🎉"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "C",
+      "explanation": "The requirement is to run a daily scheduled job to aggregate and filter sales records for analytics in the most efficient way possible. Based on the requirement, we can eliminate option A and B since they use AWS Lambda which has a limit of 15 minutes of execution time, which may not be sufficient for a job that can take up to an hour to complete.\n\nBetween options C and D, option C is the better choice since it uses AWS Fargate which is a serverless compute engine for containers that eliminates the need to manage the underlying EC2 instances, making it a low operational effort solution. Additionally, Fargate also provides instant scale-up and scale-down capabilities to run the scheduled job as per the requirement.\n\nTherefore, the correct answer is:\n\nC. Create an Amazon Elastic Container Service (Amazon ECS) cluster with an AWS Fargate launch type. Create an Amazon EventBridge scheduled event that launches an ECS task on the cluster to run the job.",
+      "upvotes": "24"
+    },
+    {
+      "selectedAnswer": "C",
+      "explanation": "\"1-hour job\" -> A, B out since max duration for Lambda is 15 min\n\nBetween C and D, \"minimize operational effort\" means Fargate -> C",
+      "upvotes": "5"
+    },
+    {
+      "selectedAnswer": "C",
+      "explanation": "A&B are out due to Lambda 15 min limits\nC is less operationally complex than D so C is the right answer. Fargate is managed ECS cluster whereas EC2 based ECS will require more config overhead.",
+      "upvotes": "4"
+    },
+    {
+      "selectedAnswer": "C",
+      "explanation": "C. Create an Amazon Elastic Container Service (Amazon ECS) cluster with an AWS Fargate launch type. Create an Amazon EventBridge scheduled event that launches an ECS task on the cluster to run the job",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "C",
+      "explanation": "The best option is C.\n'The job can take up to an hour to complete' rules out lambda functions as they only execute up to 15 mins. Hence option A and B are out.\n'The CPU and memory usage of the job are constant and are known in advance' rules out the need for autoscaling. Hence option D is out.",
+      "upvotes": "4"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "C (100%)",
+      "votes": "42 votes."
+    },
+    {
+      "option": "C (25%)",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is C. AWS Fargate allows you to run containers without managing servers, which fits the requirement of minimizing operational complexity. Since the job can take up to an hour, it exceeds the AWS Lambda maximum execution time of 15 minutes, thereby eliminating options A and B. Between C and D, using Fargate (C) is more efficient because it abstracts server management, unlike the EC2 launch type in D, which involves additional operational overhead such as managing EC2 instances and scaling. Option D also has Auto Scaling, which is unnecessary given that the resource consumption is stable and predictable.",
+  "video_url": "https://certificationation.com/videos/exam-run-a-scheduled-daily-job-exam-396.html",
+  "url": "https://certificationation.com/questions/exam-run-a-scheduled-daily-job-exam-396.html"
+}

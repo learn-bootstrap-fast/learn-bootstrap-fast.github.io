@@ -1,0 +1,62 @@
+---
+title: "Your firm has uploaded a large amount of aerial imageExam"
+description: "Video for your firm has uploaded a large amount of aerial image data to S3 In the past, in your on-premises environment, you used a dedicated group of servers"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your firm has uploaded a large amount of aerial image data to S3 In the past, in your on-premises environment, you used a dedicated group of servers to process this critical data. You used Rabbit MQ - An open source messaging system to get job information to the servers. Once processed, the data would go to tape and be shipped offsite. Your manager told you to stay with the current design and leverage AWS archival storage and messaging services to minimize cost. Which is correct?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><b>Leverage Auto Scaling for workers managed by the SQS queue depth and utilize Amazon EC2 spot instances for cost efficiency. After each photo is processed, define a lifecycle rule to transition the S3 object to Glacier storage for archival.</b> is correct because it matches the original design closely—SQS acts as a managed, scalable messaging system very similar to RabbitMQ, and EC2 with Auto Scaling and spot pricing helps minimize cost. Once files are processed, using S3 lifecycle policies to move them into Glacier achieves comparable tape archival but with AWS-native, low-cost cold storage.</p> <p>The option <i>Transition the S3 data to Reduced Redundancy Storage first. Create a scaling group of spot worker instances directed by SQS queue length for processing, and once data processing finishes, migrate the objects to Glacier.</i> is incorrect because Reduced Redundancy Storage (RRS) is not cost-effective compared to S3 Standard or Glacier for archival and has been largely deprecated by AWS in favor of newer storage classes like S3 Standard-IA or S3 Glacier.</p> <p>The option <i>Adopt SNS to dispatch processing jobs and configure CloudWatch alarms to terminate idle spot instances. After processing completes, archive the S3 files into Glacier.</i> is wrong since SNS is designed for push-based notification, not reliable job queuing; SQS is more suitable for decoupled worker pools that need guaranteed message delivery and retry capability.</p> <p>The option <i>Use SQS for sending out processing requests and rely on CloudWatch alarms to shut down EC2 workers if idle. After processing, modify S3 data to Reduced Redundancy Storage class.</i> misses the mark because using only EC2 on-demand workers (without auto-scaling or spot pricing) does not minimize cost, and RRS is not appropriate for long-term or critical storage. It also does not archive data.</p> <p><b>Pro Tips:</b> For cost and reliability, always use SQS in place of open-source queues like RabbitMQ on AWS, and rely on S3 Lifecycle Policies to move data into archives like Glacier. Avoid RRS as it's now outdated. Spot instances combined with auto scaling maximize processing efficiency and minimize costs.</p>",
+  "query": "<p>Your organization has transferred a substantial collection of aerial photos to Amazon S3. Previously, you relied on a set of dedicated physical servers and RabbitMQ for the processing workflow and job dispatch. After processing, files were archived on tape and sent off premises. Your management requests you to use a similar architecture on AWS, making the most of cost-efficient AWS messaging and archive storage solutions. What is the best approach?</p>",
+  "original_oid": "6793da2461969b416038a164",
+  "options": [
+    {
+      "correct": true,
+      "text": "Leverage Auto Scaling for workers managed by the SQS queue depth and utilize Amazon EC2 spot instances for cost efficiency. After each photo is processed, define a lifecycle rule to transition the S3 object to Glacier storage for archival.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Transition the S3 data to Reduced Redundancy Storage first. Create a scaling group of spot worker instances directed by SQS queue length for processing, and once data processing finishes, migrate the objects to Glacier.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Adopt SNS to dispatch processing jobs and configure CloudWatch alarms to terminate idle spot instances. After processing completes, archive the S3 files into Glacier.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Use SQS for sending out processing requests and rely on CloudWatch alarms to shut down EC2 workers if idle. After processing, modify S3 data to Reduced Redundancy Storage class.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question243",
+  "originalQuery": "Your firm has uploaded a large amount of aerial image data to S3\nIn the past, in your on-premises environment, you used a dedicated group of servers to process this critical data.\nYou used Rabbit MQ - An open source messaging system to get job information to the servers.\nOnce processed, the data would go to tape and be shipped offsite.\nYour manager told you to stay with the current design and leverage AWS archival storage and messaging services to minimize cost.\nWhich is correct?",
+  "originalOptions": "A. Use SQS for passing job messages. Use Cloud Watch alarms to terminate EC2 worker instances when they become idle. Once data is processed, change the storage class of the S3 objects to Reduced Redundancy Storage.|B. Set up Auto-Scaled workers triggered by queue depth that use spot instances to process messages in SQS. Once data is processed, set up a lifecycle policy to move the object from S3 to Glacier.|C. Change the storage class of the S3 objects to Reduced Redundancy Storage. Set up Auto-Scaled workers triggered by queue depth that use spot instances to process messages in SQS. Once data is processed, change the storage class of the S3 objects to Glacier.|D. Use SNS to pass job messages use Cloud Watch alarms to terminate spot worker instances when they become idle. Once data is processed, change the storage class of the S3 object to Glacier.",
+  "video_url": "https://certificationation.com/videos/exam-amount-of-aerial-image-data-exam-404.html",
+  "url": "https://certificationation.com/questions/exam-amount-of-aerial-image-data-exam-404.html"
+}

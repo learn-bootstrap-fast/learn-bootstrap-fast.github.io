@@ -1,0 +1,76 @@
+---
+title: "Your company decided to improve on the current batchExam"
+description: "Video for your company decided to improve on the current batch processing model and start using the AWS Batch instead of the currently running SQS and EC2 with"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company decided to improve on the current batch processing model and start using the AWS Batch instead of the currently running SQS and EC2 with Auto Scaling configurations. Your processing jobs are using Docker containers. You also expect the jobs to grow in future. These jobs pull messages from the AWS SQS queue and write the data into DynamoDB tables once the processing is completed. You have created a small Proof-of-concept application to try out the AWS Batch before you actually migrate your job containers."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d5cbf501ee1c8ade9859"
+  },
+  "quid": "0",
+  "ordinal": "272",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "AWS Batch",
+    " Amazon SQS",
+    " Amazon DynamoDB",
+    " AWS Auto Scaling",
+    " Amazon EC2"
+  ],
+  "slug": "ba-improve-batch-processing-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question272",
+  "title": "AWS Your Company Decided To Improve Question",
+  "meta": "AWS Exam Question: Improve batch processing with AWS Batch, Docker containers, SQS, and DynamoDB for future job growth. Find the best answer and optimize your setup.",
+  "answer": "Correct Answers B C D",
+  "query": "A company wants to transition its existing data processing system that uses EC2 instances with Auto Scaling and SQS queues to use AWS Batch for handling containerized jobs. These jobs process messages from an Amazon SQS queue and store results in DynamoDB. The organization anticipates a significant rise in job volume over the coming months. A pilot application utilizing AWS Batch is currently under evaluation to validate the new approach.",
+  "originalQuery": "Your company decided to improve on the current batch processing model and start using the AWS Batch instead of the currently running SQS and EC2 with Auto Scaling configurations.\nYour processing jobs are using Docker containers.\nYou also expect the jobs to grow in future.\nThese jobs pull messages from the AWS SQS queue and write the data into DynamoDB tables once the processing is completed.\nYou have created a small Proof-of-concept application to try out the AWS Batch before you actually migrate your job containers.",
+  "options": [
+    "A. Confirm a CloudWatch Log group exists for the Batch process.",
+    "B. Make sure Internet Access is available to your container.",
+    "C. Make sure suitable CPU and RAM are allocated for the Batch job.",
+    "D. Make sure your AWS account has not reached to the EC2 limit.",
+    "E. Validate that the VPC Endpoint has been configured for containers to reach SQS inside the VPC."
+  ],
+  "originalOptions": [
+    "A. Make sure a CloudWatch Log group is set up for the Batch job.",
+    "B. Make sure Internet Access is available to your container.",
+    "C. Make sure suitable CPU and RAM are allocated for the Batch job.",
+    "D. Make sure your AWS account has not reached to the EC2 limit.",
+    "E. Make sure the VPC Endpoint is set to access the SQS queue from the containers inside the VP."
+  ],
+  "image": "",
+  "primaryObjective": "4: Accelerate Workload Migration and Modernization",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "E.\nCorrect Answers: B, C, and D.\nOption Ais INCORRECT because the CloudWatch Log group does not impact the Batch job's running status.\nPlease refer to the following link:\nhttps://aws.amazon.com/premiumsupport/knowledge-center/batch-job-stuck-runnable-status/\nOption B is CORRECT because no internet access for the compute resources may result in this issue.\nRefer to the link: https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html.\nOption C is CORRECT because if the job has asked for more resources than the attached compute environment has, the Batch will not schedule the job to execute, and the job will stay in the RUNNABLE state forever.\nOption D is CORRECT because the job may require starting new instances to run the additional containers.\nIf the AWS account has reached its limit, the service will not start new containers, and the job will remain in the RUNNABLE state.\nOption E is INCORRECT because the question has not mentioned connecting to the SQS privately from the VPC.\nVPC Endpoint is not required for AWS Batch to work.\nSure, I can provide a detailed explanation of the answer options for this scenario.\nOption A: Make sure a CloudWatch Log group is set up for the Batch job. Explanation: AWS Batch logs can be sent to Amazon CloudWatch Logs. It's important to set up a CloudWatch Log group for the Batch job, as it enables logging, monitoring, and debugging of the Batch job. You can also set up alarms and notifications based on the log data to help with troubleshooting.\nOption B: Make sure Internet Access is available to your container. Explanation: Docker containers running on AWS Batch require internet access to pull images from the container registry. If internet access is not available, the containers cannot be created. Hence, it's essential to ensure internet access is available for the Batch job to run.\nOption C: Make sure suitable CPU and RAM are allocated for the Batch job. Explanation: AWS Batch allows specifying CPU and memory resources for each job. Proper allocation of CPU and RAM is necessary to ensure that the job runs efficiently and within the specified time. Oversizing or undersizing can cause performance issues or excessive costs.\nOption D: Make sure your AWS account has not reached the EC2 limit. Explanation: AWS Batch uses EC2 instances to run jobs, and it's important to ensure that your AWS account has enough EC2 instances available to run your Batch jobs. You can check your EC2 instance limits using the AWS Service Quotas console.\nOption E: Make sure the VPC Endpoint is set to access the SQS queue from the containers inside the VPC. Explanation: If your Batch job is running within a VPC, it's essential to set up a VPC endpoint to access the SQS queue from within the VPC. This eliminates the need to route traffic outside the VPC, which improves security and network performance. Without this, the containers would not be able to access the SQS queue.\nIn summary, all the answer options are essential considerations when migrating batch processing from SQS and EC2 to AWS Batch with Docker containers. You should ensure that a CloudWatch Log group is set up, internet access is available to containers, suitable CPU and RAM are allocated, EC2 instance limits are not reached, and the VPC endpoint is set up to access the SQS queue from within the VPC.",
+  "chatGptExplanation": "The primary AWS product focused on in this question is AWS Batch (AWS Batch). \n\nExplanation of correct answers:\n\nB. Make sure Internet Access is available to your container. \nThis is correct because AWS Batch jobs running Docker containers often need internet access to pull images from public container registries (like Amazon ECR Public or Docker Hub). Without internet access, container images cannot be pulled, causing jobs to stall in the RUNNABLE state.\n\nC. Make sure suitable CPU and RAM are allocated for the Batch job. \nSpecifying appropriate compute resources is essential because AWS Batch schedules jobs only if the compute environment has adequate CPU and memory to run them. If resource requirements exceed available compute environment capacity, jobs will not start and remain queued in the RUNNABLE state.\n\nD. Make sure your AWS account has not reached the EC2 limit. \nAWS Batch dynamically provisions EC2 instances to run container jobs. If the AWS account has hit EC2 instance limits, AWS Batch cannot launch new instances, resulting in jobs stuck in the RUNNABLE state. Ensuring the account has sufficient EC2 instance quota is critical for job execution scaling.\n\nExplanation of incorrect answers:\n\nA. Confirm a CloudWatch Log group exists for the Batch process.\nThis option is incorrect because, while enabling CloudWatch Logs is good for monitoring and troubleshooting, a missing log group does not prevent jobs from starting or running. It does not affect job scheduling or execution.\n\nE. Validate that the VPC Endpoint has been configured for containers to reach SQS inside the VPC.\nThis is incorrect because the question does not specify that AWS Batch is running inside a VPC with private-only connectivity requiring a VPC endpoint to access SQS. AWS Batch jobs can access SQS over the internet or via public endpoints, so this is not a mandatory configuration here.\n\nSummary: Ensuring container internet access, proper resource allocation, and adequate EC2 instance limits are fundamental for AWS Batch job execution. CloudWatch logging and VPC endpoint configuration, while useful, do not directly enable job scheduling or start.",
+  "video_url": "https://certificationation.com/videos/exam-the-current-batch-processing-model-exam-178.html",
+  "url": "https://certificationation.com/questions/exam-the-current-batch-processing-model-exam-178.html"
+}

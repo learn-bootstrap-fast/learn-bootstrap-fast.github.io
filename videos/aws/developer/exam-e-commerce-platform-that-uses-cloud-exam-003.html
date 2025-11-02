@@ -1,0 +1,81 @@
+---
+title: "You are designing a solution for an e-commerce platformExam"
+description: "Video for you are designing a solution for an e-commerce platform that uses Cloud SQL for transactional data. The platform must remain available during"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are designing a solution for an e-commerce platform that uses Cloud SQL for transactional data. The platform must remain available during maintenance events or unexpected zonal outages. How should you configure Cloud SQL to ensure high availability?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A subscription video startup runs its billing and orders database on Cloud SQL for PostgreSQL. The service must continue to accept traffic during planned maintenance events and if one zone in the region fails. Which Cloud SQL configuration should you implement to provide high availability?",
+  "options": [
+    {
+      "text": "Create a cross-region read replica and plan to promote it during an incident",
+      "explanation": "This sets up asynchronous replication to another region and requires a manual promotion step when needed",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable Cloud SQL high availability and configure automatic failover to a standby in another zone",
+      "explanation": "This uses a regional setup with a primary and standby in different zones and failover occurs automatically during disruptions",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Provision two single-zone Cloud SQL instances in separate zones and keep them synchronized with custom scripts",
+      "explanation": "This runs two independent instances and relies on user-managed jobs to replicate changes between them",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Depend on automated backups and restore the database to a new instance in another zone during an outage",
+      "explanation": "This relies on scheduled backups and uses point-in-time recovery to bring up a replacement instance",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Enable Cloud SQL high availability and configure automatic failover to a standby in another zone</b>.</p><p>This configuration creates a regional Cloud SQL instance with a primary in one zone and a synchronous standby in another zone. If the primary zone experiences a failure then Cloud SQL automatically fails over to the standby so the service continues to accept traffic. During planned maintenance the instance can fail over to minimize disruption which helps meet the requirement to keep the billing and orders database available.</p><p><i>Create a cross-region read replica and plan to promote it during an incident</i> is not suitable for high availability within a region because promotion is a manual operation and causes downtime. Read replicas are designed for read scaling and disaster recovery and they do not provide automatic failover for maintenance or zonal outages.</p><p><i>Provision two single-zone Cloud SQL instances in separate zones and keep them synchronized with custom scripts</i> is not supported as a high availability pattern in Cloud SQL. You would be responsible for replication, health checks, and failover which risks data loss and split brain and does not provide the managed automatic failover the scenario requires.</p><p><i>Depend on automated backups and restore the database to a new instance in another zone during an outage</i> leads to long recovery times and potential data loss. Restores are for backup and recovery and not for maintaining continuous service during maintenance or a zone failure.</p>",
+  "batch_id": "144",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "You are designing a solution for an e-commerce platform that uses Cloud SQL for transactional data. The platform must remain available during maintenance events or unexpected zonal outages. How should you configure Cloud SQL to ensure high availability?",
+  "originalOptions": "A. Configure automated backups and use them to restore the database in another zone during an outage.<br/>B. Enable High Availability (HA) on the Cloud SQL instance and configure it for automatic failover.<br/>C. Deploy two Cloud SQL instances in different zones and use manual scripts to synchronize data between them.<br/>D. Replicate the database instance using external MySQL replication to another region.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "3",
+  "tip": "<p>Look for managed features that provide <i>automatic failover</i> within a region when the requirement is to keep serving traffic during maintenance and a single zone failure. If a choice requires <i>manual promotion</i> or a <i>restore</i> then it usually does not meet high availability needs.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/high-availability",
+    "https://cloud.google.com/sql/docs/postgres/high-availability#failover",
+    "https://cloud.google.com/sql/docs/postgres/disaster-recovery",
+    "https://cloud.google.com/sql/docs/postgres/backup-recovery/restoring",
+    "https://cloud.google.com/sql/docs/maintenance"
+  ],
+  "url": "https://certificationation.com/questions/exam-e-commerce-platform-that-uses-cloud-exam-003.html",
+  "video_url": "https://certificationation.com/videos/exam-e-commerce-platform-that-uses-cloud-exam-003.html"
+}

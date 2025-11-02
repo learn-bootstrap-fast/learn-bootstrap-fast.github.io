@@ -1,0 +1,74 @@
+---
+title: "There are two departments in a company. Both departmentsExam"
+description: "Video for there are two departments in a company. Both departments own several EC2 instances."
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "There are two departments in a company. Both departments own several EC2 instances."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d5b3f501ee1c8ade981c"
+  },
+  "quid": "0",
+  "ordinal": "211",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "AWS Backup",
+    " Amazon Elastic Block Store (Amazon EBS)",
+    " AWS Lambda",
+    " AWS Systems Manager",
+    " AWS Resource Groups and Tag Editor"
+  ],
+  "slug": "ec2-two-departments-company-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question211",
+  "title": "AWS There Are Two Departments In A Company Question",
+  "meta": "AWS Exam Question: There are two departments in a company. Both departments own several EC2 instances. Find the answer using AWS technologies like EC2 and VPC.",
+  "answer": "A",
+  "query": "A firm has two teams managing several EC2 instances. Each team needs automated backup solutions for their storage volumes, with schedules of every 10 hours and every 22 hours respectively. How can the backup process be set up to ensure both backup cycles occur for volumes shared by both teams?",
+  "originalQuery": "There are two departments in a company.\nBoth departments own several EC2 instances.",
+  "options": [
+    "A. Each Department adds tags on its EBS volume(s). Set up lifecycle policies based on the tags. For EBS volumes owned by two departments, snapshots will be taken every 12 hours and every 24 hours.",
+    "B. Teams apply tags to their EBS volumes. Lifecycle policies are configured per tag. Shared volumes will not get snapshots because the two policies have conflicting schedules. Other volumes remain unaffected.",
+    "C. Teams apply tags to their EBS volumes. Create one lifecycle policy targeting the tag. Shared volumes will have snapshots every 12 hours since that schedule overrides the others.",
+    "D. Apply a tag only on the EBS volumes owned solely by Team 2 without tagging shared volumes. Configure a lifecycle policy based on this tag. Shared volumes will get snapshots every 12 hours due to Team 1’s policy."
+  ],
+  "originalOptions": [
+    "A. Each Department adds tags on its EBS volume(s). Set up lifecycle policies based on the tags. For EBS volumes owned by two departments, snapshots will be taken every 12 hours and every 24 hours.",
+    "B. Each Department adds tags on its EBS volume(s). Set up lifecycle policies based on the tags. For EBS volumes owned by two departments, snapshots will not be taken as there is a schedule conflict between the two policies. Other EBS volumes are not affected.",
+    "C. Each Department adds tags on its EBS volume(s). Set up a lifecycle policy based on the tag. For EBS volumes owned by two departments, snapshots will be taken every 12 hours since the 12-hour schedule takes priority.",
+    "D. Add a tag on the EBS volume(s) that Department B owns outright (not including the tag on any shared volumes). Set up a lifecycle policy based on the tag. For the EBS volumes owned by two departments, snapshots are taken every 12 hours due to the policy of Department"
+  ],
+  "image": "",
+  "primaryObjective": "1: Design Solutions for Organizational Complexity",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Correct Answer - A.\nMultiple policies can be created to take snapshots for an EBS volume, as long as each policy targets a unique tag on the volume.\nIn this case, the EBS volumes owned by two departments should have two tags: tag A is the target for policy A to create a snapshot every 12 hours for Department A, and tag B is the target for policy B to create a snapshot every 24 hours for Department.\nB.\nAmazon DLM creates snapshots according to the schedules for both policies.\nDetails refer to https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-lifecycle.html.\nOption A is CORRECT because when an EBS volume has two tags, multiple policies can run simultaneously.\nOption B is incorrect because there is no schedule conflict for this scenario.\nOption C is incorrect because 12 hours schedule does not take priority over 24 hours, and both schedules can run in parallel.\nOption D is incorrect because the EBS volumes owned by two departments can add another tag and be included in the policy for Department.\nB.\nThe correct answer is A.\nHere is an explanation of why:\nThe requirement is to take snapshots of EBS volumes owned by two departments on a schedule that is every 12 hours and every 24 hours. The best approach to achieving this requirement is by using AWS EBS Lifecycle policies with tags.\nEach department should add tags to their EBS volumes. The tags will be used to set up the lifecycle policies for the EBS volumes. For the volumes owned by both departments, the lifecycle policy should be set up to take snapshots every 12 hours and every 24 hours.\nOption B is incorrect because it does not address the requirement of taking snapshots for EBS volumes owned by two departments.\nOption C is incorrect because it suggests that snapshots should be taken every 12 hours only. This does not meet the requirement of taking snapshots every 12 hours and every 24 hours.\nOption D is incorrect because it only addresses the EBS volumes owned by Department B outright and does not address the EBS volumes owned by both departments.\nTo summarize, the best approach is to use AWS EBS Lifecycle policies with tags. Each department adds tags to their EBS volumes, and the lifecycle policies are set up based on the tags. For the EBS volumes owned by two departments, the lifecycle policy should be set up to take snapshots every 12 hours and every 24 hours.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-company-both-departments-own-several-exam-128.html",
+  "url": "https://certificationation.com/questions/exam-company-both-departments-own-several-exam-128.html"
+}

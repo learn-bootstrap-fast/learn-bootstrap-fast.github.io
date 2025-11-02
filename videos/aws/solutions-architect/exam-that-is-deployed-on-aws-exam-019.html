@@ -1,0 +1,128 @@
+---
+title: "A company has a three-tier web application that isExam"
+description: "Video for a company has a three-tier web application that is deployed on AWS. The web servers are deployed in a public subnet in a VPC. The application servers"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company has a three-tier web application that is deployed on AWS. The web servers are deployed in a public subnet in a VPC. The application servers and database servers are deployed in private subnets in the same VPC. The company has deployed a third-party virtual firewall appliance from AWS Marketplace in an inspection VPC. The appliance is configured with an IP interface that can accept IP packets. A solutions architect needs to integrate the web application with the appliance to inspect all traffic to the application before the traffic reaches the web server. Which solution will meet these requirements with the LEAST operational overhead?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729978"
+  },
+  "quid": null,
+  "ordinal": "19",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS Marketplace",
+    " Amazon VPC",
+    " Network services",
+    " AWS Well-Architected Framework",
+    " AWS Security Hub"
+  ],
+  "slug": "w-a-three-tier-web-application-aws",
+  "source": "ET",
+  "title": "AWS A Company Has A Three-Tier Web Application Question",
+  "meta": "AWS Exam Question: A company has a three-tier web application on AWS with public and private subnets. How to integrate a firewall appliance for traffic inspection? Answer: VPC, AWS Marketplace, subnet.",
+  "answer": "D",
+  "query": "A cloud-based retail company implements a multi-tier application on AWS. The architecture is designed such that the frontend servers are hosted in a public subnet within a specific VPC, while the backend servers and the data storage instances are placed in private subnets of the same VPC. Additionally, the company has acquired a third-party virtual security appliance from the AWS Marketplace, deployed in its own designated inspection VPC, configured to process IP traffic. A solutions architect's task is to set up the security appliance to thoroughly analyze all traffic directed towards the application before it reaches the frontend servers. What setup will best achieve these goals with MINIMAL management requirements?",
+  "originalQuery": "A company has a three-tier web application that is deployed on AWS. The web servers are deployed in a public subnet in a VPC. The application servers and database servers are deployed in private subnets in the same VPC. The company has deployed a third-party virtual firewall appliance from AWS Marketplace in an inspection VPC. The appliance is configured with an IP interface that can accept IP packets.\nA solutions architect needs to integrate the web application with the appliance to inspect all traffic to the application before the traffic reaches the web server.\nWhich solution will meet these requirements with the LEAST operational overhead?",
+  "options": [
+    "A. Develop a Network Load Balancer inside the retail application's public subnet to direct traffic to the security appliance for packet analysis.",
+    "B. Develop an Application Load Balancer in the retail application's public subnet to direct traffic to the security appliance for packet analysis.",
+    "C. Establish a transit gateway in the inspection VPC and configure the route tables to send incoming packets through the transit gateway.",
+    "D. Deploy a Gateway Load Balancer in the inspection VPC. Create a Gateway Load Balancer endpoint to receive the incoming packets and forward the packets to the appliance."
+  ],
+  "originalOptions": [
+    "A. Create a Network Load Balancer in the public subnet of the application's VPC to route the traffic to the appliance for packet inspection.",
+    "B. Create an Application Load Balancer in the public subnet of the application's VPC to route the traffic to the appliance for packet inspection.",
+    "C. Deploy a transit gateway in the inspection VPConfigure route tables to route the incoming packets through the transit gateway.",
+    "D. Deploy a Gateway Load Balancer in the inspection VPC. Create a Gateway Load Balancer endpoint to receive the incoming packets and forward the packets to the appliance."
+  ],
+  "image": null,
+  "primaryObjective": "1: Design Secure Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "The optimal solution in this scenario is to deploy a Gateway Load Balancer within the inspection VPC. By creating a Gateway Load Balancer endpoint, incoming packets can be effectively received and subsequently forwarded to the virtual firewall appliance for thorough inspection. This approach minimizes operational overhead while ensuring that all traffic directed to the web application is scrutinized before reaching the web servers. \n\nGateway Load Balancers are specifically designed to integrate seamlessly with virtual appliances, facilitating the transparent inspection of traffic. This architecture not only enhances security by placing the inspection layer between the internet and the web application but also maintains high availability and scalability. \n\nWhen implementing this solution, it is crucial to configure the associated route tables correctly to ensure that the traffic flows through the Gateway Load Balancer. This configuration will enable efficient packet management and analysis, while also preserving the performance and reliability of the web application.",
+    "The answer is D! 🎉 Why, you ask? Well, the Gateway Load Balancer is a fantastic addition to the AWS family, operating at Layer 3 of the OSI model. It's powered by Hyperplane and can juggle thousands of connections per second like a pro! 🤹‍♂️ \n\nBy setting up Gateway Load Balancer endpoints in your spoke VPCs—those charming little VPCs sending and receiving traffic from the Internet—you can effortlessly conduct inline traffic inspections. This setup keeps everything neat and tidy while allowing you to centralize your virtual appliances in a scalable way. So, you get the best of both worlds: security and simplicity! 🌐🔒",
+    "With a sprinkle of insight into traffic management, we can seamlessly direct some of the incoming requests to those virtual appliances for a thorough inspection. \n\nThese appliances play nice with various security tools, including:\n- Firewalls\n- Intrusion Detection Systems (IDS)\n- Intrusion Prevention Systems (IPS)\n- Deep Packet Inspection (DPI) Systems\n\nFunctioning at Layer 3, they monitor every packet across all ports without discrimination. \n\nTraffic is forwarded according to the rules defined in the listener, ensuring that everything flows smoothly to the designated target group.\n\nIn this setup, the Gateway Load Balancer (GLB) and the virtual appliances exchange data using the GENEVE protocol over port 6081, making the process both efficient and elegant. So, while we could dive deeper into the nitty-gritty, it's safe to say this arrangement keeps things tidy with minimal fuss.",
+    "In this scenario, the term \"utilizing the GENEVE protocol\" pertains to the way the Global Load Balancer (GLB) interacts with virtual appliances, such as firewalls and intrusion detection systems, to facilitate traffic exchange. GENEVE, which stands for Generic Network Virtualization Encapsulation, is a versatile protocol designed to encapsulate packets for streamlined transport across networks. This approach supports dynamic and scalable network virtualization solutions. Operating on port 6081, GENEVE enables the load balancer to direct traffic to designated target groups (TG) in accordance with specific listener rules, ensuring efficient and effective traffic management.",
+    "The best choice here is D, and here's why it's a delightful fit: \n\n- It offers minimal operational overhead, making life easier for your team. 🌟\n- It seamlessly integrates the third-party application from AWS Marketplace, ensuring smooth functionality.\n\nImagine if the author spiced things up by including an option for VPC-to-VPC traffic inspection! That would certainly make the scenario more intriguing, especially since it involves inspecting traffic before it reaches the application layer. After all, exploring different methods of traffic forwarding could open the door to even more creative solutions! 🎉"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "",
+      "explanation": "Answer is D . Use Gateway Load balancer",
+      "upvotes": "48"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "It's D, Coz.. Gateway Load Balancer is a new type of load balancer that operates at layer 3 of the OSI model and is built on Hyperplane, which is capable of handling several thousands of connections per second. Gateway Load Balancer endpoints are configured in spoke VPCs originating or receiving traffic from the Internet. This architecture allows you to perform inline inspection of traffic from multiple spoke VPCs in a simplified and scalable fashion while still centralizing your virtual appliances.",
+      "upvotes": "46"
+    },
+    {
+      "selectedAnswer": "D",
+      "explanation": "we're able to load balance some of the incoming traffic through to those virtual appliances where they can perform some kind of inspection.\n\n- Used in front of virtual appliances such as:\n- firewalls,\n- IDS: intrusion detection systems\n- IPS: intrusion prevention systems\n- DPI: deep packet inspection systems\n- Operates at Layer 3 – listens for all packets on all ports\n\n- Forwards traffic to the TG specified in the listener rules\n\n- GLB and virtual appliances Exchanges traffic using the GENEVE protocol on port 6081",
+      "upvotes": "1"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "In this context, \"using the GENEVE protocol\" refers to the method by which the Global Load Balancer (GLB) and the virtual appliances (like firewalls and intrusion detection systems) communicate and exchange traffic. GENEVE (Generic Network Virtualization Encapsulation) is a protocol that encapsulates packets for efficient transport over a network, allowing for flexible and scalable network virtualization. It operates on port 6081, enabling the load balancer to forward traffic to the specified target groups (TG) based on the listener rules.\nCredits: AI answer",
+      "upvotes": "1"
+    },
+    {
+      "selectedAnswer": "D",
+      "explanation": "The answer is D for some obvious reasons:\n- Low operational overhead.\n- Integrate AWS Marketplace and third-party application.\n\nI think the question will be much more interesting if the author add another option like using VPC-to-VPC traffic inspection because the question asked traffic to be inspected before it reaches application layer so traffic forwarding is also a feasible solution.",
+      "upvotes": "1"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "D (82%)",
+      "votes": "113 votes."
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is D because a Gateway Load Balancer (GLB) is specifically designed to work with virtual appliances and can efficiently handle the routing of traffic for inspection while minimizing management overhead. It allows for layer 3 traffic inspection and can distribute traffic to the security appliance effectively. The other options are less optimal because: A and B involve traditional Load Balancers, which are not specifically built for inline inspection of traffic before reaching the application layer, and may add complexity. Option C, using a transit gateway, does not inherently provide inspection capabilities and may complicate the architecture further without leveraging the GLB's functionalities. Therefore, D provides the simplest and most efficient solution.",
+  "video_url": "https://certificationation.com/videos/exam-that-is-deployed-on-aws-exam-019.html",
+  "url": "https://certificationation.com/questions/exam-that-is-deployed-on-aws-exam-019.html"
+}

@@ -1,0 +1,81 @@
+---
+title: "You are managing a Cloud SQL instance that supports yourExam"
+description: "Video for you are managing a Cloud SQL instance that supports your organization's internal applications. Users have reported intermittent query timeouts and"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are managing a Cloud SQL instance that supports your organization's internal applications. Users have reported intermittent query timeouts and degraded performance during peak usage. What steps should you take to resolve this issue?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You administer a Cloud SQL for PostgreSQL instance that powers the booking platform for Alpine Courier. During the evening rush users report sporadic timeouts and slower responses. Monitoring shows CPU peaking near 80 percent and active connections rising to about 220. You must identify the root cause and alleviate the slowdown with minimal risk to production. What should you do first?",
+  "options": [
+    {
+      "text": "Create one or more read replicas for the database",
+      "explanation": "This offloads read traffic from the primary by replicating data asynchronously.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Resize the primary instance to a larger machine type",
+      "explanation": "This increases available vCPU and memory for the database to handle more concurrent work.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable Cloud SQL Insights and review the longest running and most frequent queries",
+      "explanation": "This activates query performance monitoring and tracing so you can spot hotspots and waits.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Place a global external load balancer in front of the database to spread connections",
+      "explanation": "This attempts to route client sessions across backends through a worldwide entry point.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Enable Cloud SQL Insights and review the longest running and most frequent queries</b>. This provides immediate visibility into what is actually consuming resources and it does so without risky changes to the production instance.</p><p>It lets you see query level statistics such as execution time, frequency, waits, and locking so you can pinpoint which statements are driving the CPU peaks and rising connection counts. With this information you can validate whether the slowdown is caused by a few inefficient queries, missing indexes, or excessive concurrency, and you can then apply targeted fixes with confidence.</p><p><i>Create one or more read replicas for the database</i> is not the right first step because replicas only offload reads and they require application changes to route read traffic. They do not reduce write load on the primary and they do not address the underlying cause of the slow queries. Replication lag can also introduce new issues during busy periods.</p><p><i>Resize the primary instance to a larger machine type</i> may temporarily mask the symptoms and it adds operational risk because changing machine type triggers a restart. If the root cause is inefficient queries or excessive connections then more CPU will not solve the problem efficiently.</p><p><i>Place a global external load balancer in front of the database to spread connections</i> is not appropriate for Cloud SQL. Fronting a managed database with a global HTTP or TCP load balancer is not supported as a way to multiplex database sessions and it does not solve query level bottlenecks. Connection pooling at the application layer is the recommended approach instead.</p>",
+  "batch_id": "202",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are managing a Cloud SQL instance that supports your organization's internal applications. Users have reported intermittent query timeouts and degraded performance during peak usage. What steps should you take to resolve this issue?",
+  "originalOptions": "A. Enable Cloud SQL Insights for performance analysis.<br/>B. Optimize query performance using query execution plans.<br/>C. Enable database read replicas.<br/>D. Use a global load balancer to distribute database queries.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "5",
+  "tip": "<p>When you see performance issues, make <i>observability</i> your <i>first</i> step. Use built in diagnostics to confirm the cause before scaling or changing architecture.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/insights-overview",
+    "https://cloud.google.com/sql/docs/postgres/connect-overview",
+    "https://cloud.google.com/sql/docs/postgres/replication",
+    "https://cloud.google.com/sql/docs/postgres/scale-instance",
+    "https://cloud.google.com/sql/docs/postgres/connection-pooling"
+  ],
+  "url": "https://certificationation.com/questions/exam-that-supports-your-organization-s-internal-exam-005.html",
+  "video_url": "https://certificationation.com/videos/exam-that-supports-your-organization-s-internal-exam-005.html"
+}

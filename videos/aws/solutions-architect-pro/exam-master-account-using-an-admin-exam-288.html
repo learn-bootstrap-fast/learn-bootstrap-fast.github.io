@@ -1,0 +1,73 @@
+---
+title: "You have signed in to an AWS Organization's masterExam"
+description: "Video for you have signed in to an AWS Organization's master account using an admin IAM user. You need to move accounts to this Organization from one OU"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have signed in to an AWS Organization's master account using an admin IAM user. You need to move accounts to this Organization from one OU (Organizational Unit) to another or back to the root from an OU. However, the operation was disallowed due to a lack of permissions. So you started looking at the IAM policies attached to this user. What are the minimum permissions you need to move accounts among OUs? (Select TWO.)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d60ef501ee1c8ade9900"
+  },
+  "quid": "0",
+  "ordinal": "440",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "organizations:MoveAccount",
+    " organizations:DescribeOrganization"
+  ],
+  "slug": "iam-move-accounts-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question440",
+  "title": "AWS You Have Signed In To An AWS Organization Question",
+  "meta": "AWS Exam Question: You signed in to an AWS Organization's master account as an admin IAM user. What minimum permissions are needed to move accounts? Answer: IAM, OU.",
+  "answer": "B C",
+  "query": "As an administrator of an AWS Organization, you are using an admin IAM user in the management account. You want to transfer several accounts from one Organizational Unit (OU) to another OU or move them back to the root. However, your current IAM policy does not allow this action. What are the two essential permissions that must be included in your IAM policy to enable transferring accounts between OUs? (Choose TWO.)",
+  "originalQuery": "You have signed in to an AWS Organization's master account using an admin IAM user.\nYou need to move accounts to this Organization from one OU (Organizational Unit) to another or back to the root from an OU.\nHowever, the operation was disallowed due to a lack of permissions.\nSo you started looking at the IAM policies attached to this user.\nWhat are the minimum permissions you need to move accounts among OUs? (Select TWO.)",
+  "options": [
+    "A. organizations:ViewAccountDetails",
+    "B. organizations:DescribeOrganization",
+    "C. organizations:MoveAccount",
+    "D. organizations:AssignPolicyToEntity",
+    "E. organizations:*"
+  ],
+  "originalOptions": [
+    "A. organizations:DescribeAccount",
+    "B. organizations:DescribeOrganization",
+    "C. organizations:MoveAccount",
+    "D. organizations:AttachPolicy",
+    "E. organizations:*"
+  ],
+  "image": "",
+  "primaryObjective": "1: Design Solutions for Organizational Complexity",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "E.\nCorrect Answer - B, C.\nUsers can move accounts between the Root and OUs in AWS Organization according to.\nhttps://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html.\nHowever, permissions are needed to do that.\nOption A is incorrect because organizations:DescribeAccount is used to retrieve Organization details about the account, which is not required.\nOption B is CORRECT because organizations:DescribeOrganization is required if the move operation is done from console.\nOption C is CORRECT because organizations:MoveAccount permits users to move accounts in an Organization.\nOption D is incorrect because attaching SCP is not needed in this scenario.\nOption E is incorrect: because this will allow all actions for Organizations, which will not meet the least privilege.\nTo move accounts between OUs within an AWS Organization, you need to have the following minimum permissions:\n1.\norganizations:DescribeAccount: This permission allows the IAM user to view the details of the account being moved. This is a read-only permission and does not allow any modifications to be made.\n2.\norganizations:MoveAccount: This permission allows the IAM user to move the account from one OU to another within the same organization. This permission should be added to the IAM policy attached to the admin user to enable the movement of accounts.\nOption A (organizations:DescribeAccount) and Option C (organizations:MoveAccount) are the correct answers.\nOption B (organizations:DescribeOrganization) is not required to move accounts between OUs, as it only allows viewing the details of the organization itself.\nOption D (organizations:AttachPolicy) is also not required to move accounts between OUs, as it only allows attaching policies to entities within the organization.\nOption E (organizations:*) grants all permissions for AWS Organizations, which is not the best practice as it grants excessive privileges and increases the risk of accidental or unauthorized actions. Therefore, it should be avoided whenever possible.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-master-account-using-an-admin-exam-288.html",
+  "url": "https://certificationation.com/questions/exam-master-account-using-an-admin-exam-288.html"
+}

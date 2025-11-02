@@ -1,0 +1,62 @@
+---
+title: "You were assigned a task to create a security monitoringExam"
+description: "Video for you were assigned a task to create a security monitoring dashboard in AWS. The dashboard should be able to identify whether EC2 instances are exposed"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You were assigned a task to create a security monitoring dashboard in AWS. The dashboard should be able to identify whether EC2 instances are exposed to common vulnerabilities and exposures (CVEs) For example, if an EC2 instance does not install certain patch and is exposed to a known CVE, this incident should be discovered. Which approach is the best one to implement this?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><b>Enable Amazon Inspector, verifying all EC2 machines have the proper Inspector agents and that CVE rules are included in its assessment configuration.</b> is the strongest approach. Amazon Inspector is purpose-built for vulnerability management on EC2 instances, and it continuously monitors for software vulnerabilities, especially those documented as CVEs. It scans instances, reports detected CVEs, and integrates directly with dashboards for real-time visibility.</p><p><i>Set up AWS Systems Manager to include CVE updates in the patch baselines, then use Patch Manager to deploy relevant patches across all EC2 servers.</i> is more about automated patch management than detection. While Patch Manager helps keep instances up to date, it does not provide discovery capabilities or specific CVE reports if patches are missing.</p><p><i>Activate Amazon GuardDuty with CVE rule packs included in the detection configuration, and monitor the dashboard for any CVE alerts.</i> is incorrect because GuardDuty is designed for continuous threat detection and malicious activity monitoring (like suspicious network traffic), but it does not scan instance vulnerabilities or CVE exposure directly.</p><p><i>Set up AWS Macie and add CVE scanning rules to its configuration for analysis.</i> is not suitable here—Macie focuses on discovering, classifying, and protecting sensitive data in S3, and has no features for CVE or vulnerability assessment.</p><p><b>Tip:</b> Inspector provides detailed, actionable vulnerability findings with CVE references, making it ideal for compliance and remediation workflows focused on EC2 instance security.</p>",
+  "query": "<p>You are asked to set up an AWS security dashboard with the goal of discovering whether any EC2 instances are vulnerable to common security risks (CVEs), such as missing patches that leave them open to specific threats. Which solution will provide the most effective way to automatically identify EC2 instances at risk due to unpatched and known CVEs?</p>",
+  "original_oid": "6793da4461969b416038a1a8",
+  "options": [
+    {
+      "correct": false,
+      "text": "Set up AWS Systems Manager to include CVE updates in the patch baselines, then use Patch Manager to deploy relevant patches across all EC2 servers.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Activate Amazon GuardDuty with CVE rule packs included in the detection configuration, and monitor the dashboard for any CVE alerts.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Enable Amazon Inspector, verifying all EC2 machines have the proper Inspector agents and that CVE rules are included in its assessment configuration.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up AWS Macie and add CVE scanning rules to its configuration for analysis.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question311",
+  "originalQuery": "You were assigned a task to create a security monitoring dashboard in AWS.\nThe dashboard should be able to identify whether EC2 instances are exposed to common vulnerabilities and exposures (CVEs)\nFor example, if an EC2 instance does not install certain patch and is exposed to a known CVE, this incident should be discovered.\nWhich approach is the best one to implement this?",
+  "originalOptions": "A. Enable AWS GuardDuty and include CVE rule package in the GuardDuty template. Monitor CVE findings in the console.\nB. In AWS Systems Manager, include CVE patches in patch baselines. Use patch manager to apply system patches to all EC2 instances.\nC. Enable AWS Inspector and make sure all EC2 instances have the Inspector agents installed properly. Include CVE rule package in the assessment template.\nD. Configure AWS Macie and include CVE rule package in the assessment template.",
+  "video_url": "https://certificationation.com/videos/exam-security-monitoring-dashboard-in-aws-exam-356.html",
+  "url": "https://certificationation.com/questions/exam-security-monitoring-dashboard-in-aws-exam-356.html"
+}

@@ -1,0 +1,74 @@
+---
+title: "You use AWS Cognito User Pool to configure a userExam"
+description: "Video for you use AWS Cognito User Pool to configure a user directory for an application. You want to separate different users as readers, contributors, and"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You use AWS Cognito User Pool to configure a user directory for an application. You want to separate different users as readers, contributors, and editors of the app. For example, the readers can only read contents from AWS S3 buckets. Contributors can put contents into Amazon S3 buckets, and editors have the permissions to publish contents through an API in Amazon API Gateway. Which method is the best to achieve this requirement in AWS Cognito?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d613f501ee1c8ade990c"
+  },
+  "quid": "0",
+  "ordinal": "452",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "Amazon Cognito",
+    " Amazon S3",
+    " IAM",
+    " AWS Identity and Access Management (IAM)",
+    " Amazon API Gateway"
+  ],
+  "slug": "co-user-directory-separate-users-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question452",
+  "title": "AWS You Use AWS Cognito User Pool Question",
+  "meta": "AWS Exam Question: Use AWS Cognito User Pool to manage users as readers, contributors, and editors for your app. The answer involves AWS S3 and Amazon API Gateway.",
+  "answer": "C",
+  "query": "A company uses Amazon Cognito User Pool to manage authentication for its new online platform. They need to classify users into categories like viewers, contributors, and managers. Viewers should only access reports stored in Amazon S3 buckets. Contributors must have permissions to upload files to Amazon S3. Managers require permission to trigger publishing workflows using an Amazon API Gateway endpoint. What is the ideal way to set up these role-based permissions using Amazon Cognito User Pool?",
+  "originalQuery": "You use AWS Cognito User Pool to configure a user directory for an application.\nYou want to separate different users as readers, contributors, and editors of the app.\nFor example, the readers can only read contents from AWS S3 buckets.\nContributors can put contents into Amazon S3 buckets, and editors have the permissions to publish contents through an API in Amazon API Gateway.\nWhich method is the best to achieve this requirement in AWS Cognito?",
+  "options": [
+    "A. In IAM, set up multiple groups and assign appropriate IAM policies. Then assign users to these IAM groups within Amazon Cognito User Pool.",
+    "B. Define separate IAM roles for viewers, contributors, and managers within IAM. Assign each Cognito user an individual IAM role accordingly.",
+    "C. In Amazon Cognito User Pool, create groups and assign IAM roles to them. Add users to the groups to assign the required permissions.",
+    "D. Attach an IAM policy directly to each Amazon Cognito User Pool user. Ensure each user policy aligns with their role."
+  ],
+  "originalOptions": [
+    "A. In IAM, add different groups and assign suitable IAM policies. In Amazon Cognito User Pool, assign users to the IAM groups.",
+    "B. Configure different IAM roles in IAM for readers, contributors and editors. In Amazon Cognito User Pool, configure each user with an IAM role.",
+    "C. In Amazon Cognito User Pool, create groups and assign IAM roles to them. Add users to the groups to assign the required permissions.",
+    "D. Directly attach an IAM policy to each user in Amazon Cognito User Pool. Make sure each user has an appropriate IAM policy according to the user role."
+  ],
+  "image": "https://eaeastus2.blob.core.windows.net/optimizedimages/static/images/AWS-Certified-Solutions-Architect-Professional/answer/imgckeditor_345.png",
+  "primaryObjective": "2: Design for New Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Correct Answer - C.\nIn Amazon Cognito User Pool, you can configure users in groups to manage the permissions better.\nEach group can be linked with an IAM role ARN.\nThe reference can be found in https://docs.aws.amazon.com/en_pv/cognito/latest/developerguide/cognito-user-pools-user-groups.html.\nOption A is incorrect: Because users should be added into groups in the Cognito User Pool instead of IAM.\nOption B is incorrect: Because users in Cognito User Pool cannot be configured directly with an IAM role.\nOption C is CORRECT: Check the below example:\nGroup1 is linked with an IAM role, and User1 is added into the group.\nOption D is incorrect: Similar to Option B, it is inappropriate to attach an IAM policy to each user directly.\nThe best method to achieve this requirement in AWS Cognito is option C: In Amazon Cognito User Pool, create groups and assign IAM roles to them. Add users to the groups to assign the required permissions.\nAmazon Cognito User Pool provides user authentication and authorization, and can integrate with other AWS services such as Amazon S3, Amazon API Gateway, and IAM to control access to resources.\nOption A suggests using IAM groups to assign suitable IAM policies, and then assigning users to the IAM groups in Amazon Cognito User Pool. However, IAM policies are not directly assignable to Amazon Cognito User Pool users. It is more appropriate to use IAM policies to define permissions for specific AWS services, such as Amazon S3 or Amazon API Gateway.\nOption B suggests configuring different IAM roles for readers, contributors, and editors in IAM and then assigning each user with an IAM role in Amazon Cognito User Pool. However, IAM roles are intended to grant permissions to AWS resources, and may not be the best fit for this use case.\nOption D suggests attaching an IAM policy directly to each user in Amazon Cognito User Pool. While this approach is possible, it can be cumbersome to manage if there are many users with different roles and permissions.\nOption C is the best method to achieve the requirements. In Amazon Cognito User Pool, create groups for readers, contributors, and editors. For each group, assign an IAM role that has the necessary permissions for the corresponding AWS service. Then, add users to the appropriate groups to assign the required permissions. This approach is scalable and easy to manage, and provides fine-grained access control for users in different roles.",
+  "chatGptExplanation": "The correct answer is option C because Amazon Cognito User Pools allow you to create groups and associate each group with a specific IAM role that defines permissions. By creating groups such as viewers, contributors, and managers within the Cognito User Pool and assigning to each group an IAM role with precise permissions (e.g., read-only access to S3 for viewers, upload permissions for contributors, and API Gateway invoke permissions for managers), you can manage role-based access efficiently and scalably. Users are then added to the appropriate groups, automatically inheriting the associated IAM roles and thus their permissions.\n\nOption A is incorrect because IAM groups and Cognito User Pool groups are distinct; you cannot assign IAM groups to Cognito users. IAM policies are attached to IAM roles or IAM groups in IAM, but Cognito User Pools manage users separately, so this approach does not work.\n\nOption B is incorrect because although you can create IAM roles with specific permissions, Cognito User Pool users cannot be directly assigned individual IAM roles; instead, you assign roles via groups, or via identity pools during federated authentication.\n\nOption D is incorrect because attaching IAM policies directly to individual Cognito User Pool users is not supported; user permissions should be managed via groups and roles for scalability and maintainability.\n\nHence, using Cognito User Pool groups mapped to IAM roles is the recommended best practice to implement role-based access control in this scenario.",
+  "video_url": "https://certificationation.com/videos/exam-configure-a-user-directory-for-exam-298.html",
+  "url": "https://certificationation.com/questions/exam-configure-a-user-directory-for-exam-298.html"
+}

@@ -1,0 +1,74 @@
+---
+title: "While implementing cost-cutting measurements in yourExam"
+description: "Video for while implementing cost-cutting measurements in your organization, you have been told that you need to migrate some of your existing resources to"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "While implementing cost-cutting measurements in your organization, you have been told that you need to migrate some of your existing resources to another region. The first task you have been given is to copy all of your Amazon Machine Images from Asia Pacific (Sydney) to US West (Oregon) One of the things that you are unsure of is how the SSH keys on your Amazon Machine Images need to be migrated. Which of the following best describes how your SSH keys are affected when AMIs are migrated between regions? Choose the correct answer from the options below."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d584f501ee1c8ade97a5"
+  },
+  "quid": "0",
+  "ordinal": "90",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "Amazon EC2",
+    " Amazon Machine Images (AMIs)",
+    " AWS global infrastructure",
+    " AWS shared responsibility model",
+    " Security"
+  ],
+  "slug": "am-amazon-machine-images-migrate-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question90",
+  "title": "AWS While Implementing Cost Cutting Measurements Question",
+  "meta": "AWS Exam Question: While implementing cost-cutting measures, you need to migrate Amazon Machine Images from Asia Pacific to US West. What about SSH keys? Answer: AMIs, SSH keys.",
+  "answer": "D",
+  "query": "Your company plans to relocate several EC2 resources from the Canada (Central) region to the Europe (Frankfurt) region to optimize latency and compliance. You have been tasked with transferring Amazon Machine Images accordingly.\nYou want to understand how the SSH key pairs behave during this migration.\nWhich statement accurately describes the impact on SSH keys when you copy AMIs between these two AWS regions? Select the most accurate answer from the choices below.",
+  "originalQuery": "While implementing cost-cutting measurements in your organization, you have been told that you need to migrate some of your existing resources to another region.\nThe first task you have been given is to copy all of your Amazon Machine Images from Asia Pacific (Sydney) to US West (Oregon)\nOne of the things that you are unsure of is how the SSH keys on your Amazon Machine Images need to be migrated.\nWhich of the following best describes how your SSH keys are affected when AMIs are migrated between regions? Choose the correct answer from the options below.",
+  "options": [
+    "A. SSH keys are transferred along automatically, so launching the new instance requires no extra steps.",
+    "B. SSH keys transfer with the AMI but only function for previous users; new users require fresh keys.",
+    "C. Both SSH and authorization keys do not transfer, demanding new keys when creating instances.",
+    "D. The SSH keys will not be copied to the new region but the authorization keys will still be in the operating system of the AMI. You need to import the SSH keys to the new region if you want to launch the new EC2 instances with the same SSH keys."
+  ],
+  "originalOptions": [
+    "A. The SSH keys will also be copied across, so you don`t need to do anything except launch the new instance.",
+    "B. The SSH keys will also be copied across. However, they will only work for users who have already accessed them in the old region. If you need new users to access the instances, then new keys will need to be generated.",
+    "C. Neither the SSH key nor the authorized key is copied and consequently you need to create new keys when you launch the new instance.",
+    "D. The SSH keys will not be copied to the new region but the authorization keys will still be in the operating system of the AMI. You need to import the SSH keys to the new region if you want to launch the new EC2 instances with the same SSH keys."
+  ],
+  "image": "https://eaeastus2.blob.core.windows.net/optimizedimages/static/images/AWS-Certified-Solutions-Architect-Professional/answer/imgquestions_ozi1er.png",
+  "primaryObjective": "4: Accelerate Workload Migration and Modernization",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Answer - D.\nOption A is incorrect because, as mentioned above, the SSH Keys are private keys and are never copied across the regions.\nOption B is incorrect because the SSH keys are not user-specific.\nOption C is incorrect because the authorization keys are copied across the region.\nOption D is CORRECT because the authorization key is included in the AMI, hence copied across the region.\nHowever, the SSH keys are not copied and need to be imported explicitly if you still want to use the same SSH key for the instances in the new region.\nSee the AWS Console option for importing the SSH key.\nFor more information on EC2 key pairs, please visit the below URL-\nhttp://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html\nFor more information on this subject, please visit the below forums on AWS-\nhttps://forums.aws.amazon.com/thread.jspa?threadID=52654\nNote:\nYou specify the name of the key pair when you launch an EC2 instance and provide the private key when you connect to that instance.\nAuthorization Key here is the public key content (of the key pair) placed in an entry within ~/.ssh/authorized_keys of that EC2 instance.\nThis gets copied as part of the AMI.\nWhen you migrate Amazon Machine Images (AMIs) from one region to another, there are several factors that you need to consider, one of which is how the SSH keys are affected. SSH (Secure Shell) is a network protocol used for secure communication between two computers, allowing you to connect to and manage your EC2 instances remotely.\nThe correct answer to the question is D. The SSH keys will not be copied to the new region, but the authorization keys will still be in the operating system of the AMI. This means that when you launch the new EC2 instances in the US West (Oregon) region using the migrated AMIs, the authorization keys will still be present in the operating system, but the SSH keys themselves will not be copied over to the new region.\nTo connect to the new EC2 instances using SSH, you will need to import the SSH keys to the new region. This can be done using a few different methods, including:\n1.\nManually copying the SSH keys: You can manually copy the SSH keys from the old region to the new region by downloading them from the old EC2 instances and then uploading them to the new instances.\n2.\nUsing AWS System Manager: AWS System Manager is a service that allows you to manage EC2 instances remotely, and it includes a feature called Session Manager that allows you to connect to EC2 instances without needing to use SSH keys. This means that you can use Session Manager to connect to your old EC2 instances in the Sydney region, and then use it to copy the SSH keys to the new instances in the US West (Oregon) region.\n3.\nUsing AWS DataSync: AWS DataSync is a service that allows you to transfer large amounts of data between different storage systems, including EC2 instances. You can use AWS DataSync to transfer the SSH keys from the old region to the new region.\nIt's also worth noting that if you need new users to access the migrated instances in the new region, you will need to generate new SSH keys for them. The authorization keys will still be present in the operating system of the AMI, but new users will not have access to the existing SSH keys.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-measurements-in-your-organization-you-exam-051.html",
+  "url": "https://certificationation.com/questions/exam-measurements-in-your-organization-you-exam-051.html"
+}

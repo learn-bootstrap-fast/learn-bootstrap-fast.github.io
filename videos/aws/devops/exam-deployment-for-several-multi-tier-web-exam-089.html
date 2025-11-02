@@ -1,0 +1,62 @@
+---
+title: "You need to implement Blue/Green Deployment for severalExam"
+description: "Video for you need to implement Blue/Green Deployment for several multi-tier web applications. Each of them has Its Individual infrastructure: Amazon Elastic"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You need to implement Blue/Green Deployment for several multi-tier web applications. Each of them has Its Individual infrastructure: Amazon Elastic Compute Cloud (EC2) front-end servers, Amazon ElastiCache clusters, Amazon Simple Queue Service (SQS) queues, and Amazon Relational Database (RDS) Instances. Which combination of services would give you the ability to distribute the traffic between different deployed versions of your application?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><strong>With CloudFormation, provision an Elastic Beanstalk application and all necessary AWS components for each web app. Deploy new versions via CloudFormation templates, creating new Beanstalk environments for each release. Use Amazon Route 53 Weighted Round Robin (WRR) records to shift and balance traffic between environments.</strong> is the correct choice for implementing Blue/Green Deployments across complex, multi-tier web apps. This approach leverages CloudFormation for infrastructure-as-code management, Elastic Beanstalk for deploying applications, and Route 53 WRR routing to control how user traffic is distributed between new and old versions. This provides a smooth switchover, fast rollback, and granular traffic shifting capabilities.<br><br>Let's review the other options:<br><br><i>Utilize AWS CloudFormation templates to provision an Elastic Beanstalk application and related resources for every web app. Deploy new versions by updating a CloudFormation parameter and pushing it to the cfn-hup daemon. Use Weighted Round Robin (WRR) routing in Amazon Route 53 for traffic distribution.</i> appears similar, but updating a parameter with cfn-hup does not reliably launch a Blue/Green environment; it is more suitable for configuration changes than environment-level switchover.<br><br><i>For each web application, deploy an Elastic Beanstalk application with all required AWS resources defined inside the source bundle configuration files. Release new versions by updating the application version in the current environment.</i> describes in-place deployments, which carry more risk and don't facilitate true Blue/Green deployment where old and new environments coexist for traffic swapping.<br><br><i>Create a single AWS Elastic Beanstalk application and related resources (via configuration files in your source bundle) for every web app. Use Elastic Beanstalk environments and the Swap URLs feature to deploy new versions.</i> is limited by the Swap URLs feature, which typically swaps your production and staging environment URLs instantly rather than supporting granular, weighted traffic distribution like WRR in Route 53.<br><br><strong>Tip:</strong> For effective Blue/Green deployments, you need the ability to run two parallel environments and control the traffic between them, which is best achieved with CloudFormation, independent environments in Elastic Beanstalk, and Route 53.</p>",
+  "query": "<p>You must implement a Blue/Green Deployment strategy for a set of multi-tier web applications, each with its own stack including EC2 web servers, ElastiCache clusters, SQS queues, and RDS databases. Which approach enables you to route traffic between different deployed versions of your applications?</p>",
+  "original_oid": "6793d9ce61969b416038a0bc",
+  "options": [
+    {
+      "correct": false,
+      "text": "Utilize AWS CloudFormation templates to provision an Elastic Beanstalk application and related resources for every web app. Deploy new versions by updating a CloudFormation parameter and pushing it to the <code>cfn-hup</code> daemon. Use Weighted Round Robin (WRR) routing in Amazon Route 53 for traffic distribution.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "For each web application, deploy an Elastic Beanstalk application with all required AWS resources defined inside the source bundle configuration files. Release new versions by updating the application version in the current environment.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "With CloudFormation, provision an Elastic Beanstalk application and all necessary AWS components for each web app. Deploy new versions via CloudFormation templates, creating new Beanstalk environments for each release. Use Amazon Route 53 Weighted Round Robin (WRR) records to shift and balance traffic between environments.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Create a single AWS Elastic Beanstalk application and related resources (via configuration files in your source bundle) for every web app. Use Elastic Beanstalk environments and the Swap URLs feature to deploy new versions.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question71",
+  "originalQuery": "You need to implement Blue/Green Deployment for several multi-tier web applications.\nEach of them has Its Individual infrastructure:\n Amazon Elastic Compute Cloud (EC2) front-end servers, Amazon ElastiCache clusters, Amazon Simple Queue Service\n (SQS) queues, and Amazon Relational Database (RDS) Instances.\n Which combination of services would give you the ability to distribute the traffic between different deployed versions of your application?",
+  "originalOptions": "A. Create one AWS Elastic Beanstalk application and all AWS resources (using configuration files inside the application source bundle) for each web application. New versions would be deployed using Elastic Beanstalk environments and using the Swap URLs feature.|B. Using AWS CloudFormation templates, create one Elastic Beanstalk application and all required AWS resources for each web application.New versions would be deployed using AWS CloudFormation templates to create new Elastic Beanstalk environments. Traffic would be balanced between them using weighted Round Robin (WRR) records in Amazon Route 53.|C. Using AWS CloudFormation templates, create one Elastic Beanstalk application and all required AWS resources for each web application. New versions would be deployed updating a parameter on the CloudFormation template and passing it to the cfn-hup helper daemon. Traffic would be balanced between them using Weighted Round Robin (WRR) records in Amazon Route 53.|D. Create one Elastic Beanstalk application and all AWS resources (using configuration files inside the application source bundle) for each web application. New versions would be deployed updating the Elastic Beanstalk application version for the current Elastic Beanstalk environment.",
+  "video_url": "https://certificationation.com/videos/exam-deployment-for-several-multi-tier-web-exam-089.html",
+  "url": "https://certificationation.com/questions/exam-deployment-for-several-multi-tier-web-exam-089.html"
+}

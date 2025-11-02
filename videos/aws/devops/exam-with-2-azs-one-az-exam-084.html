@@ -1,0 +1,62 @@
+---
+title: "You have an Auto Scaling group with 2 AZs. One AZ has 4Exam"
+description: "Video for you have an Auto Scaling group with 2 AZs. One AZ has 4 EC2 instances, and the other has 3 EC2 instances. None of the instances are protected from"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have an Auto Scaling group with 2 AZs. One AZ has 4 EC2 instances, and the other has 3 EC2 instances. None of the instances are protected from scale in. Based on the default Auto Scaling termination policy, what will happen?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>default termination policy in Auto Scaling</b> aims to maintain balance across Availability Zones. The process typically begins by identifying the AZ with the greatest number of instances—here, that's the zone with four EC2 instances. From there, one instance will be terminated in this AZ to help maintain an even distribution. This makes <b>\"Auto Scaling picks a zone with more instances (the AZ with four) and terminates one instance from it.\"</b> the correct choice.</p><p>Option <i>\"Auto Scaling identifies unprotected instances closer to the end of the billing hour and terminates those first.\"</i> is incorrect, as the billing hour is only considered as a secondary criterion if there are multiple equally valid candidates in the same AZ.</p><p>Option <i>\"Auto Scaling terminates an instance randomly, regardless of zone or configuration.\"</i> is also incorrect—the process prioritizes AZ balancing before random selection.</p><p>Option <i>\"Auto Scaling will always remove instances from the group with the oldest launch configuration.\"</i> is not the primary rule since launch configuration age is only considered when balancing and billing criteria don't decide termination.</p><p><b>Tip:</b> Memorize the Auto Scaling default termination sequence: balance AZs &rarr; oldest launch config &rarr; closest to next billing hour &rarr; random choice.</p>",
+  "query": "<p>An Auto Scaling group is configured across two Availability Zones (AZs): one AZ has four EC2 instances, while the second AZ has three EC2 instances. No instances are protected from being scaled in. According to the default Auto Scaling termination policy, what action will take place?</p>",
+  "original_oid": "6793d9be61969b416038a09d",
+  "options": [
+    {
+      "correct": true,
+      "text": "Auto Scaling picks a zone with more instances (the AZ with four) and terminates one instance from it.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Auto Scaling identifies unprotected instances closer to the end of the billing hour and terminates those first.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Auto Scaling terminates an instance randomly, regardless of zone or configuration.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Auto Scaling will always remove instances from the group with the oldest launch configuration.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question40",
+  "originalQuery": "You have an Auto Scaling group with 2 AZs.\nOne AZ has 4 EC2 instances, and the other has 3 EC2 instances.\nNone of the instances are protected from scale in.\nBased on the default Auto Scaling termination policy, what will happen?",
+  "originalOptions": "A. Auto Scaling selects an instance to terminate randomly.|B. Auto Scaling will terminate unprotected instances in the Availability Zone with the oldest launch configuration.|C. Auto Scaling terminates which unprotected instances are closest to the next billing hour.|D. Auto Scaling will select the AZ with 4 EC2 instances and terminate an instance.",
+  "video_url": "https://certificationation.com/videos/exam-with-2-azs-one-az-exam-084.html",
+  "url": "https://certificationation.com/questions/exam-with-2-azs-one-az-exam-084.html"
+}

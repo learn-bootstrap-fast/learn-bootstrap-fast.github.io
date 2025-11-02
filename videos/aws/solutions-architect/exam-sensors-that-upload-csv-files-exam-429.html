@@ -1,0 +1,130 @@
+---
+title: "A manufacturing company has machine sensors that uploadExam"
+description: "Video for a manufacturing company has machine sensors that upload .csv files to an Amazon S3 bucket. These .csv files must be converted into images and must be"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A manufacturing company has machine sensors that upload .csv files to an Amazon S3 bucket. These .csv files must be converted into images and must be made available as soon as possible for the automatic generation of graphical reports. The images become irrelevant after 1 month, but the .csv files must be kept to train machine learning (ML) models twice a year. The ML trainings and audits are planned weeks in advance. Which combination of steps will meet these requirements MOST cost-effectively? (Choose two.)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729b13"
+  },
+  "quid": null,
+  "ordinal": "430",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS Lambda",
+    " Amazon S3",
+    " AWS Backup",
+    " S3 Lifecycle rules",
+    " Amazon S3 Glacier"
+  ],
+  "slug": "s3-manufacturing-sensors-images-aws",
+  "source": "ET",
+  "title": "AWS A Manufacturing Company Has Machine Sensors Question",
+  "meta": "AWS Exam Question: A manufacturing company uploads .csv files to an S3 bucket for conversion to images for reports. The answer includes S3 and machine learning.",
+  "answer": "BC",
+  "query": "A logistics company has shipment sensors that send .csv files to an Amazon S3 bucket. These .csv files need to be transformed into images for immediate use in automated inventory tracking reports.\n\nThe images are useful for only 30 days, while the .csv files should be retained for training machine learning (ML) models biannually. The ML training sessions and assessments are scheduled weeks beforehand.\n\nWhich combination of actions will fulfill these requirements in the MOST cost-effective manner? (Choose two.)",
+  "originalQuery": "A manufacturing company has machine sensors that upload .csv files to an Amazon S3 bucket. These .csv files must be converted into images and must be made available as soon as possible for the automatic generation of graphical reports.\n\nThe images become irrelevant after 1 month, but the .csv files must be kept to train machine learning (ML) models twice a year. The ML trainings and audits are planned weeks in advance.\n\nWhich combination of steps will meet these requirements MOST cost-effectively? (Choose two.)",
+  "options": [
+    "A. Launch an Amazon EC2 Spot Instance that downloads the .csv files every hour, generates the image files, and uploads the images to the S3 bucket.",
+    "B. Design an AWS Lambda function that converts the .csv files into images and stores the images in the S3 bucket. Invoke the Lambda function when a .csv file is uploaded.",
+    "C. Create S3 Lifecycle rules for .csv files and image files in the S3 bucket. Transition the .csv files from S3 Standard to S3 Glacier one day post-upload. Expire the image files after 30 days.",
+    "D. Implement S3 Lifecycle rules for .csv files and images in the S3 bucket. Move the .csv files from S3 Standard to S3 One Zone-IA one day after upload. Expire the image files after 30 days.",
+    "E. Set up S3 Lifecycle rules for .csv files and images in the S3 bucket. Move the .csv files from S3 Standard to S3 Standard-IA one day after they are uploaded. Store the image files in Reduced Redundancy Storage (RRS)."
+  ],
+  "originalOptions": [
+    "A. Launch an Amazon EC2 Spot Instance that downloads the .csv files every hour, generates the image files, and uploads the images to the S3 bucket.",
+    "B. Design an AWS Lambda function that converts the .csv files into images and stores the images in the S3 bucket. Invoke the Lambda function when a .csv file is uploaded.",
+    "C. Create S3 Lifecycle rules for .csv files and image files in the S3 bucket. Transition the .csv files from S3 Standard to S3 Glacier 1 day after they are uploaded. Expire the image files after 30 days.",
+    "D. Create S3 Lifecycle rules for .csv files and image files in the S3 bucket. Transition the .csv files from S3 Standard to S3 One Zone-Infrequent Access (S3 One Zone-IA) 1 day after they are uploaded. Expire the image files after 30 days.",
+    "E. Create S3 Lifecycle rules for .csv files and image files in the S3 bucket. Transition the .csv files from S3 Standard to S3 Standard-Infrequent Access (S3 Standard-IA) 1 day after they are uploaded. Keep the image files in Reduced Redundancy Storage (RRS)."
+  ],
+  "image": null,
+  "primaryObjective": "4: Design Cost-Optimized Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "To effectively manage the conversion of .csv files to images while ensuring cost efficiency and compliance with data retention requirements, a strategic approach is essential. \n\nUsing AWS Lambda for the conversion process provides a serverless solution that automatically triggers whenever a .csv file is uploaded to the S3 bucket. This ensures immediate processing and availability of the image files without the need for continuous resource management, thus reducing operational costs. Additionally, Lambda functions can be easily scaled to handle varying workloads, ensuring that performance remains consistent regardless of the volume of incoming data.\n\nImplementing S3 Lifecycle policies is crucial for managing storage costs over time. By transitioning .csv files to a lower-cost storage class such as S3 Glacier or S3 One Zone-IA after a day, organizations can optimize expenses for infrequently accessed data, while still retaining the necessary files for biannual machine learning model training. The expiration of image files after 30 days further ensures that storage costs are minimized, as these files have a limited useful life.\n\nThis combination of AWS services not only meets the functional requirements for immediate image generation but also aligns with best practices in cost management and data lifecycle governance.",
+    "To tackle this challenge, let's go with option B for transforming those .csv files into images using AWS Lambda. It's like having a super-efficient digital elf working round the clock, and it’s way more cost-effective than spinning up EC2 Spot Instances. 🎉\n\nNow, for the icing on the cake, option C is our best bet for managing the lifecycle of those images. With the images expiring after 30 days and the .csv files transitioning to S3 Glacier, we’re set for economical storage. After all, if ML training is planned weeks ahead, Glacier is the perfect cozy spot for our data, being budget-friendly and just a tad slower to access (but who doesn’t love a good suspense story? 😉).\n\nOn the other hand, options D and E are more like that friend who insists on dining at the fanciest restaurant—they use S3 infrequent access, which can get a bit pricey compared to Glacier. So, let’s keep our costs down while staying efficient! 🚀",
+    "Option A is a no-go; we need those images \"as soon as possible,\" and running a process every hour just doesn't cut it. Since the machine learning trainings and audits are scheduled weeks ahead, transitioning to Glacier (Option C) works just fine for archiving the .csv files. After all, who needs instant access to something that won't be touched for half a year?",
+    "The optimal solutions are B and C. For option D, it's important to note that data must be retained in S3 Standard storage for a minimum of 30 days before transitioning to Infrequent Access (IA) tiers. However, moving files to Glacier is an acceptable approach for long-term storage. \n\nEnsuring that the .csv files are efficiently converted into images while managing their lifecycle effectively is key to balancing performance and cost. Keep up the great work in leveraging AWS services to streamline your data processes!",
+    "Absolutely, the best choice here would be a delightful combination of B and C! 🌟 \n\nBy utilizing an AWS Lambda function, you can effortlessly convert those .csv files into images the moment they land in your S3 bucket. That means the images will be ready to dazzle and support your graphical reports in no time! \n\nAnd don’t forget about those S3 Lifecycle rules! They’re like the fairy godmothers of data management. You can set them to transition your .csv files to S3 Glacier just a day after they arrive while ensuring the images gracefully disappear after 30 days. This way, you're keeping your data organized and cost-efficient! 🎉 \n\nA splendid plan for a smooth operational flow!"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "BC",
+      "explanation": "https://docs.aws.amazon.com/amazonglacier/latest/dev/introduction.html",
+      "upvotes": "5"
+    },
+    {
+      "selectedAnswer": "BC",
+      "explanation": "B for processing the images via Lambda as it's more cost efficient than EC2 spot instances\nC for expiring images after 30 days and because the ML trainings are planned weeks in advance so S3 glacier is ideal for slow retrieval and cheap storage.\n\nD and E uses S3 infrequent access which is more expensive than glacier",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "BC",
+      "explanation": "Not A, we need the images \"as soon as possible\", A runs every hour\n\"ML trainings and audits are planned weeks in advance\" thus Glacier (C) is ok.",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "BC",
+      "explanation": "Answer is B&C. For D, you must store data for 30 days in s3 standard before move to IA tiers, glacier is fine\n\nhttps://docs.aws.amazon.com/AmazonS3/latest/userguide/lifecycle-transition-general-considerations.html#:~:text=Before%20you%20transition%20objects%20to%20S3%20Standard%2DIA%20or%20S3%20One%20Zone%2DIA%2C%20you%20must%20store%20them%20for%20at%20least%2030%20days%20in%20Amazon%20S3",
+      "upvotes": "4"
+    },
+    {
+      "selectedAnswer": "BC",
+      "explanation": "Definitely B & C",
+      "upvotes": "3"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "BC (90%)",
+      "votes": "35 votes."
+    },
+    {
+      "option": "10%",
+      "votes": "4 votes."
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answers are B and C. Option B is correct because using AWS Lambda for image conversion is more cost-effective and provides faster processing compared to launching an EC2 Spot Instance that operates every hour, as it leads to unnecessary delays. Option C is also correct because it involves creating S3 Lifecycle rules, which is appropriate for managing the storage efficiently: transitioning .csv files to S3 Glacier is cost-effective for long-term storage, and expiring image files after 30 days aligns with their relevance. \n\nOption A is incorrect because it is less efficient due to the hourly processing delay. Option D delays access to the .csv files by moving them to S3 One Zone-IA and doesn’t fulfill the requirement for timely processing of images. Option E also fails because storing images in Reduced Redundancy Storage (RRS) is not appropriate for this scenario and incurs higher costs than necessary. The need for immediate image availability and cost-effectiveness drives the preference for options B and C.",
+  "video_url": "https://certificationation.com/videos/exam-sensors-that-upload-csv-files-exam-429.html",
+  "url": "https://certificationation.com/questions/exam-sensors-that-upload-csv-files-exam-429.html"
+}

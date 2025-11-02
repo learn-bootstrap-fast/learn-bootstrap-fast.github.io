@@ -1,0 +1,128 @@
+---
+title: "A company has a mobile chat application with a dataExam"
+description: "Video for a company has a mobile chat application with a data store based in Amazon DynamoDB. Users would like new messages to be read with as little latency as"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company has a mobile chat application with a data store based in Amazon DynamoDB. Users would like new messages to be read with as little latency as possible. A solutions architect needs to design an optimal solution that requires minimal application changes. Which method should the solutions architect select?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729b3d"
+  },
+  "quid": null,
+  "ordinal": "472",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon DynamoDB",
+    " AWS Lambda",
+    " AWS ElastiCache for Redis",
+    " Amazon CloudWatch",
+    " AWS Systems Manager"
+  ],
+  "slug": "db-mobile-chat-app-messages-read-aws",
+  "source": "ET",
+  "title": "AWS A Company Has A Mobile Chat Application Question",
+  "meta": "AWS Exam Question: A company has a mobile chat app using Amazon DynamoDB. How can the architect ensure minimal latency for new messages? Answer: Amazon SNS.",
+  "answer": "A",
+  "query": "An organization operates a real-time notification system that relies on Amazon DynamoDB for its data. Users expect notifications to appear with minimal delay. A solutions architect is tasked with creating a solution that calls for minimal modifications to the existing application.\n\nWhat approach should the solutions architect adopt?",
+  "originalQuery": "A company has a mobile chat application with a data store based in Amazon DynamoDB. Users would like new messages to be read with as little latency as possible. A solutions architect needs to design an optimal solution that requires minimal application changes.\n\nWhich method should the solutions architect select?",
+  "options": [
+    "A. Configure Amazon DynamoDB Accelerator (DAX) for the new messages table. Update the code to use the DAX endpoint.",
+    "B. Introduce read replicas in DynamoDB to manage extra read loads more effectively.",
+    "C. Double the read capacity units for the new messages table already in use with DynamoDB.",
+    "D. Add an Amazon ElastiCache for Redis cache to the application stack. Update the application to point to the Redis cache endpoint instead of DynamoDB."
+  ],
+  "originalOptions": [
+    "A. Configure Amazon DynamoDB Accelerator (DAX) for the new messages table. Update the code to use the DAX endpoint.",
+    "B. Add DynamoDB read replicas to handle the increased read load. Update the application to point to the read endpoint for the read replicas.",
+    "C. Double the number of read capacity units for the new messages table in DynamoDB. Continue to use the existing DynamoDB endpoint.",
+    "D. Add an Amazon ElastiCache for Redis cache to the application stack. Update the application to point to the Redis cache endpoint instead of DynamoDB."
+  ],
+  "image": null,
+  "primaryObjective": "3: Design High-Performing Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Options B and C do not effectively address latency reduction. While option D could lower latency, it would necessitate substantial modifications to the application.",
+    "Option D isn't going to help with latency because all those messages are fresh off the press! 📰 They’re unique and dynamic, meaning they won’t stick around in the cache for long—making ElastiCache more suited for static or frequently accessed content. So, it’s like trying to store ice cream in the sun—just not a great idea! 🍦\n\nOn the other hand, option A shines like a star on a clear night! 🌟 Configuring Amazon DynamoDB Accelerator (DAX) for the new messages table is a smart move. It enhances the read performance by caching those hot, new messages right where you need them. So, why not take the express lane to low-latency reads? 🚀",
+    "Ah, the classic dilemma of keeping your mobile chat app zippy and your users happy, all while avoiding an avalanche of code changes. Let's cut to the chase: option C, with its glorious promise of zero code modifications, is the way to go. Doubling the read capacity units for the new messages table in DynamoDB is like giving your data a shot of espresso – it’ll perk things right up. \n\nNow, while options A, B, and D bring their own flair to the table—be it in-memory caching, read replicas, or a shiny ElastiCache for Redis—each of these would require some level of application adjustment. And who has time for that? The chat application is dynamic, after all; any caching solution would still need to fetch fresh data from the production database. So, why not keep it simple and effective? Stick with the increased read capacity units and enjoy the benefits of faster message delivery without the hassle of code rewrites.",
+    "Option C requires no code changes, which is certainly convenient; however, it does not effectively tackle the underlying issue of improving latency for new message retrieval. It's important to consider solutions that not only minimize application modifications but also enhance performance.",
+    "I would happily choose option A! 🎉 While we aim for minimal changes to the application, it's important to note that \"minimal\" doesn't mean \"none.\" Embracing a little tweak here and there can lead to fantastic improvements in performance!"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "A",
+      "explanation": "B and C do not reduce latency. D would reduce latency but require significant application changes.",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "D would not reduce latency, all the messages are new, they wont be stored in cache and they are unique messages(dynamic content) so Elasticache would be pointless here, its more preferable for static content/frequently accessed content.... A makes perfect sense",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "C",
+      "explanation": "0 code change @C\n\nABD. In memory cache, read replica, elasticache. Chat application and content is dynamic, cache will still pull data from prod database",
+      "upvotes": "1"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "C has 0 codes changes but doesn't address the issue.",
+      "upvotes": "6"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Would go for A.\nMinimal application changes != No application changes",
+      "upvotes": "2"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "A (95%)",
+      "votes": "20 votes."
+    },
+    {
+      "option": "5%",
+      "votes": "1 votes."
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is A, because Amazon DynamoDB Accelerator (DAX) provides a caching layer that can significantly reduce the time it takes to read data from DynamoDB, thus minimizing latency in the notification system. It allows for near real-time performance with minimal modifications to the existing application by only requiring an update to the endpoint used in the application code. \n\nOption B is incorrect because adding read replicas does not inherently reduce latency; it is meant to manage increased read loads without improving the speed of data retrieval. Option C, which suggests doubling the read capacity units, also does not directly increase the speed of read operations and would require some adjustments in read capacity management but not necessarily decrease latency experienced by users. Finally, option D is erroneous because using ElastiCache would not effectively reduce latency for dynamic content like real-time notifications; instead, it is more suitable for static or frequently accessed data, and implementing this change would involve significant rework of the application.",
+  "video_url": "https://certificationation.com/videos/exam-with-a-data-store-based-exam-471.html",
+  "url": "https://certificationation.com/questions/exam-with-a-data-store-based-exam-471.html"
+}

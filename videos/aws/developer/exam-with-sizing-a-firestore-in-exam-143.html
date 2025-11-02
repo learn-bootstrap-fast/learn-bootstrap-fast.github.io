@@ -1,0 +1,82 @@
+---
+title: "A Database Engineer is tasked with sizing a Firestore inExam"
+description: "Video for a Database Engineer is tasked with sizing a Firestore in Datastore mode instance for a social media application. The current environment workload"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A Database Engineer is tasked with sizing a Firestore in Datastore mode instance for a social media application. The current environment workload metrics and requirements are as follows: 25,000 reads per second during peak times 10,000 writes per second during peak times 3 TB of data storage Strong consistency for read operations The company expects a 75% increase in reads and writes per second and a 50% increase in data storage over the next year. Which of the following instance configurations is the most appropriate to handle the anticipated growth while optimizing costs?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "NovaGrid Labs is preparing to launch a user activity feed on Google Cloud and you must plan capacity for Firestore in Datastore mode. Current peaks reach 32,000 reads per second and 14,000 writes per second and the dataset is about 4 TB. Product leadership requires strong consistency for read operations and you must retain Datastore mode for existing integrations. Forecasts show reads and writes will grow by 60 percent within 12 months and storage will increase by 40 percent. Which configuration will best handle the expected growth while keeping costs efficient?",
+  "options": [
+    {
+      "text": "Cloud Spanner",
+      "explanation": "This option would migrate the workload to a relational and horizontally scalable service with strong consistency and high availability.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Firestore in Native mode with automatic scaling",
+      "explanation": "This changes the deployment to Native mode which uses the document data model and automatically scales with traffic.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Firestore in Datastore mode with automatic scaling",
+      "explanation": "This keeps the Datastore mode API and relies on built in elasticity to scale throughput in response to demand without preprovisioning capacity.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Firestore in Datastore mode with manual throughput provisioning set to 52,000 reads per second and 23,000 writes per second",
+      "explanation": "This proposes reserving fixed throughput targets to match anticipated peak traffic for the next year.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Firestore in Datastore mode with automatic scaling</b>.</p><p>This configuration preserves Datastore mode which aligns with the requirement to retain existing integrations. It provides strong consistency for entity lookups and ancestor queries and supports transactional reads which are typical access patterns for feeds. It also scales automatically with workload so it will accommodate the projected peak of about 51,200 reads per second and 22,400 writes per second along with growth from 4 TB to roughly 5.6 TB. Because billing is per operation and storage, automatic scaling avoids paying for idle capacity and is therefore the most cost efficient approach for variable traffic.</p><p><i>Cloud Spanner</i> would meet strong consistency and scale needs, yet it changes the data model, requires schema design and SQL, and usually costs more at these volumes. The prompt also states you must retain Datastore mode, so this service does not satisfy that constraint.</p><p><i>Firestore in Native mode with automatic scaling</i> would also scale and deliver strong consistency, but it violates the requirement to stay in Datastore mode. Migrating would impact indexes, APIs, and integrations, which the scenario disallows.</p><p><i>Firestore in Datastore mode with manual throughput provisioning set to 52,000 reads per second and 23,000 writes per second</i> is not a valid configuration because Datastore mode does not use manual throughput provisioning. Even if it did, preprovisioning to the forecasted peak would likely be less cost efficient than automatic scaling during off peak periods.</p>",
+  "batch_id": "225",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "A Database Engineer is tasked with sizing a Firestore in Datastore mode instance for a social media application. The current environment workload metrics and requirements are as follows: 25,000 reads per second during peak times 10,000 writes per second during peak times 3 TB of data storage Strong consistency for read operations The company expects a 75% increase in reads and writes per second and a 50% increase in data storage over the next year. Which of the following instance configurations is the most appropriate to handle the anticipated growth while optimizing costs?",
+  "originalOptions": "A. Firestore in Datastore mode with Automatic scaling<br/>B. Firestore in Native mode with Automatic scaling<br/>C. Firestore in Datastore mode with Manual scaling set to 40,000 reads and 20,000 writes per second<br/>D. Firestore in Datastore mode with Native mode scaling",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "143",
+  "tip": "<p>Do the <i>growth math</i> first, then check <i>mode constraints</i>. When the requirement is to stay in Datastore mode and traffic is spiky, favor <i>automatic scaling</i> and be wary of options that mention features that do not exist for that mode.</p>",
+  "references": [
+    "https://cloud.google.com/firestore/docs/choose-database-mode",
+    "https://cloud.google.com/datastore/docs",
+    "https://cloud.google.com/datastore/quotas",
+    "https://cloud.google.com/firestore/pricing",
+    "https://cloud.google.com/datastore/docs/consistency",
+    "https://cloud.google.com/spanner/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-with-sizing-a-firestore-in-exam-143.html",
+  "video_url": "https://certificationation.com/videos/exam-with-sizing-a-firestore-in-exam-143.html"
+}

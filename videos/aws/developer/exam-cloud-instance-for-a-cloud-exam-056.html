@@ -1,0 +1,79 @@
+---
+title: "You are setting up a brand new Google Cloud instance forExam"
+description: "Video for you are setting up a brand new Google Cloud instance for a Cloud SQL MySQL database. The application team has requested the deployment of a primary"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are setting up a brand new Google Cloud instance for a Cloud SQL MySQL database. The application team has requested the deployment of a primary instance, a failover replica, and a read replica instance. It is crucial to adhere to the Google-recommended practices to ensure high availability and optimal read performance. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "BriskTrail Retail is launching a new Cloud SQL for MySQL environment in Google Cloud. The application owners require a writable primary, an automatic failover replica, and one read replica to offload reporting queries. You need to follow Google guidance to achieve high availability and strong read performance while minimizing latency. How should you place these instances?",
+  "options": [
+    {
+      "text": "Put the primary in one region and place both the failover replica and the read replica in a second region",
+      "explanation": "This arrangement places the write instance in one region while locating both replicas together in another region for geographic separation",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Place the primary in zone b, the failover replica in zone c, and the read replica in zone d within the same region",
+      "explanation": "This distributes the primary and both replicas across three different zones in a single region to reduce zonal risk and keep latency low",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Place the primary in zone b, the failover replica in zone c, and the read replica in zone c within the same region",
+      "explanation": "This keeps the read replica in the same zone as the failover replica while the primary is in a separate zone",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Put the primary in one region, the failover replica in a second region, and the read replica in a third region",
+      "explanation": "This layout distributes each instance across separate regions for maximum geographic spread and isolation",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Place the primary in zone b, the failover replica in zone c, and the read replica in zone d within the same region</b>.</p><p>This layout follows Cloud SQL high availability guidance because the primary and the automatic failover replica are in different zones within the same region. That is how Cloud SQL provides automatic failover. Keeping the read replica in a third zone in the same region minimizes replication and query latency while spreading risk across zones so a single zonal outage does not remove both the failover target and the read capacity.</p><p><i>Put the primary in one region and place both the failover replica and the read replica in a second region</i> is incorrect because Cloud SQL automatic failover requires the standby to be in a different zone of the same region as the primary. Moving the standby to another region prevents automatic failover and adds cross region latency and replication lag.</p><p><i>Place the primary in zone b, the failover replica in zone c, and the read replica in zone c within the same region</i> is incorrect because placing both the standby and the read replica in the same zone concentrates risk. A single zonal failure would remove both the failover target and the read scaling capacity at the same time.</p><p><i>Put the primary in one region, the failover replica in a second region, and the read replica in a third region</i> is incorrect because Cloud SQL high availability is regional with zonal separation. Cross region replicas are asynchronous and are not used for automatic failover, and spreading all instances across regions would increase latency and replication lag.</p>",
+  "batch_id": "245",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "You are setting up a brand new Google Cloud instance for a Cloud SQL MySQL database. The application team has requested the deployment of a primary instance, a failover replica, and a read replica instance. It is crucial to adhere to the Google-recommended practices to ensure high availability and optimal read performance. What should you do?",
+  "originalOptions": "A. Configure the primary instance in one region and both the failover replica and read replica instances in a second region.<br/>B. Configure the primary instance in zone A, the failover replica in zone B, and the read replica in zone C, all in the same region.<br/>C. Configure the primary instance in zone A, the failover replica in zone B, and the read replica in zone B, all in the same region.<br/>D. Configure the primary instance in one region, the failover replica in a second region, and the read replica in a third region.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "56",
+  "tip": "<p>When a question mentions <i>automatic failover</i> for Cloud SQL, think <i>same region</i> with <i>different zones</i> for the primary and standby. Place read replicas near the primary to keep <i>latency</i> and <i>replication lag</i> low.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/high-availability",
+    "https://cloud.google.com/sql/docs/mysql/replication/overview",
+    "https://cloud.google.com/sql/docs/mysql/instance-settings#choose_a_region_and_zone"
+  ],
+  "url": "https://certificationation.com/questions/exam-cloud-instance-for-a-cloud-exam-056.html",
+  "video_url": "https://certificationation.com/videos/exam-cloud-instance-for-a-cloud-exam-056.html"
+}

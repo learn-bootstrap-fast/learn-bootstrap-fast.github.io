@@ -1,0 +1,81 @@
+---
+title: "Your organization has a Cloud SQL database used for aExam"
+description: "Video for your organization has a Cloud SQL database used for a customer-facing application. To ensure scalability and minimize latency, you have implemented"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your organization has a Cloud SQL database used for a customer-facing application. To ensure scalability and minimize latency, you have implemented read replicas. During peak traffic, customers from one specific region experience higher latency. What should you do to address this issue?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Rivermark Books runs a customer order portal on Cloud SQL for PostgreSQL and uses read replicas to handle read traffic. You currently operate two replicas in us-central1 and europe-west4. During the evening peak, shoppers connecting from Singapore experience noticeably higher query latency than other regions. What should you implement to reduce read latency for those users?",
+  "options": [
+    {
+      "text": "Migrate the workload to Cloud Spanner with a multi-region configuration",
+      "explanation": "Cloud Spanner provides global horizontal scalability with strong consistency across regions.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Increase the vCPU and memory of the primary Cloud SQL instance",
+      "explanation": "Upsizing the primary can improve server capacity but it does not reduce network distance for far away readers.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a read replica in asia-southeast1 and modify the application to route regional read requests to that replica",
+      "explanation": "Placing a read replica in the users&apos; region allows local read access and shortens network latency for those requests.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Place a global external HTTP(S) Load Balancer in front of the database to route SQL traffic by geography",
+      "explanation": "The global external HTTP(S) Load Balancer is built for HTTP and HTTPS protocols and is not intended for SQL connections.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct answer is <b>Create a read replica in asia-southeast1 and modify the application to route regional read requests to that replica</b>.</p><p>Users in Singapore are currently reading from replicas in the United States and Europe which adds significant network round trip time. Adding a replica in asia-southeast1 places the data close to those users and the application can direct their read queries to the local replica. This approach reduces network latency during peak periods while keeping writes on the primary and maintaining read scalability.</p><p><i>Migrate the workload to Cloud Spanner with a multi-region configuration</i> is unnecessary for this problem. Spanner is a different managed database with a distinct architecture and migration effort and while it offers multi region reads it is not required when Cloud SQL can solve the issue with a nearby read replica.</p><p><i>Increase the vCPU and memory of the primary Cloud SQL instance</i> does not address the network distance between Singapore and the existing replicas or primary. The dominant factor here is geographic latency rather than compute capacity.</p><p><i>Place a global external HTTP(S) Load Balancer in front of the database to route SQL traffic by geography</i> is not viable because the HTTP(S) load balancer handles only HTTP and HTTPS traffic and Cloud SQL instances are not exposed as load balancer backends. Database connections use private or public IP with Cloud SQL connectors rather than L7 load balancing.</p>",
+  "batch_id": "338",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "Your organization has a Cloud SQL database used for a customer-facing application. To ensure scalability and minimize latency, you have implemented read replicas. During peak traffic, customers from one specific region experience higher latency. What should you do to address this issue?",
+  "originalOptions": "A. Migrate the database to Cloud Spanner for built-in regional latency optimization.<br/>B. Use a global external HTTP(S) Load Balancer to route all traffic, including database queries, based on geographic proximity.<br/>C. Increase the CPU and memory of the primary instance to handle the additional read requests.<br/>D. Configure a dedicated regional read replica and update the application to route traffic to it for that region.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "275",
+  "tip": "<p>When users in a specific region see high read latency, think <i>data locality</i> first. Use <i>cross-region read replicas</i> near those users and ensure the application routes read traffic to the closest replica.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/replication/overview",
+    "https://cloud.google.com/sql/docs/postgres/replication/configure-replicas",
+    "https://cloud.google.com/sql/docs/postgres/best-practices",
+    "https://cloud.google.com/load-balancing/docs/https",
+    "https://cloud.google.com/sql/docs/postgres/connect-connectors"
+  ],
+  "url": "https://certificationation.com/questions/exam-sql-database-used-for-a-exam-275.html",
+  "video_url": "https://certificationation.com/videos/exam-sql-database-used-for-a-exam-275.html"
+}

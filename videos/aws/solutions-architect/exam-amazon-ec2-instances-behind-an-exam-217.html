@@ -1,0 +1,128 @@
+---
+title: "A company runs a global web application on Amazon EC2Exam"
+description: "Video for a company runs a global web application on Amazon EC2 instances behind an Application Load Balancer. The application stores data in Amazon Aurora. The"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company runs a global web application on Amazon EC2 instances behind an Application Load Balancer. The application stores data in Amazon Aurora. The company needs to create a disaster recovery solution and can tolerate up to 30 minutes of downtime and potential data loss. The solution does not need to handle the load when the primary infrastructure is healthy. What should a solutions architect do to meet these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729a3e"
+  },
+  "quid": null,
+  "ordinal": "217",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon Aurora",
+    " Amazon Route 53",
+    " Amazon EC2",
+    " AWS Backup",
+    " Application Load Balancer"
+  ],
+  "slug": "ec2-global-web-application-aws",
+  "source": "ET",
+  "title": "AWS A Company Runs A Global Web Application Question",
+  "meta": "AWS Exam Question: A company needs a disaster recovery solution for a global web app on EC2 with an ALB and Aurora, tolerating 30 min downtime. Answer: RDS.",
+  "answer": "A",
+  "query": "An organization operates a worldwide web service utilizing Amazon EC2 instances managed by an Application Load Balancer. This application relies on Amazon Aurora for data storage. The organization seeks a disaster recovery strategy that allows for a maximum downtime and data loss of no more than 30 minutes. The primary infrastructure's operational status does not necessitate load management in this scenario.\n\nWhat actions should a solutions architect take to fulfill these needs?",
+  "originalQuery": "A company runs a global web application on Amazon EC2 instances behind an Application Load Balancer. The application stores data in Amazon Aurora. The company needs to create a disaster recovery solution and can tolerate up to 30 minutes of downtime and potential data loss. The solution does not need to handle the load when the primary infrastructure is healthy.\n\nWhat should a solutions architect do to meet these requirements?",
+  "options": [
+    "A. Deploy the application with the required infrastructure elements in place. Use Amazon Route 53 to configure active-passive failover. Create an Aurora Replica in a second AWS Region.",
+    "B. Set up a reduced-capacity version of the application in another AWS Region. Configure Amazon Route 53 for active-active failover using this setup. Create an Aurora Replica in that Region.",
+    "C. Duplicate the existing infrastructure in a different AWS Region. Utilize Amazon Route 53 for implementing active-active failover. Restore an Aurora database from the latest snapshot.",
+    "D. Back up data with AWS Backup. Use the backup to create the required infrastructure in a second AWS Region. Use Amazon Route 53 to configure active-passive failover. Create an Aurora second primary instance in the second Region."
+  ],
+  "originalOptions": [
+    "A. Deploy the application with the required infrastructure elements in place. Use Amazon Route 53 to configure active-passive failover. Create an Aurora Replica in a second AWS Region.",
+    "B. Host a scaled-down deployment of the application in a second AWS Region. Use Amazon Route 53 to configure active-active failover. Create an Aurora Replica in the second Region.",
+    "C. Replicate the primary infrastructure in a second AWS Region. Use Amazon Route 53 to configure active-active failover. Create an Aurora database that is restored from the latest snapshot.",
+    "D. Back up data with AWS Backup. Use the backup to create the required infrastructure in a second AWS Region. Use Amazon Route 53 to configure active-passive failover. Create an Aurora second primary instance in the second Region."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Option A is the appropriate choice. \n\n- Since the solution does not need to manage traffic during periods when the primary infrastructure is operational, utilizing Amazon Route 53 with an Active-Passive failover configuration is ideal. This approach rules out options B and C. \n\n- Option D is not suitable because it suggests creating a second primary instance of Aurora in the secondary region. Instead, the requirement is to establish an Aurora Replica, which suffices for this scenario.",
+    "A company has a global web application running smoothly on Amazon EC2 instances, all cozy behind an Application Load Balancer. The app relies on Amazon Aurora for data storage. Now, they want to whip up a disaster recovery plan that allows for a bit of downtime—up to 30 minutes, to be precise—and some minor data loss won’t send them into a tailspin. They don’t need to juggle loads when everything is functioning just fine.\n\nSo, what’s the game plan to keep things running smoothly? 🤔\n\nFirst off, deploying the application with all the necessary infrastructure is a great start. A sprinkle of Amazon Route 53 can work wonders for configuring active-passive failover, ensuring that if things go south, you have a backup plan ready to kick in. And don’t forget to create an Aurora Replica in a different AWS Region—after all, who doesn’t love a good backup buddy? 🌎✨\n\nAlternatively, you could create a scaled-down version of the application in another AWS Region and set up Amazon Route 53 for active-active failover. Just imagine the thrill of having two regions working in harmony like a well-practiced dance routine! 💃🕺\n\nIf you’re feeling ambitious, duplicating the entire infrastructure in a separate AWS Region is another option. With Amazon Route 53 in your corner for active-active failover, you can restore an Aurora database from the latest snapshot. It’s like having a safety net made of cloud! ☁️🛡️\n\nAnd let’s not forget about AWS Backup! By backing up your data, you can easily create the necessary infrastructure in a second AWS Region. Pair it with Amazon Route 53 for that nifty active-passive failover, and you’ll have an Aurora second primary instance ready to leap into action when called upon. \n\nSo, whether you’re going for full redundancy or a buddy system, there’s plenty of room for creativity and reliability in your disaster recovery strategy. Just remember: in the cloud, a little planning goes a long way! 🚀",
+    "When it comes to disaster recovery, anything that isn’t instant recovery falls into the realm of active-passive setups. Here’s how the various strategies stack up:\n\n1. **AWS Backup**: This method demands the least operational overhead, but it comes with a Recovery Time Objective (RTO) and Recovery Point Objective (RPO) measured in hours. Not exactly the speedy recovery one dreams of.\n   \n2. **Pilot Light**: In this approach, the basic infrastructure is already in place but requires further implementation to be fully operational. The RTO/RPO here is in the tens of minutes—better, but still not lightning-fast.\n\n3. **Warm Standby**: This strategy includes basic infrastructure that runs a small load and might require auto-scaling to handle sudden surges. The RTO/RPO for this setup is measured in mere minutes, making it a more responsive option.\n\n4. **Active-Active**: Utilizing a Multi-AZ setup, this option provides instant recovery. \n\nGiven that we can tolerate up to 30 minutes of downtime, options B and D fall short of the mark. AWS Backup is a slowpoke, so option D is out of the picture. Thus, option A emerges as the most suitable choice, allowing for the necessary infrastructure to be deployed while leveraging active-passive failover through Amazon Route 53 and creating an Aurora Replica in a secondary AWS Region.",
+    "Option A does not establish the necessary infrastructure in the disaster recovery region.",
+    "The Aurora Global Database would be a fantastic choice for a production environment that needs almost immediate failover, but alas, it wasn't listed among the options! Since option D might not fit within the 30-minute downtime tolerance, my pick would be option A—leveraging an Aurora Replica for disaster recovery. While replication is primarily intended for read traffic, it can still serve as a viable failover solution based on the guidance provided in the documentation. 🌟"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "A",
+      "explanation": "A is correct.\n- \"The solution does not need to handle the load when the primary infrastructure is healthy.\" => Should use Route 53 Active-Passive ==> Exclude B, C\n- D is incorrect because \"Create an Aurora second primary instance in the second Region.\", we need to create an Aurora Replica enough.",
+      "upvotes": "30"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Ref link: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-types.html",
+      "upvotes": "6"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "Anything that is not instant recovery is active - passive.\nIn active -passive we have :\n1. Aws Backup(least op overhead) - RTO/RPO = hours\n2. Pilot Light ( Basic Infra is already deployed, but needs to be fully implemented) -RTO/RPO = 10's of minutes.\n3. Warm Standby- (Basic infra + runs small loads ( might need to add auto scaling) -RTO/RPO= minutes\n4. ( ACTIVE -ACTIVE ) : Multi AZ option : instant\n\nhere we can tolerate 30 mins\nhence B,D are incorrect. AWS backup is in hours, hence D is incorrect .\ntherefore A",
+      "upvotes": "22"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "A does not create the infrastructure in the DR region though.",
+      "upvotes": "1"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "The Aurora Global Database would be ideal for a production system requiring near-instantaneous failover, however, it was not in the options. Since the option D may not meet the 30-minute tolerance, I choose option A- Aurora Replica-based disaster recovery although replication is more designed for reading traffic, it can still be used for failover based on this doc https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Replication.html.",
+      "upvotes": "1"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "A (70%)",
+      "votes": "73 votes."
+    },
+    {
+      "option": "D (30%)",
+      "votes": "31 votes."
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is A because using Amazon Route 53 for active-passive failover is appropriate when the primary infrastructure does not need load balancing, allowing for a straightforward recovery strategy. The creation of an Aurora Replica in a secondary region supports the requirement for minimal downtime and data loss, as it allows for a relatively quick switch over to a recovery site within the specified tolerance of 30 minutes. \n\nOption B is incorrect since an active-active configuration requires both regions to handle the load simultaneously, which contradicts the scenario's need for a straightforward disaster recovery approach without load management. \n\nOption C is also incorrect because it suggests using an active-active setup with Route 53, which is unnecessary for this scenario where load balancing is not required.\n\nOption D is incorrect for proposing to create an Aurora second primary instance, thus exceeding the requirement of creating only an Aurora Replica, and it also involves using AWS Backup which may not provide the desired Recovery Time Objectives (RTO) within the stipulated time frame.",
+  "video_url": "https://certificationation.com/videos/exam-amazon-ec2-instances-behind-an-exam-217.html",
+  "url": "https://certificationation.com/questions/exam-amazon-ec2-instances-behind-an-exam-217.html"
+}

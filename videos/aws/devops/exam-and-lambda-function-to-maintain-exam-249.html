@@ -1,0 +1,62 @@
+---
+title: "Your team is using AWS API Gateway and Lambda functionExam"
+description: "Video for your team is using AWS API Gateway and Lambda function to maintain an API endpoint. Recently, there is a change in the Lambda function which adds some"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your team is using AWS API Gateway and Lambda function to maintain an API endpoint. Recently, there is a change in the Lambda function which adds some new data in the response body. The Lambda function is upgraded and a new API is added to support the change. The team wants to keep both version1 and version2 of the API to be available simultaneously to your API consumers. How should you modify the version1 API in API Gateway to behave as the V1 consumers expect?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best way to maintain compatibility for version1 consumers is to use a <b>mapping template in the Integration Response</b> of the version1 API to remove the additional fields from the Lambda response, ensuring the format stays consistent with what clients expect. This approach enables you to process the backend response before it is sent to the client—removing any unwanted or new fields introduced by Lambda code changes. </p><p>The option <i>Insert a mapping template in the Method Response of the version1 API so that the extra data is stripped out, maintaining previous output behavior</i> is incorrect because method response is not responsible for transforming or filtering the backend data; it mainly defines models and status codes.</p><p>The choice <i>Configure a Header Mapping within the Integration Response of version1 API to remove any new data present in the backend reply</i> is misleading because header mapping is for HTTP headers—not the body of the response which contains the new fields. </p><p>The suggestion <i>Set up a mapping in the Integration Request of version1 API so the Lambda backend omits the additional data when producing the response</i> is also not accurate, as integration request mapping is used to transform the incoming request, not the Lambda’s outgoing response. </p><p><b>Tip:</b> Use an integration response mapping template when you need to modify or filter the response payload from the backend before it is returned to the client—especially when managing API version compatibility.</p>",
+  "query": "<p>Your developer team is managing an AWS API Gateway endpoint that invokes a Lambda function. Recently, an update to the Lambda function introduced additional fields in the response body. You have introduced a new API (version2) to utilize these enhancements, but you need to ensure that the legacy (version1) API continues to serve responses in its original format for existing consumers. What is the best way to adjust the version1 API in API Gateway so its output matches the expectations of version1 users?</p>",
+  "original_oid": "6793da1061969b416038a13d",
+  "options": [
+    {
+      "correct": false,
+      "text": "Insert a mapping template in the Method Response of the version1 API so that the extra data is stripped out, maintaining previous output behavior.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Create a mapping template in the Integration Response of the version1 API to filter out the new fields, restoring the original response format.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Configure a Header Mapping within the Integration Response of version1 API to remove any new data present in the backend reply.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up a mapping in the Integration Request of version1 API so the Lambda backend omits the additional data when producing the response.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question203",
+  "originalQuery": "Your team is using AWS API Gateway and Lambda function to maintain an API endpoint.\nRecently, there is a change in the Lambda function which adds some new data in the response body.\nThe Lambda function is upgraded and a new API is added to support the change.\nThe team wants to keep both version1 and version2 of the API to be available simultaneously to your API consumers.\nHow should you modify the version1 API in API Gateway to behave as the V1 consumers expect?",
+  "originalOptions": "A. Add a mapping template in the Method Response of version1 API to remove the new data in response to keep the same behaviors as before.|B. In the Integration Request of version1 API, add a mapping to inform the backend Lambda to remove the new data in the relevant response.|C. In the Integration Response of version1 API, add a new Header Mapping to remove the new data which comes from the backend.|D. Add a mapping template in the Integration Response of version1 API to remove the new data so that the response is transformed to the original format.",
+  "video_url": "https://certificationation.com/videos/exam-and-lambda-function-to-maintain-exam-249.html",
+  "url": "https://certificationation.com/questions/exam-and-lambda-function-to-maintain-exam-249.html"
+}

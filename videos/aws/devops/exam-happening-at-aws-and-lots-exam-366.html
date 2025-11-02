@@ -1,0 +1,62 @@
+---
+title: "There is a very serious outage happening at AWS, andExam"
+description: "Video for there is a very serious outage happening at AWS, and lots of services are impacted. Your existing EC2 instances seem to work fine, and the status"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "There is a very serious outage happening at AWS, and lots of services are impacted. Your existing EC2 instances seem to work fine, and the status checks of the instances have passed. But when you try to launch a new instance from an EBS snapshot, the operation is unsuccessful. What might be the issue?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct answer is <b>The availability of S3 is affected; since EBS snapshots are kept in S3, this prevents launching new instances from snapshots.</b></p><p>Here's why: EBS snapshots are actually stored in Amazon S3. When the S3 service is impaired or unavailable, any attempt to launch a new EC2 instance from an EBS snapshot can fail because the underlying snapshot data cannot be accessed. This explains why your current EC2 instances (which do not require S3 to continue operating unless you are attaching a snapshot) are fine, but you are unable to start new ones from snapshots during the S3 outage.</p><p>Why the other answers are incorrect:</p><ul><li><i>There is a disruption with AWS CloudWatch, which is causing issues with EC2 provisioning.</i> — CloudWatch is used for monitoring and alarms; its availability does not directly impact launching EC2 instances from EBS snapshots.</li><li><i>Because the AWS Console is not available, AWS CLI commands also cease to function.</i> — The AWS CLI and Console are separate interfaces; CLI commands interact with the APIs directly, so this would not prevent operations solely because the Console is down.</li><li><i>To prevent system overload, AWS disables all EC2 API calls during serious outages.</i> — AWS does not disable all EC2 API calls as a blanket measure even during major outages. Existing running instances and some API operations may continue even under partial outages.</li></ul><p><b>Tip:</b> If you experience failures when restoring from EBS snapshots during AWS outages, always check the S3 service health dashboard, as snapshot restore and creation depend on S3's infrastructure. Understanding cross-service dependencies is key for troubleshooting AWS outages.</p>",
+  "query": "<p>An AWS region is experiencing a major outage, affecting several services. Your current EC2 instances are running normally, and their status checks are successful. However, any attempt to create a new EC2 instance from an EBS snapshot does not work. What could explain this behavior?</p>",
+  "original_oid": "6793d9e861969b416038a0ee",
+  "options": [
+    {
+      "correct": true,
+      "text": "The availability of S3 is affected; since EBS snapshots are kept in S3, this prevents launching new instances from snapshots.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "There is a disruption with AWS CloudWatch, which is causing issues with EC2 provisioning.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Because the AWS Console is not available, AWS CLI commands also cease to function.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "To prevent system overload, AWS disables all EC2 API calls during serious outages.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question123",
+  "originalQuery": "There is a very serious outage happening at AWS, and lots of services are impacted.\nYour existing EC2 instances seem to work fine, and the status checks of the instances have passed.\nBut when you try to launch a new instance from an EBS snapshot, the operation is unsuccessful.\nWhat might be the issue?",
+  "originalOptions": "[\"A. The AWS Console is down, so your AWS CLI commands do not work.\",\"B. S3 has an issue. As the EBS snapshots are saved in S3, you cannot launch an instance from the EBS snapshot.\",\"C. AWS turns off all the EC2 related API calls when there are major outages to protect from system floods.\",\"D. There is an outage in the AWS CloudWatch service.\"]",
+  "video_url": "https://certificationation.com/videos/exam-happening-at-aws-and-lots-exam-366.html",
+  "url": "https://certificationation.com/questions/exam-happening-at-aws-and-lots-exam-366.html"
+}

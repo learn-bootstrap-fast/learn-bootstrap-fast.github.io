@@ -1,0 +1,79 @@
+---
+title: "You need to back up a Cloud SQL for MySQL instanceExam"
+description: "Video for you need to back up a Cloud SQL for MySQL instance containing production databases that handle high transaction volumes. The backup operation should"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You need to back up a Cloud SQL for MySQL instance containing production databases that handle high transaction volumes. The backup operation should minimize performance impact on the production workload while ensuring a reliable backup. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You manage a Cloud SQL for MySQL instance that powers the checkout service for a global retail site at mcnz.com. During peak hours the databases process about 18 thousand transactions per second. You must create backups that are dependable while causing the least possible effect on the production workload. What should you do?",
+  "options": [
+    {
+      "text": "Create a Cloud SQL read replica and run scheduled exports from the replica to Cloud Storage",
+      "explanation": "This approach uses a replica to run logical exports and keeps the primary instance focused on serving traffic",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Run mysqldump from the primary instance and write the dump files to Cloud Storage",
+      "explanation": "This uses the mysqldump client to produce a logical backup directly from the primary database and stores it in Cloud Storage",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable Cloud SQL automated backups and schedule the backup window during off peak traffic",
+      "explanation": "This relies on the managed backup capability of Cloud SQL which runs on a schedule and stores backups for restore operations",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Run a Cloud SQL serverless export of all databases to Cloud Storage on a regular schedule",
+      "explanation": "This runs a managed export job that produces logical files such as SQL or CSV and writes them to Cloud Storage",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Enable Cloud SQL automated backups and schedule the backup window during off peak traffic</b>.</p><p><b>Automated backups</b> are the Cloud SQL recommended approach for reliable recovery because they use managed, incremental storage level snapshots and integrate with restore workflows. They are dependable and can be paired with binary logging to enable point in time recovery. By setting the backup window to off peak hours you reduce the impact on a high throughput workload and keep production latency and throughput stable.</p><p><i>Create a Cloud SQL read replica and run scheduled exports from the replica to Cloud Storage</i> is not ideal because exports are logical dumps that do not offer the same recovery guarantees as managed backups. A replica can lag behind the primary so the export may not represent a precise point in time and the export process still consumes resources and adds I O load.</p><p><i>Run mysqldump from the primary instance and write the dump files to Cloud Storage</i> increases CPU and I O load on the primary and may require long running transactions or locks to achieve consistency. This directly affects a busy checkout workload and does not minimize production impact.</p><p><i>Run a Cloud SQL serverless export of all databases to Cloud Storage on a regular schedule</i> still performs a logical export that lacks point in time recovery and often has longer and more manual restore steps. Even if some processing is offloaded the data must still be read from the instance which can impact throughput.</p>",
+  "batch_id": "31",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You need to back up a Cloud SQL for MySQL instance containing production databases that handle high transaction volumes. The backup operation should minimize performance impact on the production workload while ensuring a reliable backup. What should you do?",
+  "originalOptions": "A. Use serverless export to Cloud Storage.<br/>B. Use Cloud SQL automatic backups.<br/>C. Perform a manual export to Cloud Storage using the mysqldump utility.<br/>D. Use the Database Migration Service.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "109",
+  "tip": "<p>When you see a production OLTP workload and the question asks for minimal impact and reliability, prefer <i>automated backups</i> with a configured <i>backup window</i> and features that support <i>point in time recovery</i> rather than logical exports.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+    "https://cloud.google.com/sql/docs/mysql/backup-recovery/pitr",
+    "https://cloud.google.com/sql/docs/mysql/import-export/exporting"
+  ],
+  "url": "https://certificationation.com/questions/exam-mysql-instance-containing-production-databases-exam-109.html",
+  "video_url": "https://certificationation.com/videos/exam-mysql-instance-containing-production-databases-exam-109.html"
+}

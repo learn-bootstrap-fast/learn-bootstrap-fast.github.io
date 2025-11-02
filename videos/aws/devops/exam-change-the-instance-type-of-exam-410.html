@@ -1,0 +1,62 @@
+---
+title: "You have decided that you need to change the instanceExam"
+description: "Video for you have decided that you need to change the instance type of your production instances which are running as part of an AutoScaling group. The entire"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have decided that you need to change the instance type of your production instances which are running as part of an AutoScaling group. The entire architecture is deployed using CloudFormation Template. You currently have 4 instances in Production. You cannot have any interruption in service and need to ensure 2 instances are always running during the update. Which of the options below listed can be used for this?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct choice is <b>Perform a rolling update by configuring an Auto Scaling policy in CloudFormation to change instances in batches</b>. By using the <b>AutoScalingRollingUpdate</b> policy within your CloudFormation template's update policy, you can perform rolling updates that terminate and replace instances in batches while maintaining a specified minimum number of healthy instances. This guarantees high availability and meets the requirement of always keeping at least two instances operational during the update.</p><p>The option <i>Schedule an Auto Scaling action to update instance types at a specific time</i> is incorrect because AutoScalingScheduledAction is meant for scaling activities (like increasing/decreasing the number of instances) at specific times, not for modifying the instance type as part of a CloudFormation update.</p><p><i>Replace all Auto Scaling instances simultaneously using the replacing update policy</i> (AutoScalingReplacingUpdate) is not suitable, as it could potentially lead to downtime—this policy replaces all instances at once, violating the requirement to always have at least two instances running.</p><p><i>Use Auto Scaling integration update to refresh the environment</i> is not a valid Auto Scaling update policy and does not apply in this scenario.</p><p><b>Tip:</b> For production environments where availability must be maintained, always use a rolling update strategy and tune the parameters (like MinInstancesInService and MaxBatchSize) to preserve uptime.</p>",
+  "query": "<p>You need to switch the instance type for your production servers that are being managed by an Auto Scaling group, all provisioned via a CloudFormation template. With 4 instances currently running, uninterrupted availability is crucial, and you must maintain at least 2 operational instances at any time during the update. Which update strategy can you use to meet these requirements?</p>",
+  "original_oid": "6793d9b261969b416038a086",
+  "options": [
+    {
+      "correct": false,
+      "text": "Schedule an Auto Scaling action to update instance types at a specific time.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Perform a rolling update by configuring an Auto Scaling policy in CloudFormation to change instances in batches.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Replace all Auto Scaling instances simultaneously using the replacing update policy.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Use Auto Scaling integration update to refresh the environment.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question17",
+  "originalQuery": "You have decided that you need to change the instance type of your production instances which are running as part of an AutoScaling group.\nThe entire architecture is deployed using CloudFormation Template.\nYou currently have 4 instances in Production.\nYou cannot have any interruption in service and need to ensure 2 instances are always running during the update.\nWhich of the options below listed can be used for this?",
+  "originalOptions": "[\"A. AutoScalingRollingUpdate\",\"B. AutoScalingScheduledAction\",\"C. AutoScalingReplacingUpdate\",\"D. AutoScalingIntegrationUpdate.\"]",
+  "video_url": "https://certificationation.com/videos/exam-change-the-instance-type-of-exam-410.html",
+  "url": "https://certificationation.com/questions/exam-change-the-instance-type-of-exam-410.html"
+}

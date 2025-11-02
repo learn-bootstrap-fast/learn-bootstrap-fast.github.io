@@ -1,0 +1,62 @@
+---
+title: "Your development team is using an Elastic beanstalkExam"
+description: "Video for your development team is using an Elastic beanstalk environment. After a week, the environment was torn down and a new one was created. When the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your development team is using an Elastic beanstalk environment. After a week, the environment was torn down and a new one was created. When the development team tried to access the data on the older environment, it was not available. Why is this the case?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct answer is <b>Since the EC2 instances in the environment use temporary local storage, its data is lost upon environment termination.</b></p><p>When you use AWS Elastic Beanstalk, by default, the EC2 instances have local storage (often instance store volumes or the root EBS volume with no persistence set up). When you terminate the environment, those instances (along with their storage) are permanently deleted, and any local data is lost. To persist data, you would need to attach external, persistent storage (for example, an S3 bucket or a separate EBS volume not managed by Elastic Beanstalk lifecycle).</p><p><i>Because before tearing down, Elastic Beanstalk copies everything to DynamoDB, making EBS data empty.</i> is incorrect: Elastic Beanstalk does not automatically copy your application or EC2 instance data to DynamoDB during environment termination.</p><p><i>Because the EC2s used encrypted volumes, making them inaccessible after the Beanstalk environment is removed.</i> is incorrect: Encryption does not make EBS volumes automatically inaccessible after environment removal; the volumes themselves are deleted if not explicitly preserved.</p><p><i>Since the environment uses high-IOPS volumes, you can’t recover them after deleting the environment.</i> is incorrect: Using IOPS-optimized volumes does not dictate data recoverability. The loss is from the deletion of resources, not their speed or performance tier.</p><p><b>Tip:</b> For data storage across environment changes, use persistent systems like Amazon S3 or attach external EBS volumes to avoid data loss when the environment is terminated.</p>",
+  "query": "<p>Your dev team set up an AWS Elastic Beanstalk environment, used it for a week, then terminated it and launched a new environment. When trying to access previous data stored on the old environment, nothing is available. Why did this happen?</p>",
+  "original_oid": "6793da7161969b416038a205",
+  "options": [
+    {
+      "correct": true,
+      "text": "Since the EC2 instances in the environment use temporary local storage, its data is lost upon environment termination.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Because before tearing down, Elastic Beanstalk copies everything to DynamoDB, making EBS data empty.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Because the EC2s used encrypted volumes, making them inaccessible after the Beanstalk environment is removed.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Since the environment uses high-IOPS volumes, you can’t recover them after deleting the environment.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question405",
+  "originalQuery": "Your development team is using an Elastic beanstalk environment.\nAfter a week, the environment was torn down and a new one was created.\nWhen the development team tried to access the data on the older environment, it was not available.\nWhy is this the case?",
+  "originalOptions": "A. This is because the underlying EC2 Instances are created with encrypted storage and cannot be accessed once the environment has been terminated.|B. This is because the underlying EC2 Instances are created with IOPS volumes and cannot be accessed once the environment has been terminated.|C. This is because before the environment termination, Elastic beanstalk copies the data to DynamoDB, and hence the data is not present in the EBS volumes|D. This is because the underlying EC2 Instances are created with no persistent local storage.",
+  "video_url": "https://certificationation.com/videos/exam-elastic-beanstalk-environment-after-a-exam-220.html",
+  "url": "https://certificationation.com/questions/exam-elastic-beanstalk-environment-after-a-exam-220.html"
+}

@@ -1,0 +1,80 @@
+---
+title: "As a Database Engineer, you are using Cloud SQL forExam"
+description: "Video for as a Database Engineer, you are using Cloud SQL for PostgreSQL to hold business-critical data. You want to ensure that, if an error occurs, you can"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are using Cloud SQL for PostgreSQL to hold business-critical data. You want to ensure that, if an error occurs, you can recover the database to the previous state with minimal data loss. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You administer a Cloud SQL for PostgreSQL instance that holds orders and payments for LarkBerry Retail at scrumtuous.com, and leadership wants the ability to roll back to a moment just before an accidental change within the past 36 hours so that only a few minutes of data are lost. What should you implement?",
+  "options": [
+    {
+      "text": "Create a read replica in another region",
+      "explanation": "A read replica provides an asynchronous copy that is typically used for read scaling or for promotion during regional incidents",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable point in time recovery for the Cloud SQL instance",
+      "explanation": "Point in time recovery allows restoring the database to a specific timestamp within the configured retention window",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Schedule automated backups for the instance",
+      "explanation": "Automated backups create periodic full backups that you can restore to the time the backup was taken",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure high availability with a standby instance",
+      "explanation": "High availability provides a regional configuration that reduces downtime during primary instance failures",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Enable point in time recovery for the Cloud SQL instance</b>.</p><p>This capability retains the transaction logs and lets you restore the database to a precise timestamp within the configured retention window. That meets the need to roll back to a moment just before the accidental change in the past 36 hours and it limits data loss to only a few minutes. You must configure the retention window to cover at least 36 hours to satisfy this requirement.</p><p><i>Create a read replica in another region</i> addresses read scaling and disaster recovery rather than targeted rollback. It mirrors changes from the primary so it cannot rewind to a specific moment and promoting a replica would not let you restore to just before the change.</p><p><i>Schedule automated backups for the instance</i> creates restore points at backup times only. You cannot restore to an arbitrary moment between backups so you could lose many hours of data without the continuous logging that enables near minute level recovery.</p><p><i>Configure high availability with a standby instance</i> improves uptime by failing over during zonal issues or maintenance. It does not enable rolling back unwanted changes because the standby has the same data state as the primary.</p>",
+  "batch_id": "270",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are using Cloud SQL for PostgreSQL to hold business-critical data. You want to ensure that, if an error occurs, you can recover the database to the previous state with minimal data loss. What should you do?",
+  "originalOptions": "A. Enable failover replication.<br/>B. Enable automated backups.<br/>C. Enable point-in-time recovery.<br/>D. Write all updates to a log file.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "151",
+  "tip": "<p>Map needs to features. If the question stresses a <i>specific moment</i> and minimal <i>RPO</i> within a recent window then choose <i>point in time recovery</i>. Use <i>automated backups</i> to define the window and remember that <i>high availability</i> is for uptime not data rewind.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/point-in-time-recovery",
+    "https://cloud.google.com/sql/docs/postgres/backup-recovery/backups",
+    "https://cloud.google.com/sql/docs/postgres/replication",
+    "https://cloud.google.com/sql/docs/postgres/high-availability"
+  ],
+  "url": "https://certificationation.com/questions/exam-using-cloud-sql-for-postgresql-exam-151.html",
+  "video_url": "https://certificationation.com/videos/exam-using-cloud-sql-for-postgresql-exam-151.html"
+}

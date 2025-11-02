@@ -1,0 +1,79 @@
+---
+title: "Your organization has strict data privacy policies andExam"
+description: "Video for your organization has strict data privacy policies and needs to ensure compliance with GDPR. The data engineering team includes: Person X is a"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your organization has strict data privacy policies and needs to ensure compliance with GDPR. The data engineering team includes: Person X is a database administrator. Person Y is responsible for monitoring database performance. Person Z is a data analyst who retrieves and analyzes data. You need to assign roles to team members for Cloud SQL. Which roles should you assign?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Norvera Health enforces strict GDPR controls to protect customer data. The data platform team includes three people. Alex manages database provisioning and lifecycle. Priya monitors Cloud SQL instance health and configuration. Mateo is a data analyst who connects to the databases to run queries and pull results. You must assign least privilege Cloud SQL IAM roles to each person to align with compliance. Which role mapping should you choose?",
+  "options": [
+    {
+      "text": "Grant roles/cloudsql.editor to Alex, roles/cloudsql.viewer to Priya, and roles/cloudsql.client to Mateo",
+      "explanation": "This set makes Alex a Cloud SQL editor while Priya can view instance metadata and Mateo can connect to instances.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Grant roles/cloudsql.admin to Alex, roles/cloudsql.editor to Priya, and roles/cloudsql.client to Mateo",
+      "explanation": "This combination gives Alex full admin rights while Priya can modify instances and Mateo can connect to databases.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Grant roles/cloudsql.admin to Alex, roles/cloudsql.viewer to Priya, and roles/cloudsql.client to Mateo",
+      "explanation": "This choice gives Alex full administration while Priya has read-only visibility and Mateo can connect to Cloud SQL.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Grant roles/cloudsql.admin to Alex, roles/cloudsql.viewer to Priya, and roles/cloudsql.editor to Mateo",
+      "explanation": "This mapping gives Alex administrator access while Priya views configurations and Mateo can modify Cloud SQL resources.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Grant roles/cloudsql.admin to Alex, roles/cloudsql.viewer to Priya, and roles/cloudsql.client to Mateo</b>.</p><p>Alex owns provisioning and lifecycle which requires full administrative control of Cloud SQL instances. The Cloud SQL Admin role lets a user create and delete instances, modify configuration, manage replicas, backups, and maintenance settings, and perform other administrative actions that are essential for end to end lifecycle management.</p><p>Priya only needs to observe health and configuration without making changes. The Cloud SQL Viewer role provides read only access to instance metadata, settings, and monitoring information so it fits least privilege for monitoring duties.</p><p>Mateo must connect to databases to run queries but he should not manage instances. The Cloud SQL Client role allows establishing connections through the Cloud SQL Auth Proxy or using private IP without granting management permissions. Actual query permissions are controlled inside the database engine with database accounts and are not provided by Cloud IAM.</p><p><i>Grant roles/cloudsql.editor to Alex, roles/cloudsql.viewer to Priya, and roles/cloudsql.client to Mateo</i> is not appropriate because the editor role does not provide full administrative capability for complete lifecycle tasks such as instance creation and deletion, which Alex requires.</p><p><i>Grant roles/cloudsql.admin to Alex, roles/cloudsql.editor to Priya, and roles/cloudsql.client to Mateo</i> gives Priya permissions to modify instances rather than only view them, which violates least privilege for a monitoring responsibility.</p><p><i>Grant roles/cloudsql.admin to Alex, roles/cloudsql.viewer to Priya, and roles/cloudsql.editor to Mateo</i> grants Mateo modification rights to instances even though he only needs to connect, which exceeds least privilege and is unnecessary for analytics work.</p>",
+  "batch_id": "348",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "Your organization has strict data privacy policies and needs to ensure compliance with GDPR. The data engineering team includes: Person X is a database administrator. Person Y is responsible for monitoring database performance. Person Z is a data analyst who retrieves and analyzes data. You need to assign roles to team members for Cloud SQL. Which roles should you assign?",
+  "originalOptions": "A. roles/cloudsql.admin for Person X roles/cloudsql.viewer for Person Y roles/cloudsql.editor for Person Z<br/>B. roles/cloudsql.admin for Person X roles/cloudsql.viewer for Person Y roles/cloudsql.client for Person Z<br/>C. roles/cloudsql.editor for Person X roles/cloudsql.viewer for Person Y roles/cloudsql.client for Person Z<br/>D. roles/cloudsql.admin for Person X roles/cloudsql.editor for Person Y roles/cloudsql.client for Person Z",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "138",
+  "tip": "<p>Map responsibilities to predefined roles and think in terms of <i>least privilege</i>. Instance administrators need <i>admin</i>, observers need <i>viewer</i>, and users who only connect need <i>client</i>. Remember that <i>client</i> enables connection while data access is granted inside the database.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/iam",
+    "https://cloud.google.com/sql/docs/mysql/roles",
+    "https://cloud.google.com/sql/docs/postgres/connect-admin-proxy#before-you-begin"
+  ],
+  "url": "https://certificationation.com/questions/exam-data-privacy-policies-and-needs-exam-138.html",
+  "video_url": "https://certificationation.com/videos/exam-data-privacy-policies-and-needs-exam-138.html"
+}

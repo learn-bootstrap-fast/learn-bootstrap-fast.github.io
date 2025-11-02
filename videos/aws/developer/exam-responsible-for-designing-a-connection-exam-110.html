@@ -1,0 +1,82 @@
+---
+title: "As a Database Engineer, you are responsible forExam"
+description: "Video for as a Database Engineer, you are responsible for designing a connection strategy for an application that needs to access data stored in BigQuery. To"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are responsible for designing a connection strategy for an application that needs to access data stored in BigQuery. To maintain optimal performance and minimize latency, which of the following strategies should you use?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Your team at example.com is building an analytics service on GKE in us-central1 and europe-west1 that must read large result sets directly from BigQuery with minimal latency and consistent throughput. Which connection approach should you adopt to achieve the best performance for both streaming and batch reads?",
+  "options": [
+    {
+      "text": "Use Cloud Pub/Sub as an intermediary between the application and BigQuery",
+      "explanation": "This introduces a messaging layer that relays events and is not intended for querying or directly reading BigQuery result sets.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use the BigQuery Storage Read API for parallelized access by batch and streaming clients",
+      "explanation": "This API provides high throughput columnar reads with low latency and supports parallel consumption for both streaming and batch workloads.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Call the BigQuery REST API and page through results with the query endpoint",
+      "explanation": "This relies on paginated responses from the standard query endpoint which can limit throughput and increase latency for large result sets.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Set up VPC peering with BigQuery for each region that runs the service",
+      "explanation": "BigQuery is a serverless service that does not support direct VPC peering for query access across regions.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Use the BigQuery Storage Read API for parallelized access by batch and streaming clients</b>.</p><p>The <b>BigQuery Storage Read API</b> delivers minimal latency and consistent high throughput because it provides parallelized reads over multiple streams and returns data in efficient columnar formats. It uses a high performance transport that lets your GKE clients in us-central1 and europe-west1 shard and read large result sets concurrently which is ideal for both batch and streaming style consumers. It also offers strong read consistency by creating a snapshot at session start which avoids inconsistent pagination and reduces per request overhead compared with row oriented JSON responses.</p><p><i>Use Cloud Pub/Sub as an intermediary between the application and BigQuery</i> is not appropriate because Pub/Sub is a messaging service for event delivery and does not provide direct access to BigQuery query results. Introducing it would add latency and complexity without improving BigQuery read performance.</p><p><i>Call the BigQuery REST API and page through results with the query endpoint</i> relies on paginated JSON responses that are limited by page size and serialization costs. This approach lacks parallelized columnar reads and typically results in higher latency and lower throughput for large result sets.</p><p><i>Set up VPC peering with BigQuery for each region that runs the service</i> is not viable because BigQuery is a Google managed service that is accessed over Google APIs rather than through VPC peering. Private access options exist for reaching Google APIs but peering would not enable or improve the high throughput read path needed here.</p>",
+  "batch_id": "11",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are responsible for designing a connection strategy for an application that needs to access data stored in BigQuery. To maintain optimal performance and minimize latency, which of the following strategies should you use?",
+  "originalOptions": "A. Utilize the BigQuery Storage API for batch and streaming data access<br/>B. Connect the application instances to BigQuery using public IP addresses<br/>C. Use Cloud Pub/Sub to manage the connection between the application instances and BigQuery<br/>D. Establish VPC peering connections between the application and BigQuery for each region",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "110",
+  "tip": "<p>When you see a need for <i>high throughput</i> and low latency reads of large BigQuery results by applications, prefer the <i>BigQuery Storage Read API</i>. The REST API suits small or control oriented responses while network topology changes rarely beat purpose built read paths.</p>",
+  "references": [
+    "https://cloud.google.com/bigquery/docs/bigquery-storage-intro",
+    "https://cloud.google.com/bigquery/docs/storage-read-api-best-practices",
+    "https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/getQueryResults",
+    "https://cloud.google.com/vpc/docs/vpc-peering",
+    "https://cloud.google.com/vpc/docs/private-google-access",
+    "https://cloud.google.com/pubsub/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-responsible-for-designing-a-connection-exam-110.html",
+  "video_url": "https://certificationation.com/videos/exam-responsible-for-designing-a-connection-exam-110.html"
+}

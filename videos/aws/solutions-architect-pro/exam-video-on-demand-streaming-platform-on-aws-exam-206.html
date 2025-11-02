@@ -1,0 +1,74 @@
+---
+title: "Your customer is implementing a video-on-demandExam"
+description: "Video for your customer is implementing a video-on-demand streaming platform on AWS. The requirement is to be able to support multiple devices such as iOS,"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your customer is implementing a video-on-demand streaming platform on AWS. The requirement is to be able to support multiple devices such as iOS, Android, and Windows as client devices, using a standard client player, using streaming technology and scalable architecture with cost-effectiveness."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d5dbf501ee1c8ade9881"
+  },
+  "quid": "0",
+  "ordinal": "313",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "Amazon S3",
+    " Amazon CloudFront",
+    " Amazon Elastic Compute Cloud (EC2)",
+    " AWS Elemental MediaConvert",
+    " video-on-demand"
+  ],
+  "slug": "vd-streaming-platform-multiple-devices-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question313",
+  "title": "AWS Your Customer Is Implementing A Video-on-Demand Question",
+  "meta": "AWS Exam Question: Your customer is implementing a video-on-demand streaming platform on AWS, supporting iOS, Android, and Windows clients with scalable architecture. Answer: AWS Media Services.",
+  "answer": "B",
+  "query": "A client wants to build a reliable video-on-demand streaming service on AWS capable of supporting various client devices such as Linux, macOS, and Android using a flexible streaming solution that scales efficiently while keeping costs down.",
+  "originalQuery": "Your customer is implementing a video-on-demand streaming platform on AWS.\nThe requirement is to be able to support multiple devices such as iOS, Android, and Windows as client devices, using a standard client player, using streaming technology and scalable architecture with cost-effectiveness.",
+  "options": [
+    "A. Upload the video files to Amazon Simple Storage Service (S3) to act as the origin source. Set up the Amazon CloudFront distribution using the streaming feature to broadcast the video content.",
+    "B. Store the video contents to Amazon S3 as the origin server. Configure the Amazon CloudFront distribution. Use the AWS Elemental MediaConvert to easily create video-on-demand (VOD) content for broadcast and multiscreen delivery ( multi- devices) at scale.",
+    "C. Set up a streaming application on Amazon Elastic Compute Cloud (EC2) (such as Adobe Media Server), and store video files as the origin. Configure the Amazon CloudFront distribution with the download setting to provide video streaming.",
+    "D. Deploy a streaming server on Amazon EC2 (like Adobe Media Server), store the video files as the origin source, and deploy multiple streaming servers on Amazon EC2 as edge servers to deliver the video streams."
+  ],
+  "originalOptions": [
+    "A. Store the video contents to Amazon Simple Storage Service (S3) as an origin server. Configure the Amazon CloudFront distribution with a streaming option to stream the video contents.",
+    "B. Store the video contents to Amazon S3 as the origin server. Configure the Amazon CloudFront distribution. Use the AWS Elemental MediaConvert to easily create video-on-demand (VOD) content for broadcast and multiscreen delivery ( multi- devices) at scale.",
+    "C. Launch a streaming server on Amazon Elastic Compute Cloud (EC2) (for example, Adobe Media Server), and store the video contents as an origin server. Configure the Amazon CloudFront distribution with a download option to stream the video contents.",
+    "D. Launch a streaming server on Amazon EC2 (for example, Adobe Media Server), and store the video contents as an origin server. Launch and configure the required amount of streaming servers on Amazon EC2 as an edge server to stream the video contents."
+  ],
+  "image": "",
+  "primaryObjective": "2: Design for New Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Answer - B.\nOption A is incorrect because it uses CloudFront distribution with the streaming option which does not work on all platforms; whereas, it should use the download option.\nOption B is CORRECT because (a) it uses CloudFront distribution (b) It uses Elemental MediaConvert for streaming the on-demand videos on any mobile and (c) it uses S3 as origin, so it keeps the costs low.\nOption C is incorrect because (a) provisioning streaming EC2 instances is a costly solution, (b) the videos are to be delivered on-demand, not live streaming.\nOption D is incorrect because the videos are to be delivered on-demand, not live streaming.\nSo, the streaming server is not required.\nFor more information on live and on-demand streaming using CloudFront, please visit the below URL:\nhttps://aws.amazon.com/blogs/aws/using-amazon-cloudfront-for-video-streaming/\nNote:\nIn the on-demand streaming case, your video content is stored in Amazon S3\nViewers can choose to watch it at any desired time.\nA complete on-demand streaming solution typically uses Amazon S3 for storage, AWS Elemental MediaConvert for file-based video processing, and Amazon CloudFront for delivery.\nOnce uploaded, you may need to convert your video into the size, resolution, or format needed by a particular television or connected device.\nAWS Elemental MediaConvert will take care of this for you.\nMediaConvert takes content from S3, transcodes it as requested, and stores the result back in S3\nTranscoding processes video files, creating compressed versions of the original content to reduce its size, change its format, or increase playback device compatibility.\nYou can also create assets that vary in resolution and bitrate for adaptive bitrate streaming, which adjusts the viewing quality depending on the viewer's available bandwidth.\nAWS Elemental MediaConvert outputs the transcoded video to an S3 bucket.\nThe next step is global delivery with Amazon CloudFront.\nCloudFront caches content at the edges for low latency and high throughput video delivery.This delivery can be made in two different ways.\nYou can deliver the entire video file to the device before playing it, or you can stream it to the device.\nMore information is available at:\nhttps://aws.amazon.com/cloudfront/streaming/ https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/on-demand-video.html\nVideo streaming requires a scalable and cost-effective architecture to deliver content to multiple devices across different platforms. AWS provides a variety of services that can be used to meet the requirements of the client.\nOption A: Store the video contents to Amazon S3 as an origin server. Configure the Amazon CloudFront distribution with a streaming option to stream the video contents. Amazon S3 is a highly scalable, reliable, and durable object storage service. It can be used as an origin server to store the video content. Amazon CloudFront is a content delivery network (CDN) that can be used to deliver the video content to end-users. With the streaming option enabled, CloudFront can deliver video content to a variety of devices, including iOS, Android, and Windows. This option is cost-effective, scalable, and easy to manage.\nOption B: Store the video contents to Amazon S3 as the origin server. Configure the Amazon CloudFront distribution. Use the AWS Elemental MediaConvert to easily create video-on-demand (VOD) content for broadcast and multiscreen delivery (multi-devices) at scale. This option is similar to Option A, but it uses AWS Elemental MediaConvert to create video-on-demand content for broadcast and multiscreen delivery. MediaConvert is a file-based video transcoding service that can be used to convert video content into various formats and resolutions. This option provides additional flexibility to create VOD content for broadcast and multiscreen delivery, but it may be more expensive than Option A.\nOption C: Launch a streaming server on Amazon EC2 (for example, Adobe Media Server), and store the video contents as an origin server. Configure the Amazon CloudFront distribution with a download option to stream the video contents. This option uses Amazon EC2 to launch a streaming server (e.g. Adobe Media Server) and store the video content as an origin server. Amazon CloudFront is used to deliver the video content to end-users with the download option enabled. This option may be more expensive than Option A or B since it requires the deployment and management of a streaming server.\nOption D: Launch a streaming server on Amazon EC2 (for example, Adobe Media Server), and store the video contents as an origin server. Launch and configure the required amount of streaming servers on Amazon EC2 as an edge server to stream the video contents. This option is similar to Option C, but it uses multiple streaming servers as edge servers to deliver the video content to end-users. This option provides additional scalability and reliability, but it may be more expensive than Option A or B.\nIn conclusion, the best option for implementing a video-on-demand streaming platform on AWS is Option A. It provides a cost-effective, scalable, and easy-to-manage solution using Amazon S3 as the origin server and Amazon CloudFront as the CDN with the streaming option enabled. Option B may be more flexible, but it may also be more expensive. Options C and D may provide additional scalability and reliability, but they may also be more expensive and complex to manage.",
+  "chatGptExplanation": "The correct answer is option B because it offers a scalable, flexible, and cost-effective solution for delivering video-on-demand (VOD) content across multiple devices. Using Amazon S3 as the origin provides durable, highly available storage with low cost. Amazon CloudFront serves as the content delivery network (CDN) to cache and distribute content globally, improving performance and reducing latency. AWS Elemental MediaConvert is a powerful file-based video transcoding service that converts raw video files into multiple resolutions and formats suitable for different devices and bandwidth conditions, enabling adaptive bitrate streaming. This combination ensures broad device compatibility (Linux, macOS, Android, iOS, Windows, etc.) and efficient scaling without managing streaming servers.\n\nIncorrect options explained:\n- Option A: While storing videos in S3 and using CloudFront with streaming might sound reasonable, the \"streaming option\" in CloudFront refers to RTMP distribution which is legacy, limited in device support, and does not support adaptive bitrate streaming, making it unsuitable for broad multi-device VOD use cases.\n- Option C: Launching and managing streaming servers like Adobe Media Server on EC2 adds unnecessary complexity and cost. It is not required for on-demand streaming since cloud native services and HTTP-based adaptive streaming are more scalable and manageable.\n- Option D: Similarly, deploying multiple streaming servers on EC2 as edge servers is complex, costly, and unnecessary. CloudFront handles edge caching and delivery efficiently without the need to manage your own edge streaming servers.\n\nThe primary AWS product in focus is AWS Elemental MediaConvert, which plays a key role in creating multi-device compatible VOD content.",
+  "video_url": "https://certificationation.com/videos/exam-video-on-demand-streaming-platform-on-aws-exam-206.html",
+  "url": "https://certificationation.com/questions/exam-video-on-demand-streaming-platform-on-aws-exam-206.html"
+}

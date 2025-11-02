@@ -1,0 +1,62 @@
+---
+title: "Your DevOps team manages dozens of AWS accounts. Some ofExam"
+description: "Video for your DevOps team manages dozens of AWS accounts. Some of them belong to certain AWS Organizations and some do not. There is a new requirement to set"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your DevOps team manages dozens of AWS accounts. Some of them belong to certain AWS Organizations and some do not. There is a new requirement to set up a CloudWatch rule in the master account whenever there is a new event of EC2 termination for any of the other accounts. You plan to set up a CloudWatch Events rule in each account and get the event sent to the default Event bus in the master account. Which condition is NOT mandatory for this solution to work?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct answer is <strong>Each participating account must belong to an AWS Organization</strong>.</p><p>This condition is <strong>NOT</strong> required for forwarding CloudWatch Events to a master account's event bus. CloudWatch Events (now Amazon EventBridge) allows sending events across AWS accounts, regardless of AWS Organizations membership. This means accounts can be standalone or part of multiple organizations—they do <strong>not</strong> have to share a single AWS Organization for cross-account event delivery to work.</p><ul><li><em>The main (master) account must allow the receipt of CloudWatch events from other AWS accounts.</em>: This is essential. Without proper permissions and policy configuration, the master account's event bus will not accept incoming events from other accounts.</li><li><strong>Each participating account must belong to an AWS Organization.</strong>: This is <strong>NOT</strong> required. Event forwarding supports cross-account scenarios independent of organization structure.</li><li><em>The sender accounts require an appropriate IAM role to forward events to the master account's event bus.</em>: This is necessary for secure cross-account operations, ensuring only authorized accounts can send events.</li><li><em>The event's target in CloudWatch Events should be set to 'Event bus in another AWS account' for transmission to the master account.</em>: Without specifying the correct target, the event will not reach the intended event bus in the master account.</li></ul><p><strong>Tip:</strong> Remember, AWS Organizations simplifies management of multiple accounts but is not required for basic cross-account integrations like EventBridge event forwarding. Always ensure correct permissions and targets are configured for successful cross-account communication.</p>",
+  "query": "<p>Your DevOps group oversees numerous AWS accounts, with some organized under AWS Organizations and others operating independently. There is a new requirement: when an EC2 instance is terminated in any of the accounts, a CloudWatch Events rule in the master account should be triggered. The plan is for each individual account to send a CloudWatch Event to the default event bus in the master account. Considering this approach, which of the following is <strong>NOT</strong> a compulsory requirement for this setup to function?</p>",
+  "original_oid": "6793d9fe61969b416038a119",
+  "options": [
+    {
+      "correct": false,
+      "text": "The main (master) account must allow the receipt of CloudWatch events from other AWS accounts.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Each participating account must belong to an AWS Organization.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "The sender accounts require an appropriate IAM role to forward events to the master account's event bus.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "The event's target in CloudWatch Events should be set to 'Event bus in another AWS account' for transmission to the master account.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question167",
+  "originalQuery": "Your DevOps team manages dozens of AWS accounts.\nSome of them belong to certain AWS Organizations and some do not.\nThere is a new requirement to set up a CloudWatch rule in the master account whenever there is a new event of EC2 termination for any of the other accounts.\nYou plan to set up a CloudWatch Events rule in each account and get the event sent to the default Event bus in the master account.\nWhich condition is NOT mandatory for this solution to work?",
+  "originalOptions": "A. Master account should permit the CloudWatch events to be received from other accounts.|B. All accounts should belong to certain AWS Organization.|C. A proper IAM role is needed for the sender account to send events to the Event bus in the master account.|D. In CloudWatch Events, in order to send the event to the master account, the target should be configured as “Event bus in another AWS account”.",
+  "video_url": "https://certificationation.com/videos/exam-aws-accounts-some-of-them-exam-040.html",
+  "url": "https://certificationation.com/questions/exam-aws-accounts-some-of-them-exam-040.html"
+}

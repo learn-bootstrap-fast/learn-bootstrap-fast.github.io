@@ -1,0 +1,81 @@
+---
+title: "You manage a system that collects approximately 10 TB ofExam"
+description: "Video for you manage a system that collects approximately 10 TB of data daily in Azure Blob Storage. You need to transfer this data daily into Google Cloud"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You manage a system that collects approximately 10 TB of data daily in Azure Blob Storage. You need to transfer this data daily into Google Cloud Storage for further processing in BigQuery. The solution must be reliable and require minimal operational overhead. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "An analytics team at scrumtuous.com lands roughly 24 TB of files each day in Azure Blob Storage. They want the files to arrive in a Google Cloud Storage bucket every day so downstream jobs can load them into BigQuery. The approach must be dependable and keep ongoing operational work to a minimum. What should you do?",
+  "options": [
+    {
+      "text": "Order a Transfer Appliance and ship data batches on a recurring schedule",
+      "explanation": "Transfer Appliance is a hardware device for bulk offline transfers into Google Cloud that requires logistics and shipment.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Build a Cloud Data Fusion pipeline that reads from Azure Blob Storage and writes to Cloud Storage on a daily schedule",
+      "explanation": "Cloud Data Fusion provides managed data integration with connectors and orchestration for moving and transforming data across systems.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure Storage Transfer Service to run a scheduled copy from Azure Blob Storage into the target Cloud Storage bucket",
+      "explanation": "Storage Transfer Service supports recurring transfers from Azure Blob Storage to Cloud Storage with built-in scheduling and monitoring.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Develop a Python tool with the Azure SDK and run it each day on a Compute Engine VM to push objects to Cloud Storage",
+      "explanation": "A custom Python process on Compute Engine would necessitate building and maintaining code for authentication, retries, parallelism and scheduling.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct answer is <b>Configure Storage Transfer Service to run a scheduled copy from Azure Blob Storage into the target Cloud Storage bucket</b>.</p><p>This managed service natively supports cross cloud transfers from Azure Blob Storage into Cloud Storage and it allows you to schedule recurring daily jobs. It handles retries, parallelization, incremental copies, and detailed logging which makes it dependable for large daily volumes such as 24 TB while keeping operations light. You avoid building and maintaining data pipelines or custom tooling and you use IAM and monitoring that are already integrated.</p><p><i>Order a Transfer Appliance and ship data batches on a recurring schedule</i> is intended for offline bulk migrations from on premises locations and it is not designed for ongoing daily cloud to cloud transfers. Shipping hardware on a daily cadence would be slow and operationally heavy.</p><p><i>Build a Cloud Data Fusion pipeline that reads from Azure Blob Storage and writes to Cloud Storage on a daily schedule</i> introduces unnecessary pipeline management and compute orchestration for a simple file transfer use case. It adds cost and operational overhead without providing benefits since no transformations are required and a managed transfer service already solves the problem.</p><p><i>Develop a Python tool with the Azure SDK and run it each day on a Compute Engine VM to push objects to Cloud Storage</i> creates custom code to maintain and requires you to handle scaling, resilience, retries, credentials, and error recovery for 24 TB per day. This increases operational burden and risk compared with a managed transfer service.</p>",
+  "batch_id": "268",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You manage a system that collects approximately 10 TB of data daily in Azure Blob Storage. You need to transfer this data daily into Google Cloud Storage for further processing in BigQuery. The solution must be reliable and require minimal operational overhead. What should you do?",
+  "originalOptions": "A. Configure Storage Transfer Service to perform recurring transfers.<br/>B. Use a Transfer Appliance to migrate the data manually.<br/>C. Write a custom Python script using the Azure SDK and run it daily on Compute Engine.<br/>D. Download the data to a local machine, then upload it to Google Cloud Storage using gsutil.",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "48",
+  "tip": "<p>When a question asks for recurring cross cloud object movement with <i>minimal operations</i> and strong reliability, prefer the managed <i>Storage Transfer Service</i>. Choose data integration tools only when you must transform or enrich the data during movement.</p>",
+  "references": [
+    "https://cloud.google.com/storage-transfer/docs/overview",
+    "https://cloud.google.com/storage-transfer/docs/create-azure-transfer",
+    "https://cloud.google.com/storage-transfer/docs",
+    "https://cloud.google.com/transfer-appliance/docs/overview",
+    "https://cloud.google.com/data-fusion/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-approximately-10-tb-of-data-exam-048.html",
+  "video_url": "https://certificationation.com/videos/exam-approximately-10-tb-of-data-exam-048.html"
+}

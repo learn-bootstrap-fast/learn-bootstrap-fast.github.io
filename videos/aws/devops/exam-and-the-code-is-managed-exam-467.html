@@ -1,0 +1,62 @@
+---
+title: "A team is developing an application and the code isExam"
+description: "Video for a team is developing an application and the code is managed in a repository in AWS CodeCommit. The developers push code in their own branches. When"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A team is developing an application and the code is managed in a repository in AWS CodeCommit. The developers push code in their own branches. When the code is ready for release, only a senior team member is allowed to merge the other branches into master. The merging event then triggers a pipeline for the deployment in production. You need to make sure that the team members are allowed to push or merge code to all the branches except the master branch. Which of the following options describes the correct method?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <strong>correct approach</strong> is to <b>create an IAM group and attach a policy that allows codecommit:GitPush and codecommit:Merge* to all branches except master by using a StringNotEquals condition on codecommit:References (Option B)</b>. This ensures developers retain full access to feature branches, but cannot push or merge directly to master, while the senior developer's permissions can be managed separately.</p><p><i>Option A</i> is incorrect because CodeCommit console permissions don't allow branch-level editor/viewer granularity, and access is generally managed by IAM policies. <i>Option C</i> is not suitable since the 'NotResource' condition would potentially deny access to all resources except the listed repository, and does not address the branch-specific limitation required for master. <i>Option D</i> misuses resource policies; branch specificity is not supported with Resource elements set to '*', and IAM policies are more appropriate for user/group controls at this granularity.</p><ul><li><b>Tip:</b> For CodeCommit branch-level restrictions, always use Conditions in the IAM policy, specifically the <code>codecommit:References</code> key to target individual branches.</li></ul>",
+  "query": "<p>An organization is building an application, and the source code is maintained in AWS CodeCommit. Developers regularly push their work to feature branches. Once the code is deemed production-ready, only a designated senior developer should be able to merge any branch into <strong>master</strong>. The merge operation then triggers an automated pipeline to deploy the application. Which approach best ensures that all developers can push or merge to any branch, except for restricting pushing and merging to master solely to the senior developer?</p>",
+  "original_oid": "6793da6361969b416038a1e8",
+  "options": [
+    {
+      "correct": false,
+      "text": "In the AWS CodeCommit console, grant team members viewer access to the master branch and editor privileges to the dev branch.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Create an IAM group for the developers and link the following policy: { \"Effect\": \"Allow\", \"Action\": [ \"codecommit:GitPush\", \"codecommit:Merge*\" ], \"Resource\": [ \"arn:aws:codecommit:*:*:the-repo-name\" ], \"Condition\": { \"StringNotEquals\": { \"codecommit:References\": [ \"refs/heads/master\" ] } } }",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Assign the developers to an IAM group with this policy: { \"Effect\": \"Deny\", \"Action\": [ \"codecommit:GitPush\", \"codecommit:Merge*\" ], \"NotResource\": [ \"arn:aws:codecommit:*:*:the-repo-name\" ] }",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up an IAM group for developers and attach a CodeCommit resource policy to deny push/merge access for the master branch, using: { \"Effect\": \"Deny\", \"Action\": [ \"codecommit:GitPush\", \"codecommit:Merge*\" ], \"Principal\": [ \"arn:aws:iam::xxxxxxxxxxxx:group/Development\" ], \"Resource\": [ \"*\" ] }",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question375",
+  "originalQuery": "A team is developing an application and the code is managed in a repository in AWS CodeCommit.\nThe developers push code in their own branches.\nWhen the code is ready for release, only a senior team member is allowed to merge the other branches into master.\nThe merging event then triggers a pipeline for the deployment in production.\nYou need to make sure that the team members are allowed to push or merge code to all the branches except the master branch.\nWhich of the following options describes the correct method?",
+  "originalOptions": "A. Create an IAM group that includes the team members and attach the below policy: { \"Effect\": \"Allow\", \"Action\": [ \"codecommit:GitPush\", \"codecommit:Merge*\" ], \"Resource\": [ \"arn:aws:codecommit:*:*:the-repo-name\" ], \"Condition\": { \"StringNotEquals\": { \"codecommit:References\": [ \"refs/heads/master\" ] } } }\nB. In AWS CodeCommit management console, configure the team members as viewers in the master branch and editors in the dev branch.\nC. Add the team members in an IAM group and attach the IAM policy in the group: { \"Effect\": \"Deny\", \"Action\": [ \"codecommit:GitPush\", \"codecommit:Merge*\" ], \"NotResource\": [ \"arn:aws:codecommit:*:*:the-repo-name\" ] }\nD. Create an IAM group to include the team members and attach a CodeCommit resource policy for the master branch of the repository: { \"Effect\": \"Deny\", \"Action\": [ \"codecommit:GitPush\", \"codecommit:Merge*\" ], \"Principal\": [ \"arn:aws:iam::xxxxxxxxxxxx:group/Development\" ], \"Resource\": [ \"*\" ] }",
+  "video_url": "https://certificationation.com/videos/exam-and-the-code-is-managed-exam-467.html",
+  "url": "https://certificationation.com/questions/exam-and-the-code-is-managed-exam-467.html"
+}

@@ -1,0 +1,81 @@
+---
+title: "You are managing a MySQL database in Cloud SQL thatExam"
+description: "Video for you are managing a MySQL database in Cloud SQL that supports a high-volume inventory application. Recently, users have reported delays during high"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are managing a MySQL database in Cloud SQL that supports a high-volume inventory application. Recently, users have reported delays during high traffic due to lock contention. You want to minimize the time it takes to identify such issues in the future. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You administer a Cloud SQL for MySQL instance that powers a busy order processing application for a nationwide retailer. During major promotions customers experience slow responses that you traced to lock contention in the database. You want to reduce the time it takes to detect these lock issues the next time they occur. What should you implement?",
+  "options": [
+    {
+      "text": "Create a Cloud Monitoring alert on the Cloud SQL CPU utilization metric when it rises above 80%",
+      "explanation": "This sets a threshold on CPU usage so you receive notifications when the instance becomes heavily utilized.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Run a scheduled job that queries performance_schema lock wait views every 20 minutes and publish the findings to Pub or Sub",
+      "explanation": "This polls MySQL performance_schema on a fixed schedule and forwards the collected data to a messaging service.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a log based metric in Cloud Logging for MySQL &quot;lock wait timeout&quot; entries and attach a Cloud Monitoring alert policy",
+      "explanation": "This captures specific lock timeout events from database logs and triggers alerts as soon as those log entries appear.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Create a Cloud Monitoring alert for the Cloud SQL Active connections metric when it exceeds 95 percent of the configured limit",
+      "explanation": "This alarms when database connections approach the configured limit so you are notified about potential connection saturation.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Create a log based metric in Cloud Logging for MySQL \"lock wait timeout\" entries and attach a Cloud Monitoring alert policy</b>.</p><p>Lock contention in MySQL produces a clear signal in the logs through the lock wait timeout message. Cloud SQL forwards these logs to Cloud Logging, and creating a <b>log based metric</b> that counts those entries allows you to trigger an <b>alert policy</b> when the count rises. This targets the exact symptom and provides near real time detection because log ingestion and alert evaluations occur frequently. It reduces noise and speeds investigation since alerts fire only when actual lock waits are observed.</p><p><i>Create a Cloud Monitoring alert on the Cloud SQL CPU utilization metric when it rises above 80%</i> is not a good indicator of lock contention. Locks can occur even when CPU is moderate, and high CPU can be caused by many unrelated issues, which makes this a noisy and unreliable signal for this problem.</p><p><i>Run a scheduled job that queries performance_schema lock wait views every 20 minutes and publish the findings to Pub or Sub</i> introduces long detection delays and additional operational overhead. A twenty minute polling interval is too slow for a busy promotion window, and Cloud SQL already exports logs that can be used for faster and simpler alerting.</p><p><i>Create a Cloud Monitoring alert for the Cloud SQL Active connections metric when it exceeds 95 percent of the configured limit</i> does not directly measure lock waits. Connection count can be high for many reasons and lock contention can be severe even when connections are well below the limit, so this metric does not reliably detect the issue.</p>",
+  "batch_id": "309",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are managing a MySQL database in Cloud SQL that supports a high-volume inventory application. Recently, users have reported delays during high traffic due to lock contention. You want to minimize the time it takes to identify such issues in the future. What should you do?",
+  "originalOptions": "A. Create a Cloud Monitoring log-based metric for \"lock wait timeout\" errors, and set up an alerting policy.<br/>B. Set up an alert in Cloud SQL to notify you when the CPU utilization exceeds 75%.<br/>C. Write a script to query the performance_schema tables for lock wait events every hour, and send the results to Pub/Sub.<br/>D. Enable automatic backups in Cloud SQL and inspect them daily for lock contention patterns.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "297",
+  "tip": "<p>Favor alerts on the <i>specific symptom</i> of the problem. When a service logs an error that uniquely identifies the condition, build a <i>log based metric</i> and alert on it rather than relying on indirect infrastructure metrics.</p>",
+  "references": [
+    "https://cloud.google.com/logging/docs/logs-based-metrics",
+    "https://cloud.google.com/monitoring/alerts/using-alerting",
+    "https://cloud.google.com/sql/docs/mysql/instance-logs",
+    "https://cloud.google.com/sql/docs/mysql/monitoring",
+    "https://dev.mysql.com/doc/refman/8.0/en/innodb-error-handling.html"
+  ],
+  "url": "https://certificationation.com/questions/exam-cloud-sql-that-supports-a-exam-297.html",
+  "video_url": "https://certificationation.com/videos/exam-cloud-sql-that-supports-a-exam-297.html"
+}

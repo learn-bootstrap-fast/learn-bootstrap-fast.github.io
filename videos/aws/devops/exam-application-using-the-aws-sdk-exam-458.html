@@ -1,0 +1,62 @@
+---
+title: "Your company has developed a web application using theExam"
+description: "Video for your company has developed a web application using the AWS SDK to access data stored in an Amazon DynamoDB table. You want to ensure that the API keys"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company has developed a web application using the AWS SDK to access data stored in an Amazon DynamoDB table. You want to ensure that the API keys for access to DynamoDB are kept secure, and you do not want to write your own sign-in code logic. Which of the following methods is the most appropriate?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The most effective method is to configure a web identity federation role in IAM, which allows the application to obtain <b>temporary credentials</b> for accessing DynamoDB resources. This integration enables seamless use of external identity providers like Amazon Cognito, Facebook, or Google, thereby eliminating the need to write and maintain custom authentication code logic yourself.</p><p>Choosing <i>Integrate AWS keys as global variables within your codebase and set the application to use these credentials for DynamoDB requests</i> or <i>Set up your AWS access keys within the application so it can authenticate using the keys when accessing DynamoDB</i> exposes your long-term credentials in application code, which poses a serious security risk and should always be avoided.</p><p><i>Provision an IAM user with the proper permissions to access DynamoDB tables, then assign these credentials directly to the web app</i> also involves embedding static credentials into your application or its configuration, increasing the risk of credential leakage and not utilizing AWS’s recommended practice of using temporary credentials and least privilege access.</p><p><b>Tip:</b> Always prefer temporary, automatically rotated credentials provided by services like IAM roles. Using web identity federation keeps credentials secure and reduces the management overhead and risk of exposure.</p>",
+  "query": "<p>Your organization built a web app that leverages the AWS SDK to access information in an Amazon DynamoDB table. To keep your API credentials secure and avoid implementing custom authentication logic yourself, which solution is the most suitable?</p>",
+  "original_oid": "6793d9d061969b416038a0c1",
+  "options": [
+    {
+      "correct": true,
+      "text": "Establish a web identity federation role in IAM to grant access to the necessary DynamoDB tables and acquire temporary credentials.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Integrate AWS keys as global variables within your codebase and set the application to use these credentials for DynamoDB requests.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Provision an IAM user with the proper permissions to access DynamoDB tables, then assign these credentials directly to the web app.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up your AWS access keys within the application so it can authenticate using the keys when accessing DynamoDB.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question76",
+  "originalQuery": "Your company has developed a web application using the AWS SDK to access data stored in an Amazon DynamoDB table.\nYou want to ensure that the API keys for access to DynamoDB are kept secure, and you do not want to write your own sign-in code logic.\nWhich of the following methods is the most appropriate?",
+  "originalOptions": "[\"A. Create an IAM user with access to the specific DynamoDB tables, and assign it to the application.\",\"B. Configure your AWS access keys for the application to use the keys to access DynamoD.\",\"C. Configure a web identity federation role within IAM to enable access to the correct DynamoDB resources and retrieve temporary credentials.\",\"D. Store AWS keys in global variables within your application and configure the application to use these credentials when making requests.\"]",
+  "video_url": "https://certificationation.com/videos/exam-application-using-the-aws-sdk-exam-458.html",
+  "url": "https://certificationation.com/questions/exam-application-using-the-aws-sdk-exam-458.html"
+}

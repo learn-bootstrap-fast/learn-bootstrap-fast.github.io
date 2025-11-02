@@ -1,0 +1,82 @@
+---
+title: "As a Database Engineer, you have implemented a disasterExam"
+description: "Video for as a Database Engineer, you have implemented a disaster recovery strategy for a mission-critical application. To ensure the effectiveness of the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you have implemented a disaster recovery strategy for a mission-critical application. To ensure the effectiveness of the disaster recovery plan, you must perform periodic tests. Which of the following options is the best approach for testing the disaster recovery plan while minimizing the impact on production workloads?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the data platform lead at Northstar Pay and you manage a Cloud SQL for PostgreSQL deployment that powers a real time payments API. Compliance requires that you exercise the disaster recovery plan every 90 days, and you need to validate runbooks while keeping risk and load on production as low as possible. What is the best approach for testing the disaster recovery plan with minimal impact on the live system?",
+  "options": [
+    {
+      "text": "Use Database Migration Service to create a temporary copy of production in a separate project each week and run DR drills against the copy",
+      "explanation": "This uses periodic migration jobs to refresh a test instance rather than maintaining continuous synchronization",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Run DR drills in an isolated blue green environment that is kept in near real time sync with production using replication, then execute failover and validation there",
+      "explanation": "This approach maintains a separate environment synchronized from production so that testing happens away from live traffic",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Manually stop the production primary database and start the disaster recovery procedure to verify the plan",
+      "explanation": "This intentionally takes the live system offline to run the end to end recovery process",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Perform the recovery exercise during a planned maintenance window on the production system",
+      "explanation": "This executes the test against the live environment during a scheduled period with potential customer impact",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Run DR drills in an isolated blue green environment that is kept in near real time sync with production using replication, then execute failover and validation there</b>.</p><p>This approach mirrors production with minimal risk because replication keeps the standby environment close to current state while isolating tests from live traffic. You can validate failover runbooks by promoting a replica and exercising routing, application connections, and data integrity checks without introducing downtime or additional load on the primary instance. Cloud SQL supports read replicas and cross region replicas, so you can practice a controlled promotion and verify recovery objectives while preserving production availability.</p><p><i>Use Database Migration Service to create a temporary copy of production in a separate project each week and run DR drills against the copy</i> is not appropriate because the service is optimized for migrations rather than recurring disaster recovery exercises. It adds replication overhead to production and does not provide realistic failover mechanics, so it will not validate procedures like replica promotion and cutover that you must prove in a true recovery scenario.</p><p><i>Manually stop the production primary database and start the disaster recovery procedure to verify the plan</i> creates an avoidable outage and introduces significant risk to a real time payments API. Compliance testing should not jeopardize availability, and there is no need to disrupt the primary when an isolated synchronized environment can be used.</p><p><i>Perform the recovery exercise during a planned maintenance window on the production system</i> still impacts the live system and can extend beyond the window if issues arise. Maintenance windows are intended for patching and routine updates, not for full recovery drills that are better executed in an isolated replica environment.</p>",
+  "batch_id": "105",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you have implemented a disaster recovery strategy for a mission-critical application. To ensure the effectiveness of the disaster recovery plan, you must perform periodic tests. Which of the following options is the best approach for testing the disaster recovery plan while minimizing the impact on production workloads?",
+  "originalOptions": "A. Implement a blue-green deployment strategy, where a separate environment is used for testing disaster recovery scenarios with real-time database replication.<br/>B. Conduct a recovery test during a scheduled maintenance window on the production environment.<br/>C. Perform a chaos engineering test by injecting random failures into the production environment.<br/>D. Test the disaster recovery plan by manually shutting down the production database and initiating the recovery process.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "197",
+  "tip": "<p>When a question stresses <i>minimal impact</i> on production, prefer answers that use replicas or an <i>isolated</i> blue green environment where you can promote and validate without touching live traffic. Be cautious of options that interrupt <i>production</i> or use migration tools for ongoing DR tests.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/high-availability",
+    "https://cloud.google.com/sql/docs/postgres/replication",
+    "https://cloud.google.com/sql/docs/postgres/replication/promote-replica",
+    "https://cloud.google.com/sql/docs/postgres/maintenance",
+    "https://cloud.google.com/architecture/dr-scenarios-planning-guide",
+    "https://cloud.google.com/database-migration-service/docs/concepts/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-implemented-a-disaster-recovery-strategy-exam-197.html",
+  "video_url": "https://certificationation.com/videos/exam-implemented-a-disaster-recovery-strategy-exam-197.html"
+}

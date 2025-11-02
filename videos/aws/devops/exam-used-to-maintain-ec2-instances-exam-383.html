@@ -1,0 +1,62 @@
+---
+title: "In your team, AWS Systems Manager is used to maintainExam"
+description: "Video for in your team, AWS Systems Manager is used to maintain EC2 instances. For example, you can run a command to execute a shell script for instances with a"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "In your team, AWS Systems Manager is used to maintain EC2 instances. For example, you can run a command to execute a shell script for instances with a tag of “QA” However, you want to limit the usage of the “Run Command” feature for some IAM users for security concerns. For these specific users, you need an IAM policy to only allow them to run commands for instances that have the “department” tag of “dev1” or “dev2” Which IAM policy can help you to achieve this requirement?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct IAM policy is <b>{ \"Version\": \"2012-10-17\", \"Statement\": [{ \"Effect\":\"Allow\", \"Action\":[ \"ssm:SendCommand\" ], \"Resource\":\"*\", \"Condition\":{ \"StringLike\":{ \"ssm:resourceTag/department\":[ \"dev1\", \"dev2\" ] }} } ] }</b>. This policy specifically allows the <code>ssm:SendCommand</code> action, which is the action required to use the Run Command feature, but only if the EC2 instance has the <code>department</code> tag set to either <code>dev1</code> or <code>dev2</code>. The use of <code>StringLike</code> with an array properly matches either tag value. <br/><br/>Let's review the other options:</p><ul><li><i>{ \"Version\": \"2012-10-17\", \"Statement\": [{ \"Effect\": \"Allow\", \"Action\": [\"*\"], \"Resource\": \"*\", \"Condition\": { \"StringLike\": { \"ssm:resourceTag/department\":[ \"dev1\" ], \"ssm:resourceTag/department\":[ \"dev2\" ] }} }] }</i>: This option incorrectly specifies the <code>Action</code> as <code>[\"*\"]</code>, which is too permissive and not secure. Additionally, the <code>Condition</code> field lists <code>ssm:resourceTag/department</code> twice, which is invalid JSON and will not work as intended.</li><li><i>{ \"Version\": \"2012-10-17\", \"Statement\": [{ \"Effect\": \"Allow\", \"Action\": [ \"ssm:SendCommand\" ], \"Resource\":\"*\", \"Condition\":{ \"StringNotEquals\":{ \"ssm:resourceTag/department\":[ \"dev1\", \"dev2\" ] }} }] }</i>: Here, <code>StringNotEquals</code> would do the opposite, denying access to resources with <code>department=dev1</code> or <code>dev2</code>. This does not meet the requirement and is the inverse of the intended functionality.</li><li><i>{ \"Version\": \"2012-10-17\", \"Statement\": [{ \"Effect\":\"Allow\", \"Action\":[ \"ssm:RunCommand\" ], \"Resource\":\"*\", \"Condition\":{ \"StringLike\":{ \"ssm:department\":[ \"dev1\" ], \"ssm:department\":[ \"dev2\" ] } } } ] }</i>: This option uses the incorrect action name <code>ssm:RunCommand</code> (it should be <code>ssm:SendCommand</code>), and also refers to the tag key as <code>ssm:department</code> rather than <code>ssm:resourceTag/department</code>. Both errors mean this policy would not properly control access via tags as required.</li></ul><p><b>Tip:</b> Always use the correct IAM actions and ensure that conditions referencing tags use the format <code>ssm:resourceTag/[tagKey]</code> for resource-level permissions. Group multiple allowed values within a single array as shown.</p>",
+  "query": "<p>Your AWS team uses Systems Manager for the administration of EC2 instances. For heightened security, you would like to restrict specific IAM users so that they can only execute commands using AWS Systems Manager 'Run Command' on instances that are specifically tagged with the <b>department</b> tag set to either <b>dev1</b> or <b>dev2</b>. Which of the following IAM policy statements correctly enforces this access control?</p>",
+  "original_oid": "6793d9fb61969b416038a112",
+  "options": [
+    {
+      "correct": false,
+      "text": "{ \"Version\": \"2012-10-17\", \"Statement\": [{ \"Effect\": \"Allow\", \"Action\": [ \"ssm:SendCommand\" ], \"Resource\":\"*\", \"Condition\":{ \"StringNotEquals\":{ \"ssm:resourceTag/department\":[ \"dev1\", \"dev2\" ] }} }] }",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "{ \"Version\": \"2012-10-17\", \"Statement\": [{ \"Effect\":\"Allow\", \"Action\":[ \"ssm:SendCommand\" ], \"Resource\":\"*\", \"Condition\":{ \"StringLike\":{ \"ssm:resourceTag/department\":[ \"dev1\", \"dev2\" ] }} } ] }",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "{ \"Version\": \"2012-10-17\", \"Statement\": [{ \"Effect\": \"Allow\", \"Action\": [\"*\"], \"Resource\": \"*\", \"Condition\": { \"StringLike\": { \"ssm:resourceTag/department\":[ \"dev1\" ], \"ssm:resourceTag/department\":[ \"dev2\" ] }} }] }",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "{ \"Version\": \"2012-10-17\", \"Statement\": [{ \"Effect\":\"Allow\", \"Action\":[ \"ssm:RunCommand\" ], \"Resource\":\"*\", \"Condition\":{ \"StringLike\":{ \"ssm:department\":[ \"dev1\" ], \"ssm:department\":[ \"dev2\" ] } } } ] }",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question160",
+  "originalQuery": "In your team, AWS Systems Manager is used to maintain EC2 instances.\nFor example, you can run a command to execute a shell script for instances with a tag of “QA”\nHowever, you want to limit the usage of the “Run Command” feature for some IAM users for security concerns.\nFor these specific users, you need an IAM policy to only allow them to run commands for instances that have the “department” tag of “dev1” or “dev2”\nWhich IAM policy can help you to achieve this requirement?",
+  "originalOptions": "A. { \"Version\": \"2012-10-17\", \"Statement\": [{ \"Effect\": \"Allow\", \"Action\": [\"*\"], \"Resource\": \"*\", \"Condition\": { \"StringLike\": { \"ssm:resourceTag/department\":[ \"dev1\" ], \"ssm:resourceTag/department\":[ \"dev2\" ] }} }] }\nB. { \"Version\": \"2012-10-17\", \"Statement\": [{ \"Effect\": \"Allow\", \"Action\": [ \"ssm:SendCommand\" ], \"Resource\":\"*\", \"Condition\":{ \"StringNotEquals\":{ \"ssm:resourceTag/department\":[ \"dev1\", \"dev2\" ] }} }] }\nC. { \"Version\": \"2012-10-17\", \"Statement\": [{ \"Effect\":\"Allow\", \"Action\":[ \"ssm:SendCommand\" ], \"Resource\":\"*\", \"Condition\":{ \"StringLike\":{ \"ssm:resourceTag/department\":[ \"dev1\" ], \"ssm:resourceTag/department\":[ \"dev2\" ] }} } ] }\nD. { \"Version\": \"2012-10-17\", \"Statement\": [{ \"Effect\":\"Allow\", \"Action\":[ \"ssm:RunCommand\" ], \"Resource\":\"*\", \"Condition\":{ \"StringLike\":{ \"ssm:department\":[ \"dev1\" ], \"ssm:department\":[ \"dev2\" ] } } } ] }",
+  "video_url": "https://certificationation.com/videos/exam-used-to-maintain-ec2-instances-exam-383.html",
+  "url": "https://certificationation.com/questions/exam-used-to-maintain-ec2-instances-exam-383.html"
+}

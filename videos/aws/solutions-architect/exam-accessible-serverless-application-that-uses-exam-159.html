@@ -1,0 +1,129 @@
+---
+title: "A company is running a publicly accessible serverlessExam"
+description: "Video for a company is running a publicly accessible serverless application that uses Amazon API Gateway and AWS Lambda. The application’s traffic recently"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company is running a publicly accessible serverless application that uses Amazon API Gateway and AWS Lambda. The application’s traffic recently spiked due to fraudulent requests from botnets. Which steps should a solutions architect take to block requests from unauthorized users? (Choose two.)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729a04"
+  },
+  "quid": null,
+  "ordinal": "159",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS WAF",
+    " AWS Lambda",
+    " Amazon API Gateway",
+    " AWS Identity and Access Management (IAM)"
+  ],
+  "slug": "apg-block-requests-unauthorized-users-aws",
+  "source": "ET",
+  "title": "AWS A Company Is Running A Publicly Accessible Question",
+  "meta": "AWS Exam Question: A company has a serverless app using Amazon API Gateway and AWS Lambda facing botnet traffic spikes. What steps to block unauthorized users? Answer: AWS WAF, AWS Shield.",
+  "answer": "AC",
+  "query": "An organization has deployed a public serverless application using AWS Lambda and Amazon API Gateway. Recently, it experienced a surge in traffic driven by automated bot requests.\n\nWhat actions should a solutions architect take to prevent unauthorized user access? (Select two options.)",
+  "originalQuery": "A company is running a publicly accessible serverless application that uses Amazon API Gateway and AWS Lambda. The application’s traffic recently spiked due to fraudulent requests from botnets.\n\nWhich steps should a solutions architect take to block requests from unauthorized users? (Choose two.)",
+  "options": [
+    "A. Create a usage plan with an API key that is shared with genuine users only.",
+    "B. Add logic to Lambda to exclude requests from known harmful IP addresses.",
+    "C. Implement an AWS WAF rule to target malicious requests and trigger actions to filter them out.",
+    "D. Transform the current public API to a private one, and adjust DNS entries to point users to the private API.",
+    "E. Create an IAM role for each user attempting to access the API. A user will assume the role when making the API call."
+  ],
+  "originalOptions": [
+    "A. Create a usage plan with an API key that is shared with genuine users only.",
+    "B. Integrate logic within the Lambda function to ignore the requests from fraudulent IP addresses.",
+    "C. Implement an AWS WAF rule to target malicious requests and trigger actions to filter them out.",
+    "D. Convert the existing public API to a private API. Update the DNS records to redirect users to the new API endpoint.",
+    "E. Create an IAM role for each user attempting to access the API. A user will assume the role when making the API call."
+  ],
+  "image": null,
+  "primaryObjective": "1: Design Secure Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Option C) AWS Web Application Firewall (WAF) includes features for bot detection and mitigation, making it an effective choice for filtering out malicious requests. By implementing WAF rules tailored to identify and block harmful traffic, the application can safeguard itself from botnet attacks.\n\nOption A) While an API key may not be the most secure method of authorization, it does provide a layer of protection against completely anonymous access. By utilizing a usage plan that requires an API key, only users who possess the key can authenticate and make requests. This initial barrier can help reduce unauthorized access, at least temporarily, until the key is potentially compromised.\n\nOption B) Integrating logic within AWS Lambda to identify and block requests from fraudulent IP addresses is challenging due to the dynamic nature of IP address usage. Attackers may frequently change their IPs, making it difficult to create a reliable detection mechanism.\n\nOption D) Creating an IAM role does not inherently enhance protection against unauthorized requests. While roles serve as a mechanism for defining permissions for AWS resources, they do not directly contribute to the authorization process for API access. \n\nIn summary, when securing a serverless application, leveraging AWS WAF to filter out malicious requests and implementing API keys for authorized users can significantly improve the application's resilience against unauthorized access.",
+    "When it comes to securing your APIs, relying solely on API keys for authentication and authorization is like using a paper umbrella in a monsoon—definitely not the best idea! 🌧️☔ If you have several APIs under a usage plan, a savvy user with a valid API key for one of them could waltz right into all the others like they own the place. 🎉 \n\nInstead, consider adopting more robust access control methods. Using IAM roles, Lambda authorizers, or Amazon Cognito user pools will help you keep the gatecrashers out while ensuring your genuine users have smooth access. So, level up your security game and let the party continue without the unwanted guests! 🎊🔒",
+    "Creating an IAM role for every single user trying to access the API? Seriously? That’s a recipe for chaos! Instead, why not embrace a more practical approach? Focus on implementing an AWS WAF rule to filter out those pesky malicious requests. Combine that with a usage plan that includes an API key, shared only with your genuine users, and you'll be on your way to keeping the bots at bay. It's all about striking a balance between security and usability without drowning in an ocean of IAM roles. Keep it simple and efficient!",
+    "Absolutely agree with the choices of A and C! They provide effective measures to enhance security and manage access.\n\nRegarding option E, it poses challenges in the context of a public API. Creating an IAM role for every individual user would be impractical, as it would require a complex and cumbersome management process. Instead, focusing on scalable solutions like usage plans and AWS WAF rules is a much more efficient approach!",
+    "To keep your application safe and sound, consider implementing API keys along with usage plans, which will ensure that only users with the key can access your API. This creates a cozy little barrier against unwanted visitors! 😊 \n\nAdditionally, deploying an AWS WAF rule is like putting up a sturdy fence around your application. It’s designed specifically to combat those pesky bots and filter out any malicious requests that dare to intrude. With these steps, you can enjoy a more secure environment while your genuine users bask in the sun of reliable access! 🌞"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "CE",
+      "explanation": "C) WAF has bot identification and remedial tools, so it's CORRECT.\n\nA) remember the question : \"...block requests from unauthorized users?\" -- an api key is involved in a authorization process. It's not the more secure process, but it's better than an totoally anonymous process. If you don't know the key, you can't authenticate. So the bots, at least the first days/weeks could not access the service (at the end they'll do, cos' the key will be spread informally). So it's CORRECT.\n\nB) Implement a logic in the Lambda to detect fraudulent ip's is almost impossible, cos' it's a dynamic and changing pattern that you cannot handle easily.\n\nD) creating a rol is not going to imply be more protected from unauth. request, because a rol is a \"principal\", it's not involved in the authorization process.",
+      "upvotes": "10"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Don't use API keys for authentication or authorization to control access to your APIs. If you have multiple APIs in a usage plan, a user with a valid API key for one API in that usage plan can access all APIs in that usage plan. Instead, to control access to your API, use an IAM role, a Lambda authorizer, or an Amazon Cognito user pool.",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "E \"An IAM role for EACH (!) user ATTEMPTING (!) to access the API\"? Hello no.",
+      "upvotes": "5"
+    },
+    {
+      "selectedAnswer": "AC",
+      "explanation": "Agree A and C\n\nI don't see how E is feasible as its a public API. How would you create an IAM role for each user?",
+      "upvotes": "6"
+    },
+    {
+      "selectedAnswer": "AC",
+      "explanation": "Ans A, C -\nA: using API keys and usage plans restricts access to your API to users who have the key, limiting fraudulent access.\nC: designed to fight bots",
+      "upvotes": "2"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "AC (71%)",
+      "votes": "47 votes."
+    },
+    {
+      "option": "CE (21%)",
+      "votes": "14 votes."
+    },
+    {
+      "option": "6%",
+      "votes": "6%"
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answers are A and C. Option A is correct because creating a usage plan with an API key restricts API access to authorized users who have that key, helping to limit unauthorized access. Although API keys can be shared, they still provide a basic level of security against uncontrolled access. Option C is correct as AWS WAF (Web Application Firewall) can help mitigate bot traffic by evaluating incoming requests and applying rules to filter out malicious ones.\n\nOption B is incorrect because implementing logic to filter IP addresses in the Lambda function would be very challenging due to the dynamic nature of IP addresses used by bots, and it's difficult to maintain an up-to-date list of malicious IPs.\n\nOption D is incorrect because converting a public API to a private API removes access for legitimate users, which may not solve the problem and complicates user access. It does not address the bots directly. \n\nOption E is incorrect since creating an IAM role for each user for a public API is impractical and unwieldy; it's not a scalable approach to managing access control for numerous users.",
+  "video_url": "https://certificationation.com/videos/exam-accessible-serverless-application-that-uses-exam-159.html",
+  "url": "https://certificationation.com/questions/exam-accessible-serverless-application-that-uses-exam-159.html"
+}

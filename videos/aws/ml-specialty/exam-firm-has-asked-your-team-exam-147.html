@@ -1,0 +1,54 @@
+---
+title: "Your company, a financial services firm, has asked yourExam"
+description: "Video for your company, a financial services firm, has asked your team to build an analytics and machine learning platform to analyze and forecast your"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company, a financial services firm, has asked your team to build an analytics and machine learning platform to analyze and forecast your company's trading operations using Athena, S3, and SageMaker Studio. The volume of data received on a daily basis is very high. The data, stored in S3, will be used as feature data for your machine learning model that uses the XGBoost SageMaker built-in algorithm. The source systems that stream data into your environment send their data in JSON format in real-time. Your team needs to transform the data in real-time to prepare it for your machine learning model. Before storing it on S3 for use in your SageMaker XGBoost algorithm-based model, how can you transform the data to prepare it for training?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d6ff7742293cac494b3b"
+  },
+  "answer": "A",
+  "certification": "AWS Machine Learning Specialty",
+  "certificationKey": "AWSMLS",
+  "difficulty": "0",
+  "image": "",
+  "needsWork": "false",
+  "ordinal": "147",
+  "originalExplanation": "Correct Answer: A.\nOption A is correct.\nThis option satisfies the real-time requirement while also being the most efficient and requiring the least amount of effort for your team.\nAlso, the XGBoost algorithm only supports the libsvm and CSV content types for training and inference.\nOption B is incorrect.\nThis option can meet your real-time requirement, but it is far more complex to set up and maintain for your team than using the Kinesis Data Streams and Kinesis Data Firehose option.\nAlso, the XGBoost algorithm only supports the libsvm and CSV content types, not the x-recordio-protobuf content type for training and inference.\nOption C is incorrect.\nThis option is incorrect because Glue ETL jobs imply batch processing, which fails to meet your real-time requirement.\nAlso, the XGBoost algorithm only supports the libsvm and CSV content types, not the x-recordio content type for training and inference.\nOption D is incorrect.\nThis option is also incorrect because it is far more complex to set up and maintain for your team than using the Kinesis Data Streams and Kinesis Data Firehose option.\nAlso, the XGBoost algorithm only supports the libsvm and CSV content types, not the x-recordio content type for training and inference.\nReferences:\nPlease see the AWS blog titled Archiving Amazon MSK Data to Amazon S3 with the Lenses.io S3 Kafka Connect Connector (https://aws.amazon.com/blogs/apn/archiving-amazon-msk-data-to-amazon-s3-with-the-lenses-io-s3-kafka-connect-connector/),\nThe Amazon SageMaker developer guide titled Prepare ML Data with Amazon SageMaker Data Wrangler (https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler.html),\nThe Amazon Kinesis Data Firehose developer guide titled Converting Your Input Record Format in Kinesis Data Firehose (https://docs.aws.amazon.com/firehose/latest/dev/record-format-conversion.html),\nThe Amazon SageMaker developer guide titled Common Data Formats for Training (https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-training.html),\nThe Amazon SageMaker developer guide titled XGBoost Algorithm (https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost.html)\nThe task at hand is to transform real-time JSON data received from source systems into a format suitable for training a machine learning model using SageMaker XGBoost algorithm. The transformed data will be stored in S3 for use in the machine learning model. The volume of data received daily is very high, which means the transformation process must be efficient and scalable.\nOption A suggests using Kinesis Data Streams to ingest the JSON data from the source systems. Kinesis Data Firehose can then be used to receive the data from Kinesis Data Streams. A Lambda function can be leveraged to convert the JSON data into libsvm format. Then, a Kinesis Data Firehose transform can be used to write the data to S3.\nKinesis Data Streams is a scalable and durable real-time data streaming service that can collect and process large amounts of data in real-time. Kinesis Data Firehose is a fully managed service that can load streaming data into S3 or other destinations, such as Redshift or Elasticsearch. Lambda functions are serverless functions that can be used to process data in real-time. The libsvm format is a widely used sparse data format for machine learning algorithms.\nOption B suggests using Apache Spark Structured Streaming in an EMR cluster to ingest the JSON data from the source systems. Apache Spark can then be used to convert the JSON data into x-recordio-protobuf format.\nApache Spark is a powerful distributed computing framework for processing large-scale data. EMR is a fully managed service that can be used to provision and scale clusters running Apache Spark and other big data frameworks. Structured Streaming is a scalable and fault-tolerant stream processing engine built on top of Apache Spark. x-recordio-protobuf is a binary data format that can be used to serialize data for use in machine learning models.\nOption C suggests using Kinesis Data Streams to ingest the JSON data from the source systems. Glue ETL job can then be used to convert the data from JSON into x-recordio format.\nGlue is a fully managed ETL service that can be used to extract, transform, and load data from various sources into data lakes, data warehouses, and other destinations. It can automatically generate ETL code in Python or Scala that can be executed on Spark or other big data engines. x-recordio is a binary data format that can be used to serialize data for use in machine learning models.\nOption D suggests using Apache Kafka Streams running on EC2 instances to ingest the JSON data from the source systems. The Kafka Connect S3 connector can then be used to serialize the data onto S3 as x-recordio.\nKafka is a distributed streaming platform that can be used to collect and process real-time data streams. Kafka Streams is a library built on top of Kafka that can be used to build scalable and fault-tolerant stream processing applications. EC2 is a scalable and secure compute service that can be used to provision virtual servers in the cloud. Kafka Connect is a framework for integrating Kafka with external systems. The S3 connector is a Kafka Connect plugin that can be used to write data from Kafka topics to S3. x-recordio is a binary data format that can be used to serialize data for use in machine learning models.\nOverall, all the options offer viable ways to transform the JSON data into a suitable format for training the machine learning model. The choice of which option to use depends on the specific requirements and constraints of the project, such as the volume of data, the desired latency, the available resources, and the skill set of the team.",
+  "originalOptions": [
+    "A. Use Kinesis Data Streams to ingest the JSON data from the source systems, then send the data to Kinesis Data Firehose, where you can leverage a Lambda function to convert the JSON to libsvm and then use a Kinesis Data Firehose transform to write the data to S3.",
+    "B. Use Apache Spark Structured Streaming in an EMR cluster to ingest the JSON data from the source systems, then run Apache Spark steps to convert the JSON data into x-recordio-protobuf.",
+    "C. Use Kinesis Data Streams to ingest the JSON data from the source systems, then use a Glue ETL job to convert data from JSON into x-recordio.",
+    "D. Use Apache Kafka Streams running on EC2 instances to ingest the JSON data from the source systems, then use the Kafka Connect S3 connector to serialize the data onto S3 as x-recordio."
+  ],
+  "originalQuery": "Your company, a financial services firm, has asked your team to build an analytics and machine learning platform to analyze and forecast your company's trading operations using Athena, S3, and SageMaker Studio.\nThe volume of data received on a daily basis is very high.\nThe data, stored in S3, will be used as feature data for your machine learning model that uses the XGBoost SageMaker built-in algorithm.\nThe source systems that stream data into your environment send their data in JSON format in real-time.\nYour team needs to transform the data in real-time to prepare it for your machine learning model.\nBefore storing it on S3 for use in your SageMaker XGBoost algorithm-based model, how can you transform the data to prepare it for training?",
+  "primaryObjective": "",
+  "quid": "0",
+  "source": "https://www.exam-answer.com/amazon/mls-c01/question147",
+  "video_url": "https://certificationation.com/videos/exam-firm-has-asked-your-team-exam-147.html",
+  "url": "https://certificationation.com/questions/exam-firm-has-asked-your-team-exam-147.html"
+}

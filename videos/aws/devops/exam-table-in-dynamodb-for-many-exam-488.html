@@ -1,0 +1,62 @@
+---
+title: "You are building a \"game high score\" table in DynamoDBExam"
+description: "Video for you are building a \"game high score\" table in DynamoDB for many games, and the highest score for each game will be stored in the table. The table"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are building a \"game high score\" table in DynamoDB for many games, and the highest score for each game will be stored in the table. The table includes some columns such as \"Name of the game\", \"Name of the user\", \"UserID\", etc. The web application needs to get the highest score of certain games from the table frequently. You also need a suitable partition key to distribute the workload evenly. How would you design the structure of the DynamoDB table?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best choice is to <b>make the game identifier the partition key and HighestScore the sort key</b>. This design ensures that scores are distributed based on the game, allowing queries for the top scores to be efficient and scalable. By using the game as the partition key, you distribute requests evenly across the partition space, which is essential for high-traffic scenarios and prevents \"hot partitions.\" The HighestScore as the sort key then enables queries that quickly fetch the highest score for each game (by sorting in descending order and retrieving the first item).<br><br>The other options are suboptimal:</p><ul><li><i>Use the UserID field as only the partition key.</i> - This would spread data based on users, not games, making it hard to efficiently query for top scores per game.</li><li><i>Set UserID as the partition key and HighestScore as the sort key.</i> - This pattern would partition data by users, not by game, causing similar inefficiencies for game-specific queries.</li><li><i>Choose the HighestScore column as the partition key.</i> - Partitioning by score would cluster scores rather than spreading requests, leading to poor distribution, and you might face uneven workload and scaling issues.</li></ul><p>Tip: Always align your DynamoDB key structure with your main access patterns, and choose partition keys that will result in balanced and scalable workloads.</p>",
+  "query": "<p>You are designing a DynamoDB table to record high scores for various games. Each entry includes fields like the game name, user name, and UserID. Your web application regularly needs to fetch the top score for particular games, and it's important to select a partition key that distributes traffic evenly across the table. What is the ideal way to configure your table's primary key structure?</p>",
+  "original_oid": "6793d9e261969b416038a0e3",
+  "options": [
+    {
+      "correct": false,
+      "text": "Use the UserID field as only the partition key.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set UserID as the partition key and HighestScore as the sort key.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Choose the HighestScore column as the partition key.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Make the game identifier the partition key and HighestScore the sort key.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question112",
+  "originalQuery": "You are building a \"game high score\" table in DynamoDB for many games, and the highest score for each game will be stored in the table.\nThe table includes some columns such as \"Name of the game\", \"Name of the user\", \"UserID\", etc.\nThe web application needs to get the highest score of certain games from the table frequently.\nYou also need a suitable partition key to distribute the workload evenly.\nHow would you design the structure of the DynamoDB table?",
+  "originalOptions": "A. HighestScore as the partition key.\nB. UserID as the partition key and HighestScore as the sort key.\nC. UserID as the partition key.\nD. UserID as the sort key.",
+  "video_url": "https://certificationation.com/videos/exam-table-in-dynamodb-for-many-exam-488.html",
+  "url": "https://certificationation.com/questions/exam-table-in-dynamodb-for-many-exam-488.html"
+}

@@ -1,0 +1,67 @@
+---
+title: "You use Amazon CloudWatch as your primary monitoringExam"
+description: "Video for you use Amazon CloudWatch as your primary monitoring system for your web application. After a recent software deployment, your users are getting"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You use Amazon CloudWatch as your primary monitoring system for your web application. After a recent software deployment, your users are getting Intermittent 500 Internal Server Errors when using the web application. You want to create a CloudWatch alarm and notify an on-call engineer when these occur. How can you accomplish this using AWS services? Choose three answers from the options given below."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>For this scenario, you need to detect when 500 Internal Server Errors occur, set up an alarm in CloudWatch, and immediately alert an engineer. Here’s the breakdown:</p><ul><li><strong>Install the CloudWatch Logs Agent</strong>: By streaming your application logs to CloudWatch Logs, you enable centralized log management and real-time monitoring of error messages, like 500 status codes.</li><li><strong>Configure a metric filter and alarm</strong>: With your logs in CloudWatch Logs, you can define metric filters that scan log entries for patterns matching 500 Internal Server Errors. This filter creates a custom metric that can trigger a CloudWatch alarm whenever error occurrences cross a threshold.</li><li><strong>Use Amazon SNS for notification</strong>: SNS is designed to push notifications (via email, SMS, etc.) when an alarm state changes, making it the most direct and simple way to notify on-call staff.</li></ul><p>Now, let’s see why the other choices are not correct:</p><ul><li><em>Deploy your application as an Elastic Beanstalk environment and use the default Elastic Beanstalk CloudWatch metrics …</em>: While Beanstalk offers some CloudWatch monitoring, the default metrics typically do not offer granular error tracking like custom 500 Internal Server Errors. You need custom log analysis, not just high-level metrics.</li><li><em>Utilize Amazon SES to send a notification …</em>: SES is mainly for bulk email sending and is not designed for reactive alerting triggered by CloudWatch alarms. SNS is the standard solution for alarm notifications and integrates directly with CloudWatch.</li></ul><p><strong>Tips and Insights:</strong> Always stream logs to CloudWatch Logs for deep application monitoring, create custom metric filters for specific errors, and rely on SNS for integrating CloudWatch alarm notifications into operational workflows. Ensure your alarms are set so you get notified of real incidents without generating excessive false positives.</p>",
+  "query": "<p>You rely on Amazon CloudWatch as the core monitoring tool for your web app. A recent deployment has led to users experiencing occasional 500 Internal Server Errors. You need to set up a CloudWatch alarm to detect these failures and promptly notify an on-call engineer. Which combination of steps using AWS services will let you accomplish this? Select <strong>three</strong> answers.</p>",
+  "original_oid": "6793d9c561969b416038a0aa",
+  "options": [
+    {
+      "correct": true,
+      "text": "Install the CloudWatch Logs Agent on your application servers to forward server logs to Amazon CloudWatch Logs.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Configure a CloudWatch Logs group with a metric filter to identify log patterns like 500 Internal Server Errors, and set an alarm on this custom metric.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Use Amazon Simple Notification Service (SNS) to alert the on-call staff when the relevant CloudWatch alarm is triggered.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Deploy your application as an Elastic Beanstalk environment and use the default Elastic Beanstalk CloudWatch metrics to track 500 errors, then set an alarm on that metric.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Utilize Amazon Simple Email Service (SES) to send a notification to the on-call engineer whenever a CloudWatch alarm is generated.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question53",
+  "originalQuery": "You use Amazon CloudWatch as your primary monitoring system for your web application.\nAfter a recent software deployment, your users are getting Intermittent 500 Internal Server Errors when using the web application.\nYou want to create a CloudWatch alarm and notify an on-call engineer when these occur.\nHow can you accomplish this using AWS services? Choose three answers from the options given below.",
+  "originalOptions": "[\"A. Deploy your web application as an AWS Elastic Beanstalk application. Use the default Elastic Beanstalk Cloudwatch metrics to capture 500 Internal Server Errors. Set a CloudWatch alarm on that metric.\",\"B. Install a CloudWatch Logs Agent on your servers to stream web application logs to CloudWatch.\",\"C. Use Amazon Simple Email Service to notify an on-call engineer when a CloudWatch alarm is triggered.\",\"D. Create a CloudWatch Logs group and define metric filters that capture 500 Internal Server Errors.Set a CloudWatch alarm on that metric.\",\"E. Use Amazon Simple Notification Service to notify an on-call engineer when a CloudWatch alarm is triggered.\"]",
+  "video_url": "https://certificationation.com/videos/exam-primary-monitoring-system-for-your-exam-317.html",
+  "url": "https://certificationation.com/questions/exam-primary-monitoring-system-for-your-exam-317.html"
+}

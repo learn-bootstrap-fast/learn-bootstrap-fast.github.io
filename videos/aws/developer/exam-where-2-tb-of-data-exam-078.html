@@ -1,0 +1,80 @@
+---
+title: "You are managing a data pipeline where 2 TB of data isExam"
+description: "Video for you are managing a data pipeline where 2 TB of data is generated daily in an on-premises file storage system. This data needs to be transferred to"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are managing a data pipeline where 2 TB of data is generated daily in an on-premises file storage system. This data needs to be transferred to Google Cloud Storage daily for ingestion into BigQuery. You want a cost-effective and reliable solution with minimal management effort. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A retail analytics team at Blue Harbor Media produces 3 TB of log files each day on an on premises network file share. The files must be delivered to Cloud Storage every day so that BigQuery can load them for reporting. You want a dependable and economical approach that requires little ongoing administration. What should you implement?",
+  "options": [
+    {
+      "text": "Build a transfer service on Compute Engine that runs a copy job from Cloud Scheduler",
+      "explanation": "This approach relies on virtual machines and a scheduler to execute a custom script that moves files on a timetable",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure Storage Transfer Service with on premises agents and a daily schedule",
+      "explanation": "This service can deploy agents in the data center and orchestrate recurring transfers into Cloud Storage",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use gsutil to manually copy the data from the data center to Cloud Storage each day",
+      "explanation": "This command line utility can copy files from local storage to a bucket when run by an operator",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "BigQuery Data Transfer Service",
+      "explanation": "This managed service automates scheduled data loads into BigQuery from supported sources and storage locations",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Configure Storage Transfer Service with on premises agents and a daily schedule</b>.</p><p>This approach uses lightweight agents inside the data center to read from NFS or SMB shares and supports scheduling daily runs with incremental syncing, retries, and parallelization. It is a fully managed solution that minimizes ongoing administration while reliably handling large daily volumes such as 3 TB. Delivering the data into Cloud Storage matches the expected ingestion path for BigQuery so you can load from buckets on a schedule.</p><p><i>Build a transfer service on Compute Engine that runs a copy job from Cloud Scheduler</i> requires you to design, secure, monitor, and scale your own transfer tooling. This increases operational overhead and risk when compared to a managed service and it does not meet the requirement for minimal administration.</p><p><i>Use gsutil to manually copy the data from the data center to Cloud Storage each day</i> relies on human intervention and ad hoc processes, which is error prone and not dependable at the 3 TB per day scale. It also adds unnecessary operational burden.</p><p><i>BigQuery Data Transfer Service</i> is designed for moving data from supported SaaS sources or from Cloud Storage into BigQuery. It does not ingest files directly from on premises file shares into Cloud Storage, so it does not meet the source and path required here.</p>",
+  "batch_id": "316",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "You are managing a data pipeline where 2 TB of data is generated daily in an on-premises file storage system. This data needs to be transferred to Google Cloud Storage daily for ingestion into BigQuery. You want a cost-effective and reliable solution with minimal management effort. What should you do?",
+  "originalOptions": "A. Configure Storage Transfer Service to schedule and automate the transfers.<br/>B. Use gsutil to copy the data from on-premises to Cloud Storage manuall.<br/>C. Use a custom data transfer script on Compute Engine, triggered by Cloud Scheduler.<br/>D. Use the Transfer Appliance to perform daily data transfers.",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "78",
+  "tip": "<p>When a question mentions <i>on premises</i> file shares and a recurring schedule with <i>low administration</i>, prefer a <i>managed</i> transfer service that can run on a <i>schedule</i> and perform incremental syncs and retries.</p>",
+  "references": [
+    "https://cloud.google.com/storage-transfer/docs/on-premises",
+    "https://cloud.google.com/storage-transfer/docs/schedule-transfers",
+    "https://cloud.google.com/bigquery/docs/loading-data-cloud-storage",
+    "https://cloud.google.com/bigquery-transfer/docs/introduction"
+  ],
+  "url": "https://certificationation.com/questions/exam-where-2-tb-of-data-exam-078.html",
+  "video_url": "https://certificationation.com/videos/exam-where-2-tb-of-data-exam-078.html"
+}

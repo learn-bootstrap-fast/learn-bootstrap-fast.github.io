@@ -1,0 +1,62 @@
+---
+title: "As part of your deployment process, you are configuringExam"
+description: "Video for as part of your deployment process, you are configuring your continuous integration (CI) system to build AMIs. You want to build them in an automated"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As part of your deployment process, you are configuring your continuous integration (CI) system to build AMIs. You want to build them in an automated manner that is not time constrained and is also cost-efficient. Which method should you use?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct answer is <b>\"Configure the CI system to start a new Spot instance, install and configure the necessary code and applications, and then produce an AMI from that instance.\"</b> By leveraging Spot Instances, you minimize cost since they are usually significantly cheaper than On-Demand instances, and because there are no strict time requirements in the scenario, the possibility of instance interruption is not a concern. This makes spot instances a practical and efficient choice in CI pipelines for AMI creation.</p><p>Let’s look at the other options:<br><i>\"Upload all image files to Amazon S3, then start a base instance, pull the files from S3, and generate the AMI.\"</i> is incorrect because while S3 can be used as a storage location, you cannot directly create an AMI from files in S3. You must create an AMI from a running instance configured with your desired software.<br><i>\"Connect an Amazon EBS volume to the CI instance, set up the image root file system on this volume, then use the CreateImage API to make an AMI from it.\"</i> is incorrect because AMIs are created from EC2 instances, not simply from EBS volumes attached to a separate CI host. The root volume must be part of an EC2 instance.<br><i>\"Instruct the CI system to launch an On-Demand instance, bootstrap all required code and applications, and then create an AMI from that prepared instance.\"</i> will also result in a working AMI, but this approach is typically more expensive than using Spot Instances, so it is not as cost efficient as the spot option.<br><br><b>Tip:</b> Spot instances are highly cost effective when your processes can tolerate interruptions and are not highly time sensitive. If CI/CD automation can re-run failed builds (due to spot termination), using spot is a best practice for automated AMI creation pipelines.</p>",
+  "query": "<p>You are setting up your continuous integration (CI) process to automate the creation of Amazon Machine Images (AMIs) for application deployment. The goal is to ensure the process is cost-effective and does not have strict time restrictions. Which of the following approaches is most suitable for this scenario?</p>",
+  "original_oid": "6793da4d61969b416038a1bb",
+  "options": [
+    {
+      "correct": false,
+      "text": "Upload all image files to Amazon S3, then start a base instance, pull the files from S3, and generate the AMI.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Configure the CI system to start a new Spot instance, install and configure the necessary code and applications, and then produce an AMI from that instance.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Connect an Amazon EBS volume to the CI instance, set up the image root file system on this volume, then use the CreateImage API to make an AMI from it.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Instruct the CI system to launch an On-Demand instance, bootstrap all required code and applications, and then create an AMI from that prepared instance.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question330",
+  "originalQuery": "As part of your deployment process, you are configuring your continuous integration (CI) system to build AMIs.\nYou want to build them in an automated manner that is not time constrained and is also cost-efficient.\nWhich method should you use?",
+  "originalOptions": "A. Attach an Amazon EBS volume to your CI instance, build the root file system of your image on the volume, and use the CreateImage API call to create an AMI out of this volume.|B. Have the CI system launch a new instance, bootstrap the code and apps onto the instance and create an AMI out of it.|C. Upload all contents of the image to Amazon S3 launch the base instance, download all of the contents from Amazon S3 and create the AMI.|D. Have the CI system launch a new spot instance bootstrap the code and apps onto the instance and create an AMI out of it.",
+  "video_url": "https://certificationation.com/videos/exam-you-are-configuring-your-continuous-exam-149.html",
+  "url": "https://certificationation.com/questions/exam-you-are-configuring-your-continuous-exam-149.html"
+}

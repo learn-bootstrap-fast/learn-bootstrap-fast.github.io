@@ -1,0 +1,62 @@
+---
+title: "After reviewing the last quarter's monthly billsExam"
+description: "Video for after reviewing the last quarter's monthly bills, management has noticed an increase in the overall bill from AWS. After researching this increase in"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "After reviewing the last quarter's monthly bills, management has noticed an increase in the overall bill from AWS. After researching this increase in cost, you discovered that some new services and users are doing many GET Bucket API calls to Amazon S3 Your boss has asked you to come up with a new cost-effective way to reduce the number of these new GET Bucket API calls. What process should you use to help mitigate the cost?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The recommended approach is to use <b>Implement a file caching layer using ElastiCache, change your applications to retrieve files from this cache, and sync data to Amazon S3 for archival</b>. This solution leverages ElastiCache to cache frequently accessed objects in-memory, reducing the frequency and cost of S3 GET requests. Applications update their logic to read from the cache first, which is significantly faster and less costly than pulling data from S3 every time.</p><p>The other options have limitations:</p><ul><li><i>Apply a lifecycle policy that automatically transfers S3 objects to Glacier storage class</i> only affects storage costs and long-term archive management; it does not reduce the number of GET requests or their associated costs in S3.</li><li><i>Limit unauthorized or public access to your S3 bucket using bucket policy configurations</i> is important for security but does not address the cost from legitimate users or services making frequent GET calls.</li><li><i>Activate S3 versioning and manually delete unnecessary previous object versions</i> can help manage storage costs but again does not impact the number of GET requests made to the bucket.</li></ul><p><b>Tip:</b> By introducing a caching layer such as ElastiCache, you significantly reduce the need for repeated data retrievals from S3, which is especially beneficial for workloads with high read request volumes. This method is especially effective when the same data is frequently accessed.</p>",
+  "query": "<p>Following a review of your AWS expenses, you've noticed a recent spike related to frequent GET Bucket API calls made to Amazon S3 by some of your users and services. Management asks for the most cost-efficient way to decrease these GET requests and reduce related charges. Which action should you take?</p>",
+  "original_oid": "6793d9c361969b416038a0a7",
+  "options": [
+    {
+      "correct": false,
+      "text": "Apply a lifecycle policy that automatically transfers S3 objects to Glacier storage class.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Limit unauthorized or public access to your S3 bucket using bucket policy configurations.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Activate S3 versioning and manually delete unnecessary previous object versions.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Implement a file caching layer using ElastiCache, change your applications to retrieve files from this cache, and sync data to Amazon S3 for archival.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question50",
+  "originalQuery": "After reviewing the last quarter's monthly bills, management has noticed an increase in the overall bill from AWS.\nAfter researching this increase in cost, you discovered that some new services and users are doing many GET Bucket API calls to Amazon S3\nYour boss has asked you to come up with a new cost-effective way to reduce the number of these new GET Bucket API calls.\nWhat process should you use to help mitigate the cost?",
+  "originalOptions": "[\"A. Enable versioning on S3 and delete previous versions of objects that you do not need.\",\"B. Create a lifecycle policy to migrate the S3 objects to Glacier.\",\"C. Prevent unauthorized access or limit public access to your bucket using bucket policies.\",\"D. Upload all files to an ElastiCache file cache server, update your new services to now read all the files from the ElastiCache file cache server, and configure the ElastiCache policies to push all files to Amazon S3 for long-term storage.\"]",
+  "video_url": "https://certificationation.com/videos/exam-monthly-bills-management-has-noticed-exam-048.html",
+  "url": "https://certificationation.com/questions/exam-monthly-bills-management-has-noticed-exam-048.html"
+}

@@ -1,0 +1,91 @@
+---
+title: "A company has two applications: a sender applicationExam"
+description: "Video for a company has two applications: a sender application that sends messages with payloads to be processed and a processing application intended to"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company has two applications: a sender application that sends messages with payloads to be processed and a processing application intended to receive the messages with payloads. The company wants to implement an AWS service to handle messages between the two applications. The sender application can send about 1,000 messages each hour. The messages may take up to 2 days to be processed: If the messages fail to process, they must be retained so that they do not impact the processing of any remaining messages. Which solution meets these requirements and is the MOST operationally efficient?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729a09"
+  },
+  "quid": null,
+  "ordinal": "164",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon Simple Queue Service (Amazon SQS)",
+    " Amazon Kinesis",
+    " Amazon EC2",
+    " AWS Lambda",
+    " AWS Backup"
+  ],
+  "slug": "sqs-sender-application-messages-aws",
+  "source": "ET",
+  "title": "AWS A Company Has Two Applications Question",
+  "meta": "AWS Exam Question: A company needs an AWS service to handle messages between a sender and processing application. What is the most operationally efficient answer? Consider SQS, SNS.",
+  "answer": "C",
+  "query": "An organization has deployed two different applications: a message sender application that transmits payloads for processing and a message processing application designed to receive those payloads. The organization aims to utilize an AWS service to effectively manage the transmission of messages between these two systems. The message sender can deliver approximately 2,000 messages hourly. If processing fails for any message, it is crucial to retain it to avoid interfering with other messages being processed.\n\nWhat solution satisfies these requirements while being the MOST operationally efficient?",
+  "originalQuery": "A company has two applications: a sender application that sends messages with payloads to be processed and a processing application intended to receive the messages with payloads. The company wants to implement an AWS service to handle messages between the two applications. The sender application can send about 1,000 messages each hour. The messages may take up to 2 days to be processed: If the messages fail to process, they must be retained so that they do not impact the processing of any remaining messages.\n\nWhich solution meets these requirements and is the MOST operationally efficient?",
+  "options": [
+    "A. Set up an Amazon EC2 instance running a Redis database. Configure both applications to use the instance. Store, process, and delete the messages, respectively.",
+    "B. Use an Amazon Kinesis data stream to gather messages from the sender application. Connect the processing app to the Kinesis Client Library (KCL).",
+    "C. Integrate the sender and processor applications with an Amazon Simple Queue Service (Amazon SQS) queue. Configure a dead-letter queue to collect the messages that failed to process.",
+    "D. Connect the processing application to an Amazon SNS topic to receive processing notifications. Allow the sender application to publish to this SNS topic."
+  ],
+  "originalOptions": [
+    "A. Set up an Amazon EC2 instance running a Redis database. Configure both applications to use the instance. Store, process, and delete the messages, respectively.",
+    "B. Use an Amazon Kinesis data stream to receive the messages from the sender application. Integrate the processing application with the Kinesis Client Library (KCL).",
+    "C. Integrate the sender and processor applications with an Amazon Simple Queue Service (Amazon SQS) queue. Configure a dead-letter queue to collect the messages that failed to process.",
+    "D. Subscribe the processing application to an Amazon Simple Notification Service (Amazon SNS) topic to receive notifications to process. Integrate the sender application to write to the SNS topic."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [],
+  "originalComments": [],
+  "voteDistribution": [
+    {
+      "option": "C (89%)",
+      "votes": "50 votes."
+    },
+    {
+      "option": "11%",
+      "votes": "6 votes."
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "Option C is the correct answer because Amazon Simple Queue Service (Amazon SQS) allows for effective message queuing, ensuring that messages are retained even if they fail to process. This means that processing failures do not impact the handling of other messages, meeting the requirement for operational efficiency. Additionally, using a dead-letter queue helps manage failed messages separately for later analysis and reprocessing. \n\nOption A is incorrect because while Redis can store messages, it requires setting up and managing an EC2 instance, which adds complexity and operational overhead compared to a fully managed service like SQS. \n\nOption B is also incorrect because Amazon Kinesis is designed more for real-time data processing, which may not be necessary for straightforward message queuing, and does not guarantee message retention as SQS does. While it can maintain message order, it introduces additional management overhead. \n\nOption D is incorrect since Amazon SNS is a pub/sub messaging service, which does not retain messages for processing failures. If the processing application fails to consume the message, the message is lost unless explicit retry logic is implemented, which does not satisfy the requirement for message retention upon failure.",
+  "video_url": "https://certificationation.com/videos/exam-sender-application-that-sends-messages-exam-164.html",
+  "url": "https://certificationation.com/questions/exam-sender-application-that-sends-messages-exam-164.html"
+}

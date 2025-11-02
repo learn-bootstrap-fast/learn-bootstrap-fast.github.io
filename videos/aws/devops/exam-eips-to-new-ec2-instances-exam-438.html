@@ -1,0 +1,62 @@
+---
+title: "Your system automatically provisions EIPs to new EC2Exam"
+description: "Video for your system automatically provisions EIPs to new EC2 instances. On your new AWS account, your attempt to create a Production environment failed, after"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your system automatically provisions EIPs to new EC2 instances. On your new AWS account, your attempt to create a Production environment failed, after successfully creating the Development and Staging environments in the same region. It seems that the number of EIPs hit the limit. How would you fix the problem?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct way to resolve hitting the Elastic IP (EIP) limit is to <b>Send a request for an Elastic IP quota increase using the AWS Service Quotas dashboard</b>. This is the standard AWS workflow for raising service quotas, and it enables you to request a specific increase beyond the default (typically 5 EIPs per region). This is quick and effective, and changes can be tracked from the console.</p><p>The option <i>Go to AWS Trusted Advisor, review EIP usage, and increase the EIP limit directly within Trusted Advisor</i> is incorrect because Trusted Advisor provides recommendations and usage data, but does not support directly making quota requests. <i>Submit an AWS support ticket to raise your EC2 Elastic IP limit from 5 to 30</i> used to be the method before Service Quotas, but now AWS recommends using the dedicated Service Quotas console for most quotas. <i>Elastic IP quota is fixed; instead, alter your provisioning script to use either public or private IP addresses rather than EIPs</i> is incorrect, since the EIP limit is adjustable and you do not need to re-engineer your automation for larger environments.</p><p><b>Tip:</b> When scaling in AWS, always check service and resource limits before deploying at scale, especially with resources like EIPs that have a low default quota, and use the Service Quotas console for increases.<br><b>Trick:</b> You may encounter legacy suggestions about submitting support tickets for certain limits, but Service Quotas is now the standard for most quota requests.</p>",
+  "query": "<p>Your cloud deployment script assigns Elastic IPs (EIPs) to every EC2 instance. You were able to successfully launch Development and Staging environments, but when building the Production environment in the same region, the provisioning stopped due to reaching the regional EIP limit. What is the best way to resolve this issue?</p>",
+  "original_oid": "6793d9db61969b416038a0d6",
+  "options": [
+    {
+      "correct": true,
+      "text": "Send a request for an Elastic IP quota increase using the AWS Service Quotas dashboard.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Go to AWS Trusted Advisor, review EIP usage, and increase the EIP limit directly within Trusted Advisor.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Submit an AWS support ticket to raise your EC2 Elastic IP limit from 5 to 30.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Elastic IP quota is fixed; instead, alter your provisioning script to use either public or private IP addresses rather than EIPs.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question98",
+  "originalQuery": "Your system automatically provisions EIPs to new EC2 instances.\nOn your new AWS account, your attempt to create a Production environment failed, after successfully creating the Development and Staging environments in the same region.\nIt seems that the number of EIPs hit the limit.\nHow would you fix the problem?",
+  "originalOptions": "A. Check the usage of EIPs in AWS Trusted Advisor and increase the limit from 5 to 100 through the AWS Trusted Advisor portal.\nB. Raise a ticket to AWS support to increase the EC2 EIP limit from 5 to 30.\nC. Request a quota increase for the Elastic IPs directly from the AWS Service Quotas console.\nD. The EIP limit cannot be adjusted. You need to modify EIPs to public or private IPs in your script.",
+  "video_url": "https://certificationation.com/videos/exam-eips-to-new-ec2-instances-exam-438.html",
+  "url": "https://certificationation.com/questions/exam-eips-to-new-ec2-instances-exam-438.html"
+}

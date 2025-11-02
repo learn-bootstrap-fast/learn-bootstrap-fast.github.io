@@ -1,0 +1,74 @@
+---
+title: "Your company's office was just reallocated to anotherExam"
+description: "Video for your company's office was just reallocated to another site. A Site-to-Site VPN was set up to connect the local server in the new site and the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company's office was just reallocated to another site. A Site-to-Site VPN was set up to connect the local server in the new site and the company's AWS VPC in the AWS region ap-south-1 The VPN is working properly. However, the operation team lead is worried about the robustness of the connection and has consulted you if it is possible to provide more redundancy to the VPN. Which suggestion should you give to him?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d5e2f501ee1c8ade9892"
+  },
+  "quid": "0",
+  "ordinal": "330",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "Amazon VPC",
+    " AWS VPN",
+    " AWS Direct Connect",
+    " AWS global infrastructure",
+    " Network services"
+  ],
+  "slug": "st-vpn-site-connect-local-server-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question330",
+  "title": "AWS Your Company's Office Was Just Reallocated Question",
+  "meta": "AWS Exam Question: Your company's office was reallocated. A Site-to-Site VPN connects the local server and AWS VPC. Suggest ways to enhance VPN redundancy. Answer: AWS VPC.",
+  "answer": "D",
+  "query": "The IT department recently relocated its remote office and established a Site-to-Site VPN linking the local infrastructure with their AWS VPC located in the ap-southeast-2 region. Though the VPN connection functions correctly, the network team is seeking recommendations for increasing the connection’s fault tolerance. What is the best advice you could provide to ensure greater VPN durability?",
+  "originalQuery": "Your company's office was just reallocated to another site.\nA Site-to-Site VPN was set up to connect the local server in the new site and the company's AWS VPC in the AWS region ap-south-1\nThe VPN is working properly.\nHowever, the operation team lead is worried about the robustness of the connection and has consulted you if it is possible to provide more redundancy to the VPN.\nWhich suggestion should you give to him?",
+  "options": [
+    "A. The current VPN setup is sufficiently stable and doesn't require extra redundancy steps. Its design inherently avoids any single points of failure.",
+    "B. Introduce an additional tunnel from the on-premises gateway to the virtual private gateway to facilitate failover if the existing tunnel encounters issues.",
+    "C. Deploy an extra virtual private gateway to the AWS VPC to remove the existing single point of failure in the network path.",
+    "D. Set up a second Site-to-Site VPN connection to the virtual private gateway by using a second customer gateway."
+  ],
+  "originalOptions": [
+    "A. No redundancy is required as the VPN connection is robust enough to provide auto failover ability. No single point failure exists for the existing solution.",
+    "B. Add 1 more tunnel between the customer gateway and virtual private gateway. So if the existing tunnel fails, the traffic can failover to the new one.",
+    "C. Add another virtual private gateway as it is a single point without redundancy.",
+    "D. Set up a second Site-to-Site VPN connection to the virtual private gateway by using a second customer gateway."
+  ],
+  "image": "https://eaeastus2.blob.core.windows.net/optimizedimages/static/images/AWS-Certified-Solutions-Architect-Professional/answer/imgckeditor_10.png",
+  "primaryObjective": "3: Continuous Improvement for Existing Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Correct Answer - D.\nCheck out https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNConnections.html on how to provide redundant Site-to-Site VPN connections to provide failover.\nOption A is incorrect because the customer gateway is a single point of failure in this case.\nIf it fails, the whole VPN connection is influenced.\nOption B is incorrect because there are already two lines between the customer gateway and the virtual private gateway.\nThere is no need to add another tunnel.\nOption C is incorrect because the customer gateway is a single point of failure instead of a virtual private gateway.\nOption D is correct because adding another Site-to-Site VPN connection is a good redundancy plan.\nEven if one customer gateway does not work, there is still another path that works.\nThe operation team lead is concerned about the robustness of the VPN connection between the local server and the AWS VPC, and is looking for a way to add more redundancy to the connection. Here are the options to consider:\nA. No redundancy is required as the VPN connection is robust enough to provide auto failover ability. No single point failure exists for the existing solution.\nThis option suggests that the existing VPN connection is already robust enough and no redundancy is needed. It states that the VPN connection can provide auto failover ability, which means that if the primary VPN connection fails, the secondary connection will take over automatically. However, this option does not provide any further details on how the VPN connection is set up to provide this failover ability. It is essential to confirm if the current VPN connection is indeed designed to provide automatic failover.\nB. Add 1 more tunnel between the customer gateway and virtual private gateway. So if the existing tunnel fails, the traffic can failover to the new one.\nThis option suggests adding one more tunnel between the customer gateway and virtual private gateway to provide redundancy. If the existing tunnel fails, traffic can failover to the new tunnel, ensuring that the connection remains operational. This option is a reasonable solution as it provides redundancy and is a relatively simple and cost-effective solution to implement.\nC. Add another virtual private gateway as it is a single point without redundancy.\nThis option suggests adding another virtual private gateway to the AWS VPC to provide redundancy. This solution would eliminate the single point of failure of the existing virtual private gateway. However, this option is a more complex and expensive solution than adding another tunnel, as it requires additional configuration and resources.\nD. Set up a second Site-to-Site VPN connection to the virtual private gateway by using a second customer gateway.\nThis option suggests setting up a second Site-to-Site VPN connection to the virtual private gateway, using a second customer gateway. This option would provide redundancy by having two separate VPN connections, but it is also a more complex and expensive solution than adding another tunnel. This option requires additional configuration and resources, and the customer would have to maintain two separate VPN connections.\nIn summary, option B is a reasonable solution, providing redundancy by adding one more tunnel between the customer gateway and virtual private gateway. This option is a simple and cost-effective solution to implement, and it addresses the concern of the operation team lead about the robustness of the VPN connection.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-reallocated-to-another-site-a-exam-215.html",
+  "url": "https://certificationation.com/questions/exam-reallocated-to-another-site-a-exam-215.html"
+}

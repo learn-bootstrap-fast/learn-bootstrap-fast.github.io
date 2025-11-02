@@ -1,0 +1,62 @@
+---
+title: "Your organization owns several AWS accounts. The AWSExam"
+description: "Video for your organization owns several AWS accounts. The AWS operation team creates several base docker images in AWS ECR. Another development team is working"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your organization owns several AWS accounts. The AWS operation team creates several base docker images in AWS ECR. Another development team is working on a new project in which the build phase needs to use AWS CodeBuild to build artifacts. One requirement is that the environment image of CodeBuild must use an ECR docker image owned by the operation team. However, the ECR docker image is located in different AWS account. How would you resolve this and create the CodeBuild project?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct configuration is to <b>Select a custom image and specify the ECR image registry, then provide the full ECR URI from the other AWS account</b>. CodeBuild allows you to directly reference Docker images stored in another AWS account’s ECR repository, provided that you grant the correct permissions (such as repository access and the appropriate resource policies for cross-account usage), and you specify the full ECR repository URI. This streamlines the process and avoids duplicating images between accounts.</p><p>Why the other choices are incorrect:</p><ul><li><i>Pick the AWS managed Ubuntu image and configure it to pull the Docker image from the other account's ECR during the build process.</i> — This solely uses an AWS managed image as the environment, not the custom ECR image you are required to use for the build environment itself, so it doesn't meet the requirement.</li><li><i>Opt for using a custom image and choose 'Other registry' for an external Docker registry, using the other account's ECR URI as the registry endpoint.</i> — ECR is not classified as an 'External Docker registry' in this context; you should instead select the ECR image registry option to properly authenticate and use AWS ECR resources.</li><li><i>Since CodeBuild cannot use Docker images from an ECR in another AWS account, copy the image into your own account's ECR repository first.</i> — This is incorrect as CodeBuild does support cross-account usage of ECR images if the right permissions are in place, so copying is unnecessary.</li></ul><p><b>Tip:</b> For cross-account ECR access, always ensure that both the CodeBuild project has permissions to pull the image (by assigning the correct IAM role) and the ECR repository policy in the source account allows access from the target account. This enables you to maintain a single source of truth for your Docker images across AWS organizations.</p>",
+  "query": "<p>Your organization manages multiple AWS accounts. The operations team has prepared foundational Docker images stored in Amazon ECR. A separate development group needs to use AWS CodeBuild for their build workflow, and they have a requirement for CodeBuild’s environment image to utilize an ECR Docker image managed by the operations team—however, this ECR image resides in another AWS account. What is the correct way to configure the CodeBuild project so that it uses the ECR image located in a different account?</p>",
+  "original_oid": "6793da3a61969b416038a194",
+  "options": [
+    {
+      "correct": true,
+      "text": "Select a custom image and specify the ECR image registry, then provide the full ECR URI from the other AWS account.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Pick the AWS managed Ubuntu image and configure it to pull the Docker image from the other account's ECR during the build process.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Opt for using a custom image and choose 'Other registry' for an external Docker registry, using the other account's ECR URI as the registry endpoint.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Since CodeBuild cannot use Docker images from an ECR in another AWS account, copy the image into your own account's ECR repository first.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question291",
+  "originalQuery": "Your organization owns several AWS accounts.\nThe AWS operation team creates several base docker images in AWS ECR.\nAnother development team is working on a new project in which the build phase needs to use AWS CodeBuild to build artifacts.\nOne requirement is that the environment image of CodeBuild must use an ECR docker image owned by the operation team.\nHowever, the ECR docker image is located in different AWS account.\nHow would you resolve this and create the CodeBuild project?",
+  "originalOptions": "A. Select AWS managed Ubuntu image. In the image, pull the ECR docker image from another account.|B. CodeBuild does not support cross account ECR image. Copy the image to the ECR registry in the same account first.|C. Select custom image and choose ECR image registry. Enter the full ECR repository URI for the repository in the other account.|D. Select custom image and choose Other registry for an external Docker registry. In external registry URI, enter the ECR repository URI of the other account.",
+  "video_url": "https://certificationation.com/videos/exam-aws-accounts-the-aws-operation-exam-426.html",
+  "url": "https://certificationation.com/questions/exam-aws-accounts-the-aws-operation-exam-426.html"
+}

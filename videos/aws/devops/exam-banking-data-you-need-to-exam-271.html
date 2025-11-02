@@ -1,0 +1,62 @@
+---
+title: "You use DynamoDB to store the customer banking data. YouExam"
+description: "Video for you use DynamoDB to store the customer banking data. You need to create an audit log of all changes to the data. It's important not to lose any"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You use DynamoDB to store the customer banking data. You need to create an audit log of all changes to the data. It's important not to lose any information. What is an elegant way to accomplish this?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><b>\"Configure DynamoDB Streams to forward all changes to AWS Lambda, where sensitive data is redacted before forwarding the sanitized changes to CloudWatch Logs\"</b> is correct. This solution leverages DynamoDB Streams to capture every data mutation in real time. AWS Lambda processes each stream record, ensuring every change is noted and sensitive details can be scrubbed before delivering logs to CloudWatch Logs for durable, searchable audit storage. This workflow is scalable, serverless, minimizes data loss risks, and ensures redaction is performed consistently.</p><p>Let's break down the other options:</p><ul><li><i>\"Prior to saving data in DynamoDB, write a sanitized record (excluding sensitive content) to disk on the application server. Regularly rotate these files to S3 for long-term audit storage.\"</i> – This approach could miss updates if the application server fails before writing both files, introduces operational overhead, is not scalable, and may lead to inconsistent logging.</li><li><i>\"Set up DynamoDB Streams to periodically send updates to an EC2 instance's local drive. Remove confidential information before storing. Consolidate and migrate these logs to S3 at intervals.\"</i> – This adds unnecessary complexity by using an EC2 instance and local storage, creates risks of data loss if the instance fails, and complicates durability.</li><li><i>\"Before committing data to DynamoDB, log a redacted version to local disk on the app server. Pipe these logs into CloudWatch Logs periodically for audit purposes.\"</i> – Similar to the previous disk-based approach, this is not fail-safe: a server crash could lose audit entries and increase operational complexity. It also does not operate in real time.</li></ul><p><b>Tips:</b> Use DynamoDB Streams with Lambda for real-time, serverless change detection with built-in durability. Always sanitize sensitive information before logging and prefer managed solutions (like CloudWatch Logs) for storing critical audit trails.</p>",
+  "query": "<p>You are storing sensitive customer banking details in DynamoDB. You need to maintain an audit history of every change made to this data—no information can be lost. What is a robust and efficient approach for this use case?</p>",
+  "original_oid": "6793d9ea61969b416038a0f2",
+  "options": [
+    {
+      "correct": true,
+      "text": "Configure DynamoDB Streams to forward all changes to AWS Lambda, where sensitive data is redacted before forwarding the sanitized changes to CloudWatch Logs.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Prior to saving data in DynamoDB, write a sanitized record (excluding sensitive content) to disk on the application server. Regularly rotate these files to S3 for long-term audit storage.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up DynamoDB Streams to periodically send updates to an EC2 instance's local drive. Remove confidential information before storing. Consolidate and migrate these logs to S3 at intervals.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Before committing data to DynamoDB, log a redacted version to local disk on the app server. Pipe these logs into CloudWatch Logs periodically for audit purposes.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question127",
+  "originalQuery": "You use DynamoDB to store the customer banking data.\nYou need to create an audit log of all changes to the data.\nIt's important not to lose any information.\nWhat is an elegant way to accomplish this?",
+  "originalOptions": "A. Use a DynamoDB Stream and stream all changes to AWS Lambda. Log the changes to AWS CloudWatch Logs, removing sensitive information before logging.\nB. Before writing to DynamoDB, do a pre-write acknowledgment to disk on the application server, removing sensitive information before logging. Periodically rotate these log files into S3.\nC. Use a DynamoDB Stream and periodically flush to an EC2 instance store, removing sensitive information before putting the objects. Periodically flush these logs to S3.\nD. Before writing to DynamoDB, do a pre-write acknowledgment to disk on the application server, removing sensitive information before logging. Periodically pipe these files into CloudWatch Logs.",
+  "video_url": "https://certificationation.com/videos/exam-banking-data-you-need-to-exam-271.html",
+  "url": "https://certificationation.com/questions/exam-banking-data-you-need-to-exam-271.html"
+}

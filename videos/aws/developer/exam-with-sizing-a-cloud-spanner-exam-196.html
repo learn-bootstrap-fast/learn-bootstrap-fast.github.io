@@ -1,0 +1,80 @@
+---
+title: "A Database Engineer is tasked with sizing a CloudExam"
+description: "Video for a Database Engineer is tasked with sizing a Cloud Spanner instance to accommodate the current environment workload metrics and future requirements for"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A Database Engineer is tasked with sizing a Cloud Spanner instance to accommodate the current environment workload metrics and future requirements for an e-commerce company. The current average workload metrics are as follows: 8,000 reads per second during peak times 4,000 writes per second during peak times 4 TB of data storage 99.99% availability requirement The company expects a 100% increase in reads and writes per second and a 30% increase in data storage over the next year. Which of the following instance configurations is the most appropriate to handle the anticipated growth while optimizing costs?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A database engineer at StreamCore, a subscription video platform, must size a Cloud Spanner deployment for today&apos;s traffic and for projected growth. Peak traffic is 7,000 reads per second and 3,000 writes per second with 3 TB of stored data, and the service level objective is 99.99% availability. Product forecasts call for a 100% increase in both reads and writes and a 40% increase in stored data within the next year. Which instance configuration would best meet the projected demand while keeping costs efficient?",
+  "options": [
+    {
+      "text": "6-node Regional instance with 3.5 TB of SSD storage",
+      "explanation": "This configuration uses a smaller regional footprint aimed at lower throughput and slightly increased storage capacity.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "12-node Multi-Regional instance with 6 TB of SSD storage",
+      "explanation": "This option spans multiple regions and raises node count and storage to improve durability and availability across geographies.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "10-node Regional instance with 5 TB of SSD storage",
+      "explanation": "This setup scales compute and storage within a single region to balance throughput and capacity while managing spend.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "8-node Regional instance with 4 TB of SSD storage",
+      "explanation": "This regional choice increases capacity over a minimal footprint and offers moderate headroom for compute and storage.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>10-node Regional instance with 5 TB of SSD storage</b>. It satisfies the projected throughput of about 14,000 reads per second and 6,000 writes per second and it covers the forecasted 4.2 TB of data with buffer while meeting the 99.99% availability target with a regional configuration. This choice remains cost efficient because it avoids the premium of a multi regional deployment while providing ample headroom for growth and workload skews.</p><p>A single Cloud Spanner node typically supports up to about 10,000 reads per second for small reads and up to about 2,000 writes per second for small writes, and the common sizing guideline is about 2 TB of data per node. The forecast requires at least 2 nodes for reads and at least 3 nodes for writes and at least 3 nodes for storage. Selecting this configuration provides comfortable capacity for the doubled workload and the increased dataset size, along with operational headroom for rebalancing and maintenance, and it aligns with the 99.99% availability objective that a regional instance provides.</p><p><i>6-node Regional instance with 3.5 TB of SSD storage</i> is not sufficient for the projected data size because 3.5 TB is below the expected 4.2 TB. While its throughput would likely be adequate, the storage shortfall makes it unsuitable.</p><p><i>12-node Multi-Regional instance with 6 TB of SSD storage</i> would meet performance and storage needs, yet it exceeds the availability requirement and adds significant cost. Multi regional instances target higher availability than 99.99% and therefore are not the most cost efficient choice for this scenario.</p><p><i>8-node Regional instance with 4 TB of SSD storage</i> does not meet the storage requirement because 4 TB is below the projected 4.2 TB, so it would fall short even though its throughput capacity would be adequate.</p>",
+  "batch_id": "117",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "A Database Engineer is tasked with sizing a Cloud Spanner instance to accommodate the current environment workload metrics and future requirements for an e-commerce company. The current average workload metrics are as follows: 8,000 reads per second during peak times 4,000 writes per second during peak times 4 TB of data storage 99.99% availability requirement The company expects a 100% increase in reads and writes per second and a 30% increase in data storage over the next year. Which of the following instance configurations is the most appropriate to handle the anticipated growth while optimizing costs?",
+  "originalOptions": "A. 12-node Regional instance with 6 TB of SSD storage<br/>B. 16-node Regional instance with 8 TB of SSD storage<br/>C. 14-node Multi-Regional instance with 6 TB of SSD storage<br/>D. 8-node Regional instance with 5 TB of SSD storage",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "196",
+  "tip": "<p>Extract the future workload and data size first, then map to per node capacity. Remember that one node supports about <i>10k reads per second</i>, about <i>2k writes per second</i>, and roughly <i>2 TB</i> of data as a sizing guide. Choose regional versus multi regional based on the stated availability target to stay cost efficient.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/compute-capacity",
+    "https://cloud.google.com/spanner/docs/sizing-capacity",
+    "https://cloud.google.com/spanner/docs/instances#instance_configurations",
+    "https://cloud.google.com/spanner/sla"
+  ],
+  "url": "https://certificationation.com/questions/exam-with-sizing-a-cloud-spanner-exam-196.html",
+  "video_url": "https://certificationation.com/videos/exam-with-sizing-a-cloud-spanner-exam-196.html"
+}

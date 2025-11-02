@@ -1,0 +1,128 @@
+---
+title: "A company serves a dynamic website from a fleet ofExam"
+description: "Video for a company serves a dynamic website from a fleet of Amazon EC2 instances behind an Application Load Balancer (ALB). The website needs to support"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company serves a dynamic website from a fleet of Amazon EC2 instances behind an Application Load Balancer (ALB). The website needs to support multiple languages to serve customers around the world. The website’s architecture is running in the us-west-1 Region and is exhibiting high request latency for users that are located in other parts of the world. The website needs to serve requests quickly and efficiently regardless of a user’s location. However, the company does not want to recreate the existing architecture across multiple Regions. What should a solutions architect do to meet these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729a75"
+  },
+  "quid": null,
+  "ordinal": "272",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS global infrastructure",
+    " Amazon CloudFront",
+    " AWS Global Accelerator",
+    " Amazon Route 53",
+    " AWS Lambda"
+  ],
+  "slug": "ec2-serve-dynamic-website-aws",
+  "source": "ET",
+  "title": "AWS A Company Serves A Dynamic Website Question",
+  "meta": "AWS Exam Question: A company uses Amazon EC2 and Application Load Balancer to serve a dynamic website globally. What’s the best answer? Consider CloudFront.",
+  "answer": "B",
+  "query": "An organization operates a dynamic web application hosted on several Amazon EC2 instances behind an Application Load Balancer (ALB). The application is designed to cater to users in various languages globally. With the infrastructure located in the us-west-2 Region, they are experiencing delays for users outside of this region.\n\nThe goal is to ensure fast and efficient response times for users regardless of their geographic location, while avoiding the effort of duplicating the architecture in various regions.\n\nWhat steps should a solutions architect take to achieve this objective?",
+  "originalQuery": "A company serves a dynamic website from a fleet of Amazon EC2 instances behind an Application Load Balancer (ALB). The website needs to support multiple languages to serve customers around the world. The website’s architecture is running in the us-west-1 Region and is exhibiting high request latency for users that are located in other parts of the world.\n\nThe website needs to serve requests quickly and efficiently regardless of a user’s location. However, the company does not want to recreate the existing architecture across multiple Regions.\n\nWhat should a solutions architect do to meet these requirements?",
+  "options": [
+    "",
+    "",
+    "",
+    ""
+  ],
+  "originalOptions": [
+    "A. Replace the existing architecture with a website that is served from an Amazon S3 bucket. Configure an Amazon CloudFront distribution with the S3 bucket as the origin. Set the cache behavior settings to cache based on the Accept-Language request header.",
+    "B. Configure an Amazon CloudFront distribution with the ALB as the origin. Set the cache behavior settings to cache based on the Accept-Language request header.",
+    "C. Create an Amazon API Gateway API that is integrated with the ALB. Configure the API to use the HTTP integration type. Set up an API Gateway stage to enable the API cache based on the Accept-Language request header.",
+    "D. Launch an EC2 instance in each additional Region and configure NGINX to act as a cache server for that Region. Put all the EC2 instances and the ALB behind an Amazon Route 53 record set with a geolocation routing policy."
+  ],
+  "image": null,
+  "primaryObjective": "3: Design High-Performing Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "To enhance caching based on the viewer's language preferences, it is essential to configure Amazon CloudFront to cache distinct versions of your content according to the language indicated in the request. This can be achieved by setting up CloudFront to forward the Accept-Language header to the origin server. By doing so, CloudFront will be able to differentiate between requests made in various languages and serve the appropriate cached content accordingly. For more detailed guidance on header caching, refer to the official documentation: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html. \n\nImplementing this solution will significantly reduce latency for users located in different regions, as CloudFront can deliver cached content more quickly based on their language preferences, improving the overall user experience.",
+    "To give your website a global boost 🌍 and make it multilingual, you'll want to configure CloudFront to work its magic! If you're dreaming of serving up different versions of your content based on the language preferences of your users, simply set CloudFront to pass the Accept-Language header along to your origin server. That way, your site can speak the language of love (or whatever language your visitors prefer) with style! 💬\n\nBut wait, there's more! If you also want to serve up content based on the geographical location of your users, just have CloudFront forward the CloudFront-Viewer-Country header to your origin. Don’t worry; CloudFront is a whiz at translating IP addresses into handy two-letter country codes. For a quick reference on these codes, you can check out the ISO 3166-1 alpha-2 list on Wikipedia. It's like a cheat sheet for international communication! 🌐✨ \n\nWith these configurations, your website will be zipping along at lightning speed for users all over the world, without the need for a full-blown architectural road trip! 🚀",
+    "Oh, the age-old misconception that CloudFront is only for static content! While it’s true that CloudFront shines with static assets, it’s also more than capable of handling dynamic content. Think of it as a savvy delivery driver, efficiently routing requests no matter the type of cargo. By using CloudFront as a content delivery network (CDN), you can cache dynamic responses closer to users, which can significantly reduce latency. \n\nThis way, your fleet of EC2 instances can focus on generating content while CloudFront handles the heavy lifting of serving it up quickly to users around the globe. So, while the website may be dynamic, CloudFront is still your best friend in reducing response times without the hassle of duplicating your entire architecture in multiple regions. It’s like having your cake and eating it too—just don’t forget to share a slice with your users!",
+    "Amazon CloudFront is an excellent solution for delivering both static and dynamic content efficiently. While Amazon S3 is a great option for serving static files, CloudFront enhances performance for dynamic content as well, ensuring that users experience low latency regardless of their geographic location. By utilizing CloudFront, the company can optimize its website's responsiveness and provide an exceptional user experience for customers around the globe.",
+    "By utilizing CloudFront to cache content tailored to the Accept-Language request header, the company can deliver the right version of the website to users according to their language preferences. This delightful approach not only enhances the website's performance for a global audience but also eliminates the need to replicate the existing architecture across various Regions. It’s a smart, efficient way to ensure users everywhere enjoy a speedy and customized browsing experience! 🌍✨"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "B",
+      "explanation": "Configuring caching based on the language of the viewer\nIf you want CloudFront to cache different versions of your objects based on the language specified in the request, configure CloudFront to forward the Accept-Language header to your origin.\nhttps://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html",
+      "upvotes": "12"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "B\n\nIf you want CloudFront to cache different versions of your objects based on the language specified in the request, configure CloudFront to forward the Accept-Language header to your origin.\nIf you want CloudFront to cache different versions of your objects based on the country that the request came from, configure CloudFront to forward the CloudFront-Viewer-Country header to your origin. CloudFront automatically converts the IP address that the request came from into a two-letter country code. For an easy-to-use list of country codes, sortable by code and by country name, see the Wikipedia entry ISO 3166-1 alpha-2.",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Isn't CloudFront for static websites though? Question specifically states the content is dynamic",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Cloudfront serves for both static and dynamic. If it was just static,then you can consider AWS S3.",
+      "upvotes": "5"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "By caching content based on the Accept-Language request header, CloudFront can serve the appropriate version of the website to users based on their language preferences. This solution allows the company to improve the website’s performance for users around the world without having to recreate the existing architecture in multiple Regions.",
+      "upvotes": "4"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "B (100%)",
+      "votes": "24 votes."
+    },
+    {
+      "option": "C (25%)",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is B because configuring an Amazon CloudFront distribution with the Application Load Balancer (ALB) as the origin allows for caching based on user language preferences via the Accept-Language request header. This enhances performance by serving localized content quickly to users worldwide without needing to replicate the architecture in multiple regions. \n\nOption A is incorrect because serving from an S3 bucket is not suitable for the dynamic content of the web application. Option C is not optimal, as API Gateway is typically for HTTP APIs and does not leverage caching in the manner needed for delivering content efficiently based on language. Option D involves deploying EC2 instances in multiple regions, which goes against the requirement of avoiding duplication in architecture.",
+  "video_url": "https://certificationation.com/videos/exam-from-a-fleet-of-amazon-exam-272.html",
+  "url": "https://certificationation.com/questions/exam-from-a-fleet-of-amazon-exam-272.html"
+}

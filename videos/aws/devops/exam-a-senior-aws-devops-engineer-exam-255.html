@@ -1,0 +1,67 @@
+---
+title: "A large IT company just hired you as a senior AWS DevOpsExam"
+description: "Video for a large IT company just hired you as a senior AWS DevOps engineer. You are supposed to provide a solution to notify the team appropriately when the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A large IT company just hired you as a senior AWS DevOps engineer. You are supposed to provide a solution to notify the team appropriately when the status of Trusted Advisor checks has changed. For example, if the Cost Optimization checks in Trusted Advisor have just found a Low Utilization Amazon EC2 Instance, there should be a notification to a Slack channel so that the operation team can react to the status change and potentially optimize the cost. Which combinations of services should you use to meet this requirement? (Select TWO.)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><b>Correct Answers:</b> <b>Utilize AWS Lambda to forward personalized notifications to Slack when a status alteration event from CloudWatch is detected</b> and <b>Configure a CloudWatch Events rule with 'Trusted Advisor' as the event source and select 'Check Item Refresh Status' as the event type</b>.</p><p>To automate Slack alerts on Trusted Advisor check changes, you need an event-driven solution that detects changes and sends customized notifications. Setting up a <b>CloudWatch Events rule for Trusted Advisor</b> specifically captures these events, and by triggering an <b>AWS Lambda function</b>, you can customize the notification payload and send it to Slack via a webhook API. This method leverages native AWS integrations and maximizes flexibility for message formatting and routing.</p><p>Why other options are incorrect:<br/><ul><li><i>Set up an SNS topic that will send custom messages directly to a Slack channel via a suitable integration</i>: While SNS can send messages, it does not natively format or transmit notifications to Slack without an intermediary, such as Lambda. SNS lacks direct, robust Slack integration capabilities.</li><li><i>In AWS CloudWatch Logs, create a metric filter that looks for new log entries containing 'Check Item Refresh Status'</i>: This relies on log streams which may not capture all relevant status change events, and event-driven architecture is more precise than log parsing for this use case.</li><li><i>Within Trusted Advisor's Cost Optimization dashboard, establish a notification to an SNS topic upon detection of a new status check event</i>: Trusted Advisor dashboards do not provide direct notification configurations to SNS topics; notifications are handled outside of the Trusted Advisor UI through services like CloudWatch Events (EventBridge).</li></ul></p><p><b>Tips:</b> Always leverage EventBridge (formerly CloudWatch Events) and Lambda for customizable, third-party notifications such as Slack. SNS is great for email/SMS, but Lambda provides greater control for integrations.</p>",
+  "query": "<p>Your role as an AWS DevOps engineer at a major IT organization comes with the responsibility to alert your team whenever there is a change in the status of AWS Trusted Advisor checks. For example, if a Cost Optimization check identifies an underutilized EC2 instance, your goal is to immediately notify the operations team via Slack so they can take necessary cost-saving actions. <br/><br/>Which combination of AWS services would effectively create this automated Slack notification flow when a Trusted Advisor check status changes? <b>Select TWO options.</b></p>",
+  "original_oid": "6793d9d661969b416038a0cc",
+  "options": [
+    {
+      "correct": false,
+      "text": "Set up an SNS topic that will send custom messages directly to a Slack channel via a suitable integration.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Utilize AWS Lambda to forward personalized notifications to Slack when a status alteration event from CloudWatch is detected.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Configure a CloudWatch Events rule with 'Trusted Advisor' as the event source and select 'Check Item Refresh Status' as the event type.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "In AWS CloudWatch Logs, create a metric filter that looks for new log entries containing 'Check Item Refresh Status'.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Within Trusted Advisor's Cost Optimization dashboard, establish a notification to an SNS topic upon detection of a new status check event.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question87",
+  "originalQuery": "A large IT company just hired you as a senior AWS DevOps engineer.\nYou are supposed to provide a solution to notify the team appropriately when the status of Trusted Advisor checks has changed.\nFor example, if the Cost Optimization checks in Trusted Advisor have just found a Low Utilization Amazon EC2 Instance, there should be a notification to a Slack channel so that the operation team can react to the status change and potentially optimize the cost.\nWhich combinations of services should you use to meet this requirement? (Select TWO.)",
+  "originalOptions": "A. In the Cost Optimization dashboard of Trusted Advisor, configure a notification to an SNS topic when the status check has found a new event.\nB. In AWS CloudWatch Logs, create a metric filter for any new logs which contain “Check Item Refresh Status”.\nC. Create a new CloudWatch Events rule. Add event source as \"Trusted Advisor\" and event type as \"Check Item Refresh Status\".\nD. Create a new SNS topic that is in charge of providing customized notifications to the Slack channel.\nE. Use a Lambda function to pass a customized notification to the Slack channel when check status in CloudWatch Event has changed.",
+  "video_url": "https://certificationation.com/videos/exam-a-senior-aws-devops-engineer-exam-255.html",
+  "url": "https://certificationation.com/questions/exam-a-senior-aws-devops-engineer-exam-255.html"
+}

@@ -1,0 +1,62 @@
+---
+title: "Your team starts to build a CI/CD pipeline in AWSExam"
+description: "Video for your team starts to build a CI/CD pipeline in AWS CodePipeline. Before the application is deployed in production, you have added an approval action in"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your team starts to build a CI/CD pipeline in AWS CodePipeline. Before the application is deployed in production, you have added an approval action in a stage to stop the CodePipeline pipeline. Your project manager needs to manually approve the action for the pipeline to proceed. However, the project manager informs you that he does not have enough permissions to approve it with his IAM user. How would you resolve this problem?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct solution is to <b>Grant the AWSCodePipelineApproverAccess managed IAM policy to the project manager’s IAM user</b>. This policy provides just the necessary permissions to manually approve or reject approval actions in AWS CodePipeline, without granting full administrative rights.</p><p>The option <i>Configure an SNS topic within the manual approval action and subscribe the project manager’s email so he receives approval notifications and is able to approve through email</i> is not sufficient. While the SNS topic will notify the project manager when an approval is needed, he will still require appropriate IAM permissions to perform the approval through the console or CLI.</p><p>The option <i>Assign the AWSCodePipelineFullAccess managed IAM policy to the project manager’s IAM account to provide the required permissions</i> works technically, but it grants excessive permissions that are not aligned with the principle of least privilege, thereby leading to potential security risks.</p><p>The choice <i>Directly add the project manager’s IAM user as an approver in the CodePipeline manual approval stage and execute the pipeline again</i> refers to configuring the approvers for approval actions, but unless the user has the required IAM permissions (which he does not), simply adding his name will not resolve the permission issue.</p><p><b>Tip:</b> Always use AWS managed policies like <b>AWSCodePipelineApproverAccess</b> to grant minimal necessary permissions, helping maintain secure and compliant AWS environments.</p>",
+  "query": "<p>Your development team is implementing a CI/CD pipeline using AWS CodePipeline. A manual approval action has been configured in a stage prior to production deployment, to allow a project manager to manually approve the deployment before it proceeds. The project manager now reports that he is unable to grant this approval, and his IAM user lacks the necessary permissions. What is the most appropriate way to address this permission issue so that the project manager can successfully approve the action when required?</p>",
+  "original_oid": "6793da8c61969b416038a23a",
+  "options": [
+    {
+      "correct": false,
+      "text": "Configure an SNS topic within the manual approval action and subscribe the project manager’s email so he receives approval notifications and is able to approve through email.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Grant the AWSCodePipelineApproverAccess managed IAM policy to the project manager’s IAM user.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Assign the AWSCodePipelineFullAccess managed IAM policy to the project manager’s IAM account to provide the required permissions.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Directly add the project manager’s IAM user as an approver in the CodePipeline manual approval stage and execute the pipeline again.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question458",
+  "originalQuery": "Your team starts to build a CI/CD pipeline in AWS CodePipeline.\nBefore the application is deployed in production, you have added an approval action in a stage to stop the CodePipeline pipeline.\nYour project manager needs to manually approve the action for the pipeline to proceed.\nHowever, the project manager informs you that he does not have enough permissions to approve it with his IAM user.\nHow would you resolve this problem?",
+  "originalOptions": "A. Add the project manager’s IAM user as an approver in the CodePipeline manual approval stage and rerun the pipeline.|B. In the AWS IAM console, attach the AWS managed IAM policy AWSCodePipelineFullAccess to the project manager’s IAM user.|C. Configure an SNS topic in the manual approval stage and subscribe the project manager’s work email to the SNS topic so that he can approve the action.|D. Attach the AWSCodePipelineApproverAccess managed policy to the project manager’s IAM user.",
+  "video_url": "https://certificationation.com/videos/exam-pipeline-in-aws-codepipeline-before-exam-183.html",
+  "url": "https://certificationation.com/questions/exam-pipeline-in-aws-codepipeline-before-exam-183.html"
+}

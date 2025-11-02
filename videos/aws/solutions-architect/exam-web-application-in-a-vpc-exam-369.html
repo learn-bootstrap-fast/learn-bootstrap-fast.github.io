@@ -1,0 +1,128 @@
+---
+title: "A company runs a public three-tier web application in aExam"
+description: "Video for a company runs a public three-tier web application in a VPC. The application runs on Amazon EC2 instances across multiple Availability Zones. The EC2"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company runs a public three-tier web application in a VPC. The application runs on Amazon EC2 instances across multiple Availability Zones. The EC2 instances that run in private subnets need to communicate with a license server over the internet. The company needs a managed solution that minimizes operational maintenance. Which solution meets these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729ad7"
+  },
+  "quid": null,
+  "ordinal": "370",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon EC2",
+    " AWS global infrastructure",
+    " Network services",
+    " Amazon VPC",
+    " AWS Lambda"
+  ],
+  "slug": "ec2-public-three-tier-app-aws",
+  "source": "ET",
+  "title": "AWS A Company Runs A Public Three-Tier Web Application Question",
+  "meta": "AWS Exam Question: A company needs a managed solution for a public three-tier web app in a VPC with EC2 instances in private subnets. Answer: AWS License Manager.",
+  "answer": "C",
+  "query": "An organization operates a public-facing multi-tier application within a VPC. The application is hosted on Amazon EC2 instances distributed across several Availability Zones. EC2 instances situated in private subnets require access to a licensing server on the internet. The organization seeks a managed solution that reduces operational upkeep.\n\nWhat option satisfies these criteria?",
+  "originalQuery": "A company runs a public three-tier web application in a VPC. The application runs on Amazon EC2 instances across multiple Availability Zones. The EC2 instances that run in private subnets need to communicate with a license server over the internet. The company needs a managed solution that minimizes operational maintenance.\n\nWhich solution meets these requirements?",
+  "options": [
+    "A. Set up a NAT instance in a public subnet. Adjust the route table for each private subnet to direct traffic to the NAT instance.",
+    "B. Set up a NAT instance in a private subnet. Adjust the route table for each private subnet to route traffic to the NAT instance.",
+    "C. Provision a NAT gateway in a public subnet. Modify each private subnet's route table with a default route that points to the NAT gateway.",
+    "D. Set up a NAT gateway in a private subnet. Adjust the default route in the private subnet's route table to send traffic to the NAT gateway."
+  ],
+  "originalOptions": [
+    "A. Provision a NAT instance in a public subnet. Modify each private subnet's route table with a default route that points to the NAT instance.",
+    "B. Provision a NAT instance in a private subnet. Modify each private subnet's route table with a default route that points to the NAT instance.",
+    "C. Provision a NAT gateway in a public subnet. Modify each private subnet's route table with a default route that points to the NAT gateway.",
+    "D. Provision a NAT gateway in a private subnet. Modify each private subnet's route table with a default route that points to the NAT gateway."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "A managed solution that reduces operational overhead is essential for the company's needs. \n\nIt's important to distinguish between NAT instances and NAT gateways. Given the requirement for a managed service with minimal maintenance, deploying a NAT gateway in a public subnet is the optimal choice. NAT gateways are fully managed by AWS, offering higher availability and scalability compared to NAT instances, which require more hands-on management and configuration. This approach ensures secure communication from the EC2 instances in private subnets to external resources, such as the license server, while minimizing the need for ongoing operational tasks.",
+    "Ah, the age-old question of where to place your NAT gateway! 🚀 Just a friendly reminder: you can't deploy a NAT gateway in a private subnet. It needs to bask in the glory of a public subnet to do its job properly. 🌐 So, if you're looking to keep those EC2 instances in private subnets chatting away with that license server out in the wild internet, your best bet is to set up that NAT gateway in a public subnet. Happy networking! 😄",
+    "The most fitting solution here is option C: provision a NAT gateway in a public subnet and update the route tables for each private subnet to direct traffic to that NAT gateway. This approach offers a managed service that offloads much of the operational burden associated with maintaining a NAT instance. \n\nNAT gateways are designed to provide reliable and scalable network address translation, enabling your EC2 instances in private subnets to communicate with the license server over the internet without exposing them directly. Unlike NAT instances, which require more hands-on management and can become a single point of failure, NAT gateways are fully managed by AWS. They automatically scale to accommodate traffic demands and come with built-in redundancy across Availability Zones.\n\nSo, while the thought of manually juggling NAT instances might seem appealing to some, opting for a NAT gateway takes you one step closer to the blissful world of reduced operational hassle. For more details, feel free to dive into the AWS documentation on managing network access with NAT gateways.",
+    "This solution perfectly aligns with the need for a managed, low-maintenance approach for enabling private subnets to access the internet:\n\nA NAT gateway offers automatic scaling, high availability, and a fully managed service, freeing you from the burden of administrative overhead. By positioning the NAT gateway in a public subnet and configuring the appropriate route tables, private instances can seamlessly utilize it for internet connectivity. This option significantly reduces operational maintenance compared to using NAT instances, allowing your team to focus on other critical tasks while ensuring efficient internet access for your application.",
+    "Oh dear! It seems that NAT instances (options A and B) come with a bit more of a maintenance burden than we’d like. 🌈 \n\nAlso, let’s not forget that a NAT gateway nestled in a private subnet (option D) simply won’t grant those internet access privileges we need. What a pickle! Let's keep things light and breezy while making sure our resources can communicate smoothly!"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "C",
+      "explanation": "\"The company needs a managed solution that minimizes operational maintenance\"\n\nWatch out for NAT instances vs NAT Gateways.\n\nAs the company needs a managed solution that minimizes operational maintenance - NAT Gateway is a public subnet is the answer.",
+      "upvotes": "9"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "C\nNat gateway can't deploy in a private subnet.",
+      "upvotes": "5"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "C\nhttps://docs.aws.amazon.com/appstream2/latest/developerguide/managing-network-internet-NAT-gateway.html\n...and a NAT gateway in a public subnet.",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "C",
+      "explanation": "This meets the requirements for a managed, low maintenance solution for private subnets to access the internet:\n\nNAT gateway provides automatic scaling, high availability, and fully managed service without admin overhead.\nPlacing the NAT gateway in a public subnet with proper routes allows private instances to use it for internet access.\nMinimal operational maintenance compared to NAT instances.",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "No good:\nNAT instances (A, B) require more hands-on management.\n\nPlacing a NAT gateway in a private subnet (D) would not allow internet access.",
+      "upvotes": "4"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "C (100%)",
+      "votes": "22 votes."
+    },
+    {
+      "option": "C (25%)",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is C because it involves provisioning a NAT gateway in a public subnet, which provides a managed solution that requires minimal operational maintenance. NAT gateways automatically handle scaling and high availability, which alleviates the need for hands-on management that NAT instances require. The other options are incorrect for the following reasons: A requires a NAT instance in a public subnet, which is less managed; B is incorrect because a NAT instance in a private subnet wouldn't have internet access; D is incorrect because NAT gateways must be placed in public subnets to facilitate internet access.",
+  "video_url": "https://certificationation.com/videos/exam-web-application-in-a-vpc-exam-369.html",
+  "url": "https://certificationation.com/questions/exam-web-application-in-a-vpc-exam-369.html"
+}

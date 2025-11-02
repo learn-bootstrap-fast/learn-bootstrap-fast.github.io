@@ -1,0 +1,78 @@
+---
+title: "A software development team just finished phase 1 of aExam"
+description: "Video for a software development team just finished phase 1 of a web service that provides NBA news to subscribers. The web service has used a dedicated VPC"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A software development team just finished phase 1 of a web service that provides NBA news to subscribers. The web service has used a dedicated VPC which has only IPv4 CIDR (10.0.0.0/16) with two public subnets and two private subnets. A NAT gateway is put into each public subnet for outbound internet traffic. The EC2 instances are put into private subnets with a route that connects all Internet-bound IPv4 traffic to the relevant NAT gateway. The product is getting more and more popular and needs IPv6 to support some new features. Which below options are required for the new support for IPv6? Select 3."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d59cf501ee1c8ade97e3"
+  },
+  "quid": "0",
+  "ordinal": "153",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "AWS global infrastructure",
+    " Amazon VPC",
+    " AWS Lambda",
+    " AWS NAT Gateway",
+    " Amazon EC2"
+  ],
+  "slug": "vpc-nba-news-service-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question153",
+  "title": "AWS Software Development Team Just Finished Phase 1 Question",
+  "meta": "AWS Exam Question: A software development team used a dedicated VPC, NAT gateways, and EC2 instances for NBA news. Which options are needed for IPv6 support? Answer: VPC, NAT gateway, EC2.",
+  "answer": "B C F",
+  "query": "A tech startup has launched a news aggregation service on AWS. The current setup includes a VPC configured only with IPv4 (192.168.0.0/16) featuring multiple public and private subnets. NAT gateways are deployed in the public subnets to allow private instances outgoing internet access. The development team wants to enable IPv6 functionality to accommodate new app features that require it. Which of the following actions are necessary to add IPv6 capability to the existing architecture? Choose 3.",
+  "originalQuery": "A software development team just finished phase 1 of a web service that provides NBA news to subscribers.\nThe web service has used a dedicated VPC which has only IPv4 CIDR (10.0.0.0/16) with two public subnets and two private subnets.\nA NAT gateway is put into each public subnet for outbound internet traffic.\nThe EC2 instances are put into private subnets with a route that connects all Internet-bound IPv4 traffic to the relevant NAT gateway.\nThe product is getting more and more popular and needs IPv6 to support some new features.\nWhich below options are required for the new support for IPv6? Select 3.",
+  "options": [
+    "A. Remove the current VPC and build a new VPC configured with both IPv4 and IPv6 CIDR blocks. Then create fresh public and private subnets with IPv4 and IPv6 address spaces.",
+    "B. Associate an Amazon-provided IPv6 CIDR block with existing VPC and subnets. In the VPC and subnets console, choose “Add IPv6 CIDR”.",
+    "C. For public subnets, create a route that sends all IPv6 traffic from the subnet to the internet gateway. For private subnets, create a route that sends all internet-bound IPv6 traffic to an egress-only internet gateway.",
+    "D. Change route tables to support IPv6 by adding routes where public subnets route IPv6 traffic to the internet gateway, and routes in private subnets send internet-bound IPv6 traffic to NAT gateways.",
+    "E. Configure NAT gateways with IPv6 addresses so they can forward internet-bound IPv6 traffic originating from EC2 instances.",
+    "F. Assign IPv6 addresses to EC2 instances within the allocated subnet IPv6 range."
+  ],
+  "originalOptions": [
+    "A. Delete existing VPC and recreate a new VPC with both IPv4 and IPv6 CIDR. Create new public and private subnets with both IPv4 and IPv6 address ranges.",
+    "B. Associate an Amazon-provided IPv6 CIDR block with existing VPC and subnets. In the VPC and subnets console, choose “Add IPv6 CIDR”.",
+    "C. For public subnets, create a route that routes all IPv6 traffic from the subnet to the internet gateway. For private subnets, create a route that routes all Internet-bound IPv6 traffic to an egress-only internet gateway.",
+    "D. Update the route tables to route the IPv6 traffic. For public subnets, create a route that routes all IPv6 traffic from the subnet to the internet gateway. For private subnets, create a route that routes all Internet-bound IPv6 traffic to NAT gateway.",
+    "E. Assign IPv6 addresses to NAT gateway which will be used to route the internet-bound IPv6 traffic from EC2 instances.",
+    "F. Assign IPv6 addresses to EC2 instances from the IPv6 address range that is allocated to the subnet."
+  ],
+  "image": "",
+  "primaryObjective": "2: Design for New Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "E.\nF.\nCorrect Answer - B, C, F.\nRefer to https://docs.aws.amazon.com/vpc/latest/userguide/vpc-migrate-ipv6.html for the details on how to migrate to IPv6 traffic.\nPlease also note that this question asks for the necessary options.\nThe below steps are required.\nStep 1: Associate an IPv6 CIDR Block with Your VPC and Subnets.\nStep 2: Update Your Route Tables.\nStep 3: Update Your Security Group Rules.\nStep 4: Change Your Instance Type.\nStep 5: Assign IPv6 Addresses to Your Instances.\nOption A is incorrect: Because you do not need to delete and recreate VPC to support IPv6.\nOption B is CORRECT: Because that is a required step to add IPv6 CIDR in both VPC and subnets.\nOption C is CORRECT: Because the routing table needs to be modified to route the IPv6 traffic properly.\nOption D is incorrect: Because the NAT gateway is IPv4 only.\nFor IPv6, an egress-only internet gateway should be used.\nRefer to https://docs.aws.amazon.com/vpc/latest/userguide/egress-only-internet-gateway.html.\nOption E is incorrect: Same reason as option.\nD.\nAlso, you cannot add IPv6 IP range to the NAT gateway.\nOption F is CORRECT: Because EC2 instances need IPv6 addresses to route IPv6 traffic.\nThis can be done in “Actions, Networking, Manage IP Addresses” and choose “Assign new IP” Under “IPv6 Addresses”.\nSure, I can provide a detailed explanation for each option and why it is required for the new support for IPv6.\nOption A: Delete existing VPC and recreate a new VPC with both IPv4 and IPv6 CIDR. Create new public and private subnets with both IPv4 and IPv6 address ranges.\nThis option involves creating a new VPC that supports both IPv4 and IPv6 CIDR blocks, as well as creating new public and private subnets with both IPv4 and IPv6 address ranges. This option may be necessary if the existing VPC and subnets were not designed to support IPv6.\nOption B: Associate an Amazon-provided IPv6 CIDR block with existing VPC and subnets. In the VPC and subnets console, choose “Add IPv6 CIDR”.\nThis option involves associating an Amazon-provided IPv6 CIDR block with the existing VPC and subnets. This option is recommended if the existing VPC and subnets were designed to support IPv6 but were not configured with an IPv6 CIDR block.\nOption C: For public subnets, create a route that routes all IPv6 traffic from the subnet to the internet gateway. For private subnets, create a route that routes all Internet-bound IPv6 traffic to an egress-only internet gateway.\nThis option involves creating a route in the route table that routes all IPv6 traffic from the public subnet to the internet gateway, and creating a route in the route table that routes all Internet-bound IPv6 traffic from the private subnet to an egress-only internet gateway. This option is required to ensure that IPv6 traffic can flow correctly between the VPC and the internet.\nOption D: Update the route tables to route the IPv6 traffic. For public subnets, create a route that routes all IPv6 traffic from the subnet to the internet gateway. For private subnets, create a route that routes all Internet-bound IPv6 traffic to NAT gateway.\nThis option involves updating the route tables to route IPv6 traffic correctly. For public subnets, a route is created that routes all IPv6 traffic from the subnet to the internet gateway. For private subnets, a route is created that routes all Internet-bound IPv6 traffic to the NAT gateway. This option is required to ensure that IPv6 traffic can flow correctly between the VPC and the internet.\nOption E: Assign IPv6 addresses to NAT gateway which will be used to route the internet-bound IPv6 traffic from EC2 instances.\nThis option involves assigning IPv6 addresses to the NAT gateway so that it can route Internet-bound IPv6 traffic from the EC2 instances. This option is required to ensure that IPv6 traffic can flow correctly from the private subnets to the internet.\nOption F: Assign IPv6 addresses to EC2 instances from the IPv6 address range that is allocated to the subnet.\nThis option involves assigning IPv6 addresses to the EC2 instances from the IPv6 address range that is allocated to the subnet. This option is required to ensure that the EC2 instances can communicate with each other over IPv6 and that they can communicate with other IPv6-enabled resources in the VPC.\nIn summary, the three options that are required for the new support for IPv6 are:\nAssociate an Amazon-provided IPv6 CIDR block with existing VPC and subnets.\nCreate routes in the route table that route IPv6 traffic correctly.\nAssign IPv6 addresses to the EC2 instances from the IPv6 address range that is allocated to the subnet.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-finished-phase-1-of-a-exam-093.html",
+  "url": "https://certificationation.com/questions/exam-finished-phase-1-of-a-exam-093.html"
+}

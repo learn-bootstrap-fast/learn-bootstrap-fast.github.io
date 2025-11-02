@@ -1,0 +1,62 @@
+---
+title: "You use CloudFormation templates to deploy webExam"
+description: "Video for you use CloudFormation templates to deploy web applications on EC2 instances. During initialization, the applications download Bash scripts from an S3"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You use CloudFormation templates to deploy web applications on EC2 instances. During initialization, the applications download Bash scripts from an S3 bucket to install the necessary dependencies. The S3 bucket has enabled versioning. One day, the web applications failed to launch because a script in the S3 bucket has been mistakenly deleted by a new hire. The script is very old and no one has a backup. How would you quickly restore the script in the S3 bucket?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><b>Use the Amazon S3 console's 'List versions' feature, pick the deleted script, and restore it by removing the delete marker.</b> is the correct method. When S3 versioning is enabled, deleting an object simply adds a delete marker, but all previous versions remain preserved unless explicitly deleted. By listing all versions, you can find the object's pre-deletion version and recover it simply by deleting the delete marker, making the object visible again at its original key.<br/><br/>The option <i>Update your CloudFormation templates to reference the previous version of the script by specifying the prior version ID.</i> is unnecessary and less efficient, as you can directly restore the original file for all uses instead of pointing templates to a versioned URL.<br/><br/>The suggestion <i>In the Amazon S3 console, select the overwritten object, download an older version, upload it back to the bucket with a new name, and change the CloudFormation templates to point to this new file.</i> is also not optimal. This workaround complicates ongoing maintenance and isn't needed, since versioning allows you a far simpler restore.<br/><br/>Finally, <i>It is not possible to retrieve deleted files from an S3 bucket that has versioning enabled.</i> is incorrect. Enabling versioning specifically allows you to recover deleted objects.<br/><br/><b>Tip:</b> If S3 bucket versioning is on, deleting an object merely hides its content until the delete marker is removed, enabling fast and easy restoration.</p>",
+  "query": "<p>You utilize AWS CloudFormation templates to deploy web applications onto EC2 instances. These applications, upon initialization, download Bash scripts required for installing dependencies from a specified S3 bucket. Versioning is enabled on this S3 bucket. Recently, all web apps failed to start because a script file from the S3 bucket was accidentally deleted by a new employee. As the script is very old, there are no existing external backups. What is the most efficient way to promptly recover this script in your S3 bucket?</p>",
+  "original_oid": "6793da9d61969b416038a25c",
+  "options": [
+    {
+      "correct": true,
+      "text": "Use the Amazon S3 console's 'List versions' feature, pick the deleted script, and restore it by removing the delete marker.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Update your CloudFormation templates to reference the previous version of the script by specifying the prior version ID.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "In the Amazon S3 console, select the overwritten object, download an older version, upload it back to the bucket with a new name, and change the CloudFormation templates to point to this new file.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "It is not possible to retrieve deleted files from an S3 bucket that has versioning enabled.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question492",
+  "originalQuery": "You use CloudFormation templates to deploy web applications on EC2 instances.\nDuring initialization, the applications download Bash scripts from an S3 bucket to install the necessary dependencies.\nThe S3 bucket has enabled versioning.\nOne day, the web applications failed to launch because a script in the S3 bucket has been mistakenly deleted by a new hire.\nThe script is very old and no one has a backup.\nHow would you quickly restore the script in the S3 bucket?",
+  "originalOptions": "A. In the Amazon S3 console, select the deleted object, download the previous version of the object and upload the downloaded file to the S3 bucket with another name. Modify the CloudFormation templates to use the new file.|B. Modify the CloudFormation templates to use the previous version of the deleted object by adding the previous version I.|C. In the Amazon S3 console, choose the “List versions” switch, select the deleted script and undelete it by deleting the delete marker.|D. Deleted objects cannot be recovered or restored in an S3 bucket that has enabled versioning.",
+  "video_url": "https://certificationation.com/videos/exam-deploy-web-applications-on-ec2-exam-357.html",
+  "url": "https://certificationation.com/questions/exam-deploy-web-applications-on-ec2-exam-357.html"
+}

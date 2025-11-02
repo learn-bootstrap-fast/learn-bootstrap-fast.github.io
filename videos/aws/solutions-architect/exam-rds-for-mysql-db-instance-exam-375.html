@@ -1,0 +1,128 @@
+---
+title: "A company has launched an Amazon RDS for MySQL DBExam"
+description: "Video for a company has launched an Amazon RDS for MySQL DB instance. Most of the connections to the database come from serverless applications. Application"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company has launched an Amazon RDS for MySQL DB instance. Most of the connections to the database come from serverless applications. Application traffic to the database changes significantly at random intervals. At times of high demand, users report that their applications experience database connection rejection errors. Which solution will resolve this issue with the LEAST operational overhead?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729add"
+  },
+  "quid": null,
+  "ordinal": "376",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon RDS",
+    " AWS Lambda",
+    " AWS Backup",
+    " AWS Well-Architected Framework",
+    " AWS Managed Services (AMS)"
+  ],
+  "slug": "rds-launch-amazon-mysql-database-aws",
+  "source": "ET",
+  "title": "AWS A Company Has Launched An Amazon RDS Question",
+  "meta": "AWS Exam Question: A company launched an Amazon RDS for MySQL DB instance with serverless apps experiencing connection rejection errors. Find the answer.",
+  "answer": "A",
+  "query": "A startup has deployed an Amazon RDS for PostgreSQL DB instance. Their serverless applications frequently connect to the database, but traffic spikes unexpectedly. Users have reported issues with database connection errors during peak times.\n\nWhat solution can be implemented to minimize operational overhead while addressing this issue?",
+  "originalQuery": "A company has launched an Amazon RDS for MySQL DB instance. Most of the connections to the database come from serverless applications. Application traffic to the database changes significantly at random intervals. At times of high demand, users report that their applications experience database connection rejection errors.\n\nWhich solution will resolve this issue with the LEAST operational overhead?",
+  "options": [
+    "A. Create a proxy in RDS Proxy. Configure the users’ applications to use the DB instance through RDS Proxy.",
+    "B. Set up Amazon ElastiCache for Memcached to communicate between applications and the database.",
+    "C. Upgrade the DB instance to a higher instance class that supports greater I/O. Reconfigure the applications to use this instance.",
+    "D. Enable Multi-AZ for the DB instance. Adjust applications to switch between the replicated DB instances."
+  ],
+  "originalOptions": [
+    "A. Create a proxy in RDS Proxy. Configure the users’ applications to use the DB instance through RDS Proxy.",
+    "B. Deploy Amazon ElastiCache for Memcached between the users’ applications and the DB instance.",
+    "C. Migrate the DB instance to a different instance class that has higher I/O capacity. Configure the users’ applications to use the new DB instance.",
+    "D. Configure Multi-AZ for the DB instance. Configure the users’ applications to switch between the DB instances."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "The issue of database connection rejection errors can be effectively addressed by implementing RDS Proxy. RDS Proxy serves as an intermediary between the application and the Amazon RDS database, allowing for better management of database connections. It helps to efficiently pool and share connections, thereby mitigating the impact of fluctuating traffic demands typical in serverless applications. This approach not only enhances application performance during peak usage periods but also reduces the operational overhead associated with managing database connections directly. By utilizing RDS Proxy, applications can maintain a stable connection to the database, resulting in improved reliability and user experience.",
+    "The ideal fix for this scenario is to set up an RDS Proxy. 🦸‍♂️ RDS Proxy is like the superhero of database connections, effortlessly managing thousands of concurrent connections and reducing those pesky connection rejection errors. Plus, it comes equipped with handy features like connection pooling, read/write splitting, and automatic retries—making your life a whole lot easier! 🌟 \n\nChoosing this option means you won't have to deal with the hassle of migrating to a beefier instance class or establishing a new caching layer. Talk about a win-win! So, it’s safe to say that option A is the way to go! 🎉",
+    "RDS Proxy acts as a middleman that cleverly pools and shares database connections, enhancing scalability like a seasoned traffic cop directing a chaotic intersection. This nifty solution can smoothly manage those pesky connection spikes during peak times without breaking a sweat.\n\nImplementing RDS Proxy is a breeze when it comes to operational overhead. All you need to do is set up the proxy and tweak the applications to connect through it—no need for any code rewrites or convoluted adjustments. It’s as simple as flipping a switch!",
+    "That's an interesting point! However, let's explore the benefits of the other options more closely. While option B involves using Amazon ElastiCache for Memcached to facilitate communication between the applications and the database, it may not be the most efficient solution for addressing the specific issue of database connection rejections. Instead, focusing on a proxy layer or upgrading the instance class could provide a more streamlined and effective approach to managing connections during peak traffic times. Your enthusiasm for considering different solutions is fantastic, and it's always valuable to evaluate all options!",
+    "Amazon ElastiCache might seem like a tempting option due to its lower operational overhead, but we’re already set up with an Amazon RDS for MySQL DB instance. So, let’s keep our joyful momentum going and focus on maximizing what we have! 🌟"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "A",
+      "explanation": "database connection rejection errors = RDS Proxy",
+      "upvotes": "6"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "The correct solution for this scenario would be to create a proxy in RDS Proxy. RDS Proxy allows for managing thousands of concurrent database connections, which can help reduce connection errors. RDS Proxy also provides features such as connection pooling, read/write splitting, and retries. This solution requires the least operational overhead as it does not involve migrating to a different instance class or setting up a new cache layer. Therefore, option A is the correct answer.",
+      "upvotes": "5"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "RDS Proxy provides a proxy layer that pools and shares database connections to improve scalability. This allows the proxy to handle connection spikes to the database gracefully.\n\nUsing RDS Proxy requires minimal operational overhead - just create the proxy and reconfigure applications to use it. No code changes needed.",
+      "upvotes": "4"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Wait, why not B?????",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Amazon ElastiCache tends to have a lower operational overhead compared to Amazon RDS Proxy. BUT we already have \" Amazon RDS for MySQL DB instance\"",
+      "upvotes": "2"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "A (100%)",
+      "votes": "19 votes."
+    },
+    {
+      "option": "C (25%)",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is option A, which suggests creating a proxy using RDS Proxy. This is the best solution because RDS Proxy helps manage large numbers of concurrent database connections, mitigating connection errors particularly during traffic spikes, without requiring substantial changes to the existing setup. Other options, such as deploying ElastiCache (B) or changing instance classes (C), involve higher operational overhead or do not specifically target the issue of managing database connections effectively. Option D does not address connection limits and is primarily focused on availability rather than connection management.",
+  "video_url": "https://certificationation.com/videos/exam-rds-for-mysql-db-instance-exam-375.html",
+  "url": "https://certificationation.com/questions/exam-rds-for-mysql-db-instance-exam-375.html"
+}

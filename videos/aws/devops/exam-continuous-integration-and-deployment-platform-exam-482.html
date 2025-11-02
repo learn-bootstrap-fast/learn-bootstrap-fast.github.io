@@ -1,0 +1,62 @@
+---
+title: "Your company starts to use a third-party continuousExam"
+description: "Video for your company starts to use a third-party continuous integration and deployment platform provided by a SaaS partner. You know that this SaaS partner"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company starts to use a third-party continuous integration and deployment platform provided by a SaaS partner. You know that this SaaS partner can integrate with Amazon EventBridge and send its build events to AWS. Based on the received events, you can track the build metrics over time and visualise the build performance. In order to receive the events from the SaaS partner, which of the following configurations do you need in Amazon EventBridge?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct solution is to <b>generate a partner event bus within Amazon EventBridge dedicated to the SaaS provider, and enable event transmission to this partner bus</b>. Partner event buses are specifically designed for external, AWS-integrated SaaS providers, making it the most secure and proper way to accept third-party event data. This setup is necessary because events from SaaS partners are received via partner event sources and require a dedicated event bus for segregation and management.</p><p>Option <i>Provision an IAM user specifically for the SaaS partner, granting it permission to publish events directly to the default EventBridge event bus</i> is incorrect because SaaS integrations with EventBridge use event sources, not direct IAM user access for event publishing.</p><p>Option <i>Share an IAM role with Amazon EventBridge permissions by providing its ARN to the SaaS provider to link their event source</i> is not the valid approach. Associating an IAM role and sharing its ARN is neither required nor recommended for third-party SaaS connections with EventBridge.</p><p>Option <i>Locate the event source identifier supplied by the SaaS partner and allow reception for that ID on the default EventBridge bus</i> is not complete or correct; the proper action is to create a <b>partner event bus</b> corresponding to the external event source. The default bus is not used for SaaS event sources.</p><p><b>Tip:</b> Always refer to AWS documentation for EventBridge SaaS integration, and remember that events from partners are routed to a dedicated event bus for each partner integration.</p>",
+  "query": "<p>Your organization is adopting a third-party continuous integration and deployment SaaS platform. This SaaS partner can transmit build events to AWS using Amazon EventBridge, allowing you to monitor and visualize build performance metrics over time. What configuration is required in Amazon EventBridge to successfully receive the events from this SaaS partner?</p>",
+  "original_oid": "6793da9461969b416038a249",
+  "options": [
+    {
+      "correct": true,
+      "text": "Generate a partner event bus within Amazon EventBridge dedicated to the SaaS provider, and enable event transmission to this partner bus.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Share an IAM role with Amazon EventBridge permissions by providing its ARN to the SaaS provider to link their event source.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Locate the event source identifier supplied by the SaaS partner and allow reception for that ID on the default EventBridge bus.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Provision an IAM user specifically for the SaaS partner, granting it permission to publish events directly to the default EventBridge event bus.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question473",
+  "originalQuery": "Your company starts to use a third-party continuous integration and deployment platform provided by a SaaS partner.\nYou know that this SaaS partner can integrate with Amazon EventBridge and send its build events to AWS.\nBased on the received events, you can track the build metrics over time and visualise the build performance.\nIn order to receive the events from the SaaS partner, which of the following configurations do you need in Amazon EventBridge?",
+  "originalOptions": "A. You need to create an IAM user for the SaaS partner and allow the IAM user to send events to the default event bus of Amazon EventBridge.|B. You need to find out the SaaS partner’s event source ID and permit the event source in the default event bus of Amazon EventBridge.|C. You need to create a partner event bus in Amazon EventBridge for the SaaS partner to send events to it.|D. You need to create an IAM role that has the read and write permissions of Amazon EventBridge and share the role’s ARN to the SaaS partner to associate the event source with Amazon EventBridge.",
+  "video_url": "https://certificationation.com/videos/exam-continuous-integration-and-deployment-platform-exam-482.html",
+  "url": "https://certificationation.com/questions/exam-continuous-integration-and-deployment-platform-exam-482.html"
+}

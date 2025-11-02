@@ -1,0 +1,72 @@
+---
+title: "A corporate web application is deployed within an AmazonExam"
+description: "Video for a corporate web application is deployed within an Amazon Virtual Private Cloud (VPC) and is connected to the corporate data center via an IPsec VPN."
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A corporate web application is deployed within an Amazon Virtual Private Cloud (VPC) and is connected to the corporate data center via an IPsec VPN. The application must authenticate against the on-premises LDAP server. After authentication, each logged-in user can only access an Amazon Simple Storage Service(S3) keyspace specific to that user. Which two approaches can satisfy these objectives?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d598f501ee1c8ade97d7"
+  },
+  "quid": "0",
+  "ordinal": "140",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "AWS Security Token Service (STS)",
+    " AWS Identity and Access Management (IAM)",
+    " Amazon S3"
+  ],
+  "slug": "vpc-corporate-web-application-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question140",
+  "title": "AWS A Corporate Web Application Is Deployed Question",
+  "meta": "AWS Exam Question: A corporate web application in a VPC connects to an LDAP server via an IPsec VPN. How to ensure user-specific S3 keyspace access? Answer: AWS VPC, IPsec VPN, S3.",
+  "answer": "B C",
+  "query": "A company hosts an internal web portal inside an Amazon VPC that is linked to its headquarters through an IPsec VPN connection. Users must verify their identities through the company’s LDAP directory before gaining access. Once signed in, users should only be able to access an Amazon S3 bucket specific to their account. What two methods achieve these requirements?",
+  "originalQuery": "A corporate web application is deployed within an Amazon Virtual Private Cloud (VPC) and is connected to the corporate data center via an IPsec VPN.\nThe application must authenticate against the on-premises LDAP server.\nAfter authentication, each logged-in user can only access an Amazon Simple Storage Service(S3) keyspace specific to that user.\nWhich two approaches can satisfy these objectives?",
+  "options": [
+    "A. Build an identity proxy that authenticates directly with AWS Security Token Service (STS) to assume a role for retrieving temporary AWS credentials. The app queries this proxy to obtain temporary AWS credentials for accessing the assigned S3 bucket.",
+    "B. The application authenticates against LDAP and retrieves the name of an IAM role associated with the user. The application then calls the AWS Security Token Service (STS) to assume that IAM role ( including the ARN ). The application then uses the temporary credentials to access the appropriate S3 bucket.",
+    "C. Create an identity broker that first validates users using LDAP and then requests IAM federated credentials from AWS Security Token Service (STS). The application then utilizes these temporary credentials to access the user's S3 bucket.",
+    "D. The application authenticates against LDAP and then calls the AWS Identity and Access Management (IAM) Security service to log in to IAM using the LDAP credentials. The application can then access the appropriate S3 bucket."
+  ],
+  "originalOptions": [
+    "A. Develop an identity broker that authenticates against AWS Security Token Service (STS) to assume an IAM role to get temporary AWS security credentials. The application calls the identity broker to get AWS temporary security credentials to access the appropriate S3 bucket.",
+    "B. The application authenticates against LDAP and retrieves the name of an IAM role associated with the user. The application then calls the AWS Security Token Service (STS) to assume that IAM role ( including the ARN ). The application then uses the temporary credentials to access the appropriate S3 bucket.",
+    "C. Develop an identity broker that authenticates against LDAP and then calls AWS Security Token Service (STS) to get IAM federated user credentials. The application then uses the temporary credentials to access the appropriate S3 bucket..",
+    "D. The application authenticates against LDAP and then calls the AWS Identity and Access Management (IAM) Security service to log in to IAM using the LDAP credentials. The application can then access the appropriate S3 bucket."
+  ],
+  "image": "https://eaeastus2.blob.core.windows.net/optimizedimages/static/images/AWS-Certified-Solutions-Architect-Professional/answer/imgquestions_lwzqxu.png",
+  "primaryObjective": "2: Design for New Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Answer - B and C.\nThere are two architectural considerations here: (1) The users must be authenticated via the on-premise LDAP server, and (2) each user should have access to S3 only.\nWith this information, it is important to authenticate the users using LDAP, get the IAM Role name, get the temporary credentials from AWS STS, and access the S3 bucket using those credentials.\nAnd second, create an IAM Role that provides access to S3.\nOption A is incorrect because the users need to be authenticated using LDAP first, not AWS STS.\nAlso, the temporary credentials to log into AWS are provided by AWS STS, not an identity broker.\nOption B is CORRECT because it follows the correct sequence.\nIt authenticates users using LDAP, gets the security token from AWS STS, and then accesses the S3 bucket using the temporary credentials.\nOption C is CORRECT because it follows the correct sequence.\nIt develops an identity broker that authenticates users against LDAP, gets the security token from AWS STS, and then accesses the S3 bucket using the IAM federated user credentials.\nOption D is incorrect because you cannot use the LDAP credentials to log in to IAM.\nAn example diagram of how this works from the AWS documentation is given below.\nFor more information on federated access, please visit the below link-\nhttp://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_federated-users.html\nThe scenario presented involves a corporate web application that is deployed within an Amazon Virtual Private Cloud (VPC) and is connected to the corporate data center via an IPsec VPN. The application must authenticate against the on-premises LDAP server, and each logged-in user can only access an Amazon S3 keyspace specific to that user. Two approaches can satisfy these objectives:\nA. Develop an identity broker that authenticates against AWS Security Token Service (STS) to assume an IAM role to get temporary AWS security credentials. The application calls the identity broker to get AWS temporary security credentials to access the appropriate S3 bucket.\nThis approach involves developing an identity broker that authenticates against AWS Security Token Service (STS) to assume an IAM role to obtain temporary AWS security credentials. The application then calls the identity broker to obtain the temporary credentials required to access the appropriate S3 bucket.\nIn this approach, the identity broker authenticates against AWS Security Token Service (STS) by assuming an IAM role. The IAM role is configured with the necessary permissions to access the appropriate S3 bucket. Once the identity broker has assumed the IAM role, it obtains temporary AWS security credentials from STS. These temporary credentials are then passed to the application, which uses them to access the appropriate S3 bucket.\nB. The application authenticates against LDAP and retrieves the name of an IAM role associated with the user. The application then calls the AWS Security Token Service (STS) to assume that IAM role ( including the ARN ). The application then uses the temporary credentials to access the appropriate S3 bucket.\nThis approach involves the application authenticating against LDAP and retrieving the name of an IAM role associated with the user. The application then calls the AWS Security Token Service (STS) to assume that IAM role, including the ARN. The application then uses the temporary credentials obtained from STS to access the appropriate S3 bucket.\nIn this approach, the application authenticates against LDAP and retrieves the name of the IAM role associated with the user. The application then calls STS to assume that IAM role, which is configured with the necessary permissions to access the appropriate S3 bucket. The application then uses the temporary credentials obtained from STS to access the S3 bucket.\nC. Develop an identity broker that authenticates against LDAP and then calls AWS Security Token Service (STS) to get IAM federated user credentials. The application then uses the temporary credentials to access the appropriate S3 bucket.\nThis approach involves developing an identity broker that authenticates against LDAP and then calls AWS Security Token Service (STS) to obtain IAM federated user credentials. The application then uses the temporary credentials obtained from STS to access the appropriate S3 bucket.\nIn this approach, the identity broker authenticates against LDAP and obtains IAM federated user credentials from STS. These temporary credentials are then passed to the application, which uses them to access the appropriate S3 bucket.\nD. The application authenticates against LDAP and then calls the AWS Identity and Access Management (IAM) Security service to log in to IAM using the LDAP credentials. The application can then access the appropriate S3 bucket.\nThis approach involves the application authenticating against LDAP and then calling the AWS Identity and Access Management (IAM) Security service to log in to IAM using the LDAP credentials. The application can then access the appropriate S3 bucket.\nIn this approach, the application authenticates against LDAP and uses the LDAP credentials to log in to IAM. Once logged in, the application can access the appropriate S3 bucket.\nIn summary, options A and B are both viable solutions to the given scenario. Option A involves developing an identity broker that authenticates against AWS STS to assume an IAM role and obtain temporary AWS security credentials, while option B involves the application authenticating against LDAP and retrieving the name of an IAM role associated with",
+  "chatGptExplanation": "The primary AWS product in focus is AWS Security Token Service (STS).\n\nExplanation of correct answers (B and C):\n- Option B is correct because it correctly describes a flow where the application first authenticates the user against the on-premises LDAP directory. After successful authentication, it retrieves the user's associated IAM role. Then the application calls AWS STS to assume that IAM role and obtain temporary security credentials. These credentials are used to access the specific Amazon S3 bucket. This approach properly leverages federated authentication with LDAP and STS temporary credentials for fine-grained access control.\n- Option C is also correct because it suggests using an identity broker that authenticates users against LDAP and then obtains federated IAM credentials by calling AWS STS. This decouples authentication from AWS and enables secure temporary credential issuance, which the application subsequently uses to access S3 buckets specific to users. This is a common pattern for integrating on-premises identity directories with AWS security.\n\nExplanation of incorrect answers:\n- Option A is incorrect because it suggests the identity broker authenticates directly with AWS STS to assume an IAM role without first authenticating users against the corporate LDAP directory. Since the requirement is that users must authenticate against LDAP, skipping this step makes the solution insufficient. Moreover, AWS STS does not perform authentication itself; it issues temporary credentials based on a trusted identity already authenticated.\n- Option D is incorrect because AWS IAM does not support logging in using LDAP credentials. IAM roles and policies rely on AWS credentials and trust policies; LDAP credentials cannot be used to log into IAM directly. Therefore, this approach is not feasible.\n\nIn summary, solutions B and C satisfy both requirements: LDAP-based user authentication and granting access to S3 buckets through temporary security credentials obtained via AWS STS.\n",
+  "video_url": "https://certificationation.com/videos/exam-deployed-within-an-amazon-virtual-exam-085.html",
+  "url": "https://certificationation.com/questions/exam-deployed-within-an-amazon-virtual-exam-085.html"
+}

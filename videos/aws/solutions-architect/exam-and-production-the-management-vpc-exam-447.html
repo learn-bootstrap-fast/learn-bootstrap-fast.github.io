@@ -1,0 +1,128 @@
+---
+title: "A company has two VPCs named Management and ProductionExam"
+description: "Video for a company has two VPCs named Management and Production. The Management VPC uses VPNs through a customer gateway to connect to a single device in the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company has two VPCs named Management and Production. The Management VPC uses VPNs through a customer gateway to connect to a single device in the data center. The Production VPC uses a virtual private gateway with two attached AWS Direct Connect connections. The Management and Production VPCs both use a single VPC peering connection to allow communication between the applications. What should a solutions architect do to mitigate any single point of failure in this architecture?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729b25"
+  },
+  "quid": null,
+  "ordinal": "448",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS Direct Connect",
+    " AWS VPN",
+    " Amazon VPC",
+    " AWS Well-Architected Framework",
+    " AWS Global Accelerator"
+  ],
+  "slug": "vpc-mitigate-single-point-failure-aws",
+  "source": "ET",
+  "title": "AWS A Company Has Two VPCs Named Management Question",
+  "meta": "AWS Exam Question: A company has two VPCs, Management and Production, using VPNs and Direct Connect. What can mitigate single points of failure? Answer: VPC Peering, VPN, Direct Connect.",
+  "answer": "C",
+  "query": "An organization operates two VPCs called Admin and Release. The Admin VPC establishes VPN connections via a customer gateway to reach a single device located in the on-premises data center. In comparison, the Release VPC employs a virtual private gateway linked to two separate AWS Direct Connect connections. Additionally, both VPCs utilize a single VPC peering connection for inter-application communication.\n\nWhat action should a solutions architect recommend to eliminate any possibility of a single point of failure within this setup?",
+  "originalQuery": "A company has two VPCs named Management and Production. The Management VPC uses VPNs through a customer gateway to connect to a single device in the data center. The Production VPC uses a virtual private gateway with two attached AWS Direct Connect connections. The Management and Production VPCs both use a single VPC peering connection to allow communication between the applications.\n\nWhat should a solutions architect do to mitigate any single point of failure in this architecture?",
+  "options": [
+    "A. Configure multiple VPNs between the Admin and Release VPCs.",
+    "B. Provision another virtual private gateway for the Admin VPC.",
+    "C. Add a second set of VPNs to the Management VPC from a second customer gateway device.",
+    "D. Create an additional VPC peering connection linking Admin and Release VPCs."
+  ],
+  "originalOptions": [
+    "A. Add a set of VPNs between the Management and Production VPCs.",
+    "B. Add a second virtual private gateway and attach it to the Management VPC.",
+    "C. Add a second set of VPNs to the Management VPC from a second customer gateway device.",
+    "D. Add a second VPC peering connection between the Management VPC and the Production VPC."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Option C effectively addresses the issue of a single point of failure in the current architecture.\n\nThe Management VPC is reliant on a single VPN connection established via one customer gateway device, which poses a risk of failure.\n\nBy implementing an additional set of VPN connections from the Management VPC to a secondary customer gateway device, redundancy is introduced. This enhancement significantly reduces the risk associated with relying on a single connection, thereby mitigating the potential impact of any outages.",
+    "As @Abrar2022 so brilliantly points out, we have a classic case of connectivity here! 🎉 In this setup, the Management VPC is linked to the data center via VPN 2 through customer gateway (cgw) 1, while the Production VPC is strutting its stuff with VPN 1 connecting through the same cgw. \n\nHowever, we wouldn't want to put all our eggs in one basket (or all our data in one VPC, for that matter)! 🥚💼 To spice things up and add some redundancy, we could consider a few options. \n\nImagine adding another layer of VPN fun! 🌐 By introducing additional VPN connections to the Management VPC from a second customer gateway device, we can ensure that even if one connection takes a vacation, the other is ready to step in and keep things running smoothly. \n\nSo let's keep our architecture robust and resilient, and make sure those applications can chat without a hitch! 🗣️✨",
+    "In the current setup, we have two VPCs: Management and Production. The Management VPC relies on a VPN connection through a customer gateway to a lone device in the data center, while the Production VPC boasts a virtual private gateway with two AWS Direct Connect links—quite the overachiever! Both VPCs communicate through a single peering connection, which is a bit like putting all your eggs in one basket if you ask me.\n\nTo spice things up and eliminate any potential single point of failure, it would be wise to consider some alternatives. For instance, introducing multiple VPN connections between the Management and Production VPCs could bolster resilience. Alternatively, provisioning an additional virtual private gateway for the Management VPC would further enhance connectivity. Another option is to set up a second set of VPNs from a different customer gateway device, creating redundancy like a safety net for your data traffic. Lastly, establishing an extra VPC peering connection could also work wonders for communication between the two.\n\nIn the world of cloud architecture, redundancy is the name of the game. It's all about ensuring that if one path goes awry, there are ample alternatives ready to take over without missing a beat. So, choose wisely and avoid putting all your connectivity hopes into one fragile link!",
+    "The best approach to enhance the resilience of this architecture is to implement an additional set of VPN connections from a secondary customer gateway device to the Management VPC. This strategy effectively addresses the potential single point of failure by diversifying the connection paths and ensuring that if one connection encounters issues, the other can maintain communication. By adding this redundancy, you significantly improve the overall reliability and robustness of the network infrastructure.",
+    "To enhance the architecture's resilience and eliminate potential single points of failure, consider the following delightful adjustments! 🌈 \n\nImagine this setup: \n\n1. The Production VPC joyfully connects to the data center through two separate paths via Direct Connect Gateways, ensuring that if one pathway stumbles, the other keeps the connection alive! \n   - **Path 1:** Production VPC → Private Gateway → Direct Connect Gateway 1 → Customer Gateway 1 → Data Center\n   - **Path 2:** Production VPC → Private Gateway → Direct Connect Gateway 2 → Customer Gateway 2 → Data Center \n\n2. Meanwhile, the Management VPC happily utilizes a VPN connection to engage with the data center, but to sprinkle a little extra magic on this connection, we could introduce an additional VPN from a second customer gateway device. This way, if one connection encounters a hiccup, the other can swoop in and save the day! \n\nBy embracing this cheerful redundancy, the architecture can maintain its merry flow of communication even in the face of challenges. 🎉"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "C",
+      "explanation": "C is the correct option to mitigate the single point of failure.\n\nThe Management VPC currently has a single VPN connection through one customer gateway device. This is a single point of failure.\n\nAdding a second set of VPN connections from the Management VPC to a second customer gateway device provides redundancy and eliminates this single point of failure.",
+      "upvotes": "7"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "As @Abrar2022 explains\n(production) VPN 1--------------> cgw 1\n(management) VPN 2--------------> cgw",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "(production) VPN 1--------------> cgw 1\n(management) VPN 2--------------> cgw 2",
+      "upvotes": "6"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "ANSWER IS C",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "C,\n\n(production) --PrivateGateway-------->Direct Connect Gateway 1 ---> cgw 1 ---> DataCenter\n(production) -- PrivateGateway ------> Direct Connect Gateway 2 --->cgw 2 --> DataCenter\n(Management) -- > VPN ---- > (Direct Connect Gateway 1?) --- >cgw1 ---> dataCenter---> device in dataCenter",
+      "upvotes": "2"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "C (100%)",
+      "votes": "20 votes."
+    },
+    {
+      "option": "C (25%)",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "Option C is correct because it introduces redundancy for the current single VPN connection between the Management VPC and the on-premises data center, mitigating the single point of failure. The Management VPC is currently dependent on a single customer gateway device for its VPN connection, which means if that connection fails, the Management VPC loses connectivity. By adding a second set of VPNs from a second customer gateway device, the solutions architect can ensure that if one VPN connection fails, the other can still maintain connectivity.\n\nOption A is incorrect because adding VPNs between the Admin and Release VPCs does not address the single point of failure issue associated specifically with the Management VPC's connection to the on-premises data center.\n\nOption B is also incorrect since adding a second virtual private gateway does not solve the core issue of redundancy for the VPN connection; it does not involve a second customer gateway for failover. \n\nOption D is incorrect as creating an additional VPC peering connection does not connect the Management VPC redundantly to the data center but only connects the two VPCs. This does not contribute to solving the identified single point of failure related to the VPN connection.",
+  "video_url": "https://certificationation.com/videos/exam-and-production-the-management-vpc-exam-447.html",
+  "url": "https://certificationation.com/questions/exam-and-production-the-management-vpc-exam-447.html"
+}

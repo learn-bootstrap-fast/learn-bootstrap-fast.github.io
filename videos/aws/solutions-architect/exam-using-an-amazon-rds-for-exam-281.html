@@ -1,0 +1,128 @@
+---
+title: "A company runs a fleet of web servers using an AmazonExam"
+description: "Video for a company runs a fleet of web servers using an Amazon RDS for PostgreSQL DB instance. After a routine compliance check, the company sets a standard"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company runs a fleet of web servers using an Amazon RDS for PostgreSQL DB instance. After a routine compliance check, the company sets a standard that requires a recovery point objective (RPO) of less than 1 second for all its production databases. Which solution meets these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729a7e"
+  },
+  "quid": null,
+  "ordinal": "281",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS Database Migration Service (AWS DMS)",
+    " Amazon RDS",
+    " AWS Auto Scaling",
+    " Multi-AZ deployment",
+    " Recovery point objective (RPO)"
+  ],
+  "slug": "rds-recovery-point-objective-aws",
+  "source": "ET",
+  "title": "AWS A Company Runs A Fleet Of Web Servers Question",
+  "meta": "AWS Exam Question: A company needs an RPO of less than 1 second for its Amazon RDS for PostgreSQL. What solution meets these requirements? Answer: AWS technologies.",
+  "answer": "A",
+  "query": "An organization operates a collection of microservices backed by an Amazon RDS database for MySQL. Following a recent audit, the organization mandates a recovery point objective (RPO) of under 2 seconds for all production databases.\n\nWhat is the best approach to satisfy this requirement?",
+  "originalQuery": "A company runs a fleet of web servers using an Amazon RDS for PostgreSQL DB instance. After a routine compliance check, the company sets a standard that requires a recovery point objective (RPO) of less than 1 second for all its production databases.\n\nWhich solution meets these requirements?",
+  "options": [
+    "A. Enable a Multi-AZ deployment for the DB instance.",
+    "B. Activate auto scaling features for the DB instance in a single Availability Zone.",
+    "C. Set up the DB instance in one Availability Zone and create several read replicas in another Availability Zone.",
+    "D. Configure the DB instance in one Availability Zone, and configure AWS Database Migration Service (AWS DMS) change data capture (CDC) tasks."
+  ],
+  "originalOptions": [
+    "A. Enable a Multi-AZ deployment for the DB instance.",
+    "B. Enable auto scaling for the DB instance in one Availability Zone.",
+    "C. Configure the DB instance in one Availability Zone, and create multiple read replicas in a separate Availability Zone.",
+    "D. Configure the DB instance in one Availability Zone, and configure AWS Database Migration Service (AWS DMS) change data capture (CDC) tasks."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "A Multi-AZ deployment allows the company to attain an RPO of under 1 second, as the standby instance remains continuously synchronized with the primary instance. This setup guarantees that data modifications are replicated in real-time, thereby minimizing potential data loss in the event of a failure. In this configuration, automated failover capabilities further enhance availability and resilience, ensuring that operations can continue with minimal interruption.",
+    "Let’s dive into the delightful world of database options, shall we? 🌟\n\n**Read Replicas** are like the popular kids in school, always there for a good time! They're asynchronous, which means they can handle read requests without breaking a sweat, giving your database a boost in performance. You can set these charming replicas up in the same region or even across different regions for disaster recovery. However, beware! They come with a catch: if there's a hiccup, automatic failover isn’t in their repertoire. You’ll need to roll up your sleeves for some manual intervention, which includes updating DNS settings and making some application changes. Think of it as giving your database a little makeover! 💅\n\nOn the other hand, **Multi-AZ** deployments are the dependable friends who always have your back. They maintain a synchronized standby replica of your primary instance in a different Availability Zone within the same region. This setup provides high availability and automatic failover—no drama, just smooth sailing! 🚀\n\nSo, when it comes to meeting that snazzy recovery point objective (RPO) of less than 1 second, Option A is the star of the show! It's the reliable choice that keeps your production databases dancing through any challenges. 💃✨",
+    "The most effective solution here is option A. Enabling a Multi-AZ deployment for the DB instance is like giving your database a cozy, backup buddy in another availability zone. This setup not only enhances availability but also ensures that your data is automatically replicated to a standby instance. So, if there’s ever a hiccup in the primary instance, you can switch over in a flash—keeping your recovery point objective under that ambitious one-second mark. \n\nWhile the other options might sound tempting, they don't quite cut the mustard when it comes to achieving such a stringent RPO. Auto-scaling in a single Availability Zone (B) is more about handling traffic spikes than ensuring data durability. Creating read replicas (C) is great for offloading read queries, but they aren't designed for immediate failover. And configuring AWS Database Migration Service (DMS) for change data capture tasks, while clever, is an overcomplicated way to meet your RPO needs. So, stick with the Multi-AZ deployment—it's the dependable sidekick your database deserves!",
+    "A company operates a fleet of web servers that utilize an Amazon RDS for PostgreSQL database instance. Following a routine compliance assessment, the organization established a standard requiring a recovery point objective (RPO) of less than one second for all its production databases.\n\nTo achieve this ambitious goal, the most effective solution would be to enable a Multi-AZ deployment for the database instance. This configuration enhances availability and durability by automatically replicating data to a standby instance in a different Availability Zone, ensuring minimal data loss and rapid recovery in the event of a failure. \n\nEach of the other options—such as activating auto-scaling features, creating read replicas, or utilizing AWS Database Migration Service (DMS) for change data capture—offers benefits but does not meet the stringent RPO requirement as effectively as a Multi-AZ deployment. Embracing this solution not only aligns with the company's compliance standards but also reinforces its commitment to maintaining robust and reliable database operations.",
+    "Oh, what a delightful conundrum we have! 🌟 To ensure your database shines with a recovery point objective (RPO) of less than one second, you can set up the primary database instance in one Availability Zone and sprinkle in several read replicas in a different Availability Zone. \n\nHere's the magic behind it: Read replicas utilize asynchronous replication, allowing data to flow from the primary instance to the replicas with barely a whisper of delay. This charming arrangement enables almost real-time data replication, making it a splendid choice for meeting that snazzy low RPO requirement! \n\nNow, while Multi-AZ deployments do offer high availability with a standby replica, they might not always deliver that golden RPO of under one second due to the synchronous replication dance and potential failover hiccups. And as for the other options, they don’t quite hit the mark in terms of achieving that swift data recovery. So, let’s keep the focus on those fabulous read replicas! 🎉"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "",
+      "explanation": "A:\nBy using Multi-AZ deployment, the company can achieve an RPO of less than 1 second because the standby instance is always in sync with the primary instance, ensuring that data changes are continuously replicated.",
+      "upvotes": "23"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "Read Replicas:\nRead Replicas are asynchronous and support read scalability.\nIt is uese to improve performance.\nRead Replicas can be in the same region or in a different region for disaster recovery purposes, but this involves manual intervention,\nwhich means Read Replicas do not provide automatic failover and requires DNS updates and application changes\n\nMulti-AZ:\nMulti-AZ maintains a synchronous standby replica of the primary instance in a different Availability Zone within the same region.\nMulti-AZ deployments provide high availability and automatic failover.\n\nOption A is better choice with respect to below statement,\n\"the company sets a standard that requires a recovery point objective (RPO) of less than 1 second for all its production databases.\"",
+      "upvotes": "12"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Correct answer is A",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Same question old from SAA-C02\n08.2021\n\nhttps://www.examtopics.com/discussions/amazon/view/61072-exam-aws-certified-solutions-architect-associate-saa-c02/",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "C",
+      "explanation": "C. Configure the DB instance in one Availability Zone, and create multiple read replicas in a separate Availability Zone.\nHere's why:\nRead Replicas: By configuring read replicas in a separate Availability Zone, you can leverage asynchronous replication to replicate data from the primary DB instance to the read replicas with minimal latency. This setup allows for near real-time data replication and can help achieve a low RPO.\n\nIn contrast, Multi-AZ deployments (Option A) provide high availability by maintaining a standby replica but may not guarantee an RPO of less than 1 second due to synchronous replication and failover considerations. Options B and D are not directly related to achieving a low RPO for the databases.",
+      "upvotes": "2"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "A (90%)",
+      "votes": "27 votes."
+    },
+    {
+      "option": "7%",
+      "votes": "7%"
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is A: Enable a Multi-AZ deployment for the DB instance. Multi-AZ deployments offer synchronous replication of database updates to a standby instance in a different Availability Zone, thereby ensuring high availability and minimizing downtime. This model meets the mandated recovery point objective (RPO) of under 2 seconds because it provides automatic failover and continuous data replication. \n\nThe incorrect options are as follows: \nB. Enable auto scaling for the DB instance in one Availability Zone. Auto scaling is related to managing compute resources for handling load but does not address RPO directly. \nC. Configure the DB instance in one Availability Zone, and create multiple read replicas in a separate Availability Zone. While read replicas improve read scalability, they use asynchronous replication, which may not guarantee a low RPO as changes are not immediately reflected. \nD. Configure the DB instance in one Availability Zone, and configure AWS Database Migration Service (AWS DMS) change data capture (CDC) tasks. DMS and CDC do not inherently provide a solution for RPO, as they are more suited for data migration and not for continuous database availability and replication required for high transaction environments.",
+  "video_url": "https://certificationation.com/videos/exam-using-an-amazon-rds-for-exam-281.html",
+  "url": "https://certificationation.com/questions/exam-using-an-amazon-rds-for-exam-281.html"
+}

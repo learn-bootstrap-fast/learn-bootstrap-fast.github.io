@@ -1,0 +1,80 @@
+---
+title: "As a Database Engineer, you are tasked with designing aExam"
+description: "Video for as a Database Engineer, you are tasked with designing a Cloud Memorystore for Redis instance to meet specific performance requirements while"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are tasked with designing a Cloud Memorystore for Redis instance to meet specific performance requirements while minimizing costs. The instance has the following performance requirements: 20,000 read operations per second (OPS) 10,000 write operations per second (OPS) 100 GB of storage capacity Considering the above requirements, which of the following configurations should you choose for your Cloud Memorystore for Redis instance?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the Cloud Database Engineer for a logistics startup named Riverpath Systems and you need to size a Cloud Memorystore for Redis instance that keeps spend low while satisfying performance goals. The application must sustain 25,000 read requests per second and 12,500 write requests per second and it needs approximately 120 GB of memory capacity. Which instance configuration should you choose to meet these requirements while prioritizing cost efficiency?",
+  "options": [
+    {
+      "text": "Standard tier with 120 GB capacity",
+      "explanation": "This option provisions a highly available Redis instance with a replica and automatic failover at 120 GB capacity.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Standard tier with 240 GB capacity",
+      "explanation": "This option provides a larger highly available deployment with 240 GB capacity that includes a replica for resilience.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Basic tier with 120 GB capacity",
+      "explanation": "This option uses a single node Redis instance with 120 GB capacity and does not include automatic failover.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Standard tier with 60 GB capacity",
+      "explanation": "This option offers a highly available setup with 60 GB capacity which may be appropriate for smaller datasets.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Basic tier with 120 GB capacity</b>.</p><p>The <b>Basic tier</b> is the most cost efficient choice because it runs a single Redis node without replication. This avoids the replication overhead that reduces write throughput and increases cost, which helps you sustain the stated 25,000 reads per second and 12,500 writes per second for typical Redis workloads while matching the required 120 GB memory size. With the <b>120 GB</b> instance you meet the capacity target exactly without paying for additional memory you do not need.</p><p>High availability replicas in the other tier are intended for failover rather than serving application reads, so you would not gain read scaling from them. Since the requirement prioritizes cost efficiency and does not state a need for cross zone failover, the <b>Basic tier</b> at the required capacity is the better fit.</p><p><i>Standard tier with 120 GB capacity</i> is more expensive for the same memory capacity because it includes a replica for failover, and the replica does not serve user reads. You would pay more without a performance benefit for this workload and would also inherit replication overhead on writes.</p><p><i>Standard tier with 240 GB capacity</i> overprovisions memory and further increases cost while offering no read scaling benefit for your application traffic. It exceeds the stated 120 GB requirement without adding value for the stated performance goals.</p><p><i>Standard tier with 60 GB capacity</i> cannot meet the 120 GB memory requirement, so it fails the capacity constraint regardless of any performance considerations.</p>",
+  "batch_id": "303",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are tasked with designing a Cloud Memorystore for Redis instance to meet specific performance requirements while minimizing costs. The instance has the following performance requirements: 20,000 read operations per second (OPS) 10,000 write operations per second (OPS) 100 GB of storage capacity Considering the above requirements, which of the following configurations should you choose for your Cloud Memorystore for Redis instance?",
+  "originalOptions": "A. Tier: Basic, Capacity: 100 GB<br/>B. Tier: Standard, Capacity: 200 GB<br/>C. Tier: Standard, Capacity: 50 GB<br/>D. Tier: Standard, Capacity: 100 GB",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "89",
+  "tip": "<p>Match the tier to the requirement first. If the question emphasizes <i>cost</i> and does not require <i>high availability</i> across zones, prefer Basic, and size only to the needed memory. Remember that Memorystore Standard replicas do not provide <i>read replicas</i> for application traffic.</p>",
+  "references": [
+    "https://cloud.google.com/memorystore/docs/redis/tiers",
+    "https://cloud.google.com/memorystore/docs/redis/features",
+    "https://cloud.google.com/memorystore/docs/redis/performance",
+    "https://cloud.google.com/memorystore/pricing"
+  ],
+  "url": "https://certificationation.com/questions/exam-tasked-with-designing-a-cloud-exam-089.html",
+  "video_url": "https://certificationation.com/videos/exam-tasked-with-designing-a-cloud-exam-089.html"
+}

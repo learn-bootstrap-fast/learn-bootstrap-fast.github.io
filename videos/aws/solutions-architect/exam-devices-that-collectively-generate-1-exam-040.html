@@ -1,0 +1,91 @@
+---
+title: "A company has thousands of edge devices thatExam"
+description: "Video for a company has thousands of edge devices that collectively generate 1 TB of status alerts each day. Each alert is approximately 2 KB in size. A"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company has thousands of edge devices that collectively generate 1 TB of status alerts each day. Each alert is approximately 2 KB in size. A solutions architect needs to implement a solution to ingest and store the alerts for future analysis. The company wants a highly available solution. However, the company needs to minimize costs and does not want to manage additional infrastructure. Additionally, the company wants to keep 14 days of data available for immediate analysis and archive any data older than 14 days. What is the MOST operationally efficient solution that meets these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f72998d"
+  },
+  "quid": null,
+  "ordinal": "40",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon Kinesis",
+    " Amazon S3",
+    " Amazon S3 Glacier",
+    " Amazon OpenSearch Service",
+    " Amazon Simple Queue Service (Amazon SQS)"
+  ],
+  "slug": "S3-ingest-store-status-alerts-aws",
+  "source": "ET",
+  "title": "AWS A Company Has Thousands Of Edge Devices Question",
+  "meta": "AWS Exam Question: A solutions architect needs to ingest and store 1 TB of daily alerts from edge devices, ensuring high availability and low cost. Find the answer.",
+  "answer": "A",
+  "query": "A business operates numerous edge devices generating 1200GB of status updates daily. Each update is about 4KB in size. The business requires a method to collect and store these updates for later review. The solution must be highly available, while requiring minimal infrastructure management. Additionally, data should remain accessible for 20 days, with older records archived. What is the MOST operationally efficient solution to satisfy these needs?",
+  "originalQuery": "A company has thousands of edge devices that collectively generate 1 TB of status alerts each day. Each alert is approximately 2 KB in size. A solutions architect needs to implement a solution to ingest and store the alerts for future analysis.\nThe company wants a highly available solution. However, the company needs to minimize costs and does not want to manage additional infrastructure. Additionally, the company wants to keep 14 days of data available for immediate analysis and archive any data older than 14 days.\nWhat is the MOST operationally efficient solution that meets these requirements?",
+  "options": [
+    "A. Establish an Amazon Kinesis Data Firehose delivery stream for alert ingestion. Configure the stream to deliver alerts to an Amazon S3 bucket. Transition data older than 20 days to Amazon S3 Glacier using S3 Lifecycle.",
+    "B. Initialize Amazon EC2 instances in different Availability Zones paired with an Elastic Load Balancer for alert collection. Implement a script to forward the alerts to an Amazon S3 bucket. Use S3 Lifecycle to archive data to Amazon S3 Glacier after 20 days.",
+    "C. Form an Amazon Kinesis Data Firehose delivery stream to pull in the alerts. Set up the stream to channel the alerts to an Amazon OpenSearch Service (also known as Amazon Elasticsearch Service) cluster. Enable the cluster to take manual snapshots daily and delete data that's older than 20 days.",
+    "D. Formulate an Amazon Simple Queue Service (Amazon SQS) standard queue for alert accumulation, and set the retention period to 20 days. Set up consumers to fetch data from the SQS queue, scrutinize the message age and data as necessary. If a message is 20 days old, instruct the consumer to transfer the message to an Amazon S3 bucket and then delete it from the SQS queue."
+  ],
+  "originalOptions": [
+    "A. Create an Amazon Kinesis Data Firehose delivery stream to ingest the alerts. Configure the Kinesis Data Firehose stream to deliver the alerts to an Amazon S3 bucket. Set up an S3 Lifecycle configuration to transition data to Amazon S3 Glacier after 14 days.",
+    "B. Launch Amazon EC2 instances across two Availability Zones and place them behind an Elastic Load Balancer to ingest the alerts. Create a script on the EC2 instances that will store the alerts in an Amazon S3 bucket. Set up an S3 Lifecycle configuration to transition data to Amazon S3 Glacier after 14 days.",
+    "C. Create an Amazon Kinesis Data Firehose delivery stream to ingest the alerts. Configure the Kinesis Data Firehose stream to deliver the alerts to an Amazon OpenSearch Service (Amazon Elasticsearch Service) cluster. Set up the Amazon OpenSearch Service (Amazon Elasticsearch Service) cluster to take manual snapshots every day and delete data from the cluster that is older than 14 days.",
+    "D. Create an Amazon Simple Queue Service (Amazon SQS) standard queue to ingest the alerts, and set the message retention period to 14 days. Configure consumers to poll the SQS queue, check the age of the message, and analyze the message data as needed. If the message is 14 days old, the consumer should copy the message to an Amazon S3 bucket and delete the message from the SQS queue."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [],
+  "originalComments": [],
+  "voteDistribution": [
+    {
+      "option": "A (87%)",
+      "votes": "94 votes."
+    },
+    {
+      "option": "13%",
+      "votes": "14 votes."
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct option is A because it utilizes Amazon Kinesis Data Firehose, which is designed specifically for real-time data streaming and ingestion, making it perfect for collecting and storing status updates from edge devices. It automatically handles scaling, which minimizes infrastructure management. By delivering to an Amazon S3 bucket, the data remains highly available. The S3 Lifecycle configuration enables transitioning old data to Amazon S3 Glacier after 14 days, which satisfies both the archiving requirement and cost minimization strategies. \n\nOption B is incorrect as it requires launching and managing EC2 instances, which introduces significant overhead and management effort, contrary to the requirement for minimal infrastructure management. \n\nOption C uses Kinesis Data Firehose but stores data in Amazon OpenSearch Service. This introduces complexity and management overhead associated with managing an OpenSearch cluster, making it less operationally efficient than option A. \n\nOption D relies on SQS, which is more suited for message queuing rather than bulk data ingestion and storage. The additional steps of polling and manually moving messages to S3 add operational overhead, making it less efficient than the automated approach of Kinesis Data Firehose in option A.",
+  "video_url": "https://certificationation.com/videos/exam-devices-that-collectively-generate-1-exam-040.html",
+  "url": "https://certificationation.com/questions/exam-devices-that-collectively-generate-1-exam-040.html"
+}

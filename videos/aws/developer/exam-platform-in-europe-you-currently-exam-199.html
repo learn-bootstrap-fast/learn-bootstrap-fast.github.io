@@ -1,0 +1,80 @@
+---
+title: "You recently launched a new e-commerce platform inExam"
+description: "Video for you recently launched a new e-commerce platform in Europe. You currently have two Cloud Spanner instances in one European region to serve all the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You recently launched a new e-commerce platform in Europe. You currently have two Cloud Spanner instances in one European region to serve all the traffic. Your marketing team is planning an immediate expansion to North America and Asia-Pacific. You need to roll out the regional expansion while implementing high availability according to Google-recommended practices. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Lumos Media runs a subscription streaming service based in Spain, and it currently uses two Cloud Spanner instances in a single European region to handle all users. Leadership now plans a rapid rollout to North America and Asia Pacific, and you must adopt a design that delivers high availability following Google best practices and keeps operations straightforward. What should you do?",
+  "options": [
+    {
+      "text": "Run three separate Cloud Spanner regional instances in europe-west1 us-central1 and asia-east1 and split tenants by continent with application logic",
+      "explanation": "This approach uses multiple isolated regional instances and requires the application to route requests and manage data placement and consistency.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Switch to Cloud Bigtable with multi cluster routing and place clusters in europe-west4 us-central1 and asia-northeast1 while targeting 40 percent CPU per cluster",
+      "explanation": "This proposes moving to a different database product and using replicated clusters across regions with conservative capacity planning.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create one Cloud Spanner multi region instance using nam eur asia1 and size capacity to keep average CPU near 45 percent so clients can read from the nearest replicas",
+      "explanation": "This sets up a single global Spanner deployment that spans North America Europe and Asia and maintains headroom for failover and low latency reads.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Keep the two European instances and add read replicas in us east1 and asia southeast1 to reduce latency",
+      "explanation": "This suggests extending a regional deployment by introducing cross region read replicas in an attempt to serve global users with lower latency.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct answer is <b>Create one Cloud Spanner multi region instance using nam eur asia1 and size capacity to keep average CPU near 45 percent so clients can read from the nearest replicas</b>.</p><p>This design follows Google guidance for high availability with a single globally distributed Spanner instance that spans multiple continents. The multi region configuration provides synchronous replication with quorum writes across regions and can serve low latency reads from nearby replicas while maintaining strong consistency where applicable. Managing one global instance keeps operations simple because there is a single schema and no application level sharding, and sizing for about 45 percent average CPU preserves headroom for spikes and failover events.</p><p><i>Run three separate Cloud Spanner regional instances in europe-west1 us-central1 and asia-east1 and split tenants by continent with application logic</i> is wrong because it fragments data and shifts complexity into the application. It does not provide transparent cross region failover or global consistency, and it complicates operations and rebalancing as tenants grow or move.</p><p><i>Switch to Cloud Bigtable with multi cluster routing and place clusters in europe-west4 us-central1 and asia-northeast1 while targeting 40 percent CPU per cluster</i> is wrong because Bigtable is a NoSQL wide column store without Spanner’s relational model or global transactional consistency. Its multi cluster replication is eventually consistent, which does not meet the typical requirements of a Spanner backed subscription service that relies on strong consistency and SQL semantics.</p><p><i>Keep the two European instances and add read replicas in us east1 and asia southeast1 to reduce latency</i> is wrong because Spanner read only replicas are defined by the instance configuration and are not bolted onto a regional instance in arbitrary regions. This approach would still lack global write availability and would increase operational complexity rather than simplify it.</p>",
+  "batch_id": "358",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You recently launched a new e-commerce platform in Europe. You currently have two Cloud Spanner instances in one European region to serve all the traffic. Your marketing team is planning an immediate expansion to North America and Asia-Pacific. You need to roll out the regional expansion while implementing high availability according to Google-recommended practices. What should you do?",
+  "originalOptions": "A. Maintain a target of 35% CPU utilization by locating: instance-a in zone europe-west1-a instance-b in zone us-west1-a instance-c in zone asia-southeast1-b instance-d in zone asia-northeast1-b<br/>B. Maintain a target of 35% CPU utilization by locating: instance-a in zone europe-west1-a instance-b in zone europe-west2-a instance-c in zone us-central1-b instance-d in zone asia-northeast1-b<br/>C. Maintain a target of 23% CPU utilization by locating: instance-a in zone europe-west1-a instance-b in zone us-central1-a instance-c in zone asia-east1-b<br/>D. Maintain a target of 23% CPU utilization by locating: instance-a in zone europe-west1-a instance-b in zone europe-west1-b instance-c in zone us-east1-a",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "199",
+  "tip": "<p>When you see needs for <i>global availability</i>, <i>low latency reads</i>, and <i>simpler operations</i>, prefer a single Cloud Spanner <i>multi region</i> instance. Watch for clues about <i>CPU headroom</i> to handle failover and traffic spikes.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/instance-configurations",
+    "https://cloud.google.com/spanner/docs/replication",
+    "https://cloud.google.com/spanner/docs/best-practices",
+    "https://cloud.google.com/bigtable/docs/replication-overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-platform-in-europe-you-currently-exam-199.html",
+  "video_url": "https://certificationation.com/videos/exam-platform-in-europe-you-currently-exam-199.html"
+}

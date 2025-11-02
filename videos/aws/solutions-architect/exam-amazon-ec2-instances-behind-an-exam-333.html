@@ -1,0 +1,128 @@
+---
+title: "A company’s application runs on Amazon EC2 instancesExam"
+description: "Video for a company’s application runs on Amazon EC2 instances behind an Application Load Balancer (ALB). The instances run in an Amazon EC2 Auto Scaling group"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company’s application runs on Amazon EC2 instances behind an Application Load Balancer (ALB). The instances run in an Amazon EC2 Auto Scaling group across multiple Availability Zones. On the first day of every month at midnight, the application becomes much slower when the month-end financial calculation batch runs. This causes the CPU utilization of the EC2 instances to immediately peak to 100%, which disrupts the application. What should a solutions architect recommend to ensure the application is able to handle the workload and avoid downtime?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729ab2"
+  },
+  "quid": null,
+  "ordinal": "333",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "EC2 Auto Scaling",
+    " Amazon EC2",
+    " Amazon CloudFront",
+    " AWS Auto Scaling",
+    " Amazon ElastiCache"
+  ],
+  "slug": "ec2-application-load-balancer-aws",
+  "source": "ET",
+  "title": "AWS A Company’s Application Runs On Amazon EC2 Question",
+  "meta": "AWS Exam Question: A company's application on Amazon EC2 with an ALB faces high CPU utilization at month-end. What solution ensures workload handling? Answer: EC2 Auto Scaling.",
+  "answer": "C",
+  "query": "An organization has an application deployed on a fleet of Amazon EC2 instances that sit behind an Application Load Balancer (ALB). These instances are part of an Amazon EC2 Auto Scaling group that spans several Availability Zones. At the start of each month, when the month-end financial reporting batch is executed at midnight, the application experiences a significant slowdown, with the CPU usage of the EC2 instances spiking to 100% and impacting performance. What strategy should the solutions architect recommend to help the application manage this workload more effectively and reduce downtime?",
+  "originalQuery": "A company’s application runs on Amazon EC2 instances behind an Application Load Balancer (ALB). The instances run in an Amazon EC2 Auto Scaling group across multiple Availability Zones. On the first day of every month at midnight, the application becomes much slower when the month-end financial calculation batch runs. This causes the CPU utilization of the EC2 instances to immediately peak to 100%, which disrupts the application.\n\nWhat should a solutions architect recommend to ensure the application is able to handle the workload and avoid downtime?",
+  "options": [
+    "A. Configure an Amazon CloudFront distribution in front of the ALB.",
+    "B. Configure an EC2 Auto Scaling policy that triggers based on CPU usage.",
+    "C. Configure an EC2 Auto Scaling scheduled scaling policy based on the monthly schedule.",
+    "D. Use Amazon ElastiCache for offloading some workloads from EC2 instances."
+  ],
+  "originalOptions": [
+    "A. Configure an Amazon CloudFront distribution in front of the ALB.",
+    "B. Configure an EC2 Auto Scaling simple scaling policy based on CPU utilization.",
+    "C. Configure an EC2 Auto Scaling scheduled scaling policy based on the monthly schedule.",
+    "D. Configure Amazon ElastiCache to remove some of the workload from the EC2 instances."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "To address the performance issues experienced by the application during the month-end financial calculation batch, it is essential to implement a solution that accommodates the predictable increase in workload. A scheduled scaling policy can be configured to automatically adjust the number of Amazon EC2 instances in the Auto Scaling group at midnight on the first day of each month. This proactive approach allows for the preemptive allocation of resources to handle the anticipated peak CPU utilization, ultimately preventing application slowdowns and ensuring consistent performance.\n\nIn addition, employing an Amazon ElastiCache solution can further enhance application efficiency by offloading certain workloads from the EC2 instances. This can reduce the overall CPU demand during high-traffic periods by caching frequently accessed data, thereby optimizing resource utilization and improving response times.\n\nOverall, combining scheduled scaling with caching strategies can significantly enhance the application's ability to manage increased workloads effectively, reducing the risk of downtime during critical operational periods.",
+    "By setting up a scheduled scaling policy, the EC2 Auto Scaling group can get ahead of the curve and spin up extra EC2 instances before that pesky CPU utilization hits the dreaded 100%. 🚀 This way, the application will be well-equipped to tackle the month-end financial calculation batch without breaking a sweat, preventing any disruption or downtime. \n\nWhile options like a simple scaling policy based on CPU usage, introducing Amazon CloudFront, or adding Amazon ElastiCache might sound appealing, they won't quite cut it when it comes to managing that monthly workload spike. So, let's get proactive and keep those servers cool and collected! 😎✌️",
+    "When scaling is tied to CPU or memory usage, there's typically a delay before auto-scaling kicks in—let's say around five minutes. This means the CPU could be maxed out at 100% for a full five minutes before any corrective action is taken. So, while you're sitting there watching your application struggle, the scaling group is just taking its sweet time to react.",
+    "The optimal approach to effectively manage the increased workload during the monthly batch processing is to implement a scheduled scaling policy for the EC2 Auto Scaling group. This proactive strategy allows for the scaling of EC2 instances ahead of the monthly run, ensuring that the application can efficiently accommodate the surge in demand without any downtime. By setting the scheduled scaling policy to increase the number of instances a few hours prior to the batch processing, and then reducing the instances afterward, you can guarantee that the necessary resources are available when they’re most needed, while also avoiding unnecessary costs during quieter periods. This thoughtful planning will greatly enhance the application's performance and reliability during critical processing times!",
+    "Scheduled scaling policies are like your personal assistants for managing EC2 instance scaling in advance, based on a specific time and date! 🎉 This delightful feature allows you to get ahead of the game by preparing for expected traffic surges or seasonal demand changes. By implementing these policies, you can ensure that the perfect number of instances is up and running when you need them, all while keeping performance at its best and costs in check.\n\nTo create a scheduled scaling policy in EC2 Auto Scaling, you'll need to define a few key components:\n\n- **Start Time and Date:** Specify when the scaling event should kick off—this is your moment to shine!\n  \n- **Desired Capacity:** Decide how many instances you want to have buzzing along after the scaling event.\n\n- **Recurrence:** Outline how often you’d like the scaling event to take place. You can set it for a one-time occurrence or make it a regular event, like a cheerful daily or weekly routine! \n\nWith these details in place, you’ll be all set to ensure your application can gracefully handle those busy times without missing a beat! 🌟"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "C",
+      "explanation": "'On the first day of every month at midnight' = Scheduled scaling policy",
+      "upvotes": "4"
+    },
+    {
+      "selectedAnswer": "C",
+      "explanation": "By configuring a scheduled scaling policy, the EC2 Auto Scaling group can proactively launch additional EC2 instances before the CPU utilization peaks to 100%. This will ensure that the application can handle the workload during the month-end financial calculation batch, and avoid any disruption or downtime.\n\nConfiguring a simple scaling policy based on CPU utilization or adding Amazon CloudFront distribution or Amazon ElastiCache will not directly address the issue of handling the monthly peak workload.",
+      "upvotes": "4"
+    },
+    {
+      "selectedAnswer": "C",
+      "explanation": "If the scaling were based on CPU or memory, it requires a certain amount of time above that threshhold, 5 minutes for example. That would mean the CPU would be at 100% for five minutes.",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "C",
+      "explanation": "C: Configure an EC2 Auto Scaling scheduled scaling policy based on the monthly schedule is the best option because it allows for the proactive scaling of the EC2 instances before the monthly batch run begins. This will ensure that the application is able to handle the increased workload without experiencing downtime. The scheduled scaling policy can be configured to increase the number of instances in the Auto Scaling group a few hours before the batch run and then decrease the number of instances after the batch run is complete. This will ensure that the resources are available when needed and not wasted when not needed.\n\nThe most appropriate solution to handle the increased workload during the monthly batch run and avoid downtime would be to configure an EC2 Auto Scaling scheduled scaling policy based on the monthly schedule.",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Scheduled scaling policies allow you to schedule EC2 instance scaling events in advance based on a specified time and date. You can use this feature to plan for anticipated traffic spikes or seasonal changes in demand. By setting up scheduled scaling policies, you can ensure that you have the right number of instances running at the right time, thereby optimizing performance and reducing costs.\n\nTo set up a scheduled scaling policy in EC2 Auto Scaling, you need to specify the following:\n\nStart time and date: The date and time when the scaling event should begin.\n\nDesired capacity: The number of instances that you want to have running after the scaling event.\n\nRecurrence: The frequency with which the scaling event should occur. This can be a one-time event or a recurring event, such as daily or weekly.",
+      "upvotes": "2"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "C (100%)",
+      "votes": "16 votes."
+    },
+    {
+      "option": "C (25%)",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The recommended option is C, which proposes configuring an EC2 Auto Scaling scheduled scaling policy based on the monthly schedule. This allows the Auto Scaling group to increase the number of EC2 instances before the expected spike in CPU usage during the month-end financial reporting batch, thereby preventing performance degradation and downtime. \n\nOption A, configuring an Amazon CloudFront distribution, is not relevant in this scenario as it does not address the underlying issue of CPU overload on the EC2 instances. \n\nOption B, implementing a simple scaling policy based on CPU utilization, could lead to delayed scaling since it reacts only after the CPU utilization has already peaked, meaning the application would still experience slowdown during critical periods. \n\nOption D, using Amazon ElastiCache, could help with offloading some workload but does not inherently solve the problem of CPU spikes during scheduled high-demand periods. Therefore, C is the most proactive approach to ensuring optimal performance during peak times.",
+  "video_url": "https://certificationation.com/videos/exam-amazon-ec2-instances-behind-an-exam-333.html",
+  "url": "https://certificationation.com/questions/exam-amazon-ec2-instances-behind-an-exam-333.html"
+}

@@ -1,0 +1,62 @@
+---
+title: "You work for a startup that has developed a newExam"
+description: "Video for you work for a startup that has developed a new photo-sharing application for mobile devices. Over recent months your application has increased in"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You work for a startup that has developed a new photo-sharing application for mobile devices. Over recent months your application has increased in popularity; this has resulted in a decrease in the performance of the application due to the increased load. Your application has a two-tier architecture that is composed of an Auto Scaling PHP application tier and a MySQL RDS instance initially deployed with AWS Cloud Formation. Your Auto Scaling group has a min value of 4 and a max value of 8 The desired capacity is now at 8 because of the high CPU utilization of the instances. After some analysis, you are confident that the performance issues stem from a constraint in CPU capacity, although memory utilization remains low. You therefore decide to move from the general-purpose M3 instances to the compute-optimized C3 instances. How would you deploy this change while minimizing any interruption to your end users?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct approach is to <b>update the launch configuration to use C3 in your CloudFormation template and add an UpdatePolicy for AutoScalingRollingUpdate, then run a stack update</b>. The <b>UpdatePolicy</b> ensures rolling updates, which means old instances are gradually replaced with new ones running the C3 instance type, minimizing downtime for users.</p><p>Why other options are incorrect:</p><ul><li><i>Make changes to the AWS Management Console, creating a new launch configuration for C3 instances, then update the Auto Scaling group with this configuration. Existing instances will automatically switch instance types.</i> – This is incorrect because existing instances do not change their type automatically (live in-place modification is not possible); they are only replaced as part of scaling actions or rolling updates.</li><li><i>Directly update the existing launch configuration through the AWS Management Console to use C3 instances, and add an UpdatePolicy of AutoScalingRollingUpdate to your Auto Scaling group.</i> – This option suggests editing an existing launch configuration, but launch configurations are immutable; you must create a new one. Also, changes through the console don’t link to CloudFormation management and can cause drift from the stack.</li><li><i>Change the launch configuration to use C3 in your CloudFormation template, then update the stack with this template. Automatic replacement of the instances with new types will follow.</i> – While this updates the launch configuration, it does not specify an UpdatePolicy, so CloudFormation terminates and replaces all instances at once, causing disruption.</li></ul><p><b>Tip:</b> Always include an AutoScalingRollingUpdate UpdatePolicy for controlled Auto Scaling group updates using CloudFormation to ensure minimal service impact and smooth instance type transitions.</p>",
+  "query": "<p>Your company’s photo-sharing mobile app is growing in popularity. Performance is suffering because the current compute resources can’t keep up, although memory use remains modest. The app uses a two-tier design with an Auto Scaling PHP application tier and MySQL RDS, all created with AWS CloudFormation. The group has scaled up to its max of 8 instances due to high CPU load. To boost efficiency, you want to switch from general-purpose M3 instances to CPU-optimized C3 instances. What’s the best way to make this switch via CloudFormation while causing as little disruption as possible for users?</p>",
+  "original_oid": "6793d9cc61969b416038a0b9",
+  "options": [
+    {
+      "correct": true,
+      "text": "After updating the launch configuration in the CloudFormation template to specify C3 instances, also include an UpdatePolicy with AutoScalingRollingUpdate for the Auto Scaling group. Run a stack update using the revised template.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Make changes to the AWS Management Console, creating a new launch configuration for C3 instances, then update the Auto Scaling group with this configuration. Existing instances will automatically switch instance types.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Directly update the existing launch configuration through the AWS Management Console to use C3 instances, and add an UpdatePolicy of AutoScalingRollingUpdate to your Auto Scaling group.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Change the launch configuration to use C3 in your CloudFormation template, then update the stack with this template. Automatic replacement of the instances with new types will follow.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question68",
+  "originalQuery": "You work for a startup that has developed a new photo-sharing application for mobile devices.\nOver recent months your application has increased in popularity; this has resulted in a decrease in the performance of the application due to the increased load.\nYour application has a two-tier architecture that is composed of an Auto Scaling PHP application tier and a MySQL RDS instance initially deployed with AWS Cloud Formation.\nYour Auto Scaling group has a min value of 4 and a max value of 8\nThe desired capacity is now at 8 because of the high CPU utilization of the instances.\nAfter some analysis, you are confident that the performance issues stem from a constraint in CPU capacity, although memory utilization remains low.\nYou therefore decide to move from the general-purpose M3 instances to the compute-optimized C3 instances.\nHow would you deploy this change while minimizing any interruption to your end users?",
+  "originalOptions": "[\"A. Sign in to the AWS Management Console, copy the old launch configuration, and create a new launch configuration that specifies the C3 instances. Update the Auto Scaling group with the new launch configuration. Auto Scaling will then update the instance type of all running instances.\",\"B. Sign in to the AWS Management Console, and update the existing launch configuration with the new C3 instance type. Add an UpdatePolicy attribute to your Auto Scaling group that specifies AutoScalingRollingUpdate.\",\"C. Update the launch configuration specified in the AWS CloudFormation template with the new C3 instance type. Run a stack update with the new template. Auto Scaling will then update the instances with the new instance type.\",\"D. Update the launch configuration specified in the AWS CloudFormation template with the new C3 instance type. Also, add an UpdatePolicy attribute to your Auto Scaling group that specifies AutoScalingRollingUpdate. Run a stack update with the new template.\"]",
+  "video_url": "https://certificationation.com/videos/exam-developed-a-new-photo-sharing-application-exam-018.html",
+  "url": "https://certificationation.com/questions/exam-developed-a-new-photo-sharing-application-exam-018.html"
+}

@@ -1,0 +1,74 @@
+---
+title: "A company has 2 accounts- one is a development accountExam"
+description: "Video for a company has 2 accounts- one is a development account, and the other is a production account. There are 20 people on the development account who now"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company has 2 accounts- one is a development account, and the other is a production account. There are 20 people on the development account who now need various access levels provided to them on the production account. 10 of them need read-only access to all resources on the production account, 5 of them need read/write access to EC2 resources, and the remaining 5 only need read-only access to S3 buckets. Which of the following options would be the best way for both practical and security-wise to accomplish this task?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d5edf501ee1c8ade98ae"
+  },
+  "quid": "0",
+  "ordinal": "358",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "AWS Identity and Access Management (IAM)",
+    " AWS shared responsibility model",
+    " Security",
+    " AWS Organizations",
+    " Management and governance"
+  ],
+  "slug": "ec2-s3-development-production-access-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question358",
+  "title": "AWS A Company Has 2 Accounts Question",
+  "meta": "AWS Exam Question: A company has 2 accounts with 20 developers needing access to production. What’s the best, secure way to manage their permissions? Answer: IAM, EC2, S3.",
+  "answer": "A",
+  "query": "An enterprise has two separate AWS accounts: one for testing and one for live operations. There are 20 team members in the testing account who now require different levels of permissions on the live operations account. Specifically, 9 individuals need view-only access to all live account resources, 6 require full control over EC2 instances, and the last 5 need only read access to the S3 storage.\nWhat is the most effective and secure method to grant the correct permissions to these users in the live operations account?",
+  "originalQuery": "A company has 2 accounts- one is a development account, and the other is a production account.\nThere are 20 people on the development account who now need various access levels provided to them on the production account.\n10 of them need read-only access to all resources on the production account, 5 of them need read/write access to EC2 resources, and the remaining 5 only need read-only access to S3 buckets.\nWhich of the following options would be the best way for both practical and security-wise to accomplish this task?",
+  "options": [
+    "A. Create 3 roles in the production account with a different policy for each of the access levels needed. Add permissions to each IAM User in the development account to assume a role on the production account based on the type of access needed.",
+    "B. Set up 3 separate users inside the production account with the necessary access permissions, then assign those user credentials to each of the 20 people according to their access requirements.",
+    "C. Generate encryption keys linked to every resource that requires access and distribute the keys to users based on their permission levels.",
+    "D. Duplicate the 20 IAM users from the development account to the production account and then modify the access rights for every user in the production account."
+  ],
+  "originalOptions": [
+    "A. Create 3 roles in the production account with a different policy for each of the access levels needed. Add permissions to each IAM User in the development account to assume a role on the production account based on the type of access needed.",
+    "B. Create 3 new users on the production account with the various levels of permissions needed. Give each of the 20 users the login for whichever one of the 3 users they need depending on the level of access required.",
+    "C. Create encryption keys for each of the resources that need access and provide those keys to each user depending on the access required.",
+    "D. Copy the 20 users IAM accounts from the development account to the production account. Then change the access levels for each user on the production account."
+  ],
+  "image": "",
+  "primaryObjective": "1: Design Solutions for Organizational Complexity",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Answer - A.\nOption A is CORRECT because it creates 3 roles according to the need in the production account and adds the permissions to each of the IAM Users in the development account to assume those roles accordingly in the production account.\nOption B is incorrect because you should be creating IAM Roles in the production account, and the development users should assume those roles.\nThis option is suggesting creating 3 separate users in the production account which is incorrect.\nOption C is incorrect because encryption keys are unnecessary and will not work in this scenario.\nOption D is incorrect because the creation of the IAM user accounts in the production account is unnecessary.\nYou should be creating IAM Roles instead.\nFor more information on \"Delegating Access Across AWS Accounts Using IAM Role\" - please refer to the below link.\nhttps://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html\nThe best way to provide the required access levels to the 20 users on the development account for the production account would be option A: Create 3 roles in the production account with a different policy for each of the access levels needed. Add permissions to each IAM User in the development account to assume a role on the production account based on the type of access needed.\nExplanation:\nOption A involves creating roles in the production account with specific policies for each level of access required by the 20 users. The roles will be associated with an AWS Identity and Access Management (IAM) policy, which grants permissions to the users. The IAM policy can be used to define the specific actions, resources, and conditions that the user is allowed or denied to access.\nOnce the roles are created, permissions to assume the roles need to be added to the IAM users in the development account. The IAM users in the development account will use temporary security credentials to access the resources in the production account. This approach ensures that access to resources in the production account is strictly controlled and monitored, enhancing the security of the production account.\nOption B involves creating new users on the production account with varying levels of access, and then providing login credentials to the 20 users based on the access level required. This approach is not scalable and requires additional management overhead to manage the users and their access levels. Furthermore, this approach does not provide fine-grained control over permissions and may result in users being granted excessive access.\nOption C involves creating encryption keys for each resource that needs access and providing these keys to the users based on the access level required. This approach is impractical as it requires creating and managing encryption keys for each resource, and the keys may need to be frequently rotated. Additionally, this approach does not provide fine-grained control over permissions, and it may be difficult to revoke access once granted.\nOption D involves copying the IAM accounts of the 20 users from the development account to the production account and then changing the access levels for each user on the production account. This approach is not recommended as it may result in users being granted excessive access to resources in the production account. Additionally, it does not provide a separation of duties between the development and production accounts, which is important for security and compliance reasons.\nIn summary, option A is the best approach as it provides fine-grained control over permissions, is scalable, and enhances the security of the production account by strictly controlling access to resources.",
+  "chatGptExplanation": "The correct answer is A because it follows AWS best practices for cross-account access. By creating three IAM roles in the live (production) operations account—each with permissions matching the required access levels (view-only, EC2 full control, S3 read-only)—you can securely grant fine-grained access. Then, the 20 testers in the testing account can be allowed to assume these roles using their IAM user permissions. This setup enables temporary security credentials with clearly defined scopes and reduces the risk of long-term credential exposure. It also simplifies management by centralizing permissions in roles and avoiding credential sharing.\n\nOption B is incorrect because creating new IAM users in the live account and sharing their login credentials with the team members is not scalable, secure, or aligned with AWS principles. It increases management overhead and risks, and doesn't leverage the more secure ‘assume role’ mechanism.\n\nOption C is incorrect because encryption keys are unrelated to granting access in this context. AWS KMS keys control encryption/decryption rights but do not replace proper IAM-based identity and permission management for resource access.\n\nOption D is incorrect because duplicating IAM users in the live account leads to unnecessary user management increases, lacks scalability, and violates the principle of separation of duties between accounts. It also misses the simpler, more secure cross-account role assumption solution.\n\nPrimary AWS product focus of this question is Identity and Access Management (IAM).",
+  "video_url": "https://certificationation.com/videos/exam-development-account-and-the-other-exam-233.html",
+  "url": "https://certificationation.com/questions/exam-development-account-and-the-other-exam-233.html"
+}

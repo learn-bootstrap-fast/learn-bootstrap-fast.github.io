@@ -1,0 +1,54 @@
+---
+title: "You work as a machine learning specialist at a creditExam"
+description: "Video for you work as a machine learning specialist at a credit card transaction processing company. You have built a data streaming pipeline using Kinesis Data"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You work as a machine learning specialist at a credit card transaction processing company. You have built a data streaming pipeline using Kinesis Data Firehose and S3 Due to the personally identifiable information contained in your data stream, your data must be encrypted in flight and at rest. How should you configure your solution to achieve encryption at rest?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d6d27742293cac494acf"
+  },
+  "answer": "C",
+  "certification": "AWS Machine Learning Specialty",
+  "certificationKey": "AWSMLS",
+  "difficulty": "0",
+  "image": "",
+  "needsWork": "false",
+  "ordinal": "39",
+  "originalExplanation": "Answer: C.\nOption A is incorrect.\nEncrypting the data at the Kinesis consumer application level does not allow for encryption at the S3 bucket.\nOnce the data has reached the consumer application, it has already been stored in S3 without being encrypted.\nOption B is incorrect.\nKinesis Data Firehose does not use SSE-S3\nIt uses SSE-KMS.\n(See the Amazon Kinesis Data Firehose developer documentation titled Configure Settings)\nOption C is correct.\nThe Kinesis Data Firehose documentation states that “Kinesis Data Firehose supports Amazon S3 server-side encryption with AWS Key Management Service (AWS KMS) for encrypting delivered data in Amazon S3\nYou can choose not to encrypt the data or encrypt with a key from the list of AWS KMS keys that you own.\nFor more information, see Protecting Data Using Server-Side Encryption with AWS KMS-Managed Keys (SSE-KMS).”\nOption D is incorrect.\nKinesis Data Firehose does not use 256-bit AES-GCM with HKDF.\nIt uses SSE-KMS.\n(See the Amazon Kinesis Data Firehose developer documentation titled Configure Settings)\nReference:\nPlease see the Amazon Kinesis Data Firehose developer guide documentation titled Creating an Amazon Kinesis Data Firehose Delivery Stream and the Amazon Kinesis Data Streams developer guide documentation titled What is Server-Side Encryption for Kinesis Data Streams.\nTo achieve encryption at rest for the data streaming pipeline using Kinesis Data Firehose and S3, we can use server-side encryption (SSE) provided by S3. There are multiple SSE options provided by S3 to encrypt data at rest, including Amazon S3-managed encryption keys (SSE-S3), customer-provided encryption keys (SSE-C), and AWS Key Management Service (KMS) encryption keys (SSE-KMS).\nHowever, as personally identifiable information (PII) is involved in the data stream, using customer-provided encryption keys (SSE-C) is not recommended because it requires managing the keys and can lead to potential security risks. Therefore, the recommended approach is to use either SSE-S3 or SSE-KMS to encrypt data at rest.\nSSE-S3 is the simplest option provided by S3, which automatically encrypts data at rest using Amazon S3-managed encryption keys. With this option, data is encrypted before it is written to disk and decrypted when it is read. However, with SSE-S3, we have limited control over the encryption keys, and S3 manages the keys, making it less secure than SSE-KMS.\nOn the other hand, SSE-KMS provides greater control and security over the encryption keys. SSE-KMS uses the AWS Key Management Service (KMS) to manage encryption keys, which provides additional benefits, such as auditing, key rotation, and revocation. With SSE-KMS, data is encrypted using a unique customer master key (CMK), and KMS manages the encryption keys.\nTherefore, the recommended approach to achieve encryption at rest for the data streaming pipeline is to configure Firehose to use S3 server-side encryption with AWS Key Management Service (SSE-KMS), option C. This ensures that the data is encrypted before it is written to S3, and the encryption keys are securely managed by KMS.\nOption A, Encrypt the data at the data consumer application level, is not recommended as it would require additional development effort and might lead to security vulnerabilities.\nOption D, Encrypt the data by configuring Firehose to use S3 server-side encryption with 256-bit AES-GCM with HKD, is not a valid option as HKD is not an encryption algorithm provided by S3 for SSE.",
+  "originalOptions": [
+    "A. Encrypt the data at the data consumer application level.",
+    "B. Encrypt the data by configuring Firehose to use S3-managed encryption keys (SSE-S3).",
+    "C. Encrypt the data by configuring Firehose to use S3 server-side encryption with AWS Key Management Service (SSE-KMS).",
+    "D. Encrypt the data by configuring Firehose to use S3 server-side encryption with 256-bit AES-GCM with HKD."
+  ],
+  "originalQuery": "You work as a machine learning specialist at a credit card transaction processing company.\nYou have built a data streaming pipeline using Kinesis Data Firehose and S3\nDue to the personally identifiable information contained in your data stream, your data must be encrypted in flight and at rest.\nHow should you configure your solution to achieve encryption at rest?",
+  "primaryObjective": "",
+  "quid": "0",
+  "source": "https://www.exam-answer.com/amazon/mls-c01/question39",
+  "video_url": "https://certificationation.com/videos/exam-specialist-at-a-credit-card-exam-039.html",
+  "url": "https://certificationation.com/questions/exam-specialist-at-a-credit-card-exam-039.html"
+}

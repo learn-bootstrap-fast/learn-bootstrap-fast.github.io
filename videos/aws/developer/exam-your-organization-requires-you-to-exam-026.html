@@ -1,0 +1,81 @@
+---
+title: "You are a Database Engineer, and your organizationExam"
+description: "Video for you are a Database Engineer, and your organization requires you to configure a session pooler service for a Cloud SQL instance to optimize the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are a Database Engineer, and your organization requires you to configure a session pooler service for a Cloud SQL instance to optimize the performance of a highly dynamic application. Which of the following strategies for managing idle connections in the session pooler service will result in the most efficient resource usage and optimal performance?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You work as a Cloud Database Engineer at Aurora Outfitters, an online retailer. Your team operates a Cloud SQL for PostgreSQL instance behind a session pooling layer for the checkout API at api.example.com. Traffic alternates between quiet windows and bursts that can reach 8,000 requests per second, which causes many connections to sit idle between spikes. You need to tune how the pooler treats idle sessions so that compute resources are used efficiently and latency remains low. Which configuration should you choose for handling idle connections?",
+  "options": [
+    {
+      "text": "Use a long idle timeout and route all connections through Cloud SQL Auth Proxy",
+      "explanation": "This keeps idle sessions open for extended periods while relying on the proxy for authentication and secure networking.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use a long idle timeout and disable pooler health checks",
+      "explanation": "This avoids periodic validation of connections and allows idle sessions to remain established for longer.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use a brief idle timeout together with connection multiplexing",
+      "explanation": "This combines quick cleanup of inactive sessions with sharing of server connections across many clients to reduce overhead.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use a short idle timeout and enable aggressive eviction of idle sessions",
+      "explanation": "This removes idle sessions rapidly based on strict eviction rules in order to trim connection counts.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Use a brief idle timeout together with connection multiplexing</b>.</p><p>A short idle timeout quickly returns unused sessions to the pool so memory and backends are freed during quiet periods. Connection multiplexing lets many client sessions share a smaller number of database connections, which keeps warm connections ready for bursts and avoids hitting connection limits. This pairing uses compute efficiently while keeping latency low during spikes.</p><p><i>Use a long idle timeout and route all connections through Cloud SQL Auth Proxy</i> is not suitable because a long idle timeout strands resources on idle backends, and the Cloud SQL Auth Proxy does not provide pooling or multiplexing. It secures connections but it does not manage session reuse.</p><p><i>Use a long idle timeout and disable pooler health checks</i> wastes resources during quiet windows and removes important safeguards that keep the pool healthy, which can increase latency and failure risk during traffic spikes.</p><p><i>Use a short idle timeout and enable aggressive eviction of idle sessions</i> can cause excessive connection churn and cold starts. Without multiplexing you still maintain too many server connections and risk thrashing just as traffic ramps up.</p>",
+  "batch_id": "227",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are a Database Engineer, and your organization requires you to configure a session pooler service for a Cloud SQL instance to optimize the performance of a highly dynamic application. Which of the following strategies for managing idle connections in the session pooler service will result in the most efficient resource usage and optimal performance?",
+  "originalOptions": "A. Set a long idle connection timeout and enable connection multiplexing.<br/>B. Set a long idle connection timeout and disable connection health checks.<br/>C. Set a short idle connection timeout and enable connection multiplexing.<br/>D. Set a short idle connection timeout and enable aggressive connection eviction.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "26",
+  "tip": "<p>When traffic is <i>bursty</i>, pair a short idle timeout with <i>multiplexing</i> so you reclaim resources without paying a cold start penalty. Remember the Cloud SQL Auth Proxy <i>does not pool</i> so look for a real pooler in the correct option.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/manage-connections#pooling",
+    "https://cloud.google.com/sql/docs/postgres/pgbouncer",
+    "https://cloud.google.com/sql/docs/postgres/connect-admin-proxy",
+    "https://www.pgbouncer.org/features.html",
+    "https://www.pgbouncer.org/config.html#pool_mode"
+  ],
+  "url": "https://certificationation.com/questions/exam-your-organization-requires-you-to-exam-026.html",
+  "video_url": "https://certificationation.com/videos/exam-your-organization-requires-you-to-exam-026.html"
+}

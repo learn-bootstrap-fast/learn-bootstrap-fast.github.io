@@ -1,0 +1,87 @@
+---
+title: "You manage a Cloud SQL instance that hosts a criticalExam"
+description: "Video for you manage a Cloud SQL instance that hosts a critical application requiring high availability. Customers have reported increased latency during peak"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You manage a Cloud SQL instance that hosts a critical application requiring high availability. Customers have reported increased latency during peak traffic periods, coinciding with automatic storage scaling events. You want to address this issue to ensure smoother performance during scaling operations. What should you do? (Choose two)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the database lead at a streaming platform named RiverWave that runs a mission critical workload on Cloud SQL for PostgreSQL with high availability enabled. During the busy evening hours your users report latency spikes that consistently line up with automatic storage increase events when disk usage passes about 85 percent and a resize is triggered. You want to keep performance steady while storage grows during these events. What should you do?",
+  "options": [
+    {
+      "text": "Set a preferred maintenance window during low traffic hours",
+      "explanation": "This configures when planned maintenance such as patching or minor version updates may occur so it does not change automatic storage increase behavior",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Add Cloud SQL read replicas to distribute read traffic",
+      "explanation": "Read replicas can serve read only queries which reduces workload on the primary instance during peak demand",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Add exponential backoff and retry logic in the client",
+      "explanation": "This pattern spaces out retries from clients to avoid request storms when transient errors occur",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use connection pooling to reuse database sessions efficiently",
+      "explanation": "Pooling keeps a limited set of persistent connections that are reused by many requests which reduces connection churn and overhead",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Turn off automatic storage increase",
+      "explanation": "Disabling automatic growth requires manual capacity management and increases the risk of the database running out of space under load",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct options are <b>Add Cloud SQL read replicas to distribute read traffic</b> and <b>Use connection pooling to reuse database sessions efficiently</b>.</p><p>Adding <b>read replicas</b> moves a significant portion of read traffic away from the primary instance which reduces CPU and I O pressure during storage resize operations. This helps keep latency steady when the primary is busy extending storage because the replicas continue to serve read queries while the primary focuses on writes and the resize task. With a highly available primary you still keep failover capabilities while scaling read capacity horizontally with <b>read replicas</b>.</p><p>Implementing <b>connection pooling</b> reduces the overhead of creating and tearing down many PostgreSQL connections which can be expensive and can amplify latency during heavy load and resize events. By reusing existing sessions and limiting the number of active backends, <b>connection pooling</b> stabilizes resource usage and helps the database maintain predictable performance as storage grows.</p><p><i>Set a preferred maintenance window during low traffic hours</i> does not address the problem because automatic storage increases are not tied to the maintenance window and will still occur when thresholds are crossed during peak hours.</p><p><i>Add exponential backoff and retry logic in the client</i> can mask symptoms but it does not remove pressure from the database during storage resizing and will not keep performance steady under sustained load.</p><p><i>Turn off automatic storage increase</i> risks running out of disk space during peak periods which can cause outages and is not recommended for a mission critical system. It also avoids the real need to scale storage safely under load.</p>",
+  "batch_id": "276",
+  "answerCode": "2,4",
+  "type": "multi-select",
+  "originalQuery": "You manage a Cloud SQL instance that hosts a critical application requiring high availability. Customers have reported increased latency during peak traffic periods, coinciding with automatic storage scaling events. You want to address this issue to ensure smoother performance during scaling operations. What should you do? (Choose two)",
+  "originalOptions": "A. Implement an exponential backoff mechanism in your application.<br/>B. Use connection pooling to manage database connections efficiently.<br/>C. Configure maintenance notifications for advance alerts.<br/>D. Disable automatic storage scaling.<br/>E. Enable read replicas to distribute read traffic.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "188",
+  "tip": "<p>When performance dips align with a specific system event, first offload or smooth the workload rather than suppress the event. Think about <i>read replicas</i> to spread reads and <i>connection pooling</i> to cap connection overhead before considering changes that reduce resilience.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/replication",
+    "https://cloud.google.com/sql/docs/postgres/connection-pooling",
+    "https://cloud.google.com/sql/docs/postgres/performance",
+    "https://cloud.google.com/sql/docs/postgres/maintenance",
+    "https://cloud.google.com/sql/docs/postgres/expand-storage"
+  ],
+  "url": "https://certificationation.com/questions/exam-that-hosts-a-critical-application-exam-188.html",
+  "video_url": "https://certificationation.com/videos/exam-that-hosts-a-critical-application-exam-188.html"
+}

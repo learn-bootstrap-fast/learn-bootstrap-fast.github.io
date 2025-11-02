@@ -1,0 +1,74 @@
+---
+title: "After configuring a whole site CDN on CloudFront, youExam"
+description: "Video for after configuring a whole site CDN on CloudFront, you receive the following error."
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "After configuring a whole site CDN on CloudFront, you receive the following error."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d575f501ee1c8ade977e"
+  },
+  "quid": "0",
+  "ordinal": "51",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "Amazon CloudFront",
+    " AWS global infrastructure",
+    " AWS Support Center",
+    " AWS Compliance",
+    " AWS Well-Architected Framework"
+  ],
+  "slug": "cf-whole-site-cdn-error-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question51",
+  "title": "AWS After Configuring A Whole Site CDN On CloudFront Question",
+  "meta": "AWS Exam Question: After configuring a whole site CDN on CloudFront, you receive the following error. Find the answer including insights on CloudFront and Amazon S3.",
+  "answer": "B",
+  "query": "A company sets up a full website CDN using CloudFront. However, users experience errors related to HTTP requests when trying to access certain resources. What could be the likely cause?",
+  "originalQuery": "After configuring a whole site CDN on CloudFront, you receive the following error.",
+  "options": [
+    "A. The CloudFront distribution points to an incorrect origin server.",
+    "B. Allowed HTTP methods on that specific origin is only accepting GET, HEA.",
+    "C. Only POST and PATCH HTTP methods are permitted on the origin.",
+    "D. Allowed HTTP methods on that specific origin is only accepting GET, HEAD, OPTIONS, PUT, POST, PATCH, DELET."
+  ],
+  "originalOptions": [
+    "A. The CloudFront distribution is configured to the wrong origin.",
+    "B. Allowed HTTP methods on that specific origin is only accepting GET, HEA.",
+    "C. Allowed HTTP methods on that specific origin is only accepting POST, PATCH.",
+    "D. Allowed HTTP methods on that specific origin is only accepting GET, HEAD, OPTIONS, PUT, POST, PATCH, DELET."
+  ],
+  "image": "",
+  "primaryObjective": "3: Continuous Improvement for Existing Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Answer - B.\nThe AWS documentation also states that \"CloudFront caches responses to GET and HEAD requests\" and, optionally, OPTIONS requests.\nCloudFront does not cache responses to requests that use the other methods.\nAs per AWS documentation,\nAllowed HTTP Methods.\nSpecify the HTTP methods that you want CloudFront to process and forward to your origin:\nGET, HEAD: You can use CloudFront only to get objects from your origin or to get object headers.\nGET, HEAD, OPTIONS: You can use CloudFront only to get objects from your origin, get object headers, or retrieve a list of the options that your origin server supports.\nGET, HEAD, OPTIONS, PUT, POST, PATCH, DELETE: You can use CloudFront to get, add, update, and delete objects, and to get object headers.\nIn addition, you can perform other POST operations, such as submitting data from a web form.\nNote:\nCloudFront caches responses to GET and HEAD requests and, optionally, OPTIONS requests.\nCloudFront does not cache responses to requests that use the other methods.\nBased on this, Option B seems to be a better choice than.\nC.For more information, please visit:\nhttps://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesAllowedHTTPMethods\nWhen the CloudFront Distribution supports only \"cacheable requests\", it means that it supports only GET and HEAD HTTP requests (read-only)\nFor the HTTP requests such as OPTIONS, PUT, POST, PATCH AND DELETE, the CloudFront will give an error \"The distribution supports only cacheable requests\".\nHence, option B is the correct answer.\nThere is a good question posted on StackOverflow which explains what should be done in this situation.\nhttp://stackoverflow.com/questions/31253694/this-distribution-is-not-configured-to-allow-the-http-request\nThe error indicates that there is a problem with the allowed HTTP methods on the specific origin configured for the CloudFront distribution. The allowed HTTP methods on the origin do not match the HTTP methods used by the client, which results in the error.\nOption A, \"The CloudFront distribution is configured to the wrong origin,\" is not likely to be the issue because the error message specifically mentions HTTP methods.\nOption B, \"Allowed HTTP methods on that specific origin is only accepting GET, HEA,\" is also not correct because \"HEA\" is not a valid HTTP method. The correct method is \"HEAD.\"\nOption C, \"Allowed HTTP methods on that specific origin is only accepting POST, PATCH,\" is also not correct because the error message suggests that the client is using a method that is not allowed by the origin, and POST and PATCH are commonly used methods that are allowed by most origins.\nOption D, \"Allowed HTTP methods on that specific origin is only accepting GET, HEAD, OPTIONS, PUT, POST, PATCH, DELETE,\" is the correct answer because it lists all of the commonly used HTTP methods that are allowed by most origins. If the origin is only accepting a subset of these methods, then the client may receive an error if it attempts to use a method that is not allowed.\nIn summary, the correct answer is option D because it correctly identifies the allowed HTTP methods on the origin as the likely cause of the error.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-cdn-on-cloudfront-you-receive-exam-027.html",
+  "url": "https://certificationation.com/questions/exam-cdn-on-cloudfront-you-receive-exam-027.html"
+}

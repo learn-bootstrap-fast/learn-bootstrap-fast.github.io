@@ -1,0 +1,67 @@
+---
+title: "An application is deployed in an Auto Scaling group withExam"
+description: "Video for an application is deployed in an Auto Scaling group with an Application Load Balancer. One day, you updated the AMI ID used by the ASG and increased"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "An application is deployed in an Auto Scaling group with an Application Load Balancer. One day, you updated the AMI ID used by the ASG and increased the desired number of instances. However, you found that the new instance failed the health check of the ALB target group and was terminated by the Auto Scaling group. Then the ASG recreated a new instance which would be terminated again after some time. You want to isolate one of the new instances for troubleshooting and this instance must be in service for at least one day. Which of the following methods can achieve the requirement? (SelectTWO.)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct answers are: <b>Put the problematic instance into Standby mode</b> and <b>Attach a lifecycle hook that places the instance in Pending:Wait status for up to 24 hours</b>.</p><ul><li><b>Standby Mode:</b> By putting the instance in Standby, it is temporarily detached from the Auto Scaling group, meaning it won't be terminated due to failing health checks. This allows you to connect and troubleshoot the instance without interference from Auto Scaling processes.</li><li><b>Lifecycle Hook – Pending:Wait:</b> When using a lifecycle hook at the time of instance launch, the instance is paused in the Pending:Wait state, preventing it from proceeding to become 'InService'. The timeout can be extended up to 48 hours, so you have at least 24 hours to investigate.</li></ul><p>Why the other options fail:</p><ul><li><i>Edit the ASG’s health checks to disable Elastic Load Balancing (ELB) health monitoring</i>: Simply disabling ELB health checks could cause the ASG to rely on EC2 health checks, but unhealthy instances may still be terminated, or you might miss crucial load balancer-specific issues.</li><li><i>Revert the AMI ID in the launch template to the previous version</i>: This would not keep the new instance running for troubleshooting. Any failed health check would still cause instance termination by the ASG mechanism.</li><li><i>Decrease the desired instance count in the Auto Scaling group to reduce terminations</i>: Lowering the desired count only reduces the number of running instances, but doesn’t guarantee that any single instance will stay up for troubleshooting, nor does it isolate an instance from health checks and terminations.</li></ul><p><b>Tip:</b> Use Standby mode to isolate and retain specific instances. Lifecycle hooks are valuable for pausing an instance’s lifecycle at key stages. Both approaches offer safe avenues for in-depth troubleshooting without prematurely losing instances to automated recovery actions.</p>",
+  "query": "<p>An application runs within an Auto Scaling group that uses an Application Load Balancer for health checks. Recently, you updated the launch template’s AMI ID and raised the desired capacity, but observed that newly launched instances repeatedly fail ALB health checks, leading to their termination and replacement by the ASG. You want to troubleshoot one of these newly launched instances by isolating it and ensuring it remains available (not terminated) for at least 24 hours. Which TWO actions would help achieve this goal?</p>",
+  "original_oid": "6793daa061969b416038a261",
+  "options": [
+    {
+      "correct": true,
+      "text": "Put the problematic instance into Standby mode to remove it temporarily from the Auto Scaling group while you diagnose issues.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Decrease the desired instance count in the Auto Scaling group to reduce terminations.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Edit the ASG’s health checks to disable Elastic Load Balancing (ELB) health monitoring.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Revert the AMI ID in the launch template to the previous version.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Attach a lifecycle hook to the Auto Scaling group to place the instance in Pending:Wait status for up to 24 hours.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question498",
+  "originalQuery": "An application is deployed in an Auto Scaling group with an Application Load Balancer.\nOne day, you updated the AMI ID used by the ASG and increased the desired number of instances.\nHowever, you found that the new instance failed the health check of the ALB target group and was terminated by the Auto Scaling group.\nThen the ASG recreated a new instance which would be terminated again after some time.\nYou want to isolate one of the new instances for troubleshooting and this instance must be in service for at least one day.\nWhich of the following methods can achieve the requirement? (SelectTWO.)",
+  "originalOptions": "[\"A. Modify the AMI ID to the previous one in the launch template of the Auto Scaling group.\",\"B. In the ASG health check configuration, disable the health check provided by Elastic Load Balancing (ELB).\",\"C. Put the instance in the Standby state to temporarily remove it from the Auto Scaling group.\",\"D. Put the instance in the Pending:Wait state for 24 hours by adding a lifecycle hook with the default timeout.\",\"E. Decrease the desired number of the instances in the Auto Scaling group.\"]",
+  "video_url": "https://certificationation.com/videos/exam-auto-scaling-group-with-an-exam-288.html",
+  "url": "https://certificationation.com/questions/exam-auto-scaling-group-with-an-exam-288.html"
+}

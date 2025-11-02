@@ -1,0 +1,80 @@
+---
+title: "You are a Database Engineer and have been tasked withExam"
+description: "Video for you are a Database Engineer and have been tasked with migrating a Microsoft SQL Server database to Google Cloud SQL for SQL Server. You need to ensure"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are a Database Engineer and have been tasked with migrating a Microsoft SQL Server database to Google Cloud SQL for SQL Server. You need to ensure minimal downtime and maintain a fallback plan. Which migration strategy is best for this scenario?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Riverview Analytics plans to move its on-premises Microsoft SQL Server workload into Cloud SQL for SQL Server. The primary database is about 3.2 TB and leadership wants a cutover that lasts under 25 minutes while also keeping a simple rollback path if issues appear immediately after switching. Which migration approach should you choose to achieve minimal downtime while preserving a fallback?",
+  "options": [
+    {
+      "text": "Use Datastream to capture change data from SQL Server into Cloud SQL for SQL Server and configure reverse replication to the source for rollback",
+      "explanation": "Datastream provides serverless change data capture for specific sources and targets and it does not support SQL Server to Cloud SQL for SQL Server or reverse synchronization back to the source.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Build a Cloud Data Fusion pipeline that performs nightly full loads and run a final copy during the maintenance window and add a second pipeline to copy changes back if you need to revert",
+      "explanation": "Cloud Data Fusion is well suited for batch transformations and scheduled loads and it generally requires downtime for the final sync and custom pipelines for any rollback process.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Run Database Migration Service for SQL Server with continuous data replication then validate the destination and perform a planned cutover while keeping the source writable until you confirm success",
+      "explanation": "Database Migration Service supports homogeneous SQL Server migrations with ongoing replication which enables a short cutover window after validation of the target instance.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Export a native SQL Server backup to Cloud Storage then restore into Cloud SQL for SQL Server with SQL Server Management Studio and create a Cloud SQL read replica that points to the on-premises instance for fallback",
+      "explanation": "A native backup and restore produces a one-time snapshot and Cloud SQL for SQL Server cannot be configured as a replica of an external on-premises SQL Server for rollback.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Run Database Migration Service for SQL Server with continuous data replication then validate the destination and perform a planned cutover while keeping the source writable until you confirm success</b>.</p><p>This approach streams ongoing changes from the source to Cloud SQL so the target stays nearly current. The final cutover is a brief event where you stop writes and point applications to Cloud SQL which supports the under 25 minute requirement for a 3.2 TB database when the heavy data movement has already completed. Because the source remains intact and writable until you validate the target you have a straightforward rollback by directing traffic back to the original database if an issue appears immediately after switching.</p><p><i>Use Datastream to capture change data from SQL Server into Cloud SQL for SQL Server and configure reverse replication to the source for rollback</i> is not viable because the service does not support SQL Server as a source into Cloud SQL for SQL Server and there is no reverse replication capability to sync changes back to the on premises system.</p><p><i>Build a Cloud Data Fusion pipeline that performs nightly full loads and run a final copy during the maintenance window and add a second pipeline to copy changes back if you need to revert</i> does not provide continuous replication and would require a large final copy which risks exceeding the short window. It also introduces complex custom rollback logic rather than keeping the source as the simple fallback.</p><p><i>Export a native SQL Server backup to Cloud Storage then restore into Cloud SQL for SQL Server with SQL Server Management Studio and create a Cloud SQL read replica that points to the on-premises instance for fallback</i> is unsuitable because native backup and restore for a multi terabyte database is a lengthy offline operation and Cloud SQL for SQL Server does not support read replicas or replication from an on premises primary.</p>",
+  "batch_id": "166",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are a Database Engineer and have been tasked with migrating a Microsoft SQL Server database to Google Cloud SQL for SQL Server. You need to ensure minimal downtime and maintain a fallback plan. Which migration strategy is best for this scenario?",
+  "originalOptions": "A. Utilize the Schema Conversion Tool (SCT) to convert the SQL Server schema for Cloud SQL, perform data transfer using Datastream, and set up a reverse replication from Cloud SQL to the on-premises SQL Server database as a fallback.<br/>B. Use Cloud Data Fusion to convert the SQL Server schema and transfer the data to Cloud SQL, then create a Cloud Data Fusion pipeline to transfer the data back to the on-premises database as a fallback plan.<br/>C. Utilize the Schema Conversion Tool (SCT) to convert the SQL Server schema for Cloud SQL, perform data transfer using the SQL Server Management Studio (SSMS) backup and restore feature, and set up a read replica of the Cloud SQL instance on the on-premises SQL Server database as a fallback.<br/>D. Create a Cloud SQL instance with a SQL Server database, use Cloud SQL's external server feature to perform data transfer, and set up a reverse replication from Cloud SQL to the on-premises SQL Server database as a fallback.",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "240",
+  "tip": "<p>When you see requirements for <i>minimal downtime</i> and a quick <i>rollback</i> favor a managed migration service with <i>continuous replication</i> and a <i>planned cutover</i>. Always verify service compatibility for the specific source and target engines.</p>",
+  "references": [
+    "https://cloud.google.com/database-migration/docs/overview",
+    "https://cloud.google.com/database-migration/docs/sql-server/",
+    "https://cloud.google.com/datastream/docs/sources",
+    "https://cloud.google.com/sql/docs/sqlserver/features"
+  ],
+  "url": "https://certificationation.com/questions/exam-have-been-tasked-with-migrating-exam-240.html",
+  "video_url": "https://certificationation.com/videos/exam-have-been-tasked-with-migrating-exam-240.html"
+}

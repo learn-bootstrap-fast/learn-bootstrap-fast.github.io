@@ -1,0 +1,62 @@
+---
+title: "You have a set of EC2 Instances in an Autoscaling GroupExam"
+description: "Video for you have a set of EC2 Instances in an Autoscaling Group that processes messages from an SQS queue. The messages contain the location in S3 from where"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have a set of EC2 Instances in an Autoscaling Group that processes messages from an SQS queue. The messages contain the location in S3 from where video's need to be processed by the EC2 Instances. When a scale in happens, it is noticed that an at times that the EC2 Instance is still in a state of processing a video when the instance is terminated. How can you implement a solution which will ensure this does not happen?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct answer is <b>Implement lifecycle hooks so that instance termination waits until processing tasks are complete</b>. Lifecycle hooks pause the Auto Scaling termination process, giving your EC2 instance extra time to complete any remaining workloads (such as finishing video processing) and perform cleanup before actually shutting down. This mechanism ensures that no tasks are left incomplete or lost when scaling in occurs.</p><p><i>Extend the cooldown period for the Auto Scaling Group to delay additional scaling activities</i> is incorrect because cooldowns control the frequency of scaling actions, but do not prevent termination of an instance that is still processing a job. Cooldowns simply avoid rapid scaling actions, not the in-flight task scenario.</p><p><i>Inactivate the AZRebalance policy to stop redistribution of instances across Availability Zones</i> is not relevant, because the AZRebalance termination policy concerns balancing the distribution of instances among availability zones and does not resolve the problem of tasks being interrupted by scale-in actions.</p><p><i>Increase the min and max instance counts in the Auto Scaling Group and reduce dynamic scaling adjustments</i> could make scale-in events less frequent, but it does not guarantee that termination won’t happen while a job is in progress. It would also result in inefficient resource usage and higher costs.</p><p><b>Tip:</b> For workloads that require graceful shutdown or need to safely complete in-process tasks before termination, always employ lifecycle hooks with Auto Scaling. Also, update your application logic to report completion back to the hook so the instance can be safely terminated by Auto Scaling.</p>",
+  "query": "<p>You are running a group of EC2 instances in an Auto Scaling Group to process video files whose S3 locations are queued in Amazon SQS messages. Occasionally, when the Auto Scaling Group scales in, an instance is terminated while it is still handling a video processing job. How can you prevent an EC2 instance from being terminated before it finishes its current processing work?</p>",
+  "original_oid": "6793da6361969b416038a1e9",
+  "options": [
+    {
+      "correct": false,
+      "text": "Extend the cooldown period for the Auto Scaling Group to delay additional scaling activities.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Implement lifecycle hooks so that instance termination waits until processing tasks are complete.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Inactivate the AZRebalance policy to stop redistribution of instances across Availability Zones.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Increase the min and max instance counts in the Auto Scaling Group and reduce dynamic scaling adjustments.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question376",
+  "originalQuery": "You have a set of EC2 Instances in an Autoscaling Group that processes messages from an SQS queue.\nThe messages contain the location in S3 from where video's need to be processed by the EC2 Instances.\nWhen a scale in happens, it is noticed that an at times that the EC2 Instance is still in a state of processing a video when the instance is terminated.\nHow can you implement a solution which will ensure this does not happen?",
+  "originalOptions": "A. Change the CoolDown property for the Autoscaling Group.|B. Suspend the AZRebalance termination policy|C. Use lifecycle hooks to ensure the processing is complete before the termination occurs|D. Increase the minimum and maximum size for the Auto Scaling group, and change the scaling policies so they scale less dynamically.",
+  "video_url": "https://certificationation.com/videos/exam-autoscaling-group-that-processes-messages-exam-058.html",
+  "url": "https://certificationation.com/questions/exam-autoscaling-group-that-processes-messages-exam-058.html"
+}

@@ -1,0 +1,80 @@
+---
+title: "You are running an instance of Cloud SQL for PostgreSQLExam"
+description: "Video for you are running an instance of Cloud SQL for PostgreSQL as the backend of your healthcare application. You learn that the development team needs a"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are running an instance of Cloud SQL for PostgreSQL as the backend of your healthcare application. You learn that the development team needs a copy of your Cloud SQL database in a new environment to test a new feature. You want to follow Google-recommended practices. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "StreamHaven runs its transactional store on Cloud SQL for PostgreSQL. The engineering team needs a complete copy of the production database, which is about 280 GB, in a separate staging environment to validate a new feature within 48 hours. You want to follow Google recommended practices to provide the team with a consistent copy that includes schema and data. What should you do?",
+  "options": [
+    {
+      "text": "Use Cloud SQL export to write table data to CSV files in Cloud Storage and import them into a new instance",
+      "explanation": "CSV exports contain only raw rows so you must recreate schema objects and constraints before loading the data.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Run a Cloud SQL export that produces a SQL dump in Cloud Storage and import it into the target instance",
+      "explanation": "A SQL dump preserves schema and data so it can be restored into another Cloud SQL for PostgreSQL instance.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Create a read replica of the production instance in the same project and promote it to a standalone instance for staging",
+      "explanation": "A read replica streams changes from the primary and can later be promoted to create an independent copy.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Trigger a JSON export with Cloud Functions and load the files into the staging database",
+      "explanation": "Cloud Functions can orchestrate tasks but exporting PostgreSQL data in JSON is not a standard Cloud SQL export workflow.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Run a Cloud SQL export that produces a SQL dump in Cloud Storage and import it into the target instance</b>. This approach creates a consistent logical backup that captures both schema and data and you can restore it into a new staging instance within the required time window.</p><p>A SQL dump produced by Cloud SQL preserves database objects and metadata such as tables, indexes, sequences, constraints, and grants. The import then replays these statements to faithfully reconstruct the database in the target environment. The export runs from a consistent snapshot which provides transactional consistency across tables, and it is the Google recommended method for moving a full database between environments at this scale.</p><p><i>Use Cloud SQL export to write table data to CSV files in Cloud Storage and import them into a new instance</i> is incorrect because CSV files contain only raw table rows and do not include schema, indexes, sequences, or foreign keys. You would need to recreate the schema and constraints manually and cross table consistency is not guaranteed in a single snapshot, which does not meet the requirement for a complete and consistent copy.</p><p><i>Create a read replica of the production instance in the same project and promote it to a standalone instance for staging</i> is incorrect because read replicas are intended for read scaling and disaster recovery rather than environment cloning. Replicas must live in the same project and region constraints apply, so this does not satisfy a separate staging environment in many cases. Promotion also introduces operational complexity and is not the recommended pattern for producing a one time consistent copy for testing.</p><p><i>Trigger a JSON export with Cloud Functions and load the files into the staging database</i> is incorrect because Cloud SQL does not support JSON export for relational backups and JSON would not capture the database schema. This workflow would not provide a reliable, importable copy of the database.</p>",
+  "batch_id": "174",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "You are running an instance of Cloud SQL for PostgreSQL as the backend of your healthcare application. You learn that the development team needs a copy of your Cloud SQL database in a new environment to test a new feature. You want to follow Google-recommended practices. What should you do?",
+  "originalOptions": "A. Use Cloud SQL export functionality to create a SQL dump file.<br/>B. Use Cloud SQL export functionality to create a CSV file.<br/>C. Use Cloud Functions to run the export in JSON format.<br/>D. Use Cloud Functions to run the export in CSV format.",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "4",
+  "tip": "<p>When a question asks for a complete and <i>consistent</i> copy that includes <i>schema and data</i>, prefer a Cloud SQL <i>SQL dump</i> export and import. CSV is data only and replicas are for read scaling rather than cloning environments.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/import-export/exporting",
+    "https://cloud.google.com/sql/docs/postgres/import-export/importing",
+    "https://cloud.google.com/sql/docs/postgres/import-export/import-export-overview",
+    "https://cloud.google.com/sql/docs/postgres/replication/replication-overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-cloud-sql-for-postgresql-as-exam-004.html",
+  "video_url": "https://certificationation.com/videos/exam-cloud-sql-for-postgresql-as-exam-004.html"
+}

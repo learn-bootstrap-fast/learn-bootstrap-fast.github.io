@@ -1,0 +1,62 @@
+---
+title: "The Trusted Advisor in your AWS account raises the “LowExam"
+description: "Video for the Trusted Advisor in your AWS account raises the “Low Utilization Amazon EC2 Instances” alerts. You check the EC2 instances and find that some"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "The Trusted Advisor in your AWS account raises the “Low Utilization Amazon EC2 Instances” alerts. You check the EC2 instances and find that some instances should be stopped as they are no longer used. You want to automate this process so that whenever Trusted Advisor discovers a low utilization EC2 instance, the instance will be stopped and you will get an email notification. Which of the following methods is the most appropriate?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>first option</b>, which suggests creating a Lambda function via CloudFormation to query the Trusted Advisor low utilization EC2 list, stop those instances, and trigger itself periodically (for example, using EventBridge scheduled events), is the optimal and most direct solution. This method automates the entire response—from fetching the relevant Trusted Advisor findings, taking action by stopping instances, to sending email notifications (such as via SNS). It also leverages serverless best practices and infrastructure as code.<br><br>The other options have notable drawbacks:<br><br><i>Set up a CloudWatch Event that executes an SSM Run Command action as its target to shut down detected unused EC2 instances when Trusted Advisor reports them</i>: While CloudWatch Events and SSM Run Command can automate tasks for instances, there is no direct way to trigger events based on Trusted Advisor findings. Trusted Advisor does not emit CloudWatch Events natively, so this option wouldn't work automatically.<br><br><i>Utilize a CloudWatch Event with an AWS Lambda function designed to track the Trusted Advisor Low Utilization EC2 Instances check, automatically stopping recommended instances</i>: Although Lambda is used, a CloudWatch Event cannot directly monitor Trusted Advisor checks. Additional work would be needed, and this lacks the periodic, scalable approach that scheduling a Lambda offers.<br><br><i>Create an AWS Config rule to detect the Trusted Advisor low utilization warnings and apply remediation to stop the underutilized EC2 instances</i>: AWS Config is primarily focused on configuration changes in supported AWS resources, not on Trusted Advisor results. Config rules cannot detect Trusted Advisor status changes by default, so this approach would not be effective.<br><br><b>Tip:</b> When automating responses to Trusted Advisor alerts, use scheduled Lambda functions for periodic polling, since Trusted Advisor data cannot be subscribed to as an event. Be sure to include notifications, such as SNS, to meet the email requirement.</p>",
+  "query": "<p>Suppose that AWS Trusted Advisor is generating alerts for 'Low Utilization Amazon EC2 Instances' in your account. After investigating, you conclude that these flagged EC2 instances should be shut down, as they are no longer actively needed.<br><br>You want to fully automate this process: whenever Trusted Advisor reports a low utilization EC2 instance, the instance should be stopped automatically and an email should be sent to notify you.<br><br>Which approach would be the most efficient and automated for achieving this result?</p>",
+  "original_oid": "6793da6b61969b416038a1f8",
+  "options": [
+    {
+      "correct": true,
+      "text": "Deploy a Lambda function using CloudFormation, which fetches the Trusted Advisor low utilization EC2 data and stops each instance accordingly. Run this function on a schedule.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up a CloudWatch Event that executes an SSM Run Command action as its target to shut down detected unused EC2 instances when Trusted Advisor reports them.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Utilize a CloudWatch Event with an AWS Lambda function designed to track the Trusted Advisor Low Utilization EC2 Instances check, automatically stopping recommended instances.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Create an AWS Config rule to detect the Trusted Advisor low utilization warnings and apply remediation to stop the underutilized EC2 instances.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question392",
+  "originalQuery": "The Trusted Advisor in your AWS account raises the “Low Utilization Amazon EC2 Instances” alerts.\nYou check the EC2 instances and find that some instances should be stopped as they are no longer used.\nYou want to automate this process so that whenever Trusted Advisor discovers a low utilization EC2 instance, the instance will be stopped and you will get an email notification.\nWhich of the following methods is the most appropriate?",
+  "originalOptions": "A. Use CloudFormation to create an Amazon Cloudwatch Event. Register the SSM Run Command as its target to shut down the low utilization EC2 instances.|B. Configure Amazon Cloudwatch Event and AWS Lambda to monitor the Low Utilization EC2 Instances Trusted Advisor check. Use the Lambda to stop the instances.|C. Create an AWS Config rule to check the Trusted Advisor Low Utilization warning status. Configure the remediation action that automatically stops the instances.|D. Use CloudFormation to set up a Lambda function that gets the Low Utilization EC2 Instances status in Trusted Advisor and stops the instances. Trigger the Lambda function periodically.",
+  "video_url": "https://certificationation.com/videos/exam-account-raises-the-low-utilization-exam-485.html",
+  "url": "https://certificationation.com/questions/exam-account-raises-the-low-utilization-exam-485.html"
+}

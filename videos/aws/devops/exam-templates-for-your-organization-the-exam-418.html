@@ -1,0 +1,67 @@
+---
+title: "You are setting up cloudformation templates for yourExam"
+description: "Video for you are setting up cloudformation templates for your organization. The cloudformation template consists of creating EC2 Instances for both your"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are setting up cloudformation templates for your organization. The cloudformation template consists of creating EC2 Instances for both your development and production environments in the same region. Each of these instances will have an Elastic IP and a security group attached to them which will be done via Cloudformation. Your cloudformation stack for the development environment gets successfully created, but then the production cloudformation stack fails. Which of the below could be a reason for this."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>correct answer</b> is: <b>You exceeded the regional default quota of Elastic IP addresses when setting up the development stack.</b></p><p>Each AWS region has a default soft limit of 5 Elastic IPs per account. It's common for users to overlook these service quotas, especially when deploying infrastructure across multiple environments like development and production. If you assigned 5 EIPs to the development instances, the subsequent attempt to allocate another for the production stack would fail, resulting in unsuccessful stack creation.</p><p>Why the other answers are incorrect:</p><ul><li><i>You selected incorrect tag values when provisioning instances for both stacks.</i> &ndash; Using the wrong tags does not cause stack creation to fail; tags are metadata and would not block resource allocation.</li><li><i>You ran up against the allowed number of security groups in the region while creating the development environment.</i> &ndash; If this had been the issue, your development stack would have failed, not the production one, since the limit would have been exceeded earlier.</li><li><i>You launched the production stack using a non-production version of your Amazon Machine Image (AMI).</i> &ndash; Choosing a different AMI version may affect the stack's configuration or behavior, but it usually doesn&rsquo;t trigger stack failure unless the AMI is missing or incorrect permissions are set.</li></ul><p><b>Tip:</b> Always check AWS service quotas (soft limits) such as EIPs per region before automating or scaling out environments to ensure your CloudFormation stacks don&rsquo;t fail unexpectedly during resource allocation.</p>",
+  "query": "<p>You are designing AWS CloudFormation templates to launch Amazon EC2 instances for both development and production within the same AWS region. Each instance created should have a dedicated Elastic IP address and an associated security group, all set up through the template. The development stack creation completes with no issues, but when you initiate the production environment's stack, it fails to deploy.</p><p>Which of the following could explain why the production stack did not succeed?</p>",
+  "original_oid": "6793da7261969b416038a207",
+  "options": [
+    {
+      "correct": false,
+      "text": "You ran up against the allowed number of security groups in the region while creating the development environment.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "You selected incorrect tag values when provisioning instances for both stacks.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "You exceeded the regional default quota of Elastic IP addresses when setting up the development stack.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "You launched the production stack using a non-production version of your Amazon Machine Image (AMI).",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question407",
+  "originalQuery": "You are setting up cloudformation templates for your organization.\nThe cloudformation template consists of creating EC2 Instances for both your development and production environments in the same region.\nEach of these instances will have an Elastic IP and a security group attached to them which will be done via Cloudformation.\nYour cloudformation stack for the development environment gets successfully created, but then the production cloudformation stack fails.\nWhich of the below could be a reason for this.",
+  "originalOptions": [
+    "A. You have chosen the wrong tags when creating the instances in both environments.",
+    "B. You hit the soft limit of 5 EIPs per region when creating the development environment.",
+    "C. You hit the soft limit for security groups when creating the development environment.",
+    "D. You didn’t choose the Production version of the AMI you are using when creating the production stack."
+  ],
+  "video_url": "https://certificationation.com/videos/exam-templates-for-your-organization-the-exam-418.html",
+  "url": "https://certificationation.com/questions/exam-templates-for-your-organization-the-exam-418.html"
+}

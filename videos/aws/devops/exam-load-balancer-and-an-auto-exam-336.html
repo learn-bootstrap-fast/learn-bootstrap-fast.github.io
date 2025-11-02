@@ -1,0 +1,67 @@
+---
+title: "Your public website uses an Application Load BalancerExam"
+description: "Video for your public website uses an Application Load Balancer and an Auto Scaling group in a virtual private cloud. Your chief security officer has asked you"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your public website uses an Application Load Balancer and an Auto Scaling group in a virtual private cloud. Your chief security officer has asked you to set up a monitoring system that quickly detects and alerts your team when a large sudden traffic increase occurs. How should you set this up?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best solution is to <b>deploy a CloudWatch alarm based on the NetworkIn metric of the EC2 instances within your Auto Scaling group, and set up Amazon SNS to inform your team via alert notifications</b>. This approach provides near real-time monitoring (CloudWatch alarms often check every 1–5 minutes) and immediate notification, which is crucial for responding swiftly to sudden traffic increases.<br><br><i>Launch an Amazon EMR job that runs on a 30-minute interval, parses CloudWatch application logs from the EC2 instances in your Auto Scaling group, analyzes them for traffic spikes, and then uses Amazon SNS to send SMS alerts to your team</i> is inefficient for timely detection, as it introduces delays due to batch processing and is more complex to maintain.<br><br><i>Create a CloudWatch alarm tracking the NetworkOut metric of your Application Load Balancer and configure Amazon SNS to instantly notify your team if a predefined threshold is crossed</i> focuses on outbound traffic from the load balancer, whereas the objective is to identify incoming traffic surges to your instances.<br><br><i>Schedule a periodic Amazon EMR analysis every 30 minutes to batch process access logs from the Application Load Balancer, and utilize Amazon Simple Email Service for team notifications if unusual traffic is detected</i> also suffers from delayed batch processing and adds unnecessary complexity.<br><br><i>Configure a cron task to continuously inspect AWS CloudTrail for events indicating high traffic and employ Amazon SNS to deliver alerts to your team</i> is not ideal because CloudTrail primarily logs API activity, not network-level traffic. This would not provide accurate insights on real-time traffic surges.<br><br><b>Tip:</b> For operational monitoring of traffic, always leverage CloudWatch metrics and alarms for real-time alerting. Choose metrics like NetworkIn or relevant request count metrics for timely detection of load changes. SNS offers seamless integration for alerts to email, SMS, or other endpoints.</p>",
+  "query": "<p>Your organization hosts a public-facing web application using an Application Load Balancer and an Auto Scaling group within a VPC.<br>Your Chief Security Officer wants a rapid-response monitoring solution to quickly identify and notify your team of any sudden surges in incoming network traffic.<br>Which approach should you implement to fulfill this requirement?</p>",
+  "original_oid": "6793da4d61969b416038a1ba",
+  "options": [
+    {
+      "correct": false,
+      "text": "Launch an Amazon EMR job that runs on a 30-minute interval, parses CloudWatch application logs from the EC2 instances in your Auto Scaling group, analyzes them for traffic spikes, and then uses Amazon SNS to send SMS alerts to your team.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Create a CloudWatch alarm tracking the NetworkOut metric of your Application Load Balancer and configure Amazon SNS to instantly notify your team if a predefined threshold is crossed.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Deploy a CloudWatch alarm based on the NetworkIn metric of the EC2 instances within your Auto Scaling group, and set up Amazon SNS to inform your team via alert notifications.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Schedule a periodic Amazon EMR analysis every 30 minutes to batch process access logs from the Application Load Balancer, and utilize Amazon Simple Email Service for team notifications if unusual traffic is detected.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Configure a cron task to continuously inspect AWS CloudTrail for events indicating high traffic and employ Amazon SNS to deliver alerts to your team.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question329",
+  "originalQuery": "Your public website uses an Application Load Balancer and an Auto Scaling group in a virtual private cloud.\nYour chief security officer has asked you to set up a monitoring system that quickly detects and alerts your team when a large sudden traffic increase occurs.\nHow should you set this up?",
+  "originalOptions": "A. Set up an Amazon CloudWatch alarm for the Elastic Load Balancing NetworkOut metric and then use Amazon SNS to alert your team.|B. Use an Amazon EMR job to run every thirty minutes, analyze the Elastic Load Balancing access logs in a batch manner to detect a sharp increase in traffic and then use the Amazon Simple Email Service to alert your team.|C. Use an Amazon EMR job to run every thirty minutes analyze the CloudWatch logs from your application Amazon EC2 instances in a batch manner to detect a sharp increase in traffic and then use the Amazon SNS SMS notification to alert your team.|D. Set up an Amazon Cloudwatch alarm for the NetworkIn metric associated with the EC2 instances of the Auto Scaling group and then use Amazon SNS to alert your team.|E. Set up a cron job to actively monitor the AWS CloudTrail logs for increased traffic and use Amazon SNS to alert your team.",
+  "video_url": "https://certificationation.com/videos/exam-load-balancer-and-an-auto-exam-336.html",
+  "url": "https://certificationation.com/questions/exam-load-balancer-and-an-auto-exam-336.html"
+}

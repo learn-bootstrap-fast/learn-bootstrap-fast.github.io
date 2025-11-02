@@ -1,0 +1,128 @@
+---
+title: "A solutions architect must create a disaster recoveryExam"
+description: "Video for a solutions architect must create a disaster recovery (DR) plan for a high-volume software as a service (SaaS) platform. All data for the platform is"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A solutions architect must create a disaster recovery (DR) plan for a high-volume software as a service (SaaS) platform. All data for the platform is stored in an Amazon Aurora MySQL DB cluster. The DR plan must replicate data to a secondary AWS Region. Which solution will meet these requirements MOST cost-effectively?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729ab7"
+  },
+  "quid": null,
+  "ordinal": "338",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS Database Migration Service (AWS DMS)",
+    " Amazon Aurora",
+    " AWS Well-Architected Framework",
+    " AWS Backup",
+    " AWS Global Accelerator"
+  ],
+  "slug": "aa-mysql-db-cluster-disaster-recovery-aws",
+  "source": "ET",
+  "title": "AWS Solutions Architect Must Create A Disaster Recovery Question",
+  "meta": "AWS Exam Question: A solutions architect must create a disaster recovery plan for a high-volume SaaS platform using Amazon Aurora MySQL DB. Find the answer with AWS.",
+  "answer": "B",
+  "query": "A solutions architect needs to develop a disaster recovery (DR) strategy for a high-traffic SaaS application. The application's data is maintained in an Amazon Aurora MySQL database cluster. The DR strategy requires that data is replicated to another AWS Region. What is the most economical solution to achieve this?",
+  "originalQuery": "A solutions architect must create a disaster recovery (DR) plan for a high-volume software as a service (SaaS) platform. All data for the platform is stored in an Amazon Aurora MySQL DB cluster.\n\nThe DR plan must replicate data to a secondary AWS Region.\n\nWhich solution will meet these requirements MOST cost-effectively?",
+  "options": [
+    "A. Use MySQL binary log replication to an Aurora cluster in the secondary Region. Provision one DB instance for the Aurora cluster in the secondary Region.",
+    "B. Set up an Aurora global database for the DB cluster. When setup is complete, remove the DB instance from the secondary Region.",
+    "C. Use AWS Database Migration Service (AWS DMS) to replicate data continuously to the Aurora cluster in a secondary Region. Remove the DB instance from that region.",
+    "D. Set up an Aurora global database for the DB cluster. Specify a minimum of one DB instance in the secondary Region."
+  ],
+  "originalOptions": [
+    "A. Use MySQL binary log replication to an Aurora cluster in the secondary Region. Provision one DB instance for the Aurora cluster in the secondary Region.",
+    "B. Set up an Aurora global database for the DB cluster. When setup is complete, remove the DB instance from the secondary Region.",
+    "C. Use AWS Database Migration Service (AWS DMS) to continuously replicate data to an Aurora cluster in the secondary Region. Remove the DB instance from the secondary Region.",
+    "D. Set up an Aurora global database for the DB cluster. Specify a minimum of one DB instance in the secondary Region."
+  ],
+  "image": null,
+  "primaryObjective": "4: Design Cost-Optimized Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Initially, I believed option D was the best choice; however, I now consider option B to be the more appropriate solution. Option D involves an active-active cluster configuration, while option B utilizes an active-passive setup, known as a headless cluster. The headless cluster design in option B is generally more cost-effective than the active-active configuration of option D. \n\nFor further details on this approach, refer to the AWS blog post on achieving cost-effective multi-region resiliency with Amazon Aurora Global Database headless clusters.",
+    "Answer: A 🎉\n\nAlright, let’s dive into the world of cross-region replication with a sprinkle of humor! 🌍✨\n\nTo set up an Aurora MySQL DB cluster as a cross-region read replica, you first need to enable binary logging on your source Aurora MySQL DB cluster. This is like giving your database a magical power to keep track of all its changes! 🪄 With binary logging activated, your Aurora MySQL can replicate those changes to its buddy in the other region, ensuring that your data is always in sync and ready to conquer any disaster that comes its way! 💪\n\nFor the nitty-gritty, check out the official AWS documentation here: [AWS Aurora MySQL Cross-Region Replication](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Replication.CrossRegion.html). It’s like the ultimate guidebook for database wizards! 🧙‍♂️📚 So gear up and let your data travel across regions like a pro! 🚀",
+    "Ah, the joys of disaster recovery planning for a high-traffic SaaS platform! When it comes to replicating data to a \"secondary\" AWS Region, you have a few tricks up your sleeve beyond just the standard Aurora Replicas.\n\nOne option is to utilize an Aurora global database, which allows you to seamlessly replicate data across multiple AWS Regions. This setup is a savvy choice when you want high availability across regions. For more details on this delightful capability, check out the documentation on high availability with Aurora global databases.\n\nAlternatively, you can opt for MySQL binary log (binlog) replication to create read replicas of your Aurora MySQL DB cluster in a different AWS Region. The beauty of this method is that you can have up to five read replicas, each residing in a different region, ensuring your data is well-distributed and available, should the need arise.\n\nSo whether you choose the global database route or stick with binlog replication, rest assured that your DR plan can effectively keep your data safe and sound across regions. Just make sure to weigh the costs and benefits of each option before you dive in!",
+    "This task seeks the most economical approach to establish a disaster recovery plan. It's worth noting that while Aurora global databases offer robust features for multi-region replication, they generally come at a higher price point. \n\nFor those looking to optimize costs effectively, exploring alternatives that balance performance and affordability could prove beneficial. Understanding the pricing structure of services like Amazon Aurora can guide the decision-making process towards a solution that meets both the functional and budgetary requirements.",
+    "On the delightful URL you shared, there’s a cheerful note that stands out, saying:  \n\"Data replication from the primary database cluster to all secondary clusters is expertly managed by the Aurora storage layer instead of the database engine. This means the lag time for replicating changes is incredibly minimal—usually less than 1 second! By keeping the database engine out of the replication process, it can focus entirely on processing workloads. Plus, there’s no need to worry about configuring or managing the Aurora MySQL binary log replication!\"  \n\nWith this in mind, the best choice is option A! 🌟"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "B",
+      "explanation": "I originally went for D but now I think B is correct. D is active-active cluster so whereas B is active-passive (headless cluster) so it is cheaper than D.\n\nhttps://aws.amazon.com/blogs/database/achieve-cost-effective-multi-region-resiliency-with-amazon-aurora-global-database-headless-clusters/",
+      "upvotes": "18"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Answer - A\nhttps://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Replication.CrossRegion.html\n-----------------------------------------------------------------------------\nBefore you begin\nBefore you can create an Aurora MySQL DB cluster that is a cross-Region read replica, you must turn on binary logging on your source Aurora MySQL DB cluster. Cross-region replication for Aurora MySQL uses MySQL binary replication to replay changes on the cross-Region read replica DB cluster.",
+      "upvotes": "9"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "The question states \" The DR plan must replicate data to a \"secondary\" AWS Region.\"\n\nIn addition to Aurora Replicas, you have the following options for replication with Aurora MySQL:\n\nAurora MySQL DB clusters in different AWS Regions.\n\nYou can replicate data across multiple Regions by using an Aurora global database. For details, see High availability across AWS Regions with Aurora global databases\n\nYou can create an Aurora read replica of an Aurora MySQL DB cluster in a different AWS Region, by using MySQL binary log (binlog) replication. Each cluster can have up to five read replicas created this way, each in a different Region.\n\nhttps://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Replication.html",
+      "upvotes": "1"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "The question is asking for the most cost-effective solution.\nAurora global databases are more expensive.\n\nhttps://aws.amazon.com/rds/aurora/pricing/",
+      "upvotes": "1"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "On this same URL you provided, there is a note highlighted, stating the following:\n\"Replication from the primary DB cluster to all secondaries is handled by the Aurora storage layer rather than by the database engine, so lag time for replicating changes is minimal—typically, less than 1 second. Keeping the database engine out of the replication process means that the database engine is dedicated to processing workloads. It also means that you don't need to configure or manage the Aurora MySQL binlog (binary logging) replication.\"\n\nSo, answer should be A",
+      "upvotes": "2"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "B (59%)",
+      "votes": "35 votes."
+    },
+    {
+      "option": "D (29%)",
+      "votes": "17 votes."
+    },
+    {
+      "option": "7%",
+      "votes": "7%"
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is B: Setting up an Aurora global database for the DB cluster is the most economical solution. This offers a single point of management and requires only one instance in the secondary region after initial setup. It is designed for high availability and minimal latency, making it suitable for disaster recovery. The other options are less cost-effective and involve additional instance provisioning or complexity. \n\nOption A is incorrect because while MySQL binary log replication can work for cross-region replication, it might not be the most cost-effective due to ongoing provision of instance costs for replication workloads. \nOption C involves the AWS Database Migration Service, which adds another service layer and likely incurs more costs than setting up Aurora's built-in global database. \nOption D is incorrect because it requires maintaining at least one DB instance in the secondary region, increasing costs unnecessarily when no instance is needed in a headless cluster setup after configuration.",
+  "video_url": "https://certificationation.com/videos/exam-disaster-recovery-dr-plan-for-exam-337.html",
+  "url": "https://certificationation.com/questions/exam-disaster-recovery-dr-plan-for-exam-337.html"
+}

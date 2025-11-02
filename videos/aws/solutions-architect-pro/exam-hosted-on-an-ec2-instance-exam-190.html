@@ -1,0 +1,74 @@
+---
+title: "A company has an application that is hosted on an EC2Exam"
+description: "Video for a company has an application that is hosted on an EC2 instance. The code is written in .NET and connects to a MySQL RDS database. If you're executing"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company has an application that is hosted on an EC2 instance. The code is written in .NET and connects to a MySQL RDS database. If you're executing .NET code against AWS on an EC2 instance that is assigned an IAM role, which of the following is a true statement?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d5d2f501ee1c8ade986b"
+  },
+  "quid": "0",
+  "ordinal": "291",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "Amazon EC2",
+    " Amazon RDS",
+    " AWS Identity and Access Management (IAM)",
+    " AWS shared responsibility model",
+    " AWS Security Center"
+  ],
+  "slug": "ec2-hosted-application-net-mysql-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question291",
+  "title": "AWS A Company Has An Application That Is Hosted Question",
+  "meta": "AWS Exam Question: A company hosts an application on EC2 with .NET code connecting to MySQL RDS. What is a true statement about IAM roles? Answer: IAM roles.",
+  "answer": "A",
+  "query": "An enterprise runs a Java-based service on an EC2 server connected to a PostgreSQL RDS instance. When running Java code on an EC2 machine assigned an IAM role, which of the following statements is accurate?",
+  "originalQuery": "A company has an application that is hosted on an EC2 instance.\nThe code is written in .NET and connects to a MySQL RDS database.\nIf you're executing .NET code against AWS on an EC2 instance that is assigned an IAM role, which of the following is a true statement?",
+  "options": [
+    "A. Retrieve the temporary security credentials from Amazon EC2 instance metadata. These are then passed on to the code that assumes the role and is valid for a limited time.",
+    "B. The program must use AWS access keys to work.",
+    "C. IAM roles can only be assumed by .NET applications.",
+    "D. None of the above."
+  ],
+  "originalOptions": [
+    "A. Retrieve the temporary security credentials from Amazon EC2 instance metadata. These are then passed on to the code that assumes the role and is valid for a limited time.",
+    "B. The code must have AWS access keys to execute.",
+    "C. Only .NET code can assume IAM roles.",
+    "D. None of the above."
+  ],
+  "image": "https://eaeastus2.blob.core.windows.net/optimizedimages/static/images/AWS-Certified-Solutions-Architect-Professional/answer/imgckeditor_aws-csap-p3-36.png",
+  "primaryObjective": "1: Design Solutions for Organizational Complexity",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Answer - A.\nThe best practice for IAM is to create roles that have specific access to an AWS service and then give the user permission to the AWS service via the role.\nFor the best practices on IAM policies, please visit the links.\nhttp://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html\nNote:\nAs per AWS,\nWhen you launch an EC2 instance, you specify an IAM role to associate with the instance.\nApplications that run on the instance can then use the role-supplied temporary credentials to sign API requests.\nUsing roles to grant permissions to applications that run on EC2 instances requires a bit of extra configuration.\nAn application running on an EC2 instance is abstracted from AWS by the virtualized operating system.\nBecause of this extra separation, an additional step is needed to assign an AWS role and its associated permissions to an EC2 instance and make them available to its applications.\nThis extra step is the creation of an instance profile that is attached to the instance.\nThe instance profile contains the role and can provide the role's temporary credentials to an application that runs on the instance.\nThose temporary credentials can then be used in the application's API calls to access resources and limit access to only those resources that the role specifies.\nNote that, only one role can be assigned to an EC2 instance at a time, and all applications on the instance share the same role and permissions.\nThe example given here shows how the application retrieves role permissions from the instance for accessing the bucket.\nThe correct answer is A. Retrieve the temporary security credentials from Amazon EC2 instance metadata. These are then passed on to the code that assumes the role and is valid for a limited time.\nWhen an EC2 instance is assigned an IAM role, it can use the AWS SDK or CLI to retrieve temporary security credentials from the instance metadata service. These credentials include an access key, a secret access key, and a session token, and are valid for a limited time, usually one hour.\nIn this scenario, the .NET code running on the EC2 instance can use the AWS SDK for .NET to retrieve the temporary security credentials and assume the IAM role. Once the code assumes the role, it can access AWS resources as defined by the permissions of the IAM role.\nOption B is incorrect because the code does not need to have AWS access keys to execute if it is running on an EC2 instance with an assigned IAM role. The IAM role provides temporary security credentials that can be used to access AWS resources.\nOption C is incorrect because IAM roles can be assumed by any AWS SDK, not just .NET code. For example, Python, Java, and Ruby SDKs can also assume IAM roles.\nOption D is incorrect because the correct answer is A, as explained above.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-hosted-on-an-ec2-instance-exam-190.html",
+  "url": "https://certificationation.com/questions/exam-hosted-on-an-ec2-instance-exam-190.html"
+}

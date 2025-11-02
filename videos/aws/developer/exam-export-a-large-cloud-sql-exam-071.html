@@ -1,0 +1,80 @@
+---
+title: "As a Database Engineer, you need to export a large CloudExam"
+description: "Video for as a Database Engineer, you need to export a large Cloud SQL for PostgreSQL instance. The databases in the instance are used heavily in production,"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you need to export a large Cloud SQL for PostgreSQL instance. The databases in the instance are used heavily in production, and export time is not a concern. You want to conduct the export operation without affecting the performance of the database. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the database engineer at AlpineLedger where a 24 TB Cloud SQL for PostgreSQL instance handles mission critical production traffic throughout the day. You must export all databases for compliance archiving and you do not care if the export takes a long time, but you need to ensure that the export does not degrade the performance of the live instance. What should you do?",
+  "options": [
+    {
+      "text": "Database Migration Service",
+      "explanation": "Database Migration Service sets up managed migration jobs for one time or continuous replication between database environments",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Run a serverless export from Cloud SQL",
+      "explanation": "Serverless export uses a recent backup to write data directly to Cloud Storage while avoiding load on the primary instance",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Run pg_dump from a Compute Engine VM through the Cloud SQL Auth Proxy",
+      "explanation": "This approach streams data through a client VM and consumes resources on the primary database instance during the export",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Datastream",
+      "explanation": "Datastream captures database changes and streams them to targets such as BigQuery or Cloud Storage for near real time pipelines",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Run a serverless export from Cloud SQL</b>.</p><p><b>Run a serverless export from Cloud SQL</b> uses Google managed resources to perform the export and writes the output to Cloud Storage. This keeps the heavy work off the primary instance so CPU and memory pressure on the production database remain low. It is designed for large datasets and long running jobs and it is the best fit when you need to archive data without affecting live traffic.</p><p><i>Database Migration Service</i> is built for moving data into Cloud SQL and ongoing replication during migrations. It does not produce an on demand archival export to Cloud Storage and it is not intended for one time compliance backups.</p><p><i>Run pg_dump from a Compute Engine VM through the Cloud SQL Auth Proxy</i> would pull data through the proxy by running queries on the primary instance. That approach consumes instance CPU and I O and can prolong locks or contention which risks degrading performance on a busy production system.</p><p><i>Datastream</i> focuses on change data capture for continuous replication into destinations such as BigQuery or Cloud Storage. It is not a simple one time full export of all databases for archival purposes and it does not minimize load on the primary instance the way a managed serverless export does.</p>",
+  "batch_id": "62",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you need to export a large Cloud SQL for PostgreSQL instance. The databases in the instance are used heavily in production, and export time is not a concern. You want to conduct the export operation without affecting the performance of the database. What should you do?",
+  "originalOptions": "A. Use Datastream.<br/>B. Use serverless export.<br/>C. Use Database Migration Service.<br/>D. Use Cloud SQL in high availability (HA) mode.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "71",
+  "tip": "<p>When a question emphasizes minimizing impact on a production Cloud SQL instance, look for a managed or <i>serverless</i> export that runs outside the database compute. Client side tools like <i>pg_dump</i> or migration and CDC services often add load or solve a different problem.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/export",
+    "https://cloud.google.com/sql/docs/postgres/connect-auth-proxy",
+    "https://cloud.google.com/database-migration/docs/overview",
+    "https://cloud.google.com/datastream/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-export-a-large-cloud-sql-exam-071.html",
+  "video_url": "https://certificationation.com/videos/exam-export-a-large-cloud-sql-exam-071.html"
+}

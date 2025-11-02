@@ -1,0 +1,128 @@
+---
+title: "A large media company hosts a web application on AWSExam"
+description: "Video for a large media company hosts a web application on AWS. The company wants to start caching confidential media files so that users around the world will"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A large media company hosts a web application on AWS. The company wants to start caching confidential media files so that users around the world will have reliable access to the files. The content is stored in Amazon S3 buckets. The company must deliver the content quickly, regardless of where the requests originate geographically. Which solution will meet these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729a00"
+  },
+  "quid": null,
+  "ordinal": "155",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon CloudFront",
+    " Amazon S3",
+    " AWS global infrastructure",
+    " AWS Lambda",
+    " AWS Direct Connect"
+  ],
+  "slug": "s3-caching-confidential-media-files-aws",
+  "source": "ET",
+  "title": "AWS A Large Media Company Hosts A Web Application Question",
+  "meta": "AWS Exam Question: A large media company seeks to cache confidential media files on AWS for reliable global access. Which solution will meet these requirements? Answer: CloudFront.",
+  "answer": "C",
+  "query": "An international streaming service operates its content delivery platform on AWS. The service aims to improve access times for sensitive media files, ensuring that users worldwide can easily retrieve them. The media is stored in Amazon S3 buckets. The service needs to deliver content rapidly, regardless of the user's location.\nWhat solution can fulfill these needs?",
+  "originalQuery": "A large media company hosts a web application on AWS. The company wants to start caching confidential media files so that users around the world will have reliable access to the files. The content is stored in Amazon S3 buckets. The company must deliver the content quickly, regardless of where the requests originate geographically.\nWhich solution will meet these requirements?",
+  "options": [
+    "",
+    "",
+    "",
+    ""
+  ],
+  "originalOptions": [
+    "A. Use AWS DataSync to connect the S3 buckets to the web application.",
+    "B. Deploy AWS Global Accelerator to connect the S3 buckets to the web application.",
+    "C. Deploy Amazon CloudFront to connect the S3 buckets to CloudFront edge servers.",
+    "D. Use Amazon Simple Queue Service (Amazon SQS) to connect the S3 buckets to the web application."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "To ensure reliable access to confidential media files for users across the globe, the media company can implement a caching strategy that leverages Amazon CloudFront, a content delivery network (CDN) service. By configuring CloudFront to cache the media files stored in Amazon S3, the solution can significantly reduce latency and improve load times for users, regardless of their geographic location.\n\nWhen a user requests a media file, CloudFront retrieves the content from the nearest edge location, which is geographically closer to the user, rather than fetching it directly from the S3 bucket. This not only enhances performance but also minimizes the load on the S3 storage, allowing for efficient content delivery.\n\nAdditionally, CloudFront offers built-in security features, such as encryption during transit and the ability to restrict access to only authorized users, which is crucial for handling confidential media files. By implementing signed URLs or cookies, the company can ensure that only authenticated users can access sensitive content.\n\nOverall, utilizing CloudFront in conjunction with S3 provides a robust solution for caching and delivering media files quickly and securely, addressing both performance and security requirements effectively.",
+    "Here’s the scoop! 🥳\n\nAmazon CloudFront is like the superhero of content delivery networks (CDN), swooping in to cache your media files at edge locations all around the globe. 🌍 By linking your S3 buckets, which are basically treasure chests for your media, to CloudFront, you ensure that users get lightning-fast access to content from the nearest edge location. Talk about speed! ⚡ \n\nThis dynamic duo also offers secure and reliable storage, making sure your precious files are safe and sound. While Global Accelerator is great for boosting TCP/UDP traffic performance, it’s not the right sidekick for HTTP-based content delivery like CloudFront. And as for DataSync and SQS? They’re more like the side characters in a movie—interesting, but not quite what you need for global content delivery! 🎬 \n\nSo, with CloudFront in your corner, you’re all set to deliver content quickly and reliably, no matter where your users are hanging out! 🎉",
+    "Ah, the wonders of CloudFront! This nifty service is tailor-made for your scenario, effortlessly delivering your precious media files to users across the globe. Think of it as your personal butler, ensuring that no matter where your audience is lounging—be it a cozy couch in California or a bustling café in Tokyo—they have speedy access to your confidential content stored in Amazon S3 buckets. \n\nWith CloudFront, not only do you benefit from reduced latency and improved load times, but you also get the added security for your sensitive files. It’s like putting your data in a digital fortress while still handing out VIP passes to your clientele. So, if you want to make sure your media files are always available and served up quickly, this is the solution that checks all the boxes.",
+    "Amazon CloudFront is the perfect solution for this scenario! This powerful content delivery network (CDN) effectively caches confidential media files, ensuring that users around the globe can access them reliably and quickly. By integrating seamlessly with Amazon S3, CloudFront enhances the delivery speed of your content, regardless of the geographical location of the requests. With its extensive network of edge locations, your users will experience minimal latency and optimal performance. Embracing CloudFront not only improves user experience but also boosts the efficiency of your media delivery strategy!",
+    "CloudFront is a delightful content delivery network (CDN) service offered by AWS that sprinkles magic on your media files! 🎉 It caches your content at edge locations all around the globe, ensuring that users can access their favorite media swiftly, no matter where they are. By linking Amazon S3 with CloudFront, your confidential media files are stored closer to the users, allowing for speedy and dependable access.\n\nNow, let's take a peek at a few alternatives:\n\nA. While this service is great for transferring data between on-premises storage and AWS, it’s not your caching or content delivery hero. It focuses on moving data rather than providing quick access to media files.\n\nB. This service enhances application performance and availability for users worldwide. However, it doesn’t specifically cater to caching media files or have a direct connection to S3, making it less than ideal for your needs.\n\nD. This service is more about message queuing than caching or delivering content. It's fantastic for coordinating communication between different parts of an application, but it won’t help with speedy access to media files.\n\nSo, the shining star of your solution is indeed to deploy CloudFront, seamlessly connecting your S3 buckets to its marvelous edge servers! 🌟"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "",
+      "explanation": "key :caching\nOption C",
+      "upvotes": "15"
+    },
+    {
+      "selectedAnswer": "C",
+      "explanation": "The reasons are:\n\nAmazon CloudFront is a content delivery network (CDN) that caches content at edge locations around the world.\nConnecting the S3 buckets containing the media files to CloudFront will cache the content at global edge locations.\nThis provides fast reliable access to users everywhere by serving content from the nearest edge location.\nCloudFront integrates tightly with S3 for secure, durable storage.\nGlobal Accelerator improves availability and performance for TCP/UDP traffic, not HTTP-based content delivery.\nDataSync and SQS are not technologies for a global CDN like CloudFront.",
+      "upvotes": "8"
+    },
+    {
+      "selectedAnswer": "C",
+      "explanation": "Ans C - Cloudfront is designed to do this...",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "C",
+      "explanation": "Amazon CloudFront to the rescue",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "C",
+      "explanation": "CloudFront is a content delivery network (CDN) service provided by AWS. It caches content at edge locations worldwide, allowing users to access the content quickly regardless of their geographic location. By connecting the S3 to CloudFront, the media files can be cached at edge locations, ensuring reliable and fast delivery to users.\n\nA. is a data transfer service that is not designed for caching or content delivery. It is used for transferring data between on-premises storage systems and AWS services.\n\nB. is a service that improves the performance and availability of applications for global users. While it can provide fast and reliable access, it is not specifically designed for caching media files or connecting directly to S3.\n\nD. is a message queue service that is not suitable for caching or content delivery. It is used for decoupling and coordinating message-based communication between different components of an application.\n\nTherefore, the correct solution is option C, deploying CloudFront to connect the S3 to CloudFront edge servers.",
+      "upvotes": "5"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "C (100%)",
+      "votes": "23 votes."
+    },
+    {
+      "option": "C (25%)",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is option C because Amazon CloudFront is a Content Delivery Network (CDN) that efficiently caches content at edge locations across the globe, allowing for rapid access to media files stored in Amazon S3. This functionality is critical for an international streaming service that needs to ensure users have quick and reliable access to sensitive media files, regardless of their geographical location. In contrast, option A (AWS DataSync) is a service for data transfer, not content delivery or caching. Option B (AWS Global Accelerator) enhances the performance of TCP/UDP traffic rather than HTTP-based content delivery from S3. Option D (Amazon SQS) is a message queuing service, which is not suitable for delivering media files in a fast and efficient manner as it does not provide caching capabilities.",
+  "video_url": "https://certificationation.com/videos/exam-application-on-aws-the-company-exam-155.html",
+  "url": "https://certificationation.com/questions/exam-application-on-aws-the-company-exam-155.html"
+}

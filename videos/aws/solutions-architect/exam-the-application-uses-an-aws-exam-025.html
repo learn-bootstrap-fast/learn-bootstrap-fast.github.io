@@ -1,0 +1,128 @@
+---
+title: "A company is designing an application. The applicationExam"
+description: "Video for a company is designing an application. The application uses an AWS Lambda function to receive information through Amazon API Gateway and to store the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company is designing an application. The application uses an AWS Lambda function to receive information through Amazon API Gateway and to store the information in an Amazon Aurora PostgreSQL database. During the proof-of-concept stage, the company has to increase the Lambda quotas significantly to handle the high volumes of data that the company needs to load into the database. A solutions architect must recommend a new design to improve scalability and minimize the configuration effort. Which solution will meet these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f72997e"
+  },
+  "quid": null,
+  "ordinal": "25",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS Lambda",
+    " Amazon API Gateway",
+    " Amazon Aurora",
+    " Amazon DynamoDB",
+    " Amazon Simple Queue Service (Amazon SQS)"
+  ],
+  "slug": "lambdas-designing-application-aws",
+  "source": "ET",
+  "title": "AWS A Company Is Designing An Application Question",
+  "meta": "AWS Exam Question: A company designs an app using AWS Lambda, Amazon API Gateway, and Amazon Aurora PostgreSQL. What solution improves scalability? Answer: Amazon RDS.",
+  "answer": "D",
+  "query": "An organization is creating a new application utilizing an AWS Lambda function to retrieve information via the Amazon API Gateway and store that data in an Amazon Aurora MySQL database. During the testing phase, it became clear that substantial boosts in Lambda quotas were necessary to handle the large data inflow to the database. As a result, a solutions architect is required to suggest a design modification that will improve system scalability and decrease the setup time. What design alteration would satisfy these needs?",
+  "originalQuery": "A company is designing an application. The application uses an AWS Lambda function to receive information through Amazon API Gateway and to store the information in an Amazon Aurora PostgreSQL database.\nDuring the proof-of-concept stage, the company has to increase the Lambda quotas significantly to handle the high volumes of data that the company needs to load into the database. A solutions architect must recommend a new design to improve scalability and minimize the configuration effort.\nWhich solution will meet these requirements?",
+  "options": [
+    "A. Rewrite the Lambda function code into an Apache server-based code that operates on Amazon EC2 instances. Connect the database using proprietary Java Database Connectivity (JDBC) drivers.",
+    "B. Alter the system from Aurora to Amazon DynamoDB and arrange a DynamoDB Accelerator (DAX) cluster. Redirect the existing DynamoDB API calls to the DAX cluster using the DAX client SDK.",
+    "C. Establish two Lambda functions. Design the first function to collect the data and the second to transfer the data into the database. Connect the Lambda functions using the Amazon Simple Notification Service (Amazon SNS).",
+    "D. Set up two Lambda functions. Configure one function to receive the information. Configure the other function to load the information into the database. Integrate the Lambda functions by using an Amazon Simple Queue Service (Amazon SQS) queue."
+  ],
+  "originalOptions": [
+    "A. Refactor the Lambda function code to Apache Tomcat code that runs on Amazon EC2 instances. Connect the database by using native Java Database Connectivity (JDBC) drivers.",
+    "B. Change the platform from Aurora to Amazon DynamoDProvision a DynamoDB Accelerator (DAX) cluster. Use the DAX client SDK to point the existing DynamoDB API calls at the DAX cluster.",
+    "C. Set up two Lambda functions. Configure one function to receive the information. Configure the other function to load the information into the database. Integrate the Lambda functions by using Amazon Simple Notification Service (Amazon SNS).",
+    "D. Set up two Lambda functions. Configure one function to receive the information. Configure the other function to load the information into the database. Integrate the Lambda functions by using an Amazon Simple Queue Service (Amazon SQS) queue."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Option A involves refactoring the existing Lambda function code into an Apache server-based application running on Amazon EC2 instances. While this approach may offer some advantages, it demands substantial effort for migration and maintenance, making it an impractical solution.\n\nOption B suggests migrating from Amazon Aurora, a SQL database, to Amazon DynamoDB, a NoSQL database, along with the implementation of a DynamoDB Accelerator (DAX) cluster. This transition necessitates a complete database migration, which is a significant undertaking and not a feasible solution in this scenario.\n\nOptions C and D share a similar structural approach but differ in their implementation. Option C utilizes Amazon Simple Notification Service (SNS) to notify the second Lambda function. However, this may inadvertently create a bottleneck, as the notification process could lead to delays in data handling.\n\nIn contrast, Option D employs Amazon Simple Queue Service (SQS) to facilitate communication between the two Lambda functions. By enabling the second Lambda function to process messages from the queue asynchronously, this approach effectively alleviates potential bottlenecks during database load operations. Decoupling the application components in this manner enhances overall performance by distributing the workload more efficiently. Therefore, Option D represents the most effective solution for addressing the scalability and configuration challenges presented.",
+    "Alright, let’s dive into this AWS conundrum with a sprinkle of humor and a dash of professionalism! 🌟 \n\nSo, here’s the scoop: the company needs to crank up those Lambda quotas to deal with a mountain of data heading into their database. They want a solution that not only scales like a pro but also keeps the setup hassle-free. \n\nA: Nope, not the right call! Switching to Apache on EC2 would mean juggling a whole circus of load balancers and auto-scaling groups. Plus, relying on Java Database Connectivity (JDBC) drivers won’t magically sprinkle performance fairy dust on your operations. 🧚‍♂️\n\nB: Wrong again! Migrating to DynamoDB and adding a DAX cluster would require a significant overhaul. Remember, DAX is more of a read-time magician, not your go-to for writing data. 🎩✨\n\nC: Not quite! While establishing two Lambda functions sounds like a good plan, using Amazon SNS is like trying to send a text message to your pizza delivery guy when you really just wanted to alert your friends. SNS is great for notifications but doesn't quite fit the bill here.\n\nD: Bingo! This is the golden ticket! By setting up two Lambda functions connected through Amazon SQS, you can effectively queue up the data. This setup allows for smooth scaling—like a well-oiled machine—while minimizing the configuration headache. 📦🚀\n\nIn summary, if you want to handle that data deluge without breaking a sweat, go with the SQS solution. Your future self will thank you! 😄",
+    "The options could be C or D, but D takes the cake for a few reasons:\n\n- With SNS, we’ve got a push mechanism at play, which means the second Lambda function is obliged to grab the message, even if it’s not quite ready for it—or it might just turn its back on the message altogether. \n- On the other hand, SQS operates on a pull mechanism. This means the second Lambda function can leisurely pick up the next message whenever it’s in the right headspace to process it.\n\nSQS offers a straightforward solution and promotes better decoupling between the components, allowing for a more flexible and efficient architecture.",
+    "To enhance scalability and streamline the configuration process, one effective approach is to implement two distinct Lambda functions. The first function can be designated to receive and process incoming data, while the second function is responsible for transferring that data into the database. By utilizing Amazon Simple Queue Service (Amazon SQS) to integrate these Lambda functions, you can ensure that data is processed efficiently and can handle high volumes. This architecture not only optimizes the system's performance but also simplifies the management of data flow, allowing for greater flexibility and responsiveness. Embracing this solution will undoubtedly lead to improved scalability and a more robust application design!",
+    "When the data flow is so robust that Lambda concurrency exceeds 1,000, it's time to introduce a delightful queue to help manage and moderate the incoming requests! 🌟 This approach ensures a smooth and efficient process, striking the perfect balance between scaling and performance."
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "D",
+      "explanation": "A - refactoring can be a solution, BUT requires a LOT of effort - not the answer\nB - DynamoDB is NoSQL and Aurora is SQL, so it requires a DB migration... again a LOT of effort, so no the answer\nC and D are similar in structure, but...\nC uses SNS, which would notify the 2nd Lambda function... provoking the same bottleneck... not the solution\nD uses SQS, so the 2nd lambda function can go to the queue when responsive to keep with the DB load process.\nUsually the app decoupling helps with the performance improvement by distributing load. In this case, the bottleneck is solved by uses queues... so D is the answer.",
+      "upvotes": "95"
+    },
+    {
+      "selectedAnswer": "D",
+      "explanation": "Keywords:\n- Company has to increase the Lambda quotas significantly to handle the high volumes of data that the company needs to load into the database.\n- Improve scalability and minimize the configuration effort.\n\nA: Incorrect - Lambda is Serverless and automatically scale - EC2 instance we have to create load balancer, auto scaling group,.. a lot of things. using native Java Database Connectivity (JDBC) drivers don't improve the performance.\nB: Incorrect - a lot of things to changes and DynamoDB Accelerator use for cache(read) not for write.\nC: Incorrect - SNS is use for send notification (e-mail, SMS).\nD: Correct - with SQS we can scale application well by queuing the data.",
+      "upvotes": "18"
+    },
+    {
+      "selectedAnswer": "D",
+      "explanation": "It could be C or D, but Ans D wins because\n–SNS is Push Mechanism - ‘Other Lambda’ function is forced to take message when it might not be ready (or refuse it)\n–SQS is Pull Mechanism – ‘Other Lambda’ function can take next message when its ready to do so\nSQS is simple and allows better de-coupling.",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "D",
+      "explanation": "uses SQS",
+      "upvotes": "1"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "If the throughput is so high that lambda concurrency needs to go beyond 1000, we need to set up a queue to throttle the request.",
+      "upvotes": "2"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "D (99%)",
+      "votes": "150 votes."
+    },
+    {
+      "option": "1%",
+      "votes": "2 votes."
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is D because using Amazon SQS to decouple the two Lambda functions allows the application to scale more effectively. This design helps to buffer the incoming requests, enabling the second Lambda function to process them at its own pace, reducing the load on the database. Option A is incorrect because refactoring the serverless Lambda function to run on EC2 involves significant effort and complexity without improving performance. Option B is inappropriate as it requires a migration from a SQL database (Aurora) to a NoSQL solution (DynamoDB), which is labor-intensive and not necessary for this scenario. Option C is also flawed; using SNS would create a bottleneck because it pushes messages to the second Lambda directly, which may not be ready to process them, hence defeating the purpose of managing load effectively.",
+  "video_url": "https://certificationation.com/videos/exam-the-application-uses-an-aws-exam-025.html",
+  "url": "https://certificationation.com/questions/exam-the-application-uses-an-aws-exam-025.html"
+}

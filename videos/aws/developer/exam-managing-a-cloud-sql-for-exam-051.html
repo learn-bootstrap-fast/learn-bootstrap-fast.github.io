@@ -1,0 +1,80 @@
+---
+title: "As a Database Engineer, you are managing a Cloud SQL forExam"
+description: "Video for as a Database Engineer, you are managing a Cloud SQL for MySQL instance. You need to perform database maintenance to ensure data consistency, optimal"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are managing a Cloud SQL for MySQL instance. You need to perform database maintenance to ensure data consistency, optimal performance, and disaster recovery without impacting the database's availability. Which of the following strategies should you adopt?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "At Rivertown Retail you manage a production Cloud SQL for MySQL instance that serves checkout transactions. Your monitoring shows a brief lull of roughly 45 minutes during the early morning hours in UTC. You need to perform routine maintenance that preserves data consistency and supports disaster recovery and keeps performance steady without any interruption to availability. What should you do?",
+  "options": [
+    {
+      "text": "Implement database sharding based on access patterns",
+      "explanation": "This partitions the dataset across multiple databases so that write and read load can be spread across shards.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable automated backups and configure the backup window to align with the daily 45 minute low traffic period",
+      "explanation": "This uses Cloud SQL automated backups with a defined window so that consistent backups occur when activity is lowest.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Migrate the application database to Cloud Spanner",
+      "explanation": "This moves the workload to a globally distributed relational database service that provides strong consistency and high scalability.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Disable binary logging to improve write throughput",
+      "explanation": "This removes the overhead of binary logs which also eliminates replication and point in time recovery features.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Enable automated backups and configure the backup window to align with the daily 45 minute low traffic period</b>.</p><p>Cloud SQL <b>automated backups</b> provide consistent backups without taking the instance offline so availability is maintained. By setting the <b>backup window</b> during the observed lull you minimize performance impact while ensuring that backups complete reliably. Enabling this feature also supports disaster recovery through restore capabilities such as point in time restoration when configured, which meets the requirement to preserve data and quickly recover from failure.</p><p><i>Implement database sharding based on access patterns</i> is unnecessary for this problem and adds complexity to schema design and operations. It does not address the requirement to perform routine maintenance safely during the low traffic period and it does not inherently improve disaster recovery for a single production instance.</p><p><i>Migrate the application database to Cloud Spanner</i> is a major replatforming effort that is not justified by the stated need. The goal is to maintain availability and consistency for an existing Cloud SQL for MySQL workload, and a migration would introduce risk and delay rather than providing a simple maintenance solution.</p><p><i>Disable binary logging to improve write throughput</i> undermines disaster recovery because you lose the ability to perform point in time recovery and it also impacts replication features. Any small gain in write performance would directly conflict with the recovery objectives of the scenario.</p>",
+  "batch_id": "321",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are managing a Cloud SQL for MySQL instance. You need to perform database maintenance to ensure data consistency, optimal performance, and disaster recovery without impacting the database's availability. Which of the following strategies should you adopt?",
+  "originalOptions": "A. Migrate the database to a Cloud Bigtable instance.<br/>B. Schedule automated backups during periods of low traffic.<br/>C. Implement database sharding based on access patterns.<br/>D. Disable binary logging to improve write performance.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "51",
+  "tip": "<p>Map each requirement to a managed feature. When you see needs like <i>disaster recovery</i>, <i>data consistency</i>, and <i>no downtime</i> on Cloud SQL, think of <i>automated backups</i> with a configured <i>backup window</i> rather than redesigning the architecture.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+    "https://cloud.google.com/sql/docs/mysql/backup-recovery/automated-backups",
+    "https://cloud.google.com/sql/docs/mysql/replication/replication-overview",
+    "https://cloud.google.com/databases/docs/choose-database"
+  ],
+  "url": "https://certificationation.com/questions/exam-managing-a-cloud-sql-for-exam-051.html",
+  "video_url": "https://certificationation.com/videos/exam-managing-a-cloud-sql-for-exam-051.html"
+}

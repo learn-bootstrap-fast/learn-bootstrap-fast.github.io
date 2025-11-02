@@ -1,0 +1,126 @@
+---
+title: "A company has a Java application that uses Amazon SimpleExam"
+description: "Video for a company has a Java application that uses Amazon Simple Queue Service (Amazon SQS) to parse messages. The application cannot parse messages that are"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company has a Java application that uses Amazon Simple Queue Service (Amazon SQS) to parse messages. The application cannot parse messages that are larger than 256 KB in size. The company wants to implement a solution to give the application the ability to parse messages as large as 50 MB. Which solution will meet these requirements with the FEWEST changes to the code?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729abd"
+  },
+  "quid": null,
+  "ordinal": "344",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon Simple Queue Service (Amazon SQS)",
+    " Amazon S3",
+    " Amazon Elastic File System (Amazon EFS)"
+  ],
+  "slug": "sq-parse-messages-larger-than-aws",
+  "source": "ET",
+  "title": "AWS A Company Has A Java Application Question",
+  "meta": "AWS Exam Question: A company needs to enable a Java app using Amazon SQS to parse messages up to 50 MB with minimal code changes. Answer: AWS Lambda, Amazon S3.",
+  "answer": "A",
+  "query": "A business is operating a Java-based microservice that utilizes Amazon Simple Queue Service (Amazon SQS) for processing incoming messages. Currently, the service struggles with messages exceeding a size of 256 KB. The goal is to enable message processing capabilities for sizes up to 50 MB without requiring significant code modifications.\n\nWhat is the most efficient solution to achieve this?",
+  "originalQuery": "A company has a Java application that uses Amazon Simple Queue Service (Amazon SQS) to parse messages. The application cannot parse messages that are larger than 256 KB in size. The company wants to implement a solution to give the application the ability to parse messages as large as 50 MB.\n\nWhich solution will meet these requirements with the FEWEST changes to the code?",
+  "options": [
+    "A. Use the Amazon SQS Extended Client Library for Java to host messages that are larger than 256 KB in Amazon S3.",
+    "B. Utilize Amazon EventBridge for sending bigger messages instead of Amazon SQS.",
+    "C. Adjust Amazon SQS configuration to support messages exceeding the 256 KB limit.",
+    "D. Save large messages in Amazon Elastic File System (Amazon EFS) and update Amazon SQS references accordingly."
+  ],
+  "originalOptions": [
+    "A. Use the Amazon SQS Extended Client Library for Java to host messages that are larger than 256 KB in Amazon S3.",
+    "B. Use Amazon EventBridge to post large messages from the application instead of Amazon SQS.",
+    "C. Change the limit in Amazon SQS to handle messages that are larger than 256 KB.",
+    "D. Store messages that are larger than 256 KB in Amazon Elastic File System (Amazon EFS). Configure Amazon SQS to reference this location in the messages."
+  ],
+  "image": null,
+  "primaryObjective": "3: Design High-Performing Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "A. Utilize the Amazon SQS Extended Client Library for Java to store messages exceeding 256 KB in Amazon S3.\n\nAmazon SQS imposes a limit of 256 KB on message size. To accommodate larger messages, the Amazon SQS Extended Client Library for Java offers a viable solution. This library enables the storage of messages exceeding the 256 KB limit in Amazon S3, allowing for efficient retrieval and processing. By implementing this approach, the existing application code can remain largely intact, while extending its capabilities to handle messages of up to 50 MB in size. This solution is particularly advantageous as it minimizes the need for extensive code modifications while leveraging the scalability and durability of Amazon S3.",
+    "If you're looking to handle messages larger than 256 KB, the Amazon SQS Extended Client Library for Java is your best buddy! It lets you stash those hefty messages in Amazon S3 while keeping your application happy and humming along. 🚀 Just think of it as a cozy little storage space for your big messages, allowing your app to focus on what it does best. For more details, feel free to check out the Amazon documentation: [Amazon SQS Extended Client Library](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html). Happy coding! 🎉✨",
+    "Ah, the joys of working with message limits! It seems like the Java application is having a tough time with anything over 256 KB, which is like trying to squeeze an elephant into a Volkswagen. To tackle this issue with the least amount of code rewrites, the best bet is to employ the Amazon SQS Extended Client Library for Java. This nifty tool allows you to store those hefty messages in Amazon S3, freeing your application from its size constraints and letting it handle messages up to 50 MB without breaking a sweat.\n\nNow, if you were to consider other options, you might think about using Amazon EventBridge or tweaking your SQS settings, but that could lead to a world of headaches. And while saving large messages in Amazon Elastic File System (EFS) sounds great, it would require you to adjust all those SQS references, which is like asking your cat to take orders—good luck with that! \n\nSo, in summary, using the Extended Client Library is the path of least resistance, allowing your application to flourish without the need for a major overhaul. Sometimes, the simplest solutions are the most elegant, even in the wild world of AWS.",
+    "To enable the transmission of messages larger than 256 KiB, the ideal approach is to leverage the Amazon SQS Extended Client Library for Java. This powerful library allows you to seamlessly store larger messages in Amazon S3 while still using SQS for message queuing. By doing so, your application can efficiently handle messages up to 50 MB in size with minimal modifications to your existing codebase. This solution not only enhances the application's capabilities but also maintains a streamlined integration with SQS, ensuring a smooth transition and improved message processing.",
+    "The Amazon SQS Extended Client Library for Java is your trusty sidekick for handling those larger-than-life message payloads! 🎉 By integrating with Amazon S3, it allows you to seamlessly store and retrieve messages that exceed the standard SQS limit of 256 KB, all the way up to a whopping 2 GB! This makes it a fantastic solution for applications that need to process hefty messages without a hitch."
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "A",
+      "explanation": "A. Use the Amazon SQS Extended Client Library for Java to host messages that are larger than 256 KB in Amazon S3.\n\nAmazon SQS has a limit of 256 KB for the size of messages. To handle messages larger than 256 KB, the Amazon SQS Extended Client Library for Java can be used. This library allows messages larger than 256 KB to be stored in Amazon S3 and provides a way to retrieve and process them. Using this solution, the application code can remain largely unchanged while still being able to process messages up to 50 MB in size.",
+      "upvotes": "16"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "A\nFor messages > 256 KB, use Amazon SQS Extended Client Library for Java\nhttps://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html",
+      "upvotes": "7"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "who would know this...",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "To send messages larger than 256 KiB, you can use the Amazon SQS Extended Client Library for Java...",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "The Amazon SQS Extended Client Library for Java enables you to manage Amazon SQS message payloads with Amazon S3. This is especially useful for storing and retrieving messages with a message payload size greater than the current SQS limit of 256 KB, up to a maximum of 2 GB.",
+      "upvotes": "4"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "A (100%)",
+      "votes": "37 votes."
+    },
+    {
+      "option": "C (25%)",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is A because the Amazon SQS Extended Client Library for Java allows developers to easily manage messages that exceed the SQS limit of 256 KB by storing them in Amazon S3. This approach minimally impacts existing application code while supporting much larger messages (up to 50 MB). The other options are less efficient or incorrect because:\n\nB is incorrect since Amazon EventBridge is primarily for event-driven architectures and does not directly address the message size limitation.\nC is incorrect because SQS has a hard limit of 256 KB for message sizes that cannot be adjusted.\nD is also incorrect as storing messages in Amazon EFS would involve significant changes to message handling and does not directly leverage the native capabilities of SQS.",
+  "video_url": "https://certificationation.com/videos/exam-that-uses-amazon-simple-queue-exam-343.html",
+  "url": "https://certificationation.com/questions/exam-that-uses-amazon-simple-queue-exam-343.html"
+}

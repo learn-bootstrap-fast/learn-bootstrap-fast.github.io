@@ -1,0 +1,62 @@
+---
+title: "Your company is getting ready to make a major publicExam"
+description: "Video for your company is getting ready to make a major public announcement of a social media site on AWS. The website runs on EC2 instances deployed across"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company is getting ready to make a major public announcement of a social media site on AWS. The website runs on EC2 instances deployed across multiple Availability Zones with a Multi-AZ RDS MySQL Extra Large DB Instance. The site performs many small reads and writes per second and relies on an eventual consistency model. After comprehensive tests, you discover that there is read contention on RDS MySQL. Which are the best approaches to meet these requirements? Choose 2 answers from the options below."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct answers are: <b>Utilize an in-memory caching solution such as ElastiCache with Multi-AZ capabilities</b> and <b>Set up an RDS MySQL read replica in every availability zone</b>.</p><p>Here's why:</p><ul><li><b>Utilize an in-memory caching solution such as ElastiCache with Multi-AZ capabilities</b>: Using a caching layer like ElastiCache can significantly decrease the volume of read requests to the RDS instance. Frequently accessed data can be stored and served directly from memory, offering much faster read performance, reducing database contention, and improving scalability. Since the site is tolerant of eventual consistency, the caching strategy aligns well with the application's needs.</li><li><b>Set up an RDS MySQL read replica in every availability zone</b>: Adding read replicas distributes read traffic, easing the load on the primary instance and providing high availability. Read replicas can be used to serve read-heavy workloads, which directly addresses the read contention observed.</li></ul><p>Why the other choices are less suitable:</p><ul><li><i>Upgrade the RDS MySQL instance size and enable provisioned IOPS</i>: While upgrading the instance and provisioning more IOPS may help with performance bottlenecks, this is primarily effective for write-heavy or I/O-constrained workloads. Since the issue is specifically with read contention, simply increasing hardware resources doesn't address the underlying scalability and distribution challenges.</li><li><i>Partition the database workload by implementing sharding across multiple RDS MySQL instances</i>: Sharding can certainly increase scalability, but it adds significant application and operational complexity. The scenario can be addressed efficiently with caching and read replicas, so sharding is not the most appropriate initial remedy.</li></ul><p><b>Tips:</b> For read-heavy workloads, always consider read replicas and caching before embarking on complex redesigns like sharding. Leverage AWS managed solutions like ElastiCache and RDS read replicas to scale efficiently and effortlessly.<br><b>Remember</b>: Caching and read replicas are powerful approaches, especially when your application accepts eventual consistency!</p>",
+  "query": "<p>Your organization is preparing for a significant public announcement for a new social networking platform hosted on AWS.</p><p>The platform uses EC2 instances across several Availability Zones, leveraging a Multi-AZ RDS MySQL Extra Large DB Instance. The application executes frequent small-scale read and write operations every second and adopts an eventual consistency approach. After extensive performance testing, you notice the RDS MySQL instance is experiencing read contention issues.</p><p>Which TWO strategies would most effectively address these requirements?</p>",
+  "original_oid": "6793da1161969b416038a13e",
+  "options": [
+    {
+      "correct": true,
+      "text": "Utilize an in-memory caching solution such as ElastiCache with Multi-AZ capabilities.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Set up an RDS MySQL read replica in every availability zone.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Upgrade the RDS MySQL instance size and enable provisioned IOPS.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Partition the database workload by implementing sharding across multiple RDS MySQL instances.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question204",
+  "originalQuery": "Your company is getting ready to make a major public announcement of a social media site on AWS.\nThe website runs on EC2 instances deployed across multiple Availability Zones with a Multi-AZ RDS MySQL Extra Large DB Instance.\nThe site performs many small reads and writes per second and relies on an eventual consistency model.\nAfter comprehensive tests, you discover that there is read contention on RDS MySQL.\nWhich are the best approaches to meet these requirements? Choose 2 answers from the options below.",
+  "originalOptions": "[\"A. Deploy ElasticCache in-memory cache with Multi-AZ.\",\"B. Implement sharding to distribute load to multiple RDS MySQL instances.\",\"C. Increase the RDS MySQL Instance size and Implement provisioned IOPS.\",\"D. Add an RDS MySQL read replica in each availability zone.\"]",
+  "video_url": "https://certificationation.com/videos/exam-make-a-major-public-announcement-exam-266.html",
+  "url": "https://certificationation.com/questions/exam-make-a-major-public-announcement-exam-266.html"
+}

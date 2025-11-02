@@ -1,0 +1,62 @@
+---
+title: "You are a DevOps engineer and you need to create aExam"
+description: "Video for you are a DevOps engineer and you need to create a metric filter for a CloudWatch Log Group. The log events are the HTTP messages returned from an"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are a DevOps engineer and you need to create a metric filter for a CloudWatch Log Group. The log events are the HTTP messages returned from an Apache server. For example:"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The optimal filter pattern is <b>Pattern: [ip, user, username, timestamp, request, status_code matching 4**, bytes]</b>. This pattern makes use of the <b>4**</b> wildcard to match all log lines where the status code falls within the 4xx range (such as 404, 403, 400, etc.) and includes the key 'bytes' to capture the relevant field. This approach ensures precise detection of all client error responses irrespective of the specific 4xx code.</p><p>Examining the other options:</p><ul><li><i>Pattern: [..., 4xx status code, bytes]</i>: While this option attempts to match 4xx status codes, the syntax is ambiguous and would not be recognized properly by CloudWatch metric filters.</li><li><i>Pattern: [ip, user, username, timestamp, request, status_code is like 4xx, bytes]</i>: This pattern uses non-standard phrasing ('is like'), which CloudWatch metric filters do not support, and could result in no log lines matching.</li><li><i>Pattern: [..., status_code equals 4*, bytes]</i>: The use of 'equals 4*' is incorrect pattern matching for CloudWatch, where '**' should be used as the wildcard for any digits, not '*'.</li></ul><p><b>Tip:</b> In CloudWatch metric filter patterns, use '**' to match patterns such as an entire range of HTTP status codes (4xx or 5xx) across log events. Always ensure your filter pattern mirrors both the structure and the order of log fields in your source logs.</p>",
+  "query": "<p>As a DevOps engineer, you are tasked with establishing a metric filter for an AWS CloudWatch Log Group that receives HTTP response messages from an Apache server. Given a log line showing a typical HTTP transaction, which pattern should you use in the metric filter to reliably track all 4xx status code events along with the response byte count?</p>",
+  "original_oid": "6793da9661969b416038a24e",
+  "options": [
+    {
+      "correct": true,
+      "text": "Pattern: [ip, user, username, timestamp, request, status_code matching 4**, bytes]",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Pattern: [..., 4xx status code, bytes]",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Pattern: [ip, user, username, timestamp, request, status_code is like 4xx, bytes]",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Pattern: [..., status_code equals 4*, bytes]",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question478",
+  "originalQuery": "You are a DevOps engineer and you need to create a metric filter for a CloudWatch Log Group.\nThe log events are the HTTP messages returned from an Apache server.\nFor example:",
+  "originalOptions": "A. [ip, user, username, timestamp, request, status_code like 4xx, bytes]\nB. [..., status_code = 4*, bytes]\nC. [..., 4xx, bytes]\nD. [ip, user, username, timestamp, request, 4**, bytes]",
+  "video_url": "https://certificationation.com/videos/exam-need-to-create-a-metric-exam-083.html",
+  "url": "https://certificationation.com/questions/exam-need-to-create-a-metric-exam-083.html"
+}

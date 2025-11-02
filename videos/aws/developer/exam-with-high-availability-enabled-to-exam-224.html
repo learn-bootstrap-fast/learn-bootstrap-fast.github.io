@@ -1,0 +1,81 @@
+---
+title: "You have set up a Cloud SQL instance with highExam"
+description: "Video for you have set up a Cloud SQL instance with high availability enabled to ensure minimal downtime. As the instance is used for a mission-critical"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have set up a Cloud SQL instance with high availability enabled to ensure minimal downtime. As the instance is used for a mission-critical workload, you expect the database size to grow rapidly to over 40 TB within the next year. What configuration should you implement to ensure the database scales storage capacity without manual intervention?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "MeadowSky Retail runs a mission critical e-commerce platform on a Cloud SQL for PostgreSQL instance that is configured with high availability. Capacity forecasts show the dataset could grow past 55 TB within the next 9 months as orders and product content increase. You want storage to expand automatically without operator action and without downtime. Which configuration should you apply to the instance?",
+  "options": [
+    {
+      "text": "Cloud Spanner",
+      "explanation": "Cloud Spanner is a fully managed relational database service that provides strong consistency and horizontal scalability across regions.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable automatic storage increase on the Cloud SQL instance",
+      "explanation": "This feature lets the instance expand its disk allocation as utilization grows so capacity increases without manual steps.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Create read replicas for the Cloud SQL instance",
+      "explanation": "Read replicas offload read traffic from the primary and replicate data asynchronously to additional instances.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Schedule a weekly job with Cloud Scheduler and Cloud Functions to grow the disk",
+      "explanation": "A scheduled job can invoke administrative scripts that adjust instance settings on a recurring timetable.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct configuration is <b>Enable automatic storage increase on the Cloud SQL instance</b>.</p><p>This setting monitors free space and grows the underlying storage automatically before the instance runs out. The resize is online and does not cause downtime or require operator action. It continues to expand up to the per instance storage maximum supported by Cloud SQL and works with high availability so the primary and standby remain healthy through expansions.</p><p><i>Cloud Spanner</i> is a different managed database service and adopting it would require migration rather than configuring the existing Cloud SQL instance. The question asks for a configuration to apply to the current instance so this is not appropriate.</p><p><i>Create read replicas for the Cloud SQL instance</i> helps scale read traffic and can improve availability for reads but replicas do not increase the primary instance storage capacity and they do not address automatic disk growth.</p><p><i>Schedule a weekly job with Cloud Scheduler and Cloud Functions to grow the disk</i> is unnecessary because Cloud SQL already provides native automatic storage increases. A periodic job is reactive and may miss sudden growth and it adds operational complexity without improving availability.</p>",
+  "batch_id": "226",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "You have set up a Cloud SQL instance with high availability enabled to ensure minimal downtime. As the instance is used for a mission-critical workload, you expect the database size to grow rapidly to over 40 TB within the next year. What configuration should you implement to ensure the database scales storage capacity without manual intervention?",
+  "originalOptions": "A. Use horizontal scaling by sharding the database.<br/>B. Set up a scheduled task.<br/>C. Enable read replicas:<br/>D. Enable automatic storage increases in the Cloud SQL instance settings.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "224",
+  "tip": "<p>When a requirement says grow storage automatically with no downtime on Cloud SQL, look for the instance setting that enables <i>automatic storage increase</i>. If an option suggests moving to another product, confirm whether the question asks to configure the existing instance rather than to re-architect.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/automatic-storage-increases",
+    "https://cloud.google.com/sql/docs/postgres/limits",
+    "https://cloud.google.com/sql/docs/postgres/high-availability",
+    "https://cloud.google.com/sql/docs/postgres/replication",
+    "https://cloud.google.com/spanner/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-with-high-availability-enabled-to-exam-224.html",
+  "video_url": "https://certificationation.com/videos/exam-with-high-availability-enabled-to-exam-224.html"
+}

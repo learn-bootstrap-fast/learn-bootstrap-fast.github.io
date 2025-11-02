@@ -1,0 +1,80 @@
+---
+title: "As a Database Engineer, you are tasked with migrating aExam"
+description: "Video for as a Database Engineer, you are tasked with migrating a large-scale MongoDB database to Google Cloud Firestore. The migration process should have"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are tasked with migrating a large-scale MongoDB database to Google Cloud Firestore. The migration process should have minimal downtime and include both schema conversion and data transfer. Additionally, a fallback plan must be in place. What is the best migration strategy for this scenario?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the lead database engineer at Skyway Logistics and must migrate a 20 TB on premises MongoDB cluster to Google Cloud Firestore in Native mode with a cutover window under 45 minutes. The plan must include transforming the existing document model for the target and moving the data at scale and you also need a clear rollback if post migration checks fail. Which migration approach should you choose?",
+  "options": [
+    {
+      "text": "Create a Firestore database and run Firestore import to convert the schema and load the data and set up reverse replication from Firestore back to the on premises MongoDB cluster as a rollback option",
+      "explanation": "This proposes using Firestore import for schema conversion and bulk load with a bidirectional sync path back to MongoDB as the fallback.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Datastream to capture changes from MongoDB and apply them to Firestore and depend on Datastream to handle rollback if issues occur",
+      "explanation": "This suggests a serverless change data capture approach with Datastream and assumes it can replicate to Firestore and provide rollback capabilities.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Build a custom migration that transforms MongoDB documents for Firestore using application code and Firestore APIs and use MongoDB change streams to keep Firestore in sync until cutover and maintain a temporary reverse copy process back to MongoDB for rollback",
+      "explanation": "This uses custom code for schema mapping and Firestore writes while reading MongoDB change streams for near zero downtime and includes a reversible path during validation.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use a Schema Conversion Tool to map MongoDB collections to Firestore then move data with Dataflow and configure reverse replication from Firestore to the on premises MongoDB cluster for fallback",
+      "explanation": "This combines a generic schema converter with Dataflow for transfer and proposes reverse synchronization from Firestore back to MongoDB as the contingency.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Build a custom migration that transforms MongoDB documents for Firestore using application code and Firestore APIs and use MongoDB change streams to keep Firestore in sync until cutover and maintain a temporary reverse copy process back to MongoDB for rollback</b>.</p><p>This approach lets you implement the document model transformation explicitly in code so you can reshape collections, fields, and keys to match Firestore Native mode requirements. You can use Firestore client libraries along with high throughput patterns such as bulk writers to handle the 20 TB scale efficiently.</p><p>This plan also supports a short cutover window. You can run an initial bulk load, then consume MongoDB change streams to capture and apply ongoing changes to Firestore until the moment of cutover. That reduces downtime because only the final sync and validation need to happen during the 45 minute window. For rollback you can keep a temporary reverse copy path that mirrors writes from Firestore back to MongoDB during validation so if post migration checks fail you can redirect traffic to the still consistent source.</p><p><i>Create a Firestore database and run Firestore import to convert the schema and load the data and set up reverse replication from Firestore back to the on premises MongoDB cluster as a rollback option</i> is incorrect because Firestore import only restores exports that were produced by Firestore and it does not convert external schemas or transform documents. It also does not provide reverse replication back to MongoDB.</p><p><i>Use Datastream to capture changes from MongoDB and apply them to Firestore and depend on Datastream to handle rollback if issues occur</i> is incorrect because Datastream does not support Firestore as a destination and it does not provide an automatic rollback capability. It also does not support MongoDB as a source for this target.</p><p><i>Use a Schema Conversion Tool to map MongoDB collections to Firestore then move data with Dataflow and configure reverse replication from Firestore to the on premises MongoDB cluster for fallback</i> is incorrect because there is no Google schema conversion tool for mapping MongoDB to Firestore Native mode and Dataflow does not have a native Firestore Native sink. Reverse replication from Firestore back to MongoDB is not a built in feature and would require custom development.</p>",
+  "batch_id": "85",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are tasked with migrating a large-scale MongoDB database to Google Cloud Firestore. The migration process should have minimal downtime and include both schema conversion and data transfer. Additionally, a fallback plan must be in place. What is the best migration strategy for this scenario?",
+  "originalOptions": "A. Create a Firestore instance, use Firestore's import functionality to convert the schema and transfer data, and set up a reverse replication from Firestore to the on-premises MongoDB database as a fallback.<br/>B. Develop custom scripts to convert the MongoDB schema to Firestore and transfer the data using Firestore APIs, then create a reverse replication process from Firestore to the on-premises MongoDB database as a fallback plan.<br/>C. Utilize the Schema Conversion Tool (SCT) to convert the MongoDB schema for Firestore, perform data transfer using Dataflow, and set up a reverse replication from Firestore to the on-premises MongoDB database as a fallback.<br/>D. Use Google Cloud Datastore to import the MongoDB schema and data, then create a Datastore export as a fallback plan.",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "34",
+  "tip": "<p>Confirm service <i>support</i> for both source and target and verify how data is transformed at <i>scale</i>. If a question requires a fast cutover and <i>rollback</i> then favor designs that use CDC to minimize downtime and plan a reversible write path rather than assuming tools can undo changes.</p>",
+  "references": [
+    "https://cloud.google.com/firestore/docs/manage-data/export-import",
+    "https://cloud.google.com/firestore/docs/bulk-writes",
+    "https://cloud.google.com/datastream/docs/sources-and-destinations",
+    "https://www.mongodb.com/docs/manual/changeStreams/"
+  ],
+  "url": "https://certificationation.com/questions/exam-tasked-with-migrating-a-large-scale-exam-034.html",
+  "video_url": "https://certificationation.com/videos/exam-tasked-with-migrating-a-large-scale-exam-034.html"
+}

@@ -1,0 +1,74 @@
+---
+title: "You work in the integration team of a company, and yourExam"
+description: "Video for you work in the integration team of a company, and your team is integrating the infrastructure with Amazon VPC. You are recently assigned a task to"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You work in the integration team of a company, and your team is integrating the infrastructure with Amazon VPC. You are recently assigned a task to create a VPN connection. You have the AWS management console logging access. The first step that you plan to do is to create a customer gateway in the AWS VPC console. In order to do that, which information do you need? (Select TWO)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d5d9f501ee1c8ade987b"
+  },
+  "quid": "0",
+  "ordinal": "307",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "Amazon VPC",
+    " AWS VPN",
+    " AWS Direct Connect",
+    " Network services",
+    " AWS global infrastructure"
+  ],
+  "slug": "vpc-create-vpn-connection-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question307",
+  "title": "AWS You Work In The Integration Team Question",
+  "meta": "AWS Exam Question: You work in the integration team, integrating infrastructure with Amazon VPC. What information do you need to create a customer gateway? Answer: VPN, AWS management console.",
+  "answer": "A D",
+  "query": "Your company’s network team is tasked with setting up a secure VPN link between the on-premises data center and an Amazon VPC. Before establishing this VPN, you must configure a customer gateway device in the VPC console. Which details are necessary to provide for this customer gateway? (Choose TWO)",
+  "originalQuery": "You work in the integration team of a company, and your team is integrating the infrastructure with Amazon VPC.\nYou are recently assigned a task to create a VPN connection.\nYou have the AWS management console logging access.\nThe first step that you plan to do is to create a customer gateway in the AWS VPC console.\nIn order to do that, which information do you need? (Select TWO)",
+  "options": [
+    "A. A Border Gateway Protocol (BGP) Autonomous System Number (ASN) if the routing type is Dynamic.",
+    "B. The BGP ASN if the connection routing uses static configuration.",
+    "C. The changing public IP address of the on-site gateway device if located behind NAT.",
+    "D. A static, internet-routable IP address for the customer gateway device."
+  ],
+  "originalOptions": [
+    "A. A Border Gateway Protocol (BGP) Autonomous System Number (ASN) if the routing type is Dynamic.",
+    "B. A BGP Autonomous System Number (ASN) if the routing type is static.",
+    "C. A dynamic public IP address for the customer gateway device. If the customer gateway is behind a NAT device, use the NAT device`s dynamic public IP address.",
+    "D. A static, internet-routable IP address for the customer gateway device."
+  ],
+  "image": "https://eaeastus2.blob.core.windows.net/optimizedimages/static/images/AWS-Certified-Solutions-Architect-Professional/answer/imgckeditor_9.png",
+  "primaryObjective": "1: Design Solutions for Organizational Complexity",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Correct Answer - A, D.\nThe first step of creating a VPN connection is to set up a customer gateway in the AWS VPC console according to https://docs.aws.amazon.com/vpn/latest/s2svpn/SetUpVPNConnections.html.\nOption A is correct: AWS VPN has used BGP ASN to establish the connection for dynamic routing.\nOption B is incorrect: For static routing, no BGP ASN is needed.\nOption C is incorrect: The internet-routable IP address for the customer gateway device's external interface is required.\nAnd the value must be static.\nOption D is correct: Same reason as option.\nC.\nWhen creating a VPN connection in Amazon VPC, the first step is to create a customer gateway. A customer gateway is the VPN device that is located on-premises and establishes the VPN connection with the virtual private gateway (VGW) in Amazon VPC.\nTo create a customer gateway, the following information is required:\n1.\nA static, internet-routable IP address for the customer gateway device: This is required to establish a secure VPN tunnel between the customer gateway and virtual private gateway. The IP address must be reachable over the internet and should not be a private or non-routable IP address.\n2.\nA Border Gateway Protocol (BGP) Autonomous System Number (ASN): This is required if the routing type is dynamic. BGP is a protocol that enables the exchange of routing information between the customer gateway and the virtual private gateway. If the customer gateway is using BGP, it must have a unique ASN.\nIn addition, if the customer gateway is behind a NAT device, the dynamic public IP address of the NAT device can be used.\nIt is important to note that the ASN is only required for dynamic routing. If the routing type is static, an ASN is not required. Static routing requires the configuration of static routes on the customer gateway, whereas dynamic routing uses BGP to automatically learn and advertise routes between the customer gateway and the virtual private gateway.\nIn summary, to create a customer gateway in Amazon VPC, you need a static, internet-routable IP address for the customer gateway device, and a BGP ASN if the routing type is dynamic. If the customer gateway is behind a NAT device, the dynamic public IP address of the NAT device can be used.",
+  "chatGptExplanation": "This question focuses on setting up a VPN connection between an on-premises data center and an Amazon VPC, specifically configuring the customer gateway device details. The AWS service involved here is the Virtual Private Network (VPN) feature within Amazon Virtual Private Cloud (VPC).\n\nCorrect Answers Analysis:\n- Option A is correct because when using dynamic routing for the VPN connection, AWS requires a Border Gateway Protocol (BGP) Autonomous System Number (ASN) for the customer gateway device. BGP is a dynamic routing protocol that facilitates the exchange of routing information between the customer gateway and the AWS Virtual Private Gateway.\n- Option D is correct because AWS requires a static, internet-routable IP address for the customer gateway device. This static IP ensures that the VPN endpoints are reachable and stable over the internet. Dynamic IP addresses or private IPs are not valid for this purpose.\n\nIncorrect Options Explanation:\n- Option B is incorrect because if static routing is used, BGP ASN is not required. Static routing involves manually configuring routes without BGP, so providing a BGP ASN when static routing is in use is unnecessary.\n- Option C is incorrect because the customer gateway's IP address must be static and public (internet-routable). A dynamic public IP would not guarantee stable connectivity, which is essential for VPN tunnels. However, if the customer gateway is behind a NAT device, the NAT's public IP (which should be static) can be used, but it cannot be dynamic.\n\nIn summary, configuring a customer gateway for AWS VPN involves specifying a fixed, public IP address and, when using dynamic routing, a BGP ASN. These ensure secure, reliable, and properly routed VPN connections between the on-premises gateway and the AWS VPC.",
+  "video_url": "https://certificationation.com/videos/exam-a-company-and-your-team-exam-202.html",
+  "url": "https://certificationation.com/questions/exam-a-company-and-your-team-exam-202.html"
+}

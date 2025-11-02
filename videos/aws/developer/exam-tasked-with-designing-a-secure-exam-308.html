@@ -1,0 +1,81 @@
+---
+title: "As a Database Engineer, you are tasked with designing aExam"
+description: "Video for as a Database Engineer, you are tasked with designing a secure and efficient connection strategy for an application hosted on Google Kubernetes Engine"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are tasked with designing a secure and efficient connection strategy for an application hosted on Google Kubernetes Engine (GKE) that needs to interact with a Cloud SQL database. Which of the following strategies should you use to achieve this goal while minimizing the impact on performance?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Verdant Media runs a microservice on a Google Kubernetes Engine cluster in us-west2 that must connect to a Cloud SQL for PostgreSQL instance, and you want a secure approach that is simple to manage and adds as little latency as possible. Which connectivity method should you implement?",
+  "options": [
+    {
+      "text": "Establish VPC peering between the GKE VPC and the Cloud SQL network",
+      "explanation": "VPC peering connects two VPC networks but Cloud SQL does not accept direct peering from client VPCs and instead relies on managed service networking features.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Run the Cloud SQL Auth Proxy as a sidecar container in each GKE pod",
+      "explanation": "The Cloud SQL Auth Proxy manages secure authentication and encryption between the application and Cloud SQL while reducing credential handling in the application.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use the Cloud SQL public IP with SSL client certificates and authorized networks",
+      "explanation": "Public IP access can be gated with SSL and authorized networks but it still exposes the database over the internet path.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure Cloud NAT so the pods egress to Cloud SQL through a NAT gateway",
+      "explanation": "Cloud NAT provides outbound internet access for private resources but it does not provide private connectivity to Cloud SQL instances.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Run the Cloud SQL Auth Proxy as a sidecar container in each GKE pod</b>.</p><p>This approach provides strong security with IAM based authentication and automatic TLS, and it is easy to manage because you deploy it alongside your application containers. Applications connect to a local TCP port so they do not need database credentials in the code, which simplifies secret management. When you pair this with a Cloud SQL private IP in the same region, traffic stays on the private Google network which helps minimize latency.</p><p><i>Establish VPC peering between the GKE VPC and the Cloud SQL network</i> is not valid because Cloud SQL private IP uses private services access with a service producer network. You do not create a direct VPC peering to a Cloud SQL network.</p><p><i>Use the Cloud SQL public IP with SSL client certificates and authorized networks</i> can be secure, yet it requires managing client certificates and source IP allow lists. GKE pods do not have stable public source IPs, so you would need extra networking to present a fixed IP. This adds operational overhead and can add latency compared to private in region traffic.</p><p><i>Configure Cloud NAT so the pods egress to Cloud SQL through a NAT gateway</i> is not a connectivity method to Cloud SQL by itself. It only provides outbound internet and does not authenticate or grant access to the database. You would still need a public IP with authorized networks and a fixed source IP, which increases complexity.</p>",
+  "batch_id": "282",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are tasked with designing a secure and efficient connection strategy for an application hosted on Google Kubernetes Engine (GKE) that needs to interact with a Cloud SQL database. Which of the following strategies should you use to achieve this goal while minimizing the impact on performance?",
+  "originalOptions": "A. Implement Cloud NAT for the application instances to connect to Cloud SQL<br/>B. Connect the application instances to the Cloud SQL database using VPC peering<br/>C. Configure the application instances to use public IP addresses to connect to Cloud SQL<br/>D. Use Cloud SQL proxy sidecars in the GKE application pods",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "308",
+  "tip": "<p>When a question asks for <i>secure</i> and <i>simple to manage</i> GKE to Cloud SQL connectivity with <i>low latency</i>, think of the Cloud SQL helper running with the workload and prefer private IP for in region traffic.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/connect-kubernetes-engine",
+    "https://cloud.google.com/sql/docs/postgres/connect-auth-proxy",
+    "https://cloud.google.com/sql/docs/postgres/private-ip",
+    "https://cloud.google.com/sql/docs/postgres/configure-ip#public-ip",
+    "https://cloud.google.com/nat/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-tasked-with-designing-a-secure-exam-308.html",
+  "video_url": "https://certificationation.com/videos/exam-tasked-with-designing-a-secure-exam-308.html"
+}

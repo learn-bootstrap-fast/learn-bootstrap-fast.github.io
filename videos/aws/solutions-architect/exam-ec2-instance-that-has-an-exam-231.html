@@ -1,0 +1,128 @@
+---
+title: "An application runs on an Amazon EC2 instance that hasExam"
+description: "Video for an application runs on an Amazon EC2 instance that has an Elastic IP address in VPC A. The application requires access to a database in VPC B. Both"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "An application runs on an Amazon EC2 instance that has an Elastic IP address in VPC A. The application requires access to a database in VPC B. Both VPCs are in the same AWS account. Which solution will provide the required access MOST securely?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729a4c"
+  },
+  "quid": null,
+  "ordinal": "231",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS shared responsibility model",
+    " Amazon EC2",
+    " Amazon VPC",
+    " AWS Security",
+    " AWS Compliance"
+  ],
+  "slug": "ec2-application-runs-elastic-ip-aws",
+  "source": "ET",
+  "title": "AWS An Application Runs On An Amazon EC2 Instance Question",
+  "meta": "AWS Exam Question: An application on EC2 with Elastic IP in VPC A needs secure database access in VPC B. Find the most secure answer. Includes VPC and EC2.",
+  "answer": "B",
+  "query": "A web application is hosted on an Amazon EC2 instance with an Elastic IP in VPC Alpha. The application needs to connect to a database located in VPC Beta. Both VPCs are under the same AWS account.\n\nWhat is the most secure way to establish access?",
+  "originalQuery": "An application runs on an Amazon EC2 instance that has an Elastic IP address in VPC A. The application requires access to a database in VPC B. Both VPCs are in the same AWS account.\n\nWhich solution will provide the required access MOST securely?",
+  "options": [
+    "A. Create a DB instance security group that only permits traffic from the application server's public IP in VPC A.",
+    "B. Configure a VPC peering connection between VPC A and VPC B.",
+    "C. Make the DB instance accessible via public IP. Enable public access to the DB instance.",
+    "D. Deploy an EC2 instance with an Elastic IP in VPC B to handle all requests."
+  ],
+  "originalOptions": [
+    "A. Create a DB instance security group that allows all traffic from the public IP address of the application server in VPC A.",
+    "B. Configure a VPC peering connection between VPC A and VPC B.",
+    "C. Make the DB instance publicly accessible. Assign a public IP address to the DB instance.",
+    "D. Launch an EC2 instance with an Elastic IP address into VPC B. Proxy all requests through the new EC2 instance."
+  ],
+  "image": null,
+  "primaryObjective": "1: Design Secure Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Option A is the most secure solution. While option B can establish connectivity between VPC A and VPC B, it is not the most secure approach. VPC peering connections allow all resources in VPC A to communicate with all resources in VPC B, which could lead to potential security vulnerabilities. In contrast, option A restricts access by permitting traffic solely from the application server's public IP address in VPC A to the database instance in VPC B. This targeted approach ensures that only the necessary connectivity is established, thereby enhancing security. For further details on configuring security groups for database instances, refer to the official AWS documentation: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.RDSSecurityGroups.html.",
+    "Ah, the allure of allowing all traffic from a public IP address! 🌟 But let’s be real: that’s about as secure as leaving your front door wide open with a neon sign saying, “Welcome, intruders!” 🚪💨 \n\nSo, while it might sound tempting, let’s kick that idea to the curb. The most secure approach would involve a little more finesse. Think of VPC peering as the VIP pass for your application, granting it a safe and direct route to the database in VPC B without the risk of unwanted guests crashing the party! 🎉 \n\nIn short, keep it classy and secure! Your data will thank you later! 😄🔒",
+    "Let’s break this down in a way that’s both clear and a bit cheeky. You’ve got an application on an Amazon EC2 instance with an Elastic IP in one Virtual Private Cloud (VPC A), and it desperately wants to chat with a database in another VPC (VPC B). Both VPCs are cozy, sharing the same AWS account, but they need a secure bridge to connect.\n\nNow, let’s sift through the options without getting buried in technical jargon. \n\nCreating a security group for the database instance that only allows traffic from the application server’s public IP is like building a moat around a castle but leaving the drawbridge down for just one knight. It’s not the worst idea, but it’s about as secure as a screen door on a submarine.\n\nOn the other hand, configuring a VPC peering connection is a much more elegant solution. Think of it as inviting your application and database to a private dinner party where only they can communicate. No outsiders allowed, and the conversation stays nice and secure.\n\nMaking the database accessible via public IP and enabling public access is akin to throwing open the castle gates and shouting, “Come one, come all!” Not exactly the best plan if you value security, right?\n\nFinally, deploying an EC2 instance with an Elastic IP in VPC B to handle requests is like hiring a bouncer who can only communicate with the application in VPC A. It can work, but let’s face it, it’s a little clunky and not the most efficient way to manage your connections.\n\nIn summary, while there are multiple ways to connect these VPCs, the VPC peering connection is the most secure and efficient method, allowing for seamless communication without compromising safety.",
+    "It's essential to prioritize security when it comes to handling traffic over the public internet. Relying on public networks can expose sensitive data to potential risks. It's crucial to implement secure measures that protect your application and database interactions. Always ensure that your configurations are designed with security as a top priority!",
+    "Imagine a delightful scenario where an application happily resides on an Amazon EC2 instance sporting an Elastic IP address in the charming VPC A, while it yearns for a connection to a splendid database nestled in VPC B. Both of these Virtual Private Clouds are cozy companions within the same AWS account. 🌈\n\nTo ensure this connection is established in the most secure manner, consider the following options:\n\n- Craft a security group for the database instance that graciously allows traffic solely from the application server's public IP in VPC A. This way, you ensure only trusted sources can communicate with your precious database.\n  \n- Establish a VPC peering connection between VPC A and VPC B, creating a seamless and private pathway for data to flow securely between the two.\n\n- Open up the database instance to the world by enabling public access and assigning it a public IP. However, this may expose your database to unwanted guests, so caution is advised!\n\n- Alternatively, deploy a cheerful EC2 instance with an Elastic IP in VPC B, which will serve as a friendly intermediary to manage all incoming requests.\n\nIn this vibrant cloud world, choosing the most secure solution is key to keeping your data safe and sound! 🎉"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "",
+      "explanation": "A is correct. B will work but is not the most secure method, since it will allow everything in VPC A to talk to everything in VPC B and vice versa, not at all secure. A on the other hand will only allow the application (since you select it's IP address) to talk to the application server in VPC A - you are allowing only the required connectivity. See the link for this exact use case: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.RDSSecurityGroups.html",
+      "upvotes": "14"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "\" allows all traffic from the public IP address\" Nice bro niceee This is absolutely the most secure method at all. :)))",
+      "upvotes": "16"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": ":)))))))))",
+      "upvotes": "1"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "he must be the security engineer lolol :D\n\n\"Jaybee\" - Please dont ever say that traffic over the public internet is secure :D",
+      "upvotes": "5"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "https://aws.amazon.com/vpc/faqs/",
+      "upvotes": "1"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "B (91%)",
+      "votes": "52 votes."
+    },
+    {
+      "option": "9%",
+      "votes": "5 votes."
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is B: Configure a VPC peering connection between VPC A and VPC B. This method is secure because it allows direct communication between the two VPCs without exposing the database to the public internet, ensuring that only resources in VPC A can access the database in VPC B. A VPC peering connection also provides a private route for the traffic, thereby minimizing exposure to external threats.\n\nOption A is incorrect because allowing traffic from the public IP of the application server in VPC A could potentially expose the DB instance to unwanted traffic if the public IP is compromised. This does not provide the same level of security as a VPC peering connection.\n\nOption C is incorrect as making the DB instance publicly accessible and assigning a public IP exposes it to the internet, which is less secure and increases the risk of unauthorized access.\n\nOption D is not as efficient as option B; while it provides some measure of security, deploying an additional EC2 instance in VPC B to handle requests introduces complexity and potential bottlenecks in terms of performance and management, without offering the direct private connection of VPC peering.",
+  "video_url": "https://certificationation.com/videos/exam-ec2-instance-that-has-an-exam-231.html",
+  "url": "https://certificationation.com/questions/exam-ec2-instance-that-has-an-exam-231.html"
+}

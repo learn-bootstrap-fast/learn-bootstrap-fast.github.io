@@ -1,0 +1,128 @@
+---
+title: "A company's application integrates with multipleExam"
+description: "Video for a company's application integrates with multiple software-as-a-service (SaaS) sources for data collection. The company runs Amazon EC2 instances to"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company's application integrates with multiple software-as-a-service (SaaS) sources for data collection. The company runs Amazon EC2 instances to receive the data and to upload the data to an Amazon S3 bucket for analysis. The same EC2 instance that receives and uploads the data also sends a notification to the user when an upload is complete. The company has noticed slow application performance and wants to improve the performance as much as possible. Which solution will meet these requirements with the LEAST operational overhead?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f72998e"
+  },
+  "quid": null,
+  "ordinal": "41",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon S3",
+    " Amazon Simple Notification Service (Amazon SNS)",
+    " Amazon EC2",
+    " Amazon Elastic Container Service (Amazon ECS)",
+    " AWS Auto Scaling"
+  ],
+  "slug": "ec2-saas-data-collection-upload-aws",
+  "source": "ET",
+  "title": "AWS A Companys Application Integrates With Multiple Question",
+  "meta": "AWS Exam Question: A company's application integrates with SaaS sources, using Amazon EC2 and S3 for data collection and analysis. Discover the optimal answer with minimal overhead.",
+  "answer": "B",
+  "query": "An organization utilizes several different software-as-a-service (SaaS) applications for data gathering. Presently, this organization operates Amazon EC2 instances to capture data and subsequently store it in an Amazon S3 bucket for processing. After the data transfer is finished, the same EC2 instance sends a notification to the user. To enhance performance and streamline operations for the organization, which solution is the most suitable?",
+  "originalQuery": "A company's application integrates with multiple software-as-a-service (SaaS) sources for data collection. The company runs Amazon EC2 instances to receive the data and to upload the data to an Amazon S3 bucket for analysis. The same EC2 instance that receives and uploads the data also sends a notification to the user when an upload is complete. The company has noticed slow application performance and wants to improve the performance as much as possible.\nWhich solution will meet these requirements with the LEAST operational overhead?",
+  "options": [
+    "A. Implement an Auto Scaling group to allow EC2 instances to expand as needed. Once data has been fully uploaded to the S3 bucket, an Amazon Simple Notification Service (Amazon SNS) topic is notified through an event from S3.",
+    "B. Design an Amazon AppFlow process, which acts as the conduit for data from each SaaS source to the S3 bucket. Set up an Amazon SNS topic to receive event notifications from S3 post upload completion.",
+    "C. Create an Amazon EventBridge (Amazon CloudWatch Events) rule for each SaaS system to deliver output data. Configure the S3 bucket as the destination for these rules. When the upload to the S3 bucket completes, a separate EventBridge (CloudWatch Events) rule sends a notification to an Amazon SNS topic.",
+    "D. Replace the EC2 instance with a containerized application using Docker. Run this container on Amazon Elastic Container Service (Amazon ECS) and configure Amazon CloudWatch Container Insights to activate an Amazon SNS topic once the upload to the S3 bucket is completed."
+  ],
+  "originalOptions": [
+    "A. Create an Auto Scaling group so that EC2 instances can scale out. Configure an S3 event notification to send events to an Amazon Simple Notification Service (Amazon SNS) topic when the upload to the S3 bucket is complete.",
+    "B. Create an Amazon AppFlow flow to transfer data between each SaaS source and the S3 bucket. Configure an S3 event notification to send events to an Amazon Simple Notification Service (Amazon SNS) topic when the upload to the S3 bucket is complete.",
+    "C. Create an Amazon EventBridge (Amazon CloudWatch Events) rule for each SaaS source to send output data. Configure the S3 bucket as the rule's target. Create a second EventBridge (Cloud Watch Events) rule to send events when the upload to the S3 bucket is complete. Configure an Amazon Simple Notification Service (Amazon SNS) topic as the second rule's target.",
+    "D. Create a Docker container to use instead of an EC2 instance. Host the containerized application on Amazon Elastic Container Service (Amazon ECS). Configure Amazon CloudWatch Container Insights to send events to an Amazon Simple Notification Service (Amazon SNS) topic when the upload to the S3 bucket is complete."
+  ],
+  "image": null,
+  "primaryObjective": "3: Design High-Performing Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "The requirement for \"least operational overhead\" indicates the need for a solution that minimizes the amount of manual effort and management required. \n\nUtilizing Amazon AppFlow can demand a significant investment of time for configuration and testing. Additionally, users may encounter challenges related to error handling during the data extraction and loading processes, which can further complicate implementation.\n\nIn this scenario, the company already operates EC2 instances that handle data reception and uploads. The primary concern is enhancing performance, which can be effectively achieved by implementing auto-scaling capabilities and introducing a notification queue (such as Amazon SNS) to decouple the user notification process. This approach reduces operational burden compared to the complexities associated with setting up and managing AppFlow. \n\nOverall, the proposed solution of scaling the existing infrastructure and leveraging SNS for notifications is a more efficient and less labor-intensive path to improved application performance.",
+    "Oh, definitely not option B! If you take a little jaunt over to the AWS website (https://aws.amazon.com/appflow/), you'll find that AppFlow is like the trusty delivery person of the AWS family. It’s a fully managed integration service that makes it a breeze to transfer data between various Software-as-a-Service (SaaS) applications—think Salesforce, SAP, Google Analytics, Facebook Ads, and ServiceNow—right into AWS services like Amazon S3 and Amazon Redshift, all with just a few clicks! 🚀\n\nNow, let’s talk about that \"least operational overhead\" vibe. While Auto Scaling can jazz up performance, it still means you have to wrangle those EC2 instances, which can be a bit of a chore. On the other hand, AppFlow is like the easy button; it handles the heavy lifting for you with minimal fuss. So, if you want to keep things light and breezy, AppFlow is your go-to! 🌈✨",
+    "I completely understand the hesitation; I wavered quite a bit myself. However, the goal here is to turbocharge performance without the baggage. It's hard to promise the same level of efficiency with EC2 as you would get from managed services. That’s precisely why I ultimately leaned towards option B.",
+    "\"Operational overhead\" pertains to the ongoing management and maintenance of a solution after it has been implemented, rather than the initial setup process. Utilizing EC2 instances solely to transfer data from one source to another is inefficient; cloud services are specifically designed to streamline these processes and enhance performance. Embracing the capabilities of cloud solutions can significantly reduce complexity and improve overall application efficiency.",
+    "When it comes to AWS, utilizing a managed service often means enjoying a delightful reduction in operational overhead, no matter how intricate the configuration might be! 🌈 Managing AppFlow is a breeze compared to the intricacies of EC2 management, so option A simply doesn't fit the bill. With EC2, you're faced with the responsibilities of setting up the operating system, applications, code integrations, ensuring security, and the ongoing tasks of patching and upgrading—quite a handful, wouldn't you agree? \n\nIn contrast, option B shines as the ideal choice! It streamlines the process and minimizes those pesky headaches associated with manual management. Enjoy the simplicity and efficiency that comes with it! ✨"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "A",
+      "explanation": "It says \"LEAST operational overhead\" (ie do it in a way it's the less work for me).\nIf you know a little Amazon AppFlow (see the some videos) you'll see you'll need time to configure and test it, and at the end cope with the errors during the extraction and load the info to the target.\nThe customer in the example ALREADY has some EC2 that do the work, the only problem is the performance, that WILL be improved scaling out and adding a queue (SNS) to decouple the work of notify the user.\nThe operational load of doing this is LESS that configuring AppFlow.",
+      "upvotes": "42"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "No B. if you go to the aws site(https://aws.amazon.com/appflow/) -AppFlow is a fully managed integration service that helps you securely transfer data between software as a service (SaaS) applications such as Salesforce, SAP, Google Analytics, Facebook Ads, and ServiceNow, and AWS services such as Amazon Simple Storage Service (S3) and Amazon Redshift in just a \"few clicks\". remember the question is asking for \"the LEAST operational overhead\", While Auto Scaling improves performance, it still involves managing EC2 instances, which adds operational overhead compared to a managed service like AppFlow.",
+      "upvotes": "1"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Agreed, I hesitated a long time exactly for this reason. However, the requirement is to improve the performance as much as possible. I cannot guarantee the same performance with EC2 than with managed services. That's why I eventually voted B.",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "\"Operational overhead\" refers to operation of the solution once it's deployed, it's not about setting it up. EC2 instances that retrieve data from A and write it to B are nonsense, that's what cloud services are meant for.",
+      "upvotes": "12"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "With AWS, a managed service is \"less operational overhead\" regardless of the complexity of the setup. AppFlow management is less of a headache when compared to EC2 management so A cannot be correct. EC2 has a setup overhead of OS/Application/Code hooks, security etc. continuous patching/upgrading seems like more than what you'll need to do with SaaS.\nB is the correct answer.",
+      "upvotes": "8"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "B (67%)",
+      "votes": "110 votes."
+    },
+    {
+      "option": "A (33%)",
+      "votes": "54 votes."
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is B because Amazon AppFlow is designed to facilitate the secure transfer of data between SaaS applications and AWS services with minimal operational overhead. It automates the data integration process, requiring less management and maintenance than managing EC2 instances. Option A adds complexity by requiring the management of EC2 instances even with auto scaling, which does not address streamlining operations effectively. Option C introduces more complexity by relying on EventBridge rules for data integration, which is an overhead compared to using a managed service like AppFlow. Option D suggests a containerized approach using ECS, which again requires more operational involvement in terms of management and scaling compared to the simplicity of using AppFlow, thus not meeting the requirement for the least operational overhead.",
+  "video_url": "https://certificationation.com/videos/exam-with-multiple-software-as-a-service-saas-sources-exam-041.html",
+  "url": "https://certificationation.com/questions/exam-with-multiple-software-as-a-service-saas-sources-exam-041.html"
+}

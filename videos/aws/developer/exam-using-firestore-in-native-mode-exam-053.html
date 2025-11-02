@@ -1,0 +1,79 @@
+---
+title: "An e-commerce organization is using Firestore in NativeExam"
+description: "Video for an e-commerce organization is using Firestore in Native mode to store real-time customer and order data. They need to ensure high availability and"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "An e-commerce organization is using Firestore in Native mode to store real-time customer and order data. They need to ensure high availability and disaster recovery while maintaining low-latency read and write operations. Which of the following options should the organization choose to best meet their requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A video streaming startup named StreamForge runs Firestore in Native mode to store real-time viewer profiles and watch session metadata. They want very high availability and robust disaster recovery while keeping read and write latency low for their primarily Europe-based customers. Which deployment choice should they implement?",
+  "options": [
+    {
+      "text": "Cloud Spanner",
+      "explanation": "This is a Google Cloud relational service that offers strong consistency and multi-region options for mission-critical workloads.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Single-region Firestore database hosted in one European region",
+      "explanation": "This uses a single regional deployment that provides low latency in that area but lacks cross-region resilience.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Multi-region Firestore configuration that replicates data within one continent",
+      "explanation": "This setup places replicas across multiple regions in the same continent to improve availability and keep latency lower for nearby users.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Multi-region Firestore configuration that spans regions on different continents",
+      "explanation": "This distributes data worldwide which increases durability but can raise write latency due to long distances.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Multi-region Firestore configuration that replicates data within one continent</b>.</p><p>This configuration replicates data across multiple regions within a defined European multi-region and provides strong consistency with automatic failover. It delivers very high availability and disaster resilience while keeping read and write latency low for customers located in Europe. It also supports data residency expectations by keeping the data within the continent.</p><p><i>Cloud Spanner</i> is a different database service and the question asks for a Firestore deployment choice. While it can provide global scale and strong consistency, it changes the data model and operational profile and is unnecessary when the application is already using Firestore in Native mode.</p><p><i>Single-region Firestore database hosted in one European region</i> can offer low latency, but it does not meet the requirement for very high availability and robust disaster recovery because a regional outage can cause downtime.</p><p><i>Multi-region Firestore configuration that spans regions on different continents</i> would increase latency for Europe-based users and can conflict with data residency needs. Firestore multi-region locations are predefined within a continent, so this option is not appropriate for the stated goals.</p>",
+  "batch_id": "317",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "An e-commerce organization is using Firestore in Native mode to store real-time customer and order data. They need to ensure high availability and disaster recovery while maintaining low-latency read and write operations. Which of the following options should the organization choose to best meet their requirements?",
+  "originalOptions": "A. Single-region Firestore instance.<br/>B. Regional Firestore instance with asynchronous replication.<br/>C. Multi-region Firestore instance with replication within the same continent.<br/>D. Multi-region Firestore instance with replication across multiple continents.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "53",
+  "tip": "<p>When a scenario stresses <i>low latency</i> for users concentrated in one geography and high <i>availability</i>, prefer a multi-region deployment within that same geography. Watch for hints about data <i>residency</i> because that often rules out cross-continent designs.</p>",
+  "references": [
+    "https://cloud.google.com/firestore/docs/locations",
+    "https://cloud.google.com/firestore/docs/best-practices",
+    "https://cloud.google.com/databases/docs/choose-database"
+  ],
+  "url": "https://certificationation.com/questions/exam-using-firestore-in-native-mode-exam-053.html",
+  "video_url": "https://certificationation.com/videos/exam-using-firestore-in-native-mode-exam-053.html"
+}

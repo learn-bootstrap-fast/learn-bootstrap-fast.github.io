@@ -1,0 +1,74 @@
+---
+title: "A team is developing a feature that needs to recognizeExam"
+description: "Video for a team is developing a feature that needs to recognize Celebrities. By using the App, clients can upload photos and search celebrities among the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A team is developing a feature that needs to recognize Celebrities. By using the App, clients can upload photos and search celebrities among the photos by clicking a button. Or they can upload a bunch of photos and search the times that a given celebrity has appeared. The team wants to run the App in AWS at a lower cost. Which option is the most efficient one to implement while still ensuring availability and stability?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d596f501ee1c8ade97d2"
+  },
+  "quid": "0",
+  "ordinal": "135",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "AWS Lambda",
+    " AWS Rekognition",
+    " Amazon S3",
+    " Amazon EC2",
+    " AWS CloudFormation"
+  ],
+  "slug": "ap-recognize-celebrities-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question135",
+  "title": "AWS A Team Is Developing A Feature Question",
+  "meta": "AWS Exam Question: A team is developing a feature to recognize celebrities by uploading photos. What is the most efficient AWS option? Answer: EC2, S3, Lambda.",
+  "answer": "C",
+  "query": "A development group is building a service to identify famous people in event photos. Users upload images and inquire about which known individuals appear in them. They can also upload multiple photos to determine how many times a specific celebrity can be seen. The group aims to host this service on AWS with minimal expenses while maintaining reliability and responsiveness. What is the best approach to achieve these goals?",
+  "originalQuery": "A team is developing a feature that needs to recognize Celebrities.\nBy using the App, clients can upload photos and search celebrities among the photos by clicking a button.\nOr they can upload a bunch of photos and search the times that a given celebrity has appeared.\nThe team wants to run the App in AWS at a lower cost.\nWhich option is the most efficient one to implement while still ensuring availability and stability?",
+  "options": [
+    "A. Host frontend and backend on a T3 medium EC2 instance using its burstable performance. Use Rekognition API \"RecognizeCelebrities\" to retrieve data in JSON. Parse the JSON in the backend and deliver results to the client interface.",
+    "B. Create the app as a serverless Lambda function calling the Rekognition API \"SearchFaces\" to find celebrities. Input images may be base64-encoded or stored in S3. Present the output to users after the API response.",
+    "C. Use the AWS Rekognition service. Implement the App in a lambda to call Rekognition API \"RecognizeCelebrities\" to fetch the information required in a JSON format. Process the information in Lambda and return the result to end-users. Use S3 for clients to upload photos.",
+    "D. Deploy the app on a C5 large EC2 instance with Autoscaling and ELB. Define infrastructure via CloudFormation template. The App uses the Rekognition API \"SearchFaces\" to query data. Handle the JSON output in backend and serve results through CloudFront CDN."
+  ],
+  "originalOptions": [
+    "A. Create the frontend and backend in a T2 medium EC2 instance to use its burstable capability. Call Rekognition API “RecognizeCelebrities” to fetch the information in a JSON format. Process the JSON result in the backend service and return the result to the frontend UI.",
+    "B. Develop the App in a serverless lambda to use Rekognition API “SearchFaces” to search a Celebrity. The input image can be base64-encoded bytes or an S3 object. After the API has been returned, present the result to clients.",
+    "C. Use the AWS Rekognition service. Implement the App in a lambda to call Rekognition API “RecognizeCelebrities” to fetch the information required in a JSON format. Process the information in Lambda and return the result to end-users. Use S3 for clients to upload photos.",
+    "D. Implement the App in an M4 large EC2 instance with Autoscaling and Elastic Load Balancer. Build the application via a Cloudformation template. Use the App to call Rekognition API “SearchFaces” to get the information. Process the JSON result in the backend service and return the result to the frontend with a Cloudfront CDN."
+  ],
+  "image": "",
+  "primaryObjective": "2: Design for New Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Correct Answer - C.\nAs the question asks for a lower cost while still ensuring availability and stability.\nLambda should be considered first.\nLambda can autoscale without manual operations.\nMore importantly, it is very efficient to develop a web app without considering a lot about OS, patching, etc.\nAmazon Rekognition can recognize thousands of celebrities in a wide range of categories, such as entertainment and media, sports, business, and politics.\nWith Amazon Rekognition, you can recognize celebrities in images and stored videos.\nYou can also get additional information for recognized celebrities.\nOption A is incorrect: Because EC2 does not cost-efficient and brings in extra cost if the load is not stable.\nLambda should be considered instead.\nOption B is incorrect: Because Rekognition API “RecognizeCelebrities” should be used in this case.\nFor each celebrity recognized, “RecognizeCelebrities” returns a Celebrity object.\nThe Celebrity object contains the celebrity name, ID, URL links to additional information, match confidence, and a ComparedFace object that you can use to locate the celebrity's face on the image.\n“SearchFaces” is incorrect as it is not used to search Celebrities.\nOption C is CORRECT: Because Lambda together with Rekognition can meet the need for low cost, availability, and stability.\nRefer to https://docs.aws.amazon.com/rekognition/latest/dg/celebrities.html for this feature.\nOption D is incorrect: Because firstly, it has used EC2\nEven if Autoscaling and ELB are used, it is not as efficient as Lambda.\nSecondly, API “SearchFaces” should not be used for the function of Celebrities Recognition.\nSure, I'd be happy to explain the options in detail.\nOption A: This option suggests creating the frontend and backend of the application in a T2 medium EC2 instance. The Rekognition API \"RecognizeCelebrities\" will be used to fetch information in a JSON format. The JSON result will be processed in the backend service, and the result will be returned to the frontend UI. The T2 instance is a good choice since it has burstable capabilities that can help handle spikes in traffic. However, this option requires that you manage the EC2 instance and the application running on it, which can be time-consuming and complex. It also involves direct calls to the Rekognition API, which could lead to higher costs.\nOption B: This option suggests developing the application in a serverless Lambda function to use the Rekognition API \"SearchFaces\" to search for celebrities. The input image can be base64-encoded bytes or an S3 object. After the API has returned, the result will be presented to clients. This option is very cost-effective because Lambda is a serverless service and automatically scales based on the incoming requests. You only pay for the compute time used, making it much cheaper than maintaining an EC2 instance. Additionally, using the \"SearchFaces\" API is an efficient way to search for celebrities.\nOption C: This option suggests using the AWS Rekognition service and implementing the application in a Lambda function. The \"RecognizeCelebrities\" API will be used to fetch information required in a JSON format. The information will be processed in Lambda, and the result will be returned to end-users. S3 will be used for clients to upload photos. This option is similar to option B, but it uses the \"RecognizeCelebrities\" API instead of \"SearchFaces.\" This option is also very cost-effective, but it might not be as efficient as option B, especially if there are many photos to analyze.\nOption D: This option suggests implementing the application in an M4 large EC2 instance with Autoscaling and Elastic Load Balancer. The application will be built via a CloudFormation template. The App will call the Rekognition API \"SearchFaces\" to get the required information. The JSON result will be processed in the backend service and returned to the frontend with a Cloudfront CDN. This option provides a highly available and scalable architecture, but it's the most expensive option since you have to manage the EC2 instance, autoscaling, and load balancing.\nOverall, Options B and C are the most cost-effective and efficient options since they utilize Lambda and the Rekognition API. They are also highly scalable and easy to maintain, making them the best options for this use case.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-that-needs-to-recognize-celebrities-exam-082.html",
+  "url": "https://certificationation.com/questions/exam-that-needs-to-recognize-celebrities-exam-082.html"
+}

@@ -1,0 +1,74 @@
+---
+title: "You have been asked to design network connectivityExam"
+description: "Video for you have been asked to design network connectivity between your existing data centers and AWS. Your application's EC2 instances must be able to"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have been asked to design network connectivity between your existing data centers and AWS. Your application's EC2 instances must be able to connect to existing backend resources located in your data center. Network traffic between AWS and your data centers will start small, but ramp up to 10s of GB per second over the course of several months. The success of your application is dependent upon getting to market quickly. Which of the following design options will allow you to meet your objectives?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d5b7f501ee1c8ade9827"
+  },
+  "quid": "0",
+  "ordinal": "222",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "Direct Connect",
+    " AWS VPC",
+    " AWS VPN",
+    " Amazon EC2",
+    " AWS global infrastructure"
+  ],
+  "slug": "ec2-design-network-connectivity-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question222",
+  "title": "AWS Design Network Connectivity Question",
+  "meta": "AWS Exam Question: Design network connectivity between your data centers and AWS. Ensure EC2 instances connect to backend resources. Find the answer with Direct Connect.",
+  "answer": "C",
+  "query": "Your company is tasked with establishing a reliable network link between your on-premises locations and AWS to enable EC2 instances to access internal legacy systems hosted in your data centers. The volume of traffic expected will start off low but is forecasted to grow to multiple gigabits per second within a few months. Speed to deploy connectivity initially is critical for your project timeline. Which approach best fulfills these requirements?",
+  "originalQuery": "You have been asked to design network connectivity between your existing data centers and AWS.\nYour application's EC2 instances must be able to connect to existing backend resources located in your data center.\nNetwork traffic between AWS and your data centers will start small, but ramp up to 10s of GB per second over the course of several months.\nThe success of your application is dependent upon getting to market quickly.\nWhich of the following design options will allow you to meet your objectives?",
+  "options": [
+    "A. Deploy an internal Application Load Balancer for backend services, request a Direct Connect link at 1 Gbps to connect your data center and VPC, then scale the Direct Connect throughput or count as demand grows.",
+    "B. Assign Elastic IPs and configure an Internet Gateway on your VPC instances for short-term backend access, then establish a VPN tunnel between the VPC and your on-site hardware.",
+    "C. Provision a VPN connection between a VPC and existing on-premises equipment, submit a Direct Connect partner request to provision cross-connects between your data center and the Direct Connect location, then cut over from the VPN connection one or more Direct Connect connections as needed.",
+    "D. Immediately request a 1 Gbps Direct Connect circuit to connect your VPC with your data center, and adjust the number or bandwidth of these connections as traffic increases."
+  ],
+  "originalOptions": [
+    "A. Quickly create an internal ELB for your backend applications, submit a Direct Connect request to provision a 1 Gbps cross-connect between your data center and VPC, then increase the number or size of your Direct Connect connections as needed.",
+    "B. Allocate EIPs and an Internet Gateway for your VPC instances to use for quick, temporary access to your backend applications, then provision a VPN connection between a VPC and existing on-premises equipment.",
+    "C. Provision a VPN connection between a VPC and existing on-premises equipment, submit a Direct Connect partner request to provision cross-connects between your data center and the Direct Connect location, then cut over from the VPN connection one or more Direct Connect connections as needed.",
+    "D. Quickly submit a Direct Connect request to provision a 1 Gbps cross-connect between your data center and VPC, then increase the number or size of your Direct Connect connections as needed."
+  ],
+  "image": "",
+  "primaryObjective": "4: Accelerate Workload Migration and Modernization",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Answer - C.\nThe most important considerations in this scenario are: (1) the network traffic would be initially small, and will increase in the future, and (2) the application should be up quickly.\nSo time is crucial.\nOne thing should be noted that it takes time initially to set up the AWS Direct Connect (See the link below for the latest information).\nhttps://docs.aws.amazon.com/directconnect/latest/UserGuide/getting_started.html\nOption A is incorrect because setting up Direct Connect will take time.\nSo, the backend servers will not be connected quickly.\nOption B is incorrect because provisioning VPN is not a long-term solution since the traffic would increase to over 10Gbps.\nOption C is CORRECT because (a) it provides a quick connection between the on-premise data center and AWS via VPN, and (b) it also initiates the provision of a Direct Connect solution to tackle the requirement of higher bandwidth (for 10Gbps network) for later.\nOption D is incorrect because setting up Direct Connect will take time, and the application will not be up within time as it is time-critical.\nIt needs to establish a VPN connection firstly.\nFor more information on VPN and Direct Connect, please visit the link below.\nhttps://datapath.io/resources/blog/aws-direct-connect-vs-vpn-vs-direct-connect-gateway/\nOption A: Quickly create an internal ELB for your backend applications, submit a Direct Connect request to provision a 1 Gbps cross-connect between your data center and VPC, then increase the number or size of your Direct Connect connections as needed.\nThis option suggests setting up an internal Elastic Load Balancer (ELB) for the backend applications, which will help distribute traffic across the backend servers. This is a good approach for scaling the backend resources as traffic increases. Additionally, the option suggests using Direct Connect to connect the data centers and VPC, which provides a dedicated, private connection with high bandwidth and low latency. This option allows for increasing the number or size of Direct Connect connections as needed to accommodate increasing traffic.\nOption B: Allocate EIPs and an Internet Gateway for your VPC instances to use for quick, temporary access to your backend applications, then provision a VPN connection between a VPC and existing on-premises equipment.\nThis option suggests using Elastic IPs (EIPs) and an Internet Gateway to provide temporary access to backend resources from VPC instances. While this approach may work in the short term, it may not be sufficient for scaling to 10s of GB per second over several months. Additionally, it suggests provisioning a VPN connection between the VPC and the data center, which is less performant than Direct Connect and may not be sufficient for high bandwidth traffic.\nOption C: Provision a VPN connection between a VPC and existing on-premises equipment, submit a Direct Connect partner request to provision cross-connects between your data center and the Direct Connect location, then cut over from the VPN connection one or more Direct Connect connections as needed.\nThis option suggests starting with a VPN connection between the VPC and data center and later transitioning to Direct Connect as traffic increases. While this approach may be feasible, it requires additional steps to transition from VPN to Direct Connect, which may cause downtime or disruptions. Additionally, this option suggests using a Direct Connect partner, which adds another layer of complexity to the network setup.\nOption D: Quickly submit a Direct Connect request to provision a 1 Gbps cross-connect between your data center and VPC, then increase the number or size of your Direct Connect connections as needed.\nThis option is similar to Option A but does not include setting up an internal ELB for the backend applications. This option still allows for Direct Connect to provide a dedicated, private connection with high bandwidth and low latency, and allows for increasing the number or size of Direct Connect connections as needed to accommodate increasing traffic.\nOverall, the best option for meeting the objectives of quickly connecting the existing data centers to AWS and scaling to 10s of GB per second over several months is Option A, which suggests setting up an internal ELB for the backend applications and using Direct Connect to connect the data centers and VPC, allowing for easy scalability.",
+  "chatGptExplanation": "The correct answer is C because it balances the need for quick deployment and future high bandwidth requirements. Initially, provisioning a VPN connection between the VPC and on-premises infrastructure can be done quickly to enable immediate connectivity, which satisfies the requirement for speed to deploy. Since network traffic is expected to grow significantly (to multiple gigabits per second), the solution also includes initiating a Direct Connect request via a Direct Connect partner. This prepares the infrastructure for a high-bandwidth, reliable, and low-latency direct physical connection that can replace the VPN once provisioned. \n\nOption A is incorrect because it assumes Direct Connect can be provisioned quickly enough to meet time-critical deployment, which typically it cannot since Direct Connect takes days or weeks to become active. Also, adding an internal ELB for the backend is unnecessary for establishing network connectivity and does not address the initial quick connectivity need.\n\nOption B is incorrect because using EIPs and an Internet Gateway for temporary backend access is not suitable for reliable, secure connectivity and also does not scale well for very high bandwidth. While VPN is provisioned, it alone cannot handle multi-gigabit traffic efficiently in the long term.\n\nOption D is incorrect because it starts immediately with provisioning Direct Connect without a fallback to a fast provisional connection. As Direct Connect takes significant time to provision, this does not meet the rapid deployment requirement. The VPN in option C provides that immediate connectivity.\n\nPrimary AWS product focus in this question: AWS Direct Connect (DX)",
+  "video_url": "https://certificationation.com/videos/exam-connectivity-between-your-existing-data-exam-138.html",
+  "url": "https://certificationation.com/questions/exam-connectivity-between-your-existing-data-exam-138.html"
+}

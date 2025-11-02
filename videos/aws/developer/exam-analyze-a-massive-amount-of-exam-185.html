@@ -1,0 +1,80 @@
+---
+title: "A logistics company is using BigQuery to analyze aExam"
+description: "Video for a logistics company is using BigQuery to analyze a massive amount of data related to shipment tracking and route optimization. The company needs to"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A logistics company is using BigQuery to analyze a massive amount of data related to shipment tracking and route optimization. The company needs to ensure high availability and disaster recovery while minimizing query latency. Which of the following options should the company choose to best meet their requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "An e commerce brand named Luma Threads uses BigQuery to analyze about 120 TB of order and clickstream data for inventory forecasting and real time merchandising reports. They require strong availability and disaster recovery while keeping query response times low for teams based in North America. Which BigQuery data location choice should they use?",
+  "options": [
+    {
+      "text": "BigQuery dataset stored in a single region",
+      "explanation": "This keeps all data in one regional location which lowers cost but provides less geographic resilience.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "BigQuery dataset stored in a multi region within the same continent",
+      "explanation": "This replicates data across multiple zones in a broad geographic area which improves availability and serves users in that continent with low latency.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "BigQuery dataset partitioned to span several regions in one continent",
+      "explanation": "This suggests using table partitioning to place partitions in different regions which BigQuery does not support for cross region storage.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "BigQuery dataset created as a multi region that spans multiple continents",
+      "explanation": "This assumes a dataset can be configured to cover continents which BigQuery does not offer and it would add wide area network latency.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>BigQuery dataset stored in a multi region within the same continent</b>.</p><p>This location replicates data across multiple regions within the continent and is designed to provide higher availability and resilience than a single region. It also keeps data and processing within North America which reduces latency for teams based there and supports low query response times for both batch and real time analytics. With 120 TB of data, automatic replication and management reduces operational overhead and provides built in disaster recovery because the service can continue operating if an individual region experiences an outage.</p><p><i>BigQuery dataset stored in a single region</i> can be cost effective and can offer low latency within that region but it does not provide the same level of availability or disaster recovery as a multi region. A regional outage could make the data unavailable which conflicts with the strong DR requirement.</p><p><i>BigQuery dataset partitioned to span several regions in one continent</i> is not supported. Partitioning divides a table within a dataset by date or integer ranges and it does not change or distribute the dataset location across regions.</p><p><i>BigQuery dataset created as a multi region that spans multiple continents</i> does not exist in BigQuery. Multi regional locations are limited to areas such as US, EU, or ASIA and they do not combine continents, and spanning continents would add unnecessary latency for North American users.</p>",
+  "batch_id": "132",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "A logistics company is using BigQuery to analyze a massive amount of data related to shipment tracking and route optimization. The company needs to ensure high availability and disaster recovery while minimizing query latency. Which of the following options should the company choose to best meet their requirements?",
+  "originalOptions": "A. BigQuery with data partitioned across multiple regions within the same continent.<br/>B. BigQuery with data stored in a multi-region across multiple continents.<br/>C. BigQuery with data stored in a multi-region within the same continent.<br/>D. BigQuery with data stored in a single region.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "185",
+  "tip": "<p>When you see requirements for <i>high availability</i> and <i>disaster recovery</i> for users in one continent, prefer a BigQuery <i>multi region</i> in that continent. Remember that datasets have a single location and that partitioning does not change where data is stored.</p>",
+  "references": [
+    "https://cloud.google.com/bigquery/docs/locations",
+    "https://cloud.google.com/bigquery/docs/locations#geographic_considerations",
+    "https://cloud.google.com/bigquery/docs/best-practices-performance-compute#data_locality",
+    "https://cloud.google.com/bigquery/docs/partitioned-tables"
+  ],
+  "url": "https://certificationation.com/questions/exam-analyze-a-massive-amount-of-exam-185.html",
+  "video_url": "https://certificationation.com/videos/exam-analyze-a-massive-amount-of-exam-185.html"
+}

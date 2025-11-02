@@ -1,0 +1,62 @@
+---
+title: "You use CloudFormation to launch an Auto Scaling groupExam"
+description: "Video for you use CloudFormation to launch an Auto Scaling group. In the CloudFormation stack, you create a lifecycle hook in the ASG that puts a new instance"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You use CloudFormation to launch an Auto Scaling group. In the CloudFormation stack, you create a lifecycle hook in the ASG that puts a new instance in the Wait state while the custom script of the user data is running. The script installs the web application, initializes customer data and performs a health check of the instance. After the health check has passed, how would you put the instance back to the InService state in the Auto Scaling group?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct way to move your instance from <strong>Wait</strong> to <strong>InService</strong> after your health check passes is by using the <strong>complete-lifecycle-action</strong> AWS CLI command (or its API equivalent). When you configure an Auto Scaling group with a lifecycle hook, it pauses instances at 'Pending:Wait' or 'Terminating:Wait' until you signal that your custom actions are done. <strong>complete-lifecycle-action</strong> is designed to let Auto Scaling know when you are finished, so it can resume normal processing. </p><p>Why the other options are incorrect:<ul><li><i>Run 'record-lifecycle-action-heartbeat'...</i> - This action merely extends the timeout of the lifecycle hook but does not complete the process or transition the instance out of the Wait state.</li><li><i>Employ the 'attach-instances'...</i> - This command is for attaching standalone EC2 instances to an Auto Scaling group. It doesn't signal lifecycle hook completion and will not move the instance from Wait to InService in this context.</li><li><i>Use the 'put-lifecycle-hook'...</i> - This command creates or updates lifecycle hooks; it does not manage the completion or continuation of an individual instance through the hook.</li></ul></p><p><strong>Tip:</strong> Always use <strong>complete-lifecycle-action</strong> in your automation to exit custom Wait states and resume Auto Scaling's operations. Remember: <i>heartbeat</i> commands buy you more time, but <strong>complete-lifecycle-action</strong> is the signal that you're done!</p>",
+  "query": "<p>You provision an Auto Scaling group using CloudFormation, which sets up a lifecycle hook to keep a new EC2 instance in the <strong>Wait</strong> state as a custom user data script executes. The script installs a web app, initializes user data, and verifies the instance's health. After a successful health check, what is the correct way for your script to signal the Auto Scaling group to move the instance from <strong>Wait</strong> to <strong>InService</strong> status?</p>",
+  "original_oid": "6793da8461969b416038a22a",
+  "options": [
+    {
+      "correct": true,
+      "text": "In the user data script, utilize the AWS CLI 'complete-lifecycle-action' command to notify Auto Scaling that the instance is ready.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Run 'record-lifecycle-action-heartbeat' using AWS CLI or the corresponding API operation in your script to complete the cycle.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Employ the 'attach-instances' AWS CLI command inside the script to add the instance back into the Auto Scaling group, which will change its state from Wait to InService.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Use the 'put-lifecycle-hook' AWS CLI command in your script, which immediately transitions the instance into its normal lifecycle state.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question442",
+  "originalQuery": "You use CloudFormation to launch an Auto Scaling group.\nIn the CloudFormation stack, you create a lifecycle hook in the ASG that puts a new instance in the Wait state while the custom script of the user data is running.\nThe script installs the web application, initializes customer data and performs a health check of the instance.\nAfter the health check has passed, how would you put the instance back to the InService state in the Auto Scaling group?",
+  "originalOptions": "A. Use the record-lifecycle-action-heartbeat CLI command or the RecordLifecycleActionHeartbeat operation in the script.\nB. In the script, use the AWS CLI command complete-lifecycle-action to finish the lifecycle hook customer actions.\nC. Use the AWS CLI command put-lifecycle-hook to complete the lifecycle actions and put the instance back to the normal process of the Auto Scaling group.\nD. In the script, use the AWS CLI command attach-instances to attach the instance to the ASG, which completes the lifecycle action and modifies the instance state from Wait to InService.",
+  "video_url": "https://certificationation.com/videos/exam-auto-scaling-group-in-the-exam-166.html",
+  "url": "https://certificationation.com/questions/exam-auto-scaling-group-in-the-exam-166.html"
+}

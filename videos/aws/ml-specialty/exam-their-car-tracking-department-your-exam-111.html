@@ -1,0 +1,54 @@
+---
+title: "You work for a car rental firm in their car trackingExam"
+description: "Video for you work for a car rental firm in their car tracking department. Your team is responsible for building machine learning solutions to track the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You work for a car rental firm in their car tracking department. Your team is responsible for building machine learning solutions to track the company's fleet of cars. Each car is equipped with a GPS vehicle tracking device that emits IoT data. You are building a data transformation solution to take the GPS IoT data and transform it before storing it in S3 for use in your machine learning models. You have decided to use Kinesis Data Firehose data transformation to pre-process your IoT data before storing it in S3 You have written your lambda function that pre-processes the data, and you are now testing your data transformation process flow. When running your tests, you see that Kinesis Data Firehose rejects every record as a data transformation failure. What could be the reason for the failure?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d6f07742293cac494b17"
+  },
+  "answer": "B",
+  "certification": "AWS Machine Learning Specialty",
+  "certificationKey": "AWSMLS",
+  "difficulty": "0",
+  "image": "",
+  "needsWork": "false",
+  "ordinal": "111",
+  "originalExplanation": "Answer: B.\nOption A is incorrect.\nThe status of your transformed record produced by your lambda function can be Ok (the record was transformed successfully), Dropped (the record was dropped intentionally by your transformation logic), or ProcessingFailed (the record could not be transformed)\nA status of Ok or Dropped indicates to Kinesis Data Firehose that the record was successfully processed.\nA status of ProcessingFailed indicates a failed transformation.\nYour lambda function has set each record's status to either Ok or Dropped, so this option is incorrect.\nOption B is correct.\nTransformed records received by Kinesis Data Firehose from lambda must contain the recordId, result, and data parameters.\nYour transformed records only contain the recordId and result parameters.\nOption C is incorrect.\nYou can use lambda blueprints from either the AWS Serverless Application Repository or the AWS Lambda console to create your transformation lambda function.\nOption D is incorrect.\nYou can use lambda blueprints from either the AWS Serverless Application Repository or the AWS Lambda console to create your transformation lambda function.\nReference:\nPlease see the Amazon Kinesis Data Firehose developer guide titled Amazon Kinesis Data Firehose Data Transformation.\nThe reason for the data transformation failure in this scenario could be option A, where the Lambda function has set the result to OK or Dropped for each record processed.\nKinesis Data Firehose is a fully managed service that enables real-time delivery of streaming data to destinations such as S3, Redshift, Elasticsearch, and Splunk. It can also be used to transform data before delivering it to the destination. To perform the transformation, you can use a Lambda function that processes the incoming data and returns the transformed data to Kinesis Data Firehose.\nWhen using a Lambda function with Kinesis Data Firehose for data transformation, the Lambda function should return a transformed record that includes the transformed data and metadata such as the record ID and the result of the transformation. The metadata should be returned in a specific format, which includes the record ID and the result set to \"Ok\" or \"Dropped.\"\nIf the Lambda function returns a transformed record without the required metadata or with the result set to a value other than \"Ok\" or \"Dropped,\" Kinesis Data Firehose will reject the record as a data transformation failure. This means that the data will not be delivered to the destination and will not be available for use in machine learning models.\nOption B suggests that the transformed records from the Lambda function include the required metadata, which should prevent the data transformation failure. However, option C and D are related to the source of the Lambda function blueprint and are unlikely to cause the data transformation failure in this scenario.\nTherefore, the most likely reason for the data transformation failure is option A, where the Lambda function has set the result to a value other than \"Ok\" or \"Dropped\" for each record processed.",
+  "originalOptions": [
+    "A. In your Lambda function, you have set the result to OK or Dropped for each record processed.",
+    "B. The transformed records from your lambda function consist of the recordId and result parameters.",
+    "C. When creating your Lambda function, you used a lambda blueprint for data transformation from the AWS Serverless Application Repository.",
+    "D. When creating your Lambda function, you used a lambda blueprint for data transformation from the AWS Lambda console."
+  ],
+  "originalQuery": "You work for a car rental firm in their car tracking department.\nYour team is responsible for building machine learning solutions to track the company's fleet of cars.\nEach car is equipped with a GPS vehicle tracking device that emits IoT data.\nYou are building a data transformation solution to take the GPS IoT data and transform it before storing it in S3 for use in your machine learning models. You have decided to use Kinesis Data Firehose data transformation to pre-process your IoT data before storing it in S3\nYou have written your lambda function that pre-processes the data, and you are now testing your data transformation process flow.\nWhen running your tests, you see that Kinesis Data Firehose rejects every record as a data transformation failure.\nWhat could be the reason for the failure?",
+  "primaryObjective": "",
+  "quid": "0",
+  "source": "https://www.exam-answer.com/amazon/mls-c01/question111",
+  "video_url": "https://certificationation.com/videos/exam-their-car-tracking-department-your-exam-111.html",
+  "url": "https://certificationation.com/questions/exam-their-car-tracking-department-your-exam-111.html"
+}

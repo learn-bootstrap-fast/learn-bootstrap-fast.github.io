@@ -1,0 +1,128 @@
+---
+title: "A company needs to retain application log files for aExam"
+description: "Video for a company needs to retain application log files for a critical application for 10 years. The application team regularly accesses logs from the past"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company needs to retain application log files for a critical application for 10 years. The application team regularly accesses logs from the past month for troubleshooting, but logs older than 1 month are rarely accessed. The application generates more than 10 TB of logs per month. Which storage option meets these requirements MOST cost-effectively?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f7299f8"
+  },
+  "quid": null,
+  "ordinal": "147",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon S3",
+    " S3 Glacier Deep Archive",
+    " AWS Backup",
+    " Amazon CloudWatch Logs",
+    " S3 Lifecycle policies"
+  ],
+  "slug": "s3-retain-application-log-files-aws",
+  "source": "ET",
+  "title": "AWS A Company Needs To Retain Application Log Files Question",
+  "meta": "AWS Exam Question: A company needs to retain application log files for 10 years, accessing logs monthly. Which storage option is the most cost-effective? Answer: S3, Glacier.",
+  "answer": "B",
+  "query": "An organization must keep application log files for a crucial system for 10 years. The development team often reviews logs from the last month for issue resolution, yet logs older than 1 month are infrequently reviewed. The application produces over 9 TB of logs per month.\nWhat is the most cost-efficient storage solution for these needs?",
+  "originalQuery": "A company needs to retain application log files for a critical application for 10 years. The application team regularly accesses logs from the past month for troubleshooting, but logs older than 1 month are rarely accessed. The application generates more than 10 TB of logs per month.\nWhich storage option meets these requirements MOST cost-effectively?",
+  "options": [
+    "A. Store the logs in Amazon S3. Use AWS Backup to transfer logs older than 1 month to S3 Glacier Deep Archive.",
+    "B. Store the logs in Amazon S3. Use S3 Lifecycle policies to move logs more than 1 month old to S3 Glacier Deep Archive.",
+    "C. Store the logs in Amazon CloudWatch Logs. Use AWS Backup to transfer logs older than 1 month to S3 Glacier Deep Archive.",
+    "D. Store the logs in Amazon CloudWatch Logs. Utilize Amazon S3 Lifecycle policies to transition logs older than 1 month to S3 Glacier Deep Archive."
+  ],
+  "originalOptions": [
+    "A. Store the logs in Amazon S3. Use AWS Backup to move logs more than 1 month old to S3 Glacier Deep Archive.",
+    "B. Store the logs in Amazon S3. Use S3 Lifecycle policies to move logs more than 1 month old to S3 Glacier Deep Archive.",
+    "C. Store the logs in Amazon CloudWatch Logs. Use AWS Backup to move logs more than 1 month old to S3 Glacier Deep Archive.",
+    "D. Store the logs in Amazon CloudWatch Logs. Use Amazon S3 Lifecycle policies to move logs more than 1 month old to S3 Glacier Deep Archive."
+  ],
+  "image": null,
+  "primaryObjective": "4: Design Cost-Optimized Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Using AWS Backup for transferring logs to S3 Glacier Deep Archive is not an option, as AWS Backup does not support this specific storage class. According to the AWS Backup documentation, the service is compatible with the following S3 storage classes:\n\n- S3 Standard\n- S3 Standard - Infrequently Accessed (IA)\n- S3 One Zone-IA\n- S3 Glacier Instant Retrieval\n- S3 Intelligent-Tiering (S3 INT)\n\nFor long-term retention of application log files that must be retained for 10 years, while still allowing quick access to logs from the past month, utilizing S3 Lifecycle policies is a more suitable approach. This enables automated transitions of logs older than one month to S3 Glacier Deep Archive, which is designed for long-term storage at a significantly lower cost. By leveraging this strategy, the organization can effectively manage storage costs while ensuring compliance with retention requirements.",
+    "When it comes to keeping those logs safe and sound for the long haul, AWS Backup comes with a price tag, while setting up S3 Lifecycle Policies (LCP) is as free as a bird! 🦅 So, if you're looking to save some serious cash while ensuring your logs are tucked away neatly after a month, the smart move is to go with S3 Lifecycle Policies. It’s like putting your logs on autopilot—no extra fees, just a seamless transition to S3 Glacier Deep Archive! 🧊💰",
+    "Option B emerges as the most financially savvy choice. By storing logs in S3 and leveraging S3 Lifecycle policies to transition logs older than one month to S3 Glacier Deep Archive, you can optimize costs in line with actual data access patterns. Given that logs older than one month see minimal usage, this strategy effectively trims storage expenses while ensuring compliance with the 10-year retention requirement.\n\nOption A misses the mark because relying on AWS Backup to transfer logs to S3 Glacier Deep Archive introduces unnecessary costs and complexity that can easily be avoided by using S3 Lifecycle policies.\n\nOption C complicates matters further by involving CloudWatch Logs and AWS Backup when a straightforward S3 solution suffices. It's like hiring a personal trainer just to lift a light dumbbell.\n\nOption D is off base as well, since S3 Lifecycle policies aren’t applicable to CloudWatch Logs. These services operate on distinct storage frameworks, and attempting to apply S3 Lifecycle policies to CloudWatch Logs is like trying to fit a square peg in a round hole.",
+    "The best choice is option B, which utilizes Amazon S3 alongside Glacier Deep Archive and incorporates S3 Lifecycle policies. This approach effectively addresses the need for long-term log retention while optimizing costs. By storing the logs in Amazon S3, the application team can easily access recent logs for troubleshooting. The Lifecycle policies will automatically transition logs older than one month to S3 Glacier Deep Archive, ensuring that older logs are stored in a highly cost-effective manner. This solution not only meets the retention requirements but also streamlines log management, making it an excellent choice for efficient data handling.",
+    "S3 Lifecycle policies to the rescue! 🌟 These clever little tools make managing your data a breeze. By automatically transitioning logs older than one month to S3 Glacier Deep Archive, you can keep your costs low while ensuring that your critical data is securely stored for the long haul. Plus, your application team will still have quick access to the most recent logs for troubleshooting! It’s a win-win situation! 🎉"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "B",
+      "explanation": "Why not AwsBackup? No Glacier Deep is supported by AWS Backup\n\nhttps://docs.aws.amazon.com/aws-backup/latest/devguide/s3-backups.html\nAWS Backup allows you to backup your S3 data stored in the following S3 Storage Classes:\n• S3 Standard\n• S3 Standard - Infrequently Access (IA)\n• S3 One Zone-IA\n• S3 Glacier Instant Retrieval\n• S3 Intelligent-Tiering (S3 INT)",
+      "upvotes": "11"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "AWS BackUp costs something, setting up S3 LCP doesn't.",
+      "upvotes": "8"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "B is the most cost-effective solution. Storing the logs in S3 and using S3 Lifecycle policies to transition logs older than 1 month to S3 Glacier Deep Archive allows for cost optimization based on data access patterns. Since logs older than 1 month are rarely accessed, moving them to S3 Glacier Deep Archive helps minimize storage costs while still retaining the logs for the required 10-year period.\n\nA is incorrect because using AWS Backup to move logs to S3 Glacier Deep Archive can incur additional costs and complexity compared to using S3 Lifecycle policies directly.\n\nC adds unnecessary complexity and costs by involving CloudWatch Logs and AWS Backup when direct management through S3 is sufficient.\n\nD is incorrect because using S3 Lifecycle policies to move logs from CloudWatch Logs to S3 Glacier Deep Archive is not a valid option. CloudWatch Logs and S3 have separate storage mechanisms, and S3 Lifecycle policies cannot be applied directly to CloudWatch Logs.",
+      "upvotes": "5"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "Ans B - S3 with Glacier Deep plus Lifecycle management",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "S3 Lifecycle policies to the rescue",
+      "upvotes": "3"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "B (100%)",
+      "votes": "33 votes."
+    },
+    {
+      "option": "C (25%)",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "Option B is the correct answer because it allows for a cost-effective way to store and manage logs. By storing logs in Amazon S3 and utilizing S3 Lifecycle policies, logs that are older than one month can be automatically transitioned to S3 Glacier Deep Archive, which is a lower-cost storage solution ideal for infrequently accessed data. This permits the organization to keep logs for the required 10 years while minimizing costs. \n\nOption A is incorrect because using AWS Backup to transfer logs to S3 Glacier Deep Archive incurs additional costs and complexity compared to the direct method provided by S3 Lifecycle policies. Option C incorrectly suggests using Amazon CloudWatch Logs, which adds unnecessary complexity and costs when S3 can directly manage log storage. Finally, Option D is not valid as S3 Lifecycle policies cannot be applied directly to CloudWatch Logs, indicating a misunderstanding of how the services interact.",
+  "video_url": "https://certificationation.com/videos/exam-log-files-for-a-critical-exam-147.html",
+  "url": "https://certificationation.com/questions/exam-log-files-for-a-critical-exam-147.html"
+}

@@ -1,0 +1,62 @@
+---
+title: "Your application is currently running on Amazon EC2Exam"
+description: "Video for your application is currently running on Amazon EC2 instances behind a load balancer. Your management has decided to use a Blue/Green deployment"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your application is currently running on Amazon EC2 instances behind a load balancer. Your management has decided to use a Blue/Green deployment strategy. How should you implement this for each deployment?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The most effective way to implement a Blue/Green deployment in this scenario is to <b>Establish a new load balancer connected to a fresh pool of EC2 instances, perform the deployment on these, and—once validated—point Route 53 DNS to the new load balancer</b>. This method lets you provision and validate your new environment (the Green environment) independently of the current one (the Blue environment), minimizing downtime and risk. Once testing is successful, you simply switch traffic by updating your DNS (e.g., using Amazon Route 53), offering seamless cutover with an option for easy rollback.</p><p>The other options are less effective or do not align with true Blue/Green strategies: <i>Set up Amazon Route 53 health checks to redirect traffic away from currently deploying Amazon EC2 instances</i> does not distinctly separate the new and old environments as Blue/Green does. <i>Deploy a test AWS CloudFormation stack for code validation, then use it as a means to update each live EC2 instance</i> describes a way to stage deployments but doesn't provide the immediate switch and rollback benefits of Blue/Green. Lastly, <i>Increase the number of EC2 instances to maintain availability, remove each instance from the load balancer to update and test, then re-add it to the load balancer</i> describes a rolling deployment pattern, which can still risk user disruption and does not offer the clean break or quick rollback found in Blue/Green deployments.</p><p><b>Tip:</b> Blue/Green deployments improve reliability and rollback speed by operating two parallel environments. Always ensure thorough testing of the Green environment before redirecting production traffic.</p>",
+  "query": "<p>Your organization is operating an application on Amazon EC2 instances that are fronted by a load balancer. Leadership has determined that a Blue/Green deployment approach will be adopted. How can you best implement this deployment technique for each new release?</p>",
+  "original_oid": "6793d9b361969b416038a088",
+  "options": [
+    {
+      "correct": false,
+      "text": "Set up Amazon Route 53 health checks to redirect traffic away from currently deploying Amazon EC2 instances.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Deploy a test AWS CloudFormation stack for code validation, then use it as a means to update each live EC2 instance.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Establish a new load balancer connected to a fresh pool of EC2 instances, perform the deployment on these, and—once validated—point Route 53 DNS to the new load balancer.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Increase the number of EC2 instances to maintain availability, remove each instance from the load balancer to update and test, then re-add it to the load balancer.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question19",
+  "originalQuery": "Your application is currently running on Amazon EC2 instances behind a load balancer.\nYour management has decided to use a Blue/Green deployment strategy.\nHow should you implement this for each deployment?",
+  "originalOptions": "[\"A. Set up Amazon Route 53 health checks to fail over from any Amazon EC2 instance currently being deployed.\",\"B. Using AWS CloudFormation, create a test stack for validating the code, and then deploy it to each production Amazon EC2 instance.\",\"C. Create a new load balancer with new Amazon EC2 instances, carry out the deployment, and then switch DNS over to the new load balancer using Amazon Route 53 after testing.\",\"D. Launch more Amazon EC2 instances to ensure high availability, de-register each Amazon EC2 instance from the load balancer, upgrade it, test it, and then register it again with the load balancer.\"]",
+  "video_url": "https://certificationation.com/videos/exam-running-on-amazon-ec2-instances-exam-015.html",
+  "url": "https://certificationation.com/questions/exam-running-on-amazon-ec2-instances-exam-015.html"
+}

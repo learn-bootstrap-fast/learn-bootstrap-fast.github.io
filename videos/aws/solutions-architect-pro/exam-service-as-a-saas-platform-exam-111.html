@@ -1,0 +1,74 @@
+---
+title: "Your company runs a popular map service as a SaaSExam"
+description: "Video for your company runs a popular map service as a SaaS platform. Your dynamic multi-page application users are spread across the world, but not all of them"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company runs a popular map service as a SaaS platform. Your dynamic multi-page application users are spread across the world, but not all of them heavily use the system. So the load is high in some of the regions but not all. The application uses the NoSQL database and runs it on a cluster of EC2 machines and using the custom tools to replicate the data across different regions. The current database size is around 10PB. As the popularity of the application grows, the database is also growing rapidly. Now the application is serving millions of requests from your SaaS platform. The management has decided to develop a plan to re-design the architecture dynamically, both from the application availability and infrastructure cost perspective. Please suggest the necessary changes. Select 3 Options."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d5a8f501ee1c8ade97ff"
+  },
+  "quid": "0",
+  "ordinal": "182",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "Amazon Route 53",
+    " Amazon S3",
+    " Amazon DynamoDB"
+  ],
+  "slug": "n-ec2-map-service-database-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question182",
+  "title": "AWS Your Company Runs A Popular Map Service Question",
+  "meta": "AWS Exam Question: Your company runs a popular map service as a SaaS platform with a 10PB NoSQL database on EC2. Suggest changes for availability and cost. Answer: DynamoDB, CloudFormation, Load Balancer.",
+  "answer": "A C D",
+  "query": "A global analytics company operates a dynamic web platform with users concentrated unevenly across different continents. The service depends on a NoSQL backend currently managed on EC2 clusters with custom solution for cross-region replication. The data volume has reached several petabytes and continues to grow as user access surges. The team wants to overhaul the infrastructure focusing on scalability, lower latency for end-users, and cost optimization. What changes should be implemented to improve the architecture? Choose 3.",
+  "originalQuery": "Your company runs a popular map service as a SaaS platform.\nYour dynamic multi-page application users are spread across the world, but not all of them heavily use the system.\nSo the load is high in some of the regions but not all.\nThe application uses the NoSQL database and runs it on a cluster of EC2 machines and using the custom tools to replicate the data across different regions.\nThe current database size is around 10PB.\nAs the popularity of the application grows, the database is also growing rapidly.\nNow the application is serving millions of requests from your SaaS platform.\nThe management has decided to develop a plan to re-design the architecture dynamically, both from the application availability and infrastructure cost perspective.\nPlease suggest the necessary changes.\nSelect 3 Options.",
+  "options": [
+    "A. Route53 with Latency-based routing policy to redirect to the lowest latency region and deploy the application into regions from where the heavy load is generating.",
+    "B. Transition the entire application to Amazon S3, leveraging CloudFront for global content delivery.",
+    "C. Use DynamoDB global tables to replicate the data into multiple regions.",
+    "D. Deploy ElastiCache to buffer requests destined for the DynamoDB tables.",
+    "E. Implement RDS with Read Replicas in multiple regions to distribute read traffic across replicas."
+  ],
+  "originalOptions": [
+    "A. Route53 with Latency-based routing policy to redirect to the lowest latency region and deploy the application into regions from where the heavy load is generating.",
+    "B. Migrate the application on S3 and use CloudFront edge locations to serve the requests.",
+    "C. Use DynamoDB global tables to replicate the data into multiple regions.",
+    "D. Deploy the ElastiCache to cache the requests to the DynamoDB table.",
+    "E. Use RDS with the Read Replicas into multiple regions, application servers will use the read replicas to serve the traffic."
+  ],
+  "image": "",
+  "primaryObjective": "2: Design for New Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "E.\nCorrect Answer: A, C, D.\nOption A is CORRECT because the AWS Route53 Latency-based routing will redirect the lowest latency region's request to help serve the application faster.\nOption B is INCORRECT because the AWS S3 can only be used for Static Website Hosting or Single Page Applications.\nHowever, in the current case, the application is a SaaS platform and the question mentions that the multi-page application is dynamic.\nCloudFront is suitable to serve requests from different regions.\nBut as S3 is incorrect, this option is wrong.\nOption C is CORRECT because the DynamoDB global tables provide replication capabilities.\nWith global tables, you can have a fully managed, multi-region, and multi-master database that provides fast, local, read and write performance for massively scaled, global applications.\nOption D is CORRECT because, in the current case, the size of the database is into petabytes.\nWe can use ElasticCache to provide secure and fast performance.\nOption E is INCORRECT because AWS RDS is a relational database service, and the application in the context is using the NoSQL database.\nIt would require a significant engineering effort to re-design the application to fit the relational database and scale for such a huge amount of data.\nTo re-design the architecture dynamically from both application availability and infrastructure cost perspective, the following three options can be selected:\nOption A: Route53 with Latency-Based Routing Policy\nBy using Route53 with the Latency-Based Routing Policy, the application can be deployed in the regions where the heavy load is being generated. This policy will redirect the users to the lowest latency region from their location, ensuring that they have the best possible experience. This option helps to improve application availability by providing users with low latency and reducing the load on other regions.\nOption C: Use DynamoDB Global Tables\nDynamoDB Global Tables can be used to replicate the data into multiple regions. This option provides high availability and low latency by replicating data across different regions. The application can read and write data to any of the replicas, and DynamoDB will automatically synchronize the data between the replicas, ensuring that the data is always consistent.\nOption E: Use RDS with Read Replicas\nUsing RDS with Read Replicas into multiple regions can help improve availability and reduce the load on the primary database. The read replicas can be used to serve traffic, and the primary database can be used to handle writes. This option provides lower latency for read operations and helps improve application availability.\nOptions B and D are not suitable for the given scenario. Migrating the application to S3 and using CloudFront edge locations will not work for a dynamic multi-page application that uses a NoSQL database. And deploying ElastiCache to cache requests to the DynamoDB table may not be useful in regions with low traffic.\nTherefore, options A, C, and E are the most suitable options for re-designing the architecture dynamically from both application availability and infrastructure cost perspective.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-service-as-a-saas-platform-exam-111.html",
+  "url": "https://certificationation.com/questions/exam-service-as-a-saas-platform-exam-111.html"
+}

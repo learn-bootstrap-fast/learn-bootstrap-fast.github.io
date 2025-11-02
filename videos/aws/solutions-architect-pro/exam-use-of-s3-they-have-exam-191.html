@@ -1,0 +1,71 @@
+---
+title: "A company is making extensive use of S3 They have aExam"
+description: "Video for a company is making extensive use of S3 They have a strict security policy and require that all artifacts are stored securely in S3 When specified in"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company is making extensive use of S3 They have a strict security policy and require that all artifacts are stored securely in S3 When specified in an API call, which of the following request headers will cause an object to be SSE?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d5d3f501ee1c8ade986c"
+  },
+  "quid": "0",
+  "ordinal": "292",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "x-amz-server-side-encryption",
+    " Amazon S3"
+  ],
+  "slug": "s3-making-extensive-use-artifacts-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question292",
+  "title": "AWS A Company Is Making Extensive Use Of S3 Question",
+  "meta": "AWS Exam Question: A company uses S3 with strict security policies for secure artifact storage. Which request headers enable SSE? Find the answer.",
+  "answer": "C",
+  "query": "An organization uses Amazon S3 to store sensitive business data. Their security rules demand that all uploaded files must be encrypted on the server side. Which request header should be specified in the S3 upload API call to ensure that the object is encrypted with server-side encryption?",
+  "originalQuery": "A company is making extensive use of S3\nThey have a strict security policy and require that all artifacts are stored securely in S3\nWhen specified in an API call, which of the following request headers will cause an object to be SSE?",
+  "options": [
+    "A. AES256",
+    "B. amz-side-encryption-server",
+    "C. x-amz-server-side-encryption",
+    "D. encryption-for-server-side"
+  ],
+  "originalOptions": [
+    "A. AES256",
+    "B. amz-server-side-encryption",
+    "C. x-amz-server-side-encryption",
+    "D. server-side-encryption."
+  ],
+  "image": "",
+  "primaryObjective": "1: Design Solutions for Organizational Complexity",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Answer - C.\nServer-side encryption is about protecting data at rest.\nServer-side encryption with Amazon S3-managed encryption keys (SSE-S3) employs strong multi-factor encryption.\nAmazon S3 encrypts each object with a unique key.\nAs an additional safeguard, it encrypts the key itself with a master key that it regularly rotates.\nAmazon S3 server-side encryption uses one of the strongest block ciphers available, 256-bit Advanced Encryption Standard (AES-256), to encrypt your data.\nThe object creation REST APIs (see Specifying Server-Side Encryption Using the REST API) provides a request header, x-amz-server-side-encryption that you can use to request server-side encryption.\nTo encrypt an object at the time of upload, you need to add a header called x-amz-server-side-encryption to the request to tell S3 to encrypt the object using SSE-C, SSE-S3, or SSE-KMS.\nThe following code example shows a Put request using SSE-S3.\nPUT /example-object HTTP/1.1\nHost: myBucket.s3.amazonaws.com.\nDate: Wed, 8 Jun 2016 17:50:00 GMT.\nAuthorization: authorization string.\nContent-Type: text/plain.\nContent-Length: 11434\nx-amz-meta-author: Janet.\nExpect: 100-continue.\nx-amz-server-side-encryption: AES256\n[11434 bytes of object data]\nIn order to enforce object encryption, create an S3 bucket policy that denies any S3 Put request that does not include the x-amz-server-side-encryption header.\nThere are two possible values for the x-amz-server-side-encryption header: AES256, which tells S3 to use S3-managed keys, and aws:kms, which tells S3 to use AWS KMS-managed keys.\nFor more information on S3 encryption, please visit the links.\nhttp://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html https://aws.amazon.com/blogs/security/how-to-prevent-uploads-of-unencrypted-objects-to-amazon-s3/\nThe correct answer is C. x-amz-server-side-encryption.\nAmazon S3 provides various methods to encrypt objects at rest. Server-side encryption (SSE) is one such method that encrypts S3 objects with encryption keys managed by AWS. SSE encrypts objects before storing them in S3 and decrypts objects when you download them.\nWhen you upload an object to S3, you can specify that the object should be encrypted using SSE by adding a request header in the API call. The header to use is x-amz-server-side-encryption.\nOption A, AES256, is a valid encryption algorithm that you can use with SSE, but it is not a header. When you want to use this algorithm, you specify it as the value for the x-amz-server-side-encryption header.\nOption B, amz-server-side-encryption, is not a valid header for SSE. It should be x-amz-server-side-encryption.\nOption D, server-side-encryption, is not a valid header for SSE. It should be x-amz-server-side-encryption.\nTo summarize, when you want to encrypt an object with SSE in S3, you should use the x-amz-server-side-encryption header in the API call and specify the appropriate encryption algorithm as the header value.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-use-of-s3-they-have-exam-191.html",
+  "url": "https://certificationation.com/questions/exam-use-of-s3-they-have-exam-191.html"
+}

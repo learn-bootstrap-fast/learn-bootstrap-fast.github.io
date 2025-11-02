@@ -1,0 +1,62 @@
+---
+title: "You need the absolute highest possible networkExam"
+description: "Video for you need the absolute highest possible network performance for a cluster computing application. You already selected homogeneous instance types"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You need the absolute highest possible network performance for a cluster computing application. You already selected homogeneous instance types supporting 10 gigabit enhanced networking, made sure that your workload was network bound, and put the instances in a placement group. What is the last optimization you can make?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best final optimization for maximizing network performance in this scenario is to <b>increase the MTU to 9001 bytes for Jumbo Frames</b>. This adjustment reduces the ratio of packet header to payload, allowing more data in each packet and decreasing CPU utilization and transmission overhead. Enhanced networking combined with Jumbo Frames is a recommended AWS approach for large-scale, high-throughput compute clusters.</p><p>The other options are less effective or incorrect: <i>Separate the servers into different peered VPCs, assign each one its own Internet Gateway, and leave all in a placement group</i> would actually degrade intra-cluster throughput because peered VPCs do not support placement groups, and cross-VPC traffic will incur additional latency and bandwidth limits. <i>Re-deploy the instances from a custom AMI</i> does not enhance network performance if you are already using dedicated hardware in a placement group; relaunching has no direct impact on throughput or latency. <i>Disable the SYN/ACK mechanism in TCP or switch to the UDP protocol</i> is not a viable solution, as disabling TCP's handshake would break reliable connections, and switching protocols does not guarantee better throughput or reliability for most cluster compute workloads.</p><p><b>Tip:</b> Jumbo Frames must be uniformly enabled across the operating system and all network devices in the path. Always test application compatibility before full deployment.</p>",
+  "query": "<p>For a distributed compute cluster requiring the highest achievable network performance, you've ensured your workload is network bound, chosen identical instance types with 10 Gbps enhanced networking, and placed them together in a placement group. What additional action should you take to further maximize network throughput?</p>",
+  "original_oid": "6793d9e561969b416038a0e8",
+  "options": [
+    {
+      "correct": true,
+      "text": "Increase the MTU to 9001 bytes to enable Jumbo Frames, resulting in more efficient packet transmission by reducing overhead.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Separate the servers into different peered VPCs, assign each one its own Internet Gateway, and leave all in a placement group.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Re-deploy the instances from a custom AMI to ensure all nodes in the placement group are using freshly launched machines.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Disable the SYN/ACK mechanism in TCP or switch to the UDP protocol in order to improve network speeds.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question117",
+  "originalQuery": "You need the absolute highest possible network performance for a cluster computing application.\nYou already selected homogeneous instance types supporting 10 gigabit enhanced networking, made sure that your workload was network bound, and put the instances in a placement group.\nWhat is the last optimization you can make?",
+  "originalOptions": "A. Use 9001 MTU instead of 1500 for Jumbo Frames to raise packet body to packet overhead ratios.\nB. Segregate the instances into different peered VPCs while keeping them all in a placement group, so each one has its own Internet Gateway.\nC. Bake an AMI for the instances and relaunch, so the instances are fresh in the placement group and do not have noisy neighbors.\nD. Turn off SYN/ACK on your TCP stack or begin using UDP for higher throughput.",
+  "video_url": "https://certificationation.com/videos/exam-possible-network-performance-for-a-exam-466.html",
+  "url": "https://certificationation.com/questions/exam-possible-network-performance-for-a-exam-466.html"
+}

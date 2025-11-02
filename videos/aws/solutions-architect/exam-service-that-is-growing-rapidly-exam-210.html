@@ -1,0 +1,91 @@
+---
+title: "A company offers a food delivery service that is growingExam"
+description: "Video for a company offers a food delivery service that is growing rapidly. Because of the growth, the company’s order processing system is experiencing scaling"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company offers a food delivery service that is growing rapidly. Because of the growth, the company’s order processing system is experiencing scaling problems during peak traffic hours. The current architecture includes the following: • A group of Amazon EC2 instances that run in an Amazon EC2 Auto Scaling group to collect orders from the application • Another group of EC2 instances that run in an Amazon EC2 Auto Scaling group to fulfill orders The order collection process occurs quickly, but the order fulfillment process can take longer. Data must not be lost because of a scaling event. A solutions architect must ensure that the order collection process and the order fulfillment process can both scale properly during peak traffic hours. The solution must optimize utilization of the company’s AWS resources. Which solution meets these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729a37"
+  },
+  "quid": null,
+  "ordinal": "210",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon Simple Queue Service (Amazon SQS)",
+    " Amazon EC2",
+    " AWS Auto Scaling",
+    " Amazon CloudWatch",
+    " AWS Lambda"
+  ],
+  "slug": "ec2-food-delivery-service-aws",
+  "source": "ET",
+  "title": "AWS A Company Offers A Food Delivery Service Question",
+  "meta": "AWS Exam Question: A company’s food delivery service faces scaling issues. A solutions architect must optimize EC2 instances for order processing. Answer: AWS Auto Scaling.",
+  "answer": "D",
+  "query": "A growing online store experiences challenges with order processing as sales surge. To manage the increased demand, the current system architecture involves:\n\n• A group of Amazon EC2 instances in an Auto Scaling group responsible for capturing orders from customers.\n• A separate Auto Scaling group of EC2 instances dedicated to processing and shipping those orders.\n\nThe order capturing is efficient, but fulfilling the orders can take extra time. It is critical that no data is lost during scaling operations.\n\nA solutions architect needs to ensure both the order capturing and processing functions can scale effectively during high demand periods while maximizing the use of AWS resources.\n\nWhat solution addresses these requirements?",
+  "originalQuery": "A company offers a food delivery service that is growing rapidly. Because of the growth, the company’s order processing system is experiencing scaling problems during peak traffic hours. The current architecture includes the following:\n\n• A group of Amazon EC2 instances that run in an Amazon EC2 Auto Scaling group to collect orders from the application\n• Another group of EC2 instances that run in an Amazon EC2 Auto Scaling group to fulfill orders\n\nThe order collection process occurs quickly, but the order fulfillment process can take longer. Data must not be lost because of a scaling event.\n\nA solutions architect must ensure that the order collection process and the order fulfillment process can both scale properly during peak traffic hours. The solution must optimize utilization of the company’s AWS resources.\n\nWhich solution meets these requirements?",
+  "options": [
+    "A. Use Amazon CloudWatch metrics to monitor the CPU of each instance in the Auto Scaling groups. Modify the minimum capacity of each Auto Scaling group based on peak workload demands.",
+    "B. Use Amazon CloudWatch metrics to monitor the CPU of each instance in the Auto Scaling groups. Set up a CloudWatch alarm to trigger an Amazon Simple Notification Service (Amazon SNS) topic to create new Auto Scaling groups as necessary.",
+    "C. Create two Amazon Simple Queue Service (Amazon SQS) queues for handling orders: one for capturing and one for processing. Set the EC2 instances to frequently poll the appropriate queue. Adjust scaling based on updates from these queues.",
+    "D. Provision two Amazon Simple Queue Service (Amazon SQS) queues: one for order collection and another for order fulfillment. Configure the EC2 instances to poll their respective queue. Create a metric based on a backlog per instance calculation. Scale the Auto Scaling groups based on this metric."
+  ],
+  "originalOptions": [
+    "A. Use Amazon CloudWatch metrics to monitor the CPU of each instance in the Auto Scaling groups. Configure each Auto Scaling group’s minimum capacity according to peak workload values.",
+    "B. Use Amazon CloudWatch metrics to monitor the CPU of each instance in the Auto Scaling groups. Configure a CloudWatch alarm to invoke an Amazon Simple Notification Service (Amazon SNS) topic that creates additional Auto Scaling groups on demand.",
+    "C. Provision two Amazon Simple Queue Service (Amazon SQS) queues: one for order collection and another for order fulfillment. Configure the EC2 instances to poll their respective queue. Scale the Auto Scaling groups based on notifications that the queues send.",
+    "D. Provision two Amazon Simple Queue Service (Amazon SQS) queues: one for order collection and another for order fulfillment. Configure the EC2 instances to poll their respective queue. Create a metric based on a backlog per instance calculation. Scale the Auto Scaling groups based on this metric."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [],
+  "originalComments": [],
+  "voteDistribution": [
+    {
+      "option": "D (91%)",
+      "votes": "64 votes."
+    },
+    {
+      "option": "9%",
+      "votes": "6 votes."
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is D. This solution uses two Amazon SQS queues, ensuring that order capturing and order fulfillment processes can be decoupled. EC2 instances can fail without losing data, as SQS queues retain messages until they are processed. It also allows for effective scaling based on a backlog metric, which addresses potential bottlenecks in processing queues during high demand periods. \n\nOption A is incorrect because simply monitoring CPU does not guarantee effective scaling for order processing, especially if the task is I/O bound rather than CPU bound. \n\nOption B is incorrect since relying on SNS and creating new Auto Scaling groups may introduce unnecessary complexity and delays; additionally, it does not directly address the queue backlog issue. \n\nOption C, while utilizing SQS, lacks the critical element of creating a backlog metric, which is essential for ensuring resources scale appropriately based on transaction demand, leading to potential delays in fulfillment during peak traffic.",
+  "video_url": "https://certificationation.com/videos/exam-service-that-is-growing-rapidly-exam-210.html",
+  "url": "https://certificationation.com/questions/exam-service-that-is-growing-rapidly-exam-210.html"
+}

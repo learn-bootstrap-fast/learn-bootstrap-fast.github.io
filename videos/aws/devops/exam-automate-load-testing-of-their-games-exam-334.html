@@ -1,0 +1,67 @@
+---
+title: "A gaming company adopted AWS CloudFormation to automateExam"
+description: "Video for a gaming company adopted AWS CloudFormation to automate load-testing of their games. They have created an AWS Cloud Formation template for each gaming"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A gaming company adopted AWS CloudFormation to automate load-testing of their games. They have created an AWS Cloud Formation template for each gaming environment and one for the load-testing stack. The load-testing stack creates an Amazon Relational Database Service (RDS) Postgres database and two web servers running on Amazon Elastic Compute Cloud (EC2) that send HTTP requests, measure response times, and write the results into the database. A test run usually takes between 15 and 30 minutes. Once the tests are done, the AWS Cloud Formation stacks are torn down immediately. The test results written to the Amazon RDS database must remain accessible for visualization and analysis."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The most appropriate solution is to use the <b>deletion policy of type Snapshot</b> on the Amazon RDS resource within the AWS CloudFormation template. This ensures that, when the CloudFormation stack is deleted, a DB snapshot of the database is automatically created, preserving all test data for future access and restoration as needed. This policy is tailored for temporary resources that hold valuable information needing retention after automated infrastructure teardown.</p><p>Option <i>\"Set up a dependency relationship using the DependsOn attribute between the master Amazon RDS instance and a read replica in the testing stack.\"</i> is incorrect because the DependsOn attribute only manages the order of resource creation and does not affect the retention or deletion of resources after the stack is removed. It is not intended for data preservation.</p><p>Option <i>\"Designate an update policy that will prevent the Amazon RDS database from being deleted when the CloudFormation stack is removed.\"</i> is not feasible. Update policies are used for controlling resource update behavior (mainly for Auto Scaling groups or similar) and do not influence deletion protection.</p><p>Option <i>\"Assign a deletion policy of type Retain to the RDS resource to ensure the RDS instance is preserved after CloudFormation deletes the stack.\"</i> would leave the entire database running and available, which might incur unnecessary costs and is not typically aligned with the purpose of ephemeral test environments. Retaining the full instance is often unnecessary just for data preservation.</p><p>Option <i>\"Establish automated backups with a 30-day backup retention policy for Amazon RDS and plan to perform a point-in-time restoration if data access is necessary after stack removal.\"</i> depends on scheduled backups, which may not capture all the test data—especially if testing is short lived. Backups also introduce complexities in restoring and accessing the data as needed since point-in-time recovery may not be practical in this use case.</p><p><b>Tip:</b> Always evaluate whether you need the actual resource to persist or just need a backup or snapshot for compliance or data recovery. For temporary stacks with crucial data, the <b>Snapshot</b> deletion policy is optimal as it manages costs and ensures data protection.</p>",
+  "query": "<p>A gaming organization is using AWS CloudFormation to automatically provision environments for load-testing their applications. Each test environment spins up with an AWS CloudFormation template and contains an Amazon RDS PostgreSQL database. Two EC2 instances are also launched to simulate user requests and capture performance metrics, which are then stored in the database. Each test lasts 15–30 minutes, after which the environments and resources are deleted. However, the company needs to ensure that the performance data saved in Amazon RDS remains available for later review and reporting, even after the AWS CloudFormation stack has been deleted. What is the best solution to guarantee the test data is preserved?</p>",
+  "original_oid": "6793da1d61969b416038a156",
+  "options": [
+    {
+      "correct": true,
+      "text": "Specify a deletion policy of type Snapshot on the Amazon RDS resource in the AWS CloudFormation template, so that the database state can be retained and restored even after the stack deletion.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up a dependency relationship using the DependsOn attribute between the master Amazon RDS instance and a read replica in the testing stack.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Designate an update policy that will prevent the Amazon RDS database from being deleted when the CloudFormation stack is removed.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Establish automated backups with a 30-day backup retention policy for Amazon RDS and plan to perform a point-in-time restoration if data access is necessary after stack removal.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Assign a deletion policy of type Retain to the RDS resource to ensure the RDS instance is preserved after CloudFormation deletes the stack.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question229",
+  "originalQuery": "A gaming company adopted AWS CloudFormation to automate load-testing of their games.\nThey have created an AWS Cloud Formation template for each gaming environment and one for the load-testing stack.\nThe load-testing stack creates an Amazon Relational Database Service (RDS) Postgres database and two web servers running on Amazon Elastic Compute Cloud (EC2) that send HTTP requests, measure response times, and write the results into the database.\nA test run usually takes between 15 and 30 minutes.\nOnce the tests are done, the AWS Cloud Formation stacks are torn down immediately.\nThe test results written to the Amazon RDS database must remain accessible for visualization and analysis.",
+  "originalOptions": "A. Define an Amazon RDS Read-Replica in the load-testing AWS CloudFormation stack and define a dependency relation between master and replica via the Depends On attribute.\nB. Define an update policy to prevent deleting the Amazon RDS database after the AWS CloudFormation stack is deleted.\nC. Define a deletion policy of type Retain for the Amazon RDS resource to assure that the RDS database is not deleted with the AWS CloudFormation stack.\nD. Define a deletion policy of type Snapshot for the Amazon RDS resource to assure that the RDS database can be restored after the AWS CloudFormation stack is deleted.\nE. Define automated backups with a backup retention period of 30 days for the Amazon RDS database and perform point-in-time recovery of the database after the AWS CloudFormation stack is deleted.",
+  "video_url": "https://certificationation.com/videos/exam-automate-load-testing-of-their-games-exam-334.html",
+  "url": "https://certificationation.com/questions/exam-automate-load-testing-of-their-games-exam-334.html"
+}

@@ -1,0 +1,55 @@
+---
+title: "You are building a machine learning model for your userExam"
+description: "Video for you are building a machine learning model for your user behavior prediction problem using your company's user interaction data stored in DynamoDB. You"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are building a machine learning model for your user behavior prediction problem using your company's user interaction data stored in DynamoDB. You want to get your data into CSV format and load it into an S3 bucket so you can use it for your machine learning algorithm to give personalized recommendations to your users. Your data set needs to be updated automatically to produce real-time recommendations. Your business analysts also want to have the ability to run ad hoc queries on your data. Which of the following architectures will be the most efficient way to achieve this?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d6d87742293cac494ade"
+  },
+  "answer": "A",
+  "certification": "AWS Machine Learning Specialty",
+  "certificationKey": "AWSMLS",
+  "code": "Users\r\n\r\n/\r\n\r\nUpdate Data\r\n\r\nReal-time Recommendation\r\n\r\nSagotaker\r\n\r\n‘Automated Data Pipeline\r\n\r\n‘Ad Hoc Queries\r\n\r\nBO BR BB\r\n\r\nAnalysts",
+  "difficulty": "0",
+  "image": "https://eaeastus2.blob.core.windows.net/optimizedimages/static/images/AWS-Certified-Machine-Learning-Specialty/answer/imgckeditor_39.png",
+  "needsWork": "false",
+  "ordinal": "54",
+  "originalExplanation": "Answer: A.\nOption A is correct.\nAWS Data Pipeline is used here to schedule frequent runs of the described workflow: DynamoDB export, transformation, and running the model to give real-time predictions.\nOption B is incorrect.\nThis approach lacks the pipeline coordination described in.\nOption A.Option C is incorrect.\nAWS DMS does not support DynamoDB as a data source.\nAlso, this approach lacks the pipeline coordination described in.\nOption A.Option D is incorrect.\nYou would have to write more code to make this option work when compared to option A.\nYou would need to write an extraction job to make the DynamoDB data into a Kinesis producer.\nYou would also have to write the consumer ETL job.\nAlso, this approach lacks the pipeline coordination described in.\nOption A.Reference:\nPlease see the AWS Data Pipeline developer guide titled What is AWS Data Pipeline, and AWS Database Migration Service user guide titled How AWS Data Migration Service Works specifically the section on sources, the Amazon Kinesis Data Streams developer guide titled Amazon Kinesis Data Streams Terminology and Concepts.\nHere is a diagram of the best option:\nThe most efficient architecture to achieve the goal of real-time recommendations from DynamoDB data stored in CSV format in an S3 bucket, with the ability to perform ad hoc queries, is option A: Use AWS Data Pipeline to coordinate the following set of tasks: export DynamoDB data to S3 as JSON; Convert JSON to CSV; SageMaker model uses the data to produce real-time predictions; analysts use Amazon Athena to perform ad hoc queries against the CSV data in S3.\nHere is a detailed explanation of why option A is the most efficient architecture:\n1.\nExporting DynamoDB data to S3 as JSON:\nAWS Data Pipeline allows exporting data from DynamoDB to S3 in JSON format.\nExporting data in JSON format enables the subsequent step of converting the data to CSV format.\n2.\nConverting JSON to CSV:\nAWS Data Pipeline provides built-in support to transform data in JSON format to CSV format.\nBy converting data to CSV format, it can be used as input to machine learning algorithms and data analysts can perform ad hoc queries using Amazon Athena.\n3.\nSageMaker model uses the data to produce real-time predictions:\nSageMaker is a managed machine learning service that provides pre-built algorithms and tools to build, train, and deploy machine learning models at scale.\nThe converted CSV data in the S3 bucket can be used as input to a SageMaker model to produce real-time predictions.\n4.\nAnalysts use Amazon Athena to perform ad hoc queries against the CSV data in S3:\nAmazon Athena is an interactive query service that makes it easy to analyze data in S3 using standard SQL.\nThe converted CSV data stored in the S3 bucket can be easily queried using Amazon Athena by analysts to perform ad hoc queries.\nIn summary, the option A architecture provides a simple and efficient way to extract data from DynamoDB, transform it into CSV format, use it as input for a machine learning model to produce real-time recommendations, and allow analysts to perform ad hoc queries using Amazon Athena.",
+  "originalOptions": [
+    "A. Use AWS Data Pipeline to coordinate the following set of tasks: export DynamoDB data to S3 as JSON; Convert JSON to CSV; SageMaker model uses the data to produce real-time predictions; analysts use Amazon Athena to perform ad hoc queries against the CSV data in S3.",
+    "B. Create a custom classifier in an AWS Glue ETL job that extracts the DynamoDB data to CSV format on your S3 bucket; run your SageMaker model on the new data to produce real-time recommendations; analysts use Amazon Athena to perform ad hoc queries against the CSV data in S3.",
+    "C. Use AWS DMS to connect to your DynamoDB database and export the data to S3 in CSV format; run your SageMaker model on the new data to produce real-time recommendations; analysts use Amazon Athena to perform ad hoc queries against the CSV data in S3.",
+    "D. Use Kinesis Data Streams to receive the data from DynamoDB; use an ETL job running on an EC2 instance to consume the data and produce the CSV representation; run your SageMaker model on the new data to produce real-time recommendations; analysts use Amazon Athena to perform ad hoc queries against the CSV data in S3."
+  ],
+  "originalQuery": "You are building a machine learning model for your user behavior prediction problem using your company's user interaction data stored in DynamoDB.\nYou want to get your data into CSV format and load it into an S3 bucket so you can use it for your machine learning algorithm to give personalized recommendations to your users.\nYour data set needs to be updated automatically to produce real-time recommendations.\nYour business analysts also want to have the ability to run ad hoc queries on your data. Which of the following architectures will be the most efficient way to achieve this?",
+  "primaryObjective": "",
+  "quid": "0",
+  "source": "https://www.exam-answer.com/amazon/mls-c01/question54",
+  "video_url": "https://certificationation.com/videos/exam-model-for-your-user-behavior-exam-054.html",
+  "url": "https://certificationation.com/questions/exam-model-for-your-user-behavior-exam-054.html"
+}

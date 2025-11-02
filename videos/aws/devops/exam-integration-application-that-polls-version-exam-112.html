@@ -1,0 +1,62 @@
+---
+title: "You are administering a continuous integrationExam"
+description: "Video for you are administering a continuous integration application that polls version control for changes and then launches new Amazon EC2 instances for a"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are administering a continuous integration application that polls version control for changes and then launches new Amazon EC2 instances for a full suite of build tests. What should you do to ensure the lowest overall cost while being able to run as many tests in parallel as possible?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best way to optimize for both speed and cost is to run as many early-stage checks as possible—such as syntax and build verification—on the existing continuous integration (CI) system, rather than launching additional Amazon EC2 instances. The <b>\"Carry out syntax and build validation within the continuous integration (CI) system prior to spinning up new Amazon EC2 instances for unit and integration tests.\"</b> option is correct because it ensures that only the code that passes basic checks results in launching new instances for more resource-intensive tests.</p><p>The other options don't achieve this:</p><ul><li><i>\"Use AWS OpsWorks in your CI system to perform all syntax, unit, integration, and build tests on the existing infrastructure.\"</i> is incorrect since using OpsWorks to do everything in one place may limit your ability to parallelize test runs and won't leverage cheap/high-performance scaling of EC2 launches.</li><li><i>\"Use the CI system to only perform syntax validation before triggering an AWS Data Pipeline that orchestrates unit, integration, and build tests.\"</i> is misleading because AWS Data Pipeline isn't designed for running application tests—it's mainly for ETL workflows and data processing, not CI pipelines.</li><li><i>\"Have the CI system check syntax only, before launching an Amazon EC2 instance to run all types of tests including build, unit, and integration.\"</i> is suboptimal; you want to filter as much as possible (such as failing builds) before incurring EC2 instance costs. Running only a syntax check on CI, and pushing all other tests to EC2, might waste money on tests that could have been filtered out sooner.</li></ul><p><b>Tip:</b> Always perform lightweight validations early in your pipeline using existing resources. Trigger extra infrastructure for heavier tests only after code has passed these initial stages to maximize parallelism and minimize unnecessary resource usage and cost.</p>",
+  "query": "<p>You need to manage a continuous integration application that monitors your version control repository for code changes and then starts new Amazon EC2 instances to conduct a comprehensive set of build, unit, and integration tests.<br>How can you achieve minimal total cost and maximum parallel test execution?</p>",
+  "original_oid": "6793d9bf61969b416038a09f",
+  "options": [
+    {
+      "correct": true,
+      "text": "Carry out syntax and build validation within the continuous integration (CI) system prior to spinning up new Amazon EC2 instances for unit and integration tests.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Use AWS OpsWorks in your CI system to perform all syntax, unit, integration, and build tests on the existing infrastructure.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Use the CI system to only perform syntax validation before triggering an AWS Data Pipeline that orchestrates unit, integration, and build tests.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Have the CI system check syntax only, before launching an Amazon EC2 instance to run all types of tests including build, unit, and integration.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question42",
+  "originalQuery": "You are administering a continuous integration application that polls version control for changes and then launches new Amazon EC2 instances for a full suite of build tests.\nWhat should you do to ensure the lowest overall cost while being able to run as many tests in parallel as possible?",
+  "originalOptions": "A. Perform syntax checking on the continuous integration system before launching a new Amazon EC2 instance for build test, unit and integration tests.|B. Perform syntax and build tests on the continuous integration system before launching the new Amazon EC2 instance unit and integration tests.|C. Perform all tests on the continuous integration system, using AWS OpsWorks for unit, integration, and build tests.|D. Perform syntax checking on the continuous integration system before launching a new AWS Data Pipeline for coordinating the output of unit, integration, and build tests.",
+  "video_url": "https://certificationation.com/videos/exam-integration-application-that-polls-version-exam-112.html",
+  "url": "https://certificationation.com/questions/exam-integration-application-that-polls-version-exam-112.html"
+}

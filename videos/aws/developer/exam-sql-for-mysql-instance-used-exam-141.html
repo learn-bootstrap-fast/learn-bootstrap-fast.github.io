@@ -1,0 +1,82 @@
+---
+title: "You are managing a critical Cloud SQL for MySQL instanceExam"
+description: "Video for you are managing a critical Cloud SQL for MySQL instance used by a heavily loaded web application. Your development team is working on a major update,"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are managing a critical Cloud SQL for MySQL instance used by a heavily loaded web application. Your development team is working on a major update, and they require a full database backup before proceeding. Another DBA starts an on-demand backup, and you need to confirm the backup status. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You oversee a production Cloud SQL for MySQL instance that powers the OrbitTickets reservation site. The engineering group plans a large schema rollout and requested a complete backup before the push. A colleague has already triggered a manual backup through the console, and you must verify whether that backup has finished or is still in progress. What should you do?",
+  "options": [
+    {
+      "text": "Open the cloudsql.googleapis.com/mysql.log for the instance to look for backup progress entries",
+      "explanation": "This log captures messages from the MySQL engine and connection activity for the database instance",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Run gcloud sql operations list for the instance to view the backup operation state",
+      "explanation": "This command lists recent Cloud SQL operations for the instance and shows their current status",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use Cloud Monitoring Metrics Explorer to inspect Cloud SQL metrics for backup completion",
+      "explanation": "This interface displays time series metrics related to performance and resource utilization of services",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Review Cloud Audit Logs to see the backup request event and any related entries",
+      "explanation": "These logs record administrative API calls and access events for Cloud SQL resources",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Run gcloud sql operations list for the instance to view the backup operation state</b>.</p><p>Cloud SQL exposes manual backups as long running operations, and the gcloud operations commands surface their lifecycle. Listing operations for the instance lets you see the backup operation type along with status such as RUNNING or DONE, start and end times, and any error information. This is the most direct and reliable way to verify whether the manual backup has completed.</p><p><i>Open the cloudsql.googleapis.com/mysql.log for the instance to look for backup progress entries</i> is incorrect because MySQL logs capture database activity and server errors, while Cloud SQL backups are managed by the service outside the MySQL process. Backup progress is not recorded in the MySQL logs.</p><p><i>Use Cloud Monitoring Metrics Explorer to inspect Cloud SQL metrics for backup completion</i> is incorrect because Cloud Monitoring provides performance and capacity metrics, yet it does not emit a per backup completion signal. You must check operations or backup runs to confirm completion.</p><p><i>Review Cloud Audit Logs to see the backup request event and any related entries</i> is incorrect because audit logs confirm that a manual backup request was made and by whom, but they do not reliably indicate completion status for the long running operation. You still need to query operations or backup runs to know if it finished successfully.</p>",
+  "batch_id": "185",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "You are managing a critical Cloud SQL for MySQL instance used by a heavily loaded web application. Your development team is working on a major update, and they require a full database backup before proceeding. Another DBA starts an on-demand backup, and you need to confirm the backup status. What should you do?",
+  "originalOptions": "A. Monitor the Cloud Logging dashboard.<br/>B. Check the cloudsql.googleapis.com/mysql.log instance log.<br/>C. Perform the gcloud sql operations list command.<br/>D. Use Cloud Audit Logs to verify the status.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "141",
+  "tip": "<p>When verifying the status of a Cloud SQL backup or maintenance task, think in terms of <i>operations</i> or <i>backupRuns</i> through gcloud or the SQL Admin API rather than logs or metrics. Audit logs prove initiation, while operations show progress and completion.</p>",
+  "references": [
+    "https://cloud.google.com/sdk/gcloud/reference/sql/operations/list",
+    "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/operations/list",
+    "https://cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+    "https://cloud.google.com/sql/docs/mysql/monitor-logs",
+    "https://cloud.google.com/sql/docs/mysql/monitoring-reference/metrics",
+    "https://cloud.google.com/sql/docs/mysql/audit-logs"
+  ],
+  "url": "https://certificationation.com/questions/exam-sql-for-mysql-instance-used-exam-141.html",
+  "video_url": "https://certificationation.com/videos/exam-sql-for-mysql-instance-used-exam-141.html"
+}

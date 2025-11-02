@@ -1,0 +1,62 @@
+---
+title: "Your team uses AWS CodeDeploy to automate theExam"
+description: "Video for your team uses AWS CodeDeploy to automate the deployments to several AWS EC2 instances and on-premises instances. A deployment group is used to define"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your team uses AWS CodeDeploy to automate the deployments to several AWS EC2 instances and on-premises instances. A deployment group is used to define which individual instances are included. For some testing activities, you need to remove one on-premises instance from the deployment group for two weeks. During the time, AWS CodeDeploy should not deploy any new revisions to this particular instance. Which of the following methods is the most appropriate?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>\"Run the AWS CLI command aws deploy remove-tags-from-on-premises-instances...\"</b> option is correct because CodeDeploy uses tags to associate on-premises servers with deployment groups. By simply removing the relevant tag from the specific server, you effectively exclude it from the group and thus from any deployment activity, without having to decommission, deregister, or uninstall anything. This approach is reversible and straightforward, making it ideal for temporary exclusions.<br><br>The option <i>\"Uninstall the CodeDeploy agent on the on-premises server...\"</i> is excessive and not recommended—uninstalling and reinstalling the agent solely to pause deployments could add unnecessary effort and possible misconfiguration.<br><br>The option <i>\"Deregister the on-premises instance...\"</i> will permanently remove the instance from CodeDeploy, which is not needed for a temporary exclusion, and re-registering may require generating new credentials.<br><br>Finally, <i>\"Establish a new deployment group...\"</i> is unnecessarily complex for a short-term need; managing deployment groups and tags should be simple and focused on the affected instance only.<br><br><strong>Tip:</strong> For short-term exclusions, modifying tags is the preferred, non-destructive approach, making rollbacks easy when you are ready to add the server back into the deployment group.</p>",
+  "query": "<p>Your company is leveraging AWS CodeDeploy for automating deployments to both AWS EC2 and on-premises servers. A deployment group is set up to specify which servers participate in the deployments.<br><br>There is a requirement to temporarily exclude one on-premises server from this deployment group for a two-week period due to testing purposes.<br><br>What is the best and most efficient approach to ensure this server does not receive any new CodeDeploy revisions during this time?</p>",
+  "original_oid": "6793da8d61969b416038a23d",
+  "options": [
+    {
+      "correct": true,
+      "text": "Run the AWS CLI command aws deploy remove-tags-from-on-premises-instances to delete the deployment group tag from the target server.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Uninstall the CodeDeploy agent from the on-premises server using the AWS CLI aws deploy uninstall command.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Deregister the on-premises instance from CodeDeploy by executing aws deploy deregister through the AWS CLI.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Establish a new deployment group with a distinctive tag that doesn't include all the current instances, and update the CodeDeploy application to refer to this group.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question461",
+  "originalQuery": "Your team uses AWS CodeDeploy to automate the deployments to several AWS EC2 instances and on-premises instances.\nA deployment group is used to define which individual instances are included.\nFor some testing activities, you need to remove one on-premises instance from the deployment group for two weeks.\nDuring the time, AWS CodeDeploy should not deploy any new revisions to this particular instance.\nWhich of the following methods is the most appropriate?",
+  "originalOptions": "A. Use the AWS CLI command aws deploy uninstall to uninstall the CodeDeploy agent and remove the configuration file from the on-premises instance.\nB. Use the AWS CLI command aws deploy deregister to deregister the on-premises instance from the AWS CodeDeploy service.\nC. Create another deployment group with a new tag that is not used by all the on-premises instances. Modify the CodeDeploy application to use this new deployment group.\nD. Check the tag used by the deployment group and use the AWS CLI \"aws deploy remove-tags-from-on-premises-instances\" to remove the tag from the particular on-premises instance.",
+  "video_url": "https://certificationation.com/videos/exam-automate-the-deployments-to-several-exam-228.html",
+  "url": "https://certificationation.com/questions/exam-automate-the-deployments-to-several-exam-228.html"
+}

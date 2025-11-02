@@ -1,0 +1,128 @@
+---
+title: "A company wants to move a multi-tiered application fromExam"
+description: "Video for a company wants to move a multi-tiered application from on premises to the AWS Cloud to improve the application's performance. The application"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company wants to move a multi-tiered application from on premises to the AWS Cloud to improve the application's performance. The application consists of application tiers that communicate with each other by way of RESTful services. Transactions are dropped when one tier becomes overloaded. A solutions architect must design a solution that resolves these issues and modernizes the application. Which solution meets these requirements and is the MOST operationally efficient?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f7299b0"
+  },
+  "quid": null,
+  "ordinal": "75",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon API Gateway",
+    " AWS Lambda",
+    " Amazon Simple Queue Service (Amazon SQS)",
+    " Amazon CloudWatch",
+    " Amazon EC2"
+  ],
+  "slug": "mta-move-multi-tiered-application-aws",
+  "source": "ET",
+  "title": "AWS A Company Wants To Move A Multi-Tiered Application Question",
+  "meta": "AWS Exam Question: A company seeks to enhance a multi-tiered app's performance on AWS, resolving RESTful service overload issues for operational efficiency. Answer: Elastic Load Balancing, Amazon EC2.",
+  "answer": "A",
+  "query": "An organization plans to migrate its multi-tier application from an on-premises environment to the AWS Cloud to enhance overall performance. The application consists of distinct layers that interact using RESTful APIs. Transactions fail when a layer experiences excessive load. The role of a solutions architect is to design a resolution that improves performance and modernizes the application. What solution would best address these challenges while maximizing operational efficiency?",
+  "originalQuery": "A company wants to move a multi-tiered application from on premises to the AWS Cloud to improve the application's performance. The application consists of application tiers that communicate with each other by way of RESTful services. Transactions are dropped when one tier becomes overloaded. A solutions architect must design a solution that resolves these issues and modernizes the application.\nWhich solution meets these requirements and is the MOST operationally efficient?",
+  "options": [
+    "A. Incorporate Amazon API Gateway, directing transactions to the AWS Lambda functions acting as the application layer. Use Amazon Simple Queue Service (Amazon SQS) for the interaction between application services.",
+    "B. Utilize Amazon CloudWatch metrics to evaluate application performance trends and identify peak usage periods on the servers. Scale up application server's Amazon EC2 instances to manage peak traffic.",
+    "C. Leverage Amazon Simple Notification Service (Amazon SNS) for messaging among application servers operating on Amazon EC2 in an Auto Scaling group. Monitor the length of the SNS queue via Amazon CloudWatch and adjust scaling as needed.",
+    "D. Avail Amazon Simple Queue Service (Amazon SQS) to oversee the inter-server messaging of the application servers deployed on Amazon EC2 in an Auto Scaling group. Monitor the SQS queue length through Amazon CloudWatch and scale upward in case of communication fault detections."
+  ],
+  "originalOptions": [
+    "A. Use Amazon API Gateway and direct transactions to the AWS Lambda functions as the application layer. Use Amazon Simple Queue Service (Amazon SQS) as the communication layer between application services.",
+    "B. Use Amazon CloudWatch metrics to analyze the application performance history to determine the servers' peak utilization during the performance failures. Increase the size of the application server's Amazon EC2 instances to meet the peak requirements.",
+    "C. Use Amazon Simple Notification Service (Amazon SNS) to handle the messaging between application servers running on Amazon EC2 in an Auto Scaling group. Use Amazon CloudWatch to monitor the SNS queue length and scale up and down as required.",
+    "D. Use Amazon Simple Queue Service (Amazon SQS) to handle the messaging between application servers running on Amazon EC2 in an Auto Scaling group. Use Amazon CloudWatch to monitor the SQS queue length and scale up when communication failures are detected."
+  ],
+  "image": null,
+  "primaryObjective": "3: Design High-Performing Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Option A effectively modernizes the application by leveraging AWS Lambda, which provides a serverless architecture that automatically scales based on demand. This ensures that the application can handle varying workloads without the need for manual intervention. Additionally, incorporating Amazon Simple Queue Service (SQS) facilitates decoupling between application tiers, which mitigates the risk of dropped transactions during periods of high load. By allowing services to communicate asynchronously, SQS improves the overall resilience and efficiency of the application, ensuring reliable processing of transactions even when one or more tiers experience high traffic. This solution not only enhances performance but also aligns with best practices for building scalable, cloud-native applications.",
+    "The golden rule here is \"scale up when communication failures are detected\"—but let’s be real, that’s like trying to put out a fire with a garden hose after the house has burned down! 🚒💦 Waiting for communication hiccups to occur before scaling is a recipe for disaster. So, option D misses the mark. Instead, proactive scaling is the name of the game! 🌟",
+    "A company is looking to migrate its multi-tier application from on-premises infrastructure to AWS Cloud in a bid to enhance performance. This application comprises various tiers that communicate through RESTful services, but unfortunately, transactions tend to drop when any single tier gets overwhelmed. Thus, a solutions architect must devise a strategy that addresses these bottlenecks while also modernizing the application.\n\nNow, let's dissect the options with a healthy dose of skepticism:\n\nOption A suggests using Amazon API Gateway to funnel transactions into AWS Lambda functions, which would serve as the application layer. It also brings Amazon Simple Queue Service (SQS) into the mix to manage communication between services. Sounds like a plan, right? After all, serverless architectures paired with queuing systems can work wonders for scalability and resilience.\n\nOption B takes a more traditional route, proposing the use of Amazon CloudWatch metrics to track performance trends and peak usage times on servers. The idea here is to scale up Amazon EC2 instances to handle those surges in traffic. While this might get the job done, one has to wonder if this method is the most efficient use of resources when there are more modern approaches available.\n\nOption C suggests leveraging Amazon Simple Notification Service (SNS) for messaging among EC2 instances operating in an Auto Scaling group. The plan is to keep an eye on the SNS queue length via CloudWatch and adjust scaling accordingly. It’s a decent approach, but is it too reliant on notifications to manage workload spikes?\n\nFinally, we have Option D, which proposes employing Amazon SQS to supervise inter-server messaging for EC2 instances in an Auto Scaling group. By monitoring SQS queue length through CloudWatch, the idea is to scale up whenever communication issues arise. It’s a classic case of “let’s throw more resources at the problem,” but sometimes, that’s not the most elegant solution either.\n\nIn the end, the best choice would be one that not only alleviates the immediate issues of transaction drop-offs but also offers a streamlined, modern, and operationally efficient architecture. Achieving that balance is the key to a successful migration to the cloud.",
+    "A company is looking to migrate a multi-tier application from its on-premises environment to the AWS Cloud in order to enhance the application's performance. The application is structured with various tiers that interact through RESTful services. However, when one tier experiences high demand, it can lead to dropped transactions. The goal is to design a solution that addresses these challenges while modernizing the application.\n\nTo achieve this in the most operationally efficient manner, consider leveraging Amazon API Gateway to route transactions to AWS Lambda functions that will serve as the application layer. Incorporating Amazon Simple Queue Service (Amazon SQS) will facilitate seamless communication between the application services, ensuring that transactions are managed effectively even under load.\n\nAdditionally, employing Amazon CloudWatch metrics will allow for the assessment of application performance trends, helping to identify peak usage periods. This insight can inform decisions about scaling application server resources, such as Amazon EC2 instances, to handle increased traffic efficiently.\n\nAnother effective approach is to utilize Amazon Simple Notification Service (Amazon SNS) for messaging among application servers running on Amazon EC2 within an Auto Scaling group. By monitoring the length of the SNS queue via Amazon CloudWatch, you can adjust scaling dynamically as needed, ensuring optimal performance.\n\nFinally, implementing Amazon SQS for managing inter-server messaging among application servers in an Auto Scaling group is a robust strategy. By keeping an eye on the SQS queue length through Amazon CloudWatch, you can proactively scale resources in response to any potential communication bottlenecks.\n\nThese solutions not only modernize the application but also enhance its performance and reliability, paving the way for a more efficient cloud-based operation.",
+    "D suggests: \"Harness the power of Amazon CloudWatch to keep an eye on the SQS queue length and ramp up your resources whenever communication hiccups are spotted! 🌈\""
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "",
+      "explanation": "Agree with A>>> Lambda = serverless + autoscale (modernize), SQS= decouple (no more drops)",
+      "upvotes": "42"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "The catch phrase is \"scale up when communication failures are detected\" Scaling should not be based on communication failures, that'll be crying over spilled milk ! or rather too late. So D is wrong.",
+      "upvotes": "24"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Spot on",
+      "upvotes": "1"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "it says \"one tier becomes overloaded\" , Not communication failure...",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "D says: \"Use Amazon CloudWatch to monitor the SQS queue length and scale up when communication failures are detected\".",
+      "upvotes": "4"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "A (84%)",
+      "votes": "59 votes."
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is A because it utilizes Amazon API Gateway, which provides a reliable and scalable way to create RESTful APIs, and AWS Lambda functions that allow for serverless compute capacity. This combination modernizes the application by decoupling components and providing automatic scaling during high loads, thereby improving overall performance. Option B is incorrect because it proposes merely scaling up EC2 instances based on observed peak utilization rather than addressing the inherent architectural issues of the application. Option C offers SNS for messaging, which isn't optimal in this context since it doesn't resolve scaling of the application layer appropriately. Option D suggests SQS for messaging but relies on communication failures for scaling, which is reactive rather than proactive and doesn't effectively modernize the application architecture.",
+  "video_url": "https://certificationation.com/videos/exam-application-from-on-premises-to-exam-075.html",
+  "url": "https://certificationation.com/questions/exam-application-from-on-premises-to-exam-075.html"
+}

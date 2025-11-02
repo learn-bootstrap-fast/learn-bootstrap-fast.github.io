@@ -1,0 +1,128 @@
+---
+title: "A company is developing a file-sharing application thatExam"
+description: "Video for a company is developing a file-sharing application that will use an Amazon S3 bucket for storage. The company wants to serve all the files through an"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company is developing a file-sharing application that will use an Amazon S3 bucket for storage. The company wants to serve all the files through an Amazon CloudFront distribution. The company does not want the files to be accessible through direct navigation to the S3 URL. What should a solutions architect do to meet these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f7299e8"
+  },
+  "quid": null,
+  "ordinal": "131",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon S3",
+    " Amazon CloudFront",
+    " AWS Identity and Access Management (IAM)",
+    " AWS Lambda",
+    " AWS Backup"
+  ],
+  "slug": "s3-file-sharing-application-aws",
+  "source": "ET",
+  "title": "AWS A Company Is Developing A File Sharing Application Question",
+  "meta": "AWS Exam Question: A company is developing a file-sharing app using Amazon S3 for storage and Amazon CloudFront for distribution. What is the answer?",
+  "answer": "D",
+  "query": "An organization is building a media streaming app that will leverage an Amazon S3 bucket for storing its media files. They intend to deliver all media through an Amazon CloudFront distribution and want to ensure that the files cannot be accessed via direct URLs to the S3 bucket.\nWhat steps should a solutions architect take to satisfy these requirements?",
+  "originalQuery": "A company is developing a file-sharing application that will use an Amazon S3 bucket for storage. The company wants to serve all the files through an Amazon CloudFront distribution. The company does not want the files to be accessible through direct navigation to the S3 URL.\nWhat should a solutions architect do to meet these requirements?",
+  "options": [
+    "A. Create separate policies for S3 buckets to allow only CloudFront access.",
+    "B. Set up an IAM user. Allow the user to access objects in the S3 bucket. Link the user to CloudFront.",
+    "C. Write an S3 bucket policy that assigns the CloudFront distribution ID as the Principal and assigns the target S3 bucket as the Amazon Resource Name (ARN).",
+    "D. Create an origin access identity (OAI). Assign the OAI to the CloudFront distribution. Configure the S3 bucket permissions so that only the OAI has read permission."
+  ],
+  "originalOptions": [
+    "A. Write individual policies for each S3 bucket to grant read permission for only CloudFront access.",
+    "B. Create an IAM user. Grant the user read permission to objects in the S3 bucket. Assign the user to CloudFront.",
+    "C. Write an S3 bucket policy that assigns the CloudFront distribution ID as the Principal and assigns the target S3 bucket as the Amazon Resource Name (ARN).",
+    "D. Create an origin access identity (OAI). Assign the OAI to the CloudFront distribution. Configure the S3 bucket permissions so that only the OAI has read permission."
+  ],
+  "image": null,
+  "primaryObjective": "1: Design Secure Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "To ensure that access to your Amazon Simple Storage Service (Amazon S3) bucket is limited solely to your Amazon CloudFront distribution, you can implement an origin access identity (OAI). This process involves creating an OAI within CloudFront, which acts as a special user that CloudFront uses to access your S3 bucket.\n\nOnce the OAI is created, you should associate it with your CloudFront distribution. Following this, you will need to adjust the permissions of your S3 bucket. Specifically, you should configure the bucket policy to grant read access only to the OAI, effectively preventing direct access to the S3 bucket via its URL. \n\nThis setup ensures that all requests for the objects in your S3 bucket are routed through CloudFront, enhancing security and allowing you to leverage the caching and performance benefits of the CloudFront service.\n\nFor a detailed guide on this process, refer to the AWS Knowledge Center article on enabling CloudFront access to S3.",
+    "Alright, let's sprinkle some magic on this! ✨ \n\nTo ensure that your files are only accessible via CloudFront and keep those pesky direct S3 URL navigators at bay, you’ll want to create an origin access identity (OAI). Think of the OAI as your personal bouncer, ensuring only CloudFront can waltz into the S3 bucket party. 🎉 \n\nOnce you've got your OAI set up and assigned to the CloudFront distribution, you’ll need to adjust the S3 bucket permissions. Make sure to grant read access exclusively to the OAI. This way, everyone else will be left outside, gazing longingly at the door while they try to navigate to your S3 URL. 🚪🙅‍♂️\n\nSo, in summary, the OAI is your VIP pass, and with the right permissions, only your CloudFront darlings get to enjoy the file-sharing festivities! 🎈📁",
+    "Here’s the lowdown:\n\nUsing an Origin Access Identity (OAI) is the golden ticket for ensuring secure communication between CloudFront and S3, all while keeping your S3 bucket safely tucked away from prying eyes. This OAI is linked directly to your CloudFront distribution, creating a cozy little relationship. Meanwhile, the S3 bucket policy is designed to roll out the welcome mat exclusively for that OAI, meaning only CloudFront gets to peek at the files—direct S3 access? Not in this lifetime.\n\nNow let’s talk about the alternatives: \n\n- Option A? That's a management nightmare waiting to happen with all those individual bucket policies to juggle.\n  \n- Option B? You’d be handing out credentials that nobody asked for—no thanks!\n\n- Option C might get the job done, but really, why not go with the OAI for a smoother ride?\n\nIn short, leveraging an OAI is the most secure and efficient way to serve up private S3 content through CloudFront. It’s the superhero move that keeps your bucket off the public radar.",
+    "Origin Access Identities (OAIs) are purpose-built for securing S3 origins when using CloudFront. They enhance the security of your content delivery by ensuring that only CloudFront can access the files stored in your S3 bucket. This setup effectively prevents unauthorized access through direct S3 URLs, allowing you to maintain control over your content distribution while leveraging the performance benefits of CloudFront. By implementing OAIs, you can confidently provide a secure and efficient file-sharing experience for your users!",
+    "Option C could also be a viable choice; however, it lacks some crucial details that are necessary for a complete solution. On the other hand, option D is considered outdated and should not be suggested by a solutions architect. 🌟"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "D",
+      "explanation": "I want to restrict access to my Amazon Simple Storage Service (Amazon S3) bucket so that objects can be accessed only through my Amazon CloudFront distribution. How can I do that?\nCreate a CloudFront origin access identity (OAI)\nhttps://aws.amazon.com/premiumsupport/knowledge-center/cloudfront-access-to-amazon-s3/",
+      "upvotes": "38"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Thanks it convinces me",
+      "upvotes": "1"
+    },
+    {
+      "selectedAnswer": "D",
+      "explanation": "The key reasons are:\n\nAn OAI provides secure access between CloudFront and S3 without exposing the S3 bucket publicly.\nThe OAI is associated with the CloudFront distribution.\nThe S3 bucket policy limits access only to that OAI.\nThis ensures only CloudFront can access the objects, not direct S3 access.\nOption A is complex to manage individual bucket policies.\nOption B exposes credentials that aren't needed.\nOption C works but OAI is the preferred method.\nSo using an origin access identity provides the most secure way to serve private S3 content through CloudFront. The OAI prevents direct public access to the S3 bucket.",
+      "upvotes": "9"
+    },
+    {
+      "selectedAnswer": "D",
+      "explanation": "OAI's are designed specifically for S3 origins. It helps provide security for CloudFront.",
+      "upvotes": "1"
+    },
+    {
+      "selectedAnswer": "D",
+      "explanation": "C would also work but missing important details in the answer\nD is legacy and architect should not recommend it",
+      "upvotes": "4"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "D (100%)",
+      "votes": "68 votes."
+    },
+    {
+      "option": "C (25%)",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is D because creating an origin access identity (OAI) for the CloudFront distribution specifically allows CloudFront to retrieve content from the S3 bucket securely, while keeping the bucket itself private. By configuring the S3 bucket permissions to grant read access only to the OAI, the organization ensures that media files cannot be accessed directly via S3 URLs, thus maintaining security and privacy. \n\nOption A is incorrect because writing individual policies for each bucket can become complex and hard to manage, especially as the number of buckets grows. \n\nOption B is incorrect as it introduces unnecessary permissions and credentials through an IAM user, which are not required for CloudFront to access S3. \n\nOption C can achieve similar functionality but lacks the preferred method of using an OAI to secure the access, making it less efficient than option D.",
+  "video_url": "https://certificationation.com/videos/exam-application-that-will-use-an-exam-131.html",
+  "url": "https://certificationation.com/questions/exam-application-that-will-use-an-exam-131.html"
+}

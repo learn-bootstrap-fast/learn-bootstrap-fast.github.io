@@ -1,0 +1,81 @@
+---
+title: "As a Database Engineer, you are tasked with evaluatingExam"
+description: "Video for as a Database Engineer, you are tasked with evaluating the performance and cost tradeoffs of different database configurations for a large e-commerce"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are tasked with evaluating the performance and cost tradeoffs of different database configurations for a large e-commerce company. The company's application requires high write throughput, low read latency, and support for complex transactions. Which of the following database configurations would best meet these requirements while minimizing costs?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the Cloud Database Engineer for a fast growing fintech startup called LedgerLy. The payments platform must sustain very high write throughput, deliver very low read latency, and support complex transactions across multiple rows. Which Google Cloud database configuration should you choose to satisfy these needs while keeping costs controlled?",
+  "options": [
+    {
+      "text": "Utilize a sharded Cloud Firestore instance in Native mode",
+      "explanation": "Cloud Firestore in Native mode is a document database that scales by partitioning data and provides transactional capabilities within certain limits",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a single region Cloud Spanner instance",
+      "explanation": "A single region Cloud Spanner instance offers strong consistency and scalable throughput with full SQL transactions while costing less than multi region deployments",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Provision Cloud SQL for PostgreSQL with high availability and multiple read replicas",
+      "explanation": "Cloud SQL for PostgreSQL delivers managed relational features including ACID transactions and can offload reads using replicas",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use a multi region Cloud Bigtable instance with 4 clusters in different regions",
+      "explanation": "A multi region Cloud Bigtable configuration places clusters across regions to improve read locality and availability at increased cost",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Create a single region Cloud Spanner instance</b>.</p><p>A <b>Cloud Spanner</b> regional deployment provides horizontally scalable write throughput and very low read latency while preserving strong consistency and full ACID transactions across multiple rows and tables. Keeping the instance in one region reduces cross region latency and keeps costs controlled compared with multi region configurations while still offering high availability within the region.</p><p><i>Utilize a sharded Cloud Firestore instance in Native mode</i> is not suitable because <i>Cloud Firestore</i> is a document database that does not excel at complex relational workloads and its transactions are designed for small sets of documents and have per transaction limits that constrain complex multi row operations at very high throughput. Sharding does not change the transactional model or remove these limits.</p><p><i>Provision Cloud SQL for PostgreSQL with high availability and multiple read replicas</i> is not a fit because only the primary in <i>Cloud SQL</i> handles writes and replicas are read only. This means write throughput cannot scale horizontally and would become a bottleneck as demand grows even though <i>PostgreSQL</i> supports ACID transactions.</p><p><i>Use a multi region Cloud Bigtable instance with 4 clusters in different regions</i> is incorrect because <i>Cloud Bigtable</i> does not support multi row ACID transactions. Multi region replication adds cost and can increase write latency and replication between clusters is not strongly consistent which conflicts with the transactional requirement.</p>",
+  "batch_id": "289",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are tasked with evaluating the performance and cost tradeoffs of different database configurations for a large e-commerce company. The company's application requires high write throughput, low read latency, and support for complex transactions. Which of the following database configurations would best meet these requirements while minimizing costs?",
+  "originalOptions": "A. Deploy a single regional Cloud Spanner instance.<br/>B. Implement a zonal Cloud MemoryStore for Redis instance.<br/>C. Utilize a sharded Cloud Firestore instance in Native mode.<br/>D. Use a multi-regional Cloud Bigtable instance with 3 clusters in different regions.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "126",
+  "tip": "<p>Map requirements to capabilities quickly. If you see very high <i>writes</i> plus very low <i>read latency</i> plus multi row <i>ACID</i> transactions then think <i>Cloud Spanner</i>. If cost sensitivity is noted and global distribution is not required prefer a <i>regional</i> configuration.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/overview",
+    "https://cloud.google.com/spanner/docs/instances#regional_configurations",
+    "https://cloud.google.com/firestore/quotas",
+    "https://cloud.google.com/sql/docs/postgres/replication",
+    "https://cloud.google.com/bigtable/docs/transactional-updates"
+  ],
+  "url": "https://certificationation.com/questions/exam-tasked-with-evaluating-the-performance-exam-126.html",
+  "video_url": "https://certificationation.com/videos/exam-tasked-with-evaluating-the-performance-exam-126.html"
+}

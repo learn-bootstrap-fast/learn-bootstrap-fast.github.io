@@ -1,0 +1,89 @@
+---
+title: "A Database Engineer is working on a project thatExam"
+description: "Video for a Database Engineer is working on a project that involves a social media application with a large number of users and a requirement for low-latency,"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A Database Engineer is working on a project that involves a social media application with a large number of users and a requirement for low-latency, complex queries. The application is currently using Firestore, and the engineer is tasked with optimizing cost and performance. Which of the following strategies should the engineer implement to best achieve these objectives? (Choose two)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A data team at Aurora Chat needs to serve about 22 million daily users and keep p95 read latency under 110 ms for interactive features that require moderately complex lookups. The backend currently runs on Firestore and leadership has asked you to lower cost and improve end user performance without changing the product&apos;s behavior. Which actions should you take to meet these goals?",
+  "options": [
+    {
+      "text": "Migrate the workload to Cloud Spanner to gain automatic horizontal scaling",
+      "explanation": "Cloud Spanner provides horizontal scalability and strong consistency across regions for transactional workloads.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Introduce a caching layer with Cloud Memorystore to store hot keys and reduce read load",
+      "explanation": "Cloud Memorystore can keep frequently accessed items in memory so the application reads fewer documents from Firestore and returns results faster.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Replace the primary store with BigQuery to support complex querying needs",
+      "explanation": "BigQuery is a serverless data warehouse optimized for analytical SQL over very large datasets rather than low latency transactional access.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Refine Firestore queries and maintain targeted composite indexes to improve selectivity",
+      "explanation": "Well designed queries and appropriate single field and composite indexes align with Firestore query planning which reduces reads and billing overhead.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Shard user data across multiple Firestore projects to distribute traffic at the application layer",
+      "explanation": "Application level sharding spreads data across several backends which adds routing logic and operational complexity.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct options are <b>Introduce a caching layer with Cloud Memorystore to store hot keys and reduce read load</b> and <b>Refine Firestore queries and maintain targeted composite indexes to improve selectivity</b>.</p><p>Adding a cache in front of the database offloads the hottest reads and returns responses from memory which is much faster than fetching from the primary store. This reduces per request latency for interactive features and it also cuts Firestore read operations which lowers cost. With careful TTLs and invalidation for frequently accessed keys you can keep the behavior consistent while improving p95 latency and protecting the backend during traffic spikes.</p><p>Tuning queries and keeping the right indexes increases selectivity so that lookups hit precise index entries and avoid unnecessary document reads. Better selectivity and index only lookups reduce tail latency and lower the total reads billed. Focus on matching filters and ordering to available indexes and remove unneeded fields from projections so that the database does less work for each interactive request.</p><p><i>Migrate the workload to Cloud Spanner to gain automatic horizontal scaling</i> is not the best fit because it increases complexity and cost for a migration that is not required to meet the latency target. You can reach the performance goal with a cache and index tuning while keeping the existing data model and behavior.</p><p><i>Replace the primary store with BigQuery to support complex querying needs</i> is incorrect because BigQuery is optimized for analytical queries and throughput rather than low latency transactional reads. It does not provide the consistent sub hundred millisecond p95 that interactive features need and it would raise costs and change access patterns.</p><p><i>Shard user data across multiple Firestore projects to distribute traffic at the application layer</i> is unnecessary and risky. Firestore already scales within a project for very large read volumes and cross project sharding adds operational complexity and routing logic which can increase latency and change application behavior without a clear cost or performance benefit.</p>",
+  "batch_id": "56",
+  "answerCode": "2,4",
+  "type": "multi-select",
+  "originalQuery": "A Database Engineer is working on a project that involves a social media application with a large number of users and a requirement for low-latency, complex queries. The application is currently using Firestore, and the engineer is tasked with optimizing cost and performance. Which of the following strategies should the engineer implement to best achieve these objectives? (Choose two)",
+  "originalOptions": "A. Use Cloud Spanner instead of Firestore to take advantage of its horizontal scaling capabilities<br/>B. Optimize Firestore queries and indexes for efficient data retrieval<br/>C. Implement horizontal partitioning (sharding) to distribute data across multiple instances<br/>D. Implement a caching layer using Cloud Memorystore for frequently accessed data<br/>E. Use BigQuery instead of Firestore for complex query requirements",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "23",
+  "tip": "<p>When you see a requirement for <i>lower cost</i> and <i>faster reads</i> on an existing workload, first think of adding a cache for hot keys and tuning indexes before considering wholesale migrations or architectural sharding.</p>",
+  "references": [
+    "https://cloud.google.com/memorystore/docs/redis",
+    "https://cloud.google.com/memorystore/docs/redis/caching",
+    "https://cloud.google.com/firestore/docs/best-practices",
+    "https://cloud.google.com/firestore/docs/query-data/indexing",
+    "https://cloud.google.com/firestore/quotas",
+    "https://cloud.google.com/spanner/docs/overview",
+    "https://cloud.google.com/bigquery/docs/introduction"
+  ],
+  "url": "https://certificationation.com/questions/exam-a-project-that-involves-a-exam-023.html",
+  "video_url": "https://certificationation.com/videos/exam-a-project-that-involves-a-exam-023.html"
+}

@@ -1,0 +1,81 @@
+---
+title: "A Database Engineer is tasked with planning an upgradeExam"
+description: "Video for a Database Engineer is tasked with planning an upgrade of a Google Cloud-managed PostgreSQL database to the latest major version while ensuring"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A Database Engineer is tasked with planning an upgrade of a Google Cloud-managed PostgreSQL database to the latest major version while ensuring minimal downtime and data consistency. Which of the following strategies is the most suitable for achieving these objectives?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A cloud database engineer at mcnz.com needs to upgrade a production Cloud SQL for PostgreSQL instance to the newest major release while keeping application downtime under two minutes and maintaining data consistency. Which approach best meets these requirements?",
+  "options": [
+    {
+      "text": "Perform an in place major version upgrade of the existing Cloud SQL for PostgreSQL instance from the Google Cloud console",
+      "explanation": "An in place upgrade changes the major version on the same instance and requires a restart that interrupts connections.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Google Cloud Datastream to set up continuous replication from the current instance to a new Cloud SQL instance and then cut over to the target",
+      "explanation": "Datastream captures changes from a source and delivers them to supported destinations to keep data moving in near real time.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Provision a new Cloud SQL for PostgreSQL instance on the required major version then configure external server logical replication from the current instance wait for it to catch up promote the new instance and redirect clients",
+      "explanation": "External server replication lets a Cloud SQL instance subscribe to changes from another PostgreSQL server and be promoted for cutover.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Export the database with pg_dump then import it into a fresh Cloud SQL instance using pg_restore and point the application to the new instance",
+      "explanation": "Logical dump and restore migrates schema and data by exporting from the source and importing into the destination.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Provision a new Cloud SQL for PostgreSQL instance on the required major version then configure external server logical replication from the current instance wait for it to catch up promote the new instance and redirect clients</b>.</p><p>This method creates a parallel target on the newer major version and streams changes from the source using PostgreSQL logical replication. You can keep the application writing to the old instance while the target catches up. At cutover you quiesce writes, confirm replication has reached zero lag, promote the target by removing the subscription, and point clients to it. The only downtime is the brief cutover which can be kept well under two minutes while data consistency is preserved because you replicate all committed changes before redirecting traffic.</p><p>This approach is supported by Cloud SQL for PostgreSQL and uses native publications and subscriptions. You enable logical WAL on the source, publish the required tables, create a subscription on the target, and monitor replication lag. Because the target already runs the new major version, you avoid the risks and unpredictability of an in place upgrade and you have an easy rollback path by keeping the original instance intact until the switch is complete.</p><p><i>Perform an in place major version upgrade of the existing Cloud SQL for PostgreSQL instance from the Google Cloud console</i> is not suitable because the instance is taken offline during the upgrade and the duration depends on data size and vacuum state. This outage can easily exceed two minutes and you have limited control and rollback options during the process.</p><p><i>Use Google Cloud Datastream to set up continuous replication from the current instance to a new Cloud SQL instance and then cut over to the target</i> is not appropriate because Datastream is designed for change data capture into destinations such as BigQuery and Cloud Storage and does not provide a direct and supported path to Cloud SQL for PostgreSQL for this use case. It would require additional pipelines and orchestration which adds complexity and risk and does not align with the recommended method for Cloud SQL major version upgrades.</p><p><i>Export the database with pg_dump then import it into a fresh Cloud SQL instance using pg_restore and point the application to the new instance</i> results in prolonged downtime for nontrivial databases because both export and import are offline relative to writes. This process cannot reliably meet a two minute outage window and it does not provide continuous replication to keep the target in sync prior to cutover.</p>",
+  "batch_id": "297",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "A Database Engineer is tasked with planning an upgrade of a Google Cloud-managed PostgreSQL database to the latest major version while ensuring minimal downtime and data consistency. Which of the following strategies is the most suitable for achieving these objectives?",
+  "originalOptions": "A. Create a new Cloud SQL instance with the desired PostgreSQL version, use the Cloud SQL external replica promotion feature to promote the new instance, and then switch the application to use the new instance.<br/>B. Use Google Cloud Datastream to create a real-time replication pipeline between the old and new instances, and then switch the application to use the new instance.<br/>C. Use pg_dump and pg_restore to export the data, create a new Cloud SQL instance with the desired PostgreSQL version, import the data, and then switch the application to use the new instance.<br/>D. Perform an in-place upgrade of the Cloud SQL instance running PostgreSQL using the GCP Console.",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "10",
+  "tip": "<p>When you see requirements for <i>minimal downtime</i> and a <i>major version</i> jump on Cloud SQL for PostgreSQL, think about setting up a parallel target and using logical replication to catch up, then plan a short cutover window rather than choosing in place upgrades or dump and restore workflows.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/replication",
+    "https://cloud.google.com/architecture/strategies-for-migrating-postgresql-to-cloud-sql",
+    "https://www.postgresql.org/docs/current/logical-replication.html",
+    "https://cloud.google.com/datastream/docs/destinations",
+    "https://cloud.google.com/sql/docs/postgres/import-export/importing"
+  ],
+  "url": "https://certificationation.com/questions/exam-with-planning-an-upgrade-of-exam-010.html",
+  "video_url": "https://certificationation.com/videos/exam-with-planning-an-upgrade-of-exam-010.html"
+}

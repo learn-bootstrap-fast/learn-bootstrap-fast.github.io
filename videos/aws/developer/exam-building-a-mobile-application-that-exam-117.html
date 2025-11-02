@@ -1,0 +1,81 @@
+---
+title: "As a Database Engineer, you are building a mobileExam"
+description: "Video for as a Database Engineer, you are building a mobile application that allows end users to upload images. These images need to go through a series of"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are building a mobile application that allows end users to upload images. These images need to go through a series of processing steps, including converting to black and white, cropping, and other editing. Your mobile application has a feature that allows end users to notify their followers when they edit images. You want to create a scalable solution with minimal effort and cost. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the data platform engineer for the mcnz.com mobile app where users upload photos and the service must automatically apply a sequence of edits that include grayscale conversion, resizing, and cropping. When a user updates a photo the system should notify that user&apos;s followers instantly. You want a solution that scales on demand with minimal operational work and low cost. What should you choose?",
+  "options": [
+    {
+      "text": "Cloud Spanner and Cloud Run",
+      "explanation": "This pairing stores image and follower metadata in a globally distributed relational database while containerized services handle image transformations and webhooks.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Firebase with Cloud Functions for Firebase",
+      "explanation": "This uses Firebase Storage and Firestore triggers to run serverless functions that edit images and send follower notifications through Firebase services.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Cloud Storage with Pub/Sub and Cloud Run",
+      "explanation": "This connects object change notifications delivered to Pub/Sub with Cloud Run processors that transform images and call an external notification workflow.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Firebase with Compute Engine managed instance group",
+      "explanation": "This approach uses Firebase on the client while a managed instance group of VMs runs custom image workers and a notification service.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Firebase with Cloud Functions for Firebase</b>.</p><p><b>Cloud Functions for Firebase</b> can trigger on photo uploads to Firebase Storage and run image processing code that performs grayscale conversion, resizing, and cropping. It scales automatically with no servers to manage and you pay per invocation which keeps costs low for bursty workloads. You can also use Firebase Authentication and data stores to track follower relationships, and then have <b>Cloud Functions for Firebase</b> send push notifications through Firebase Cloud Messaging so followers are notified in near real time when a photo is updated.</p><p><i>Cloud Spanner and Cloud Run</i> is not a good fit because Spanner is a premium globally distributed relational database that is unnecessary for this use case and increases cost. While Cloud Run can handle image processing, this pair does not provide an integrated path for mobile user management and push notifications and it adds complexity that the question asks you to avoid.</p><p><i>Cloud Storage with Pub/Sub and Cloud Run</i> can be assembled to process images and it scales well, but it requires wiring multiple services together and building additional logic for follower management and push notifications. This increases operational work compared to the cohesive Firebase stack that already integrates storage triggers and messaging for mobile apps.</p><p><i>Firebase with Compute Engine managed instance group</i> introduces virtual machine management, autoscaling policies, and patching which raises operational overhead and cost. A serverless approach is preferred for on demand scaling and minimal operations in this scenario.</p>",
+  "batch_id": "112",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are building a mobile application that allows end users to upload images. These images need to go through a series of processing steps, including converting to black and white, cropping, and other editing. Your mobile application has a feature that allows end users to notify their followers when they edit images. You want to create a scalable solution with minimal effort and cost. What should you do?",
+  "originalOptions": "A. Use Firebase and Cloud Functions for Firebase.<br/>B. Use Firebase and Compute Engine.<br/>C. Use Bigtable and Cloud Functions for Firebase.<br/>D. Use Cloud Spanner and Cloud Run.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "117",
+  "tip": "<p>When you see mobile app needs with instant notifications and event driven processing, favor serverless and tightly integrated Firebase services. Look for <i>storage triggers</i> for media processing and <i>Cloud Messaging</i> for push delivery to minimize operations and cost.</p>",
+  "references": [
+    "https://firebase.google.com/docs/functions",
+    "https://firebase.google.com/docs/storage/extend-with-functions",
+    "https://firebase.google.com/docs/cloud-messaging",
+    "https://cloud.google.com/run/docs/overview",
+    "https://cloud.google.com/storage/docs/pubsub-notifications"
+  ],
+  "url": "https://certificationation.com/questions/exam-building-a-mobile-application-that-exam-117.html",
+  "video_url": "https://certificationation.com/videos/exam-building-a-mobile-application-that-exam-117.html"
+}

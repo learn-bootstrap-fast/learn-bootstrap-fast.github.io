@@ -1,0 +1,130 @@
+---
+title: "A solutions architect is designing a two-tieredExam"
+description: "Video for a solutions architect is designing a two-tiered architecture that includes a public subnet and a database subnet. The web servers in the public subnet"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A solutions architect is designing a two-tiered architecture that includes a public subnet and a database subnet. The web servers in the public subnet must be open to the internet on port 443. The Amazon RDS for MySQL DB instance in the database subnet must be accessible only to the web servers on port 3306. Which combination of steps should the solutions architect take to meet these requirements? (Choose two.)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729afb"
+  },
+  "quid": null,
+  "ordinal": "406",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS shared responsibility model",
+    " Amazon RDS",
+    " AWS Security",
+    " Amazon VPC",
+    " AWS IAM Identity Center (AWS Single Sign-On)"
+  ],
+  "slug": "rds-designing-two-tiered-architecture-aws",
+  "source": "ET",
+  "title": "AWS Solutions Architect Is Designing A Question",
+  "meta": "AWS Exam Question: A solutions architect designs a two-tiered architecture with public and database subnets, ensuring web servers access RDS securely. Answer: RDS, MySQL.",
+  "answer": "CD",
+  "query": "A solutions architect is establishing a multi-tier architecture with an internet-facing tier and a private database tier. The web servers in the internet-facing tier must accept incoming traffic on port 443. However, the Amazon RDS for MySQL DB instance located in the private database tier should be configured to only accept connections from the web servers on port 3306.\n\nWhat steps should the solutions architect implement to achieve these goals? (Choose two.)",
+  "originalQuery": "A solutions architect is designing a two-tiered architecture that includes a public subnet and a database subnet. The web servers in the public subnet must be open to the internet on port 443. The Amazon RDS for MySQL DB instance in the database subnet must be accessible only to the web servers on port 3306.\n\nWhich combination of steps should the solutions architect take to meet these requirements? (Choose two.)",
+  "options": [
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "originalOptions": [
+    "A. Create a network ACL for the public subnet. Add a rule to deny outbound traffic to 0.0.0.0/0 on port 3306.",
+    "B. Create a security group for the DB instance. Add a rule to allow traffic from the public subnet CIDR block on port 3306.",
+    "C. Create a security group for the web servers in the public subnet. Add a rule to allow traffic from 0.0.0.0/0 on port 443.",
+    "D. Create a security group for the DB instance. Add a rule to allow traffic from the web servers’ security group on port 3306.",
+    "E. Create a security group for the DB instance. Add a rule to deny all traffic except traffic from the web servers’ security group on port 3306."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "It's important to note that security groups (SGs) in AWS function solely on an allow-based model; they do not support deny actions. This means that when configuring security group rules, you can only specify which traffic is permitted. By default, all inbound traffic is denied unless explicitly allowed through an inbound rule. Therefore, to secure your architecture effectively, ensure that you define your security groups to allow only the necessary traffic, while keeping all other traffic blocked by default.",
+    "Hey folks! Just a friendly reminder that Security Groups (SG) in AWS are all about the \"yes\" vibes – they only allow traffic and don’t do the whole \"deny\" thing. So, if you're thinking of blocking something, you might want to rethink your strategy! 🚫✨ Instead, focus on crafting those allow rules like a master chef whipping up a delicious recipe! 🍳🍰 Happy architecting!",
+    "When you whip up a shiny new security group, you might find its default rules as friendly as a cat on a rainy day:\n\n- It blocks all incoming traffic—yes, you read that right, not a single byte is welcome.\n  \n- On the flip side, it lets every outgoing packet roam free without a care in the world.\n\nThis setup might seem a tad overprotective, but hey, better safe than sorry, right? Just remember, it’s up to you to loosen the reins for the traffic you actually want!",
+    "The critical point to focus on is that the database should be restricted to access exclusively from the web servers. \n\nI initially found Option B a bit misleading. If chosen, it would inadvertently allow all resources in the public subnet to access the database security group. \n\nIn contrast, Options C and D effectively adhere to the principle of least privilege, ensuring that access is tightly controlled and limited only to what's necessary. This approach enhances security while meeting the architectural requirements seamlessly!",
+    "To ensure that the web servers in the public subnet can happily greet visitors on port 443, while the Amazon RDS for MySQL database instance snugly resides in the database subnet, accessible only by those web servers on port 3306, here’s a cheerful plan! 🌟\n\n1. First, let’s whip up a security group specifically for our web servers in the public subnet. We’ll sprinkle in a delightful rule that allows traffic from anywhere on the internet (0.0.0.0/0) through port 443, welcoming all those happy connections!\n  \n2. Next, we’ll concoct another security group for our beloved DB instance. Here, we’ll add a rule that permits traffic exclusively from the web servers’ security group on port 3306, ensuring that our database remains cozy and secure, only interacting with its friendly web server pals.\n\nWith these steps, our web servers will be open to the world, while the database stays safely tucked away, accessible only to its designated companions! 😊"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "CD",
+      "explanation": "Remember guys that SG is not used for Deny action, just Allow",
+      "upvotes": "10"
+    },
+    {
+      "selectedAnswer": "CD",
+      "explanation": "Remember guys that SG is not used for Deny action, just Allow",
+      "upvotes": "5"
+    },
+    {
+      "selectedAnswer": "CD",
+      "explanation": "The following are the default rules for a security group that you create:\n\nAllows no inbound traffic\n\nAllows all outbound traffic",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "CD",
+      "explanation": "'must be accessible only to the web servers' is the key here.\nOption B almost threw me off, but with this then all that exists in the public subnet would be able to access the DB security group.\nTherefore C,D well applies the principle of least privilege.",
+      "upvotes": "5"
+    },
+    {
+      "selectedAnswer": "CD",
+      "explanation": "To meet the requirements of allowing access to the web servers in the public subnet on port 443 and the Amazon RDS for MySQL DB instance in the database subnet on port 3306, the best solution would be to create a security group for the web servers and another security group for the DB instance, and then define the appropriate inbound and outbound rules for each security group.\n\n1. Create a security group for the web servers in the public subnet. Add a rule to allow traffic from 0.0.0.0/0 on port 443.\n2. Create a security group for the DB instance. Add a rule to allow traffic from the web servers' security group on port 3306.\n\nThis will allow the web servers in the public subnet to receive traffic from the internet on port 443, and the Amazon RDS for MySQL DB instance in the database subnet to receive traffic only from the web servers on port 3306.",
+      "upvotes": "3"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "CD (100%)",
+      "votes": "34 votes."
+    },
+    {
+      "option": "C (25%)",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is 'CD'. Option D is correct because it creates a security group for the Amazon RDS instance that allows traffic only from the web servers' security group on port 3306. This adheres to the principle of least privilege and ensures that only the web servers can connect to the database. Option C is also correct because it allows the web servers to accept incoming traffic on port 443 from any source, which is needed for them to be publicly accessible over HTTPS. \n\nOption A is incorrect because creating a network ACL to deny outbound traffic to 0.0.0.0/0 on port 3306 doesn't help since the goal is to allow traffic from the web servers to the RDS instance, not to deny it. \n\nOption B (allowing traffic from the public subnet CIDR block on port 3306) is overly permissive; if this rule is applied, all instances in the public subnet could potentially access the RDS instance, which violates the requirement to restrict access to only the web servers. \n\nOption E is incorrect because security groups in AWS do not support deny rules. They can only allow specific types of traffic, so implementing a deny rule directly in the security group won't work.",
+  "video_url": "https://certificationation.com/videos/exam-two-tiered-architecture-that-includes-a-exam-405.html",
+  "url": "https://certificationation.com/questions/exam-two-tiered-architecture-that-includes-a-exam-405.html"
+}

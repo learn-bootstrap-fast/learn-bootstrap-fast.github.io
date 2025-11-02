@@ -1,0 +1,74 @@
+---
+title: "You have created an Elastic Load Balancer withExam"
+description: "Video for you have created an Elastic Load Balancer with Duration-Based sticky sessions enabled in front of your six EC2 web application instances in US-West-2"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have created an Elastic Load Balancer with Duration-Based sticky sessions enabled in front of your six EC2 web application instances in US-West-2 For High Availability, there are three web application instances in Availability Zone 1 and three web application instances in Availability Zone 2 To load test, you set up a software-based load tester in Availability Zone 2 to send traffic to the Elastic Load Balancer, as well as letting several hundred users browse to the ELB's hostname."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d5bef501ee1c8ade9838"
+  },
+  "quid": "0",
+  "ordinal": "239",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "AWS global infrastructure",
+    " Amazon EC2",
+    " Network services",
+    " AWS Elastic Beanstalk",
+    " AWS Lambda"
+  ],
+  "slug": "elbs-load-balancer-sticky-sessions-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question239",
+  "title": "AWS You Have Created An Elastic Load Balancer Question",
+  "meta": "AWS Exam Question: You have created an Elastic Load Balancer with Duration-Based sticky sessions for six EC2 instances in US-West-2. Answer includes ELB and EC2.",
+  "answer": "B C",
+  "query": "You have deployed a Network Load Balancer with Duration-Based sticky sessions enabled to distribute traffic among eight EC2 web servers located in two Availability Zones in the eu-central-1 region. Four servers reside in each AZ. To evaluate performance, you run a software-based load tester on an instance inside Availability Zone 1, while real users also access the NLB via its DNS name. How can you ensure your load test accurately represents traffic distribution across all web servers?",
+  "originalQuery": "You have created an Elastic Load Balancer with Duration-Based sticky sessions enabled in front of your six EC2 web application instances in US-West-2\nFor High Availability, there are three web application instances in Availability Zone 1 and three web application instances in Availability Zone 2\nTo load test, you set up a software-based load tester in Availability Zone 2 to send traffic to the Elastic Load Balancer, as well as letting several hundred users browse to the ELB's hostname.",
+  "options": [
+    "A. Run a software-based load tester from the eu-west-2 region instead.",
+    "B. Force the software-based load tester to re-resolve DNS before every request.",
+    "C. Utilize a third-party load-testing tool that generates traffic from multiple global locations.",
+    "D. Change to application-managed sticky sessions."
+  ],
+  "originalOptions": [
+    "A. Create a software-based load tester in US-East-1 and test from there.",
+    "B. Force the software-based load tester to re-resolve DNS before every request.",
+    "C. Use a third party load-testing service to send requests from globally distributed clients.",
+    "D. Switch to application-controlled sticky sessions."
+  ],
+  "image": "",
+  "primaryObjective": "2: Design for New Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Answer - B and C.\nWhen you create an elastic load balancer, a default level of capacity is allocated and configured.\nAs Elastic Load Balancing sees changes in the traffic profile, it will scale up or down.\nThe time required for Elastic Load Balancing to scale can range from 1 to 7 minutes, depending on the changes in the traffic profile.\nWhen Elastic Load Balancing scales, it updates the DNS record with the new list of IP addresses.\nTo ensure that clients are taking advantage of the increased capacity, Elastic Load Balancing uses a TTL setting on the DNS record of 60 seconds.\nIt is critical that you factor this changing DNS record into your tests.\nIf you do not ensure that DNS is re-resolved or use multiple test clients to simulate increased load, the test may continue to hit a single IP address when Elastic Load Balancing has actually allocated many more IP addresses.\nBecause your end-users will not all be resolving to that single IP address, your test will not be a realistic sampling of real-world behavior.\nOption A is incorrect because creating a load tester in US-East-1 is inconsequential since it is in a different region.\nOption B is CORRECT because if you do not ensure that DNS is re-resolved, the test may continue to hit the single IP address.\nOption C is CORRECT because if the requests come from globally distributed users, the DNS will not be resolved to a single IP address.\nThe traffic would be distributed evenly across multiple instances.\nOption D is incorrect because the traffic will be routed to the same back-end instances as the users continue to access your application.\nThe load will not be evenly distributed across the AZs.\nPlease refer to the below article for more information.\nhttp://aws.amazon.com/articles/1636185810492479\nThe scenario described above involves an Elastic Load Balancer with Duration-Based sticky sessions enabled in front of six EC2 web application instances spread across two Availability Zones. A software-based load tester is used to simulate traffic to the Elastic Load Balancer and several hundred users browse to the ELB's hostname.\nThe objective of load testing is to identify potential bottlenecks in the application or infrastructure under test, determine the maximum capacity that can be handled by the system, and measure the response time and performance metrics under different traffic scenarios.\nOption A suggests creating a software-based load tester in US-East-1 and testing from there. However, this option does not address the high availability aspect of the architecture and may not accurately reflect the real-world scenario where users may be accessing the application from different locations.\nOption B suggests forcing the software-based load tester to re-resolve DNS before every request. This option can help distribute the load across multiple EC2 instances behind the load balancer, but it does not address the need for global testing and may not accurately reflect the performance in real-world scenarios.\nOption C suggests using a third-party load-testing service to send requests from globally distributed clients. This option can help simulate real-world traffic patterns, identify regional performance issues, and provide detailed performance metrics. However, this option may incur additional costs and may require additional setup and configuration.\nOption D suggests switching to application-controlled sticky sessions. This option can help distribute the load across multiple EC2 instances based on the application's logic, but it may not be suitable for all applications and may require additional development effort.\nIn summary, Option C is the most suitable answer as it can provide a more realistic load testing scenario, identify potential performance issues, and provide detailed performance metrics from globally distributed clients. However, depending on the specific requirements and constraints of the project, other options may also be considered.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-balancer-with-duration-based-sticky-sessions-exam-151.html",
+  "url": "https://certificationation.com/questions/exam-balancer-with-duration-based-sticky-sessions-exam-151.html"
+}

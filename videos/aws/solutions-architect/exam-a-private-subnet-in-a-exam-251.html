@@ -1,0 +1,128 @@
+---
+title: "An Amazon EC2 instance is located in a private subnet inExam"
+description: "Video for an Amazon EC2 instance is located in a private subnet in a new VPC. This subnet does not have outbound internet access, but the EC2 instance needs the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "An Amazon EC2 instance is located in a private subnet in a new VPC. This subnet does not have outbound internet access, but the EC2 instance needs the ability to download monthly security updates from an outside vendor. What should a solutions architect do to meet these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729a60"
+  },
+  "quid": null,
+  "ordinal": "251",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS NAT Gateway",
+    " Amazon VPC",
+    " Amazon EC2",
+    " AWS Solutions Architects",
+    " AWS Well-Architected Framework"
+  ],
+  "slug": "ec2-private-subnet-monthly-updates-aws",
+  "source": "ET",
+  "title": "AWS An Amazon EC2 Instance Is Located In A Private Subnet Question",
+  "meta": "AWS Exam Question: An Amazon EC2 instance in a private subnet needs to download updates without internet access. What should a solutions architect do to meet these requirements? Answer: VPC, EC2.",
+  "answer": "B",
+  "query": "A new VPC has a private subnet containing an EC2 instance that currently cannot reach the internet. The instance requires internet access to obtain regular software updates from a third-party source.\n\nWhat solution should a solutions architect implement to allow this access?",
+  "originalQuery": "An Amazon EC2 instance is located in a private subnet in a new VPC. This subnet does not have outbound internet access, but the EC2 instance needs the ability to download monthly security updates from an outside vendor.\n\nWhat should a solutions architect do to meet these requirements?",
+  "options": [
+    "",
+    "",
+    "",
+    ""
+  ],
+  "originalOptions": [
+    "A. Create an internet gateway, and attach it to the VPC. Configure the private subnet route table to use the internet gateway as the default route.",
+    "B. Create a NAT gateway, and place it in a public subnet. Configure the private subnet route table to use the NAT gateway as the default route.",
+    "C. Create a NAT instance, and place it in the same subnet where the EC2 instance is located. Configure the private subnet route table to use the NAT instance as the default route.",
+    "D. Create an internet gateway, and attach it to the VPC. Create a NAT instance, and place it in the same subnet where the EC2 instance is located. Configure the private subnet route table to use the internet gateway as the default route."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Establish a NAT gateway within a public subnet and configure the route table of the private subnet to designate the NAT gateway as the default route. \n\nThis configuration enables the EC2 instance in the private subnet to access the internet for downloading monthly security updates while maintaining its isolation from direct internet exposure. By deploying the NAT gateway in a public subnet, instances in the private subnet can initiate outbound traffic to the internet through the NAT gateway. Configuring the route table of the private subnet to route all outbound traffic through the NAT gateway ensures that the EC2 instance can securely access external resources, thereby preserving the security posture of the private subnet. \n\nAdditionally, it is essential to ensure that the NAT gateway is properly associated with an Elastic IP address to facilitate internet connectivity. This setup not only meets the requirement for external access but also adheres to AWS best practices for securing resources within a VPC.",
+    "A NAT gateway is like that friend who can get you into the coolest parties but needs a ride to get there! 🚗✨ It can’t provide internet access all by itself; it also requires an internet gateway to make the connection. So, while it can facilitate traffic from your private subnet to the outside world, it’s just waiting for that internet gateway to join the fun! 🎉 So, if the options don’t mention this dynamic duo, they might just be missing the party altogether! 🥳",
+    "Option B suggests tossing the EC2 instance into a public subnet. Sure, why not? Just remember, a public subnet requires an Internet Gateway to function properly. So, when you make that leap into the public realm, don’t forget to set up the gateway, or else you’ll be left with an instance that’s all dressed up with nowhere to go. Just a little reminder that getting that outbound internet access sorted is key to snagging those monthly security updates from the vendor. It's all about ensuring your instance can chat with the outside world while still keeping your VPC cozy and secure.",
+    "To enable an EC2 instance in a private subnet to download monthly security updates from an external vendor, a solutions architect can implement a highly effective strategy. One excellent approach is to utilize AWS PrivateLink, which allows private connectivity between VPCs and AWS services without exposing your traffic to the public internet. \n\nThis approach not only maintains the security of your private subnet but also simplifies the network architecture. By leveraging PrivateLink, the EC2 instance can securely access the necessary updates while remaining isolated from the internet, ensuring a robust security posture. Another option is to set up a NAT gateway within a public subnet of the same VPC, which can facilitate outgoing internet traffic for resources in private subnets. This solution provides a seamless way to manage updates while maintaining the integrity of your network's private resources.\n\nImplementing either of these solutions will ensure the EC2 instance can efficiently and securely download essential updates, keeping your systems up to date and fortified against potential vulnerabilities.",
+    "To ensure that your EC2 instance in a private subnet can access those delightful monthly security updates from an external vendor, you can set up a NAT gateway! 🌈 This will allow the instance to reach the internet while keeping it safe and snug in its private environment. The NAT gateway will handle the outbound traffic, letting your instance fetch updates without exposing it directly to the internet. Just make sure the subnet has a route to the NAT gateway, and voilà! Your instance will be happily downloading those updates in no time! 🎉"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "B",
+      "explanation": "B. Create a NAT gateway, and place it in a public subnet. Configure the private subnet route table to use the NAT gateway as the default route.\n\nThis approach will allow the EC2 instance to access the internet and download the monthly security updates while still being located in a private subnet. By creating a NAT gateway and placing it in a public subnet, it will allow the instances in the private subnet to access the internet through the NAT gateway. And then, configure the private subnet route table to use the NAT gateway as the default route. This will ensure that all outbound traffic is directed through the NAT gateway, allowing the EC2 instance to access the internet while still maintaining the security of the private subnet.",
+      "upvotes": "9"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "NAT gateway does not allow internet on it's own. It needs internet gateway too. None of the answers make sense",
+      "upvotes": "10"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "B says \"place it in a public subnet\", a public subnet needs an Internet Gateway so that is included in the answer.",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "refer below link\nhttps://aws.amazon.com/about-aws/whats-new/2021/06/aws-removes-nat-gateways-dependence-on-internet-gateway-for-private-communications/",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "lol, thats for 'private connections'",
+      "upvotes": "1"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "B (94%)",
+      "votes": "29 votes."
+    },
+    {
+      "option": "3%",
+      "votes": "3%"
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is B because creating a NAT gateway in a public subnet enables the instance in the private subnet to access the internet while keeping the instance secure from direct internet traffic. The NAT gateway acts as an intermediary for outbound traffic from the private subnet, allowing software updates to be downloaded. Option A is incorrect because an internet gateway only allows resources in a public subnet to access the internet directly. Option C is incorrect because placing a NAT instance in the same private subnet would not allow the instance to reach the internet directly, without the support of a public subnet. Option D is incorrect for similar reasons; an internet gateway alone will not allow private subnets to access the internet. Using a NAT gateway in a public subnet is the proper solution to meet the requirement.",
+  "video_url": "https://certificationation.com/videos/exam-a-private-subnet-in-a-exam-251.html",
+  "url": "https://certificationation.com/questions/exam-a-private-subnet-in-a-exam-251.html"
+}

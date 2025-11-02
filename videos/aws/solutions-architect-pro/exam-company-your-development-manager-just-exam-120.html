@@ -1,0 +1,74 @@
+---
+title: "You are an AWS consultant in an IT company. YourExam"
+description: "Video for you are an AWS consultant in an IT company. Your development manager just assigned you a task to evaluate if the EBS volume types of the EC2 instances"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are an AWS consultant in an IT company. Your development manager just assigned you a task to evaluate if the EBS volume types of the EC2 instances were properly configured in all regions. The major concern that you have found is that almost all EBS volumes are using the Provisioned IOPS SSD (io1) volume type which costs the company a lot. You plan to change the volume type from io1 to other types. However, for which scenarios should you still use the EBS volume type of io1?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d5adf501ee1c8ade980e"
+  },
+  "quid": "0",
+  "ordinal": "197",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "Amazon Elastic Block Store (Amazon EBS)",
+    " Amazon EC2",
+    " AWS Cost and Usage Report",
+    " AWS Cost Explorer",
+    " AWS Compute Optimizer"
+  ],
+  "slug": "ebs-evaluate-volume-types-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question197",
+  "title": "AWS You Are An AWS Consultant Question",
+  "meta": "AWS Exam Question: Evaluate EBS volume types of EC2 instances for proper configuration. Identify scenarios for using io1 volumes. Find the answer with insights on EBS.",
+  "answer": "Correct AnswerB",
+  "query": "As an AWS consultant for a software development firm, you have been tasked with evaluating all EC2 instance EBS volume types deployed globally. Most volumes currently use io1 Provisioned IOPS SSD, which is costly. Before recommending any changes, in which use case should the io1 volume type definitely remain?",
+  "originalQuery": "You are an AWS consultant in an IT company.\nYour development manager just assigned you a task to evaluate if the EBS volume types of the EC2 instances were properly configured in all regions.\nThe major concern that you have found is that almost all EBS volumes are using the Provisioned IOPS SSD (io1) volume type which costs the company a lot.\nYou plan to change the volume type from io1 to other types.\nHowever, for which scenarios should you still use the EBS volume type of io1?",
+  "options": [
+    "A. A boot disk for a development virtual machine used regularly by the QA team.",
+    "B. A Cassandra database that needs extremely low latency and high performance when being processed.",
+    "C. A data analytics server storing vast amounts of customer information frequently scanned by monitoring apps.",
+    "D. Old, rarely accessed data archives preserving historical customer activity logs for compliance."
+  ],
+  "originalOptions": [
+    "A. A boot volume of a test server that is frequently used by the Quality Assurance team.",
+    "B. A Cassandra database that needs extremely low latency and high performance when being processed.",
+    "C. A data warehouse server that contains a huge amount of customer data. The data needs to be accessed and analyzed by a monitor process frequently.",
+    "D. Some large and legacy cold data that is stored to trace customers’ activities in the past. The database requires fewer scans per day."
+  ],
+  "image": "",
+  "primaryObjective": "3: Continuous Improvement for Existing Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Correct Answer:B.\nRefer to https://aws.amazon.com/ebs/features/ for the use cases of different EBS volume types:\nVolume Type.\nEBS Provisioned IOPS SSD (io1)\nEBS General Purpose SSD (gp2)*\nThroughput Optimized HDD (st1)\nCold HDD (sc1)\nShort Description.\nHighest performance SSD volume designed for latency-sensitive transactional workloads.\nGeneral Purpose SSD volume that balances price performance for a wide variety of transactional workloads.\nLow-cost HDD volume designed for frequently accessed, throughput intensive workloads.\nLowest cost HDD volume designed for less frequently accessed workloads.\nUse Cases.\nI/O-intensive NoSQL and relational databases.\nBoot volumes, low-latency interactive apps, dev &amp; test.\nBig data, data warehouses, log processing.\nColder data requiring fewer scans per day.\nOption A is incorrect: Because according to the above introductions, this should be a gp2 for a boot volume.\nOption B is CORRECT: Because this is ideal for io1 as it needs the highest performance and lowest latency.\nOption C is incorrect: Because this should be an st1, it could lower the cost and meet the performance need.\nOption D is incorrect: Because sc1 is suitable for this as it is not frequently used.\nMoreover, because it contains a large amount of data, using io1 is not cost-efficient.\nSure, I'd be happy to provide a detailed explanation!\nFirstly, let's start with understanding what the EBS volume type of io1 is and what makes it different from other EBS volume types.\nProvisioned IOPS SSD (io1) is a type of Amazon Elastic Block Store (EBS) volume that is designed for applications that require high-performance storage with low-latency and consistent I/O performance. It offers the highest performance, lowest latency, and most consistent I/O performance among all EBS volume types.\nNow, let's analyze each of the given scenarios to determine whether the io1 volume type is still appropriate or if another volume type would be more suitable.\nA. A boot volume of a test server that is frequently used by the Quality Assurance team.\nThe boot volume of a test server is typically not I/O-intensive, and the workload is generally read-heavy with infrequent writes. For such workloads, the General Purpose SSD (gp2) volume type is usually sufficient, as it provides a good balance of price and performance. Therefore, io1 volume type is not needed in this scenario.\nB. A Cassandra database that needs extremely low latency and high performance when being processed.\nCassandra is a distributed NoSQL database that requires high-performance storage to ensure low latency and high throughput. The io1 volume type is a suitable option for such workloads, as it can provide the required IOPS and low latency. However, other options such as the Amazon Elastic File System (EFS) or Amazon S3 can also be considered for specific use cases.\nC. A data warehouse server that contains a huge amount of customer data. The data needs to be accessed and analyzed by a monitor process frequently.\nData warehouses require high throughput and large capacity to store and process data. The throughput is generally measured in MB/s rather than IOPS, so the Throughput Optimized HDD (st1) or Cold HDD (sc1) volume types are typically more cost-effective options. The io1 volume type is not recommended for such workloads since it's mainly designed for IOPS-intensive workloads.\nD. Some large and legacy cold data that is stored to trace customers' activities in the past. The database requires fewer scans per day.\nFor such workloads, where the data is infrequently accessed, and the performance requirements are low, the Cold HDD (sc1) volume type is the most cost-effective option. The io1 volume type is not recommended for this scenario, as it's overkill for such a workload.\nIn conclusion, the io1 volume type is suitable for workloads that require high-performance storage with low-latency and consistent I/O performance, such as databases and other I/O-intensive applications. However, for workloads with lower I/O requirements or higher throughput demands, other volume types such as gp2, st1, or sc1 can be more cost-effective.",
+  "chatGptExplanation": "The primary AWS product focus of this question is Amazon Elastic Block Store (EBS).\n\nThe correct answer is option B: \"A Cassandra database that needs extremely low latency and high performance when being processed.\" This is because the io1 EBS volume type is specifically designed to provide high and consistent IOPS (Input/Output Operations Per Second), along with very low latency, making it ideal for I/O-intensive workloads such as NoSQL databases like Cassandra. io1 volumes allow customers to provision a specific number of IOPS to meet demanding, transactional database workloads requiring consistent performance.\n\nExplanation of why other options are incorrect:\n\nOption A (boot volume of a test server frequently used by QA): Boot volumes usually have modest I/O requirements and are generally well served by General Purpose SSD (gp2) volumes which balance cost and performance adequately. Using io1 here leads to unnecessarily high costs without significant performance benefit.\n\nOption C (data warehouse server with large amounts of customer data, frequently accessed by monitoring processes): Data warehouses typically require high throughput rather than low-latency IOPS. For such throughput-intensive workloads, Throughput Optimized HDD (st1) volumes are more cost-effective and appropriate than io1.\n\nOption D (large legacy cold data accessed infrequently): This scenario suits Cold HDD (sc1) volumes, which are designed for infrequently accessed data and offer the lowest cost among EBS volume types. Using io1 here would be prohibitively expensive and offer no performance advantage given the low access frequency.\n\nIn summary, the io1 volume type should be used only for workloads that require consistent, low-latency, and high IOPS performance like transactional databases, whereas other volume types offer better cost-performance trade-offs for less demanding workloads.",
+  "video_url": "https://certificationation.com/videos/exam-company-your-development-manager-just-exam-120.html",
+  "url": "https://certificationation.com/questions/exam-company-your-development-manager-just-exam-120.html"
+}

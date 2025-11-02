@@ -1,0 +1,128 @@
+---
+title: "A company deploys an application on five Amazon EC2Exam"
+description: "Video for a company deploys an application on five Amazon EC2 instances. An Application Load Balancer (ALB) distributes traffic to the instances by using a"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company deploys an application on five Amazon EC2 instances. An Application Load Balancer (ALB) distributes traffic to the instances by using a target group. The average CPU usage on each of the instances is below 10% most of the time, with occasional surges to 65%. A solutions architect needs to implement a solution to automate the scalability of the application. The solution must optimize the cost of the architecture and must ensure that the application has enough CPU resources when surges occur. Which solution will meet these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729a8e"
+  },
+  "quid": null,
+  "ordinal": "297",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS Lambda",
+    " Amazon CloudWatch",
+    " EC2 Auto Scaling group",
+    " Application Load Balancer (ALB)",
+    " Amazon SNS"
+  ],
+  "slug": "ec2-deploys-application-scaling-aws",
+  "source": "ET",
+  "title": "AWS A Company Deploys An Application Question",
+  "meta": "AWS Exam Question: A company uses five EC2 instances with an ALB for traffic distribution. How can a solutions architect automate scalability? Answer: Auto Scaling.",
+  "answer": "B",
+  "query": "A business has deployed a web application across six Amazon EC2 instances. These instances receive traffic from an Application Load Balancer (ALB) targeting a specific group. The instances generally experience CPU usage under 15% but may occasionally spike to 70% during peak traffic.\n\nA solutions architect is tasked with creating an automated scalability solution to optimize costs while ensuring adequate CPU resources are available during high-demand periods.\n\nWhat is the best approach to achieve these requirements?",
+  "originalQuery": "A company deploys an application on five Amazon EC2 instances. An Application Load Balancer (ALB) distributes traffic to the instances by using a target group. The average CPU usage on each of the instances is below 10% most of the time, with occasional surges to 65%.\n\nA solutions architect needs to implement a solution to automate the scalability of the application. The solution must optimize the cost of the architecture and must ensure that the application has enough CPU resources when surges occur.\n\nWhich solution will meet these requirements?",
+  "options": [
+    "A. Create an Amazon CloudWatch alarm that enters the ALARM state when the CPUUtilization metric is less than 20%. Create an AWS Lambda function that the CloudWatch alarm invokes to terminate one of the EC2 instances in the ALB target group.",
+    "B. Create an EC2 Auto Scaling group. Select the existing ALB as the load balancer and the existing target group as the target group. Set a target tracking scaling policy that is based on the ASGAverageCPUUtilization metric. Set the minimum instances to 2, the desired capacity to 3, the maximum instances to 6, and the target value to 50%. Add the EC2 instances to the Auto Scaling group.",
+    "C. Create an EC2 Auto Scaling group. Select the existing ALB as the load balancer and the existing target group as the target group. Establish minimum instances as 2, desired capacity as 3, and maximum instances as 6. Include the EC2 instances in the Auto Scaling group.",
+    "D. Create two Amazon CloudWatch alarms. Configure the first CloudWatch alarm to enter the ALARM state when the average CPUUtilization metric is below 20%. Configure the second CloudWatch alarm to enter the ALARM state when the average CPUUtilization metric crosses above 50%. Configure the alarms to use Amazon Simple Notification Service (Amazon SNS) to send an email notification. After receiving the notification, log in to adjust the number of running EC2 instances."
+  ],
+  "originalOptions": [
+    "A. Create an Amazon CloudWatch alarm that enters the ALARM state when the CPUUtilization metric is less than 20%. Create an AWS Lambda function that the CloudWatch alarm invokes to terminate one of the EC2 instances in the ALB target group.",
+    "B. Create an EC2 Auto Scaling group. Select the existing ALB as the load balancer and the existing target group as the target group. Set a target tracking scaling policy that is based on the ASGAverageCPUUtilization metric. Set the minimum instances to 2, the desired capacity to 3, the maximum instances to 6, and the target value to 50%. Add the EC2 instances to the Auto Scaling group.",
+    "C. Create an EC2 Auto Scaling group. Select the existing ALB as the load balancer and the existing target group as the target group. Set the minimum instances to 2, the desired capacity to 3, and the maximum instances to 6. Add the EC2 instances to the Auto Scaling group.",
+    "D. Create two Amazon CloudWatch alarms. Configure the first CloudWatch alarm to enter the ALARM state when the average CPUUtilization metric is below 20%. Configure the second CloudWatch alarm to enter the ALARM state when the average CPUUtilization matric is above 50%. Configure the alarms to publish to an Amazon Simple Notification Service (Amazon SNS) topic to send an email message. After receiving the message, log in to decrease or increase the number of EC2 instances that are running."
+  ],
+  "image": null,
+  "primaryObjective": "4: Design Cost-Optimized Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Implementing an Auto Scaling policy is a strategic approach to manage the capacity of your application effectively. By establishing an EC2 Auto Scaling group, you can dynamically adjust the number of EC2 instances based on real-time demand, ensuring that resources are optimized while maintaining performance during peak usage periods.\n\nConfigure the Auto Scaling group to utilize the existing Application Load Balancer (ALB) and target group, allowing for seamless integration into your architecture. Set parameters for minimum, desired, and maximum instances to ensure that there are always enough resources available to handle traffic fluctuations. For example, setting a minimum of 2 instances ensures availability, while a maximum of 6 instances allows for scaling during surges without incurring unnecessary costs.\n\nIncorporate a target tracking scaling policy based on the ASGAverageCPUUtilization metric to automatically adjust the number of instances. By establishing a target value (e.g., 50%), the Auto Scaling group will automatically increase or decrease the instance count based on CPU utilization, ensuring that your application remains responsive and cost-efficient during varying load conditions. This approach not only enhances application performance but also optimizes resource utilization and cost management in your AWS environment.",
+    "I chose option B, but I'm not entirely convinced I'm hitting the mark here. 🤔 The application is running on five instances to start. Now, let's break down this whole 2/3/6 Auto Scaling Group (ASG) setup. Since the CPU utilization is hanging out around 10%, it makes sense to set the minimum at 2, right? We want to keep things cost-effective while still having enough resources on standby for those occasional spikes. 🚀 \n\nHonestly, I'm feeling a bit iffy about nailing this ASG question. It's like trying to balance a plate of spaghetti on a unicycle—challenging! 🍝 But hey, at least I'm giving it my best shot!",
+    "The most suitable choice here is B.\n\nThis approach effectively addresses the requirements by:\n\n- Automating the application's scalability with EC2 Auto Scaling, so you can sit back and relax while the system does the heavy lifting.\n- Keeping costs in check by scaling up the number of EC2 instances only when necessary, rather than letting resources sit idle like a forgotten gym membership.\n- Ensuring that there are sufficient CPU resources during those pesky surges by establishing a target value of 50% for the scaling policy. This way, the application can handle traffic spikes without breaking a sweat. \n\nIn short, it's a savvy solution that balances performance and cost, allowing you to focus on more pressing matters—like wondering if your coffee is strong enough to power through the day.",
+    "Incorrect Choices: Options A, C, and D do not provide the optimal solutions.\n\nOption A proposes setting up a CloudWatch alarm to terminate an EC2 instance when CPU utilization falls below 20%. However, this strategy fails to guarantee that adequate CPU resources will be available during traffic surges, as it only focuses on reducing capacity during low usage periods, which does not align with the scalability requirements.\n\nOption C suggests establishing an Auto Scaling group but lacks defined scaling policies or configurations. This approach does not adequately respond to variations in CPU utilization, rendering it inadequate for the needs of the application.\n\nOption D recommends utilizing CloudWatch alarms to trigger notifications through Amazon SNS, prompting manual adjustments to instance counts based on received alerts. This method is not automated and entails manual intervention, which undermines cost optimization and does not fulfill the requirement for seamless scalability.\n\nIn this context, Option B stands out as the most effective solution.",
+    "Explanation:  \nAh, the wonders of EC2 Auto Scaling! 🌟 Option B embraces this fantastic feature, which automatically fine-tunes the number of instances in response to defined metrics. By establishing a target tracking scaling policy that focuses on average CPU utilization, the Auto Scaling group can seamlessly adjust the instance count to keep CPU resources at just the right level, even during those occasional surges. Setting the minimum to 2 guarantees a solid baseline capacity, ensuring that at least two instances are always up and running. The desired capacity of 3 ensures that three instances are active, providing extra support during typical traffic. Meanwhile, the upper limit of 6 keeps costs in check, preventing any unexpected surprises! It’s a delightful dance of efficiency and resourcefulness! 🎉"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "B",
+      "explanation": "Just create an auto scaling policy",
+      "upvotes": "16"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "I picked B.. I am not 100% sure..The application is deployed in 5 instances initially. What is the logic behind 2/3/6 ASG. Because utilization is 10%, we can set min 2? I know for sure I am not going to get this ASG question correct in the exam.",
+      "upvotes": "4"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "The correct answer is B.\n\nThis solution will meet the requirements because it will:\n\nAutomate the scalability of the application by using EC2 Auto Scaling.\nOptimize the cost of the architecture by only scaling the number of EC2 instances up when needed.\nEnsure that the application has enough CPU resources when surges occur by setting the target value of the target tracking scaling policy to 50%.",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Wrong answers: Options A, C, and D are not the most appropriate solutions:\n\nOption A suggests creating a CloudWatch alarm to terminate an EC2 instance when CPU utilization is less than 20%. However, this approach does not ensure that the application will have enough CPU resources during surges, as it only terminates instances when CPU utilization is low, which may not meet the requirements.\nOption C suggests creating an Auto Scaling group without any specific scaling policies or configurations. This approach does not address the need for automated scaling based on CPU utilization, making it insufficient for the given requirements.\nOption D suggests using CloudWatch alarms to send notifications via Amazon SNS and manually adjusting the number of instances based on the received messages. This approach lacks automation and requires manual intervention, which does not optimize cost or meet the requirement of automated scalability.\nTherefore, Option B is the most appropriate solution in this case.",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "Explanation:\nOption B leverages EC2 Auto Scaling, which is designed to automatically adjust the number of instances based on specified metrics. By setting a target tracking scaling policy based on average CPU utilization, the Auto Scaling group can dynamically scale the number of instances to maintain the desired level of CPU resources. The minimum instances of 2 ensure a minimum baseline capacity, while the desired capacity of 3 ensures at least three instances are running even during normal traffic. The maximum instances of 6 cap the upper limit to control costs.",
+      "upvotes": "4"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "B (94%)",
+      "votes": "33 votes."
+    },
+    {
+      "option": "6%",
+      "votes": "2 votes."
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "{\"correctAnswerExplanation\":\"Option B is the best approach because it utilizes EC2 Auto Scaling to automate the process of scaling up or down based on CPU utilization. By setting a target tracking scaling policy that targets an average CPU utilization of 50%, the application can scale efficiently during high-demand periods without manually adjusting the instances. The settings of minimum instances (2), desired capacity (3), and maximum instances (6) ensure a balance between being cost-effective during low traffic and having enough resources during spikes.\",\"incorrectOptionAExplanation\":\"Option A suggests terminating instances when CPU utilization is below 20%, which does not provide a mechanism for scaling up during demand spikes, leaving the application potentially under-resourced during high traffic periods.\",\"incorrectOptionCExplanation\":\"Option C lacks specific scaling policies. Although it does define minimum and maximum instances, it doesn't address how to dynamically scale based on actual demand, making it insufficient for achieving automated scalability based on CPU metrics.\",\"incorrectOptionDExplanation\":\"Option D recommends using CloudWatch alarms to notify when to change instance counts, which requires manual intervention to adjust the capacity. This approach does not automate the scaling process, making it less efficient and potentially more costly as it relies on human action for adjustments.\"}",
+  "video_url": "https://certificationation.com/videos/exam-five-amazon-ec2-instances-an-exam-297.html",
+  "url": "https://certificationation.com/questions/exam-five-amazon-ec2-instances-an-exam-297.html"
+}

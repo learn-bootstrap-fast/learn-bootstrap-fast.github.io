@@ -1,0 +1,62 @@
+---
+title: "Your team needs to create CloudFormation stacks forExam"
+description: "Video for your team needs to create CloudFormation stacks for multiple web applications. There are some common AWS resources that are used by most applications"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your team needs to create CloudFormation stacks for multiple web applications. There are some common AWS resources that are used by most applications such as security groups. These resources are not frequently modified after being created. You want to manage these common AWS resources separately and other application stacks can easily reuse them when needed. How would you achieve this requirement?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><b>Leverage a CloudFormation stack to provision and export output values for shared resources. Allow other stacks to retrieve those resources using the Fn::ImportValue function.</b> is the most appropriate approach, as it enables a clear separation of shared resources (like security groups) from application-specific stacks. By exporting outputs in the 'shared' stack, other stacks can reference them via the <code>Fn::ImportValue</code> function, ensuring reusability while maintaining independence and preventing unnecessary updates or recreations.</p><p>The option <i>Deploy shared resources within a CloudFormation stack, then have dependent stacks access these via the Fn::GetAttr intrinsic function.</i> is incorrect because <code>Fn::GetAtt</code> is typically used to obtain attributes from resources within the same stack, not across stacks.</p><p><i>Embed the shared resources as part of a common stack, then nest this stack within each app’s CloudFormation stack by utilizing the AWS::CloudFormation::Stack resource.</i> is not ideal, as using nested stacks results in tight coupling, making management of shared resources independent of application stacks more difficult. Updates to the common nested stack can affect all child stacks, reducing flexibility.</p><p><i>Create a stack for shared resources and then, within the AWS console, choose 'Import resources into stack' to allow other CloudFormation stacks to reuse these managed AWS resources.</i> is a misconception. The 'Import resources into stack' feature is designed for resource adoption, not for reusing resources across multiple stacks.</p><ul><li><b>Tip:</b> Use <code>Outputs</code> and exports in dedicated CloudFormation stacks for reusable infrastructure elements, and reference them in other stacks with <code>Fn::ImportValue</code>.</li></ul>",
+  "query": "<p>Your organization plans to set up AWS CloudFormation stacks for several web-based applications. Some AWS resources, such as security groups, are shared across many applications and rarely change after their initial creation. How can you manage these shared AWS resources independently, while also allowing other CloudFormation stacks to reference and reuse them efficiently?</p>",
+  "original_oid": "6793da8761969b416038a230",
+  "options": [
+    {
+      "correct": true,
+      "text": "Leverage a CloudFormation stack to provision and export output values for shared resources. Allow other stacks to retrieve those resources using the Fn::ImportValue function.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Deploy shared resources within a CloudFormation stack, then have dependent stacks access these via the Fn::GetAttr intrinsic function.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Embed the shared resources as part of a common stack, then nest this stack within each app’s CloudFormation stack by utilizing the AWS::CloudFormation::Stack resource.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Create a stack for shared resources and then, within the AWS console, choose 'Import resources into stack' to allow other CloudFormation stacks to reuse these managed AWS resources.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question448",
+  "originalQuery": "Your team needs to create CloudFormation stacks for multiple web applications.\nThere are some common AWS resources that are used by most applications such as security groups.\nThese resources are not frequently modified after being created.\nYou want to manage these common AWS resources separately and other application stacks can easily reuse them when needed.\nHow would you achieve this requirement?",
+  "originalOptions": "A. Use a CloudFormation stack to create these resources and export the output values. Other CloudFormation stacks can import the resources through the Fn::ImportValue function.\nB. Use a CloudFormation stack to include these commonly used resources and export the output values. Other CloudFormation stacks can import the resources through the Fn::GetAttr function.\nC. Launch a CloudFormation stack to include the common resources and the stack is nested within other application CloudFormation stacks using the AWS::CloudFormation::Stack resource.\nD. Use a CloudFormation stack to manage the common resources. In the AWS Console, choose “Import resources into stack” for other CloudFormation stacks to reuse its AWS resources.",
+  "video_url": "https://certificationation.com/videos/exam-stacks-for-multiple-web-applications-exam-360.html",
+  "url": "https://certificationation.com/questions/exam-stacks-for-multiple-web-applications-exam-360.html"
+}

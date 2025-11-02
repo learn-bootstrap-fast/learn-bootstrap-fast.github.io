@@ -1,0 +1,62 @@
+---
+title: "Your team owns an AWS account for central managementExam"
+description: "Video for your team owns an AWS account for central management. The AWS accounts from another AWS Organization will send their CloudWatch events to your AWS"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your team owns an AWS account for central management. The AWS accounts from another AWS Organization will send their CloudWatch events to your AWS account's default CloudWatch event bus. You need to set up your AWS account and grant access to all accounts in that organization so that you can receive the events properly from these AWS accounts. Which of the following actions is required?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct step is to go to the CloudWatch Event console, select Event Buses, and then use Add Permission. Choose Organization and provide the organization ID for the other AWS Organization. This allows all AWS accounts within that organization to send events to your event bus, streamlining permissions for large groups of accounts.<br/><br/><b>In the CloudWatch Event console, open Event Buses &rarr; Add Permission, select Organization, and input the organization ID of the external organization.</b> is correct because it leverages AWS Organizations for scalable permissions, granting all member accounts access rather than configuring individual accounts.<br/><br/>Let's look at why the other options are incorrect:<br/><ul><li><i>In the CloudWatch Event console, go to Event Buses &rarr; Add Permission, select AWS Account, and supply the account IDs of the organization's members.</i> is not optimal because you would need to manage hundreds or thousands of IDs individually, rather than authorizing the organization as a whole.</li><li><i>Add an IAM role in your AWS account granting CloudWatch event sending permissions and permitting any account in the organization to assume this role.</i> cannot grant CloudWatch event bus permissions directly; permission to send events is controlled at the event bus level, not via cross-account role assumption.</li><li><i>Attach an IAM policy to the CloudWatch Event console that allows all AWS accounts in the organization to send events to your default event bus.</i> is an incorrect workflow—CloudWatch event bus permissions are set in the EventBridge (CloudWatch Events) bus permissions, not by attaching an IAM policy in the console.</li></ul><br/>Tip: Using the Organization option is the most scalable and easily managed method for cross-organization event bus permissions in AWS EventBridge.</p>",
+  "query": "<p>Your team manages a centralized AWS account. Accounts from a different AWS Organization need to forward their CloudWatch events into the default event bus of your AWS account.<br/>What configuration step must you take to permit all accounts in that organization to send events to your event bus?</p>",
+  "original_oid": "6793da9361969b416038a248",
+  "options": [
+    {
+      "correct": false,
+      "text": "In the CloudWatch Event console, go to Event Buses &rarr; Add Permission, select AWS Account, and supply the account IDs of the organization's members.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Add an IAM role in your AWS account granting CloudWatch event sending permissions and permitting any account in the organization to assume this role.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "In the CloudWatch Event console, open Event Buses &rarr; Add Permission, select Organization, and input the organization ID of the external organization.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Attach an IAM policy to the CloudWatch Event console that allows all AWS accounts in the organization to send events to your default event bus.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question472",
+  "originalQuery": "Your team owns an AWS account for central management.\nThe AWS accounts from another AWS Organization will send their CloudWatch events to your AWS account's default CloudWatch event bus.\nYou need to set up your AWS account and grant access to all accounts in that organization so that you can receive the events properly from these AWS accounts.\nWhich of the following actions is required?",
+  "originalOptions": "A. Create an IAM role in your AWS account that has the permission to send CloudWatch events and allows all accounts in the organization to assume it.,B. In the CloudWatch Event console, attach an IAM policy that allows the organization’s AWS accounts to send events to your default CloudWatch event bus.,C. In the CloudWatch Event console, go to Event Buses -> Add Permission, choose AWS Account and enter the AWS account IDs of the organization.,D. In the CloudWatch Event console, go to Event Buses -> Add Permission, choose Organization and enter the organization ID of that organization.",
+  "video_url": "https://certificationation.com/videos/exam-central-management-the-aws-accounts-exam-006.html",
+  "url": "https://certificationation.com/questions/exam-central-management-the-aws-accounts-exam-006.html"
+}

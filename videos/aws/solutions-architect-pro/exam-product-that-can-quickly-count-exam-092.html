@@ -1,0 +1,74 @@
+---
+title: "An IoT company needs to develop a product that canExam"
+description: "Video for an IoT company needs to develop a product that can quickly count the number of persons in a given area. They have used wireless sensors and a Node.js"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "An IoT company needs to develop a product that can quickly count the number of persons in a given area. They have used wireless sensors and a Node.js backend in AWS EC2 (ap-southeast-2 region with 3 availability zones) As the data is very sensitive which will be analyzed by a third-party company, they need the backend to be highly available. The backend EC2 needs to connect to the internet to download patches. Other than that, for security reasons, EC2 should only open SSH port to a jump host. For the below descriptions, which one is the best?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d59bf501ee1c8ade97e1"
+  },
+  "quid": "0",
+  "ordinal": "150",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "AWS shared responsibility model",
+    " Amazon EC2",
+    " AWS Security",
+    " AWS Auto Scaling",
+    " AWS VPC"
+  ],
+  "slug": "ec2-iot-company-develop-product-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question150",
+  "title": "AWS IoT Company Needs To Develop A Product Question",
+  "meta": "AWS Exam Question: An IoT company needs a highly available Node.js backend on EC2 to count persons using wireless sensors. Answer: Consider AWS Lambda and VPC.",
+  "answer": "C",
+  "query": "A healthcare technology firm needs to deploy a backend system that processes patient data across multiple availability zones in the us-east-1 region. The backend runs on EC2 instances using Python, and the data is highly confidential and must be secured. The EC2 instances require internet access for software updates but should only allow SSH access via a jump server to enhance security. Which setup best meets these requirements?",
+  "originalQuery": "An IoT company needs to develop a product that can quickly count the number of persons in a given area.\nThey have used wireless sensors and a Node.js backend in AWS EC2 (ap-southeast-2 region with 3 availability zones)\nAs the data is very sensitive which will be analyzed by a third-party company, they need the backend to be highly available.\nThe backend EC2 needs to connect to the internet to download patches.\nOther than that, for security reasons, EC2 should only open SSH port to a jump host.\nFor the below descriptions, which one is the best?",
+  "options": [
+    "A. Launch one public and one private subnet per availability zone, set up a NAT gateway in just one public subnet, and update the private subnet route tables to direct internet traffic to this NAT gateway. Configure a bastion host in a single public subnet and restrict SSH access to EC2 instances only from the bastion host ARN.",
+    "B. Deploy public and private subnets across all three availability zones in us-east-1. Use NAT instances in every public subnet and route the private subnet traffic through these public subnets. Place a bastion host in a public subnet, and limit SSH inbound access to EC2 instances only from the bastion host ARN.",
+    "C. For each availability zone, establish a pair of public and private subnets. Implement a NAT gateway in each public subnet, ensuring the private subnet route tables send 0.0.0.0/0 traffic through their respective NAT gateways. Host a bastion server in one public subnet, and allow SSH (port 22) to EC2 instances from the bastion host’s security group.",
+    "D. Create a single private subnet in us-east-1a and public subnets in us-east-1a, us-east-1b, and us-east-1c. Use an autoscaling group to manage NAT gateways across these zones, and point the private subnet’s route table to the NAT gateway. Install a bastion host in a public subnet, permitting SSH access to EC2 instances only from the bastion host’s security group."
+  ],
+  "originalOptions": [
+    "A. For each availability zone, create a public subnet and a private subnet. Create a NAT gateway in a single public subnet and for the route table in three private subnets, add a route from 0.0.0.0/0 to the NAT gateway. Add a bastion host in one public subnet and for EC2 instances, only open port 22 for the inbound traffic from the bastion host ARN id.",
+    "B. Create a public subnet and a private subnet in all three availability zones in the ap-southeast-2 region. Create a NAT instance in each public subnet and for the route table in the private subnet, add a route from 0.0.0.0/0 to the public subnet. Add a bastion host in one public subnet and for EC2 instances, only open port 22 for the inbound traffic from the bastion host ARN id.",
+    "C. For each availability zone, create a public subnet and a private subnet. Create a NAT gateway in each public subnet and for the route table in the private subnet, add a route from 0.0.0.0/0 to the NAT gateway. Add a bastion host in one public subnet and for EC2 instances, only open port 22 for the inbound traffic from the security group of the bastion host.",
+    "D. Create a private subnet in ap-southeast-2a and three public subnets in ap-southeast-2a, ap-southeast-2b, and ap-southeast-2c. Create a NAT gateway using an autoscaling group in all three availability zones and for the route table in the private subnet, add a route from 0.0.0.0/0 to the NAT gateway. Add a bastion host in one public subnet and for EC2 instances, only open port 22 for the inbound traffic from the security group of the bastion host."
+  ],
+  "image": "",
+  "primaryObjective": "2: Design for New Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Correct Answer - C.\nAs in the scenario, high availability is a must.\nWe should consider using public/private pairs in all three availability zones ap-southeast-2a, ap-southeast-2b, and ap-southeast-2c.\nThen create a NAT gateway in each public subnet as NAT gateway is within the scope of an availability zone.\nThis can ensure that other NAT gateways can still server internet traffic even when an availability zone is out of service.\nIn terms of the Bastion host, it should be put in a public subnet, and the EC2 security group should allow the SSH access (port 22) for the inbound traffic from the Bastion host security group.\nOption A is incorrect: Because NAT gateway should be created in each availability zone instead of meeting the need for high availability.\nAnd bastion host ARN id is incorrect as well.\nBastion host security group should be used.\nOption B is incorrect: Because NAT gateway is better than NAT instance as NAT gateway is more reliable and easier to maintain.\nMoreover, the route should connect to the NAT gateway.\nOption C is CORRECT: Because it has used NAT gateway in three availability zones and Bastion host in a public subnet, which is the best way.\nOption D is incorrect: Because it should create three private subnets to make three public/private pairs.\nIt can ensure that the service is not interrupted even when one availability zone is out of service.\nMoreover, NAT gateway is highly managed by AWS, and autoscaling is impossible to be added for that.\nThe best option for the IoT company would be Option A.\nOption A suggests creating a VPC with three availability zones in the ap-southeast-2 region. For each availability zone, a public subnet and a private subnet should be created. A NAT gateway should be created in a single public subnet, and for the route table in the private subnets of all three availability zones, a route from 0.0.0.0/0 to the NAT gateway should be added.\nA bastion host should be created in one public subnet, and for EC2 instances, only port 22 should be opened for inbound traffic from the bastion host ARN id. This configuration will provide highly available connectivity to the internet, secure SSH access to the EC2 instances, and keep sensitive data within the VPC's private subnet.\nOption B suggests creating a VPC with three availability zones in the ap-southeast-2 region. For each availability zone, a public subnet and a private subnet should be created. A NAT instance should be created in each public subnet, and for the route table in the private subnets of all three availability zones, a route from 0.0.0.0/0 to the public subnet should be added.\nA bastion host should be created in one public subnet, and for EC2 instances, only port 22 should be opened for inbound traffic from the bastion host ARN id. This option is less optimal than Option A because NAT instances are less scalable and less available than NAT gateways.\nOption C suggests creating a VPC with three availability zones in the ap-southeast-2 region. For each availability zone, a public subnet and a private subnet should be created. A NAT gateway should be created in each public subnet, and for the route table in the private subnets of all three availability zones, a route from 0.0.0.0/0 to the NAT gateway should be added.\nA bastion host should be created in one public subnet, and for EC2 instances, only port 22 should be opened for inbound traffic from the security group of the bastion host. This option is less optimal than Option A because it creates three NAT gateways instead of one, which is unnecessary and more expensive.\nOption D suggests creating a private subnet in ap-southeast-2a and three public subnets in ap-southeast-2a, ap-southeast-2b, and ap-southeast-2c. A NAT gateway should be created using an autoscaling group in all three availability zones, and for the route table in the private subnet of ap-southeast-2a, a route from 0.0.0.0/0 to the NAT gateway should be added.\nA bastion host should be created in one public subnet, and for EC2 instances, only port 22 should be opened for inbound traffic from the security group of the bastion host. This option is less optimal than Option A because it creates unnecessary complexity by using an autoscaling group for the NAT gateway and only provides a NAT gateway in one availability zone instead of three.\nIn summary, Option A is the best option because it creates a VPC with three availability zones and a single NAT gateway for all three private subnets. It also provides secure SSH access to the EC2 instances through a bastion host and keeps sensitive data within the private subnet.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-product-that-can-quickly-count-exam-092.html",
+  "url": "https://certificationation.com/questions/exam-product-that-can-quickly-count-exam-092.html"
+}

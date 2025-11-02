@@ -1,0 +1,81 @@
+---
+title: "Your organization requires a managed NoSQL databaseExam"
+description: "Video for your organization requires a managed NoSQL database service on Google Cloud for an application that will have unpredictable spikes in traffic. You"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your organization requires a managed NoSQL database service on Google Cloud for an application that will have unpredictable spikes in traffic. You need to make sure the database scales automatically to accommodate the load while maintaining performance. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "BrightCart is launching a customer activity service on Google Cloud that sees erratic surges in demand, rising from about 500 to 25,000 requests per second within a few minutes. They want a fully managed NoSQL backend that automatically adjusts capacity so that performance stays steady without manual intervention. Which approach should they take?",
+  "options": [
+    {
+      "text": "Create a Cloud SQL for PostgreSQL instance and add several read replicas to handle spikes in reads",
+      "explanation": "This uses a managed relational database with read replicas that distribute read queries across additional instances.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Deploy Bigtable with a static three node cluster in each zone and increase nodes by hand during busy periods",
+      "explanation": "This sets up a wide column database where capacity changes depend on manual node adjustments in the cluster.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Firestore in Datastore mode with automatic sharding and elastic scaling",
+      "explanation": "This provides a serverless NoSQL document database that automatically partitions and scales as traffic changes.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Provision Memorystore for Redis with a fixed 64 GB tier to buffer traffic spikes",
+      "explanation": "This offers a managed in memory cache sized to a specific tier that is best suited for caching rather than as the primary data store.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct approach is <b>Use Firestore in Datastore mode with automatic sharding and elastic scaling</b>.</p><p>This service is fully managed and automatically partitions data and scales request throughput which allows it to absorb abrupt surges from hundreds to tens of thousands of requests per second while keeping performance steady. It requires no capacity planning and no manual node changes which aligns directly with the requirement for hands off elasticity and a durable NoSQL backend for customer activity data.</p><p><i>Create a Cloud SQL for PostgreSQL instance and add several read replicas to handle spikes in reads</i> is not a NoSQL solution and replicas only help reads while writes still funnel to the primary. It also depends on manual sizing and replica management and it does not provide the automatic elastic scaling needed for sudden traffic spikes.</p><p><i>Deploy Bigtable with a static three node cluster in each zone and increase nodes by hand during busy periods</i> does not meet the requirement because it explicitly relies on manual scaling and a fixed starting size. The service can scale very high but this configuration would throttle during surges until an operator intervenes which violates the need for automatic capacity adjustments.</p><p><i>Provision Memorystore for Redis with a fixed 64 GB tier to buffer traffic spikes</i> is a cache rather than a primary durable NoSQL database. It has fixed capacity and eviction risk under pressure and it is not intended to be the system of record for this workload.</p>",
+  "batch_id": "125",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "Your organization requires a managed NoSQL database service on Google Cloud for an application that will have unpredictable spikes in traffic. You need to make sure the database scales automatically to accommodate the load while maintaining performance. What should you do?",
+  "originalOptions": "A. Implement a Google Cloud SQL instance with read replicas to manage read traffic spikes.<br/>B. Set up a Firestore in Datastore mode with automatic sharding and scaling.<br/>C. Configure a Memorystore for Redis instance with a fixed capacity to handle peak loads.<br/>D. Deploy the application using Google Cloud Datastore with manual scaling set for read and write operations.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "61",
+  "tip": "<p>When you see requirements for <i>fully managed</i> and <i>automatic scaling</i> with unpredictable load, map them to serverless NoSQL backends. Keywords like <i>no manual capacity</i> and <i>elastic sharding</i> help you eliminate options that require manual node changes or fixed tiers.</p>",
+  "references": [
+    "https://cloud.google.com/datastore/docs",
+    "https://cloud.google.com/firestore/docs/best-practices",
+    "https://cloud.google.com/sql/docs/postgres/replication",
+    "https://cloud.google.com/bigtable/docs/scaling-clusters",
+    "https://cloud.google.com/memorystore/docs/redis/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-managed-nosql-database-service-on-exam-061.html",
+  "video_url": "https://certificationation.com/videos/exam-managed-nosql-database-service-on-exam-061.html"
+}

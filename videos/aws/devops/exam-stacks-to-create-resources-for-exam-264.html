@@ -1,0 +1,62 @@
+---
+title: "Your team plans to launch two CloudFormation stacks toExam"
+description: "Video for your team plans to launch two CloudFormation stacks to create resources for a web application. These two stacks need to be managed separately. The"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your team plans to launch two CloudFormation stacks to create resources for a web application. These two stacks need to be managed separately. The first stack is a network stack that includes network resources such as subnets and security groups. The second stack is an application stack used to launch an Auto Scaling group resource. The ASG needs to refer to the resources created by the network stack. How would you configure the application stack to import the network resources properly?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct approach is to <b>declare the resources for export in the <code>Outputs</code> section of the network stack and import them into the application stack using the <code>Fn::ImportValue</code> function</b>. This enables cross-stack reference between resources managed by different CloudFormation stacks. By doing so, you ensure the application stack can dynamically reference outputs from the network stack, while still allowing each stack to be managed and updated independently.</p> <p>Let's examine why the other options are incorrect:</p> <ul> <li><i>Specify the network resources as exported properties within the resource definitions of the network stack, and in the application stack, retrieve them using the Fn::GetAtt function.</i> <br>This is not possible because <code>Fn::GetAtt</code> cannot retrieve resources across stacks in this manner. Resources must be shared through outputs and imported via explicit functions designed for cross-stack referencing.</li> <li><i>Output the required values in the Outputs section of the network stack, then import them into the application stack using Fn::Sub.</i> <br><code>Fn::Sub</code> substitutes variables within a string and does not import outputs across stacks; it doesn't provide cross-stack import capabilities.</li> <li><i>Export necessary items from the network stack using Fn::ExportValue, and use Fn::FindInMap to import these resources in the application stack.</i> <br>While <code>Fn::ExportValue</code> is used behind the scenes during cross-stack imports, <code>Fn::FindInMap</code> is only meant to retrieve values from mappings declared within the same stack and cannot be used for cross-stack outputs.</li> </ul> <p><b>Tip:</b> Using outputs and <code>Fn::ImportValue</code> is the standard way to reference values from one CloudFormation stack in another, ensuring loose coupling and modular management of your infrastructure.</p>",
+  "query": "<p>Your organization needs to deploy two separate Amazon CloudFormation stacks for a web-based application. The first stack's role is to manage networking components, such as security groups and subnets, while the second stack will launch an Auto Scaling group for the application layer. How should the application stack correctly access and reuse resources defined in the previously launched network stack?</p>",
+  "original_oid": "6793da9161969b416038a244",
+  "options": [
+    {
+      "correct": true,
+      "text": "Declare the necessary resources in the network stack's <code>Outputs</code> section, then have the application stack use the <code>Fn::ImportValue</code> intrinsic function to bring them in.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Specify the network resources as exported properties within the resource definitions of the network stack, and in the application stack, retrieve them using the <code>Fn::GetAtt</code> function.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Output the required values in the <code>Outputs</code> section of the network stack, then import them into the application stack using <code>Fn::Sub</code>.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Export necessary items from the network stack using <code>Fn::ExportValue</code>, and use <code>Fn::FindInMap</code> to import these resources in the application stack.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question468",
+  "originalQuery": "Your team plans to launch two CloudFormation stacks to create resources for a web application.\nThese two stacks need to be managed separately.\nThe first stack is a network stack that includes network resources such as subnets and security groups.\nThe second stack is an application stack used to launch an Auto Scaling group resource.\nThe ASG needs to refer to the resources created by the network stack.\nHow would you configure the application stack to import the network resources properly?",
+  "originalOptions": "A. Export the resources in the resource properties of the network stack. In the application stack, import the resources with the intrinsic function Fn::GetAttr.|B. Export the resources in the outputs of the network stack. In the application stack, import the resources with the intrinsic function Fn::Sub.|C. Export the resources in the outputs of the network stack. In the application stack, import the resources with the intrinsic function Fn::ImportValue.|D. In the network stack, export the resources through the intrinsic function Fn::ExportValue. In the application stack, import the resources with the intrinsic function Fn::FindInMap.",
+  "video_url": "https://certificationation.com/videos/exam-stacks-to-create-resources-for-exam-264.html",
+  "url": "https://certificationation.com/questions/exam-stacks-to-create-resources-for-exam-264.html"
+}

@@ -1,0 +1,54 @@
+---
+title: "You work as a machine learning specialist for aExam"
+description: "Video for you work as a machine learning specialist for a financial services organization. Your machine learning team is responsible for building models that"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You work as a machine learning specialist for a financial services organization. Your machine learning team is responsible for building models that predict index fund tracking errors for the various funds managed by your mutual fund portfolio management department. You need to ingest data into your data lake for use in your machine learning models. The required securities pricing data come from varying sources that deliver the data you need to use in your model inferences in near real-time. You need to perform data transformation, such as compression, of the data before writing it to your S3 data lake. Which option gives you the most efficient solution for ingesting the data into your data lake?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d7177742293cac494b75"
+  },
+  "answer": "D",
+  "certification": "AWS Machine Learning Specialty",
+  "certificationKey": "AWSMLS",
+  "difficulty": "0",
+  "image": "",
+  "needsWork": "false",
+  "ordinal": "205",
+  "originalExplanation": "Correct Answer: D.\nOption A is incorrect.\nKinesis Data Analytics needs to be fed the streaming data by either Kinesis Data Streams or Kinesis Data Firehose.\nKinesis Data Analytics cannot ingest data directly.\nAlso, Apache Flink can write your data to S3 using the streaming file sink, but it writes in the AVRO and Parquet formats, not GZIP.\nOption B is incorrect.\nThe solution described in this option will technically work.\nHowever, it is much less efficient than using Kinesis Data Firehose to ingest, compress using Lambda, and write your data to S3.\nOption C is incorrect.\nYou can ingest your pricing data using Kinesis Data Firehose and use lambda to compress your data into the GZIP format.\nHowever, you should leverage the Kinesis Data Firehose capability to write your data directly to your S3 bucket.\nThis is more efficient than writing your own code in your Lambda function to write the data to S3.\nOption D is correct.\nIngesting the data using Kinesis Data Firehose, using Lambda to compress the data into the GZIP format, and then having Kinesis Data Firehose write your data to S3 is a very common example of using Kinesis Data Firehose for a very efficient data ingestion solution.\nReferences:\nPlease see the Building Big Data Storage Solutions (Data Lakes) for Maximum Flexibility AWS Whitepaper titled Data Ingestion Methods (https://docs.aws.amazon.com/whitepapers/latest/building-data-lakes/data-ingestion-methods.html),\nThe Investopedia page titled Tracking Error (https://www.investopedia.com/terms/t/trackingerror.asp#:~:text=Tracking%20error%20is%20the%20difference,and%20its%20corresponding%20risk%20level.),\nThe Apache Flink developer guide titled Streaming File Sink (https://ci.apache.org/projects/flink/flink-docs-stable/dev/connectors/streamfile_sink.html),\nThe Amazon Kinesis Data Streams product page titled Getting started with Amazon Kinesis Data Streams (https://aws.amazon.com/kinesis/data-streams/getting-started/),\nThe Amazon Kinesis Data Analytics for SQL Applications Developer Guide SQL developer guide titled Amazon Kinesis Data Analytics for SQL Applications: How It Works (https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works.html)\nThe most efficient solution for ingesting the data into the data lake in this scenario would be option D, which involves using Kinesis Data Firehose to ingest the data and a Lambda function to compress the data before writing it to the S3 data lake.\nHere is a more detailed explanation of why this option is the best choice:\nKinesis Data Firehose is a fully managed service that makes it easy to prepare and load streaming data into data stores and analytics tools. With Kinesis Data Firehose, you don't need to write any application code or manage any infrastructure. You simply configure your data producers to send data to Kinesis Data Firehose, and the service takes care of the rest.\nIn this case, the required securities pricing data comes from varying sources that deliver the data in near real-time. Kinesis Data Firehose is a good fit for this use case because it can handle high volumes of streaming data and can deliver that data to S3 in near real-time. Additionally, Kinesis Data Firehose can automatically transform the data into the desired format, such as compressing the data using GZIP.\nOption D suggests using a Lambda function to compress the data into the GZIP format before writing it to the S3 data lake. This approach is ideal because it offloads the data transformation step from the Kinesis Data Firehose service, which can focus on delivering the data to S3 as quickly as possible. The Lambda function can be triggered by Kinesis Data Firehose as soon as new data arrives, and it can quickly compress the data before sending it on to S3.\nOption A suggests using a Kinesis Data Analytics application with Apache Flink to compress the data into GZIP format before writing it to S3. This approach could work, but it adds an unnecessary layer of complexity to the data ingestion process. Kinesis Data Analytics is designed for performing complex real-time analytics on streaming data, which is not necessary for this use case. Additionally, using Apache Flink to compress the data requires more setup and management than using a simple Lambda function.\nOption B suggests using Kinesis Data Streams with Kinesis Producer Library (KPL) and Kinesis Client Library (KCL) applications to ingest and compress the data. While this approach could work, it is more complex than using Kinesis Data Firehose and requires managing EC2 instances to run the KPL and KCL applications. This adds more overhead and complexity to the data ingestion process.\nOption C suggests using Kinesis Data Firehose with a Lambda function to compress the data before writing it to S3. This approach is similar to option D but suggests having the Lambda function write the data to S3 instead of having Kinesis Data Firehose write the data. While this could work, it is less efficient than option D because it requires the Lambda function to handle the S3 write operation in addition to the data transformation. This could slow down the overall data ingestion process.",
+  "originalOptions": [
+    "A. Ingest the pricing data using a Kinesis Data Analytics application where you use Apache Flink to compress your data into the GZIP format and write it to your S3 data lake.",
+    "B. Ingest the pricing data into Kinesis Data Streams using a Kinesis Producer Library (KPL) application running on EC2 instances; use a Kinesis Client Library (KCL) application to compress your data into the GZIP format and write it to your S3 data lake.",
+    "C. Ingest the pricing data using Kinesis Data Firehose where you use a Lambda function to compress your data into the GZIP format and have the Lambda function write the data to your S3 data lake.",
+    "D. Ingest the pricing data using Kinesis Data Firehose where you use a Lambda function to compress your data into the GZIP format; Kinesis Data Firehose writes the data to your S3 data lake."
+  ],
+  "originalQuery": "You work as a machine learning specialist for a financial services organization.\nYour machine learning team is responsible for building models that predict index fund tracking errors for the various funds managed by your mutual fund portfolio management department.\nYou need to ingest data into your data lake for use in your machine learning models.\nThe required securities pricing data come from varying sources that deliver the data you need to use in your model inferences in near real-time.\nYou need to perform data transformation, such as compression, of the data before writing it to your S3 data lake.\nWhich option gives you the most efficient solution for ingesting the data into your data lake?",
+  "primaryObjective": "",
+  "quid": "0",
+  "source": "https://www.exam-answer.com/amazon/mls-c01/question205",
+  "video_url": "https://certificationation.com/videos/exam-specialist-for-a-financial-services-exam-205.html",
+  "url": "https://certificationation.com/questions/exam-specialist-for-a-financial-services-exam-205.html"
+}

@@ -1,0 +1,79 @@
+---
+title: "You are creating applications for your company in theExam"
+description: "Video for you are creating applications for your company in the retail industry. Orders are stored in Cloud Spanner, and your flagship store uses storeId"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are creating applications for your company in the retail industry. Orders are stored in Cloud Spanner, and your flagship store uses storeId “12345.” Management wants to regularly run a query on this store for different customers. You want to parameterize this query for performance. Which query should you use?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are building a booking application for a regional airline. Reservation data is stored in Cloud Spanner, and the primary hub uses hubId &quot;67890&quot;. The operations team needs to run the same query repeatedly for many passenger accounts but only for this hub. You want to parameterize the query to improve performance. Which SQL should you use?",
+  "options": [
+    {
+      "text": "select seatNumbers from reservations where passengerId like @passengerId and hubId=@hubId",
+      "explanation": "This query uses the LIKE operator for the passengerId parameter and also parameterizes the hubId value",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "select seatNumbers from reservations where passengerId=@passengerId and hubId=@hubId",
+      "explanation": "This query uses equality filters and supplies both passengerId and hubId as parameters",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "select seatNumbers from reservations where passengerId like @passengerId and hubId=&apos;67890&apos;",
+      "explanation": "This query applies the LIKE operator for passengerId while using a literal hubId value for the hub filter",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "select seatNumbers from reservations where passengerId=@passengerId and hubId=&apos;67890&apos;",
+      "explanation": "This query uses an equality predicate for the passengerId parameter and keeps the hubId as a fixed literal value",
+      "correct": true,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>select seatNumbers from reservations where passengerId=@passengerId and hubId='67890'</b>. This parameterizes the value that varies across runs while keeping the constant hub filter as a literal which supports better plan reuse and allows the optimizer to take advantage of a fixed and selective predicate.</p><p>Parameterizing the passenger identifier improves performance because Spanner can cache and reuse the query plan for many different passengers while avoiding repeated compilation. Keeping the hub identifier as a literal helps the optimizer reason about a single hub and can lead to more selective index access or filtering for that specific value. This combination fits the requirement that the team will run the same query many times for different passengers at the same hub.</p><p>The option <i>select seatNumbers from reservations where passengerId like @passengerId and hubId=@hubId</i> is incorrect because it parameterizes the hub even though the value is constant and it uses LIKE unnecessarily on the passenger identifier which can reduce index efficiency when an exact match is intended.</p><p>The option <i>select seatNumbers from reservations where passengerId=@passengerId and hubId=@hubId</i> is incorrect because parameterizing the hub adds no benefit when it never changes and it can prevent the optimizer from benefiting from a plan specialized for a single hub value.</p><p>The option <i>select seatNumbers from reservations where passengerId like @passengerId and hubId='67890'</i> is incorrect because using LIKE for a passenger lookup is not needed and can be less efficient than an equality predicate when you want exact matches.</p>",
+  "batch_id": "261",
+  "answerCode": "4",
+  "type": "multiple-choice",
+  "originalQuery": "You are creating applications for your company in the retail industry. Orders are stored in Cloud Spanner, and your flagship store uses storeId “12345.” Management wants to regularly run a query on this store for different customers. You want to parameterize this query for performance. Which query should you use?",
+  "originalOptions": "A. select productIds from orders where customerId=@customerId and storeId=@storeId<br/>B. select productIds from orders where customerId like @customerId and storeId='12345'<br/>C. select productIds from orders where customerId=@customerId and storeId='12345'<br/>D. select productIds from orders where customerId like @customerId and storeId=@storeId",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "272",
+  "tip": "<p>When tuning Spanner queries, <i>parameterize</i> values that change across executions and keep truly <i>constant</i> filters as literals. Prefer <i>equality</i> for exact lookups and reserve LIKE for real pattern matching needs.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/parameters",
+    "https://cloud.google.com/spanner/docs/sql-best-practices",
+    "https://cloud.google.com/spanner/docs/functions-and-operators"
+  ],
+  "url": "https://certificationation.com/questions/exam-for-your-company-in-the-exam-272.html",
+  "video_url": "https://certificationation.com/videos/exam-for-your-company-in-the-exam-272.html"
+}

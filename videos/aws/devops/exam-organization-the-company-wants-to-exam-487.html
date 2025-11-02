@@ -1,0 +1,62 @@
+---
+title: "You are Devops Engineer for a large organization. TheExam"
+description: "Video for you are Devops Engineer for a large organization. The company wants to start using Cloudformation templates to start building their resources in AWS."
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are Devops Engineer for a large organization. The company wants to start using Cloudformation templates to start building their resources in AWS. You are getting requirements for the templates from various departments, such as the networking, security, application etc. What is the best way to architect these Cloudformation templates."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><b>Partition templates by function, such as having distinct templates for networking, application, and security setups, and incorporate nesting to link them appropriately.</b> is the best approach. By modularizing CloudFormation templates—creating logically separated ones for different domains like networking, security, and application layers—you ensure each template remains maintainable, reusable, and easier for respective teams to update independently. Nested stacks (using the <code>AWS::CloudFormation::Stack</code> resource) can orchestrate dependencies and combine these focused templates into a full solution.</p> <p>Why not the others?</p> <ul> <li><i>Use a single comprehensive CloudFormation template to lower maintenance work across teams</i>: Large monolithic templates are difficult to manage, version control, and collaborate on, especially when requirements change—a common scenario in large organizations with multiple teams.</li> <li><i>Leverage Elastic Beanstalk for environment creation, as CloudFormation cannot handle this level of customization</i>: Elastic Beanstalk is a platform-as-a-service solution ideal for simple app deployments, but it lacks the flexibility and depth of resource provisioning and customization that CloudFormation provides, especially when creating complex, cross-cutting resources for an organization.</li> <li><i>Switch to AWS OpsWorks for provisioning as CloudFormation isn’t suited for large-scale customization</i>: OpsWorks is generally used for configuration management and orchestrating deployments using Chef/Puppet-like stacks, and doesn't directly provide the same deep customization and IaC capabilities as CloudFormation.</li> </ul> <p><b>Tip:</b> Use nested stacks to manage dependencies between teams while allowing each department to maintain its area of responsibility. This also makes updates and error tracking much easier!</p>",
+  "query": "<p>You are a DevOps Engineer at a major enterprise. The business has decided to begin provisioning AWS resources via CloudFormation templates. Multiple departments—including networking, security, and application teams—are submitting their requirements for these templates. What is the most effective strategy for designing your CloudFormation templates to support this scenario?</p>",
+  "original_oid": "6793da2b61969b416038a174",
+  "options": [
+    {
+      "correct": true,
+      "text": "Partition templates by function, such as having distinct templates for networking, application, and security setups, and incorporate nesting to link them appropriately.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Leverage Elastic Beanstalk for environment creation, as CloudFormation cannot handle this level of customization.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Use a single comprehensive CloudFormation template to lower maintenance work across teams.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Switch to AWS OpsWorks for provisioning as CloudFormation isn’t suited for large-scale customization.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question259",
+  "originalQuery": "You are Devops Engineer for a large organization.\nThe company wants to start using Cloudformation templates to start building their resources in AWS.\nYou are getting requirements for the templates from various departments, such as the networking, security, application etc.\nWhat is the best way to architect these Cloudformation templates.",
+  "originalOptions": "A. Use a single Cloudformation template, since this would reduce the maintenance overhead on the templates itself.|B. Create separate logical templates, for example, a separate template for networking, security, application etc. Then nest the relevant templates.|C. Consider using Elastic beanstalk to create your environments since Cloudformation is not built for such customization.|D. Consider using Opsworks to create your environments since Cloudformation is not built for such customization.",
+  "video_url": "https://certificationation.com/videos/exam-organization-the-company-wants-to-exam-487.html",
+  "url": "https://certificationation.com/questions/exam-organization-the-company-wants-to-exam-487.html"
+}

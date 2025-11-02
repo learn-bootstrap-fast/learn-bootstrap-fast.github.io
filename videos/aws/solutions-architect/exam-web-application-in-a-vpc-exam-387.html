@@ -1,0 +1,128 @@
+---
+title: "A company is deploying a two-tier web application in aExam"
+description: "Video for a company is deploying a two-tier web application in a VPC. The web tier is using an Amazon EC2 Auto Scaling group with public subnets that span"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company is deploying a two-tier web application in a VPC. The web tier is using an Amazon EC2 Auto Scaling group with public subnets that span multiple Availability Zones. The database tier consists of an Amazon RDS for MySQL DB instance in separate private subnets. The web tier requires access to the database to retrieve product information. The web application is not working as intended. The web application reports that it cannot connect to the database. The database is confirmed to be up and running. All configurations for the network ACLs, security groups, and route tables are still in their default states. What should a solutions architect recommend to fix the application?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729ae9"
+  },
+  "quid": null,
+  "ordinal": "388",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon RDS",
+    " Amazon EC2",
+    " AWS Security Group",
+    " VPC",
+    " Security"
+  ],
+  "slug": "ec2-auto-scaling-web-application-aws",
+  "source": "ET",
+  "title": "AWS A Company Is Deploying A Two-Tier Web Application Question",
+  "meta": "AWS Exam Question: A company has a two-tier web app in a VPC using EC2 Auto Scaling and RDS for MySQL but faces connectivity issues. Find the answer.",
+  "answer": "D",
+  "query": "A startup is rolling out a multi-tier e-commerce application within a VPC. The front end utilizes an Amazon EC2 Auto Scaling group that is located in public subnets distributed across various Availability Zones. Meanwhile, the backend includes an Amazon RDS for PostgreSQL instance situated in distinct private subnets. The front end needs to access the backend database to fetch customer orders.\n\nThe e-commerce platform is experiencing issues. It indicates that it fails to connect to the backend database. The database instance is verified to be operational. All settings for the network ACLs, security groups, and route tables remain in their default configurations.\n\nWhat action should a solutions architect advise to resolve this situation?",
+  "originalQuery": "A company is deploying a two-tier web application in a VPC. The web tier is using an Amazon EC2 Auto Scaling group with public subnets that span multiple Availability Zones. The database tier consists of an Amazon RDS for MySQL DB instance in separate private subnets. The web tier requires access to the database to retrieve product information.\n\nThe web application is not working as intended. The web application reports that it cannot connect to the database. The database is confirmed to be up and running. All configurations for the network ACLs, security groups, and route tables are still in their default states.\n\nWhat should a solutions architect recommend to fix the application?",
+  "options": [
+    "A. Implement a specific rule to the private subnet's network ACL for web tier EC2 traffic.",
+    "B. Configure a route in the VPC's route table for traffic between web EC2 instances and the database.",
+    "C. Launch the web tier's EC2 instances and the database RDS instance in separate VPCs and set up VPC peering.",
+    "D. Add an inbound rule to the security group of the database tier’s RDS instance to allow traffic from the web tiers security group."
+  ],
+  "originalOptions": [
+    "A. Add an explicit rule to the private subnet’s network ACL to allow traffic from the web tier’s EC2 instances.",
+    "B. Add a route in the VPC route table to allow traffic between the web tier’s EC2 instances and the database tier.",
+    "C. Deploy the web tier's EC2 instances and the database tier’s RDS instance into two separate VPCs, and configure VPC peering.",
+    "D. Add an inbound rule to the security group of the database tier’s RDS instance to allow traffic from the web tiers security group."
+  ],
+  "image": null,
+  "primaryObjective": "1: Design Secure Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "By default, security groups deny all inbound traffic. To resolve connectivity issues between the web tier and the database, it is essential to modify the security group associated with the RDS instance. Specifically, an inbound rule should be added to this security group to permit traffic originating from the security group linked to the web tier. This configuration will enable the web tier's EC2 instances to communicate with the RDS instance and retrieve the necessary product information. Ensuring that the appropriate security group rules are in place is crucial for maintaining secure and functional communication between application components within the VPC.",
+    "Security Groups are like the bouncers at a club, keeping an eye on who gets in and out of your instance, while Network ACLs are more like the security guards at the door of the entire subnet! 🕴️🚪 So, when you’re setting up your access rules, remember that Security Groups are specific to each instance, whereas Network ACLs apply to the whole subnet. It's all about keeping your data dance party safe and sound! 💃🔒",
+    "For anyone wondering why option A isn't the winning choice:\n\nThe default Network Access Control Lists (NACLs) in AWS permit all traffic by default. Given that the NACLs, security groups, and route tables in this scenario are all set to their default configurations, there's no need to implement additional rules for the private subnet's NACL regarding traffic from the web tier EC2 instances. \n\nIn essence, the groundwork is already laid out for communication; it’s just a matter of ensuring that the right permissions are in place where they matter.",
+    "The most suitable recommendation would be to implement a specific rule in the network ACL of the private subnet to allow traffic from the web tier's EC2 instances. Since the services are located in different subnets, the default configuration of the network ACL will block all incoming traffic to the private subnet. It's important to note that security group rules cannot override the restrictions set by the network ACL. By adding the appropriate rule to the network ACL, you can facilitate the necessary communication between the web tier and the database tier, ensuring that the application operates smoothly.",
+    "I also chose option D, but I have a curious thought about option A! Since the EC2 instances and the RDS are nestled in separate subnets, wouldn’t it make sense for the network ACLs in each subnet to allow traffic to and fro? Given that default network ACL settings often block all traffic, wouldn’t we need to specifically enable communication between those subnets? 🤔✨"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "D",
+      "explanation": "Security group defaults block all inbound traffic..Add an inbound rule to the security group of the database tier’s RDS instance to allow traffic from the web tiers security group",
+      "upvotes": "13"
+    },
+    {
+      "selectedAnswer": "D",
+      "explanation": "Security Groups are tied on instance where as network ACL are tied to Subnet.",
+      "upvotes": "5"
+    },
+    {
+      "selectedAnswer": "D",
+      "explanation": "For those questioning why the answer is not A:\n\nhttps://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html\n\nDefault NACLs allow all traffic, and in this question NACLs, SGs and route tables are in their default states.",
+      "upvotes": "5"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "I think the answer should be A. Sine the services are in different subnets, the NACL would by default block all the incoming traffic to the subnet. Security group rule wouldn't be able to override NACL rule.",
+      "upvotes": "1"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "I selected option D as well, but I have a question regarding option A. Considering that the EC2 instances and the RDS are located in different subnets, shouldn't the network ACLs for each subnet allow traffic from one another as well? Given that the default settings for network ACLs typically block all traffic, wouldn't it be necessary to explicitly permit communication between the subnets?",
+      "upvotes": "2"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "D (97%)",
+      "votes": "34 votes."
+    },
+    {
+      "option": "3%",
+      "votes": "1 votes."
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is D because the default security group settings for the RDS instance prevent inbound traffic from sources that are not explicitly allowed. Adding an inbound rule to the security group of the RDS instance allows traffic from the EC2 instances in the web tier's security group, thus enabling the necessary connectivity between the front end and the database backend. \n\nOption A is incorrect because default network ACLs do allow all inbound and outbound traffic unless explicitly denied. Therefore, modifying the NACL would not be necessary in this context. \n\nOption B is incorrect because route tables are primarily used for defining how data is routed within the VPC, but since the RDS instance's security group is blocking the inbound traffic, no route configuration will help without a security group rule allowing the connection. \n\nOption C is not appropriate as deploying the tiers in separate VPCs and configuring VPC peering would add unnecessary complexity when the current configuration could work with proper security group settings.",
+  "video_url": "https://certificationation.com/videos/exam-web-application-in-a-vpc-exam-387.html",
+  "url": "https://certificationation.com/questions/exam-web-application-in-a-vpc-exam-387.html"
+}

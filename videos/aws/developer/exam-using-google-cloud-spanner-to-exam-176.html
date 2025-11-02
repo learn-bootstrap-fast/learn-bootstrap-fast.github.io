@@ -1,0 +1,80 @@
+---
+title: "A healthcare organization is using Google Cloud SpannerExam"
+description: "Video for a healthcare organization is using Google Cloud Spanner to store patient records and needs to ensure high availability and disaster recovery. The"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A healthcare organization is using Google Cloud Spanner to store patient records and needs to ensure high availability and disaster recovery. The organization must comply with strict data residency requirements and cannot store data outside their country where the Google Cloud region is located. Which of the following options should the organization choose to best meet their requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A national credit union headquartered in France uses Cloud Spanner for loan and account data and it must achieve high availability and disaster recovery. Regulators mandate strict data residency and do not allow any storage or replication outside the country where their selected Google Cloud region is located. Which deployment configuration should the team choose to satisfy these constraints?",
+  "options": [
+    {
+      "text": "Single-zone instance with synchronous replication inside one zone",
+      "explanation": "This configuration places all replicas in one zone which limits resilience if that zone fails.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Multi-region instance with replicas across different continents",
+      "explanation": "This configuration stores copies in regions that can be in different countries which can violate strict residency rules.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Regional instance with replicas spread across multiple zones in the same region",
+      "explanation": "This configuration keeps data within a single region and uses replicas in separate zones for fault tolerance.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Regional instance configured to extend across several regions in one continent",
+      "explanation": "This configuration suggests stretching a regional deployment across regions which does not align with how regional instances work.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Regional instance with replicas spread across multiple zones in the same region</b>. This configuration keeps all storage and replication within a single country while still providing high availability and disaster recovery.</p><p>Cloud Spanner uses synchronous replication across multiple zones within one region for a <b>regional instance</b>. This gives fault tolerance against a zonal outage and maintains strong consistency while ensuring that data and backups stay inside the selected region that is located in the required country.</p><p><i>Single-zone instance with synchronous replication inside one zone</i> is not a valid Cloud Spanner deployment model and it would not provide high availability because there is no redundancy across zones. Spanner requires multiple zones even when you choose a regional configuration.</p><p><i>Multi-region instance with replicas across different continents</i> would replicate data outside the country which violates the strict data residency requirement. Multi-region is intended for cross-region distribution and is not allowed in this scenario.</p><p><i>Regional instance configured to extend across several regions in one continent</i> is contradictory because a regional instance cannot span multiple regions. Extending across regions would be a multi-region design and would risk crossing national borders which breaks the residency constraint.</p>",
+  "batch_id": "195",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "A healthcare organization is using Google Cloud Spanner to store patient records and needs to ensure high availability and disaster recovery. The organization must comply with strict data residency requirements and cannot store data outside their country where the Google Cloud region is located. Which of the following options should the organization choose to best meet their requirements?",
+  "originalOptions": "A. Regional instance with nodes spread across multiple zones within the same region.<br/>B. Zonal instance with synchronous replication in the same zone.<br/>C. Multi-regional instance with nodes spread across multiple continents.<br/>D. Regional instance with nodes spread across multiple regions within the same continent.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "176",
+  "tip": "<p>When a scenario stresses strict <i>data residency</i> in one country choose <i>regional</i> deployments that replicate across multiple zones in a single region and avoid any <i>multi-region</i> wording.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/instance-configurations",
+    "https://cloud.google.com/spanner/docs/replication",
+    "https://cloud.google.com/spanner/docs/backup",
+    "https://cloud.google.com/spanner/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-using-google-cloud-spanner-to-exam-176.html",
+  "video_url": "https://certificationation.com/videos/exam-using-google-cloud-spanner-to-exam-176.html"
+}

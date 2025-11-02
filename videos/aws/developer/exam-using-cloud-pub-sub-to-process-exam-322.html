@@ -1,0 +1,80 @@
+---
+title: "A streaming service provider is using Cloud Pub/Sub toExam"
+description: "Video for a streaming service provider is using Cloud Pub/Sub to process a high volume of real-time events from user devices. The provider needs to ensure high"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A streaming service provider is using Cloud Pub/Sub to process a high volume of real-time events from user devices. The provider needs to ensure high availability and disaster recovery while maintaining low-latency processing. Which of the following options should the provider choose to best meet their requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A mobility platform at example.com ingests tens of millions of telemetry events per hour from phones and in-vehicle devices using Pub/Sub. The team must keep end-to-end processing latency low while achieving high availability and disaster recovery within a single continent. Which configuration should they choose?",
+  "options": [
+    {
+      "text": "Pub/Sub with regional endpoints in a single region",
+      "explanation": "This setup directs all publishers and subscribers to one chosen region and stores message data only in that region",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Pub/Sub with global endpoints and message storage in a single region",
+      "explanation": "Clients connect to a global service entry point while messages are persisted in one selected region",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Pub/Sub with global endpoints and message storage in a continental multi-region",
+      "explanation": "Publishers and subscribers use a global service entry and messages are replicated across multiple regions within the same continent",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Pub/Sub Lite with zonal topics in two zones of one region",
+      "explanation": "This option stores data in specific zones and is optimized for predictable throughput and lower cost within a region",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct configuration is <b>Pub/Sub with global endpoints and message storage in a continental multi-region</b>.</p><p>This choice keeps client to service latency low because Pub/Sub uses a global service entry point that routes clients to the nearest edge and it also provides high availability and disaster recovery because messages are stored in a continental multi region with replication across independent regions. This satisfies the requirement to stay within a single continent while protecting against regional failures and still handling tens of millions of events per hour.</p><p><i>Pub/Sub with regional endpoints in a single region</i> concentrates the control plane and data plane in one region which does not meet the disaster recovery requirement. A regional outage would disrupt ingestion and delivery and clients spread across the continent can also see higher tail latency if forced to reach that single region.</p><p><i>Pub/Sub with global endpoints and message storage in a single region</i> improves client ingress latency but still fails the disaster recovery goal because the data is stored in only one region. A regional failure would interrupt processing and availability.</p><p><i>Pub/Sub Lite with zonal topics in two zones of one region</i> is designed for cost sensitive and predictable throughput workloads. Zonal topics do not provide cross region replication and even with two zones the design cannot survive a regional outage and it adds operational overhead that is unnecessary for this requirement.</p>",
+  "batch_id": "1",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "A streaming service provider is using Cloud Pub/Sub to process a high volume of real-time events from user devices. The provider needs to ensure high availability and disaster recovery while maintaining low-latency processing. Which of the following options should the provider choose to best meet their requirements?",
+  "originalOptions": "A. Pub/Sub with global endpoints and message storage in multiple regions within the same continent.<br/>B. Pub/Sub with regional endpoints in a single region.<br/>C. Pub/Sub with regional endpoints in multiple regions within the same continent.<br/>D. Pub/Sub with global endpoints and message storage in a single region.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "322",
+  "tip": "<p>Map requirements to scope. If you see <i>disaster recovery</i> across a continent then select <i>multi region</i> storage and prefer <i>global endpoints</i> for ingress. Eliminate <i>single region</i> or <i>zonal</i> choices when DR is required.</p>",
+  "references": [
+    "https://cloud.google.com/pubsub/docs/resource-locations",
+    "https://cloud.google.com/pubsub/docs/choosing-endpoints",
+    "https://cloud.google.com/pubsub/docs/overview",
+    "https://cloud.google.com/pubsub/lite/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-using-cloud-pub-sub-to-process-exam-322.html",
+  "video_url": "https://certificationation.com/videos/exam-using-cloud-pub-sub-to-process-exam-322.html"
+}

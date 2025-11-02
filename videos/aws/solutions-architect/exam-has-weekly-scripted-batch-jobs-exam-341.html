@@ -1,0 +1,91 @@
+---
+title: "A transaction processing company has weekly scriptedExam"
+description: "Video for a transaction processing company has weekly scripted batch jobs that run on Amazon EC2 instances. The EC2 instances are in an Auto Scaling group. The"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A transaction processing company has weekly scripted batch jobs that run on Amazon EC2 instances. The EC2 instances are in an Auto Scaling group. The number of transactions can vary, but the baseline CPU utilization that is noted on each run is at least 60%. The company needs to provision the capacity 30 minutes before the jobs run. Currently, engineers complete this task by manually modifying the Auto Scaling group parameters. The company does not have the resources to analyze the required capacity trends for the Auto Scaling group counts. The company needs an automated way to modify the Auto Scaling group’s desired capacity. Which solution will meet these requirements with the LEAST operational overhead?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729abb"
+  },
+  "quid": null,
+  "ordinal": "342",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS Auto Scaling",
+    " AWS Compute Optimizer",
+    " AWS CloudWatch",
+    " AWS Elastic Beanstalk",
+    " AWS Lambda"
+  ],
+  "slug": "ec2-transaction-processing-capacity-aws",
+  "source": "ET",
+  "title": "AWS Transaction Processing Company Question",
+  "meta": "AWS Exam Question: A transaction processing company needs an automated way to modify Auto Scaling group capacity before batch jobs. Find the answer, including EC2.",
+  "answer": "C",
+  "query": "A financial analytics firm processes data through scheduled batch jobs that execute on Amazon EC2 instances within an Auto Scaling group. The transactions fluctuates significantly, but the observed CPU utilization during each batch process never falls below 70%. The firm must ensure that the necessary capacity is provisioned 45 minutes prior to job execution.\n\nCurrently, the team manually adjusts the Auto Scaling group settings to accommodate this. However, they lack the capability to assess the required capacity trends automatically. The firm is seeking an efficient solution to dynamically adjust the Auto Scaling group's desired capacity.\n\nWhat solution can accomplish this with MINIMAL management effort?",
+  "originalQuery": "A transaction processing company has weekly scripted batch jobs that run on Amazon EC2 instances. The EC2 instances are in an Auto Scaling group. The number of transactions can vary, but the baseline CPU utilization that is noted on each run is at least 60%. The company needs to provision the capacity 30 minutes before the jobs run.\n\nCurrently, engineers complete this task by manually modifying the Auto Scaling group parameters. The company does not have the resources to analyze the required capacity trends for the Auto Scaling group counts. The company needs an automated way to modify the Auto Scaling group’s desired capacity.\n\nWhich solution will meet these requirements with the LEAST operational overhead?",
+  "options": [
+    "",
+    "",
+    "",
+    ""
+  ],
+  "originalOptions": [
+    "A. Create a dynamic scaling policy for the Auto Scaling group. Configure the policy to scale based on the CPU utilization metric. Set the target value for the metric to 60%.",
+    "B. Create a scheduled scaling policy for the Auto Scaling group. Set the appropriate desired capacity, minimum capacity, and maximum capacity. Set the recurrence to weekly. Set the start time to 30 minutes before the batch jobs run.",
+    "C. Create a predictive scaling policy for the Auto Scaling group. Configure the policy to scale based on forecast. Set the scaling metric to CPU utilization. Set the target value for the metric to 60%. In the policy, set the instances to pre-launch 30 minutes before the jobs run.",
+    "D. Create an Amazon EventBridge event to invoke an AWS Lambda function when the CPU utilization metric value for the Auto Scaling group reaches 60%. Configure the Lambda function to increase the Auto Scaling group’s desired capacity and maximum capacity by 20%."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [],
+  "originalComments": [],
+  "voteDistribution": [
+    {
+      "option": "C (69%)",
+      "votes": "51 votes."
+    },
+    {
+      "option": "B (28%)",
+      "votes": "21 votes."
+    },
+    {
+      "option": "3%",
+      "votes": "2 votes."
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "Option C is the correct answer because it utilizes a predictive scaling policy which forecasts the necessary capacity based on historical data, effectively pre-launching instances 30 minutes before the batch jobs start. This minimizes management effort since it automates the scaling process based on trends rather than manual intervention. \n\nOption A is incorrect because while a dynamic scaling policy can respond to changes in CPU utilization, it would not ensure that capacity is ready 30 minutes in advance. \n\nOption B is also inappropriate because a scheduled scaling policy does not account for fluctuating workloads over time and may not react well to unexpected changes, unlike a predictive policy. Furthermore, it sets a fixed schedule rather than dynamically adjusting based on actual usage patterns. \n\nOption D involves using EventBridge and Lambda, but this approach would require more management effort to configure and monitor, compared to the fully automated predictive scaling method in option C.",
+  "video_url": "https://certificationation.com/videos/exam-has-weekly-scripted-batch-jobs-exam-341.html",
+  "url": "https://certificationation.com/questions/exam-has-weekly-scripted-batch-jobs-exam-341.html"
+}

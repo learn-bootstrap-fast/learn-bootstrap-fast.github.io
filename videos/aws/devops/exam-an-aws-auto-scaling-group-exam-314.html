@@ -1,0 +1,62 @@
+---
+title: "You have deployed a Java application in an AWS AutoExam"
+description: "Video for you have deployed a Java application in an AWS Auto Scaling group. The application has sent its logs to an AWS CloudWatch Log Group. You want to"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have deployed a Java application in an AWS Auto Scaling group. The application has sent its logs to an AWS CloudWatch Log Group. You want to deliver the log events from the CloudWatch Log Group to a Lambda function in real-time for custom processing and analysis. As the Lambda function is designed to process only the logs that contain certain keywords, you need a filter pattern that defines which log events should be forwarded. How would you implement this?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><b>Within the CloudWatch Log Group, configure a subscription filter that directs log events to the Lambda function, specifying the required filter pattern.</b> This is the correct approach because CloudWatch Log Groups support subscription filters, which let you stream selected log events to AWS Lambda or other services based on real-time pattern matching. The subscription filter uses a filter pattern so only the events that include your desired keywords are delivered to Lambda immediately for processing.</p><p>The other options are incorrect for these reasons:</p><ul><li><i>Choose the CloudWatch Log Group and use the 'Export data to Lambda' feature, selecting your Lambda and setting the appropriate filter pattern.</i> — There's no built-in feature in CloudWatch to directly 'Export data to Lambda'; this workflow does not exist.</li><li><i>From the CloudWatch Log Group, pick the log stream and select 'Export results', assign your Lambda function, and provide the filter pattern.</i> — Exporting log stream results is primarily for static exports (like to S3), not real-time processing by Lambda.</li><li><i>Set up a metric filter in the CloudWatch Log Group to send filtered log data to the Lambda function and define the search pattern within this metric filter.</i> — Metric filters are for generating CloudWatch Metrics from log events, not for streaming filtered event data directly to Lambda in real-time.</li></ul><p><b>Tips and Insights:</b><br/>When automating real-time log event processing with Lambda, always use subscription filters, which provide both filtering and streaming capabilities. The filter pattern should be crafted carefully to avoid unintentional invocation of your Lambda function, keeping costs and unwanted triggers minimal.</p>",
+  "query": "<p>An organization is running a Java application on an AWS Auto Scaling group, logging its output to an AWS CloudWatch Log Group. The requirement is to trigger a Lambda function in real-time, but only for log events that match specific keywords. Which configuration enables only matching log events from the CloudWatch Log Group to be sent directly to the Lambda function for processing and analytics?</p>",
+  "original_oid": "6793da9461969b416038a24b",
+  "options": [
+    {
+      "correct": true,
+      "text": "Within the CloudWatch Log Group, configure a subscription filter that directs log events to the Lambda function, specifying the required filter pattern.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Choose the CloudWatch Log Group and use the 'Export data to Lambda' feature, selecting your Lambda and setting the appropriate filter pattern.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "From the CloudWatch Log Group, pick the log stream and select 'Export results', assign your Lambda function, and provide the filter pattern.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up a metric filter in the CloudWatch Log Group to send filtered log data to the Lambda function and define the search pattern within this metric filter.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question475",
+  "originalQuery": "You have deployed a Java application in an AWS Auto Scaling group.\nThe application has sent its logs to an AWS CloudWatch Log Group.\nYou want to deliver the log events from the CloudWatch Log Group to a Lambda function in real-time for custom processing and analysis.\nAs the Lambda function is designed to process only the logs that contain certain keywords, you need a filter pattern that defines which log events should be forwarded.\nHow would you implement this?",
+  "originalOptions": "A. In the CloudWatch Log Group, create a metric filter to send the log data to the AWS Lambda function. Set up a filter pattern in the metric filter to specify which logs are forwarded.;B. In the CloudWatch Log Group, create a subscription filter that sends the log data to the AWS Lambda function. Set up the filter pattern in the subscription filter to specify which logs are forwarded.;C. Select the log stream of the CloudWatch Log Group and click “Export results”. Choose the Lambda function and configure the filter pattern.;D. Select the CloudWatch Log Group and click “Export data to Lambda”. Choose your Lambda function and define the filter pattern.",
+  "video_url": "https://certificationation.com/videos/exam-an-aws-auto-scaling-group-exam-314.html",
+  "url": "https://certificationation.com/questions/exam-an-aws-auto-scaling-group-exam-314.html"
+}

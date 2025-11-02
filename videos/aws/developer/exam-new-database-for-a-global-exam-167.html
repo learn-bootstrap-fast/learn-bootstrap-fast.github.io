@@ -1,0 +1,83 @@
+---
+title: "You are responsible for designing a new database for aExam"
+description: "Video for you are responsible for designing a new database for a global e-commerce application in Google Cloud. This application must be able to: Handle"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are responsible for designing a new database for a global e-commerce application in Google Cloud. This application must be able to: Handle transactions with strong consistency. Work with structured and semi-structured (JSON) data. Scale globally to provide low latency access for users worldwide. As a Database Engineer, you need a Google Cloud database that meets all the requirements of the application. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Your team at scrumtuous.com is launching a global ride booking platform on Google Cloud. The database must support strongly consistent transactions, store both relational columns and JSON attributes, and scale across multiple continents to keep latency low for users worldwide. Which Google Cloud database should you choose to meet these needs?",
+  "options": [
+    {
+      "text": "Create a Bigtable instance with clusters in three regions",
+      "explanation": "This sets up a wide column NoSQL database that can distribute traffic across clusters in several regions",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Provision Cloud Spanner using a multi region instance configuration",
+      "explanation": "This provides a horizontally scalable relational service that can span regions and includes support for structured data and a JSON type",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Deploy AlloyDB for PostgreSQL with cross region read replicas",
+      "explanation": "This offers a managed PostgreSQL compatible service with high performance and the ability to create read replicas in other regions",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Firestore in Native mode",
+      "explanation": "This delivers a globally accessible document database with automatic scaling and strong consistency for document reads and writes",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Provision Cloud Spanner using a multi region instance configuration</b> because it delivers strongly consistent transactions, supports relational tables alongside a native JSON data type, and scales across continents to keep user latency low.</p><p><b>Cloud Spanner</b> provides external consistency for reads and writes, horizontal scalability, and a relational schema with SQL. It also includes a JSON column type so you can combine structured columns with semi structured attributes in the same database. A multi region instance configuration synchronously replicates data across regions and automatically handles failover, which preserves strong consistency while serving a global user base with low latency.</p><p><i>Create a Bigtable instance with clusters in three regions</i> is not a fit because <i>Bigtable</i> is a wide column NoSQL store without a relational schema or multi row ACID transactions, and multi cluster routing can yield eventually consistent reads. It does not offer SQL or native transactional semantics needed for strongly consistent multi table operations.</p><p><i>Deploy AlloyDB for PostgreSQL with cross region read replicas</i> does not meet the requirement because the primary is single region and cross region replicas are asynchronous. This means no strongly consistent multi region writes or transactions, even though <i>AlloyDB</i> supports relational data and JSONB within one region.</p><p><i>Use Firestore in Native mode</i> is not appropriate because <i>Firestore</i> is a document database rather than a relational system and it does not provide a relational schema or SQL. While it offers multi region locations and transactions for documents, it is not designed for globally distributed strongly consistent relational workloads.</p>",
+  "batch_id": "207",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "You are responsible for designing a new database for a global e-commerce application in Google Cloud. This application must be able to: Handle transactions with strong consistency. Work with structured and semi-structured (JSON) data. Scale globally to provide low latency access for users worldwide. As a Database Engineer, you need a Google Cloud database that meets all the requirements of the application. What should you do?",
+  "originalOptions": "A. Use Cloud SQL for PostgreSQL with global read replicas.<br/>B. Use a Bigtable instance with clusters in multiple regions.<br/>C. Use Cloud Spanner in a multi-region configuration.<br/>D. Use Firestore in Native mode.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "167",
+  "tip": "<p>Map each requirement to a capability. When you see <i>global scale</i> with <i>strongly consistent transactions</i> and a <i>relational</i> model that can also hold <i>JSON</i>, think of Cloud Spanner with a <i>multi region</i> configuration. Cross region read replicas usually imply asynchronous replication which does not satisfy global strong consistency for writes.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/overview",
+    "https://cloud.google.com/spanner/docs/instance-configurations",
+    "https://cloud.google.com/spanner/docs/json-data",
+    "https://cloud.google.com/spanner/docs/transactions",
+    "https://cloud.google.com/bigtable/docs/replication-overview#consistency",
+    "https://cloud.google.com/alloydb/docs/concepts/read-replicas#cross-region-replicas",
+    "https://cloud.google.com/firestore/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-new-database-for-a-global-exam-167.html",
+  "video_url": "https://certificationation.com/videos/exam-new-database-for-a-global-exam-167.html"
+}

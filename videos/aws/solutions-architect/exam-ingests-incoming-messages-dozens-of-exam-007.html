@@ -1,0 +1,128 @@
+---
+title: "A company has an application that ingests incomingExam"
+description: "Video for a company has an application that ingests incoming messages. Dozens of other applications and microservices then quickly consume these messages. The"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company has an application that ingests incoming messages. Dozens of other applications and microservices then quickly consume these messages. The number of messages varies drastically and sometimes increases suddenly to 100,000 each second. The company wants to decouple the solution and increase scalability. Which solution meets these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f72996c"
+  },
+  "quid": null,
+  "ordinal": "7",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon Simple Queue Service (Amazon SQS)",
+    " AWS Lambda",
+    " Amazon EventBridge",
+    " AWS Fargate",
+    " AWS Step Functions"
+  ],
+  "slug": "sqs-ingests-incoming-messages-aws",
+  "source": "ET",
+  "title": "AWS A Company Has An Application That Ingests Question",
+  "meta": "AWS Exam Question: A company seeks a scalable solution for an application ingesting messages for various microservices. What is the best answer? Consider SQS and Lambda.",
+  "answer": "D",
+  "query": "A business operates an application designed for incoming message ingestion. Numerous applications and microservices rapidly consume these messages. Message traffic fluctuates greatly, occasionally spiking to 85,000 each second. The business seeks to decouple the architecture and boost scalability.\nWhat solution addresses these needs?",
+  "originalQuery": "A company has an application that ingests incoming messages. Dozens of other applications and microservices then quickly consume these messages. The number of messages varies drastically and sometimes increases suddenly to 100,000 each second. The company wants to decouple the solution and increase scalability.\nWhich solution meets these requirements?",
+  "options": [
+    "",
+    "",
+    "",
+    ""
+  ],
+  "originalOptions": [
+    "A. Persist the messages to Amazon Kinesis Data Analytics. Configure the consumer applications to read and process the messages.",
+    "B. Deploy the ingestion application on Amazon EC2 instances in an Auto Scaling group to scale the number of EC2 instances based on CPU metrics.",
+    "C. Write the messages to Amazon Kinesis Data Streams with a single shard. Use an AWS Lambda function to preprocess messages and store them in Amazon DynamoDB. Configure the consumer applications to read from DynamoDB to process the messages.",
+    "D. Publish the messages to an Amazon Simple Notification Service (Amazon SNS) topic with multiple Amazon Simple Queue Service (Amazon SOS) subscriptions. Configure the consumer applications to process the messages from the queues."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Option D is the most logical choice in this scenario. To achieve decoupling and enhanced scalability, implementing a message broker, such as Amazon Simple Queue Service (SQS) or Amazon Managed Streaming for Apache Kafka, would be beneficial. These services allow for asynchronous message processing, enabling the system to handle varying message loads without overwhelming the downstream consumers.\n\nBy utilizing a message broker, the application can queue incoming messages, allowing multiple microservices to process them at their own pace. This setup not only facilitates the handling of sudden spikes in message volume but also improves the overall resilience and fault tolerance of the system. Moreover, message brokers often support features such as message retention, dead-letter queues, and scaling capabilities, which are essential for maintaining performance during high-load scenarios.\n\nIn addition, integrating a message broker can lead to better resource allocation, as it allows for the dynamic scaling of microservices based on current processing demands. This results in a more efficient architecture that can adapt to varying workloads, ensuring that the system remains responsive and reliable under different conditions. Overall, adopting a message broker aligns well with the goals of decoupling and scalability.",
+    "By default, an SQS queue is like a friendly bouncer at a club, allowing a maximum of 3,000 messages to waltz in each second. But don't worry, if you're throwing a wild party and need more space, you can just give AWS Support a shout! They can pump up your queue's capacity, letting in an extra 300 messages per second, all the way up to a whopping 10,000 messages per second! 🎉\n\nJust keep in mind, the number of messages your queue can handle per second is different from the number of requests the SQS API can manage. Think of the SQS API as an energetic DJ, ready to spin requests at a high rate, allowing you to send messages to your queue even faster than it can handle them. So, whether you're throwing a small shindig or a massive rave, SQS has got your back! 💃📦",
+    "Well, it's obvious that the right choice here is D. In a world where your message volume can spike to a staggering 100,000 per second, you definitely need a solution that can keep up without breaking a sweat. To achieve this decoupling and scalability, consider leveraging systems like Amazon Simple Queue Service (SQS) or Amazon Kinesis. These tools allow your application to smoothly handle incoming messages and distribute them to various consumers without getting tangled up in a web of dependencies. \n\nSQS offers reliable message queuing, ensuring that your messages are stored until they are processed, while Kinesis can handle real-time data streams, making it a great fit for high-velocity scenarios. Both options enable your system to scale effortlessly, so when those message spikes come knocking, you won't be left scrambling. Embrace the beauty of decoupling and let your applications thrive in a more flexible, resilient architecture!",
+    "Utilize Amazon Simple Notification Service (Amazon SNS) to publish messages to a designated topic, coupled with multiple subscriptions to Amazon Simple Queue Service (Amazon SQS). Configure the consuming applications to retrieve and process messages directly from these queues.\n\nThis approach leverages the capabilities of Amazon SNS and SQS to facilitate a robust publish-subscribe model, effectively decoupling your system and enhancing scalability. By enabling multiple consumer applications to handle messages concurrently, this solution promotes efficient processing, even during peak load times. Furthermore, employing Amazon SQS with multiple subscriptions enhances resiliency, allowing for multiple instances of the same message to be processed simultaneously, ensuring that your applications remain responsive and reliable under varying workloads.",
+    "Oh, what a delightful puzzle we have here! 🌟 Let’s sprinkle some joy into this explanation while keeping it professional and informative.\n\nA: Not quite right! It’s essential to remember that Kinesis Data Analytics is meant for analyzing data, drawing its information from sources like Kinesis Data Streams, Kinesis Data Firehose, or Managed Streaming for Apache Kafka (MSK). However, it doesn’t have the magical ability to directly consume messages or send them to applications. \n\nB: Oops! This option misses the mark too. An Auto Scaling group might seem like a good idea, but it struggles with rapid fluctuations. It takes time to monitor CPU metrics and even longer to spin up new EC2 instances. Imagine needing to scale from 10 to 100 EC2s—there could be a temporary downtime while everything catches up!\n\nC: Almost there, but not quite! While Kinesis Data Streams can handle the workload, simply increasing to a single shard won’t do the trick. We would need to add additional shards to effectively manage the influx of messages.\n\nD: Bingo! This is the star of the show! By employing a fan-out pattern with Amazon SNS (Simple Notification Service) and multiple SQS (Simple Queue Service) queues, we can elegantly handle high workloads. This setup is particularly fantastic for managing drastic variations in message volume, including those exhilarating moments when traffic peaks at 100,000 messages per second! 🎉 \n\nWith this joyful approach, scaling and decoupling your solution becomes a breeze!"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "D",
+      "explanation": "D makes more sense to me.",
+      "upvotes": "54"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "By default, an SQS queue can handle a maximum of 3,000 messages per second. However, you can request higher throughput by contacting AWS Support. AWS can increase the message throughput for your queue beyond the default limits in increments of 300 messages per second, up to a maximum of 10,000 messages per second.\n\nIt's important to note that the maximum number of messages per second that a queue can handle is not the same as the maximum number of requests per second that the SQS API can handle. The SQS API is designed to handle a high volume of requests per second, so it can be used to send messages to your queue at a rate that exceeds the maximum message throughput of the queue.",
+      "upvotes": "16"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "of course, the answer is D",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "D. Publish the messages to an Amazon Simple Notification Service (Amazon SNS) topic with multiple Amazon Simple Queue Service (Amazon SQS) subscriptions. Configure the consumer applications to process the messages from the queues.\n\nThis solution uses Amazon SNS and SQS to publish and subscribe to messages respectively, which decouples the system and enables scalability by allowing multiple consumer applications to process the messages in parallel. Additionally, using Amazon SQS with multiple subscriptions can provide increased resiliency by allowing multiple copies of the same message to be processed in parallel.",
+      "upvotes": "15"
+    },
+    {
+      "selectedAnswer": "D",
+      "explanation": "Keywords:\n- The number of messages varies drastically\n- Sometimes increases suddenly to 100,000 each second\n\nA: Incorrect - Don't confuse between Kinesis Data Analytics and Kinesis Data Stream =)) Kinesis Data Analytics will get the data from Kinesis Data Stream or Kinesis Data FireHose or MSK (Managed Stream for apache Kafka) for analytic purpose. It can not consume message and send to applications.\nB: Incorrect - Base on the keywords -> Auto Scaling group not scale well because it need time to check the CPU metric and need time to start up the EC2 and the messages varies drastically. Example: we have to scale from 10 to 100 EC2. Our servers may be down a while when it was scaling.\nC: Incorrect - Kinesis Data Streams can handle this case but we should increase the more shards but not single shard.\nD: Correct: We can handle high workload well with fan-out pattern SNS + multiple SQS -> This is good for use case:\n- The number of messages varies drastically\n- Sometimes increases suddenly to 100,000 each second",
+      "upvotes": "16"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "D (83%)",
+      "votes": "172 votes."
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "Option D is the correct answer because it effectively utilizes Amazon Simple Notification Service (SNS) and Amazon Simple Queue Service (SQS) to decouple the message ingestion process and enhance scalability. The SNS topic allows messages to be published and then distributed to multiple SQS queues, enabling various consumer applications to process the messages in parallel. This fan-out model is particularly well-suited for high fluctuations in message traffic, allowing for efficient processing even under peak loads. \n\nOption A is incorrect because Kinesis Data Analytics is not designed to directly process and consume messages; it is for analytics and primarily acts on data coming from Kinesis Data Streams, which would still need to be configured but does not support decoupling at the same level as SNS/SQS.\n\nOption B is incorrect since relying solely on EC2 instances would not efficiently manage the spikes in message traffic. Auto Scaling relies on CloudWatch metrics and could result in delays in scaling based on CPU usage, which may not keep pace with high volume, rapidly changing incoming messages. \n\nOption C is incorrect as it suggests using a single shard in Kinesis Data Streams. While Kinesis can handle high-throughput scenarios, a single shard would likely become a bottleneck, necessitating multiple shards to effectively manage the 85,000 messages per second during spikes. Thus, it would not meet the decoupling and scalability goals as effectively as the SNS/SQS solution.",
+  "video_url": "https://certificationation.com/videos/exam-ingests-incoming-messages-dozens-of-exam-007.html",
+  "url": "https://certificationation.com/questions/exam-ingests-incoming-messages-dozens-of-exam-007.html"
+}

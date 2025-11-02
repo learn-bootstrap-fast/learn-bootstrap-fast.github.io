@@ -1,0 +1,127 @@
+---
+title: "A company has a data ingestion workflow that consists ofExam"
+description: "Video for a company has a data ingestion workflow that consists of the following: • An Amazon Simple Notification Service (Amazon SNS) topic for notifications"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company has a data ingestion workflow that consists of the following: • An Amazon Simple Notification Service (Amazon SNS) topic for notifications about new data deliveries • An AWS Lambda function to process the data and record metadata The company observes that the ingestion workflow fails occasionally because of network connectivity issues. When such a failure occurs, the Lambda function does not ingest the corresponding data unless the company manually reruns the job. Which combination of actions should a solutions architect take to ensure that the Lambda function ingests all data in the future? (Choose two.)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729992"
+  },
+  "quid": null,
+  "ordinal": "45",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon Simple Queue Service (Amazon SQS)",
+    " AWS Lambda"
+  ],
+  "slug": "sn-data-ingestion-workflow-aws",
+  "source": "ET",
+  "title": "AWS A Company Has A Data Ingestion Workflow Question",
+  "meta": "AWS Exam Question: A company has a data ingestion workflow using Amazon SNS and AWS Lambda. What actions ensure data ingestion? Find the answer!",
+  "answer": "BE",
+  "query": "An organization has established a data ingestion process that includes:\n• An Amazon Simple Notification Service (Amazon SNS) topic for alerts regarding incoming data deliveries\n• An AWS Lambda function that processes the incoming data and logs relevant information\nRecently, the company has faced challenges where the ingestion process fails intermittently due to connectivity issues. During these failures, the Lambda function fails to process the associated data unless the workflow is manually restarted. What steps should a solutions architect take to guarantee that the Lambda function processes all data moving forward? (Select two.)",
+  "originalQuery": "A company has a data ingestion workflow that consists of the following:\n• An Amazon Simple Notification Service (Amazon SNS) topic for notifications about new data deliveries\n• An AWS Lambda function to process the data and record metadata\nThe company observes that the ingestion workflow fails occasionally because of network connectivity issues. When such a failure occurs, the Lambda function does not ingest the corresponding data unless the company manually reruns the job.\nWhich combination of actions should a solutions architect take to ensure that the Lambda function ingests all data in the future? (Choose two.)",
+  "options": [
+    "A. Deploy the Lambda function across multiple Availability Zones.",
+    "B. Create an Amazon Simple Queue Service (Amazon SQS) queue, and subscribe it to the SNS topic.",
+    "C. Enhance the CPU and memory allocated to the Lambda function.",
+    "D. Boost provisioned throughput for the Lambda function.",
+    "E. Modify the Lambda function to read from an Amazon Simple Queue Service (Amazon SQS) queue."
+  ],
+  "originalOptions": [
+    "A. Deploy the Lambda function in multiple Availability Zones.",
+    "B. Create an Amazon Simple Queue Service (Amazon SQS) queue, and subscribe it to the SNS topic.",
+    "C. Increase the CPU and memory that are allocated to the Lambda function.",
+    "D. Increase provisioned throughput for the Lambda function.",
+    "E. Modify the Lambda function to read from an Amazon Simple Queue Service (Amazon SQS) queue."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Options A, C, and D can be disregarded because AWS Lambda is a fully managed service that inherently ensures high availability and scalability. \n\nThe appropriate choices are B and E. By creating an Amazon Simple Queue Service (SQS) queue and subscribing it to the Amazon Simple Notification Service (SNS) topic, you can provide a reliable buffering mechanism that will store messages during periods of network instability. This setup ensures that no data is lost during connectivity issues. Additionally, modifying the Lambda function to read from the SQS queue allows for automatic retries of data ingestion, ensuring that the function processes all messages, even if initial attempts fail due to transient network problems. This approach enhances the overall robustness of the data ingestion workflow.",
+    "Sometimes, giving your Lambda function a little extra memory can help boost its performance. However, in this particular situation, that's not the solution we need! 🚀 Let's keep it light and ensure our data ingestion workflow stays on track without manually kicking it back into gear. After all, we want our Lambda to handle those data deliveries like a pro, right? 😄",
+    "To ensure that the Lambda function successfully ingests all data, it’s crucial to implement a reliable message queue system. By having the Lambda function read from an Amazon Simple Queue Service (SQS) queue, you create a safety net that catches any data that might otherwise slip through the cracks during those pesky network hiccups. This setup guarantees that messages are stored reliably and can be processed even if the Lambda function experiences a temporary failure. So, instead of relying on a manual rerun, you’ll have a robust mechanism in place, ensuring nothing gets lost in the ether.",
+    "The ideal solution involves decoupling the applications by implementing an Amazon Simple Queue Service (SQS) queue. This approach enhances the reliability of the data ingestion workflow by providing a buffer that captures notifications from the SNS topic. By doing so, any connectivity issues will not hinder the processing of data, as the Lambda function can retrieve messages from the SQS queue at its own pace, ensuring that no data is lost. This method not only streamlines the workflow but also improves overall system resilience and efficiency.",
+    "Let's bring a little sunshine to the explanation! 🌞\n\nWhen we create an Amazon Simple Queue Service (SQS) queue and link it to the Amazon Simple Notification Service (SNS) topic, we’re setting up a delightful safety net! This means that whenever the SNS topic sends out notifications, those messages will magically find their way into the SQS queue. This clever arrangement ensures that the messages are safely stored, even if our Lambda function isn’t ready to process them right away. \n\nNext, by adjusting the Lambda function to listen for messages coming from the SQS queue, we’re giving it a fantastic upgrade! The function will spring into action whenever a new message arrives. If there’s ever a hiccup in connectivity or if the function encounters a snag, no worries! The messages will patiently wait in the SQS queue until our Lambda function is ready to handle them. This charming setup prevents any loss of messages and means we can say goodbye to the hassle of manual intervention. 🎉"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "",
+      "explanation": "A, C, D options are out, since Lambda is fully managed service which provides high availability and scalability by its own\n\nAnswers are B and E",
+      "upvotes": "27"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "There are times you do have to increase lambda memory for improved performance though. But not in this case.",
+      "upvotes": "4"
+    },
+    {
+      "selectedAnswer": "BE",
+      "explanation": "BE so that the lambda function reads the SQS queue and nothing gets lost",
+      "upvotes": "12"
+    },
+    {
+      "selectedAnswer": "BE",
+      "explanation": "best solution is to decouple the applications using SQS queue.",
+      "upvotes": "1"
+    },
+    {
+      "selectedAnswer": "BE",
+      "explanation": "Explicação:\nCriar uma fila do SQS e inscrevê-la no tópico do SNS (Opção B):\n\nQuando o tópico do SNS envia notificações, elas são colocadas na fila do SQS.\nIsso garante que as mensagens sejam armazenadas de forma durável na fila, mesmo que a função do Lambda não esteja disponível para processá-las imediatamente.\nModificar a função do Lambda para ler da fila do SQS (Opção E):\n\nA função do Lambda é configurada para ser acionada por mensagens na fila do SQS.\nSe ocorrer um problema de conectividade ou falha na função, as mensagens permanecerão na fila do SQS até que sejam processadas com sucesso.\nIsso evita a perda de mensagens e elimina a necessidade de intervenção manual.",
+      "upvotes": "1"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "BE (98%)",
+      "votes": "51 votes."
+    },
+    {
+      "option": "2%",
+      "votes": "1 votes."
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answers are B and E. Option B suggests creating an Amazon SQS queue and subscribing it to the SNS topic. This allows messages to be stored durably in the SQS queue even if the Lambda function is unavailable to process them immediately. Option E involves modifying the Lambda function to read from the SQS queue, which ensures that messages remain in the queue until they are successfully processed, thereby preventing data loss. The incorrect answers are as follows: Option A is incorrect because deploying Lambda across multiple Availability Zones does not fix connectivity issues and does not guarantee message processing. Option C (increasing CPU and memory) may improve performance but does not address the failed process during connectivity issues. Option D (increasing provisioned throughput) does not apply to Lambda, as it automatically scales based on demand; thus, it does not solve the intermittent failures.",
+  "video_url": "https://certificationation.com/videos/exam-workflow-that-consists-of-the-exam-045.html",
+  "url": "https://certificationation.com/questions/exam-workflow-that-consists-of-the-exam-045.html"
+}

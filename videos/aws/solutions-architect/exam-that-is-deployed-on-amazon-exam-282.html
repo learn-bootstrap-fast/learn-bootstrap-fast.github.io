@@ -1,0 +1,128 @@
+---
+title: "A company runs a web application that is deployed onExam"
+description: "Video for a company runs a web application that is deployed on Amazon EC2 instances in the private subnet of a VPC. An Application Load Balancer (ALB) that"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company runs a web application that is deployed on Amazon EC2 instances in the private subnet of a VPC. An Application Load Balancer (ALB) that extends across the public subnets directs web traffic to the EC2 instances. The company wants to implement new security measures to restrict inbound traffic from the ALB to the EC2 instances while preventing access from any other source inside or outside the private subnet of the EC2 instances. Which solution will meet these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729a7f"
+  },
+  "quid": null,
+  "ordinal": "282",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS shared responsibility model",
+    " Amazon EC2",
+    " AWS VPC",
+    " AWS Security",
+    " AWS Security Hub"
+  ],
+  "slug": "ec2-web-application-security-measures-aws",
+  "source": "ET",
+  "title": "AWS A Company Runs A Web Application Question",
+  "meta": "AWS Exam Question: A company runs a web app on Amazon EC2 in a private subnet with an ALB directing traffic. What solution restricts inbound access? Answer: VPC, security groups.",
+  "answer": "B",
+  "query": "An organization has a website hosted on Amazon EC2 instances situated within a private subnet of a virtual private cloud (VPC). An Application Load Balancer (ALB) positioned in the public subnet handles incoming web traffic to these instances. The organization is aiming to enhance security by limiting the inbound traffic from the ALB to the EC2 instances and wants to block access from any other external or internal sources to the private subnet of the EC2 instances.\n\nWhat approach will satisfy these requirements?",
+  "originalQuery": "A company runs a web application that is deployed on Amazon EC2 instances in the private subnet of a VPC. An Application Load Balancer (ALB) that extends across the public subnets directs web traffic to the EC2 instances. The company wants to implement new security measures to restrict inbound traffic from the ALB to the EC2 instances while preventing access from any other source inside or outside the private subnet of the EC2 instances.\n\nWhich solution will meet these requirements?",
+  "options": [
+    "A. Set up a route in the route table for directing internet traffic to the private IPs of the EC2 instances.",
+    "B. Configure the security group for the EC2 instances to only allow traffic that comes from the security group for the ALB.",
+    "C. Relocate the EC2 instances to the public subnet. Assign Elastic IPs to those EC2 instances.",
+    "D. Configure the security group for the ALB to allow any TCP traffic on any port."
+  ],
+  "originalOptions": [
+    "A. Configure a route in a route table to direct traffic from the internet to the private IP addresses of the EC2 instances.",
+    "B. Configure the security group for the EC2 instances to only allow traffic that comes from the security group for the ALB.",
+    "C. Move the EC2 instances into the public subnet. Give the EC2 instances a set of Elastic IP addresses.",
+    "D. Configure the security group for the ALB to allow any TCP traffic on any port."
+  ],
+  "image": null,
+  "primaryObjective": "1: Design Secure Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "To implement appropriate security measures that restrict inbound traffic from the Application Load Balancer (ALB) to the EC2 instances while blocking access from any other source, it is essential to configure the security groups effectively. The optimal approach is to modify the security group associated with the EC2 instances to allow traffic exclusively from the security group linked to the ALB. This configuration ensures that only requests originating from the ALB can reach the EC2 instances, thereby enhancing security by preventing unauthorized access from both internal and external sources.\n\nIt is critical to understand that security groups act as virtual firewalls, controlling inbound and outbound traffic to instances. By setting the inbound rules of the EC2 instances' security group to permit traffic solely from the ALB's security group, you effectively create a controlled environment that limits exposure to potential threats.\n\nOther options, such as relocating EC2 instances to a public subnet or allowing all TCP traffic on any port via the ALB's security group, would introduce unnecessary risks and vulnerabilities. Maintaining the architecture where EC2 instances reside in a private subnet while leveraging an ALB in public subnets is a best practice, as it helps to isolate resources and minimize the attack surface.\n\nIn summary, the best practice for securing the communication between the ALB and the EC2 instances is to configure the security group for the EC2 instances to accept traffic only from the security group associated with the ALB. This approach ensures that your application remains secure while still accessible through the designated load balancer.",
+    "To ensure your EC2 instances stay snug and secure, just tweak their security group settings to permit only the traffic that originates from the ALB's security group. 🎉 This way, you'll keep those unwanted guests at bay, while still letting your friendly ALB traffic waltz right in! 🚪💃 It's like giving your instances a bouncer who only lets in the cool crowd. So, keep it tight and let the good vibes flow! 🚀",
+    "Could someone clarify the question for me? I’m trying to wrap my head around it, but it feels like I’m chasing my own tail here.",
+    "It's perfectly understandable that mistakes can happen! It's simply a matter of oversight. Option \"C\" is not a viable solution in this scenario, as relocating the EC2 instances to a public subnet and assigning Elastic IPs would expose them to unnecessary risks. Let's focus on the best practices to enhance security while maintaining the functionality of the architecture.",
+    "Oh my goodness! The question seems a bit tricky, doesn't it? But fear not, we're here to unravel the mystery and get to the heart of it! 🌟 It looks like it's all about enhancing security for your EC2 instances while keeping things nice and cozy within your private subnet. The goal is to ensure that only the Application Load Balancer (ALB) can communicate with those instances, blocking any other traffic from sneaking in. Let's dive into the potential solutions and see which one brings the most sunshine to your cloud environment! ☁️✨"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "",
+      "explanation": "Read the discussion, that’s the whole point why examtopics picks the wrong answer. Follow most voted answer not examtopics answer",
+      "upvotes": "12"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "Configure the security group for the EC2 instances to only allow traffic that comes from the security group for the ALB",
+      "upvotes": "7"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "can anybody explains the question?",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "is just admins fault dont worry, he just made a mistake, because \"C\" doesnt make any sence",
+      "upvotes": "1"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "i don't even understand what the question is trying to ask",
+      "upvotes": "1"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "B (100%)",
+      "votes": "24 votes."
+    },
+    {
+      "option": "C (25%)",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is B because it restricts the inbound traffic to the EC2 instances strictly from the ALB, ensuring that no other traffic can reach the EC2 instances from either external or internal sources. This is achieved by configuring the security group of the EC2 instances to accept traffic only from the security group associated with the ALB, thus enhancing the security posture of the application.\n\nOption A is incorrect because configuring a route in a route table to direct traffic from the internet to the private IP addresses of the EC2 instances would expose them to public traffic, which contradicts the requirement to restrict access. Option C is incorrect as moving the EC2 instances to a public subnet with Elastic IPs would also expose them to direct internet access, failing the security objective. Option D is incorrect because allowing any TCP traffic on any port in the security group for the ALB does not limit access but rather increases vulnerability by permitting unrestricted traffic.",
+  "video_url": "https://certificationation.com/videos/exam-that-is-deployed-on-amazon-exam-282.html",
+  "url": "https://certificationation.com/questions/exam-that-is-deployed-on-amazon-exam-282.html"
+}

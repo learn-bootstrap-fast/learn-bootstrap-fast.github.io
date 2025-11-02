@@ -1,0 +1,79 @@
+---
+title: "As a Database Engineer, you are tasked with designing aExam"
+description: "Video for as a Database Engineer, you are tasked with designing a Cloud SQL instance to meet specific performance requirements while minimizing costs. The"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are tasked with designing a Cloud SQL instance to meet specific performance requirements while minimizing costs. The database has the following performance requirements: 1,000 write transactions per second (TPS) 2,000 read transactions per second (TPS) 3 TB of storage capacity Given the above requirements, which of the following configurations should you choose for your Cloud SQL instance?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are designing a Cloud SQL instance for Redwood Outfitters to meet strict throughput targets while keeping overall cost low. The database must handle 1,200 write transactions per second and 2,400 read transactions per second, and it needs 4 TB of persistent storage. Which instance configuration should you provision to meet these goals at the lowest cost?",
+  "options": [
+    {
+      "text": "db-n2-highmem-16, 4 TB SSD storage",
+      "explanation": "This option uses a 16 vCPU high memory machine type combined with 4 TB of SSD capacity",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "db-n2-standard-16, 4 TB SSD storage",
+      "explanation": "This option uses a 16 vCPU general purpose machine type paired with 4 TB of SSD capacity",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "db-n2-standard-32, 4 TB HDD storage",
+      "explanation": "This option selects a 32 vCPU general purpose machine type backed by 4 TB of HDD storage",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "db-n2-standard-64, 4 TB SSD storage",
+      "explanation": "This option uses a 64 vCPU general purpose machine type with 4 TB of SSD capacity",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>db-n2-standard-16, 4 TB SSD storage</b>. This configuration provides a balanced CPU and memory profile at a lower price point while using SSD storage that scales IOPS and throughput with size. At 4 TB, SSD persistent disk offers ample performance to comfortably satisfy 1,200 write and 2,400 read transactions per second and it also meets the capacity requirement.</p><p>This choice avoids paying for excess memory or vCPUs while still delivering the low latency and high IOPS characteristics that come from SSD. For Cloud SQL OLTP workloads, SSD is the key enabler for high write and read throughput and its performance increases with larger disk sizes, which gives additional headroom at 4 TB without needing to move up to larger machine types.</p><p><i>db-n2-highmem-16, 4 TB SSD storage</i> adds more memory and therefore higher cost without clear benefit for the stated throughput goals. The bottleneck for write and read rates in this scenario is addressed by SSD performance, not extra RAM, so it does not meet the lowest cost requirement.</p><p><i>db-n2-standard-32, 4 TB HDD storage</i> relies on HDD, which has significantly lower IOPS and higher latency than SSD. This makes it unsuitable for sustained high write and read transaction rates, and adding more vCPUs does not overcome the storage bottleneck, while also increasing cost.</p><p><i>db-n2-standard-64, 4 TB SSD storage</i> would provide ample performance but at a much higher cost due to excess vCPUs. It is overprovisioned for the given throughput targets, so it is not the lowest cost solution.</p>",
+  "batch_id": "186",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are tasked with designing a Cloud SQL instance to meet specific performance requirements while minimizing costs. The database has the following performance requirements: 1,000 write transactions per second (TPS) 2,000 read transactions per second (TPS) 3 TB of storage capacity Given the above requirements, which of the following configurations should you choose for your Cloud SQL instance?",
+  "originalOptions": "A. db-n1-standard-16, 3 TB SSD storage<br/>B. db-n1-standard-64, 3 TB SSD storage<br/>C. db-n1-highmem-16, 3 TB SSD storage<br/>D. db-n1-standard-32, 2.5 TB SSD storage, 0.5 TB HDD storage",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "58",
+  "tip": "<p>Map the performance requirement to the right storage first. Use <i>SSD</i> for high IOPS and low latency, then choose the smallest <i>machine type</i> that meets CPU and memory needs to satisfy a lowest cost constraint.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/instance-settings",
+    "https://cloud.google.com/sql/docs/mysql/performance",
+    "https://cloud.google.com/compute/docs/disks/performance"
+  ],
+  "url": "https://certificationation.com/questions/exam-tasked-with-designing-a-cloud-exam-058.html",
+  "video_url": "https://certificationation.com/videos/exam-tasked-with-designing-a-cloud-exam-058.html"
+}

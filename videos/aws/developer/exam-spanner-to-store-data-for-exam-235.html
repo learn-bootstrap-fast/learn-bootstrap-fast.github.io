@@ -1,0 +1,80 @@
+---
+title: "Your organization is using Cloud Spanner to store dataExam"
+description: "Video for your organization is using Cloud Spanner to store data for a critical, user-facing application with strict low-latency requirements. You need to"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your organization is using Cloud Spanner to store data for a critical, user-facing application with strict low-latency requirements. You need to recommend the optimal node configuration to ensure consistent, high performance. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "CrestCart runs its checkout and inventory service on Cloud Spanner and it is customer facing with strict low latency at the 95th percentile. Peak load is around 18,000 reads per second and 5,000 writes per second and the team needs guidance on how to choose a node configuration that keeps performance consistent as traffic grows. What should you recommend?",
+  "options": [
+    {
+      "text": "Reduce the number of nodes to optimize for cost and rely on client retries to mask occasional latency spikes",
+      "explanation": "This option suggests downsizing capacity while depending on application retry logic to handle variable response times",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a multi-region instance so data is replicated to multiple regions for better performance globally",
+      "explanation": "This option places data replicas in several regions to increase geographic distribution and availability",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Increase node count based on measured read and write throughput and adjust nodes as traffic and storage grow",
+      "explanation": "This option sizes capacity by observed workload characteristics and scales out to maintain steady performance",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Break the schema into more tables to make queries and updates faster",
+      "explanation": "This option proposes restructuring the data model to attempt to improve query and update behavior",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Increase node count based on measured read and write throughput and adjust nodes as traffic and storage grow</b>.</p><p>Cloud Spanner performance scales horizontally with compute capacity. The right way to keep p95 latency consistent is to measure actual read and write throughput and observe latency and CPU utilization, then increase or decrease capacity to match. As traffic and stored data grow, adding capacity keeps request queues short and reduces contention, which sustains low tail latency. Teams can adjust capacity manually or use autoscaling to react to changing load patterns.</p><p><i>Reduce the number of nodes to optimize for cost and rely on client retries to mask occasional latency spikes</i> is not appropriate because reducing capacity increases queuing and contention which raises tail latency. Client retries add more work and time that users experience and they do not meet a strict p95 latency objective.</p><p><i>Create a multi-region instance so data is replicated to multiple regions for better performance globally</i> does not address the core scaling need for the stated workload. Multi-region configurations improve availability and geographic reach, yet they introduce higher write latency due to cross region consensus and they do not inherently provide the consistent low p95 latency required for writes.</p><p><i>Break the schema into more tables to make queries and updates faster</i> is not a reliable way to achieve consistent low latency. Performance issues are more often caused by insufficient compute capacity, hot spots, or suboptimal indexing rather than the number of tables, so arbitrary table proliferation does not solve the scaling requirement.</p>",
+  "batch_id": "293",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "Your organization is using Cloud Spanner to store data for a critical, user-facing application with strict low-latency requirements. You need to recommend the optimal node configuration to ensure consistent, high performance. What should you do?",
+  "originalOptions": "A. Recommend using a multi-region instance to distribute the data across multiple regions.<br/>B. Recommend increasing the number of nodes based on the application's read and write throughput requirements.<br/>C. Recommend splitting the data into smaller tables to improve performance.<br/>D. Recommend reducing the number of nodes to optimize for cost.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "235",
+  "tip": "<p>When sizing Cloud Spanner, start from measured throughput and <i>p95 latency</i> and map that to <i>compute capacity</i>. Verify with load tests and plan to scale horizontally, and remember that <i>multi region</i> improves availability but adds write latency.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/compute-capacity",
+    "https://cloud.google.com/spanner/docs/autoscaling",
+    "https://cloud.google.com/spanner/docs/performance",
+    "https://cloud.google.com/spanner/docs/instance-configurations#latency_characteristics"
+  ],
+  "url": "https://certificationation.com/questions/exam-spanner-to-store-data-for-exam-235.html",
+  "video_url": "https://certificationation.com/videos/exam-spanner-to-store-data-for-exam-235.html"
+}

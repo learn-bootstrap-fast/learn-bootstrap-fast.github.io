@@ -1,0 +1,91 @@
+---
+title: "A company's HTTP application is behind a Network LoadExam"
+description: "Video for a company's HTTP application is behind a Network Load Balancer (NLB). The NLB's target group is configured to use an Amazon EC2 Auto Scaling group"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company's HTTP application is behind a Network Load Balancer (NLB). The NLB's target group is configured to use an Amazon EC2 Auto Scaling group with multiple EC2 instances that run the web service. The company notices that the NLB is not detecting HTTP errors for the application. These errors require a manual restart of the EC2 instances that run the web service. The company needs to improve the application's availability without writing custom scripts or code. What should a solutions architect do to meet these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f7299ab"
+  },
+  "quid": null,
+  "ordinal": "70",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon EC2",
+    " AWS Auto Scaling",
+    " Amazon CloudWatch",
+    " Network services",
+    " AWS Well-Architected Framework"
+  ],
+  "slug": "nlb-http-application-errors-aws",
+  "source": "ET",
+  "title": "AWS A Companys HTTP Application Is Behind A Question",
+  "meta": "AWS Exam Question: A company’s HTTP application behind a Network Load Balancer (NLB) needs to improve availability without custom scripts. Answer: Amazon EC2, Auto Scaling.",
+  "answer": "C",
+  "query": "An organization is leveraging a Network Load Balancer (NLB) for its web-based service. Their NLB's target group employs an Amazon EC2 Auto Scaling group with different EC2 instances handling the application. The organization has found that HTTP-related errors from the service are not being addressed by the NLB, leading to a manual need to restart the EC2 instances serving the application. The organization seeks to boost the availability of the application without resorting to custom development or scripts. What recommendation should a solutions architect make to fulfill these needs?",
+  "originalQuery": "A company's HTTP application is behind a Network Load Balancer (NLB). The NLB's target group is configured to use an Amazon EC2 Auto Scaling group with multiple EC2 instances that run the web service.\nThe company notices that the NLB is not detecting HTTP errors for the application. These errors require a manual restart of the EC2 instances that run the web service. The company needs to improve the application's availability without writing custom scripts or code.\nWhat should a solutions architect do to meet these requirements?",
+  "options": [
+    "A. Implement HTTP health checks on the NLB while providing the URL of the organization's application.",
+    "B. Establish a scheduled task on the EC2 instances to examine the local application's logs every sixty seconds. In case of detection of HTTP errors, the application will be rebooted.",
+    "C. Replace the NLB with an Application Load Balancer. Enable HTTP health checks by supplying the URL of the organization's application. Set up an Auto Scaling mechanism to replace instances that aren't in good health.",
+    "D. Set up an Amazon Cloud Watch alarm to track the UnhealthyHostCount metric for the NLB. Configure an Auto Scaling policy to replace instances when the alarm is triggered."
+  ],
+  "originalOptions": [
+    "A. Enable HTTP health checks on the NLB, supplying the URL of the company's application.",
+    "B. Add a cron job to the EC2 instances to check the local application's logs once each minute. If HTTP errors are detected. the application will restart.",
+    "C. Replace the NLB with an Application Load Balancer. Enable HTTP health checks by supplying the URL of the company's application. Configure an Auto Scaling action to replace unhealthy instances.",
+    "D. Create an Amazon Cloud Watch alarm that monitors the UnhealthyHostCount metric for the NLB. Configure an Auto Scaling action to replace unhealthy instances when the alarm is in the ALARM state."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [],
+  "originalComments": [],
+  "voteDistribution": [
+    {
+      "option": "C (89%)",
+      "votes": "85 votes."
+    },
+    {
+      "option": "11%",
+      "votes": "11 votes."
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is C, which involves replacing the Network Load Balancer (NLB) with an Application Load Balancer (ALB), enabling HTTP health checks, and configuring Auto Scaling actions. This approach directly addresses the need for better detection and management of HTTP errors, as ALBs support content-based routing and robust health checks that cater specifically to HTTP applications, ensuring unhealthy instances are replaced automatically without manual intervention.\n\nOption A is incorrect because simply enabling HTTP health checks on the NLB won't resolve the issues faced since the NLB isn't designed mainly for application-level health checks. It is more suited for TCP/UDP traffic.\n\nOption B is also incorrect as adding a cron job on the EC2 instances would still rely on manual operations and custom scripts, which the organization wants to avoid. This method does not scale well and is not a best practice in AWS architecture.\n\nOption D suggests using CloudWatch alarms for monitoring the NLB's UnhealthyHostCount metric. While this could help to some extent, it does not fix the fundamental issue of the NLB's inability to perform HTTP health checks effectively. Therefore, it won't provide a proactive solution to ensure application availability as effectively as replacing the NLB with an ALB would.",
+  "video_url": "https://certificationation.com/videos/exam-behind-a-network-load-balancer-exam-070.html",
+  "url": "https://certificationation.com/questions/exam-behind-a-network-load-balancer-exam-070.html"
+}

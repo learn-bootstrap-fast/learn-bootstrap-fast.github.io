@@ -1,0 +1,74 @@
+---
+title: "An AWS Solution architect who uses EBS General PurposeExam"
+description: "Video for an AWS Solution architect who uses EBS General Purpose SSD (gp2) volume type for his EBS volumes now wants to modify some of these volumes. What"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "An AWS Solution architect who uses EBS General Purpose SSD (gp2) volume type for his EBS volumes now wants to modify some of these volumes. What options would you suggest? (Select TWO)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d5aef501ee1c8ade980f"
+  },
+  "quid": "0",
+  "ordinal": "198",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "Amazon Elastic Block Store (Amazon EBS)",
+    " Amazon EC2 instance types",
+    " AWS Backup",
+    " AWS Compute Optimizer",
+    " AWS Elastic Disaster Recovery"
+  ],
+  "slug": "ebs-solution-architect-modify-volumes-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question198",
+  "title": "AWS Solution Architect Who Uses EBS General Purpose SSD Question",
+  "meta": "AWS Exam Question: An AWS Solution Architect using EBS General Purpose SSD (gp2) wants to modify volumes. What options would you suggest? Answer: EBS, SSD.",
+  "answer": "Correct AnswerA D",
+  "query": "A cloud architect manages EBS volumes currently using the General Purpose SSD (gp2) type. They want to update several of these volumes to other types.\nWhich modifications are feasible? (Choose TWO)",
+  "originalQuery": "An AWS Solution architect who uses EBS General Purpose SSD (gp2) volume type for his EBS volumes now wants to modify some of these volumes.\nWhat options would you suggest? (Select TWO)",
+  "options": [
+    "A. A 50GB gp2 root volume can be modified to an EBS Provisioned IOPS SSD (io1) after stopping the instance.",
+    "B. You can switch a gp2 root volume to a Throughput Optimized HDD (st1) volume while attached.",
+    "C. A 1GB gp2 attached as a data volume can be changed to a gp4 volume.",
+    "D. A 1TB gp2 data volume can be converted to a Throughput Optimized HDD (st1) without detaching or stopping the instance."
+  ],
+  "originalOptions": [
+    "A. A 50GB gp2 root volume can be modified to an EBS Provisioned IOPS SSD (io1) after stopping the instance.",
+    "B. A gp2 volume attached to an instance as a root volume can be modified to a Throughput Optimized HDD (st1) volume.",
+    "C. A 1GB gp2 volume attached to an instance as a non-root volume can be modified to a gp4 volume.",
+    "D. A 1TB gp2 volume attached to an instance as a non-root volume can be modified to a Throughput Optimized HDD (st1) volume without stopping the instance or detaching the volume."
+  ],
+  "image": "https://eaeastus2.blob.core.windows.net/optimizedimages/static/images/AWS-Certified-Solutions-Architect-Professional/answer/imgckeditor_64981.png",
+  "primaryObjective": "3: Continuous Improvement for Existing Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Correct AnswerA, D.\nThe EBS volume types can be modified in flight without the volume being detached or the instance being restarted.\nHowever, some limitations need to be noticed.\nThe details are in https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/modify-volume-requirements.html.\nOption A is CORRECT: Because the root volume can be changed to io1 such as:\nOption B is incorrect: Because a gp2 volume that is attached to an instance as a root volume cannot be modified to an st1 or sc1 volume.\nCheck https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/modify-volume-requirements.html.\nOption C is incorrect: Because there is no gp4 type of volume available.\nOption D is CORRECT: Because the volume size 1TB is suitable for Throughput Optimized HDD (st1):\nSure, I'd be happy to explain the options available for modifying EBS volumes from the General Purpose SSD (gp2) volume type.\nOption A: A 50GB gp2 root volume can be modified to an EBS Provisioned IOPS SSD (io1) after stopping the instance. Explanation: This option is correct because when you stop an instance, you can modify the EBS root volume type. In this case, the current gp2 volume can be modified to an EBS Provisioned IOPS SSD (io1) volume type, which provides higher performance and consistent IOPS for latency-sensitive workloads.\nOption B: A gp2 volume attached to an instance as a root volume can be modified to a Throughput Optimized HDD (st1) volume. Explanation: This option is incorrect because you cannot modify the volume type of a root volume. Root volumes are created from Amazon Machine Images (AMIs) and cannot be modified after the instance is launched.\nOption C: A 1GB gp2 volume attached to an instance as a non-root volume can be modified to a gp3 volume. Explanation: This option is partially correct because you can modify a gp2 volume to a gp3 volume, which provides better performance at a lower cost. However, the minimum size for gp3 volumes is 1 GiB, not 1 GB. GiB stands for gibibyte, which is a binary multiple of a byte and is equal to 2^30 bytes. On the other hand, GB stands for gigabyte, which is a decimal multiple of a byte and is equal to 10^9 bytes. Therefore, the correct size for a gp3 volume would be 1 GiB, not 1 GB.\nOption D: A 1TB gp2 volume attached to an instance as a non-root volume can be modified to a Throughput Optimized HDD (st1) volume without stopping the instance or detaching the volume. Explanation: This option is incorrect because you cannot modify the volume type of an EBS volume without creating a new volume and copying the data over. Therefore, to modify a gp2 volume to a Throughput Optimized HDD (st1) volume, you would need to create a new st1 volume, copy the data from the gp2 volume to the st1 volume, and then detach the gp2 volume and attach the st1 volume to the instance.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-uses-ebs-general-purpose-ssd-exam-121.html",
+  "url": "https://certificationation.com/questions/exam-uses-ebs-general-purpose-ssd-exam-121.html"
+}

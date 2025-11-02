@@ -1,0 +1,62 @@
+---
+title: "An IT consulting company starts to use CodePipeline toExam"
+description: "Video for an IT consulting company starts to use CodePipeline to help manage its development lifecycle since AWS CodePipeline is a great DevOps service. They"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "An IT consulting company starts to use CodePipeline to help manage its development lifecycle since AWS CodePipeline is a great DevOps service. They hope that starting from CodeCommit, the pipeline is able to build the code, test the artifact and deploy the build automatically. They heard that CodePipeline is also very convenient to work together with Jenkins so they decided to use Jenkins as a build provider. Another reason is that they already have very strong experiences on Jenkins for their on-premise applications. Which of the following options is correct on how to use the CodePipeline together with Jenkins?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>correct answer</b> is the option where Jenkins is hosted on an EC2 instance, and that EC2 instance is granted the necessary AWS permissions through an IAM role. This is the best practice for securely integrating Jenkins with AWS CodePipeline, as it avoids the risks associated with embedding static credentials on the instance and instead relies on IAM roles for fine-grained access control.</p><p><i>\"Ensure all AWS resources related to the pipeline are deployed in the same region, then create a new pipeline with the four essential stages: Source, Jenkins, Test, and Deploy.\"</i> is incorrect because, while using the same region is recommended, specifying fixed pipeline stages is misleading—CodePipeline's stages are flexible, and not all are strictly required.</p><p><i>\"Set up CodePipeline in one AWS Region while configuring CodeCommit and the EC2 instance key pair in a separate Region to address safety concerns. When defining the pipeline, add Jenkins in the build stage, specifying the relevant provider name and server URL.\"</i> is incorrect since CodePipeline and its resources should be in the same AWS region for compatibility and best practices; splitting them may cause integration issues.</p><p><i>\"Launch an EC2 instance running Jenkins, and grant permissions for CodePipeline connectivity using access key/secret key credentials. In the CodePipeline build stage, pick Jenkins as the build provider. Use the Jenkins server URL, but any provider name is acceptable.\"</i> is incorrect as managing credentials via access key/secret key is not secure and is against AWS best practices. Provider name should also be configured carefully to avoid confusion.</p><p><b>Tip:</b> Always use IAM roles when integrating AWS services with compute resources like EC2 to increase security and manageability. Remember to correctly configure the Jenkins provider name and server URL for a successful connection to AWS CodePipeline.</p>",
+  "query": "<p>An IT consultancy wants to integrate AWS CodePipeline to streamline their development lifecycle, beginning with AWS CodeCommit. They want their pipeline to build, test, and deploy code automatically. As the company has strong expertise in Jenkins, they would like to use Jenkins as their build provider integrated into CodePipeline.<br>Which method correctly sets up AWS CodePipeline with Jenkins as the build server for this automation?</p>",
+  "original_oid": "6793da7b61969b416038a217",
+  "options": [
+    {
+      "correct": false,
+      "text": "Ensure all AWS resources related to the pipeline are deployed in the same region, then create a new pipeline with the four essential stages: Source, Jenkins, Test, and Deploy.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up CodePipeline in one AWS Region while configuring CodeCommit and the EC2 instance key pair in a separate Region to address safety concerns. When defining the pipeline, add Jenkins in the build stage, specifying the relevant provider name and server URL.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Launch an EC2 instance running Jenkins, and grant permissions for CodePipeline connectivity using access key/secret key credentials. In the CodePipeline build stage, pick Jenkins as the build provider. Use the Jenkins server URL, but any provider name is acceptable.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Deploy Jenkins on an EC2 instance and assign an IAM role to the instance to enable interactions with CodePipeline. Then, build a pipeline and, in the build stage, choose to add Jenkins, providing the accurate provider name and server URL.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question423",
+  "originalQuery": "An IT consulting company starts to use CodePipeline to help manage its development lifecycle since AWS CodePipeline is a great DevOps service.\nThey hope that starting from CodeCommit, the pipeline is able to build the code, test the artifact and deploy the build automatically.\nThey heard that CodePipeline is also very convenient to work together with Jenkins so they decided to use Jenkins as a build provider.\nAnother reason is that they already have very strong experiences on Jenkins for their on-premise applications.\nWhich of the following options is correct on how to use the CodePipeline together with Jenkins?",
+  "originalOptions": "[\"A. Setup CodePipeline in one region and setup CodeCommit and Amazon EC2 instance key pair in another region. This is to address some safety concerns. Then create a new CodePipeline with 4 stages. In the build stage, choose \\u201cAdd Jenkins\\u201d and configure correct \\u201cProvider name\\u201d and \\u201cServer URL\\u201d.\",\"B. Make sure that all of the AWS resources for this procedure are created in the same AWS Region where you create your pipeline. Then create a new CodePipeline with 4 mandatory stages which are \\u201cSource Stage\\u201d, \\u201cJenkins Stage\\u201d, \\u201cTest Stage\\u201d and \\u201cDeploy Stage\\u201d.\",\"C. Launch an Amazon EC2 instance to host the Jenkins server and using a Secret Access Key/Access Key ID to grant the instance the required permissions for interacting with AWS CodePipeline. For the new CodePipeline configuration, make sure that Jenkins is selected as the build server in the build stage. The \\u201cServer URL\\u201d should match that in the Jenkins server however the \\u201cProvider name\\u201d can be anything.\",\"D. Launch an Amazon EC2 instance to host the Jenkins server and use an IAM role to grant the instance the required permissions for interacting with AWS CodePipeline. Then create a new CodePipeline. In the build stage, choose \\u201cAdd Jenkins\\u201d and configure correct \\u201cProvider name\\u201d and \\u201cServer URL\\u201d.\"]",
+  "video_url": "https://certificationation.com/videos/exam-use-codepipeline-to-help-manage-exam-376.html",
+  "url": "https://certificationation.com/questions/exam-use-codepipeline-to-help-manage-exam-376.html"
+}

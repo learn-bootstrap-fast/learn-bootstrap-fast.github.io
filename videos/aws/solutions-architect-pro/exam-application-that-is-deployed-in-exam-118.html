@@ -1,0 +1,65 @@
+---
+title: "An IT company has a big data analytics application thatExam"
+description: "Video for an IT company has a big data analytics application that is deployed in EC2 in multiple availability zones. These EC2 instances simultaneously access a"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "An IT company has a big data analytics application that is deployed in EC2 in multiple availability zones. These EC2 instances simultaneously access a shared Amazon EFS file system using a traditional file permissions model. A recent internal security audit has found a potential security risk, as the EFS file system is not encrypted for either at rest or in transit. What actions could be taken to address the potential security threat posed by the non-encryption of the EFS volume?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d5acf501ee1c8ade980b"
+  },
+  "quid": "0",
+  "ordinal": "194",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "It seems that the question and options were not provided in your prompt. Please provide the specific AWS question and the options so that I can extract the relevant topics from the list you've shared."
+  ],
+  "slug": "ec2-big-data-analytics-efs-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question194",
+  "title": "AWS An IT Company Has A Big Data Analytics Question",
+  "meta": "AWS Exam Question: An IT company has a big data analytics app in EC2 across multiple zones. Address EFS encryption risks. Find the answer: encryption, security audit.",
+  "answer": "A",
+  "query": null,
+  "originalQuery": "An IT company has a big data analytics application that is deployed in EC2 in multiple availability zones.\nThese EC2 instances simultaneously access a shared Amazon EFS file system using a traditional file permissions model.\nA recent internal security audit has found a potential security risk, as the EFS file system is not encrypted for either at rest or in transit.\nWhat actions could be taken to address the potential security threat posed by the non-encryption of the EFS volume?",
+  "options": null,
+  "originalOptions": [
+    "A. The encryption of data at rest has to be enabled when the Amazon EFS file system is created. The encryption of data in transit can be enabled when the file system is mounted in the EC2 instance.",
+    "B. The encryption of data at rest and in transit can be enabled when the Amazon EFS file system is created.",
+    "C. The encryption of data at rest and in transit can only be enabled when the Amazon EFS file system is mounted in the EC2 instance.",
+    "D. The encryption of data at rest can be enabled when the Amazon EFS file system is mounted in the EC2 instance. The encryption of data in transit is enabled when the EFS file system is created using the AWS console or CLI."
+  ],
+  "image": "https://eaeastus2.blob.core.windows.net/optimizedimages/static/images/AWS-Certified-Solutions-Architect-Professional/answer/imgckeditor_aws6-9.jpg",
+  "primaryObjective": "1: Design Solutions for Organizational Complexity",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Correct Answer - A.\nBoth encryption of data in transit and at rest are supported for EFS.\nDue to this, Amazon EFS now offers a comprehensive encryption solution.\nBlog https://aws.amazon.com/blogs/aws/new-encryption-of-data-in-transit-for-amazon-efs/ has an introduction to this.\nOption A is CORRECT: For the encryption at rest, it can be enabled as an option when the EFS file system is created.\nFor the encryption in transit, it can be enabled when the EFS file system is mounted:\nsudo mount -t efs-o tls fs-12345678:/ /mnt/efs.\nReference is in https://docs.aws.amazon.com/efs/latest/ug/encryption.html.\nOption B is incorrect: Because the encryption of data in transit is enabled when the EFS file system is mounted.\nOption C is incorrect: Because the encryption of data at rest is enabled when the EFS file system is created.\nOption D is incorrect: Same reason as Option B &amp;\nC.\nSure, I'd be happy to explain this question in detail!\nFirst, let's briefly discuss what Amazon EFS is and how it works. Amazon Elastic File System (EFS) is a scalable, fully managed, cloud-based NFS file system that provides shared access to files across multiple EC2 instances. EFS allows for easy access to shared file storage from multiple EC2 instances, which is especially useful for big data analytics applications that require a shared storage system.\nNow, let's look at the question. The IT company in question has deployed a big data analytics application in EC2 across multiple availability zones, with all instances accessing a shared Amazon EFS file system using traditional file permissions. The internal security audit has found a potential security risk because the EFS file system is not encrypted for either at rest or in transit.\nTo address this potential security risk, the question asks what actions could be taken. Let's look at each answer option in turn:\nA. The encryption of data at rest has to be enabled when the Amazon EFS file system is created. The encryption of data in transit can be enabled when the file system is mounted in the EC2 instance.\nThis answer option is incorrect. While it is true that data at rest can be encrypted when an EFS file system is created, data in transit cannot be enabled when the file system is mounted. Encryption of data in transit requires the use of a secure network protocol, such as SSL/TLS or IPsec, which must be configured separately from the file system.\nB. The encryption of data at rest and in transit can be enabled when the Amazon EFS file system is created.\nThis answer option is correct. When creating an EFS file system, you can enable encryption of data at rest and in transit. Encryption of data at rest is done using AWS Key Management Service (KMS) and encryption of data in transit is done using Secure Sockets Layer (SSL) or Transport Layer Security (TLS).\nC. The encryption of data at rest and in transit can only be enabled when the Amazon EFS file system is mounted in the EC2 instance.\nThis answer option is incorrect. Encryption of data at rest and in transit can be enabled when the EFS file system is created, not just when it is mounted in the EC2 instance.\nD. The encryption of data at rest can be enabled when the Amazon EFS file system is mounted in the EC2 instance. The encryption of data in transit is enabled when the EFS file system is created using the AWS console or CLI.\nThis answer option is incorrect. Encryption of data at rest and in transit can both be enabled when the EFS file system is created, not just when it is mounted in the EC2 instance.\nSo, the correct answer is B. The encryption of data at rest and in transit can be enabled when the Amazon EFS file system is created. By enabling encryption of data at rest and in transit, the IT company can address the potential security risk posed by the non-encryption of the EFS volume, ensuring the confidentiality and integrity of the data stored in the file system.",
+  "chatGptExplanation": "The primary AWS product involved in this question is Amazon Elastic File System (EFS), abbreviated as \"EFS\".\n\nAnswer A is correct because Amazon EFS supports encryption of data at rest and in transit but at different stages. Specifically, encryption at rest must be enabled at the time you create the EFS file system. This encryption uses AWS KMS keys and ensures that data stored on the file system is encrypted at rest. On the other hand, encryption of data in transit is not a file system setting but is enabled when mounting the EFS file system on EC2 instances, by using the TLS protocol option (mounting with the \"-o tls\" flag). This approach provides encryption for data as it moves between EC2 instances and EFS.\n\nWhy the other options are incorrect:\n- Option B incorrectly states that both encryption at rest and in transit are enabled at creation of the EFS file system. While encryption at rest is enabled during creation, encryption in transit is enabled at mount time on the client side, not during the file system creation.\n- Option C incorrectly claims encryption for both at rest and in transit can only be enabled at mount time. Encryption at rest cannot be turned on after creation and must be set at creation; only encryption in transit is configured at mount time.\n- Option D incorrectly inverts when the encryption can be enabled—saying encryption at rest can be enabled at mount time (which is false) and encryption in transit at creation (also false). Both concepts are reversed compared to how EFS actually works.\n\nIn summary, the key detail to remember is that EFS encryption at rest is configured once at the time of file system creation, whereas encryption in transit is enabled dynamically when mounting the file system on clients via TLS. This configuration ensures data confidentiality both when stored and while moving over the network.",
+  "video_url": "https://certificationation.com/videos/exam-application-that-is-deployed-in-exam-118.html",
+  "url": "https://certificationation.com/questions/exam-application-that-is-deployed-in-exam-118.html"
+}

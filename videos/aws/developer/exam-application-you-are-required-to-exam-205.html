@@ -1,0 +1,81 @@
+---
+title: "In a distributed, global e-commerce application, you areExam"
+description: "Video for in a distributed, global e-commerce application, you are required to design a highly available, scalable, and secure database system to handle a"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "In a distributed, global e-commerce application, you are required to design a highly available, scalable, and secure database system to handle a growing number of customers and transactions. Which of the following configurations would be the most appropriate to achieve this objective?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Your team at a multinational ride sharing startup is designing a globally available and horizontally scalable transactional datastore for real time trips and payments. The system must be secure and tolerate a regional outage and provide strongly consistent writes across continents. Which database deployment in Google Cloud best satisfies these requirements?",
+  "options": [
+    {
+      "text": "Create a Cloud Bigtable deployment with multi cluster replication across two regions",
+      "explanation": "This provides a wide column store with low latency access and uses eventual consistency when data is replicated between clusters.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Cloud Spanner in a multi region configuration with multiple read write replicas",
+      "explanation": "This offers globally distributed relational transactions with synchronous replication and high availability across regions.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Run AlloyDB for PostgreSQL in one region with cross region read replicas",
+      "explanation": "This delivers managed PostgreSQL compatibility with high read scalability and disaster recovery through replicas in another region.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Provision a single region Cloud Spanner instance with one read write replica and automated backups",
+      "explanation": "This provides regional transactional consistency and backups but does not maintain availability if the region becomes unavailable.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Use Cloud Spanner in a multi region configuration with multiple read write replicas</b>.</p><p>This option provides a globally distributed relational datastore with strong consistency and true transactions. A multi region instance places read write replicas in multiple regions and uses synchronous replication to maintain external consistency, which lets the system continue to accept writes during a regional outage. It horizontally scales, offers very high availability, and integrates with encryption and IAM to meet stringent security needs.</p><p><i>Create a Cloud Bigtable deployment with multi cluster replication across two regions</i> is not suitable because replication between clusters is asynchronous and eventually consistent. It does not provide strongly consistent cross region writes or multi row transactional guarantees that are needed for payments.</p><p><i>Run AlloyDB for PostgreSQL in one region with cross region read replicas</i> does not meet the requirement because the primary writer resides in a single region and replicas are read only and typically asynchronous. A regional outage would halt writes and the deployment would not deliver strongly consistent writes across continents.</p><p><i>Provision a single region Cloud Spanner instance with one read write replica and automated backups</i> cannot satisfy cross continent strong consistency or survive a regional outage for writes. Backups aid recovery but they do not provide continuous availability or multi region transactional writes.</p>",
+  "batch_id": "10",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "In a distributed, global e-commerce application, you are required to design a highly available, scalable, and secure database system to handle a growing number of customers and transactions. Which of the following configurations would be the most appropriate to achieve this objective?",
+  "originalOptions": "A. Use a multi-regional Cloud Bigtable instance with a replication factor of 3.<br/>B. Use a single-region Cloud SQL instance with automatic backups and a custom VPC.<br/>C. Deploy a single-region Cloud Spanner instance with a single read-write replica and automatic backups.<br/>D. Deploy a multi-regional Cloud Spanner instance with multiple read-write replicas.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "205",
+  "tip": "<p>When you see strong consistency for global transactions and the need to keep writing during a regional outage, think <i>multi region Spanner</i>. If a choice mentions asynchronous cross region replication or read only replicas, it usually cannot provide <i>strongly consistent writes across continents</i>.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/overview",
+    "https://cloud.google.com/spanner/docs/instances#configurations",
+    "https://cloud.google.com/spanner/docs/replication",
+    "https://cloud.google.com/bigtable/docs/replication-overview",
+    "https://cloud.google.com/alloydb/docs/concepts/architecture#replication"
+  ],
+  "url": "https://certificationation.com/questions/exam-application-you-are-required-to-exam-205.html",
+  "video_url": "https://certificationation.com/videos/exam-application-you-are-required-to-exam-205.html"
+}

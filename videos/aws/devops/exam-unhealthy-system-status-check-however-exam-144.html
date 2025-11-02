@@ -1,0 +1,62 @@
+---
+title: "One of your EC2 instance is reporting an unhealthyExam"
+description: "Video for one of your EC2 instance is reporting an unhealthy system status check. However, this is not something you should have to monitor and repair on your"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "One of your EC2 instance is reporting an unhealthy system status check. However, this is not something you should have to monitor and repair on your own. How might you automate the repair of the system status check failure in an AWS environment? Choose the correct answer from the options given below."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best solution is to use a <b>CloudWatch alarm set to trigger an EC2 recovery action when the StatusCheckFailed_System metric is detected</b>. This leverages native AWS automation, allowing CloudWatch to monitor the health of your EC2 instances and automatically attempt to recover an instance that fails its system status check, all without manual oversight. This method is highly reliable, requires minimal configuration, and fully integrates with AWS.</p><p>The following options are not optimal: <i>Develop a script to query each EC2 instance's status check through the EC2 API at set intervals</i> requires manual scripting, extra maintenance, and handling of edge cases; it's more complicated than the native option. <i>Create a recurring script to shut down and reboot EC2 instances based on health statistics</i> risks unnecessary instabilities, and doesn't directly target system status check failures. <i>Employ a third-party monitoring application for all your EC2 instance health checks</i> introduces more cost, more complexity, and is not required for this use-case since AWS gives you built-in tools for automation.</p><p><b>Tip:</b> When you see a question about automatically fixing instance/system status check failures in EC2, remember that CloudWatch alarms with EC2 recover actions are purpose-built for this scenario.</p>",
+  "query": "<p>An EC2 instance in your AWS environment is experiencing a failed system status check. As this should not require manual intervention for monitoring or remediation, which automated solution should you use to repair the EC2 instance when such failures occur?</p>",
+  "original_oid": "6793da7061969b416038a204",
+  "options": [
+    {
+      "correct": true,
+      "text": "Use a CloudWatch alarm set to trigger an EC2 recovery action when the StatusCheckFailed_System metric is detected.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Develop a script to query each EC2 instance's status check through the EC2 API at set intervals.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Employ a third-party monitoring application for all your EC2 instance health checks.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Create a recurring script to shut down and reboot EC2 instances based on health statistics.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question404",
+  "originalQuery": "One of your EC2 instance is reporting an unhealthy system status check.\nHowever, this is not something you should have to monitor and repair on your own.\nHow might you automate the repair of the system status check failure in an AWS environment? Choose the correct answer from the options given below.",
+  "originalOptions": "A. Create CloudWatch alarms for StatuscheckFailed_System metrics and select EC2 action-Recover the EC2 instance,B. Write a script that queries the EC2 API for each EC2 instance status check,C. Write a script that periodically shuts down and starts EC2 instances based on certain stats.,D. Implement a third party monitoring tool.",
+  "video_url": "https://certificationation.com/videos/exam-unhealthy-system-status-check-however-exam-144.html",
+  "url": "https://certificationation.com/questions/exam-unhealthy-system-status-check-however-exam-144.html"
+}

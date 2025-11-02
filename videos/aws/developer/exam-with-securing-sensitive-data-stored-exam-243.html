@@ -1,0 +1,80 @@
+---
+title: "A Database Engineer is tasked with securing sensitiveExam"
+description: "Video for a Database Engineer is tasked with securing sensitive data stored in a Cloud SQL instance. The company requires that data encryption keys to be"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A Database Engineer is tasked with securing sensitive data stored in a Cloud SQL instance. The company requires that data encryption keys to be managed according to its strict security policies. Which of the following approaches should the engineer take to meet these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "BrightCore Finance runs a Cloud SQL for PostgreSQL instance that stores regulated payment records and the compliance team requires that the organization&apos;s encryption keys be created, rotated every 120 days, and access controlled by the security team in a dedicated key ring within a restricted project. What should the database engineer configure so that the instance follows these key governance requirements?",
+  "options": [
+    {
+      "text": "Configure Cloud SQL to use customer supplied encryption keys and store the keys in Cloud KMS",
+      "explanation": "This option tries to use customer supplied keys while referencing Cloud KMS for key storage.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure Cloud SQL to use customer managed encryption keys and keep the keys in a third party key manager",
+      "explanation": "This option places customer managed keys under an external service that is not Cloud KMS.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable CMEK on the Cloud SQL instance and keep the keys in a Cloud KMS key ring that the security team manages",
+      "explanation": "This option configures Cloud SQL to encrypt with a key that you control using Cloud KMS and a key ring owned by your security team.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Turn off storage encryption for the Cloud SQL instance and manage the keys separately in Cloud KMS",
+      "explanation": "This option assumes encryption can be disabled while keeping keys in Cloud KMS for separate management.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Enable CMEK on the Cloud SQL instance and keep the keys in a Cloud KMS key ring that the security team manages</b>.</p><p>With <b>CMEK</b> you choose a Cloud KMS key that can reside in a dedicated key ring within a restricted project controlled by the security team. Cloud SQL uses that key to encrypt data at rest and you grant only the necessary KMS roles to the Cloud SQL service account so the security team retains ownership and access control. You configure key creation and a 120 day rotation schedule on the Cloud KMS key and the instance automatically uses new key versions as they are rotated which satisfies the governance requirements.</p><p><i>Configure Cloud SQL to use customer supplied encryption keys and store the keys in Cloud KMS</i> is incorrect because Cloud SQL does not support customer supplied encryption keys and it supports customer managed encryption keys with Cloud KMS instead.</p><p><i>Configure Cloud SQL to use customer managed encryption keys and keep the keys in a third party key manager</i> is incorrect because Cloud SQL CMEK requires keys stored in Cloud KMS and Cloud EKM third party key managers are not supported for Cloud SQL.</p><p><i>Turn off storage encryption for the Cloud SQL instance and manage the keys separately in Cloud KMS</i> is incorrect because encryption at rest in Cloud SQL is always enabled and cannot be disabled and the correct way to meet governance needs is to enable CMEK and use Cloud KMS.</p>",
+  "batch_id": "346",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "A Database Engineer is tasked with securing sensitive data stored in a Cloud SQL instance. The company requires that data encryption keys to be managed according to its strict security policies. Which of the following approaches should the engineer take to meet these requirements?",
+  "originalOptions": "A. Configure the Cloud SQL instance to use customer-managed encryption keys (CMEK) and store the keys in a Cloud Key Management Service (KMS) key ring.<br/>B. Configure the Cloud SQL instance to use customer-managed encryption keys (CMEK) and store the keys in a third-party key management service.<br/>C. Configure the Cloud SQL instance to use customer-supplied encryption keys (CSEK) and store the keys in a Cloud Key Management Service (KMS) key ring.<br/>D. Disable data encryption for the Cloud SQL instance and manage keys separately using a Cloud Key Management Service (KMS) key ring.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "243",
+  "tip": "<p>Identify who must own and control the keys and look for a required <i>rotation schedule</i>. Those cues point to <i>CMEK</i> with a <i>Cloud KMS key ring</i> in a separate project and least privilege access for the service account.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/cmek",
+    "https://cloud.google.com/sql/docs/postgres/encryption-at-rest",
+    "https://cloud.google.com/kms/docs/key-rotation",
+    "https://cloud.google.com/kms/docs/ekm#supported"
+  ],
+  "url": "https://certificationation.com/questions/exam-with-securing-sensitive-data-stored-exam-243.html",
+  "video_url": "https://certificationation.com/videos/exam-with-securing-sensitive-data-stored-exam-243.html"
+}

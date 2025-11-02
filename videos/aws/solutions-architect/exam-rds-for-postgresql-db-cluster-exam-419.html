@@ -1,0 +1,128 @@
+---
+title: "A company wants to use an Amazon RDS for PostgreSQL DBExam"
+description: "Video for a company wants to use an Amazon RDS for PostgreSQL DB cluster to simplify time-consuming database administrative tasks for production database"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company wants to use an Amazon RDS for PostgreSQL DB cluster to simplify time-consuming database administrative tasks for production database workloads. The company wants to ensure that its database is highly available and will provide automatic failover support in most scenarios in less than 40 seconds. The company wants to offload reads off of the primary instance and keep costs as low as possible. Which solution will meet these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729b09"
+  },
+  "quid": null,
+  "ordinal": "420",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon RDS",
+    " AWS Well-Architected Framework",
+    " AWS Cost Management",
+    " AWS Support",
+    " AWS Managed Services (AMS)"
+  ],
+  "slug": "rds-postgresql-database-availability-aws",
+  "source": "ET",
+  "title": "AWS A Company Wants To Use An Amazon RDS Question",
+  "meta": "AWS Exam Question: A company seeks an Amazon RDS for PostgreSQL DB cluster for high availability, automatic failover, and cost-effective read offloading. Answer: RDS, PostgreSQL.",
+  "answer": "D",
+  "query": "An organization aims to deploy an Amazon RDS for MySQL DB cluster to streamline labor-intensive database management tasks in their production environment. They require high availability and automatic failover within approximately 30 seconds for most scenarios. Additionally, they want to divert read operations from the main instance while minimizing expenses.\n\nWhat is the most suitable solution to fulfill these needs?",
+  "originalQuery": "A company wants to use an Amazon RDS for PostgreSQL DB cluster to simplify time-consuming database administrative tasks for production database workloads. The company wants to ensure that its database is highly available and will provide automatic failover support in most scenarios in less than 40 seconds. The company wants to offload reads off of the primary instance and keep costs as low as possible.\n\nWhich solution will meet these requirements?",
+  "options": [
+    "A. Use an Amazon RDS Multi-AZ DB instance deployment. Create one read replica and point the read workload to the read replica.",
+    "B. Use an Amazon RDS Multi-AZ DB cluster. Create two read replicas and redirect the read workload to those replicas.",
+    "C. Use an Amazon RDS Multi-AZ DB instance deployment. Redirect the read workload to the secondary instance in the Multi-AZ arrangement.",
+    "D. Use an Amazon RDS Multi-AZ DB cluster deployment. Point the read workload to the reader endpoint."
+  ],
+  "originalOptions": [
+    "A. Use an Amazon RDS Multi-AZ DB instance deployment. Create one read replica and point the read workload to the read replica.",
+    "B. Use an Amazon RDS Multi-AZ DB duster deployment Create two read replicas and point the read workload to the read replicas.",
+    "C. Use an Amazon RDS Multi-AZ DB instance deployment. Point the read workload to the secondary instances in the Multi-AZ pair.",
+    "D. Use an Amazon RDS Multi-AZ DB cluster deployment Point the read workload to the reader endpoint."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Option A, which involves a Multi-AZ DB instance deployment, typically experiences failover times ranging from 60 to 120 seconds. In contrast, Option D utilizes a Multi-AZ DB cluster, which can achieve failover in approximately 35 seconds. Therefore, for scenarios requiring rapid failover and high availability, a Multi-AZ cluster is a more suitable solution. Additionally, the Multi-AZ architecture provides automatic replication of data between primary and standby instances, enhancing fault tolerance. This setup also allows for the use of reader endpoints, enabling read replicas to offload read traffic from the primary instance, thereby optimizing performance and controlling costs effectively.",
+    "To keep costs down and still have a reliable setup, the best approach is option A. By using an Amazon RDS Multi-AZ deployment, you not only get high availability but also the opportunity to create a read replica to handle those read-heavy workloads. This way, you can offload some of the pressure from the primary instance, all while keeping your budget in check. It's like having your cake and eating it too! 🎂💰 So, go ahead and let that read replica take some of the load off your primary database like a trusty sidekick! 🦸‍♂️",
+    "Well, let's not beat around the bush here. The prompt explicitly states the need for \"failover support in most scenarios in less than 40 seconds,\" which is quite a specific requirement. Option D stands out as the only viable solution that meets this criterion. \n\nIt’s worth mentioning that Amazon RDS Multi-AZ deployments automatically handle failover with minimal downtime, making them a solid choice for high availability. By directing the read workload to the reader endpoint, you can effectively balance the load while keeping costs down. So, while the other options might sound tempting, they simply don’t cut it when it comes to delivering the promised speed and reliability.",
+    "The optimal solution is:\n\nD. Utilize an Amazon RDS Multi-AZ DB cluster deployment and direct the read workload to the reader endpoint.\n\nHere's why this approach stands out:\n\n1. Amazon RDS Multi-AZ deployments ensure high availability and facilitate automatic failover, meeting the requirement for minimal downtime.\n\n2. With a Multi-AZ DB cluster, Amazon RDS automatically provisions a standby instance in a separate Availability Zone. In the event of a failure, it seamlessly switches to the standby, ensuring that downtime is kept to a minimum.\n\n3. By utilizing the \"Reader endpoint\" in an Amazon RDS DB cluster, you gain the advantage of load balancing for read-only connections. This effectively offloads read operations from the primary instance, optimizing performance while keeping costs manageable.\n\nThis solution not only addresses the company's needs for reliability and efficiency but also enhances the overall database management experience.",
+    "Oh dear, I'm a tad perplexed! I was under the impression that only the Aurora DB Cluster offers a reader endpoint. Could you possibly share the documentation link for the RDS Reader Endpoint? That would be super helpful! 😊"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "D",
+      "explanation": "A - multi-az instance : failover takes between 60-120 sec\nD - multi-az cluster: failover around 35 sec",
+      "upvotes": "19"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "They want to keep cost low as possible, A is the right answer",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "No, the question clearly says \"failover support in most scenarios in less than 40 seconds.\"\nD is the only possible answer.",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "D",
+      "explanation": "The correct answer is:\nD. Use an Amazon RDS Multi-AZ DB cluster deployment. Point the read workload to the reader endpoint.\n\nExplanation:\nThe company wants high availability, automatic failover support in less than 40 seconds, read offloading from the primary instance, and cost-effectiveness.\n\nAnswer D is the best choice for several reasons:\n\n1. Amazon RDS Multi-AZ deployments provide high availability and automatic failover support.\n\n2. In a Multi-AZ DB cluster, Amazon RDS automatically provisions and maintains a standby in a different Availability Zone. If a failure occurs, Amazon RDS performs an automatic failover to the standby, minimizing downtime.\n\n3. The \"Reader endpoint\" for an Amazon RDS DB cluster provides load-balancing support for read-only connections to the DB cluster. Directing read traffic to the reader endpoint helps in offloading read operations from the primary instance.",
+      "upvotes": "12"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Sorry I'm a bit confused... I thought only Aurora DB Cluster has reader endpoint. Do you by any chance has the link to the doc for RDS Reader Endpoint?",
+      "upvotes": "3"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "D (86%)",
+      "votes": "59 votes."
+    },
+    {
+      "option": "13%",
+      "votes": "13%"
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is D. An Amazon RDS Multi-AZ DB cluster deployment allows for high availability and automated failover support in less than 40 seconds, meeting the organization's requirements. This deployment uses multiple availability zones, ensuring that one can take over if the primary fails. The reader endpoint enables the offloading of read traffic from the main instance, optimizing resource usage and minimizing costs. \n\nOption A is incorrect because using a Multi-AZ DB instance offers failover times of 60-120 seconds, which does not meet the 30-second requirement. \n\nOption B is unsuitable as adding multiple read replicas within a Multi-AZ configuration does not inherently guarantee the required failover speed. \n\nOption C is wrong since it refers to read workloads being redirected to secondary instances. In a Multi-AZ configuration, you cannot maintain a load-balanced setup specifically for reads from secondary instances, which limits read scaling and efficiency.",
+  "video_url": "https://certificationation.com/videos/exam-rds-for-postgresql-db-cluster-exam-419.html",
+  "url": "https://certificationation.com/questions/exam-rds-for-postgresql-db-cluster-exam-419.html"
+}

@@ -1,0 +1,128 @@
+---
+title: "A company needs to store its accounting records inExam"
+description: "Video for a company needs to store its accounting records in Amazon S3. The records must be immediately accessible for 1 year and then must be archived for an"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company needs to store its accounting records in Amazon S3. The records must be immediately accessible for 1 year and then must be archived for an additional 9 years. No one at the company, including administrative users and root users, can be able to delete the records during the entire 10-year period. The records must be stored with maximum resiliency. Which solution will meet these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f72999a"
+  },
+  "quid": null,
+  "ordinal": "53",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon S3",
+    " AWS Identity and Access Management (IAM)",
+    " AWS Backup",
+    " AWS Compliance",
+    " AWS Well-Architected Framework"
+  ],
+  "slug": "s3-store-accounting-records-aws",
+  "source": "ET",
+  "title": "AWS A Company Needs To Store Its Accounting Records Question",
+  "meta": "AWS Exam Question: A company needs to store accounting records in Amazon S3 with 10-year retention and no deletion access. Find the best answer. Technologies include S3 Glacier.",
+  "answer": "C",
+  "query": "A healthcare organization is tasked with storing patient records in Amazon S3. These records require immediate access for five months and must be preserved securely for 15 additional months. Under no condition, should any team member, even those with administrative privileges, be allowed to delete this data during the total duration of 20 months. Furthermore, the organization seeks to ensure the data is maintained with optimal durability. What is the best strategy to satisfy these requirements?",
+  "originalQuery": "A company needs to store its accounting records in Amazon S3. The records must be immediately accessible for 1 year and then must be archived for an additional 9 years. No one at the company, including administrative users and root users, can be able to delete the records during the entire 10-year period. The records must be stored with maximum resiliency.\nWhich solution will meet these requirements?",
+  "options": [
+    "A. Keep the records in S3 Glacier for the full 20 months. Apply an access policy to prevent deletion of the records throughout this period.",
+    "B. Retain the records using S3 Intelligent-Tiering. Implement an IAM policy to block deletion of the records. Modify the IAM policy to enable deletion after the specified duration.",
+    "C. Implement an S3 Lifecycle policy that shifts the ledgers from S3 Standard to S3 Glacier Deep Archive post 1 year. Utilize S3 Object Lock in compliance mode for the next 10 years.",
+    "D. Implement an S3 Lifecycle policy that transitions the records from S3 Standard to S3 One Zone-Infrequent Access (S3 One Zone-IA) after the span of a year. Utilize S3 Object Lock in governance mode for the next 10 years."
+  ],
+  "originalOptions": [
+    "A. Store the records in S3 Glacier for the entire 10-year period. Use an access control policy to deny deletion of the records for a period of 10 years.",
+    "B. Store the records by using S3 Intelligent-Tiering. Use an IAM policy to deny deletion of the records. After 10 years, change the IAM policy to allow deletion.",
+    "C. Use an S3 Lifecycle policy to transition the records from S3 Standard to S3 Glacier Deep Archive after 1 year. Use S3 Object Lock in compliance mode for a period of 10 years.",
+    "D. Use an S3 Lifecycle policy to transition the records from S3 Standard to S3 One Zone-Infrequent Access (S3 One Zone-IA) after 1 year. Use S3 Object Lock in governance mode for a period of 10 years."
+  ],
+  "image": null,
+  "primaryObjective": "1: Design Secure Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Only option C offers the necessary Object Lock capabilities to prevent both administrative and root users from deleting the records during the required retention period. \n\nOption D utilizes governance mode, which allows for potential overrides if certain conditions are met, akin to a corrupt government official who can be influenced or paid off. This does not align with the strict requirement for preventing deletion.\n\nIn contrast, compliance mode ensures that the records cannot be deleted or modified for the specified duration, providing a secure and reliable solution.\n\nTo summarize, option C is the optimal choice for achieving the desired level of data protection and compliance.\n\nFor future reference, it is important to differentiate between the S3 Object Lock modes: Governance mode may allow for exceptions under certain circumstances, while Compliance mode enforces strict adherence to retention policies, ensuring data integrity and security.",
+    "Here’s the scoop on why this solution is a winner:\n\n🗂️ The S3 Lifecycle policy smoothly transitions your data to Glacier Deep Archive after the first year, ensuring those records enjoy a long and cozy retirement. \n\n🔒 Thanks to S3 Object Lock in compliance mode, no sneaky user—be it an admin or the root user—can delete or mess with the objects during the designated retention period. Talk about job security for your data!\n\n💰 Glacier Deep Archive not only offers top-notch durability but also comes with a price tag that won’t make your wallet cry. It's the perfect budget-friendly option for long-term storage.\n\n🛡️ Compliance mode is like a fortress for your settings, ensuring that no one can override or alter the retention rules, even if the winds of policy change blow your way.\n\nIn short, this approach checks all the boxes: immediate access for a year, archiving for nine more years, a solid ten years of deletion-proof security, and maximum resiliency. Your records are safe and sound! 🎉📊",
+    "To navigate the labyrinth of data storage requirements, S3 Lifecycle policies are your trusty map, guiding you from the land of immediate access to the realm of archival bliss. Meanwhile, S3 Object Lock serves as the vigilant guardian, ensuring that no one—be it the overzealous intern or the well-meaning admin—can accidentally erase those precious records. With these tools in your arsenal, you can rest easy knowing that your data will be securely stored and preserved for the long haul.",
+    "The optimal solution is to utilize S3 Glacier Deep Archive after the first year, while implementing S3 Object Lock in compliance mode. This approach ensures that the accounting records remain immutable and protected from deletion for the entire 10-year retention period. By transitioning to S3 Glacier Deep Archive after one year, the company not only meets the accessibility requirements but also achieves maximum resiliency and cost-effectiveness for long-term data storage. This strategy guarantees that the records are securely preserved while maintaining compliance with the necessary regulations.",
+    "For the entire 10-year duration, absolutely no one at the company—be it administrative users or even root users—will have the ability to delete the records. This ensures the utmost compliance and security for the stored data! 🌟"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "C",
+      "explanation": "Only CD provides Object Lock options which is required for stopping admin/root users from deleting.\nD is governance mode which is like government, pay enough money and you can do anything. This is not what we want so compliance is the option.\nC is right choice.\n\nFor future, remember\nS3 Lock Governance = corrupt government official\nS3 Lock Compliance = honest solution architect!",
+      "upvotes": "21"
+    },
+    {
+      "selectedAnswer": "C",
+      "explanation": "The key reasons are:\n\nThe S3 Lifecycle policy transitions the data to Glacier Deep Archive after 1 year for long-term archival.\nS3 Object Lock in compliance mode prevents any user from deleting or overwriting objects for the specified retention period.\nGlacier Deep Archive provides very high durability and the lowest storage cost for long-term archival.\nCompliance mode ensures no one can override or change the retention settings even if policies change.\nThis meets all the requirements - immediate access for 1 year, archived for 9 years, unable to delete for 10 years, maximum resiliency",
+      "upvotes": "8"
+    },
+    {
+      "selectedAnswer": "C",
+      "explanation": "S3 lifecycle policies are required to transition from immediate availability to archived form. Also the S3 object lock helps prevent deletion of the bucket.",
+      "upvotes": "1"
+    },
+    {
+      "selectedAnswer": "C",
+      "explanation": "Ans C - S3 Glacier after year 1 in compliance mode with object lock (=immutable lock)",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "No one at the company, including administrative users and root users, can be able to delete the records during the entire 10-year period = Compliance Mode",
+      "upvotes": "5"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "C (100%)",
+      "votes": "86 votes."
+    },
+    {
+      "option": "C (25%)",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is C because it utilizes S3 Object Lock in compliance mode, which ensures that no one, including administrative users, can delete or alter the records for the designated retention period of 10 years. The S3 Lifecycle policy allows for the transition of records to S3 Glacier Deep Archive after one year, providing cost-effective long-term storage while ensuring optimal durability. \n\nOption A is incorrect because S3 Glacier is not immediately accessible, which does not meet the requirement for five months of immediate access. Option B incorrectly relies on IAM policies to manage deletions, which could be overridden, thus not ensuring against deletions. Option D incorrectly utilizes governance mode for Object Lock, allowing for certain deletions under specific conditions, which does not meet the requirements to entirely prevent data deletion during the designated period.",
+  "video_url": "https://certificationation.com/videos/exam-records-in-amazon-s3-the-exam-053.html",
+  "url": "https://certificationation.com/questions/exam-records-in-amazon-s3-the-exam-053.html"
+}

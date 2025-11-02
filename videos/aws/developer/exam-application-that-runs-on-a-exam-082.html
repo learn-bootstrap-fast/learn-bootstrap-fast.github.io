@@ -1,0 +1,79 @@
+---
+title: "You support a customer order management application thatExam"
+description: "Video for you support a customer order management application that runs on a regional instance of Cloud SQL for PostgreSQL. A client opened a support ticket to"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You support a customer order management application that runs on a regional instance of Cloud SQL for PostgreSQL. A client opened a support ticket to complain about slow response times. You notice a Cloud Monitoring alert about high CPU utilization. You want to follow Google-recommended practices to address the CPU performance issue. What should you do first?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You manage a ticket reservation API for a media streaming startup that runs on a regional Cloud SQL for PostgreSQL instance. Users report sluggish response times, and Cloud Monitoring has triggered an alert that CPU utilization remained above 92 percent for 18 minutes on the primary instance. You want to follow Google recommended practices to resolve the CPU bottleneck. What should you do first?",
+  "options": [
+    {
+      "text": "Distribute the database across multiple Cloud SQL instances by sharding the data",
+      "explanation": "This approach splits the workload across separate instances and can reduce load when designed correctly",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Identify and tune the most expensive queries using Query Insights or pg_stat_statements",
+      "explanation": "This examines query patterns and waits so you can optimize query plans and indexes",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Increase the instance&apos;s vCPU allocation by moving to a larger machine type",
+      "explanation": "This adds compute capacity to the database server which can reduce CPU pressure temporarily",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Change the database schema and create additional indexes across several columns",
+      "explanation": "This modifies tables and indexes to try to improve query performance without changing application code",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Identify and tune the most expensive queries using Query Insights or pg_stat_statements</b>.</p><p>High and sustained CPU utilization on a Cloud SQL for PostgreSQL primary is most often driven by inefficient or high volume queries. Google recommends starting with observability and query tuning because it provides the biggest improvement at the lowest cost with minimal disruption. You can use <b>Query Insights</b> to find the statements that consume the most CPU time and to view latencies, execution counts, and patterns over time. You can also enable <b>pg_stat_statements</b> to capture cumulative statistics for each normalized query and then optimize the worst offenders by rewriting queries, adding a targeted index, or adjusting query parameters. This approach addresses the root cause rather than masking it.</p><p><i>Distribute the database across multiple Cloud SQL instances by sharding the data</i> is not the first step because sharding adds significant complexity, requires application changes, and introduces operational overhead. Cloud SQL does not provide managed sharding and cross shard queries and transactions become harder, so this is a last resort after you have exhausted tuning and simpler scaling options.</p><p><i>Increase the instance's vCPU allocation by moving to a larger machine type</i> can temporarily reduce CPU pressure but it may only mask inefficient queries and raise costs. Vertical scaling might still be needed later, but recommended practice is to profile and fix the top queries first and then right size the instance based on measured improvements.</p><p><i>Change the database schema and create additional indexes across several columns</i> should not be done blindly because unnecessary or broad indexes can slow writes, increase storage, and may not help the real hotspots. Schema or index changes should be driven by findings from <b>Query Insights</b> or <b>pg_stat_statements</b> so that you add only targeted indexes that benefit specific expensive queries.</p>",
+  "batch_id": "47",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "You support a customer order management application that runs on a regional instance of Cloud SQL for PostgreSQL. A client opened a support ticket to complain about slow response times. You notice a Cloud Monitoring alert about high CPU utilization. You want to follow Google-recommended practices to address the CPU performance issue. What should you do first?",
+  "originalOptions": "A. Modify the database schema, and add additional indexes.<br/>B. Shard data required by the application into multiple instances.<br/>C. Increase the number of processing units.<br/>D. Analyze slow queries and optimize them.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "82",
+  "tip": "<p>When a question asks what to do <i>first</i> for a performance issue, look for options that help you <i>measure</i> and identify the root cause before scaling or redesigning. Tools like Query Insights or pg_stat_statements usually come before resizing or sharding.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/insights-overview",
+    "https://cloud.google.com/sql/docs/postgres/troubleshoot-performance",
+    "https://www.postgresql.org/docs/current/pgstatstatements.html"
+  ],
+  "url": "https://certificationation.com/questions/exam-application-that-runs-on-a-exam-082.html",
+  "video_url": "https://certificationation.com/videos/exam-application-that-runs-on-a-exam-082.html"
+}

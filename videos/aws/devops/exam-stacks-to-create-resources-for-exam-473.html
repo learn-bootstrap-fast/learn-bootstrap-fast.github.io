@@ -1,0 +1,62 @@
+---
+title: "Your team plans to launch two CloudFormation stacks toExam"
+description: "Video for your team plans to launch two CloudFormation stacks to create resources for a web application. These two stacks need to be managed separately. The"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your team plans to launch two CloudFormation stacks to create resources for a web application. These two stacks need to be managed separately. The first stack is a network stack that includes network resources such as subnets and security groups. The second stack is an application stack used to launch an Auto Scaling group resource. The ASG needs to refer to the resources created by the network stack. How would you configure the application stack to import the network resources properly?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct approach is to <b>define outputs in the network stack and export resources, then use the Fn::ImportValue intrinsic function in the application stack to import them</b>. This mechanism allows you to share resources securely and efficiently between CloudFormation stacks while maintaining stack independence and decoupled management.<br><br>Here's why other options are not suitable:<br>- <i>Export resources within the network stack's resource properties, and in the application stack, use the Fn::GetAtt intrinsic function to obtain them</i>: Fn::GetAtt only works within the same stack or with nested stacks, not for cross-stack references through separate stacks.<br>- <i>Export network stack outputs, then import those resources within the application stack by leveraging the Fn::Sub intrinsic function</i>: Fn::Sub substitutes variables and doesn't retrieve values from exports; it can't perform stack-to-stack imports.<br>- <i>Utilize Fn::ExportValue in the network stack to export resources, then apply Fn::FindInMap in the application stack to retrieve them</i>: Fn::FindInMap is designed for mapping static values and cannot fetch outputs exported from another stack.<br><br><b>Tip:</b> Exporting stack outputs and importing with Fn::ImportValue is the best-practice method for allowing loosely coupled CloudFormation stacks to reference shared resources like VPC subnets and security groups without directly linking the stacks.</p>",
+  "query": "<p>Your development team is preparing to deploy two separate AWS CloudFormation stacks for a new web application architecture. The initial stack—named the network stack—provisions resources such as subnets and security groups. A distinct application stack will be responsible for launching an Auto Scaling group. Since these stacks are administered independently, the application stack must be able to reference specific resources created by the network stack, such as subnet IDs and security group IDs. <br><br>What is the correct way to import resources from the network stack into the application stack within CloudFormation?</p>",
+  "original_oid": "6793da8a61969b416038a235",
+  "options": [
+    {
+      "correct": true,
+      "text": "In the network stack, define outputs to export the needed resources, then use the Fn::ImportValue intrinsic function in the application stack to import them.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Export resources within the network stack's resource properties, and in the application stack, use the Fn::GetAtt intrinsic function to obtain them.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Export network stack outputs, then import those resources within the application stack by leveraging the Fn::Sub intrinsic function.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Utilize Fn::ExportValue in the network stack to export resources, then apply Fn::FindInMap in the application stack to retrieve them.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question453",
+  "originalQuery": "Your team plans to launch two CloudFormation stacks to create resources for a web application.\nThese two stacks need to be managed separately.\nThe first stack is a network stack that includes network resources such as subnets and security groups.\nThe second stack is an application stack used to launch an Auto Scaling group resource.\nThe ASG needs to refer to the resources created by the network stack.\nHow would you configure the application stack to import the network resources properly?",
+  "originalOptions": "A. Export the resources in the resource properties of the network stack. In the application stack, import the resources with the intrinsic function Fn::GetAttr.|B. Export the resources in the outputs of the network stack. In the application stack, import the resources with the intrinsic function Fn::Sub.|C. Export the resources in the outputs of the network stack. In the application stack, import the resources with the intrinsic function Fn::ImportValue.|D. In the network stack, export the resources through the intrinsic function Fn::ExportValue. In the application stack, import the resources with the intrinsic function Fn::FindInMap.",
+  "video_url": "https://certificationation.com/videos/exam-stacks-to-create-resources-for-exam-473.html",
+  "url": "https://certificationation.com/questions/exam-stacks-to-create-resources-for-exam-473.html"
+}

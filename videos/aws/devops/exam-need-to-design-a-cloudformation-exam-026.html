@@ -1,0 +1,62 @@
+---
+title: "You are a DevOps engineer and you need to design aExam"
+description: "Video for you are a DevOps engineer and you need to design a CloudFormation stack to manage AWS resources. You want to use the same CloudFormation template for"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are a DevOps engineer and you need to design a CloudFormation stack to manage AWS resources. You want to use the same CloudFormation template for both production and development environments. The stack includes an EC2 instance whose instance type should be c1.xlarge for production and m1.large for development. You have a Condition resource called CreateProdResources that determines whether or not the environment is production. The template uses the YAML format. How would you configure the EC2 instance type in the CloudFormation template?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct answer is <b>EC2Instance: Type: \"AWS::EC2::Instance\" Properties: InstanceType: !If [CreateProdResources, c1.xlarge, m1.large]</b>. This syntax leverages CloudFormation's <b>Fn::If</b> intrinsic function (or its YAML shorthand <b>!If</b>), which evaluates the <code>CreateProdResources</code> condition. If the condition is true (production), the value <b>c1.xlarge</b> is used for the <code>InstanceType</code>; otherwise (development), it uses <b>m1.large</b>.</p> <p>Let's review why the other choices are incorrect:</p> <ul> <li><i>EC2Instance: Type: \"AWS::EC2::Instance\" Condition: CreateProdResources Properties: InstanceType: !Ref [c1.xlarge, m1.large]</i> — The <code>Condition</code> attribute is for controlling whether the whole resource is created, not for selecting between values within properties. Also, <code>!Ref</code> with a list is not valid CloudFormation YAML syntax.</li> <li><i>EC2Instance: Type: \"AWS::EC2::Instance\" Properties: InstanceType: Fn::Not: [CreateProdResources, m1.large, c1.xlarge]</i> — <code>Fn::Not</code> does not select between values; it returns true or false. It's incorrect for dynamically setting <code>InstanceType</code>.</li> <li><i>EC2Instance: Type: \"AWS::EC2::Instance\" Properties: InstanceType: !Equals [CreateProdResources, c1.xlarge, m1.large]</i> — <code>!Equals</code> only checks for equality and returns a boolean, not a value that can be assigned to <code>InstanceType</code>.</li> </ul> <p><b>Tip:</b> Use <b>!If</b> when you need to conditionally assign property values; use the top-level <code>Condition</code> only to control resource creation. Review CloudFormation intrinsic functions to understand these differences!</p>",
+  "query": "<p>You are responsible for automating infrastructure deployment using AWS CloudFormation. Your template must support both development and production setups. An EC2 instance declared in your template should launch as <b>c1.xlarge</b> if it is a production environment, and <b>m1.large</b> for development. A condition named <code>CreateProdResources</code> is defined elsewhere in the template to signal production environments. The template syntax is YAML. How should you specify the <code>InstanceType</code> for your EC2 instance to meet this requirement?</p>",
+  "original_oid": "6793da8e61969b416038a23e",
+  "options": [
+    {
+      "correct": false,
+      "text": "EC2Instance: Type: \"AWS::EC2::Instance\" Condition: CreateProdResources Properties: InstanceType: !Ref [c1.xlarge, m1.large]",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "EC2Instance: Type: \"AWS::EC2::Instance\" Properties: InstanceType: !Equals [CreateProdResources, c1.xlarge, m1.large]",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "EC2Instance: Type: \"AWS::EC2::Instance\" Properties: InstanceType: !If [CreateProdResources, c1.xlarge, m1.large]",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "EC2Instance: Type: \"AWS::EC2::Instance\" Properties: InstanceType: Fn::Not: [CreateProdResources, m1.large, c1.xlarge]",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question462",
+  "originalQuery": "You are a DevOps engineer and you need to design a CloudFormation stack to manage AWS resources.\nYou want to use the same CloudFormation template for both production and development environments.\nThe stack includes an EC2 instance whose instance type should be c1.xlarge for production and m1.large for development.\nYou have a Condition resource called CreateProdResources that determines whether or not the environment is production.\nThe template uses the YAML format.\nHow would you configure the EC2 instance type in the CloudFormation template?",
+  "originalOptions": "[\"A. EC2Instance: Type: \\\"AWS::EC2::Instance\\\" Condition: CreateProdResources Properties: InstanceType: !Ref [c1.xlarge, m1.large]\",\"B. EC2Instance: Type: \\\"AWS::EC2::Instance\\\" Properties: InstanceType: !If [CreateProdResources, c1.xlarge, m1.large]\",\"C. EC2Instance: Type: \\\"AWS::EC2::Instance\\\" Properties: InstanceType: Fn::Not: [CreateProdResources, m1.large, c1.xlarge]\",\"D. EC2Instance: Type: \\\"AWS::EC2::Instance\\\" Properties: InstanceType: !Equals [CreateProdResources, c1.xlarge, m1.large]\"]",
+  "video_url": "https://certificationation.com/videos/exam-need-to-design-a-cloudformation-exam-026.html",
+  "url": "https://certificationation.com/questions/exam-need-to-design-a-cloudformation-exam-026.html"
+}

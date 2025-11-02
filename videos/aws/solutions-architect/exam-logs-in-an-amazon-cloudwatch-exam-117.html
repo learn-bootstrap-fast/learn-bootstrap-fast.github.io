@@ -1,0 +1,128 @@
+---
+title: "A company stores its application logs in an AmazonExam"
+description: "Video for a company stores its application logs in an Amazon CloudWatch Logs log group. A new policy requires the company to store all application logs in"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company stores its application logs in an Amazon CloudWatch Logs log group. A new policy requires the company to store all application logs in Amazon OpenSearch Service (Amazon Elasticsearch Service) in near-real time. Which solution will meet this requirement with the LEAST operational overhead?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f7299da"
+  },
+  "quid": null,
+  "ordinal": "117",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon OpenSearch Service",
+    " AWS CloudWatch",
+    " AWS Lambda",
+    " Amazon Kinesis",
+    " AWS CloudFormation"
+  ],
+  "slug": "cw-logs-store-application-logs-aws",
+  "source": "ET",
+  "title": "AWS A Company Stores Its Application Logs Question",
+  "meta": "AWS Exam Question: A company needs to store application logs from Amazon CloudWatch Logs to Amazon OpenSearch Service in near-real time. Find the answer using AWS technologies.",
+  "answer": "A",
+  "query": "An organization manages its application logs using an AWS CloudWatch Logs group. New compliance mandates state that all application logs must be stored in Amazon OpenSearch Service (Amazon Elasticsearch Service) with minimal delay.\nWhat is the most efficient solution to achieve this with the LEAST operational effort?",
+  "originalQuery": "A company stores its application logs in an Amazon CloudWatch Logs log group. A new policy requires the company to store all application logs in Amazon OpenSearch Service (Amazon Elasticsearch Service) in near-real time.\nWhich solution will meet this requirement with the LEAST operational overhead?",
+  "options": [
+    "A. Configure a CloudWatch Logs subscription to stream the logs to Amazon OpenSearch Service (Amazon Elasticsearch Service).",
+    "B. Create a Lambda function to invoke and write logs to Amazon OpenSearch Service (Amazon Elasticsearch Service) using the log group.",
+    "C. Set up an Amazon Kinesis Data Firehose stream by configuring the log group as the source and directing to Amazon OpenSearch Service (Amazon Elasticsearch Service).",
+    "D. Use Amazon Kinesis Agent on servers to send the logs to Amazon Kinesis Data Streams. Configure it to forward logs to Amazon OpenSearch Service (Amazon Elasticsearch Service)."
+  ],
+  "originalOptions": [
+    "A. Configure a CloudWatch Logs subscription to stream the logs to Amazon OpenSearch Service (Amazon Elasticsearch Service).",
+    "B. Create an AWS Lambda function. Use the log group to invoke the function to write the logs to Amazon OpenSearch Service (Amazon Elasticsearch Service).",
+    "C. Create an Amazon Kinesis Data Firehose delivery stream. Configure the log group as the delivery streams sources. Configure Amazon OpenSearch Service (Amazon Elasticsearch Service) as the delivery stream's destination.",
+    "D. Install and configure Amazon Kinesis Agent on each application server to deliver the logs to Amazon Kinesis Data Streams. Configure Kinesis Data Streams to deliver the logs to Amazon OpenSearch Service (Amazon Elasticsearch Service)."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "The optimal solution involves configuring a CloudWatch Logs log group to stream incoming data directly to your Amazon OpenSearch Service cluster in near real-time via a CloudWatch Logs subscription. This approach minimizes operational overhead compared to using Amazon Kinesis, as it eliminates the need for additional components such as Kinesis Data Firehose or Lambda functions. \n\nFor detailed guidance on setting up the integration between CloudWatch Logs and Amazon OpenSearch Service, refer to the official documentation: [CloudWatch Logs to OpenSearch Streaming](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_OpenSearch_Stream.html).",
+    "When it comes to effortlessly sending your application logs to Amazon OpenSearch Service (formerly known as Amazon Elasticsearch Service) in near-real-time, you want a solution that’s as smooth as butter on a hot pancake! 🥞 \n\nOption A, configuring a CloudWatch Logs subscription to stream logs directly to Amazon OpenSearch Service, is like the trusty Swiss Army knife of this scenario. It offers simplicity and ease of use, ensuring your logs flow seamlessly with minimal fuss. 🎉 \n\nOn the other hand, while options like creating a Lambda function (Option B) or using Amazon Kinesis Agent (Option D) might seem appealing, they can introduce extra layers of complexity that you probably don’t need. Who wants to juggle Lambda functions like a circus performer? 🎪 \n\nAnd let’s not forget about using Amazon Kinesis Data Firehose (Option C) – it’s a great choice, but it can feel like you’re setting up a complex Rube Goldberg machine just to pour a glass of water. 🚰 \n\nSo, if you’re looking for the least operational overhead while still keeping things organized and efficient, go with the CloudWatch Logs subscription. Your future self will thank you for the ease and simplicity! 🌟",
+    "Oh, look who's on the money! A Lambda function is indeed the savvy choice for sending logs to OpenSearch. It’s like having a reliable assistant—efficient, flexible, and ready to handle the heavy lifting without causing a ruckus. While other options might involve a bit more fuss and complexity, this one keeps operational overhead at a delightful minimum. So, let’s embrace the simplicity and let Lambda do its thing!",
+    "Fantastic information! You've truly persuaded me!",
+    "Option A, which involves setting up a CloudWatch Logs subscription to stream logs to Amazon OpenSearch Service (formerly Amazon Elasticsearch Service), isn’t quite the right fit! 🎈 A CloudWatch Logs subscription is primarily intended for directing log events to destinations like an Amazon Simple Notification Service (SNS) topic or an AWS Lambda function. Unfortunately, it doesn’t support direct logging to Amazon OpenSearch Service. So, while it’s a lovely idea, it won’t quite do the trick for this particular requirement!"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "A",
+      "explanation": "answer is A\nhttps://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_OpenSearch_Stream.html\n\n> You can configure a CloudWatch Logs log group to stream data it receives to your Amazon OpenSearch Service cluster in NEAR REAL-TIME through a CloudWatch Logs subscription\n\nleast overhead compared to kinesis",
+      "upvotes": "92"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "good enough for me",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Zerotn3 is right! There should be a Lambda for writing into ES",
+      "upvotes": "1"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Great link. Convinced me",
+      "upvotes": "5"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Option A (Configure a CloudWatch Logs subscription to stream the logs to Amazon OpenSearch Service (Amazon Elasticsearch Service)) is not a suitable option, as a CloudWatch Logs subscription is designed to send log events to a destination such as an Amazon Simple Notification Service (Amazon SNS) topic or an AWS Lambda function. It is not designed to write logs directly to Amazon Elasticsearch Service (Amazon ES).",
+      "upvotes": "4"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "A (66%)",
+      "votes": "124 votes."
+    },
+    {
+      "option": "C (32%)",
+      "votes": "60 votes."
+    },
+    {
+      "option": "2%",
+      "votes": "2%"
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is A because configuring a CloudWatch Logs subscription allows logs to be streamed directly to Amazon OpenSearch Service with minimal delay and operational overhead. This method is designed for real-time log streaming without needing additional configurations or services. \n\nOption B is incorrect as it involves creating a Lambda function, which adds operational complexity and overhead, making it less efficient than a direct stream. \n\nOption C, while a valid approach, introduces the Kinesis Data Firehose service, adding unnecessary complexity given that CloudWatch can stream the logs directly. \n\nOption D requires installing and configuring Kinesis Agent on each server, which is not efficient and requires more management than the other solutions.",
+  "video_url": "https://certificationation.com/videos/exam-logs-in-an-amazon-cloudwatch-exam-117.html",
+  "url": "https://certificationation.com/questions/exam-logs-in-an-amazon-cloudwatch-exam-117.html"
+}

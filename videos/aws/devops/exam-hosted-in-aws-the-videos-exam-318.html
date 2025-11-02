@@ -1,0 +1,62 @@
+---
+title: "You have a video processing application hosted in AWSExam"
+description: "Video for you have a video processing application hosted in AWS. The videos are uploaded by users onto the site. You have a program that is custom-built and"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have a video processing application hosted in AWS. The videos are uploaded by users onto the site. You have a program that is custom-built and runs in the background anytime to process those videos. The program can recover in case there are any failures when processing the videos. Which of the following mechanisms can be used to deploy the instances for carrying out the video processing activities, ensuring that the cost is kept at a minimum?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best option is to use <b>Spot Instances</b> in a launch configuration with the User Data script installing your custom video processing tool, deployed via an Auto Scaling group. Spot Instances are highly cost-effective, offering significant savings compared to On-Demand or Reserved Instances. Since the video processing app is fault-tolerant and can handle interruptions and recover gracefully, Spot Instances are appropriate even though they can be terminated at any time by AWS.</p><p>The options <i>Reserved Instances</i> and <i>On-Demand Instances</i> are more expensive and are suited for applications requiring guaranteed availability. <i>Dedicated Instances</i> are intended for isolated hardware requirements, further increasing costs and are unnecessary here. For this particular workload, where resilience to interruption exists and minimizing costs is the top priority, Spot Instances provide the optimal solution. Make sure your User Data automation installs necessary packages and dependencies on each instance launch, leveraging the Auto Scaling group for elasticity and management.</p><p><b>Tip:</b> Always match your instance purchase option to the tolerance of your workload for cost savings. Use Spot for interruption-resilient stateless or recoverable workloads, and reserve or on-demand for critical, always-on services.</p>",
+  "query": "<p>An organization is running a video processing workload on AWS. Users upload videos, and a custom application handles the processing in the background. The processing tool is resilient and can restart or continue if interruptions occur. What is the most cost-effective way to launch EC2 instances for this service while making sure the custom software gets installed automatically?</p>",
+  "original_oid": "6793da0561969b416038a126",
+  "options": [
+    {
+      "correct": false,
+      "text": "Set up a launch configuration using Reserved Instances. In the User Data section, provide instructions for installing the custom software. Attach this configuration to an Autoscaling group.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up a launch configuration using On-Demand Instances. In the User Data section, provide instructions for installing the custom software. Attach this configuration to an Autoscaling group.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up a launch configuration using Dedicated Instances. In the User Data section, provide instructions for installing the custom software. Attach this configuration to an Autoscaling group.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Set up a launch configuration using Spot Instances. In the User Data section, provide instructions for installing the custom software. Attach this configuration to an Autoscaling group.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question180",
+  "originalQuery": "You have a video processing application hosted in AWS.\nThe videos are uploaded by users onto the site.\nYou have a program that is custom-built and runs in the background anytime to process those videos.\nThe program can recover in case there are any failures when processing the videos.\nWhich of the following mechanisms can be used to deploy the instances for carrying out the video processing activities, ensuring that the cost is kept at a minimum?",
+  "originalOptions": "A. Create a launch configuration with Reserved Instances. Ensure the User Data section details the installation of the custom software. Create an Autoscaling group with the launch configuration.,B. Create a launch configuration with Spot Instances. Ensure the User Data section details the installation of the custom software. Create an Autoscaling group with the launch configuration.,C. Create a launch configuration with Dedicated Instances. Ensure the User Data section details the installation of the custom software. Create an Autoscaling group with the launch configuration.,D. Create a launch configuration with On-Demand Instances. Ensure the User Data section details the installation of the custom software. Create an Autoscaling group with the launch configuration.",
+  "video_url": "https://certificationation.com/videos/exam-hosted-in-aws-the-videos-exam-318.html",
+  "url": "https://certificationation.com/questions/exam-hosted-in-aws-the-videos-exam-318.html"
+}

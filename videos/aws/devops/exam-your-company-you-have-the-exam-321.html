@@ -1,0 +1,62 @@
+---
+title: "You are the IT administrator for your company. You haveExam"
+description: "Video for you are the IT administrator for your company. You have the responsibility of creating the development environment for a LAMP stack. The requirement"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are the IT administrator for your company. You have the responsibility of creating the development environment for a LAMP stack. The requirement is that the development team always gets the latest version of the LAMP stack each time a new instance is launched. Which of the following is an efficient and effective way to implement this requirement? Choose 2 answers from the options given below."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>To ensure every newly launched EC2 instance starts with the <b>latest LAMP stack</b>, it's crucial to perform the installation or update process at launch time using automation tools. <br><br>The correct approaches are:<br><ul><li><b>Leveraging a CloudFormation template with cloud-init directives</b>: This method dynamically provisions resources and uses automation at boot (with <code>cloud-init</code>) to fetch and install the most recent LAMP stack packages. This empowers you to consistently create environments with up-to-date components, as each stack will be provisioned directly from latest repositories.</li><li><b>Configuring EC2 User data with a custom installation script</b>: By providing shell scripts or configuration management scripts in the User data field, each instance will automatically retrieve and install the newest LAMP packages during the initialization phase. This guarantees current versions upon each launch.</li></ul><br>Why the other options do not fit:<br><ul><li><i>Build an AMI preloaded with the LAMP stack and distribute instances to the dev team from this AMI</i>: Although creating an AMI can speed up instance launches, the AMI will quickly become outdated, containing only the versions available at the time it was built. Unless you remake the AMI each time a new LAMP version is released, you cannot guarantee freshness.</li><li><i>Prepare an EBS volume containing the LAMP stack and connect it to an EC2 instance on demand</i>: Storing pre-installed software on an EBS volume faces the same version staleness issue as the AMI solution. Also, simply attaching the volume does not integrate or update the operating system packages and services, leading to potential compatibility or security gaps.</li></ul><br><b>Tips:</b> For environments requiring the latest application stacks every time, combining infrastructure-as-code (like CloudFormation) with launch-time scripts (User Data or cloud-init) is a best practice. This keeps each deployment consistent and current.</p>",
+  "query": "<p>You manage IT tasks for your organization.<br>You're tasked with preparing a development environment using a LAMP stack.<br>The team requires the freshest available LAMP stack each time a new server is deployed.<br>What are the two most practical and efficient solutions to guarantee that developers always receive the newest LAMP stack on their instances?</p>",
+  "original_oid": "6793da0d61969b416038a137",
+  "options": [
+    {
+      "correct": true,
+      "text": "Leverage a CloudFormation template that uses <code>cloud-init</code> commands to fetch and install the latest LAMP packages.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Configure the EC2 instance's User data to run a custom script that installs up-to-date versions of the LAMP stack.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Build an AMI preloaded with the LAMP stack and distribute instances to the dev team from this AMI.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Prepare an EBS volume containing the LAMP stack and connect it to an EC2 instance on demand.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question197",
+  "originalQuery": "You are the IT administrator for your company.\nYou have the responsibility of creating the development environment for a LAMP stack.\nThe requirement is that the development team always gets the latest version of the LAMP stack each time a new instance is launched.\nWhich of the following is an efficient and effective way to implement this requirement? Choose 2 answers from the options given below.",
+  "originalOptions": "A. Create an AMI with all the artifacts of the LAMP stack and provide an instance to the development team based on the AMI.|B. Create a CloudFormation template and use the cloud-init directives to download and install the LAMP stack packages.|C. Use the User data section and use a custom script that will be used to download the necessary LAMP stack packages.|D. Create an EBS Volume with the LAMP stack and attach it to an instance whenever it is required.",
+  "video_url": "https://certificationation.com/videos/exam-your-company-you-have-the-exam-321.html",
+  "url": "https://certificationation.com/questions/exam-your-company-you-have-the-exam-321.html"
+}

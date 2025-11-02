@@ -1,0 +1,62 @@
+---
+title: "You are an AWS administrator. Last week, a new employeeExam"
+description: "Video for you are an AWS administrator. Last week, a new employee accidentally deleted a repository branch in CodeCommit. For certain key repositories, you are"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are an AWS administrator. Last week, a new employee accidentally deleted a repository branch in CodeCommit. For certain key repositories, you are told to create a notification when someone deletes any branch in CodeCommit. You plan to configure a trigger in CodeCommit. Which service should you use to implement this in the best way?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The most effective solution is to use a CodeCommit trigger that publishes to an <b>Amazon SNS topic</b> when a branch deletion event occurs. SNS (Simple Notification Service) is intended for broadcasting messages and alerts to multiple subscribers through various means such as email, SMS, or HTTP endpoints, making it easy to notify users in real time.<br><br>The other options are less suitable or require extra configuration:<br><ul><li><i>Set up a CodeCommit trigger for branch deletions that targets an AWS CloudWatch Event to generate user alerts.</i>—CloudWatch Events (now known as EventBridge) can monitor AWS services, but native integration for fine-grained branch deletion events is not straightforward, and additional configuration is required to notify users.</li><li><i>Establish a trigger in CodeCommit to send deletion event notifications to an Amazon SQS queue to alert users.</i>—SQS (Simple Queue Service) is used for decoupled, programmatic message processing and doesn't send alerts directly to end users. You'd need a consumer application or Lambda function to process the queue and notify users.</li><li><i>Create a CodeCommit trigger that calls a Lambda function, which then uses AWS Simple Email Service to send out emails when branches are deleted.</i>—While this setup works, it's unnecessarily complex for a simple notification use case. SNS directly supports email notifications and removes the need for creating and maintaining Lambda functions and SES configuration.</li></ul><br><b>Tip:</b> Whenever you need to send alerts or notifications to a broad group of recipients in AWS based on system events, <b>SNS</b> is typically the best fit for simplicity, scalability, and ease of integration.</p>",
+  "query": "<p>An AWS administrator recently discovered that a new team member unintentionally removed a branch in AWS CodeCommit.<br>To help prevent issues in the future, you have been asked to set up a notification mechanism for certain repositories that will alert designated users whenever a branch deletion occurs in CodeCommit.<br>If you're going to configure a trigger within CodeCommit, what is the most suitable AWS service for delivering these notifications?</p>",
+  "original_oid": "6793d9b661969b416038a08d",
+  "options": [
+    {
+      "correct": true,
+      "text": "Configure a trigger in CodeCommit to invoke an Amazon SNS topic for branch deletion events, so notifications can be sent to users.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up a CodeCommit trigger for branch deletions that targets an AWS CloudWatch Event to generate user alerts.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Establish a trigger in CodeCommit to send deletion event notifications to an Amazon SQS queue to alert users.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Create a CodeCommit trigger that calls a Lambda function, which then uses AWS Simple Email Service to send out emails when branches are deleted.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question24",
+  "originalQuery": "You are an AWS administrator.\nLast week, a new employee accidentally deleted a repository branch in CodeCommit.\nFor certain key repositories, you are told to create a notification when someone deletes any branch in CodeCommit.\nYou plan to configure a trigger in CodeCommit.\nWhich service should you use to implement this in the best way?",
+  "originalOptions": "A. In CodeCommit, create a trigger to a Lambda function that works with AWS Simple Email Service to send emails to notify users when a branch is deleted.\nB. In CodeCommit, create a trigger for branch deletion event to an Amazon SQS queue to provide warnings to users.\nC. For the repository event of deleting branches, create a trigger in CodeCommit to an Amazon SNS topic to provide notifications to users.\nD. For the repository event of deleting branches, create a trigger in CodeCommit to an AWS CloudWatch Event to provide warnings.",
+  "video_url": "https://certificationation.com/videos/exam-week-a-new-employee-accidentally-exam-037.html",
+  "url": "https://certificationation.com/questions/exam-week-a-new-employee-accidentally-exam-037.html"
+}

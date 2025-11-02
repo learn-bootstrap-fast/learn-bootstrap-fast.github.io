@@ -1,0 +1,62 @@
+---
+title: "You work for a company that automatically tagsExam"
+description: "Video for you work for a company that automatically tags photographs using artificial neural networks (ANNs), which run on GPUs using C++ You receive many"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You work for a company that automatically tags photographs using artificial neural networks (ANNs), which run on GPUs using C++ You receive many images at a time, but only 3 times per day on average. These images are loaded into an AWS S3 bucket you control in a batch, and then the customer publishes a JSON-formatted manifest into another S3 bucket you control as well. Each image takes 10 milliseconds to process using a full GPU. Your neural network software requires 5 minutes to bootstrap. Which of these is the best system architecture for this system?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><b>Configure an S3 event on the manifest bucket to trigger an AWS Lambda. The Lambda spins up a CloudFormation Stack to build an auto-scaling pool of EC2 G2 worker instances, each loaded with the artificial neural network. Use an SQS queue for the manifest’s images. Once processing completes and the queue is emptied, have the stack tear itself down.</b> is the optimal answer since it provisions GPU-powered resources dynamically only when required, minimizing costs since the ANN software has a significant 5-minute bootstrap time. By automatically scaling to accommodate each batch then deprovisioning resources after processing, this model efficiently matches the bursty, batch-oriented workload of a few large jobs per day and avoids underutilized, always-on compute costs.</p><p>The <i>Deploy the artificial neural network software as a Lambda-bundled C++ binary...</i> option is impractical because Lambda is unsuitable for workloads that require special GPU hardware or involve lengthy bootstrap times and extensive image processing, both of which exceed Lambda’s execution limits and lack native GPU support.</p><p>The <i>Launch an OpsWorks stack with two layers...</i> approach maintains always-on resources for monitoring and provisioning, unnecessarily incurring ongoing infrastructure costs, and introduces complexity in synchronization and management of layers and APIs.</p><p>With <i>Use Elastic Beanstalk to set up an auto-scaling, load-balanced worker...</i>, although you leverage scalable infrastructure, keeping the desired capacity to one undermines scalability for large image batches. Additionally, polling S3 for manifests is less efficient than using event-driven processing, and resources may remain idle for much of the day.</p><p><b>Tip:</b> For batch-processing scenarios where startup time is considerable and workloads are infrequent yet intensive, combine event-driven architecture with dynamic provisioning—using tools like Lambda for orchestration, CloudFormation for rapid infrastructure deployment, spot (or on-demand) EC2 G2 instances for GPU workloads, and SQS for job queueing. Always evaluate both processing speed and resource efficiency for cost-effective cloud solutions.</p>",
+  "query": "<p>Your company employs GPU-powered artificial neural networks developed in C++ to automatically tag batches of photos. Image uploads occur a few times daily to an S3 bucket you manage, followed by the arrival of a JSON manifest in a separate, controlled S3 bucket. While each image processes rapidly—only 10 ms per GPU—the neural network software itself takes 5 minutes to start. Which system design below offers the most effective solution for this architecture?</p>",
+  "original_oid": "6793da1a61969b416038a150",
+  "options": [
+    {
+      "correct": true,
+      "text": "Configure an S3 event on the manifest bucket to trigger an AWS Lambda. The Lambda spins up a CloudFormation Stack to build an auto-scaling pool of EC2 G2 worker instances, each loaded with the artificial neural network. Use an SQS queue for the manifest’s images. Once processing completes and the queue is emptied, have the stack tear itself down.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Deploy the artificial neural network software as a Lambda-bundled C++ binary. Use an S3 notification so, whenever a manifest appears, a controlling Lambda function publishes all images to AWS Kinesis. Set up your Lambda to use Kinesis as its event source for automatic scaling.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Launch an OpsWorks stack with two layers: one for lifecycle scripts to bootstrap HTTP APIs on G2 instances for image processing, and another always-on instance watching the manifest bucket for new arrivals. Upon detecting a manifest, boot the neural network layer's instances, then direct processing requests to their APIs.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Use Elastic Beanstalk to set up an auto-scaling, load-balanced worker application, deploying your neural network to G2 instances. Keep capacity at one, and set your code to check S3 for new manifests. When one arrives, send the listed images into the Elastic Beanstalk worker’s SQS queue.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question223",
+  "originalQuery": "You work for a company that automatically tags photographs using artificial neural networks (ANNs), which run on GPUs using C++\nYou receive many images at a time, but only 3 times per day on average.\nThese images are loaded into an AWS S3 bucket you control in a batch, and then the customer publishes a JSON-formatted manifest into another S3 bucket you control as well.\nEach image takes 10 milliseconds to process using a full GPU.\nYour neural network software requires 5 minutes to bootstrap.\nWhich of these is the best system architecture for this system?",
+  "originalOptions": "A. Create an OpsWorks Stack with two Layers. The first contains lifecycle scripts for launching and bootstrapping an HTTP API on G2 instances for image processing. The second has an always-on instance that monitors the S3 manifest bucket for new files. When a new file is detected, request instances to boot on the artificial neural network layer. When the instances are booted and the HTTP APIs are up, submit processing requests to individual instances.|B. Make an S3 notification configuration that publishes to AWS Lambda on the manifest bucket. Make the Lambda create a CloudFormation Stack which contains the logic to construct an autoscaling worker tier of EC2 G2 instances with the artificial neural network code on each instance. Create an SQS queue of the images in the manifest. Tear the stack down when the queue is empty.|C. Deploy your artificial neural network code to AWS Lambda as a bundled binary for the C++ extension. Make an S3 notification configuration on the manifest, which publishes to another AWS Lambda running controller code. This controller code publishes all the images in the manifest to AWS Kinesis. Your ANN code Lambda Function uses the Kinesis as an Event Source. The system automatically scales when the stream contains image events.|D. Create an Auto Scaling, Load Balanced Elastic Beanstalk worker tier Application and Environment. Deploy the artificial neural network code to G2 instances in this tier. Set the desired capacity to 1. Make the code periodically check S3 for new manifests. When a new manifest is detected, push all of the images in the manifest into the SQS queue associated with the Elastic Beanstalk worker tier.",
+  "video_url": "https://certificationation.com/videos/exam-tags-photographs-using-artificial-neural-exam-158.html",
+  "url": "https://certificationation.com/questions/exam-tags-photographs-using-artificial-neural-exam-158.html"
+}

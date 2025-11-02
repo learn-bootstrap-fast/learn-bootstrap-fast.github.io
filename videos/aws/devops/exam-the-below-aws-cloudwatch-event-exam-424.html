@@ -1,0 +1,62 @@
+---
+title: "A DevOps engineer has created the below AWS CloudWatchExam"
+description: "Video for a DevOps engineer has created the below AWS CloudWatch Event rule to capture the CloudFormation API call:"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A DevOps engineer has created the below AWS CloudWatch Event rule to capture the CloudFormation API call:"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct choice is <b>The rule definition should use the following snippet: { \"source\": [ \"aws.cloudtrail\" ], \"detail\": { \"eventSource\": [ \"cloudformation.amazonaws.com\" ] } }</b>. This is necessary because to capture CloudFormation API calls through CloudWatch Events, the rule must be properly configured to match the correct event source and detail fields associated with CloudTrail recorded actions. Incorrectly specifying these fields may cause expected events to be missed.</p><p>The option <i>Check if CloudTrail logging is enabled for the specific region, since disabled logging will prevent AWS API activity from being detected.</i> is useful advice generally, but the scenario assumes the rule is intended to capture events and does not indicate that logging is disabled.</p><p>The choice <i>CloudTrail only records when a CloudFormation stack is created or deleted, not when it is updated. Thus, no event is available for the rule to capture during a stack update.</i> is incorrect because CloudTrail logs both stack update and stack create/delete events as long as logging is enabled and configured.</p><p>The answer <i>Events originating from AWS API calls tracked via CloudTrail cannot be used in CloudWatch Event rules.</i> is false, as CloudWatch Event rules can filter on AWS API actions that CloudTrail records.</p><p><b>Tip:</b> Always ensure both CloudTrail and CloudWatch Event rules are set up to monitor the right event pattern. Double-check that the 'source' and 'detail' objects in the rule are correctly defined to filter the events you intend to watch.</p>",
+  "query": "<p>An AWS DevOps specialist has set up an AWS CloudWatch rule aimed at capturing CloudFormation API activity. However, the team is not receiving notifications for stack updates. What could be the cause of this issue?</p>",
+  "original_oid": "6793da1661969b416038a147",
+  "options": [
+    {
+      "correct": false,
+      "text": "Check if CloudTrail logging is enabled for the specific region, since disabled logging will prevent AWS API activity from being detected.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "CloudTrail only records when a CloudFormation stack is created or deleted, not when it is updated. Thus, no event is available for the rule to capture during a stack update.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "The rule definition should use the following snippet: { \"source\": [ \"aws.cloudtrail\" ], \"detail\": { \"eventSource\": [ \"cloudformation.amazonaws.com\" ] } }",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Events originating from AWS API calls tracked via CloudTrail cannot be used in CloudWatch Event rules.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question214",
+  "originalQuery": "A DevOps engineer has created the below AWS CloudWatch Event rule to capture the CloudFormation API call:",
+  "originalOptions": "A. AWS API Call via CloudTrail cannot be used in a CloudWatch Event rule.|B. CloudTrail can only trace the add and delete for a CloudFormation stack. No API call is recorded for the stack update, so no notification was received.|C. The rule should be changed as the following snippet: { \"source\": [ \"aws.cloudtrail\" ], \"detail\": { \"eventSource\": [ \"cloudformation.amazonaws.com\" ] } }|D. Check if CloudTrail logging is turned on in this region. If it is turned off, no AWS API action events can be received.",
+  "video_url": "https://certificationation.com/videos/exam-the-below-aws-cloudwatch-event-exam-424.html",
+  "url": "https://certificationation.com/questions/exam-the-below-aws-cloudwatch-event-exam-424.html"
+}

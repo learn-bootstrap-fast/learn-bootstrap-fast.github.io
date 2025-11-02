@@ -1,0 +1,62 @@
+---
+title: "Your team creates a new pipeline called myPipeline viaExam"
+description: "Video for your team creates a new pipeline called myPipeline via AWS CodePipeline service. The pipeline includes several stages such as Source, Build, Test and"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your team creates a new pipeline called myPipeline via AWS CodePipeline service. The pipeline includes several stages such as Source, Build, Test and Deploy. When the pipeline is executed, it may fail at a certain stage. You need to set up a CloudWatch Event rule to notify the DevOps team immediately whenever a pipeline stage has a failure. You have customized an event pattern in CloudWatch Event to match the CodePipeline events. Which of the following event patterns is the most appropriate?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct event pattern is <strong>{ \"source\": [ \"aws.codepipeline\" ], \"detail-type\": [ \"CodePipeline Stage Execution State Change\" ], \"detail\": { \"state\": [ \"FAILED\" ], \"pipeline\": [ \"myPipeline\" ] } }</strong>. This pattern specifically matches failures that happen at the <strong>stage</strong> level for your named pipeline, thus ensuring notifications are only sent when a distinct stage in <strong>myPipeline</strong> fails.&nbsp;</p><ul><li><em>{ \"source\": [ \"aws.codepipeline\" ], \"detail-type\": [ \"CodePipeline Pipeline Execution State Change\" ], \"detail\": { \"state\": [ \"FAILED\" ] } }</em> is incorrect because it targets failures at the entire pipeline execution level, not the granular stage level. This could cause missed notifications for individual stage failures.</li><li><em>{ \"source\": [ \"aws.codepipeline\" ], \"detail-type\": [ \"AWS API Call via CloudTrail\" ], \"detail\": { \"eventSource\": [ \"codepipeline.amazonaws.com\" ], \"pipeline\": [ \"myPipeline\" ] } }</em> is not suitable, as this pattern triggers on all API operations via CloudTrail for the pipeline, generating noise and irrelevant alerts.</li><li><em>{ \"source\": [ \"aws.codepipeline\" ], \"detail-type\": [ \"CodePipeline Action Execution State Change\" ], \"detail\": { \"state\": [ \"FAILED\" ], \"pipeline\": [ \"myPipeline\" ] } }</em> is more granular, matching individual actions rather than stages. This may result in excessive alerting for internal action-level failures, many of which may be retried or not as significant as a stage-level failure.</li></ul><p><strong>Tip:</strong> When monitoring a pipeline for failed stages via CloudWatch Events/EventBridge, always match the <strong>detail-type</strong> to <strong>CodePipeline Stage Execution State Change</strong> and filter on <strong>state</strong> as <strong>FAILED</strong> to ensure precise and actionable notifications. Granularity is crucial to avoid alert fatigue or missing critical failures.</p>",
+  "query": "<p>Your DevOps team has built a new AWS CodePipeline named <strong>myPipeline</strong>, comprising multiple phases such as Source, Build, Test, and Deploy. Whenever an execution of a stage fails within this pipeline, the team must be alerted as soon as possible via a CloudWatch Event rule. <br>Given the following possible event patterns for your rule, which is the most suitable for specifically detecting failures at the stage level?</p>",
+  "original_oid": "6793da3f61969b416038a19f",
+  "options": [
+    {
+      "correct": false,
+      "text": "{ \"source\": [ \"aws.codepipeline\" ], \"detail-type\": [ \"CodePipeline Pipeline Execution State Change\" ], \"detail\": { \"state\": [ \"FAILED\" ] } }",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "{ \"source\": [ \"aws.codepipeline\" ], \"detail-type\": [ \"AWS API Call via CloudTrail\" ], \"detail\": { \"eventSource\": [ \"codepipeline.amazonaws.com\" ], \"pipeline\": [ \"myPipeline\" ] } }",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "{ \"source\": [ \"aws.codepipeline\" ], \"detail-type\": [ \"CodePipeline Stage Execution State Change\" ], \"detail\": { \"state\": [ \"FAILED\" ], \"pipeline\": [ \"myPipeline\" ] } }",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "{ \"source\": [ \"aws.codepipeline\" ], \"detail-type\": [ \"CodePipeline Action Execution State Change\" ], \"detail\": { \"state\": [ \"FAILED\" ], \"pipeline\": [ \"myPipeline\" ] } }",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question302",
+  "originalQuery": "Your team creates a new pipeline called myPipeline via AWS CodePipeline service.\nThe pipeline includes several stages such as Source, Build, Test and Deploy.\nWhen the pipeline is executed, it may fail at a certain stage.\nYou need to set up a CloudWatch Event rule to notify the DevOps team immediately whenever a pipeline stage has a failure.\nYou have customized an event pattern in CloudWatch Event to match the CodePipeline events.\nWhich of the following event patterns is the most appropriate?",
+  "originalOptions": "A. { \"source\": [ \"aws.codepipeline\" ], \"detail-type\": [ \"CodePipeline Stage Execution State Change\" ], \"detail\": { \"state\": [ \"FAILED\" ], \"pipeline\": [ \"myPipeline\" ] } }\nB. { \"source\": [ \"aws.codepipeline\" ], \"detail-type\": [ \"CodePipeline Pipeline Execution State Change\" ], \"detail\": { \"state\": [ \"FAILED\" ] } }\nC. { \"source\": [ \"aws.codepipeline\" ], \"detail-type\": [ \"CodePipeline Action Execution State Change\" ], \"detail\": { \"state\": [ \"FAILED\" ], \"pipeline\": [ \"myPipeline\" ] } }\nD. { \"source\": [ \"aws.codepipeline\" ], \"detail-type\": [ \"AWS API Call via CloudTrail\" ], \"detail\": { \"eventSource\": [ \"codepipeline.amazonaws.com\" ], \"pipeline\": [ \"myPipeline\" ] } }",
+  "video_url": "https://certificationation.com/videos/exam-called-mypipeline-via-aws-codepipeline-exam-217.html",
+  "url": "https://certificationation.com/questions/exam-called-mypipeline-via-aws-codepipeline-exam-217.html"
+}

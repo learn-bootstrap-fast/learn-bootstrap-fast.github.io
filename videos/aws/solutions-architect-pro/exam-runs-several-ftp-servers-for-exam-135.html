@@ -1,0 +1,74 @@
+---
+title: "A web design company currently runs several FTP serversExam"
+description: "Video for a web design company currently runs several FTP servers for their 20 customers to upload and download large graphic files. They want to move this"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A web design company currently runs several FTP servers for their 20 customers to upload and download large graphic files. They want to move this system to AWS. They also want to maintain customer privacy and keep the costs incurred on AWS side to a minimum."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d5b6f501ee1c8ade9824"
+  },
+  "quid": "0",
+  "ordinal": "219",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "Amazon S3",
+    " AWS Identity and Access Management (IAM)",
+    " AWS Cost Management",
+    " AWS Security",
+    " AWS Shared Responsibility Model"
+  ],
+  "slug": "f-ftp-servers-customers-upload-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question219",
+  "title": "AWS Web Design Company Runs Several FTP Servers Question",
+  "meta": "AWS Exam Question: A web design company seeks to migrate FTP servers to AWS while ensuring customer privacy and minimizing costs. Answer: S3, EC2.",
+  "answer": "A",
+  "query": "A marketing agency currently operates multiple FTP servers that their 25 clients use to transfer large promotional videos. They want to transition this file transfer process to cloud services while ensuring each client’s data remains private and keeping operational expenses as low as possible.",
+  "originalQuery": "A web design company currently runs several FTP servers for their 20 customers to upload and download large graphic files.\nThey want to move this system to AWS.\nThey also want to maintain customer privacy and keep the costs incurred on AWS side to a minimum.",
+  "options": [
+    "A. Ask their customers to use an S3 client instead of an FTP client. Create a single S3 bucket. Create an IAM user for each customer. Put the IAM Users in a Group with an IAM policy that permits access to objects ( files ) within the bucket via the use of the ‘username’ policy variable.",
+    "B. Deploy a single S3 bucket configured with Standard-Infrequent Access storage class and instruct customers to connect using an S3 client. Set up bucket policies granting exclusive access per client for their designated bucket.",
+    "C. Launch an Auto Scaling Group consisting of FTP servers with a policy to scale down when network usage is minimal. Retrieve a centralized FTP user list from S3 as part of the initialization script on each instance.",
+    "D. Provision a single S3 bucket with the Requester Pays feature enabled, requiring clients to cover data transfer costs. Assign a bucket to each client with a policy that restricts access solely to that client."
+  ],
+  "originalOptions": [
+    "A. Ask their customers to use an S3 client instead of an FTP client. Create a single S3 bucket. Create an IAM user for each customer. Put the IAM Users in a Group with an IAM policy that permits access to objects ( files ) within the bucket via the use of the ‘username’ policy variable.",
+    "B. Create a single S3 bucket with Reduced Redundancy Storage turned on and ask their customers to use an S3 client instead of an FTP client. Create a bucket for each customer with a Bucket Policy that permits access only to that one customer.",
+    "C. Create an Auto Scaling Group of FTP servers with a scaling policy to automatically scale-in when minimum network traffic on the auto-scaling group is below a given threshold. Load a central list of FTP users from S3 as part of the user data startup script on each Instance.",
+    "D. Create a single S3 bucket with Requester Pays turned on and ask their customers to use an S3 client instead of an FTP client. Create a bucket for each customer with a bucket policy that permits access only to that one customer."
+  ],
+  "image": "",
+  "primaryObjective": "2: Design for New Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Answer - A.\nThe main considerations in this scenario are: (1) the architecture should be scalable, (2) customer privacy should be maintained, and (3) the solution should be cost-effective.\nOption A is correct because (a) it creates permissions via IAM policy where each user will have access to only those objects ( files ) named with their username, and (b) S3 is a cost-effective and highly scalable solution.\nNote: Even though creating one IAM User per user/customer is not the best way forwards, but given the other choices, this is the best option.\nOption B is incorrect because creating one bucket per user is not a scalable architecture.\nOne S3 bucket is enough for this scenario.\nOption C is incorrect because creating an Auto Scaling group of FTP servers is a costly solution compared to creating buckets on S3 and appropriate IAM policies.\nOption D is incorrect because (a) creating one bucket per user is not a scalable architecture.\nCurrently, the number of customers is 20\nBut in the future, the number can grow.\nIf it does, it will put limits on the number of buckets, and (b) you configure buckets to be Requester Pays when you want to share the data but not incur charges associated with others accessing the data.\nThis will keep the cost down for the company but will increase the cost for the customer who will access the buckets.\nThe best option among the given choices is A.\nOption A involves using Amazon S3 (Simple Storage Service) as the storage solution for the web design company's FTP server. S3 provides highly scalable, reliable, and cost-effective storage with built-in security and access controls.\nTo implement this option, the company can create a single S3 bucket to store all the customer files. Then, they can create an IAM user for each customer and put them in an IAM group with an IAM policy that permits access to objects (files) within the bucket using the \"username\" policy variable. This approach ensures that each customer can only access their own files and not those of other customers.\nAdditionally, the company can ask their customers to use an S3 client instead of an FTP client to upload and download files. This approach reduces the cost of maintaining FTP servers and ensures secure and reliable file transfers using S3's built-in encryption and data integrity features.\nOption B involves creating a single S3 bucket with Reduced Redundancy Storage (RRS) turned on, which provides lower durability but lower storage costs compared to standard S3 storage. The company would create a separate bucket for each customer with a Bucket Policy that permits access only to that one customer. However, this approach is less flexible and scalable than Option A and requires more management overhead, making it less ideal for the web design company's needs.\nOption C involves creating an Auto Scaling Group of FTP servers that automatically scale-in when network traffic on the group falls below a given threshold. The company would load a central list of FTP users from S3 as part of the user data startup script on each instance. While this approach ensures high availability and scalability, it also requires more infrastructure management and maintenance than Option A and may incur higher costs.\nOption D involves creating a single S3 bucket with Requester Pays turned on, which requires the customer to pay for the data transfer costs incurred when accessing the bucket. The company would create a separate bucket for each customer with a Bucket Policy that permits access only to that one customer. However, this approach may not be feasible if the company wants to cover the data transfer costs themselves or if customers are unwilling to pay for the costs of accessing their files.\nIn summary, Option A is the best choice for the web design company as it provides a cost-effective, scalable, and secure solution for file storage and transfer while maintaining customer privacy.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-runs-several-ftp-servers-for-exam-135.html",
+  "url": "https://certificationation.com/questions/exam-runs-several-ftp-servers-for-exam-135.html"
+}

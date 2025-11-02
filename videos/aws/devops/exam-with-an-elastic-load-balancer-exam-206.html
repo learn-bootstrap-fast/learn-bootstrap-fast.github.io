@@ -1,0 +1,67 @@
+---
+title: "You have an Auto Scaling group with an Elastic LoadExam"
+description: "Video for you have an Auto Scaling group with an Elastic Load Balancer. You decide to suspend the Auto Scaling AddToLoadBalancer for a short period of time."
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have an Auto Scaling group with an Elastic Load Balancer. You decide to suspend the Auto Scaling AddToLoadBalancer for a short period of time. What will happen to the instances launched during the suspension period?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct answer is <b>The new instances will not automatically be registered with the ELB.</b> When you suspend the <em>AddToLoadBalancer</em> process, any new EC2 instances created by Auto Scaling are launched, but are <b>not</b> registered with the ELB while the suspension is in effect. When you resume the process, you must manually register these instances with the ELB if you want them to receive traffic, unless you terminate and relaunch them, allowing Auto Scaling to automatically register them.</p><p><i>'The Auto Scaling group does not launch any instances while suspended.'</i> is incorrect since only the registration process is paused, not the instance lifecycle. <i>'Instances are added to the ELB as soon as you resume the AddToLoadBalancer process; no manual actions needed.'</i> is wrong because Auto Scaling will not attempt to register previously launched instances with the ELB unless you do so manually. <i>'Manual intervention is required to attach the instances to the ELB after resuming the process.'</i> is misleading. Instance registration must be done manually, but this option fails to clarify that automatic registration does not occur upon resuming. <i>'Suspending the AddToLoadBalancer process is not an available feature.'</i> is incorrect as AWS supports suspension of specific Auto Scaling processes like AddToLoadBalancer.</p><ul><li><b>Tip:</b> Understanding Auto Scaling process suspension is crucial for troubleshooting load balancing issues with scaling groups and ensuring application availability.</li></ul>",
+  "query": "<p>You have an Auto Scaling group integrated with an Elastic Load Balancer (ELB). If you temporarily suspend the Auto Scaling <em>AddToLoadBalancer</em> process, what happens to EC2 instances that are started while this process is paused?</p>",
+  "original_oid": "6793d9c061969b416038a0a1",
+  "options": [
+    {
+      "correct": true,
+      "text": "The new instances will not automatically be registered with the ELB.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "The Auto Scaling group does not launch any instances while suspended.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Instances are added to the ELB as soon as you resume the AddToLoadBalancer process; no manual actions needed.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Manual intervention is required to attach the instances to the ELB after resuming the process.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Suspending the AddToLoadBalancer process is not an available feature.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question44",
+  "originalQuery": "You have an Auto Scaling group with an Elastic Load Balancer.\nYou decide to suspend the Auto Scaling AddToLoadBalancer for a short period of time.\nWhat will happen to the instances launched during the suspension period?",
+  "originalOptions": "A. The instances will be registered with ELB once the process has resumed.\nB. Auto Scaling will not launch the instances during this period because of the suspension.\nC. The instances will not be registered with EL.\nD. You must manually register when the process is resumed.\nE. It is not possible to suspend the AddToLoadBalancer process.",
+  "video_url": "https://certificationation.com/videos/exam-with-an-elastic-load-balancer-exam-206.html",
+  "url": "https://certificationation.com/questions/exam-with-an-elastic-load-balancer-exam-206.html"
+}

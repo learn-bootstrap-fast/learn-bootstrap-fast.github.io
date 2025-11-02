@@ -1,0 +1,128 @@
+---
+title: "A company needs to move data from an Amazon EC2 instanceExam"
+description: "Video for a company needs to move data from an Amazon EC2 instance to an Amazon S3 bucket. The company must ensure that no API calls and no data are routed"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company needs to move data from an Amazon EC2 instance to an Amazon S3 bucket. The company must ensure that no API calls and no data are routed through public internet routes. Only the EC2 instance can have access to upload data to the S3 bucket. Which solution will meet these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729a35"
+  },
+  "quid": null,
+  "ordinal": "208",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon S3",
+    " Amazon EC2",
+    " AWS Identity and Access Management (IAM)",
+    " AWS VPC",
+    " AWS resource policy"
+  ],
+  "slug": "ec2-move-data-amazon-s3-aws",
+  "source": "ET",
+  "title": "AWS A Company Needs To Move Data Question",
+  "meta": "AWS Exam Question: A company needs to move data from an Amazon EC2 instance to an Amazon S3 bucket without public internet routes. Find the answer using VPC endpoints.",
+  "answer": "A",
+  "query": "An organization wants to transfer files from an EC2 instance to an S3 bucket securely, without using public internet connections. It requires that only the EC2 instance has permissions to upload files to the S3 bucket. \n\nWhat solution fulfills these requirements?",
+  "originalQuery": "A company needs to move data from an Amazon EC2 instance to an Amazon S3 bucket. The company must ensure that no API calls and no data are routed through public internet routes. Only the EC2 instance can have access to upload data to the S3 bucket.\n\nWhich solution will meet these requirements?",
+  "options": [
+    "A. Create an interface VPC endpoint for Amazon S3 in the subnet where the EC2 instance is located. Attach a resource policy to the S3 bucket to only allow the EC2 instance’s IAM role for access.",
+    "B. Set up a gateway VPC endpoint for Amazon S3 in the Availability Zone where the EC2 instance resides. Associate the proper security groups with the gateway.",
+    "C. Use a tool inside the EC2 instance to find the private IP address of the S3 bucket’s service API endpoint. Then create a route in the VPC route table for EC2 to access the S3 bucket. Attach a corresponding resource policy to ensure only the EC2 instance’s IAM role can access the S3 bucket.",
+    "D. Use the AWS provided, publicly available ip-ranges.json file to obtain the private IP address of the S3 bucket’s service API endpoint. Create a route in the VPC route table to provide the EC2 instance with access to the S3 bucket. Attach a resource policy to the S3 bucket to only allow the EC2 instance’s IAM role for access."
+  ],
+  "originalOptions": [
+    "A. Create an interface VPC endpoint for Amazon S3 in the subnet where the EC2 instance is located. Attach a resource policy to the S3 bucket to only allow the EC2 instance’s IAM role for access.",
+    "B. Create a gateway VPC endpoint for Amazon S3 in the Availability Zone where the EC2 instance is located. Attach appropriate security groups to the endpoint. Attach a resource policy to the S3 bucket to only allow the EC2 instance’s IAM role for access.",
+    "C. Run the nslookup tool from inside the EC2 instance to obtain the private IP address of the S3 bucket’s service API endpoint. Create a route in the VPC route table to provide the EC2 instance with access to the S3 bucket. Attach a resource policy to the S3 bucket to only allow the EC2 instance’s IAM role for access.",
+    "D. Use the AWS provided, publicly available ip-ranges.json file to obtain the private IP address of the S3 bucket’s service API endpoint. Create a route in the VPC route table to provide the EC2 instance with access to the S3 bucket. Attach a resource policy to the S3 bucket to only allow the EC2 instance’s IAM role for access."
+  ],
+  "image": null,
+  "primaryObjective": "1: Design Secure Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "The optimal solution is A, rather than B, because it is not possible to assign security groups to a gateway endpoint. Instead, an interface VPC endpoint for Amazon S3 allows for secure communication between the EC2 instance and the S3 bucket without traversing the public internet. By attaching a resource policy to the S3 bucket that restricts access solely to the IAM role associated with the EC2 instance, you can ensure that only the designated instance has permission to upload data to S3. This approach adheres to security best practices by maintaining a private connection and minimizing exposure to potential threats.",
+    "Absolutely! 🌟 When it comes to transferring data from an EC2 instance to an S3 bucket without letting it wander through the public internet, you’ve got some nifty options. \n\nOne reliable approach is to set up a gateway VPC endpoint for Amazon S3 in the same Availability Zone as your EC2 instance. This way, your instance can securely upload data directly to S3 without any public internet detours. 🚀 Just remember to associate the right security groups to keep everything cozy and secure!\n\nAnother option is to create an interface VPC endpoint for S3, which allows your EC2 instance to communicate directly with the bucket. Just make sure to attach a resource policy that grants access exclusively to the EC2 instance’s IAM role, keeping those pesky unauthorized users at bay! 🦸‍♂️\n\nHowever, the idea of manually hunting down private IP addresses of S3’s service API and crafting routes in the VPC route table might sound like a fun scavenger hunt, but it’s not the most efficient way to go about it. So, let’s skip the detective work and stick with the endpoints instead! 🔍\n\nFor all the juicy details and a step-by-step guide, check this out: [AWS Knowledge Center](https://aws.amazon.com/premiumsupport/knowledge-center/connect-s3-vpc-endpoint/). Happy cloud adventuring! ☁️✨",
+    "Well, that's a hard pass. The solution you’re looking for is not on that list. In fact, the only right answer here would be to set up a gateway VPC endpoint for Amazon S3 in the same Availability Zone as your EC2 instance. This little gem allows direct communication between your instance and the S3 bucket without any unsightly detours through the public internet. \n\nRemember, the gateway VPC endpoint is your friend—it keeps your data private and secure. Just don’t forget to configure the necessary security groups to allow traffic. It’s like ensuring your bouncer at the club only lets in the VIPs—your EC2 instance's IAM role should have exclusive access to the S3 bucket. \n\nThe other options? Well, they might sound clever, but let’s be real: they’re not going to cut it when it comes to maintaining that sweet, sweet isolation from the public internet. Stick to the gateway endpoint, and you’ll be golden!",
+    "To facilitate seamless communication between your VPC resources and the endpoint network interfaces for the VPC endpoint, it’s essential to configure a security group that permits this interaction. To enable tools like the AWS CLI to send HTTPS requests from your VPC resources to the AWS service, the security group should be configured to allow inbound HTTPS traffic.\n\nWhen setting up security groups, make sure to select the appropriate security groups to associate with the endpoint network interfaces for the VPC endpoint. By default, the security group associated with the VPC will be the default one. This setup ensures that your resources can securely and efficiently communicate with the necessary AWS services without traversing the public internet.",
+    "Oh, what a delightful puzzle we have here! 🌟 It looks like option B is a bit off the mark! You see, the gateway endpoint is not suitable for this scenario, while the interface endpoint is just the star of the show. So, we can say that option B doesn't quite fit the bill. Let's keep our focus on the right choice that ensures all data travels privately without a hitch! 🥳"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "A",
+      "explanation": "I think answer should be A and not B.\nas we cannot \"Attach a security groups to a gateway endpoint.\"",
+      "upvotes": "39"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "It's possible:\n\nhttps://aws.amazon.com/premiumsupport/knowledge-center/connect-s3-vpc-endpoint/",
+      "upvotes": "4"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "No, it’s not",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Create a security group that allows the resources in your VPC to communicate with the endpoint network interfaces for the VPC endpoint. To ensure that tools such as the AWS CLI can make requests over HTTPS from resources in the VPC to the AWS service, the security group must allow inbound HTTPS traffic.\n\n\nFor Security groups, select the security groups to associate with the endpoint network interfaces for the VPC endpoint. By default, we associate the default security group for the VPC.",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "this is valid for interface endpoint, not for gateway endpoint, which option B mentioned",
+      "upvotes": "4"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "A (57%)",
+      "votes": "109 votes."
+    },
+    {
+      "option": "B (43%)",
+      "votes": "82 votes."
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is A because creating an interface VPC endpoint for Amazon S3 ensures that the traffic between the EC2 instance and the S3 bucket does not traverse the public internet, fulfilling the requirement for a secure file transfer. Additionally, attaching a resource policy allows only the EC2 instance's IAM role to access the S3 bucket, ensuring that no other services can interact with the bucket. \n\nOption B is incorrect because gateway endpoints for S3 do not support attaching security groups, which is necessary for controlling access in this context. \n\nOption C incorrectly suggests using nslookup to determine a private IP address and creating a routing rule, which is unnecessary and doesn't provide the required security features. \n\nOption D suggests using a public JSON file to find private IP addresses, which is not effective or secure for this scenario and also overlooks the requirement of ensuring that only the EC2 instance can upload files to the S3 bucket.",
+  "video_url": "https://certificationation.com/videos/exam-amazon-ec2-instance-to-an-exam-208.html",
+  "url": "https://certificationation.com/questions/exam-amazon-ec2-instance-to-an-exam-208.html"
+}

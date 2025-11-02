@@ -1,0 +1,82 @@
+---
+title: "Your organization has a security policy to ensure thatExam"
+description: "Video for your organization has a security policy to ensure that all Cloud SQL for MySQL databases are secure. You want to protect sensitive data by using a key"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your organization has a security policy to ensure that all Cloud SQL for MySQL databases are secure. You want to protect sensitive data by using a key that meets specific locality or residency requirements. Your organization needs to control the key's lifecycle activities. You need to ensure that data is encrypted at rest and in transit. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "HelioBank is deploying Cloud SQL for MySQL in europe-west1 to support payment processing for example.com. The compliance team requires that data at rest be encrypted with a key that they own and manage in a specific European location, and they must control the key lifecycle including rotation and disablement. They also need all client connections to be encrypted from end to end. What should they configure?",
+  "options": [
+    {
+      "text": "Create the Cloud SQL for MySQL instance with Google managed encryption keys and secure access using VPC Service Controls",
+      "explanation": "This option relies on Google managed keys and uses VPC Service Controls to reduce data exfiltration risks without giving customer control of the encryption key",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create the Cloud SQL for MySQL instance using customer managed encryption keys and place it behind Cloud VPN for all client connectivity",
+      "explanation": "This uses a customer managed key but focuses on a network tunnel for connectivity rather than enabling client level TLS",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create the Cloud SQL for MySQL instance using customer managed encryption keys from Cloud KMS in the required region and require SSL or TLS for client connections",
+      "explanation": "This gives the customer ownership of the at rest encryption key in a specific location and secures client connections with TLS",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Create the Cloud SQL for MySQL instance with Google managed encryption keys and require SSL or TLS",
+      "explanation": "This secures data in transit with TLS but relies on Google managed keys for at rest encryption",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Create the Cloud SQL for MySQL instance using customer managed encryption keys from Cloud KMS in the required region and require SSL or TLS for client connections</b>.</p><p>This choice lets HelioBank own and manage the data encryption key through Cloud KMS in a European location that matches their compliance needs. With CMEK they control key rotation, disabling, and destruction which fulfills the lifecycle requirement. Requiring SSL or TLS on the instance ensures all client connections are encrypted in transit from the client to Cloud SQL and provides end to end protection.</p><p><i>Create the Cloud SQL for MySQL instance with Google managed encryption keys and secure access using VPC Service Controls</i> is not correct because Google managed keys do not give the customer ownership or lifecycle control of the key. VPC Service Controls helps reduce data exfiltration risk across service perimeters but it does not provide customer managed encryption at rest or enforce client to database encryption.</p><p><i>Create the Cloud SQL for MySQL instance using customer managed encryption keys and place it behind Cloud VPN for all client connectivity</i> is not correct because a VPN encrypts links between networks rather than the end to end database session. You would still need to enforce SSL or TLS to meet the requirement for encrypted client connections and requiring VPN for all clients is unnecessary and may not even apply for public or cross region access.</p><p><i>Create the Cloud SQL for MySQL instance with Google managed encryption keys and require SSL or TLS</i> is not correct because requiring SSL or TLS would protect traffic in transit but Google managed keys do not satisfy the requirement to own and manage the data encryption key.</p>",
+  "batch_id": "351",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "Your organization has a security policy to ensure that all Cloud SQL for MySQL databases are secure. You want to protect sensitive data by using a key that meets specific locality or residency requirements. Your organization needs to control the key's lifecycle activities. You need to ensure that data is encrypted at rest and in transit. What should you do?",
+  "originalOptions": "A. Create the database with customer-managed encryption keys and use a VPN tunnel.<br/>B. Create the database with customer-managed encryption keys and enable SSL/TLS.<br/>C. Create the database with Google-managed encryption keys and use a VPN tunnel.<br/>D. Create the database with Google-managed encryption keys and enable SSL/TLS.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "178",
+  "tip": "<p>Map requirements to controls. Data at rest with keys you own means <i>CMEK in Cloud KMS with a matching key location</i>. End to end client encryption means <i>SSL or TLS or the Cloud SQL Auth Proxy</i>. Perimeter tools like VPC Service Controls or tunnels like Cloud VPN do not replace these.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/customer-managed-encryption",
+    "https://cloud.google.com/kms/docs/locations",
+    "https://cloud.google.com/sql/docs/mysql/configure-ssl-instance",
+    "https://cloud.google.com/sql/docs/mysql/connect-overview#secure-connections",
+    "https://cloud.google.com/vpc-service-controls/docs/overview",
+    "https://cloud.google.com/vpn/docs/concepts/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-policy-to-ensure-that-all-exam-178.html",
+  "video_url": "https://certificationation.com/videos/exam-policy-to-ensure-that-all-exam-178.html"
+}

@@ -1,0 +1,62 @@
+---
+title: "You are a DevOps engineer working in a big organizationExam"
+description: "Video for you are a DevOps engineer working in a big organization and you manage AWS resources including EC2 and RDS. One day, the security group of an EC2"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are a DevOps engineer working in a big organization and you manage AWS resources including EC2 and RDS. One day, the security group of an EC2 bastion host has been modified to allow the inbound SSH traffic from any IP addresses. You notice this potential security risk after several days. Although this issue did not lead to any data leakage, you still want to enhance the AWS configurations so that whenever the IP addresses of the incoming SSH traffic in the security groups are not restricted, you will get a notification in time. Which option is the most suitable?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct mechanism to get notified when a security group allows unrestricted SSH is to use the <b>Set up an AWS Config rule by choosing the AWS Managed rule named \"restricted-ssh,\" which evaluates whether security groups allow SSH access from all locations</b> option. The AWS Config managed rule \"restricted-ssh\" specifically checks if security groups are permitting inbound SSH from the entire internet (0.0.0.0/0); when non-compliance is detected, Config can trigger notifications via SNS, Lambda, or other integrations for real-time alerts.</p><p>The option <i>\"Create a rule in AWS Config and utilize the Managed rule 'restricted-common-ports' to automatically assess if any security group permits open SSH ingress\"</i> is incorrect because the \"restricted-common-ports\" rule checks a range of common ports, but for precise SSH access notification, \"restricted-ssh\" is specifically designed for port 22.</p><p><i>\"Activate Amazon Inspector and add the rule set 'Common Vulnerabilities and Exposures-1.1' to inspect security groups and set up alerting via SNS\"</i> is not suitable, because while Inspector mainly scans for vulnerabilities on EC2 instances themselves, it does not continuously evaluate security group configurations for future changes or for specific SSH access risk.</p><p>The option <i>\"Turn on Amazon GuardDuty and review findings regarding open security groups using AWS Security Hub\"</i> is incorrect since GuardDuty primarily monitors for suspicious activity, but does not provide real-time compliance checks or notifications when security groups are made publicly accessible for SSH. Security Hub aggregates findings, but it is not intended for direct security group change notification.</p><p><b>Tip:</b> AWS Config rules are the purpose-built solution for monitoring compliance of resource configurations, including security groups. To ensure immediate notification, pair AWS Config rule evaluations with SNS topics to trigger alerts when non-compliance, such as unrestricted SSH, is detected.</p>",
+  "query": "<p>You are in charge of AWS resources for a large enterprise, and recently discovered that the security group attached to a critical EC2 bastion host was changed to permit SSH access (port 22) from any IP address. This open rule was in place for several days before you detected it, creating a potential vulnerability. To strengthen your AWS setup, you want to receive prompt notifications if any security group allows unrestricted (0.0.0.0/0) inbound SSH traffic in the future. Which is the best way to fulfill this requirement?</p>",
+  "original_oid": "6793da9e61969b416038a25e",
+  "options": [
+    {
+      "correct": true,
+      "text": "Set up an AWS Config rule by choosing the AWS Managed rule named \"restricted-ssh,\" which evaluates whether security groups allow SSH access from all locations.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Create a rule in AWS Config and utilize the Managed rule \"restricted-common-ports\" to automatically assess if any security group permits open SSH ingress.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Activate Amazon Inspector and add the rule set \"Common Vulnerabilities and Exposures-1.1\" to inspect security groups and set up alerting via SNS.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Turn on Amazon GuardDuty and review findings regarding open security groups using AWS Security Hub.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question494",
+  "originalQuery": "You are a DevOps engineer working in a big organization and you manage AWS resources including EC2 and RDS.\nOne day, the security group of an EC2 bastion host has been modified to allow the inbound SSH traffic from any IP addresses.\nYou notice this potential security risk after several days.\nAlthough this issue did not lead to any data leakage, you still want to enhance the AWS configurations so that whenever the IP addresses of the incoming SSH traffic in the security groups are not restricted, you will get a notification in time.\nWhich option is the most suitable?",
+  "originalOptions": "[\"A. Create an AWS Config rule and select the AWS Managed rule \\\"restricted-ssh\\\" to check whether security groups disallow unrestricted incoming SSH traffic.\",\"B. Add a rule in AWS Config and select the AWS Managed rule \\\"restricted-common-ports\\\" to check whether security groups disallow unrestricted incoming SSH traffic.\",\"C. Enable Amazon Inspector and include the rule package \\\"Common Vulnerabilities and Exposures-1.1\\\" to check the security groups. Configure a notification through SNS.\",\"D. Enable Amazon GuardDuty and check the security findings of security groups in AWS Security Hub.\"]",
+  "video_url": "https://certificationation.com/videos/exam-a-big-organization-and-you-exam-256.html",
+  "url": "https://certificationation.com/questions/exam-a-big-organization-and-you-exam-256.html"
+}

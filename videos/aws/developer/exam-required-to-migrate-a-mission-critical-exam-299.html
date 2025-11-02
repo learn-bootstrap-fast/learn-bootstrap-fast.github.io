@@ -1,0 +1,81 @@
+---
+title: "As a Database Engineer, you are required to migrate aExam"
+description: "Video for as a Database Engineer, you are required to migrate a mission-critical PostgreSQL database from an on-premises data center to Google Cloud Spanner,"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are required to migrate a mission-critical PostgreSQL database from an on-premises data center to Google Cloud Spanner, ensuring minimal to zero downtime during the migration process. Which of the following migration strategies would be the most effective in achieving this objective while maintaining data integrity?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the lead database engineer at AuroraPlay, a streaming media startup, and you must migrate a critical PostgreSQL database from a company owned data center to Cloud Spanner with virtually no downtime. The business will accept at most 60 seconds of disruption and it requires that data integrity is preserved during and after cutover. Which migration strategy should you choose?",
+  "options": [
+    {
+      "text": "Export the full PostgreSQL database to files and then import the dump into Cloud Spanner as a single batch",
+      "explanation": "This approach performs a complete copy in one operation and typically requires a sizable maintenance window.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure Datastream to capture changes from the on premises PostgreSQL source and continuously apply them to Cloud Spanner before redirecting traffic",
+      "explanation": "This streams inserts updates and deletes so the target remains closely synchronized with the source.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use Database Migration Service to move the on premises PostgreSQL database directly into Cloud Spanner",
+      "explanation": "This managed service orchestrates migrations for compatible databases and can provide replication and connectivity management.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Modify the applications to write to both the existing PostgreSQL database and Cloud Spanner at the same time",
+      "explanation": "This relies on dual writes in application code and can create ordering and conflict challenges.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Configure Datastream to capture changes from the on premises PostgreSQL source and continuously apply them to Cloud Spanner before redirecting traffic</b>.</p><p>This approach lets you perform an initial load and then keep Cloud Spanner in sync through continuous change data capture. You can validate replication lag and data consistency, pause writes briefly on the source, allow the final changes to apply, and then redirect traffic. The brief cutover window can meet the 60 second requirement while preserving transactional integrity because the pipeline replays ordered changes and checkpoints progress.</p><p><i>Export the full PostgreSQL database to files and then import the dump into Cloud Spanner as a single batch</i> is a bulk offline process that requires extended downtime and cannot guarantee a 60 second cutover. It also risks divergence if the source continues to accept writes during the import.</p><p><i>Use Database Migration Service to move the on premises PostgreSQL database directly into Cloud Spanner</i> is not supported because Database Migration Service does not target Cloud Spanner. It is designed for migrations into Cloud SQL and AlloyDB rather than into Spanner.</p><p><i>Modify the applications to write to both the existing PostgreSQL database and Cloud Spanner at the same time</i> introduces dual writes which are prone to inconsistency and lost ordering under failures. It complicates application logic and does not ensure data integrity during cutover.</p>",
+  "batch_id": "263",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are required to migrate a mission-critical PostgreSQL database from an on-premises data center to Google Cloud Spanner, ensuring minimal to zero downtime during the migration process. Which of the following migration strategies would be the most effective in achieving this objective while maintaining data integrity?",
+  "originalOptions": "A. Perform a one-time export-import process to lift and shift the entire PostgreSQL database to Cloud Spanner.<br/>B. Use the Cloud Data Fusion to create an ETL pipeline that replicates data from the on-premises PostgreSQL database to Cloud Spanner.<br/>C. Implement a custom dual-write mechanism to write data to both the on-premises PostgreSQL database and Cloud Spanner simultaneously.<br/>D. Set up a Datastream connection between the on-premises PostgreSQL database and Cloud Spanner for continuous data replication.",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "299",
+  "tip": "<p>When you must meet <i>near zero downtime</i> and preserve integrity, look for managed change data capture that can pre seed and continuously replicate, then plan a brief cutover after lag reaches zero.</p>",
+  "references": [
+    "https://cloud.google.com/datastream/docs/overview",
+    "https://cloud.google.com/datastream/docs/configure-your-source-postgresql",
+    "https://cloud.google.com/dataflow/docs/guides/templates/provided-streaming",
+    "https://cloud.google.com/spanner/docs/migration-overview",
+    "https://cloud.google.com/database-migration/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-required-to-migrate-a-mission-critical-exam-299.html",
+  "video_url": "https://certificationation.com/videos/exam-required-to-migrate-a-mission-critical-exam-299.html"
+}

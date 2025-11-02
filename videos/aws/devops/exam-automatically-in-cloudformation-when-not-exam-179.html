@@ -1,0 +1,62 @@
+---
+title: "You need to create a Route53 record automatically inExam"
+description: "Video for you need to create a Route53 record automatically in CloudFormation when not running in production during all launches of a Template. How should you"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You need to create a Route53 record automatically in CloudFormation when not running in production during all launches of a Template. How should you implement this?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The most effective and maintainable approach is to use a CloudFormation <strong>parameter</strong> (such as Environment) and apply a <strong>Condition</strong> to the Route53 resource. This ensures the DNS record is only created if the environment is not production, which is accomplished by referencing the parameter within the condition logic. This method keeps your infrastructure as code DRY (Don't Repeat Yourself) and adjustable across environments.</p><p>Option <em>\"Develop two CloudFormation templates: one that defines the Route53 record, and another that omits the resource. Use the latter for production deployments.\"</em> and <em>\"Generate two separate templates: one that provisions the Route53 record and another that does not, deploying the latter to production.\"</em> are incorrect because maintaining duplicate templates increases risk and maintenance overhead, and is against best practices for infrastructure automation.</p><p>The choice <em>\"Rely on a template parameter to distinguish the environment, but configure the Route53 record with an empty string when deploying to production.\"</em> doesn’t prevent resource creation and may result in invalid DNS records.</p><p><strong>Tip:</strong> Use CloudFormation Conditions in conjunction with parameters for flexible, environment-aware infrastructure definitions—this minimizes errors and template sprawl.</p>",
+  "query": "<p>When using AWS CloudFormation, you want a Route53 DNS record to be set up automatically in every environment <strong>except</strong> production. Which strategy should you pick to achieve this behavior?</p>",
+  "original_oid": "6793d9d361969b416038a0c6",
+  "options": [
+    {
+      "correct": true,
+      "text": "Introduce a CloudFormation parameter to indicate the environment and apply a Condition to the Route53 resource so the record is only created outside of production.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Develop two CloudFormation templates: one that defines the Route53 record, and another that omits the resource. Use the latter for production deployments.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Rely on a template parameter to distinguish the environment, but configure the Route53 record with an empty string when deploying to production.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Generate two separate templates: one that provisions the Route53 record and another that does not, deploying the latter to production.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question81",
+  "originalQuery": "You need to create a Route53 record automatically in CloudFormation when not running in production during all launches of a Template.\nHow should you implement this?",
+  "originalOptions": "A. Use a Parameter for the environment, and add a Condition on the Route53 Resource in the template to create the record only when the environment is not production.\nB. Create two templates, one with the Route53 record value and one with a null value for the record. Use the one without it when deploying to production.\nC. Use a Parameter for the environment, and add a Condition on the Route53 Resource in the template to create the record with a null string when the environment is production.\nD. Create two templates, one with the Route53 record and one without it. Use the one without it when deploying to production.",
+  "video_url": "https://certificationation.com/videos/exam-automatically-in-cloudformation-when-not-exam-179.html",
+  "url": "https://certificationation.com/questions/exam-automatically-in-cloudformation-when-not-exam-179.html"
+}

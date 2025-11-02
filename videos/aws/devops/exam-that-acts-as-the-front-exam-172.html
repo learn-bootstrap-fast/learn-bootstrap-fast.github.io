@@ -1,0 +1,62 @@
+---
+title: "You are managing an application that acts as the frontExam"
+description: "Video for you are managing an application that acts as the front end and you use MongoDB for document management which is hosted on a relevant Web server. You"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are managing an application that acts as the front end and you use MongoDB for document management which is hosted on a relevant Web server. You pre-bake AMI's with the latest version of the Web server, then used the User Data section to setup the application. You now have a change to the underlying Operating system version and need to deploy that accordingly. How can this be done in the easiest way possible ?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The most straightforward approach in this scenario is to <b>Prepare a new AMI that includes the latest operating system version and use the User Data feature to install the application during instance launch</b>. Since your existing practice involves using pre-baked AMIs for the web server and leveraging the User Data script to set up the application on initialization, updating your deployment is simply a matter of creating a new AMI with the required OS version and following the same process. This method minimizes manual intervention and keeps your workflow consistent.<br/><br/>The option <i>Provision a new EBS volume with the updated operating system patches and attach it to the existing EC2 Instance</i> is inappropriate because the operating system is installed on the root volume, and swapping volumes like this does not guarantee a healthy boot process. There may be compatibility and configuration issues that make this approach unreliable.<br/><br/>Choosing <i>Create an AWS CloudFormation stack utilizing a new AMI and perform deployment from there</i> introduces unnecessary complexity unless you are already leveraging CloudFormation for full-stack deployments. It isn't the simplest way if CloudFormation is not central to your workflow.<br/><br/>Similarly, <i>Set up an OpsWorks stack incorporating the latest AMI, and proceed with deploying the application</i> is not optimal unless OpsWorks is already in use. Migrating the deployment architecture to OpsWorks solely for this OS upgrade adds overhead and learning curve.<br/><br/><b>Tip:</b> Always align your upgrade/deployment strategy with your current infrastructure as long as it remains simple, repeatable, and reliable. Utilizing AMIs and User Data remains one of the best-practice methods for updating servers in a predictable and scalable way.</p>",
+  "query": "<p>You are overseeing a web application that leverages MongoDB for document storage, hosted on a suitable web server. Application servers are launched utilizing pre-configured AMIs containing the latest web server version, and the application is installed via the User Data script at boot time. Recently, there's a requirement to update the underlying operating system to a newer version. Considering your current deployment strategy, what is the simplest way to handle this OS upgrade?</p>",
+  "original_oid": "6793da3761969b416038a18f",
+  "options": [
+    {
+      "correct": false,
+      "text": "Create an AWS CloudFormation stack utilizing a new AMI and perform deployment from there.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Prepare a new AMI that includes the latest operating system version and use the User Data feature to install the application during instance launch.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up an OpsWorks stack incorporating the latest AMI, and proceed with deploying the application.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Provision a new EBS volume with the updated operating system patches and attach it to the existing EC2 Instance.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question286",
+  "originalQuery": "You are managing an application that acts as the front end and you use MongoDB for document management which is hosted on a relevant Web server.\nYou pre-bake AMI's with the latest version of the Web server, then used the User Data section to setup the application.\nYou now have a change to the underlying Operating system version and need to deploy that accordingly.\nHow can this be done in the easiest way possible ?",
+  "originalOptions": "A. Create a new EBS Volume with the relevant OS patches and attach it to the EC2 Instance.|B. Create a Cloudformation stack with the new AMI and then deploy the application accordingly.|C. Create a new pre-baked AMI with the new OS and use the User Data section to deploy the application.|D. Create an Opswork stack with the new AMI and then deploy the application accordingly.",
+  "video_url": "https://certificationation.com/videos/exam-that-acts-as-the-front-exam-172.html",
+  "url": "https://certificationation.com/questions/exam-that-acts-as-the-front-exam-172.html"
+}

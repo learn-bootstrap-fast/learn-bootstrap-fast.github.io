@@ -1,0 +1,128 @@
+---
+title: "A solutions architect configured a VPC that has a smallExam"
+description: "Video for a solutions architect configured a VPC that has a small range of IP addresses. The number of Amazon EC2 instances that are in the VPC is increasing,"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A solutions architect configured a VPC that has a small range of IP addresses. The number of Amazon EC2 instances that are in the VPC is increasing, and there is an insufficient number of IP addresses for future workloads. Which solution resolves this issue with the LEAST operational overhead?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729b1c"
+  },
+  "quid": null,
+  "ordinal": "439",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon VPC",
+    " Amazon EC2",
+    " AWS Transit Gateway",
+    " Site-to-Site VPN",
+    " IP address range"
+  ],
+  "slug": "vpc-solution-ip-addresses-aws",
+  "source": "ET",
+  "title": "AWS A Solutions Architect Configured A VPC Question",
+  "meta": "AWS Exam Question: A solutions architect configured a VPC with limited IP addresses for increasing Amazon EC2 instances. What solution resolves this issue? Answer: VPC, EC2.",
+  "answer": "A",
+  "query": "A cloud architect has set up a VPC with a limited IP address range. As the demand for Amazon EC2 instances grows, the provided IP addresses are becoming inadequate for new applications. What is the best way to address this concern with minimal operational complexity?",
+  "originalQuery": "A solutions architect configured a VPC that has a small range of IP addresses. The number of Amazon EC2 instances that are in the VPC is increasing, and there is an insufficient number of IP addresses for future workloads.\n\nWhich solution resolves this issue with the LEAST operational overhead?",
+  "options": [
+    "A. Add an additional IPv4 CIDR block to increase the number of IP addresses and create additional subnets in the VPC. Create new resources in the new subnets by using the new CIDR.",
+    "B. Set up a new VPC with its own subnets. Connect this new VPC to the current one with a peering connection and modify the routes accordingly.",
+    "C. Utilize AWS Transit Gateway to integrate a second VPC with the existing one; modify the transit gateway and VPC routes accordingly.",
+    "D. Create a second VPC. Create a Site-to-Site VPN connection between the first VPC and the second VPC by using a VPN-hosted solution on Amazon EC2 and a virtual private gateway. Update the route between VPCs to the traffic through the VPN. Create new resources in the subnets of the second VPC."
+  ],
+  "originalOptions": [
+    "A. Add an additional IPv4 CIDR block to increase the number of IP addresses and create additional subnets in the VPC. Create new resources in the new subnets by using the new CIDR.",
+    "B. Create a second VPC with additional subnets. Use a peering connection to connect the second VPC with the first VPC Update the routes and create new resources in the subnets of the second VPC.",
+    "C. Use AWS Transit Gateway to add a transit gateway and connect a second VPC with the first VPUpdate the routes of the transit gateway and VPCs. Create new resources in the subnets of the second VPC.",
+    "D. Create a second VPC. Create a Site-to-Site VPN connection between the first VPC and the second VPC by using a VPN-hosted solution on Amazon EC2 and a virtual private gateway. Update the route between VPCs to the traffic through the VPN. Create new resources in the subnets of the second VPC."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Option A is the optimal solution: When a Virtual Private Cloud (VPC) is created, a primary CIDR block is assigned to define the IP address range. After the VPC is established, it is possible to add up to four secondary CIDR blocks. This allows for an increased number of available IP addresses, enabling the creation of additional subnets within the VPC. By leveraging this approach, new resources can be provisioned in the newly created subnets using the expanded CIDR blocks, while minimizing operational complexity.",
+    "The architect simply needs to:\n\n1. **Expand the CIDR** using the AWS console or CLI—easy peasy! 🖥️\n2. **Spin up some new subnets** in the VPC with that shiny new CIDR—like adding new rooms to a cozy virtual house! 🏡\n3. **Deploy resources** in these fresh subnets—time to throw a party and invite those new instances! 🎉\n\nWith these steps, you’ll be all set without breaking a sweat! 🚀",
+    "A VPC's CIDR block is like that stubborn friend who won't change their mind but is willing to make a little extra room for you. So, if you want to keep things simple and avoid a circus of complexities, just extend the existing CIDR block. This way, you can add more IP addresses without the hassle of managing a whole new VPC or setting up intricate networking configurations. It's the straightforward solution that lets you focus on building rather than juggling.",
+    "The most effective approach to address the shortage of IP addresses, while minimizing operational complexity, is to add an additional IPv4 CIDR block to the existing VPC. This solution allows for an increase in the number of available IP addresses and enables the creation of additional subnets within the VPC. By utilizing the new CIDR block, new resources can be easily provisioned in these subnets, ensuring that the growing number of Amazon EC2 instances can be accommodated without the need for extensive changes or significant management efforts. This strategy not only resolves the immediate issue but also provides a scalable framework for future workloads, fostering seamless expansion and operational efficiency.",
+    "The best option with the least operational overhead is to simply add a new CIDR block to your existing VPC. This delightful approach allows you to expand your pool of IP addresses seamlessly! 🎉 The other alternatives involve setting up additional gateways or establishing a second VPC, which can add unnecessary complexity and management hassle. So keep it simple and cheerful by enhancing what you already have!"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "A",
+      "explanation": "A is correct: You assign a single CIDR IP address range as the primary CIDR block when you create a VPC and can add up to four secondary CIDR blocks after creation of the VPC.",
+      "upvotes": "7"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "the architect just needs to:\n\nAdd the CIDR using the AWS console or CLI\nCreate new subnets in the VPC using the new CIDR\nLaunch resources in the new subnets",
+      "upvotes": "5"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "The CIDR block of a VPC can NOT be changed but can be extended.\nThus, for the LEAST operational overhead; extend the existing one.",
+      "upvotes": "1"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "best option",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "A: LEAST operational overhead is by creating a new CIDR block in existing VPC.\nAll other options require additional overhead of gateway or second VPC",
+      "upvotes": "4"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "A (100%)",
+      "votes": "34 votes."
+    },
+    {
+      "option": "C (25%)",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is A because adding a secondary CIDR block to an existing VPC allows for an increase in the number of available IP addresses without the need to create a new VPC or manage additional complexities associated with inter-VPC connectivity. This approach is also straightforward and can be accomplished using the AWS console or CLI with minimal operational overhead. \n\nOption B is incorrect because creating a second VPC introduces additional operational complexity and management overhead, as it requires managing two separate VPCs and the peering connections between them. \n\nOption C is also incorrect as using AWS Transit Gateway involves additional configuration and management efforts, as well as potential costs associated with maintaining a transit gateway. \n\nOption D is the least desirable because setting up a Site-to-Site VPN connection requires managing a VPN solution on EC2, which introduces significant operational overhead compared to simply adding another CIDR block.",
+  "video_url": "https://certificationation.com/videos/exam-vpc-that-has-a-small-exam-438.html",
+  "url": "https://certificationation.com/questions/exam-vpc-that-has-a-small-exam-438.html"
+}

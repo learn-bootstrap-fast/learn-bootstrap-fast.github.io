@@ -1,0 +1,62 @@
+---
+title: "You have a web application composed of an Auto ScalingExam"
+description: "Video for you have a web application composed of an Auto Scaling group of web servers behind a load balancer, and create a new AMI for each application version"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have a web application composed of an Auto Scaling group of web servers behind a load balancer, and create a new AMI for each application version for deployment. You have a new version to release, and you want to use the Blue-Green deployment technique to migrate users over in a controlled manner while the size of the fleet remains constant over a period of 6 hours, to ensure that the new version is performing well. What option should you choose to enable this technique while being able to roll back easily? Choose 2 answers from the options given below. Each answer presents part of the solution."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>To perform a Blue-Green deployment in AWS while keeping the web server fleet size steady and allowing a quick rollback, you need to launch new instances with the latest application version (Green) alongside the existing ones (Blue), then slowly shift user traffic to the new environment. The best practice is to create a new Auto Scaling launch configuration using the updated AMI and attach these instances to your existing load balancer (option <b>Set up a new launch configuration with the updated AMI and attach these new instances to your existing load balancer.</b>). Then, you can leverage Amazon Route 53's weighted routing to incrementally increase the proportion of requests sent to the updated servers (option <b>Use Amazon Route 53 weighted routing to distribute incoming traffic between both load balancers to control the flow to each application version.</b>).</p><p>The option <i>Set up a new Auto Scaling launch configuration using the latest AMI, associate it with a new load balancer, and update the Auto Scaling group to use this setup.</i> is not ideal since it introduces a separate load balancer, making the controlled cutover and rollback process more complex. Meanwhile, <i>Modify the Elastic Load Balancing settings to route a chosen percentage of requests to servers running the old and new versions.</i> is not supported because Elastic Load Balancer (ELB) itself cannot split rules by version, it will just round-robin across registered instances indiscriminately.</p><p><b>Tips:</b> By maintaining both AMI versions in the same load balancer's target pool, you control rollout via instance registration. Using Route 53 lets you adjust the traffic weight, and if you need to roll back, just adjust the weight or replace instances. Keep rollbacks simple and avoid potential architectural drift by not introducing unnecessary new load balancers.</p>",
+  "query": "<p>You maintain a scalable web application behind a load balancer and deploy each app update with a fresh AMI. As you're rolling out a new app version, you want to use the blue-green deployment strategy to gradually move users to the latest version over the next 6 hours and ensure that the total number of running instances never changes during the process. Which TWO actions should you take to implement this approach and allow for a simple rollback if necessary?</p>",
+  "original_oid": "6793da5e61969b416038a1de",
+  "options": [
+    {
+      "correct": false,
+      "text": "Set up a new Auto Scaling launch configuration using the latest AMI, associate it with a new load balancer, and update the Auto Scaling group to use this setup.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Set up a new launch configuration with the updated AMI and attach these new instances to your existing load balancer.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Use Amazon Route 53 weighted routing to distribute incoming traffic between both load balancers to control the flow to each application version.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Modify the Elastic Load Balancing settings to route a chosen percentage of requests to servers running the old and new versions.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question365",
+  "originalQuery": "You have a web application composed of an Auto Scaling group of web servers behind a load balancer, and create a new AMI for each application version for deployment.\nYou have a new version to release, and you want to use the Blue-Green deployment technique to migrate users over in a controlled manner while the size of the fleet remains constant over a period of 6 hours, to ensure that the new version is performing well.\nWhat option should you choose to enable this technique while being able to roll back easily? Choose 2 answers from the options given below.\nEach answer presents part of the solution.",
+  "originalOptions": "A. Create an Auto Scaling launch configuration with the new AMI to use the new launch configuration and to register instances with the new load balancer,B. Create an Auto Scaling launch configuration with the new AMI to use the new launch configuration and to register instances with the existing load balancer,C. Use Amazon Route53 weighted Round Robin to vary the proportion of requests sent to the load balancers.,D. Configure Elastic Load Balancing to vary the proportion of requests sent to instances running the two application versions.",
+  "video_url": "https://certificationation.com/videos/exam-an-auto-scaling-group-of-exam-265.html",
+  "url": "https://certificationation.com/questions/exam-an-auto-scaling-group-of-exam-265.html"
+}

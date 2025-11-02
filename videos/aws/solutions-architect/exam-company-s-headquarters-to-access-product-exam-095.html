@@ -1,0 +1,128 @@
+---
+title: "An application allows users at a company's headquartersExam"
+description: "Video for an application allows users at a company's headquarters to access product data. The product data is stored in an Amazon RDS MySQL DB instance. The"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "An application allows users at a company's headquarters to access product data. The product data is stored in an Amazon RDS MySQL DB instance. The operations team has isolated an application performance slowdown and wants to separate read traffic from write traffic. A solutions architect needs to optimize the application's performance quickly. What should the solutions architect recommend?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f7299c4"
+  },
+  "quid": null,
+  "ordinal": "95",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon RDS",
+    " AWS Solutions Architects",
+    " Compute",
+    " Databases",
+    " AWS Well-Architected Framework"
+  ],
+  "slug": "rds-application-access-product-data-aws",
+  "source": "ET",
+  "title": "AWS An Application Allows Users At A Company's Question",
+  "meta": "AWS Exam Question: An application accesses product data stored in Amazon RDS MySQL. How can a solutions architect optimize performance? Answer: Amazon RDS.",
+  "answer": "D",
+  "query": "A business's e-commerce application relies on customer data stored in an Amazon RDS MySQL database. The technical team has identified a slowdown in system performance and emphasizes the need to differentiate between read and write operations. A timely performance improvement is required by a Solutions Architect.\nWhat recommendation should the Solutions Architect give?",
+  "originalQuery": "An application allows users at a company's headquarters to access product data. The product data is stored in an Amazon RDS MySQL DB instance. The operations team has isolated an application performance slowdown and wants to separate read traffic from write traffic. A solutions architect needs to optimize the application's performance quickly.\nWhat should the solutions architect recommend?",
+  "options": [
+    "D. Create read replicas for the database. Configure the read replicas with the same compute and storage resources as the source database.",
+    "B. Transform the current database into a multi-AZ architecture. Route the read requests towards the secondary Availability Zone.",
+    "C. Establish read replicas of the database that use half the compute and storage capacity of the original database.",
+    "A. Adjust the database to a Multi-AZ deployment and direct the read requests to the primary Availability Zone."
+  ],
+  "originalOptions": [
+    "A. Change the existing database to a Multi-AZ deployment. Serve the read requests from the primary Availability Zone.",
+    "B. Change the existing database to a Multi-AZ deployment. Serve the read requests from the secondary Availability Zone.",
+    "C. Create read replicas for the database. Configure the read replicas with half of the compute and storage resources as the source database.",
+    "D. Create read replicas for the database. Configure the read replicas with the same compute and storage resources as the source database."
+  ],
+  "image": null,
+  "primaryObjective": "3: Design High-Performing Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "The recommended approach is to implement read replicas for the database. It is essential to configure these read replicas with identical compute and storage resources as the primary database.\n\nBy establishing read replicas, the application can effectively offload read traffic from the primary database, resulting in enhanced overall performance. Ensuring that the read replicas have the same compute and storage capabilities as the original database is crucial, as this allows them to manage the read workload efficiently without introducing bottlenecks or latency issues. This strategy not only optimizes performance but also improves scalability, enabling the application to handle increased read requests seamlessly.",
+    "A. In a Multi-AZ setup, a trusty standby replica of the database is created in a different availability zone. This is great for high availability and automatic failover, like having a backup superhero ready to save the day! 🦸‍♂️ But, if you’re still sending all read requests to the primary AZ, you’ll find that read and write traffic are still mingling together like an awkward party. This mix-up won’t help you achieve optimal performance. 🚫\n\nB. That secondary instance in a Multi-AZ deployment is like the friend who comes to the party but just sits quietly in the corner. It’s there for failover and backup—but it’s not designed to handle read traffic. It’s in standby mode, so it’s not going to help you with those read queries when you need them to dance! 💃 \n\nC. Now, if you’re thinking of configuring read replicas with only half the compute and storage resources of the original database, that’s like trying to run a marathon with one shoe on! 🏃‍♂️ It’s generally best to give those read replicas the same compute and storage resources as the primary database. This way, they’ll have the strength to manage the read workload without breaking a sweat. 💪\n\nD. By setting up read replicas with the same compute and storage resources as your source database, you’re ensuring they can handle the read workload like champs! 🏆 This configuration can give your application the performance boost it needs, allowing it to reach new heights faster than a rocket! 🚀",
+    "Creating read replicas with identical compute and storage resources as the source database is a clever way to tackle the performance issue, and here's why:\n\n**Segregation of Read Traffic:**  \nBy routing read traffic to the replicas, you effectively lighten the load on the primary instance, leading to a delightful boost in overall performance. Who doesn’t love a little breathing room?\n\n**Maintaining Performance Levels:**  \nEnsuring that the replicas have the same resources prevents those pesky bottlenecks from sneaking in, even during peak usage. It’s like giving your database a double shot of espresso when things get hectic!\n\n**Rapid Implementation:**  \nSetting up read replicas in Amazon RDS is a breeze and is managed for you, allowing for a nearly instantaneous solution. Talk about a quick fix—it's like having a handyman on speed dial for your database woes.\n\nThis strategy meets the company's urgent need to enhance application performance swiftly and in a scalable manner. After all, in the world of databases, speed and efficiency are the names of the game!",
+    "Multi-AZ deployments enhance availability and resilience, ensuring that your application remains operational even in the event of an outage. On the other hand, Read Replicas significantly boost read performance by offloading read requests from the primary database. This allows for a more efficient distribution of database traffic, leading to improved response times and enhanced overall application performance. Embracing Read Replicas can be a fantastic way to optimize your system while ensuring that your read workloads are handled effectively!",
+    "Ah, the delightful world of database optimization! 🌟 It seems we can't quite settle on option D, and C isn’t the best fit either, since we’re not sure how much CPU is being gobbled up by those read and write operations. A little monitoring magic will be essential to uncover the truth! Let's keep our spirits high and focus on finding the perfect solution! 🎉"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "D",
+      "explanation": "The solutions architect should recommend option D: Create read replicas for the database. Configure the read replicas with the same compute and storage resources as the source database.\n\nCreating read replicas allows the application to offload read traffic from the source database, improving its performance. The read replicas should be configured with the same compute and storage resources as the source database to ensure that they can handle the read workload effectively.",
+      "upvotes": "27"
+    },
+    {
+      "selectedAnswer": "D",
+      "explanation": "A. In a Multi-AZ deployment, a standby replica of the database is created in a different AZ for high availability and automatic failover purposes. However, serving read requests from the primary AZ alone would not effectively separate read and write traffic. Both read and write traffic would still be directed to the primary database instance, which might not fully optimize performance.\n\nB. The secondary instance in a Multi-AZ deployment is intended for failover and backup purposes, not for actively serving read traffic. It operates in a standby mode and is not optimized for handling read queries efficiently.\n\nC. Configuring the read replicas with half of the compute and storage resources as the source database might not be optimal. It's generally recommended to configure the read replicas with the same compute and storage resources as the source database to ensure they can handle the read workload effectively.\n\nD. Configuring the read replicas with the same compute and storage resources as the source database ensures that they can handle the read workload efficiently and provide the required performance boost.",
+      "upvotes": "7"
+    },
+    {
+      "selectedAnswer": "D",
+      "explanation": "A criação de réplicas de leitura com os mesmos recursos de computação e armazenamento que o banco de dados de origem resolve o problema de forma eficiente, pois:\n\nTráfego de leitura separado:\n\nDirecionar o tráfego de leitura para as réplicas reduz a carga na instância primária, otimizando o desempenho geral.\nManutenção da performance:\n\nGarantir que as réplicas tenham os mesmos recursos evita gargalos, mesmo sob tráfego intenso.\nImplementação rápida:\n\nA configuração de réplicas de leitura no Amazon RDS é rápida e gerenciada, permitindo uma solução quase imediata.\nEssa abordagem atende à necessidade da empresa de otimizar o desempenho do aplicativo de forma rápida e escalável.",
+      "upvotes": "1"
+    },
+    {
+      "selectedAnswer": "D",
+      "explanation": "Multi-AZ's offer availability but Read Replicas offers read performance.",
+      "upvotes": "1"
+    },
+    {
+      "selectedAnswer": "D",
+      "explanation": "Ans D - can't be C because we don't know how much CPU write/read respectively consumes; we'll have to monitor to find out...",
+      "upvotes": "3"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "D (98%)",
+      "votes": "64 votes."
+    },
+    {
+      "option": "2%",
+      "votes": "1 votes."
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is D because creating read replicas allows for better separation of read and write traffic, thus improving overall database performance. By configuring the read replicas with the same compute and storage resources as the primary instance, the replicas will be capable of handling the read workload effectively and ensure high performance. \n\nOption A is incorrect as serving all read requests from a Multi-AZ primary instance does not separate the read/write traffic sufficiently, potentially leading to continued performance issues. \n\nOption B is also incorrect because the secondary instance in a Multi-AZ setup is not intended for read traffic; it is primarily for high availability and failover. \n\nOption C is incorrect, as configuring read replicas with only half the resources may lead to performance bottlenecks when handling read operations. The replicas should have the same resources to effectively manage the read load.",
+  "video_url": "https://certificationation.com/videos/exam-company-s-headquarters-to-access-product-exam-095.html",
+  "url": "https://certificationation.com/questions/exam-company-s-headquarters-to-access-product-exam-095.html"
+}

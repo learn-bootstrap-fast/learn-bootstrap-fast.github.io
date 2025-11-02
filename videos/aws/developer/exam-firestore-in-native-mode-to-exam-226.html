@@ -1,0 +1,79 @@
+---
+title: "A retail company is using Cloud Firestore in Native modeExam"
+description: "Video for a retail company is using Cloud Firestore in Native mode to store inventory and customer data. The company needs to ensure high availability and"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A retail company is using Cloud Firestore in Native mode to store inventory and customer data. The company needs to ensure high availability and disaster recovery while maintaining low-latency read and write operations, and adhering to regional data residency requirements. Which of the following options should the company choose to best meet their requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A fintech startup based in Spain uses Cloud Firestore in Native mode to store user profiles and payment preferences. Compliance rules require all records to remain within a single EU region. The team also needs strong availability and disaster recovery that can tolerate a zonal outage while keeping read and write latency low. Which deployment choice should they adopt to meet these needs?",
+  "options": [
+    {
+      "text": "Firestore multi-region location in the EU with replication across multiple regions in the same continent",
+      "explanation": "This option places data in a defined multi-region and keeps multiple copies across distinct regions within that continent for durability and availability",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Firestore multi-region location that replicates data to regions on different continents",
+      "explanation": "This option distributes data copies across continents and is designed for global availability and durability",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Firestore regional location in one EU region with automatic replication across multiple zones in that region",
+      "explanation": "This option stores data within a single region and synchronously replicates across zones to provide high availability with low latency while maintaining regional residency",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Firestore regional configuration using a designated primary node and several read-only replicas inside the region",
+      "explanation": "This option assumes a primary and read replica topology that is not how Cloud Firestore Native mode is configured or managed",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Firestore regional location in one EU region with automatic replication across multiple zones in that region</b>.</p><p>This choice keeps all data within a single EU region which satisfies the data residency requirement. It also provides high availability because data is automatically replicated across multiple zones within the same region. This protects against a zonal outage while maintaining strong consistency. Because reads and writes remain in the chosen region it also delivers low latency for users in that geography.</p><p><i>Firestore multi-region location in the EU with replication across multiple regions in the same continent</i> is incorrect because it stores copies in more than one region. That violates the requirement to keep all records within a single EU region.</p><p><i>Firestore multi-region location that replicates data to regions on different continents</i> is incorrect because it spreads data across continents which conflicts with the single EU region residency rule and would also add unnecessary latency.</p><p><i>Firestore regional configuration using a designated primary node and several read-only replicas inside the region</i> is incorrect because Firestore Native mode does not expose a primary and read replica topology to customers. The service manages multi zone replication automatically and presents strongly consistent reads and writes without customer managed roles.</p>",
+  "batch_id": "288",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "A retail company is using Cloud Firestore in Native mode to store inventory and customer data. The company needs to ensure high availability and disaster recovery while maintaining low-latency read and write operations, and adhering to regional data residency requirements. Which of the following options should the company choose to best meet their requirements?",
+  "originalOptions": "A. Firestore in multi-region mode with replication across multiple continents.<br/>B. Firestore in regional mode with replication across multiple zones within the same region.<br/>C. Firestore in multi-region mode with replication within the same continent.<br/>D. Firestore in regional mode with a primary node and multiple read replicas within the same region.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "226",
+  "tip": "<p>Translate the residency requirement into the location choice. Pick a regional location for a <i>single region</i> rule and ensure there is automatic replication across zones to survive a <i>zonal outage</i>. Choose <i>multi-region</i> only when cross region resilience is explicitly required.</p>",
+  "references": [
+    "https://cloud.google.com/firestore/docs/locations",
+    "https://cloud.google.com/firestore/docs/locations#regional",
+    "https://cloud.google.com/firestore/docs/locations#multi-regional"
+  ],
+  "url": "https://certificationation.com/questions/exam-firestore-in-native-mode-to-exam-226.html",
+  "video_url": "https://certificationation.com/videos/exam-firestore-in-native-mode-to-exam-226.html"
+}

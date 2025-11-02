@@ -1,0 +1,72 @@
+---
+layout: default
+title: "Free Practice Exam Question Links from the Certification Nation"
+description: "Loads of certification questions and answers."
+video_host: "youtube"
+video_id: "MaqVvXv6zrU"
+upload_date: "2025-10-01T00:00:01+00:00"
+duration: "PT34M04S"
+thumbnail_url: "https://i.ytimg.com/vi/MaqVvXv6zrU/maxresdefault.jpg"
+content_url: "https://youtu.be/MaqVvXv6zrU?si=VOAp6ZlsZl8RS13b"
+embed_url: "https://www.youtube.com/embed/MaqVvXv6zrU"
+publisher_name: "certificationExams.pro"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - github
+  - github desktop
+  - articles
+  - videos
+  - examples
+  - certification
+  - version control 
+  - tutorial
+  - how to git
+  - desktop app
+---
+
+{% comment %}
+Derive {first}-{second} from the folder name.
+Example: page.dir = "/aws-practitioner/" -> folder = "aws-practitioner"
+Then split on "-" and capitalize first letter of each piece when used.
+{% endcomment %}
+{% assign segs = page.dir | split: '/' %}
+{% assign folder = '' %}
+{% for s in segs %}
+  {% if s != '' %}
+    {% assign folder = s %}
+  {% endif %}
+{% endfor %}
+{% assign parts = folder | split: '-' %}
+{% assign first_raw  = parts[0] | default: '' %}
+{% assign second_raw = parts[1] | default: '' %}
+{% assign First = first_raw  | replace: '_',' ' | capitalize %}
+{% assign Second = second_raw | replace: '_',' ' | capitalize %}
+
+<section class="py-6" id="exam-overview" style="padding-top:5px; padding-bottom:35px;">
+  <div class="container mt-4 mb-14">
+    <div class="row g-4 mt-4">
+      <!-- Left card: Certification Info -->
+      <div class="col-12">
+        <div class="compare-card border-accent-subtle h-100">
+          <div class="card-body">
+ 
+<h1>{{ First }}{% if Second != '' %} {{ Second }}{% endif %} Certification Questions and Answers</h1>
+<h2>Free {{ First }}{% if Second != '' %} {{ Second }}{% endif %} Practice Exams</h2>
+
+<ul>
+  {% assign current_dir = page.dir %}
+  {% for p in site.pages %}
+    {% if p.dir == current_dir and p.url != page.url %}
+      <li><a href="{{ p.url | relative_url }}">{{ p.title | default: p.name }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

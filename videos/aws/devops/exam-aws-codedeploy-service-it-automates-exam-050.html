@@ -1,0 +1,62 @@
+---
+title: "Your team has created a new deployment in AWS CodeDeployExam"
+description: "Video for your team has created a new deployment in AWS CodeDeploy service. It automates the deployments for a new Node.js application to Amazon EC2 instances."
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your team has created a new deployment in AWS CodeDeploy service. It automates the deployments for a new Node.js application to Amazon EC2 instances. In order to pass a notification to a Slack channel whenever deployments fail, a DevOps engineer configured a CloudWatch Event rule as follows:"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best approach is to <b>modify the detail-type in the CloudWatch Event rule to 'CodeDeploy Deployment State-change Notification'</b>. This option ensures that only specific deployment state change events, such as failures, trigger your Lambda function, which can then post notifications directly to Slack. Using the most precise event detail-type filter prevents unnecessary invocations and simplifies your Lambda logic.</p><p>The option <i>Remove the detail-type filter from the rule to capture every CodeDeploy event, then handle deployment failure logic and notifications within the Lambda function</i> would trigger your Lambda on all CodeDeploy events, increasing costs and adding extra logic to the function to filter relevant failures. This is less efficient than restricting events at the rule level.</p><p>The choice <i>Ensure the Lambda function is integrated with an API Gateway to accept inbound API requests from events.amazonaws.com</i> is not required; CloudWatch Events can invoke Lambda functions directly and securely via AWS service permissions, not through API Gateway.</p><p>The option <i>Switch the target for the CloudWatch Event rule from the Lambda function to an SNS topic, then subscribe an HTTP endpoint to this topic for notifications</i> is a possible architectural change, but it adds unnecessary complexity for this use case. Lambda is a better fit for processing event content and posting messages to Slack, while SNS would be more relevant for generic, broad push notifications.</p><p><b>Tip:</b> Use the most targeted event patterns in CloudWatch rules to avoid unnecessary compute costs and simplify downstream processing!</p>",
+  "query": "<p>Your team has rolled out a new Node.js application using AWS CodeDeploy to automate deployments on Amazon EC2 instances. To send Slack notifications whenever a deployment fails, a DevOps engineer has set up a CloudWatch Events rule. Which action should be taken to ensure failed deployment notifications are properly triggered?</p>",
+  "original_oid": "6793d9aa61969b416038a077",
+  "options": [
+    {
+      "correct": false,
+      "text": "Remove the detail-type filter from the rule to capture every CodeDeploy event, then handle deployment failure logic and notifications within the Lambda function.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Modify the detail-type in the rule to 'CodeDeploy Deployment State-change Notification' so only relevant deployment status changes, like failures, are captured.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Ensure the Lambda function is integrated with an API Gateway to accept inbound API requests from events.amazonaws.com.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Switch the target for the CloudWatch Event rule from the Lambda function to an SNS topic, then subscribe an HTTP endpoint to this topic for notifications.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question2",
+  "originalQuery": "Your team has created a new deployment in AWS CodeDeploy service.\nIt automates the deployments for a new Node.js application to Amazon EC2 instances.\nIn order to pass a notification to a Slack channel whenever deployments fail, a DevOps engineer configured a CloudWatch Event rule as follows:",
+  "originalOptions": "[\"A. Replace the Lambda function with an SNS topic as the target of the CloudWatch Event rule. Create an HTTP endpoint to subscribe to the topic.\",\"B. Remove the detail-type in the rule in order to capture all CodeDeploy events. Add the logic in the Lambda function to determine the deployment failures and send notifications accordingly.\",\"C. Modify the detail-type to be \\\"CodeDeploy Deployment State-change Notification\\” in the CloudWatch Event rule.\",\"D. Make sure that the Lambda function has an API gateway to allow the incoming API requests from events.amazonaws.com.\"]",
+  "video_url": "https://certificationation.com/videos/exam-aws-codedeploy-service-it-automates-exam-050.html",
+  "url": "https://certificationation.com/questions/exam-aws-codedeploy-service-it-automates-exam-050.html"
+}

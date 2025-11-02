@@ -1,0 +1,80 @@
+---
+title: "Your application requires a Redis cache, and you'veExam"
+description: "Video for your application requires a Redis cache, and you've decided to use Google Cloud's Memorystore for Redis. The application is deployed across two"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your application requires a Redis cache, and you've decided to use Google Cloud's Memorystore for Redis. The application is deployed across two regions for disaster recovery purposes. How should you configure Memorystore to support this setup?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "BrightTrail Media will run a personalization service in three Google Cloud regions for resilience and disaster recovery. The service needs a low latency Redis cache and the team plans to use Cloud Memorystore for Redis. How should they deploy Memorystore so the design supports this multi region setup?",
+  "options": [
+    {
+      "text": "Configure a single Memorystore for Redis instance and turn on cross region replication",
+      "explanation": "This proposes using one Redis cache and replicating it across regions for continuity of service.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Choose a multi regional Memorystore for Redis deployment to fail over automatically across regions",
+      "explanation": "This suggests selecting a multi regional tier that would handle failover without application changes.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Provision a Memorystore for Redis instance in each region and have the application connect to the nearest regional endpoint",
+      "explanation": "This describes deploying separate regional Redis caches and letting clients route to the closest instance.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Place a global load balancer in front of Redis to route traffic between regions",
+      "explanation": "This suggests inserting a global load balancer to present a single address that forwards Redis traffic across regions.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Provision a Memorystore for Redis instance in each region and have the application connect to the nearest regional endpoint</b>.</p><p>Memorystore for Redis is a regional service and its instances use private regional IP addresses. Replication and failover in the standard tier are only within a region. There is no cross region replication or automatic multi region failover, so the right way to achieve low latency and resilience across multiple regions is to run a separate cache in each region and have clients connect to the local endpoint. Applications often pair this with a multi region authoritative datastore and treat the cache as ephemeral.</p><p><i>Configure a single Memorystore for Redis instance and turn on cross region replication</i> is incorrect because the product does not support cross region replication. Replication is only across zones within the same region in the standard tier.</p><p><i>Choose a multi regional Memorystore for Redis deployment to fail over automatically across regions</i> is incorrect because there is no multi regional deployment tier for Memorystore for Redis.</p><p><i>Place a global load balancer in front of Redis to route traffic between regions</i> is incorrect because Memorystore exposes regional private endpoints inside a VPC and cannot sit behind a global load balancer. This approach would also not solve data consistency or failover needs across regions.</p>",
+  "batch_id": "211",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "Your application requires a Redis cache, and you've decided to use Google Cloud's Memorystore for Redis. The application is deployed across two regions for disaster recovery purposes. How should you configure Memorystore to support this setup?",
+  "originalOptions": "A. Set up a single Memorystore for Redis instance and enable cross-region replication.<br/>B. Configure a Memorystore for Redis instance with a multi-regional setup to automatically handle failovers.<br/>C. Deploy a Memorystore for Redis instance in each region and configure your application to use the nearest instance.<br/>D. Use VPC Network Peering to connect Memorystore instances across the two regions.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "324",
+  "tip": "<p>When a question mentions <i>multi region</i> requirements for Redis on Google Cloud, verify the service scope. Memorystore for Redis is <i>regional</i>, so expect one cache per region and have clients connect to the nearest regional endpoint while keeping the system of record highly available across regions.</p>",
+  "references": [
+    "https://cloud.google.com/memorystore/docs/redis/redis-overview",
+    "https://cloud.google.com/memorystore/docs/redis/regions",
+    "https://cloud.google.com/memorystore/docs/redis/concepts-redis-standard-tier",
+    "https://cloud.google.com/memorystore/docs/redis/best-practices"
+  ],
+  "url": "https://certificationation.com/questions/exam-cache-and-you-ve-decided-to-exam-324.html",
+  "video_url": "https://certificationation.com/videos/exam-cache-and-you-ve-decided-to-exam-324.html"
+}

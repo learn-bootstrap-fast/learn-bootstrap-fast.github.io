@@ -1,0 +1,80 @@
+---
+title: "A financial organization is using Bigtable to store aExam"
+description: "Video for a financial organization is using Bigtable to store a large amount of time-series data. The organization needs to ensure high availability and"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A financial organization is using Bigtable to store a large amount of time-series data. The organization needs to ensure high availability and disaster recovery while maintaining low-latency read and write operations. Which of the following options should the organization choose to best meet their requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "BrightWave Insights uses Cloud Bigtable to capture high volume time series engagement events from streaming sessions and the system handles about 150,000 concurrent sessions while retaining 90 days of data. The team must keep both read and write latency very low while also achieving strong availability and disaster recovery. Which deployment configuration should the team implement to meet these goals?",
+  "options": [
+    {
+      "text": "Configure a multi-cluster instance with clusters distributed across different zones in the same region",
+      "explanation": "This option places clusters in separate zones within one region to increase resilience within that region.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a multi-cluster Bigtable instance with clusters placed in separate regions within a single continent",
+      "explanation": "This option deploys clusters into different regions that are in the same continent to spread load and provide regional independence.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use a zonal instance with asynchronous replication configured within the same zone",
+      "explanation": "This option keeps all resources in one zone and attempts to replicate within that same zone.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Provision a single cluster instance and scale out the node count within one zone",
+      "explanation": "This option increases capacity by adding nodes to a single cluster that resides in one zone.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Create a multi-cluster Bigtable instance with clusters placed in separate regions within a single continent</b>.</p><p>This configuration replicates data between clusters and the client library can route traffic to the nearest healthy cluster which keeps read and write latency low in steady state and during failover. Placing clusters in different regions within one continent provides regional fault tolerance and disaster recovery while keeping inter region latency small enough for fast replication and quick client routing. It also allows horizontal scaling by adding nodes per cluster to sustain very high concurrency while maintaining low latency.</p><p><i>Configure a multi-cluster instance with clusters distributed across different zones in the same region</i> only protects against zonal failures. It does not provide protection from a regional outage, so it does not meet the disaster recovery requirement.</p><p><i>Use a zonal instance with asynchronous replication configured within the same zone</i> is not a valid Bigtable setup because replication requires distinct clusters in different zones. A single zone deployment offers no failover or disaster recovery.</p><p><i>Provision a single cluster instance and scale out the node count within one zone</i> can improve throughput and lower latency, but it remains a single point of failure and does not provide cross zone or cross region disaster recovery.</p>",
+  "batch_id": "257",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "A financial organization is using Bigtable to store a large amount of time-series data. The organization needs to ensure high availability and disaster recovery while maintaining low-latency read and write operations. Which of the following options should the organization choose to best meet their requirements?",
+  "originalOptions": "A. Multi-cluster instance with clusters in different regions within the same continent.<br/>B. Single-cluster instance with multiple nodes in the same zone.<br/>C. Multi-cluster instance with clusters in different zones within the same region.<br/>D. Zonal instance with asynchronous replication in the same zone.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "139",
+  "tip": "<p>Map the requirement words to the architecture. If you see <i>very low latency</i> and <i>disaster recovery</i> together, think of replicated clusters in different regions within one continent with automatic routing to the nearest healthy cluster.</p>",
+  "references": [
+    "https://cloud.google.com/bigtable/docs/replication-overview",
+    "https://cloud.google.com/bigtable/docs/instances-clusters-nodes#multicluster-routing",
+    "https://cloud.google.com/bigtable/docs/disaster-recovery",
+    "https://cloud.google.com/bigtable/docs/locations"
+  ],
+  "url": "https://certificationation.com/questions/exam-bigtable-to-store-a-large-exam-139.html",
+  "video_url": "https://certificationation.com/videos/exam-bigtable-to-store-a-large-exam-139.html"
+}

@@ -1,0 +1,81 @@
+---
+title: "As a Database Engineer, you are part of the databaseExam"
+description: "Video for as a Database Engineer, you are part of the database maintenance team at your company. You are running a MySQL instance on a Compute Engine virtual"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are part of the database maintenance team at your company. You are running a MySQL instance on a Compute Engine virtual machine (VM). The applications team raised a high-priority ticket regarding slow responses to queries running on the database. You need to quickly identify the slow queries. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the Cloud Database Engineer for scrumtuous.com, and a production MySQL server runs on a Compute Engine virtual machine. The application team reports sudden latency spikes for database requests, and leadership wants you to quickly find which SQL statements are taking the longest without changing the application code or moving the workload. What should you do?",
+  "options": [
+    {
+      "text": "Configure your services to export spans to Cloud Trace and inspect traces for long operations",
+      "explanation": "Cloud Trace can visualize application latency if the code is instrumented to emit spans and annotations",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable the MySQL slow query log and set long_query_time, ship mysql-slow.log to Cloud Logging using the Ops Agent, and review entries in Logs Explorer",
+      "explanation": "The MySQL slow query log records statements that exceed the threshold and Cloud Logging centralizes the log for rapid filtering and analysis",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Migrate the database to Cloud SQL for MySQL and analyze performance using Query Insights",
+      "explanation": "Query Insights in Cloud SQL provides query-level metrics and statistics after the instance is migrated to the managed service",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Add timing statements around each database call in the application and redeploy to capture durations",
+      "explanation": "Application-level logging can measure query timing but requires code changes and a new release cycle",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Enable the MySQL slow query log and set long_query_time, ship mysql-slow.log to Cloud Logging using the Ops Agent, and review entries in Logs Explorer</b>.</p><p>This approach uses the built in MySQL slow query log to capture statements that exceed a threshold, which lets you identify the longest running SQL without touching application code. On a Compute Engine VM you can configure the Ops Agent to send mysql-slow.log to Cloud Logging, then use Logs Explorer to filter by duration fields and quickly see which queries are causing the latency spikes.</p><p><i>Configure your services to export spans to Cloud Trace and inspect traces for long operations</i> is not appropriate because it typically requires instrumenting the application to emit spans around database calls. The requirement is to avoid code changes and tracing on a self managed MySQL VM will not automatically capture SQL statements without additional instrumentation.</p><p><i>Migrate the database to Cloud SQL for MySQL and analyze performance using Query Insights</i> violates the constraint to avoid moving the workload and it is not a quick action. Query Insights is a managed feature in Cloud SQL and does not apply to a self managed MySQL instance on a VM.</p><p><i>Add timing statements around each database call in the application and redeploy to capture durations</i> directly conflicts with the requirement to make no application changes and it introduces redeployment risk and delay.</p>",
+  "batch_id": "191",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are part of the database maintenance team at your company. You are running a MySQL instance on a Compute Engine virtual machine (VM). The applications team raised a high-priority ticket regarding slow responses to queries running on the database. You need to quickly identify the slow queries. What should you do?",
+  "originalOptions": "A. Migrate the MySQL instance to Cloud SQL, and then look at Query Insights.<br/>B. Configure your application to export spans to Cloud Trace.<br/>C. Set the database-flags options for slow_query_log. Then look for mysql-slow.log in the Logs Explorer.<br/>D. Add application logs before and after each of the queries.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "112",
+  "tip": "<p>When constraints say <i>no code changes</i> or <i>no migration</i>, look for database native diagnostics and host level logging that can be enabled in place. Favor solutions that surface data in Logs Explorer for quick filtering and triage.</p>",
+  "references": [
+    "https://dev.mysql.com/doc/refman/8.0/en/slow-query-log.html",
+    "https://cloud.google.com/logging/docs/agent/ops-agent/third-party/mysql",
+    "https://cloud.google.com/logging/docs/view/logs-explorer",
+    "https://cloud.google.com/trace/docs/setup",
+    "https://cloud.google.com/sql/docs/mysql/using-query-insights"
+  ],
+  "url": "https://certificationation.com/questions/exam-part-of-the-database-maintenance-exam-112.html",
+  "video_url": "https://certificationation.com/videos/exam-part-of-the-database-maintenance-exam-112.html"
+}

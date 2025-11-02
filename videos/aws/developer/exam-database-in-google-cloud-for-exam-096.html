@@ -1,0 +1,80 @@
+---
+title: "A client wants to deploy a MongoDB database in GoogleExam"
+description: "Video for a client wants to deploy a MongoDB database in Google Cloud for a high-traffic web application. They want to optimize for high availability and"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A client wants to deploy a MongoDB database in Google Cloud for a high-traffic web application. They want to optimize for high availability and performance. They also have a continuous, substantial stream of incoming writes. What is the most suitable strategy for this scenario?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "NovaRidge is preparing to run MongoDB on Google Cloud for its global storefront on example.com, where traffic is heavy in North America and Europe and write volume averages about 30,000 operations per second. The team requires high availability and low read latency for users in multiple continents while preserving a single authoritative writer. Which deployment approach should they choose?",
+  "options": [
+    {
+      "text": "Run a MongoDB replica set on Compute Engine instances in one region and direct both reads and writes to the primary instance",
+      "explanation": "This approach concentrates the database in a single region and routes all traffic to the primary node which can increase latency for distant users",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Cloud SQL to host a MongoDB instance",
+      "explanation": "Cloud SQL is a managed service for relational engines such as MySQL PostgreSQL and SQL Server rather than MongoDB",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Build a MongoDB cluster on Compute Engine across multiple regions and serve reads from the nearest regional replica while directing all writes to the primary",
+      "explanation": "This design places replica members in more than one region to reduce read latency for users while maintaining a single primary for write operations",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Store documents in Cloud Storage and read them through a web tier",
+      "explanation": "Cloud Storage is an object store that holds files and requires custom logic for access rather than providing database query semantics",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Build a MongoDB cluster on Compute Engine across multiple regions and serve reads from the nearest regional replica while directing all writes to the primary</b>. This approach satisfies the need for high availability and low read latency across continents while maintaining a single authoritative writer.</p><p>MongoDB replica sets are designed for a primary that handles all writes and secondaries that can serve reads. Placing secondaries in regions close to users lets you use a nearest read preference to reduce latency for North America and Europe. Keeping a single primary preserves write ordering and consistency while automatic elections provide high availability if the primary fails. Compute Engine gives you flexible placement across regions and zones with control over machine types and storage so you can meet the write throughput requirement.</p><p><i>Run a MongoDB replica set on Compute Engine instances in one region and direct both reads and writes to the primary instance</i> is incorrect because a single region cannot provide low latency reads for users in multiple continents and it concentrates failure risk in one location which weakens availability.</p><p><i>Use Cloud SQL to host a MongoDB instance</i> is incorrect because Cloud SQL does not support MongoDB which makes this option infeasible.</p><p><i>Store documents in Cloud Storage and read them through a web tier</i> is incorrect because Cloud Storage is an object store rather than a database and it does not provide query capabilities, secondary replicas, or a primary writer model that can meet the described latency and throughput needs.</p>",
+  "batch_id": "59",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "A client wants to deploy a MongoDB database in Google Cloud for a high-traffic web application. They want to optimize for high availability and performance. They also have a continuous, substantial stream of incoming writes. What is the most suitable strategy for this scenario?",
+  "originalOptions": "A. Deploy a MongoDB cluster on Compute Engine instances across multiple regions, with reads being served from the closest region to the user and writes being served from the primary instance.<br/>B. Deploy a MongoDB instance on Cloud SQL.<br/>C. Deploy a MongoDB instance on Cloud Storage.<br/>D. Deploy a MongoDB cluster on Compute Engine instances in a single region, with reads and writes being served from the primary instance.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "96",
+  "tip": "<p>Map the requirements to the data model and service capabilities. When you see a need for a <i>single writer</i> with <i>global low latency reads</i>, think of a primary with regional replicas and use read preferences. Quickly eliminate answers that mismatch <i>service compatibility</i> or replace a database with an object store.</p>",
+  "references": [
+    "https://cloud.google.com/architecture/production-ready-mongodb-in-google-cloud-deployment-guide",
+    "https://www.mongodb.com/docs/manual/replication/",
+    "https://www.mongodb.com/docs/manual/core/read-preference/",
+    "https://cloud.google.com/compute/docs/regions-zones"
+  ],
+  "url": "https://certificationation.com/questions/exam-database-in-google-cloud-for-exam-096.html",
+  "video_url": "https://certificationation.com/videos/exam-database-in-google-cloud-for-exam-096.html"
+}

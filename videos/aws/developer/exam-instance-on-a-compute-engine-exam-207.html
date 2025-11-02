@@ -1,0 +1,79 @@
+---
+title: "You are managing a PostgreSQL instance on a ComputeExam"
+description: "Video for you are managing a PostgreSQL instance on a Compute Engine virtual machine (VM). The application team reports occasional slow query performance but"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are managing a PostgreSQL instance on a Compute Engine virtual machine (VM). The application team reports occasional slow query performance but cannot identify a pattern. You need to collect detailed metrics and logs to troubleshoot and identify the slow queries without impacting the current workload. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "An analytics team at a retail startup named NorthPeak Commerce manages a self-hosted PostgreSQL database on a Compute Engine VM. Customers intermittently experience slow responses and the team cannot find a consistent trigger. You need to capture detailed query information to identify which SQL statements are slow while keeping overhead low and without changing the application code. What should you do?",
+  "options": [
+    {
+      "text": "Migrate the database to Cloud SQL using Database Migration Service and analyze performance with Query Insights",
+      "explanation": "This approach moves the database to a managed service and provides built-in query analytics to visualize performance patterns.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Add tracing logic to the application so each database call logs its elapsed time",
+      "explanation": "This method instruments the application to measure and log durations for each database operation which requires code changes and deployments.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable the log_min_duration_statement parameter in postgresql.conf with a 300 ms threshold and analyze the resulting server logs",
+      "explanation": "This PostgreSQL setting records statements that exceed the configured duration and includes the execution time and SQL text in the server logs.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Install Prometheus and a PostgreSQL exporter on the VM to monitor performance metrics for the database",
+      "explanation": "This setup collects time series metrics from the database and the host which helps track performance trends and resource usage.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Enable the log_min_duration_statement parameter in postgresql.conf with a 300 ms threshold and analyze the resulting server logs</b>.</p><p>The <b>log_min_duration_statement</b> setting instructs PostgreSQL to write any statement that takes longer than the threshold to the server log along with its execution time. This directly reveals which queries are slow without requiring any change to the application. It has relatively low overhead because it logs only statements that exceed the threshold rather than every query. It can be enabled with a configuration change and a reload of the database process and the resulting logs can be reviewed locally or exported to a central logging solution for analysis.</p><p><i>Migrate the database to Cloud SQL using Database Migration Service and analyze performance with Query Insights</i> is not appropriate for immediate troubleshooting. This introduces a platform migration and operational risk when you only need to capture slow queries on an existing VM. <i>Query Insights</i> is a Cloud SQL feature and it does not apply to a self hosted PostgreSQL instance on Compute Engine.</p><p><i>Add tracing logic to the application so each database call logs its elapsed time</i> requires code changes and redeployments. The requirement is to avoid changing the application. Application level timing may also miss the exact SQL text or transformations applied by an ORM while server logs capture the executed statement and duration.</p><p><i>Install Prometheus and a PostgreSQL exporter on the VM to monitor performance metrics for the database</i> provides useful metrics such as CPU and query rates but it does not capture the full SQL text or per statement durations needed to pinpoint which queries are slow. It adds components to manage without delivering the detailed query logging that the scenario requires.</p>",
+  "batch_id": "44",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are managing a PostgreSQL instance on a Compute Engine virtual machine (VM). The application team reports occasional slow query performance but cannot identify a pattern. You need to collect detailed metrics and logs to troubleshoot and identify the slow queries without impacting the current workload. What should you do?",
+  "originalOptions": "A. Use the Database Migration Service to migrate the instance to Cloud SQL, then use Query Insights.<br/>B. Enable the log_min_duration_statement flag in the PostgreSQL configuration file and review the logs in the instance.<br/>C. Set up Prometheus to monitor query performance on the PostgreSQL instance.<br/>D. Add tracing in your application code to measure the time taken by each query.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "207",
+  "tip": "<p>When the question emphasizes <i>no code changes</i> and <i>low overhead</i> on a self managed PostgreSQL instance, look first to database <i>server parameters</i> like log_min_duration_statement or built in extensions rather than migrating platforms or modifying the application.</p>",
+  "references": [
+    "https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-MIN-DURATION-STATEMENT",
+    "https://cloud.google.com/sql/docs/postgres/insights/overview",
+    "https://cloud.google.com/stackdriver/docs/solutions/agents/ops-agent/third-party/postgresql"
+  ],
+  "url": "https://certificationation.com/questions/exam-instance-on-a-compute-engine-exam-207.html",
+  "video_url": "https://certificationation.com/videos/exam-instance-on-a-compute-engine-exam-207.html"
+}

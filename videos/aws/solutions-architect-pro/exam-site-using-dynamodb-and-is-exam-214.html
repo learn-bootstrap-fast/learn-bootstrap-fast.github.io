@@ -1,0 +1,74 @@
+---
+title: "Company B has created an e-commerce site using DynamoDBExam"
+description: "Video for company B has created an e-commerce site using DynamoDB and is designing a table named Products that includes items purchased by users. There are"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Company B has created an e-commerce site using DynamoDB and is designing a table named Products that includes items purchased by users. There are thousands of users and dozens of products. The table only has the partition key and does not have the sort key. When creating the table, which of the following is the most suitable to be selected as the partition key?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d5e1f501ee1c8ade9890"
+  },
+  "quid": "0",
+  "ordinal": "328",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "Amazon DynamoDB",
+    " Databases",
+    " AWS Well-Architected Framework",
+    " AWS Support",
+    " Benefits of migrating to the AWS Cloud"
+  ],
+  "slug": "db-products-table-partition-key-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question328",
+  "title": "AWS Company B Has Created An E-commerce Site Question",
+  "meta": "AWS Exam Question: Company B's e-commerce site uses DynamoDB, designing a Products table with a partition key. What is the best choice for the key? Answer: DynamoDB.",
+  "answer": "A",
+  "query": "An internet startup built a marketplace app leveraging DynamoDB and created an Orders table to track purchases by customers. The environment includes thousands of customers but only a limited list of items. The table is configured with only a partition key, no sort key. Which attribute should be chosen as the partition key to ensure the best performance?",
+  "originalQuery": "Company B has created an e-commerce site using DynamoDB and is designing a table named Products that includes items purchased by users.\nThere are thousands of users and dozens of products.\nThe table only has the partition key and does not have the sort key.\nWhen creating the table, which of the following is the most suitable to be selected as the partition key?",
+  "options": [
+    "A. user_id",
+    "B. item_id",
+    "C. product_category",
+    "D. None of the above."
+  ],
+  "originalOptions": [
+    "A. user_id",
+    "B. product_id",
+    "C. category_id",
+    "D. None of the above."
+  ],
+  "image": "",
+  "primaryObjective": "2: Design for New Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Answer - A.\nWhen defining primary keys, you should always use the \"many to few\" principle.\nThere are thousands of users but only a few products and categories.\nHence, option A is the best answer.\nFor a table item, you can fill in all the products purchased for a user.\nFor more information on DynamoDB, please visit the link.\nhttps://aws.amazon.com/dynamodb/faqs/\nWhen designing a DynamoDB table, choosing the right partition key is crucial for optimal performance and scalability.\nIn this scenario, the table is intended to store items purchased by users, and there are thousands of users and dozens of products. Since the table doesn't have a sort key, it means that the items will be unordered.\nOption A: user_id The user_id may seem like a good choice, but it would likely result in a hotspotting issue. This means that a small set of partitions will receive a disproportionate amount of read/write traffic, which can lead to performance issues and increased costs. In this case, a small number of popular users could end up overwhelming the capacity of a single partition.\nOption B: product_id Similarly, using product_id as the partition key can lead to hotspotting if certain products are much more popular than others. Additionally, if there are multiple sellers for a given product, their sales data would be spread across multiple partitions, making it harder to aggregate and analyze.\nOption C: category_id Using category_id as the partition key is a better option than user_id or product_id, as it can help distribute the data more evenly across partitions. However, it may still lead to hotspotting if certain categories are more popular than others.\nOption D: None of the above Based on the information given, it's difficult to determine the optimal partition key. One option would be to use a combination of user_id and product_id as a composite partition key, which would help distribute the data more evenly. Another option would be to use a time-based partition key, such as a purchase date, which would allow for efficient querying of recent purchases.\nIn summary, the most suitable option for a partition key would depend on the specific requirements and access patterns of the application. However, based on the information given, using category_id as the partition key would be a better choice than user_id or product_id, as it can help distribute the data more evenly across partitions.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-site-using-dynamodb-and-is-exam-214.html",
+  "url": "https://certificationation.com/questions/exam-site-using-dynamodb-and-is-exam-214.html"
+}

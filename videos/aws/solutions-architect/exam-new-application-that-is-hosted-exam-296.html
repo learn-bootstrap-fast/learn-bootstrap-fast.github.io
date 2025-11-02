@@ -1,0 +1,128 @@
+---
+title: "A development team has launched a new application thatExam"
+description: "Video for a development team has launched a new application that is hosted on Amazon EC2 instances inside a development VPC. A solutions architect needs to"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A development team has launched a new application that is hosted on Amazon EC2 instances inside a development VPC. A solutions architect needs to create a new VPC in the same account. The new VPC will be peered with the development VPC. The VPC CIDR block for the development VPC is 192.168.0.0/24. The solutions architect needs to create a CIDR block for the new VPC. The CIDR block must be valid for a VPC peering connection to the development VPC. What is the SMALLEST CIDR block that meets these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729a8d"
+  },
+  "quid": null,
+  "ordinal": "296",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon VPC",
+    " Amazon EC2",
+    " VPC peering",
+    " CIDR block",
+    " AWS global infrastructure"
+  ],
+  "slug": "ec2-development-vpc-peering-aws",
+  "source": "ET",
+  "title": "AWS A Development Team Has Launched A New Application Question",
+  "meta": "AWS Exam Question: A development team launched an app on Amazon EC2 in a VPC. What is the SMALLEST CIDR block for a new VPC to peer with it? Answer: VPC Peering.",
+  "answer": "D",
+  "query": "A new engineering team has deployed a service on Amazon EC2 instances within a staging VPC. Now, a solutions architect is tasked with establishing a new VPC within the same AWS account. This new VPC will need to peer with the staging VPC. The CIDR block allocated for the staging VPC is 192.168.0.0/24. The architect aims to assign a CIDR block for the new VPC that will support the VPC peering functionality with the staging VPC.\n\nWhat is the SMALLEST CIDR block that satisfies these requirements?",
+  "originalQuery": "A development team has launched a new application that is hosted on Amazon EC2 instances inside a development VPC. A solutions architect needs to create a new VPC in the same account. The new VPC will be peered with the development VPC. The VPC CIDR block for the development VPC is 192.168.0.0/24. The solutions architect needs to create a CIDR block for the new VPC. The CIDR block must be valid for a VPC peering connection to the development VPC.\n\nWhat is the SMALLEST CIDR block that meets these requirements?",
+  "options": [
+    "A. 10.0.1.0/32",
+    "B. 192.168.0.0/24",
+    "C. 192.168.1.0/32",
+    "D. 10.0.1.0/24"
+  ],
+  "originalOptions": [
+    "A. 10.0.1.0/32",
+    "B. 192.168.0.0/24",
+    "C. 192.168.1.0/32",
+    "D. 10.0.1.0/24"
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "The CIDR blocks 10.0.1.0/32 and 192.168.1.0/32 are insufficient for use with a VPC, as a /32 subnet allows for only a single host. Additionally, the CIDR block 192.168.0.0/24 overlaps with the existing development VPC's CIDR range. Therefore, a suitable CIDR block for the new VPC must be selected to ensure it does not conflict with the existing VPC's address space while also providing adequate capacity for resources. It's essential to choose a CIDR block that allows for proper routing and communication between the peered VPCs without any address overlap.",
+    "Let’s break it down in a fun way! 🎉\n\n- Option A (10.0.1.0/32) is a no-go 🚫—that /32 CIDR prefix is like trying to fit a giraffe in a mini car; it’s just a single host, not a whole VPC range!\n\n- Option B (192.168.0.0/24) is like trying to wear your friend's shoes; it overlaps with the development VPC and can't be used. \n\n- Option C (192.168.1.0/32) is also invalid 🚷—just like option A, this /32 prefix is only suitable for a single host, not a VPC.\n\n- Option D (10.0.1.0/24) is the winner in terms of not overlapping, but it’s a bit of an overachiever! 🎈 It provides more addresses than we really need for just two VPCs to connect. \n\nSo, remember, when choosing a CIDR block for VPC peering, make sure it’s valid, doesn’t overlap, and isn’t throwing a surprise party with more addresses than you can handle! 🥳",
+    "In an Amazon VPC, the first four and the last IP addresses in each subnet are off-limits for customer instances due to their reserved nature. Let’s break down this quirky reservation system:\n\n**Network Address (First IP):**  \nThe very first IP address in a subnet, which has all zeros in the host portion, is designated as the network address. For instance, in a subnet with a CIDR of 10.0.0.0/24, that would be 10.0.0.0. \n\n**VPC Router (Second IP):**  \nThe second IP address? That’s the VPC router’s personal space. It’s like a reserved parking spot for the router.\n\n**DNS Server (Third IP):**  \nNext up, the third IP is claimed by the DNS server. You could say it's the brain of the operation, handling all those pesky name resolutions.\n\n**Reserved for Future Use (Fourth IP):**  \nThe fourth IP is a mystery box—reserved for future use, though what that future entails is anyone's guess.\n\n**Customer Instances (Fifth to Second-to-Last IP):**  \nThe IP addresses from the fifth all the way to the second-to-last are the ones you can actually use for your customer instances. This is where the magic happens.\n\n**Broadcast Address (Last IP):**  \nFinally, we have the last IP address, which, despite AWS not supporting broadcasts, is still labeled as the broadcast address. It’s like being given a title but not the power that comes with it.\n\nIn this whimsical world of IP addressing, understanding these reserved addresses is crucial for efficient network planning and VPC configurations. So, remember: the first four and the last IP addresses are just not for you!",
+    "The IP address ranges for private networks are as follows: \n\n- For the 10.0.0.0 - 10.255.255.255 range, which corresponds to the 10/8 prefix, a suitable example CIDR block would be 10.0.0.0/16.\n- The range of 172.16.0.0 - 172.31.255.255 is associated with the 172.16/12 prefix, and an example CIDR block in this range could be 172.31.0.0/16.\n- The 192.168.0.0 - 192.168.255.255 range corresponds to the 192.168/16 prefix, where an example CIDR block could be 192.168.0.0/20.\n\nSince the development VPC is currently utilizing the 192.168.0.0/24 CIDR block, it's essential to select a CIDR block that does not overlap with it. The smallest valid CIDR block that fulfills this requirement is 192.168.1.0/24. This choice ensures seamless VPC peering while maintaining an organized network structure.",
+    "Options A and C represent individual host IP addresses. Option B is not feasible since it shares the same subnet with another team or department. That leaves us with Option D, which is indeed the correct choice! 🌟"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "D",
+      "explanation": "10.0.1.0/32 and 192.168.1.0/32 are too small for VPC, and /32 network is only 1 host\n192.168.0.0/24 is overlapping with existing VPC",
+      "upvotes": "29"
+    },
+    {
+      "selectedAnswer": "D",
+      "explanation": "• Option A (10.0.1.0/32) is invalid - a /32 CIDR prefix is a host route, not a VPC range.\n• Option B (192.168.0.0/24) overlaps the development VPC and so cannot be used.\n• Option C (192.168.1.0/32) is invalid - a /32 CIDR prefix is a host route, not a VPC range.\n• Option D (10.0.1.0/24) satisfies the non-overlapping CIDR requirement but is a larger block than needed. Since only two VPCs need to be peered, a /24 block provides more addresses than necessary.",
+      "upvotes": "13"
+    },
+    {
+      "selectedAnswer": "D",
+      "explanation": "In an Amazon VPC, the first four and the last IP address in each subnet are reserved for specific purposes, and they cannot be used for customer instances. Here's how the reserved addresses are typically allocated:\n\nNetwork Address (First IP):\n\nThe first IP address (all zeros in the host portion) in a subnet is reserved as the network address. For example, if you have a subnet with a CIDR notation of 10.0.0.0/24, the network address would be 10.0.0.0.\nVPC Router (Second IP):\n\nThe second IP address in the subnet is reserved for the VPC router.\nDNS Server (Third IP):\n\nThe third IP address is reserved for the DNS server.\nReserved for Future Use (Fourth IP):\n\nThe fourth IP address is reserved for future use.\nCustomer Instances (Fifth to Second-to-Last IP):\n\nThe IP addresses from the fifth to the second-to-last IP address in the subnet are available for customer instances.\nBroadcast Address (Last IP):\n\nThe last IP address (all ones in the host portion) in a subnet is reserved as the broadcast address, even though AWS does not support broadcast.",
+      "upvotes": "5"
+    },
+    {
+      "selectedAnswer": "C",
+      "explanation": "10.0.0.0 - 10.255.255.255 (10/8 prefix): Example CIDR block: 10.0.0.0/16\n172.16.0.0 - 172.31.255.255 (172.16/12 prefix): Example CIDR block: 172.31.0.0/16\n192.168.0.0 - 192.168.255.255 (192.168/16 prefix): Example CIDR block: 192.168.0.0/20\nGiven that the development VPC already uses 192.168.0.0/24, we need to choose a non-overlapping CIDR block. The smallest valid CIDR block that meets the requirements is 192.168.1.0/24 (Option C).",
+      "upvotes": "1"
+    },
+    {
+      "selectedAnswer": "D",
+      "explanation": "A and C are host IP addresses.\nB is not possible because it's using the same subnet for the other team/department.\nWe are left with D, which is the right answer.",
+      "upvotes": "2"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "D (99%)",
+      "votes": "73 votes."
+    },
+    {
+      "option": "1%",
+      "votes": "1 votes."
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "Option D (10.0.1.0/24) is the correct answer because it provides a valid CIDR block that does not overlap with the existing VPC (192.168.0.0/24) and is suitable for VPC peering. The other options are incorrect for the following reasons: Option A (10.0.1.0/32) is a host route that only allows for a single IP address, making it invalid for a VPC. Option B (192.168.0.0/24) overlaps with the existing VPC, so it cannot be used. Option C (192.168.1.0/32) is also a host route, which is invalid for a VPC. Therefore, the smallest CIDR block that can be assigned which meets the peering requirements is D (10.0.1.0/24).",
+  "video_url": "https://certificationation.com/videos/exam-new-application-that-is-hosted-exam-296.html",
+  "url": "https://certificationation.com/questions/exam-new-application-that-is-hosted-exam-296.html"
+}

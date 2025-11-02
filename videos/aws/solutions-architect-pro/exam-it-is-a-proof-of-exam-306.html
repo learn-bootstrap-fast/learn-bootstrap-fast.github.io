@@ -1,0 +1,74 @@
+---
+title: "You are developing a mobile application. As it is aExam"
+description: "Video for you are developing a mobile application. As it is a proof of concept, you want to deliver the project as soon as possible and you prefer using a"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are developing a mobile application. As it is a proof of concept, you want to deliver the project as soon as possible and you prefer using a serverless pattern. The whole application contains the presentation tier, the logical tier and the database tier. The component in the presentation tier is the mobile application running on a user device. For the logical tier and database tier, which services should you use as the serverless mobile backend?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d617f501ee1c8ade9914"
+  },
+  "quid": "0",
+  "ordinal": "460",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "AWS Lambda",
+    " Amazon API Gateway",
+    " Amazon DynamoDB",
+    " Amazon Cognito",
+    " AWS Auto Scaling"
+  ],
+  "slug": "ma-delivering-mobile-application-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question460",
+  "title": "AWS You Are Developing A Mobile Application Question",
+  "meta": "AWS Exam Question: You are developing a mobile app as a proof of concept using a serverless pattern. Which services should you use for the backend? Answer: AWS Lambda, Amazon DynamoDB.",
+  "answer": "D",
+  "query": "You are tasked with building a quick prototype for a mobile app that will feature a presentation layer, application logic, and data storage. Your goal is to use fully managed serverless services to accelerate development and reduce operational overhead. For the backend logic and database layers, which combination of AWS services should you select to provide a serverless environment?",
+  "originalQuery": "You are developing a mobile application.\nAs it is a proof of concept, you want to deliver the project as soon as possible and you prefer using a serverless pattern.\nThe whole application contains the presentation tier, the logical tier and the database tier.\nThe component in the presentation tier is the mobile application running on a user device.\nFor the logical tier and database tier, which services should you use as the serverless mobile backend?",
+  "options": [
+    "A. The application logic layer uses Amazon API Gateway with AWS Lambda. The API Gateway endpoints are protected using Amazon Certificate Manager. Amazon RDS MySQL handles the database.",
+    "B. The logic layer contains Amazon API Gateway tied to AWS ECS running on EC2 instances. Third-party identity providers secure the API endpoints. Amazon DynamoDB serves as the data backend.",
+    "C. The logic component leverages Amazon CloudFront alongside an AWS Auto Scaling Group. Identity management is handled using Amazon Cognito identity pools. Amazon DocumentDB is the database solution.",
+    "D. The logic tier contains Amazon API Gateway and AWS Lambda. The API Gateway endpoints are secured via Amazon Cognito user pools. Amazon DynamoDB is used for the data tier."
+  ],
+  "originalOptions": [
+    "A. The logical tier contains Amazon API Gateway and AWS Lambda. The API Gateway endpoints are secured via Amazon Certificate Manager. Amazon RDS MySQL is used for the data tier.",
+    "B. The logic tier contains Amazon API Gateway and AWS ECS with EC2 instances. The API Gateway endpoints are secured via third-party identity providers. The data tier includes the resource of Amazon DynamoD.",
+    "C. The logic tier contains Amazon CloudFront and AWS Auto Scaling Group. Amazon Cognito identity pools provide identity services. Amazon DocumentDB is used for the data tier.",
+    "D. The logic tier contains Amazon API Gateway and AWS Lambda. The API Gateway endpoints are secured via Amazon Cognito user pools. Amazon DynamoDB is used for the data tier."
+  ],
+  "image": "",
+  "primaryObjective": "2: Design for New Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Correct Answer - D.\nAs the serverless pattern is required, we should choose the serverless services that AWS fully manages.\nOption A is incorrect: Because Amazon RDS MySQL is not a pure serverless service.\nUsers still need to configure the database instance type, storage and provisioned IOPS.\nDetails can be found in https://d1.awsstatic.com/whitepapers/AWS_Serverless_Multi-Tier_Architectures.pdf.\nOption B is incorrect: Because AWS ECS with EC2 instance is not a serverless service, ECS with Fargate can be a serverless service.\nIn this scenario, Amazon API Gateway with AWS Lambda is the most appropriate for the logic tier.\nOption C is incorrect: Because AWS Auto Scaling Group and Amazon DocumentDB are not serverless services.\nOption D is CORRECT: Because all the mentioned services are serverless.\nUsers do not need to create or maintain servers for the whole architecture.\nCheck https://d1.awsstatic.com/whitepapers/AWS_Serverless_Multi-Tier_Architectures.pdf on how to create AWS serverless multi-tier architectures via Amazon API Gateway and AWS Lambda.\nOption D is the correct answer.\nThe logical tier contains Amazon API Gateway and AWS Lambda. API Gateway is a fully managed service that makes it easy for developers to create, publish, maintain, monitor, and secure APIs at any scale. Lambda is a serverless compute service that allows you to run code without provisioning or managing servers. Lambda functions can be triggered by API Gateway endpoints.\nThe API Gateway endpoints are secured via Amazon Cognito user pools, which provides a secure user directory that scales to hundreds of millions of users. Cognito user pools provide user authentication and authorization services, allowing users to sign up, sign in, and manage their profile information.\nAmazon DynamoDB is used for the data tier. DynamoDB is a fully managed NoSQL database service that can handle any amount of traffic and scale up or down automatically. DynamoDB is a great fit for mobile applications as it provides low latency and high throughput for read and write operations.\nOverall, this architecture is a good fit for a proof of concept mobile application that needs to be delivered quickly. The serverless pattern allows for easy scaling and cost savings, and the use of fully managed services means that developers can focus on writing code rather than managing infrastructure.",
+  "chatGptExplanation": "The correct answer is D because it uses fully managed serverless AWS services for both the logic and data tiers, which meet the requirement to accelerate development and reduce operational overhead. Specifically, Amazon API Gateway combined with AWS Lambda provides a serverless compute environment where API endpoints trigger Lambda functions without server provisioning or management. Securing the API via Amazon Cognito user pools enables scalable, managed user authentication directly integrated with the backend, ideal for mobile app user management. For the data tier, Amazon DynamoDB is a fully managed, serverless NoSQL database that scales automatically and provides low-latency access perfectly suited for mobile app backends.\n\nIncorrect options are flawed because:\n\nOption A uses Amazon RDS MySQL, which is not purely serverless since it requires provisioning and managing database instances, storage, and IOPS. Also, securing API Gateway via Amazon Certificate Manager only manages SSL/TLS certificates and does not provide user authentication or authorization.\n\nOption B includes AWS ECS running on EC2 instances, which is not serverless due to the need to manage the EC2 servers. While API Gateway is serverless, combining it with ECS on EC2 contradicts the goal. Also, the data tier references \"Amazon DynamoD\" which seems to be a typographical error and does not clarify if a fully serverless database is used.\n\nOption C uses Amazon CloudFront and an Auto Scaling Group, which involves managing server infrastructure and is thus not serverless. Amazon DocumentDB is a managed database but not serverless as it requires instance management. Additionally, identity pools in Amazon Cognito provide temporary AWS credentials but not the full user authentication layer needed here.\n\nHence, answer D's combination of API Gateway, AWS Lambda, Amazon Cognito user pools, and DynamoDB provides a fully managed, scalable, secure, and serverless architecture, perfectly aligned with the question's requirements.",
+  "video_url": "https://certificationation.com/videos/exam-it-is-a-proof-of-exam-306.html",
+  "url": "https://certificationation.com/questions/exam-it-is-a-proof-of-exam-306.html"
+}

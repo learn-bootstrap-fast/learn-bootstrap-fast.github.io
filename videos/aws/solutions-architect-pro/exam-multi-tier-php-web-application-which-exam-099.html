@@ -1,0 +1,74 @@
+---
+title: "Your company has an on-premises multi-tier PHP webExam"
+description: "Video for your company has an on-premises multi-tier PHP web application, which recently experienced downtime due to a large burst In web traffic due to a"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company has an on-premises multi-tier PHP web application, which recently experienced downtime due to a large burst In web traffic due to a company announcement. Over the coming days, you are expecting similar announcements to drive similar unpredictable bursts. You are looking for ways to quickly improve your infrastructure's ability to handle unexpected traffic increases."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d5a0f501ee1c8ade97eb"
+  },
+  "quid": "0",
+  "ordinal": "162",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "AWS Auto Scaling",
+    " Amazon EC2",
+    " Amazon RDS",
+    " Amazon Route 53",
+    " Amazon CloudFront"
+  ],
+  "slug": "MT-php-web-application-downtime-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question162",
+  "title": "AWS Your Company Has An On-Premises Multi-Tier Question",
+  "meta": "AWS Exam Question: How can you enhance your on-premises multi-tier PHP web application to handle unpredictable traffic bursts effectively? Find the answer using Elastic Load Balancing and Auto Scaling.",
+  "answer": "A",
+  "query": "A retail company hosts a dynamic e-commerce website on their local servers which recently faced performance issues after a flash sale event caused a sudden increase in user visits. Similar promotional events are planned in the near future, and they want to enhance their system's ability to manage unpredictable surges in web traffic promptly.",
+  "originalQuery": "Your company has an on-premises multi-tier PHP web application, which recently experienced downtime due to a large burst In web traffic due to a company announcement.\nOver the coming days, you are expecting similar announcements to drive similar unpredictable bursts.\nYou are looking for ways to quickly improve your infrastructure's ability to handle unexpected traffic increases.",
+  "options": [
+    "A. Offload traffic from an on-premises environment by setting up a CloudFront distribution and configure CloudFront to cache objects from a custom origin. Choose to customize your object cache behavior, and select a TTL that objects should exist in the cache.",
+    "B. Transition operations to AWS cloud. Use VM Import/Export to convert the existing local web server into an AMI. Deploy an Auto Scaling group using this AMI to automatically increase web tier capacity with traffic spikes. Establish an RDS read replica and configure replication between the on-premises MySQL database and the RDS instance to handle database migration.",
+    "C. Set up an S3 bucket for web hosting. Transfer DNS management to Route53 with zone file import. Utilize Route53 DNS failover to redirect traffic to the S3 site during outages.",
+    "D. Create an AMI for launching EC2 web servers. Build an Auto Scaling group with these AMIs to expand the web layer as traffic climbs. Use Elastic Load Balancing to distribute requests across both local and AWS-hosted web servers."
+  ],
+  "originalOptions": [
+    "A. Offload traffic from an on-premises environment by setting up a CloudFront distribution and configure CloudFront to cache objects from a custom origin. Choose to customize your object cache behavior, and select a TTL that objects should exist in the cache.",
+    "B. Migrate to AWS. Use VM import ‘Export to quickly convert an on-premises web server to an AMI create an Auto Scaling group, which uses the imported AMI to scale the web tier based on incoming traffic. Create an RDS read replica and setup replication between the RDS instance and on-premises MySQL server to migrate the database.",
+    "C. Create an S3 bucket and configure it tor website hosting. Migrate your DNS to Route53 using zone import and leverage Route53 DNS failover to failover to the S3 hosted website.",
+    "D. Create an AMI which can be used to launch web servers in EC2. Create an Auto Scaling group which uses the AMI’s to scale the web tier based on incoming traffic. Leverage Elastic Load Balancing to balance traffic between on-premises web servers and those hosted in AWS."
+  ],
+  "image": "",
+  "primaryObjective": "4: Accelerate Workload Migration and Modernization",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Answer - A.\nIn this scenario, the major points of consideration are: (1) your application may get unpredictable bursts of traffic, (b) you need to improve the current infrastructure in the shortest period possible, and (3) your web servers are on-premises.\nSince the time period in hand is short, instead of migrating the app to AWS, you need to consider different ways to improve the performance without modifying the existing infrastructure.\nOption A is CORRECT because (a) CloudFront is AWS's highly scalable, highly available content delivery service, where it can perform excellently even in case of a sudden unpredictable burst of traffic, (b) the only change you need to make is making the on-premises load balancer as the custom origin of the CloudFront distribution.\nOption B is incorrect because you are supposed to improve the current situation in the shortest time possible.\nMigrating to AWS would be more time consuming than simply setting up the CloudFront distribution.\nOption C is incorrect because you cannot host dynamic websites on the S3 bucket.\nAlso, this option provides insufficient infrastructure to set up options.\nOption D is incorrect.\nIt is now possible to use Application Load Balancers through IP Address to On-Premises and AWS Resources.\nHowever, option D is incorrect as it is not covering the database tier which is an essential part of this 2 tier architecture.\nMore information on CloudFront:\nYou can have CloudFront sit in front of your on-premise web environment via a custom origin.\nThis would protect against unexpected bursts in traffic by letting CloudFront handle the traffic from the cache, thus removing some of the load from the on-premise web servers.\nAmazon CloudFront is a web service that gives businesses and web application developers an easy and cost-effective way to distribute content with low latency and high data transfer speeds.\nLike other AWS services, Amazon CloudFront is a self-service, pay-per-use offering, requiring no long-term commitments or minimum fees.\nWith CloudFront, your files are delivered to end-users using a global network of edge locations.\nIf you have dynamic content, then it is best to have the TTL set to 0.\nFor more information on CloudFront, please visit the below URL-\nhttps://aws.amazon.com/cloudfront/\nSure, I'd be happy to explain the options and their implications.\nOption A: Offload traffic from an on-premises environment by setting up a CloudFront distribution and configure CloudFront to cache objects from a custom origin. Choose to customize your object cache behavior, and select a TTL that objects should exist in the cache.\nThis option involves using AWS CloudFront, a content delivery network (CDN), to cache objects from a custom origin server. By doing so, CloudFront can offload traffic from your on-premises environment, reducing the load on your servers and potentially improving their availability during traffic surges. The TTL (time-to-live) value determines how long CloudFront caches objects before fetching them again from the origin server. This option could be a good fit if your application has static content that can be cached for long periods, or if you can tolerate some delay in serving stale content.\nOption B: Migrate to AWS. Use VM import 'Export to quickly convert an on-premises web server to an AMI create an Auto Scaling group, which uses the imported AMI to scale the web tier based on incoming traffic. Create an RDS read replica and set up replication between the RDS instance and on-premises MySQL server to migrate the database.\nThis option involves migrating your entire application to AWS. It starts with using VM Import/Export to create an Amazon Machine Image (AMI) of your on-premises web server, which can then be launched as an EC2 instance. An Auto Scaling group can be set up to automatically launch additional instances as traffic increases, using the imported AMI. An RDS read replica can also be created to migrate your database to AWS, and replication can be set up between the RDS instance and your on-premises MySQL server to ensure data consistency. This option provides a scalable, resilient environment for your application, but requires more effort to set up and migrate your data to AWS.\nOption C: Create an S3 bucket and configure it for website hosting. Migrate your DNS to Route53 using zone import and leverage Route53 DNS failover to failover to the S3 hosted website.\nThis option involves using Amazon S3 to host your website, which can then be accessed using a custom domain name through Amazon Route53. Route53 DNS failover can be configured to automatically route traffic to the S3-hosted website in the event of a failure on your on-premises environment. This option is suitable for simple websites with static content, but may not be suitable for more complex web applications.\nOption D: Create an AMI which can be used to launch web servers in EC2. Create an Auto Scaling group which uses the AMI's to scale the web tier based on incoming traffic. Leverage Elastic Load Balancing to balance traffic between on-premises web servers and those hosted in AWS.\nThis option involves creating an AMI of your web server and launching it as an EC2 instance. An Auto Scaling group can be set up to automatically launch additional instances as traffic increases, using the AMI. Elastic Load Balancing can be used to distribute traffic between your on-premises web servers and those hosted in AWS. This option provides a scalable and resilient environment, but may require more complex networking configurations to integrate with your on-premises environment.\nOverall, each option has its pros and cons depending on the specific requirements of your application. Option B provides the most comprehensive solution but requires the most effort to set up and migrate data. Option A and D are more focused on offloading traffic and providing scalable capacity, respectively. Option C is the simplest option but may not be suitable for more complex applications.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-multi-tier-php-web-application-which-exam-099.html",
+  "url": "https://certificationation.com/questions/exam-multi-tier-php-web-application-which-exam-099.html"
+}

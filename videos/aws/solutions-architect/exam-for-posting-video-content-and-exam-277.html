@@ -1,0 +1,126 @@
+---
+title: "A company provides an online service for posting videoExam"
+description: "Video for a company provides an online service for posting video content and transcoding it for use by any mobile platform. The application architecture uses"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company provides an online service for posting video content and transcoding it for use by any mobile platform. The application architecture uses Amazon Elastic File System (Amazon EFS) Standard to collect and store the videos so that multiple Amazon EC2 Linux instances can access the video content for processing. As the popularity of the service has grown over time, the storage costs have become too expensive. Which storage solution is MOST cost-effective?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729a7a"
+  },
+  "quid": null,
+  "ordinal": "277",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon Elastic File System (Amazon EFS)",
+    " Amazon Elastic Block Store (Amazon EBS)",
+    " Amazon S3"
+  ],
+  "slug": "efs-online-video-content-processing-aws",
+  "source": "ET",
+  "title": "AWS A Company Provides An Online Service Question",
+  "meta": "AWS Exam Question: A company provides an online service for posting video content and transcoding it. Which storage solution is MOST cost-effective? Answer: Amazon S3.",
+  "answer": "D",
+  "query": "An organization is running a streaming service that allows users to upload and encode videos for various devices. Their architecture relies on Amazon Elastic File System (Amazon EFS) Standard to maintain video files, enabling numerous Amazon EC2 Linux instances to work on them simultaneously. As the number of users has increased, the expenses for storage have significantly risen.\n\nWhat storage option is the MOST economical?",
+  "originalQuery": "A company provides an online service for posting video content and transcoding it for use by any mobile platform. The application architecture uses Amazon Elastic File System (Amazon EFS) Standard to collect and store the videos so that multiple Amazon EC2 Linux instances can access the video content for processing. As the popularity of the service has grown over time, the storage costs have become too expensive.\n\nWhich storage solution is MOST cost-effective?",
+  "options": [
+    "A. Use AWS Storage Gateway for files to store and process the video content.",
+    "B. Utilize AWS Storage Gateway for volumes to manage the video files.",
+    "C. Use Amazon EFS for storing the video content. Once processing is complete, transfer the files to Amazon Elastic Block Store (Amazon EBS).",
+    "D. Use Amazon S3 for storing the video content. Move the files temporarily over to an Amazon Elastic Block Store (Amazon EBS) volume attached to the server for processing."
+  ],
+  "originalOptions": [
+    "A. Use AWS Storage Gateway for files to store and process the video content.",
+    "B. Use AWS Storage Gateway for volumes to store and process the video content.",
+    "C. Use Amazon EFS for storing the video content. Once processing is complete, transfer the files to Amazon Elastic Block Store (Amazon EBS).",
+    "D. Use Amazon S3 for storing the video content. Move the files temporarily over to an Amazon Elastic Block Store (Amazon EBS) volume attached to the server for processing."
+  ],
+  "image": null,
+  "primaryObjective": "4: Design Cost-Optimized Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "AWS Storage Gateway is primarily designed for facilitating the transfer of data to the cloud rather than serving as a long-term storage solution. It acts as a bridge between on-premises environments and cloud storage, enabling seamless migration and access to cloud resources. Therefore, it is not suitable as a primary means of storing video content. Instead, leveraging cloud-native storage solutions like Amazon S3, which offers scalable and cost-effective object storage, would be a more appropriate approach for managing large volumes of video files while minimizing costs.",
+    "Option A doesn’t quite hit the mark; it suggests \"using AWS Storage Gateway for files\" (which is indeed a product) but doesn’t clarify that the actual storage of the video content happens *on* Amazon S3. 🤔\n\nNow, let's wade into the waters of option B. While it talks about utilizing AWS Storage Gateway for volumes to manage video files, it might not be the most cost-efficient choice for your growing video library. 💰\n\nAs for option C, it suggests sticking with Amazon EFS for storage but then recommends transferring files to Amazon Elastic Block Store (EBS) after processing. While it’s a solid plan, the transition could add unnecessary complexity and costs. 🚧\n\nFinally, option D proposes using Amazon S3 for storing the video content and temporarily moving files to an EBS volume for processing. This approach is quite economical, as S3 is designed for scalable storage, and you only pay for what you use. 🌟\n\nSo, if you're looking to keep your costs down while still efficiently managing your video files, it’s clear that option D is the way to go! Happy streaming! 🎥✨",
+    "Setting up a Storage Gateway for Files will allow you to mount an S3 bucket as an NFS volume, which can be shared among EC2 instances just like EFS, but without the hefty price tag. Think of it as the budget-friendly alternative that lets you enjoy the same functionality while keeping your expenses in check. It's like having your cake and eating it too, without feeling guilty about the calories—or in this case, the costs!",
+    "Utilizing an on-premises or non-AWS infrastructure to create a gateway is not an option in this scenario. Additionally, the combined use of Amazon EFS and Amazon EBS incurs higher costs compared to using Amazon EFS and Amazon S3 together. Therefore, the most cost-effective solution is to opt for the latter. This approach not only maximizes efficiency but also significantly reduces storage expenses while ensuring that your video content is stored and processed seamlessly.",
+    "Ah, the delightful challenge of connecting an EBS volume to all your servers! 🌟 You see, the magic of Amazon EBS lies in its ability to serve as a block storage option, but it can only be attached to a single EC2 instance at a time. So, to share those fabulous files with all your servers, you would typically need to set up a clever workflow. \n\nOne cheerful approach is to use Amazon S3 as your primary storage for the video content. Once the files are ready for processing, you can temporarily transfer them to an EBS volume linked to one EC2 instance for the necessary work. After processing is complete, the files can be sent back to the S3 bucket, where they can be easily accessed by all your servers. This method not only keeps costs down but also ensures that your service remains scalable and efficient. Happy storing! 🎉"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "D",
+      "explanation": "Storage gateway is not used for storing content - only to transfer to the Cloud",
+      "upvotes": "28"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "A doesn't say \"store content ON the gateway\", it says \"use AWS Storage Gateway for files\" (which is the product) \"to store the video content\" [on S3].",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Creating storage gateway for Files will mount S3 bucket as an NFS volume that can be shared among EC2 Instances in the same manner as EFS but more cost effectively.",
+      "upvotes": "1"
+    },
+    {
+      "selectedAnswer": "D",
+      "explanation": "There is no on-prem/non Aws infrastructure to create a gateway. Also, EFS+EBS is more expensive that EFS and S3. So D is the best option.",
+      "upvotes": "12"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "But how do you attach \"an EBS volume\" to all the servers, and how will you use the files on it then to serve customers.",
+      "upvotes": "3"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "D (81%)",
+      "votes": "65 votes."
+    },
+    {
+      "option": "A (19%)",
+      "votes": "15 votes."
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "Option D is the most economical option as Amazon S3 provides a highly scalable, cost-effective storage solution compared to EFS. By storing the video content in S3, the organization can take advantage of S3's lower storage costs. Option A is incorrect because AWS Storage Gateway is primarily used for integrating on-premises applications with cloud storage and not for direct storage solutions. Option B is also incorrect since it doesn't address the high storage costs associated with EBS for managing streaming video content. Option C is also not economical; while it allows EFS initially, transferring to EBS afterward incurs unnecessary costs, and managing EBS for multiple servers can complicate architecture and increase expenses significantly.",
+  "video_url": "https://certificationation.com/videos/exam-for-posting-video-content-and-exam-277.html",
+  "url": "https://certificationation.com/questions/exam-for-posting-video-content-and-exam-277.html"
+}

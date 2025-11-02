@@ -1,0 +1,74 @@
+---
+title: "You have multiple EC2 instances in three availabilityExam"
+description: "Video for you have multiple EC2 instances in three availability zones (AZs), with a load balancer configured for your application. Any instance can process the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have multiple EC2 instances in three availability zones (AZs), with a load balancer configured for your application. Any instance can process the requests and there is no need to route the requests for a particular session to the same EC2 instance. However, you observe that only one of those AZs is receiving all the traffic. Which of the following actions may help distribute the traffic in three AZs? (Select TWO)."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d585f501ee1c8ade97a8"
+  },
+  "quid": "0",
+  "ordinal": "93",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "Amazon Elastic Load Balancing (ELB)",
+    " AWS global infrastructure",
+    " Amazon EC2",
+    " Amazon EC2 instance types",
+    " AWS Well-Architected Framework"
+  ],
+  "slug": "ec2-multiple-instances-traffic-distribution-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question93",
+  "title": "AWS You Have Multiple EC2 Instances Question",
+  "meta": "AWS Exam Question: You have multiple EC2 instances in three AZs with a load balancer configured. Which actions may help distribute traffic? Find the answer using Elastic Load Balancing.",
+  "answer": "A C",
+  "query": "An application runs on several EC2 instances spread across three availability zones with an attached load balancer. Any instance can handle requests, and it's not necessary to stick user sessions to a specific instance. Recently, you notice that the load balancer is directing almost all traffic to just one availability zone. What actions could help in spreading incoming traffic evenly across all availability zones? (Choose TWO).",
+  "originalQuery": "You have multiple EC2 instances in three availability zones (AZs), with a load balancer configured for your application.\nAny instance can process the requests and there is no need to route the requests for a particular session to the same EC2 instance.\nHowever, you observe that only one of those AZs is receiving all the traffic.\nWhich of the following actions may help distribute the traffic in three AZs? (Select TWO).",
+  "options": [
+    "A. Disable sticky sessions",
+    "B. Adjust the interval of health status checks",
+    "C. Enable cross zone load balancer",
+    "D. Amazon recommends to use two availability zone behind ELB."
+  ],
+  "originalOptions": [
+    "A. Disable sticky sessions",
+    "B. Reduce the frequency of the health checks",
+    "C. Enable cross zone load balancer",
+    "D. Amazon recommends to use two availability zone behind ELB."
+  ],
+  "image": "https://eaeastus2.blob.core.windows.net/optimizedimages/static/images/AWS-Certified-Solutions-Architect-Professional/answer/imgquestions_pzy32n.png",
+  "primaryObjective": "1: Design Solutions for Organizational Complexity",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Answer - A, C.\nSince the traffic is routed to only one availability zone (AZ) and none of the other AZs are receiving any, the ELB must have only one AZ registered in it.\nFirst, you have to ensure that the ELB is configured to support multiple AZs via Cross-Zone load balancing.\nEven after enabling the cross zone load balancing, if the traffic is routed to particular EC2 instances in an AZ, the users' sessions must have tied to those EC2 instances.\nThese symptoms seem to be related to the sticky sessions (session affinity)\nSo, the second thing you must ensure that the sticky sessions need to be either disabled or configured to be expiring after a specific period.\nOption A is CORRECT because, as mentioned above, sticky sessions could be a reason for traffic being routed to specific EC2 instances in a specific AZ.\nOption B is incorrect because reducing the health check frequency will not balance the traffic between different AZs.\nOption C is CORRECT because cross zone load balancing needs to be enabled on the ELB and the other AZs must be registered under this ELB.Option D is incorrect because there is no such recommendation from Amazon about ELB.More information on ELB, Sticky Sessions, and Cross Zone Load Balancing:\nhttps://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html\nThe issue described in this question suggests that the Elastic Load Balancer (ELB) is not distributing traffic evenly across all three Availability Zones (AZs) where your EC2 instances are deployed. To fix this, you should consider the following two options:\n1.\nEnable Cross-Zone Load Balancing: Enabling Cross-Zone Load Balancing allows the ELB to distribute traffic evenly across all the registered instances, regardless of the AZ they belong to. This means that traffic from any client will be distributed across all the instances in all the AZs that are registered with the ELB. To enable this feature, you should go to your Load Balancer's configuration and select the option \"Enable Cross-Zone Load Balancing\". This should help distribute the traffic more evenly across all the AZs.\n2.\nDisable Sticky Sessions: Sticky sessions is a feature of the ELB that allows the same client to be directed to the same instance in order to maintain session state. If you have disabled sticky sessions, the ELB will distribute traffic evenly across all instances regardless of their state. If you're not using sticky sessions and your traffic is still being directed to a single AZ, it's possible that some instances are not healthy or are underutilized, which is causing the ELB to direct traffic to the instances in the healthy AZ. To disable this feature, you should go to your Load Balancer's configuration and select the option \"Disable Sticky Sessions\".\nReducing the frequency of health checks may not help distribute traffic to all the AZs as the ELB will still direct traffic to the healthy instances regardless of their AZ. Additionally, Amazon recommends using at least two AZs for high availability and fault tolerance, but this is not relevant to the current issue. Therefore, the correct answers to this question are A and C.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-three-availability-zones-azs-with-exam-053.html",
+  "url": "https://certificationation.com/questions/exam-three-availability-zones-azs-with-exam-053.html"
+}

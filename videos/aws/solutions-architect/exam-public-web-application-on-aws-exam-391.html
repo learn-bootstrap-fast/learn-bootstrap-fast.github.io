@@ -1,0 +1,126 @@
+---
+title: "A company wants to deploy a new public web applicationExam"
+description: "Video for a company wants to deploy a new public web application on AWS. The application includes a web server tier that uses Amazon EC2 instances. The"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company wants to deploy a new public web application on AWS. The application includes a web server tier that uses Amazon EC2 instances. The application also includes a database tier that uses an Amazon RDS for MySQL DB instance. The application must be secure and accessible for global customers that have dynamic IP addresses. How should a solutions architect configure the security groups to meet these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729aed"
+  },
+  "quid": null,
+  "ordinal": "392",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon EC2",
+    " Amazon RDS",
+    " Security"
+  ],
+  "slug": "ec2-application-deploy-security-groups-aws",
+  "source": "ET",
+  "title": "AWS A Company Wants To Deploy A New Question",
+  "meta": "AWS Exam Question: A company wants to deploy a public web application on AWS using Amazon EC2 and Amazon RDS for MySQL. How to configure security groups? Answer: security groups.",
+  "answer": "A",
+  "query": "An organization is planning to launch a new online service hosted on AWS. The service will incorporate a web server layer that runs on Amazon EC2 instances and a database layer utilizing Amazon RDS powered by PostgreSQL. \n\nTo ensure security and accessibility for users across the globe with variable IP addresses, what configurations should a solutions architect implement for the security groups?",
+  "originalQuery": "A company wants to deploy a new public web application on AWS. The application includes a web server tier that uses Amazon EC2 instances. The application also includes a database tier that uses an Amazon RDS for MySQL DB instance.\n\nThe application must be secure and accessible for global customers that have dynamic IP addresses.\n\nHow should a solutions architect configure the security groups to meet these requirements?",
+  "options": [
+    "A. Configure the security group for the web servers to allow inbound traffic on port 443 from 0.0.0.0/0. Configure the security group for the DB instance to allow inbound traffic on port 3306 from the security group of the web servers.",
+    "B. Set the security group on the web servers to permit inbound traffic on port 443 from the customers' IP addresses. Configure the security group for the database instance to allow inbound traffic on port 3306 from the web servers' security group.",
+    "C. Allow the security group for web servers access on port 443 from the customers, and the DB instance security group to allow inbound traffic only from the customers' IP addresses on port 3306.",
+    "D. Configure the security group of web servers to accept inbound traffic on port 443 from 0.0.0.0/0. Also set the DB instance security group to permit inbound traffic on port 3306 from 0.0.0.0/0."
+  ],
+  "originalOptions": [
+    "A. Configure the security group for the web servers to allow inbound traffic on port 443 from 0.0.0.0/0. Configure the security group for the DB instance to allow inbound traffic on port 3306 from the security group of the web servers.",
+    "B. Configure the security group for the web servers to allow inbound traffic on port 443 from the IP addresses of the customers. Configure the security group for the DB instance to allow inbound traffic on port 3306 from the security group of the web servers.",
+    "C. Configure the security group for the web servers to allow inbound traffic on port 443 from the IP addresses of the customers. Configure the security group for the DB instance to allow inbound traffic on port 3306 from the IP addresses of the customers.",
+    "D. Configure the security group for the web servers to allow inbound traffic on port 443 from 0.0.0.0/0. Configure the security group for the DB instance to allow inbound traffic on port 3306 from 0.0.0.0/0."
+  ],
+  "image": null,
+  "primaryObjective": "1: Design Secure Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "The key consideration here is the dynamic nature of the customers' IP addresses. Therefore, options B and C are not viable, as they would limit access based on specific IP addresses that can change frequently. Option D is also unsuitable because allowing inbound traffic on port 3306 from 0.0.0.0/0 would expose the database to potential security threats by permitting access from any IP address.\n\nThe most appropriate configuration would involve allowing inbound traffic on port 443 for the web server security group from all IP addresses (0.0.0.0/0) to ensure accessibility for global customers. Additionally, the security group for the RDS instance should be configured to allow inbound traffic on port 3306 only from the security group associated with the web servers. This setup maintains security by ensuring that the database is only accessible from the web servers while still allowing the web application to be publicly accessible. \n\nWhen designing secure architectures on AWS, it is crucial to adhere to the principle of least privilege, ensuring that resources are only accessible to the necessary entities while minimizing exposure to potential threats.",
+    "For this web application, it’s essential to ensure that it’s both secure and accessible to a worldwide audience with ever-changing IP addresses. 🌍💻 \n\nNow, while option B might seem tempting, it’s like trying to catch a greased pig—those dynamic IPs are tricky to pin down! 🐖 So, we can't just allow access from specific IPs. As for option D, it essentially throws open the database doors to anyone on the internet, which is a recipe for disaster! 🚪💨 \n\nOn the bright side, option A gets it just right! It lets the web servers welcome traffic from anywhere on port 443, while keeping the database snug and secure by only allowing access from the web servers themselves. It's like having a bouncer at the club—everyone can party outside, but only the right folks get past the velvet rope! 🎉✨",
+    "By permitting HTTPS traffic from any public IP address, you effectively satisfy the need for worldwide customer access. This approach ensures that communications are securely encrypted, enhancing the overall security of the application. Meanwhile, configuring the database security group to accept inbound connections on port 3306 exclusively from the web server security group ensures that access is tightly controlled, allowing only the necessary resources to interact. This strategic setup not only bolsters security but also keeps things neat and tidy, minimizing exposure to unwanted traffic.",
+    "The best choice is option A, as it effectively accommodates the dynamic nature of customer IP addresses. By allowing inbound traffic on port 443 from 0.0.0.0/0 for the web server security group, the application remains accessible to all users globally. Additionally, permitting inbound traffic on port 3306 for the database instance from the web server security group ensures secure communication between the web servers and the database without exposing the database to the broader internet. This configuration balances security and accessibility perfectly, making it an excellent solution for the application’s needs!",
+    "Absolutely! 🌟 \n\nTo ensure a delightful and secure experience for global customers, the web application should be configured with precise security group settings. First, the web server security group should be set to allow inbound traffic on port 443 from anywhere (0.0.0.0/0). This ensures that all users can access the application securely over HTTPS.\n\nNext, the database security group must be configured to allow inbound traffic on port 3306, but with a twist! It should only accept connections from the web server's security group. This creates a snug little fortress around the database, allowing only the web servers to communicate with it, while keeping unwanted guests at bay. \n\nThis configuration strikes a perfect balance between accessibility and security, creating a happy and safe environment for your users! 🌈"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "",
+      "explanation": "The keyword is dynamic IPs from the customer, then B, C out, D out due to 0.0.0.0/0",
+      "upvotes": "6"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "\"The application must be secure and accessible for global customers that have dynamic IP addresses.\" This just means \"anyone\" so BC are wrong as you cannot know in advance about the dynamic IP addresses. D is just opening the DB to the internet.\n\nA is most secure as web is open to internet and db is open to web only.",
+      "upvotes": "6"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "It allows HTTPS access from any public IP address, meeting the requirement for global customer access.\nHTTPS provides encryption for secure communication.\nAnd for the database security group, only allowing inbound port 3306 from the web server security group properly restricts access to only the resources that need it.",
+      "upvotes": "4"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "Should be A since the customer IPs are dynamically.",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "A no doubt.",
+      "upvotes": "3"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "A (86%)",
+      "votes": "24 votes."
+    },
+    {
+      "option": "14%",
+      "votes": "4 votes."
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "Option A is correct because it allows inbound traffic on port 443 (HTTPS) from anywhere (0.0.0.0/0), which is critical for global user accessibility. For the DB instance, allowing inbound traffic on port 3306 only from the web server's security group enhances security by restricting database access to only the web servers that need it, thus minimizing potential attack vectors. \n\nOption B is incorrect because it requires a specific list of customer IP addresses, which cannot be determined in advance due to their dynamic nature. \n\nOption C also fails for the same reason as B, as it attempts to restrict access to specific customer IPs instead of a general approach. \n\nOption D is the least secure, as it opens the database to the entire internet by allowing inbound traffic on port 3306 from 0.0.0.0/0, which exposes it to numerous security risks.",
+  "video_url": "https://certificationation.com/videos/exam-public-web-application-on-aws-exam-391.html",
+  "url": "https://certificationation.com/questions/exam-public-web-application-on-aws-exam-391.html"
+}

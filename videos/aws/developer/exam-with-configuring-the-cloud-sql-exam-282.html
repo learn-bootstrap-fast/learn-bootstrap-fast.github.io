@@ -1,0 +1,80 @@
+---
+title: "A Database Engineer is tasked with configuring the CloudExam"
+description: "Video for a Database Engineer is tasked with configuring the Cloud SQL Auth Proxy for a new application, with a focus on ensuring the highest level of network"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A Database Engineer is tasked with configuring the Cloud SQL Auth Proxy for a new application, with a focus on ensuring the highest level of network security. Which of the following steps should the engineer take to accomplish this goal?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Riverton Analytics is rolling out a new microservice on Google Kubernetes Engine that connects to a new Cloud SQL for PostgreSQL instance through the Cloud SQL Auth Proxy. The security team requires the strongest possible protection for traffic between the proxy and the database. What should the engineer configure to meet this requirement?",
+  "options": [
+    {
+      "text": "Enable only Private IP for the Cloud SQL instance and rely on VPC firewall rules for access control",
+      "explanation": "This confines database access to private networking and firewall policy but it does not strengthen the encryption of the transport itself.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Require mutual TLS by configuring the proxy with a client certificate and private key and by validating the server certificate",
+      "explanation": "This enforces encrypted transport with certificate based identity verification on both sides of the connection.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use a shared symmetric key to encrypt all proxy connections",
+      "explanation": "This relies on a pre shared secret and does not provide certificate based authentication or standard TLS properties.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Disable TLS between the proxy and the Cloud SQL instance to simplify setup",
+      "explanation": "This removes encryption and integrity protection from the database connection.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Require mutual TLS by configuring the proxy with a client certificate and private key and by validating the server certificate</b>. Mutual TLS encrypts all traffic and also authenticates both the Cloud SQL Auth Proxy and the Cloud SQL instance, which provides the strongest protection for data in transit.</p><p>With mutual TLS, the proxy verifies the server certificate to prevent man in the middle attacks and the server verifies the client certificate so only trusted clients can connect. This gives confidentiality, integrity, and peer authentication for the connection between the proxy and the database, which aligns with the requirement for the strongest possible protection.</p><p><i>Enable only Private IP for the Cloud SQL instance and rely on VPC firewall rules for access control</i> is not sufficient because Private IP and firewall rules control network reachability but they do not provide encryption of the database protocol or mutual authentication by themselves. This improves isolation but does not deliver the strongest in transit protection.</p><p><i>Use a shared symmetric key to encrypt all proxy connections</i> is not a supported or recommended approach for Cloud SQL connections. It lacks built in identity verification and introduces difficult key distribution and rotation challenges compared to standard TLS with certificates.</p><p><i>Disable TLS between the proxy and the Cloud SQL instance to simplify setup</i> directly weakens security by removing encryption and peer authentication, which contradicts the requirement for the strongest protection.</p>",
+  "batch_id": "307",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "A Database Engineer is tasked with configuring the Cloud SQL Auth Proxy for a new application, with a focus on ensuring the highest level of network security. Which of the following steps should the engineer take to accomplish this goal?",
+  "originalOptions": "A. Configure the proxy to allow connections only from a specific IP range.<br/>B. Configure the proxy to use a shared secret key for encryption.<br/>C. Configure the proxy to use SSL connections with a client certificate, a server certificate, and a private key.<br/>D. Disable SSL connections between the proxy and the Cloud SQL instance.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "282",
+  "tip": "<p>When a question asks for the <i>strongest</i> in transit protection, look for <i>mutual TLS</i> with client and server certificate verification rather than relying only on Private IP, firewall rules, or simplified setups.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/connect-auth-proxy",
+    "https://cloud.google.com/sql/docs/postgres/configure-ssl-instance",
+    "https://cloud.google.com/sql/docs/postgres/encryption-in-transit",
+    "https://cloud.google.com/sql/docs/postgres/private-ip"
+  ],
+  "url": "https://certificationation.com/questions/exam-with-configuring-the-cloud-sql-exam-282.html",
+  "video_url": "https://certificationation.com/videos/exam-with-configuring-the-cloud-sql-exam-282.html"
+}

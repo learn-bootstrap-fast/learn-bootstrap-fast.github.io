@@ -1,0 +1,54 @@
+---
+title: "You work for a rideshare software company as a machineExam"
+description: "Video for you work for a rideshare software company as a machine learning specialist. You are working on a model to predict driver capacity based on several"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You work for a rideshare software company as a machine learning specialist. You are working on a model to predict driver capacity based on several factors, such as location, time of day, weather, population density, age of the car, etc. You have several million observations stretching back over 5 years across several geographic locations worldwide. You have performed feature engineering on your data, and you have transformed it into 5 CSV files (one for each year) which you have uploaded to your S3 bucket training prefix. Due to a large number of observations, your management team anticipates that training this model could get costly, so they have asked you to keep the costs of your project as low as possible. You have written the following python code using the SageMaker Python SDK in your SageMaker jupyter notebook: s3_train = sagemaker.s3_input(s3_data='s3://{}/{}'.format(bucket, path_train), content_type='csv',distribution='ShardedByS3Key') my_container = get_image_uri(boto3.Session().region_name, 'xgboost') my_session = sagemaker.Session() role = get_execution_role() xgb = sagemaker.estimator.Estimator(my_container, role, train_instance_count=5, train_instance_type='ml.m4.xlarge', output_path=output_path, sagemaker_session=my_session) xgb.set_hyperparameters( max_depth=10, eta=0.2, gamma=4, min_child_weight=40, subsample=0.8, silent=0, objective='reg:linear', early_stopping_rounds=10, num_round=200 ) xgb.fit({'train': s3_train, 'validation': s3_input_validation}) Using this code, how does SageMaker replicate your dataset to your Machine Learning instances for training?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d6f37742293cac494b1d"
+  },
+  "answer": "D",
+  "certification": "AWS Machine Learning Specialty",
+  "certificationKey": "AWSMLS",
+  "difficulty": "0",
+  "image": "",
+  "needsWork": "false",
+  "ordinal": "117",
+  "originalExplanation": "Answer: D.\nOption A is incorrect.\nIn the SageMaker API, when you set the distribution type parameter to ShardedByS3Key, SageMaker replicates a subset of your dataset on each of the ML instances you've defined.\nOption B is incorrect.\nIn the SageMaker API, when you set the distribution type parameter to ShardedByS3Key, SageMaker replicates a subset of your dataset on each of the ML instances you've defined.\nYou define the quantity of the ML instances (in this case 5) in the train_instance_count parameter of the Estimator API call.\nOption C is incorrect.\nIt is correct that in the SageMaker API, when you set the distribution type parameter to ShardedByS3Key, SageMaker replicates a subset of your dataset on each of the ML instances you've defined.\nYou define the quantity of the ML instances (in this case 5) in the train_instance_count parameter of the Estimator API call.\nOption D is correct.\nIn the SageMaker API, when you set the distribution type parameter to ShardedByS3Key, SageMaker replicates a subset of your dataset on each of the ML instances you've defined.\nYou define the quantity of the ML instances (in this case 5) in the train_instance_count parameter of the Estimator API call.\nDistributing your dataset across several instances, making your training much faster and therefore less expensive.\nReference:\nPlease see the Amazon SageMaker developer guide titled Train a Model with Amazon SageMaker, the Amazon SageMaker developer guide titled S3DataSource, and the AWS Machine Learning blog titled Amazon SageMaker Automatic Model Tuning becomes more efficient with warm start of hyperparameter tuning jobs )specifically the ‘create a training estimator' section of the blog)\nBased on the provided code, the SageMaker Python SDK is used to create a SageMaker estimator object xgb with the Estimator constructor. The estimator is then configured with hyperparameters using the set_hyperparameters method. The fit method is then used to train the estimator with the training data and validate with the validation data.\nTo train the model, SageMaker needs to replicate the data to the ML instances launched for training. The s3_input method is used to create a s3_train object that specifies the location of the training data in S3. The s3_input_validation object specifies the location of the validation data in S3.\nThe distribution parameter of the s3_input method is set to ShardedByS3Key, which indicates that the data will be sharded (split) by the S3 key across the ML instances.\nThe train_instance_count parameter of the Estimator constructor is set to 5, which indicates that 5 ML instances will be launched for training. Therefore, the answer is (B) SageMaker replicates the entire dataset on each of the 5 ML instances that are launched for training.\nWhen SageMaker replicates the entire dataset on each of the 5 ML instances that are launched for training, it distributes the data in a way that each ML instance receives a subset of the data. This allows for parallel processing, which can significantly reduce the time required to train the model. By sharding the data across instances, SageMaker can also handle larger datasets than could be processed by a single instance.\nIt's important to note that sharding the data can also increase the network traffic and potentially slow down the training process. However, using the ShardedByS3Key distribution method is an efficient way to split the data while minimizing network traffic.",
+  "originalOptions": [
+    "A. SageMaker replicates the entire dataset on each of the 10 ML instances that are launched for training.",
+    "B. SageMaker replicates the entire dataset on each of the 5 ML instances that are launched for training.",
+    "C. SageMaker replicates a subset of your dataset on each of the 10 ML instances that are launched for training.",
+    "D. SageMaker replicates a subset of your dataset on each of the 5 ML instances that are launched for training."
+  ],
+  "originalQuery": "You work for a rideshare software company as a machine learning specialist.\nYou are working on a model to predict driver capacity based on several factors, such as location, time of day, weather, population density, age of the car, etc.\nYou have several million observations stretching back over 5 years across several geographic locations worldwide.\nYou have performed feature engineering on your data, and you have transformed it into 5 CSV files (one for each year) which you have uploaded to your S3 bucket training prefix. Due to a large number of observations, your management team anticipates that training this model could get costly, so they have asked you to keep the costs of your project as low as possible. You have written the following python code using the SageMaker Python SDK in your SageMaker jupyter notebook: s3_train = sagemaker.s3_input(s3_data='s3://{}/{}'.format(bucket, path_train), content_type='csv',distribution='ShardedByS3Key') my_container = get_image_uri(boto3.Session().region_name, 'xgboost') my_session = sagemaker.Session() role = get_execution_role() xgb = sagemaker.estimator.Estimator(my_container, role, train_instance_count=5, train_instance_type='ml.m4.xlarge', output_path=output_path, sagemaker_session=my_session) xgb.set_hyperparameters( max_depth=10, eta=0.2, gamma=4, min_child_weight=40, subsample=0.8, silent=0, objective='reg:linear', early_stopping_rounds=10, num_round=200 ) xgb.fit({'train': s3_train, 'validation': s3_input_validation}) Using this code, how does SageMaker replicate your dataset to your Machine Learning instances for training?",
+  "primaryObjective": "",
+  "quid": "0",
+  "source": "https://www.exam-answer.com/amazon/mls-c01/question117",
+  "video_url": "https://certificationation.com/videos/exam-company-as-a-machine-learning-exam-117.html",
+  "url": "https://certificationation.com/questions/exam-company-as-a-machine-learning-exam-117.html"
+}

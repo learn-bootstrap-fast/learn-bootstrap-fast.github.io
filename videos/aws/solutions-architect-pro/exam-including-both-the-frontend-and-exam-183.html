@@ -1,0 +1,76 @@
+---
+title: "You tried to integrate two systems including both theExam"
+description: "Video for you tried to integrate two systems including both the frontend and backend in a stack. These systems don't store any state inside. All of the state"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You tried to integrate two systems including both the frontend and backend in a stack. These systems don't store any state inside. All of the state information is stored in a DynamoDB table. You have launched each of the systems with separate AMIs."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d5cdf501ee1c8ade985f"
+  },
+  "quid": "0",
+  "ordinal": "278",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "AWS Elastic Beanstalk",
+    " Amazon DynamoDB",
+    " AWS Auto Scaling",
+    " Amazon CloudFront",
+    " Amazon SQS"
+  ],
+  "slug": "db-integrate-two-systems-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question278",
+  "title": "AWS You Tried To Integrate Two Systems Question",
+  "meta": "AWS Exam Question: You integrated frontend and backend systems without internal state, using a DynamoDB table for state storage and separate AMIs. Answer: Lambda, EC2.",
+  "answer": "B C",
+  "query": "A company has combined two service components, frontend and backend, into a single application environment. Both components are stateless and persist all session data in a DynamoDB table. They launched each service using distinct AMIs. What is the best method to upgrade the application with new AMIs while minimizing downtime?",
+  "originalQuery": "You tried to integrate two systems including both the frontend and backend in a stack.\nThese systems don't store any state inside.\nAll of the state information is stored in a DynamoDB table.\nYou have launched each of the systems with separate AMIs.",
+  "options": [
+    "A. Use Route53.",
+    "B. Use Blue/Green deployment strategy by creating new Auto Scaling groups with the new AMIs.",
+    "C. Update the AMIs in the Auto Scaling groups and change the desired capacity to launch new instances with the updated AMIs.",
+    "D. Deploy Amazon CloudFront in front of the frontend servers to improve access.",
+    "E. Implement Amazon SQS between frontend and backend services."
+  ],
+  "originalOptions": [
+    "A. Use Route53.",
+    "B. Use Blue/Green deployment strategy by creating new Auto Scaling groups with the new AMIs.",
+    "C. Modify the AMIs used by the existing Auto Scaling groups and adjust the desired number of Auto Scaling group to deploy the new AMIs in the new instances.",
+    "D. Use Amazon CloudFront with access to the frontend server with origin fetch.",
+    "E. Use Amazon SQS between the frontend and backend subsystems."
+  ],
+  "image": "",
+  "primaryObjective": "3: Continuous Improvement for Existing Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "E.\nAnswer - B and C.\nOption A is incorrect because Route53 cannot be used to deploy the fixes.\nOption B is CORRECT because Blue/Green deployment strategy can deploy new versions of AMIs without service disruption.\nOption C is CORRECT because you can modify the AMI used by the Auto Scaling group and adjust the desired number of the ASG to launch new instances with the new AMI.\nOption D is incorrect because deploying CloudFront is not needed in this situation.\nOption E is incorrect because SQS does not help to deploy the new fix.\nReference:\nhttps://d1.awsstatic.com/whitepapers/AWS_Blue_Green_Deployments.pdf\nBased on the given scenario, where two systems including frontend and backend are integrated into a stack, and all state information is stored in a DynamoDB table, there are several options to ensure smooth integration.\nOption A - Use Route53:\nRoute53 is a DNS service that routes traffic between internet resources. Using Route53, you can create DNS records that direct traffic to specific servers or endpoints. While Route53 can be used to balance traffic between systems, it is not the best solution for this scenario, as it does not provide any specific features for integrating frontend and backend systems.\nOption B - Use Blue/Green deployment strategy by creating new Auto Scaling groups with the new AMIs:\nThe Blue/Green deployment strategy involves deploying a new version of an application, referred to as the \"Green\" version, alongside the existing, or \"Blue\" version. Once the Green version is fully tested and ready, traffic is shifted from the Blue version to the Green version. This can be done by creating new Auto Scaling groups with the new AMIs, testing them, and then redirecting traffic to them. This option is a good choice because it allows the testing of the new systems before redirecting traffic to them.\nOption C - Modify the AMIs used by the existing Auto Scaling groups and adjust the desired number of Auto Scaling group to deploy the new AMIs in the new instances:\nModifying the AMIs used by the existing Auto Scaling groups and adjusting the desired number of Auto Scaling groups to deploy the new AMIs in the new instances is a viable option. This approach requires careful consideration of the effects of making the changes and ensuring that the systems are fully tested before deploying them in production.\nOption D - Use Amazon CloudFront with access to the frontend server with origin fetch:\nAmazon CloudFront is a content delivery network that caches and distributes content from an origin server to multiple locations worldwide. In this scenario, CloudFront can be used to cache the frontend server and serve it to end-users. This option is not the best choice, as CloudFront does not provide any specific features for integrating frontend and backend systems.\nOption E - Use Amazon SQS between the frontend and backend subsystems:\nAmazon Simple Queue Service (SQS) is a fully managed message queuing service that enables decoupling and scaling microservices, distributed systems, and serverless applications. This option can be used to decouple the frontend and backend subsystems, making it easy to integrate them into the stack. However, this option requires additional work to ensure that the messages are processed correctly and that the systems are integrated seamlessly.\nOverall, Option B - Use Blue/Green deployment strategy by creating new Auto Scaling groups with the new AMIs is the best option as it provides the ability to test the new systems before redirecting traffic to them, ensuring smooth integration with the existing stack.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-including-both-the-frontend-and-exam-183.html",
+  "url": "https://certificationation.com/questions/exam-including-both-the-frontend-and-exam-183.html"
+}

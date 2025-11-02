@@ -1,0 +1,86 @@
+---
+title: "Your organization is running a Cloud SQL PostgreSQLExam"
+description: "Video for your organization is running a Cloud SQL PostgreSQL instance hosting a high-availability application. During maintenance events, there have been brief"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your organization is running a Cloud SQL PostgreSQL instance hosting a high-availability application. During maintenance events, there have been brief outages affecting user transactions. You want to ensure minimal downtime and impact on the application in the future. What should you do? (Choose two)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "mcnz.com runs a customer billing portal on Cloud SQL for PostgreSQL, and during a few Google managed maintenance events each quarter the team sees brief transaction errors that disrupt users. You need to reduce downtime and lessen user impact during future maintenance while continuing to use Cloud SQL. What should you do?",
+  "options": [
+    {
+      "text": "Configure a maintenance window during off peak hours",
+      "explanation": "This sets a preferred weekly window so maintenance is applied when user activity is lower.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use Cloud Spanner instead of Cloud SQL",
+      "explanation": "This would require a migration to a different managed relational database service.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable high availability for the Cloud SQL instance",
+      "explanation": "This creates a standby instance in another zone and allows automatic failover during maintenance.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Implement client side retries with exponential backoff",
+      "explanation": "The application would automatically retry transient failures using a backoff and jitter policy.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable Cloud SQL Insights",
+      "explanation": "This enables query performance insights and monitoring for the database.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct answers are <b>Configure a maintenance window during off peak hours</b> and <b>Enable high availability for the Cloud SQL instance</b>.</p><p>A <b>maintenance window</b> lets you choose when Google applies scheduled updates so they occur during your lowest traffic periods. This reduces user facing errors because changes happen when fewer sessions are active and it also gives you predictability to prepare your application. Aligning the <b>maintenance window</b> with off peak usage directly minimizes the impact users experience.</p><p>Enabling <b>high availability</b> creates a standby instance in another zone with synchronous replication. During maintenance Google can update the standby first and then perform a controlled failover which shortens the interruption to a brief reconnection event. <b>High availability</b> therefore reduces downtime and lessens user impact while you continue to use Cloud SQL.</p><p><i>Use Cloud Spanner instead of Cloud SQL</i> does not meet the requirement to continue using Cloud SQL and it introduces a migration to a different service that is unnecessary for solving brief maintenance interruptions.</p><p><i>Implement client side retries with exponential backoff</i> can help mask transient errors but it does not reduce the actual maintenance downtime and transactions can still fail during a failover event.</p><p><i>Enable Cloud SQL Insights</i> helps analyze query performance and troubleshoot latency but it does not change maintenance behavior or availability and it will not reduce downtime.</p>",
+  "batch_id": "63",
+  "answerCode": "1,3",
+  "type": "multi-select",
+  "originalQuery": "Your organization is running a Cloud SQL PostgreSQL instance hosting a high-availability application. During maintenance events, there have been brief outages affecting user transactions. You want to ensure minimal downtime and impact on the application in the future. What should you do? (Choose two)",
+  "originalOptions": "A. Implement client-side retries with exponential backoff.<br/>B. Configure maintenance windows for non-peak hours.<br/>C. Enable high availability for the instance.<br/>D. Use Cloud Spanner instead of Cloud SQL.<br/>E. Turn off automatic maintenance updates.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "135",
+  "tip": "<p>When a question asks to reduce maintenance impact while staying on a service, look for configuration features that control timing and failover. Prioritize options like <i>maintenance windows</i> and <i>high availability</i> over migrations or diagnostic tooling.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/maintenance",
+    "https://cloud.google.com/sql/docs/postgres/maintenance-window",
+    "https://cloud.google.com/sql/docs/postgres/high-availability",
+    "https://cloud.google.com/sql/docs/insights/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-cloud-sql-postgresql-instance-hosting-exam-135.html",
+  "video_url": "https://certificationation.com/videos/exam-cloud-sql-postgresql-instance-hosting-exam-135.html"
+}

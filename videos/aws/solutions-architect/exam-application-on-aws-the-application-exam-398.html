@@ -1,0 +1,128 @@
+---
+title: "A financial company hosts a web application on AWS. TheExam"
+description: "Video for a financial company hosts a web application on AWS. The application uses an Amazon API Gateway Regional API endpoint to give users the ability to"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A financial company hosts a web application on AWS. The application uses an Amazon API Gateway Regional API endpoint to give users the ability to retrieve current stock prices. The company’s security team has noticed an increase in the number of API requests. The security team is concerned that HTTP flood attacks might take the application offline. A solutions architect must design a solution to protect the application from this type of attack. Which solution meets these requirements with the LEAST operational overhead?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729af4"
+  },
+  "quid": null,
+  "ordinal": "399",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS WAF",
+    " Amazon CloudFront",
+    " AWS Lambda",
+    " Amazon API Gateway",
+    " Amazon CloudWatch"
+  ],
+  "slug": "apigateway-protect-application-aws",
+  "source": "ET",
+  "title": "AWS A Financial Company Hosts A Web Application Question",
+  "meta": "AWS Exam Question: A financial company uses Amazon API Gateway to retrieve stock prices. How to protect against HTTP flood attacks with minimal overhead? Answer: AWS WAF.",
+  "answer": "B",
+  "query": "A fintech organization is utilizing AWS to operate a web service that allows clients to access real-time cryptocurrency prices via an Amazon API Gateway Regional API endpoint. Recently, the security team has observed a surge in API requests, raising concerns about potential HTTP flood attacks that could disrupt service availability.\n\nA solutions architect needs to devise a strategy to secure the web service against such attacks while minimizing operational complexity.",
+  "originalQuery": "A financial company hosts a web application on AWS. The application uses an Amazon API Gateway Regional API endpoint to give users the ability to retrieve current stock prices. The company’s security team has noticed an increase in the number of API requests. The security team is concerned that HTTP flood attacks might take the application offline.\n\nA solutions architect must design a solution to protect the application from this type of attack.\n\nWhich solution meets these requirements with the LEAST operational overhead?",
+  "options": [
+    "A. Set up an Amazon CloudFront distribution before the API Gateway Regional API endpoint with a max TTL of one day.",
+    "B. Create a Regional AWS WAF web ACL with a rate-based rule. Associate the web ACL with the API Gateway stage.",
+    "C. Implement Amazon CloudWatch to keep track of the Count metric and notify the security team when limits are exceeded.",
+    "D. Deploy an Amazon CloudFront distribution with Lambda@Edge before the API Gateway Regional API endpoint. Develop an AWS Lambda function to deny requests from IP addresses surpassing the set rate."
+  ],
+  "originalOptions": [
+    "A. Create an Amazon CloudFront distribution in front of the API Gateway Regional API endpoint with a maximum TTL of 24 hours.",
+    "B. Create a Regional AWS WAF web ACL with a rate-based rule. Associate the web ACL with the API Gateway stage.",
+    "C. Use Amazon CloudWatch metrics to monitor the Count metric and alert the security team when the predefined rate is reached.",
+    "D. Create an Amazon CloudFront distribution with Lambda@Edge in front of the API Gateway Regional API endpoint. Create an AWS Lambda function to block requests from IP addresses that exceed the predefined rate."
+  ],
+  "image": null,
+  "primaryObjective": "1: Design Secure Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "A Regional AWS WAF (Web Application Firewall) web ACL (Access Control List) serves as a managed security solution to safeguard your API Gateway from diverse threats, including HTTP flood attacks. \n\nThe rate-based rule is a specific type of rule designed to restrict the number of requests originating from a single IP address over a defined time frame. This helps mitigate the risk of abuse and ensures that no single user can overwhelm the application with excessive traffic.\n\nThe API Gateway stage functions as a logical organization of API resources, enabling granular control over access and configuration settings for your API. This structured approach allows for effective management of security policies, usage plans, and deployment stages, enhancing the overall resilience of your web application against potential attacks.",
+    "A rate-based rule in AWS WAF is like your trusty bouncer at a club, keeping an eye on the number of guests (or API requests) coming in. 🎉 The security team can set specific limits, and when the crowd gets too rowdy and exceeds those limits, AWS WAF takes action by blocking the unruly guests automatically. 🚫 This nifty feature helps fend off pesky HTTP flood attacks while keeping the operational hassle to a bare minimum. It's a win-win for security and smooth sailing for your application! 🛡️✨",
+    "The best choice here is option B. By creating a Regional AWS WAF (Web Application Firewall) web ACL (Access Control List) with a rate-based rule, and then linking it to the API Gateway stage, you’re essentially putting up a sturdy gate that only allows a reasonable number of requests through. It's like having a bouncer at a club who knows when to cut off the crowd before it gets out of hand.\n\nThis approach keeps operational fuss to a minimum while actively monitoring traffic patterns. With the WAF in place, you can automatically block or limit requests from IP addresses that exceed a specified threshold. It’s a proactive measure to fend off those pesky HTTP flood attacks that threaten to bring your application to a grinding halt.\n\nWhile options like CloudFront or CloudWatch have their merits, they don’t quite match the targeted protection that WAF provides in this scenario. So go ahead, put up that digital bouncer and let your users enjoy hassle-free access to stock prices without the fear of a sudden blackout.",
+    "The ideal solution is to create a Regional AWS WAF web access control list (ACL) featuring a rate-based rule and associate it with the API Gateway stage. This approach effectively safeguards the application against potential HTTP flood attacks while maintaining minimal operational overhead. By implementing this protective layer, the company can efficiently manage incoming traffic and mitigate risks, ensuring the web application remains resilient and responsive to legitimate user requests. This proactive strategy not only enhances security but also allows the team to focus on other critical areas of development and maintenance.",
+    "A financial company is hosting a delightful web application on AWS, featuring an Amazon API Gateway Regional API endpoint that allows users to fetch the latest stock prices. Recently, the company's security team has observed a surge in API requests and is a bit worried about the potential for HTTP flood attacks that could disrupt the application’s availability.\n\nTo counter this concern, a solutions architect is tasked with crafting a protective strategy for the application. The goal is to implement a solution that safeguards against these threats while keeping operational overhead to a minimum. 🌟\n\nOne option to consider is to create a Regional AWS WAF web access control list (ACL) with a rate-based rule, effectively managing the flow of requests and associating the web ACL with the API Gateway stage. This method is not only effective but also efficient, allowing for automated protection without requiring constant oversight.\n\nIn addition, setting up an Amazon CloudFront distribution in front of the API Gateway can enhance security and performance. By leveraging CloudFront's caching capabilities, you can reduce the load on your API while also benefiting from its built-in DDoS protection features.\n\nAnother approach could involve implementing Amazon CloudWatch to monitor the Count metric, which would alert the security team when traffic limits are exceeded. While this provides useful insights, it may require more manual intervention.\n\nLastly, deploying a CloudFront distribution with Lambda@Edge, coupled with an AWS Lambda function to deny requests from IP addresses that exceed a predetermined rate, adds a layer of customization but may introduce additional complexity in management.\n\nIn this whimsical world of cloud solutions, it’s essential to choose the path that strikes the perfect balance between security and simplicity. Happy cloud computing! ☁️✨"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "B",
+      "explanation": "Regional AWS WAF web ACL is a managed web application firewall that can be used to protect your API Gateway API from a variety of attacks, including HTTP flood attacks.\nRate-based rule is a type of rule that can be used to limit the number of requests that can be made from a single IP address within a specified period of time.\nAPI Gateway stage is a logical grouping of API resources that can be used to control access to your API.",
+      "upvotes": "9"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "A rate-based rule in AWS WAF allows the security team to configure thresholds that trigger rate-based rules, which enable AWS WAF to track the rate of requests for a specified time period and then block them automatically when the threshold is exceeded. This provides the ability to prevent HTTP flood attacks with minimal operational overhead.",
+      "upvotes": "6"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "Answer is B",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "B os correct",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "https://docs.aws.amazon.com/waf/latest/developerguide/web-acl.html",
+      "upvotes": "2"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "B (100%)",
+      "votes": "23 votes."
+    },
+    {
+      "option": "C (25%)",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is B because AWS WAF provides a managed web application firewall that is specifically designed to protect web applications from various attacks, including HTTP flood attacks. By using a rate-based rule within the AWS WAF, the security team can set a threshold for the maximum number of requests that can originate from a single IP address within a specified time frame. If the threshold is exceeded, subsequent requests from that IP can be automatically blocked, providing effective protection with minimal operational overhead. \n\nOption A is incorrect because while CloudFront can help with caching and reducing the origin load, it does not inherently prevent HTTP flood attacks without a WAF or similar security layer in place. \nOption C is incorrect because while monitoring with CloudWatch is important, it only provides alerts based on request counts and does not actively block malicious traffic. \nOption D introduces additional complexity and latency by using Lambda@Edge to block requests, which may not be as efficient as using a WAF that can handle this at the edge natively.",
+  "video_url": "https://certificationation.com/videos/exam-application-on-aws-the-application-exam-398.html",
+  "url": "https://certificationation.com/questions/exam-application-on-aws-the-application-exam-398.html"
+}

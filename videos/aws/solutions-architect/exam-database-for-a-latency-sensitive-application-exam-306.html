@@ -1,0 +1,128 @@
+---
+title: "A company wants to run an in-memory database for aExam"
+description: "Video for a company wants to run an in-memory database for a latency-sensitive application that runs on Amazon EC2 instances. The application processes more"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company wants to run an in-memory database for a latency-sensitive application that runs on Amazon EC2 instances. The application processes more than 100,000 transactions each minute and requires high network throughput. A solutions architect needs to provide a cost-effective network design that minimizes data transfer charges. Which solution meets these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729a97"
+  },
+  "quid": null,
+  "ordinal": "306",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon EC2",
+    " AWS Auto Scaling",
+    " AWS global infrastructure",
+    " Compute",
+    " Cost management"
+  ],
+  "slug": "ec2-run-memory-database-latency-aws",
+  "source": "ET",
+  "title": "AWS A Company Wants To Run An In-Memory Database Question",
+  "meta": "AWS Exam Question: A company seeks an in-memory database on EC2 for a latency-sensitive app processing 100,000 transactions/min. What is the answer? Consider Amazon ElastiCache.",
+  "answer": "A",
+  "query": "An organization intends to implement a real-time financial application using Amazon EC2 instances. The application needs to handle over 200,000 transactions per minute while achieving low-latency performance. A solutions architect is tasked with designing a network solution that reduces costs for data transfer.\n\nWhat is the best approach to satisfy these criteria?",
+  "originalQuery": "A company wants to run an in-memory database for a latency-sensitive application that runs on Amazon EC2 instances. The application processes more than 100,000 transactions each minute and requires high network throughput. A solutions architect needs to provide a cost-effective network design that minimizes data transfer charges.\n\nWhich solution meets these requirements?",
+  "options": [
+    "A. Launch all EC2 instances in the same Availability Zone within the same AWS Region. Specify a placement group with cluster strategy when launching EC2 instances.",
+    "B. Deploy all EC2 instances across various Availability Zones within the same AWS Region. Specify a partition strategy for placement group during the EC2 launch.",
+    "C. Deploy an Auto Scaling group to launch EC2 instances in different Availability Zones based on a network utilization target.",
+    "D. Deploy an Auto Scaling group with a step scaling policy to launch EC2 instances in different Availability Zones."
+  ],
+  "originalOptions": [
+    "A. Launch all EC2 instances in the same Availability Zone within the same AWS Region. Specify a placement group with cluster strategy when launching EC2 instances.",
+    "B. Launch all EC2 instances in different Availability Zones within the same AWS Region. Specify a placement group with partition strategy when launching EC2 instances.",
+    "C. Deploy an Auto Scaling group to launch EC2 instances in different Availability Zones based on a network utilization target.",
+    "D. Deploy an Auto Scaling group with a step scaling policy to launch EC2 instances in different Availability Zones."
+  ],
+  "image": null,
+  "primaryObjective": "3: Design High-Performing Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Reasons:\n\n- Deploying instances within a single Availability Zone (AZ) and utilizing a cluster placement group ensures the lowest network latency and the highest bandwidth between instances. This configuration is ideal for optimizing the performance of an in-memory database and managing a high-throughput application.\n\n- Communication between instances located within the same AZ and placement group incurs no data transfer charges, thereby minimizing costs. Conversely, traffic between different AZs or public IPs may lead to additional fees.\n\n- A cluster placement group positions instances in close proximity within the AZ, enabling the high network throughput that the application demands. In contrast, partition placement groups that span multiple AZs can lead to reduced bandwidth performance.\n\n- Implementing Auto Scaling across multiple AZs could inadvertently result in instances being launched in different AZs, which may increase data transfer costs. This approach could also diminish network throughput, adversely affecting overall application performance.",
+    "Let’s break it down with a sprinkle of humor and clarity! 😄 \n\nFor Option B, while it may sound like a fun party spreading across Availability Zones (AZs), it can actually lead to a bit of a traffic jam! 🚦 This arrangement might increase network bandwidth between instances, and trust me, that can put a dent in your wallet with those pesky data transfer charges.\n\nNow, onto Option C. Auto Scaling is like having a personal trainer for your instances—great for growth, but it won't ensure you're staying on budget! 💸 Launching instances across AZs could lead to those unwanted extra costs sneaking in, like a surprise guest at a dinner party!\n\nAnd finally, for Option D, using step scaling policies is a bit like trying to win a game of chess while blindfolded—you're reacting to metrics, but you might miss the bigger picture! 🎭 This method doesn't help manage network connectivity or keep those costs in check once the instances are up and running.\n\nSo, when it comes to keeping your costs low while ensuring high performance, it's best to stick with a smart placement strategy that keeps your instances cozy and close together! 🏡✨",
+    "A cluster placement group crams instances together within a single Availability Zone, creating a cozy little environment that’s perfect for low-latency network performance. This setup is particularly beneficial for workloads that demand speedy communication, ensuring that your application can process those 100,000 transactions per minute without breaking a sweat. It’s like having your team huddled around a coffee pot—everyone can exchange ideas quickly and efficiently, minimizing those pesky delays. So, if you're looking to keep your network throughput high while keeping costs down, this strategy might just be the ticket.",
+    "While options B, C, and D distribute instances across multiple Availability Zones, which can negatively impact inter-node network latency, option A stands out as a superior choice for this scenario. To gain deeper insights into the benefits of using placement groups, particularly the cluster strategy, I highly recommend checking out this informative article: \n\nhttps://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html\n\nThis resource provides valuable information on optimizing network performance and minimizing latency for your in-memory database application.",
+    "Oh, what a delightful task we have ahead! Let’s sprinkle some magic on this explanation! 🌟\n\nBy launching your instances within a single Availability Zone and utilizing a cluster placement group, you unlock the treasure trove of the lowest network latency and the highest bandwidth between your instances. This approach is simply splendid for optimizing the performance of your in-memory database and ensuring your high-throughput application runs like a charm!\n\nWhen your instances chat with one another within the same Availability Zone and placement group, the communication is absolutely free! This delightful arrangement helps keep those pesky data transfer charges at bay. Just a friendly reminder: traffic that crosses between Availability Zones or utilizes public IPs might incur some costs, so it's wise to keep an eye on that!\n\nA cluster placement group allows your instances to huddle closely together within the Availability Zone, providing the high network throughput your application craves. In contrast, partition groups span across multiple Availability Zones, which can lead to a reduction in available bandwidth. So, let’s keep those instances cozy and connected for the best results! Happy networking! 🎉"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "A",
+      "explanation": "Reasons:\n• Launching instances within a single AZ and using a cluster placement group provides the lowest network latency and highest bandwidth between instances. This maximizes performance for an in-memory database and high-throughput application.\n• Communications between instances in the same AZ and placement group are free, minimizing data transfer charges. Inter-AZ and public IP traffic can incur charges.\n• A cluster placement group enables the instances to be placed close together within the AZ, allowing the high network throughput required. Partition groups span AZs, reducing bandwidth.\n• Auto Scaling across zones could launch instances in AZs that increase data transfer charges. It may reduce network throughput, impacting performance.",
+      "upvotes": "21"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "In contrast:\nOption B - A partition placement group spans AZs, reducing network bandwidth between instances and potentially increasing costs.\nOption C - Auto Scaling alone does not guarantee the network throughput and cost controls required for this use case. Launching across AZs could increase data transfer charges.\nOption D - Step scaling policies determine how many instances to launch based on metrics alone. They lack control over network connectivity and costs between instances after launch.",
+      "upvotes": "10"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "Cluster placement group packs instances close together inside an Availability Zone. This strategy enables workloads to achieve the low-latency network performance.",
+      "upvotes": "5"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "Apart from the fact that BCD distribute the instances across AZ which is bad for inter-node network latency, I think the following article is really useful in understanding A:\n\nhttps://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "• Launching instances within a single AZ and using a cluster placement group provides the lowest network latency and highest bandwidth between instances. This maximizes performance for an in-memory database and high-throughput application.\n• Communications between instances in the same AZ and placement group are free, minimizing data transfer charges. Inter-AZ and public IP traffic can incur charges.\n• A cluster placement group enables the instances to be placed close together within the AZ, allowing the high network throughput required. Partition groups span AZs, reducing bandwidth.",
+      "upvotes": "2"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "A (100%)",
+      "votes": "41 votes."
+    },
+    {
+      "option": "C (25%)",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is A because launching all EC2 instances in the same Availability Zone (AZ) with a cluster placement group maximizes both network performance and cost efficiency. This configuration allows instances to communicate with the highest bandwidth and lowest latency, which is essential for applications requiring real-time data processing. Additionally, data transfer within the same AZ is free, reducing overall costs. \n\nOption B is incorrect because a partition placement group spans multiple AZs, which can lead to increased latency and potentially higher data transfer costs due to inter-AZ communication. \n\nOption C is also unsuitable as Auto Scaling can lead to instances being distributed across different AZs, thereby increasing latency and costs due to data transfer charges. \n\nOption D suffers from the same issue as C, as relying solely on metrics from step scaling policies does not address network connectivity and performance optimization between instances, which is critical for this scenario.",
+  "video_url": "https://certificationation.com/videos/exam-database-for-a-latency-sensitive-application-exam-306.html",
+  "url": "https://certificationation.com/questions/exam-database-for-a-latency-sensitive-application-exam-306.html"
+}

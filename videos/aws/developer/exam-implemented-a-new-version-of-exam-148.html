@@ -1,0 +1,79 @@
+---
+title: "To mitigate data loss, your organization implemented aExam"
+description: "Video for to mitigate data loss, your organization implemented a new version of a critical application that relies on Cloud SQL for PostgreSQL. This deployment"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "To mitigate data loss, your organization implemented a new version of a critical application that relies on Cloud SQL for PostgreSQL. This deployment includes high availability (HA) and Write-Ahead Logging (WAL) functionality to ensure secure storage of transactional data. Unfortunately, the most recent release of the application contained a flaw that resulted in extensive data corruption within your Cloud SQL for PostgreSQL database. Your immediate objective is to minimize the amount of data that has been lost. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "BrightCart, an online retailer, rolled out a new build of its order service that uses Cloud SQL for PostgreSQL. The instance is configured with high availability and automated backups with WAL archiving to protect transactional data. A defect in this release caused widespread corruption in the database and the issue was detected about 30 minutes after deployment. You need to recover with the least possible data loss. What should you do?",
+  "options": [
+    {
+      "text": "Force a manual failover to the Cloud SQL for PostgreSQL standby and keep the primary offline while you investigate",
+      "explanation": "This switches traffic to the standby within the same high availability setup and preserves the current state while you examine the issue",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Restore the most recent automated backup that was taken before the faulty release",
+      "explanation": "This returns the instance to the last scheduled backup snapshot that predates the bad deployment",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Perform a point in time recovery to a timestamp just before the corruption began",
+      "explanation": "This recreates the instance at a specific moment using backups and archived WAL to reach the chosen time",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use Database Migration Service to recreate the database from the last known good export and then resync changes",
+      "explanation": "This sets up a migration job from an export artifact and attempts to copy data back into a new Cloud SQL destination",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Perform a point in time recovery to a timestamp just before the corruption began</b>.</p><p>This approach leverages the automated backups and the write ahead log archive to recreate the database state just before the defect started corrupting data. Because the problem was detected about 30 minutes after deployment, recovering to a timestamp just before the first corrupting transaction minimizes data loss and meets the goal of the lowest possible recovery point objective. In Cloud SQL for PostgreSQL this recovery is performed by restoring from the latest backup and replaying WAL entries up to the specified timestamp.</p><p><i>Force a manual failover to the Cloud SQL for PostgreSQL standby and keep the primary offline while you investigate</i> is not appropriate because high availability failover keeps the same data state. Logical corruption is typically present on both primary and standby through synchronous replication, so failing over does not remove the corruption and does not reduce data loss.</p><p><i>Restore the most recent automated backup that was taken before the faulty release</i> would likely cause unnecessary data loss because you would lose all transactions that occurred after that backup. You are not taking advantage of WAL archiving to restore to a more precise time just before the incident.</p><p><i>Use Database Migration Service to recreate the database from the last known good export and then resync changes</i> is designed for migrations and not for rapid recovery from corruption. It would be slower, requires additional setup, and cannot precisely recreate the pre-corruption state with minimal data loss.</p>",
+  "batch_id": "339",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "To mitigate data loss, your organization implemented a new version of a critical application that relies on Cloud SQL for PostgreSQL. This deployment includes high availability (HA) and Write-Ahead Logging (WAL) functionality to ensure secure storage of transactional data. Unfortunately, the most recent release of the application contained a flaw that resulted in extensive data corruption within your Cloud SQL for PostgreSQL database. Your immediate objective is to minimize the amount of data that has been lost. What should you do?",
+  "originalOptions": "A. Initiate a point-in-time recovery of your Cloud SQL for PostgreSQL database, selecting a date and time before the data was corrupted.<br/>B. Use Cloud Data Fusion to restore the data from the last available backup before the corruption.<br/>C. Fail over to the Cloud SQL for PostgreSQL HA instance. Use that instance to recover the transactions that occurred before the corruption.<br/>D. Open the Google Cloud Console, go to the SQL section, locate the Backups tab, and choose the most recent automated backup before the corruption.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "148",
+  "tip": "<p>When the question asks for the least data loss, think about <i>RPO</i>. Prefer features that restore to a specific time such as <i>point in time recovery</i>, and remember that high availability improves uptime but does not fix corruption.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/backup-recovery/point-in-time-recovery",
+    "https://cloud.google.com/sql/docs/postgres/backup-recovery/backups",
+    "https://cloud.google.com/sql/docs/postgres/high-availability"
+  ],
+  "url": "https://certificationation.com/questions/exam-implemented-a-new-version-of-exam-148.html",
+  "video_url": "https://certificationation.com/videos/exam-implemented-a-new-version-of-exam-148.html"
+}

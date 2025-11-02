@@ -1,0 +1,83 @@
+---
+title: "As a Database Engineer, you have been tasked withExam"
+description: "Video for as a Database Engineer, you have been tasked with determining the most appropriate method for connecting a serverless application running on Cloud Run"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you have been tasked with determining the most appropriate method for connecting a serverless application running on Cloud Run to a Firestore database. The application requires high throughput, low latency, and secure connections to the database. Choose the most suitable option."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "At Alpine Outfitters, your team is launching a serverless order tracking API on Cloud Run that must read and write to Firestore in Native mode and the service is expected to handle roughly 800 thousand reads and 200 thousand writes per day with median latency under 40 ms and strict security using Google-managed identity. What is the most appropriate way to connect the Cloud Run service to Firestore while meeting these requirements?",
+  "options": [
+    {
+      "text": "Configure Serverless VPC Access and VPC Network Peering to establish a private connection from Cloud Run to Firestore",
+      "explanation": "This approach attempts to reach Firestore by extending networking from Cloud Run into a VPC and then peering to another network.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Firestore client libraries in the Cloud Run service and assign the service account the needed IAM roles",
+      "explanation": "This method uses the Firestore SDK with Application Default Credentials from the Cloud Run service account and controls access with IAM roles.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Place an external HTTP load balancer in front of Firestore and direct clients to the closest regional endpoint",
+      "explanation": "This design introduces a Google Cloud HTTP load balancer to route requests toward a targeted backend endpoint.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Run the Cloud SQL Auth Proxy with the service and connect to Firestore over the proxy using SSL",
+      "explanation": "This option adds the Cloud SQL Auth Proxy sidecar to the service with the intent of brokering TLS connections to a database endpoint.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Use Firestore client libraries in the Cloud Run service and assign the service account the needed IAM roles</b>. This uses Google managed service account identity with application default credentials to obtain tokens for Firestore and keeps calls on the standard Google APIs path which supports the stated read and write volume and meets low latency needs.</p><p>This approach is the supported and most efficient way for Cloud Run to access Firestore in Native mode. The client library handles IAM authentication, secure connections, retries, and efficient use of HTTP sessions. You simply grant the Cloud Run service account the minimal roles required to read and write documents so you get strict security with least privilege and no user managed keys.</p><p><i>Configure Serverless VPC Access and VPC Network Peering to establish a private connection from Cloud Run to Firestore</i> is not appropriate because Serverless VPC Access connects to resources in your VPC and Firestore is a Google API reached over the Google front end. VPC peering does not provide access to Firestore and private access to Google APIs would require Private Service Connect for Google APIs which is not needed for these requirements.</p><p><i>Place an external HTTP load balancer in front of Firestore and direct clients to the closest regional endpoint</i> is not possible because you cannot place your own load balancer in front of Firestore. Firestore already exposes managed endpoints and the client libraries route to the correct regional service when you choose the Firestore location.</p><p><i>Run the Cloud SQL Auth Proxy with the service and connect to Firestore over the proxy using SSL</i> is incorrect because the Cloud SQL Auth Proxy is only for Cloud SQL and it does not support Firestore. Firestore already uses TLS and IAM so adding this proxy would not work and would not improve security.</p>",
+  "batch_id": "335",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you have been tasked with determining the most appropriate method for connecting a serverless application running on Cloud Run to a Firestore database. The application requires high throughput, low latency, and secure connections to the database. Choose the most suitable option.",
+  "originalOptions": "A. Deploy a global load balancer and configure it to route traffic to the nearest Firestore regional endpoint.<br/>B. Establish a direct connection to the Firestore instance using the instance's public IP address and enable SSL encryption.<br/>C. Use Firestore client libraries in the Cloud Run application and configure IAM policies for secure access.<br/>D. Utilize a VPC Network Peering connection between the Cloud Run service and the Firestore instance.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "6",
+  "tip": "<p>When a serverless service must reach a managed Google API such as Firestore, prefer <i>client libraries</i> with <i>IAM</i> on the service account instead of adding network plumbing. Use <i>Private Service Connect</i> only when the question explicitly asks for private access to Google APIs.</p>",
+  "references": [
+    "https://cloud.google.com/firestore/docs/reference/libraries",
+    "https://cloud.google.com/docs/authentication/production",
+    "https://cloud.google.com/run/docs/securing/service-identity",
+    "https://cloud.google.com/vpc/docs/serverless-vpc-access",
+    "https://cloud.google.com/vpc/docs/private-service-connect#psc-google-apis",
+    "https://cloud.google.com/sql/docs/sql-proxy",
+    "https://cloud.google.com/firestore/quotas"
+  ],
+  "url": "https://certificationation.com/questions/exam-been-tasked-with-determining-the-exam-006.html",
+  "video_url": "https://certificationation.com/videos/exam-been-tasked-with-determining-the-exam-006.html"
+}

@@ -1,0 +1,128 @@
+---
+title: "A company needs to retain its AWS CloudTrail logs for 3Exam"
+description: "Video for a company needs to retain its AWS CloudTrail logs for 3 years. The company is enforcing CloudTrail across a set of AWS accounts by using AWS"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company needs to retain its AWS CloudTrail logs for 3 years. The company is enforcing CloudTrail across a set of AWS accounts by using AWS Organizations from the parent account. The CloudTrail target S3 bucket is configured with S3 Versioning enabled. An S3 Lifecycle policy is in place to delete current objects after 3 years. After the fourth year of use of the S3 bucket, the S3 bucket metrics show that the number of objects has continued to rise. However, the number of new CloudTrail logs that are delivered to the S3 bucket has remained consistent. Which solution will delete objects that are older than 3 years in the MOST cost-effective manner?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729a48"
+  },
+  "quid": null,
+  "ordinal": "227",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS CloudTrail",
+    " Amazon S3",
+    " AWS Organizations",
+    " AWS Lambda",
+    " S3 Lifecycle policy"
+  ],
+  "slug": "ct-logs-retain-3-years-aws",
+  "source": "ET",
+  "title": "AWS Company Needs To Retain Its Question",
+  "meta": "AWS Exam Question: A company needs to retain its AWS CloudTrail logs for 3 years. Which solution will delete objects older than 3 years cost-effectively? Answer: S3 Lifecycle policy.",
+  "answer": "B",
+  "query": "An organization must retain CloudTrail logs on AWS for a duration of three years. The organization has implemented CloudTrail across several accounts using AWS Organizations from the main account. The S3 bucket designated for CloudTrail logs has S3 Versioning turned on. There is also an S3 Lifecycle policy set to remove current objects after three years. \n\nUpon reaching the fourth year, metrics from the S3 bucket indicate that the object count has continued to increase, even though the inflow of new CloudTrail logs into the bucket has remained steady.\n\nWhat is the most economical approach to remove objects older than three years?",
+  "originalQuery": "A company needs to retain its AWS CloudTrail logs for 3 years. The company is enforcing CloudTrail across a set of AWS accounts by using AWS Organizations from the parent account. The CloudTrail target S3 bucket is configured with S3 Versioning enabled. An S3 Lifecycle policy is in place to delete current objects after 3 years.\n\nAfter the fourth year of use of the S3 bucket, the S3 bucket metrics show that the number of objects has continued to rise. However, the number of new CloudTrail logs that are delivered to the S3 bucket has remained consistent.\n\nWhich solution will delete objects that are older than 3 years in the MOST cost-effective manner?",
+  "options": [
+    "A. Set up the organization’s unified CloudTrail trail to remove objects after 3 years.",
+    "B. Configure the S3 Lifecycle policy to delete previous versions as well as current versions.",
+    "C. Develop an AWS Lambda function to find and remove S3 objects older than 3 years.",
+    "D. Designate the parent account as the owner of all objects uploaded to the S3 bucket."
+  ],
+  "originalOptions": [
+    "A. Configure the organization’s centralized CloudTrail trail to expire objects after 3 years.",
+    "B. Configure the S3 Lifecycle policy to delete previous versions as well as current versions.",
+    "C. Create an AWS Lambda function to enumerate and delete objects from Amazon S3 that are older than 3 years.",
+    "D. Configure the parent account as the owner of all objects that are delivered to the S3 bucket."
+  ],
+  "image": null,
+  "primaryObjective": "4: Design Cost-Optimized Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "The most economical solution is as follows:\n\n- The implementation of versioning has resulted in a continuous increase in the total number of objects stored, even though current objects are scheduled for deletion after three years. By also removing previous versions of these objects, this approach will effectively eliminate outdated object versions and significantly lower storage expenses.\n\n- Utilizing an S3 Lifecycle policy does not incur any extra costs and does not necessitate the allocation of additional resources for setup or operation. This policy is a built-in feature of S3 designed to facilitate the efficient management of object lifecycles.",
+    "By adjusting the S3 Lifecycle policy to remove both current and previous versions, you’ll ensure that those pesky older CloudTrail log versions are sent packing! 🚀 This means that any objects hanging around for more than three years will be automatically deleted from the S3 bucket, helping to keep your object count in check and your storage costs from ballooning. 💸\n\nAs for option A, it's like trying to fix a leaky faucet by replacing the whole sink. It's all about setting the expiration for CloudTrail trails, but it won't help you clear out those old S3 objects.\n\nOption C, while it sounds tech-savvy, involves creating a Lambda function to hunt down and delete objects older than three years. While it’s doable, it adds unnecessary complexity and extra work for you. Who wants that? 😅\n\nFinally, option D is a bit of a red herring. Just designating the parent account as the owner of the objects doesn’t solve the problem of getting rid of those outdated logs. Ownership doesn’t magically make the old files disappear! 🧙‍♂️✨",
+    "I recently found myself in a similar situation: the Lifecycle policy kicks in roughly every 24 hours, and in my case, it cleared out hundreds of gigabytes and millions of tiny files in one fell swoop. If I had resorted to a manual script, it would have dragged on for days, if not weeks. So, let's just say, relying on the Lifecycle policy is like having a trusty sidekick that swoops in to save the day without breaking a sweat.",
+    "This option stands out as the most cost-effective solution for a couple of key reasons:\n\n- The implementation of versioning has led to a significant accumulation of objects over time, despite the deletion of current objects after three years. By also removing previous versions, we can effectively declutter the S3 bucket and minimize storage expenses.\n\n- Utilizing an S3 Lifecycle policy comes with no extra costs and doesn’t demand additional resources for setup or execution. This built-in feature of S3 is a powerful and efficient way to manage object lifecycles while keeping costs in check.",
+    "Be sure to also remove the earlier versions! 🌟"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "B",
+      "explanation": "This is the most cost-effective option because:\n• Versioning has caused the number of objects to increase over time, even as current objects are deleted after 3 years. By deleting previous versions as well, this will clean up old object versions and reduce storage costs.\n• An S3 Lifecycle policy incurs no additional charges and requires no additional resources to configure and run. It is a native S3 tool for managing object lifecycles cost-effectively.",
+      "upvotes": "11"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "By configuring the S3 Lifecycle policy to delete previous versions as well as current versions, the older versions of the CloudTrail logs will be deleted. This ensures that objects older than 3 years are removed from the S3 bucket, reducing the object count and controlling storage costs.\n\nA. This option is not directly related to managing objects in the S3. It focuses on configuring the expiration of CloudTrail trails, which may not address the need to delete objects from the S3 bucket.\n\nC. While it is technically possible to create a Lambda to delete objects older than 3 years, this approach would introduce additional complexity and operational overhead.\n\nD. Changing the ownership of the objects in the S3 bucket does not directly address the need to delete objects older than 3 years. Ownership does not affect the deletion behavior of the objects.",
+      "upvotes": "5"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "I did something similar recently : Lifecycle is triggered more or less each 24 hours, in my case it removed hundreds of gigabytes and millions of small files in one shot. Using another mechanism like a script would have taken days if not weeks.",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "This is the most cost-effective option because:\n• Versioning has caused the number of objects to increase over time, even as current objects are deleted after 3 years. By deleting previous versions as well, this will clean up old object versions and reduce storage costs.\n• An S3 Lifecycle policy incurs no additional charges and requires no additional resources to configure and run. It is a native S3 tool for managing object lifecycles cost-effectively.",
+      "upvotes": "3"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "Ensure to delete previous versions as well.",
+      "upvotes": "2"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "B (94%)",
+      "votes": "44 votes."
+    },
+    {
+      "option": "6%",
+      "votes": "3 votes."
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is B, which states to configure the S3 Lifecycle policy to delete previous versions as well as current versions. This is the most economical approach because, with S3 Versioning enabled, every time an object is updated or deleted, a new version is created. Thus, even after the current version is deleted after three years, the older versions remain, causing the overall object count to grow. Option B directly addresses the issue by ensuring that all versions of the objects older than three years are also deleted, preventing unnecessary storage costs.\n\nOption A is incorrect because it focuses on the expiration of the CloudTrail trail and does not affect the objects stored in S3. Option C, while technically valid, introduces unnecessary complexity by needing to manage a Lambda function to delete old objects. This is less cost-effective and requires additional maintenance. Option D is also incorrect as changing ownership of the objects does not influence their deletion and does not address the underlying retention issue.",
+  "video_url": "https://certificationation.com/videos/exam-cloudtrail-logs-for-3-years-exam-227.html",
+  "url": "https://certificationation.com/questions/exam-cloudtrail-logs-for-3-years-exam-227.html"
+}

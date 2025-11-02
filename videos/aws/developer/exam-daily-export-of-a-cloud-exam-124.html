@@ -1,0 +1,80 @@
+---
+title: "A Database Engineer needs to schedule a daily export ofExam"
+description: "Video for a Database Engineer needs to schedule a daily export of a Cloud SQL instance to a Cloud Storage bucket using Cloud Scheduler. The instance is running"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A Database Engineer needs to schedule a daily export of a Cloud SQL instance to a Cloud Storage bucket using Cloud Scheduler. The instance is running PostgreSQL and needs to be exported in SQL format. Which of the following sets of steps is the correct approach to accomplish this task?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "LumaTrail Logistics operates a Cloud SQL for PostgreSQL instance and needs a plain SQL dump delivered to a Cloud Storage bucket every 24 hours. You are required to initiate the process with Cloud Scheduler and you should keep the solution lightweight with minimal operational overhead. Which sequence of steps should you implement to satisfy these requirements?",
+  "options": [
+    {
+      "text": "Provision a Cloud Composer environment with an Airflow DAG that runs a pg_dump task to create an SQL file in Cloud Storage and configure Cloud Scheduler to trigger the DAG each day",
+      "explanation": "This approach uses Cloud Composer to orchestrate a workflow that generates a SQL dump and relies on Cloud Scheduler to start the DAG on a schedule",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a Cloud Function that calls the Cloud SQL Admin API export for the PostgreSQL instance to write an SQL dump to Cloud Storage and trigger it daily with Cloud Scheduler",
+      "explanation": "This design uses a serverless function to invoke the Cloud SQL Admin API on a schedule in order to export in SQL format to Cloud Storage",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Enable automated backups in Cloud SQL and rely on the daily backups instead of performing an export to Cloud Storage",
+      "explanation": "This method uses the built in automated backup capability of Cloud SQL to capture daily managed backups retained by the service",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Build a Dataflow job that reads from the database and writes records to Cloud Storage in text format and set a Cloud Scheduler job to start it each day",
+      "explanation": "This approach uses a Dataflow pipeline to move data from the database to Cloud Storage on a schedule",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct answer is <b>Create a Cloud Function that calls the Cloud SQL Admin API export for the PostgreSQL instance to write an SQL dump to Cloud Storage and trigger it daily with Cloud Scheduler</b>.</p><p>This approach uses a managed export that produces a plain SQL dump in a Cloud Storage bucket, which directly satisfies the requirement. You can schedule the invocation with Cloud Scheduler and use an HTTP or Pub/Sub trigger, which keeps the design lightweight and serverless. It avoids managing worker infrastructure and reduces operational overhead while using a supported and documented export path for Cloud SQL for PostgreSQL.</p><p><i>Provision a Cloud Composer environment with an Airflow DAG that runs a pg_dump task to create an SQL file in Cloud Storage and configure Cloud Scheduler to trigger the DAG each day</i> is heavier than necessary. Composer introduces environment management, upgrades and cost considerations, and a custom pg_dump task needs network access and secret handling. This does not align with the minimal operational overhead requirement.</p><p><i>Enable automated backups in Cloud SQL and rely on the daily backups instead of performing an export to Cloud Storage</i> does not meet the requirement because automated backups are for recovery and are stored in a managed format. They do not deliver a plain SQL dump into a Cloud Storage bucket for external use.</p><p><i>Build a Dataflow job that reads from the database and writes records to Cloud Storage in text format and set a Cloud Scheduler job to start it each day</i> is not appropriate for creating a plain SQL dump. Dataflow would require custom pipeline logic and still would not produce a schema and DDL rich SQL dump. It also adds unnecessary complexity and operational overhead.</p>",
+  "batch_id": "106",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "A Database Engineer needs to schedule a daily export of a Cloud SQL instance to a Cloud Storage bucket using Cloud Scheduler. The instance is running PostgreSQL and needs to be exported in SQL format. Which of the following sets of steps is the correct approach to accomplish this task?",
+  "originalOptions": "A. Use the Cloud SQL Scheduled Backups feature to configure daily exports to a Cloud Storage bucket.<br/>B. Create a Cloud Composer environment to run an Airflow DAG that exports the database, then set up a Cloud Scheduler job to trigger the DAG daily.<br/>C. Create a Cloud Function that calls the Cloud SQL Admin API to export the database, then set up a Cloud Scheduler job to trigger the function daily.<br/>D. Create a Cloud Dataflow pipeline to export the database, then set up a Cloud Scheduler job to trigger the pipeline daily.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "124",
+  "tip": "<p>When a question asks for a plain SQL dump and low overhead, look for a managed <i>export</i> capability that writes directly to Cloud Storage and trigger it with a serverless <i>scheduler</i>. Distinguish backup and recovery features from <i>exports</i> that produce shareable files.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/export",
+    "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances/export",
+    "https://cloud.google.com/scheduler/docs/http-target-cron",
+    "https://cloud.google.com/sql/docs/postgres/backup-recovery/backups"
+  ],
+  "url": "https://certificationation.com/questions/exam-daily-export-of-a-cloud-exam-124.html",
+  "video_url": "https://certificationation.com/videos/exam-daily-export-of-a-cloud-exam-124.html"
+}

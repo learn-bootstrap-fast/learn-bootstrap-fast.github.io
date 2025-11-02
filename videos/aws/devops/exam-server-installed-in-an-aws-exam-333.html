@@ -1,0 +1,62 @@
+---
+title: "Your team has maintained a Jenkins server installed inExam"
+description: "Video for your team has maintained a Jenkins server installed in an AWS EC2 instance. The Jenkins server is mainly used to build the artifacts for a Java"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your team has maintained a Jenkins server installed in an AWS EC2 instance. The Jenkins server is mainly used to build the artifacts for a Java application. At the moment, there is no disaster recovery strategy for this Jenkins server. Your team needs to design a new disaster recovery plan with both RTO and RPO set as 24 hours. Which disaster recovery strategy should the team choose?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><b>Establish a backup and restore process: schedule daily backups of Jenkins configuration files to Amazon S3, and use CloudFormation to quickly redeploy resources if necessary.</b> is the most suitable option in this scenario.</p><ul><li>Both RTO and RPO are set at 24 hours, which means your organization can tolerate up to 24 hours without the Jenkins server and up to 24 hours of data loss. The backup & restore pattern is the most cost-effective and operationally simple approach when recovery can be reasonably handled within these windows.</li><li>Automating regular backups of configuration files to S3 ensures that you always have a recent copy ready for restoration. Combining this with CloudFormation allows for automated and consistent re-provisioning of the server infrastructure, keeping recovery simple and within the permitted RTO/RPO.</li></ul><p>The other options are less appropriate for these requirements:</p><ul><li><i>Implement a Warm Standby solution: launch a smaller-scale EC2 server in another VPC within the same region to act as a standby Jenkins instance.</i> — Warm standby strategies are designed for lower RTO/RPO; typically minutes to an hour. They are more costly because they keep servers running and ready, which isn’t necessary when 24-hour windows are acceptable.</li><li><i>Set up a Pilot Light configuration: maintain an AMI image so an EC2 instance can be launched in a different region and kept off to minimize costs, starting it when needed.</i> — While pilot light is used for reduced cost, it is often more complex to implement than basic backup & restore, and is more suited when infrastructure and application state need to be preserved and restored rapidly.</li><li><i>Deploy a Hot Standby solution: provision a fully running EC2 server mirroring the Jenkins environment, but pause its workload unless a failover is triggered.</i> — Hot standby (multi-site) solutions are intended for organizations that require minimal downtime and minimal-to-zero data loss (very low RTO/RPO). This is far beyond the requirements here and much more expensive to maintain.</li></ul><p><b>Tip:</b> Always align your disaster recovery solution to your actual RTO/RPO needs. When 24 hours is sufficient, simple daily backups and automated restoration can save both money and complexity.</p>",
+  "query": "<p>Your company manages a Jenkins server running on an Amazon EC2 instance. This Jenkins instance is mainly responsible for building Java application deliverables. Currently, there is no disaster recovery (DR) plan in place for this server. Your team is now tasked with establishing a DR approach that ensures both the Recovery Time Objective (RTO) and Recovery Point Objective (RPO) are capped at 24 hours. <br><br> Which DR method best fits these requirements?</p>",
+  "original_oid": "6793d9db61969b416038a0d5",
+  "options": [
+    {
+      "correct": false,
+      "text": "Implement a Warm Standby solution: launch a smaller-scale EC2 server in another VPC within the same region to act as a standby Jenkins instance.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Establish a backup and restore process: schedule daily backups of Jenkins configuration files to Amazon S3, and use CloudFormation to quickly redeploy resources if necessary.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up a Pilot Light configuration: maintain an AMI image so an EC2 instance can be launched in a different region and kept off to minimize costs, starting it when needed.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Deploy a Hot Standby solution: provision a fully running EC2 server mirroring the Jenkins environment, but pause its workload unless a failover is triggered.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question97",
+  "originalQuery": "Your team has maintained a Jenkins server installed in an AWS EC2 instance.\nThe Jenkins server is mainly used to build the artifacts for a Java application.\nAt the moment, there is no disaster recovery strategy for this Jenkins server.\nYour team needs to design a new disaster recovery plan with both RTO and RPO set as 24 hours.\nWhich disaster recovery strategy should the team choose?",
+  "originalOptions": "A. Backup & Restore strategy. For example, backup the Jenkins configuration files every day to an S3 bucket. Use CloudFormation templates to provision the necessary AWS resources.\nB. Pilot Light strategy. Use an AMI to launch an EC2 instance in another region and stop the instance to save cost. Start the Pilot Light instance when there is an outage in the original Jenkins server.\nC. Warm Standby strategy. Launch a smaller size EC2 instance in the same region but different VPC as a standby.\nD. Hot Standby (Multi Site) strategy. Launch a fully operational EC2 instance for the Jenkins server. Suspend its tasks unless a failover happens.",
+  "video_url": "https://certificationation.com/videos/exam-server-installed-in-an-aws-exam-333.html",
+  "url": "https://certificationation.com/questions/exam-server-installed-in-an-aws-exam-333.html"
+}

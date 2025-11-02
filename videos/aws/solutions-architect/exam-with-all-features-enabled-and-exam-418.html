@@ -1,0 +1,130 @@
+---
+title: "A company uses AWS Organizations with all featuresExam"
+description: "Video for a company uses AWS Organizations with all features enabled and runs multiple Amazon EC2 workloads in the ap-southeast-2 Region. The company has a"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company uses AWS Organizations with all features enabled and runs multiple Amazon EC2 workloads in the ap-southeast-2 Region. The company has a service control policy (SCP) that prevents any resources from being created in any other Region. A security policy requires the company to encrypt all data at rest. An audit discovers that employees have created Amazon Elastic Block Store (Amazon EBS) volumes for EC2 instances without encrypting the volumes. The company wants any new EC2 instances that any IAM user or root user launches in ap-southeast-2 to use encrypted EBS volumes. The company wants a solution that will have minimal effect on employees who create EBS volumes. Which combination of steps will meet these requirements? (Choose two.)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729b08"
+  },
+  "quid": null,
+  "ordinal": "419",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon Elastic Block Store (Amazon EBS)",
+    " Amazon EC2",
+    " AWS Organizations",
+    " AWS Identity and Access Management (IAM)",
+    " AWS Service Control Policies (SCP)"
+  ],
+  "slug": "eo-aws-organizations-ec2-multiple-aws",
+  "source": "ET",
+  "title": "AWS A Company Uses AWS Organizations With All Features Question",
+  "meta": "AWS Exam Question: A company uses AWS Organizations with EC2 in ap-southeast-2, enforcing SCPs and encrypting EBS volumes. What steps will ensure compliance? Answer: EBS, IAM.",
+  "answer": "CE",
+  "query": "A business operates in the us-west-1 Region using AWS Organizations with all features active and runs several Amazon EC2 applications. They have enforced a service control policy (SCP) that blocks resource creation in any other Region. An internal review revealed that team members have provisioned Amazon Elastic Block Store (Amazon EBS) volumes for EC2 instances without enabling encryption. The business requires that any new EC2 instances launched by any IAM user or root user in us-west-1 utilize encrypted EBS volumes. They seek a resolution that minimizes disruption to EBS volume creation by employees.\n\nWhat combination of actions will satisfy these conditions? (Select two.)",
+  "originalQuery": "A company uses AWS Organizations with all features enabled and runs multiple Amazon EC2 workloads in the ap-southeast-2 Region. The company has a service control policy (SCP) that prevents any resources from being created in any other Region. A security policy requires the company to encrypt all data at rest.\n\nAn audit discovers that employees have created Amazon Elastic Block Store (Amazon EBS) volumes for EC2 instances without encrypting the volumes. The company wants any new EC2 instances that any IAM user or root user launches in ap-southeast-2 to use encrypted EBS volumes. The company wants a solution that will have minimal effect on employees who create EBS volumes.\n\nWhich combination of steps will meet these requirements? (Choose two.)",
+  "options": [
+    "A. In the Amazon EC2 settings, choose the default encryption option for EBS volumes.",
+    "B. Create a permission boundary in IAM. Bind it to the root organizational unit (OU) to ensure the ec2:CreateVolume action is denied if ec2:Encrypted is false.",
+    "C. Create an SCP. Attach the SCP to the root organizational unit (OU). Define the SCP to deny the ec2:CreateVolume action when the ec2:Encrypted condition equals false.",
+    "D. Revise IAM policies across accounts to block the ec2:CreateVolume action if ec2:Encrypted is false.",
+    "E. In the Organizations management account, specify the Default EBS volume encryption setting."
+  ],
+  "originalOptions": [
+    "A. In the Amazon EC2 console, select the EBS encryption account attribute and define a default encryption key.",
+    "B. Create an IAM permission boundary. Attach the permission boundary to the root organizational unit (OU). Define the boundary to deny the ec2:CreateVolume action when the ec2:Encrypted condition equals false.",
+    "C. Create an SCP. Attach the SCP to the root organizational unit (OU). Define the SCP to deny the ec2:CreateVolume action whenthe ec2:Encrypted condition equals false.",
+    "D. Update the IAM policies for each account to deny the ec2:CreateVolume action when the ec2:Encrypted condition equals false.",
+    "E. In the Organizations management account, specify the Default EBS volume encryption setting."
+  ],
+  "image": null,
+  "primaryObjective": "1: Design Secure Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "The appropriate choices are (C) and (E).\n\nOption (C): Implementing a service control policy (SCP) and attaching it to the root organizational unit (OU) will prohibit the execution of the ec2:CreateVolume action if the ec2:Encrypted condition is set to false. This effectively prevents any IAM user or root user across all accounts within the organization from creating an unencrypted EBS volume.\n\nOption (E): Configuring the Default EBS volume encryption setting in the management account of AWS Organizations guarantees that all newly created EBS volumes in any account within the organization will be encrypted automatically by default. This approach enhances security compliance while minimizing disruption to employees who create EBS volumes.",
+    "To avoid any future hiccups, let’s create a Service Control Policy (SCP) and enable default encryption like a pro! 🔒✨ This dynamic duo will ensure that all new EBS volumes are encrypted automatically, keeping data safe and sound without cramping anyone's style. So, no more unencrypted EBS volumes sneaking around, and your team can keep on spinning up instances without a worry! 🎉🚀",
+    "The challenge we face is the ambiguity surrounding the account housing the workload. Is the workload in the management account or one of the member accounts in the ap-southeast-2 Region? This distinction will determine whether we opt for option A or E. However, option C is undoubtedly on point.",
+    "Option A is not the best choice because, without the implementation of a service control policy (SCP) or the management account in AWS Organizations, the settings in the EC2 console are limited in scope. This means they cannot effectively enforce encryption for all IAM users or the root user across the organization.",
+    "Oh, what a delightful day to enhance our Amazon EBS volume encryption! 🎉 By default, newly created Amazon EBS volumes do not come with encryption. But fear not! You can easily enable default encryption for all new EBS volumes and snapshot copies created within a specific Region. To activate this wonderful feature, simply head over to the Amazon Elastic Compute Cloud (Amazon EC2) console. With just a few clicks, you'll be on your way to ensuring that all your EBS volumes are securely encrypted by default, making your data safer and your team happier! 🌟"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "CE",
+      "explanation": "The correct answer is (C) and (E).\n\nOption (C): Creating an SCP and attaching it to the root organizational unit (OU) will deny the ec2:CreateVolume action when the ec2:Encrypted condition equals false. This means that any IAM user or root user in any account in the organization will not be able to create an EBS volume without encrypting it.\nOption (E): Specifying the Default EBS volume encryption setting in the Organizations management account will ensure that all new EBS volumes created in any account in the organization are encrypted by default.",
+      "upvotes": "10"
+    },
+    {
+      "selectedAnswer": "CE",
+      "explanation": "CE\nPrevent future issues by creating a SCP and set a default encryption.",
+      "upvotes": "9"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "The problem here is we don't know in which account the workload is on. The account in ap-xx-is that the management account or it's a member account?? That will decide to select either A or E. C is certainly correct",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "CE",
+      "explanation": "(A) is incorrect bc absent of SCP or the Organizations management account, the scope of the EC2 console is too narrow to be applied to 'any IAM user or root user'.",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "AC",
+      "explanation": "https://repost.aws/knowledge-center/ebs-automatic-encryption\nNewly created Amazon EBS volumes aren't encrypted by default. However, you can turn on default encryption for new EBS volumes and snapshot copies that are created within a specified Region. To turn on encryption by default, use the Amazon Elastic Compute Cloud (Amazon EC2) console.",
+      "upvotes": "2"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "CE (76%)",
+      "votes": "31 votes."
+    },
+    {
+      "option": "AE (15%)",
+      "votes": "6 votes."
+    },
+    {
+      "option": "10%",
+      "votes": "4 votes."
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct actions are (C) and (E). Option (C) involves creating a Service Control Policy (SCP) which will enforce encryption by denying the creation of any unencrypted EBS volumes in the entire organization. This solution is aligned with the requirement that all new EC2 instances must use encrypted volumes. Option (E) refers to setting a default EBS encryption policy in the Organizations management account, which ensures that all newly created EBS volumes will be encrypted unless specified otherwise. \n\nOption (A) is incorrect because setting a default in the EC2 console does not apply organization-wide if SCPs are not utilized. It would be a limited and ineffective approach. Option (B) is incorrect since permission boundaries do not control resource creation across an organization; they are more about limiting IAM user actions in a specific account. Option (D) is also incorrect as updating IAM policies for each account is not efficient or scalable compared to implementing an SCP and default encryption policy.",
+  "video_url": "https://certificationation.com/videos/exam-with-all-features-enabled-and-exam-418.html",
+  "url": "https://certificationation.com/questions/exam-with-all-features-enabled-and-exam-418.html"
+}

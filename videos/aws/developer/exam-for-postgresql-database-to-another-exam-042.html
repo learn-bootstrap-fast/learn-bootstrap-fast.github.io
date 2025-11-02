@@ -1,0 +1,82 @@
+---
+title: "You need to migrate a Cloud SQL for PostgreSQL databaseExam"
+description: "Video for you need to migrate a Cloud SQL for PostgreSQL database to another region. The migration must have minimal downtime, and the data should remain"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You need to migrate a Cloud SQL for PostgreSQL database to another region. The migration must have minimal downtime, and the data should remain consistent during the process. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Riverton Media operates a production Cloud SQL for PostgreSQL instance in asia-south1 and must relocate it to europe-west2 to satisfy data residency requirements. The team wants the cutover to be under five minutes and the target must be fully consistent at switchover. What should they do?",
+  "options": [
+    {
+      "text": "Use Database Migration Service to run an offline one time migration that stops writes during export and import",
+      "explanation": "This approach performs a single cutover migration without continuous replication and requires a write freeze during the move.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Perform a manual export with serverless export then import the dump into a new instance in the destination region",
+      "explanation": "This method relies on a dump and restore which entails a full reload and leads to extended downtime.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a cross region read replica in the destination region then plan a brief maintenance window and promote the replica to primary",
+      "explanation": "This uses Cloud SQL cross region replication to keep the replica nearly up to date and enables a fast promotion during cutover.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Restore from a recent automated backup into a new instance in the destination region and then point the application to the new instance",
+      "explanation": "This seeds a new instance from a prior backup but it does not capture ongoing changes which results in significant downtime.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Create a cross region read replica in the destination region then plan a brief maintenance window and promote the replica to primary</b>.</p><p>This approach keeps continuous replication running to the target so the data is nearly up to date before cutover. You schedule a short window to stop writes to the source, confirm the replica has no lag, and then promote it. The promotion operation is fast and the application can reconnect to the new primary in the destination region which keeps downtime well under five minutes and ensures the target is fully consistent at switchover.</p><p><i>Use Database Migration Service to run an offline one time migration that stops writes during export and import</i> is not appropriate because an offline migration requires writes to be stopped for the entire export and import period. For a production database this outage commonly exceeds five minutes even though it would be consistent.</p><p><i>Perform a manual export with serverless export then import the dump into a new instance in the destination region</i> results in a long service interruption if you need strict consistency. You must stop writes before export and keep them stopped until the import finishes which typically takes longer than five minutes for nontrivial datasets.</p><p><i>Restore from a recent automated backup into a new instance in the destination region and then point the application to the new instance</i> does not guarantee full consistency at switchover unless you halt writes well before the backup. Restores can also take longer than five minutes and any writes after the backup time would be lost without a controlled replication or log shipping process.</p>",
+  "batch_id": "111",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You need to migrate a Cloud SQL for PostgreSQL database to another region. The migration must have minimal downtime, and the data should remain consistent during the process. What should you do?",
+  "originalOptions": "A. Use Datastream to replicate data to a new instance in the target region.<br/>B. Perform a manual export and import using serverless export.<br/>C. Use Database Migration Service to migrate the database.<br/>D. Set up cross-region replicas and promote the replica in the target region.",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "42",
+  "tip": "<p>When a question asks for very low downtime and a fully consistent target in another region, look for managed replication with a promotion step. Watch for words like <i>cutover under five minutes</i> and <i>consistent at switchover</i> which usually rule out export or backup based moves.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/replication/overview",
+    "https://cloud.google.com/sql/docs/postgres/replication/promote-replica",
+    "https://cloud.google.com/database-migration/docs/postgres/offline-migration",
+    "https://cloud.google.com/sql/docs/postgres/import-export/exporting",
+    "https://cloud.google.com/sql/docs/postgres/import-export/importing-sql",
+    "https://cloud.google.com/sql/docs/postgres/backup-recovery/restore"
+  ],
+  "url": "https://certificationation.com/questions/exam-for-postgresql-database-to-another-exam-042.html",
+  "video_url": "https://certificationation.com/videos/exam-for-postgresql-database-to-another-exam-042.html"
+}

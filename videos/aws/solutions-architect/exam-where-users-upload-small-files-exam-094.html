@@ -1,0 +1,91 @@
+---
+title: "A company is designing an application where users uploadExam"
+description: "Video for a company is designing an application where users upload small files into Amazon S3. After a user uploads a file, the file requires one-time simple"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company is designing an application where users upload small files into Amazon S3. After a user uploads a file, the file requires one-time simple processing to transform the data and save the data in JSON format for later analysis. Each file must be processed as quickly as possible after it is uploaded. Demand will vary. On some days, users will upload a high number of files. On other days, users will upload a few files or no files. Which solution meets these requirements with the LEAST operational overhead?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f7299c3"
+  },
+  "quid": null,
+  "ordinal": "94",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS Lambda",
+    " Amazon S3",
+    " Amazon Simple Queue Service (Amazon SQS)",
+    " Amazon DynamoDB",
+    " Amazon Aurora"
+  ],
+  "slug": "s3-users-upload-files-processing-aws",
+  "source": "ET",
+  "title": "AWS A Company Is Designing An Application Question",
+  "meta": "AWS Exam Question: A company needs a solution for quick file processing in Amazon S3, transforming data to JSON with minimal overhead. Find the answer using Lambda and S3.",
+  "answer": "C",
+  "query": "A business is developing a system that enables users to upload small documents to Amazon S3. Right after each upload, there's a need for a quick, single transformation of the file before saving it in JSON format for future reference. The volume of uploads can vary greatly, with some days experiencing heavy usage and others almost none. What is the most operationally efficient approach to handle this workload?",
+  "originalQuery": "A company is designing an application where users upload small files into Amazon S3. After a user uploads a file, the file requires one-time simple processing to transform the data and save the data in JSON format for later analysis.\nEach file must be processed as quickly as possible after it is uploaded. Demand will vary. On some days, users will upload a high number of files. On other days, users will upload a few files or no files.\nWhich solution meets these requirements with the LEAST operational overhead?",
+  "options": [
+    "A. Set up Amazon EMR to process text files from Amazon S3. Execute scripts for data transformation. Store the JSON output in an Amazon Aurora DB cluster.",
+    "B. Configure Amazon S3 to raise an event notification directed to an Amazon Simple Queue Service (Amazon SQS) queue. Utilize Amazon EC2 instances to fetch from the queue and handle the data. Save the processed JSON file in Amazon DynamoDB.",
+    "C. Configure Amazon S3 to send an event notification to an Amazon Simple Queue Service (Amazon SQS) queue. Use an AWS Lambda function to read from the queue and process the data. Store the resulting JSON file in Amazon DynamoDB.",
+    "D. Set Amazon EventBridge (Formerly known as Amazon CloudWatch Events) to dispatch an event to Amazon Kinesis Data Streams upon file upload. Leverage an AWS Lambda function to process the event from the stream and transform the data. Store the final JSON output in an Amazon Aurora DB cluster."
+  ],
+  "originalOptions": [
+    "A. Configure Amazon EMR to read text files from Amazon S3. Run processing scripts to transform the data. Store the resulting JSON file in an Amazon Aurora DB cluster.",
+    "B. Configure Amazon S3 to send an event notification to an Amazon Simple Queue Service (Amazon SQS) queue. Use Amazon EC2 instances to read from the queue and process the data. Store the resulting JSON file in Amazon DynamoDB.",
+    "C. Configure Amazon S3 to send an event notification to an Amazon Simple Queue Service (Amazon SQS) queue. Use an AWS Lambda function to read from the queue and process the data. Store the resulting JSON file in Amazon DynamoDB.",
+    "D. Configure Amazon EventBridge (Amazon CloudWatch Events) to send an event to Amazon Kinesis Data Streams when a new file is uploaded. Use an AWS Lambda function to consume the event from the stream and process the data. Store the resulting JSON file in an Amazon Aurora DB cluster."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [],
+  "originalComments": [],
+  "voteDistribution": [
+    {
+      "option": "C (100%)",
+      "votes": "43 votes."
+    },
+    {
+      "option": "C (25%)",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "Option C is the correct answer because it leverages AWS Lambda, which automatically scales to the demand of file uploads, providing an operationally efficient and serverless way to process each file transformation immediately after it's uploaded. Using Amazon S3 to send an event notification to an SQS queue allows the system to handle the variable workload effectively without manual intervention. The resulting JSON data can then be efficiently stored in Amazon DynamoDB, which is a managed NoSQL database that can handle large amounts of unstructured data with low latency.\n\nOption A is incorrect because using Amazon EMR is overkill for simple file transformations. It involves more operational overhead since it requires cluster management, scaling configurations, and additional setup that is not necessary for this use case.\n\nOption B is incorrect as it requires EC2 instances to process the data. This approach involves provisioning and managing EC2 instances, which adds operational complexity compared to using a serverless function like AWS Lambda. Additionally, the scaling is less efficient than using Lambda for fluctuating workloads.\n\nOption D is incorrect because while it also uses a Lambda function, it introduces additional latency and complexity by involving EventBridge and Kinesis Data Streams, which are not needed for simple file processing after an upload, hence increasing operational overhead unnecessarily.",
+  "video_url": "https://certificationation.com/videos/exam-where-users-upload-small-files-exam-094.html",
+  "url": "https://certificationation.com/questions/exam-where-users-upload-small-files-exam-094.html"
+}

@@ -1,0 +1,74 @@
+---
+title: "Your company is planning to develop an application inExam"
+description: "Video for your company is planning to develop an application in which the front end is in .Net and the backend is in DynamoDB. It is expected that there would"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company is planning to develop an application in which the front end is in .Net and the backend is in DynamoDB. It is expected that there would be an intermittent high load on the application. How could you ensure the application's scalability and cost-effectiveness to reduce the load on the DynamoDB database? Choose an answer from the below options."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d598f501ee1c8ade97d8"
+  },
+  "quid": "0",
+  "ordinal": "141",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "DynamoDB",
+    " AWS Cost Management",
+    " AWS Elastic Beanstalk",
+    " AWS Lambda",
+    " AWS Step Functions"
+  ],
+  "slug": "db-application-scalability-cost-effective-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question141",
+  "title": "AWS Your Company Is Planning To Develop Question",
+  "meta": "AWS Exam Question: Your company plans to develop a .Net front end and DynamoDB backend application. How to ensure scalability and cost-effectiveness? Answer: AWS Lambda, Auto Scaling.",
+  "answer": "C",
+  "query": "A startup is building a web service using a Python frontend connected to a DynamoDB backend. The service anticipates short bursts of very heavy traffic. What is the best method to ensure the system remains scalable and does not incur unnecessary costs by overwhelming the DynamoDB table? Choose one option from below.",
+  "originalQuery": "Your company is planning to develop an application in which the front end is in .Net and the backend is in DynamoDB.\nIt is expected that there would be an intermittent high load on the application.\nHow could you ensure the application's scalability and cost-effectiveness to reduce the load on the DynamoDB database? Choose an answer from the below options.",
+  "options": [
+    "A. Deploy additional DynamoDB tables to distribute the workload.",
+    "B. Raise DynamoDB's write throughput to manage occasional spikes.",
+    "C. Use SQS to hold the database requests instead of overloading the DynamoDB database. Then have a service that asynchronously pulls the messages and writes them to DynamoD.",
+    "D. Configure DynamoDB with Multi-AZ and global secondary indexes to spread out writes."
+  ],
+  "originalOptions": [
+    "A. Add more DynamoDB databases to handle the load.",
+    "B. Increase the write capacity of Dynamo DB to meet the peak loads.",
+    "C. Use SQS to hold the database requests instead of overloading the DynamoDB database. Then have a service that asynchronously pulls the messages and writes them to DynamoD.",
+    "D. Launch DynamoDB in Multi-AZ configuration with a global index to balance writes."
+  ],
+  "image": "",
+  "primaryObjective": "2: Design for New Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Answer - C.\nThis question asks for an option that can be used to reduce the load on the DynamoDB database.\nThe option has to be scalable.\nIn such a scenario, the best option to use is SQS, because it is scalable and cost-efficient as well.\nOption A is incorrect because adding more databases will not reduce the load on the existing DynamoDB database.\nAlso, this is not a cost-efficient solution.\nOption B is incorrect because increasing the write capacity is an expensive option.\nOption C is CORRECT because it uses SQS to assist in taking over the load from storing the data in DynamoDB, and it is scalable and cost-efficient.\nOption D is incorrect because the MultiAZ configuration is not going to help reduce the load.\nIn fact, it will affect the performance as the records in DynamoDB would get replicated in multiple availability zones.\nMore information on SQS:\nWhen the idea comes for scalability, then SQS is the best option.\nNormally DynamoDB is scalable, but since one is looking for a cost-effective solution, the messaging in SQS can help manage the situation mentioned in the question.\nAmazon Simple Queue Service (SQS) is a fully-managed message queuing service for reliably communicating among distributed software components and microservices - at any scale.\nBuilding applications from individual components that perform a discrete function improves scalability and reliability and is the best practice design for modern applications.\nSQS makes it simple and cost-effective to decouple and coordinate the components of a cloud application.\nUsing SQS, you can send, store, and receive messages between software components at any volume, without losing messages or requiring other services to be always available.\nFor more information on SQS, please refer to the below URL-\nhttps://aws.amazon.com/sqs/\nOption A: Adding more DynamoDB databases to handle the load: Adding more databases might increase the overall capacity of the system, but it will not ensure scalability and cost-effectiveness. The application would still need to handle the complexity of managing multiple databases and ensure data consistency across them. Additionally, this approach might result in higher costs due to the added operational overhead and duplication of data.\nOption B: Increasing the write capacity of DynamoDB to meet the peak loads: Increasing the write capacity of DynamoDB might help in handling the peak loads, but it might not be a scalable and cost-effective solution in the long term. Provisioned throughput in DynamoDB is expensive, and it might not be possible to predict the exact amount of capacity needed to handle the load. Additionally, increasing the capacity might not be feasible when the application requires consistency in reads.\nOption C: Using SQS to hold the database requests instead of overloading the DynamoDB database: Using SQS to buffer the requests is a scalable and cost-effective approach. SQS can handle a large number of requests, and the application can asynchronously process the messages in a controlled manner to ensure that DynamoDB is not overwhelmed with requests. The approach also decouples the frontend from the backend, which helps in improving the application's overall performance and reliability.\nOption D: Launching DynamoDB in Multi-AZ configuration with a global index to balance writes: Launching DynamoDB in Multi-AZ configuration with a global index can help in distributing the load across multiple availability zones and improve the application's overall availability. However, it might not be a scalable and cost-effective solution for handling high write loads. The approach might result in higher costs due to the added operational overhead and the cost of maintaining the global index.\nOverall, Option C, i.e., using SQS to buffer the requests, is the most suitable and cost-effective approach for handling intermittent high loads in the application.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-application-in-which-the-front-exam-086.html",
+  "url": "https://certificationation.com/questions/exam-application-in-which-the-front-exam-086.html"
+}

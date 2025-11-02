@@ -1,0 +1,80 @@
+---
+title: "Your client currently operates an on-premises SQL ServerExam"
+description: "Video for your client currently operates an on-premises SQL Server database that includes read replicas. However, the nightly incremental backups have become"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your client currently operates an on-premises SQL Server database that includes read replicas. However, the nightly incremental backups have become costly and burdensome to maintain. To align with Google's recommended practices, you intend to migrate the database to Google Cloud while minimizing any potential downtime. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Riverton Analytics runs Microsoft SQL Server on premises with two read-only replicas, and the nightly differential backups for 28 databases have become expensive and difficult to manage. They plan to move to Google Cloud following recommended practices and they must keep the cutover window under 20 minutes with minimal disruption. What should you do?",
+  "options": [
+    {
+      "text": "Create a Compute Engine VM, install SQL Server, and import the backup file",
+      "explanation": "This approach runs SQL Server on a virtual machine that you administer yourself and uses a restored backup to populate the database",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a Google Kubernetes Engine cluster, deploy SQL Server, and restore the backup file",
+      "explanation": "This runs SQL Server in containers inside a Kubernetes cluster that you manage and uses a backup file to seed the data",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure Cloud SQL for SQL Server as a subscriber to the on premises publisher and replicate continuously until you cut over",
+      "explanation": "This uses SQL Server replication so Cloud SQL receives ongoing changes from the source and allows a planned switchover",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Take a native SQL Server backup to Cloud Storage and restore it into a new Cloud SQL for SQL Server instance",
+      "explanation": "This method performs a one time copy of the data to Cloud SQL by restoring a .bak file from Cloud Storage",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Configure Cloud SQL for SQL Server as a subscriber to the on premises publisher and replicate continuously until you cut over</b>. This uses transactional replication to keep the managed Cloud SQL instance nearly in sync before the switch so you can meet the under 20 minute cutover and minimize disruption.</p><p>With this approach you seed the data and then stream changes continuously so the target stays current. When you are ready to migrate you stop writes on the source if needed, allow the subscriber to catch up, switch the application connection string, and complete the cutover with only a brief outage. This aligns with recommended practices because it leverages a managed service, reduces operational overhead, and avoids the complexity and cost of frequent differential backups across many databases.</p><p><i>Create a Compute Engine VM, install SQL Server, and import the backup file</i> is a one time restore that does not keep the target synchronized with ongoing changes. You would either need extended downtime or complex change capture to reconcile deltas, and you would be fully responsible for managing SQL Server on the VM which does not meet the goal of minimal disruption.</p><p><i>Create a Google Kubernetes Engine cluster, deploy SQL Server, and restore the backup file</i> places a stateful database in containers and still performs only a static restore. This is not the recommended path for migrating SQL Server to Google Cloud for low downtime and it would add significant operational complexity without providing continuous replication to meet the tight cutover window.</p><p><i>Take a native SQL Server backup to Cloud Storage and restore it into a new Cloud SQL for SQL Server instance</i> results in a point in time copy with no ongoing change replication. It cannot maintain synchronization with production writes which makes it difficult to achieve a sub 20 minute cutover for an active workload with many databases.</p>",
+  "batch_id": "146",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "Your client currently operates an on-premises SQL Server database that includes read replicas. However, the nightly incremental backups have become costly and burdensome to maintain. To align with Google's recommended practices, you intend to migrate the database to Google Cloud while minimizing any potential downtime. What should you do?",
+  "originalOptions": "A. Use the SQL Server backup and restore feature to take a backup of the existing on-premises database, and then restore it on Cloud SQL.<br/>B. Set up a Cloud SQL for SQL Server instance as an external replica and synchronize the data to the replica.<br/>C. Create a Google Kubernetes Engine (GKE) cluster, install SQL Server on the cluster, and then import the backup file.<br/>D. Create a Compute Engine VM, install SQL Server on the VM, and then import the backup file.",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "166",
+  "tip": "<p>When the requirement highlights <i>minimal downtime</i> and a short cutover window, look for managed migration patterns that keep data in sync ahead of time. In Google Cloud this often points to <i>replication</i> into Cloud SQL rather than one time backup and restore.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/sqlserver",
+    "https://cloud.google.com/sql/docs/sqlserver/features",
+    "https://cloud.google.com/sql/docs/sqlserver/import-export",
+    "https://learn.microsoft.com/sql/relational-databases/replication/transactional/transactional-replication"
+  ],
+  "url": "https://certificationation.com/questions/exam-on-premises-sql-server-database-that-exam-166.html",
+  "video_url": "https://certificationation.com/videos/exam-on-premises-sql-server-database-that-exam-166.html"
+}

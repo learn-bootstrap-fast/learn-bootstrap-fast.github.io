@@ -1,0 +1,62 @@
+---
+title: "You are building out a layer in a software stack on AWSExam"
+description: "Video for you are building out a layer in a software stack on AWS that needs to be able to scale out to react to increased demand as fast as possible. You are"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are building out a layer in a software stack on AWS that needs to be able to scale out to react to increased demand as fast as possible. You are running the code on EC2 instances in an Auto Scaling Group behind an ELB. Which application code deployment method should you use?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><b>Bake an AMI containing the latest application code, and configure your Auto Scaling Launch Configuration to use this AMI for new instance launches</b> is the preferred practice. By preparing an Amazon Machine Image (AMI) with your application stack and all necessary dependencies included, instance initialization is fast and consistent. This enables the Auto Scaling Group to respond very quickly to increases in demand since new instances require minimal setup—they boot with the latest code and are ready to serve traffic nearly instantly. This approach reduces the risk of deployment errors and ensures all instances are identical.</p><p>The other options each introduce potential delays or risks:</p><ul><li><i>SSH into each new EC2 instance...</i> is impractical and non-scalable for automated environments, especially under rapid scaling where manual intervention is infeasible.</li><li><i>Prepare a Dockerfile... and execute it on launch</i> adds extra boot time since the Docker images still have to be built or downloaded when each instance starts, slowing the launch process compared to an already-baked AMI.</li><li><i>Implement UserData scripts to always fetch the latest code</i> means every new instance will have to pull from a remote repository at boot. This can fail, introduce inconsistencies (if the remote codebase changes during scaling activity), and also makes instance startup slower.</li></ul><p><b>Tip:</b> AMI baking—often through automation pipelines—ensures reliability, speed, and repeatability. For ultra-fast scaling and minimal run-time configuration issues, always try to use golden AMIs pre-baked with all dependencies and application code.</p>",
+  "query": "<p>You are architecting a layer for a software solution deployed on AWS that must be capable of rapid scaling in response to traffic spikes. Your application stack operates on EC2 instances managed by an Auto Scaling Group behind a load balancer. Which deployment approach should you choose for rolling out new code to this layer?</p>",
+  "original_oid": "6793d9de61969b416038a0db",
+  "options": [
+    {
+      "correct": true,
+      "text": "Bake an AMI containing the latest application code, and configure your Auto Scaling Launch Configuration to use this AMI for new instance launches.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "SSH into each new EC2 instance that launches, and deploy the most recent code by retrieving it from an S3 bucket maintained with updated application releases.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Prepare a Dockerfile with your updated application, upload it to S3, and leverage UserData scripts in your Auto Scaling configuration to download and execute this Dockerfile whenever a new instance boots.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Implement a new Auto Scaling Launch Configuration where UserData scripts always fetch the latest application code from a remote repository at instance startup.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question104",
+  "originalQuery": "You are building out a layer in a software stack on AWS that needs to be able to scale out to react to increased demand as fast as possible.\nYou are running the code on EC2 instances in an Auto Scaling Group behind an ELB.\nWhich application code deployment method should you use?",
+  "originalOptions": "A. SSH into new instances that come online, and deploy new code onto the system by pulling it from an S3 bucket populated by code that you refresh from source control on new pushes.|B. Bake an AMI when deploying new versions of code, and use that AMI for the Auto Scaling Launch Configuration.|C. Create a Dockerfile when preparing to deploy a new version to production and publish it to S3. Use UserData in the Auto Scaling Launch configuration to pull down the Dockerfile from S3 and run it when new instances launch.|D. Create a new Auto Scaling Launch Configuration with UserData scripts configured to pull the latest code at all times.",
+  "video_url": "https://certificationation.com/videos/exam-software-stack-on-aws-that-exam-481.html",
+  "url": "https://certificationation.com/questions/exam-software-stack-on-aws-that-exam-481.html"
+}

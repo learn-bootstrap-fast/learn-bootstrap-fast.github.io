@@ -1,0 +1,84 @@
+---
+title: "You are building a real-time chat application for aExam"
+description: "Video for you are building a real-time chat application for a gaming platform. Users send messages that need to be delivered with low latency and stored for"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are building a real-time chat application for a gaming platform. Users send messages that need to be delivered with low latency and stored for audit purposes. The application also provides analytics to show the most active users in real time. You want a scalable and cost-effective solution. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "scrumtuous.com is rolling out live customer support chat for its marketplace. Messages must arrive with very low latency and be retained for 90 days to meet audit requirements. The product team also needs a live dashboard that surfaces the most active agents and customers with updates about every 15 seconds. You need a solution on GCP that scales automatically and controls cost. Which approach should you choose?",
+  "options": [
+    {
+      "text": "Store conversations in Cloud Spanner and run analytics services on Cloud Run to compute active user metrics",
+      "explanation": "Cloud Spanner offers horizontally scalable relational storage while Cloud Run executes stateless containers for analytics services",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Cloud SQL to store chat records and serve the chat application on App Engine for real time delivery",
+      "explanation": "Cloud SQL provides managed MySQL or PostgreSQL and App Engine scales application instances based on traffic",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Firestore to persist chat messages with real time listeners and trigger Cloud Functions on writes to update active user counters",
+      "explanation": "Firestore supports realtime subscriptions and Cloud Functions reacts to document changes to maintain aggregates",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Ingest messages with Pub/Sub and write them to BigQuery while using Dataflow streaming jobs to power the real time leaderboard",
+      "explanation": "Pub/Sub provides durable messaging and Dataflow can continuously stream data into BigQuery for analytical queries",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Use Firestore to persist chat messages with real time listeners and trigger Cloud Functions on writes to update active user counters</b>.</p><p><b>Firestore</b> delivers low latency writes and reads and it natively pushes changes to clients through real time listeners which fits a live chat requirement. It scales automatically with serverless infrastructure and charges primarily by operations which helps control cost. The 90 day retention requirement can be enforced with document expiration using <b>Firestore</b> TTL policies. The live dashboard can subscribe to aggregated counters that are updated by <b>Cloud Functions</b> on each write which keeps the leaderboard fresh well within a 15 second target.</p><p><i>Store conversations in Cloud Spanner and run analytics services on Cloud Run to compute active user metrics</i> is not the best fit because Cloud Spanner is designed for globally consistent relational workloads and is often costlier for this use case. It does not provide built in real time push to clients and would require additional components to stream updates to browsers. Managing retention would also need custom cleanup logic rather than a simple TTL policy.</p><p><i>Use Cloud SQL to store chat records and serve the chat application on App Engine for real time delivery</i> is weaker for large scale chat because Cloud SQL has connection and throughput limits that can constrain spiky interactive traffic. It does not offer native real time listeners for clients which means extra caching or messaging layers would be needed to achieve instant updates and that adds complexity and cost.</p><p><i>Ingest messages with Pub/Sub and write them to BigQuery while using Dataflow streaming jobs to power the real time leaderboard</i> is better suited for analytics pipelines than for serving interactive chat. BigQuery streaming inserts can have short but variable latency and are not intended to back low latency transactional reads for chat sessions. Pub or Sub is not a client facing transport for browsers and Dataflow adds continuous processing cost and complexity that is unnecessary for simple counters and dashboards.</p>",
+  "batch_id": "242",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are building a real-time chat application for a gaming platform. Users send messages that need to be delivered with low latency and stored for audit purposes. The application also provides analytics to show the most active users in real time. You want a scalable and cost-effective solution. What should you do?",
+  "originalOptions": "A. Use Cloud SQL for storing messages and App Engine for real-time message delivery.<br/>B. Use Cloud Spanner for storing messages and Cloud Run for analytics.<br/>C. Use Firestore for real-time messaging and Cloud Functions for analytics.<br/>D. Use Cloud Bigtable for storing messages and Cloud Dataflow for analytics.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "315",
+  "tip": "<p>Identify keywords like <i>real time</i> listeners and <i>low latency</i> delivery and match them to services that push updates to clients. When you see short lived aggregates or counters think about using event triggers to update small summary documents that dashboards can read efficiently.</p>",
+  "references": [
+    "https://cloud.google.com/firestore/docs/query-data/listen",
+    "https://cloud.google.com/firestore/docs/ttl",
+    "https://cloud.google.com/functions/docs/calling/cloud-firestore",
+    "https://cloud.google.com/spanner/docs/overview",
+    "https://cloud.google.com/sql/docs/introduction",
+    "https://cloud.google.com/sql/docs/mysql/quotas#connections",
+    "https://cloud.google.com/pubsub/docs/overview",
+    "https://cloud.google.com/bigquery/docs/streaming-data-into-bigquery#dataavailability"
+  ],
+  "url": "https://certificationation.com/questions/exam-application-for-a-gaming-platform-exam-315.html",
+  "video_url": "https://certificationation.com/videos/exam-application-for-a-gaming-platform-exam-315.html"
+}

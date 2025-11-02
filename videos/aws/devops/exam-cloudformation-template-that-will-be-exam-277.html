@@ -1,0 +1,62 @@
+---
+title: "You are in charge of creating a Cloudformation templateExam"
+description: "Video for you are in charge of creating a Cloudformation template that will be used to spin our resources on demand for your DevOps team. The requirement is"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are in charge of creating a Cloudformation template that will be used to spin our resources on demand for your DevOps team. The requirement is that this cloudformation template should be able to spin up resources in different regions. Which of the following aspects of Cloudformation templates can help you design the template to spin up resources based on the region?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct answer is <b>Leverage the mappings section in the CloudFormation template to select resources based on the deployed region</b>. The <b>Mappings</b> section allows you to create a table of values, such as AMI IDs for different regions, and reference those values within your resources using intrinsic functions like <code>Fn::FindInMap</code>. This makes your CloudFormation template dynamic across regions without requiring manual changes.</p><p>Here's why the other options are not suitable:</p><ul><li><i>Utilize the outputs section in your CloudFormation template so the correct resources are created as per region</i>: The <i>Outputs</i> section is used to return values from the stack, not to control or determine which resources are created based on region.</li><li><i>Employ the parameters section of the CloudFormation template for regional resource selection</i>: While parameters allow for user input, they are not intended for automatic region-based resource differentiation. You would still have to supply the region-appropriate value manually for each deployment.</li><li><i>Rely on the metadata section in the template to determine resources based on region</i>: The <i>Metadata</i> section is meant for storing additional information about the resources and is not used for dynamic logic or region-based control.</li></ul><p><b>Tip:</b> Always use Mappings for static sets of values tied to regions, such as AMI IDs, network configurations, or resource names that differ by region. Remember, you can combine Mappings with <code>AWS::Region</code> pseudo parameters for maximum template flexibility.</p>",
+  "query": "<p>You are tasked with designing a CloudFormation template that your DevOps team will use to deploy resources on demand. The template must support spinning up resources in various AWS regions. Which component of a CloudFormation template enables automatic deployment of resources depending on the chosen region?</p>",
+  "original_oid": "6793da0d61969b416038a136",
+  "options": [
+    {
+      "correct": true,
+      "text": "Leverage the mappings section in the CloudFormation template to select resources based on the deployed region.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Utilize the outputs section in your CloudFormation template so the correct resources are created as per region.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Employ the parameters section of the CloudFormation template for regional resource selection.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Rely on the metadata section in the template to determine resources based on region.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question196",
+  "originalQuery": "You are in charge of creating a Cloudformation template that will be used to spin our resources on demand for your DevOps team.\nThe requirement is that this cloudformation template should be able to spin up resources in different regions.\nWhich of the following aspects of Cloudformation templates can help you design the template to spin up resources based on the region?",
+  "originalOptions": "A. Use the mappings section in the Cloudformation template so that the relevant resource can be spun up based on the relevant region.\nB. Use the outputs section in the Cloudformation template so that the relevant resource can be spun up based on the relevant region.\nC. Use the parameters section in the Cloudformation template so that the relevant resource can be spun up based on the relevant region.\nD. Use the metadata section in the Cloudformation template so that the relevant resource can be spun up based on the relevant region.",
+  "video_url": "https://certificationation.com/videos/exam-cloudformation-template-that-will-be-exam-277.html",
+  "url": "https://certificationation.com/questions/exam-cloudformation-template-that-will-be-exam-277.html"
+}

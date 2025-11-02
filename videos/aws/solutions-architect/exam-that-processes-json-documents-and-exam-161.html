@@ -1,0 +1,128 @@
+---
+title: "A company has a small Python application that processesExam"
+description: "Video for a company has a small Python application that processes JSON documents and outputs the results to an on-premises SQL database. The application runs"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company has a small Python application that processes JSON documents and outputs the results to an on-premises SQL database. The application runs thousands of times each day. The company wants to move the application to the AWS Cloud. The company needs a highly available solution that maximizes scalability and minimizes operational overhead. Which solution will meet these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729a06"
+  },
+  "quid": null,
+  "ordinal": "161",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS Lambda",
+    " Amazon S3",
+    " Amazon Aurora",
+    " Amazon RDS",
+    " Amazon Elastic Container Service (Amazon ECS)"
+  ],
+  "slug": "py-json-processing-sql-database-aws",
+  "source": "ET",
+  "title": "AWS A Company Has A Small Python Application Question",
+  "meta": "AWS Exam Question: A company seeks a highly available, scalable solution for a Python app processing JSON and outputting to SQL in the AWS Cloud. Find the answer using AWS Lambda and AWS RDS.",
+  "answer": "B",
+  "query": "A business operates a lightweight Python application that handles JSON files and stores results in an on-premises relational database. This application executes numerous times daily. The organization aims to transition this application to the AWS Cloud. They require a solution that offers high availability, robust scalability, and low operational complexity.\n\nWhat solution would effectively address these needs?",
+  "originalQuery": "A company has a small Python application that processes JSON documents and outputs the results to an on-premises SQL database. The application runs thousands of times each day. The company wants to move the application to the AWS Cloud. The company needs a highly available solution that maximizes scalability and minimizes operational overhead.\n\nWhich solution will meet these requirements?",
+  "options": [
+    "A. Place the JSON documents in an Amazon S3 bucket. Run the Python code on multiple Amazon EC2 instances to process the documents. Store the results in an Amazon Aurora DB cluster.",
+    "B. Place the JSON documents in an Amazon S3 bucket. Create an AWS Lambda function that runs the Python code to process the documents as they arrive in the S3 bucket. Store the results in an Amazon Aurora DB cluster.",
+    "C. Use an Amazon Elastic Block Store volume for JSON documents and attach it to several Amazon EC2 instances. Process the documents in Python on those instances and store results in an Amazon RDS instance.",
+    "D. Place the JSON documents in an Amazon Simple Queue Service (Amazon SQS) queue as messages. Deploy the Python code as a container on an Amazon Elastic Container Service (Amazon ECS) cluster that is configured with the Amazon EC2 launch type. Use the container to process the SQS messages. Store the results on an Amazon RDS DB instance."
+  ],
+  "originalOptions": [
+    "A. Place the JSON documents in an Amazon S3 bucket. Run the Python code on multiple Amazon EC2 instances to process the documents. Store the results in an Amazon Aurora DB cluster.",
+    "B. Place the JSON documents in an Amazon S3 bucket. Create an AWS Lambda function that runs the Python code to process the documents as they arrive in the S3 bucket. Store the results in an Amazon Aurora DB cluster.",
+    "C. Place the JSON documents in an Amazon Elastic Block Store (Amazon EBS) volume. Use the EBS Multi-Attach feature to attach the volume to multiple Amazon EC2 instances. Run the Python code on the EC2 instances to process the documents. Store the results on an Amazon RDS DB instance.",
+    "D. Place the JSON documents in an Amazon Simple Queue Service (Amazon SQS) queue as messages. Deploy the Python code as a container on an Amazon Elastic Container Service (Amazon ECS) cluster that is configured with the Amazon EC2 launch type. Use the container to process the SQS messages. Store the results on an Amazon RDS DB instance."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "To achieve a solution that eliminates operational overhead while ensuring high availability and scalability, consider utilizing Amazon S3 for storing the JSON documents. By implementing an AWS Lambda function, you can automatically trigger the processing of these documents as they are uploaded to the S3 bucket. This serverless architecture allows for dynamic scaling based on incoming data without the need for manual server management. Finally, the processed results can be stored in an Amazon Aurora database cluster, which offers enhanced performance and availability. This combination effectively meets the company's requirements by leveraging fully managed services that minimize operational tasks.",
+    "Aurora is a fantastic choice for MySQL and PostgreSQL, but when it comes to SQL Server, it’s like trying to fit a square peg in a round hole. So, option B is out of the running! 🏃‍♂️💨 That leaves us with option D, which makes a lot more sense to me. I’ll admit, I initially thought option B was the winner, but after giving the question a good second glance, it became clear! 👀✨ Sometimes, a little extra scrutiny can save the day!",
+    "A company has a small Python application that processes JSON documents and outputs the results to an on-premises SQL database. The application runs thousands of times each day. The company is looking to migrate this application to the AWS Cloud while ensuring high availability, optimal scalability, and reduced operational overhead.\n\nNow, let’s dive into the options. \n\nOption A suggests placing the JSON documents in an Amazon S3 bucket and running the Python code on multiple EC2 instances. While this approach leverages S3 for storage and EC2 for processing, it could lead to a bit of a maintenance headache, given the need to manage multiple instances.\n\nOption B proposes a more elegant solution: placing the JSON documents in an Amazon S3 bucket and creating an AWS Lambda function to process the documents as they arrive. This serverless approach minimizes operational overhead and scales automatically, making it a tempting choice for the cloud-savvy. The results would then be stored in an Amazon Aurora DB cluster, which is a solid pick for relational database needs.\n\nOption C takes a different route by using an Amazon Elastic Block Store volume attached to several EC2 instances. While this might sound like a classic approach, it’s a bit cumbersome in terms of managing storage and instances, and it might not keep pace with the demands of scalability.\n\nLastly, option D involves placing the JSON documents in an Amazon Simple Queue Service (Amazon SQS) queue and deploying the Python code in containers on an Amazon Elastic Container Service (Amazon ECS) cluster. While this is a modern, containerized solution, it might introduce unnecessary complexity for a straightforward processing task.\n\nUltimately, while all options have their merits, the standout choice here is B. It blends simplicity, scalability, and efficiency, ensuring that the company can focus less on infrastructure and more on what really matters: processing those JSON documents. Plus, who doesn’t love a good serverless architecture?",
+    "Utilizing Amazon S3 to store JSON documents provides a highly durable and scalable object storage solution. By integrating AWS Lambda, the company can effortlessly run its Python code to process the documents as they arrive in the S3 bucket, freeing them from concerns about managing the underlying infrastructure. This setup fosters horizontal scalability, as AWS Lambda automatically adjusts the number of function instances in response to the volume of incoming requests. For storing the results, an Amazon Aurora DB cluster is an excellent choice, as it is a fully managed, high-performance database service that supports both MySQL and PostgreSQL. This combination ensures that the processed results are stored with the durability and scalability required for the application’s needs.",
+    "Option D is the best choice, as it ensures a first-in, first-out (FIFO) processing order. Imagine the chaos if a later JSON operation were to accidentally overwrite an existing database record! That’s a scenario we definitely want to avoid, especially since it's quite likely to happen. By using this approach, you can rest easy knowing that updates will be applied in the correct sequence, keeping your data integrity intact. 🎉"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "B",
+      "explanation": "solution should remove operation overhead -> s3 -> lambda -> aurora",
+      "upvotes": "18"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Aurora supports mysql and postgresql but question has database sql server. So, that eliminates B. So, the other logical answer is D. IMHO. Btw, i also thought the answer is B and started re-reading question carefully.",
+      "upvotes": "6"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "sql database, not sql server",
+      "upvotes": "5"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "By placing the JSON documents in an S3 bucket, the documents will be stored in a highly durable and scalable object storage service. The use of AWS Lambda allows the company to run their Python code to process the documents as they arrive in the S3 bucket without having to worry about the underlying infrastructure. This also allows for horizontal scalability, as AWS Lambda will automatically scale the number of instances of the function based on the incoming rate of requests. The results can be stored in an Amazon Aurora DB cluster, which is a fully-managed, high-performance database service that is compatible with MySQL and PostgreSQL. This will provide the necessary durability and scalability for the results of the processing.",
+      "upvotes": "13"
+    },
+    {
+      "selectedAnswer": "D",
+      "explanation": "Ans D - because none of the other answers guarantee FIFO. What if a subsequent JSON operation is intended to update an existing database record (which is highly likely) - then the wrong change would be applied",
+      "upvotes": "2"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "B (94%)",
+      "votes": "58 votes."
+    },
+    {
+      "option": "6%",
+      "votes": "4 votes."
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "Option B is the correct answer because it employs AWS Lambda, a serverless computing service, to run Python code immediately upon the arrival of JSON documents in S3. This approach minimizes operational overhead and scales automatically based on demand, making it a highly available solution. In contrast, the other options are less suited for the requirements: Option A requires the management of EC2 instances, which adds complexity. Option C relies on EBS and EC2, lacking the inherent scalability and operational simplicity offered by a serverless architecture. Option D, while viable, introduces the need for more management of containers and message processing through SQS, diverging from the simplicity preferred by the organization.",
+  "video_url": "https://certificationation.com/videos/exam-that-processes-json-documents-and-exam-161.html",
+  "url": "https://certificationation.com/questions/exam-that-processes-json-documents-and-exam-161.html"
+}

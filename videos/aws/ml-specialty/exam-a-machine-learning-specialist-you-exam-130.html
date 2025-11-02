@@ -1,0 +1,55 @@
+---
+title: "You work for a power tool manufacturer as a machineExam"
+description: "Video for you work for a power tool manufacturer as a machine learning specialist. You work in the battery-powered power tool division, where your team of"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You work for a power tool manufacturer as a machine learning specialist. You work in the battery-powered power tool division, where your team of machine learning specialists and data scientists has been tasked with building a model that predicts the lifespan of particular models of power tools. You have selected the Linear Learner algorithm on which to build your model. You have cleaned and engineered your features for your training and test data. Your feature engineering transformations convert all feature attributes to integers or real numbers. You have also trained your model and have deployed it to Amazon SageMaker Hosting Services. Your training dataset has this structure: | model| power | battery Ah | use pattern | region | country | For your client application inference requests, how would you structure the body argument for your invoke_endpoint call?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d6f87742293cac494b2a"
+  },
+  "answer": "B",
+  "certification": "AWS Machine Learning Specialty",
+  "certificationKey": "AWSMLS",
+  "difficulty": "0",
+  "image": "",
+  "needsWork": "false",
+  "ordinal": "130",
+  "originalExplanation": "E.\nAnswer: B.\nOption A is incorrect.\nThe Linear Learner algorithm expects either CSV or recordio-protobuf as the inference request content type.\nFor text/csv the value of the body argument for the invoke_endpoint API call should be a string with comma-separated values for each feature.\nThis option has a comma-separated string, but it has 7 values, when you only have 6 features in your data used to train your model.\nOption B is correct.\nThe Linear Learner algorithm expects either CSV or recordio-protobuf as the inference request content type.\nFor text/csv the value of the body argument for the invoke_endpoint API call should be a string with comma-separated values for each feature.\nThis option has a comma-separated string, and it has 6 values.\nYou also have 6 features in your data used to train your model, so this inference request is structured correctly.\nOption C is incorrect.\nThe Linear Learner algorithm expects either CSV or recordio-protobuf as the inference request content type.\nAlso, any transforms performed on the training data must also be performed on inference request data before attempting to obtain an inference.\nThe body argument in this option has not been transformed in the way your training data was transformed.\nOption D is incorrect.\nThe Linear Learner algorithm expects either CSV or recordio-protobuf as the inference request content type.\nAlso, the body argument to the invoke_endpoint should be a string, not an array.\nOption E is incorrect.\nThe Linear Learner algorithm expects either CSV or recordio-protobuf as the inference request content type.\nAlso, the body argument to the invoke_endpoint should be a string, not a list.\nReference:\nPlease see the Amazon SageMaker developer guide titled Train a Model with Amazon SageMaker, the Amazon SageMaker developer guide titled Common Parameters for Built-In Algorithms, and the Amazon SageMaker developer guide titled Common Data Formats for Inference.\nTo make an inference request to an Amazon SageMaker endpoint, you need to provide the input data in a specific format depending on the model you have deployed.\nIn this case, the model was built using the Linear Learner algorithm, and the training dataset has six features: model, power, battery Ah, use pattern, region, and country. According to the question, the feature engineering transformations convert all feature attributes to integers or real numbers.\nTherefore, the correct answer would be D. An array set to these values: [547,3.5,1.5,23.4,2,43]\nEach value in the array corresponds to one of the features in the training dataset, in the following order:\nmodel (converted to a numerical value)\npower (converted to a numerical value)\nbattery Ah (converted to a numerical value)\nuse pattern (converted to a numerical value)\nregion (converted to a numerical value)\ncountry (converted to a numerical value)\nNote that the values in the array are not surrounded by quotes or separated by commas, as this is not the correct format for an array in Python.\nOption A is incorrect because it provides the values as a string, which would need to be parsed and split to obtain the input values in the correct format for the model.\nOption B is incorrect because it only includes the first five features and does not include the numerical value for the country feature.\nOption C is incorrect because it provides the values as a string and includes the feature names instead of the numerical values.\nOption E is incorrect because it uses the Python list notation instead of the array notation.",
+  "originalOptions": [
+    "A. A string with this value: “547,3.5,1.5,23.4,2,43,1”",
+    "B. A string with this value: “547,3.5,1.5,23.4,2,43”",
+    "C. A string with this value: “Quite strike,battery,1.5,frequent,North America,US”",
+    "D. An array set to these values: [547,3.5,1.5,23.4,2,43]",
+    "E. A list set to these values: [547,3.5,1.5,23.4,2,43]"
+  ],
+  "originalQuery": "You work for a power tool manufacturer as a machine learning specialist.\nYou work in the battery-powered power tool division, where your team of machine learning specialists and data scientists has been tasked with building a model that predicts the lifespan of particular models of power tools.\nYou have selected the Linear Learner algorithm on which to build your model.\nYou have cleaned and engineered your features for your training and test data.\nYour feature engineering transformations convert all feature attributes to integers or real numbers.\nYou have also trained your model and have deployed it to Amazon SageMaker Hosting Services. Your training dataset has this structure: | model| power | battery Ah | use pattern | region | country | For your client application inference requests, how would you structure the body argument for your invoke_endpoint call?",
+  "primaryObjective": "",
+  "quid": "0",
+  "source": "https://www.exam-answer.com/amazon/mls-c01/question130",
+  "video_url": "https://certificationation.com/videos/exam-a-machine-learning-specialist-you-exam-130.html",
+  "url": "https://certificationation.com/questions/exam-a-machine-learning-specialist-you-exam-130.html"
+}

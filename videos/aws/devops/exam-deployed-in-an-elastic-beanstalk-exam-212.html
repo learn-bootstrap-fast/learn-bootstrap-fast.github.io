@@ -1,0 +1,67 @@
+---
+title: "A company has a Node.js application deployed in anExam"
+description: "Video for a company has a Node.js application deployed in an Elastic Beanstalk environment. At the moment the environment uses an “All at once” deployment"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company has a Node.js application deployed in an Elastic Beanstalk environment. At the moment the environment uses an “All at once” deployment strategy. The new versions are deployed in all instances simultaneously and there is a short time of outage. If there is a problem with the new version, another deployment is required to perform the rollback. Your manager asks you to use another method that deploys new versions to a fresh group of instances. And the new instances should serve traffic only after the health check has passed. In the meantime, you do not want to maintain two environments in Elastic Beanstalk. Which deployment strategy should you select?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>Immutable deployment strategy</b> in Elastic Beanstalk is specifically designed to ensure smooth upgrades and fast rollbacks without causing downtime or running two entire environments. With immutable deployments, Elastic Beanstalk provisions a new set of instances with the updated application version. These new instances must pass health checks before traffic is routed to them. If the new deployment is unhealthy, it can easily be terminated, reverting back to the original group of instances.</p><p>The other options are not optimal for this scenario:</p><ul><li><i>Choose a Rolling with additional batch deployment strategy to launch extra instances for each update.</i> – While this method does add extra instances temporarily and reduces downtime, it can still serve partial traffic to older or unhealthy versions during deployment, which does not fully mitigate risk of user disruption.</li><li><i>Implement a Rolling deployment by launching new app versions on new EC2 instances and then connecting them to the existing load balancer.</i> – Regular Rolling updates replace instances in batches, which can lead to periods where some users are routed to the new, untested version before health checks complete. Problems with the new version could affect some users during deployment.</li><li><i>Utilize a Blue/Green deployment by swapping Elastic Beanstalk environment URLs.</i> – This option does offer reliable rollbacks and no downtime, but it requires maintaining two separate environments momentarily, which the question states should be avoided.</li></ul><p><b>Tip:</b> Immutable deployments offer the safest and most automated way to roll out new versions without risking downtime or exposure to unhealthy releases, and do not require the overhead of a full duplicate environment like Blue/Green deployments.</p>",
+  "query": "<p>An organization uses a Node.js application running in an Elastic Beanstalk environment. Currently, the deployment approach is &#8220;All at once,&#8221; meaning every instance receives the new version at the same time, causing brief downtime. Rollbacks require a separate deployment. The manager requests an alternative method: new versions should be launched on separate instances first, traffic should switch only when these pass health checks, and you should avoid running two full Elastic Beanstalk environments in parallel. What is the most suitable deployment strategy for this scenario?</p>",
+  "original_oid": "6793da6361969b416038a1e7",
+  "options": [
+    {
+      "correct": true,
+      "text": "Set up an Immutable deployment strategy within the Elastic Beanstalk environment.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Choose a Rolling with additional batch deployment strategy to launch extra instances for each update.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Implement a Rolling deployment by launching new app versions on new EC2 instances and then connecting them to the existing load balancer.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Utilize a Blue/Green deployment by swapping Elastic Beanstalk environment URLs.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question374",
+  "originalQuery": "A company has a Node.js application deployed in an Elastic Beanstalk environment.\nAt the moment the environment uses an “All at once” deployment strategy.\nThe new versions are deployed in all instances simultaneously and there is a short time of outage.\nIf there is a problem with the new version, another deployment is required to perform the rollback.\nYour manager asks you to use another method that deploys new versions to a fresh group of instances.\nAnd the new instances should serve traffic only after the health check has passed.\nIn the meantime, you do not want to maintain two environments in Elastic Beanstalk.\nWhich deployment strategy should you select?",
+  "originalOptions": [
+    "A. Configure a Rolling update strategy in the Elastic Beanstalk environment. Deploy new application versions in new instances and then attach the instances to the original load balancer.",
+    "B. Set up a Rolling with additional batch strategy which launches an extra batch of instances for new deployments.",
+    "C. Configure a blue/green deployment strategy by swapping environment URLs in Elastic Beanstalk.",
+    "D. Configure an Immutable deployment strategy in the Elastic Beanstalk environment."
+  ],
+  "video_url": "https://certificationation.com/videos/exam-deployed-in-an-elastic-beanstalk-exam-212.html",
+  "url": "https://certificationation.com/questions/exam-deployed-in-an-elastic-beanstalk-exam-212.html"
+}

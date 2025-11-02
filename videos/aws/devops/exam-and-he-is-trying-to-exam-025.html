@@ -1,0 +1,67 @@
+---
+title: "A developer is quite new to CloudFormation and he isExam"
+description: "Video for a developer is quite new to CloudFormation and he is trying to use CloudFormation for his new assignment which is a web service in the Sydney region"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A developer is quite new to CloudFormation and he is trying to use CloudFormation for his new assignment which is a web service in the Sydney region only."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>Let users provide the AMI ID through a parameter when launching the stack, ensuring the parameter type is set as AWS::EC2::Image::Id</b> option is the most robust and best practice approach. Setting the parameter type to AWS::EC2::Image::Id enables built-in validation from AWS and improves input accuracy. </p><p><i>Include a mapping under Resources for all possible AMI IDs, then use the FindInMap intrinsic function to select the correct ID</i> is unnecessarily complex for a single region scenario, and the mapping should not be under Resources but a top-level Mapping section. <i>Simply add a Parameters section that allows input of the AMI ID</i> is incomplete without specifying the correct parameter type, which offers additional validation. <i>Specify the parameter as a String, and validate with min/max length and other restrictions</i> gives limited protection and doesn’t benefit from AWS’s built-in resource type validation. <i>Create a mapping for available AMI IDs in all regions and use FN::FindInAMI within the Resources to reference the AMI</i> is invalid, as there is no such intrinsic function called FN::FindInAMI (the function is Fn::FindInMap). </p><p><b>Tip:</b> For CloudFormation templates, use those specialized parameter types (like AWS::EC2::Image::Id) for user input whenever possible to leverage AWS resource validations. Avoid overcomplicating templates when only one region is involved.</p>",
+  "query": "<p>A novice developer wants to launch their web application in the AWS Sydney region using CloudFormation. They want users to specify the AMI ID for the EC2 instance when creating the stack. What is the best way to allow for this functionality within the CloudFormation template?</p>",
+  "original_oid": "6793da8261969b416038a225",
+  "options": [
+    {
+      "correct": false,
+      "text": "Include a mapping under Resources for all possible AMI IDs, then use the FindInMap intrinsic function to select the correct ID.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Let users provide the AMI ID through a parameter when launching the stack, ensuring the parameter type is set as AWS::EC2::Image::Id.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Simply add a Parameters section that allows input of the AMI ID.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Specify the parameter as a String, and validate with min/max length and other restrictions.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Create a mapping for available AMI IDs in all regions and use FN::FindInAMI within the Resources to reference the AMI.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question437",
+  "originalQuery": "A developer is quite new to CloudFormation and he is trying to use CloudFormation for his new assignment which is a web service in the Sydney region only.",
+  "originalOptions": "A. In order to use AMI Id, the template needs to have a “mapping” which is inside the “Resources” section so that the template understand which AMI ID to be used during stack creation. The intrinsic function “FindInMap” is needed in the template to work with “mapping”.|B. Use a parameter for the user to input the AMI ID when the stack is created. Make sure that the parameter has the type as AWS::EC2::Image::Id.|C. In the template, add a parameter section for the AMI I.|D. The type of the parameter should be a String. Make sure that proper limitations are added such as the maximum length, minimum length, etc.|E. In the template, add a mapping section for all possible AMI IDs in all regions so that the CloudFormation does not need to remember any AMI IDs manually. Then in the Resource section, use FN::FindInAMI to refer the correct AMI I.",
+  "video_url": "https://certificationation.com/videos/exam-and-he-is-trying-to-exam-025.html",
+  "url": "https://certificationation.com/questions/exam-and-he-is-trying-to-exam-025.html"
+}

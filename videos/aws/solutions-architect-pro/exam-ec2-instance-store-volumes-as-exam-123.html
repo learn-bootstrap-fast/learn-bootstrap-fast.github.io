@@ -1,0 +1,74 @@
+---
+title: "A video provider has a big proportion of EC2 instanceExam"
+description: "Video for a video provider has a big proportion of EC2 instance store volumes as many of their workloads require very quick disk IO. Compared with EBS"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A video provider has a big proportion of EC2 instance store volumes as many of their workloads require very quick disk IO. Compared with EBS counterparts, instance store volumes are physically attached to the host and have better performance. However, they still need to work out a suitable method to create an AMI for the instance store volume. How can you do it?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d5aff501ee1c8ade9811"
+  },
+  "quid": "0",
+  "ordinal": "200",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "Amazon EC2",
+    " AWS CLI",
+    " Amazon S3",
+    " Amazon Machine Image (AMI)",
+    " AWS SDKs"
+  ],
+  "slug": "ec2-video-provider-quick-disk-io-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question200",
+  "title": "AWS A Video Provider Has A Big Proportion Question",
+  "meta": "AWS Exam Question: A video provider uses EC2 instance store volumes for quick disk IO. How can they create an AMI for the instance store volume? Answer: EBS.",
+  "answer": "D",
+  "query": "A gaming company uses EC2 instance store volumes for their high-frequency read/write tasks due to the low latency of instance store compared to network-based storage. They need to create an Amazon Machine Image (AMI) of an instance store-backed instance to replicate their configuration.\nWhat is the correct approach to create this AMI?",
+  "originalQuery": "A video provider has a big proportion of EC2 instance store volumes as many of their workloads require very quick disk IO.\nCompared with EBS counterparts, instance store volumes are physically attached to the host and have better performance.\nHowever, they still need to work out a suitable method to create an AMI for the instance store volume.\nHow can you do it?",
+  "options": [
+    "A. AMI images cannot be created for instance store volumes since only EBS supports AMI creation.",
+    "B. AMIs for instance store volumes require exclusively using the AWS EC2 CLI commands.",
+    "C. The AMI can be generated using the AWS EC2 console, CLI, or SDK for instance store volumes.",
+    "D. The AWS CLI tools can be used to create a bundle for the volume and upload it to S3. Then register the AMI to the file in the S3 bucket."
+  ],
+  "originalOptions": [
+    "A. Instance store volume cannot have AMI images that are only available for EBS volumes.",
+    "B. They can only create an AMI using AWS EC2 CLI command for instance store volumes.",
+    "C. The AMI can be created by using AWS EC2 console, CLI or SDK for instance store volumes.",
+    "D. The AWS CLI tools can be used to create a bundle for the volume and upload it to S3. Then register the AMI to the file in the S3 bucket."
+  ],
+  "image": "https://eaeastus2.blob.core.windows.net/optimizedimages/static/images/AWS-Certified-Solutions-Architect-Professional/answer/imgckeditor_4_15_23.png",
+  "primaryObjective": "3: Continuous Improvement for Existing Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Correct Answer D.\nThe following diagram summarizes the process of creating an AMI from an instance store-backed instance.\nOption A is incorrect: Because an AMI can be created to store volume according to https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-instance-store.html.\nOption B is incorrect: Because AWS EC2 CLI can only be used to generate AMI for EBS volumes.\nOption C is incorrect: Because the AMI creation process for instance store volumes is different from Amazon EBS-backed AMIs.\nAMI tools such as ec2-bundle-vol and ec2-upload-bundle are required.\nOption D is CORRECT: Because this has used the correct procedures described in https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-instance-store-ami.html#amazon_linux_instructions.\nInstance store volumes are directly attached to the host and provide better performance compared to EBS volumes, which are network attached. Instance store volumes are ideal for workloads that require very fast disk IO. However, creating an Amazon Machine Image (AMI) for instance store volumes can be a bit tricky.\nAn AMI is a pre-configured virtual machine image that is used to create EC2 instances. It contains all the necessary information required to launch an instance such as operating system, applications, data, and storage configuration. To create an AMI for an instance store volume, the following options are available:\nA. Instance store volumes cannot have AMI images that are only available for EBS volumes. This statement is incorrect because instance store volumes can have AMI images.\nB. They can only create an AMI using AWS EC2 CLI command for instance store volumes. This statement is incorrect because there are other options available to create an AMI for an instance store volume.\nC. The AMI can be created by using AWS EC2 console, CLI, or SDK for instance store volumes. This statement is correct. AMIs can be created using the AWS Management Console, AWS CLI, or AWS SDK. To create an AMI using the console, navigate to the EC2 console, select the instance you want to create an AMI for, and choose the \"Create Image\" option. You can also create an AMI using the AWS CLI by running the \"aws ec2 create-image\" command. Finally, you can create an AMI using the AWS SDK by calling the \"CreateImage\" API.\nD. The AWS CLI tools can be used to create a bundle for the volume and upload it to S3. Then register the AMI to the file in the S3 bucket. This statement is also correct. To create an AMI using this method, you need to first create a bundle of the instance store volume. The bundle contains the files required to boot the instance store volume. You can use the AWS CLI command \"ec2-bundle-instance\" to create the bundle. Once the bundle is created, you need to upload it to an S3 bucket using the \"ec2-upload-bundle\" command. Finally, you can register the AMI to the uploaded bundle using the \"ec2-register\" command.\nIn summary, options C and D are correct ways to create an AMI for an instance store volume. Option A is incorrect, and option B is not the only way to create an AMI for an instance store volume.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-ec2-instance-store-volumes-as-exam-123.html",
+  "url": "https://certificationation.com/questions/exam-ec2-instance-store-volumes-as-exam-123.html"
+}

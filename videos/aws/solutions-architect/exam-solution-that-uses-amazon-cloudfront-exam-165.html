@@ -1,0 +1,128 @@
+---
+title: "A solutions architect must design a solution that usesExam"
+description: "Video for a solutions architect must design a solution that uses Amazon CloudFront with an Amazon S3 origin to store a static website. The company’s security"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A solutions architect must design a solution that uses Amazon CloudFront with an Amazon S3 origin to store a static website. The company’s security policy requires that all website traffic be inspected by AWS WAF. How should the solutions architect comply with these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729a0a"
+  },
+  "quid": null,
+  "ordinal": "165",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS WAF",
+    " Amazon CloudFront",
+    " Amazon S3",
+    " AWS Solutions Architects",
+    " Security"
+  ],
+  "slug": "cf-solution-architect-design-store-aws",
+  "source": "ET",
+  "title": "AWS Solutions Architect Must Design A Solution Question",
+  "meta": "AWS Exam Question: A solutions architect must design a static website solution using Amazon CloudFront and Amazon S3, ensuring traffic inspection with AWS WAF. Answer: AWS WAF.",
+  "answer": "D",
+  "query": "An AWS solutions architect is tasked with creating a deployment that integrates Amazon CloudFront with an Amazon S3 bucket to serve a static web application. The organization mandates that every piece of web traffic undergo scrutiny by AWS WAF.\n\nWhat is the best approach for the solutions architect to meet this guideline?",
+  "originalQuery": "A solutions architect must design a solution that uses Amazon CloudFront with an Amazon S3 origin to store a static website. The company’s security policy requires that all website traffic be inspected by AWS WAF.\n\nHow should the solutions architect comply with these requirements?",
+  "options": [
+    "A. Configure an S3 bucket policy to accept requests coming from the AWS WAF Amazon Resource Name (ARN) only.",
+    "B. Configure Amazon CloudFront to inspect all incoming requests with AWS WAF before accessing content in Amazon S3.",
+    "C. Create a security group to allow only CloudFront IPs to connect to Amazon S3. Link AWS WAF with CloudFront.",
+    "D. Configure Amazon CloudFront and Amazon S3 to use an origin access identity (OAI) to restrict access to the S3 bucket. Enable AWS WAF on the distribution."
+  ],
+  "originalOptions": [
+    "A. Configure an S3 bucket policy to accept requests coming from the AWS WAF Amazon Resource Name (ARN) only.",
+    "B. Configure Amazon CloudFront to forward all incoming requests to AWS WAF before requesting content from the S3 origin.",
+    "C. Configure a security group that allows Amazon CloudFront IP addresses to access Amazon S3 only. Associate AWS WAF to CloudFront.",
+    "D. Configure Amazon CloudFront and Amazon S3 to use an origin access identity (OAI) to restrict access to the S3 bucket. Enable AWS WAF on the distribution."
+  ],
+  "image": null,
+  "primaryObjective": "1: Design Secure Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "The correct approach involves utilizing an Origin Access Identity (OAI) to restrict access from CloudFront to the Amazon S3 origin. This effectively ensures that only CloudFront can retrieve content from the S3 bucket, enhancing security by preventing direct access to the S3 bucket from the internet. Additionally, enabling AWS WAF on the CloudFront distribution allows for the inspection and filtering of incoming web traffic, ensuring compliance with the company's security policy. This dual-layered security strategy effectively safeguards the static website by controlling access at both the storage and distribution levels.",
+    "To ensure the security of your static website hosted on Amazon S3 while using CloudFront, it’s essential to take a few clever steps. First up, configuring origin access identity (OAI) is a must! This nifty feature restricts access to your S3 bucket, ensuring only CloudFront can peek inside. 🕵️‍♂️🔍\n\nNext, you’ll want to link AWS WAF with your CloudFront distribution to inspect all incoming traffic. This way, you can catch any unwanted visitors before they even get a chance to knock on your S3 door. 🚪🔒 \n\nSo, to sum it up: use OAI to keep your S3 bucket safe and sound, and let AWS WAF handle the security checks for all your CloudFront traffic. With these measures in place, your static website will be as secure as a vault—minus the secret handshake! 😂🔐",
+    "By setting up CloudFront to channel all incoming requests through AWS WAF, you can ensure that traffic is meticulously inspected before it hits the S3 origin—perfectly aligning with the company's security policy. This method provides an essential layer of protection, scrutinizing all website traffic before it accesses the content stored in S3.\n\nOption A misses the mark because merely configuring an S3 bucket policy to accept requests exclusively from the AWS WAF ARN would defeat the purpose of thorough traffic inspection. It doesn’t guarantee that all website traffic undergoes scrutiny.\n\nOption C is also lacking in finesse. While it attempts to manage access to S3 via a security group and connects AWS WAF with CloudFront, it falls short of ensuring that every incoming request gets the WAF treatment.\n\nAs for option D, it may seem clever at first glance to set up an origin access identity (OAI) and limit access to the S3 bucket. However, this approach doesn’t ensure that all website traffic is inspected by AWS WAF. The OAI merely restricts direct access to S3 content, while the critical inspection should still occur through AWS WAF. \n\nIn short, if you want to maintain a secure environment while delivering content efficiently, the key is to let AWS WAF do its job by inspecting all traffic before it reaches your precious S3 origin.",
+    "Amazon CloudFront seamlessly integrates with AWS WAF to analyze incoming traffic without the need for any manual request forwarding. When configured correctly, AWS WAF functions directly with CloudFront, allowing it to inspect traffic as it flows through the distribution. This integration ensures that all website traffic is thoroughly examined in real-time.\n\nAs for the most effective approach to meet the security requirements, option D is the ideal choice.",
+    "While Option B does indeed utilize AWS WAF with CloudFront to inspect incoming requests, it unfortunately overlooks an important detail: it doesn’t address the need to prevent direct access to the objects in Amazon S3 without going through CloudFront. 🌟 It's crucial to ensure that all traffic is funneled through the distribution, maintaining both security and compliance with the company's policies!"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "",
+      "explanation": "Answer D. Use an OAI to lockdown CloudFront to S3 origin & enable WAF on CF distribution",
+      "upvotes": "35"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "https://aws.amazon.com/premiumsupport/knowledge-center/cloudfront-access-to-amazon-s3/ confirms use of OAI (and option D).",
+      "upvotes": "14"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "By configuring CloudFront to forward all incoming requests to AWS WAF, the traffic will be inspected by AWS WAF before reaching the S3 origin, complying with the security policy requirement. This approach ensures that all website traffic is inspected by AWS WAF, providing an additional layer of security before accessing the content stored in the S3 origin.\n\nOption A is not the correct choice as configuring an S3 bucket policy to accept requests from the AWS WAF ARN only would bypass the inspection of traffic by AWS WAF. It does not ensure that all website traffic is inspected.\n\nOption C is not the optimal solution as it focuses on controlling access to S3 using a security group. Although it associates AWS WAF with CloudFront, it does not guarantee that all incoming requests are inspected by AWS WAF.\n\nOption D is not the recommended solution as configuring an OAI in CloudFront and restricting access to the S3 bucket does not ensure that all website traffic is inspected by AWS WAF. The OAI is used for restricting direct access to S3 content, but the traffic should still pass through AWS WAF for inspection.",
+      "upvotes": "10"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "CloudFront does not \"forward\" requests to AWS WAF. Instead, AWS WAF integrates directly with CloudFront to inspect traffic as it passes through the distribution. There is no manual forwarding process involved.\nso, my Answer is D.",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Option B does use the WAF through Cloudfront, but it does not mention anything to prevent direct access to the objects without going through Cloudfront.",
+      "upvotes": "3"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "D (69%)",
+      "votes": "74 votes."
+    },
+    {
+      "option": "B (31%)",
+      "votes": "33 votes."
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is D because configuring Amazon CloudFront and Amazon S3 to use an origin access identity (OAI) restricts access to the S3 bucket and ensures that requests are routed through CloudFront. Enabling AWS WAF on the CloudFront distribution allows for traffic inspection, ensuring compliance with the requirement that all web traffic is subject to scrutiny by AWS WAF. This setup prevents direct access to the S3 content and makes sure that all traffic is filtered and monitored by WAF.\n\nOption A is incorrect because configuring an S3 bucket policy to accept requests coming from the AWS WAF ARN only does not ensure that all incoming traffic is inspected; this may result in bypassing WAF scrutiny. \n\nOption B is incorrect as it suggests forwarding requests, which does not reflect how AWS WAF works with CloudFront. AWS WAF inspects the traffic integrally as it flows through CloudFront rather than being a separate step in the request process.\n\nOption C is not optimal because it focuses on security groups, which are not necessary in this context of accessing S3 via CloudFront with WAF and does not guarantee all traffic inspection through AWS WAF.",
+  "video_url": "https://certificationation.com/videos/exam-solution-that-uses-amazon-cloudfront-exam-165.html",
+  "url": "https://certificationation.com/questions/exam-solution-that-uses-amazon-cloudfront-exam-165.html"
+}

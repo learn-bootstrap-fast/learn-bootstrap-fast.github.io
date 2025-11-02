@@ -1,0 +1,128 @@
+---
+title: "A company has applications hosted on Amazon EC2Exam"
+description: "Video for a company has applications hosted on Amazon EC2 instances with IPv6 addresses. The applications must initiate communications with other external"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company has applications hosted on Amazon EC2 instances with IPv6 addresses. The applications must initiate communications with other external applications using the internet. However the company’s security policy states that any external service cannot initiate a connection to the EC2 instances. What should a solutions architect recommend to resolve this issue?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729b3b"
+  },
+  "quid": null,
+  "ordinal": "470",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS shared responsibility model",
+    " Amazon EC2",
+    " AWS VPC",
+    " AWS Security Blog",
+    " AWS Direct Connect"
+  ],
+  "slug": "ec2-hosted-applications-communications-aws",
+  "source": "ET",
+  "title": "AWS A Company Has Applications Hosted On Amazon EC2 Question",
+  "meta": "AWS Exam Question: A company has applications on Amazon EC2 with IPv6. Solutions architect must ensure external services can’t connect. What’s the answer?",
+  "answer": "D",
+  "query": "An organization has services running on Amazon EC2 instances with IPv6 configurations. These services require the ability to connect to external applications over the internet. However, the organization’s security guidelines mandate that these external applications must not be able to start connections to the EC2 instances.\n\nWhat solution should a solutions architect propose to meet this requirement?",
+  "originalQuery": "A company has applications hosted on Amazon EC2 instances with IPv6 addresses. The applications must initiate communications with other external applications using the internet. However the company’s security policy states that any external service cannot initiate a connection to the EC2 instances.\n\nWhat should a solutions architect recommend to resolve this issue?",
+  "options": [
+    "A. Create a NAT gateway for the subnet's route table",
+    "B. Create an internet gateway for the subnet's routing configuration",
+    "C. Set up a virtual private gateway as the route table destination",
+    "D. Create an egress-only internet gateway and make it the destination of the subnet's route table"
+  ],
+  "originalOptions": [
+    "A. Create a NAT gateway and make it the destination of the subnet's route table",
+    "B. Create an internet gateway and make it the destination of the subnet's route table",
+    "C. Create a virtual private gateway and make it the destination of the subnet's route table",
+    "D. Create an egress-only internet gateway and make it the destination of the subnet's route table"
+  ],
+  "image": null,
+  "primaryObjective": "1: Design Secure Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "To facilitate outbound communication from Amazon EC2 instances with IPv6 addresses while adhering to the company's security policy— which prohibits any external service from initiating connections to these instances—an egress-only internet gateway should be implemented. This type of gateway allows for outbound traffic to the internet while blocking inbound traffic, thereby ensuring compliance with security requirements.\n\nIn contrast, a NAT gateway is specifically designed for IPv4 addresses and enables outbound traffic from instances in a private subnet to the internet while allowing responses to return to those instances. However, it does not provide the necessary functionality for IPv6 traffic.\n\nWhen configuring the network architecture, it is essential to understand the differences between these gateways. Egress-only internet gateways are crucial for managing IPv6 traffic effectively, as they serve to provide instances with the ability to reach external resources without compromising security by allowing unsolicited inbound connections.",
+    "Great news! 🎉\n\nAn egress-only internet gateway is your go-to solution for IPv6 traffic only. If you want to enable outbound-only internet access for IPv4, you'll need to roll with a NAT gateway instead. So, if your applications are itching to chat with the outside world without getting interrupted, this is the way to go! 🌐✨ \n\nFor a deeper dive into the nitty-gritty details, check out the AWS documentation. 📚",
+    "Ah, the classic conundrum of wanting to communicate outward while keeping the gates firmly shut to intruders. In this case, the most sensible solution would be to create an egress-only internet gateway. This nifty little tool allows your EC2 instances with IPv6 addresses to initiate outbound traffic to the internet while still adhering to your security policy that forbids inbound connections from external services. \n\nThe egress-only internet gateway is specifically designed for IPv6 communications, ensuring that your architecture remains secure while still allowing your applications to reach out into the wild, wild web. It’s like having a one-way door that lets you peek outside without inviting any unwanted guests in. \n\nSo, for seamless outbound communication while maintaining your fortress-like security, setting up an egress-only internet gateway is definitely the way to go.",
+    "A company is utilizing Amazon EC2 instances with IPv6 addresses to host its applications, which need to communicate with external services over the internet. However, due to the company’s security policy, external services are prohibited from initiating connections to these EC2 instances.\n\nTo effectively address this scenario, I would recommend implementing an egress-only internet gateway and configuring it as the destination in the subnet's route table. This solution will enable the EC2 instances to initiate outbound traffic while preventing any incoming connections from external services. By doing so, the company can maintain the integrity of its security policy while ensuring that its applications can successfully communicate with necessary external applications. This approach strikes a perfect balance between functionality and security, allowing for safe and efficient interactions with the internet!",
+    "An egress-only internet gateway (EIGW) is a fantastic solution tailored for VPCs that use IPv6 exclusively! It enables outbound IPv6 internet access while gracefully preventing any inbound IPv6 traffic. This clever setup meets the need to keep external services from starting connections to your EC2 instances, all while allowing those instances to initiate their own outbound communications. 🌟"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "",
+      "explanation": "For exam,\negress-only internet gateway: IPv6\nNAT gateway: IPv4",
+      "upvotes": "53"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Good stuff.\n\n\"An egress-only internet gateway is for use with IPv6 traffic only. To enable outbound-only internet communication over IPv4, use a NAT gateway instead.\"\n\nhttps://docs.aws.amazon.com/vpc/latest/userguide/egress-only-internet-gateway.html",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "This is very helpful, thanks.",
+      "upvotes": "4"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "thanks a lot",
+      "upvotes": "4"
+    },
+    {
+      "selectedAnswer": "D",
+      "explanation": "An egress-only internet gateway (EIGW) is specifically designed for IPv6-only VPCs and provides outbound IPv6 internet access while blocking inbound IPv6 traffic. It satisfies the requirement of preventing external services from initiating connections to the EC2 instances while allowing the instances to initiate outbound communications.",
+      "upvotes": "9"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "D (100%)",
+      "votes": "19 votes."
+    },
+    {
+      "option": "C (25%)",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is D, as an egress-only internet gateway (EIGW) is specifically designed to allow outbound-only IPv6 traffic while preventing external applications from initiating connections to the EC2 instances. This aligns with the organization's security guidelines that dictate no inbound connections. The other options are not suitable for IPv6 scenarios as follows: A. A NAT gateway is used for IPv4 traffic and does not address the IPv6 outbound requirement. B. An internet gateway allows bidirectional traffic, which contradicts the requirement of preventing inbound connections. C. A virtual private gateway is primarily used for VPN connections and does not handle outbound-only internet access for IPv6 efficiently.",
+  "video_url": "https://certificationation.com/videos/exam-amazon-ec2-instances-with-ipv6-exam-469.html",
+  "url": "https://certificationation.com/questions/exam-amazon-ec2-instances-with-ipv6-exam-469.html"
+}

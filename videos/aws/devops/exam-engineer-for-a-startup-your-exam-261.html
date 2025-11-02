@@ -1,0 +1,67 @@
+---
+title: "You were just hired as a DevOps Engineer for a startupExam"
+description: "Video for you were just hired as a DevOps Engineer for a startup. Your startup uses AWS for 100% of its infrastructure. They currently have no automation at all"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You were just hired as a DevOps Engineer for a startup. Your startup uses AWS for 100% of its infrastructure. They currently have no automation at all for deployment. They have had many failures while trying to deploy to production. The company has told you deployment process risk mitigation is the most important thing now, and you have a lot of budget for tools and AWS resources."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best approach is <b>Dividing the stack into three CloudFormation templates for data, compute, and network layers and applying Blue-Green deployment with automation</b>. Blue-Green deployments significantly lower the risk of production failures by providing a quick and reliable rollback mechanism—you can direct traffic to the existing environment if issues arise after deployment. Structuring your stack into separate templates allows for clear resource boundaries, improved reusability, and easier troubleshooting, as well as enforcing dependency ordering during deployment.</p> <p>The other options have notable shortcomings:</p> <ul><li><i>Organize the infrastructure in AWS Elastic Beanstalk as a single application with separate environments, and implement Rolling Deploys to progressively deploy changes across environments.</i> — While Elastic Beanstalk supports rolling deployments, it doesn't offer granular control over individual infrastructure components and isn't ideal for complex multi-layer stacks.</li><li><i>Set up AWS OpsWorks as a single stack, containing one compute layer and its corresponding Elastic Load Balancer.</i> — This lacks modular separation between resources. Managing everything within a single stack restricts isolation and flexibility, increasing risk when deploying changes.</li><li><i>Leverage Chef and Application Deployments to set up and automate rolling application deployments.</i> — Chef is powerful for configuration management, but this answer lacks clarity on managing environments and does not address stack-level risk mitigation, such as isolation or rollback strategies.</li><li><i>Create the entire infrastructure in a single CloudFormation template and automate deployment and integration tests with Rolling Deployment strategies.</i> — A single, large template is harder to maintain and troubleshoot. Modular templates improve clarity and resilience, especially for large stacks.</li></ul> <p><b>Key Tip:</b> Use multiple CloudFormation templates to clearly separate and manage different parts of your stack, and choose Blue-Green deployment methodology for safer, low-risk deployments, particularly in production environments.</p>",
+  "query": "<p>As a new DevOps Engineer at a startup that exclusively uses AWS, you face production deployment failures due to a lack of automation. The company is focused on reducing deployment risks and has given you significant budget for AWS resources and tooling. Which approach best provides repeatable, automated deployments and risk mitigation for your AWS environment?</p>",
+  "original_oid": "6793da1a61969b416038a14f",
+  "options": [
+    {
+      "correct": false,
+      "text": "Organize the infrastructure in AWS Elastic Beanstalk as a single application with separate environments, and implement Rolling Deploys to progressively deploy changes across environments.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Divide the full stack into three distinct AWS CloudFormation templates—data, compute, and network layers—and implement Blue-Green deployment with automated stack deployment and integration tests.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up AWS OpsWorks as a single stack, containing one compute layer and its corresponding Elastic Load Balancer.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Leverage Chef and Application Deployments to set up and automate rolling application deployments.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Create the entire infrastructure in a single CloudFormation template and automate deployment and integration tests with Rolling Deployment strategies.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question222",
+  "originalQuery": "You were just hired as a DevOps Engineer for a startup.\nYour startup uses AWS for 100% of its infrastructure.\nThey currently have no automation at all for deployment.\nThey have had many failures while trying to deploy to production.\nThe company has told you deployment process risk mitigation is the most important thing now, and you have a lot of budget for tools and AWS resources.",
+  "originalOptions": "A. Model the stack in AWS Elastic Beanstalk as a single Application with multiple Environments. Use Elastic Beanstalk’s Rolling Deploy option to roll out application code changes when promoting across environments progressively.|B. Model the stack in three CloudFormation templates: Data layer, compute layer, and networking layer. Write stack deployment and integration testing automation following Blue-Green methodologies.|C. Model the stack in AWS OpsWorks as a single Stack, with 1 compute layer and its associated EL.|D. Use Chef and App Deployments to automate Rolling Deployment.|E. Model the stack in 1 CloudFormation template to ensure consistency and dependency graph resolution. Write deployment and integration testing automation following Rolling Deployment methodologies.",
+  "video_url": "https://certificationation.com/videos/exam-engineer-for-a-startup-your-exam-261.html",
+  "url": "https://certificationation.com/questions/exam-engineer-for-a-startup-your-exam-261.html"
+}

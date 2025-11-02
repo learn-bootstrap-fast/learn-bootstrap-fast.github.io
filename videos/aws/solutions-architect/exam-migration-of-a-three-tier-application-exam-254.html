@@ -1,0 +1,128 @@
+---
+title: "A company is reviewing a recent migration of aExam"
+description: "Video for a company is reviewing a recent migration of a three-tier application to a VPC. The security team discovers that the principle of least privilege is"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company is reviewing a recent migration of a three-tier application to a VPC. The security team discovers that the principle of least privilege is not being applied to Amazon EC2 security group ingress and egress rules between the application tiers. What should a solutions architect do to correct this issue?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729a63"
+  },
+  "quid": null,
+  "ordinal": "254",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "AWS shared responsibility model",
+    " Amazon EC2",
+    " AWS Identity and Access Management (IAM)",
+    " Amazon VPC",
+    " Security"
+  ],
+  "slug": "ec2-reviewing-recent-migration-aws",
+  "source": "ET",
+  "title": "AWS A Company Is Reviewing A Recent Migration Question",
+  "meta": "AWS Exam Question: A company reviews a migration of a three-tier application to a VPC, finding the principle of least privilege not applied to EC2 security groups. Answer: IAM.",
+  "answer": "B",
+  "query": "A business has migrated its multi-tiered application to a VPC but the security team identifies that the principle of least privilege is not enforced in the ingress and egress rules of Amazon EC2 security groups among the different tiers. \n\nWhat steps should a solutions architect take to resolve this issue?",
+  "originalQuery": "A company is reviewing a recent migration of a three-tier application to a VPC. The security team discovers that the principle of least privilege is not being applied to Amazon EC2 security group ingress and egress rules between the application tiers.\n\nWhat should a solutions architect do to correct this issue?",
+  "options": [
+    "A. Create security group rules using the instance ID as the source or destination.",
+    "B. Create security group rules using the security group ID as the source or destination.",
+    "C. Set security group rules that utilize VPC CIDR blocks as the source or destination.",
+    "D. Establish security group rules that use subnet CIDR blocks as the source or destination."
+  ],
+  "originalOptions": [
+    "A. Create security group rules using the instance ID as the source or destination.",
+    "B. Create security group rules using the security group ID as the source or destination.",
+    "C. Create security group rules using the VPC CIDR blocks as the source or destination.",
+    "D. Create security group rules using the subnet CIDR blocks as the source or destination."
+  ],
+  "image": null,
+  "primaryObjective": "1: Design Secure Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "B. Implement security group rules that utilize the security group ID as the source or destination. \n\nThis approach enables the security team to enforce the principle of least privilege across the application tiers by permitting only the essential communication between the designated security groups. For instance, the security group associated with the web tier should be configured to accept incoming traffic exclusively from the load balancer's security group and allow outgoing traffic solely to the application tier's security group. This method enhances security by providing a precise mechanism for traffic control across the various application layers and facilitates straightforward adjustments to access permissions when necessary.\n\nAdditionally, it is prudent to limit the number of open ports and protocols to further reduce the attack surface. Utilizing security groups as the primary layer of defense, while complementing them with network access control lists (ACLs) for regulating traffic between subnets, can significantly bolster the overall security posture of the application.",
+    "To keep things secure and snazzy, using security group IDs is the way to go! This approach allows you to tighten those ingress and egress rules, ensuring that only the necessary traffic flows between your application tiers, while all other traffic gets a polite \"no thank you.\" 🚫✨ This method embodies the principle of least privilege, ensuring that only essential communication is permitted.\n\nLet’s take a quick look at the other options: \n\nOption A? Not quite the winner! Using instance IDs as your source or destination could invite traffic from any instance with that ID—yikes! That's like leaving the front door wide open and hoping no one wanders in. 🙈\n\nOption C? A bit too generous! Relying on VPC CIDR blocks would allow traffic from any IP address within the VPC, which is like inviting the whole neighborhood to your party. 🎉 You want to keep it exclusive!\n\nAnd then there's Option D. While using subnet CIDR blocks might seem like a good idea, it still risks letting traffic from any IP address in the subnet come knocking at your door. 🚪🔑 \n\nSo, stick with security group IDs for a well-guarded, streamlined communication between application tiers. Your application will thank you! 🎊",
+    "Establish security group rules that use the security group ID as the source or destination. This savvy move empowers the security team to enforce the principle of least privilege across the application tiers, ensuring that only the essential communications are permitted. For instance, the web tier's security group should welcome incoming traffic solely from the load balancer's security group and permit outgoing traffic exclusively to the application tier's security group. This method not only tightens control over inter-tier traffic but also simplifies any necessary adjustments to access down the line.\n\nLet’s not forget that it’s wise to limit the number of open ports and protocols—think of it as decluttering your digital space. Employing security groups as your frontline defense, combined with network access control lists (ACLs), creates a robust barrier to regulate traffic between subnets. After all, a little extra vigilance goes a long way in the ever-evolving landscape of cloud security.",
+    "Option A would restrict traffic to specific instances, which might not be the best approach for enforcing the principle of least privilege between different tiers of the application.\n\nOption B, on the other hand, enables you to utilize security group IDs to meticulously manage traffic flow between application tiers, ensuring that only essential communication occurs and fully embracing the principle of least privilege.\n\nOption C would implement wide-ranging rules based on the entire VPC CIDR blocks, which may lack the necessary precision for secure interactions between specific application tiers.\n\nOption D would focus on subnet CIDR blocks to limit traffic; however, this may not provide adequate security for communications between the various application tiers.\n\nIn conclusion, employing security group IDs (Option B) is the most effective strategy, as it facilitates detailed control over traffic between application tiers, perfectly aligning with the principle of least privilege.",
+    "Oh, what a delightful adventure we’re on with security groups and instance IDs! 🌈 To enhance our security, we can craft our inbound rules by using the instance ID as the source or destination. This clever approach allows us to precisely specify which EC2 instances can communicate, ensuring that only the right players are allowed to join the party! By doing so, we tighten our security and uphold the principle of least privilege, making our application environment much safer and more efficient. Isn't that just splendid? 🎉"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "B",
+      "explanation": "B. Create security group rules using the security group ID as the source or destination.\nThis way, the security team can ensure that the least privileged access is given to the application tiers by allowing only the necessary communication between the security groups. For example, the web tier security group should only allow incoming traffic from the load balancer security group and outgoing traffic to the application tier security group. This approach provides a more granular and secure way to control traffic between the different tiers of the application and also allows for easy modification of access if needed.\nIt's also worth noting that it's good practice to minimize the number of open ports and protocols, and use security groups as a first line of defense, in addition to network access control lists (ACLs) to control traffic between subnets.",
+      "upvotes": "13"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "By using security group IDs, the ingress and egress rules can be restricted to only allow traffic from the necessary source or destination, and to deny all other traffic. This ensures that only the minimum required traffic is allowed between the application tiers.\n\nOption A is not the best choice because using the instance ID as the source or destination would allow traffic from any instance with that ID, which may not be limited to the specific application tier.\n\nOption C is also not the best choice because using VPC CIDR blocks would allow traffic from any IP address within the VPC, which may not be limited to the specific application tier.\n\nOption D is not the best choice because using subnet CIDR blocks would allow traffic from any IP address within the subnet, which may not be limited to the specific application tier.",
+      "upvotes": "9"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "Create security group rules using the security group ID as the source or destination.\nThis way, the security team can ensure that the least privileged access is given to the application tiers by allowing only the necessary communication between the security groups. For example, the web tier security group should only allow incoming traffic from the load balancer security group and outgoing traffic to the application tier security group. This approach provides a more granular and secure way to control traffic between the different tiers of the application and also allows for easy modification of access if needed.\nIt's also worth noting that it's good practice to minimize the number of open ports and protocols, and use security groups as a first line of defense, in addition to network access control lists (ACLs) to control traffic between subnets.",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "B",
+      "explanation": "A. would limit the traffic based on specific instances, which may not be the most suitable solution for applying the principle of least privilege between application tiers.\n\nB. By using security group IDs in the rules, you can precisely control the traffic between application tiers, allowing only the necessary communication and adhering to the principle of least privilege.\n\nC. would apply broad rules based on the entire VPC CIDR blocks, which may not provide the necessary level of granularity required for secure communication between specific application tiers.\n\nD. would limit the traffic based on subnet CIDR blocks, which may not be sufficient for ensuring proper security between application tiers.\n\nIn summary, using security group IDs (Option B) is the recommended approach as it allows for precise control of traffic between application tiers, aligning with the principle of least privilege.",
+      "upvotes": "6"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "with option A. How would you use instance ID in security group inbound rules ?",
+      "upvotes": "2"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "B (100%)",
+      "votes": "41 votes."
+    },
+    {
+      "option": "C (25%)",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is B. Creating security group rules using security group IDs allows for precise control over the traffic between different tiers of the application. This supports the principle of least privilege by restricting communication to only what is necessary, enhancing security. \n\nOption A is incorrect because using instance IDs does not provide fine-grained control appropriate for different tiers, as it may inadvertently allow access from unintended sources. \n\nOption C is incorrect since using VPC CIDR blocks could open traffic to any resource within the VPC, violating the least privilege principle. \n\nOption D is incorrect as using subnet CIDR blocks exposes all instances within the subnet rather than enforcing strict controls between tiers. \n\nTherefore, B is the best option for maintaining security between application layers.",
+  "video_url": "https://certificationation.com/videos/exam-migration-of-a-three-tier-application-exam-254.html",
+  "url": "https://certificationation.com/questions/exam-migration-of-a-three-tier-application-exam-254.html"
+}

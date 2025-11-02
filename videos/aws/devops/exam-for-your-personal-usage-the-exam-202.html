@@ -1,0 +1,62 @@
+---
+title: "You are working on a small project for your personalExam"
+description: "Video for you are working on a small project for your personal usage. The application is hosted in an Auto Scaling group. There is only 1 instance in the ASG"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are working on a small project for your personal usage. The application is hosted in an Auto Scaling group. There is only 1 instance in the ASG and the EC2 instance may be terminated and recreated from time to time. The EC2 DNS name and IP are changed when a new instance is launched in the ASG. You own a hosted zone in Route 53 and plan to create a record set to route the internal traffic to the instance. Which method is the most cost-efficient to update the record set dynamically?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The most cost-effective solution is to deploy a lightweight instance, such as a <b>T2.micro EC2 instance</b>, to monitor the Auto Scaling group and update the Route 53 record accordingly when a new instance is launched. This approach makes sense given the project's small scale and the fact that only a single instance is present.</p><ul><li><i>Configure a network load balancer in front of the Auto Scaling group, then create a Route 53 Alias record to route requests to the load balancer.</i> — This option introduces unnecessary costs by using a load balancer, which is excessive for just one instance.</li><li><i>Create an Alias record in Route 53 targeting the Auto Scaling group's ARN, without needing any dynamic updates.</i> — Route 53 does not support pointing directly to an Auto Scaling group ARN; Alias records require supported targets like load balancers or CloudFront distributions.</li><li><i>Set up a CloudWatch Event Rule that listens for launching or terminating events from the Auto Scaling group. Configure this rule to trigger a Lambda function, which modifies the CNAME in Route 53 to match the new EC2 instance's private DNS.</i> — While this solution is serverless and modern, it is unnecessarily complex, and the combination of Lambda plus event bridging can be more expensive for low-frequency, single-instance scenarios.</li></ul><p><b>Tip:</b> For very small, non-critical environments with minimal scaling, it can be both simple and cost-effective to automate DNS updates with a script running on a micro instance, rather than using more advanced or costly AWS services. If you wanted to minimize costs further, a Lambda function with a CloudWatch Schedule could be viable, but the EC2 micro instance approach is straightforward for beginners.</p>",
+  "query": "<p>You have a personal project with an application running on a single EC2 instance managed by an Auto Scaling group. Occasionally, the instance may be replaced, resulting in changes to its IP address and DNS name. Your Route 53 hosted zone is intended to direct internal traffic to this instance. What is the most economical approach to dynamically update the DNS record when the instance is relaunched?</p>",
+  "original_oid": "6793da6161969b416038a1e5",
+  "options": [
+    {
+      "correct": true,
+      "text": "Use a scheduled T2.micro EC2 instance that periodically checks the Auto Scaling group, and upon finding a new instance, updates the Route 53 DNS record with the updated IP address.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Configure a network load balancer in front of the Auto Scaling group, then create a Route 53 Alias record to route requests to the load balancer.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Create an Alias record in Route 53 targeting the Auto Scaling group's ARN, without needing any dynamic updates.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up a CloudWatch Event Rule that listens for launching or terminating events from the Auto Scaling group. Configure this rule to trigger a Lambda function, which modifies the CNAME in Route 53 to match the new EC2 instance's private DNS.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question372",
+  "originalQuery": "You are working on a small project for your personal usage.\nThe application is hosted in an Auto Scaling group.\nThere is only 1 instance in the ASG and the EC2 instance may be terminated and recreated from time to time.\nThe EC2 DNS name and IP are changed when a new instance is launched in the ASG.\nYou own a hosted zone in Route 53 and plan to create a record set to route the internal traffic to the instance.\nWhich method is the most cost-efficient to update the record set dynamically?",
+  "originalOptions": "A. Create a network load balancer to point to the Auto Scaling group. Create an Alias record that routes the traffic to the load balancer.|B. Create an Alias record in Route 53 that has the Auto Scaling group ARN as its target. The Route 53 record set does not need to be changed dynamically.|C. Configure a CloudWatch Event rule to monitor the Auto Scaling events. The CloudWatch Event rule triggers a Lambda function to point the CNAME in the record set to the private DNS of the new EC2 instance.|D. Create a T2.micro EC2 instance to periodically check the Auto Scaling group. If there is a new EC2 instance launched, update the Route 53 record set with the new IP address.",
+  "video_url": "https://certificationation.com/videos/exam-for-your-personal-usage-the-exam-202.html",
+  "url": "https://certificationation.com/questions/exam-for-your-personal-usage-the-exam-202.html"
+}

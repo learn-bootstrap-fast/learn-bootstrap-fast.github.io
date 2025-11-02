@@ -1,0 +1,62 @@
+---
+title: "An application is hosted in an AWS Auto Scaling groupExam"
+description: "Video for an application is hosted in an AWS Auto Scaling group. The ASG has a scheduled action that adds more instances at 8:00 AM every day. The cooldown"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "An application is hosted in an AWS Auto Scaling group. The ASG has a scheduled action that adds more instances at 8:00 AM every day. The cooldown timer of the ASG is set as 45 minutes and it takes about 30 minutes for a new instance to finish its init scripts and serve traffic. One day, the ASG scaled up at 7:45 AM because a high CPU alarm was triggered in AWS CloudWatch. What will happen for the scheduled scaling activity on that day?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><b>The scheduled scaling activity will execute instantly at 8:00 AM, regardless of the cooldown period in progress.</b> This is because Auto Scaling scheduled actions do not wait for the cooldown period of previous scaling events before starting; instead, scheduled actions trigger at their specified time.<br><br>Option <i>The scheduled scaling action will trigger at 8:45 AM, since scheduled actions consider the cooldown timer and will be delayed until the cooldown period completes</i> is incorrect because scheduled actions don't wait for cooldown expiration; they start based on the defined schedule.<br><br>Option <i>The scheduled scaling event will take place at 8:30 AM, waiting for the cooldown timer to finish</i> is not right, since this assumes the scheduled event actually waits for the cooldown to end, which is not the case.<br><br>Option <i>The scheduled scale-up won't proceed this time due to the running cooldown timer and will only resume the next day</i> is also inaccurate, as cooldown timers do not prevent scheduled actions altogether.<br><br><b>Tip:</b> Remember, cooldown periods delay subsequent scaling activities triggered by dynamic policies but do not postpone scheduled actions. Scheduled scaling always takes place at the appointed time, regardless of current cooldown status.</p>",
+  "query": "<p>An application runs in an AWS Auto Scaling group. This group performs a scheduled scale-up every day at 8:00 AM. The cooldown timer for the group is set to 45 minutes; initializing a new instance takes about 30 minutes before it can serve live traffic. On a particular day, the group scaled out at 7:45 AM because a CloudWatch alarm detected high CPU usage.<br>What will occur regarding the scheduled scale-up for that day?</p>",
+  "original_oid": "6793da8361969b416038a229",
+  "options": [
+    {
+      "correct": false,
+      "text": "The scheduled scaling action will trigger at 8:45 AM, since scheduled actions consider the cooldown timer and will be delayed until the cooldown period completes.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "The scheduled scaling event will take place at 8:30 AM, waiting for the cooldown timer to finish.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "The scheduled scaling activity will execute instantly at 8:00 AM, regardless of the cooldown period in progress.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "The scheduled scale-up won't proceed this time due to the running cooldown timer and will only resume the next day.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question441",
+  "originalQuery": "An application is hosted in an AWS Auto Scaling group.\nThe ASG has a scheduled action that adds more instances at 8:00 AM every day.\nThe cooldown timer of the ASG is set as 45 minutes and it takes about 30 minutes for a new instance to finish its init scripts and serve traffic.\nOne day, the ASG scaled up at 7:45 AM because a high CPU alarm was triggered in AWS CloudWatch.\nWhat will happen for the scheduled scaling activity on that day?",
+  "originalOptions": "A. The scheduled scaling activity will start at 8:45 AM as the cooldown timer is reset when the scheduled activity starts and the scheduled scaling can only start until the cooldown timer expires.\nB. The scheduled scaling activity will start at 8:30 AM as it needs to wait for the cooldown timer to expire.\nC. The scheduled scaling activity starts immediately as the scheduled action does not wait for the cooldown period to expire.\nD. The scheduled scaling will not start this time as it is overridden by the active cooldown timer. The scheduled scaling will continue to work the next day.",
+  "video_url": "https://certificationation.com/videos/exam-aws-auto-scaling-group-the-exam-004.html",
+  "url": "https://certificationation.com/questions/exam-aws-auto-scaling-group-the-exam-004.html"
+}

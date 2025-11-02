@@ -1,0 +1,79 @@
+---
+title: "You are responsible for a Cloud Spanner instance storingExam"
+description: "Video for you are responsible for a Cloud Spanner instance storing financial transaction data for your organization. Regulatory requirements mandate that you"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are responsible for a Cloud Spanner instance storing financial transaction data for your organization. Regulatory requirements mandate that you must retain the ability to restore the database to a state from any specific time in the past 30 days. How should you configure the database to meet this requirement?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You manage a Cloud Spanner database that stores order and payment records for a digital subscription service named MetroStream, and your compliance team requires the ability to restore the database to an exact timestamp from any moment within the last 21 days. What should you configure to meet this requirement?",
+  "options": [
+    {
+      "text": "Turn on high availability with a regional configuration",
+      "explanation": "This adds redundancy across multiple zones to improve uptime and resilience against zonal failures",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable point in time recovery and set the version retention period to 21 days",
+      "explanation": "This preserves historical versions of data for the specified window and allows restores to a precise timestamp within that period",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Configure scheduled Cloud Spanner backups retained for 21 days",
+      "explanation": "This creates recurring backup snapshots that can be restored to the time the backup was taken",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Export change streams to Cloud Storage on a recurring schedule",
+      "explanation": "This captures and writes data change events to external storage for downstream processing or auditing",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Enable point in time recovery and set the version retention period to 21 days</b>.</p><p>Point in time recovery in Cloud Spanner lets you restore a database to any exact timestamp within the configured version retention window. Setting the version retention period to 21 days preserves all necessary versions and transaction history for that duration, which directly satisfies the requirement to restore to any moment within the last 21 days.</p><p><i>Turn on high availability with a regional configuration</i> is about resiliency and uptime and it does not provide a mechanism to restore to a prior timestamp. Availability features do not maintain a historical timeline for recovery.</p><p><i>Configure scheduled Cloud Spanner backups retained for 21 days</i> allows recovery only to the specific points when backups were taken. This does not meet the need for restoring to an exact arbitrary timestamp at any moment in the last 21 days.</p><p><i>Export change streams to Cloud Storage on a recurring schedule</i> captures mutations for downstream processing and auditing. It is not a managed restore feature and would require complex manual replay from a consistent baseline, which does not meet the exact timestamp restore requirement.</p>",
+  "batch_id": "205",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "You are responsible for a Cloud Spanner instance storing financial transaction data for your organization. Regulatory requirements mandate that you must retain the ability to restore the database to a state from any specific time in the past 30 days. How should you configure the database to meet this requirement?",
+  "originalOptions": "A. Enable point-in-time recovery.<br/>B. Enable high availability.<br/>C. Regularly export transaction logs to Cloud Storage.<br/>D. Use Cloud Spanner backup schedules.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "73",
+  "tip": "<p>When a question emphasizes restore to an <i>exact timestamp</i> within a window, think of Cloud Spanner point in time recovery and ensure the <i>version retention period</i> matches the required window. If the question only needs periodic restore points or long term copies, think <i>backups</i> instead.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/point-in-time-recovery",
+    "https://cloud.google.com/spanner/docs/create-manage-backups",
+    "https://cloud.google.com/spanner/docs/change-streams/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-spanner-instance-storing-financial-transaction-exam-073.html",
+  "video_url": "https://certificationation.com/videos/exam-spanner-instance-storing-financial-transaction-exam-073.html"
+}

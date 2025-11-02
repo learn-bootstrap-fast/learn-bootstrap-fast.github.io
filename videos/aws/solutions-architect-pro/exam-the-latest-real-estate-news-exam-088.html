@@ -1,0 +1,65 @@
+---
+title: "A team has a website that provides the latest realExam"
+description: "Video for a team has a website that provides the latest real estate news to subscribers. It has included a Java frontend, backend, and a MySQL database to store"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A team has a website that provides the latest real estate news to subscribers. It has included a Java frontend, backend, and a MySQL database to store user information. They plan to migrate the MySQL database to PostgreSQL database to use some features that MySQL does not have. At the same time, the development lead has raised extra requirements."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d599f501ee1c8ade97db"
+  },
+  "quid": "0",
+  "ordinal": "144",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "It seems that the provided question and options are missing. Please provide the AWS exam question and options so that I can generate the appropriate response based on the listed topics."
+  ],
+  "slug": "js-website-latest-real-estate-news-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question144",
+  "title": "AWS A Team Has A Website That Provides Question",
+  "meta": "AWS Exam Question: A team runs a real estate news site with a Java frontend, backend, and MySQL. They're migrating to PostgreSQL for advanced features. Answer: AWS RDS.",
+  "answer": "D",
+  "query": null,
+  "originalQuery": "A team has a website that provides the latest real estate news to subscribers.\nIt has included a Java frontend, backend, and a MySQL database to store user information.\nThey plan to migrate the MySQL database to PostgreSQL database to use some features that MySQL does not have.\nAt the same time, the development lead has raised extra requirements.",
+  "options": null,
+  "originalOptions": [
+    "A. DMS cannot handle the task of migration from MySQL to PostgreSQL. When database engines need to be changed, use the AWS Schema Conversion Tool to convert existing database schema, including tables, indexes, and most application code, to the target platform.",
+    "B. DMS can handle the task of migration from MySQL to PostgreSQL. It can achieve task 1 by using the Selection Rule for column “user_activity” in table “user_info”. However, it cannot do tasks 2 and 3.",
+    "C. DMS can handle the task of migration from MySQL to PostgreSQL. It can achieve task 1 by using the Selection Rule for column “user_activity” in table “user_info”. Task 2, can also be completed by using a “Transformation Rules and Actions” to remove the columns starting with “test”. However, for task 3, DMS cannot do that.",
+    "D. DMS can handle the task of migration from MySQL to PostgreSQL. And all tasks can be achieved by specifying Table Selection and Transformations using JSON."
+  ],
+  "image": "https://eaeastus2.blob.core.windows.net/optimizedimages/static/images/AWS-Certified-Solutions-Architect-Professional/answer/imgckeditor_awsq11.jpg",
+  "primaryObjective": "1: Design Solutions for Organizational Complexity",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "Correct Answer - D.\nDMS can handle the task of migration from MySQL to PostgreSQL, as shown below.\nThe first task can be achieved by using a \"Selection Rule\"\nThe below diagram depicts using a filter for the \"Customers\" table on the column \"AgencyID\" where the values are between \"01\" and \"85\"\nThe second task can be achieved by using the JSON template for \"Transformation Rules,\" as shown below.\n{\n\"rules\": [{\n\"rule-type\": \"selection\",\n\"rule-id\": \"1\",\n\"rule-name\": \"1\",\n\"object-locator\": {\n\"schema-name\": \"test\",\n\"table-name\": \"%\"\n},\n\"rule-action\": \"include\"\n}, {\n\"rule-type\": \"transformation\",\n\"rule-id\": \"2\",\n\"rule-name\": \"2\",\n\"rule-action\": \"remove-column\",\n\"rule-target\": \"column\",\n\"object-locator\": {\n\"schema-name\": \"test\",\n\"table-name\": \"latestnews\",\n\"column-name\": \"test%\"\n}\n}]\n}\nThe third task can also be achieved by using the JSON template for \"Transformation Rules\" as shown below.\n{\n\"rules\": [{\n\"rule-type\": \"selection\",\n\"rule-id\": \"1\",\n\"rule-name\": \"1\",\n\"object-locator\": {\n\"schema-name\": \"test\",\n\"table-name\": \"%\"\n},\n\"rule-action\": \"include\"\n}, {\n\"rule-type\": \"transformation\",\n\"rule-id\": \"2\",\n\"rule-name\": \"2\",\n\"rule-action\": \"add-prefix\",\n\"rule-target\": \"table\",\n\"object-locator\": {\n\"schema-name\": \"test\",\n\"table-name\": \"%\"\n},\n\"value\": \"DMS_\"\n}]\n}\nOption A is incorrect.\nThis option says DMS cannot handle migration.\nIndeed migration from MySQL to PostgreSQL is supported by DMS.\nOption B is incorrect.\nThis option says tasks 2 and 3 cannot be done.\nIn fact, tasks 2 and 3 can be achieved, as shown above.\nOption C is incorrect: Because task 3 can be achieved via “Transformation Rules and Actions”\nA reference is in.\nhttps://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html.\nOption D is CORRECT: Because DMS can perform this migration with all three tasks being achievable.\nAWS Database Migration Service (DMS) is a service that helps migrate databases to AWS. DMS can migrate databases to or from the cloud, including between different database engines. In this scenario, the team plans to migrate their MySQL database to PostgreSQL. Additionally, the development lead has raised extra requirements. Let's examine each answer option in detail to determine the most accurate answer:\nOption A states that DMS cannot handle the task of migration from MySQL to PostgreSQL. Instead, the AWS Schema Conversion Tool should be used to convert the existing database schema, including tables, indexes, and most application code, to the target platform. While the AWS Schema Conversion Tool is a useful tool for database migrations, this answer is not entirely accurate. DMS can handle the task of migration from MySQL to PostgreSQL, as it supports both source and target databases. Therefore, option A is incorrect.\nOption B states that DMS can handle the task of migration from MySQL to PostgreSQL. It can achieve task 1 by using the Selection Rule for column “user_activity” in table “user_info”. However, it cannot do tasks 2 and 3. This option is partially correct. DMS can handle the task of migration from MySQL to PostgreSQL, including task 1, which is migrating the user_activity column from the user_info table. However, DMS cannot handle tasks 2 and 3, which are removing columns starting with \"test\" and renaming a column. Therefore, option B is not the best answer.\nOption C states that DMS can handle the task of migration from MySQL to PostgreSQL. It can achieve task 1 by using the Selection Rule for column “user_activity” in table “user_info”. Task 2 can also be completed by using \"Transformation Rules and Actions\" to remove the columns starting with \"test\". However, for task 3, DMS cannot do that. This option is also partially correct. DMS can handle task 1 and task 2. However, it cannot handle task 3, which is renaming a column. Therefore, option C is not the best answer.\nOption D states that DMS can handle the task of migration from MySQL to PostgreSQL. Furthermore, all tasks can be achieved by specifying Table Selection and Transformations using JSON. This option is the most accurate. DMS can handle the task of migration from MySQL to PostgreSQL, including all three tasks, by specifying Table Selection and Transformations using JSON. JSON allows users to specify how data should be migrated and transformed. Therefore, option D is the best answer.\nIn conclusion, the most accurate answer is option D: DMS can handle the task of migration from MySQL to PostgreSQL, and all tasks can be achieved by specifying Table Selection and Transformations using JSON.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-the-latest-real-estate-news-exam-088.html",
+  "url": "https://certificationation.com/questions/exam-the-latest-real-estate-news-exam-088.html"
+}

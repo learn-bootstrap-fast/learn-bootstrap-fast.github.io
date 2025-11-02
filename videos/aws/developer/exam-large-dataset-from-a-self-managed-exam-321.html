@@ -1,0 +1,81 @@
+---
+title: "You are tasked with migrating a large dataset from aExam"
+description: "Video for you are tasked with migrating a large dataset from a self-managed MySQL database to Google Cloud SQL. You aim to ensure minimal downtime and require"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are tasked with migrating a large dataset from a self-managed MySQL database to Google Cloud SQL. You aim to ensure minimal downtime and require the ability to test the new setup before the full migration. Which service should you use?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A team at mcnz.com needs to move a production MySQL database from self managed servers to Cloud SQL for MySQL. They require less than ten minutes of downtime and they also want to run tests against the target instance before they choose a final cutover date. Which Google Cloud service should they choose?",
+  "options": [
+    {
+      "text": "Datastream",
+      "explanation": "This service provides change data capture from sources such as MySQL into targets like BigQuery or Cloud Storage for near real time pipelines",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud SQL import and export",
+      "explanation": "This approach uses SQL dump files to load data into Cloud SQL and typically requires a maintenance window for the restore",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Database Migration Service",
+      "explanation": "This managed service migrates MySQL databases into Cloud SQL and can keep the target synchronized during the migration",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Migrate to Virtual Machines",
+      "explanation": "This service moves virtual machine workloads into Compute Engine and is focused on server migration rather than database migration",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Database Migration Service</b>.</p><p>This service supports an initial load of data from a self managed MySQL source into Cloud SQL and then keeps the destination in sync using continuous change replication. That lets you point tests at the Cloud SQL target while the source remains live and it allows you to choose a planned cutover time. Because only the final cutover requires a brief outage, total downtime is typically minutes and fits the less than ten minutes requirement.</p><p><i>Datastream</i> is designed for change data capture into analytics and integration targets such as BigQuery, Cloud Storage, or Pub or Sub. It does not orchestrate end to end migrations into Cloud SQL and it does not manage database cutover.</p><p><i>Cloud SQL import and export</i> relies on dump and restore which usually requires extended downtime for large datasets and it cannot keep the target synchronized for pre cutover testing.</p><p><i>Migrate to Virtual Machines</i> moves virtual machines to Compute Engine rather than migrating database data into Cloud SQL, so it does not meet the requirement for a managed database migration with minimal downtime.</p>",
+  "batch_id": "171",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are tasked with migrating a large dataset from a self-managed MySQL database to Google Cloud SQL. You aim to ensure minimal downtime and require the ability to test the new setup before the full migration. Which service should you use?",
+  "originalOptions": "A. Use Dataflow with a custom MySQL connector.<br/>B. Use Cloud SQL with a read replica.<br/>C. Use the GCP's VM Migration Service.<br/>D. Use the Database Migration Service (DMS).",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "321",
+  "tip": "<p>When you see a need for <i>minimal downtime</i> migration into <i>Cloud SQL</i> and the ability to test before <i>cutover</i>, choose the managed migration service rather than analytics replication or dump based methods.</p>",
+  "references": [
+    "https://cloud.google.com/database-migration/docs/overview",
+    "https://cloud.google.com/database-migration/docs/mysql",
+    "https://cloud.google.com/datastream/docs/overview",
+    "https://cloud.google.com/sql/docs/mysql/import-export",
+    "https://cloud.google.com/migrate/virtual-machines"
+  ],
+  "url": "https://certificationation.com/questions/exam-large-dataset-from-a-self-managed-exam-321.html",
+  "video_url": "https://certificationation.com/videos/exam-large-dataset-from-a-self-managed-exam-321.html"
+}

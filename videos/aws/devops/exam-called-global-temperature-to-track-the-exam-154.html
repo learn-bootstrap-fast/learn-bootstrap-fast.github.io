@@ -1,0 +1,62 @@
+---
+title: "Your team created a DynamoDB table calledExam"
+description: "Video for your team created a DynamoDB table called “Global-Temperature” to track the highest/lowest temperatures of cities in different countries. The items in"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your team created a DynamoDB table called “Global-Temperature” to track the highest/lowest temperatures of cities in different countries. The items in the table were identified by a partition key (CountryId) and there was no sort key. The application is recently improved with more features and some queries need to be based on a new partition key (CityId) and sort key (HighestTemperature) How should you implement this?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best solution is to <strong>add a Global Secondary Index (GSI) where CityId is the partition key and HighestTemperature is the sort key</strong>. GSIs provide the flexibility to query data with entirely new key structures, independent of the table’s primary key. This allows your queries to efficiently fetch all temperature records for a city, sorted or filtered by their recorded highest temperature without restructuring the base table or migrating data.</p><p>Here’s why the other options are not correct:</p><ul><li><i>Revise the current table to have CityId as the partition key and HighestTemperature as the sort key.</i> — Modifying the primary key for an existing DynamoDB table is not feasible; you’d have to destroy and recreate the table, resulting in downtime and potential data loss.</li><li><i>Introduce a Local Secondary Index using CityId for the partition key and HighestTemperature for the sort key.</i> — Local Secondary Indexes (LSIs) require the same partition key as the base table, which in this case is CountryId. Since CityId is different, an LSI cannot be used here.</li><li><i>Create both a Global Secondary Index with CityId as the partition key, and a separate Global Secondary Index with HighestTemperature as the partition key. This is required because the primary index only employs a single-partition key, so secondary indexes are restricted to single-partition keys as well.</i> — This suggestion is not only inaccurate but also inefficient. GSIs can have both a partition key and a sort key. Furthermore, you only need one suitable GSI to cover your query requirement. The statement about GSIs being limited to a single attribute as a partition key is incorrect.</li></ul><p><strong>Tip:</strong> Use Global Secondary Indexes to support new and diverse query patterns in DynamoDB, particularly when querying relationships and attributes not included in the table’s primary key.</p>",
+  "query": "<p>Your organization maintains a DynamoDB table named &quot;Global-Temperature&quot; to store records of cities&#39; highest and lowest temperatures worldwide. The table currently uses <strong>CountryId</strong> as its partition key, without a sort key. With new application enhancements, you now need to efficiently query the data by <strong>CityId</strong> as the partition key and <strong>HighestTemperature</strong> as the sort key. What is the optimal way to support this new query pattern?</p>",
+  "original_oid": "6793d9e661969b416038a0eb",
+  "options": [
+    {
+      "correct": false,
+      "text": "Revise the current table to have CityId as the partition key and HighestTemperature as the sort key.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Introduce a Local Secondary Index using CityId for the partition key and HighestTemperature for the sort key.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Create both a Global Secondary Index with CityId as the partition key, and a separate Global Secondary Index with HighestTemperature as the partition key. This is required because the primary index only employs a single-partition key, so secondary indexes are restricted to single-partition keys as well.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Add a Global Secondary Index (GSI) with CityId as the partition key and HighestTemperature as the sort key.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question120",
+  "originalQuery": "Your team created a DynamoDB table called “Global-Temperature” to track the highest/lowest temperatures of cities in different countries.\nThe items in the table were identified by a partition key (CountryId) and there was no sort key.\nThe application is recently improved with more features and some queries need to be based on a new partition key (CityId) and sort key (HighestTemperature)\nHow should you implement this?",
+  "originalOptions": "A. Add a Local Secondary Index with a partition key as CityId and a sort key as HighestTemperature.|B. Modify the existing primary index with partition key as CityId and sort key as HighestTemperature.|C. Add a Global Secondary Index with a partition key as CityId and a sort key as HighestTemperature.|D. Add a Global Secondary Index with partition key as CityId and another Global Secondary Index with partition key as HighestTemperature. Because the primary index only uses a simple primary key (partition key), Secondary Index can only have one partition key as well.",
+  "video_url": "https://certificationation.com/videos/exam-called-global-temperature-to-track-the-exam-154.html",
+  "url": "https://certificationation.com/questions/exam-called-global-temperature-to-track-the-exam-154.html"
+}

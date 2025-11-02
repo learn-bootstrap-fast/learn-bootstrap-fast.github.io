@@ -1,0 +1,84 @@
+---
+title: "A Database Engineer is tasked with planning a databaseExam"
+description: "Video for a Database Engineer is tasked with planning a database upgrade for a mission-critical application using Google Cloud-managed databases. Which of the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A Database Engineer is tasked with planning a database upgrade for a mission-critical application using Google Cloud-managed databases. Which of the following approaches ensures minimal downtime, rollback capability, and proper performance testing before rolling out the upgrade?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A Cloud Database Engineer at Aurora Tickets operates a mission critical workload on a Google Cloud managed relational database and must perform a major version upgrade. The service level objective allows at most three minutes of downtime during cutover and leadership requires a reliable rollback option and the ability to validate performance with production like testing before shifting users. Which approach should the engineer choose to meet these requirements?",
+  "options": [
+    {
+      "text": "Set up a Cloud SQL cross region read replica, upgrade the replica to the new version, then promote it to primary",
+      "explanation": "This option suggests using a read replica in another region that is upgraded and later promoted to become the primary instance.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Schedule an in place upgrade on the primary and rely on automatic failover during maintenance",
+      "explanation": "This approach performs the upgrade directly on the main instance while depending on failover to reduce disruption.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a full clone of the production Cloud SQL instance, upgrade the clone, run realistic performance tests, then redirect traffic to the upgraded clone",
+      "explanation": "This method builds an independent copy that can be upgraded and load tested so traffic can be switched with a brief cutover and prior validation.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use the Cloud SQL maintenance window to upgrade and plan to use point in time recovery to roll back if issues occur",
+      "explanation": "This proposes upgrading during a scheduled window and relying on point in time recovery as the fallback plan.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Create a full clone of the production Cloud SQL instance, upgrade the clone, run realistic performance tests, then redirect traffic to the upgraded clone</b>.</p><p><b>This clone approach</b> lets you validate engine and schema changes with production like load without risking the primary. You can benchmark queries and observe resource utilization on <b>the upgraded clone</b> and you can tune configuration before users are shifted. Cutover can be planned by switching connection endpoints or using a controlled DNS or connection proxy change which keeps downtime within the three minute service level objective. If problems appear after cutover then you can roll back quickly by directing traffic back to the original primary which gives a reliable and fast recovery path.</p><p><i>Set up a Cloud SQL cross region read replica, upgrade the replica to the new version, then promote it to primary</i> is not viable because a read replica must match the primary database version to replicate. You cannot upgrade the replica to a new major version while it is still replicating from an older primary and promotion after an upgrade would not be supported. Even if you promoted first you would incur longer downtime and lose the easy rollback and testing benefits.</p><p><i>Schedule an in place upgrade on the primary and rely on automatic failover during maintenance</i> does not provide controlled validation or a dependable rollback. Automatic failover is for unexpected outages and an in place major version upgrade can exceed the allowed downtime and leaves no quick path to revert if performance regresses.</p><p><i>Use the Cloud SQL maintenance window to upgrade and plan to use point in time recovery to roll back if issues occur</i> fails the rollback requirement because point in time recovery creates a new instance and restore time commonly exceeds a few minutes. It also risks data loss between the chosen recovery point and the failure which does not meet the strict recovery expectations.</p>",
+  "batch_id": "168",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "A Database Engineer is tasked with planning a database upgrade for a mission-critical application using Google Cloud-managed databases. Which of the following approaches ensures minimal downtime, rollback capability, and proper performance testing before rolling out the upgrade?",
+  "originalOptions": "A. Perform an in-place upgrade with automatic failover.<br/>B. Use Cloud SQL cross-region replication to create a replica, upgrade the replica, and then promote it to primary.<br/>C. Create a clone of the existing database, upgrade the clone, test performance, and switch traffic to the upgraded clone.<br/>D. Create a new database instance with the upgraded version and use Cloud Data Fusion to synchronize data.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "343",
+  "tip": "<p>When you see requirements for preproduction validation, minimal cutover time, and fast rollback, think in terms of <i>blue green style</i> patterns using clones or parallel environments rather than in place upgrades or replicas that cannot change versions.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/clone-instance",
+    "https://cloud.google.com/sql/docs/postgres/clone-instance",
+    "https://cloud.google.com/sql/docs/postgres/upgrade-major-db-version",
+    "https://cloud.google.com/sql/docs/mysql/upgrade-major-db-version",
+    "https://cloud.google.com/sql/docs/mysql/replication/replication-overview#read-replicas",
+    "https://cloud.google.com/sql/docs/postgres/replication/replication-overview#requirements",
+    "https://cloud.google.com/sql/docs/mysql/backup-recovery/point-in-time-recovery",
+    "https://cloud.google.com/sql/docs/mysql/maintenance"
+  ],
+  "url": "https://certificationation.com/questions/exam-with-planning-a-database-upgrade-exam-343.html",
+  "video_url": "https://certificationation.com/videos/exam-with-planning-a-database-upgrade-exam-343.html"
+}

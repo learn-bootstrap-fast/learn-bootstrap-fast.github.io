@@ -1,0 +1,62 @@
+---
+title: "As a DevOps engineer, you are supporting the developmentExam"
+description: "Video for as a DevOps engineer, you are supporting the development team to deploy a new e-commerce software. You have used AWS CodeDeploy to deploy the latest"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a DevOps engineer, you are supporting the development team to deploy a new e-commerce software. You have used AWS CodeDeploy to deploy the latest software release to several AWS EC2 instances. In this CodeDeploy application, there are two Deployment groups called Stage and Prod. Currently, the only difference between Stage and Prod is the logging level which can be configured in a file. What is the most efficient way to implement the different logging levels for Deployment groups Stage and Prod?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>most efficient and manageable solution</b> is to use the <b>DEPLOYMENT_GROUP_NAME</b> environment variable in your deployment script (specifically in the BeforeInstall lifecycle hook). This variable lets your script detect whether it's running against the Stage or Prod deployment group and configure the logging level accordingly.</p><p>This approach avoids code duplication, centralizes logic, and makes maintenance easier, especially as you scale to more environments or change configuration behaviors in the future.</p><ul><li><i>\"Rely on the value of the environment variable DEPLOYMENT_ID inside your script to detect which Deployment Group is being used...\"</i> is incorrect because DEPLOYMENT_ID identifies the deployment event, not the group. It makes detection indirect and unreliable.</li><li><i>\"Produce two separate versions of your script file prior to installation...\"</i> and <i>\"Maintain two distinct script files...\"</i> are both less efficient. They increase maintenance overhead, risk inconsistencies if scripts drift, and complicate deployment updates. Managing a single script that selects its behavior based on a dynamic variable is a best practice for environment-specific customization.</li></ul><p><b>Tip:</b> AWS CodeDeploy automatically passes context-specific environment variables (like DEPLOYMENT_GROUP_NAME) to scripts, making dynamic configuration easy and robust.</p>",
+  "query": "<p>You're working as a DevOps engineer assisting a team launching a new e-commerce platform. They're leveraging AWS CodeDeploy for deployments to their EC2 fleet, which uses two separate deployment groups: Stage and Prod. The chief distinction between these groups is the logging level, which is controlled via a configuration file. What is the most streamlined and maintainable method to assign the correct logging levels to the Stage and Prod groups during deployment?</p>",
+  "original_oid": "6793d9f761969b416038a10c",
+  "options": [
+    {
+      "correct": true,
+      "text": "Modify your deployment scripts so that the logging level is chosen using the environment variable DEPLOYMENT_GROUP_NAME within the BeforeInstall hook, allowing your script to adjust the config file based on whether it's targeting Stage or Prod.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Rely on the value of the environment variable DEPLOYMENT_ID inside your script to detect which Deployment Group is being used, then set the appropriate logging level.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Produce two separate versions of your script file prior to installation. Each version is set to the required log level for either Stage or Prod, and you select the needed script for each deployment.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Maintain two distinct script files: one for Stage and one for Prod, each set with its respective logging configuration, and alter your deployment groups to reference the proper script.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question153",
+  "originalQuery": "As a DevOps engineer, you are supporting the development team to deploy a new e-commerce software.\nYou have used AWS CodeDeploy to deploy the latest software release to several AWS EC2 instances.\nIn this CodeDeploy application, there are two Deployment groups called Stage and Prod.\nCurrently, the only difference between Stage and Prod is the logging level which can be configured in a file.\nWhat is the most efficient way to implement the different logging levels for Deployment groups Stage and Prod?",
+  "originalOptions": "[\"A. Create two source versions of script files in the BeforeInstall hook. One version has its logging level setting for Deployment Group \\u201cStage\\u201d. And the other one has its logging level setting for \\u201cProd\\u201d. Choose the relevant source files when creating a new deployment.\",\"B. For the script file in the BeforeInstall hook, use the environment variable DEPLOYMENT_GROUP_NAME to determine the Deployment Group. Then modify the logging level accordingly in the script.\",\"C. In the hook script file, use the environment variable DEPLOYMENT_ID to determine which Deployment Group it is. Then modify the logging level accordingly in the script.\",\"D. Create two script files. One version has its logging level setting for \\u201cStage\\u201d. And the other one has its logging level setting for \\u201cProd\\u201d. Modify the Deployment Group configurations to use the correct script file.\"]",
+  "video_url": "https://certificationation.com/videos/exam-the-development-team-to-deploy-exam-437.html",
+  "url": "https://certificationation.com/questions/exam-the-development-team-to-deploy-exam-437.html"
+}

@@ -1,0 +1,81 @@
+---
+title: "You are designing a Cloud SQL instance for a productionExam"
+description: "Video for you are designing a Cloud SQL instance for a production application. The database must only be accessed from within the Google Cloud Platform (GCP)"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are designing a Cloud SQL instance for a production application. The database must only be accessed from within the Google Cloud Platform (GCP) environment and should not be exposed to the internet. How can you configure access to meet these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are setting up a Cloud SQL instance for a payment processing system at scrumtuous.com. Company policy requires that the database be reachable only from workloads running inside Google Cloud and that it must not be accessible from the public internet. What configuration should you implement to satisfy this policy?",
+  "options": [
+    {
+      "text": "Configure a VPC Service Controls perimeter around the project",
+      "explanation": "VPC Service Controls creates a service perimeter to reduce data exfiltration risks for Google-managed services",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable private services access for your VPC and create the instance with a private IP",
+      "explanation": "Private services access establishes a private connection so Cloud SQL can use an internal IP address within your VPC",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Configure a Cloud NAT gateway for the instance",
+      "explanation": "Cloud NAT provides outbound internet access for resources that do not have public IP addresses",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable a public IP on the instance and restrict sources with authorized networks",
+      "explanation": "Authorized networks allow you to permit specific source IP ranges to reach a public endpoint",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct configuration is <b>Enable private services access for your VPC and create the instance with a private IP</b>.</p><p>This approach provisions the database with an internal address through Service Networking so the instance has no public endpoint. Connections can originate only from resources in your VPC or from connected networks such as Shared VPC, VPC peering, Cloud VPN, or Cloud Interconnect. This satisfies the requirement that the database be reachable only from workloads inside Google Cloud and not from the public internet.</p><p><i>Configure a VPC Service Controls perimeter around the project</i> is not sufficient because it protects access to supported Google APIs and reduces data exfiltration risk, yet it does not govern database connection paths to Cloud SQL and does not create a private endpoint.</p><p><i>Configure a Cloud NAT gateway for the instance</i> is unrelated to restricting inbound connectivity. It provides outbound internet access for private resources and does not make a managed database privately reachable only within your networks.</p><p><i>Enable a public IP on the instance and restrict sources with authorized networks</i> still exposes a public endpoint on the internet. Even with source restrictions in place, the stated policy requires no public exposure, so this does not meet the requirement.</p>",
+  "batch_id": "60",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "You are designing a Cloud SQL instance for a production application. The database must only be accessed from within the Google Cloud Platform (GCP) environment and should not be exposed to the internet. How can you configure access to meet these requirements?",
+  "originalOptions": "A. Enable public IP on the instance but restrict access with authorized networks.<br/>B. Configure a Cloud NAT gateway for the instance.<br/>C. Add the Cloud SQL instance to a shared VPC host project.<br/>D. Enable private services access for your VPC.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "300",
+  "tip": "<p>When you see a requirement that says <i>no public internet</i>, look for options that give the service an <i>internal</i> endpoint only. For Cloud SQL that usually means a <i>private IP</i> created through private services access rather than a public IP with filters.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/configure-private-ip",
+    "https://cloud.google.com/vpc/docs/private-services-access",
+    "https://cloud.google.com/sql/docs/mysql/authorize-networks",
+    "https://cloud.google.com/nat/docs/overview",
+    "https://cloud.google.com/vpc-service-controls/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-for-a-production-application-the-exam-300.html",
+  "video_url": "https://certificationation.com/videos/exam-for-a-production-application-the-exam-300.html"
+}

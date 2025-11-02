@@ -1,0 +1,128 @@
+---
+title: "A company has an ordering application that storesExam"
+description: "Video for a company has an ordering application that stores customer information in Amazon RDS for MySQL. During regular business hours, employees run one-time"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company has an ordering application that stores customer information in Amazon RDS for MySQL. During regular business hours, employees run one-time queries for reporting purposes. Timeouts are occurring during order processing because the reporting queries are taking a long time to run. The company needs to eliminate the timeouts without preventing employees from performing queries. What should a solutions architect do to meet these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729a24"
+  },
+  "quid": null,
+  "ordinal": "191",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon RDS",
+    " Amazon Redshift",
+    " AWS Glue",
+    " Amazon Athena",
+    " AWS Database Migration Service (AWS DMS)"
+  ],
+  "slug": "rd-application-stores-customer-info-aws",
+  "source": "ET",
+  "title": "AWS A Company Has An Ordering Application Question",
+  "meta": "AWS Exam Question: A company needs to eliminate timeouts in an ordering app using Amazon RDS for MySQL while allowing employee queries. Find the optimal answer.",
+  "answer": "A",
+  "query": "A retail organization operates a purchasing app that saves customer records in Amazon RDS for PostgreSQL. During peak business hours, staff execute ad-hoc queries for analytical insights. However, order processing is facing timeouts due to these lengthy analytical queries. The organization seeks a way to eliminate the timeouts while still allowing staff to run these queries.\n\nWhat action should a solutions architect take to resolve this issue?",
+  "originalQuery": "A company has an ordering application that stores customer information in Amazon RDS for MySQL. During regular business hours, employees run one-time queries for reporting purposes. Timeouts are occurring during order processing because the reporting queries are taking a long time to run. The company needs to eliminate the timeouts without preventing employees from performing queries.\n\nWhat should a solutions architect do to meet these requirements?",
+  "options": [
+    "",
+    "",
+    "",
+    ""
+  ],
+  "originalOptions": [
+    "A. Create a read replica. Move reporting queries to the read replica.",
+    "B. Create a read replica. Distribute the ordering application to the primary DB instance and the read replica.",
+    "C. Migrate the ordering application to Amazon DynamoDB with on-demand capacity.",
+    "D. Schedule the reporting queries for non-peak hours."
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "To address the issue of timeouts during order processing caused by long-running reporting queries in an Amazon RDS for MySQL environment, a solutions architect should consider implementing a dedicated reporting database. This approach involves creating a separate Amazon RDS instance specifically for reporting purposes. By offloading reporting queries to this dedicated instance, the primary database can focus on handling order transactions without the interference of resource-intensive reporting tasks.\n\nAdditionally, the architect may explore the use of Amazon RDS Read Replicas to enhance read scalability. Read Replicas can distribute the read workload, allowing reporting queries to be executed on the replicas while the primary database remains optimized for write operations. This setup not only reduces contention for resources but also improves overall system performance.\n\nTo further optimize the reporting queries, the solutions architect should analyze the query performance and consider indexing strategies or query refactoring to ensure faster execution. Implementing caching mechanisms, such as Amazon ElastiCache, could also help store frequently accessed data, thereby reducing the load on the database during peak times.\n\nIn summary, establishing a dedicated reporting database, utilizing Read Replicas, and optimizing query performance are effective strategies to mitigate timeouts while maintaining employee access to necessary reporting functionalities.",
+    "It looks like the order processing is getting a bit cranky due to those pesky long-running reporting queries! 🥴 To keep the good vibes flowing, a solutions architect could consider a few options. For starters, they might introduce read replicas in Amazon RDS for MySQL. This would allow employees to run their reporting queries on a separate instance, freeing up the main database for those speedy order transactions. 🚀\n\nAnother clever move could be to implement query optimization techniques. By analyzing slow queries and adding indexes where needed, the time spent on reporting could be drastically reduced. 📈 \n\nLastly, scheduling reporting queries during off-peak hours might just do the trick! After all, who doesn’t love a little late-night data crunching? 🌙 This way, employees can still access the information they need without stepping on the toes of the order processing system. \n\nWith these strategies in place, it's like turning the database traffic jam into a smooth highway! 🛣️ Happy querying!",
+    "To tackle the pesky timeouts and ensure that those long-winded reporting queries don’t mess with order processing, the most effective approach would be to implement a read replica for the Amazon RDS for MySQL database. This way, the reporting queries can be directed to the read replica, freeing up the primary database to handle order transactions without breaking a sweat. \n\nIn addition, consider optimizing the reporting queries themselves by analyzing their execution plans and adding appropriate indexes. This will help them run more efficiently, reducing their impact on the overall system. \n\nOf course, there’s always the option of leveraging Amazon RDS Performance Insights to monitor database performance and identify bottlenecks, which could inform further tuning. Ultimately, with a little ingenuity and the right tools, you can keep the order processing smooth while still letting employees indulge their curiosity with reports.",
+    "To enhance the performance of the ordering application while allowing employees to continue executing their reporting queries, the reporting queries can be directed to a read replica. This strategy ensures that the primary database remains focused on handling write and read operations for order processing, thereby minimizing timeouts and improving overall efficiency. By implementing this approach, the company can effectively balance the demands of reporting and transactional workloads, leading to a smoother and more responsive application experience for all users.",
+    "The ideal approach here is to set up a read replica! 🌈 By directing reporting queries to this read replica, you can ease the strain on the primary database that supports your ordering application. This delightful strategy allows the primary instance to focus on critical operations, such as processing orders, without the interference of those demanding reporting queries. As a result, you should see a significant reduction, if not a complete elimination, of the pesky timeouts that have been disrupting your order processing. It's a win-win for everyone involved! 🎉"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "",
+      "explanation": "A is correct answer. This was in my exam",
+      "upvotes": "27"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Did these questions help with your exam?",
+      "upvotes": "5"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "The best solution to address the timeouts and eliminate the impact of long-running reporting queries without disrupting order processing is:A",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "Reporting queries will point to read replica. Application will still point to primary db for write / read operations.",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "A",
+      "explanation": "The correct answer to this question is A: Create a read replica. Move reporting queries to the read replica. This solution is designed to alleviate the load on the primary database used by the ordering application. By offloading the reporting queries to a read replica, the primary instance is freed up to handle operational transactions like order processing without contention from the resource-intensive reporting queries. This should effectively reduce or eliminate the timeouts currently experienced during order processing.",
+      "upvotes": "3"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "A (100%)",
+      "votes": "64 votes."
+    },
+    {
+      "option": "C (25%)",
+      "votes": ""
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is A: Creating a read replica and moving reporting queries to it addresses the timeouts by alleviating load on the primary database, allowing it to focus on handling transaction operations. As for the incorrect options: B suggests distributing the application which may complicate the architecture without resolving the load issue directly. C, migrating to DynamoDB, involves significant changes and does not necessarily solve the immediate timeout problem. D scheduling queries for non-peak hours may help but does not allow staff to run needed queries during peak operations.",
+  "video_url": "https://certificationation.com/videos/exam-that-stores-customer-information-in-exam-191.html",
+  "url": "https://certificationation.com/questions/exam-that-stores-customer-information-in-exam-191.html"
+}

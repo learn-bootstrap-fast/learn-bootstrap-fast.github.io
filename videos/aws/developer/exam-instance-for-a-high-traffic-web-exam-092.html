@@ -1,0 +1,79 @@
+---
+title: "You are managing a Cloud Spanner instance for aExam"
+description: "Video for you are managing a Cloud Spanner instance for a high-traffic web application. You need to add a new index to a table that has millions of rows without"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are managing a Cloud Spanner instance for a high-traffic web application. You need to add a new index to a table that has millions of rows without affecting the performance of the application. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You administer a Cloud Spanner database for a nationwide ticketing startup named Stardash. You need to add a secondary index to the Purchases table, which holds about 80 million rows, and you must not increase request latency while customers are actively buying tickets. What should you do?",
+  "options": [
+    {
+      "text": "Stand up a new Cloud Spanner instance with the updated schema, bulk copy the data, and cut over clients to the new instance",
+      "explanation": "This performs a migration by creating a parallel environment then migrating data and switching traffic to it",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Submit a &quot;CREATE INDEX&quot; statement with gcloud spanner databases ddl update so Cloud Spanner builds and backfills the index online",
+      "explanation": "This issues an online schema change that Cloud Spanner executes as a long running operation while continuing to serve traffic",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use Dataflow to populate a separate lookup table that mirrors the needed index and have the application query that table",
+      "explanation": "This creates a custom denormalized table via a batch pipeline and would require application changes to use it",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Shut down the Cloud Spanner instance, apply the index change, then bring the instance back online",
+      "explanation": "This applies the schema change during downtime because the instance is offline until the change is complete",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Submit a \"CREATE INDEX\" statement with gcloud spanner databases ddl update so Cloud Spanner builds and backfills the index online</b>. Cloud Spanner performs index creation as an online schema change that continues to serve traffic while the backfill runs and it does not require downtime.</p><p>Cloud Spanner builds the new index in the background and backfills existing rows while reads and writes proceed. Submitting the DDL through the gcloud command lets Spanner manage the change safely and it throttles work so active workloads are protected. This satisfies the need to avoid increasing request latency while customers are buying tickets.</p><p><i>Stand up a new Cloud Spanner instance with the updated schema, bulk copy the data, and cut over clients to the new instance</i> is unnecessary and risky for latency. It adds migration complexity and introduces a cutover that can disrupt traffic, and Spanner already supports online index creation without moving data.</p><p><i>Use Dataflow to populate a separate lookup table that mirrors the needed index and have the application query that table</i> duplicates data and bypasses transactional indexing guarantees. It complicates application logic and can create consistency gaps compared with a true secondary index that is maintained automatically.</p><p><i>Shut down the Cloud Spanner instance, apply the index change, then bring the instance back online</i> causes downtime and interrupts sales activity, which violates the requirement to avoid impacting request latency during active purchases.</p>",
+  "batch_id": "286",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "You are managing a Cloud Spanner instance for a high-traffic web application. You need to add a new index to a table that has millions of rows without affecting the performance of the application. What should you do?",
+  "originalOptions": "A. Stop the Cloud Spanner instance, add the index, and restart it.<br/>B. Use the gcloud command-line tool to add the index by specifying the --background flag with the gcloud spanner databases update command.<br/>C. Use the Cloud Console to add the index.<br/>D. Create a new instance with the index and migrate the data to it.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "92",
+  "tip": "<p>When you see a requirement for <i>no downtime</i> during schema changes in Cloud Spanner, choose the <i>online</i> CREATE INDEX path with gcloud schema updates and eliminate answers that rely on migrations, custom ETL, or stopping the instance.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/schema-updates",
+    "https://cloud.google.com/spanner/docs/secondary-indexes",
+    "https://cloud.google.com/sdk/gcloud/reference/spanner/databases/ddl/update"
+  ],
+  "url": "https://certificationation.com/questions/exam-instance-for-a-high-traffic-web-exam-092.html",
+  "video_url": "https://certificationation.com/videos/exam-instance-for-a-high-traffic-web-exam-092.html"
+}

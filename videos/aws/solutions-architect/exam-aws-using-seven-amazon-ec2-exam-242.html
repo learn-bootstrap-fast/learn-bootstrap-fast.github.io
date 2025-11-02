@@ -1,0 +1,128 @@
+---
+title: "A company hosts its web application on AWS using sevenExam"
+description: "Video for a company hosts its web application on AWS using seven Amazon EC2 instances. The company requires that the IP addresses of all healthy EC2 instances"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company hosts its web application on AWS using seven Amazon EC2 instances. The company requires that the IP addresses of all healthy EC2 instances be returned in response to DNS queries. Which policy should be used to meet this requirement?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6792e6394a5aa27e4f729a57"
+  },
+  "quid": null,
+  "ordinal": "242",
+  "certificationKey": "AWSSAA",
+  "certification": "AWS Solution Architect Associate Exam",
+  "keywords": [
+    "Amazon Route 53",
+    " Amazon EC2",
+    " AWS global infrastructure",
+    " Network services",
+    " AWS Well-Architected Framework"
+  ],
+  "slug": "ec2-hosts-ip-addresses-dns-aws",
+  "source": "ET",
+  "title": "AWS A Company Hosts Its Web Application Question",
+  "meta": "AWS Exam Question: A company hosts its web app on AWS with seven EC2 instances and needs healthy instance IPs for DNS queries. What policy is the answer?",
+  "answer": "C",
+  "query": "An organization operates a web service on AWS utilizing eight Amazon EC2 instances. They need to ensure that the DNS queries return the IP addresses of every healthy EC2 instance available.\n\nWhat routing policy is best suitable for this requirement?",
+  "originalQuery": "A company hosts its web application on AWS using seven Amazon EC2 instances. The company requires that the IP addresses of all healthy EC2 instances be returned in response to DNS queries.\n\nWhich policy should be used to meet this requirement?",
+  "options": [
+    "A. Simple routing policy",
+    "B. Routing that optimizes based on latency",
+    "C. Multivalue routing policy",
+    "D. Routing based on user's location"
+  ],
+  "originalOptions": [
+    "A. Simple routing policy",
+    "B. Latency routing policy",
+    "C. Multivalue routing policy",
+    "D. Geolocation routing policy"
+  ],
+  "image": null,
+  "primaryObjective": "2: Design Resilient Architectures",
+  "comments": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "The Multivalue routing policy enables Amazon Route 53 to provide multiple healthy IP addresses in response to DNS queries for the same resource. This feature is particularly advantageous in scenarios where several instances perform identical functions, allowing for effective load balancing and failover capabilities. By utilizing the Multivalue routing policy, Route 53 can return multiple IP addresses in a randomized order, thereby distributing incoming traffic evenly across all healthy instances.\n\nIn contrast, the Simple routing policy would yield only a single IP address for DNS queries, lacking the functionality to return multiple addresses.\n\nThe Latency routing policy optimizes traffic routing based on the lowest latency to a resource but does not satisfy the requirement to return all healthy IP addresses.\n\nSimilarly, the Geolocation routing policy directs traffic based on the user's geographic location and does not meet the need for returning all healthy IP addresses.\n\nThus, the Multivalue routing policy is the most appropriate choice for ensuring that all healthy EC2 instance IP addresses are returned in response to DNS queries.",
+    "To sprinkle a bit of magic on your DNS responses, opt for a multivalue answer routing policy! 🪄 This nifty approach allows you to serve up DNS responses from various resources, sharing the love (and traffic) among multiple healthy EC2 instances. 🌟 It’s particularly handy when you want to pair your routing records with a Route 53 health check, ensuring that only the A-team (aka healthy instances) get to shine. Plus, it lets you return multiple IP addresses for a single DNS query, making sure your users have plenty of options to connect with your application! 🚀 So, let’s keep it healthy and happy in the cloud!",
+    "Ah, the joys of DNS queries and the eternal quest for healthy EC2 instances! When you want Route 53 to respond with the IP addresses of all the well-behaved instances—up to eight of them, to be exact—multivalue answer routing is your go-to. This nifty feature allows you to serve up a random selection of healthy records, ensuring that your responses are as dynamic as they are efficient. Plus, if you're feeling particularly private, you can even set this up in a private hosted zone. \n\nSo, when the company insists on getting the IPs of all the healthy instances, you’ll find that multivalue routing is the only game in town. It’s like having a buffet of healthy options—just make sure only the good ones make it to the table!",
+    "Implementing a multivalue answer routing policy is a fantastic way to enhance your DNS responses by enabling them to span multiple resources. This approach is particularly beneficial when you want to link your routing records to a Route 53 health check, ensuring that only healthy instances are considered. By employing multivalue answer routing, you can effectively return multiple IP addresses in response to a DNS query, allowing traffic to be efficiently distributed across all available and healthy EC2 instances. This not only improves the resilience of your application but also optimizes resource utilization. What an excellent strategy for achieving reliability and performance!",
+    "When you're looking for a delightful way to ensure that Route 53 responds to DNS queries with a sprinkle of randomness, the Multivalue answer routing policy is your best friend! 🌈 This fabulous option allows Route 53 to share the joy by returning up to eight healthy records, chosen at random, every time a query is made. It's a cheerful and effective way to keep things lively and ensure that users are directed to your vibrant web application hosted on those splendid EC2 instances!"
+  ],
+  "originalComments": [
+    {
+      "selectedAnswer": "",
+      "explanation": "The Multivalue routing policy allows Route 53 to respond to DNS queries with multiple healthy IP addresses for the same resource. This is particularly useful in scenarios where multiple instances are serving the same purpose and need to be load balanced or failover capable. With the Multivalue routing policy, Route 53 returns multiple IP addresses in a random order to distribute the traffic across all healthy instances.\n\nOption A (Simple routing policy) would only return a single IP address in response to DNS queries and does not support returning multiple addresses.\n\nOption B (Latency routing policy) is used to route traffic based on the lowest latency to the resource and does not fulfill the requirement of returning all healthy IP addresses.\n\nOption D (Geolocation routing policy) is used to route traffic based on the geographic location of the user and does not fulfill the requirement of returning all healthy IP addresses.\n\nTherefore, the Multivalue routing policy is the most suitable option for returning the IP addresses of all healthy EC2 instances in response to DNS queries.",
+      "upvotes": "14"
+    },
+    {
+      "selectedAnswer": "C",
+      "explanation": "Use a multivalue answer routing policy to help distribute DNS responses across multiple resources. For example, use multivalue answer routing when you want to associate your routing records with a Route 53 health check. For example, use multivalue answer routing when you need to return multiple values for a DNS query and route traffic to multiple IP addresses.\n\nhttps://aws.amazon.com/premiumsupport/knowledge-center/multivalue-versus-simple-policies/",
+      "upvotes": "14"
+    },
+    {
+      "selectedAnswer": "C",
+      "explanation": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue\n\n\"Multivalue answer routing policy – Use when you want Route 53 to respond to DNS queries with up to eight healthy records selected at random. You can use multivalue answer routing to create records in a private hosted zone.\"\n\nCompany requires that the IP addresses of \"ALL\" healthy EC2 instances be returned so C is the only option.",
+      "upvotes": "5"
+    },
+    {
+      "selectedAnswer": "",
+      "explanation": "Use a multivalue answer routing policy to help distribute DNS responses across multiple resources. For example, use multivalue answer routing when you want to associate your routing records with a Route 53 health check. For example, use multivalue answer routing when you need to return multiple values for a DNS query and route traffic to multiple IP addresses.",
+      "upvotes": "2"
+    },
+    {
+      "selectedAnswer": "C",
+      "explanation": "Use Multivalue answer routing policy when you want Route 53 to respond to DNS queries with up to eight healthy records selected at random.",
+      "upvotes": "2"
+    }
+  ],
+  "voteDistribution": [
+    {
+      "option": "C (97%)",
+      "votes": "34 votes."
+    },
+    {
+      "option": "3%",
+      "votes": "1 votes."
+    },
+    {
+      "option": "B (20%)",
+      "votes": ""
+    },
+    {
+      "option": "Other",
+      "votes": ""
+    }
+  ],
+  "difficulty": null,
+  "originalExplanation": null,
+  "chatGptExplanation": "The correct answer is C, the Multivalue routing policy, as it allows Route 53 to return all healthy IP addresses of EC2 instances in response to DNS queries. This is essential for load balancing and failover scenarios. \n\nOption A, Simple routing policy, only returns a single IP address, which fails to meet the requirement of returning all healthy instances. \n\nOption B, Latency routing policy, routes based on the lowest response time, but does not return multiple IP addresses. \n\nOption D, Geolocation routing policy, directs traffic based on the user's geographical location and does not address the requirement to return all healthy instances. \n\nThus, C is the correct choice for the stated requirements.",
+  "video_url": "https://certificationation.com/videos/exam-aws-using-seven-amazon-ec2-exam-242.html",
+  "url": "https://certificationation.com/questions/exam-aws-using-seven-amazon-ec2-exam-242.html"
+}

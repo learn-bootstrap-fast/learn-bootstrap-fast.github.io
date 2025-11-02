@@ -1,0 +1,76 @@
+---
+title: "You have deployed a web application targeting a globalExam"
+description: "Video for you have deployed a web application targeting a global audience across multiple AWS Regions under the domain name example.com. You decide to use"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have deployed a web application targeting a global audience across multiple AWS Regions under the domain name example.com. You decide to use Route53 Latency-Based Routing to serve web requests to the users from the region closest to them. To provide business continuity in the event of server downtime, you configure weighted record sets associated with two web servers in separate Availability Zones per region."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "_id": {
+    "$oid": "6793d5f5f501ee1c8ade98c2"
+  },
+  "quid": "0",
+  "ordinal": "378",
+  "certificationKey": "AWSSAP",
+  "certification": "AWS Solutions Architect Professional",
+  "keywords": [
+    "Amazon Route 53",
+    " Amazon EC2",
+    " AWS global infrastructure",
+    " AWS Well-Architected Framework",
+    " AWS Cloud Adoption Framework (AWS CAF)"
+  ],
+  "slug": "r53-web-application-global-audience-aws",
+  "source": "https://www.exam-answer.com/amazon/Sap-c01/question378",
+  "title": "AWS Deployed A Web Application Question",
+  "meta": "AWS Exam Question: Deploy a web application globally using Route53 Latency-Based Routing and weighted record sets for business continuity. Learn the answer!",
+  "answer": "B amp E",
+  "query": "A multinational company has rolled out a global online service hosted in various AWS Regions under the domain serviceglobal.com. They opt for Route 53 Latency-Based Routing to minimize response times by directing client requests to the nearest region. For fault tolerance, they use weighted record sets including two EC2 web servers in distinct Availability Zones within each region. Despite this setup, users experience downtime when a server is disabled in one region. What are possible causes?",
+  "originalQuery": "You have deployed a web application targeting a global audience across multiple AWS Regions under the domain name example.com.\nYou decide to use Route53 Latency-Based Routing to serve web requests to the users from the region closest to them.\nTo provide business continuity in the event of server downtime, you configure weighted record sets associated with two web servers in separate Availability Zones per region.",
+  "options": [
+    "A. Latency resource record sets cannot be combined with weighted resource records.",
+    "B. You did not set up an HTTP health check to one or more of the weighted resource record sets associated with the disabled web servers.",
+    "C. The weight assigned to the latency alias resource record set in the region with the inactive servers is greater than that in other regions.",
+    "D. One of the two operational web servers in the alternate region failed its HTTP health inspection.",
+    "E. You did not set “Evaluate Target Health” to “Yes” on the latency alias resource record set associated with serviceglobal.com in the region where you disabled the servers."
+  ],
+  "originalOptions": [
+    "A. Latency resource record sets cannot be used in combination with weighted resource record sets.",
+    "B. You did not set up an HTTP health check to one or more of the weighted resource record sets associated with the disabled web servers.",
+    "C. The value of the weight associated with the latency alias resource record set in the region with the disabled servers is higher than the weight for the other region.",
+    "D. One of the two working web servers in the other region did not pass its HTTP health check.",
+    "E. You did not set “Evaluate Target Health” to “Yes” on the latency alias resource record set associated with example.com in the region where you disabled the servers."
+  ],
+  "image": "",
+  "primaryObjective": "3: Continuous Improvement for Existing Solutions",
+  "comments": [],
+  "originalComments": null,
+  "voteDistribution": null,
+  "difficulty": "0",
+  "originalExplanation": "E.\nAnswer - B &amp; E.\nOption A is incorrect because you can set up weighted record sets as the failover or secondary recordset.\nOption B is CORRECT because if the HTTP health check is not set with the weighted resource record sets of the disabled web servers, Route 53 will consider them healthy and continue to forward the traffic.\nOnce the health check is enabled, the DNS queries will get a response indicating that the web servers are disabled, and then the requests would get routed to the other region.\nOption C is incorrect because even if the weight is lower for the region with disabled web servers, Route 53 will continue forwarding the users' requests closest to that region because it will evaluate the latency record set first.\nOption D is incorrect because, even if one of the servers fails, the other server will still work, and the region should get the traffic.\nOption E is CORRECT because if the “Evaluate Target Health” is not set to “Yes” for the region containing the disabled web servers, Route 53 will consider the health of the recordset as healthy and continue to route the traffic to it.\nFor more information on How Amazon Route 53 chooses records when Health Checking is configured, please visit the link below:\nhttps://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-how-route-53-chooses-records.html https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-eth-no\nThe correct answer is E. You did not set “Evaluate Target Health” to “Yes” on the latency alias resource record set associated with example.com in the region where you disabled the servers.\nExplanation:\nThe scenario described in the question involves the deployment of a web application across multiple AWS regions under the domain name example.com. The objective is to use Route53 Latency-Based Routing to serve web requests to users from the region closest to them. To ensure business continuity in case of server downtime, the configuration involves weighted record sets associated with two web servers in separate Availability Zones per region.\nIn such a setup, each region has a latency alias resource record set associated with example.com. Each alias resource record set contains the weighted record sets of the two web servers in the region. The weight distribution across the two record sets ensures that traffic is distributed between them in a specified proportion, which can be used to balance traffic load or provide failover capabilities.\nThe question asks for the reason for the failure of business continuity in case of server downtime. There can be several reasons why a server in a region can fail, but the configuration should ensure that traffic is redirected to the other server. The options provided in the question are as follows:\nA. Latency resource record sets cannot be used in combination with weighted resource record sets.\nThis statement is incorrect. Latency alias resource record sets can be combined with weighted record sets to provide failover capabilities based on latency.\nB. You did not set up an HTTP health check to one or more of the weighted resource record sets associated with the disabled web servers.\nThis statement is incorrect. The scenario mentions that weighted record sets are used to provide business continuity in case of server downtime. Health checks can be configured to monitor the health of the web servers associated with the weighted record sets. If a server is found to be unhealthy, Route53 can automatically route traffic to the other server.\nC. The value of the weight associated with the latency alias resource record set in the region with the disabled servers is higher than the weight for the other region.\nThis statement is incorrect. The weights associated with the latency alias resource record sets determine the proportion of traffic to be sent to each region. The weight distribution across the two weighted record sets within each latency alias resource record set determines the proportion of traffic to be sent to each web server within the region.\nD. One of the two working web servers in the other region did not pass its HTTP health check.\nThis statement is incorrect. The scenario mentions that weighted record sets are used to provide business continuity in case of server downtime. Health checks can be configured to monitor the health of the web servers associated with the weighted record sets. If a server is found to be unhealthy, Route53 can automatically route traffic to the other server.\nE. You did not set “Evaluate Target Health” to “Yes” on the latency alias resource record set associated with example.com in the region where you disabled the servers.\nThis statement is correct. The option \"Evaluate Target Health\" should be set to \"Yes\" on the latency alias resource record set associated with example.com in the region where servers are disabled. This setting ensures that Route53 checks the health of the web servers associated with the weighted record sets within the latency alias resource record set before redirecting traffic to them. If Route53 finds that a web server is unhealthy, it routes traffic to the other web server associated with the weighted record set.\nTherefore, the correct answer is option E: You did not set “Evaluate Target Health” to “Yes” on the latency alias resource record set associated with example.com in the region where you disabled the servers.",
+  "chatGptExplanation": null,
+  "video_url": "https://certificationation.com/videos/exam-targeting-a-global-audience-across-exam-248.html",
+  "url": "https://certificationation.com/questions/exam-targeting-a-global-audience-across-exam-248.html"
+}

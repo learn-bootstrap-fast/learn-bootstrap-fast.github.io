@@ -1,0 +1,62 @@
+---
+title: "You are using an AWS CodePipeline to create aExam"
+description: "Video for you are using an AWS CodePipeline to create a CloudFormation stack. The stack is used to deploy resources for a human approval project that allows the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are using an AWS CodePipeline to create a CloudFormation stack. The stack is used to deploy resources for a human approval project that allows the execution of a state machine to pause during a task. The workflow continues to the next state once the user has approved the task. In the CloudFormation template, there are already resources including Lambda functions that send email links for approval, an API Gateway endpoint that triggers Lambda functions and an SNS topic that sends an email for approval. What is another key resource that needs to be created in the template?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct answer is <b>A Step Function resource defined using AWS::StepFunctions::StateMachine.</b> This CloudFormation resource implements a state machine via AWS Step Functions and is essential for creating workflows that can wait for user actions (such as approvals) before advancing to the next state. You can incorporate a <b>\"Wait for task token\"</b> pattern or an explicit 'Choice' state to pause execution until an external signal (typically from Lambda or API Gateway) arrives before proceeding with the pipeline.<br/><br/>The option <i>A state machine activity defined through AWS::StepFunctions::Activity.</i> is incorrect because <i>Activity</i> resources in Step Functions are meant for long-running, manual tasks executed by external workers, not for managing human approvals via the service itself.<br/><br/>Choosing <i>A SWF-based state machine defined in AWS::SWFFunctions::StateMachine.</i> is also incorrect. Amazon SWF (Simple Workflow Service) uses a different resource model and is not natively supported by modern CloudFormation templates for Step Function workflows.<br/><br/>The response <i>An activity resource for SWF using AWS::SWFFunctions::Activity.</i> does not fit because it's tailored to SWF's execution patterns, which does not integrate as easily into CodePipeline or support the \"wait for approval\" behavior required here.<br/><br/><strong>Tip:</strong> In AWS Step Functions, using a 'Task' state with a task token allows external processes (such as Lambda invoked by an API Gateway approval endpoint) to signal completion or approval, giving you a robust solution for human-in-the-loop workflows.<br/></p>",
+  "query": "<p>You are developing a deployment workflow which requires human approval in AWS CodePipeline. The process involves a CloudFormation stack that already contains Lambda functions to handle approval emails, an SNS topic to notify users, and API Gateway endpoints integrated with Lambda to manage approval callbacks. What AWS resource should you define in the CloudFormation template to enable the state machine to pause and wait for user approval before moving to the subsequent step?</p>",
+  "original_oid": "6793da2061969b416038a15d",
+  "options": [
+    {
+      "correct": true,
+      "text": "A Step Function resource defined using AWS::StepFunctions::StateMachine.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "A state machine activity defined through AWS::StepFunctions::Activity.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "A SWF-based state machine defined in AWS::SWFFunctions::StateMachine.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "An activity resource for SWF using AWS::SWFFunctions::Activity.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question236",
+  "originalQuery": "You are using an AWS CodePipeline to create a CloudFormation stack.\nThe stack is used to deploy resources for a human approval project that allows the execution of a state machine to pause during a task.\nThe workflow continues to the next state once the user has approved the task.\nIn the CloudFormation template, there are already resources including Lambda functions that send email links for approval, an API Gateway endpoint that triggers Lambda functions and an SNS topic that sends an email for approval.\nWhat is another key resource that needs to be created in the template?",
+  "originalOptions": "A. A state machine resource created in the type of AWS::StepFunctions::Activity.,B. A SWF state machine resource configured in AWS::SWFFunctions::StateMachine.,C. A Step Function resource created in the type AWS::StepFunctions::StateMachine.,D. A SWF resource in the CloudFormation type AWS::SWFFunctions::Activity.",
+  "video_url": "https://certificationation.com/videos/exam-create-a-cloudformation-stack-the-exam-368.html",
+  "url": "https://certificationation.com/questions/exam-create-a-cloudformation-stack-the-exam-368.html"
+}

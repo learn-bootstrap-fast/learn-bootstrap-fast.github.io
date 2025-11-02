@@ -1,0 +1,62 @@
+---
+title: "You have provided AWS consulting service to a financialExam"
+description: "Video for you have provided AWS consulting service to a financial company that just migrated its major on-premises products to AWS. Last week, there was an"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have provided AWS consulting service to a financial company that just migrated its major on-premises products to AWS. Last week, there was an outage ofAWS hardware which impacted one of the EBS volumes. This failure was alerted in the AWS Personal Health Dashboard. However, it took the team several hours to be aware of that. The company asks for a solution to notify the team when there is an open issue happening in AWS Personal Health Dashboard. Which approach should you recommend?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best recommendation is to <b>Set up an EventBridge (formerly CloudWatch Events) rule to detect AWS Health Events and have the rule trigger an SNS topic whenever a new event appears</b>. AWS Health Events can be automatically monitored with Amazon EventBridge. This integration allows teams to respond in real-time to issues like hardware failures that are reflected in the AWS Personal Health Dashboard. By creating a rule that filters for relevant health events and triggers an SNS notification, the team can receive immediate alerts whenever a new incident arises.</p><p>Option <i>\"Configure SNS notifications directly in the AWS Personal Health Dashboard console to alert the team about specific open issues\"</i> is incorrect because, while the dashboard displays open issues, it does not provide built-in functionality to directly set up SNS notifications for specific cases in the console.</p><p>Option <i>\"Create an AWS Lambda function that regularly polls for open issues through the AWS Health API, then sends an SNS message if it detects a new problem\"</i> is also a possible approach but is less efficient and requires more custom development compared to using EventBridge, which is purpose-built for event detection and notification.</p><p>Option <i>\"Implement a CloudWatch Event rule that observes Trusted Advisor checks and sends an SNS notification each time a new issue is found\"</i> is not suitable in this scenario because Trusted Advisor provides best practices and recommendations but does not monitor the service health events shown in the AWS Personal Health Dashboard.</p><p><b>Tips:</b> Choose automated, native AWS integrations for event monitoring and notification, and remember that AWS Health events can be consumed directly via EventBridge for near real-time alerts.</p>",
+  "query": "<p>A financial services client recently migrated most of its important on-premises applications to AWS. Last week, the company experienced a hardware failure that affected an EBS volume. While the AWS Personal Health Dashboard did display an alert regarding the incident, it took several hours before the appropriate team became informed. The client is now seeking an automated notification method to promptly alert the team whenever there is an ongoing issue shown in the AWS Personal Health Dashboard. Which strategy best meets this requirement?</p>",
+  "original_oid": "6793d9df61969b416038a0dc",
+  "options": [
+    {
+      "correct": true,
+      "text": "Set up an EventBridge (formerly CloudWatch Events) rule to detect AWS Health Events and have the rule trigger an SNS topic whenever a new event appears.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Create an AWS Lambda function that regularly polls for open issues through the AWS Health API, then sends an SNS message if it detects a new problem.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Configure SNS notifications directly in the AWS Personal Health Dashboard console to alert the team about specific open issues.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Implement a CloudWatch Event rule that observes Trusted Advisor checks and sends an SNS notification each time a new issue is found.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question105",
+  "originalQuery": "You have provided AWS consulting service to a financial company that just migrated its major on-premises products to AWS.\nLast week, there was an outage ofAWS hardware which impacted one of the EBS volumes.\nThis failure was alerted in the AWS Personal Health Dashboard.\nHowever, it took the team several hours to be aware of that.\nThe company asks for a solution to notify the team when there is an open issue happening in AWS Personal Health Dashboard.\nWhich approach should you recommend?",
+  "originalOptions": "A. Create a CloudWatch Event Rule that filters AWS Health Event and triggers an SNS notification when there is a new event.|B. In the AWS Personal Health Dashboard console, configure an SNS notification when specific open issues appear.|C. Configure a Lambda function that periodically checks open issues via AWS Health API and triggers an SNS notification if a new issue has been found.|D. Create a new CloudWatch Event that monitors Trusted Advisor service and triggers an SNS notification when there is a new issue.",
+  "video_url": "https://certificationation.com/videos/exam-service-to-a-financial-company-exam-093.html",
+  "url": "https://certificationation.com/questions/exam-service-to-a-financial-company-exam-093.html"
+}
