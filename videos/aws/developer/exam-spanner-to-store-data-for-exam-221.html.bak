@@ -1,0 +1,80 @@
+---
+title: "Your organization relies on Cloud Spanner to store dataExam"
+description: "Video for your organization relies on Cloud Spanner to store data for a mission-critical, user-facing application that requires low-latency read operations. You"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your organization relies on Cloud Spanner to store data for a mission-critical, user-facing application that requires low-latency read operations. You need to recommend the optimal instance configuration to ensure consistent, high-performance reads. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A retailer&apos;s real-time inventory platform uses Cloud Spanner to back a public API that must deliver consistently low-latency reads, and peak demand is expected to reach 35,000 queries per second during major sales events. You need to choose an instance configuration that keeps read performance fast and predictable as traffic scales. What should you recommend?",
+  "options": [
+    {
+      "text": "Route read operations to Cloud SQL for PostgreSQL to lower latency",
+      "explanation": "This choice directs read traffic to a managed PostgreSQL database that is separate from Cloud Spanner",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a multi-region Cloud Spanner instance with read-only replicas located near users to speed up reads",
+      "explanation": "This configuration replicates data across multiple regions and uses read-only replicas to serve local reads closer to users",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use a regional Cloud Spanner instance and provision enough processing units to meet the peak read workload",
+      "explanation": "A regional instance runs in a single region and can be scaled by adding processing units to support higher read throughput",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Split the workload across multiple Cloud Spanner instances to distribute read traffic",
+      "explanation": "This design distributes data and requests across multiple independent instances to reduce load on any single instance",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Use a regional Cloud Spanner instance and provision enough processing units to meet the peak read workload</b>.</p><p>This approach keeps the read and write quorum within one region which reduces round trip time and makes tail latency more predictable. Cloud Spanner scales linearly as you add processing units which increase serving capacity and IOPS so you can provision for the expected 35,000 queries per second and maintain consistently low read latency as traffic grows.</p><p><i>Route read operations to Cloud SQL for PostgreSQL to lower latency</i> is incorrect because Cloud SQL cannot act as a read replica for Cloud Spanner and introducing a separate database would add data duplication, consistency lag, and routing complexity. It would not provide predictable low latency at this scale.</p><p><i>Create a multi-region Cloud Spanner instance with read-only replicas located near users to speed up reads</i> is incorrect for this need because read-only replicas serve stale reads and not strong reads. Multi-region configurations also add interregional consensus latency for strong reads and writes which typically increases tail latency unless you specifically need global availability.</p><p><i>Split the workload across multiple Cloud Spanner instances to distribute read traffic</i> is incorrect because it fragments the dataset, removes transparent horizontal scaling, and prevents transactions across instances. A single instance with sufficient processing units is the intended way to scale throughput while preserving low and predictable latency.</p>",
+  "batch_id": "16",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "Your organization relies on Cloud Spanner to store data for a mission-critical, user-facing application that requires low-latency read operations. You need to recommend the optimal instance configuration to ensure consistent, high-performance reads. What should you do?",
+  "originalOptions": "A. Recommend using a multi-region instance to improve data resilience.<br/>B. Recommend using a regional instance with sufficient nodes to handle the application's read throughput requirements.<br/>C. Recommend using Cloud SQL for PostgreSQL for read operations to improve latency.<br/>D. Recommend splitting the Cloud Spanner instance into multiple instances to distribute read operations across instances.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "221",
+  "tip": "<p>When a scenario emphasizes <i>predictable low latency</i> at high QPS for one dataset, choose a single Cloud Spanner instance and scale by increasing <i>processing units</i>. Prefer regional for the lowest strong read latency and remember that multi-region read-only replicas are for <i>stale</i> reads.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/instance-configurations#regional-vs-multi-region",
+    "https://cloud.google.com/spanner/docs/compute-capacity#processing-units",
+    "https://cloud.google.com/spanner/docs/replication#read-only-replicas",
+    "https://cloud.google.com/spanner/docs/reads"
+  ],
+  "url": "https://certificationation.com/questions/exam-spanner-to-store-data-for-exam-221.html",
+  "video_url": "https://certificationation.com/videos/exam-spanner-to-store-data-for-exam-221.html"
+}

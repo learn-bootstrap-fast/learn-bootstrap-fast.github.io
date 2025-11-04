@@ -1,0 +1,82 @@
+---
+title: "You work for a large financial services company that isExam"
+description: "Video for you work for a large financial services company that is expanding its operations globally. Your company plans to migrate to Google Cloud. You want a"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You work for a large financial services company that is expanding its operations globally. Your company plans to migrate to Google Cloud. You want a platform that scales easily, ensures low-latency transactions, and provides a reliable user experience for your customers. You need a storage layer for account information and financial transactions and want to maintain the existing relational schema used by your current platform. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You work for a multinational online marketplace called NorthPeak Retail that is moving its core platform to Google Cloud. Within the next 6 months you expect steady traffic from three continents. You need a data platform that scales easily, supports low latency transactions, and delivers a consistent experience for customers worldwide. The storage layer must hold account profiles and purchase transactions and you must keep the existing relational schema that your engineers already maintain. What should you implement?",
+  "options": [
+    {
+      "text": "Use Firestore in Native mode with a multi region configuration and place your application services close to the default write location",
+      "explanation": "This option provides a globally available document database with automatic replication and built in regional redundancy",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Cloud SQL in a high availability configuration and run your compute services in the same region as the primary instance",
+      "explanation": "This option offers a managed database service with regional failover and synchronous replicas for resilience",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Provision Cloud Spanner with a multi region instance configuration and deploy your compute services near the default leader region",
+      "explanation": "This option provides a horizontally scalable distributed SQL database that maintains strong consistency across regions",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Deploy Cloud Bigtable with cross region replication and locate your application services near the primary cluster",
+      "explanation": "This option offers a low latency wide column database with replication support across clusters for read access",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Provision Cloud Spanner with a multi region instance configuration and deploy your compute services near the default leader region</b>.</p><p>This service is a globally distributed relational database that preserves your existing schema and SQL while providing strong transactional consistency and high throughput. A multi region configuration delivers high availability and low latency reads for users on different continents while keeping a single consistent source of truth for account profiles and purchase transactions.</p><p>Write latency is minimized when application servers run near the default leader region because writes are coordinated there. You can still achieve low latency reads from replicas in other regions and customers receive a consistent experience worldwide as the system maintains strong consistency.</p><p><i>Use Firestore in Native mode with a multi region configuration and place your application services close to the default write location</i> is not suitable because it is a document database that does not maintain a relational schema and it does not support features like joins. Its transactional model and query patterns are not designed for complex relational workloads that must preserve an existing schema.</p><p><i>Use Cloud SQL in a high availability configuration and run your compute services in the same region as the primary instance</i> would keep relational semantics but it is regional and global users would experience higher latency to a single write location. Cross region replicas are read only and asynchronous and the service scales primarily by vertical sizing and limited read replicas, which does not address seamless global scale and low latency writes.</p><p><i>Deploy Cloud Bigtable with cross region replication and locate your application services near the primary cluster</i> is not appropriate because it is a wide column NoSQL store that does not support a relational schema or multi row ACID transactions. It excels at large scale analytical or key value workloads rather than transactional purchase processing that needs strong relational guarantees.</p>",
+  "batch_id": "193",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You work for a large financial services company that is expanding its operations globally. Your company plans to migrate to Google Cloud. You want a platform that scales easily, ensures low-latency transactions, and provides a reliable user experience for your customers. You need a storage layer for account information and financial transactions and want to maintain the existing relational schema used by your current platform. What should you do?",
+  "originalOptions": "A. Deploy Cloud Spanner using a multi-region instance, and place your compute resources close to the default leader region.<br/>B. Deploy Cloud Bigtable using a multi-region instance, and place your compute resources close to the default leader region.<br/>C. Build an in-memory cache in Memorystore, and deploy it to the specific geographic regions where your application resides.<br/>D. Use Cloud SQL with a high availability configuration, and deploy your compute resources in the same region as the primary instance.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "237",
+  "tip": "<p>Start by mapping requirements to the database model. If you see <i>relational schema</i> plus <i>global consistency</i> and <i>multi region</i> scale with low latency transactions, prefer Spanner. If you need relational but mostly single region, consider Cloud SQL. If the workload is document oriented or wide column, evaluate Firestore or Bigtable.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/overview",
+    "https://cloud.google.com/spanner/docs/instance-configurations",
+    "https://cloud.google.com/spanner/docs/performance",
+    "https://cloud.google.com/firestore/docs/data-model",
+    "https://cloud.google.com/bigtable/docs/overview",
+    "https://cloud.google.com/sql/docs/locations"
+  ],
+  "url": "https://certificationation.com/questions/exam-services-company-that-is-expanding-exam-237.html",
+  "video_url": "https://certificationation.com/videos/exam-services-company-that-is-expanding-exam-237.html"
+}

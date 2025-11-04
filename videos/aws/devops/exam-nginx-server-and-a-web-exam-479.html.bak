@@ -1,0 +1,62 @@
+---
+title: "You have a set of EC2 Instances hosting an nginx serverExam"
+description: "Video for you have a set of EC2 Instances hosting an nginx server and a web application that is used by a set of users in your organization. After a recent"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have a set of EC2 Instances hosting an nginx server and a web application that is used by a set of users in your organization. After a recent application version upgrade, the instance runs into technical issues and needs an immediate restart. This does not give you enough time to inspect the cause of the issue on the server. Which of the following options if implemented prior to the incident would have assisted in detecting the underlying cause of the issue?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best answer is <b>Install the CloudWatch logs agent on the instance and forward log files to Amazon CloudWatch Logs</b>. By enabling log streaming to CloudWatch Logs ahead of time, you automatically collect, centralize, and preserve all your instance's logs externally, even if the server becomes inaccessible, stops, or is restarted. This approach ensures historical log data remains available after a failure, allowing for effective post-mortem analysis of problems like those caused by application upgrades.</p><p>Let's review why the other options are not as effective:</p><ul><li><i>Create an EBS volume snapshot post-reboot, then connect it to another EC2 instance for investigation</i>: While you can capture a snapshot and recover some static disk data, transient log files may be lost if instance storage was used or if logs weren't flushed to disk before the crash. Critical in-memory or non-persistent logs might be unavailable.</li><li><i>Enable detailed CloudWatch monitoring and review instance metrics to identify the failure</i>: Detailed monitoring provides extra granularity for instance-level metrics (CPU, disk, etc.), but does not capture the comprehensive application logs or error details needed for deep issue analysis.</li><li><i>Continuously stream all application data to Amazon Kinesis for real-time analysis</i>: This is suitable for real-time processing of events or application-level data, not for storing and maintaining OS or server log files required for troubleshooting system crashes.</li></ul><p><strong>Tip:</strong> Always set up remote log shipping (to CloudWatch Logs or S3) so that system and application logs persist beyond individual instance lifecycles. This is essential for diagnosing failures after unexpected restarts or terminations.</p>",
+  "query": "<p>You operate several EC2 instances running nginx and a business web application. Following an application update, your EC2 instance crashed unexpectedly and required an urgent reboot, which prevented you from troubleshooting or accessing the error details at the time. Which setup, if configured in advance, would have enabled you to uncover the root cause of the issue after the restart?</p>",
+  "original_oid": "6793da6061969b416038a1e3",
+  "options": [
+    {
+      "correct": false,
+      "text": "Create an EBS volume snapshot post-reboot, then connect it to another EC2 instance for investigation.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Install the CloudWatch logs agent on the instance and forward log files to Amazon CloudWatch Logs.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Enable detailed CloudWatch monitoring and review instance metrics to identify the failure.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Continuously stream all application data to Amazon Kinesis for real-time analysis.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question370",
+  "originalQuery": "You have a set of EC2 Instances hosting an nginx server and a web application that is used by a set of users in your organization.\nAfter a recent application version upgrade, the instance runs into technical issues and needs an immediate restart.\nThis does not give you enough time to inspect the cause of the issue on the server.\nWhich of the following options if implemented prior to the incident would have assisted in detecting the underlying cause of the issue?",
+  "originalOptions": "[\"A. Enable detailed monitoring and check the Cloudwatch metrics to see the cause of the issue.\",\"B. Create a snapshot of the EBS volume after restart, attach it to another instance as a volume and then diagnose the issue.\",\"C. Stream all the data to Amazon Kinesis and then analyze the data in real time.\",\"D. Install Cloudwatch logs agent on the instance and send all the logs to Cloudwatch logs.\"]",
+  "video_url": "https://certificationation.com/videos/exam-nginx-server-and-a-web-exam-479.html",
+  "url": "https://certificationation.com/questions/exam-nginx-server-and-a-web-exam-479.html"
+}

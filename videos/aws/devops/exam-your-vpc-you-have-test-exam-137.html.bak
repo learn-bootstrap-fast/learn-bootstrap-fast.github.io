@@ -1,0 +1,62 @@
+---
+title: "You have instances running on your VPC. You have testExam"
+description: "Video for you have instances running on your VPC. You have test, production and development based instances running in the VPC. You want to ensure that people"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have instances running on your VPC. You have test, production and development based instances running in the VPC. You want to ensure that people who are responsible for the development instances don't have the access to work on the production instances to ensure better security. Using policies, which of the following would be the best way to accomplish this? Choose the correct answer from the options given below."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>correct answer</b> is: <b>Associate distinct tags to your test and production EC2 instances, and implement IAM policy conditions that grant permissions only for instances with authorized tags.</b></p><p>This solution leverages resource-level permissions in AWS. By tagging EC2 instances (for example, with <b>Environment: Production</b> or <b>Environment: Development</b>), you can write IAM policies that use these tags as conditions, restricting users or groups to only operate on resources with matching tags. This ensures proper segmentation and least privilege, and is highly scalable and flexible for permissions management.</p><ul><li><i>Deploy your test and production instances in separate VPCs, and connect them with VPC peering.</i> &ndash; This option separates network boundaries but does not address IAM permission boundaries. VPC peering is for connectivity, not fine-grained access control. It doesn't prevent a user with sufficient IAM rights from accessing instances in either environment.</li><li><i>Configure an IAM policy with conditions to allow actions only on instances designated for production or development use.</i> &ndash; While this option sounds close, it is ambiguous without referencing how resources are distinguished. In AWS, the common and scalable way to differentiate is by using resource tags.</li><li><i>Launch test and production instances in separate Availability Zones and enforce Multi-Factor Authentication for access.</i> &ndash; Separating by Availability Zones does not isolate access at the instance or user level. MFA improves authentication security but does not help with segmentation between production and test resources.</li></ul><p><b>Exam Tips:</b> Always use tagging and IAM policy conditions for fine-grained access control on AWS resources. This is a core security best practice and strongly favored in the exam when segmentation is required.</p>",
+  "query": "<p>You have deployed multiple Amazon EC2 instances within a single VPC to support both test, production, and development environments. You want to ensure that developers who are authorized to manage development instances cannot access or modify production instances, as a best practice for security and segregation of duties. Using AWS IAM policies, what is the most effective way to accomplish this goal?</p>",
+  "original_oid": "6793da7461969b416038a20c",
+  "options": [
+    {
+      "correct": true,
+      "text": "Associate distinct tags to your test and production EC2 instances, and implement IAM policy conditions that grant permissions only for instances with authorized tags.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Deploy your test and production instances in separate VPCs, and connect them with VPC peering.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Configure an IAM policy with conditions to allow actions only on instances designated for production or development use.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Launch test and production instances in separate Availability Zones and enforce Multi-Factor Authentication for access.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question412",
+  "originalQuery": "You have instances running on your VPC.\nYou have test, production and development based instances running in the VPC.\nYou want to ensure that people who are responsible for the development instances don't have the access to work on the production instances to ensure better security.\nUsing policies, which of the following would be the best way to accomplish this? Choose the correct answer from the options given below.",
+  "originalOptions": "[\"A. Launch the test and production instances in separate VPC`s and use VPC peering\",\"B. Create an IAM policy with a condition which allows access to only instances that are used for production or development\",\"C. Launch the test and production instances in different Availability Zones and use Multi Factor Authentication\",\"D. Define the tags on the test and production servers and add a condition to the IAM policy which allows access to specific tags.\"]",
+  "video_url": "https://certificationation.com/videos/exam-your-vpc-you-have-test-exam-137.html",
+  "url": "https://certificationation.com/questions/exam-your-vpc-you-have-test-exam-137.html"
+}

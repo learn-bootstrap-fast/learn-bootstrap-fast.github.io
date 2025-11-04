@@ -1,0 +1,62 @@
+---
+title: "A DevOps engineer is building a pipeline in AWSExam"
+description: "Video for a DevOps engineer is building a pipeline in AWS CodePipeline to build a docker image and push it to AWS ECR. In the CodePipeline, the source stage is"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A DevOps engineer is building a pipeline in AWS CodePipeline to build a docker image and push it to AWS ECR. In the CodePipeline, the source stage is configured with AWS CodeCommit where the source files are stored. In the build stage, the Action Provider is AWS CodeBuild. For its buildspec.yml file, there are three phases which are pre_build, build and post_build. The build stage in the pipeline is responsible for creating the image and pushing it to the ECR repository. Which command should be put in the pre_build stage in the buildspec.yml file?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The command that should be included in the <b>pre_build</b> stage is to get the Docker login credentials for Amazon ECR, which is accomplished with the AWS CLI command to fetch a temporary authentication token (<b>Obtain an authentication token for Docker to interact with ECR using the AWS CLI.</b>). This is essential because ECR requires authentication before you can push images to it. Skipping this step will cause the push operation to fail due to lack of permission.<br><br>Let's break down the other options:<br><br><i>\"Initiate the Docker image build and tag with the specified ECR URI.\"</i> is incorrectly placed in the pre_build and actually belongs to the build phase, as image building is performed there.<br><br><i>\"Push the created image to the specified ECR repository.\"</i> should be part of the post_build phase as the image must be built and tagged before it can be pushed.<br><br><i>\"Tag the Docker image using the ECR repository URI.\"</i> is typically performed just after building the image, making it appropriate for the build or pre_post_build phase but not pre_build, as you can't tag an image before it exists.<br><br><b>Tip:</b> Always ensure you authenticate to ECR in pre_build to allow docker commands to work against your ECR repository throughout the build process.</p>",
+  "query": "<p>An AWS DevOps engineer uses CodePipeline to automate building a Docker image and pushing it to Amazon ECR. The source code is hosted in CodeCommit, and the image build and push actions occur in CodeBuild. The buildspec.yml has three phases: pre_build, build, and post_build. In this context, which command belongs in the <b>pre_build</b> phase to enable the Docker push to ECR?</p>",
+  "original_oid": "6793da2661969b416038a169",
+  "options": [
+    {
+      "correct": true,
+      "text": "Obtain an authentication token for Docker to interact with ECR using the AWS CLI.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Initiate the Docker image build and tag with the specified ECR URI.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Push the created image to the specified ECR repository.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Tag the Docker image using the ECR repository URI.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question248",
+  "originalQuery": "A DevOps engineer is building a pipeline in AWS CodePipeline to build a docker image and push it to AWS ECR.\nIn the CodePipeline, the source stage is configured with AWS CodeCommit where the source files are stored.\nIn the build stage, the Action Provider is AWS CodeBuild.\nFor its buildspec.yml file, there are three phases which are pre_build, build and post_build.\nThe build stage in the pipeline is responsible for creating the image and pushing it to the ECR repository.\nWhich command should be put in the pre_build stage in the buildspec.yml file?",
+  "originalOptions": "[\"A. docker build -t $REPOSITORY_URI:latest .\",\"B. aws ecr get-login --region $AWS_DEFAULT_REGION\",\"C. docker tag $REPOSITORY_URI:latest\",\"D. docker push $REPOSITORY_URI:latest.\"]",
+  "video_url": "https://certificationation.com/videos/exam-pipeline-in-aws-codepipeline-to-exam-192.html",
+  "url": "https://certificationation.com/questions/exam-pipeline-in-aws-codepipeline-to-exam-192.html"
+}

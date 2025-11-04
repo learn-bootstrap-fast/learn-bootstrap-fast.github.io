@@ -1,0 +1,80 @@
+---
+title: "You are using Cloud SQL to store financial data, andExam"
+description: "Video for you are using Cloud SQL to store financial data, and regulatory requirements mandate that you must be able to recover to any point in time within the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are using Cloud SQL to store financial data, and regulatory requirements mandate that you must be able to recover to any point in time within the last 7 days in case of accidental data deletion. What should you do to meet this requirement?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A digital marketplace runs its transactional workload on Cloud SQL and compliance requires the team to be able to restore the database to any exact point within the past 10 days in the event of accidental deletes. What should you configure to fulfill this requirement?",
+  "options": [
+    {
+      "text": "Enable high availability failover for the Cloud SQL instance",
+      "explanation": "High availability provides automatic failover for instance outages but it does not create a timeline for point based recovery",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure automated backups with a 10 day retention period",
+      "explanation": "Automated backups create daily restore points that can be retained for a configured number of days",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Turn on automated backups and binary logging and restore with point in time recovery",
+      "explanation": "Binary logging together with automated backups enables point in time recovery so you can restore to a specific timestamp within the retention window",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Create a read replica and promote it if data is deleted",
+      "explanation": "Read replicas replicate changes from the primary including deletions and are intended for read scaling rather than time based rollback",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Turn on automated backups and binary logging and restore with point in time recovery</b>.</p><p>Point in time recovery in Cloud SQL works by first restoring from the most recent automated backup and then replaying the change logs to the exact timestamp you choose. That is why you must have automated backups enabled and you must retain the binary logs for the duration required. With these configured, you can restore to any moment within the configured retention window to meet the compliance requirement.</p><p><i>Enable high availability failover for the Cloud SQL instance</i> addresses uptime and failover during infrastructure or zonal issues. It does not protect against accidental deletes because the deletion is synchronously replicated to the standby and there is no way to roll back to an earlier point without PITR.</p><p><i>Configure automated backups with a 10 day retention period</i> allows you to restore only to the timestamp of a specific backup. This does not allow recovery to an arbitrary point between backups, so it does not meet the requirement for exact point in time restoration.</p><p><i>Create a read replica and promote it if data is deleted</i> does not solve the problem because replicas receive the same changes and deletions, often within seconds. Promoting a replica would typically preserve the same data loss and it still would not provide an exact point in time restore.</p>",
+  "batch_id": "359",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are using Cloud SQL to store financial data, and regulatory requirements mandate that you must be able to recover to any point in time within the last 7 days in case of accidental data deletion. What should you do to meet this requirement?",
+  "originalOptions": "A. Enable binary logging and configure point-in-time recovery.<br/>B. Enable high availability failover for the instance.<br/>C. Use a custom script to take hourly backups.<br/>D. Enable automated backups with a 7-day retention period.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "116",
+  "tip": "<p>When a question asks for recovery to an <i>exact point in time</i>, look for solutions that combine automated backups with transaction or binary logs. Remember that high availability improves uptime while backups alone restore only to the backup time.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/backup-recovery/point-in-time-recovery",
+    "https://cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+    "https://cloud.google.com/sql/docs/mysql/high-availability",
+    "https://cloud.google.com/sql/docs/mysql/replication/replication-overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-financial-data-and-regulatory-requirements-exam-116.html",
+  "video_url": "https://certificationation.com/videos/exam-financial-data-and-regulatory-requirements-exam-116.html"
+}

@@ -1,0 +1,82 @@
+---
+title: "You are responsible for monitoring a database instanceExam"
+description: "Video for you are responsible for monitoring a database instance on Google Cloud Platform. You want to set up alerts to notify you when certain errors or"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are responsible for monitoring a database instance on Google Cloud Platform. You want to set up alerts to notify you when certain errors or performance metrics occur. Which of the following steps should you take to achieve this goal?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You manage a Cloud SQL for PostgreSQL instance named acct-db-01 that supports the billing service for example.com. You need to receive notifications when the logs include the messages &quot;deadlock detected&quot; or &quot;FATAL: password authentication failed&quot; and when CPU utilization remains above 80 percent for 7 minutes. What should you set up in Google Cloud to meet these requirements?",
+  "options": [
+    {
+      "text": "Use Cloud Trace to instrument the application and configure alerts for slow spans",
+      "explanation": "This approach focuses on distributed tracing and latency analysis rather than database error logs or infrastructure metrics.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure Cloud Monitoring uptime checks for the database endpoint and alert on check failures",
+      "explanation": "Uptime checks verify availability of endpoints but they do not evaluate specific database log messages or CPU thresholds.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a logs-based metric in Cloud Logging for the error patterns and then create Cloud Monitoring alerting policies for that metric and for the CPU utilization metric",
+      "explanation": "Logs-based metrics capture specific log patterns and Cloud Monitoring alerting policies notify you based on both logs and performance metrics.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Create a Cloud Monitoring dashboard to visualize CPU utilization and recent log entries",
+      "explanation": "Dashboards provide visual monitoring but they do not generate notifications when conditions occur.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Create a logs-based metric in Cloud Logging for the error patterns and then create Cloud Monitoring alerting policies for that metric and for the CPU utilization metric</b>.</p><p>This choice meets both needs. You can define log based metrics in Cloud Logging that match the specific PostgreSQL error messages from the Cloud SQL instance. You then create Cloud Monitoring alerting policies on those metrics so a notification is sent when the metric count rises above zero within a period. You also create a separate alerting policy on the Cloud SQL CPU utilization metric with a condition that stays above 80 percent for 7 minutes. This uses the native integration between Logging and Monitoring and provides reliable notifications.</p><p><i>Use Cloud Trace to instrument the application and configure alerts for slow spans</i> is not appropriate because Trace focuses on distributed request latency and spans. It does not detect database log patterns and it is not used to alert on Cloud SQL CPU utilization thresholds.</p><p><i>Configure Cloud Monitoring uptime checks for the database endpoint and alert on check failures</i> does not satisfy the requirements because uptime checks verify external availability of HTTP or TCP endpoints. They do not evaluate log entries and they do not provide CPU threshold alerting for Cloud SQL.</p><p><i>Create a Cloud Monitoring dashboard to visualize CPU utilization and recent log entries</i> only provides visualization. Dashboards do not send notifications, so this would not alert you when errors appear in logs or when CPU remains high.</p>",
+  "batch_id": "272",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are responsible for monitoring a database instance on Google Cloud Platform. You want to set up alerts to notify you when certain errors or performance metrics occur. Which of the following steps should you take to achieve this goal?",
+  "originalOptions": "A. Use Cloud Trace to monitor database performance and set up alerts for slow queries.<br/>B. Use Cloud Logging to monitor the database logs and set up alerts for specific error messages.<br/>C. Set up Cloud Monitoring dashboards to monitor the database instance.<br/>D. Use a third-party monitoring tool to set up alerts for the database.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "333",
+  "tip": "<p>When a question mixes alerts on specific log messages and on resource metrics, think of <i>log based metrics</i> plus a Monitoring <i>alerting policy</i> for the logs and a separate <i>threshold</i> policy for the metric.</p>",
+  "references": [
+    "https://cloud.google.com/logging/docs/logs-based-metrics",
+    "https://cloud.google.com/logging/docs/logs-based-metrics/monitoring",
+    "https://cloud.google.com/monitoring/alerts",
+    "https://cloud.google.com/sql/docs/postgres/monitoring-metrics",
+    "https://cloud.google.com/monitoring/uptime-checks",
+    "https://cloud.google.com/trace/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-database-instance-on-google-cloud-exam-333.html",
+  "video_url": "https://certificationation.com/videos/exam-database-instance-on-google-cloud-exam-333.html"
+}

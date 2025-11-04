@@ -1,0 +1,78 @@
+---
+title: "You need to migrate a large dataset from a running CloudExam"
+description: "Video for you need to migrate a large dataset from a running Cloud SQL for PostgreSQL instance in the us-west1 region to a new Cloud SQL for PostgreSQL instance"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You need to migrate a large dataset from a running Cloud SQL for PostgreSQL instance in the us-west1 region to a new Cloud SQL for PostgreSQL instance in the europe-west2 region. You want to ensure minimal downtime and follow Google-recommended practices. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Lakeside Payments runs a Cloud SQL for PostgreSQL database in asia-southeast2 and must move it to a new Cloud SQL for PostgreSQL instance in europe-west1 for regulatory reasons. The database holds about 22 TB and the service operates continuously. You want to keep downtime to a minimum and follow Google recommended practices. What should you do?",
+  "options": [
+    {
+      "text": "Build a Dataflow pipeline with JDBC to stream changes from the source Cloud SQL instance into the target Cloud SQL instance",
+      "explanation": "This sets up a custom streaming job that reads from PostgreSQL using connectors and writes records into another database",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a cross region read replica in the destination region then promote it to primary and point the application to the new instance",
+      "explanation": "Cloud SQL supports cross region replication for PostgreSQL so you can create a replica in another region and later promote it",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use pg_dump to create a logical backup on a temporary VM and restore into the new instance with pg_restore",
+      "explanation": "This approach takes a dump of the running database and restores it into another instance with a manual cutover",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Export tables to CSV with the PostgreSQL COPY command into Cloud Storage and import them into the target instance using COPY",
+      "explanation": "This bulk export and import workflow produces flat files in Cloud Storage and loads them into the destination database",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Create a cross region read replica in the destination region then promote it to primary and point the application to the new instance</b>.</p><p>This approach uses a Cloud SQL <b>read replica</b> to continuously replicate data from asia-southeast2 to europe-west1. It scales well for a 22 TB PostgreSQL database because it relies on physical replication and it keeps the target nearly in sync while the service continues to run. At cutover you <b>promote</b> the replica to become a standalone primary in europe-west1 and then update the application connections which keeps downtime to a brief window.</p><p><i>Build a Dataflow pipeline with JDBC to stream changes from the source Cloud SQL instance into the target Cloud SQL instance</i> is not a recommended method for Cloud SQL migrations and it lacks a managed and transactionally consistent change data capture path for PostgreSQL in Cloud SQL. Implementing this reliably would be complex and would not guarantee minimal downtime.</p><p><i>Use pg_dump to create a logical backup on a temporary VM and restore into the new instance with pg_restore</i> would require very long export and import times for 22 TB and would lead to extended downtime or significant performance impact. Logical dumps are slower than replication and do not meet a minimal downtime goal for this scale.</p><p><i>Export tables to CSV with the PostgreSQL COPY command into Cloud Storage and import them into the target instance using COPY</i> is a manual process that does not maintain transactional consistency across tables and provides no ongoing replication. For a multi terabyte database this would be slow and would require a long outage to achieve a consistent cutover.</p>",
+  "batch_id": "86",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "You need to migrate a large dataset from a running Cloud SQL for PostgreSQL instance in the us-west1 region to a new Cloud SQL for PostgreSQL instance in the europe-west2 region. You want to ensure minimal downtime and follow Google-recommended practices. What should you do?",
+  "originalOptions": "A. Use Cloud Pub/Sub to create a real-time data pipeline that reads from the source Cloud SQL instance and writes to the destination Cloud SQL instance.<br/>B. Export data as a CSV file using COPY command, upload the file to a Cloud Storage bucket, and then import the CSV file into the new instance using the COPY command.<br/>C. Set up Cloud SQL cross-region replication, promote the replica to primary, and then update the application to use the new primary instance.<br/>D. Create a temporary instance, export data from the running instance to the temporary instance using pg_dump , and then import data from the temporary instance to the new instance using pg_restore .",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "144",
+  "tip": "<p>When the question stresses <i>minimal downtime</i> and a large Cloud SQL dataset across regions, favor a <i>cross region read replica</i> with a planned <i>promotion</i> during cutover rather than logical exports or ad hoc pipelines.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/replication",
+    "https://cloud.google.com/sql/docs/postgres/replication/promote-replica"
+  ],
+  "url": "https://certificationation.com/questions/exam-from-a-running-cloud-sql-exam-144.html",
+  "video_url": "https://certificationation.com/videos/exam-from-a-running-cloud-sql-exam-144.html"
+}

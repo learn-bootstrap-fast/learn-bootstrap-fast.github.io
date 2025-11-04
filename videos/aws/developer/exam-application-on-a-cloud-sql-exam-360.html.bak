@@ -1,0 +1,80 @@
+---
+title: "You are running a high-traffic application on a CloudExam"
+description: "Video for you are running a high-traffic application on a Cloud SQL for MySQL database with a regional setup. The primary and failover instances are in the same"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are running a high-traffic application on a Cloud SQL for MySQL database with a regional setup. The primary and failover instances are in the same region but in different zones. You need to efficiently distribute read traffic among multiple read replica instances to improve performance. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A subscription platform at scrumtuous.com operates a regional Cloud SQL for MySQL deployment with a primary instance and a failover instance in different zones. The team created three read replicas to offload reporting queries and now wants to evenly spread read-only traffic across the replicas while providing connection pooling from the application layer with minimal code changes. Which approach should they take?",
+  "options": [
+    {
+      "text": "Configure an Internal TCP Proxy Load Balancer in front of the MySQL read replicas to distribute client connections",
+      "explanation": "An Internal TCP Proxy Load Balancer accepts TCP traffic and forwards connections to regional backend targets.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Build a Cloud Dataflow pipeline that fans out read queries across all read replicas",
+      "explanation": "Cloud Dataflow runs batch and streaming data processing jobs that can connect to various data sources.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Run ProxySQL between the application and Cloud SQL so it performs read write split and pools and balances read connections across replicas",
+      "explanation": "ProxySQL is a MySQL aware proxy that can route queries with rules and maintain efficient connection pools for backend instances.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use the Cloud SQL Auth Proxy on each application server to multiplex and load balance connections to all read replicas",
+      "explanation": "The Cloud SQL Auth Proxy secures and manages database connections and integrates with IAM for a specified Cloud SQL instance.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Run ProxySQL between the application and Cloud SQL so it performs read write split and pools and balances read connections across replicas</b>. Using <b>ProxySQL</b> lets the app continue speaking the MySQL protocol to a single endpoint while the proxy handles connection pooling and read distribution to the replicas and routes writes to the primary with minimal code change.</p><p><b>ProxySQL</b> is MySQL aware so it can perform read write splitting based on query type and send read queries to a reader host group that includes all read replicas. It supports connection pooling and multiplexing which reduces connection overhead to Cloud SQL. It can also monitor replication lag and avoid sending traffic to stale replicas which keeps reporting traffic both balanced and safe.</p><p><i>Configure an Internal TCP Proxy Load Balancer in front of the MySQL read replicas to distribute client connections</i> is incorrect because Cloud SQL instances are not supported load balancer backends and the TCP proxy is not query aware. It cannot perform read write split or database connection pooling.</p><p><i>Build a Cloud Dataflow pipeline that fans out read queries across all read replicas</i> is incorrect because Dataflow is for batch and streaming data processing rather than interactive SQL query routing. It would require substantial application changes and provides no native MySQL connection pooling or read write splitting.</p><p><i>Use the Cloud SQL Auth Proxy on each application server to multiplex and load balance connections to all read replicas</i> is incorrect because the Cloud SQL Auth Proxy is for secure authentication and connectivity to a specific instance. It does not load balance across multiple instances and it does not perform read write split or provide the type of pooling and replica balancing needed here.</p>",
+  "batch_id": "325",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are running a high-traffic application on a Cloud SQL for MySQL database with a regional setup. The primary and failover instances are in the same region but in different zones. You need to efficiently distribute read traffic among multiple read replica instances to improve performance. What should you do?",
+  "originalOptions": "A. Use the Cloud SQL Auth proxy for load balancing read traffic between the Cloud SQL read replica instances.<br/>B. Use HTTP(S) Load Balancing for database connection pooling between the Cloud SQL read replica instances.<br/>C. Use Cloud Data Fusion to distribute read traffic between the Cloud SQL read replica instances.<br/>D. Use ProxySQL to set up database connection pooling and load balancing between the Cloud SQL primary and read replica instances.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "360",
+  "tip": "<p>When a question asks for spreading reads across Cloud SQL replicas with minimal code change look for a database aware proxy that can do <i>read write split</i> and <i>connection pooling</i>. Remember that Google Cloud load balancers cannot sit in front of <i>Cloud SQL</i> instances.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/manage-connections",
+    "https://cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+    "https://cloud.google.com/sql/docs/mysql/replication/replication-overview",
+    "https://cloud.google.com/load-balancing/docs/tcp"
+  ],
+  "url": "https://certificationation.com/questions/exam-application-on-a-cloud-sql-exam-360.html",
+  "video_url": "https://certificationation.com/videos/exam-application-on-a-cloud-sql-exam-360.html"
+}

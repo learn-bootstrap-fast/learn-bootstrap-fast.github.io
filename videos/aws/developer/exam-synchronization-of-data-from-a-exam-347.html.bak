@@ -1,0 +1,80 @@
+---
+title: "Your company requires a periodic synchronization of dataExam"
+description: "Video for your company requires a periodic synchronization of data from a heavily used Cloud SQL for MySQL instance to BigQuery for analytics purposes. The"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company requires a periodic synchronization of data from a heavily used Cloud SQL for MySQL instance to BigQuery for analytics purposes. The synchronization process must have minimal impact on the operational workload. Which approach should you take?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "HarborBay Commerce runs a high traffic Cloud SQL for MySQL instance for live orders and inventory, and your analysts need fresh data in BigQuery every 8 hours while placing as little load as possible on the production system. Which approach should you implement?",
+  "options": [
+    {
+      "text": "Create a BigQuery connection to Cloud SQL and query the data through federation",
+      "explanation": "This sets up a BigQuery connection so you can run federated queries that read tables directly from Cloud SQL without persisting data in BigQuery storage",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "BigQuery Data Transfer Service",
+      "explanation": "This managed service schedules recurring loads into BigQuery and reduces the need for custom extraction jobs",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Cloud SQL export to CSV files in Cloud Storage followed by a BigQuery load job",
+      "explanation": "This performs a periodic export of Cloud SQL tables to CSV in Cloud Storage and then loads the files into BigQuery",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Build a Dataflow pipeline that uses the JDBC connector to extract from Cloud SQL and write to BigQuery",
+      "explanation": "This constructs a pipeline that pulls data over JDBC from Cloud SQL and writes the results into BigQuery",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>BigQuery Data Transfer Service</b>. It provides a managed and scheduled way to copy data from Cloud SQL for MySQL into BigQuery so you can meet an eight hour freshness target while placing minimal and predictable load on the production database.</p><p>This service performs batch extraction on a schedule and loads the results into BigQuery tables. It reduces operational overhead because you do not need to build or maintain pipelines and it supports connecting to a read replica when available which helps further reduce impact on the primary instance. Once data lands in BigQuery your analysts query the loaded tables without touching the transactional system.</p><p><i>Create a BigQuery connection to Cloud SQL and query the data through federation</i> is not appropriate because each analyst query reaches into the Cloud SQL instance and can add unpredictable and potentially heavy load on a high traffic production database. It also does not stage data in BigQuery so performance and cost are less predictable for analytics.</p><p><i>Cloud SQL export to CSV files in Cloud Storage followed by a BigQuery load job</i> introduces manual orchestration and often requires full exports or complex scripts for incremental loads. Exports can be resource intensive on the database and are less reliable for recurring refreshes compared with a managed transfer.</p><p><i>Build a Dataflow pipeline that uses the JDBC connector to extract from Cloud SQL and write to BigQuery</i> can work but it is unnecessary for a simple periodic batch and it increases engineering and operational complexity. It also reads directly from the production instance unless you design against a replica which can create more load than a managed transfer solution.</p>",
+  "batch_id": "23",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "Your company requires a periodic synchronization of data from a heavily used Cloud SQL for MySQL instance to BigQuery for analytics purposes. The synchronization process must have minimal impact on the operational workload. Which approach should you take?",
+  "originalOptions": "A. Use the mysqldump utility with the --single-transaction flag.<br/>B. Set up external data source connections in BigQuery.<br/>C. Use BigQuery Data Transfer Service.<br/>D. Utilize the Cloud SQL export function to a CSV file.",
+  "domain": "Manage a solution that can span multiple database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "347",
+  "tip": "<p>When you see a need for periodic refresh into BigQuery with minimal impact on a transactional source, prefer the <i>managed</i> transfer option that offers <i>scheduled</i> runs and supports using a <i>read replica</i> to protect the primary.</p>",
+  "references": [
+    "https://cloud.google.com/bigquery-transfer/docs/cloud-sql-transfer-overview",
+    "https://cloud.google.com/bigquery/docs/cloud-sql-federated-queries",
+    "https://cloud.google.com/sql/docs/mysql/import-export/exporting",
+    "https://cloud.google.com/dataflow/docs/guides/templates/provided/jdbc-to-bigquery"
+  ],
+  "url": "https://certificationation.com/questions/exam-synchronization-of-data-from-a-exam-347.html",
+  "video_url": "https://certificationation.com/videos/exam-synchronization-of-data-from-a-exam-347.html"
+}

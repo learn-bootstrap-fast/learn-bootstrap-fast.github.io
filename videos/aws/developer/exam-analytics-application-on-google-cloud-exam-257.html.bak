@@ -1,0 +1,83 @@
+---
+title: "Your company is developing a real-time analyticsExam"
+description: "Video for your company is developing a real-time analytics application on Google Cloud Platform (GCP) that requires low-latency processing of a high volume of"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company is developing a real-time analytics application on Google Cloud Platform (GCP) that requires low-latency processing of a high volume of streaming data. The current workload is 50,000 events per second (EPS), and you expect this to increase to 150,000 EPS over the next two years. The database solution must accommodate the current workload and scale to meet future requirements. Which of the following options is the most appropriate choice?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A gaming analytics team at scrumtuous.com is building a near real time metrics service on Google Cloud that must handle very low latency writes for a heavy event stream. The current rate is about 60,000 events per second and you expect it to grow to roughly 180,000 events per second within the next 18 months. You need a managed database that supports this load today and can scale smoothly as traffic increases while keeping latency low. Which solution should you choose?",
+  "options": [
+    {
+      "text": "BigQuery with streaming inserts into partitioned tables and BI Engine",
+      "explanation": "This approach ingests data into BigQuery for analytical queries by continuously streaming rows into time partitioned tables.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud Spanner with a multi region instance and scale nodes as needed with hotspot aware key design",
+      "explanation": "Cloud Spanner provides horizontally scalable relational storage with strong consistency and can add nodes to increase throughput.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud Bigtable with autoscaling enabled and three clusters for multi cluster replication",
+      "explanation": "Cloud Bigtable is a wide column database that supports very high write throughput and can scale automatically across multiple clusters.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Cloud SQL with read replicas and upgrade the primary instance size when demand grows",
+      "explanation": "Cloud SQL provides managed relational databases that scale primarily by increasing machine size and adding replicas for read traffic.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Cloud Bigtable with autoscaling enabled and three clusters for multi cluster replication</b>.</p><p><b>Bigtable</b> is purpose built for extremely high write throughput with very low latency for single row operations. It scales horizontally by adding nodes and can handle sustained event streams at the scale in the question while keeping latency in the single digit millisecond range. Autoscaling adjusts cluster size based on workload which reduces manual capacity planning as traffic grows from sixty thousand to one hundred eighty thousand events per second.</p><p>With three clusters using multi cluster replication, <b>Bigtable</b> improves availability and can use multi cluster routing to distribute requests to healthy clusters. This supports smooth scaling under heavy ingestion and provides resilience during regional issues while keeping write latency low for near real time metrics.</p><p><i>BigQuery with streaming inserts into partitioned tables and BI Engine</i> is designed for analytics rather than as a low latency operational store. Streaming inserts have quotas and can introduce variability in availability for querying, and BI Engine accelerates query performance rather than ingestion. This does not meet very low latency write requirements at this scale.</p><p><i>Cloud Spanner with a multi region instance and scale nodes as needed with hotspot aware key design</i> can scale, yet multi region configurations require cross region quorum which increases write latency. The workload does not need relational transactions or strong SQL semantics, so the added latency and cost are not justified compared to a wide column store optimized for high write throughput.</p><p><i>Cloud SQL with read replicas and upgrade the primary instance size when demand grows</i> cannot meet the sustained write rate because there is a single primary for writes and read replicas only help reads. Vertical scaling of the primary will hit limits long before reaching the required throughput and latency targets.</p>",
+  "batch_id": "162",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "Your company is developing a real-time analytics application on Google Cloud Platform (GCP) that requires low-latency processing of a high volume of streaming data. The current workload is 50,000 events per second (EPS), and you expect this to increase to 150,000 EPS over the next two years. The database solution must accommodate the current workload and scale to meet future requirements. Which of the following options is the most appropriate choice?",
+  "originalOptions": "A. Migrate the database to Cloud Datastore and enable automatic scaling.<br/>B. Deploy Cloud Spanner with a multi-regional instance and use partitioned tables to distribute the data.<br/>C. Use Cloud Bigtable with a replication factor of 3 and enable autoscaling based on the workload.<br/>D. Use Cloud SQL with read replicas and increase the instance size when needed.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "257",
+  "tip": "<p>Match the workload to the storage model. For sustained <i>write heavy</i> ingestion with <i>low latency</i> and linear <i>horizontal scaling</i>, favor Cloud Bigtable. If you see strong consistency across regions or SQL transactions as primary needs, then consider Cloud Spanner instead.</p>",
+  "references": [
+    "https://cloud.google.com/bigtable/docs/overview",
+    "https://cloud.google.com/bigtable/docs/performance",
+    "https://cloud.google.com/bigtable/docs/autoscaling",
+    "https://cloud.google.com/bigtable/docs/replication-overview",
+    "https://cloud.google.com/bigquery/streaming-data-into-bigquery",
+    "https://cloud.google.com/spanner/docs/latency",
+    "https://cloud.google.com/sql/docs/introduction"
+  ],
+  "url": "https://certificationation.com/questions/exam-analytics-application-on-google-cloud-exam-257.html",
+  "video_url": "https://certificationation.com/videos/exam-analytics-application-on-google-cloud-exam-257.html"
+}

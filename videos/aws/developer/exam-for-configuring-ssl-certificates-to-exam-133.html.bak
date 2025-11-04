@@ -1,0 +1,80 @@
+---
+title: "A Database Engineer is responsible for configuring SSLExam"
+description: "Video for a Database Engineer is responsible for configuring SSL certificates to secure communication between a Cloud SQL instance and its clients. Which of the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A Database Engineer is responsible for configuring SSL certificates to secure communication between a Cloud SQL instance and its clients. Which of the following approaches is the most secure and recommended method for setting up SSL connections?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "At Veridian Ledger you must secure traffic between a Cloud SQL for PostgreSQL instance and application clients that connect over the public internet. You need to configure SSL so that data is encrypted in transit and so that clients verify the server&apos;s identity. Which approach should you implement?",
+  "options": [
+    {
+      "text": "Use a self-signed certificate on the Cloud SQL instance and turn off certificate verification on the client",
+      "explanation": "This relies on a self-generated certificate and disables client checks to simplify setup",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Rely on Private IP with VPC Service Controls and do not configure any TLS certificates",
+      "explanation": "This depends on network perimeter features and private addressing without enabling SSL on the database",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Install a certificate for the Cloud SQL instance that is issued by a trusted Certificate Authority and require clients to validate the certificate",
+      "explanation": "This uses a CA-signed server certificate that clients trust and enforces certificate verification to confirm server authenticity",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Install a certificate from an untrusted Certificate Authority on the Cloud SQL instance and enable certificate checks on the client",
+      "explanation": "This configures the server with a certificate from a CA that clients do not inherently trust while still turning on client verification",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Install a certificate for the Cloud SQL instance that is issued by a trusted Certificate Authority and require clients to validate the certificate</b>.</p><p>This approach provides TLS encryption in transit and confirms the server identity to the client. Cloud SQL supports SSL and you should use a server certificate that the client trusts and configure the client to verify the certificate and the host name. This prevents man in the middle attacks and meets the requirement to secure traffic over the public internet.</p><p><i>Use a self-signed certificate on the Cloud SQL instance and turn off certificate verification on the client</i> is incorrect because disabling verification removes server identity checks and allows interception. A self-signed certificate without validation does not satisfy the requirement to verify the server identity.</p><p><i>Rely on Private IP with VPC Service Controls and do not configure any TLS certificates</i> is incorrect because the scenario states clients connect over the public internet and this option does not use TLS or provide server authentication. Private IP and VPC Service Controls reduce exposure and exfiltration risk but they do not encrypt traffic or replace TLS.</p><p><i>Install a certificate from an untrusted Certificate Authority on the Cloud SQL instance and enable certificate checks on the client</i> is incorrect because clients will reject a certificate chain that is not trusted. If you add the CA to the client trust store then it becomes trusted which contradicts the option as stated.</p>",
+  "batch_id": "94",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "A Database Engineer is responsible for configuring SSL certificates to secure communication between a Cloud SQL instance and its clients. Which of the following approaches is the most secure and recommended method for setting up SSL connections?",
+  "originalOptions": "A. Configure the Cloud SQL instance with a certificate issued by a trusted Certificate Authority (CA) and enable certificate validation on the client side.<br/>B. Use a self-signed certificate for the Cloud SQL instance and disable certificate validation on the client side.<br/>C. Configure the Cloud SQL instance with a certificate issued by an untrusted Certificate Authority (CA) and enable certificate validation on the client side.<br/>D. Enable SSL connections without any certificates, relying on the encryption only.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "133",
+  "tip": "<p>Look for keywords such as <i>public internet</i> and <i>verify the server's identity</i> which point to TLS with a <i>trusted CA</i> and strict client validation. Be wary of answers that rely only on network isolation features because they do not replace encryption or identity checks.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/configure-ssl-instance",
+    "https://cloud.google.com/sql/docs/postgres/connect-public-ip",
+    "https://cloud.google.com/sql/docs/postgres/private-ip",
+    "https://cloud.google.com/vpc-service-controls/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-for-configuring-ssl-certificates-to-exam-133.html",
+  "video_url": "https://certificationation.com/videos/exam-for-configuring-ssl-certificates-to-exam-133.html"
+}

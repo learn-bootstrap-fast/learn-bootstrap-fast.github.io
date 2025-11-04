@@ -1,0 +1,62 @@
+---
+title: "You are a DevOps engineer in a company whose dataExam"
+description: "Video for you are a DevOps engineer in a company whose data analysis department is planning to benefit from CloudWatch Logs to troubleshoot some business use"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are a DevOps engineer in a company whose data analysis department is planning to benefit from CloudWatch Logs to troubleshoot some business use cases by exploring the content in all container logs. How is it possible to automate a pipeline for analysis in this context?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>first option</b> is correct because it highlights the necessary steps to enable automated log collection for both EC2 and Fargate launch types in Amazon ECS. This includes:</p><ul><li>Attaching a proper IAM policy granting access to CloudWatch Logs APIs to the ecsInstanceRole.</li><li>Installing the CloudWatch agent on all container instances (EC2 or Fargate).</li><li>For EC2 launch type, if you're not using an ECS-optimized AMI, you have to edit <b>/etc/ecs/ecs.config</b> to specify <b>ECS_AVAILABLE_LOGGING_DRIVERS</b>, ensuring the <b>awslogs</b> logging driver is available for capturing logs.</li></ul><p>This setup allows the company to centralize and explore all container logs in CloudWatch Logs, thereby enabling efficient troubleshooting and downstream analytics—an ideal foundation for a log analysis pipeline.</p><p>Why the other answers are incorrect:</p><ul><li><i>By creating a suitable IAM policy...Fargate option...ECS-optimized AMI and update ecs-init package.</i> — This incorrectly limits log collection to only Fargate and insists you can only use the ECS-optimized AMI, which is not accurate, as EC2 also supports logging with proper configuration.</li><li><i>You must create an IAM policy...EC2 launch type...awslogs logging driver.</i> — This limits log collection capabilities to just EC2 instances, ignoring Fargate (which natively supports CloudWatch Logs integration).</li><li><i>After establishing an IAM policy...Fargate. For EC2, logs...avoid disk space consumption from logs...ECS-optimized AMI...</i> — While partially correct, this answer falsely claims that using EC2 will prevent log files from using up disk space and requires only the ECS-optimized AMI, which is not a hard requirement if you configure logging drivers correctly.</li></ul><p><b>Tip:</b> For production ECS environments, explicitly set available logging drivers in <b>/etc/ecs/ecs.config</b> when customizing or using a non-optimized AMI, and always ensure the IAM role permits access to CloudWatch Logs to guarantee all containers can stream logs properly.</p>",
+  "query": "<p>You are a DevOps engineer assisting the data analytics team, who want to leverage CloudWatch Logs to efficiently troubleshoot and analyze all their containerized application logs. How can you automate a log analysis pipeline in this situation?</p>",
+  "original_oid": "6793da1d61969b416038a155",
+  "options": [
+    {
+      "correct": true,
+      "text": "By setting up an IAM policy granting container instances access to the CloudWatch Logs APIs and associating it with the ecsInstanceRole, you can install the CloudWatch agent on your container hosts. When using the Fargate launch type, you can access logs from your containers. For the EC2 launch type, you can consolidate logs from various containers efficiently. If you are not deploying the ECS-optimized AMI, update the /etc/ecs/ecs.config file to include ECS_AVAILABLE_LOGGING_DRIVERS=[\"json-file\",\"awslogs\"] so the awslogs logging driver becomes available.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "By creating a suitable IAM policy for container instances to call CloudWatch Logs APIs and linking it to the ecsInstanceRole, then installing the CloudWatch agent on them, you can monitor logs only when launching containers using the Fargate option. Also, in order to get the ECS container agent, you must use the ECS-optimized AMI and update the ecs-init package.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "You must create an IAM policy to enable your container instances to interact with CloudWatch Logs APIs and attach it to ecsInstanceRole. Install the CloudWatch agent on instances, and note that logs are available solely if you launch containers with the EC2 launch type. If you're not using the ECS-optimized AMI, the /etc/ecs/ecs.config file must be modified to support the awslogs logging driver.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "After establishing an IAM policy that allows CloudWatch Logs API actions and associating it with ecsInstanceRole, as well as installing the CloudWatch agent, you will be able to retrieve logs via Fargate. For EC2, logs appear in a single view and you avoid disk space consumption from logs. The ECS-optimized AMI must be used for installing the ECS container agent and updating ecs-init.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question228",
+  "originalQuery": "You are a DevOps engineer in a company whose data analysis department is planning to benefit from CloudWatch Logs to troubleshoot some business use cases by exploring the content in all container logs.\nHow is it possible to automate a pipeline for analysis in this context?",
+  "originalOptions": "A. You create an IAM policy to allow your container instances to use the CloudWatch Logs APIs, and then you must attach that policy to ecsInstanceRole. Then, you install the CloudWatch agent on your container instances. You only can use the Fargate launch type to view the logs from your containers. You only can use Amazon ECS-optimized AMI to get the Amazon ECS container agent by updating the ecs-init package.|B. You create an IAM policy to allow your container instances to use the CloudWatch Logs APIs, and then you must attach that policy to ecsInstanceRole. Then, you install the CloudWatch agent on your container instances. On the Fargate launch type, you view the logs from your containers. On the EC2 launch type, you get different logs from your containers in one convenient location. If you are not using the Amazon ECS-optimized AMI, you will have to edit the /etc/ecs/ecs.config file and add ECS_AVAILABLE_LOGGING_DRIVERS=[\"json-file\",\"awslogs\"] to specify that the awslogs logging driver is available on the container instance.|C. You create an IAM policy to allow your container instances to use the CloudWatch Logs APIs, and then you must attach that policy to ecsInstanceRole. Then, you install the CloudWatch agent on your container instances. You only can use EC2 launch type to view the logs from your containers. If you are not using the Amazon ECS-optimized AMI, you will have to edit the /etc/ecs/ecs.config file and add ECS_AVAILABLE_LOGGING_DRIVERS=[\"json-file\",\"awslogs\"] to specify that the awslogs logging driver is available on the container instance.|D. You create an IAM policy to allow your container instances to use the CloudWatch Logs APIs, and then you must attach that policy to ecsInstanceRole. Then, you install the CloudWatch agent on your container instances. On the Fargate launch type, you view the logs from your containers. On the EC2 launch type, you get different logs from your containers in one convenient location, and it prevents your container logs from taking up disk space on your container instances. You only can use Amazon ECS-optimized AMI to get the Amazon ECS container agent by updating the ecs-init package.",
+  "video_url": "https://certificationation.com/videos/exam-whose-data-analysis-department-is-exam-347.html",
+  "url": "https://certificationation.com/questions/exam-whose-data-analysis-department-is-exam-347.html"
+}

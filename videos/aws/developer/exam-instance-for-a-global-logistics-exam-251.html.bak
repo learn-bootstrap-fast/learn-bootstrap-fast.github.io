@@ -1,0 +1,79 @@
+---
+title: "You are managing a Cloud Spanner instance for a globalExam"
+description: "Video for you are managing a Cloud Spanner instance for a global logistics company. Shipments are logged in real-time, and each shipment entry has a unique"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are managing a Cloud Spanner instance for a global logistics company. Shipments are logged in real-time, and each shipment entry has a unique shipmentId and associated regionId . You need to create a flexible query to fetch details for a specific shipment in a given region. The query must be optimized for frequent use. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You administer a Cloud Spanner database for QuickMeal, a food delivery platform. Orders stream into a table named orders_feed in real time, and each record includes a unique orderId and a related zoneId. You must design a reusable parameterized query that is efficient for frequent execution and that retrieves the details for one specific order within a particular zone. What should you do?",
+  "options": [
+    {
+      "text": "SELECT * FROM orders_feed WHERE order_id=@orderId OR zone_id=@zoneId",
+      "explanation": "This statement returns rows that satisfy either the order identifier or the zone filter which can broaden the result set unintentionally",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "SELECT * FROM orders_feed WHERE order_id=@orderId AND zone_id=@zoneId",
+      "explanation": "This statement applies both the order identifier and the zone as parameters to restrict the results to a single targeted order",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "SELECT * FROM orders_feed@{FORCE_INDEX=idx_orders_order_id} WHERE order_id=@orderId",
+      "explanation": "This statement forces use of a specific index and filters only by the order identifier which omits the zone filter",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "SELECT * FROM orders_feed WHERE order_id=@orderId AND zone_id=&apos;APAC&apos;",
+      "explanation": "This statement uses a parameter for the order identifier but hard-codes the zone to APAC which reduces query flexibility",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>Only <b>SELECT * FROM orders_feed WHERE order_id=@orderId AND zone_id=@zoneId</b> meets the requirement.</p><p>This retrieves the exact order within the specified zone because both predicates must be true for the same row. Using named parameters makes the query reusable and efficient for frequent execution because Cloud Spanner can cache query plans and you avoid hardcoded values. Filtering on both columns also lets the optimizer use a suitable primary key or secondary index if available which reduces the amount of data scanned.</p><p><i>SELECT * FROM orders_feed WHERE order_id=@orderId OR zone_id=@zoneId</i> returns rows that match either the order or the zone which does not guarantee that the order belongs to the given zone. Using OR can also force broader scans and limit the effectiveness of composite indexes.</p><p><i>SELECT * FROM orders_feed@{FORCE_INDEX=idx_orders_order_id} WHERE order_id=@orderId</i> omits the zone filter so it would return the order across all zones which fails the requirement. Forcing an index reduces portability and is unnecessary here because a single column index does not account for the zone filtering requirement.</p><p><i>SELECT * FROM orders_feed WHERE order_id=@orderId AND zone_id='APAC'</i> hardcodes the zone which makes the query not reusable for other zones and does not meet the requirement to parameterize the zone.</p>",
+  "batch_id": "49",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "You are managing a Cloud Spanner instance for a global logistics company. Shipments are logged in real-time, and each shipment entry has a unique shipmentId and associated regionId . You need to create a flexible query to fetch details for a specific shipment in a given region. The query must be optimized for frequent use. What should you do?",
+  "originalOptions": "A. SELECT * FROM shipments WHERE shipmentId=@shipmentId OR regionId=@regionId<br/>B. SELECT * FROM shipments WHERE shipmentId=@shipmentId AND regionId=@regionId<br/>C. SELECT * FROM shipments WHERE shipmentId LIKE @shipmentId AND regionId='EU'<br/>D. SELECT * FROM shipments WHERE shipmentId=@shipmentId AND regionId='EU'",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "251",
+  "tip": "<p>When a question asks for one item within a scope use <i>AND</i> with <i>parameters</i> for each filter. Avoid <i>OR</i> when you need a narrow lookup and avoid hardcoded values. Use <i>FORCE_INDEX</i> only when you have evidence the default plan is not optimal.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/execute-sql#use_query_parameters",
+    "https://cloud.google.com/spanner/docs/query-syntax#table_hint",
+    "https://cloud.google.com/spanner/docs/sql-best-practices"
+  ],
+  "url": "https://certificationation.com/questions/exam-instance-for-a-global-logistics-exam-251.html",
+  "video_url": "https://certificationation.com/videos/exam-instance-for-a-global-logistics-exam-251.html"
+}

@@ -1,0 +1,80 @@
+---
+title: "A Database Engineer is planning an upgrade for a CloudExam"
+description: "Video for a Database Engineer is planning an upgrade for a Cloud Spanner database in a Google Cloud project. The engineer wants to ensure data consistency and"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A Database Engineer is planning an upgrade for a Cloud Spanner database in a Google Cloud project. The engineer wants to ensure data consistency and minimize downtime during the upgrade process. Which of the following strategies is the most suitable for achieving these objectives while implementing a schema change in the Cloud Spanner database?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "An engineer at AuroraPay is preparing to roll out a schema modification to a Cloud Spanner database that supports a production service on Google Cloud. They must preserve strong consistency and keep downtime to nearly zero while the change is applied. Which approach best accomplishes these goals when performing the schema update?",
+  "options": [
+    {
+      "text": "Perform a rolling update on the Cloud Spanner instance so the schema change propagates across nodes",
+      "explanation": "This proposes changing the instance in stages with the expectation that the schema change will advance during the rolling process",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Set up Cloud Spanner change streams with a Dataflow pipeline to mirror data into a new Cloud Spanner instance that has the updated schema and then cut over",
+      "explanation": "This suggests building a near real time replica through change data capture to enable a migration cutover",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Cloud Spanner online schema updates to run the DDL while keeping the database available to clients",
+      "explanation": "This applies the schema change through Spanner&apos;s online DDL capability so applications can continue operating during the change",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Create a new Cloud Spanner instance with the revised schema and synchronize from the current instance using Datastream before redirecting traffic",
+      "explanation": "This relies on a change data capture synchronization into a separate destination instance prior to cutover",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Use Cloud Spanner online schema updates to run the DDL while keeping the database available to clients</b>.</p><p>This approach is designed for production workloads that require strong consistency and near zero downtime. Cloud Spanner executes schema changes online and continues to serve traffic during the update. Any necessary backfills run in the background and the service maintains transactional guarantees so applications can keep reading and writing while the change completes.</p><p><i>Perform a rolling update on the Cloud Spanner instance so the schema change propagates across nodes</i> is incorrect because Cloud Spanner does not rely on user managed rolling updates for schema propagation. Schema changes are applied through DDL and Spanner automatically and consistently propagates them without you orchestrating node by node updates.</p><p><i>Set up Cloud Spanner change streams with a Dataflow pipeline to mirror data into a new Cloud Spanner instance that has the updated schema and then cut over</i> is unnecessary and introduces risk. Change streams are for change data capture and do not provide strong consistency across instances. A pipeline and cutover add latency and complexity and they are not needed since Spanner supports online schema changes directly.</p><p><i>Create a new Cloud Spanner instance with the revised schema and synchronize from the current instance using Datastream before redirecting traffic</i> is not appropriate because Datastream does not support Cloud Spanner as a source or target for this purpose. This approach would not maintain strong consistency and typically requires a risky cutover.</p>",
+  "batch_id": "213",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "A Database Engineer is planning an upgrade for a Cloud Spanner database in a Google Cloud project. The engineer wants to ensure data consistency and minimize downtime during the upgrade process. Which of the following strategies is the most suitable for achieving these objectives while implementing a schema change in the Cloud Spanner database?",
+  "originalOptions": "A. Use Cloud Spanner's online schema update feature to apply the schema changes without downtime.<br/>B. Perform a rolling update on the Cloud Spanner instance to apply the schema changes.<br/>C. Create a new Cloud Spanner instance with the updated schema and use the Datastream service to synchronize the data between the old and new instances, and then switch the application to use the new instance.<br/>D. Export the data from Cloud Spanner, create a new Cloud Spanner instance with the updated schema, import the data, and then switch the application to use the new instance.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "246",
+  "tip": "<p>When you see requirements for <i>strong consistency</i> and <i>near zero downtime</i> with Cloud Spanner schema changes, prefer the built in <i>online schema updates</i> feature rather than building migrations with external pipelines or cross instance replicas.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/schema-updates",
+    "https://cloud.google.com/spanner/docs/ddl-statements",
+    "https://cloud.google.com/spanner/docs/change-streams",
+    "https://cloud.google.com/datastream/docs/sources-and-destinations"
+  ],
+  "url": "https://certificationation.com/questions/exam-upgrade-for-a-cloud-spanner-exam-246.html",
+  "video_url": "https://certificationation.com/videos/exam-upgrade-for-a-cloud-spanner-exam-246.html"
+}

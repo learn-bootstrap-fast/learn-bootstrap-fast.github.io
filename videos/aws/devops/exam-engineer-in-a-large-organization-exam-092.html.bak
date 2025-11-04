@@ -1,0 +1,62 @@
+---
+title: "You are hired as a senior DevOps engineer in a largeExam"
+description: "Video for you are hired as a senior DevOps engineer in a large organization and you manage AWS resources in multiple AWS regions. You need to enable Amazon"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are hired as a senior DevOps engineer in a large organization and you manage AWS resources in multiple AWS regions. You need to enable Amazon GuardDuty and add new AWS Config rules in all AWS regions. You have already prepared CloudFormation templates to deploy the resources. Which of the following options is the easiest one to create the CloudFormation stacks in multiple regions?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><strong>Set up CloudFormation StackSets for centralized management and select the regions in which stacks should be launched.</strong> is the best and simplest method for deploying CloudFormation stacks across multiple AWS regions. StackSets were specifically designed to make it easy to create, update, and manage CloudFormation stacks in many accounts and regions from a single location, with only a few steps. You simply specify the required regions and StackSets automatically handles the rest.</p><p>Let's examine why the other answers are incorrect:</p><ul><li><i>Put the CloudFormation templates in a shared S3 bucket and select target regions manually each time you launch stacks via CloudFormation.</i> – Although storing templates in S3 is good practice, there is no built-in mechanism to deploy to multiple regions at once. You would need to repeat the process region by region, which is inefficient for large-scale operations.</li><li><i>Write a Lambda function that uses the AWS CLI to create stacks, passing the --region argument for each AWS region where deployment is needed.</i> – While technically feasible, this approach would require you to develop, test, and maintain a custom automation solution. It is more complex and error-prone compared to the purpose-built StackSets functionality.</li><li><i>Build a CloudFormation stack resource group, specify regions within the group, and execute the stack for all included regions together.</i> – AWS CloudFormation resource groups do not exist for launching stacks in multiple regions; resource groups are intended for grouping resources within a single region. This option is not supported in AWS.</li></ul><p><strong>Tip:</strong> Prefer native AWS solutions like StackSets, as they offer built-in features for multi-region and multi-account management that will save you significant time and reduce the risk of deployment errors.</p>",
+  "query": "<p>You work for a large enterprise as a senior DevOps engineer, managing AWS environments that span several regions. You are tasked with enabling Amazon GuardDuty and introducing new AWS Config rules across every AWS region. You have already developed the necessary CloudFormation templates to provision the required resources. What is the simplest approach to deploy these CloudFormation stacks in multiple regions at once?</p>",
+  "original_oid": "6793da4f61969b416038a1c0",
+  "options": [
+    {
+      "correct": true,
+      "text": "Set up CloudFormation StackSets for centralized management and select the regions in which stacks should be launched.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Put the CloudFormation templates in a shared S3 bucket and select target regions manually each time you launch stacks via CloudFormation.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Write a Lambda function that uses the AWS CLI to create stacks, passing the --region argument for each AWS region where deployment is needed.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Build a CloudFormation stack resource group, specify regions within the group, and execute the stack for all included regions together.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question335",
+  "originalQuery": "You are hired as a senior DevOps engineer in a large organization and you manage AWS resources in multiple AWS regions.\nYou need to enable Amazon GuardDuty and add new AWS Config rules in all AWS regions.\nYou have already prepared CloudFormation templates to deploy the resources.\nWhich of the following options is the easiest one to create the CloudFormation stacks in multiple regions?",
+  "originalOptions": "A. Upload the CloudFormation templates in a global S3 bucket. Choose the templates and select regions when creating stacks in CloudFormation.,B. Create CloudFormation StackSets to manage the stacks. Choose the regions in which you want to deploy stacks.,C. Configure a Lambda function that launches CloudFormation stacks through AWS CLI create-stack. Specify different AWS regions through the --region option.,D. Configure a CloudFormation stack resource group in which AWS regions are specified. Launch the CloudFormation stack in the resource group to deploy resources in all specified AWS regions.",
+  "video_url": "https://certificationation.com/videos/exam-engineer-in-a-large-organization-exam-092.html",
+  "url": "https://certificationation.com/questions/exam-engineer-in-a-large-organization-exam-092.html"
+}

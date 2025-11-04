@@ -1,0 +1,81 @@
+---
+title: "As a Database Engineer, you are tasked with performingExam"
+description: "Video for as a Database Engineer, you are tasked with performing maintenance on a Cloud Spanner database. The database is experiencing latency issues during"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are tasked with performing maintenance on a Cloud Spanner database. The database is experiencing latency issues during read and write operations. You need to optimize the schema design and ensure efficient querying. Which of the following strategies should you use?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the database lead at Riverbend Retail and you manage a Cloud Spanner instance that powers an order management API. During busy shopping periods you see elevated latency for reads and writes and the slow queries frequently join the Orders, Payments, Customers and Shipments tables to build order summaries. You want to refine the data model so queries complete faster while preserving consistency. What should you do?",
+  "options": [
+    {
+      "text": "Normalize the schema further to remove duplicate attributes",
+      "explanation": "This approach focuses on eliminating redundancy by splitting data into more tables with stricter relationships",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud Memorystore for Redis",
+      "explanation": "This managed cache can serve frequently read keys from memory to offload the database for some requests",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Apply selective denormalization to reduce the number of joins on hot query paths",
+      "explanation": "This technique stores commonly needed fields together so queries that assemble summaries can avoid multiple table joins",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Increase the number of nodes in the Cloud Spanner instance",
+      "explanation": "This adds more compute and storage resources to the instance to improve capacity and parallelism",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Apply selective denormalization to reduce the number of joins on hot query paths</b>.</p><p>By copying a small set of frequently read attributes from Customers, Payments and Shipments into the Orders row or into a compact summary table, your queries can fetch everything they need with far fewer joins. In Cloud Spanner you can write the original data and the redundant summary fields in the same transaction, which preserves strong consistency while reducing the CPU and network cost of multi table joins during peak traffic.</p><p><i>Normalize the schema further to remove duplicate attributes</i> is counterproductive here because it increases the number of tables and joins. Your slow queries already span Orders, Payments, Customers and Shipments, so further normalization would likely worsen latency.</p><p><i>Cloud Memorystore for Redis</i> adds a separate cache that is not part of Spanner transactions and introduces cache invalidation complexity. It can help when some staleness is acceptable, but the requirement is to preserve consistency for order management, which makes a cache the wrong choice for this problem.</p><p><i>Increase the number of nodes in the Cloud Spanner instance</i> can raise throughput and reduce queuing under load, yet it does not address the intrinsic cost of join heavy queries. The question asks for a data model refinement, so adding capacity is not the best solution to reduce query latency caused by multiple joins.</p>",
+  "batch_id": "308",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are tasked with performing maintenance on a Cloud Spanner database. The database is experiencing latency issues during read and write operations. You need to optimize the schema design and ensure efficient querying. Which of the following strategies should you use?",
+  "originalOptions": "A. Use a separate in-memory cache for frequent queries.<br/>B. Normalize the schema to eliminate data redundancy.<br/>C. Increase the number of nodes in the instance.<br/>D. Denormalize the schema to reduce the number of required joins.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "76",
+  "tip": "<p>When you see many joins on the <i>hot path</i> and a requirement to <i>preserve consistency</i>, think of selective denormalization that is maintained in the same transaction to cut join costs without sacrificing correctness.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/schema-design",
+    "https://cloud.google.com/spanner/docs/query-optimization",
+    "https://cloud.google.com/spanner/docs/joins",
+    "https://cloud.google.com/spanner/docs/compute-capacity",
+    "https://cloud.google.com/memorystore/docs/redis/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-tasked-with-performing-maintenance-on-exam-076.html",
+  "video_url": "https://certificationation.com/videos/exam-tasked-with-performing-maintenance-on-exam-076.html"
+}

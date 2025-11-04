@@ -1,0 +1,81 @@
+---
+title: "Your company uses a Cloud SQL database for transactionalExam"
+description: "Video for your company uses a Cloud SQL database for transactional operations. A new requirement arises to generate daily reports on historical data, which"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company uses a Cloud SQL database for transactional operations. A new requirement arises to generate daily reports on historical data, which involves complex analytical queries. You must ensure that these queries do not impact the performance of the transactional workload. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Ardent Outfitters runs its order system on Cloud SQL for transactional processing. Leadership wants to produce a nightly report that analyzes 18 months of historical records with complex joins and aggregations. You must ensure the reporting workload does not slow down the live transactions. What should you do?",
+  "options": [
+    {
+      "text": "Use Cloud Bigtable to store a replicated copy of the relational data and run the analytical queries there",
+      "explanation": "Cloud Bigtable is a wide column database that can ingest and serve large volumes of key value or time series data with low latency",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Migrate the workload to Firestore to handle analytics at scale",
+      "explanation": "Firestore is a document database that provides scalable reads and writes for hierarchical JSON like data models",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Provision a Cloud SQL read replica and direct the analytical workload to it",
+      "explanation": "A Cloud SQL read replica maintains an asynchronous copy of the primary instance so read heavy workloads can be offloaded from the primary",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Create a Cloud SQL failover replica and point the reporting job at that instance",
+      "explanation": "A Cloud SQL failover replica is a standby instance that stays synchronized and is intended for rapid promotion during an outage",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Provision a Cloud SQL read replica and direct the analytical workload to it</b>. This keeps the heavy nightly reporting reads off the primary instance so live transactions continue without contention.</p><p>This approach maintains a near real time copy of the database through asynchronous replication. The reporting job can run complex joins and aggregations on the read only copy while the primary continues to serve writes. You can size and tune the replica independently which lets you optimize for analytics without changing the transactional workload or SQL.</p><p>The option <i>Use Cloud Bigtable to store a replicated copy of the relational data and run the analytical queries there</i> is not appropriate because Bigtable is a NoSQL wide column store that is optimized for large scale key based access and time series patterns. It does not natively support relational joins and complex SQL aggregations and it would require custom pipelines and query rewrites which adds unnecessary complexity.</p><p>The option <i>Migrate the workload to Firestore to handle analytics at scale</i> is unsuitable because Firestore is a document database designed for hierarchical access with simple indexed queries. It does not provide server side joins or multi table analytics that this reporting requires and a migration would disrupt the existing relational application without addressing the analytical need.</p><p>The option <i>Create a Cloud SQL failover replica and point the reporting job at that instance</i> is incorrect because a failover replica is a standby for high availability. It is not intended for read workloads during normal operation and is reserved to take over only if the primary fails.</p>",
+  "batch_id": "277",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "Your company uses a Cloud SQL database for transactional operations. A new requirement arises to generate daily reports on historical data, which involves complex analytical queries. You must ensure that these queries do not impact the performance of the transactional workload. What should you do?",
+  "originalOptions": "A. Set up a Memorystore instance to cache frequently accessed data for analytical queries.<br/>B. Use Cloud Bigtable to store a copy of the transactional data. Run analytical queries on Cloud Bigtable.<br/>C. Migrate the transactional database to Firestore, as it is optimized for analytics.<br/>D. Create a read replica of the Cloud SQL database. Run the analytical queries on the read replica.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "227",
+  "tip": "<p>When a question contrasts OLTP traffic with heavy reporting, look for ways to offload reads. A <i>read replica</i> serves analytics without impacting writes, while a <i>failover</i> setup is for availability rather than scaling.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/best-practices#replicas",
+    "https://cloud.google.com/sql/docs/mysql/replication/create-replica",
+    "https://cloud.google.com/sql/docs/mysql/high-availability",
+    "https://cloud.google.com/bigtable/docs/overview#use_cases",
+    "https://cloud.google.com/firestore/docs/concepts/queries"
+  ],
+  "url": "https://certificationation.com/questions/exam-for-transactional-operations-a-new-exam-227.html",
+  "video_url": "https://certificationation.com/videos/exam-for-transactional-operations-a-new-exam-227.html"
+}

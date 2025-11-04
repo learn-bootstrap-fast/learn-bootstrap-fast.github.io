@@ -1,0 +1,67 @@
+---
+title: "You are creating CloudFormation templates for newExam"
+description: "Video for you are creating CloudFormation templates for new applications. In the templates, you need to include certain custom resources as they are not"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are creating CloudFormation templates for new applications. In the templates, you need to include certain custom resources as they are not supported by the AWS CloudFormation resource types. You want to use the AWS::CloudFormation::CustomResource resource type to specify the custom resources. The resource type has a ServiceToken property that determines where AWS CloudFormation sends requests to. Which of the following endpoints can you configure in the ServiceToken property? (Select TWO.)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><strong>The correct choices are:</strong><br><strong>The Amazon SQS queue ARN.</strong> and <strong>An Amazon SNS topic ARN.</strong><br><br>When you use the <strong>AWS::CloudFormation::CustomResource</strong> resource, the ServiceToken property tells CloudFormation where to send the custom resource requests (Create/Update/Delete events). Valid values include the ARN of an SNS topic or SQS queue. CloudFormation publishes a message to the endpoint you specify in ServiceToken, which can trigger actions via various means, such as Lambda or custom listeners.<br><br><u>Why other options are incorrect:</u><br><i>An ARN for a CloudWatch Event rule.</i> – CloudWatch Event rules do not natively process CloudFormation custom resource invocations. CloudFormation can only send notifications to supported endpoints.<br><i>A Lambda function ARN.</i> – Although you often use Lambda with custom resources, Lambda function ARNs are supported with the newer <strong>AWS::CloudFormation::Resource</strong> type, but not directly with <strong>AWS::CloudFormation::CustomResource</strong>, which requires an SNS topic or SQS queue ARN.<br><i>The name of an AWS Step Function state machine.</i> – Step Function names or ARNs are not supported endpoints for ServiceToken. They cannot receive direct notifications from CloudFormation custom resources.<br><br><strong>Tips:</strong> Remember that while Lambda custom resources are preferred for newer templates (using <strong>AWS::CloudFormation::Resource</strong>), legacy custom resources require SNS or SQS endpoints.</p>",
+  "query": "<p>You are designing CloudFormation templates for your organization's new workloads.<br>Some of the required resources are not available as standard CloudFormation resource types, so you plan to use custom resources with the AWS::CloudFormation::CustomResource type.<br>To handle provisioning requests for these resources, you must set the <strong>ServiceToken</strong> property to the appropriate endpoint.<br>Which of the following can be used as valid targets for the ServiceToken property? (Select TWO.)</p>",
+  "original_oid": "6793da8a61969b416038a237",
+  "options": [
+    {
+      "correct": true,
+      "text": "The Amazon SQS queue ARN.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "An Amazon SNS topic ARN.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "An ARN for a CloudWatch Event rule.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "A Lambda function ARN.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "The name of an AWS Step Function state machine.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question455",
+  "originalQuery": "You are creating CloudFormation templates for new applications.\nIn the templates, you need to include certain custom resources as they are not supported by the AWS CloudFormation resource types.\nYou want to use the AWS::CloudFormation::CustomResource resource type to specify the custom resources.\nThe resource type has a ServiceToken property that determines where AWS CloudFormation sends requests to.\nWhich of the following endpoints can you configure in the ServiceToken property? (Select TWO.)",
+  "originalOptions": "A. An Amazon SNS topic ARN.,B. An Amazon SQS queue ARN.,C. A CloudWatch Event rule ARN.,D. An AWS Step Function name.,E. A Lambda function ARN.",
+  "video_url": "https://certificationation.com/videos/exam-templates-for-new-applications-in-exam-269.html",
+  "url": "https://certificationation.com/questions/exam-templates-for-new-applications-in-exam-269.html"
+}

@@ -1,0 +1,80 @@
+---
+title: "A healthcare organization is using Cloud Spanner toExam"
+description: "Video for a healthcare organization is using Cloud Spanner to store sensitive patient data. The organization needs to ensure high availability and disaster"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A healthcare organization is using Cloud Spanner to store sensitive patient data. The organization needs to ensure high availability and disaster recovery while maintaining low-latency read and write operations, and adhering to strict data residency requirements. The company operates in a country where the Google Cloud region is located. Which of the following options should the organization choose to best meet their requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "An insurance cooperative based in France uses Cloud Spanner for sensitive claims records. They must keep all data in country and want low-latency reads and writes for users in Paris and they expect an availability target of 99.99 percent with robust disaster recovery. France has a Google Cloud region within its borders and their workloads run only in that region. Which deployment choice should they use?",
+  "options": [
+    {
+      "text": "Spanner multi-region configuration within one continent",
+      "explanation": "This replicates data across two or more regions in the same continent to raise availability and durability",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud SQL",
+      "explanation": "This is a managed relational database service that provides primary and read replicas for transactional workloads",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Spanner regional instance in the in-country region with replicas across zones",
+      "explanation": "This keeps the database in a single region and uses synchronous replication across multiple zones for high availability and low local latency",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Spanner multi-region configuration across continents",
+      "explanation": "This distributes data across distant regions for global resilience and global access",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Spanner regional instance in the in-country region with replicas across zones</b>.</p><p>This configuration keeps all data within the French region which satisfies in-country data residency. It uses synchronous replication across multiple zones in that region which provides automatic failover and meets a 99.99 percent availability target. Placing the instance in the France region gives low latency reads and writes for users in Paris while still providing robust disaster recovery within the region.</p><p><i>Spanner multi-region configuration within one continent</i> distributes data across multiple regions in Europe and would store data outside France. It would also add write latency due to cross region coordination which is unnecessary when all users are in Paris and data must remain in country.</p><p><i>Cloud SQL</i> is a different managed relational service and does not provide the same horizontal scalability and strongly consistent global transactions that Spanner offers. The scenario already uses Spanner for sensitive records and needs Spanner features and availability characteristics rather than moving to this service.</p><p><i>Spanner multi-region configuration across continents</i> would violate the in-country requirement and would significantly increase write latency. It is designed for geographically distributed workloads where cross country data placement is acceptable.</p>",
+  "batch_id": "231",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "A healthcare organization is using Cloud Spanner to store sensitive patient data. The organization needs to ensure high availability and disaster recovery while maintaining low-latency read and write operations, and adhering to strict data residency requirements. The company operates in a country where the Google Cloud region is located. Which of the following options should the organization choose to best meet their requirements?",
+  "originalOptions": "A. Spanner multi-region instance within the same continent.<br/>B. Spanner regional instance with a primary node and multiple read replicas within the same region.<br/>C. Spanner multi-region instance across multiple continents.<br/>D. Spanner regional instance with asynchronous replication in the same region.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "31",
+  "tip": "<p>Map the requirement for <i>data residency</i> and target <i>availability</i> before choosing regional or multi-region. If data must stay in one country and there is a local region, prefer a regional Spanner deployment with zonal replicas for low latency and failover.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/instance-configurations",
+    "https://cloud.google.com/spanner/docs/replication",
+    "https://cloud.google.com/spanner/sla",
+    "https://cloud.google.com/sql/docs/mysql/high-availability"
+  ],
+  "url": "https://certificationation.com/questions/exam-using-cloud-spanner-to-store-exam-031.html",
+  "video_url": "https://certificationation.com/videos/exam-using-cloud-spanner-to-store-exam-031.html"
+}

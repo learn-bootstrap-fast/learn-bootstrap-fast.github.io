@@ -1,0 +1,90 @@
+---
+title: "As a Database Engineer, you are tasked with optimizingExam"
+description: "Video for as a Database Engineer, you are tasked with optimizing both the cost and performance of a database in Google Cloud for an e-commerce application. You"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are tasked with optimizing both the cost and performance of a database in Google Cloud for an e-commerce application. You have been asked to choose two strategies that would be most effective in achieving this goal. Which of the following options should you select? (Choose two.)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the database engineer for a fast growing online ticketing startup at scrumtuous.com and you need to enhance database performance while keeping operational costs reasonable on Google Cloud. Which actions should you implement to best meet both goals?",
+  "options": [
+    {
+      "text": "Introduce Cloud Memorystore for Redis to cache frequently requested data and session lookups",
+      "explanation": "This adds a managed in-memory cache that serves hot reads and reduces database load",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use Cloud Spanner with a multi-region configuration for every workload regardless of traffic patterns",
+      "explanation": "This selects a globally distributed relational service even when the application is small",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure Cloud SQL with automated backups and binary logging turned off to reduce overhead",
+      "explanation": "This disables automated protection features to lower storage and compute consumption",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Design schema and queries with appropriate indexing table partitioning and sharding where it aligns with access patterns",
+      "explanation": "This applies data modeling and workload management techniques that improve query efficiency and scalability",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Enable automatic instance autoscaling for Cloud SQL to handle sudden spikes in demand",
+      "explanation": "This assumes that Cloud SQL can scale vCPU and memory up and down automatically based on load",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct actions are <b>Introduce Cloud Memorystore for Redis to cache frequently requested data and session lookups</b> and <b>Design schema and queries with appropriate indexing table partitioning and sharding where it aligns with access patterns</b>.</p><p><b>Memorystore for Redis</b> offloads hot reads and session lookups from the primary database which reduces latency and decreases database CPU and IOPS. Because it is a managed in memory cache you gain performance without taking on operational overhead and you typically lower total cost by serving repeated requests from the cache rather than from the database.</p><p><b>Designing schema and queries with appropriate indexing table partitioning and sharding aligned to access patterns</b> improves query efficiency and helps the database scale predictably. Proper indexes avoid full scans and good partitioning and sharding reduce contention and hot spots which improves throughput. These practices let you meet performance goals on smaller instances and with fewer replicas which keeps costs reasonable.</p><p><i>Use Cloud Spanner with a multi-region configuration for every workload regardless of traffic patterns</i> is not cost efficient because multi region configurations are premium and should be reserved for workloads that truly need global availability and very high write scalability. Choosing Spanner and its topology should be driven by consistency and scale requirements rather than using it by default.</p><p><i>Configure Cloud SQL with automated backups and binary logging turned off to reduce overhead</i> is risky because automated backups and binary logging enable recovery and point in time restore and also support replication. Disabling them might save a small amount of overhead but it greatly increases operational and data loss risk which is not acceptable.</p><p><i>Enable automatic instance autoscaling for Cloud SQL to handle sudden spikes in demand</i> is not a valid approach because Cloud SQL does not provide automatic CPU and memory autoscaling for instances. Cloud SQL supports automatic storage increase and you handle bursts with techniques like right sizing instances read replicas and connection pooling.</p>",
+  "batch_id": "305",
+  "answerCode": "1,4",
+  "type": "multi-select",
+  "originalQuery": "As a Database Engineer, you are tasked with optimizing both the cost and performance of a database in Google Cloud for an e-commerce application. You have been asked to choose two strategies that would be most effective in achieving this goal. Which of the following options should you select? (Choose two.)",
+  "originalOptions": "A. Opt for a workload management strategy that includes partitioning, sharding, and indexing.<br/>B. Utilize Cloud SQL with automated backups and binary logging disabled.<br/>C. Enable Auto-Scaling for Cloud SQL instances to handle traffic spikes.<br/>D. Implement caching using Cloud Memorystore for Redis for frequently accessed data.<br/>E. Use Cloud Spanner with multi-region instance configurations for all workloads, regardless of their scale or read-write patterns.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "36",
+  "tip": "<p>First look for improvements that reduce database work such as <i>caching</i> and <i>indexing</i> before moving to more expensive tiers. Confirm the exact capabilities of each managed service and never trade away <i>backup</i> and <i>recovery</i> features for small performance gains.</p>",
+  "references": [
+    "https://cloud.google.com/memorystore/docs/redis/redis-overview",
+    "https://cloud.google.com/sql/docs/mysql/performance",
+    "https://cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+    "https://cloud.google.com/sql/docs/mysql/backup-recovery/point-in-time-recovery",
+    "https://cloud.google.com/sql/docs/mysql/scale",
+    "https://cloud.google.com/spanner/docs/instances#configurations",
+    "https://cloud.google.com/spanner/pricing",
+    "https://cloud.google.com/sql/docs/mysql/instance-settings#automatic-storage-increase"
+  ],
+  "url": "https://certificationation.com/questions/exam-tasked-with-optimizing-both-the-exam-036.html",
+  "video_url": "https://certificationation.com/videos/exam-tasked-with-optimizing-both-the-exam-036.html"
+}

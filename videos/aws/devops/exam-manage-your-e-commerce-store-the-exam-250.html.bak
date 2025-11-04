@@ -1,0 +1,62 @@
+---
+title: "You are using Elastic Beanstalk to manage yourExam"
+description: "Video for you are using Elastic Beanstalk to manage your e-commerce store. The store is based on an open source e-commerce platform and is deployed across"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are using Elastic Beanstalk to manage your e-commerce store. The store is based on an open source e-commerce platform and is deployed across multiple instances in an Auto Scaling group. Your development team often creates new “extensions” for the e-commerce store. These extensions include PHP source code and an SQL upgrade script used to make any necessary updates to the database schema. You have noticed that some extension deployments fail due to an error when running the SQL upgrade script. After further investigation, you realize that this is because the SQL script is being executed on all of your Amazon EC2 instances. How would you ensure that the SQL script is only executed once per deployment regardless of how many Amazon EC2 instances are running at the time?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The most reliable and direct way to ensure your SQL update script runs exactly <strong>once</strong> with each deployment in Elastic Beanstalk is by using a <strong>'Solo Command'</strong> in your configuration files. The Elastic Beanstalk service coordinates the execution environment so the <strong>Solo Command</strong> is executed a single time on only one instance, effectively avoiding race conditions or duplicate migrations.</p><p>Choosing <em>'Leverage an EC2 metadata check to see if the instance is the leader...'</em> is not an accurate or natively supported method in Elastic Beanstalk deployments; there is no built-in Auto Scaling group leader concept for reliable scripting in this context.</p><p>Modifying the database security groups as stated in <em>'Adjust the RDS security group to permit write access solely from one EC2 instance...'</em> is an insecure and administratively challenging workaround, introducing possible points of failure and single-instance dependence. It is not advisable for production or automated deployments.</p><p><em>'Include a Container command with the leader only setting enabled...'</em> is close—in Elastic Beanstalk, container commands with 'leader_only: true' can be used, but <strong>Solo Command</strong> is specifically designed for this use-case and is the best-practice approach preferred by AWS for idempotent, singleton operations during a deployment.</p><ul><li><b>Tip:</b> Use <strong>Solo Commands</strong> for tasks requiring only one execution regardless of the fleet size during Elastic Beanstalk deployments.</li><li>Do not rely on EC2-level metadata lookups for coordination in this scenario.</li><li>Security group changes as a singleton enforcement tool are not scalable or reliable.</li></ul>",
+  "query": "<p>You use AWS Elastic Beanstalk to host a multi-instance e-commerce solution. Each time developers deploy an update, they provide new PHP code and an SQL script for necessary database changes. Recently, deployments have occasionally failed, which investigation has traced to the SQL schema upgrade script attempting to run on every Amazon EC2 instance in your Auto Scaling group. What method should you use to guarantee the SQL script only runs once per deployment, no matter how many EC2 instances are launched?</p>",
+  "original_oid": "6793d9c161969b416038a0a2",
+  "options": [
+    {
+      "correct": true,
+      "text": "Use a 'Solo Command' in an Elastic Beanstalk configuration so only one instance executes the script per deployment.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Leverage an EC2 metadata check to see if the instance is the leader, running the SQL script accordingly when true.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Adjust the RDS security group to permit write access solely from one EC2 instance, ensuring only that node can execute the SQL update.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Include a 'Container command' with the 'leader only' setting enabled in your Elastic Beanstalk configuration to ensure only the primary instance runs the script.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question45",
+  "originalQuery": "You are using Elastic Beanstalk to manage your e-commerce store.\nThe store is based on an open source e-commerce platform and is deployed across multiple instances in an Auto Scaling group.\nYour development team often creates new “extensions” for the e-commerce store.\nThese extensions include PHP source code and an SQL upgrade script used to make any necessary updates to the database schema.\nYou have noticed that some extension deployments fail due to an error when running the SQL upgrade script.\nAfter further investigation, you realize that this is because the SQL script is being executed on all of your Amazon EC2 instances.\nHow would you ensure that the SQL script is only executed once per deployment regardless of how many Amazon EC2 instances are running at the time?",
+  "originalOptions": "[\"A. Use a “Container command” within an Elastic Beanstalk configuration file to execute the script, ensuring that the “leader only” flag is set to true.\",\"B. Make use of the Amazon EC2 metadata service to query whether the instance is marked as the leader” in the Auto Scaling group.Only execute the script if “true” is returned.\",\"C. Use a “Solo Command” within an Elastic Beanstalk configuration file to execute the script.The Elastic Beanstalk service will ensure that the command is only executed once.\",\"D. Update the Amazon RDS security group to only allow write access from a single instance in the Auto Scaling group; that way, only one instance will successfully execute the script on the database.\"]",
+  "video_url": "https://certificationation.com/videos/exam-manage-your-e-commerce-store-the-exam-250.html",
+  "url": "https://certificationation.com/questions/exam-manage-your-e-commerce-store-the-exam-250.html"
+}

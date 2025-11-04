@@ -1,0 +1,81 @@
+---
+title: "You are managing a MySQL database in Cloud SQL for anExam"
+description: "Video for you are managing a MySQL database in Cloud SQL for an e-commerce application. The application is expected to experience high traffic during holiday"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are managing a MySQL database in Cloud SQL for an e-commerce application. The application is expected to experience high traffic during holiday seasons, and any downtime could significantly impact revenue. To ensure minimal downtime and data loss during potential outages, what should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are responsible for a Cloud SQL for MySQL database that powers the ticketing platform at mcnz.com. The site expects a sharp spike in traffic during a 12 day concert series and any interruption would harm sales. You need to achieve the lowest possible downtime and reduce the chance of data loss if a zone becomes unavailable. What should you implement?",
+  "options": [
+    {
+      "text": "Configure automated backups",
+      "explanation": "Automated backups create scheduled restore points that you can use to recover data after an incident but they do not keep the service highly available.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a cross region read replica and plan to manually promote it during an outage",
+      "explanation": "A cross region read replica can be promoted during a disruption which helps with disaster recovery but promotion is manual and may increase downtime and risk some data loss.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable high availability on the instance with a regional configuration and automatic failover across zones",
+      "explanation": "High availability for Cloud SQL uses a standby in a different zone with automatic failover which reduces downtime and limits potential data loss during a zonal outage.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Enable point in time recovery",
+      "explanation": "Point in time recovery lets you restore the database to a specific timestamp which is useful for undoing accidental changes rather than keeping the service continuously available.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Enable high availability on the instance with a regional configuration and automatic failover across zones</b>. This choice keeps a standby in a different zone and fails over automatically if the primary zone becomes unavailable which delivers the lowest downtime and minimizes the risk of data loss for a zonal outage.</p><p>With a regional configuration, Cloud SQL maintains a standby in another zone within the same region and continuously keeps it ready. Health checks detect failures and the service promotes the standby without manual intervention. This aligns with the need to keep the ticketing platform available during the traffic spike and to reduce the chance of data loss if a zone fails.</p><p><i>Configure automated backups</i> helps with recovery from corruption or accidental deletion, yet it does not provide continuous availability. Restoring from a backup takes time and can result in data loss up to the last backup, so it does not meet the requirement for the lowest possible downtime during a zonal outage.</p><p><i>Create a cross region read replica and plan to manually promote it during an outage</i> protects against a regional failure, but manual promotion introduces longer downtime and replication is asynchronous which can lead to data loss. The question is about a zonal failure and requires the lowest downtime, so this is not the best fit compared to automatic failover in the same region.</p><p><i>Enable point in time recovery</i> is designed to recover to a specific moment after a mistake, but it requires restoring to a new instance and causes significant downtime. It is a data recovery feature rather than a high availability solution and therefore does not satisfy the requirement for minimal interruption.</p>",
+  "batch_id": "157",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are managing a MySQL database in Cloud SQL for an e-commerce application. The application is expected to experience high traffic during holiday seasons, and any downtime could significantly impact revenue. To ensure minimal downtime and data loss during potential outages, what should you do?",
+  "originalOptions": "A. Use a multi-zone instance configuration.<br/>B. Enable point-in-time recovery.<br/>C. Configure automated backups.<br/>D. Regularly export database snapshots manually.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "52",
+  "tip": "<p>Match requirements for <i>lowest downtime</i> and <i>automatic failover</i> with high availability features. If the failure scope is a zone, prefer a regional HA configuration. Backups and point in time recovery are for restoration, and read replicas with manual promotion imply more downtime.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/high-availability",
+    "https://cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+    "https://cloud.google.com/sql/docs/mysql/backup-recovery/point-in-time-recovery",
+    "https://cloud.google.com/sql/docs/mysql/replication/overview",
+    "https://cloud.google.com/sql/docs/mysql/replication/promotion"
+  ],
+  "url": "https://certificationation.com/questions/exam-cloud-sql-for-an-e-commerce-exam-052.html",
+  "video_url": "https://certificationation.com/videos/exam-cloud-sql-for-an-e-commerce-exam-052.html"
+}

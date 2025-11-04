@@ -1,0 +1,62 @@
+---
+title: "Your team is working on an event-driven application. TheExam"
+description: "Video for your team is working on an event-driven application. The frontend needs to collect the customers' requests and publish the events to an AWS service."
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your team is working on an event-driven application. The frontend needs to collect the customers' requests and publish the events to an AWS service. This AWS service should then deliver the events to several SQS queues in parallel. Each queue and the following pipeline have their own purposes such as event storage, event search or event replay. Each pipeline should process only a subset of events so a filter mechanism is required. How would you design the AWS service in the easiest way?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><b>Send events to an SNS topic, then subscribe each SQS queue to the topic and configure a filter policy for each subscription</b> is the best approach.<br><br>AWS SNS supports native integration with SQS, meaning each queue can independently subscribe to the SNS topic and receive a copy of every event. What's more, SNS subscription filter policies allow you to specify which events each queue receives—solving the requirement to deliver only relevant subsets to each downstream pipeline, and doing so without custom code.<br><br><i>Write events to an SNS topic, subscribe each SQS queue, and use a Lambda function in each pipeline to poll and filter events from its queue</i> is less efficient. Each SQS queue would receive all events, even the irrelevant ones, leading to unnecessary message processing and potential cost/waste.<br><br><i>Deliver events directly to an SQS queue, have a Lambda function extract, filter, and forward events to multiple SQS queues as needed</i> introduces additional Lambda invocation and forwarding complexity, increasing latency, cost, and operational burden. It doesn't leverage AWS-native filtering available through SNS.<br><br><i>Use EventBridge as the event bus, have a Lambda pull, filter, and distribute messages to different SQS queues in parallel</i> is more complex and typically unnecessary for straightforward fan-out and filtering to SQS queues. EventBridge is great for complex routing patterns, but SNS with subscription filters is simpler and better suited to this scenario.<br><br><b>Tip:</b> Use SNS subscription filter policies to route messages efficiently to only those SQS queues that need them—no Lambda code required.</p>",
+  "query": "<p>Your team is building an event-driven application.<br>The frontend collects customer requests and sends events to an AWS service.<br>This AWS service must route events to multiple SQS queues at the same time.<br>Each downstream application (event archival, search, replay, etc.) uses its own queue and only requires a filtered subset of events.<br>What's the simplest way to architect this AWS setup to deliver only relevant events to each queue?</p>",
+  "original_oid": "6793daa161969b416038a263",
+  "options": [
+    {
+      "correct": true,
+      "text": "Send events to an SNS topic, then subscribe each SQS queue to the topic and configure a filter policy for each subscription.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Deliver events directly to an SQS queue, have a Lambda function extract, filter, and forward events to multiple SQS queues as needed.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Write events to an SNS topic, subscribe each SQS queue, and use a Lambda function in each pipeline to poll and filter events from its queue.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Use EventBridge as the event bus, have a Lambda pull, filter, and distribute messages to different SQS queues in parallel.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question500",
+  "originalQuery": "Your team is working on an event-driven application.\nThe frontend needs to collect the customers' requests and publish the events to an AWS service.\nThis AWS service should then deliver the events to several SQS queues in parallel.\nEach queue and the following pipeline have their own purposes such as event storage, event search or event replay.\nEach pipeline should process only a subset of events so a filter mechanism is required.\nHow would you design the AWS service in the easiest way?",
+  "originalOptions": "[\"A. Publish the events to an SNS topic. Subscribe to the topic for each SQS queue. Create a Lambda function in each pipeline to pull the messages from the queue and filter the messages.\",\"B. Publish the events to an SNS topic. Create a subscription for each SQS queue and set up the subscription filter policy to filter the required events.\",\"C. Publish the events to an SQS queue. Create a Lambda function to get the messages from the queue, filter the messages and then forward them to other SQS queues for processing.\",\"D. Publish the events to an Amazon EventBridge event bus. Create a Lambda function to get the messages from the event bus, filter the messages and then forward them to other SQS queues in parallel.\"]",
+  "video_url": "https://certificationation.com/videos/exam-application-the-frontend-needs-to-exam-472.html",
+  "url": "https://certificationation.com/questions/exam-application-the-frontend-needs-to-exam-472.html"
+}

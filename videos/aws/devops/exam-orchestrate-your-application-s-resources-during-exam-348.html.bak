@@ -1,0 +1,67 @@
+---
+title: "Your application uses CloudFormation to orchestrate yourExam"
+description: "Video for your application uses CloudFormation to orchestrate your application's resources. During the testing phase before the application went live, a"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your application uses CloudFormation to orchestrate your application's resources. During the testing phase before the application went live, a developer accidentally changed the Amazon RDS instance type in the CloudFormation template and updated the stack. This has caused the instance to be re-created, resulting In the loss of test data. How should you prevent others from updating the stack resources?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>Implement an AWS CloudFormation stack policy to restrict modifications to the database instance.</b> option is correct. Stack policies allow you to define which resources in your stack can be updated and which should be protected. By specifying a stack policy that denies updates to the Amazon RDS instance, you can prevent accidental or intentional updates, thus protecting your data.<br><br>The option <i>Limit the AllowedValues of the parameter for RDS instance classes in CloudFormation to the current instance type only</i> restricts parameter selection but doesn't protect against direct template edits or future legitimate changes, making it not fully reliable.<br>The answer <i>Configure the AWS::RDS::DBInstance resource’s DBInstanceClass property as read-only in the CloudFormation template</i> is incorrect because there is no 'read-only' property in CloudFormation templates for resources—users can still edit the template.<br><i>Use Change Sets when applying updates to the stack</i> (change sets) let you preview changes before execution, but they don't prevent someone from updating resources if they proceed with the change set.<br>Lastly, <i>Subscribe to the 'BeforeResourceUpdate' CloudFormation notification and use CancelStackUpdate if the database is about to change</i> is both impractical (because such event handling for resource-specific rollbacks isn't natively supported in CloudFormation) and not a scalable solution.<br><br><b>Tip:</b> To reliably protect specific resources in a stack, always use stack policies, especially for data-critical resources like Amazon RDS, to avoid accidental loss or recreation.</p>",
+  "query": "<p>Your organization uses AWS CloudFormation to manage your application's infrastructure.<br>Recently, during pre-launch testing, a developer unintentionally modified the RDS database instance type in the CloudFormation template and then updated the stack.<br>This led to the RDS instance being replaced, resulting in a loss of critical test data.<br>What is the best way to ensure that other users cannot unintentionally update specific stack resources like the RDS instance?</p>",
+  "original_oid": "6793d9cb61969b416038a0b5",
+  "options": [
+    {
+      "correct": true,
+      "text": "Implement an AWS CloudFormation stack policy to restrict modifications to the database instance.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Limit the AllowedValues of the parameter for RDS instance classes in CloudFormation to the current instance type only.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Configure the AWS::RDS::DBInstance resource’s DBInstanceClass property as read-only in the CloudFormation template.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Use Change Sets when applying updates to the stack.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Subscribe to the 'BeforeResourceUpdate' CloudFormation notification and use CancelStackUpdate if the database is about to change.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question64",
+  "originalQuery": "Your application uses CloudFormation to orchestrate your application's resources.\nDuring the testing phase before the application went live, a developer accidentally changed the Amazon RDS instance type in the CloudFormation template and updated the stack.\nThis has caused the instance to be re-created, resulting In the loss of test data.\nHow should you prevent others from updating the stack resources?",
+  "originalOptions": "A. Within the AWS CloudFormation parameter with which users can select the Amazon RDS instance type, set AllowedValues only to contain the current instance type.|B. Use an AWS CloudFormation stack policy to deny updates to the instance.|C. In the AWS CloudFormation template, set the AWS::RDS::DBInstance’s DBlnstanceClass property to be read-only.|D. Subscribe to the AWS CloudFormation notification “BeforeResourceUpdate,” and call CancelStackUpdate if the resource identified is the Amazon RDS instance.|E. Update the stack using ChangeSets.",
+  "video_url": "https://certificationation.com/videos/exam-orchestrate-your-application-s-resources-during-exam-348.html",
+  "url": "https://certificationation.com/questions/exam-orchestrate-your-application-s-resources-during-exam-348.html"
+}

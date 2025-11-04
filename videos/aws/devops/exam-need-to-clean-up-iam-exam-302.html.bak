@@ -1,0 +1,62 @@
+---
+title: "You are a DevOps engineer and you need to clean up IAMExam"
+description: "Video for you are a DevOps engineer and you need to clean up IAM entities that are no longer used. There is an IAM policy called IAMAccessForDemo which contains"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are a DevOps engineer and you need to clean up IAM entities that are no longer used. There is an IAM policy called IAMAccessForDemo which contains CloudFormation full access, KMS full access and some other permissions. However, nobody in your team knows what the IAM policy is used for and whether it is safe to delete it. How would you check the time when the granted services by the policy were last accessed?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct approach is to use the <b>Access Advisor</b> tab in the AWS Console while viewing the IAM policy. This feature shows the <b>last accessed information</b> for each AWS service granted by the policy, helping you understand when those services were last used in your account. If certain services have not been accessed for a significant amount of time, it may be safe to remove or update the policy.</p><p>Option <i>'Use AWS CloudTrail to search for activity referencing the IAM policy, which reveals if the policy has been used recently.'</i> is incorrect because while CloudTrail logs API activity, it does not offer a direct or efficient way to see if the actions permitted by a policy were actually performed.</p><p>Option <i>'Check the Policy usage tab on the IAM policy's page in the AWS Console to see if it is attached to any entity. If attached, assume it is in use.'</i> is not reliable. Just because a policy is attached does not mean it is actively being used; you still need to verify if anyone is actually utilizing those permissions.</p><p>Option <i>'Review AWS Config's timeline for the IAM policy to determine if the allowed actions have been performed recently.'</i> is also incorrect. AWS Config tracks changes to the policy configuration over time but does not show when the permissions were last exercised.</p><p><b>Tip:</b> Always use Access Advisor for auditing permission usage, but remember, it provides information only for certain AWS resources and may not track all actions. Double-check by consulting your team or through logging solutions if the resource is critical.</p>",
+  "query": "<p>As a DevOps engineer assigned to clean up unused IAM entities, you discover an IAM policy named <code>IAMAccessForDemo</code> that provides CloudFormation and KMS full access among other permissions. Since no one on your team is sure about the policy's current usage, how would you identify when services permitted by this IAM policy were most recently accessed to decide whether it can be safely deleted?</p>",
+  "original_oid": "6793da6c61969b416038a1fa",
+  "options": [
+    {
+      "correct": true,
+      "text": "Select the IAM policy in the AWS Console and review the Access Advisor tab to view the last time each service allowed by the policy was accessed.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Use AWS CloudTrail to search for activity referencing the IAM policy, which reveals if the policy has been used recently.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Check the Policy usage tab on the IAM policy's page in the AWS Console to see if it is attached to any entity. If attached, assume it is in use.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Review AWS Config's timeline for the IAM policy to determine if the allowed actions have been performed recently.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question394",
+  "originalQuery": "You are a DevOps engineer and you need to clean up IAM entities that are no longer used.\nThere is an IAM policy called IAMAccessForDemo which contains CloudFormation full access, KMS full access and some other permissions.\nHowever, nobody in your team knows what the IAM policy is used for and whether it is safe to delete it.\nHow would you check the time when the granted services by the policy were last accessed?",
+  "originalOptions": "A. In AWS Console, click the IAM policy and go to the Policy usage tab. Check if the policy is assigned to any entity. If yes, do not delete the policy.|B. In the AWS CloudTrail console, search the IAM policy to see if the policy has been accessed recently.|C. Look at the IAM Policy configuration timeline in AWS Config to see if the permissions allowed by the policy have been accessed recently.|D. In AWS Console, check the Access Advisor of the IAM policy to see when the permitted services were last accessed. If they were accessed a long time ago, it would be safe to delete the policy.",
+  "video_url": "https://certificationation.com/videos/exam-need-to-clean-up-iam-exam-302.html",
+  "url": "https://certificationation.com/questions/exam-need-to-clean-up-iam-exam-302.html"
+}

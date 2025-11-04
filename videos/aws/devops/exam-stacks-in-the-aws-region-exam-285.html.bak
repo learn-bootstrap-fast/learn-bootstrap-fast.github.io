@@ -1,0 +1,62 @@
+---
+title: "You have created two AWS CloudFormation stacks in theExam"
+description: "Video for you have created two AWS CloudFormation stacks in the AWS region us-east-1 Stack A has exported the resource output for a security group. Stack B uses"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have created two AWS CloudFormation stacks in the AWS region us-east-1 Stack A has exported the resource output for a security group. Stack B uses the Fn::ImportValue intrinsic function to import the exported value in its template. Both stacks are in the CREATE_COMPLETE status. Now you would need to perform some actions on these stacks. Which of the following actions can you perform successfully?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct answer is <strong>“Remove the cross-stack reference in stack B, so that Stack B no longer imports the exported output from Stack A.”</strong></p><p>With CloudFormation, you can safely update stack B to stop importing the value from stack A at any time. Once stack B stops importing that value, the dependency is removed and you can subsequently update or delete stack A as needed.</p><p>Let's review the other options:</p><ul><li><i>Update stack A to erase the exported output that Stack B references.</i> – This is not permitted as long as another stack is still importing the value. CloudFormation will throw an error if you attempt to remove an output that’s still being imported elsewhere.</li><li><i>Change the exported output value in Stack A, such as renaming the security group, since the import is in use.</i> – You cannot modify the exported output if another stack is referencing it. The import creates a dependency that must be removed first.</li><li><i>Delete Stack A from the AWS console because you no longer need any resources from it in this region.</i> – Deleting a stack that has exported outputs being imported by another stack (Stack B in this case) is not allowed until those imports are removed. AWS CloudFormation enforces these dependencies to avoid breaking deployments.</li></ul><p><strong>Tip:</strong> Always ensure that no other stacks are consuming exported values before making changes to exports or deleting stacks. This ensures safe and successful operations in multi-stack CloudFormation environments.</p>",
+  "query": "<p>You have set up two AWS CloudFormation stacks in the us-east-1 region. <br/>Stack A exports the output value of a security group. <br/>Stack B imports this value via the <code>Fn::ImportValue</code> intrinsic function in its template. <br/>Both stacks are currently in <strong>CREATE_COMPLETE</strong> status.<br/>You need to execute further operations on these stacks.<br/>Which actions listed below can you complete without issues?</p>",
+  "original_oid": "6793da8a61969b416038a236",
+  "options": [
+    {
+      "correct": true,
+      "text": "Remove the cross-stack reference in stack B, so that Stack B no longer imports the exported output from Stack A.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Update stack A to erase the exported output that Stack B references.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Change the exported output value in Stack A, such as renaming the security group, since the import is in use.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Delete Stack A from the AWS console because you no longer need any resources from it in this region.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question454",
+  "originalQuery": "You have created two AWS CloudFormation stacks in the AWS region us-east-1\nStack A has exported the resource output for a security group.\nStack B uses the Fn::ImportValue intrinsic function to import the exported value in its template.\nBoth stacks are in the CREATE_COMPLETE status.\nNow you would need to perform some actions on these stacks.\nWhich of the following actions can you perform successfully?",
+  "originalOptions": "A. Delete stack A using AWS console as the created resources in stack A are no longer needed in the region.,B. In stack A, update the resource output value as the security group needs to change its name.,C. Update stack A to remove the resource output that is referenced by stack,D. Update stack B to remove the cross-stack reference so that stack B does not import the resource output from stack",
+  "video_url": "https://certificationation.com/videos/exam-stacks-in-the-aws-region-exam-285.html",
+  "url": "https://certificationation.com/questions/exam-stacks-in-the-aws-region-exam-285.html"
+}

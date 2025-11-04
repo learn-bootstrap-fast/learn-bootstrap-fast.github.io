@@ -1,0 +1,62 @@
+---
+title: "Your team is using AWS Elastic Beanstalk for webExam"
+description: "Video for your team is using AWS Elastic Beanstalk for web applications in a production environment. The project needs to read/write to a PostgreSQL RDS"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your team is using AWS Elastic Beanstalk for web applications in a production environment. The project needs to read/write to a PostgreSQL RDS database in another production environment as well. Apart from this, the AWS Elastic Beanstalk also uses Immutable deployment and entirely new instances need to be created for new deployments. Among the options provided which one do you suggest to connect to RDS database for this Elastic Beanstalk environment?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>third option</b> is the most appropriate: <b>Since this is a production environment, best practice is to maintain the RDS instance external to Elastic Beanstalk. The web application should connect to the database when it launches.</b> This approach aligns with AWS best practices for production. Externalizing the RDS instance keeps the database lifecycle independent of the Beanstalk environment, ensuring that redeployments, environment terminations, or updates (such as immutable deployments) do not inadvertently delete or modify your persistent data store.</p><ul><li><i>You should add the RDS PostgreSQL instance to Elastic Beanstalk via the database configuration options in the console, providing the appropriate credentials and instance details.</i> – This method is suitable for development or testing but not for production, as the RDS instance can be deleted if the Beanstalk environment is terminated.</li><li><i>It is not feasible to connect a production Elastic Beanstalk environment to an RDS instance.</i> – This is incorrect; Elastic Beanstalk applications can connect to external RDS databases using connection parameters.</li><li><i>Elastic Beanstalk does not support adding PostgreSQL RDS databases, so you cannot link one to the environment.</i> – This is not true; PostgreSQL is supported by AWS RDS and can be connected to from Beanstalk.</li></ul><p><b>Tip:</b> For all environments, especially production, always create RDS instances outside of Elastic Beanstalk and connect your app via configuration files or environment variables. This prevents accidental data loss during app or environment modifications.</p>",
+  "query": "<p>Your development team is leveraging AWS Elastic Beanstalk to deploy web applications in a production setting.<br>The project must interact with a PostgreSQL RDS database that is running in a separate production environment.<br>Additionally, the Elastic Beanstalk environment uses immutable deployment, which means new instances are created with each deployment.<br>Given these circumstances, which approach should you recommend for your Elastic Beanstalk application to properly connect to the RDS database?</p>",
+  "original_oid": "6793da7c61969b416038a219",
+  "options": [
+    {
+      "correct": false,
+      "text": "You should add the RDS PostgreSQL instance to Elastic Beanstalk via the database configuration options in the console, providing the appropriate credentials and instance details.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "It is not feasible to connect a production Elastic Beanstalk environment to an RDS instance.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Since this is a production environment, best practice is to maintain the RDS instance external to Elastic Beanstalk. The web application should connect to the database when it launches.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Elastic Beanstalk does not support adding PostgreSQL RDS databases, so you cannot link one to the environment.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question425",
+  "originalQuery": "Your team is using AWS Elastic Beanstalk for web applications in a production environment.\nThe project needs to read/write to a PostgreSQL RDS database in another production environment as well.\nApart from this, the AWS Elastic Beanstalk also uses Immutable deployment and entirely new instances need to be created for new deployments.\nAmong the options provided which one do you suggest to connect to RDS database for this Elastic Beanstalk environment?",
+  "originalOptions": "A. For the Elastic Beanstalk, it is not possible to connect to a RDS instance if it is for production environment.|B. You could add this RDS database to Elastic Beanstalk using the database configuration card in the console. Type in the correct username, password, instance class and other information.|C. You could not add this RDS database to Elastic Beanstalk as Elastic Beanstalk does not support PostgreSQL.|D. Since it is for the production environment, it is suggested to put the RDS database outside of the AWS Elastic Beanstalk deployment. This can be done by using your web application to connect to it on launch.",
+  "video_url": "https://certificationation.com/videos/exam-beanstalk-for-web-applications-in-exam-354.html",
+  "url": "https://certificationation.com/questions/exam-beanstalk-for-web-applications-in-exam-354.html"
+}

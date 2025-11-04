@@ -1,0 +1,81 @@
+---
+title: "You are deploying a highly available PostgreSQL databaseExam"
+description: "Video for you are deploying a highly available PostgreSQL database on Google Cloud and you want to ensure that the database remains available even if a single"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are deploying a highly available PostgreSQL database on Google Cloud and you want to ensure that the database remains available even if a single zone goes down. The database will be accessed by services running in the same region. Which configuration should you choose?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A subscription commerce team at example.com needs a highly available PostgreSQL deployment on Google Cloud. The database must continue to serve requests if one zone in us-east4 becomes unavailable, and all consuming applications run in the same region. Which architecture should you implement?",
+  "options": [
+    {
+      "text": "Deploy a multi regional GKE cluster and run PostgreSQL with a StatefulSet that uses PersistentVolumeClaims",
+      "explanation": "This approach runs PostgreSQL on Kubernetes and relies on persistent volumes managed by a StatefulSet across a Kubernetes cluster that spans multiple locations",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Run the PostgreSQL servers in one zone and store data on zonal persistent disks",
+      "explanation": "This places both compute and storage in a single failure domain which concentrates risk in one zone",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a regional stateful managed instance group for PostgreSQL and use regional persistent disks for the data volume",
+      "explanation": "This design distributes instances across zones within a region and uses synchronously replicated disks that can be reattached in another zone during a zonal outage",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use a managed instance group with autoscaling and autohealing across multiple zones",
+      "explanation": "This relies on health checks and scaling behavior of a managed instance group that places instances in more than one zone",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct answer is <b>Create a regional stateful managed instance group for PostgreSQL and use regional persistent disks for the data volume</b>.</p><p>This design places identical database instances across multiple zones in the us-east4 region and preserves each instance’s data with a stateful configuration. The storage layer replicates writes synchronously to another zone so the database can fail over to a healthy zone without data loss. The group distributes virtual machines across zones and when a zone fails it can recreate the instance in a surviving zone while reattaching the replicated volume so the service continues to serve requests for applications in the same region.</p><p><i>Deploy a multi regional GKE cluster and run PostgreSQL with a StatefulSet that uses PersistentVolumeClaims</i> is not appropriate because GKE does not offer a single multi regional cluster and StatefulSets typically bind volumes to a specific zone unless you design for regional volumes. The requirement is to remain within one region and survive a zone outage which is met more directly with a regional compute design and regionally replicated storage.</p><p><i>Run the PostgreSQL servers in one zone and store data on zonal persistent disks</i> would fail if that zone becomes unavailable because both the instances and the data are tied to a single zone and cannot continue serving.</p><p><i>Use a managed instance group with autoscaling and autohealing across multiple zones</i> addresses instance availability but not data durability. Without a stateful configuration and storage that replicates across zones the group may recreate or move instances without their data which risks downtime or data loss for a database workload. Autoscaling is also not a good fit for a stateful relational database.</p>",
+  "batch_id": "129",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are deploying a highly available PostgreSQL database on Google Cloud and you want to ensure that the database remains available even if a single zone goes down. The database will be accessed by services running in the same region. Which configuration should you choose?",
+  "originalOptions": "A. Implement a Regional Managed Instance Group for the PostgreSQL instances and use regional persistent disks.<br/>B. Configure a multi-regional Kubernetes cluster and deploy PostgreSQL using StatefulSets with PersistentVolumeClaims.<br/>C. Use a managed instance group with auto-scaling and auto-healing policies across multiple zones.<br/>D. Deploy the PostgreSQL instances in a single zone and use zonal persistent disks for storage.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "256",
+  "tip": "<p>When a requirement says the database must survive a zone outage in one region, look for <i>regional</i> resources and a <i>stateful</i> design. Pair compute spread across zones with storage that <i>replicates synchronously</i> across zones.</p>",
+  "references": [
+    "https://cloud.google.com/compute/docs/instance-groups/stateful-migs",
+    "https://cloud.google.com/compute/docs/instance-groups/regional-migs",
+    "https://cloud.google.com/compute/docs/disks",
+    "https://cloud.google.com/kubernetes-engine/docs/concepts/types-of-clusters",
+    "https://cloud.google.com/kubernetes-engine/docs/how-to/persistent-volumes/regional-pd"
+  ],
+  "url": "https://certificationation.com/questions/exam-postgresql-database-on-google-cloud-exam-256.html",
+  "video_url": "https://certificationation.com/videos/exam-postgresql-database-on-google-cloud-exam-256.html"
+}

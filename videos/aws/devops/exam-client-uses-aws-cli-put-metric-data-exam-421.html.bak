@@ -1,0 +1,62 @@
+---
+title: "You are a DevOps consultant. One client uses AWS CLIExam"
+description: "Video for you are a DevOps consultant. One client uses AWS CLI put-metric-data to publish the metric data of an application to CloudWatch every second. The"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are a DevOps consultant. One client uses AWS CLI put-metric-data to publish the metric data of an application to CloudWatch every second. The CloudWatch metric stores the data with a resolution of 1 minute. The client worries about the cost of the put-metric-data requests and wants to reduce the number of calls to put-metric-data In the meantime, the client does not want to lose the data points. Which of the following options would you suggest to address this concern?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The most cost-effective solution is to <b>Consolidate the data points before publishing and use a single put-metric-data call with the --statistic-values parameter to submit a statistics set</b>. By aggregating the data in your application over 1-minute intervals and then sending that set as a statistics set, you can minimize API usage while still ensuring all relevant data (min, max, sum, and sample count) is available for CloudWatch analytics and alarms. This method keeps your metrics granularity and detail, with much fewer API calls.</p><p>The following explains why the other options are not ideal:</p><ul><li><i>Send multiple numerical values together in one put-metric-data call using a syntax like --value 2,5,2,7,9.</i> – The <code>--value</code> parameter does not accept multiple values in one call; a single metric value per call is required unless using statistics sets with <code>--statistic-values</code>.</li><li><i>No changes are needed, since CloudWatch costs are determined by the number of metrics, not the number of put-metric-data API requests.</i> – This is inaccurate; while metric storage is a major cost factor, excessive API requests can also incur additional costs and may hit service limits. Reducing request count is best practice for efficiency and cost savings.</li><li><i>Aggregate the application's data and request the metric statistics in the application, eliminating the need to use put-metric-data API calls.</i> – Applications still need to publish data to CloudWatch to monitor and trigger alarms. Aggregating in the application and skipping metric publishing would make your metrics unavailable in CloudWatch, which is typically not an acceptable solution.</li></ul><p><b>Tip:</b> Use statistics sets when sending aggregated data to CloudWatch to combine resolution, accuracy, and cost efficiency.</p>",
+  "query": "<p>A company publishes application metrics to Amazon CloudWatch every second by running the AWS CLI <code>put-metric-data</code> command. The CloudWatch metric only requires 1-minute resolution, but the client is concerned about the costs of frequent <code>put-metric-data</code> API calls. The client wants to minimize the number of API requests without any loss of data points. Which recommendation is best suited for this scenario?</p>",
+  "original_oid": "6793da9761969b416038a250",
+  "options": [
+    {
+      "correct": true,
+      "text": "Consolidate the data points before publishing and use a single put-metric-data call with the --statistic-values parameter to submit a statistics set.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Send multiple numerical values together in one put-metric-data call using a syntax like --value 2,5,2,7,9.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "No changes are needed, since CloudWatch costs are determined by the number of metrics, not the number of put-metric-data API requests.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Aggregate the application's data and request the metric statistics in the application, eliminating the need to use put-metric-data API calls.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question480",
+  "originalQuery": "You are a DevOps consultant.\nOne client uses AWS CLI put-metric-data to publish the metric data of an application to CloudWatch every second.\nThe CloudWatch metric stores the data with a resolution of 1 minute.\nThe client worries about the cost of the put-metric-data requests and wants to reduce the number of calls to put-metric-data\nIn the meantime, the client does not want to lose the data points.\nWhich of the following options would you suggest to address this concern?",
+  "originalOptions": "A. Aggregate the data in the application and publish the data in one get-metric-statistics call. The AWS CLI call put-metric-data is not needed.,B. Aggregate the data before publishing to CloudWatch and put the data into a statistic set that you publish with one put-metric-data call, using the --statistic-values option.,C. Put multiple data values in a single put-metric-data call such as --value 2,5,2,7,9.,D. No actions are required as CloudWatch metrics are charged based on the number of metrics instead of API requests. There is no need to reduce the number of put-metric-data calls.",
+  "video_url": "https://certificationation.com/videos/exam-client-uses-aws-cli-put-metric-data-exam-421.html",
+  "url": "https://certificationation.com/questions/exam-client-uses-aws-cli-put-metric-data-exam-421.html"
+}

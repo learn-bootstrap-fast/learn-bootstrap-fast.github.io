@@ -1,0 +1,67 @@
+---
+title: "You have an on-premise virtual machine and you create aExam"
+description: "Video for you have an on-premise virtual machine and you create a replication job in AWS Server Migration Service (SMS) to migrate the VM to AWS. Whenever an"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have an on-premise virtual machine and you create a replication job in AWS Server Migration Service (SMS) to migrate the VM to AWS. Whenever an AMI is created from the SMS job, you need to launch an EC2 instance with the AMI and trigger a Jenkins job to perform the automation testing. The instance will be terminated after the testing is finished. Which method would you use to create the EC2 instance automatically for the testing?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>first option</b> is correct: Using AWS CloudWatch Events (now part of EventBridge) to monitor for state changes in SMS jobs allows you to detect when a new AMI is created. You can then trigger a Lambda function to retrieve the AMI ID, launch a new EC2 instance using it, and integrate with Jenkins to start testing. This is the best solution, as it automates the entire workflow from AMI creation to test execution.</p><p>Option <i>\"Create a replication job in SMS that will automatically deploy an EC2 instance based on a launch template as soon as the job is done.\"</i> is incorrect because SMS can replicate VMs and create AMIs, but it does not natively launch new EC2 instances automatically upon job completion.</p><p>The choice <i>\"Configure SMS to notify an SNS topic containing the AMI ID.\"</i> does not fulfill the requirement either. While SMS notifications to SNS are possible, this setup alone does not automate EC2 instance launching or integration with Jenkins.</p><p>In <i>\"Use CloudWatch Events to track AMIs tagged with AWS:SMS, invoking Lambda to spin up an EC2 instance and report the instance’s ID to Jenkins.\"</i>, monitoring tags may not be reliable as tags are not always applied consistently. Monitoring direct job state changes is more robust and event-driven.</p><p>Finally, <i>\"Assign a Lambda function as an SNS subscriber, which will launch the EC2 instance after a notification.\"</i> is not sufficient because simply subscribing to SNS does not ensure you receive the necessary information to launch an EC2 instance. The process needs to extract the new AMI ID and coordinate with Jenkins, which is most effectively managed via CloudWatch Event and Lambda.</p><p><b>Tip:</b> Use event-driven AWS architectures for automation tasks. Monitoring SMS job state changes ensures prompt response, and a Lambda function can orchestrate both launching resources and notifying other systems like Jenkins.</p>",
+  "query": "<p>You are migrating an on-premises VM to AWS using AWS Server Migration Service (SMS). Every time SMS finishes creating a new AMI from its replication job, you must automatically launch an EC2 instance with that AMI and invoke a Jenkins automation test. The EC2 instance will be terminated after the testing is complete. Which approach best enables the automatic launching of the EC2 instance for testing when a new AMI is created?</p>",
+  "original_oid": "6793d9ae61969b416038a07f",
+  "options": [
+    {
+      "correct": true,
+      "text": "Set up AWS CloudWatch Events to track the completion of SMS jobs, use a Lambda function to identify the new AMI ID, launch an EC2 instance with it, and start the Jenkins test.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Create a replication job in SMS that will automatically deploy an EC2 instance based on a launch template as soon as the job is done.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Configure SMS to notify an SNS topic containing the AMI ID.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Use CloudWatch Events to track AMIs tagged with AWS:SMS, invoking Lambda to spin up an EC2 instance and report the instance’s ID to Jenkins.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Assign a Lambda function as an SNS subscriber, which will launch the EC2 instance after a notification.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question10",
+  "originalQuery": "You have an on-premise virtual machine and you create a replication job in AWS Server Migration Service (SMS) to migrate the VM to AWS.\nWhenever an AMI is created from the SMS job, you need to launch an EC2 instance with the AMI and trigger a Jenkins job to perform the automation testing.\nThe instance will be terminated after the testing is finished.\nWhich method would you use to create the EC2 instance automatically for the testing?",
+  "originalOptions": "[\"A. Configure the Server Migration Service replication job to automatically launch an EC2 instance with a launch template when the job finishes.\",\"B. Configure the Server Migration Service to send a message to an SNS notification with the AMI I.\",\"C. Set up a Lambda function as the subscriber to launch an EC2 instance.\",\"D. Configure a CloudWatch Event to monitor newly generated AMIs with the tag AWS:SMS. Use a Lambda function to create an EC2 instance and pass the instance ID to the Jenkins job.\",\"E. Create a CloudWatch Event rule to monitor the AWS SMS job state changes. Use a Lambda function to get the new AMI ID and launch an EC2 instance.\"]",
+  "video_url": "https://certificationation.com/videos/exam-machine-and-you-create-a-exam-123.html",
+  "url": "https://certificationation.com/questions/exam-machine-and-you-create-a-exam-123.html"
+}

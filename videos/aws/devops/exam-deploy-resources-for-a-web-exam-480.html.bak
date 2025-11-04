@@ -1,0 +1,62 @@
+---
+title: "Your team uses AWS OpsWorks to deploy resources for aExam"
+description: "Video for your team uses AWS OpsWorks to deploy resources for a web application. In the OpsWorks service layer settings, you have enabled “Auto Healing” so that"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your team uses AWS OpsWorks to deploy resources for a web application. In the OpsWorks service layer settings, you have enabled “Auto Healing” so that the layer's failed instances can be automatically replaced. During the last month, the OpsWorks instances failed two times and OpsWorks auto healed them by replacing the instances. You want to be notified whenever AWS OpsWorks Stacks auto healing triggers stop and start events on the Amazon EC2 instances. Which method would you choose?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>correct answer</b> is: Set up a CloudWatch Event rule with this event pattern: { \"source\": [ \"aws.opsworks\" ], \"detail\": { \"initiated_by\": [ \"auto-healing\" ] } } and send notifications to an SNS topic.</p><p>This is because filtering on the <b>\"initiated_by\": [ \"auto-healing\" ]</b> in the EventBridge (formerly CloudWatch Events) event pattern allows you to specifically capture instance state changes that are triggered by OpsWorks' auto healing process, rather than capturing all command or instance state changes. By doing this, you limit notifications to only those events where auto healing, and therefore an automated replacement of the instance, has occurred. Connecting this rule to an SNS topic ensures you get notified whenever such events happen.</p><ul><li><i>\"Configure an SNS notification in the OpsWorks service layer settings specifically for auto healing events.\"</i> - This is <b>incorrect</b> because OpsWorks does not provide native settings within the layer's configuration to trigger SNS notifications directly for auto healing events. Notification and event management for specific triggers like auto healing must be handled through CloudWatch Events/EventBridge.</li><li><i>\"Create a CloudWatch Event rule using the following pattern: { 'source': [ 'aws.opsworks' ], 'detail-type': [ 'OpsWorks Command State Change' ] } and set this rule to notify an SNS topic.\"</i> - This is not the best answer because filtering with 'OpsWorks Command State Change' will alert you to <b>all</b> OpsWorks command state changes and not specifically those initiated by auto healing, resulting in many unnecessary notifications.</li><li><i>\"Define a CloudWatch Event rule using this pattern: { 'source': [ 'aws.opsworks' ], 'detail-type': [ 'OpsWorks Instance State Change' ] } and configure notifications to an SNS topic.\"</i> - This option has a similar drawback in that it matches all instance state changes in OpsWorks, regardless of the trigger (manual or automatic), and does not discriminate between routine state changes and those specifically caused by auto healing.</li></ul><p><b>Tip:</b> For targeted notifications in AWS, always consider adding fields in your CloudWatch/EventBridge filter that uniquely identify the event source or cause, such as 'initiated_by'. This minimizes noise and ensures precise alerts.</p>",
+  "query": "<p>Your team is using AWS OpsWorks to manage the deployment of a web application's resources. Auto Healing has been activated in the OpsWorks stack to automatically replace any unhealthy instances.<br>Over the past month, two OpsWorks instances failed and were auto healed by automatic replacement.<br>You want to receive notifications every time the auto healing process begins or stops an EC2 instance.<br>Which approach should you use to achieve this?</p>",
+  "original_oid": "6793da9f61969b416038a260",
+  "options": [
+    {
+      "correct": false,
+      "text": "Configure an SNS notification in the OpsWorks service layer settings specifically for auto healing events.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Create a CloudWatch Event rule using the following pattern: { \"source\": [ \"aws.opsworks\" ], \"detail-type\": [ \"OpsWorks Command State Change\" ] } and set this rule to notify an SNS topic.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Set up a CloudWatch Event rule with this event pattern: { \"source\": [ \"aws.opsworks\" ], \"detail\": { \"initiated_by\": [ \"auto-healing\" ] } } and send notifications to an SNS topic.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Define a CloudWatch Event rule using this pattern: { \"source\": [ \"aws.opsworks\" ], \"detail-type\": [ \"OpsWorks Instance State Change\" ] } and configure notifications to an SNS topic.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question496",
+  "originalQuery": "Your team uses AWS OpsWorks to deploy resources for a web application.\nIn the OpsWorks service layer settings, you have enabled “Auto Healing” so that the layer's failed instances can be automatically replaced.\nDuring the last month, the OpsWorks instances failed two times and OpsWorks auto healed them by replacing the instances.\nYou want to be notified whenever AWS OpsWorks Stacks auto healing triggers stop and start events on the Amazon EC2 instances.\nWhich method would you choose?",
+  "originalOptions": "A. In the AWS OpsWorks service layer settings, configure an SNS notification for the auto healing feature.|B. Create a CloudWatch Event rule with the following event pattern: { \"source\": [ \"aws.opsworks\" ], \"detail-type\": [ \"OpsWorks Command State Change\" ] } Trigger the event notifications to an SNS topic.|C. Create a CloudWatch Event rule with the following event pattern: { \"source\": [ \"aws.opsworks\" ], \"detail-type\": [ \"OpsWorks Instance State Change\" ] } Trigger the event notifications to an SNS topic.|D. Create a CloudWatch Event rule with the following event pattern: { \"source\": [ \"aws.opsworks\" ], \"detail\": { \"initiated_by\": [ \"auto-healing\" ] } } Trigger the event notifications to an SNS topic.",
+  "video_url": "https://certificationation.com/videos/exam-deploy-resources-for-a-web-exam-480.html",
+  "url": "https://certificationation.com/questions/exam-deploy-resources-for-a-web-exam-480.html"
+}

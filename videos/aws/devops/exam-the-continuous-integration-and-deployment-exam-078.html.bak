@@ -1,0 +1,67 @@
+---
+title: "Your team has used AWS CodePipeline as the continuousExam"
+description: "Video for your team has used AWS CodePipeline as the continuous integration and deployment tool for a Lambda function. In its deployment stage, the deployment"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your team has used AWS CodePipeline as the continuous integration and deployment tool for a Lambda function. In its deployment stage, the deployment provider is CloudFormation, and the Action Mode is configured as “Create or update a stack” This pipeline is working fine for several months. However recently, there were cases that the CloudFormation stack was updated inappropriately because of some mistake in the template. You were told to design a way so that the CodePipeline does not directly update the stack. Instead, there is a way to preview the stack changes before the deployment is completed. How should you work on this task?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct approach is to set the Action Mode to <b>“Create or replace a change set”</b> in the CloudFormation deployment action of your CodePipeline. This configuration causes CloudFormation to generate a change set—a summary of intended modifications to the resources in your stack—without immediately executing them. You can then add an approval or manual deploy stage where team members can review and approve the changes. If accepted, a subsequent pipeline action can execute the change set, safely applying the updates.<br><br>Choosing <i>“Alter the Action Mode to ‘Delete a stack’...”</i> is not practical, as this would destroy your current resources and may result in loss of data or downtime. The option to <i>“Switch the deployment provider from CloudFormation to CodeDeploy...”</i> does not solve the problem, since CodeDeploy is not intended for managing CloudFormation stacks directly, and the underlying issue of stack updates remains. Finally, only improving the <i>“Update the code review procedures...”</i> reduces but does not eliminate the risk of human error—it does not allow in-place preview and approval of resource changes within the pipeline.<br><br><b>Tip:</b> Using change sets in CloudFormation is a best practice for previewing and vetting potentially disruptive stack changes in automated deployments, reducing unintentional outages or configuration drift.</p>",
+  "query": "<p>Your DevOps team utilizes AWS CodePipeline for the continuous integration and deployment workflow for a Lambda function. The deployment phase leverages CloudFormation as the deployment provider with the Action Mode currently set to “Create or update a stack.” While everything has been stable for months, recently, some incorrect updates were applied due to flaws in the CloudFormation template.<br><br>You’ve been asked to adjust the pipeline such that developers can preview the effects of any stack changes prior to actually deploying them. What’s the best way to accomplish this in CodePipeline?</p>",
+  "original_oid": "6793da1e61969b416038a158",
+  "options": [
+    {
+      "correct": false,
+      "text": "Alter the Action Mode to “Delete a stack” for a fresh start, then introduce another pipeline stage to deploy the stack with the new template.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Revise the Action Mode to “Create or replace a change set,” which allows a review of proposed modifications. Following approval, add a deployment stage to execute the change set.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Switch the deployment provider from CloudFormation to CodeDeploy in order to avoid updating the stack directly.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Update the code review procedures so that any CloudFormation stack mistakes are detected and fixed earlier in the process.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question231",
+  "originalQuery": "Your team has used AWS CodePipeline as the continuous integration and deployment tool for a Lambda function.\nIn its deployment stage, the deployment provider is CloudFormation, and the Action Mode is configured as “Create or update a stack”\nThis pipeline is working fine for several months.\nHowever recently, there were cases that the CloudFormation stack was updated inappropriately because of some mistake in the template.\nYou were told to design a way so that the CodePipeline does not directly update the stack.\nInstead, there is a way to preview the stack changes before the deployment is completed.\nHow should you work on this task?",
+  "originalOptions": [
+    "A. Change the code review process so that any issues on CloudFormation stacks are avoided.",
+    "B. Modify the deployment provider to CodeDeploy to avoid any issues on CloudFormation stack update.",
+    "C. Change the Action Mode to “Delete a stack” so that the environment is clean. Then add another stage to deploy the CloudFormation stack using the new template.",
+    "D. Modify the Action Mode to “Create or replace a change set” for users to review the change. Then add another deployment stage to execute the change set if the change set is approved."
+  ],
+  "video_url": "https://certificationation.com/videos/exam-the-continuous-integration-and-deployment-exam-078.html",
+  "url": "https://certificationation.com/questions/exam-the-continuous-integration-and-deployment-exam-078.html"
+}

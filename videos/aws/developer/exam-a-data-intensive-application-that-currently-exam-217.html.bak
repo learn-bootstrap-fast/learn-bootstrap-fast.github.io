@@ -1,0 +1,82 @@
+---
+title: "You need to optimize the performance of a data-intensiveExam"
+description: "Video for you need to optimize the performance of a data-intensive application that currently uses Cloud SQL for MySQL. The application requires frequent,"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You need to optimize the performance of a data-intensive application that currently uses Cloud SQL for MySQL. The application requires frequent, complex analytical queries that can be executed concurrently. The users of the application complain about slow query response times. Which database service should you migrate to in order to improve query performance, and what additional action should you take?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Driftwood Analytics runs a reporting application on Cloud SQL for MySQL and about 250 analysts submit concurrent ad hoc queries that perform complex joins and aggregations which leads to slow response times during peak usage. To speed up these simultaneous analytical queries, which managed service should you migrate to, and what additional step should you apply to improve execution speed?",
+  "options": [
+    {
+      "text": "Move to Cloud Spanner and scale instances horizontally",
+      "explanation": "This choice uses a globally distributed relational service that can add compute capacity to handle more traffic.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Switch to Bigtable and model data with wide rows while tuning garbage collection policies",
+      "explanation": "This approach uses a key value wide column database optimized for high throughput single row operations.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Migrate to BigQuery and turn on BI Engine acceleration",
+      "explanation": "This combines a serverless analytics warehouse with an in memory accelerator to speed interactive queries.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Adopt AlloyDB for PostgreSQL and activate the columnar engine on analytical tables",
+      "explanation": "This uses a high performance PostgreSQL compatible service that can accelerate analytics with a columnar format.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Migrate to BigQuery and turn on BI Engine acceleration</b>.</p><p><b>BigQuery</b> is a serverless analytics warehouse that is designed for complex joins and large aggregations with very high concurrency. It automatically scales compute to handle many simultaneous users which matches the requirement of about 250 analysts submitting ad hoc queries. Enabling <b>BI Engine</b> adds an in memory columnar cache that accelerates query execution and reduces latency for repeated and dashboard style queries which improves responsiveness during peak usage.</p><p><i>Move to Cloud Spanner and scale instances horizontally</i> is oriented to globally consistent transactional workloads and while <i>Spanner</i> scales horizontally it is not the best fit for heavy analytical joins and aggregations for hundreds of concurrent analysts.</p><p><i>Switch to Bigtable and model data with wide rows while tuning garbage collection policies</i> targets low latency key value access patterns. <i>Bigtable</i> does not support SQL joins and is not intended for ad hoc analytical queries so it will not address the slow analytical workloads described.</p><p><i>Adopt AlloyDB for PostgreSQL and activate the columnar engine on analytical tables</i> can speed some analytical queries within a relational engine but <i>AlloyDB</i> does not match the elastic massively parallel analytics and concurrency that <b>BigQuery</b> provides for dozens to hundreds of simultaneous analysts.</p>",
+  "batch_id": "322",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You need to optimize the performance of a data-intensive application that currently uses Cloud SQL for MySQL. The application requires frequent, complex analytical queries that can be executed concurrently. The users of the application complain about slow query response times. Which database service should you migrate to in order to improve query performance, and what additional action should you take?",
+  "originalOptions": "A. Migrate to Bigtable and leverage its high throughput and low-latency capabilities.<br/>B. Migrate to Memorystore and implement caching mechanisms to improve query response times.<br/>C. Migrate to Cloud Spanner and use its horizontal scaling capabilities.<br/>D. Migrate to BigQuery and enable the BI Engine for faster query execution.",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "217",
+  "tip": "<p>Identify whether the workload is <i>OLAP</i> with many concurrent users doing complex <i>joins</i> and <i>aggregations</i>. For large scale concurrency choose a warehouse like <i>BigQuery</i> and look for features such as <i>BI Engine</i> to add in memory acceleration.</p>",
+  "references": [
+    "https://cloud.google.com/bigquery/docs/introduction",
+    "https://cloud.google.com/bi-engine/docs/bi-engine-intro",
+    "https://cloud.google.com/bigquery/docs/best-practices-performance-compute",
+    "https://cloud.google.com/spanner/docs/overview",
+    "https://cloud.google.com/bigtable/docs/overview",
+    "https://cloud.google.com/alloydb/docs/columnar-engine/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-a-data-intensive-application-that-currently-exam-217.html",
+  "video_url": "https://certificationation.com/videos/exam-a-data-intensive-application-that-currently-exam-217.html"
+}

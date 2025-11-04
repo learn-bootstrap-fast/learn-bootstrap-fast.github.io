@@ -1,0 +1,81 @@
+---
+title: "Your company requires a high availability database setupExam"
+description: "Video for your company requires a high availability database setup in Cloud SQL to minimize downtime and data loss during a zonal outage. The database must"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company requires a high availability database setup in Cloud SQL to minimize downtime and data loss during a zonal outage. The database must automatically recover and handle write operations during failover. What is the best approach to achieve this?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "MetroMart Logistics is moving a transactional workload to Cloud SQL for PostgreSQL and leadership requires that the database continue to accept writes if a single zone fails and that failover happen automatically with minimal operator effort. They also target an RPO close to zero and an RTO of about 60 seconds. Which design should you choose to meet these needs?",
+  "options": [
+    {
+      "text": "Move the workload to a multi-region Cloud Spanner instance for built-in high availability",
+      "explanation": "This migrates the application to Cloud Spanner which provides strong availability and multi-region support",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Depend on automated backups and restore to a new instance in another zone when a failure happens",
+      "explanation": "This approach relies on scheduled backups and a manual restore process to bring the service back in a different zone",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a regional Cloud SQL instance with High Availability enabled so the standby in another zone is automatically promoted on zonal failure",
+      "explanation": "This configures a primary instance and a synchronous standby in separate zones with continuous replication and automatic failover",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Configure cross-region replication and shift writes to the read replica during an outage",
+      "explanation": "This sets up an asynchronous replica in another region and traffic could be redirected there if a failure occurs",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Create a regional Cloud SQL instance with High Availability enabled so the standby in another zone is automatically promoted on zonal failure</b>.</p><p>This design places a primary and a standby in different zones within a region and keeps data synchronized through regional storage so writes continue to be accepted even if one zone fails. Automatic failover promotes the standby with minimal operator effort. This yields an RPO that is effectively near zero and an RTO that is typically around a minute which meets the stated targets.</p><p><i>Move the workload to a multi-region Cloud Spanner instance for built-in high availability</i> does not align with the requirement to use Cloud SQL for PostgreSQL and it would require a different service with different semantics and operational characteristics.</p><p><i>Depend on automated backups and restore to a new instance in another zone when a failure happens</i> results in an RPO equal to the time since the last backup and a manual restore process that leads to a much longer RTO which does not meet near zero RPO or one minute recovery goals.</p><p><i>Configure cross-region replication and shift writes to the read replica during an outage</i> uses asynchronous replication and replicas are read only until manually promoted so it does not provide automatic failover and it cannot guarantee near zero RPO.</p>",
+  "batch_id": "218",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "Your company requires a high availability database setup in Cloud SQL to minimize downtime and data loss during a zonal outage. The database must automatically recover and handle write operations during failover. What is the best approach to achieve this?",
+  "originalOptions": "A. Configure High Availability (HA) for the Cloud SQL instance to enable automatic failover to a standby replica in a different zone.<br/>B. Enable cross-region replication and use a read replica as the primary database during outages.<br/>C. Deploy a Cloud SQL instance with automated backups and restore the database in another zone during an outage.<br/>D. Use a multi-region Cloud Spanner instance to provide high availability and durability.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "288",
+  "tip": "<p>Map the stated <i>RPO</i> and <i>RTO</i> to the native capabilities of each service. If the requirement says writes must continue during a zonal outage with <i>automatic</i> failover and near zero data loss then prefer Cloud SQL High Availability over backups or asynchronous replicas.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/high-availability",
+    "https://cloud.google.com/sql/docs/postgres/replication/replication-overview",
+    "https://cloud.google.com/sql/docs/postgres/replication/create-replica",
+    "https://cloud.google.com/sql/docs/postgres/backup-recovery/backups",
+    "https://cloud.google.com/databases/choose-sql-option"
+  ],
+  "url": "https://certificationation.com/questions/exam-database-setup-in-cloud-sql-exam-288.html",
+  "video_url": "https://certificationation.com/videos/exam-database-setup-in-cloud-sql-exam-288.html"
+}

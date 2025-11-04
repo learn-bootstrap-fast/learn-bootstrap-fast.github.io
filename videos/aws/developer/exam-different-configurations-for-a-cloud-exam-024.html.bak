@@ -1,0 +1,80 @@
+---
+title: "A Database Engineer is evaluating differentExam"
+description: "Video for a Database Engineer is evaluating different configurations for a Cloud SQL instance that will host a customer relationship management (CRM)"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A Database Engineer is evaluating different configurations for a Cloud SQL instance that will host a customer relationship management (CRM) application. The workload metrics and requirements are as follows: 3,000 queries per second during peak times 2 TB of data storage 5,000 concurrent connections 100 GB of backup storage The engineer needs to choose a configuration that provides a balance between performance and cost. Which of the following instance configurations is the most appropriate to meet the application requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A data platform engineer at a regional insurance company is preparing a Cloud SQL deployment for a policy administration system. The workload includes roughly 3,600 queries per second during busy periods and about 2.5 TB of total data. It also experiences up to 3,800 concurrent client connections and requires approximately 120 GB for backups. The team wants a configuration that keeps costs reasonable while still meeting throughput and connection needs. Which instance shape and storage type should they choose?",
+  "options": [
+    {
+      "text": "db-n1-highmem-32 with 2.5 TB of HDD storage",
+      "explanation": "This option increases memory capacity but HDD storage can restrict random IO performance for transactional workloads",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "db-n1-standard-16 with 2.5 TB of SSD storage",
+      "explanation": "This shape offers a balanced CPU to memory ratio and SSD storage provides consistent low-latency IO for OLTP traffic",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "db-n1-standard-32 with 2.5 TB of HDD storage",
+      "explanation": "This option adds more vCPUs than smaller shapes but HDD storage may cause latency spikes under sustained QPS",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "db-n1-highmem-64 with 2.5 TB of SSD storage",
+      "explanation": "This option supplies very large memory and SSD-backed storage for heavy in-memory use but it substantially increases cost",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>db-n1-standard-16 with 2.5 TB of SSD storage</b>.</p><p>This selection provides SSD persistent disk which delivers high and consistent IOPS and throughput that fit a workload of roughly 3,600 queries per second and thousands of concurrent connections. At 2.5 TB, SSD persistent disk offers far higher IOPS than HDD so queries remain responsive and latency is predictable under load. This shape balances CPU and memory to meet the connection and throughput needs while keeping costs lower than larger or memory optimized shapes.</p><p>The backup size of about 120 GB does not drive the compute or storage performance decision because backup storage is billed separately. The SSD choice is made to satisfy runtime performance requirements rather than backup capacity.</p><p><i>db-n1-highmem-32 with 2.5 TB of HDD storage</i> is not suitable because HDD persistent disks provide much lower IOPS and higher latency at this size, so they are unlikely to sustain the required query rate. Extra memory increases cost without removing the disk bottleneck.</p><p><i>db-n1-standard-32 with 2.5 TB of HDD storage</i> is not a good fit because more CPU does not overcome the limited IOPS and variable latency of HDD at 2.5 TB. The workload is primarily sensitive to storage performance which calls for SSD.</p><p><i>db-n1-highmem-64 with 2.5 TB of SSD storage</i> uses the right storage type but significantly overprovisions CPU and memory for the stated needs, which increases cost without clear benefit for the described throughput and connection profile.</p>",
+  "batch_id": "36",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "A Database Engineer is evaluating different configurations for a Cloud SQL instance that will host a customer relationship management (CRM) application. The workload metrics and requirements are as follows: 3,000 queries per second during peak times 2 TB of data storage 5,000 concurrent connections 100 GB of backup storage The engineer needs to choose a configuration that provides a balance between performance and cost. Which of the following instance configurations is the most appropriate to meet the application requirements?",
+  "originalOptions": "A. db-n1-highmem-64 with 2 TB of SSD storage<br/>B. db-n1-standard-16 with 2 TB of SSD storage<br/>C. db-n1-highmem-32 with 2 TB of HDD storage<br/>D. db-n1-standard-32 with 2 TB of HDD storage",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "24",
+  "tip": "<p>First decide whether the bottleneck is <i>I/O</i> or compute. High QPS and many connections usually point to <i>SSD</i> rather than HDD. Then choose the smallest machine type that meets connection and CPU needs to control cost. Remember that <i>backups</i> are billed separately and rarely affect instance sizing.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/instance-settings#machine-type",
+    "https://cloud.google.com/sql/docs/mysql/instance-settings#storage-type",
+    "https://cloud.google.com/compute/docs/disks/performance",
+    "https://cloud.google.com/sql/docs/mysql/limits"
+  ],
+  "url": "https://certificationation.com/questions/exam-different-configurations-for-a-cloud-exam-024.html",
+  "video_url": "https://certificationation.com/videos/exam-different-configurations-for-a-cloud-exam-024.html"
+}

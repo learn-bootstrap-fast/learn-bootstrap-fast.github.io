@@ -1,0 +1,79 @@
+---
+title: "You are a Database Engineer working on a project thatExam"
+description: "Video for you are a Database Engineer working on a project that involves a global e-commerce application using Cloud Spanner. The application has varying peak"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are a Database Engineer working on a project that involves a global e-commerce application using Cloud Spanner. The application has varying peak usage times based on different regions. You have been tasked with defining maintenance windows and notifications for the application's database in accordance with the application's availability requirements. Which of the following options would be the most suitable approach?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the Cloud Database Engineer for a global ride sharing platform that uses Cloud Spanner across multiple regions. Traffic spikes occur at different times in each geography because riders and drivers follow local time. You must define maintenance scheduling and notification preferences that uphold the application&apos;s availability commitments. What should you do?",
+  "options": [
+    {
+      "text": "Configure one global maintenance window during the lowest worldwide activity and send notifications only to database administrators",
+      "explanation": "This approach sets a single time for maintenance across all regions and restricts notifications to the DBA group",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create region-specific maintenance windows that align with each region&apos;s busiest hours and notify only database administrators",
+      "explanation": "This method configures local schedules but places them during peak usage while limiting notices to DBAs",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Cloud Scheduler with a Cloud Function to postpone Cloud Spanner maintenance during busy periods and notify service owners",
+      "explanation": "This proposal depends on external automation to try to control maintenance timing and broadens notifications to service owners",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create region-specific maintenance windows that align with each region&apos;s off-peak hours and send notifications only to database administrators",
+      "explanation": "This solution defines localized maintenance windows during low demand in each region and limits alerts to the DBA audience",
+      "correct": true,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Create region-specific maintenance windows that align with each region&apos;s off-peak hours and send notifications only to database administrators</b>.</p><p>Cloud Spanner supports maintenance windows so you can steer disruptive updates into predictable times. In a multi region deployment where demand follows local time, aligning each region&apos;s window with that region&apos;s off peak hours minimizes impact on users while Google performs rolling maintenance to preserve availability. Notifying the database administrators ensures the responsible team is prepared to coordinate and monitor the changes.</p><p><i>Configure one global maintenance window during the lowest worldwide activity and send notifications only to database administrators</i> is incorrect because a single global window cannot match local off peak times across all geographies, which would cause some regions to receive maintenance during their busy periods.</p><p><i>Create region-specific maintenance windows that align with each region&apos;s busiest hours and notify only database administrators</i> is incorrect because scheduling during the busiest hours maximizes impact rather than minimizing it.</p><p><i>Use Cloud Scheduler with a Cloud Function to postpone Cloud Spanner maintenance during busy periods and notify service owners</i> is incorrect because Cloud Spanner maintenance is managed by Google and cannot be postponed or overridden with custom jobs. You must use the built in maintenance window controls to influence timing.</p>",
+  "batch_id": "247",
+  "answerCode": "4",
+  "type": "multiple-choice",
+  "originalQuery": "You are a Database Engineer working on a project that involves a global e-commerce application using Cloud Spanner. The application has varying peak usage times based on different regions. You have been tasked with defining maintenance windows and notifications for the application's database in accordance with the application's availability requirements. Which of the following options would be the most suitable approach?",
+  "originalOptions": "A. Set a fixed maintenance window during the global non-peak usage time and configure notifications for database administrators only.<br/>B. Set region-specific maintenance windows during peak usage times for each region and configure notifications for database administrators only.<br/>C. Set a fixed maintenance window during the global non-peak usage time and configure notifications for all users.<br/>D. Set region-specific maintenance windows during non-peak usage times for each region and configure notifications for database administrators only.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "11",
+  "tip": "<p>When traffic patterns vary by geography, prefer <i>region-specific</i> maintenance windows that match local off peak hours. Remember that Cloud Spanner maintenance timing can be guided with maintenance windows but it cannot be postponed with custom code. Verify notification recipients through your organization&apos;s contacts to ensure the right team is alerted.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/maintenance",
+    "https://cloud.google.com/spanner/docs/instance-configurations#multi-region",
+    "https://cloud.google.com/resource-manager/docs/managing-notification-contacts"
+  ],
+  "url": "https://certificationation.com/questions/exam-a-project-that-involves-a-exam-011.html",
+  "video_url": "https://certificationation.com/videos/exam-a-project-that-involves-a-exam-011.html"
+}

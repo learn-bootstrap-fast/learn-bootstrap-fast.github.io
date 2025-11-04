@@ -1,0 +1,82 @@
+---
+title: "As a Database Engineer, you have been tasked withExam"
+description: "Video for as a Database Engineer, you have been tasked with determining how an application will connect to a Cloud SQL database instance. The application is"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you have been tasked with determining how an application will connect to a Cloud SQL database instance. The application is expected to have high throughput and requires a secure and efficient connection method. Choose the most suitable option."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the database engineer for a fintech startup named HarborLedger and you must decide how a payments microservice running on Google Kubernetes Engine will connect to a Cloud SQL for PostgreSQL instance. The service expects roughly 4,000 short lived transactions per second and it must keep connectivity secure while maintaining low latency. Which connectivity approach should you implement?",
+  "options": [
+    {
+      "text": "Front the database with an API Gateway and add a cache layer to reduce query load",
+      "explanation": "This places an API management layer in front of the database and attempts to reduce database calls with caching.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Run the Cloud SQL Auth Proxy with the service and use a connection pooler to reuse database sessions",
+      "explanation": "This deploys the Cloud SQL Auth Proxy or language connector to secure traffic and pools connections to lower overhead.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Put Cloud SQL behind an external TCP load balancer and use VPC Network Peering to route to multiple read replicas",
+      "explanation": "This proposes an external load balancer with VPC Network Peering to spread client sessions across read replicas.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Connect using the instance public IP and disable SSL to reduce handshake costs",
+      "explanation": "This opens the database over a public endpoint and removes encryption to avoid CPU work.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Run the Cloud SQL Auth Proxy with the service and use a connection pooler to reuse database sessions</b>. It best satisfies the need for secure connectivity and low latency at roughly four thousand short lived transactions per second.</p><p>The Cloud SQL Auth Proxy encrypts traffic and centralizes authentication so the service on Google Kubernetes Engine can connect securely without managing IP allowlists. Pairing it with a lightweight PostgreSQL connection pooler such as PgBouncer lets the application reuse server sessions and avoid repeated connection set up and TLS handshakes. This reduces latency and database overhead and helps you remain within Cloud SQL connection limits while sustaining high concurrency.</p><p>On Kubernetes you typically run the proxy and the pooler alongside the application so connections are local and fast. Using a private IP for the instance further reduces latency and keeps traffic private.</p><p><i>Front the database with an API Gateway and add a cache layer to reduce query load</i> is incorrect because API Gateway fronts HTTP services rather than database wire protocols. A cache cannot safely handle a payments workload that requires strict consistency and it would add complexity and latency rather than providing secure low latency database connectivity.</p><p><i>Put Cloud SQL behind an external TCP load balancer and use VPC Network Peering to route to multiple read replicas</i> is incorrect because Cloud SQL cannot be placed behind your external load balancer and clients connect directly to the instance over public or private IP. Read replicas serve read traffic and are addressed individually and the described peering and routing model is not how Cloud SQL client connectivity works.</p><p><i>Connect using the instance public IP and disable SSL to reduce handshake costs</i> is incorrect because it violates the requirement for secure connectivity and exposes data in transit. Handshake costs should be addressed by reusing connections with a pooler rather than by disabling encryption.</p>",
+  "batch_id": "121",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you have been tasked with determining how an application will connect to a Cloud SQL database instance. The application is expected to have high throughput and requires a secure and efficient connection method. Choose the most suitable option.",
+  "originalOptions": "A. Create a custom API Gateway service to route all application requests to the database instance, and use caching to improve performance.<br/>B. Use the Cloud SQL Proxy to establish a secure connection, and use connection pooling for better performance.<br/>C. Use a VPC Network Peering connection and an external load balancer to distribute traffic to multiple database replicas.<br/>D. Establish a direct connection to the Cloud SQL instance using the instance's public IP address and disable SSL encryption for better performance.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "98",
+  "tip": "<p>When a scenario highlights many short lived transactions to Cloud SQL for PostgreSQL think of <i>connection pooling</i> with the <i>Cloud SQL Auth Proxy</i> and prefer <i>private IP</i> for lower latency. Eliminate choices that place load balancers or API gateways in front of Cloud SQL because that is <i>unsupported</i>.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/connect-kubernetes-engine",
+    "https://cloud.google.com/sql/docs/postgres/connect-auth-proxy",
+    "https://cloud.google.com/sql/docs/postgres/best-practices#connections",
+    "https://cloud.google.com/sql/docs/postgres/pgbouncer",
+    "https://cloud.google.com/sql/docs/postgres/connect-overview",
+    "https://cloud.google.com/sql/docs/postgres/private-ip"
+  ],
+  "url": "https://certificationation.com/questions/exam-been-tasked-with-determining-how-exam-098.html",
+  "video_url": "https://certificationation.com/videos/exam-been-tasked-with-determining-how-exam-098.html"
+}

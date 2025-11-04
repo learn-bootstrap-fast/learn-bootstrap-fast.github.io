@@ -1,0 +1,62 @@
+---
+title: "Your team is working on a migration project in AWSExam"
+description: "Video for your team is working on a migration project in AWS platform. An Application Load Balancer is configured to route traffic to backend EC2 instances. A"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your team is working on a migration project in AWS platform. An Application Load Balancer is configured to route traffic to backend EC2 instances. A security group is attached in the load balancer which allows the ingress traffic from a custom TCP port. Recently, due to some project requirements, the Application Load Balancer needs to be replaced by a Network Load Balancer. Existing configurations of the load balancer should be kept if possible. How would you configure the security group in the new Network Load Balancer?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><b>Update the security groups assigned to the backend EC2 instances since Network Load Balancers do not operate with their own security groups.</b> is the correct solution. Network Load Balancers (NLBs) in AWS differ from Application Load Balancers (ALBs) in that NLBs do <b>not</b> support security groups directly. This means you cannot attach or associate a security group with the NLB itself. The proper method is to ensure the security groups on the backend EC2 instances explicitly allow traffic from the NLB (such as from the NLB’s subnet or any source as your use case requires) on the required port.</p><p>The other options are incorrect for these reasons:</p><ul><li><i>Change the security group assignment to the listener of the Network Load Balancer to permit access via the custom TCP port.</i> – NLB listeners do not support security groups. You cannot associate security groups at the listener level with NLBs.</li><li><i>Modify your security group rules to allow inbound traffic from 0.0.0.0/0, since Network Load Balancers will otherwise block the traffic.</i> – This is an insecure practice unless explicitly needed. NLBs do not check security groups, so the backend instances' security groups control access. Opening up to <i>0.0.0.0/0</i> is generally not necessary and could introduce security risks.</li><li><i>Use an AWS CloudFormation template to attach the original security group directly to the Network Load Balancer.</i> – Security groups cannot be attached to an NLB, regardless of whether you use CloudFormation or the AWS Management Console.</li></ul><p><b>Tip:</b> Always review AWS documentation for the specific capabilities and limitations of each load balancer type before making configuration changes. Remember, with NLBs, only the target EC2 instances' security group settings control inbound traffic.</p>",
+  "query": "<p>Your organization is migrating to AWS. Currently, an Application Load Balancer (ALB) directs traffic to EC2 instances, and the ALB’s security group is configured to permit inbound traffic from a special TCP port. Due to new project requirements, you must swap out the ALB in favor of a Network Load Balancer (NLB), aiming to preserve the existing security configurations as much as possible. What is the correct approach for handling security groups for the new Network Load Balancer?</p>",
+  "original_oid": "6793da5761969b416038a1cf",
+  "options": [
+    {
+      "correct": true,
+      "text": "Update the security groups assigned to the backend EC2 instances since Network Load Balancers do not operate with their own security groups.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Change the security group assignment to the listener of the Network Load Balancer to permit access via the custom TCP port.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Modify your security group rules to allow inbound traffic from 0.0.0.0/0, since Network Load Balancers will otherwise block the traffic.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Use an AWS CloudFormation template to attach the original security group directly to the Network Load Balancer.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question350",
+  "originalQuery": "Your team is working on a migration project in AWS platform.\nAn Application Load Balancer is configured to route traffic to backend EC2 instances.\nA security group is attached in the load balancer which allows the ingress traffic from a custom TCP port.\nRecently, due to some project requirements, the Application Load Balancer needs to be replaced by a Network Load Balancer.\nExisting configurations of the load balancer should be kept if possible.\nHow would you configure the security group in the new Network Load Balancer?",
+  "originalOptions": "A. As Network Load Balancers do not have associated security groups, update the security group in the target EC2 instances.|B. Use a CloudFormation template to associate the same security group with the Network Load Balancer.|C. In the security group, modify the source of the inbound rule to be 0.0.0.0/0 otherwise the ingress traffic will be denied by the Network Load Balancer.|D. Attach the security group to the listener of the Network Load Balancer to allow the ingress traffic from the custom TCP port.",
+  "video_url": "https://certificationation.com/videos/exam-project-in-aws-platform-an-exam-428.html",
+  "url": "https://certificationation.com/questions/exam-project-in-aws-platform-an-exam-428.html"
+}

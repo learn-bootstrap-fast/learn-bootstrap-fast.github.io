@@ -1,0 +1,80 @@
+---
+title: "In your organization, the Cloud SQL out-of-diskExam"
+description: "Video for in your organization, the Cloud SQL out-of-disk recommender is employed to analyze storage usage patterns of production databases over the preceding"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "In your organization, the Cloud SQL out-of-disk recommender is employed to analyze storage usage patterns of production databases over the preceding 60 days. The database operations team relies on these recommendations to actively monitor storage utilization and promptly address any concerns. You have recently received a recommendation indicating that the instance is expected to run out of disk space within the upcoming month. What should you do to address this storage alert?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "At Polar Parcel, a logistics startup, your team uses the Cloud SQL out of disk recommender to review storage trends for mission critical databases over the last 90 days. The platform group relies on these insights to track capacity and act before incidents occur. A new recommendation says the Cloud SQL instance is likely to exhaust its disk space within the next three weeks. How should you respond to this storage warning?",
+  "options": [
+    {
+      "text": "Archive older partitions to a separate reporting instance",
+      "explanation": "This approach moves less frequently accessed data to another Cloud SQL instance to reduce primary storage usage",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Increase the disk size now or enable storage auto increase",
+      "explanation": "This changes the instance capacity and can permit automatic disk growth as utilization rises",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Migrate the workload to Bigtable for better compression",
+      "explanation": "This proposes moving a relational workload to a wide column database to achieve different storage behavior",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Implement sharding across multiple Cloud SQL instances",
+      "explanation": "This distributes data and load by splitting tables across several instances",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Increase the disk size now or enable storage auto increase</b>.</p><p>The out of disk recommender is forecasting imminent capacity exhaustion, so the safest response is to add headroom immediately. You can <b>increase the disk size now or enable storage auto increase</b> so that the instance can scale storage before it runs out and avoid an outage. Cloud SQL supports online storage increases and the <b>storage auto increase</b> setting grows the disk automatically when usage approaches the threshold, which directly addresses the warning within the stated three week window.</p><p><i>Archive older partitions to a separate reporting instance</i> is not a reliable immediate fix for an impending out of disk event. Even if you remove data, Cloud SQL storage cannot be decreased and reclaimed at the disk level, and cleanup operations may not free space quickly enough to prevent the incident.</p><p><i>Migrate the workload to Bigtable for better compression</i> is inappropriate for a relational Cloud SQL workload because Bigtable is a NoSQL wide column database. A migration would be complex and time consuming and it does not solve the near term capacity risk.</p><p><i>Implement sharding across multiple Cloud SQL instances</i> adds significant operational complexity and requires application changes. It is not a timely mitigation for a forecasted storage shortfall in the next few weeks.</p>",
+  "batch_id": "255",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "In your organization, the Cloud SQL out-of-disk recommender is employed to analyze storage usage patterns of production databases over the preceding 60 days. The database operations team relies on these recommendations to actively monitor storage utilization and promptly address any concerns. You have recently received a recommendation indicating that the instance is expected to run out of disk space within the upcoming month. What should you do to address this storage alert?",
+  "originalOptions": "A. Migrate the database to a different database engine with better compression.<br/>B. To free up storage space, you can archive older data in a separate instance dedicated to this purpose.<br/>C. Implement data sharding techniques to distribute data across multiple instances for better storage management.<br/>D. You can either manually increase the storage capacity or automate the process.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "130",
+  "tip": "<p>When a recommender predicts an imminent resource shortfall, choose the action that directly increases capacity in the same service. Features like <i>automatic scaling settings</i> or a quick <i>resize</i> are usually the most reliable and timely fixes.</p>",
+  "references": [
+    "https://cloud.google.com/recommender/docs/cloudsql-out-of-disk",
+    "https://cloud.google.com/sql/docs/mysql/instance-settings#automatic-storage-increase",
+    "https://cloud.google.com/sql/docs/mysql/expand-storage",
+    "https://cloud.google.com/bigtable/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-sql-out-of-disk-recommender-is-employed-exam-130.html",
+  "video_url": "https://certificationation.com/videos/exam-sql-out-of-disk-recommender-is-employed-exam-130.html"
+}

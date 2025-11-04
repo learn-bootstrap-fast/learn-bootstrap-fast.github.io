@@ -1,0 +1,82 @@
+---
+title: "As a Database Engineer, you are required to automate theExam"
+description: "Video for as a Database Engineer, you are required to automate the provisioning of a Cloud SQL instance with a high level of customizability, while maintaining"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are required to automate the provisioning of a Cloud SQL instance with a high level of customizability, while maintaining a secure and scalable environment. Which of the following approaches would best suit this requirement?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the database engineer at LumaPay and you must automate the provisioning of Cloud SQL instances for three environments and roughly 15 projects each quarter while supporting extensive configuration for networking, storage and encryption and ensuring the process remains secure and scalable. Which approach should you use to meet these goals?",
+  "options": [
+    {
+      "text": "Utilize the Cloud SQL Admin API with client libraries to create and manage instances programmatically",
+      "explanation": "This uses the official API to define instance parameters in code and integrate with automation workflows.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Orchestrate gcloud commands with Google Cloud Workflows to run a series of scripted steps for provisioning",
+      "explanation": "This coordinates sequential tasks that invoke the command line but depends on shell scripts for configuration management.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Cloud Deployment Manager with a parameterized template to declaratively create Cloud SQL instances",
+      "explanation": "This defines infrastructure as reusable templates with inputs so instances can be provisioned consistently with security and policy controls.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Write custom Bash scripts that call gcloud and run them through Cloud Build triggers for each environment",
+      "explanation": "This automates command execution through a CI pipeline while relying on environment variables for configuration.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct approach is <b>Use Cloud Deployment Manager with a parameterized template to declaratively create Cloud SQL instances</b>. This best meets the needs for secure, repeatable and scalable provisioning across many environments and projects while allowing extensive configuration.</p><p>This approach defines the desired state of Cloud SQL instances in a template and drives consistent creation with parameters for environment and project. You can pass values for networking settings such as private IP or authorized networks, storage such as disk size and type, and encryption such as CMEK without changing the template itself. It supports review and version control, enforces IAM based permissions for who can deploy, and reduces manual steps which improves security and scalability.</p><p><i>Utilize the Cloud SQL Admin API with client libraries to create and manage instances programmatically</i> gives full control but requires you to build orchestration, parameter management, idempotency, drift handling and policy enforcement yourself. This increases complexity and maintenance effort compared to a mature declarative solution.</p><p><i>Orchestrate gcloud commands with Google Cloud Workflows to run a series of scripted steps for provisioning</i> is procedural and script driven which makes it harder to manage configuration drift and replay safely at scale. It also increases brittleness and operational overhead compared to a declarative template that describes the end state.</p><p><i>Write custom Bash scripts that call gcloud and run them through Cloud Build triggers for each environment</i> relies on shell scripting which is error prone for large scale provisioning and lacks native state management, preview and rollback capabilities. It becomes difficult to secure secrets and parameters and to keep behavior consistent across many projects and quarters.</p>",
+  "batch_id": "260",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are required to automate the provisioning of a Cloud SQL instance with a high level of customizability, while maintaining a secure and scalable environment. Which of the following approaches would best suit this requirement?",
+  "originalOptions": "A. Use a custom script with the gcloud command-line tool for creating Cloud SQL instances.<br/>B. Use Cloud Deployment Manager with a custom template to create a Cloud SQL instance.<br/>C. Manually create a Cloud SQL instance and use Cloud Functions to trigger instance creation.<br/>D. Utilize the Cloud SQL API to create the instance and manage its configurations programmatically.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "211",
+  "tip": "<p>When a question stresses repeatability across many projects with strong parameterization and least privilege think in terms of <i>declarative</i> infrastructure as code. Look for options that support <i>templates</i>, <i>parameters</i>, and <i>idempotent</i> deployments rather than ad hoc scripts or custom orchestration.</p>",
+  "references": [
+    "https://cloud.google.com/deployment-manager/docs",
+    "https://cloud.google.com/deployment-manager/docs/configuration/supported-resource-types/gcp-types/sqladmin-v1beta4",
+    "https://cloud.google.com/sql/docs/mysql/admin-api",
+    "https://cloud.google.com/workflows/docs",
+    "https://cloud.google.com/build/docs/automating-builds/create-manage-triggers",
+    "https://cloud.google.com/sql/docs/mysql/configure-cmek"
+  ],
+  "url": "https://certificationation.com/questions/exam-required-to-automate-the-provisioning-exam-211.html",
+  "video_url": "https://certificationation.com/videos/exam-required-to-automate-the-provisioning-exam-211.html"
+}

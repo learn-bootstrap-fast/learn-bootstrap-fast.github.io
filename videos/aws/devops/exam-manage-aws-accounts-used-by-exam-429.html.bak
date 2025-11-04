@@ -1,0 +1,67 @@
+---
+title: "Your company has a DevOps team to manage AWS accountsExam"
+description: "Video for your company has a DevOps team to manage AWS accounts used by all the other teams within the company. In the master AWS account, several CloudWatch"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company has a DevOps team to manage AWS accounts used by all the other teams within the company. In the master AWS account, several CloudWatch Events Rules are established where the CloudWatch Events happening in other AWS accounts can be sent to. In order to do this, permissions have been configured in the default CloudWatch Event Bus of the master account in region ap-southeast-2 Which entities can be added so that they are permitted to send events to CloudWatch Event Bus in the master account? (Select TWO.)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The entities that can be allowed to send events to a CloudWatch Event Bus in another AWS account (such as a master/centralized account) are individual AWS accounts, organizations, or 'all' AWS accounts.<br><br>The <b>Any AWS account globally (all AWS accounts)</b> option is correct, as AWS allows granting permissions using a wildcard account ('*') principal, meaning all AWS accounts are permitted.<br><br>The <b>An external AWS Organization (different from the master’s organization)</b> option is also correct. CloudWatch Event Bus permissions can be granted at the AWS Organization level, including organizations outside of your own (by specifying their Organization ID), enabling all accounts under that organization to forward events.<br><br><i>Specific IAM users from within the same AWS Organization</i> are not valid principals for CloudWatch Event Bus event sources; permissions are not granted at the IAM user level.</p><p><i>A separate AWS account that creates a CloudWatch Event rule in region ap-south-1 to deliver events to the master account</i> is incorrect because the event bus permission is not dependent on the source region, but rather on which account or organization is allowed; region mismatch does not affect principal permissions.</p><p><i>IAM groups as principals</i> is incorrect because CloudWatch Event Bus permissions cannot be assigned to IAM groups.</p><ul><li><b>Tip:</b> When sharing event buses, permissions are managed at the AWS account or AWS Organization level, not at the IAM user or group level.</li><li><b>Exam Insight:</b> Pay special attention to the distinction between entity types that can be granted permissions for cross-account CloudWatch Event Bus access!</li></ul>",
+  "query": "<p>Your company’s Cloud Operations team manages all AWS accounts for various departments. In the primary (master) AWS account in region ap-southeast-2, there are several CloudWatch Event Rules ready to receive events from other accounts. Permissions are in place on the default CloudWatch Event Bus to allow event submissions. <br><br>Which types of entities can be granted permissions so they are authorized to send events to the CloudWatch Event Bus in the master account? <b>(Choose TWO.)</b></p>",
+  "original_oid": "6793d9ff61969b416038a11b",
+  "options": [
+    {
+      "correct": false,
+      "text": "Specific IAM users from within the same AWS Organization.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Any AWS account globally (all AWS accounts).",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "An external AWS Organization (different from the master’s organization).",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "IAM groups as principals.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "A separate AWS account that creates a CloudWatch Event rule in region ap-south-1 to deliver events to the master account.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question169",
+  "originalQuery": "Your company has a DevOps team to manage AWS accounts used by all the other teams within the company.\nIn the master AWS account, several CloudWatch Events Rules are established where the CloudWatch Events happening in other AWS accounts can be sent to.\nIn order to do this, permissions have been configured in the default CloudWatch Event Bus of the master account in region ap-southeast-2\nWhich entities can be added so that they are permitted to send events to CloudWatch Event Bus in the master account? (Select TWO.)",
+  "originalOptions": "[\"A. Certain IAM users in the same AWS Organization.\",\"B. Another AWS Organization.\",\"C. Everybody (all AWS accounts).\",\"D. An AWS account which creates a CloudWatch Events rule in region ap-south-1 and sends events to the master account.\",\"E. IAM groups.\"]",
+  "video_url": "https://certificationation.com/videos/exam-manage-aws-accounts-used-by-exam-429.html",
+  "url": "https://certificationation.com/questions/exam-manage-aws-accounts-used-by-exam-429.html"
+}

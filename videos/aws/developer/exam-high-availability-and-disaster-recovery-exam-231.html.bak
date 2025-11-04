@@ -1,0 +1,80 @@
+---
+title: "You are tasked with designing a high availability andExam"
+description: "Video for you are tasked with designing a high availability and disaster recovery solution for a global e-commerce application using Cloud Spanner. The"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are tasked with designing a high availability and disaster recovery solution for a global e-commerce application using Cloud Spanner. The application has strict RPO (Recovery Point Objective) and RTO (Recovery Time Objective) requirements: RPO should be less than 2 minutes, and RTO should be less than 5 minutes. The solution must be able to handle both planned and unplanned outages, as well as provide low latency for users distributed across different regions. Which of the following configurations should you choose to fulfill these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "An engineering team at mcnz.com is launching a worldwide ticketing service on Cloud Spanner. Compliance requires an RPO under 90 seconds and an RTO under 4 minutes. The design must tolerate planned maintenance and unexpected regional outages and must keep latency low for users across several continents. Which deployment approach should you choose in Cloud Spanner to meet these goals?",
+  "options": [
+    {
+      "text": "Run two independent regional Cloud Spanner instances and replicate changes with Cloud Dataflow",
+      "explanation": "This approach uses an asynchronous data pipeline to move changes between separate regional databases and relies on the application to handle conflicts and failover.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use a regional Cloud Spanner instance and turn on automated backups and point in time recovery",
+      "explanation": "This configuration protects data within a single region by allowing restoration to a recent point in time from backups and logs.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Provision Cloud Spanner in a multi region configuration that commits through a read write quorum",
+      "explanation": "This setup uses synchronous replication across multiple regions and requires a majority of replicas to acknowledge each write before it is committed.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Create a zonal Cloud Spanner instance and add read replicas in other regions for disaster recovery",
+      "explanation": "This design concentrates writes in a single zone and places read only replicas elsewhere to offload reads and provide limited geographic distribution.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Provision Cloud Spanner in a multi region configuration that commits through a read write quorum</b>.</p><p>This approach uses synchronous replication with quorum commits so a transaction is acknowledged only after a majority of read write replicas persist it. That prevents data loss for committed transactions and gives an effective RPO of zero which is well within the 90 second requirement. Automatic leader re election and failover complete quickly during planned maintenance or an unexpected regional outage which fits the 4 minute RTO target. Multi region configurations also place read only replicas in additional regions so read traffic can stay close to users which helps keep global latency low while writes remain strongly consistent.</p><p><i>Run two independent regional Cloud Spanner instances and replicate changes with Cloud Dataflow</i> is incorrect because it relies on asynchronous application level replication. Pipeline lag and lack of synchronous quorum commits can push RPO beyond 90 seconds and there is no transparent failover or cross instance transactional consistency.</p><p><i>Use a regional Cloud Spanner instance and turn on automated backups and point in time recovery</i> is incorrect because backups and point in time recovery address data recovery from corruption or mistakes rather than continuous high availability across regions. Restores typically take longer than a few minutes and a single region cannot tolerate a regional outage or provide consistently low latency for globally distributed users.</p><p><i>Create a zonal Cloud Spanner instance and add read replicas in other regions for disaster recovery</i> is incorrect because Cloud Spanner does not offer zonal instances and read replicas cannot accept writes during a failure. This means there is no write failover so the strict RPO and RTO targets would not be met.</p>",
+  "batch_id": "281",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are tasked with designing a high availability and disaster recovery solution for a global e-commerce application using Cloud Spanner. The application has strict RPO (Recovery Point Objective) and RTO (Recovery Time Objective) requirements: RPO should be less than 2 minutes, and RTO should be less than 5 minutes. The solution must be able to handle both planned and unplanned outages, as well as provide low latency for users distributed across different regions. Which of the following configurations should you choose to fulfill these requirements?",
+  "originalOptions": "A. Deploy Cloud Spanner with a multi-region configuration, configured with a read-write quorum.<br/>B. Deploy Cloud Spanner with a regional instance and configure automatic backups.<br/>C. Deploy Cloud Spanner with a zonal instance and configure read replicas.<br/>D. Deploy Cloud Spanner with a single region configuration and use Cloud Dataflow for data replication to another region.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "231",
+  "tip": "<p>When you see strict <i>RPO</i> and <i>RTO</i> targets together with tolerance of regional outages and global users, look for multi region Spanner with <i>quorum</i> commits. Backups or batch replication usually signal recovery rather than high availability.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/instances#multi-region-configs",
+    "https://cloud.google.com/spanner/docs/replication",
+    "https://cloud.google.com/spanner/docs/point-in-time-recovery",
+    "https://cloud.google.com/spanner/docs/maintenance"
+  ],
+  "url": "https://certificationation.com/questions/exam-high-availability-and-disaster-recovery-exam-231.html",
+  "video_url": "https://certificationation.com/videos/exam-high-availability-and-disaster-recovery-exam-231.html"
+}

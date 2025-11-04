@@ -1,0 +1,62 @@
+---
+title: "You are a new graduate and are trying to get an AWSExam"
+description: "Video for you are a new graduate and are trying to get an AWS DevOps job. To prepare for a tech interview, the recruiter has given you a task to use AWS to"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are a new graduate and are trying to get an AWS DevOps job. To prepare for a tech interview, the recruiter has given you a task to use AWS to build up a Hello World web service in one week."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><b>Create a CodePipeline pipeline where CodeCommit acts as the source. Build a new Docker container image in CodeBuild, push it to Amazon ECR, and then use CloudFormation to generate a new ECS task definition revision linked to the image. Finally, update the ECS service to use the latest task definition.</b> This approach is optimal for containerized deployments on AWS ECS because Amazon ECR is designed specifically as a container image registry. Matching ECS task definition to the ECR image ensures your ECS service efficiently pulls the latest container image.</p><p><i>Set up CodePipeline with a Source step using CodeCommit, then use CodeBuild to build the new artifact such as an RPM or executable file, storing it in S3. Afterward, add a Deploy step utilizing CloudFormation to create a new task definition revision that refers to the installation package in S3 and refresh the ECS service with the updated task definition.</i> is incorrect because ECS task definitions are built to work with Docker container images, not raw binaries or installers placed in S3.</p><p><i>Configure CodePipeline to use CodeCommit as the source. Employ CodeBuild to construct a new Docker image and upload it to an S3 bucket. Then apply CloudFormation in the Deploy stage to launch a new ECS Cluster linked to the S3 URL for the Docker image and update the necessary ECS service.</i> is also wrong, since Docker images should be stored in ECR (not S3) for use with ECS, and ECS cannot pull images from S3.</p><p><i>Set up a pipeline in CodePipeline using CodeCommit for sourcing. Build a new artifact such as an RPM package or executable in CodeBuild and push this directly to ECR. Use CloudFormation to create a new ECS task definition revision referencing this artifact, and update the ECS service with the new definition.</i> is incorrect, as ECR is for Docker images, not for storing RPMs or executables. Task definitions cannot consume binaries from ECR unless they're packaged as Docker images.</p><ul><li><b>Tip:</b> Always use ECR to store Docker container images when deploying to ECS.</li><li><b>Insight:</b> ECS seamlessly integrates with ECR and expects container images, not raw executables or files from S3.</li></ul>",
+  "query": "<p>You are a recent graduate getting ready for an AWS DevOps interview. The recruiter tasked you with building a simple Hello World web service on AWS within one week. What is the most suitable approach for automating the build and deployment process using AWS CodePipeline and related services?</p>",
+  "original_oid": "6793da8361969b416038a227",
+  "options": [
+    {
+      "correct": false,
+      "text": "Set up CodePipeline with a Source step using CodeCommit, then use CodeBuild to build the new artifact such as an RPM or executable file, storing it in S3. Afterward, add a Deploy step utilizing CloudFormation to create a new task definition revision that refers to the installation package in S3 and refresh the ECS service with the updated task definition.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Configure CodePipeline to use CodeCommit as the source. Employ CodeBuild to construct a new Docker image and upload it to an S3 bucket. Then apply CloudFormation in the Deploy stage to launch a new ECS Cluster linked to the S3 URL for the Docker image and update the necessary ECS service.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Create a CodePipeline pipeline where CodeCommit acts as the source. Build a new Docker container image in CodeBuild, push it to Amazon ECR, and then use CloudFormation to generate a new ECS task definition revision linked to the image. Finally, update the ECS service to use the latest task definition.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up a pipeline in CodePipeline using CodeCommit for sourcing. Build a new artifact such as an RPM package or executable in CodeBuild and push this directly to ECR. Use CloudFormation to create a new ECS task definition revision referencing this artifact, and update the ECS service with the new definition.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question439",
+  "originalQuery": "You are a new graduate and are trying to get an AWS DevOps job.\nTo prepare for a tech interview, the recruiter has given you a task to use AWS to build up a Hello World web service in one week.",
+  "originalOptions": "A. In CodePipeline, add a Source stage with CodeCommit. Add a Staging stage with CodeBuild to build the new artifact which is a RPM package or an executable file and store it in S3. Add a Deploy stage that uses CloudFormation to create a new task definition revision that points to the installation package in S3 and updates the ECS service to use the new task definition revision.|B. In CodePipeline, add a Source stage with CodeCommit. Add a Build stage with CodeBuild to build a new Docker container image and store it in S3. Add a Deploy stage that uses CloudFormation to create a new ECS Cluster that points to S3 URL with the newly built Docker container image and updates the relevant ECS service.|C. In CodePipeline, add a Source stage with CodeCommit. Add a Build stage with CodeBuild to build a new Docker container image and push it to ECR. Add a Deploy stage that uses CloudFormation to create a new task definition revision that points to the newly built Docker container image and updates the ECS service to use the new task definition revision.|D. In CodePipeline, add a Source stage with CodeCommit. Add a Build stage with CodeBuild to build the new artifact which is a RPM package or an executable file and push it to ECR. Add a Deploy stage that uses CloudFormation to create a new task definition revision that points to the newly built Docker container image and updates the ECS service to use the new task definition revision.",
+  "video_url": "https://certificationation.com/videos/exam-get-an-aws-devops-job-exam-146.html",
+  "url": "https://certificationation.com/questions/exam-get-an-aws-devops-job-exam-146.html"
+}

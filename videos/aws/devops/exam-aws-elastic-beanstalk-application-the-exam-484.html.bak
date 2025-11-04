@@ -1,0 +1,62 @@
+---
+title: "Your team is responsible for an AWS Elastic BeanstalkExam"
+description: "Video for your team is responsible for an AWS Elastic Beanstalk application. The business requires that you move to a continuous deployment model, releasing"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your team is responsible for an AWS Elastic Beanstalk application. The business requires that you move to a continuous deployment model, releasing updates to the application multiple times per day with zero downtime. What should you do to enable this and still be able to roll back almost immediately in an emergency to the previous version?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>deploy a secondary Elastic Beanstalk environment with the new version, then swap the CNAMEs of the two environments</b> approach (commonly known as Blue/Green Deployment) meets the requirements of zero downtime and rapid rollback. When you swap CNAMEs, DNS routing instantly switches all incoming traffic to the new version without interrupting service. If any issues are detected, a rollback is as easy as swapping the CNAMEs again—restoring the previous functioning environment nearly instantly.</p> <p>The option to <i>enable rolling deployment updates in your Elastic Beanstalk environment and set a suitable pause interval to account for application startup</i> may help reduce downtime, but it doesn't offer near-instantaneous rollback and can sometimes result in brief service interruptions if a batch fails. The option to <i>update your application so that it regularly checks for new code in the repository and applies updates independently on each instance</i> is not a standard Elastic Beanstalk practice and is complicated to manage. It also does not provide proper rollback mechanisms. The suggestion to <i>launch another Elastic Beanstalk environment with the updated version and set up a redirect (HTTP 301) in the old environment to send clients to the new one</i> is not appropriate here—HTTP 301 redirects are permanent and can cause caching problems for clients, besides not providing a quick rollback mechanism.</p> <p><b>Tip:</b> Elastic Beanstalk's Blue/Green deployment model is specifically designed for scenarios that demand continuous delivery and rapid rollback in production environments. Familiarity with this deployment pattern is essential for AWS Solution Architect exams.</p>",
+  "query": "<p>Your team's AWS Elastic Beanstalk application must support continuous deployment where updates are released several times daily, but you must also ensure zero downtime and be able to quickly revert to a prior version if necessary. What is the best way to satisfy these requirements?</p>",
+  "original_oid": "6793da3661969b416038a18c",
+  "options": [
+    {
+      "correct": true,
+      "text": "Deploy a secondary Elastic Beanstalk environment with the new version, then swap the CNAMEs of the two environments.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Update your application so that it regularly checks for new code in the repository and applies updates independently on each instance.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Enable rolling deployment updates in your Elastic Beanstalk environment and set a suitable pause interval to account for application startup.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Launch another Elastic Beanstalk environment with the updated version and set up a redirect (HTTP 301) in the old environment to send clients to the new one.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question283",
+  "originalQuery": "Your team is responsible for an AWS Elastic Beanstalk application.\nThe business requires that you move to a continuous deployment model, releasing updates to the application multiple times per day with zero downtime.\nWhat should you do to enable this and still be able to roll back almost immediately in an emergency to the previous version?",
+  "originalOptions": "A. Enable rolling updates in the Elastic Beanstalk environment, setting an appropriate pause time for application startup.|B. Create a second Elastic Beanstalk environment running the new application version, and swap the environment CNAMEs.|C. Develop the application to poll for a new application version in your code repository; download and install to each running Elastic Beanstalk instance.|D. Create a second Elastic Beanstalk environment with the new application version, and configure the old environment to redirect clients, using the HTTP 301 response code, to the new environment.",
+  "video_url": "https://certificationation.com/videos/exam-aws-elastic-beanstalk-application-the-exam-484.html",
+  "url": "https://certificationation.com/questions/exam-aws-elastic-beanstalk-application-the-exam-484.html"
+}

@@ -1,0 +1,80 @@
+---
+title: "As a Database Engineer, you need to design a solution toExam"
+description: "Video for as a Database Engineer, you need to design a solution to migrate data from an on-premises MySQL database to a Cloud SQL for MySQL instance. The"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you need to design a solution to migrate data from an on-premises MySQL database to a Cloud SQL for MySQL instance. The migration process must ensure minimal downtime, fault-tolerance, and allow for data validation before making the Cloud SQL instance live. Which of the following options best meets these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the Cloud Database Engineer at Oriole Media and you must migrate a 12 TB on-premises MySQL 5.7 database into Cloud SQL for MySQL with less than 10 minutes of cutover downtime. The plan must handle brief network interruptions and allow your team to verify data integrity and run smoke tests on the target before switching production traffic. What approach should you choose?",
+  "options": [
+    {
+      "text": "Build an Apache Beam pipeline on Cloud Dataflow to read from the on-premises MySQL source and write into Cloud SQL for MySQL",
+      "explanation": "This option uses a Beam pipeline to extract data from MySQL and load it into Cloud SQL while allowing transformations during transit",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Run Database Migration Service in continuous replication mode from the on-premises MySQL source into Cloud SQL for MySQL, validate the target, then perform a brief cutover",
+      "explanation": "This option uses a managed migration service that supports ongoing replication from MySQL to Cloud SQL and enables a controlled cutover after validation",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Export with mysqldump and import into Cloud SQL for MySQL using the mysql client",
+      "explanation": "This option performs a logical export and import which copies the data using dump files and SQL statements",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a Data Fusion pipeline to ingest from the on-premises MySQL database and load the data into Cloud SQL for MySQL",
+      "explanation": "This option uses a visual integration service to move data from MySQL into Cloud SQL and can include transformations",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct approach is <b>Run Database Migration Service in continuous replication mode from the on-premises MySQL source into Cloud SQL for MySQL, validate the target, then perform a brief cutover</b>.</p><p><b>Database Migration Service</b> streams changes from the source using binlog replication which keeps the Cloud SQL target in near real time sync while the initial load completes. This enables a short cutover window that can meet the less than ten minute requirement. It also tolerates brief network interruptions because replication resumes from the last processed position without a full restart. With the target continuously updated, your team can validate data and run smoke tests before directing production traffic, then you perform the brief cutover when you are satisfied.</p><p>For a 12 TB database this approach is designed to handle large initial loads and keep pace with ongoing changes. It is supported for MySQL 5.7 sources migrating into Cloud SQL for MySQL and it provides a predictable and tested path for low downtime migrations.</p><p><i>Build an Apache Beam pipeline on Cloud Dataflow to read from the on-premises MySQL source and write into Cloud SQL for MySQL</i> is not appropriate because custom pipelines do not provide native change data capture with transactional consistency for a live database and they require significant custom engineering to approach low downtime needs.</p><p><i>Export with mysqldump and import into Cloud SQL for MySQL using the mysql client</i> would require a long outage for a 12 TB dataset and it does not handle ongoing changes or resumability, so it cannot meet the stringent cutover window.</p><p><i>Create a Data Fusion pipeline to ingest from the on-premises MySQL database and load the data into Cloud SQL for MySQL</i> is designed for data integration rather than database migration with continuous replication and transactional fidelity, so it is not suited for a low downtime cutover.</p>",
+  "batch_id": "219",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you need to design a solution to migrate data from an on-premises MySQL database to a Cloud SQL for MySQL instance. The migration process must ensure minimal downtime, fault-tolerance, and allow for data validation before making the Cloud SQL instance live. Which of the following options best meets these requirements?",
+  "originalOptions": "A. Implement an Apache Beam pipeline with Cloud Dataflow to read data from the on-premises MySQL database, transform it, and write it to the Cloud SQL for MySQL instance.<br/>B. Use the mysqldump command to export data from the on-premises MySQL database and the mysql command to import data into the Cloud SQL instance.<br/>C. Set up a Data Fusion pipeline to read data from the on-premises MySQL database, transform it, and write it to the Cloud SQL for MySQL instance.<br/>D. Use the Database Migration Service (DMS) to perform a continuous replication from the on-premises MySQL database to the Cloud SQL instance.",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "270",
+  "tip": "<p>When a question asks for <i>minimal downtime</i> migration to Cloud SQL and the ability to <i>validate</i> the target before a brief <i>cutover</i>, look for <i>continuous replication</i> with Database Migration Service rather than batch exports or custom pipelines.</p>",
+  "references": [
+    "https://cloud.google.com/database-migration/docs/overview",
+    "https://cloud.google.com/database-migration/docs/mysql/overview",
+    "https://cloud.google.com/database-migration/docs/mysql/create-migration-job",
+    "https://cloud.google.com/sql/docs/mysql/import-export/importing"
+  ],
+  "url": "https://certificationation.com/questions/exam-design-a-solution-to-migrate-exam-270.html",
+  "video_url": "https://certificationation.com/videos/exam-design-a-solution-to-migrate-exam-270.html"
+}

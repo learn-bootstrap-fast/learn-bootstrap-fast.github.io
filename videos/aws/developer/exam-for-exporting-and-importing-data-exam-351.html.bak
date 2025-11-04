@@ -1,0 +1,80 @@
+---
+title: "A Database Engineer is responsible for exporting andExam"
+description: "Video for a Database Engineer is responsible for exporting and importing data between a Cloud Spanner instance and a Cloud Storage bucket. The export process"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A Database Engineer is responsible for exporting and importing data between a Cloud Spanner instance and a Cloud Storage bucket. The export process needs to be fault-tolerant and able to restart from the point of failure. Which of the following options correctly achieves this goal while exporting data from Cloud Spanner to Cloud Storage?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "An engineer at scrumtuous.com needs to export a 24 TB Cloud Spanner database to a Cloud Storage bucket for a migration. The process must tolerate failures and if interrupted it must continue from the last successful point rather than starting over. What should the engineer do to satisfy these requirements?",
+  "options": [
+    {
+      "text": "Use Storage Transfer Service to schedule a transfer from Cloud Spanner to Cloud Storage",
+      "explanation": "This service orchestrates data movement between supported storage systems but it does not pull data directly from a Cloud Spanner database.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use gsutil cp to copy data from Cloud Spanner directly into Cloud Storage",
+      "explanation": "This command copies files between locations and buckets but it is not able to read from a Cloud Spanner database source.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Run gcloud spanner databases export and include the --resume flag",
+      "explanation": "This invokes the managed Cloud Spanner export utility that writes database contents to Cloud Storage using a supported export format.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Launch a Dataflow job with gcloud using an Apache Beam pipeline and enable checkpointing",
+      "explanation": "This runs a custom Beam pipeline on Dataflow with persisted state so the pipeline can restart from a saved position during processing.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Run gcloud spanner databases export and include the --resume flag</b>.</p><p>The Cloud Spanner export command writes export metadata and supports resumable exports. If the job fails or is interrupted it can continue from the last successful point rather than starting over. This is designed for large datasets and exports to Cloud Storage while minimizing rework and meeting the fault tolerance requirement.</p><p><i>Use Storage Transfer Service to schedule a transfer from Cloud Spanner to Cloud Storage</i> is not viable because this service does not support Cloud Spanner as a source and is intended for moving objects between storage systems.</p><p><i>Use gsutil cp to copy data from Cloud Spanner directly into Cloud Storage</i> is incorrect because this tool copies files and objects to and from Cloud Storage and cannot read from Cloud Spanner.</p><p><i>Launch a Dataflow job with gcloud using an Apache Beam pipeline and enable checkpointing</i> is unnecessary and would add complexity. Checkpointing is generally for streaming workloads and does not provide the native resumable export semantics that the export command already offers.</p>",
+  "batch_id": "264",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "A Database Engineer is responsible for exporting and importing data between a Cloud Spanner instance and a Cloud Storage bucket. The export process needs to be fault-tolerant and able to restart from the point of failure. Which of the following options correctly achieves this goal while exporting data from Cloud Spanner to Cloud Storage?",
+  "originalOptions": "A. Use the gcloud dataflow command with an Apache Beam pipeline for exporting data, and enable autoscaling.<br/>B. Use the gsutil cp command to copy the data from Cloud Spanner to Cloud Storage.<br/>C. Use the gcloud dataflow command with an Apache Beam pipeline for exporting data, and enable checkpointing.<br/>D. Use the gcloud spanner export command with the --resume flag.",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "351",
+  "tip": "<p>When a question mentions a large dataset and the need to resume after failure favor the <i>native</i> export feature of the service. Look for gcloud flags like <i>--resume</i> that indicate resumable operations.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/export",
+    "https://cloud.google.com/sdk/gcloud/reference/spanner/databases/export",
+    "https://cloud.google.com/storage/docs/gsutil/commands/cp",
+    "https://cloud.google.com/storage-transfer/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-for-exporting-and-importing-data-exam-351.html",
+  "video_url": "https://certificationation.com/videos/exam-for-exporting-and-importing-data-exam-351.html"
+}

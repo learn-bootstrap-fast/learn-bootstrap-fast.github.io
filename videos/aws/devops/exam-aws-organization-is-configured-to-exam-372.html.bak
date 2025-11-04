@@ -1,0 +1,62 @@
+---
+title: "You are a DevOps engineer in a company. An AWSExam"
+description: "Video for you are a DevOps engineer in a company. An AWS Organization is configured to manage a large number of AWS accounts and the Organization uses several"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are a DevOps engineer in a company. An AWS Organization is configured to manage a large number of AWS accounts and the Organization uses several Organizational Units (OUs) to help group AWS accounts together. You need to deploy a CloudFormation stack to enable customized AWS Config rules for all AWS accounts under one Organizational Unit. Which approach would you choose to provision the stack?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The optimal solution is to <b>define a CloudFormation StackSet targeting your Organizational Unit and required regions</b>. CloudFormation StackSets were designed for precisely this scenario: they let you centrally deploy CloudFormation templates to multiple accounts and regions simultaneously, leveraging your AWS Organization structure for streamlined governance. By selecting an entire OU, the StackSet will automatically propagate the stack to all accounts under that OU and adapt dynamically as accounts are added or removed.</p><p>The option <i>Set up an AWS CodePipeline workflow with a source stage to select your CloudFormation template, followed by a deploy stage to launch the template in each account within the organizational unit</i> is incorrect because CodePipeline alone lacks native orchestration across multiple AWS accounts and OUs. You would need significant custom code or manual intervention to target every account, making this approach less scalable and harder to maintain.</p><p>The suggestion <i>Ensure the CloudFormation template includes parameters for specifying target AWS accounts and regions, and then use the management account to deploy the stack across these accounts</i> is also not ideal, as CloudFormation doesn't allow cross-account stack deployment simply by listing accounts as parameters. Each stack must be deployed within the context of its target account, not centrally from the management account.</p><p>The idea of <i>creating an IAM role that grants permission to create Config rules in accounts belonging to the Organizational Unit, then using this role within a CodeDeploy task to roll out CloudFormation stacks into all relevant accounts</i> is unnecessarily complex. CodeDeploy is mainly for application and code deployment rather than infrastructure as code across multiple accounts, and coordinating roles and permissions across all accounts adds another layer of complexity.</p><p><b>Tips:</b> For large multi-account AWS environments, always look for native multi-account deployment tools like CloudFormation StackSets, which can automatically integrate with Organizational Units for widespread, secure, and repeatable infrastructure deployment.</p>",
+  "query": "<p>You are a DevOps specialist at a company utilizing AWS Organizations to centrally manage numerous AWS accounts grouped via several Organizational Units (OUs). You must deploy a CloudFormation stack that enables custom AWS Config rules for every AWS account within a specific OU. <br><br>Which method should you select to efficiently deploy the stack across all accounts in that OU?</p>",
+  "original_oid": "6793da4f61969b416038a1bf",
+  "options": [
+    {
+      "correct": false,
+      "text": "Set up an AWS CodePipeline workflow with a source stage to select your CloudFormation template, followed by a deploy stage to launch the template in each account within the organizational unit.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Define a CloudFormation StackSet using your template. Then, target the desired Organizational Unit in the StackSet and choose which AWS regions should receive the deployment.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Ensure the CloudFormation template includes parameters for specifying target AWS accounts and regions, and then use the management account to deploy the stack across these accounts.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Create an IAM role that grants permission to create Config rules in accounts belonging to the Organizational Unit, then use this role within a CodeDeploy task to roll out CloudFormation stacks into all relevant accounts.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question334",
+  "originalQuery": "You are a DevOps engineer in a company.\nAn AWS Organization is configured to manage a large number of AWS accounts and the Organization uses several Organizational Units (OUs) to help group AWS accounts together.\nYou need to deploy a CloudFormation stack to enable customized AWS Config rules for all AWS accounts under one Organizational Unit.\nWhich approach would you choose to provision the stack?",
+  "originalOptions": "A. Create an IAM role that has permissions to create AWS Config rules in AWS accounts of the Organization Unit. Use the IAM role to configure a CodeDeploy task that deploys CloudFormation stacks in all AWS accounts.,B. Configure an AWS CodePipeline task that has a source stage to select the template and a deploy stage to launch the CloudFormation stack in all AWS accounts of the OU.,C. Ensure the CloudFormation template has parameters of AWS accounts and regions. Use the root AWS account to deploy the CloudFormation stack in all AWS accounts.,D. Configure a CloudFormation StackSet using the CloudFormation template. Choose the Organization Unit in the StackSet and specify the regions to deploy the stack.",
+  "video_url": "https://certificationation.com/videos/exam-aws-organization-is-configured-to-exam-372.html",
+  "url": "https://certificationation.com/questions/exam-aws-organization-is-configured-to-exam-372.html"
+}

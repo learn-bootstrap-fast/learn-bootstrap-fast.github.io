@@ -1,0 +1,80 @@
+---
+title: "You are tasked with setting up a relational databaseExam"
+description: "Video for you are tasked with setting up a relational database that supports the PostgreSQL engine on Google Cloud. The database must be highly available and"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are tasked with setting up a relational database that supports the PostgreSQL engine on Google Cloud. The database must be highly available and capable of automatic failover without data loss in case of a zone outage. Which configuration should you choose?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "At Trailhead Retail at example.com your team must deploy a managed relational database that uses the PostgreSQL engine on Google Cloud. The application must withstand the loss of an entire zone and continue serving traffic with automatic failover and zero data loss. Which deployment should you implement?",
+  "options": [
+    {
+      "text": "Self-managed PostgreSQL on Compute Engine VMs across two zones with a manual failover runbook",
+      "explanation": "This choice runs PostgreSQL on your own virtual machines and uses procedural steps to promote a standby in another zone",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud Spanner with a multi region instance",
+      "explanation": "This service offers a globally distributed relational store that can span regions and provides strong consistency",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud SQL for PostgreSQL regional high availability instance with synchronous replication and automatic failover",
+      "explanation": "This configuration creates a regional HA PostgreSQL instance in Cloud SQL that keeps a synchronous standby in a different zone and can fail over automatically",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Cloud SQL for PostgreSQL primary in one region with an asynchronous read replica in another region and manual promotion on failure",
+      "explanation": "This setup provides a disaster recovery replica in another region with asynchronous replication and requires a manual promotion event",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct deployment is <b>Cloud SQL for PostgreSQL regional high availability instance with synchronous replication and automatic failover</b>.</p><p>This choice runs the PostgreSQL engine as a fully managed service and places a primary and standby in different zones within the same region. Synchronous replication ensures zero data loss when a zone fails and automatic failover keeps the application serving traffic without manual intervention. It directly satisfies the requirement to survive the loss of an entire zone with no data loss.</p><p><i>Self-managed PostgreSQL on Compute Engine VMs across two zones with a manual failover runbook</i> is not a managed service and requires human action to fail over. It does not guarantee zero data loss and it adds operational risk and complexity.</p><p><i>Cloud Spanner with a multi region instance</i> does not run the PostgreSQL engine even though it offers a PostgreSQL interface. The requirement explicitly calls for PostgreSQL engine compatibility which this option does not meet.</p><p><i>Cloud SQL for PostgreSQL primary in one region with an asynchronous read replica in another region and manual promotion on failure</i> uses asynchronous replication which can lose data during failover and it relies on manual promotion. It therefore fails both the zero data loss and automatic failover requirements.</p>",
+  "batch_id": "236",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are tasked with setting up a relational database that supports the PostgreSQL engine on Google Cloud. The database must be highly available and capable of automatic failover without data loss in case of a zone outage. Which configuration should you choose?",
+  "originalOptions": "A. Set up a Cloud Spanner instance with a multi-region configuration for high availability.<br/>B. Use Cloud SQL for PostgreSQL with a single zone instance and scheduled backups.<br/>C. Deploy a self-managed PostgreSQL cluster on Compute Engine VMs with manual failover across zones.<br/>D. Configure Cloud SQL for PostgreSQL with a regional instance and synchronous replication.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "120",
+  "tip": "<p>Map the requirement to the data protection objective. A need for zero data loss implies <i>synchronous</i> replication and a need for continuity implies <i>automatic failover</i>. Then confirm the exact engine requirement before choosing a service.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/high-availability",
+    "https://cloud.google.com/sql/docs/postgres/replication",
+    "https://cloud.google.com/spanner/docs/instances#multi-region-configurations",
+    "https://cloud.google.com/spanner/docs/postgresql-interface-overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-relational-database-that-supports-the-exam-120.html",
+  "video_url": "https://certificationation.com/videos/exam-relational-database-that-supports-the-exam-120.html"
+}

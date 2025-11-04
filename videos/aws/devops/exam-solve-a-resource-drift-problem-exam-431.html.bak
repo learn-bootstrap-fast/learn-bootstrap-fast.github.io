@@ -1,0 +1,62 @@
+---
+title: "You have been assigned to a project to solve a resourceExam"
+description: "Video for you have been assigned to a project to solve a resource drift problem. You have to recover a stack from not being able to reach a normal state. What"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have been assigned to a project to solve a resource drift problem. You have to recover a stack from not being able to reach a normal state. What statement better describes how to proceed in this scenario?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct strategy is to address resource drift or stack failure by first reconciling underlying resource states with CloudFormation’s expectations—potentially by making manual changes outside CloudFormation. Afterwards, you should invoke <strong>ContinueUpdateRollback with the ResourcesToSkip parameter</strong>, which allows CloudFormation to mark the skipped resources as UPDATE_COMPLETE and continue the rollback operation. If, during stack deletion, a <em>DELETE_FAILED</em> status is encountered, making use of <strong>DeleteStack</strong> along with the <strong>RetainResources</strong> parameter enables you to remove the stack while retaining non-removable resources.</p><p>Let's break down why the options are correct or incorrect:</p><ul><li><em>Enable termination protection on the stack to prevent deletion. Next, initiate a ContinueUpdateRollback using the ResourcesToSkip parameter, allowing CloudFormation to mark listed resources as UPDATE_COMPLETE and proceed with the rollback. If deletion fails in the future, use DeleteStack with RetainResources to finish removing the stack while retaining specific resources.</em>: This option inaccurately prioritizes termination protection, which isn't part of the main recovery process for UPDATE_ROLLBACK_FAILED. It focuses on deletion prevention rather than stack recovery.</li><li><strong>After the stack enters UPDATE_ROLLBACK_FAILED, make any required adjustments outside of CloudFormation to align with its expected state. Then, perform ContinueUpdateRollback and specify ResourcesToSkip for CloudFormation to push those resources to UPDATE_COMPLETE before proceeding with rollback. If a DELETE_FAILED status is encountered during deletion, use DeleteStack along with RetainResources to delete the stack, keeping those undeletable resources.</strong>: This option correctly outlines the recommended step-by-step remediation process, specifying both drift correction and use of stack actions for cleanup.</li><li><em>Set stack protection from deletion with UpdateTerminationProtection. Proceed with ContinueUpdateRollback using ResourcesToSkip to resume rollback and mark resources as complete. There is no need for subsequent use of the DeleteStack action or retaining resources.</em>: This answer is incomplete, missing actions to handle DELETE_FAILED. Stack protection alone does not contribute to resolving UPDATE_ROLLBACK_FAILED states or resource drift.</li><li><em>Initiate UpdateTerminationProtection to guard against accidental deletions. Run ContinueUpdateRollback with ResourcesToSkip to advance the rollback. If a DELETE_FAILED state occurs while deleting, utilize DeleteStack and RetainResources to remove the stack but keep the affected resources.</em>: While this acknowledges the use of ContinueUpdateRollback and RetainResources, it wrongly emphasizes termination protection and misorders the steps, potentially causing confusion.</li></ul><p><strong>Tip:</strong> The key to resolving stack drift and failed updates is using ContinueUpdateRollback with ResourcesToSkip, and, if deletion fails, leveraging DeleteStack with RetainResources. Ensure the stack resources are as expected before retrying rollback operations.</p>",
+  "query": "<p>You are tasked with resolving an issue where a CloudFormation stack cannot return to a stable state due to resource drift. Which of the following statements best explains the recommended actions to restore the stack to a normal state?</p>",
+  "original_oid": "6793da2861969b416038a16e",
+  "options": [
+    {
+      "correct": false,
+      "text": "Enable termination protection on the stack to prevent deletion. Next, initiate a ContinueUpdateRollback using the ResourcesToSkip parameter, allowing CloudFormation to mark listed resources as UPDATE_COMPLETE and proceed with the rollback. If deletion fails in the future, use DeleteStack with RetainResources to finish removing the stack while retaining specific resources.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "After the stack enters UPDATE_ROLLBACK_FAILED, make any required adjustments outside of CloudFormation to align with its expected state. Then, perform ContinueUpdateRollback and specify ResourcesToSkip for CloudFormation to push those resources to UPDATE_COMPLETE before proceeding with rollback. If a DELETE_FAILED status is encountered during deletion, use DeleteStack along with RetainResources to delete the stack, keeping those undeletable resources.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set stack protection from deletion with UpdateTerminationProtection. Proceed with ContinueUpdateRollback using ResourcesToSkip to resume rollback and mark resources as complete. There is no need for subsequent use of the DeleteStack action or retaining resources.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Initiate UpdateTerminationProtection to guard against accidental deletions. Run ContinueUpdateRollback with ResourcesToSkip to advance the rollback. If a DELETE_FAILED state occurs while deleting, utilize DeleteStack and RetainResources to remove the stack but keep the affected resources.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question253",
+  "originalQuery": "You have been assigned to a project to solve a resource drift problem.\nYou have to recover a stack from not being able to reach a normal state.\nWhat statement better describes how to proceed in this scenario?",
+  "originalOptions": "A. When an AWS CloudFormation stack goes into the UPDATE_ROLLBACK_FAILED state you can try to make underlying account changes outside the scope of the stack to re-synchronize the stack with the expectation and then perform a ContinueUpdateRollback action with the ResourcesToSkip request parameter to let AWS CloudFormation set the status of the specified resources to UPDATE_COMPLETE and continue to roll back the stack. Also, if when trying to delete the stack a DELETE_FAILED state is reached, you can perform a DeleteStack action with the RetainResources request parameter to delete the stack while retaining resources failed to delete.|B. Protect the stack from being deleted via UpdateTerminationProtection action. Then perform a ContinueUpdateRollback action with the ResourcesToSkip request parameter to let AWS CloudFormation set the status of the specified resources to UPDATE_COMPLETE and continue to roll back the stack. A DeleteStack action with the RetainResources request parameter is no longer necessary.|C. When an AWS CloudFormation stack goes into the UPDATE_ROLLBACK_FAILED state, you can try to make underlying account changes outside the scope of the stack to re-synchronize the stack with the expectation and then perform a ContinueUpdateRollback action with the ResourcesToSkip request parameter to let AWS CloudFormation set the status of the specified resources to UPDATE_COMPLETE and continue to roll back the stack. Protect the stack from being deleted via UpdateTerminationProtection action. A DeleteStack action with the RetainResources request parameter is no longer necessary.|D. Protect the stack from being deleted via UpdateTerminationProtection action. Then perform a ContinueUpdateRollback action with the ResourcesToSkip request parameter to let AWS CloudFormation set the status of the specified resources to UPDATE_COMPLETE and continue to roll back the stack. Also, if when trying to delete the stack a DELETE_FAILED state is reached, you can perform a DeleteStack action with the RetainResources request parameter to delete the stack while retaining resources failed to delete.",
+  "video_url": "https://certificationation.com/videos/exam-solve-a-resource-drift-problem-exam-431.html",
+  "url": "https://certificationation.com/questions/exam-solve-a-resource-drift-problem-exam-431.html"
+}

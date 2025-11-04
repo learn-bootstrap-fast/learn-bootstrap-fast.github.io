@@ -1,0 +1,62 @@
+---
+title: "A well-architected serverless mobile application isExam"
+description: "Video for a well-architected serverless mobile application is being analyzed to get more insights into improving the user experience. The business unit chief"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A well-architected serverless mobile application is being analyzed to get more insights into improving the user experience. The business unit chief has gathered data scientists in the analytics and machine learning team to design SQL queries, dashboards and offer visualizations based on logs to transition to a decision-making stage. You are the DevOps engineer assigned to discuss and support the solution architecture. What are some of the important aspects of the log delivery pipeline to implement the architecture proposal?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>first option</b> is correct because Amazon Kinesis Data Firehose now supports data transformation via Lambda functions with an invocation timeout of up to 30 minutes, significantly higher than the previous 5-minute limit. This increase enables more complex log processing and transformation tasks before delivery to storage and analytics services like Amazon Athena and QuickSight. By allowing the DeliveryStreamType property (without extra configuration details such as KinesisStreamAsSource), you streamline ingestion from the given source. Using Athena and QuickSight, data scientists can efficiently run queries and build data visualizations on the log data delivered.<br><br><i>The second option</i> is incorrect because it incorrectly combines KinesisStreamAsSource with a CloudWatch Logs SubscriptionFilter as a delivery stream destination; Firehose expects a direct connection based on the source type, and this hybrid setup is not standard. <i>The third option</i> mentions using AWS Glue crawlers and databases for discovering Lambda transformations, which is misleading—AWS Glue isn't responsible for discovering Kinesis Firehose Lambda transforms; it's used for data cataloging, not Lambda management. It also references the outdated 5-minute Lambda timeout. <i>The fourth option</i> incorrectly states that the Lambda function can only run for up to 5 minutes, which ignores the updated 30-minute timeout, and sets DeliveryStreamType as KinesisStreamAsSource, which may not be suitable for direct log stream ingestion.<br><br><b>Tip:</b> Always check official AWS documentation for service limits and new features, as capabilities—like Lambda invocation limits within Kinesis Firehose—can change. Knowing the correct settings for DeliveryStreamType and recognizing which service is responsible for which aspect of the pipeline ensures a robust and maintainable architecture.</p>",
+  "query": "<p>A serverless mobile app designed using the AWS Well-Architected Framework is under review to discover ways to enhance user experience. The analytics and machine learning team, comprising data scientists, needs to develop dashboards, run SQL-style queries, and generate visualizations from log data to guide business decisions.<br>You are the DevOps engineer engaged in supporting the architecture. What key considerations are needed to design the log delivery pipeline for fulfilling these requirements?</p>",
+  "original_oid": "6793da1561969b416038a145",
+  "options": [
+    {
+      "correct": true,
+      "text": "Activate Amazon Kinesis Data Firehose data transformation. When configuring the delivery stream, specify the DeliveryStreamType property. Amazon Kinesis Data Firehose will call the chosen Lambda function asynchronously for log conversion into JSON format. The Lambda invocation time is allowed up to 30 minutes. Subsequently, data scientists can utilize services such as Amazon Athena and QuickSight for SQL querying and analytics.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up Amazon Kinesis Data Firehose data transformation with the DeliveryStreamType parameter set as KinesisStreamAsSource, while designating the AWS CloudWatch Logs SubscriptionFilter destination as the Firehose stream ARN. Amazon Kinesis Data Firehose allows a Lambda invocation time up to 30 minutes. Data scientists can use Amazon Athena and QuickSight for further data analysis.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Configure Amazon Kinesis Data Firehose transformation with the DeliveryStreamType selected as DirectPut, and connect CloudWatch Logs SubscriptionFilter destination to the stream's ARN. Kinesis Firehose invokes a Lambda to transform the logs to JSON, with up to 5 minutes invocation time. AWS Glue database and crawlers enable detection of new transformations. Athena and QuickSight provide analytics capabilities.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Deploy Amazon Kinesis Data Firehose with transformation enabled. When creating the stream, select DeliveryStreamType as KinesisStreamAsSource. Firehose calls the Lambda function for asynchronous transformation, allowing a Lambda execution time up to 5 minutes. SQL-style analysis can be performed with Athena and QuickSight.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question212",
+  "originalQuery": "A well-architected serverless mobile application is being analyzed to get more insights into improving the user experience.\nThe business unit chief has gathered data scientists in the analytics and machine learning team to design SQL queries, dashboards and offer visualizations based on logs to transition to a decision-making stage.\nYou are the DevOps engineer assigned to discuss and support the solution architecture.\nWhat are some of the important aspects of the log delivery pipeline to implement the architecture proposal?",
+  "originalOptions": "A. Enable Amazon Kinesis Data Firehose data transformation. When creating the delivery stream, set the DeliveryStreamType property as DirectPut and the AWS CloudWatch Logs SubscriptionFilter destination as the delivery stream ARN. Amazon Kinesis Data Firehose invokes the specified Lambda function asynchronously to transform logs into JSON format records. Amazon Kinesis Data Firehose supports a Lambda invocation time of up to 5 minutes. An AWS Glue database and crawler components discover new transformations from AWS Lambda. Data scientists can run SQL-like queries on top of Amazon Athena and Amazon QuickSight for further analysis.\n\nB. Enable Amazon Kinesis Data Firehose data transformation. When creating the delivery stream, set the DeliveryStreamType property. Amazon Kinesis Data Firehose invokes the specified Lambda function asynchronously to transform logs into JSON format records. Amazon Kinesis Data Firehose supports a Lambda invocation time of up to 30 minutes. Data scientists can run SQL-like queries on top of Amazon Athena and Amazon QuickSight for further analysis.\n\nC. Enable Amazon Kinesis Data Firehose data transformation. When creating the delivery stream, set the DeliveryStreamType property as KinesisStreamAsSource. Amazon Kinesis Data Firehose invokes the specified Lambda function asynchronously to transform logs into JSON format records. Amazon Kinesis Data Firehose supports a Lambda invocation time of up to 5 minutes. Data scientists can run SQL-like queries on top of Amazon Athena and Amazon QuickSight for further analysis.\n\nD. Enable Amazon Kinesis Data Firehose data transformation. When creating the delivery stream, set the DeliveryStreamType property as KinesisStreamAsSource while the AWS CloudWatch Logs SubscriptionFilter destination as the delivery stream ARN. Amazon Kinesis Data Firehose supports a Lambda invocation time of up to 30 minutes. Data scientists can run SQL-like queries on top of Amazon Athena and Amazon QuickSight for further analysis.",
+  "video_url": "https://certificationation.com/videos/exam-mobile-application-is-being-analyzed-exam-251.html",
+  "url": "https://certificationation.com/questions/exam-mobile-application-is-being-analyzed-exam-251.html"
+}

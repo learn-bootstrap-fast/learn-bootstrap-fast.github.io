@@ -1,0 +1,84 @@
+---
+title: "You are a Database Engineer responsible for automatingExam"
+description: "Video for you are a Database Engineer responsible for automating database instance provisioning across multiple projects within your organization. You need a"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are a Database Engineer responsible for automating database instance provisioning across multiple projects within your organization. You need a solution that allows for customizable provisioning, while enabling secure access control and adhering to organizational policies. Which of the following approaches would best achieve this objective?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "At BrightCrate Media you need to standardize how Cloud SQL instances are provisioned across 9 Google Cloud projects. Product teams must be able to request customizable builds, and the platform group requires strict adherence to organization policies and secure role based access with full auditability. What approach should you implement to satisfy these needs?",
+  "options": [
+    {
+      "text": "Manage Cloud SQL provisioning with Config Connector and Anthos Config Management and rely on Google Groups and folder policies for access control",
+      "explanation": "This uses Kubernetes based controllers to apply declarative YAML for Cloud SQL resources across projects and relies on group based governance.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Build a reusable Terraform module for Cloud SQL and enforce permissions with Cloud IAM roles, then roll it out through a controlled pipeline",
+      "explanation": "This uses infrastructure as code with a versioned module and integrates IAM for least privilege so changes flow through an auditable pipeline.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Deploy a Cloud Run service that calls the Cloud SQL Admin API and isolate it with VPC Service Controls",
+      "explanation": "This creates a stateless service that provisions instances by invoking Google Cloud APIs and restricts data movement with service perimeters.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Adopt Google Cloud Deployment Manager with Jinja templates and grant project owners rights to run deployments",
+      "explanation": "This uses native templating to define resources and allows users with elevated roles to execute deployments.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Build a reusable Terraform module for Cloud SQL and enforce permissions with Cloud IAM roles, then roll it out through a controlled pipeline</b>. This approach standardizes provisioning across all projects while still allowing teams to request customized builds, and it delivers strong role based access and full auditability through code reviews, plans, and approvals.</p><p>A reusable Terraform module gives you a single source of truth with input variables for size, high availability, maintenance windows, CMEK, and network settings. You can encode guardrails in the module so that required configurations and organization policy compliant defaults are always applied. You can also add policy checks in the pipeline so that plans are validated before they run and any drift or violations are caught early.</p><p>Cloud IAM provides least privilege by assigning tightly scoped roles to service accounts that execute the pipeline. A controlled CI or CD workflow offers auditable change history through version control, Terraform plans, build logs, and optional human approvals, which together meet the requirement for secure role based access with full auditability.</p><p><i>Manage Cloud SQL provisioning with Config Connector and Anthos Config Management and rely on Google Groups and folder policies for access control</i> is not the best fit for this need. While Config Connector can create Cloud SQL resources and Anthos Config Management can deliver GitOps for Kubernetes style configurations, this pattern does not provide a clear request workflow for customizable builds across many projects and it lacks the explicit pipeline based guardrails and per change approvals that strengthen auditability for provisioning workflows.</p><p><i>Deploy a Cloud Run service that calls the Cloud SQL Admin API and isolate it with VPC Service Controls</i> creates a bespoke provisioning system that is harder to maintain and standardize. It does not inherently deliver reusable patterns, plan based reviews, or policy checks, and VPC Service Controls does not solve the need for fine grained role based workflows and auditable approvals for infrastructure changes.</p><p><i>Adopt Google Cloud Deployment Manager with Jinja templates and grant project owners rights to run deployments</i> is not recommended. Deployment Manager is in maintenance mode and is being phased out for new use, and granting project owners broad rights conflicts with strict role based access and least privilege. Even though templates can standardize, the lack of a controlled pipeline with reviews and approvals makes it weaker for auditability compared to infrastructure as code with a gated workflow.</p>",
+  "batch_id": "349",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "You are a Database Engineer responsible for automating database instance provisioning across multiple projects within your organization. You need a solution that allows for customizable provisioning, while enabling secure access control and adhering to organizational policies. Which of the following approaches would best achieve this objective?",
+  "originalOptions": "A. Create a custom script that uses the gcloud command-line tool to provision Cloud SQL instances, and manage access through the Cloud Console.<br/>B. Deploy a Cloud Run service that automates Cloud SQL instance provisioning and leverages VPC Service Controls for security.<br/>C. Use Terraform with a custom module for Cloud SQL instance provisioning and integrate it with Cloud IAM for access control.<br/>D. Use Cloud Functions to trigger Cloud SQL instance provisioning and utilize Cloud Identity Platform to manage access control.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "269",
+  "tip": "<p>When you see requirements for standardization across many projects with strict access and full audit trails, prefer <i>infrastructure as code</i> with a controlled <i>pipeline</i> and policy checks over ad hoc scripts or custom services.</p>",
+  "references": [
+    "https://cloud.google.com/docs/terraform",
+    "https://cloud.google.com/docs/terraform/best-practices-for-terraform",
+    "https://cloud.google.com/build/docs/automate-builds/approvals",
+    "https://cloud.google.com/logging/docs/audit",
+    "https://cloud.google.com/iam/docs/",
+    "https://cloud.google.com/anthos-config-management/docs/overview",
+    "https://cloud.google.com/config-connector/docs/overview",
+    "https://cloud.google.com/deployment-manager/docs/compare/terraform"
+  ],
+  "url": "https://certificationation.com/questions/exam-for-automating-database-instance-provisioning-exam-269.html",
+  "video_url": "https://certificationation.com/videos/exam-for-automating-database-instance-provisioning-exam-269.html"
+}

@@ -1,0 +1,81 @@
+---
+title: "Your company is deploying a Bare Metal Solution forExam"
+description: "Video for your company is deploying a Bare Metal Solution for Oracle in Region A and requires the machine to access a Cloud SQL database in Region B. You have"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company is deploying a Bare Metal Solution for Oracle in Region A and requires the machine to access a Cloud SQL database in Region B. You have established a Dedicated Interconnect between your on-premises network and Region A. What networking configuration should you implement to allow the Bare Metal Solution machine to securely connect to the Cloud SQL database in Region B?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A retail analytics firm is deploying Bare Metal Solution for Oracle in europe-west1 and the Oracle host must privately reach a Cloud SQL for PostgreSQL instance that resides in us-central1. You already have a Dedicated Interconnect from your on-premises data center to your VPC that is attached in europe-west1. Which networking configuration will allow the Bare Metal Solution system to securely connect to the Cloud SQL instance in us-central1?",
+  "options": [
+    {
+      "text": "Turn on Private Google Access for the subnets in europe-west1",
+      "explanation": "Private Google Access lets VMs without external IP addresses reach Google APIs and services using private addresses within the subnet",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Build a Cloud VPN tunnel between the Bare Metal Solution environment in europe-west1 and the network segment in us-central1",
+      "explanation": "Cloud VPN provides encrypted connectivity across the internet between two networks or regions",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Set the VPC dynamic routing mode to global so routes from Cloud Router and Cloud Interconnect are usable in all regions",
+      "explanation": "Global dynamic routing mode propagates learned routes across the entire VPC so traffic can reach resources in different regions",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Create a static route on the Bare Metal Solution side that points to the Cloud SQL private IP range in us-central1",
+      "explanation": "A static route manually directs traffic to a specific prefix and does not provide dynamic propagation or automatic failover",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Set the VPC dynamic routing mode to global so routes from Cloud Router and Cloud Interconnect are usable in all regions</b>.</p><p>With this setting, routes learned over your Dedicated Interconnect by Cloud Router in europe-west1 are distributed to all subnets in the VPC. This makes the private IP range that backs the Cloud SQL instance in us-central1 reachable from the Bare Metal Solution hosts. It also ensures the return path to on premises is available from us-central1 so the connection is symmetric and secure.</p><p><i>Turn on Private Google Access for the subnets in europe-west1</i> is not relevant because Private Google Access lets VMs without external IPs reach Google APIs and services. It does not influence private IP connectivity to Cloud SQL through your VPC and Interconnect.</p><p><i>Build a Cloud VPN tunnel between the Bare Metal Solution environment in europe-west1 and the network segment in us-central1</i> is unnecessary and incorrect because you already have Dedicated Interconnect providing private connectivity to the VPC. The issue is route scope across regions and enabling the correct routing mode solves it without adding VPN.</p><p><i>Create a static route on the Bare Metal Solution side that points to the Cloud SQL private IP range in us-central1</i> will not work because the Cloud SQL private IP network is reached through service networking peering and the VPC relies on Cloud Router to advertise and import routes. A static route on the customer side does not make the route available in other regions and it does not override the peering control of those prefixes.</p>",
+  "batch_id": "74",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "Your company is deploying a Bare Metal Solution for Oracle in Region A and requires the machine to access a Cloud SQL database in Region B. You have established a Dedicated Interconnect between your on-premises network and Region A. What networking configuration should you implement to allow the Bare Metal Solution machine to securely connect to the Cloud SQL database in Region B?",
+  "originalOptions": "A. Add a static route to the Bare Metal Solution routing table for Region B.<br/>B. Create a Cloud VPN tunnel between the Bare Metal Solution in Region A and Region B.<br/>C. Enable global dynamic routing for your VPC network.<br/>D. Configure a private Google access gateway for the VPC in Region A.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "252",
+  "tip": "<p>When traffic must cross regions over Interconnect or VPN, first check the VPC dynamic routing mode. Choose <i>global</i> when Cloud Router routes need to be usable in every region, and remember that <i>Private Google Access</i> is for API access rather than private IP paths to managed services.</p>",
+  "references": [
+    "https://cloud.google.com/vpc/docs/dynamic-routing",
+    "https://cloud.google.com/network-connectivity/docs/router/concepts/overview",
+    "https://cloud.google.com/sql/docs/postgres/private-ip",
+    "https://cloud.google.com/bare-metal/docs/networking/concepts-networking",
+    "https://cloud.google.com/vpc/docs/private-google-access"
+  ],
+  "url": "https://certificationation.com/questions/exam-metal-solution-for-oracle-in-exam-252.html",
+  "video_url": "https://certificationation.com/videos/exam-metal-solution-for-oracle-in-exam-252.html"
+}

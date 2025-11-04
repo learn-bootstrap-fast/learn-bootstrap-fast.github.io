@@ -1,0 +1,62 @@
+---
+title: "Your company has multiple applications running on AWSExam"
+description: "Video for your company has multiple applications running on AWS. Your company wants to develop an application that notifies on-call teams immediately via email"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company has multiple applications running on AWS. Your company wants to develop an application that notifies on-call teams immediately via email when an alarm is triggered in your environment. You have multiple on-call teams that work in different shifts, and the application should handle notifying the correct teams at the correct time. How should you implement this solution?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>first option</b> is the best and most scalable approach for handling multiple on-call groups working on different schedules. By creating an SNS topic per on-call team, you gain flexibility to notify only the relevant group for each shift and can easily update subscribers when teams or schedules change. The application acts as a smart router, receiving alarm notifications (via HTTP POST from an SNS topic triggered by CloudWatch alarms) and determining which group is on shift, then using the AWS SDK to send notification emails via the correct SNS topic.</p>  <p>The <i>second option</i> would notify all on-call groups regardless of schedule, which is not ideal for teams with shift-based rotation; it fails to deliver alerts to only the intended on-duty group and may cause alert fatigue.</p>  <p>The <i>third option</i> is convoluted and ineffective. While it establishes topics and an HTTP subscription, all alerts ultimately go to a single SNS topic for the on-call engineers, so it does not solve the problem of selectively notifying the appropriate team.</p>  <p>The <i>fourth option</i> adds unnecessary complexity by using SQS and Auto Scaling EC2 workers simply to send emails via SES, which could increase cost, introduce operational overhead, and still does not cleanly address team or schedule separation. SNS and direct email routing via topics are more efficient and purpose-built for this type of alerting scenario.</p>  <p><b>Tip:</b> Use Amazon SNS's native capabilities to manage group notifications, and centralize alert routing logic in your application to maintain flexibility for shift pattern changes.</p>",
+  "query": "<p>Your organization runs various applications on AWS, and you need to build a system to alert on-call staff instantly through email whenever a CloudWatch alarm is set off. The challenge is that there are multiple on-call groups working different schedules, and the system must ensure the right group is contacted at the right time. What is the most appropriate way to architect this?</p>",
+  "original_oid": "6793d9b761969b416038a08f",
+  "options": [
+    {
+      "correct": true,
+      "text": "Configure an Amazon SNS topic dedicated to each on-call group, adding the group’s email addresses as subscribers. Then, set up a separate SNS topic for alarm notifications, linking it to your CloudWatch alarms. Attach an HTTP subscriber to this topic to signal your application (using HTTP POST) when an alarm is activated. Your application can use the AWS SDK to forward messages to the appropriate SNS topic for the on-duty group.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Establish a single SNS topic with all team email addresses subscribed. Integrate your application and SNS through the AWS SDK to send alerts directly to this topic when alarms trigger, so all on-call users receive notifications.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up an SNS topic and attach on-call team email subscribers. Also, configure an additional SNS topic for alarms and set your CloudWatch alarms to notify this second topic. Make an HTTP subscription to this topic so your application receives alarms via HTTP POST, and then have your application use the AWS SDK to send alerts to the initial SNS topic for the on-call engineers.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Design an SNS topic and an SQS queue, making the SQS queue a subscriber. Have CloudWatch alarms notify this SNS topic on triggers. Use an Auto Scaling group with the instance count set to zero by default, so worker nodes launch in response to messages in the queue. Workers can then notify on-call teams by sending email using Amazon SES.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question26",
+  "originalQuery": "Your company has multiple applications running on AWS.\nYour company wants to develop an application that notifies on-call teams immediately via email when an alarm is triggered in your environment.\nYou have multiple on-call teams that work in different shifts, and the application should handle notifying the correct teams at the correct time.\nHow should you implement this solution?",
+  "originalOptions": "A. Create an Amazon SNS topic and an Amazon SQS queue.Configure the Amazon SQS queue as a subscriber to the Amazon SNS topic.Configure CloudWatch alarms to notify this topic when an alarm is triggered.Create an Amazon EC2 Auto Scaling group with both minimum and desired Instances configured to 0.Worker nodes in this group spawn when messages are added to the queue.Workers then use Amazon Simple Email Service to send messages to your on call teams.\n\nB. Create an Amazon SNS topic and configure your on-call team email addresses as subscribers. Use the AWS SDK tools to integrate your application with Amazon SNS and send messages to this new topic.Notifications will be sent to on-call users when a CloudWatch alarm is triggered.\n\nC. Create an Amazon SNS topic and configure your on-call team email addresses as subscribers.Create a secondary Amazon SNS topic for alarms and configure your CloudWatch alarms to notify this topic when triggered.Create an HTTP subscriber to this topic that notifies your application via HTTP POST when an alarm is triggered. Use the AWS SDK tools to integrate your application with Amazon SNS and send messages to the first topic so that on-call engineers receive alerts.\n\nD. Create an Amazon SNS topic for each on-call group, and configure each of these with the team member emails as subscribers. Create another Amazon SNS topic and configure your CloudWatch alarms to notify this topic when triggered.Create an HTTP subscriber to this topic that notifies your application via HTTP POST when an alarm is triggered. Use the AWS SDK tools to integrate your application with Amazon SNS and send messages to the correct team topic when on shift.",
+  "video_url": "https://certificationation.com/videos/exam-running-on-aws-your-company-exam-165.html",
+  "url": "https://certificationation.com/questions/exam-running-on-aws-your-company-exam-165.html"
+}

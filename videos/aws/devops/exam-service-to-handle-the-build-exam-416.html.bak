@@ -1,0 +1,62 @@
+---
+title: "You are using the AWS CodeBuild service to handle theExam"
+description: "Video for you are using the AWS CodeBuild service to handle the build task in a CI/CD pipeline. In the pre-build phase of buildspec.yml, there is a docker login"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are using the AWS CodeBuild service to handle the build task in a CI/CD pipeline. In the pre-build phase of buildspec.yml, there is a docker login command such as “docker login -u $USER_NAME -p $LOGIN_PASSWORD” And its user name and password are provided as variables in the env phase in the same buildspec.yml file."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>third option</b> is the best security practice: storing sensitive data such as credentials in the AWS Systems Manager Parameter Store and referencing them via the parameter-store mapping in the <code>env</code> section of <code>buildspec.yml</code>. This avoids exposing secrets in plaintext within the file and leverages AWS's secure parameter management with encryption-at-rest and fine-grained access control.<br><br>Here's why the other options are not recommended:<br> <i>\"Store the buildspec.yml file in AWS CodeCommit instead of GitHub, relying on IAM policies in CodeCommit for enhanced security.\"</i> – While CodeCommit offers IAM integration, it does not specifically protect secrets hardcoded in <code>buildspec.yml</code>. The file would still contain sensitive data.<br> <i>\"Save the credentials in an encrypted S3 bucket using SSE-S3, and update the buildspec.yml file to retrieve and use the encrypted file from that S3 bucket.\"</i> – Although S3 encryption adds a basic layer of security, managing secrets this way is less integrated than using the Parameter Store or Secrets Manager and can be harder to manage securely at scale.<br> <i>\"Apply a restrictive IAM policy in AWS CodeBuild to ensure only a few users have access to the buildspec.yml file.\"</i> – While IAM can control file access, this does not prevent those with access from viewing plaintext secrets in the buildspec file.<br><br><b>Tip:</b> Always use a secret management service such as Parameter Store or Secrets Manager to inject sensitive values at runtime rather than storing secrets in code or config files. This minimizes the risk of unintentional exposure.</p>",
+  "query": "<p>You are setting up AWS CodeBuild to run builds in your CI/CD pipeline. In the pre-build step of your <code>buildspec.yml</code> file, you need to execute a Docker login, such as <code>docker login -u $USER_NAME -p $LOGIN_PASSWORD</code>. Currently, your username and password are defined as environment variables in the buildspec file.<br> What is the most secure and AWS-recommended way to manage these sensitive credentials?</p>",
+  "original_oid": "6793da1761969b416038a14a",
+  "options": [
+    {
+      "correct": false,
+      "text": "Store the buildspec.yml file in AWS CodeCommit instead of GitHub, relying on IAM policies in CodeCommit for enhanced security.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Save the credentials in an encrypted S3 bucket using SSE-S3, and update the buildspec.yml file to retrieve and use the encrypted file from that S3 bucket.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Specify the username and password in the env phase of buildspec.yml by referencing parameter-store. Store the secrets in AWS Systems Manager Parameter Store.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Apply a restrictive IAM policy in AWS CodeBuild to ensure only a few users have access to the buildspec.yml file.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question217",
+  "originalQuery": "You are using the AWS CodeBuild service to handle the build task in a CI/CD pipeline.\nIn the pre-build phase of buildspec.yml, there is a docker login command such as “docker login -u $USER_NAME -p $LOGIN_PASSWORD”\nAnd its user name and password are provided as variables in the env phase in the same buildspec.yml file.",
+  "originalOptions": "A. In the env phase of the buildspec.yml file, use parameter-store to specify the user name and password. The values are stored in the Systems Manager parameter store.|B. Store the buildspec.yml file in AWS CodeCommit rather than GitHub as IAM rules can be configured in CodeCommit to ensure the security.|C. Add a strong IAM rule in AWS CodeBuild to make sure that only limited users can access the buildspec.yml file.|D. Store the credentials in a file and put the file in an S3 bucket. Encrypt the S3 bucket via SSE-S3. Modify the buildspec.yml file to use the encrypted file in the S3 bucket.",
+  "video_url": "https://certificationation.com/videos/exam-service-to-handle-the-build-exam-416.html",
+  "url": "https://certificationation.com/questions/exam-service-to-handle-the-build-exam-416.html"
+}

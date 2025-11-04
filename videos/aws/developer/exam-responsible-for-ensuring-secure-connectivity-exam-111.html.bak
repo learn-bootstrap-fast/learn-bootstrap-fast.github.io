@@ -1,0 +1,78 @@
+---
+title: "As a Database Engineer, you are responsible for ensuringExam"
+description: "Video for as a Database Engineer, you are responsible for ensuring secure connectivity and access control for your organization's Google Cloud Bigtable"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are responsible for ensuring secure connectivity and access control for your organization's Google Cloud Bigtable databases. Which of the following IAM roles should be granted to a user who needs to manage Bigtable instances and clusters, but should not have access to the actual data stored in the databases?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are a Cloud Database Engineer at HarborTrack, and a teammate needs permissions to create and change Cloud Bigtable instances and clusters in one project while they must not be able to read or write any table data. Which predefined IAM role should you assign to meet this requirement?",
+  "options": [
+    {
+      "text": "roles/bigtable.backupAdmin",
+      "explanation": "This role focuses on creating, managing, and deleting Cloud Bigtable backups without broader administrative or data access permissions",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "roles/bigtable.viewer",
+      "explanation": "This role grants read-only visibility into Cloud Bigtable resources and metadata for inspection and monitoring",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "roles/bigtable.admin",
+      "explanation": "This role grants administrative control of Cloud Bigtable resources including instances and clusters while not granting row-level data access",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "roles/bigtable.user",
+      "explanation": "This role is intended for applications or users that need to read and write Cloud Bigtable table data",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>roles/bigtable.admin</b> because it allows instance and cluster administration without granting the ability to read or write table data.</p><p>This administrator role is designed for control plane tasks. A user with this assignment can create and modify Bigtable instances and clusters and manage other configuration resources. When granted on its own it does not provide the application level data permissions that are needed to read or mutate table rows, which satisfies the requirement to prevent any data access.</p><p><i>roles/bigtable.backupAdmin</i> focuses on creating, managing, and restoring backups. It does not include permissions to create or change instances or clusters, so it cannot meet the administrative requirement.</p><p><i>roles/bigtable.viewer</i> only grants read only visibility into Bigtable metadata. It cannot create or modify instances or clusters and therefore does not satisfy the need to perform administrative changes.</p><p><i>roles/bigtable.user</i> grants permissions to read and write table data while offering only limited metadata access. It does not allow instance or cluster administration and it also violates the requirement to avoid any table data access.</p>",
+  "batch_id": "214",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are responsible for ensuring secure connectivity and access control for your organization's Google Cloud Bigtable databases. Which of the following IAM roles should be granted to a user who needs to manage Bigtable instances and clusters, but should not have access to the actual data stored in the databases?",
+  "originalOptions": "A. roles/bigtable.dataReader<br/>B. roles/bigtable.viewer<br/>C. roles/bigtable.admin<br/>D. roles/bigtable.user",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "111",
+  "tip": "<p>Separate the <i>control plane</i> from the <i>data plane</i>. If the task is to manage instances or clusters without touching data then prefer an administrator role. If the task mentions reading or writing data then choose a user or reader role instead.</p>",
+  "references": [
+    "https://cloud.google.com/bigtable/docs/access-control-iam",
+    "https://cloud.google.com/iam/docs/roles-reference#bigtable"
+  ],
+  "url": "https://certificationation.com/questions/exam-responsible-for-ensuring-secure-connectivity-exam-111.html",
+  "video_url": "https://certificationation.com/videos/exam-responsible-for-ensuring-secure-connectivity-exam-111.html"
+}

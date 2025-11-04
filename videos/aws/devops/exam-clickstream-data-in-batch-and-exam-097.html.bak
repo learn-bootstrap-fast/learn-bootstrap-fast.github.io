@@ -1,0 +1,62 @@
+---
+title: "You design a service that aggregates clickstream data inExam"
+description: "Video for you design a service that aggregates clickstream data in batch and delivers reports to subscribers via email only once per week. Data is extremely"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You design a service that aggregates clickstream data in batch and delivers reports to subscribers via email only once per week. Data is extremely spikey, geographically distributed, high-scale, and unpredictable. How should you design this system?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>CloudFront with access logs to S3, processed by EMR</b> solution is most suitable for this scenario. This architecture capitalizes on highly scalable, managed AWS services: CloudFront provides low-latency, global edge collection and generates access logs in S3—no per-request storage is required, and logging is robust and scalable. EMR jobs are cost-effective for batch processing, especially because reports are only generated weekly, not requiring near-real-time data access.</p><p>The option to use <i>RedShift with Lambda</i> is less optimal as Redshift clusters are costly at high scale and not inherently designed for sudden, massive ingest bursts (which are better handled by S3 or Kinesis for write scalability). <i>Elasticsearch with Auto Scaling Groups</i> focuses on real-time analytics and dashboards, but operational overhead, cost, and write scaling challenges make it less appropriate for infrequent reporting. The <i>Kinesis-based solution</i> is effective for near-real-time streaming and analytics rather than batch, weekly aggregation, and introduces more moving parts (Kinesis, Lambdas, Spark streaming), which can increase complexity and cost for a once-a-week reporting requirement.</p><p><b>Tip:</b> For infrequent, high-scale batch analytics, leveraging S3 storage and scheduled compute jobs (like EMR or Athena) is often more cost-effective than always-on or streaming analytics systems. Additionally, CloudFront is ideal for capturing global click data efficiently with built-in log delivery to S3.</p>",
+  "query": "<p>You are tasked with creating a system that collects clickstream data in batches and emails out reports to subscribers just once every week. The data you receive is very bursty, originates from various global locations, has unpredictable and high volume surges, and is not constant. What AWS-based architecture best supports these requirements?</p>",
+  "original_oid": "6793d9dc61969b416038a0d7",
+  "options": [
+    {
+      "correct": true,
+      "text": "Leverage a CloudFront distribution to relay access logs to S3—have users' clicks be tracked via query string GETs through CloudFront, then schedule EMR jobs to periodically process those S3 access logs and email out generated reports.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Deploy a large Redshift cluster for heavy analysis workloads, and utilize a multitude of Lambda functions to insert records into Redshift tables, relying on Lambda to automatically scale with traffic spikes.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Build the system with managed Elasticsearch clusters and dynamic EC2 Auto Scaling groups that stream click data for real-time querying, using Kibana for periodic reporting.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Implement API Gateway and Lambda for ingesting clicks into a Kinesis stream, have Spark on EMR process records from Kinesis, and store output in S3 for subsequent email distribution.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question99",
+  "originalQuery": "You design a service that aggregates clickstream data in batch and delivers reports to subscribers via email only once per week.\nData is extremely spikey, geographically distributed, high-scale, and unpredictable.\nHow should you design this system?",
+  "originalOptions": "A. Use a large RedShift cluster to perform the analysis, and a fleet of Lambdas to perform record inserts into the RedShift tables. Lambda will scale rapidly enough for the traffic spikes.|B. Use a CloudFront distribution with access log delivery to S3. Clicks should be recorded as query string GETs to the distribution. Reports are built and sent by periodically running EMR jobs over the access logs in S3.|C. Use API Gateway invoking Lambdas which PutRecords into Kinesis, and EMR running Spark performing GetRecords on Kinesis to scale with spikes. Spark on EMR outputs the analysis to S3, which are sent out via email.|D. Use AWS Elasticsearch service and EC2 Auto Scaling groups. The Autoscaling groups scale based on click throughput and stream into the Elasticsearch domain, which is also scalable. Use Kibana to generate reports periodically.",
+  "video_url": "https://certificationation.com/videos/exam-clickstream-data-in-batch-and-exam-097.html",
+  "url": "https://certificationation.com/questions/exam-clickstream-data-in-batch-and-exam-097.html"
+}

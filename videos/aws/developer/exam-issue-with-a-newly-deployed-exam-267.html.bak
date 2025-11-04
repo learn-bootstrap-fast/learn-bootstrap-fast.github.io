@@ -1,0 +1,81 @@
+---
+title: "You are troubleshooting a connection issue with a newlyExam"
+description: "Video for you are troubleshooting a connection issue with a newly deployed Cloud SQL instance on Google Cloud. While investigating the Cloud SQL Proxy logs, you"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are troubleshooting a connection issue with a newly deployed Cloud SQL instance on Google Cloud. While investigating the Cloud SQL Proxy logs, you see the message Error 404: Not Found. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Riverpine Labs has just deployed a Cloud SQL for PostgreSQL instance and is connecting from a Compute Engine VM using the Cloud SQL Auth Proxy. The proxy logs show Error 404 Not Found whenever a connection attempt is made. What should you do first to fix the issue?",
+  "options": [
+    {
+      "text": "Enable the Cloud SQL Admin API in the Google Cloud project",
+      "explanation": "This action allows the proxy to call the service that provides instance metadata and connection information",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Verify that the proxy is targeting the correct Google Cloud project in its configuration",
+      "explanation": "If the proxy points to the wrong project then it may not find the intended instance by name",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Double check that the instance connection name in the proxy flags exactly matches the project region and instance ID",
+      "explanation": "The proxy resolves the endpoint based on the full connection name which includes the project ID the region and the instance name",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Grant the service account the Cloud SQL Client role",
+      "explanation": "This role provides permissions required for the service account to initiate authorized connections to Cloud SQL",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Double check that the instance connection name in the proxy flags exactly matches the project region and instance ID</b>.</p><p>A 404 Not Found from the Cloud SQL Auth Proxy means the resource the proxy requested does not exist under the identifier it used. The proxy identifies your instance through the instance connection name which must match the project the region and the instance ID exactly and must use the format with the three parts separated by colons. Any typo such as a wrong project or region or instance ID will cause the proxy to request a nonexistent resource which produces 404. The first and fastest fix is to confirm the value passed to the instances flag or the environment variable for the instance connection name exactly matches what is shown in the Cloud SQL console.</p><p><i>Enable the Cloud SQL Admin API in the Google Cloud project</i> is not the first step because if the API were disabled you would see an API not enabled or a permission error rather than 404. A 404 points to a bad identifier rather than a disabled API.</p><p><i>Verify that the proxy is targeting the correct Google Cloud project in its configuration</i> is not the best initial action because the proxy relies on the instance connection name and the credentials. If the project is wrong in the configuration it will also be wrong in the connection name which is exactly what you must correct first.</p><p><i>Grant the service account the Cloud SQL Client role</i> would address authorization problems which typically present as 403 or authentication failures rather than 404. Since the symptom is 404 this is not the right first step.</p>",
+  "batch_id": "254",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are troubleshooting a connection issue with a newly deployed Cloud SQL instance on Google Cloud. While investigating the Cloud SQL Proxy logs, you see the message Error 404: Not Found. What should you do?",
+  "originalOptions": "A. Ensure that you are using an internal (private) IP address interface.<br/>B. Confirm that the instance connection name specified in your configuration is correct.<br/>C. Check if the Cloud SQL Admin API is enabled.<br/>D. Verify that your service account has the necessary IAM roles to connect to the Cloud SQL instance.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "267",
+  "tip": "<p>When you see an <i>error code</i> from the Cloud SQL Auth Proxy map it to the most likely layer. A 404 usually means the <i>instance connection name</i> is wrong so verify the exact project region and instance ID string before changing IAM or APIs.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/connect-auth-proxy",
+    "https://cloud.google.com/sql/docs/postgres/connect-compute-engine",
+    "https://cloud.google.com/sql/docs/postgres/connect-troubleshooting",
+    "https://cloud.google.com/sql/docs/postgres/roles-and-permissions",
+    "https://cloud.google.com/sql/docs/admin-api"
+  ],
+  "url": "https://certificationation.com/questions/exam-issue-with-a-newly-deployed-exam-267.html",
+  "video_url": "https://certificationation.com/videos/exam-issue-with-a-newly-deployed-exam-267.html"
+}

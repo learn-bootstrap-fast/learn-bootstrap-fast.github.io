@@ -1,0 +1,78 @@
+---
+title: "As a Database Engineer, you are responsible for settingExam"
+description: "Video for as a Database Engineer, you are responsible for setting up secure connectivity and access control for your organization's Google Cloud Spanner"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are responsible for setting up secure connectivity and access control for your organization's Google Cloud Spanner databases. Which of the following IAM roles should be granted to a user who only needs to read data from the Spanner databases, without modifying or managing the instances?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the database specialist at BlueOrbit Logistics and you must grant access for a group of analysts who need to run queries against Cloud Spanner production databases while they must not write data, change schemas, or administer instances. Which IAM role should you assign to meet this requirement?",
+  "options": [
+    {
+      "text": "roles/spanner.databaseAdmin",
+      "explanation": "This role allows users to modify schemas, manage databases, and read and write data in Cloud Spanner.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "roles/spanner.databaseReader",
+      "explanation": "This role permits executing read-only queries on Cloud Spanner databases and blocks write and DDL operations.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "roles/spanner.viewer",
+      "explanation": "This role lets users view Cloud Spanner metadata and configuration but it does not allow access to table data.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "roles/spanner.databaseUser",
+      "explanation": "This role enables read and write transactions and DML on a database while it does not grant schema or instance management.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>roles/spanner.databaseReader</b>.</p><p>This role grants read-only access to Cloud Spanner databases so analysts can execute queries and read data. It does not permit data modification, schema changes, or instance and database administration, which matches the requirement to run queries without write or administrative capabilities.</p><p>The <i>roles/spanner.databaseAdmin</i> role is too permissive because it allows changing schemas and managing databases and backups, and it enables write operations that are not allowed for the analysts.</p><p>The <i>roles/spanner.viewer</i> role only provides visibility into resource metadata and configuration. It does not allow running queries against table data, so it fails to meet the need to read production data.</p><p>The <i>roles/spanner.databaseUser</i> role allows both reading and writing data. Since the analysts must not write data, this role grants more permissions than required.</p>",
+  "batch_id": "68",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are responsible for setting up secure connectivity and access control for your organization's Google Cloud Spanner databases. Which of the following IAM roles should be granted to a user who only needs to read data from the Spanner databases, without modifying or managing the instances?",
+  "originalOptions": "A. roles/spanner.databaseReader<br/>B. roles/spanner.databaseUser<br/>C. roles/spanner.databaseAdmin<br/>D. roles/spanner.instanceReader",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "190",
+  "tip": "<p>Map the verbs in the requirement to the permissions and choose the <i>least privilege</i> role. If you see <i>read only</i> and query needs, prefer a reader role. If you see schema or administration tasks, only then consider an admin role.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/iam#roles",
+    "https://cloud.google.com/iam/docs/understanding-roles"
+  ],
+  "url": "https://certificationation.com/questions/exam-responsible-for-setting-up-secure-exam-190.html",
+  "video_url": "https://certificationation.com/videos/exam-responsible-for-setting-up-secure-exam-190.html"
+}

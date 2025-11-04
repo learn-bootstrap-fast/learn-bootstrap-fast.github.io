@@ -1,0 +1,82 @@
+---
+title: "You are managing a multi-regional application thatExam"
+description: "Video for you are managing a multi-regional application that utilizes Google Cloud Spanner for its database needs. The application requires both read and write"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are managing a multi-regional application that utilizes Google Cloud Spanner for its database needs. The application requires both read and write operations to be as low latency as possible for users in Europe and Asia. Which configuration should you choose to meet these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "LumaPay runs a globally available service on Cloud Spanner and most customers are in Germany and Singapore, and leadership requires the lowest possible latency for both reads and writes for users in those areas. Which deployment approach in Spanner should you implement to satisfy this requirement?",
+  "options": [
+    {
+      "text": "Build two independent Spanner instances in europe-west3 and asia-southeast1 and keep data in sync using Cloud Dataflow",
+      "explanation": "This creates separate databases in each continent and uses a data pipeline to move changes between them.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use a global HTTP(S) load balancer to steer clients to the nearest Spanner endpoint",
+      "explanation": "This places a layer 7 load balancer in front of endpoints so traffic is routed by proximity rather than changing the database configuration.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Provision a multi region Spanner instance that spans Europe and Asia and use it for the application",
+      "explanation": "This chooses a Spanner configuration with replicas across both continents so clients can access a nearby replica for reads and participate in distributed writes.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Place a single region Spanner instance in europe-west1 and route all traffic from Asia to it",
+      "explanation": "This centralizes the database in one region and forwards requests from other continents across long distances.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Provision a multi region Spanner instance that spans Europe and Asia and use it for the application</b>.</p><p>This approach lets Spanner place replicas close to users in both Germany and Singapore so that reads can be served locally while writes commit through a geographically distributed quorum that preserves strong consistency. It also provides automatic failover and synchronous replication which together deliver low latency and high availability for a globally used service.</p><p><i>Build two independent Spanner instances in europe-west3 and asia-southeast1 and keep data in sync using Cloud Dataflow</i> is not correct because separate databases cannot offer strongly consistent reads and writes and a Dataflow pipeline would only provide eventual consistency with complex conflict handling rather than transactional replication.</p><p><i>Use a global HTTP(S) load balancer to steer clients to the nearest Spanner endpoint</i> is not correct because Spanner is accessed through client libraries and gRPC endpoints and is not fronted by an external HTTP load balancer. Steering traffic at the HTTP layer would not change Spanner’s replication or commit behavior and would not reduce write latency across continents.</p><p><i>Place a single region Spanner instance in europe-west1 and route all traffic from Asia to it</i> is not correct because users in Singapore would experience high latency for both reads and writes which fails the requirement for the lowest possible latency in both locations.</p>",
+  "batch_id": "50",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are managing a multi-regional application that utilizes Google Cloud Spanner for its database needs. The application requires both read and write operations to be as low latency as possible for users in Europe and Asia. Which configuration should you choose to meet these requirements?",
+  "originalOptions": "A. Create two separate Spanner instances, one in Europe and one in Asia, and synchronize them using Cloud Dataflow.<br/>B. Use a global HTTP(S) load balancer to direct traffic to the nearest Spanner instance based on the user's location.<br/>C. Deploy a single-region Spanner instance in Europe and route all Asian traffic to this instance.<br/>D. Set up a multi-regional Spanner instance configured for both Europe and Asia regions.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "244",
+  "tip": "<p>Map the requirement for low latency <i>reads and writes</i> across distant user bases to services that provide <i>synchronous multi region replication</i> with strong consistency. Verify whether a managed database supports global placement of replicas rather than trying to add an external load balancer or custom data pipelines.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/instance-configurations",
+    "https://cloud.google.com/spanner/docs/custom-instance-configurations",
+    "https://cloud.google.com/spanner/docs/replication",
+    "https://cloud.google.com/spanner/docs/instances",
+    "https://cloud.google.com/load-balancing/docs/https",
+    "https://cloud.google.com/dataflow/docs/concepts/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-application-that-utilizes-google-cloud-exam-244.html",
+  "video_url": "https://certificationation.com/videos/exam-application-that-utilizes-google-cloud-exam-244.html"
+}

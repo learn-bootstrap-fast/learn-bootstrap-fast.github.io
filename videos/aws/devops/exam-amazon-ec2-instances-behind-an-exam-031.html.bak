@@ -1,0 +1,62 @@
+---
+title: "You currently run your infrastructure on Amazon EC2Exam"
+description: "Video for you currently run your infrastructure on Amazon EC2 instances behind an Auto Scaling group. All logs for your application are currently written to"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You currently run your infrastructure on Amazon EC2 instances behind an Auto Scaling group. All logs for your application are currently written to ephemeral storage. Recently your company experienced a major bug in the code that made it through testing and was ultimately deployed to your fleet. This bug triggered your Auto Scaling group to scale up and back down before you could successfully retrieve the logs off your server to better assist you in troubleshooting the bug. Which technique should you use to make sure that you can review your logs?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct answer is <b>Set up the CloudWatch Logs Agent on your AMI, and configure it to send logs in real-time to CloudWatch Logs</b>. Since your app writes logs to ephemeral storage—which is deleted when an EC2 instance terminates—it's critical to push those logs to a persistent service as they are generated. The CloudWatch Logs Agent can stream log data directly from your instance to Amazon CloudWatch Logs, allowing centralized log collection even if instances are terminated unexpectedly or due to scaling events.</p><p>The options <i>Modify Auto Scaling group policies to perform backups of ephemeral storage when instances terminate</i> and <i>Set Auto Scaling policies to create a snapshot of all temporary instance storage upon termination</i> are incorrect because ephemeral storage is local instance storage that cannot be backed up or snapshotted when the instance is terminated; all data on ephemeral storage is lost upon shutdown or termination.</p><p>The choice <i>Install and configure the CloudWatch monitoring agent on your AMI, and use an SNS alert based on CloudWatch metrics to trigger log backups from the ephemeral drive</i> is not appropriate because the monitoring agent does not provide a native feature to do file-level log backups. Relying on metrics and alerts to backup logs from ephemeral storage is a complex workaround and not supported out-of-the-box.</p><p><b>Tip:</b> For applications running on ephemeral storage, always utilize an agent (like CloudWatch Logs Agent or a similar solution) to forward logs in real-time to persistent and centralized log storage to avoid data loss during instance scale-in events.</p>",
+  "query": "<p>Your application running on Amazon EC2 behind an Auto Scaling group writes logs to ephemeral storage. After a recent incident where a critical bug caused instances to scale down before logs could be accessed for analysis, what is the best approach to ensure log review for future troubleshooting?</p>",
+  "original_oid": "6793d9ba61969b416038a094",
+  "options": [
+    {
+      "correct": true,
+      "text": "Set up the CloudWatch Logs Agent on your AMI, and configure it to send logs in real-time to CloudWatch Logs.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Modify Auto Scaling group policies to perform backups of ephemeral storage when instances terminate.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set Auto Scaling policies to create a snapshot of all temporary instance storage upon termination.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Install and configure the CloudWatch monitoring agent on your AMI, and use an SNS alert based on CloudWatch metrics to trigger log backups from the ephemeral drive.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question31",
+  "originalQuery": "You currently run your infrastructure on Amazon EC2 instances behind an Auto Scaling group.\nAll logs for your application are currently written to ephemeral storage.\nRecently your company experienced a major bug in the code that made it through testing and was ultimately deployed to your fleet.\nThis bug triggered your Auto Scaling group to scale up and back down before you could successfully retrieve the logs off your server to better assist you in troubleshooting the bug.\nWhich technique should you use to make sure that you can review your logs?",
+  "originalOptions": "[\"A. Configure the ephemeral policies on your Auto Scaling group to back up on terminate.\",\"B. Configure your Auto Scaling policies to create a snapshot of all ephemeral storage on terminate.\",\"C. Install the CloudWatch Logs Agent on your AMI, and configure CloudWatch Logs Agent to stream your logs.\",\"D. Install the CloudWatch monitoring agent on your AMI, and set up a new SNS alert for CloudWatch metrics that triggers the CloudWatch monitoring agent to backup all logs on the ephemeral drive.\"]",
+  "video_url": "https://certificationation.com/videos/exam-amazon-ec2-instances-behind-an-exam-031.html",
+  "url": "https://certificationation.com/questions/exam-amazon-ec2-instances-behind-an-exam-031.html"
+}

@@ -1,0 +1,62 @@
+---
+title: "You are a DevOps engineer in a company. An AWSExam"
+description: "Video for you are a DevOps engineer in a company. An AWS Organization is configured to manage a large number of AWS accounts and the Organization uses several"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are a DevOps engineer in a company. An AWS Organization is configured to manage a large number of AWS accounts and the Organization uses several Organizational Units (OUs) to help group AWS accounts together. You need to deploy a CloudFormation stack to enable customized AWS Config rules for all AWS accounts under one Organizational Unit. Which approach would you choose to provision the stack?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The recommended and most scalable choice is <b>\"Configure a deployment using CloudFormation StackSet, targeting the specified Organizational Unit and declaring the necessary AWS Regions for rollout.\"</b> CloudFormation StackSets let you propagate a CloudFormation stack simultaneously across multiple AWS accounts and regions, and you can specify an entire OU as the deployment target. This ensures consistency and efficient governance for managing resources like AWS Config rules at organizational scale.<br><br><i>\"Use CodePipeline to create a pipeline where a source stage uploads the CloudFormation template and a deploy stage launches the stack in every account found in the OU.\"</i> is incorrect because CodePipeline alone doesn't natively handle multi-account, multi-region deployment targeting OUs—it's designed for CI/CD pipelines and requires custom scripting for this use case.<br><br><i>\"Set up an IAM role with permissions to manage AWS Config rules within the OU, then utilize this role to run a CodeDeploy process that delivers CloudFormation stacks to each account.\"</i> is incorrect, as CodeDeploy is not suitable for managing CloudFormation stack deployments, and IAM roles by themselves do not automate stack rollout across multiple accounts.<br><br><i>\"Include parameters for AWS account IDs and regions in your CloudFormation template, and use the root account to deploy the stack into all accounts within the OU.\"</i> is not best practice and is error-prone for large organizations; it doesn't scale well and increases the risk of deployment failures due to manual steps.<br><br><b>Tip:</b> Always leverage StackSets for organization-wide resource stack deployments, as it centralizes management and supports automatic updates for accounts added to the specified OU.</p>",
+  "query": "<p>You work as a DevOps engineer at an organization that uses AWS Organizations to manage many AWS accounts, grouped by Organizational Units (OUs). You need to roll out a CloudFormation stack to configure custom AWS Config rules across every account in a specific OU. What is the most efficient way to deploy this stack to all required accounts and regions?</p>",
+  "original_oid": "6793d9ab61969b416038a078",
+  "options": [
+    {
+      "correct": true,
+      "text": "Configure a deployment using CloudFormation StackSet, targeting the specified Organizational Unit and declaring the necessary AWS Regions for rollout.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Use CodePipeline to create a pipeline where a source stage uploads the CloudFormation template and a deploy stage launches the stack in every account found in the OU.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up an IAM role with permissions to manage AWS Config rules within the OU, then utilize this role to run a CodeDeploy process that delivers CloudFormation stacks to each account.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Include parameters for AWS account IDs and regions in your CloudFormation template, and use the root account to deploy the stack into all accounts within the OU.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question3",
+  "originalQuery": "You are a DevOps engineer in a company.\nAn AWS Organization is configured to manage a large number of AWS accounts and the Organization uses several Organizational Units (OUs) to help group AWS accounts together.\nYou need to deploy a CloudFormation stack to enable customized AWS Config rules for all AWS accounts under one Organizational Unit.\nWhich approach would you choose to provision the stack?",
+  "originalOptions": "A. Create an IAM role that has permissions to create AWS Config rules in AWS accounts of the Organization Unit. Use the IAM role to configure a CodeDeploy task that deploys CloudFormation stacks in all AWS accounts.\nB. Configure an AWS CodePipeline task that has a source stage to select the template and a deploy stage to launch the CloudFormation stack in all AWS accounts of the OU.\nC. Ensure the CloudFormation template has parameters of AWS accounts and regions. Use the root AWS account to deploy the CloudFormation stack in all AWS accounts.\nD. Configure a CloudFormation StackSet using the CloudFormation template. Choose the Organization Unit in the StackSet and specify the regions to deploy the stack.",
+  "video_url": "https://certificationation.com/videos/exam-aws-organization-is-configured-to-exam-100.html",
+  "url": "https://certificationation.com/questions/exam-aws-organization-is-configured-to-exam-100.html"
+}

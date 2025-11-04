@@ -1,0 +1,62 @@
+---
+title: "As an architect, you have decided to use CloudFormationExam"
+description: "Video for as an architect, you have decided to use CloudFormation instead of OpsWorks or Elastic Beanstalk for deploying the applications in your company. There"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As an architect, you have decided to use CloudFormation instead of OpsWorks or Elastic Beanstalk for deploying the applications in your company. There is a requirement to include a custom resource using the AWS CloudFormation. How can you achieve this?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct way to integrate a custom resource in AWS CloudFormation is by using the <b>AWS::CloudFormation::CustomResource</b> resource type within your CloudFormation template. This allows you to trigger custom logic or other AWS services during stack creation, update, or deletion. Using this resource type is the official method provided by AWS to support custom logic beyond standard resources.</p><p>The option <i>Include a Lambda function resource within your CloudFormation stack, and utilize this function to implement the logic for the custom resource</i> is not exactly correct. While Lambda functions are often used in conjunction with custom resources (since custom resources can invoke Lambda functions), merely adding a Lambda function alone doesn't incorporate a custom resource unless it's referenced as the handler for <b>AWS::CloudFormation::CustomResource</b>.</p><p>The choice <i>Add a mapping in your template to assign the desired custom resource implementation</i> is incorrect because Mappings are used to store static values for lookup during template processing; they do not enable or support custom resource functionality.</p><p>The option <i>Provision an SNS topic in your CloudFormation script and configure custom resource communication through subscriptions to this topic</i> is also incorrect. SNS topics are notification tools and don't provide the direct interface needed for defining custom resources or custom provisioning logic in stacks.</p><ul><li><b>Tip:</b> Always use <b>AWS::CloudFormation::CustomResource</b> or a resource derived from <b>AWS::CloudFormation::CustomResource</b> to ensure proper custom logic integration with stack lifecycle events.</li></ul>",
+  "query": "<p>You are designing solutions for your organization and opt to use AWS CloudFormation, avoiding OpsWorks and Elastic Beanstalk for deployment. The project requires you to add a custom resource within your CloudFormation template. What is the correct method to add a custom resource?</p>",
+  "original_oid": "6793d9cc61969b416038a0b8",
+  "options": [
+    {
+      "correct": false,
+      "text": "Include a Lambda function resource within your CloudFormation stack, and utilize this function to implement the logic for the custom resource.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Insert a custom resource of type AWS::CloudFormation::CustomResource into your template.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Add a mapping in your template to assign the desired custom resource implementation.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Provision an SNS topic in your CloudFormation script and configure custom resource communication through subscriptions to this topic.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question67",
+  "originalQuery": "As an architect, you have decided to use CloudFormation instead of OpsWorks or Elastic Beanstalk for deploying the applications in your company.\nThere is a requirement to include a custom resource using the AWS CloudFormation.\nHow can you achieve this?",
+  "originalOptions": "A. Add a custom mapping in your template to specify which custom resource would be used.\nB. Create a custom resource AWS::CloudFormation::CustomResource in the CloudFormation template.\nC. Create a Lambda function resource in the CloudFormation template and use the Lambda function to interact with the custom resource.\nD. Create an SNS topic resource in the CloudFormation template and subscribe to the SNS topic for the custom resource.",
+  "video_url": "https://certificationation.com/videos/exam-use-cloudformation-instead-of-opsworks-exam-186.html",
+  "url": "https://certificationation.com/questions/exam-use-cloudformation-instead-of-opsworks-exam-186.html"
+}

@@ -1,0 +1,62 @@
+---
+title: "Your API requires the ability to stay online during AWSExam"
+description: "Video for your API requires the ability to stay online during AWS regional failures. Your API does not store any state. It only aggregates data from other"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your API requires the ability to stay online during AWS regional failures. Your API does not store any state. It only aggregates data from other sources - you do not have a database. What is a simple but effective way to achieve this uptime goal?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best solution is to deploy two instances of your stateless API in different AWS regions and configure <b>Route53 Latency Based Routing with failover</b> to direct traffic to the optimal region. This method leverages Route53's health checks and failover so clients are automatically routed to the healthy, low-latency region. Using Auto Scaling Groups behind ELBs in both regions guarantees your deployment is elastic and resilient, even during a regional AWS failure.</p><p>The other options are not sufficient for regional failures:</p><ul><li><i>Set up a CloudFront distribution in front of your API. Even if your region encounters downtime, CloudFront's edge infrastructure ensures service continuity.</i> – CloudFront can cache static data and mitigate certain disruptions, but if the API's origin is entirely unavailable due to a regional outage, CloudFront cannot serve dynamic API responses that require a live backend.</li><li><i>Utilize an Elastic Load Balancer (ELB) with cross-zone load balancing for redundancy across data centers, guaranteeing availability if one availability zone is lost.</i> – Cross-zone load balancing helps within a single region but won't protect against complete regional failures, as the ELB itself operates only inside its home region.</li><li><i>Create a Route53 Weighted Round Robin DNS record, so if one region goes down, that region can redirect users to another operational region.</i> – Weighted routing doesn't provide health checks or automated failover, and if a region goes down, that weighted endpoint won’t be able to perform redirects or respond, resulting in downtime for users routed to the failed region.</li></ul><p><b>Key tip:</b> Stateless APIs are easier to deploy across multiple regions for disaster recovery. By pairing multi-region deployments with Route53's advanced routing and health checks, you achieve high resiliency to regional outages.</p>",
+  "query": "<p>You need your stateless API to remain operational even if an AWS region becomes unavailable. The API collects data from external sources, doesn't maintain state, and isn't backed by a database. What is an efficient method to ensure high availability during regional outages?</p>",
+  "original_oid": "6793d9ef61969b416038a0fc",
+  "options": [
+    {
+      "correct": false,
+      "text": "Set up a CloudFront distribution in front of your API. Even if your region encounters downtime, CloudFront's edge infrastructure ensures service continuity.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Configure a Route53 Latency Based Routing policy with failover, routing clients to two equivalent stateless API deployments running in separate AWS regions. Ensure both use Auto Scaling Groups behind Elastic Load Balancers.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Utilize an Elastic Load Balancer (ELB) with cross-zone load balancing for redundancy across data centers, guaranteeing availability if one availability zone is lost.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Create a Route53 Weighted Round Robin DNS record, so if one region goes down, that region can redirect users to another operational region.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question137",
+  "originalQuery": "Your API requires the ability to stay online during AWS regional failures.\nYour API does not store any state.\nIt only aggregates data from other sources - you do not have a database.\nWhat is a simple but effective way to achieve this uptime goal?",
+  "originalOptions": "A. Use a CloudFront distribution to serve up your API. Even if the region your API is in goes down, the edge locations CloudFront uses will be fine.|B. Use an ELB and a cross-zone ELB deployment to create redundancy across datacenters. Even if a region fails, the other AZ will stay online.|C. Create a Route53 Weighted Round Robin record, and if one region goes down, have that region redirect to the other region.|D. Create a Route53 Latency Based Routing Record with Failover and point it to two identical deployments of your stateless API in two different regions. Make sure both regions use Auto Scaling Groups behind ELBs.",
+  "video_url": "https://certificationation.com/videos/exam-stay-online-during-aws-regional-exam-064.html",
+  "url": "https://certificationation.com/questions/exam-stay-online-during-aws-regional-exam-064.html"
+}

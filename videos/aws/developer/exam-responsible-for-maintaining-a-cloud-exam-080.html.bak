@@ -1,0 +1,80 @@
+---
+title: "As a Database Engineer, you are responsible forExam"
+description: "Video for as a Database Engineer, you are responsible for maintaining a Cloud Bigtable instance with multiple tables. You need to perform database maintenance"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are responsible for maintaining a Cloud Bigtable instance with multiple tables. You need to perform database maintenance to ensure efficient querying and data access. Which of the following strategies should you implement?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the Cloud Database Engineer for a media analytics startup named Meridian Streams and you operate a Cloud Bigtable instance that supports two high-traffic tables called user_events and session_state. The dataset holds about 80 billion rows and you want to carry out routine maintenance that improves scan efficiency and lowers read latency without changing application behavior. What should you do?",
+  "options": [
+    {
+      "text": "Use denormalization to collapse related entities into wider rows to avoid client-side joins",
+      "explanation": "This approach stores frequently accessed attributes together so that the application can read fewer rows when retrieving related data.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Implement horizontal sharding by user region and route requests to region-specific tables",
+      "explanation": "This design divides the data set across multiple region-labeled tables so that clients access only a regional subset of the data.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Redesign the row keys to match read access patterns so range scans are efficient and hotspots are minimized",
+      "explanation": "This aligns the natural ordering of keys with common query patterns so reads remain sequential and traffic is distributed more evenly.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Create a single global secondary index table maintained by Cloud Dataflow for all Bigtable tables",
+      "explanation": "This establishes an auxiliary index table that a pipeline keeps in sync so that clients can perform lookups by alternate keys across data sets.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Redesign the row keys to match read access patterns so range scans are efficient and hotspots are minimized</b>.</p><p>Cloud Bigtable partitions data by the lexicographic order of row keys and serves scans most efficiently when adjacent rows that are read together are stored together. Thoughtful <b>row key design</b> improves locality for range scans, reduces seeks, and minimizes hotspots on tablets which lowers read latency for very large tables. Techniques such as using a composite key that starts with the primary access dimension, applying limited salting to distribute high write rates while preserving scan contiguity, or bucketing timestamps for time series workloads are all forms of <b>row key design</b> that improve scan efficiency. This is a routine optimization in Bigtable and it does not force changes to client query behavior because reads continue to use the same access patterns while the storage layout is optimized underneath.</p><p><i>Use denormalization to collapse related entities into wider rows to avoid client-side joins</i> is not the right choice because denormalization changes the data model and can increase row size and read amplification. It does not directly address scan locality or hotspotting which are governed by the row key order in Bigtable.</p><p><i>Implement horizontal sharding by user region and route requests to region-specific tables</i> would require significant application routing changes and operational overhead with multiple tables. Bigtable already scales horizontally within a cluster and this approach does not improve per-table scan efficiency or reduce hotspots in a single table.</p><p><i>Create a single global secondary index table maintained by Cloud Dataflow for all Bigtable tables</i> adds complexity, write amplification, and potential consistency lag. Bigtable does not provide native secondary indexes and maintaining a custom index changes how reads are performed rather than improving the efficiency of scans within the primary tables.</p>",
+  "batch_id": "199",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are responsible for maintaining a Cloud Bigtable instance with multiple tables. You need to perform database maintenance to ensure efficient querying and data access. Which of the following strategies should you implement?",
+  "originalOptions": "A. Optimize the row key design to enable efficient row key scans.<br/>B. Use denormalization to reduce the number of required joins.<br/>C. Implement horizontal sharding based on regions.<br/>D. Create a single global secondary index for all tables.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "80",
+  "tip": "<p>When you see a Bigtable performance question, prioritize <i>row key design</i> that matches access patterns because it governs scan locality and hotspot avoidance and usually delivers the biggest read latency gains without changing client logic.</p>",
+  "references": [
+    "https://cloud.google.com/bigtable/docs/schema-design",
+    "https://cloud.google.com/bigtable/docs/schema-design#row-keys",
+    "https://cloud.google.com/bigtable/docs/best-practices-performance",
+    "https://cloud.google.com/bigtable/docs/performance"
+  ],
+  "url": "https://certificationation.com/questions/exam-responsible-for-maintaining-a-cloud-exam-080.html",
+  "video_url": "https://certificationation.com/videos/exam-responsible-for-maintaining-a-cloud-exam-080.html"
+}

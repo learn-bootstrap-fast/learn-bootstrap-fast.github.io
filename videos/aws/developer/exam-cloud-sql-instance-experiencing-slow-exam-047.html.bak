@@ -1,0 +1,88 @@
+---
+title: "You are responsible for a production Cloud SQL instanceExam"
+description: "Video for you are responsible for a production Cloud SQL instance experiencing slow client connections during peak hours. Customers have complained about"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are responsible for a production Cloud SQL instance experiencing slow client connections during peak hours. Customers have complained about increased latency and occasional connection failures. To optimize database performance and reduce connection issues, what should you do? (Choose two)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You manage a critical Cloud SQL for PostgreSQL instance that serves the APIs for scrumtuous.com. During the mid day rush the number of short lived client connections surges to about 1,800 and average connection setup time rises from 50 ms to nearly 300 ms while some clients report connection errors. You want to improve overall responsiveness and reduce connection problems without a major redesign. What should you do?",
+  "options": [
+    {
+      "text": "Refactor queries and add appropriate indexes to the schema",
+      "explanation": "This can improve query execution and reduce table scans which lowers query time once a session is established",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a failover replica for the instance",
+      "explanation": "This provides high availability and automatic failover during regional or zonal disruptions",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Introduce a connection pool for Cloud SQL by deploying a pooler such as PgBouncer",
+      "explanation": "This reuses a small number of database connections for many clients which reduces connection churn during spikes",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Increase the CPU and memory configuration of the instance",
+      "explanation": "This gives the database more resources to handle concurrent connections and workload during peak demand",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Enable Private IP for the Cloud SQL instance",
+      "explanation": "This routes traffic to the database over internal addresses which can reduce hops and simplify firewalling",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct options are <b>Introduce a connection pool for Cloud SQL by deploying a pooler such as PgBouncer</b> and <b>Increase the CPU and memory configuration of the instance</b>.</p><p>A surge of short lived connections puts heavy pressure on PostgreSQL because each new connection has startup and authentication overhead. A <b>connection pool</b> such as <b>PgBouncer</b> maintains a small set of persistent backend connections and multiplexes client requests onto them. This reduces connection setup time and lowers the chance of hitting connection limits or exhausting backend resources. It is a targeted fix for connection storms and it improves responsiveness without changing application logic.</p><p>Increasing compute resources also helps. When you <b>increase CPU and memory</b> the instance can process more connection handshakes and queries concurrently which shortens average setup time during peak load. This is a low risk change that complements a <b>connection pool</b> and together they address both the cause and the capacity limits.</p><p><i>Refactor queries and add appropriate indexes to the schema</i> improves query execution but it does not address the cost of creating thousands of short lived connections. The symptom here is slow connection setup and connection errors rather than slow query plans.</p><p><i>Create a failover replica for the instance</i> provides high availability in case of an outage. It does not load balance connections or increase throughput during normal operation so it will not improve connection setup latency or reduce connection errors during peaks.</p><p><i>Enable Private IP for the Cloud SQL instance</i> can simplify networking and may slightly improve network latency in some topologies. It does not solve the per connection overhead in PostgreSQL and it will not meaningfully reduce connection churn on its own.</p>",
+  "batch_id": "189",
+  "answerCode": "3,4",
+  "type": "multi-select",
+  "originalQuery": "You are responsible for a production Cloud SQL instance experiencing slow client connections during peak hours. Customers have complained about increased latency and occasional connection failures. To optimize database performance and reduce connection issues, what should you do? (Choose two)",
+  "originalOptions": "A. Configure failover replicas.<br/>B. Enable private IP for your Cloud SQL instance.<br/>C. Optimize the database schema for better indexing.<br/>D. Implement Cloud SQL connection pooling.<br/>E. Increase the CPU and memory configuration of the instance.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "47",
+  "tip": "<p>When you see spikes of short lived connections think about a <i>connection pool</i> first and pair it with right sizing the instance. Tuning queries helps throughput but does not fix connection storms.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/pgbouncer",
+    "https://cloud.google.com/sql/docs/postgres/manage-connections",
+    "https://cloud.google.com/sql/docs/postgres/quotas#connection-limits",
+    "https://cloud.google.com/sql/docs/postgres/instances#resize",
+    "https://cloud.google.com/sql/docs/postgres/configure-ha",
+    "https://cloud.google.com/sql/docs/postgres/private-ip"
+  ],
+  "url": "https://certificationation.com/questions/exam-cloud-sql-instance-experiencing-slow-exam-047.html",
+  "video_url": "https://certificationation.com/videos/exam-cloud-sql-instance-experiencing-slow-exam-047.html"
+}

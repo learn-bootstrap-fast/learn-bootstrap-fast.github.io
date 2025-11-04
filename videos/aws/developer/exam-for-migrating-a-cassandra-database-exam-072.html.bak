@@ -1,0 +1,81 @@
+---
+title: "You are a Database Engineer responsible for migrating aExam"
+description: "Video for you are a Database Engineer responsible for migrating a Cassandra database to Google Cloud Bigtable while ensuring minimal downtime and maintaining a"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are a Database Engineer responsible for migrating a Cassandra database to Google Cloud Bigtable while ensuring minimal downtime and maintaining a fallback plan. Which of the following migration strategies is best for this scenario?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A retailer named Summit Outfitters operates a 24 TB Cassandra cluster on premises and plans to migrate to Cloud Bigtable with as little downtime as possible while preserving a safe rollback path. You need an approach that provides continuous replication for validation, a brief cutover of under 45 minutes, and the ability to switch back to Cassandra if problems occur. What migration strategy should you choose?",
+  "options": [
+    {
+      "text": "Use Cloud Data Fusion to run a one time batch load from Cassandra to Bigtable and schedule nightly jobs to keep data in sync while planning to copy data back if rollback is required",
+      "explanation": "This proposes a batch ETL approach with periodic synchronization using Cloud Data Fusion",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Datastream to capture changes from Cassandra and replicate them into Bigtable and configure reverse synchronization for rollback",
+      "explanation": "This suggests a managed change data capture service to continuously stream updates from the source into a GCP target",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Implement dual writes with a change data capture pipeline that publishes Cassandra mutations to Pub/Sub and streams them into Bigtable with Dataflow while keeping Cassandra as the source of truth until cutover",
+      "explanation": "This sets up continuous replication through Pub/Sub and Dataflow with the original database retained as the rollback point until the final switch",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use Bigtable bulk import to convert the Cassandra schema and load a snapshot and configure reverse replication from Bigtable back to Cassandra for rollback",
+      "explanation": "This assumes a native import will handle both data model conversion and bidirectional synchronization",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct strategy is <b>Implement dual writes with a change data capture pipeline that publishes Cassandra mutations to Pub/Sub and streams them into Bigtable with Dataflow while keeping Cassandra as the source of truth until cutover</b>.</p><p>This approach provides continuous replication from Cassandra into Cloud Bigtable so you can validate data and performance while production traffic still goes to Cassandra. Because Cassandra remains the system of record until the moment of cutover you can flip clients to Bigtable in a brief window and meet the under 45 minutes requirement. If issues appear after the switch you can safely redirect traffic back to Cassandra because writes never stopped going to it and the streaming pipeline can refill any gaps.</p><p>Publishing mutations to Pub/Sub and streaming into Bigtable with Dataflow is a proven pattern for online migrations. You can run a one time backfill followed by streaming change capture so the target quickly converges and stays current. This lets you test real workloads on Bigtable without risk and gives you a straightforward and low downtime cutover and a clear rollback plan.</p><p><i>Use Cloud Data Fusion to run a one time batch load from Cassandra to Bigtable and schedule nightly jobs to keep data in sync while planning to copy data back if rollback is required</i> is incorrect because batch loads and nightly syncs do not provide low latency replication for validation and they create large lag that makes a short cutover risky. This does not offer a reliable rollback path with consistent state for an always on workload.</p><p><i>Use Datastream to capture changes from Cassandra and replicate them into Bigtable and configure reverse synchronization for rollback</i> is incorrect because Datastream does not support Cassandra as a source and it does not replicate into Bigtable as a target. This option is not feasible.</p><p><i>Use Bigtable bulk import to convert the Cassandra schema and load a snapshot and configure reverse replication from Bigtable back to Cassandra for rollback</i> is incorrect because bulk import handles static snapshots and does not provide ongoing change capture. Bigtable replication is for Bigtable to Bigtable and there is no built in reverse replication to Cassandra which means rollback would not be supported by this method.</p>",
+  "batch_id": "38",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are a Database Engineer responsible for migrating a Cassandra database to Google Cloud Bigtable while ensuring minimal downtime and maintaining a fallback plan. Which of the following migration strategies is best for this scenario?",
+  "originalOptions": "A. Develop custom scripts to convert the Cassandra schema to Bigtable and transfer the data using Bigtable APIs, then create a reverse replication process from Bigtable to the on-premises Cassandra database as a fallback plan.<br/>B. Use Cloud Data Fusion to convert the Cassandra schema and transfer the data to Bigtable, then create a Cloud Data Fusion pipeline to transfer the data back to the on-premises database as a fallback plan.<br/>C. Create a Bigtable instance, use Bigtable's import functionality to convert the schema and transfer data, and set up a reverse replication from Bigtable to the on-premises Cassandra database as a fallback.<br/>D. Utilize the Schema Conversion Tool (SCT) to convert the Cassandra schema for Bigtable, perform data transfer using Dataflow, and set up a reverse replication from Bigtable to the on-premises Cassandra database as a fallback.",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "72",
+  "tip": "<p>Link the requirements in the prompt to migration patterns. When you see <i>continuous replication</i> with a short <i>cutover</i> and a safe <i>rollback</i> think dual writes with CDC into the target and keep the source as the system of record until you switch.</p>",
+  "references": [
+    "https://cloud.google.com/architecture/migrating-to-cloud-bigtable",
+    "https://cloud.google.com/dataflow/docs/guides/templates/provided-streaming#cloud-pubsub-to-cloud-bigtable",
+    "https://cloud.google.com/bigtable/docs/replication-overview",
+    "https://cloud.google.com/bigtable/docs/bulk-loading",
+    "https://cloud.google.com/datastream/docs/sources/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-for-migrating-a-cassandra-database-exam-072.html",
+  "video_url": "https://certificationation.com/videos/exam-for-migrating-a-cassandra-database-exam-072.html"
+}

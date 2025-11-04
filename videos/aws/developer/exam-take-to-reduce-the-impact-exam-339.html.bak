@@ -1,0 +1,86 @@
+---
+title: "What steps should a Database Engineer take to reduce theExam"
+description: "Video for what steps should a Database Engineer take to reduce the impact of maintenance events on a Cloud SQL instance serving production workloads? (Choose"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "What steps should a Database Engineer take to reduce the impact of maintenance events on a Cloud SQL instance serving production workloads? (Choose two)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "HelioMart runs a Cloud SQL for PostgreSQL instance that handles checkout requests for customers worldwide, and the operations team wants to lessen disruption when Google performs scheduled maintenance while also getting early notice to prepare. Which actions should the database engineer implement to minimize the impact of these maintenance events?",
+  "options": [
+    {
+      "text": "Implement a connection pool between the application and the database to recycle sessions",
+      "explanation": "This pools and reuses connections to lower overhead but it does not prevent brief disconnects during a restart event",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure a weekly maintenance window during off peak hours to defer patching to a quieter period",
+      "explanation": "This sets a preferred time for maintenance so work happens when traffic is typically lower",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Apply client retry logic with exponential backoff on database errors",
+      "explanation": "This helps clients recover from transient failures but it does not influence when maintenance is performed",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Subscribe to Cloud SQL maintenance notifications to receive alerts before work begins",
+      "explanation": "This provides advance notifications by email or Pub Sub so teams can prepare operationally",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Remove the maintenance window so updates are applied as soon as they are available",
+      "explanation": "This allows patching at any time and can increase the chance of disruption during busy periods",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct options are <b>Configure a weekly maintenance window during off peak hours to defer patching to a quieter period</b> and <b>Subscribe to Cloud SQL maintenance notifications to receive alerts before work begins</b>.</p><p>Using a <b>maintenance window</b> gives you control over when Cloud SQL applies updates that can restart the instance. Choosing a quiet period reduces the risk that customers will experience errors or latency. Cloud SQL defers eligible maintenance to the weekly window which lets the team plan connection draining, coordinate releases, and adjust traffic patterns.</p><p>Enabling <b>maintenance notifications</b> provides early warning of planned work and expected timing. With advance notice the operations team can prepare runbooks, notify stakeholders, and take preemptive steps such as scaling read replicas or routing traffic to minimize user impact.</p><p><i>Implement a connection pool between the application and the database to recycle sessions</i> improves efficiency and connection management but it does not prevent restarts or failovers during maintenance and it does not provide advance notice, so it does not directly minimize scheduled maintenance impact.</p><p><i>Apply client retry logic with exponential backoff on database errors</i> is a good resiliency pattern for transient errors, yet scheduled maintenance can involve longer restarts and connection resets. Retries alone do not control timing or provide early notice, so they do not address the core requirement.</p><p><i>Remove the maintenance window so updates are applied as soon as they are available</i> reduces your control and can allow disruptive updates to occur during peak traffic. This increases risk rather than minimizing it.</p>",
+  "batch_id": "29",
+  "answerCode": "2,4",
+  "type": "multi-select",
+  "originalQuery": "What steps should a Database Engineer take to reduce the impact of maintenance events on a Cloud SQL instance serving production workloads? (Choose two)",
+  "originalOptions": "A. Apply exponential backoff.<br/>B. Subscribe to maintenance notifications.<br/>C. Implement connection pools.<br/>D. Schedule updates to occur later.<br/>E. Eliminate the maintenance window.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "339",
+  "tip": "<p>When a question asks how to reduce disruption from planned maintenance, look for choices that provide <i>control of timing</i> such as a maintenance window and <i>early notification</i> such as maintenance alerts. General resiliency patterns help, but they do not replace scheduling and advance notice.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/maintenance",
+    "https://cloud.google.com/sql/docs/postgres/maintenance#maintenance-window",
+    "https://cloud.google.com/sql/docs/postgres/maintenance#notifications",
+    "https://cloud.google.com/resource-manager/docs/managing-notification-contacts"
+  ],
+  "url": "https://certificationation.com/questions/exam-take-to-reduce-the-impact-exam-339.html",
+  "video_url": "https://certificationation.com/videos/exam-take-to-reduce-the-impact-exam-339.html"
+}

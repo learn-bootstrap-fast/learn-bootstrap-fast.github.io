@@ -1,0 +1,81 @@
+---
+title: "As a Database Engineer, you are responsible forExam"
+description: "Video for as a Database Engineer, you are responsible for designing a connection strategy for an application that needs to access data stored in Firestore. To"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are responsible for designing a connection strategy for an application that needs to access data stored in Firestore. To ensure optimal performance, scalability, and connection management, which of the following strategies should you use?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the database specialist at Alpine Ledger, a fintech startup, and your Cloud Run services run in two regions while they read and write to Firestore in Native mode. You want strong performance, the ability to scale with sudden traffic spikes, and you prefer to avoid building your own connection pooling logic. What approach should you choose?",
+  "options": [
+    {
+      "text": "Peer your application VPC to a regional Firestore endpoint and pin requests to that region",
+      "explanation": "This suggests using private routing through VPC peering to direct traffic to a specific regional endpoint for lower latency",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure a regional external HTTP(S) load balancer with regional backends to steer traffic to a nearby Firestore deployment",
+      "explanation": "This adds a proxy layer intended to distribute connections based on client proximity to regional backends",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use the Firestore client libraries in each service so the SDK manages efficient gRPC connections and retries",
+      "explanation": "This relies on the official SDK to handle connection reuse, backoff, and idiomatic data operations for Firestore",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Run a per service sidecar proxy that pools and multiplexes connections to Firestore instead of using the SDK",
+      "explanation": "This adds an extra process to aggregate and reuse connections on behalf of the application containers",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Use the Firestore client libraries in each service so the SDK manages efficient gRPC connections and retries</b>.</p><p>This option uses the <b>client libraries</b> that build persistent gRPC channels and multiplex many requests over them, which minimizes connection setup costs and delivers strong performance during sudden spikes in Cloud Run. The <b>SDK</b> also provides automatic retries with backoff and is designed to be thread safe, so creating a single shared instance per container lets your services scale efficiently without custom pooling logic.</p><p><i>Peer your application VPC to a regional Firestore endpoint and pin requests to that region</i> is not viable because Firestore does not offer VPC peering to a regional Firestore API and there is no regional endpoint that you can pin to. Access occurs through Google APIs, and while private access options exist, they do not change how requests are routed to the database location.</p><p><i>Configure a regional external HTTP(S) load balancer with regional backends to steer traffic to a nearby Firestore deployment</i> is incorrect because you cannot place an external HTTP load balancer in front of a managed Google API like Firestore. This would not improve performance and would add latency and complexity.</p><p><i>Run a per service sidecar proxy that pools and multiplexes connections to Firestore instead of using the SDK</i> adds operational overhead and duplicates functionality that is already provided. This approach already pools and multiplexes connections and handles retries, so introducing a proxy is unnecessary and can hurt reliability.</p>",
+  "batch_id": "252",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are responsible for designing a connection strategy for an application that needs to access data stored in Firestore. To ensure optimal performance, scalability, and connection management, which of the following strategies should you use?",
+  "originalOptions": "A. Connect the application instances to the nearest regional Firestore endpoint using VPC peering<br/>B. Implement a regional load balancer with regional backends to distribute connections to the nearest Firestore instance<br/>C. Utilize Firestore client libraries in the application for efficient connection management and idiomatic API for database operations<br/>D. Use a single global VPC for all application instances and Firestore instances to simplify network management",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "66",
+  "tip": "<p>When a question targets scalability and performance with Google managed APIs, prefer the <i>official client libraries</i> because they provide <i>connection reuse</i> and <i>built in retries</i>. Options that add extra load balancers or proxies in front of Google APIs are usually distractors.</p>",
+  "references": [
+    "https://cloud.google.com/firestore/docs/best-practices",
+    "https://cloud.google.com/firestore/docs/reference/libraries",
+    "https://cloud.google.com/firestore/docs/locations",
+    "https://cloud.google.com/vpc/docs/private-service-connect#google-apis-apis",
+    "https://cloud.google.com/load-balancing/docs/https"
+  ],
+  "url": "https://certificationation.com/questions/exam-responsible-for-designing-a-connection-exam-066.html",
+  "video_url": "https://certificationation.com/videos/exam-responsible-for-designing-a-connection-exam-066.html"
+}

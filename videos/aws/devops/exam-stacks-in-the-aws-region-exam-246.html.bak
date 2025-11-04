@@ -1,0 +1,62 @@
+---
+title: "You have created two AWS CloudFormation stacks in theExam"
+description: "Video for you have created two AWS CloudFormation stacks in the AWS region us-east-1 Stack A has exported the resource output for a security group. Stack B uses"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have created two AWS CloudFormation stacks in the AWS region us-east-1 Stack A has exported the resource output for a security group. Stack B uses the Fn::ImportValue intrinsic function to import the exported value in its template. Both stacks are in the CREATE_COMPLETE status. Now you would need to perform some actions on these stacks. Which of the following actions can you perform successfully?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>correct answer</b> is: <b>Alter Stack Beta to eliminate the cross-stack import so it no longer imports the output from Stack Alpha.</b> <br><br>Here's why:<br><ul><li>As long as a resource output is being imported by another stack, you <b>cannot</b> remove or modify that export from the exporting stack (Stack Alpha). Therefore, you cannot delete Stack Alpha (<i>Delete Stack Alpha via the AWS Console...</i>), nor can you remove or change the resource output in Stack Alpha (<i>Edit Stack Alpha to delete the output...</i> and <i>Modify Stack Alpha to update the exported security group's name in its output value.</i>) while Stack Beta still references that value.<br><br></li><li>To safely make changes to the export or delete Stack Alpha, you must first update Stack Beta so that it no longer imports the value. This breaks the dependency, freeing Stack Alpha for changes. Thus, updating Stack Beta to remove the cross-stack reference is the only viable action here.</li></ul><br><b>Tips:</b><ul><li>When using CloudFormation cross-stack references, always remove the imports before making changes or deletions to the exports.</li><li>If you attempt to delete or modify an exported value that is being imported elsewhere, CloudFormation will block the operation and show a dependency error.</li></ul><br><b>Summary:</b> Remove cross-stack references <i>first</i> from importing stacks before changing or deleting outputs in exporting stacks.</p>",
+  "query": "<p>You have deployed two separate CloudFormation stacks in the us-east-1 region. <br>Stack Alpha exports the output value of a security group. <br>Stack Beta utilizes the <code>Fn::ImportValue</code> function to import this output into its own template. Both stacks show a status of CREATE_COMPLETE. <br>You need to make some changes involving these stacks.<br><br>Which of the following actions can be successfully performed?</p>",
+  "original_oid": "6793da9261969b416038a245",
+  "options": [
+    {
+      "correct": false,
+      "text": "Delete Stack Alpha via the AWS Console, since its resources are no longer required in that region.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Modify Stack Alpha to update the exported security group's name in its output value.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Alter Stack Beta to eliminate the cross-stack import so it no longer imports the output from Stack Alpha.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Edit Stack Alpha to delete the output being referenced by another stack.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question469",
+  "originalQuery": "You have created two AWS CloudFormation stacks in the AWS region us-east-1\nStack A has exported the resource output for a security group.\nStack B uses the Fn::ImportValue intrinsic function to import the exported value in its template.\nBoth stacks are in the CREATE_COMPLETE status.\nNow you would need to perform some actions on these stacks.\nWhich of the following actions can you perform successfully?",
+  "originalOptions": "A. Delete stack A using AWS console as the created resources in stack A are no longer needed in the region.|B. In stack A, update the resource output value as the security group needs to change its name.|C. Update stack A to remove the resource output that is referenced by stack|D. Update stack B to remove the cross-stack reference so that stack B does not import the resource output from stack",
+  "video_url": "https://certificationation.com/videos/exam-stacks-in-the-aws-region-exam-246.html",
+  "url": "https://certificationation.com/questions/exam-stacks-in-the-aws-region-exam-246.html"
+}

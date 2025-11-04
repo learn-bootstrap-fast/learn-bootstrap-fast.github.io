@@ -1,0 +1,80 @@
+---
+title: "You are tasked with ensuring the reliability andExam"
+description: "Video for you are tasked with ensuring the reliability and scalability of a MySQL instance on Cloud SQL. The instance serves a time-series data application"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are tasked with ensuring the reliability and scalability of a MySQL instance on Cloud SQL. The instance serves a time-series data application where storage usage is expected to grow rapidly. What configuration should you use to minimize downtime and manage growing storage needs automatically?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "HarborTrack Logistics runs a MySQL database on Cloud SQL that ingests telemetry readings every five seconds from 8,000 delivery vans, and storage consumption is projected to surge over the next 90 days. You want to avoid service disruption when disk capacity gets tight and you want scaling to occur without operator action. Which configuration should you choose to automatically handle expanding storage with minimal downtime?",
+  "options": [
+    {
+      "text": "Enable high availability for the instance",
+      "explanation": "This configuration places the instance in a regional setup with automatic failover for higher availability",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a read replica to distribute workloads",
+      "explanation": "A read replica offloads read queries and is useful for analytics or reporting workloads",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure automatic storage growth for the instance",
+      "explanation": "This setting allows Cloud SQL to automatically add disk capacity as utilization approaches a threshold",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Turn on automated backups for the instance",
+      "explanation": "This feature schedules backups so you can restore the database and support point in time recovery",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Configure automatic storage growth for the instance</b> because it expands disk capacity automatically as utilization rises and it does this with minimal disruption and no manual intervention.</p><p>With <b>automatic storage growth</b> enabled, Cloud SQL monitors available space and increases the allocated storage when usage approaches capacity. The resize occurs online so ingestion continues and service disruption is avoided. This directly addresses a sustained increase in write volume over the next 90 days without requiring operator action.</p><p><i>Enable high availability for the instance</i> improves resilience by providing a standby and automatic failover, yet it does not add storage capacity or grow disks as data increases, so it would not prevent a space outage.</p><p><i>Create a read replica to distribute workloads</i> can offload read traffic, but writes still go to the primary and storage is not automatically expanded, so it does not solve a primary disk capacity problem.</p><p><i>Turn on automated backups for the instance</i> protects data and supports recovery, but it does not manage live storage growth and can even consume additional storage for backup retention.</p>",
+  "batch_id": "301",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are tasked with ensuring the reliability and scalability of a MySQL instance on Cloud SQL. The instance serves a time-series data application where storage usage is expected to grow rapidly. What configuration should you use to minimize downtime and manage growing storage needs automatically?",
+  "originalOptions": "A. Enable high availability configuration.<br/>B. Enable automated backups for the instance.<br/>C. Enable automatic storage increases for the instance.<br/>D. Use a Cloud Storage bucket to store excess data.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "81",
+  "tip": "<p>When a question asks for hands off storage scaling on Cloud SQL, look for the <i>automatic storage increase</i> setting and distinguish it from <i>high availability</i>, <i>read replicas</i>, and <i>backups</i> which solve different problems.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/expand-storage",
+    "https://cloud.google.com/sql/docs/mysql/instance-settings#automatic-storage-increase",
+    "https://cloud.google.com/sql/docs/mysql/high-availability",
+    "https://cloud.google.com/sql/docs/mysql/backup-recovery/backups"
+  ],
+  "url": "https://certificationation.com/questions/exam-reliability-and-scalability-of-a-exam-081.html",
+  "video_url": "https://certificationation.com/videos/exam-reliability-and-scalability-of-a-exam-081.html"
+}

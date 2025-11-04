@@ -1,0 +1,81 @@
+---
+title: "A Database Engineer has been asked to design a backupExam"
+description: "Video for a Database Engineer has been asked to design a backup and recovery solution for a mission-critical database hosted on Google Cloud SQL. The database"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A Database Engineer has been asked to design a backup and recovery solution for a mission-critical database hosted on Google Cloud SQL. The database is expected to have a high rate of transactions and must have a low Recovery Point Objective (RPO) and Recovery Time Objective (RTO). Which of the following backup and recovery solutions would best meet these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "At BlueCart, you must design backups for a production Cloud SQL for MySQL instance that processes thousands of writes each second. The business requires an RPO that is as close to zero as possible and an RTO measured in only a few minutes. Which solution should you implement to satisfy these recovery objectives?",
+  "options": [
+    {
+      "text": "Promote a read replica to primary during an outage",
+      "explanation": "This uses a replica that can be elevated to primary if the main instance fails and it focuses on continuity rather than backup-driven recovery",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable point-in-time recovery and retain binary logs with automated backups to allow second level restore within the retention period",
+      "explanation": "This relies on binary log retention along with automatic backups so the database can be restored to a precise moment within the configured window",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Enable Cloud SQL high availability configuration with automatic failover",
+      "explanation": "This provides automatic failover to a standby instance to reduce downtime during zonal failures and it focuses on availability",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Export the database to Cloud Storage every two weeks and import when needed",
+      "explanation": "This creates periodic logical exports to a bucket and recovery requires a manual import that can take significant time",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Enable point-in-time recovery and retain binary logs with automated backups to allow second level restore within the retention period</b>.</p><p>This choice enables <b>point-in-time recovery</b> for Cloud SQL for MySQL by using automated backups together with retained binary logs so you can restore the database to a specific second within the retention window. That delivers an RPO that is near zero because changes are captured in the binary logs and can be replayed up to the chosen point in time. The restore workflow typically completes in minutes which satisfies the RTO requirement for a production system that experiences heavy write traffic.</p><p><i>Promote a read replica to primary during an outage</i> is not suitable because Cloud SQL read replicas use asynchronous replication and can lag behind the primary. This creates potential data loss which prevents an RPO near zero and the promotion is manual and does not provide controlled point-in-time recovery.</p><p><i>Enable Cloud SQL high availability configuration with automatic failover</i> improves availability during zonal disruptions by failing over to a standby but it is not a backup or restore solution. It does not protect against data corruption or accidental deletes and it does not provide second level restore, so it does not meet the recovery objectives that require precise restoration.</p><p><i>Export the database to Cloud Storage every two weeks and import when needed</i> results in an RPO measured in weeks and an RTO that is often lengthy due to export and import times. This clearly does not meet a near zero RPO or a minutes level RTO.</p>",
+  "batch_id": "26",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "A Database Engineer has been asked to design a backup and recovery solution for a mission-critical database hosted on Google Cloud SQL. The database is expected to have a high rate of transactions and must have a low Recovery Point Objective (RPO) and Recovery Time Objective (RTO). Which of the following backup and recovery solutions would best meet these requirements?",
+  "originalOptions": "A. Scheduled automated backups with daily frequency and point-in-time recovery enabled.<br/>B. Creating a read replica and promoting it to the primary instance when required.<br/>C. Using continuous backups through binary logging and point-in-time recovery enabled.<br/>D. Exporting the database to a Cloud Storage bucket on a weekly basis and importing it back when required.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "84",
+  "tip": "<p>When a question asks for near zero <i>RPO</i> and a minutes level <i>RTO</i> for Cloud SQL, think of <i>point in time recovery</i> with automated backups and binary logs rather than high availability or replicas. HA helps you stay up while PITR helps you get data back to an exact moment.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+    "https://cloud.google.com/sql/docs/mysql/backup-recovery/restore#restore-data-pitr",
+    "https://cloud.google.com/sql/docs/mysql/high-availability",
+    "https://cloud.google.com/sql/docs/mysql/replication",
+    "https://cloud.google.com/sql/docs/mysql/import-export/exporting"
+  ],
+  "url": "https://certificationation.com/questions/exam-design-a-backup-and-recovery-exam-084.html",
+  "video_url": "https://certificationation.com/videos/exam-design-a-backup-and-recovery-exam-084.html"
+}

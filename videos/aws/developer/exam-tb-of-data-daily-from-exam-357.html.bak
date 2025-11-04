@@ -1,0 +1,80 @@
+---
+title: "You need to transfer approximately 4 TB of data dailyExam"
+description: "Video for you need to transfer approximately 4 TB of data daily from Azure Blob Storage to Google Cloud Storage before importing the data into BigQuery. You are"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You need to transfer approximately 4 TB of data daily from Azure Blob Storage to Google Cloud Storage before importing the data into BigQuery. You are looking for a reliable and low-maintenance solution. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A digital media company needs to move about 6 TB of objects each day from Azure Blob Storage to a Cloud Storage bucket and then load the files into BigQuery. You want a dependable solution that requires minimal ongoing operations. What should you implement?",
+  "options": [
+    {
+      "text": "Build a Data Fusion pipeline to copy objects from Azure Blob Storage to Cloud Storage every day",
+      "explanation": "This creates an ETL pipeline that performs batch copies between the two storage systems.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Storage Transfer Service with a recurring schedule to move data from Azure Blob Storage into Cloud Storage",
+      "explanation": "This service natively orchestrates ongoing transfers from external cloud storage into Google Cloud Storage.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Run a daily cron on a Compute Engine VM that copies from Azure using the Azure CLI and gsutil",
+      "explanation": "This relies on a virtual machine that you manage and scripts that are triggered by cron.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Trigger a Cloud Function from Cloud Scheduler that executes gsutil to pull the data each day",
+      "explanation": "This sets up a serverless function that runs on a schedule and uses gsutil to perform the copy.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Use Storage Transfer Service with a recurring schedule to move data from Azure Blob Storage into Cloud Storage</b>.</p><p>With <b>Storage Transfer Service</b> you can configure a daily recurring job that pulls objects from Azure Blob Storage directly into Cloud Storage. It handles parallelism, retries, error reporting, incremental transfers based on modification time, and bandwidth control which makes it dependable and low maintenance. After the files arrive in Cloud Storage you can load them into BigQuery with scheduled load jobs or other standard loading patterns.</p><p><i>Build a Data Fusion pipeline to copy objects from Azure Blob Storage to Cloud Storage every day</i> is heavier to operate and is not purpose built for high volume cross cloud object transfers. You would need to manage connectors, pipeline failures, and scaling which increases operational overhead compared to a managed transfer service.</p><p><i>Run a daily cron on a Compute Engine VM that copies from Azure using the Azure CLI and gsutil</i> is a self managed approach that adds maintenance for the VM and credentials along with custom error handling and retry logic. Moving 6 TB per day would require careful tuning and monitoring that increases operational burden.</p><p><i>Trigger a Cloud Function from Cloud Scheduler that executes gsutil to pull the data each day</i> is not suited to multi terabyte transfers because function executions are time bound and ephemeral. Invoking command line tools for long running bulk movement is brittle and raises operational risk.</p>",
+  "batch_id": "95",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "You need to transfer approximately 4 TB of data daily from Azure Blob Storage to Google Cloud Storage before importing the data into BigQuery. You are looking for a reliable and low-maintenance solution. What should you do?",
+  "originalOptions": "A. Use a Compute Engine instance with a daily cron job to copy data using the Azure CLI and gsutil tools.<br/>B. Create a Cloud Function triggered by Cloud Scheduler to run a gsutil job daily to transfer the data.<br/>C. Configure Storage Transfer Service to perform recurring transfers from Azure Blob Storage to Google Cloud Storage.<br/>D. Set up a Data Fusion pipeline to perform daily transfers between Azure Blob Storage and Google Cloud Storage.",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "357",
+  "tip": "<p>When you see large recurring object transfers across clouds, prefer the managed service with a built in <i>schedule</i>, automatic <i>retries</i>, and centralized monitoring. That usually indicates <i>Storage Transfer Service</i> over custom scripts or serverless functions.</p>",
+  "references": [
+    "https://cloud.google.com/storage-transfer/docs/transfer-from-azure",
+    "https://cloud.google.com/storage-transfer/docs/overview",
+    "https://cloud.google.com/bigquery/docs/loading-data-cloud-storage",
+    "https://cloud.google.com/functions/docs/concepts/exec#timeouts"
+  ],
+  "url": "https://certificationation.com/questions/exam-tb-of-data-daily-from-exam-357.html",
+  "video_url": "https://certificationation.com/videos/exam-tb-of-data-daily-from-exam-357.html"
+}

@@ -1,0 +1,81 @@
+---
+title: "After the release of an updated version of a popularExam"
+description: "Video for after the release of an updated version of a popular application, your team encounters a notification from the production monitoring team. The alert"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "After the release of an updated version of a popular application, your team encounters a notification from the production monitoring team. The alert indicates a persistent replication lag between the main instance and the read replicas of your Cloud SQL for PostgreSQL instances. Resolving the replication lag problem becomes a priority for you. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Two days after launching a major update to the customer portal at mcnz.com, your monitoring reports a consistent 2 to 3 minute replication delay from the primary to several read replicas for your Cloud SQL for PostgreSQL environment. The lag started immediately after the release and aligns with a spike in write volume and new long-running analytical reports. You need to address the replication delay so that replicas catch up and remain current without rebuilding the system. What should you do?",
+  "options": [
+    {
+      "text": "Increase max_wal_senders and wal_keep_size on the primary",
+      "explanation": "Adjusting these WAL settings can help retain more logs and keep additional connections for replication but it does not remove the root cause of slow apply on replicas",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Stop all active queries and rebuild every read replica",
+      "explanation": "Recreating replicas is disruptive and time consuming and it does not fix the workload pattern that causes lag to recur",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable high availability on the primary instance",
+      "explanation": "High availability improves resilience and failover for the primary but it does not change the asynchronous replication lag behavior",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Analyze and tune slow or long-running queries on the primary and reduce transaction duration so replicas can apply WAL quickly",
+      "explanation": "Optimizing heavy or long transactions reduces WAL generation and replay delays which directly impacts replica lag",
+      "correct": true,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Analyze and tune slow or long-running queries on the primary and reduce transaction duration so replicas can apply WAL quickly</b>.</p><p>Cloud SQL read replicas apply write-ahead log records in order and they can only keep up if the primary is generating WAL at a rate that the replicas can receive and apply efficiently. A spike in writes combined with long-running analytical queries that hold transactions open means the replicas must wait to apply some changes which increases apply time and causes lag. Shortening transaction lifetimes and optimizing the slow reports reduces contention and speeds up WAL replay which lets the replicas catch up and remain current without rebuilding anything.</p><p><i>Increase max_wal_senders and wal_keep_size on the primary</i> does not address the cause of lag. More WAL senders or a larger WAL retention window can help prevent replicas from needing a rebuild if they fall too far behind or lose WAL segments. However it does not make the replicas apply WAL any faster and it does not fix slow queries or long transactions that are blocking timely WAL apply.</p><p><i>Stop all active queries and rebuild every read replica</i> is unnecessary and disruptive. Rebuilding replicas does not change the rate at which WAL is produced or applied and it does not correct the long-running queries that are creating the backlog. The lag would simply return after the rebuild once the same workload resumes.</p><p><i>Enable high availability on the primary instance</i> improves resiliency and failover but it does not reduce asynchronous read replica lag. HA protects the primary with a standby yet read replicas still apply WAL independently and will continue to lag if workload and transaction patterns are not optimized.</p>",
+  "batch_id": "328",
+  "answerCode": "4",
+  "type": "multiple-choice",
+  "originalQuery": "After the release of an updated version of a popular application, your team encounters a notification from the production monitoring team. The alert indicates a persistent replication lag between the main instance and the read replicas of your Cloud SQL for PostgreSQL instances. Resolving the replication lag problem becomes a priority for you. What should you do?",
+  "originalOptions": "A. Stop all running queries, and re-create the replicas.<br/>B. Configure high availability for the primary instance.<br/>C. Identify and optimize slow-running queries, or set parallel replication flags.<br/>D. Edit the primary instance to add more memory.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "65",
+  "tip": "<p>When you see replication lag that began with a write spike and new analytics, check for <i>long transactions</i> and <i>slow queries</i> on the primary. Fixing the workload is usually more effective than changing flags or rebuilding replicas.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/performance",
+    "https://cloud.google.com/sql/docs/postgres/read-replicas",
+    "https://cloud.google.com/sql/docs/postgres/high-availability",
+    "https://cloud.google.com/sql/docs/postgres/flags",
+    "https://www.postgresql.org/docs/current/hot-standby.html"
+  ],
+  "url": "https://certificationation.com/questions/exam-version-of-a-popular-application-exam-065.html",
+  "video_url": "https://certificationation.com/videos/exam-version-of-a-popular-application-exam-065.html"
+}

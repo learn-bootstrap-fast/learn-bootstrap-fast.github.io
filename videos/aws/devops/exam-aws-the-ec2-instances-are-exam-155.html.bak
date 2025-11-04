@@ -1,0 +1,62 @@
+---
+title: "A company has EC2 instances running in AWS. The EC2Exam"
+description: "Video for a company has EC2 instances running in AWS. The EC2 instances are running in an Auto Scaling group. There are a lot of requests being lost because of"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company has EC2 instances running in AWS. The EC2 instances are running in an Auto Scaling group. There are a lot of requests being lost because of the load on the servers. The Auto Scaling group is launching new instances to take the load but there are still some requests that are lost. Which of the following would provide the most cost-effective solution to avoid losing the submitted requests? Choose the correct answer from the options given below."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The most cost-effective approach to prevent losing requests is to implement a messaging queue such as Amazon SQS (<b>Utilize a message queue like SQS to buffer incoming requests, allowing EC2 instances to asynchronously process them from the queue.</b>). This design decouples the request submission from processing, so that requests are reliably saved in the queue, and EC2 instances can pull and handle them at a manageable rate—even when under heavy load. This eliminates the possibility of dropped requests due to momentary application server overload or scaling lag.</p><p>Here’s why the other options are not the best choices:<br /><i>Launch a standby EC2 instance at all times to rapidly handle surges.</i> is inefficient and incurs unnecessary costs, as a constantly running extra instance may sit idle for long periods.<br /><i>Upgrade to larger EC2 instance types for greater processing power.</i> increases your expenses but does not address the problem of rapidly changing traffic and application scaling delays.<br /><i>Perform pre-warming of the Elastic Load Balancer before expected spikes.</i> might help with load balancing delays, but does not prevent the application servers themselves from being overwhelmed or losing requests during high load. Message queuing is both scalable and cost-effective.</p><p><b>Tip:</b> Always consider asynchronous processing via queuing systems when application workloads experience bursty or unpredictable traffic and requests must not be lost.</p>",
+  "query": "<p>An organization operates EC2 instances as part of an Auto Scaling group. Despite scaling out to add new instances under high traffic, some requests continue to be dropped due to overloaded servers. What is the most cost-efficient way to ensure submitted requests are not lost in this scenario?</p>",
+  "original_oid": "6793da7361969b416038a209",
+  "options": [
+    {
+      "correct": false,
+      "text": "Launch a standby EC2 instance at all times to rapidly handle surges.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Utilize a message queue like SQS to buffer incoming requests, allowing EC2 instances to asynchronously process them from the queue.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Upgrade to larger EC2 instance types for greater processing power.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Perform pre-warming of the Elastic Load Balancer before expected spikes.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question409",
+  "originalQuery": "A company has EC2 instances running in AWS.\nThe EC2 instances are running in an Auto Scaling group.\nThere are a lot of requests being lost because of the load on the servers.\nThe Auto Scaling group is launching new instances to take the load but there are still some requests that are lost.\nWhich of the following would provide the most cost-effective solution to avoid losing the submitted requests? Choose the correct answer from the options given below.",
+  "originalOptions": "A. Use an SQS queue to decouple the application components. Put the requests in the SQS queue and pull the messages from the queue for further processing in the EC2 instances.\nB. Keep one extra EC2 instance always powered on.\nC. Use larger instances for your application.\nD. Pre-warm your Elastic Load Balancer.",
+  "video_url": "https://certificationation.com/videos/exam-aws-the-ec2-instances-are-exam-155.html",
+  "url": "https://certificationation.com/questions/exam-aws-the-ec2-instances-are-exam-155.html"
+}

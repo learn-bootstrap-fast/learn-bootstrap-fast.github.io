@@ -1,0 +1,81 @@
+---
+title: "You need to enhance the security of your Cloud SQL forExam"
+description: "Video for you need to enhance the security of your Cloud SQL for PostgreSQL instance which holds sensitive data. The instance should only accept connections"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You need to enhance the security of your Cloud SQL for PostgreSQL instance which holds sensitive data. The instance should only accept connections from specific GCP resources. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A retail analytics startup at example.com runs a Cloud SQL for PostgreSQL instance that stores confidential customer records. You need the database to accept connections only from a defined set of GCP resources and you want to enforce this using network level controls rather than user identity. What should you do?",
+  "options": [
+    {
+      "text": "Implement VPC Service Controls around the project that hosts the database",
+      "explanation": "VPC Service Controls creates a service perimeter to limit data movement for supported Google APIs and services.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Require SSL TLS certificates for all connections to the Cloud SQL instance",
+      "explanation": "SSL TLS encrypts data in transit and can use client certificates to authenticate clients to the database.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable authorized networks on the instance and allow only the specific IP addresses used by those resources",
+      "explanation": "Authorized networks let you define an IP allowlist so that only listed source addresses can connect to the instance.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use Identity Aware Proxy to gate database access and allow only approved principals",
+      "explanation": "Identity Aware Proxy enforces access based on IAM identities and can provide TCP forwarding for private access flows.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Enable authorized networks on the instance and allow only the specific IP addresses used by those resources</b>.</p><p><b>Authorized networks</b> create an IP allowlist on the Cloud SQL public endpoint so the instance accepts connections only from the specified source addresses. This satisfies the requirement for network level enforcement because access is based on source IP rather than user identity. In GCP you can give your workloads stable egress IPs by using a static external address or a Cloud NAT gateway and then place only those IPs in the <b>authorized networks</b> list.</p><p><i>Implement VPC Service Controls around the project that hosts the database</i> is not correct because VPC Service Controls protect Google API access at the control plane and do not restrict data plane connections to a database endpoint. At best it can limit the Cloud SQL Admin API but it does not allowlist client IPs reaching the PostgreSQL service.</p><p><i>Require SSL TLS certificates for all connections to the Cloud SQL instance</i> is not correct because SSL and client certificates provide encryption in transit and client authentication. They do not restrict which network sources can reach the instance, so any IP could still attempt to connect.</p><p><i>Use Identity Aware Proxy to gate database access and allow only approved principals</i> is not correct because IAP is an identity based control. Even when used with TCP forwarding it governs who can connect rather than enforcing a network based allowlist of source IP addresses.</p>",
+  "batch_id": "287",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You need to enhance the security of your Cloud SQL for PostgreSQL instance which holds sensitive data. The instance should only accept connections from specific GCP resources. What should you do?",
+  "originalOptions": "A. Use Identity-Aware Proxy (IAP) to control access to the database.<br/>B. Implement VPC Service Controls.<br/>C. Configure SSL/TLS certificates for your Cloud SQL instance.<br/>D. Apply IP allowlisting to restrict access to designated IP addresses.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "13",
+  "tip": "<p>When a question highlights <i>network level</i> restriction, look for <i>authorized networks</i> on public IP or private IP connectivity. If the question stresses <i>identity</i> or user principals, then consider IAP or IAM based answers instead.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/configure-ip",
+    "https://cloud.google.com/sql/docs/postgres/configure-private-ip",
+    "https://cloud.google.com/vpc-service-controls/docs/supported-products",
+    "https://cloud.google.com/sql/docs/postgres/configure-ssl-instance",
+    "https://cloud.google.com/iap/docs/concepts-overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-your-cloud-sql-for-postgresql-exam-013.html",
+  "video_url": "https://certificationation.com/videos/exam-your-cloud-sql-for-postgresql-exam-013.html"
+}

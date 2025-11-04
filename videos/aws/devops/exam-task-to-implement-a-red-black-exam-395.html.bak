@@ -1,0 +1,62 @@
+---
+title: "Your manager has assigned you a task to implement aExam"
+description: "Video for your manager has assigned you a task to implement a Red/Black deployment strategy for a new project deployed in EC2 instances. You created two similar"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your manager has assigned you a task to implement a Red/Black deployment strategy for a new project deployed in EC2 instances. You created two similar environments in AWS. Each environment contains an ELB with an Auto Scaling group attached. One environment is used to run the live traffic, and the other one will install the new software release. And the traffic is switched between two environments by updating the DNS records in Route 53 Which description is NOT true for this Red/Black deployment?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The statement <strong>\"Using Route 53, you can point DNS to both the active environment and the environment deploying the update at the same time.\"</strong> is <strong>incorrect</strong> for Red/Black deployments. Typically, you direct production traffic to only one environment at any given moment; this is fundamental for the Blue/Green (Red/Black) deployment model. Serving traffic to both environments simultaneously can lead to inconsistency, unpredictable results, and even double processing or user experience problems. <br/><br/>Option <em>\"There will be no service interruption, as the original environment is still able to answer requests while the replacement is getting ready.\"</em> is correct, as zero downtime is a key benefit of Red/Black deployment: the old version remains operational until the switch. <br/><br/>Option <em>\"Rolling back after deployment problems is straightforward by updating Route 53 to send traffic back to the previous environment.\"</em> is also true—updating DNS to revert to the earlier environment is a big advantage of this deployment model. <br/><br/>Option <em>\"Route 53 DNS should only be mapped to a single environment—either serving active traffic or running the new deployment—at one given moment.\"</em> is correct and describes the intended usage. <br/><br/><strong>Tip:</strong> In Red/Black deployments, always ensure production DNS points to exactly one target environment at a time. This minimizes risk and makes rollback safe and simple.</p>",
+  "query": "<p>Your supervisor has tasked you with setting up a Red/Black (Blue/Green) deployment using EC2 instances for a new AWS project. You've built two nearly identical environments, each with an ELB and an attached Auto Scaling group. One environment is currently handling active user traffic while the new software release is being staged in the second environment. You plan to toggle traffic between these two through Route 53 DNS changes.<br>Which statement below does <strong>not</strong> accurately describe this Red/Black deployment approach?</p>",
+  "original_oid": "6793d9d461969b416038a0c8",
+  "options": [
+    {
+      "correct": false,
+      "text": "There will be no service interruption, as the original environment is still able to answer requests while the replacement is getting ready.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Using Route 53, you can point DNS to both the active environment and the environment deploying the update at the same time.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Rolling back after deployment problems is straightforward by updating Route 53 to send traffic back to the previous environment.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Route 53 DNS should only be mapped to a single environment—either serving active traffic or running the new deployment—at one given moment.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question83",
+  "originalQuery": "Your manager has assigned you a task to implement a Red/Black deployment strategy for a new project deployed in EC2 instances.\nYou created two similar environments in AWS.\nEach environment contains an ELB with an Auto Scaling group attached.\nOne environment is used to run the live traffic, and the other one will install the new software release.\nAnd the traffic is switched between two environments by updating the DNS records in Route 53\nWhich description is NOT true for this Red/Black deployment?",
+  "originalOptions": "A. If issues arise during the deployment, rollback can be easily achieved by modifying Route 53 to shift traffic back to the original environment.|B. Use Amazon Route53 to switch the DNS record to both the \"live traffic\" environment and the environment that \"installs the new software release\" simultaneously.|C. Use Amazon Route53 to divert traffic to only one of the environments (i.e) either the \"live traffic\" or the one that \"installs the new software release\"at a single point of time.|D. There is no downtime as the old environment can still serve traffic when the new environment is not ready yet.",
+  "video_url": "https://certificationation.com/videos/exam-task-to-implement-a-red-black-exam-395.html",
+  "url": "https://certificationation.com/questions/exam-task-to-implement-a-red-black-exam-395.html"
+}

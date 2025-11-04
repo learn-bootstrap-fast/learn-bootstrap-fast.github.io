@@ -1,0 +1,80 @@
+---
+title: "A Database Engineer is tasked with assessing auditingExam"
+description: "Video for a Database Engineer is tasked with assessing auditing policies for managed services to ensure proper security and compliance. When evaluating the Data"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A Database Engineer is tasked with assessing auditing policies for managed services to ensure proper security and compliance. When evaluating the Data Access audit logs for Cloud SQL instances, which of the following actions would provide the most comprehensive and accurate auditing information?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "At BrightCart, an online retailer, a database engineer must validate that Cloud SQL audit coverage is complete across 24 instances to meet compliance objectives. When configuring Cloud Audit Logs for Cloud SQL Data Access, which action will produce the most complete and reliable audit visibility?",
+  "options": [
+    {
+      "text": "Enable Data Access audit logs for all Cloud SQL instances and set the minimum severity to WARNING",
+      "explanation": "This configures Data Access logging on all instances but filters out informational entries by keeping only warning and higher severities",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use only Admin Activity audit logs for Cloud SQL and do not enable Data Access logs",
+      "explanation": "This relies solely on administrator operation logs and omits data access events that are captured by Data Access logs",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable Data Access audit logs for every Cloud SQL instance and set the minimum severity to INFORMATIONAL",
+      "explanation": "This turns on Data Access logging across the fleet and records entries with info severity and higher for broad event capture",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Enable Data Access audit logs only for instances that process highly sensitive data and set the minimum severity to ERROR",
+      "explanation": "This limits logging to a subset of instances and keeps only error entries which reduces the amount of recorded access activity",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Enable Data Access audit logs for every Cloud SQL instance and set the minimum severity to INFORMATIONAL</b>.</p><p>Data Access audit logs are required to see who read or modified data and resource content. They are not enabled by default for most services, so enabling them on every Cloud SQL instance ensures complete coverage across all 24 databases. Many Data Access entries are written with informational severity, so using an informational minimum severity prevents these events from being filtered out and provides the most complete and reliable visibility for compliance reviews.</p><p><i>Enable Data Access audit logs for all Cloud SQL instances and set the minimum severity to WARNING</i> is incomplete because a higher threshold would exclude many informational Data Access entries, which reduces audit completeness.</p><p><i>Use only Admin Activity audit logs for Cloud SQL and do not enable Data Access logs</i> is insufficient because Admin Activity captures administrative changes to resources but it does not record access to data, which leaves significant gaps for compliance validation.</p><p><i>Enable Data Access audit logs only for instances that process highly sensitive data and set the minimum severity to ERROR</i> creates coverage gaps across instances and would omit nearly all Data Access events because most are not errors, which makes the audit trail unreliable.</p>",
+  "batch_id": "13",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "A Database Engineer is tasked with assessing auditing policies for managed services to ensure proper security and compliance. When evaluating the Data Access audit logs for Cloud SQL instances, which of the following actions would provide the most comprehensive and accurate auditing information?",
+  "originalOptions": "A. Enabling Data Access audit logs only for instances storing sensitive data and setting the log level to ERROR.<br/>B. Enabling Data Access audit logs for all Cloud SQL instances and setting the log level to WARNING.<br/>C. Enabling Data Access audit logs for all Cloud SQL instances and setting the log level to NOTICE.<br/>D. Enabling Data Access audit logs for all Cloud SQL instances and setting the log level to INFORMATIONAL.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "54",
+  "tip": "<p>When a question asks for <i>complete</i> audit visibility, think about turning on <i>Data Access</i> for all relevant resources and choose the lowest practical severity threshold, often <i>informational</i>. Remember that <i>Admin Activity</i> is on by default and does not replace Data Access.</p>",
+  "references": [
+    "https://cloud.google.com/logging/docs/audit",
+    "https://cloud.google.com/logging/docs/audit/configure-data-access",
+    "https://cloud.google.com/logging/docs/audit#types_of_audit_logs",
+    "https://cloud.google.com/sql/docs/mysql/viewing-logs#cloud-audit-logs"
+  ],
+  "url": "https://certificationation.com/questions/exam-with-assessing-auditing-policies-for-exam-054.html",
+  "video_url": "https://certificationation.com/videos/exam-with-assessing-auditing-policies-for-exam-054.html"
+}

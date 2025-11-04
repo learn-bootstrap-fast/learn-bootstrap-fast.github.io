@@ -1,0 +1,62 @@
+---
+title: "Your company has a set of EC2 instances sitting behindExam"
+description: "Video for your company has a set of EC2 instances sitting behind an Elastic Load Balancer. There is a requirement to create an OpsWorks stack to host the newer"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company has a set of EC2 instances sitting behind an Elastic Load Balancer. There is a requirement to create an OpsWorks stack to host the newer version of this application. The OpsWorks stack has been created and the current ELB was selected to host the newer version of the application. Now the application is not responding to the requests. What could be the cause?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct answer is <b>Attaching the ELB to the OpsWorks stack resulted in the deregistration of the running application instances, causing application inaccessibility.</b> When you associate an existing Elastic Load Balancer with a new OpsWorks stack or layer, OpsWorks deregisters the previously registered EC2 instances (those tied to your running application) from the ELB. If new instances for the updated application are not yet running or properly registered with the ELB, client requests won't reach any healthy backend, making the application unavailable.</p><p>Let's look at why the other options are incorrect:</p><ul><li><i>You designated the current ELB for the new OpsWorks stack without deploying fresh application instances for it.</i> – This implies no new instances were created, but doesn't specifically address the cause: existing backend instances are actually deregistered once the ELB is moved, not just because new ones weren't deployed.</li><li><i>OpsWorks is using existing instances tied to the prior application version, even after you linked the ELB.</i> – After attaching the ELB to OpsWorks, the existing instances are removed from the ELB, so OpsWorks is not serving from the original application servers anymore.</li><li><i>You set the OpsWorks stack to provision new application instances within the same domain as the previous ones.</i> – The domain configuration is not the cause here; the real issue is the loss of registered instances on the load balancer.</li></ul><p><b>Tip:</b> Always verify instance health and registration on your ELB after attaching it to a new OpsWorks stack or layer. Ensure the new application servers are launched and properly registered with the load balancer before routing production traffic through it.</p>",
+  "query": "<p>Your team manages EC2 instances behind an Elastic Load Balancer (ELB). You are tasked with launching a new version of the application using AWS OpsWorks in a new stack, and you assign the existing ELB to handle traffic for this updated deployment. After attaching the ELB to the new OpsWorks stack, the application stops responding to client requests. Which of the following best explains why this has happened?</p>",
+  "original_oid": "6793da6761969b416038a1f1",
+  "options": [
+    {
+      "correct": false,
+      "text": "You designated the current ELB for the new OpsWorks stack without deploying fresh application instances for it.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Attaching the ELB to the OpsWorks stack resulted in the deregistration of the running application instances, causing application inaccessibility.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "OpsWorks is using existing instances tied to the prior application version, even after you linked the ELB.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "You set the OpsWorks stack to provision new application instances within the same domain as the previous ones.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question384",
+  "originalQuery": "Your company has a set of EC2 instances sitting behind an Elastic Load Balancer.\nThere is a requirement to create an OpsWorks stack to host the newer version of this application.\nThe OpsWorks stack has been created and the current ELB was selected to host the newer version of the application.\nNow the application is not responding to the requests.\nWhat could be the cause?",
+  "originalOptions": "[\"A. This is because the OpsWorks stack is utilizing the instances of the current application after the ELB was attached to it.\",\"B. You have configured the OpsWorks stack to deploy the instances of the new version of the application in the same domain as that of the old instances.\",\"C. After the ELB is attached to the OpsWorks stack, it would have de-registered the instances of the current application and therefore the current application is not responding to requests.\",\"D. This is because the OpsWorks web layer is utilizing the instances of the current application after the ELB was attached to the OpsWorks layer.\"]",
+  "video_url": "https://certificationation.com/videos/exam-sitting-behind-an-elastic-load-exam-077.html",
+  "url": "https://certificationation.com/questions/exam-sitting-behind-an-elastic-load-exam-077.html"
+}

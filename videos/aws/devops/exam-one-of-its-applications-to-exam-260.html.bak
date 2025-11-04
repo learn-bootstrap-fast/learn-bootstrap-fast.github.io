@@ -1,0 +1,67 @@
+---
+title: "A software company recently migrated one of itsExam"
+description: "Video for a software company recently migrated one of its applications to the AWS platform. The application is deployed in region ap-southeast-1 For the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A software company recently migrated one of its applications to the AWS platform. The application is deployed in region ap-southeast-1 For the disaster recovery strategy, the DevOps team has used a warm-standby solution and created another functional environment in region ap-southeast-2 When there is a failure of the production system and a failover is required, which steps can be regarded as appropriate recovery steps? (Select TWO.)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct recovery steps in a warm-standby disaster recovery architecture are:</p><ul><li><b>Leverage Amazon Route 53 to reroute all client requests to the environment in ap-southeast-2.</b> Route 53 enables DNS failover, which allows user traffic to be directed to the backup environment when the primary region fails.</li><li><b>Scale the Auto Scaling groups in the secondary region to efficiently handle the increased user load.</b> In a warm-standby setup, the standby environment often runs at minimal capacity to save cost. During failover, it must be scaled up to meet production demand.</li></ul><p><i>Frequently use EBS Lifecycle Manager to schedule and take EBS volume snapshots</i> is incorrect because this action helps protect data, but it is not part of the immediate recovery steps needed during failover—these snapshots are more about maintaining backups.</p><p><i>Backup necessary data sets to Amazon S3 and activate encryption for confidential information</i> relates to data durability and security, but does not address the actual process of switching operations to the standby region after a failure.</p><p><i>Produce custom Amazon Machine Images (AMIs) and launch the application on new EC2 instances</i> is not required for warm-standby, since this architecture presumes that the secondary environment is already provisioned and ready to operate; launching new instances from AMIs is more relevant for cold standby scenarios.</p><p><b>Tip:</b> The most important actions during failover are to redirect traffic and ensure the standby environment is fully operational and capable of handling normal traffic volumes.</p>",
+  "query": "<p>A technology company has recently transitioned one of their software solutions onto AWS.<br>The application operates primarily in the <b>ap-southeast-1</b> region.<br>For disaster recovery, the DevOps engineers have implemented a warm-standby setup and provisioned a secondary working environment in the <b>ap-southeast-2</b> region.<br>Should the main production service encounter a failure leading to a required failover, which actions would be valid to properly recover the service? <b>(Select TWO.)</b></p>",
+  "original_oid": "6793d9dd61969b416038a0d8",
+  "options": [
+    {
+      "correct": true,
+      "text": "Leverage Amazon Route 53 to reroute all client requests to the environment in ap-southeast-2.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Scale the Auto Scaling groups in the secondary region to efficiently handle the increased user load.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Frequently use EBS Lifecycle Manager to schedule and take EBS volume snapshots.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Backup necessary data sets to Amazon S3 and activate encryption for confidential information.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Produce custom Amazon Machine Images (AMIs) and launch the application on new EC2 instances.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question101",
+  "originalQuery": "A software company recently migrated one of its applications to the AWS platform.\nThe application is deployed in region ap-southeast-1\nFor the disaster recovery strategy, the DevOps team has used a warm-standby solution and created another functional environment in region ap-southeast-2\nWhen there is a failure of the production system and a failover is required, which steps can be regarded as appropriate recovery steps? (Select TWO.)",
+  "originalOptions": "A. Create custom AMIs and start the application in Amazon EC2 instances.\nB. Adjust Auto Scaling groups to accommodate the increased traffic.\nC. Use EBS Lifecycle Manager to create EBS snapshots regularly.\nD. Select tools to backup data into AWS S3. Enable encryption for sensitive data.\nE. Check Amazon Route 53 to make sure that all traffic is routed to region ap-southeast-2.",
+  "video_url": "https://certificationation.com/videos/exam-one-of-its-applications-to-exam-260.html",
+  "url": "https://certificationation.com/questions/exam-one-of-its-applications-to-exam-260.html"
+}

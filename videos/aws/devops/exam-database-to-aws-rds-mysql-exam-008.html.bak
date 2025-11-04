@@ -1,0 +1,67 @@
+---
+title: "You migrated an on-premise MySQL database to AWS RDSExam"
+description: "Video for you migrated an on-premise MySQL database to AWS RDS MySQL in region ap-southeast-1 The database has stored key information such as customers' phone"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You migrated an on-premise MySQL database to AWS RDS MySQL in region ap-southeast-1 The database has stored key information such as customers' phone numbers, addresses and date of birth. In order to decrease the read load on the master DB instance, a Read Replica has been created in region ap-southeast-2 This Read Replica can also be promoted as a data recovery scheme if the source DB instance fails. In which scenarios can the data be successfully recovered by the Read Replica? (Select TWO.)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct answers are: <b>The main database instance is unintentionally deleted</b> and <b>There is a failure of RDS hardware on the primary instance</b>.</p><p>A Read Replica keeps an asynchronous copy of the primary database. If the original database is lost—such as in the case where <b>the main database instance is unintentionally deleted</b>—or if there is a <b>failure of RDS hardware on the primary instance</b>, the Read Replica can be promoted to replace the source as it contains all data replicated up to the most recent point.</p><p>The other choices are not suitable recovery scenarios:<br><ul><li><i>A bug in the application has accidentally erased some records from the primary database.</i> – Deletions made at the source are also replicated to the replica, so deleted data cannot be recovered from the Read Replica.</li><li><i>The AWS account containing the databases has been compromised.</i> – If the AWS account itself is compromised, all resources within that account are at risk, including the Read Replica, making it unavailable as a recovery option.</li><li><i>A regional outage impacts both ap-southeast-1 and ap-southeast-2 at the same time.</i> – Since both the source and the replica are affected, it would not be possible to recover data from the Read Replica.</li></ul></p><p><b>Tips:</b> Use Read Replicas across regions for high availability and disaster recovery only if the disaster is localized to one region or the source instance itself. Remember, logical errors (such as unintentional deletions or bad application logic) are always replicated, so snapshots or backups are better suited to protect against such issues.</p>",
+  "query": "<p>Your organization has migrated a MySQL database from on-premises to AWS RDS MySQL in the ap-southeast-1 region. This database holds essential information such as customer contact details, addresses, and dates of birth. To reduce the read operations on the primary database, a Read Replica has been set up in the ap-southeast-2 region. This replica may be promoted to serve as a recovery solution should the source database fail. </p><p>Under which of the following circumstances is it possible to restore the data using the Read Replica? (Choose TWO options.)</p>",
+  "original_oid": "6793d9e761969b416038a0ec",
+  "options": [
+    {
+      "correct": false,
+      "text": "A bug in the application has accidentally erased some records from the primary database.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "The main database instance is unintentionally deleted.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "There is a failure of RDS hardware on the primary instance.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "The AWS account containing the databases has been compromised.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "A regional outage impacts both ap-southeast-1 and ap-southeast-2 at the same time.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question121",
+  "originalQuery": "You migrated an on-premise MySQL database to AWS RDS MySQL in region ap-southeast-1\nThe database has stored key information such as customers' phone numbers, addresses and date of birth.\nIn order to decrease the read load on the master DB instance, a Read Replica has been created in region ap-southeast-2\nThis Read Replica can also be promoted as a data recovery scheme if the source DB instance fails.\nIn which scenarios can the data be successfully recovered by the Read Replica? (Select TWO.)",
+  "originalOptions": "[\"A. Data has been deleted mistakenly by a bug in the application code.\",\"B. A RDS hardware failure on the master instance.\",\"C. AWS account is compromised.\",\"D. The master database instance has been mistakenly deleted.\",\"E. An AWS regional failure happening in both ap-southeast-1 and ap-southeast-2.\"]",
+  "video_url": "https://certificationation.com/videos/exam-database-to-aws-rds-mysql-exam-008.html",
+  "url": "https://certificationation.com/questions/exam-database-to-aws-rds-mysql-exam-008.html"
+}

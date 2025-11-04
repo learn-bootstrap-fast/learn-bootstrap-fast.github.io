@@ -1,0 +1,81 @@
+---
+title: "A Database Engineer is working on a project thatExam"
+description: "Video for a Database Engineer is working on a project that involves a multi-tenant SaaS application with a variety of workloads and access patterns. The"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A Database Engineer is working on a project that involves a multi-tenant SaaS application with a variety of workloads and access patterns. The application is currently using Cloud SQL for PostgreSQL, and the engineer is tasked with optimizing cost and performance. Which of the following strategies should the engineer implement to best achieve these objectives?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "At Aurora Metrics, a subscription analytics startup, your multi-tenant SaaS runs on Cloud SQL for PostgreSQL. Traffic fluctuates during the day and clients open thousands of short-lived sessions at peak times. Leadership wants to reduce infrastructure spend by 15 percent and keep p95 query latency steady. What database-tier change should you implement to meet these goals?",
+  "options": [
+    {
+      "text": "Migrate the workload to Cloud Spanner",
+      "explanation": "This moves the application to a globally distributed relational service that scales horizontally with strong consistency",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Deploy a connection pooler in front of Cloud SQL so client sessions are multiplexed to a smaller number of server connections",
+      "explanation": "This adds a lightweight proxy that reuses backend connections and evens out spikes in client sessions",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Shard tenants across several Cloud SQL instances by customer key",
+      "explanation": "This splits tenants across multiple instances by a key so each instance holds a subset of the data",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable automatic storage increase on the instance to accommodate data growth",
+      "explanation": "This setting automatically grows disk capacity as it nears full to avoid out-of-space errors",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Deploy a connection pooler in front of Cloud SQL so client sessions are multiplexed to a smaller number of server connections</b>.</p><p>A <b>connection pooler</b> reuses a small set of persistent database connections and maps many short lived client sessions onto them. This directly addresses the overhead and contention caused by thousands of brief connections, which improves efficiency and helps keep p95 latency steady by reducing connection churn and queueing. Because the database spends fewer resources creating and tearing down connections, you can often right size the instance and reduce CPU and memory pressure, which supports the goal of lowering costs without sacrificing performance.</p><p><i>Migrate the workload to Cloud Spanner</i> is not appropriate because it changes the database platform and introduces migration effort and compatibility considerations. It is also typically more expensive for smaller or spiky workloads and does not target the connection flood that is driving latency and cost.</p><p><i>Shard tenants across several Cloud SQL instances by customer key</i> adds operational complexity and usually increases instance count and networking overhead. It does not solve the core issue of excessive client connections and can raise costs rather than reduce them.</p><p><i>Enable automatic storage increase on the instance to accommodate data growth</i> prevents out of space errors but does not improve connection efficiency or query latency. It can also increase storage spend over time and therefore does not help meet the 15 percent reduction target.</p>",
+  "batch_id": "220",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "A Database Engineer is working on a project that involves a multi-tenant SaaS application with a variety of workloads and access patterns. The application is currently using Cloud SQL for PostgreSQL, and the engineer is tasked with optimizing cost and performance. Which of the following strategies should the engineer implement to best achieve these objectives?",
+  "originalOptions": "A. Implement a connection pooler to manage database connections efficiently<br/>B. Use Cloud Bigtable for its low-latency read and write capabilities<br/>C. Enable automatic storage increase to handle growing workloads<br/>D. Implement horizontal partitioning (sharding) to distribute data across multiple instances",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "320",
+  "tip": "<p>When a scenario mentions many <i>short lived connections</i> to Cloud SQL and a goal to keep <i>p95 latency</i> steady while reducing cost, think of <i>connection pooling</i> as the smallest change that targets connection overhead without redesigning the data model.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/pgbouncer",
+    "https://cloud.google.com/sql/docs/postgres/best-practices",
+    "https://cloud.google.com/sql/docs/postgres/limits",
+    "https://cloud.google.com/sql/docs/postgres/instance-settings#automatic-storage-increase",
+    "https://cloud.google.com/spanner/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-a-project-that-involves-a-exam-320.html",
+  "video_url": "https://certificationation.com/videos/exam-a-project-that-involves-a-exam-320.html"
+}

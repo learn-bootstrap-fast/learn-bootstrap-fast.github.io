@@ -1,0 +1,82 @@
+---
+title: "You are tasked with managing a Cloud SQL for MySQLExam"
+description: "Video for you are tasked with managing a Cloud SQL for MySQL database that will support an application with a global user base. The application requires"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are tasked with managing a Cloud SQL for MySQL database that will support an application with a global user base. The application requires low-latency read operations and the ability to scale read capacity on demand. What should you do to optimize read performance across multiple regions?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You manage a Cloud SQL for MySQL backend for a social fitness platform at example.com that serves users in North America Europe and Asia. The team must keep read latency low for distant users and they want to scale read capacity quickly during traffic spikes without changing the write path. What approach should you take to improve read performance across regions?",
+  "options": [
+    {
+      "text": "Use a global Cloud Load Balancer in front of the database",
+      "explanation": "Google Cloud load balancers do not proxy MySQL connections to multiple database backends and they do not provide data replication for reads",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Set up cross region read replicas for the Cloud SQL for MySQL instance in each target location and direct read queries to the nearest replica",
+      "explanation": "Read replicas asynchronously copy data from the primary and allow applications to send read traffic to regional replicas to reduce latency and increase read throughput",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Enable automatic storage increase on the Cloud SQL instance",
+      "explanation": "Automatic storage increase expands disk capacity as data grows and it does not add read nodes or reduce cross region network latency",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud Spanner",
+      "explanation": "This service offers global relational storage with strong consistency and would require migrating the application to a different database engine",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Set up cross region read replicas for the Cloud SQL for MySQL instance in each target location and direct read queries to the nearest replica</b>.</p><p>Read replicas placed in regions close to users reduce round trip time so reads complete faster for distant geographies. They also let you scale out read capacity quickly by adding replicas during traffic spikes while the primary instance continues to handle all writes. With Cloud SQL for MySQL the replication to replicas is asynchronous so the write path remains unchanged and the application can route only read queries to the nearest replica while keeping all writes directed to the primary.</p><p><i>Use a global Cloud Load Balancer in front of the database</i> is incorrect because Cloud SQL instances are not supported as load balancer backends and a load balancer does not create additional database read nodes in other regions. It would not lower read latency across continents nor increase read throughput for the database.</p><p><i>Enable automatic storage increase on the Cloud SQL instance</i> is incorrect because this feature only expands disk capacity to prevent running out of space. It does not add replicas and it does not improve read latency or read scalability.</p><p><i>Cloud Spanner</i> is incorrect for this scenario because it requires migrating to a different database and making application and schema changes. The requirement is to keep the existing write path and only scale reads which is achieved by Cloud SQL read replicas without a migration.</p>",
+  "batch_id": "355",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "You are tasked with managing a Cloud SQL for MySQL database that will support an application with a global user base. The application requires low-latency read operations and the ability to scale read capacity on demand. What should you do to optimize read performance across multiple regions?",
+  "originalOptions": "A. Enable automatic storage increase on the Cloud SQL instance to improve read performance.<br/>B. Utilize a Content Delivery Network (CDN) to cache read operations close to the users.<br/>C. Set up a Cloud Spanner instance to handle global distribution and read-write operations.<br/>D. Configure the Cloud SQL instance for MySQL with read replicas in each target region.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "43",
+  "tip": "<p>When you see a requirement to lower global read latency while keeping the write path unchanged, think <i>read replicas</i>. Load balancers help for stateless services and storage settings affect capacity rather than latency, and full migrations are only right when the question allows re architecture.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/replication/configure-cross-region-replicas",
+    "https://cloud.google.com/sql/docs/mysql/replication/use-replicas",
+    "https://cloud.google.com/sql/docs/features#high-availability-and-replicas",
+    "https://cloud.google.com/load-balancing/docs/backend-service",
+    "https://cloud.google.com/sql/docs/mysql/instance-settings#automatic-storage-increase",
+    "https://cloud.google.com/spanner/docs/when-to-use"
+  ],
+  "url": "https://certificationation.com/questions/exam-cloud-sql-for-mysql-database-exam-043.html",
+  "video_url": "https://certificationation.com/videos/exam-cloud-sql-for-mysql-database-exam-043.html"
+}

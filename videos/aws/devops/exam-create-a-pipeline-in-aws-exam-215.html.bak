@@ -1,0 +1,62 @@
+---
+title: "You were assigned a new task to create a pipeline in AWSExam"
+description: "Video for you were assigned a new task to create a pipeline in AWS CodePipeline service for a new Android App. In the pipeline, the source stage is GitHub and"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You were assigned a new task to create a pipeline in AWS CodePipeline service for a new Android App. In the pipeline, the source stage is GitHub and the build stage uses CodeBuild to build the App. During the build stage, it uses a buildspec file to generate artifacts which are stored in a S3 bucket. Another stage needs to be added in order to test the new version of App in AWS Device Farm. A test project in AWS Device Farm was already created by QA team. How should you configure this new stage in AWS CodePipeline?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best approach is to <b>Introduce a new test stage and utilize AWS Device Farm as the action provider, specifying the pre-existing Device Farm project's ID and the device pool's ARN in the stage settings</b>. AWS CodePipeline natively integrates with AWS Device Farm, so you can add a test stage directly to leverage this managed testing service. By configuring the Device Farm project ID and device pool ARN, tests are automatically executed as part of the pipeline execution, providing seamless feedback on application quality post-build.</p><p>The other options are less optimal or incorrect:</p><ul><li><i>Add a new stage and configure an action provider with a Lambda function. The Lambda function should be implemented to initiate the AWS Device Farm test project.</i> – While possible to use Lambda for custom actions, it adds unnecessary complexity because AWS Device Farm is already a supported action type in CodePipeline, allowing direct integration without Lambda code.</li><li><i>Insert a new stage and set up an SNS topic as the action provider, which will prompt the Device Farm project to carry out the required testing.</i> – SNS is not an appropriate action provider in this context. CodePipeline does not natively support triggering Device Farm via SNS topics.</li><li><i>Create a new deployment stage and designate AWS CloudFormation as the action provider, configuring the stack to launch and run the Device Farm project.</i> – CloudFormation is used for provisioning and managing AWS resources, not for running application tests. This approach would not facilitate the continuous execution of tests in Device Farm.</li></ul><p><b>Tips:</b> When including testing stages in CodePipeline, always check if AWS offers a native action provider before considering custom Lambda integrations. Using direct integrations simplifies your pipeline and reduces the chance of errors.</p>",
+  "query": "<p>You are tasked with designing a pipeline in AWS CodePipeline for a newly developed Android application. The source for the pipeline is GitHub, and the application's build process is managed by CodeBuild, which outputs compiled artifacts into an S3 bucket as specified by a buildspec file. You now need to incorporate a stage into the pipeline that will test the most recent build using an existing AWS Device Farm project, which QA has already set up. What is the most appropriate way to configure this new testing stage in AWS CodePipeline?</p>",
+  "original_oid": "6793da3f61969b416038a19e",
+  "options": [
+    {
+      "correct": false,
+      "text": "Add a new stage and configure an action provider with a Lambda function. The Lambda function should be implemented to initiate the AWS Device Farm test project.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Introduce a new test stage and utilize AWS Device Farm as the action provider, specifying the pre-existing Device Farm project's ID and the device pool's ARN in the stage settings.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Insert a new stage and set up an SNS topic as the action provider, which will prompt the Device Farm project to carry out the required testing.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Create a new deployment stage and designate AWS CloudFormation as the action provider, configuring the stack to launch and run the Device Farm project.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question301",
+  "originalQuery": "You were assigned a new task to create a pipeline in AWS CodePipeline service for a new Android App.\nIn the pipeline, the source stage is GitHub and the build stage uses CodeBuild to build the App.\nDuring the build stage, it uses a buildspec file to generate artifacts which are stored in a S3 bucket.\nAnother stage needs to be added in order to test the new version of App in AWS Device Farm.\nA test project in AWS Device Farm was already created by QA team.\nHow should you configure this new stage in AWS CodePipeline?",
+  "originalOptions": "A. Add a new deploy stage and add AWS CloudFormation as the action provider. The CloudFormation stack will create and initiate the AWS Device Farm project.\nB. Add a new test stage and add AWS Device Farm as the action provider. Configure the AWS Device Farm project ID and device pool ARN in the stage.\nC. Add a new stage and add an action provider using Lambda function. The Lambda function is responsible to trigger the AWS Device Farm project.\nD. Add a new stage and add an SNS topic as the action provider. The SNS topic will trigger the AWS Device Farm project to execute the test.",
+  "video_url": "https://certificationation.com/videos/exam-create-a-pipeline-in-aws-exam-215.html",
+  "url": "https://certificationation.com/questions/exam-create-a-pipeline-in-aws-exam-215.html"
+}

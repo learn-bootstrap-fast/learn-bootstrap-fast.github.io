@@ -1,0 +1,82 @@
+---
+title: "As a Database Engineer, you are tasked with designing aExam"
+description: "Video for as a Database Engineer, you are tasked with designing a backup and recovery solution for a high-priority application running on Google Cloud Platform."
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are tasked with designing a backup and recovery solution for a high-priority application running on Google Cloud Platform. The application uses Cloud Bigtable and Cloud SQL (MySQL) as its primary data stores. Which of the following backup and recovery strategies would best meet the requirements for minimizing data loss and ensuring quick recovery in case of a disaster, while also providing a cost-effective solution?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are developing a disaster recovery plan for a mission-critical service at a logistics startup named RiverTrack that runs on Google Cloud and stores data in Cloud Bigtable and in Cloud SQL for MySQL. Which strategy should you implement to keep data loss minimal and enable rapid restoration while maintaining reasonable cost?",
+  "options": [
+    {
+      "text": "Configure Cloud Bigtable multi-cluster replication and write a Cloud Function to export Cloud SQL to Cloud Storage on a schedule",
+      "explanation": "This combines Bigtable replication for availability with periodic exports from Cloud SQL to Cloud Storage.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Cloud Bigtable scheduled backups and enable point-in-time recovery for Cloud SQL",
+      "explanation": "This uses Bigtable backup scheduling and Cloud SQL point-in-time recovery to restore to a precise moment with limited data loss.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Enable automated backups for both Cloud Bigtable and Cloud SQL and store backups in Cloud Storage",
+      "explanation": "This relies on standard backup features and placing exported data in Cloud Storage for later restoration.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Storage Transfer Service to take daily snapshots of the Cloud Bigtable and Cloud SQL instances",
+      "explanation": "This approach depends on a file transfer service to orchestrate daily copies that are treated like snapshots.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Use Cloud Bigtable scheduled backups and enable point-in-time recovery for Cloud SQL</b>.</p><p><b>Cloud Bigtable scheduled backups</b> provide managed, consistent backups that you can restore quickly to recover from accidental deletion or corruption while paying only for retained backup storage. For the relational workload, enabling <b>point-in-time recovery for Cloud SQL</b> allows recovery to an exact timestamp within the retention window which minimizes data loss and speeds restoration.</p><p>This combination aligns with minimal RPO and rapid RTO at reasonable cost because <b>scheduled backups</b> are service native and efficient while <b>point-in-time recovery</b> uses transaction logs to restore precisely without frequent full exports.</p><p><i>Configure Cloud Bigtable multi-cluster replication and write a Cloud Function to export Cloud SQL to Cloud Storage on a schedule</i> is not ideal because replication improves availability and latency but it also propagates bad writes or deletes, and a custom export schedule increases operational overhead and usually results in coarser recovery points.</p><p><i>Enable automated backups for both Cloud Bigtable and Cloud SQL and store backups in Cloud Storage</i> is inaccurate for Bigtable because its backups are managed within the service rather than stored in Cloud Storage, and automated backups alone for Cloud SQL do not provide precise point-in-time restoration which increases potential data loss.</p><p><i>Use Storage Transfer Service to take daily snapshots of the Cloud Bigtable and Cloud SQL instances</i> is incorrect because Storage Transfer Service moves objects between storage systems and does not snapshot databases, and daily snapshots would leave up to a day of potential data loss.</p>",
+  "batch_id": "141",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are tasked with designing a backup and recovery solution for a high-priority application running on Google Cloud Platform. The application uses Cloud Bigtable and Cloud SQL (MySQL) as its primary data stores. Which of the following backup and recovery strategies would best meet the requirements for minimizing data loss and ensuring quick recovery in case of a disaster, while also providing a cost-effective solution?",
+  "originalOptions": "A. Enable automated backups for both Cloud Bigtable and Cloud SQL, and use Cloud Storage for storing backups.<br/>B. Use Cloud Storage Transfer Service to create daily snapshots of Cloud Bigtable and Cloud SQL instances.<br/>C. Configure regional replication for Cloud Bigtable instances and use Cloud Functions to periodically export data from Cloud SQL to Cloud Storage.<br/>D. Use Cloud Bigtable's scheduled snapshots for backups and enable Point-in-Time Recovery for Cloud SQL.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "345",
+  "tip": "<p>Map the requirement to minimize <i>RPO</i> and speed <i>RTO</i> to native features. Prefer <i>point in time recovery</i> for transactional databases and service native <i>backups</i> for distributed stores, and remember that replication improves availability but does not protect against corruption or deletes.</p>",
+  "references": [
+    "https://cloud.google.com/bigtable/docs/using-backups",
+    "https://cloud.google.com/bigtable/docs/replication-overview",
+    "https://cloud.google.com/sql/docs/mysql/backup-recovery/pitr",
+    "https://cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+    "https://cloud.google.com/storage-transfer/docs/overview",
+    "https://cloud.google.com/sql/docs/mysql/backup-recovery/exporting#automating_exports"
+  ],
+  "url": "https://certificationation.com/questions/exam-tasked-with-designing-a-backup-exam-345.html",
+  "video_url": "https://certificationation.com/videos/exam-tasked-with-designing-a-backup-exam-345.html"
+}

@@ -1,0 +1,62 @@
+---
+title: "A developer asks you to help on setting up AWS CodeBuildExam"
+description: "Video for a developer asks you to help on setting up AWS CodeBuild for a new Java project. The project is built by Maven. In its buildspec.yml file,there are"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A developer asks you to help on setting up AWS CodeBuild for a new Java project. The project is built by Maven. In its buildspec.yml file,there are several phases such as install, pre_build and build. There is a requirement that if a command in a phase has failed, CodeBuild still has a chance to run some shell commands to do custom operations such as log collection. How should you configure the CodeBuild project to meet the need?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct answer is <b>Place the custom operation commands in the <code>post_build</code> phase so that they execute regardless of earlier failures.</b></p><p>In AWS CodeBuild, the <code>post_build</code> phase is always triggered, even if commands in earlier phases like <code>install</code> or <code>build</code> fail. By adding your custom log collection or other operations to this phase, you ensure they are executed in all scenarios, fulfilling the requirement.</p><p>Why the other options are incorrect:</p><ul><li><i>Add a <code>finally</code> block after the <code>commands</code> block in every phase and place the necessary shell commands there.</i> — CodeBuild's buildspec.yml syntax does not support a <code>finally</code> block. Only the documented phases (<code>install</code>, <code>pre_build</code>, <code>build</code>, <code>post_build</code>) are valid.</li><li><i>Create a CloudWatch Events rule to capture any CodeBuild failure and trigger a Lambda function that performs the custom operations.</i> — This approach offloads logic to a separate AWS Lambda function and is useful for actions that must occur outside the CodeBuild environment, but it does not provide the ability to execute shell commands on the CodeBuild host itself, such as gathering logs directly from the build instance.</li><li><i>Configure the CodeBuild project to send an SNS notification on build failure and use a Lambda function subscribed to that topic to run the custom shell commands.</i> — While similar to the CloudWatch Events rule, this pattern also cannot execute shell commands directly on the build instance. It’s more appropriate for triggering external processes or notifications, not for in-instance custom operations.</li></ul><p>Tip: Always use the <code>post_build</code> phase in the buildspec.yml when you want actions to be performed regardless of whether preceding phases succeed or fail.</p>",
+  "query": "<p>A developer is configuring AWS CodeBuild for a Java project that uses Maven. The project's <code>buildspec.yml</code> file is divided into several phases like <code>install</code>, <code>pre_build</code>, and <code>build</code>. There is a requirement to ensure that even if any command in one of these phases fails, some shell commands (such as custom log collection) will still be executed after the failure. What is the best way to set up the CodeBuild project to satisfy this requirement?</p>",
+  "original_oid": "6793da1861969b416038a14b",
+  "options": [
+    {
+      "correct": false,
+      "text": "Create a CloudWatch Events rule to capture any CodeBuild failure and trigger a Lambda function that performs the custom operations.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Add a <code>finally</code> block after the <code>commands</code> block in every phase and place the necessary shell commands there.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Place the custom operation commands in the <code>post_build</code> phase so that they execute regardless of earlier failures.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Configure the CodeBuild project to send an SNS notification on build failure and use a Lambda function subscribed to that topic to run the custom shell commands.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question218",
+  "originalQuery": "A developer asks you to help on setting up AWS CodeBuild for a new Java project.\nThe project is built by Maven.\nIn its buildspec.yml file,there are several phases such as install, pre_build and build.\nThere is a requirement that if a command in a phase has failed, CodeBuild still has a chance to run some shell commands to do custom operations such as log collection.\nHow should you configure the CodeBuild project to meet the need?",
+  "originalOptions": "A. Put the custom operation commands in the post_build phase so that they can still run when the build fails.|B. Add a finally block after the commands block in each phase. Put the custom shell commands in the finally block.|C. Create a CloudWatch Events rule for any CodeBuild failure event. Add a Lambda Function as the target to do custom operations.|D. Trigger an SNS notification if a build fails in the CodeBuild project. Use a Lambda Function to subscribe to the SNS topic and handle the required custom operations.",
+  "video_url": "https://certificationation.com/videos/exam-setting-up-aws-codebuild-for-exam-196.html",
+  "url": "https://certificationation.com/questions/exam-setting-up-aws-codebuild-for-exam-196.html"
+}

@@ -1,0 +1,62 @@
+---
+title: "For a new application, the DevOps team is implementing aExam"
+description: "Video for for a new application, the DevOps team is implementing a blue/green deployment strategy. For each new release, the application can be deployed via a"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "For a new application, the DevOps team is implementing a blue/green deployment strategy. For each new release, the application can be deployed via a CloudFormation stack, including resources such as Auto Scaling Group, Launch configuration, and Classic Load Balancer. A weighted routing policy is configured in Route53 With Route53, a small percentage of traffic goes to the green environment, and the weights increase until the green environment carries the full production traffic. However, which disadvantage may this approach have?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The main challenge with weighted routing policies in Route53 is the impact of DNS <b>Time To Live (TTL)</b>. When you update the DNS records to shift traffic between blue and green environments, the TTL setting determines how long clients cache the DNS response. This means that, even after you direct all new traffic to the green environment, some users may continue to connect to the blue environment if their DNS cache hasn't expired. This could slow down both the rollout of new environments and any potential rollback since old DNS responses may still point to the previous environment. <br><br><b>The correct response is:</b> The effectiveness of the transition to a new environment may be hindered by DNS TTL since clients can cache DNS responses, potentially extending connectivity to the previous environment beyond the intended switch.<br><br><i>'Using a weighted routing policy in Route53 is inherently too complex to operate within a CICD deployment pipeline'</i>: This is inaccurate; weighted routing is straightforward to incorporate in automation and pipelines.<br><br><i>'A routing policy that is weighted within Route53 is never appropriate in situations where a rollback is needed.'</i>: This is not entirely correct; rollback is possible, though DNS caching can make the process slower.<br><br><i>'Only Classic Load Balancers are supported for this approach; Application and Network Load Balancers cannot be paired with weighted routing in Route53.'</i>: Both Application and Network Load Balancers are supported with Route53 weighted routing.<br><br><b>Tip:</b> To mitigate TTL issues, use shorter DNS TTL values when deploying blue/green strategies with DNS-based routing.</p>",
+  "query": "<p>A DevOps team is using a blue/green deployment strategy for a new application. They deploy each release through a CloudFormation stack, provisioning components like Auto Scaling Groups, a Launch configuration, and a Classic Load Balancer. The team implements a weighted routing policy in Route53 to direct a small portion of user traffic to the green environment, gradually increasing it until green handles all production traffic.<br><br>What is a potential drawback of leveraging this method?</p>",
+  "original_oid": "6793da2661969b416038a16a",
+  "options": [
+    {
+      "correct": true,
+      "text": "The effectiveness of the transition to a new environment may be hindered by DNS TTL since clients can cache DNS responses, potentially extending connectivity to the previous environment beyond the intended switch.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Using a weighted routing policy in Route53 is inherently too complex to operate within a CICD deployment pipeline.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "A routing policy that is weighted within Route53 is never appropriate in situations where a rollback is needed.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Only Classic Load Balancers are supported for this approach; Application and Network Load Balancers cannot be paired with weighted routing in Route53.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question249",
+  "originalQuery": "For a new application, the DevOps team is implementing a blue/green deployment strategy.\nFor each new release, the application can be deployed via a CloudFormation stack, including resources such as Auto Scaling Group, Launch configuration, and Classic Load Balancer.\nA weighted routing policy is configured in Route53\nWith Route53, a small percentage of traffic goes to the green environment, and the weights increase until the green environment carries the full production traffic.\nHowever, which disadvantage may this approach have?",
+  "originalOptions": "A. A weighted routing policy is complicated to implement in a pipeline.|B. DNS TTL decides how long clients cache query results. Certain sessions may still be tied to the previous environment to impact the speed to deploy a new environment or rollback.|C. Route53 weighted routing policy is not suitable if a rollback is required.|D. Only a Classic load balancer is suitable for this approach. A network load balancer or application load balancer cannot be used together with the Route53 weighted routing policy.",
+  "video_url": "https://certificationation.com/videos/exam-team-is-implementing-a-blue-green-exam-101.html",
+  "url": "https://certificationation.com/questions/exam-team-is-implementing-a-blue-green-exam-101.html"
+}

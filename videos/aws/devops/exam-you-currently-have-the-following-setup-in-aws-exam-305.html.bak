@@ -1,0 +1,62 @@
+---
+title: "You currently have the following setup in AWSExam"
+description: "Video for you currently have the following setup in AWS."
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You currently have the following setup in AWS."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best practice for progressive application deployment and smooth rollback in AWS is to implement a blue/green-style setup using separate infrastructure components and DNS routing controls. <b>Launching an additional ELB and new Auto Scaling Group with a new Launch Configuration using your desired AMI, then distributing traffic via Route 53 Weighted Routing</b> minimizes risk, offers granular control, and supports seamless rollback by adjusting weights or setting them to 0% if issues occur.</p><p><i>&quot;Set up a new full stack with fresh instances running the updated version, and switch DNS over to this new stack. If issues arise, simply revert the DNS to the old stack.&quot;</i> (Option D) risks an all-or-nothing cutover, which doesn't offer easy incremental testing and rollback is coarser and slower, as it involves DNS propagation delays.</p><p><i>&quot;Deploy new AMIs containing the application updates, and launch new EC2 instances making up half of your total instance count alongside the current servers.&quot;</i> (Option B) creates mixed environments, complicates ELB health checks, and lacks clear control over which users see which version, especially if not paired with explicit routing or grouping strategies.</p><p><i>&quot;Use AWS Elastic Beanstalk along with application versions. Configure Route 53 to direct a certain percentage of requests to the new environment using Weighted Round Robin records.&quot;</i> (Option C) is plausible but less flexible for low-level configuration than managing ELBs and Auto Scaling Groups directly, and may create vendor lock-in if Beanstalk-specific features are not desired.</p><p><b>Tip:</b> Weighted routing policies in Route 53 are ideal for canary and blue/green deployments because they let you dial up/down exposure to the new environment safely and quickly revert traffic if problems emerge.</p>",
+  "query": "<p>Suppose your AWS deployment is running behind an Auto Scaling Group with Elastic Load Balancer (ELB). You wish to test a new application version with a portion of live users, while still maintaining the current stable environment. Which approach allows controlled, progressive rollout and safe rollback, using scalable AWS services and minimizing risk?</p>",
+  "original_oid": "6793d9b361969b416038a087",
+  "options": [
+    {
+      "correct": false,
+      "text": "Set up a new full stack with fresh instances running the updated version, and switch DNS over to this new stack. If issues arise, simply revert the DNS to the old stack.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Deploy new AMIs containing the application updates, and launch new EC2 instances making up half of your total instance count alongside the current servers.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Launch an additional ELB and build a new Auto Scaling Group with a new Launch Configuration using your latest AMI. Then use Route 53 Weighted Routing to distribute traffic between the two ELBs appropriately.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Use AWS Elastic Beanstalk along with application versions. Configure Route 53 to direct a certain percentage of requests to the new environment using Weighted Round Robin records.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question18",
+  "originalQuery": "You currently have the following setup in AWS.",
+  "originalOptions": "A. Create a second ELB, and a new Auto Scaling Group assigned a new Launch Configuration with the new AMI. Use the Route53 Weighted Routing policy to adjust the proportion of traffic hitting the two ELBs.|B. Create new AMIs with the new app. Then use the new EC2 instances in half proportion to the older instances.|C. Redeploy with AWS Elastic Beanstalk and Elastic Beanstalk versions. Use Route 53 Weighted Round Robin Records to adjust the proportion of traffic hitting the two ELBs.|D. Create a full second stack of instances, cut the DNS over to the new stack of instances, and change the DNS back if a rollback is needed.",
+  "video_url": "https://certificationation.com/videos/exam-you-currently-have-the-following-setup-in-aws-exam-305.html",
+  "url": "https://certificationation.com/questions/exam-you-currently-have-the-following-setup-in-aws-exam-305.html"
+}

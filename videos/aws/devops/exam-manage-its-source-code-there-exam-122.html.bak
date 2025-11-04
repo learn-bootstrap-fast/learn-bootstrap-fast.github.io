@@ -1,0 +1,62 @@
+---
+title: "A large company uses AWS CodeCommit to manage its sourceExam"
+description: "Video for a large company uses AWS CodeCommit to manage its source code. There are over a hundred of repositories and many teams are working on different"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A large company uses AWS CodeCommit to manage its source code. There are over a hundred of repositories and many teams are working on different projects. As a DevOps engineer, you need to allocate suitable access to different users. For example, development team should not access the repositories that contain sensitive data. How should you manage this?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best approach is to <b>tag each repository in AWS CodeCommit and then apply IAM policies that manage access based on repository tags</b>. This method lets you group and control repository access flexibly, especially in large environments with many projects and teams, without manually specifying repository names for each user or group.</p><p>Why the other choices are not optimal:</p><ul><li><i>In the AWS CodeCommit console, assign CodeCommit policies directly to IAM groups that specify which repositories they can or cannot access.</i> – CodeCommit does not offer a separate internal policy feature; repository access is governed through IAM policies, not within the CodeCommit console.</li><li><i>Use Git tags within CodeCommit repositories and set up IAM policies that allow or restrict actions on repositories depending on these Git tags.</i> – IAM policies cannot reference or act on Git tags. Git tags pertain to code versioning, not to AWS resource tagging or permissions.</li><li><i>Attach an IAM policy to each user account that either grants or restricts access to specified repositories using repository names in the policy conditions.</i> – While this is possible, it does not scale well for large organizations with hundreds of repositories and many users; also, maintaining these policies can become complex and error-prone. Tag-based IAM policies centralize management and are much more scalable.</li></ul><p><b>Tip:</b> Always utilize AWS resource tags for dynamic and flexible permission management in environments with complex access requirements.</p>",
+  "query": "<p>A major enterprise is managing hundreds of source code repositories with AWS CodeCommit, and multiple project teams are collaborating. As a DevOps engineer, you must grant appropriate repository access privileges to users. For instance, developers must not access repositories that store confidential information. What is the most effective way to control this repository-level access?</p>",
+  "original_oid": "6793da3261969b416038a184",
+  "options": [
+    {
+      "correct": false,
+      "text": "In the AWS CodeCommit console, assign CodeCommit policies directly to IAM groups that specify which repositories they can or cannot access.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Use Git tags within CodeCommit repositories and set up IAM policies that allow or restrict actions on repositories depending on these Git tags.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Tag each repository in AWS CodeCommit, and then configure IAM policies that permit or deny actions on repositories based on those repository tags.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Attach an IAM policy to each user account that either grants or restricts access to specified repositories using repository names in the policy conditions.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question275",
+  "originalQuery": "A large company uses AWS CodeCommit to manage its source code.\nThere are over a hundred of repositories and many teams are working on different projects.\nAs a DevOps engineer, you need to allocate suitable access to different users.\nFor example, development team should not access the repositories that contain sensitive data.\nHow should you manage this?",
+  "originalOptions": "A. Tag repositories in AWS CodeCommit. Create policies in IAM that allow or deny actions on repositories based on the tags associated with repositories.|B. In AWS CodeCommit console, create CodeCommit policies to IAM groups that allow or deny actions on repositories.|C. Configure Git tags in AWS CodeCommit repositories. Create policies in IAM that allow or deny actions on repositories based on the Git tags.|D. In IAM, for each IAM user, add an IAM policy that allows or denies actions on repositories based on repository names.",
+  "video_url": "https://certificationation.com/videos/exam-manage-its-source-code-there-exam-122.html",
+  "url": "https://certificationation.com/questions/exam-manage-its-source-code-there-exam-122.html"
+}

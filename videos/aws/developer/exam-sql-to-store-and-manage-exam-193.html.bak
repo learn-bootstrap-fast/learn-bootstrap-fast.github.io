@@ -1,0 +1,88 @@
+---
+title: "Your application is using Cloud SQL to store and manageExam"
+description: "Video for your application is using Cloud SQL to store and manage e-commerce data. You notice intermittent connectivity issues, particularly during instance"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your application is using Cloud SQL to store and manage e-commerce data. You notice intermittent connectivity issues, particularly during instance failovers or restarts. You want to improve application resiliency and minimize downtime. What should you do? (Choose two)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A ticket reservation platform at example.com stores operational data in Cloud SQL for PostgreSQL. You observe brief connection drops when an instance fails over or restarts. You need to harden the application so that service impact is minimal during those events. What should you do?",
+  "options": [
+    {
+      "text": "Use Private IP for database connections",
+      "explanation": "Connecting over internal addresses keeps traffic inside the VPC and removes reliance on public endpoints",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable high availability on the Cloud SQL instance",
+      "explanation": "High availability creates a standby in another zone and can promote it automatically when the primary becomes unavailable",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Set a maintenance window during low traffic hours",
+      "explanation": "A maintenance window schedules planned updates to occur at a time that typically affects fewer users",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Add retry logic in the application for transient database errors",
+      "explanation": "Client retry handling lets the application attempt failed operations again after brief interruptions",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Create a read replica and direct traffic to it during failover",
+      "explanation": "A read replica is designed for read only workloads and it replicates from the primary but it does not accept writes",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct options are <b>Enable high availability on the Cloud SQL instance</b> and <b>Add retry logic in the application for transient database errors</b>.</p><p>Cloud SQL <b>Enable high availability on the Cloud SQL instance</b> provides a standby instance in another zone and performs automatic failover during outages and maintenance. This reduces the duration of unavailability and preserves the connection endpoint so the application experiences shorter interruptions and can reconnect quickly.</p><p>Even with faster failover there can still be brief connection resets. Implementing <b>retry logic</b> in the client with exponential backoff and safe request retries allows the application to handle transient errors and reestablish connections as soon as the new primary is ready. Using both features together minimizes user impact.</p><p><i>Use Private IP for database connections</i> changes the network path and improves security but it does not change failover behavior. Connections can still drop during a restart or failover.</p><p><i>Set a maintenance window during low traffic hours</i> only schedules planned maintenance. It does not address unexpected failures and even planned maintenance still causes brief disconnects.</p><p><i>Create a read replica and direct traffic to it during failover</i> is not suitable because read replicas are read only and are not automatic failover targets. Promotion is manual and can introduce additional downtime and potential data inconsistency.</p>",
+  "batch_id": "360",
+  "answerCode": "2,4",
+  "type": "multi-select",
+  "originalQuery": "Your application is using Cloud SQL to store and manage e-commerce data. You notice intermittent connectivity issues, particularly during instance failovers or restarts. You want to improve application resiliency and minimize downtime. What should you do? (Choose two)",
+  "originalOptions": "A. Use Private IP to connect to the Cloud SQL instance.<br/>B. Configure your application to retry failed transactions.<br/>C. Set a maintenance window during off-peak hours.<br/>D. Enable high availability (HA) for your Cloud SQL instance.<br/>E. Disable backups to reduce instance load.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "193",
+  "tip": "<p>When a scenario mentions brief connection drops during failover look for one platform feature that reduces downtime and one application pattern that tolerates transient errors. Pair managed HA with <i>retries</i> and be wary of options that only change connectivity or scheduling without improving availability.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/high-availability",
+    "https://cloud.google.com/sql/docs/postgres/maintenance",
+    "https://cloud.google.com/sql/docs/postgres/maintenance-window",
+    "https://cloud.google.com/sql/docs/postgres/configure-private-ip",
+    "https://cloud.google.com/sql/docs/postgres/replication/replication-overview",
+    "https://cloud.google.com/sql/docs/postgres/best-practices"
+  ],
+  "url": "https://certificationation.com/questions/exam-sql-to-store-and-manage-exam-193.html",
+  "video_url": "https://certificationation.com/videos/exam-sql-to-store-and-manage-exam-193.html"
+}

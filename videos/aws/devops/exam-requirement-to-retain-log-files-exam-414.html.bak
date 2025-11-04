@@ -1,0 +1,62 @@
+---
+title: "You have been given a business requirement to retain logExam"
+description: "Video for you have been given a business requirement to retain log files for your application for 10 years. You need to regularly retrieve the most recent logs"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have been given a business requirement to retain log files for your application for 10 years. You need to regularly retrieve the most recent logs for troubleshooting. Your logging system must be able to store the given large volume of logs. What cost-optimized technique should you use to meet these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><b>Persist log data in Amazon S3, implementing lifecycle policies to automatically transition older logs to Amazon Glacier.</b> is the most suitable and cost-optimized approach. Storing logs in Amazon S3 provides highly durable, scalable, and readily accessible storage for recent logs, allowing fast retrieval for operational troubleshooting. Lifecycle policies simplify the management of long-term retention by automatically transitioning less frequently accessed logs to lower-cost storage classes such as Glacier, which is ideal for archival needs spanning 10 years.</p><p><i>Utilize Amazon Glacier for log storage.</i> is incorrect because Glacier is designed for archiving and offers very slow retrieval, making it impractical when there is a requirement for prompt access to newer logs.</p><p><i>Send your logs to Amazon CloudWatch Logs.</i> does not support cost-effective long-term archival of large log volumes over a decade, as retention costs and scalability become less ideal over time, especially for very high log volume scenarios.</p><p><i>Save logs on Amazon EBS volumes and regularly create Amazon EBS snapshots for archiving.</i> is not the optimal solution because EBS volumes and their snapshots are primarily intended for block storage tied to EC2 instances. This approach would be significantly more expensive at scale, less durable than S3, and more challenging to automate and retrieve individual log files over a 10-year period.</p><ul><li><b>Tip:</b> Use S3 for high durability and easy integration with other AWS services. Lifecycle policies help reduce cost by automatically moving data to more suitable storage tiers over time.</li></ul>",
+  "query": "<p>Your organization requires you to keep application log files for a full decade. You must also quickly access recent logs for debugging purposes, and your logging system needs to accommodate high volumes of log data. Which method provides a scalable and cost-effective solution that satisfies these requirements?</p>",
+  "original_oid": "6793d9b161969b416038a083",
+  "options": [
+    {
+      "correct": false,
+      "text": "Utilize Amazon Glacier for log storage.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Persist log data in Amazon S3, implementing lifecycle policies to automatically transition older logs to Amazon Glacier.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Send your logs to Amazon CloudWatch Logs.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Save logs on Amazon EBS volumes and regularly create Amazon EBS snapshots for archiving.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question14",
+  "originalQuery": "You have been given a business requirement to retain log files for your application for 10 years.\nYou need to regularly retrieve the most recent logs for troubleshooting.\nYour logging system must be able to store the given large volume of logs.\nWhat cost-optimized technique should you use to meet these requirements?",
+  "originalOptions": "A. Store your log in Amazon CloudWatch Logs.|B. Store your logs in Amazon Glacier.|C. Store your logs in Amazon S3, and use lifecycle policies to archive to Amazon Glacier.|D. Store your logs on Amazon EBS, and use Amazon EBS snapshots to archive them.",
+  "video_url": "https://certificationation.com/videos/exam-requirement-to-retain-log-files-exam-414.html",
+  "url": "https://certificationation.com/questions/exam-requirement-to-retain-log-files-exam-414.html"
+}

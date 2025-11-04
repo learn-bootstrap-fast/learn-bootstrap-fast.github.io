@@ -1,0 +1,83 @@
+---
+title: "As a Database Engineer, you are tasked with designing aExam"
+description: "Video for as a Database Engineer, you are tasked with designing a solution to synchronize data between two Firestore databases located in separate projects. The"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are tasked with designing a solution to synchronize data between two Firestore databases located in separate projects. The synchronization should be bidirectional, ensuring that any change made in one Firestore database is reflected in the other. Which of the following options is the most appropriate solution to achieve this goal?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You support the platform team at mcnz.com and must design a pattern to keep two Cloud Firestore databases in different Google Cloud projects synchronized. Updates must replicate in both directions so that a write in either database is delivered to the other within 15 seconds. Which approach should you implement?",
+  "options": [
+    {
+      "text": "Schedule recurring gcloud firestore export and import operations with Cloud Scheduler every 30 minutes",
+      "explanation": "This runs timed jobs that export one database and import it into the other on a fixed schedule.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Publish document change events from each Firestore to Pub/Sub and trigger Cloud Functions to apply the mutations to the peer project",
+      "explanation": "This uses event driven processing where Pub/Sub messages invoke Cloud Functions that write the corresponding updates into the other database.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Build a Cloud Data Fusion pipeline that reads from and writes to both Firestore instances for two way sync",
+      "explanation": "This designs a Data Fusion integration flow to pull from each Firestore source and push updates to the other.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Set up Datastream to capture changes from Firestore in each project and replicate them to the other Firestore",
+      "explanation": "This uses Datastream change data capture to move updates between sources and targets.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Publish document change events from each Firestore to Pub/Sub and trigger Cloud Functions to apply the mutations to the peer project</b>.</p><p>This pattern uses Cloud Firestore triggers to react to document creates, updates, and deletes in each project, publishes a compact mutation to Pub/Sub, and then a subscriber function in the peer project applies the same change. It is event driven and pushes changes almost immediately, which makes meeting the under 15 seconds replication target realistic. You can run the Pub/Sub topic in a shared or peer project and grant cross project IAM to allow publish and subscribe. To prevent infinite write loops and to ensure idempotency, include an origin marker or version field and have the subscriber skip writes that originated from the other side or apply changes conditionally with transactions.</p><p>This approach also aligns with product capabilities. Cloud Functions for Firestore provides low latency triggers and Pub/Sub provides durable, scalable, and low latency delivery with at least once semantics, so you can add de duplication keys and retries to handle transient failures while still meeting the time requirement.</p><p><i>Schedule recurring gcloud firestore export and import operations with Cloud Scheduler every 30 minutes</i> does not satisfy the requirement because it is batch and coarse grained. It would deliver changes in minutes rather than seconds and it is not designed for continuous bidirectional replication.</p><p><i>Build a Cloud Data Fusion pipeline that reads from and writes to both Firestore instances for two way sync</i> is not suitable because Data Fusion is primarily an ETL service and does not provide native Firestore change capture with low latency propagation. Building conflict detection and loop avoidance would be complex and it would not reliably meet an under 15 seconds target.</p><p><i>Set up Datastream to capture changes from Firestore in each project and replicate them to the other Firestore</i> is incorrect because Datastream does not support Firestore as a source or as a destination. It is intended for change data capture from supported relational sources into supported sinks and Firestore is not among them.</p>",
+  "batch_id": "114",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are tasked with designing a solution to synchronize data between two Firestore databases located in separate projects. The synchronization should be bidirectional, ensuring that any change made in one Firestore database is reflected in the other. Which of the following options is the most appropriate solution to achieve this goal?",
+  "originalOptions": "A. Implement a Data Fusion pipeline to perform bidirectional synchronization between the two Firestore databases.<br/>B. Set up a Cloud Scheduler job to perform periodic exports and imports using the gcloud firestore export and gcloud firestore import commands.<br/>C. Configure Cloud Pub/Sub to capture updates in each Firestore database and trigger Cloud Functions to apply the changes to the other database.<br/>D. Use the gcloud firestore export command to export data from each Firestore database and the gcloud firestore import command to import data into the other database.",
+  "domain": "Manage a solution that can span multiple database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "206",
+  "tip": "<p>When a question requires near real time and <i>two way</i> synchronization, look for an <i>event driven</i> pattern that uses triggers and messaging rather than batch jobs. Always verify <i>product support</i> for sources and sinks and confirm that the services can meet the stated latency.</p>",
+  "references": [
+    "https://cloud.google.com/functions/docs/calling/cloud-firestore",
+    "https://cloud.google.com/pubsub/docs/overview#delivery",
+    "https://cloud.google.com/pubsub/docs/access-control#resource-project",
+    "https://cloud.google.com/firestore/docs/manage-data/export-import",
+    "https://cloud.google.com/data-fusion/docs/concepts/overview",
+    "https://cloud.google.com/datastream/docs/sources",
+    "https://cloud.google.com/datastream/docs/destinations"
+  ],
+  "url": "https://certificationation.com/questions/exam-tasked-with-designing-a-solution-exam-206.html",
+  "video_url": "https://certificationation.com/videos/exam-tasked-with-designing-a-solution-exam-206.html"
+}

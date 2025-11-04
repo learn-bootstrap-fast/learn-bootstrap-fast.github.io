@@ -1,0 +1,83 @@
+---
+title: "You are responsible for designing a new database for anExam"
+description: "Video for you are responsible for designing a new database for an e-commerce application in Google Cloud. This application must be able to: Handle transactions"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are responsible for designing a new database for an e-commerce application in Google Cloud. This application must be able to: Handle transactions and provide strong consistency. Work with structured and semi-structured (JSON) data. Scale horizontally as the number of users and requests grow. As a Database Engineer, you need a Google Cloud database that meets all the requirements of the application. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "MetroMove is building a ride-share platform on Google Cloud and needs a database that can process transactional workloads with strong consistency. The system must store relational data while also keeping flexible JSON attributes. Usage is projected to grow from 500,000 to more than 1,500,000 active users within a year, so the data layer must scale horizontally without a major redesign. Which Google Cloud managed database should you implement to satisfy these requirements?",
+  "options": [
+    {
+      "text": "Firestore in Native mode",
+      "explanation": "This is a document database that organizes data as collections and documents and offers automatic scaling and real-time queries",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud SQL for MySQL with cross region read replicas",
+      "explanation": "This is a managed MySQL service that supports read replicas in additional regions to help serve read-heavy workloads",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud Spanner with a regional instance configuration",
+      "explanation": "This is a managed relational database that provides horizontal scalability with SQL support and includes a native JSON data type",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Bigtable with a single region cluster",
+      "explanation": "This is a wide column NoSQL service optimized for very low latency and massive throughput for key-based access patterns",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Cloud Spanner with a regional instance configuration</b> because it delivers strongly consistent transactions, a relational schema with SQL, native JSON attributes, and effortless horizontal scaling to meet rapid user growth without redesign.</p><p>This service supports ACID transactions with strong consistency across rows and indexes, and it stores structured relational data while also offering a JSON data type for flexible attributes. You can scale throughput and storage horizontally by adding nodes, which allows the platform to grow from five hundred thousand to more than one million five hundred thousand active users without application sharding. A regional configuration provides low latency and high availability inside a single region, which aligns with the stated requirement.</p><p><i>Firestore in Native mode</i> is a document database and not a relational system, and while it is strongly consistent for single documents its multi document transactions and querying capabilities do not match the needs of a transactional relational workload.</p><p><i>Cloud SQL for MySQL with cross region read replicas</i> has a single writable primary and read replicas for reads, so it does not provide horizontal write scaling without sharding, and read replicas are not strongly consistent with the primary. This would risk a major redesign to scale and does not meet the growth and consistency requirements.</p><p><i>Bigtable with a single region cluster</i> is a wide column NoSQL store that excels at analytical and time series workloads, yet it does not support relational schemas or multi row ACID transactions, so it is not suitable for an OLTP ride share platform.</p>",
+  "batch_id": "51",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are responsible for designing a new database for an e-commerce application in Google Cloud. This application must be able to: Handle transactions and provide strong consistency. Work with structured and semi-structured (JSON) data. Scale horizontally as the number of users and requests grow. As a Database Engineer, you need a Google Cloud database that meets all the requirements of the application. What should you do?",
+  "originalOptions": "A. Use Cloud SQL for MySQL with cross-region read replicas.<br/>B. Use a Bigtable instance with clusters in a single region.<br/>C. Use Firestore in Native mode.<br/>D. Use Cloud Spanner in a regional configuration.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "74",
+  "tip": "<p>Scan for key requirements such as <i>strong consistency</i>, <i>relational schema with SQL</i>, <i>JSON attributes</i>, and <i>horizontal write scaling without redesign</i> and map them to the managed service that natively provides all of them rather than trying to assemble features with replicas or client logic.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/overview",
+    "https://cloud.google.com/spanner/docs/transactions",
+    "https://cloud.google.com/spanner/docs/data-types#json_type",
+    "https://cloud.google.com/spanner/docs/instances",
+    "https://cloud.google.com/firestore/docs/overview",
+    "https://cloud.google.com/sql/docs/mysql/replication",
+    "https://cloud.google.com/bigtable/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-new-database-for-an-e-commerce-exam-074.html",
+  "video_url": "https://certificationation.com/videos/exam-new-database-for-an-e-commerce-exam-074.html"
+}

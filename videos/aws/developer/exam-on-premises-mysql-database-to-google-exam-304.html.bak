@@ -1,0 +1,80 @@
+---
+title: "You are tasked with migrating an on-premises MySQLExam"
+description: "Video for you are tasked with migrating an on-premises MySQL database to Google Cloud SQL. Your goal is to ensure minimal downtime during the migration and to"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are tasked with migrating an on-premises MySQL database to Google Cloud SQL. Your goal is to ensure minimal downtime during the migration and to have a fallback plan in case of issues. Which of the following strategies should you implement to achieve this goal?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "BrightMart Retail runs a self hosted MySQL 8.0 database in its own data center and plans to move it to Cloud SQL for MySQL with less than 15 minutes of disruption while keeping a practical rollback option if the cutover encounters issues. Which migration approach should the team use to satisfy both the low downtime and fallback requirements?",
+  "options": [
+    {
+      "text": "Use Database Migration Service for continuous replication to Cloud SQL, then plan rollback by restoring a recent Cloud SQL backup back to the source server",
+      "explanation": "This option relies on Database Migration Service to replicate changes and on backups to attempt a return to the source if needed",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Import a logical dump into Cloud SQL, then schedule daily exports from Cloud SQL back to the on premises server as a fallback",
+      "explanation": "This method depends on batch imports and exports rather than live replication which increases potential downtime",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a Cloud SQL read replica of the on premises MySQL using the external primary feature, promote the Cloud SQL replica during cutover, and configure an external read replica that pulls from Cloud SQL back to the on premises server for rollback",
+      "explanation": "This approach uses replication to seed Cloud SQL, performs a promotion for cutover, and keeps an external read replica attached to Cloud SQL to enable a failback path",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Create a Cloud SQL instance with the external server feature to replicate from the on premises database, and also enable reverse replication from Cloud SQL to the on premises database for failback",
+      "explanation": "This suggests configuring two way replication between Cloud SQL and the source which is not a standard pattern and increases complexity",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Create a Cloud SQL read replica of the on premises MySQL using the external primary feature, promote the Cloud SQL replica during cutover, and configure an external read replica that pulls from Cloud SQL back to the on premises server for rollback</b>.</p><p>This approach uses the external primary capability so Cloud SQL continuously replicates from the self hosted MySQL. You can plan the cutover by promoting the Cloud SQL replica once replication lag is near zero so application downtime is kept within the fifteen minute window. For a practical fallback, you can configure the original on premises MySQL as an external replica of Cloud SQL after promotion so if problems arise you can redirect traffic back to the source while it stays nearly in sync. This provides both low downtime migration and a clear rollback path using standard MySQL replication.</p><p><i>Use Database Migration Service for continuous replication to Cloud SQL, then plan rollback by restoring a recent Cloud SQL backup back to the source server</i> is incorrect because Cloud SQL backups cannot be restored to a non Cloud SQL instance and DMS does not provide a direct reverse replication path back to the source.</p><p><i>Import a logical dump into Cloud SQL, then schedule daily exports from Cloud SQL back to the on premises server as a fallback</i> is incorrect because a dump and restore typically requires extended downtime and daily exports do not provide a timely or low risk rollback and would lead to significant data loss during a failback.</p><p><i>Create a Cloud SQL instance with the external server feature to replicate from the on premises database, and also enable reverse replication from Cloud SQL to the on premises database for failback</i> is incorrect because a single instance cannot act as both a replica and a primary at the same time and Cloud SQL does not support bidirectional replication on the same pair, which would risk replication loops and conflicts.</p>",
+  "batch_id": "342",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are tasked with migrating an on-premises MySQL database to Google Cloud SQL. Your goal is to ensure minimal downtime during the migration and to have a fallback plan in case of issues. Which of the following strategies should you implement to achieve this goal?",
+  "originalOptions": "A. Migrate the MySQL database using the Cloud SQL import functionality, and periodically export the Cloud SQL instance to an on-premises MySQL server as a fallback.<br/>B. Create a Cloud SQL instance with a MySQL database, use the Cloud SQL external server feature to replicate the on-premises database to Cloud SQL, and establish a reverse replication from Cloud SQL to the on-premises database as a fallback.<br/>C. Use Cloud Datastore to migrate the MySQL database and set up a fallback to the on-premises database using Cloud Datastore's rollback feature.<br/>D. Create a read replica of the on-premises MySQL database in Cloud SQL, promote it to primary once the migration is complete, and set up an external read replica in the on-premises environment as a fallback.",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "304",
+  "tip": "<p>When you see low downtime and a need for a safe rollback, look for replication based strategies that replicate forward to Cloud SQL and have a way to replicate back for failback. Remember that <i>Cloud SQL backups cannot be restored outside Cloud SQL</i> and that <i>bidirectional replication</i> on the same pair is not supported.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/replication",
+    "https://cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+    "https://cloud.google.com/sql/docs/mysql/migrate",
+    "https://cloud.google.com/database-migration/docs/mysql"
+  ],
+  "url": "https://certificationation.com/questions/exam-on-premises-mysql-database-to-google-exam-304.html",
+  "video_url": "https://certificationation.com/videos/exam-on-premises-mysql-database-to-google-exam-304.html"
+}

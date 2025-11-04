@@ -1,0 +1,83 @@
+---
+title: "A Database Engineer is responsible for designing aExam"
+description: "Video for a Database Engineer is responsible for designing a backup and recovery solution for a heterogeneous environment that includes databases running on"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A Database Engineer is responsible for designing a backup and recovery solution for a heterogeneous environment that includes databases running on Google Cloud SQL, Google Cloud Firestore, and Google Cloud Spanner. The solution must ensure low Recovery Point Objective (RPO) and Recovery Time Objective (RTO) while meeting the unique backup requirements of each database system. Which of the following backup and recovery solutions best meets these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A data platform engineer at Riverbend Outfitters must design a backup and recovery plan for a mixed workload that runs on Cloud SQL, Firestore in Native mode, and Cloud Spanner. The plan must achieve low Recovery Point Objective and low Recovery Time Objective while respecting the distinct protection capabilities and operational models of each service. Which approach should they implement?",
+  "options": [
+    {
+      "text": "Adopt Google Cloud Backup and DR to centrally protect Cloud SQL, Firestore, and Cloud Spanner with a single policy",
+      "explanation": "This suggests using the managed backup service to apply one backup workflow to all data sources.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable native backups per engine by using automated backups with PITR for Cloud SQL, scheduled exports for Firestore, and Cloud Spanner backups or PITR",
+      "explanation": "This uses the first party backup and restore features designed for each database engine and aligns protection to the way each product stores and recovers data.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Rely only on each service&apos;s redundancy and replication to meet protection goals",
+      "explanation": "This proposes using high availability configurations such as zonal or regional replication as the sole method for protection.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a daily export pipeline that writes data from every database into a single Cloud Storage bucket",
+      "explanation": "This would run a once per day export job and stage the resulting files in Cloud Storage for later restores.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Enable native backups per engine by using automated backups with PITR for Cloud SQL, scheduled exports for Firestore, and Cloud Spanner backups or PITR</b>.</p><p>This approach uses the built in features of each database to minimize data loss and speed recovery while aligning with how each service operates. Cloud SQL offers automated backups and binary log based point in time recovery which together enable low recovery point objective and fast instance level restores. These features are managed per instance and are the intended way to protect transactional databases on Cloud SQL.</p><p>Firestore in Native mode is best protected with scheduled exports to Cloud Storage. You can run exports frequently to keep the recovery point objective low and you can target restores to specific collections or the whole database. This respects Firestore\u0019s operational model and avoids trying to retrofit tools that do not understand Firestore metadata and indexing.</p><p>Cloud Spanner provides both managed backups and point in time recovery through version retention. Backups support longer term protection and cross region restore workflows, and point in time recovery allows fast restores to a recent timestamp for low recovery point objective and recovery time objective. Using these native capabilities preserves consistency guarantees and minimizes downtime.</p><p><i>Adopt Google Cloud Backup and DR to centrally protect Cloud SQL, Firestore, and Cloud Spanner with a single policy</i> is incorrect because Backup and DR does not provide native protection for Firestore or Cloud Spanner, so it cannot centrally cover all three services in this scenario.</p><p><i>Rely only on each service's redundancy and replication to meet protection goals</i> is incorrect because replication improves availability but it does not protect against accidental deletion, corruption, or ransomware style events and it does not provide point in time restore.</p><p><i>Create a daily export pipeline that writes data from every database into a single Cloud Storage bucket</i> is incorrect because a daily cadence yields a high recovery point objective and a shared bucket introduces a single point of operational risk. It also ignores native features like point in time recovery for Cloud SQL and Cloud Spanner which deliver lower recovery time objective.</p>",
+  "batch_id": "102",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "A Database Engineer is responsible for designing a backup and recovery solution for a heterogeneous environment that includes databases running on Google Cloud SQL, Google Cloud Firestore, and Google Cloud Spanner. The solution must ensure low Recovery Point Objective (RPO) and Recovery Time Objective (RTO) while meeting the unique backup requirements of each database system. Which of the following backup and recovery solutions best meets these requirements?",
+  "originalOptions": "A. Deploying a third-party backup and recovery solution that supports all three database systems.<br/>B. Relying solely on the built-in redundancy and replication features of each database system.<br/>C. Utilizing database-specific backup solutions: scheduled automated backups for Cloud SQL, export/import operations for Firestore, and regional replication for Cloud Spanner.<br/>D. Creating a custom backup solution that exports data from each database system to a Cloud Storage bucket on a daily basis.",
+  "domain": "Manage a solution that can span multiple database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "68",
+  "tip": "<p>Map the required <i>RPO</i> and <i>RTO</i> to each service's <i>native</i> protection features first. Validate tool support matrices and avoid answers that promise a single tool for very different managed databases when the vendor does not document full coverage.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/backup-recovery/point-in-time-recovery",
+    "https://cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+    "https://cloud.google.com/firestore/docs/manage-data/export-import",
+    "https://cloud.google.com/firestore/docs/schedule-export",
+    "https://cloud.google.com/spanner/docs/backup",
+    "https://cloud.google.com/spanner/docs/point-in-time-recovery",
+    "https://cloud.google.com/backup-disaster-recovery/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-for-designing-a-backup-and-exam-068.html",
+  "video_url": "https://certificationation.com/videos/exam-for-designing-a-backup-and-exam-068.html"
+}

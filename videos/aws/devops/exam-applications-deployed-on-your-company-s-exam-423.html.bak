@@ -1,0 +1,67 @@
+---
+title: "In order to improve the security of applicationsExam"
+description: "Video for in order to improve the security of applications deployed on your company's AWS platform, you are configuring AWS Inspector to continually assess EC2"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "In order to improve the security of applications deployed on your company's AWS platform, you are configuring AWS Inspector to continually assess EC2 instances (both Linux and Windows) to see if there are security related vulnerabilities and then get the potential issues fixed in time."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><b>All EC2 instances are required to have the SSM Agent installed</b> and <b>you must assign an IAM role to the EC2 instances that allows SSM Run Command actions</b>. These steps are necessary so that AWS Inspector can communicate with the instances and perform vulnerability assessments. AWS Inspector utilizes AWS Systems Manager (SSM) for agentless scanning, which requires both the SSM Agent and the correct IAM permissions for operations like Run Command.<br/><br/>Option <i>The EC2 instances should permit inbound SSH traffic (port 22) in their security groups</i> is incorrect because Inspector and SSM do not require SSH access; SSM uses secure internal channels across AWS networks.<br/><br/>Option <i>Ensure AWS CLI is installed on all of the EC2 instances prior to assessment</i> is unnecessary for AWS Inspector scanning, as the CLI is not required by Inspector.<br/><br/>Option <i>Configure the EC2 instance IAM role to grant full AWS Inspector permissions</i> is incorrect—Inspector permissions should be managed at the Inspector service level, not assigned directly to EC2 instance roles. Instead, the EC2 role must have permissions related to SSM.<br/><br/><b>Tip:</b> Always ensure your EC2 instances meet AWS Inspector prerequisites: SSM agent (for agentless scanning), required IAM roles (allowing SSM actions), and a secure VPC configuration that does not mandate exposing management ports like SSH to the internet.</p>",
+  "query": "<p>You are tasked with enhancing the security of your organization’s AWS workloads. Part of your solution involves configuring AWS Inspector to regularly evaluate both Linux and Windows EC2 instances for potential security vulnerabilities, enabling timely remediation. Which steps must be ensured so AWS Inspector can successfully assess these instances?</p>",
+  "original_oid": "6793d9f761969b416038a10b",
+  "options": [
+    {
+      "correct": true,
+      "text": "You must assign an IAM role to the EC2 instances that allows SSM Run Command actions.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "The EC2 instances should permit inbound SSH traffic (port 22) in their security groups.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Ensure AWS CLI is installed on all of the EC2 instances prior to assessment.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "All EC2 instances are required to have the SSM Agent installed.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Configure the EC2 instance IAM role to grant full AWS Inspector permissions.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question152",
+  "originalQuery": "In order to improve the security of applications deployed on your company's AWS platform, you are configuring AWS Inspector to continually assess EC2 instances (both Linux and Windows) to see if there are security related vulnerabilities and then get the potential issues fixed in time.",
+  "originalOptions": "A. The security group in the EC2 instances should allow SSH port 22.|B. All EC2 instances need to have the AWS Systems Manager (SSM) Agent installed.|C. All EC2 instances should have AWS CLI commands preinstalled.|D. The EC2 instances need to configure an IAM role to have the AWS Inspector full access.|E. The EC2 instances should have a role to allow SSM Run Command.",
+  "video_url": "https://certificationation.com/videos/exam-applications-deployed-on-your-company-s-exam-423.html",
+  "url": "https://certificationation.com/questions/exam-applications-deployed-on-your-company-s-exam-423.html"
+}

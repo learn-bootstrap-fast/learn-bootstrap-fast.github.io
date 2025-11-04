@@ -1,0 +1,62 @@
+---
+title: "You have written an AWS Serverless Application ModelExam"
+description: "Video for you have written an AWS Serverless Application Model (AWS SAM) template to create a Lambda function. As AWS SAM service has integrated with AWS"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have written an AWS Serverless Application Model (AWS SAM) template to create a Lambda function. As AWS SAM service has integrated with AWS CodeDeploy to ensure safe Lambda deployments, you prefer to shift users to the new version gradually. A piece of template is as below:"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct answer is <b>During the deployment, 10% of user traffic is rerouted to the new Lambda version immediately, and after five minutes, the leftover 90% is redirected to the new version.</b></p><p>This reflects how the Canary10Percent5Minutes deployment configuration works in AWS CodeDeploy. It gradually shifts a small portion of traffic (10%) to the new Lambda version, waits for five minutes to monitor performance and errors, then redirects the remaining traffic. This helps prevent full-scale impact in case of issues with the new version.</p><p>The other statements are incorrect for the following reasons:</p><ul><li><i>If a health check alarm like AliasErrorMetricAlarm triggers, CodeDeploy does not roll back the deployment.</i> – This is incorrect. If an alarm configured for rollback (for example, AliasErrorMetricAlarm) goes into the Alarm state during deployment, CodeDeploy automatically rolls back to the previous version to maintain function availability.</li><li><i>A failed PreTrafficLambdaForValidation hook does not cause the deployment to roll back.</i> – This statement is false. If the PreTrafficLambdaForValidation hook fails, CodeDeploy halts the deployment and can roll back, because the pre-traffic validation step is critical to verifying the new version before routing traffic.</li><li><i>If the PostTrafficLambdaForValidation lifecycle event fails, CodeDeploy does not roll back the deployment.</i> – Similarly, if PostTrafficLambdaForValidation fails, CodeDeploy will typically roll back the deployment according to the deployment configuration for the service. Both Pre- and PostTraffic hooks are designed to ensure the deployment is safe.</li></ul><p><b>Tip:</b> Use the appropriate Canary or Linear deployment configuration for safe production releases, and always pay attention to the lifecycle hooks and rollback alarms to ensure reliable deployments.</p>",
+  "query": "<p>You are deploying an AWS Lambda function using an AWS Serverless Application Model (AWS SAM) template. AWS SAM integrates with AWS CodeDeploy to help manage Lambda deployments safely. You want traffic to shift slowly to the new version instead of all at once. Given the template snippet below, which statement reflects the correct deployment behavior?</p>",
+  "original_oid": "6793d9cf61969b416038a0be",
+  "options": [
+    {
+      "correct": false,
+      "text": "If a health check alarm like AliasErrorMetricAlarm triggers, CodeDeploy does <b>not</b> roll back the deployment.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "During the deployment, 10% of user traffic is rerouted to the new Lambda version immediately, and after five minutes, the leftover 90% is redirected to the new version.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "A failed PreTrafficLambdaForValidation hook does <b>not</b> cause the deployment to roll back.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "If the PostTrafficLambdaForValidation lifecycle event fails, CodeDeploy does <b>not</b> roll back the deployment.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question73",
+  "originalQuery": "You have written an AWS Serverless Application Model (AWS SAM) template to create a Lambda function.\nAs AWS SAM service has integrated with AWS CodeDeploy to ensure safe Lambda deployments, you prefer to shift users to the new version gradually.\nA piece of template is as below:",
+  "originalOptions": "A. If an alarm such as AliasErrorMetricAlarm appears, CodeDeploy does not roll back the deployment.|B. 10 percent of the traffic is shifted to the new version all at once. Then the remaining 90 percent of traffic is shifted to the new version 5 minutes later.|C. If PreTrafficLambdaForValidation has failed, the deployment is not rolled back.|D. If PostTrafficLambdaForValidation has failed, the deployment is not rolled back.",
+  "video_url": "https://certificationation.com/videos/exam-application-model-aws-sam-template-exam-343.html",
+  "url": "https://certificationation.com/questions/exam-application-model-aws-sam-template-exam-343.html"
+}

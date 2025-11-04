@@ -1,0 +1,81 @@
+---
+title: "Your company relies on a crucial business applicationExam"
+description: "Video for your company relies on a crucial business application that operates with a Cloud SQL for MySQL backend database. To achieve maximum fault tolerance"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company relies on a crucial business application that operates with a Cloud SQL for MySQL backend database. To achieve maximum fault tolerance and high availability, your company aims to create a robust solution. The primary objective is to ensure the survival of the application database in the event of zonal or regional failures, with the primary region specified as us-central1 and the backup region as us-east1 . What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "MetroTix operates a mission critical service that uses Cloud SQL for MySQL and must keep the database available during a zone outage and be able to recover if the entire primary region fails. The primary region is us-central1 and the designated recovery region is us-east1. Which deployment pattern should you implement to meet these goals?",
+  "options": [
+    {
+      "text": "Provision a single zone Cloud SQL for MySQL instance in us-central1-a and create a read replica in us-central1-b",
+      "explanation": "This places the primary and the replica in different zones within the same region to add local redundancy for reads",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Build two independent HA instances by enabling high availability in both us-central1 and us-west1 and configure external replication between them",
+      "explanation": "This sets up separate regional HA instances and uses custom replication to a region that is not the stated recovery target",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a Cloud SQL for MySQL instance in us-central1 with high availability enabled and add a cross region read replica in us-east1",
+      "explanation": "This deploys an HA primary with a standby in the primary region and an asynchronous replica in the designated disaster recovery region",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Migrate the workload to Cloud Spanner with multi region configuration",
+      "explanation": "This moves the database to a different managed service that supports multi region setups and changes the technology choice",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Create a Cloud SQL for MySQL instance in us-central1 with high availability enabled and add a cross region read replica in us-east1</b>.</p><p>High availability on Cloud SQL keeps a standby in a different zone within the same region and it provides automatic failover during a zone outage. Adding a cross region read replica in us-east1 provides disaster recovery if the entire primary region fails. In that event you can promote the replica to restore write capability in the recovery region which satisfies both the local availability and regional recovery requirements.</p><p><i>Provision a single zone Cloud SQL for MySQL instance in us-central1-a and create a read replica in us-central1-b</i> is incorrect because a single zone primary cannot survive a zone outage and a read replica is read only and does not provide automatic failover. Both instances are still in the same region so a regional failure would take them both down.</p><p><i>Build two independent HA instances by enabling high availability in both us-central1 and us-west1 and configure external replication between them</i> is incorrect because this creates two primaries which is not a supported active active pattern on Cloud SQL and it removes managed failover. It also chooses us-west1 rather than the designated recovery region and adds unnecessary complexity compared to using a managed cross region read replica.</p><p><i>Migrate the workload to Cloud Spanner with multi region configuration</i> is incorrect in this context because the requirement is to keep using Cloud SQL for MySQL. Spanner changes the database engine and application semantics and is not needed to meet the stated availability and disaster recovery goals.</p>",
+  "batch_id": "134",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "Your company relies on a crucial business application that operates with a Cloud SQL for MySQL backend database. To achieve maximum fault tolerance and high availability, your company aims to create a robust solution. The primary objective is to ensure the survival of the application database in the event of zonal or regional failures, with the primary region specified as us-central1 and the backup region as us-east1 . What should you do?",
+  "originalOptions": "A. 1. Provision a Cloud SQL for MySQL instance in us-central1-a . 2. Create a multiple-zone instance in us-west1-b . 3. Create a read replica in us-east1-c .<br/>B. 1. Provision a Cloud SQL for MySQL instance in us-central1-a . 2. Create a multiple-zone instance in us-east1-b . 3. Create a read replica in us-central1-b .<br/>C. 1. Provision a Cloud SQL for MySQL instance in us-central1-a . 2. Create a multiple-zone instance in us-east-b . 3. Create a read replica in us-east1-c .<br/>D. 1. Provision a Cloud SQL for MySQL instance in us-central1-a . 2. Create a multiple-zone instance in us-central1-b . 3. Create a read replica in us-east1-b .",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "309",
+  "tip": "<p>Map failure scopes to features. Use <i>high availability</i> for zone outages within a region and use a <i>cross region read replica</i> for disaster recovery across regions. Confirm promotion steps and RPO and RTO implications.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/high-availability",
+    "https://cloud.google.com/sql/docs/mysql/replication/replicate-between-regions",
+    "https://cloud.google.com/sql/docs/mysql/replication",
+    "https://cloud.google.com/sql/docs/mysql/promote-replica",
+    "https://cloud.google.com/architecture/disaster-recovery-cloud-sql-mysql"
+  ],
+  "url": "https://certificationation.com/questions/exam-business-application-that-operates-with-exam-309.html",
+  "video_url": "https://certificationation.com/videos/exam-business-application-that-operates-with-exam-309.html"
+}

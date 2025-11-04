@@ -1,0 +1,80 @@
+---
+title: "Your organization is looking to break down a largeExam"
+description: "Video for your organization is looking to break down a large, on-premises legacy CRM system into a cloud-based microservices architecture. The current system"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your organization is looking to break down a large, on-premises legacy CRM system into a cloud-based microservices architecture. The current system uses a single, large-scale relational database. The goal is to improve modularity and allow independent scaling. You need to design a database transition strategy that ensures continuity and minimizes service interruptions. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Summit Outfitters is decomposing a legacy on-premises customer management platform into microservices on Google Cloud. The current application depends on a single large relational database. Leadership wants independent scaling and clear service data ownership while keeping cutover downtime below 2 minutes and avoiding disruptions during the migration. What database transition approach should you adopt to meet these goals?",
+  "options": [
+    {
+      "text": "Set up Datastream or another change data capture pipeline to replicate changes from the monolith into separate service databases and have services read from their own copies while writes continue to the legacy system",
+      "explanation": "This option uses a CDC pipeline to fan out data from the original database so that each service can consume a near real time copy while the monolith remains the system of record during migration.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Migrate the existing schema unchanged to Cloud SQL and allow every microservice to connect directly to that shared instance",
+      "explanation": "This option lifts and shifts the relational database into a managed service while keeping a single shared backend used by all microservices.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Introduce a database proxy or data access facade that routes requests to service-specific data stores while incrementally carving functionality out of the monolith",
+      "explanation": "This option adds a routing layer that can direct queries to either the legacy database or newly created service-owned databases as migration progresses.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Maintain the monolith database and replicate each domain into separate Cloud Spanner instances for use by individual services",
+      "explanation": "This option keeps the original schema and uses replication to create multiple Spanner databases for different service domains.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Introduce a database proxy or data access facade that routes requests to service-specific data stores while incrementally carving functionality out of the monolith</b>.</p><p>This approach creates a single controlled entry point for data access so you can gradually route reads and writes to new service-owned stores while the legacy database continues to serve unaffected functionality. It enables clear ownership because each service assumes control of its own schema behind the facade and it supports independent scaling because the routing layer can direct traffic to separately scaled backends. Cutover downtime can be kept under two minutes because you switch routing in a quick and reversible step once validation is complete which avoids intrusive database migrations during the final switchover.</p><p><i>Set up Datastream or another change data capture pipeline to replicate changes from the monolith into separate service databases and have services read from their own copies while writes continue to the legacy system</i> is not sufficient because it leaves the write path centralized in the monolith which prevents true ownership and independent scaling. It also introduces eventual consistency lag and read anomalies that can cause user-visible disruption and it makes the final write cutover complex.</p><p><i>Migrate the existing schema unchanged to Cloud SQL and allow every microservice to connect directly to that shared instance</i> preserves a shared database bottleneck and tight coupling among services. It fails the goals of clear service data ownership and independent scaling and it increases blast radius and coordination overhead.</p><p><i>Maintain the monolith database and replicate each domain into separate Cloud Spanner instances for use by individual services</i> adds cost and operational complexity while still depending on the monolith for primary writes. Without a routing facade you cannot safely transition traffic service by service and you risk consistency and dual-write challenges that do not meet the low-downtime requirement.</p>",
+  "batch_id": "244",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "Your organization is looking to break down a large, on-premises legacy CRM system into a cloud-based microservices architecture. The current system uses a single, large-scale relational database. The goal is to improve modularity and allow independent scaling. You need to design a database transition strategy that ensures continuity and minimizes service interruptions. What should you do?",
+  "originalOptions": "A. Transition the existing database to Cloud SQL as-is and let each microservice directly access the Cloud SQL instance without any intermediaries.<br/>B. Keep the monolithic database structure and replicate data to individual Cloud Spanner instances for each microservice.<br/>C. Implement a Database Proxy layer that routes queries to the appropriate service-specific databases as microservices are phased in.<br/>D. Migrate the monolithic database to a managed NoSQL database like Firestore to immediately support the microservices architecture.",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "85",
+  "tip": "<p>When you see goals like <i>independent scaling</i> and <i>clear data ownership</i> with near zero downtime, favor answers that add a routing or facade layer that enables incremental cutover and reject choices that keep a single shared database or rely only on CDC replication.</p>",
+  "references": [
+    "https://cloud.google.com/datastream/docs/overview",
+    "https://cloud.google.com/sql/docs/overview",
+    "https://cloud.google.com/spanner/docs/overview",
+    "https://martinfowler.com/bliki/StranglerFigApplication.html"
+  ],
+  "url": "https://certificationation.com/questions/exam-break-down-a-large-on-premises-exam-085.html",
+  "video_url": "https://certificationation.com/videos/exam-break-down-a-large-on-premises-exam-085.html"
+}

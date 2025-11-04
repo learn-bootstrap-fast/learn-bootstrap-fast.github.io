@@ -1,0 +1,62 @@
+---
+title: "You are using a configuration management system toExam"
+description: "Video for you are using a configuration management system to manage your Amazon EC2 instances. On your Amazon EC2 Instances, you want to store credentials for"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are using a configuration management system to manage your Amazon EC2 instances. On your Amazon EC2 Instances, you want to store credentials for connecting to an Amazon RDS MYSQL DB instance. How would you securely access these credentials when the number of connections per second is lesser than 500?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>correct answer</b> is to assign an IAM role to your Amazon EC2 instance and use that IAM role to access the Amazon RDS database. This approach leverages AWS best practices for security by eliminating the need to store static credentials on the instances and instead using temporary credentials automatically provided by the IAM role. This reduces the risk of credential leakage and is the recommended method for secure access management.</p><p>Let's review the other options:</p><ul><li><i>\"Launch an EC2 instance, use your configuration management tool to inject Amazon RDS database credentials into the instance, and then create an Amazon Machine Image (AMI) out of this configured EC2.\"</i> This approach is insecure because the credentials become part of the AMI and thus are potentially accessible to anyone launching instances from that AMI.</li><li><i>\"Add the Amazon RDS database credentials to the EC2 instance's user data and retrieve them on instance boot.\"</i> Storing sensitive credentials in user data is not recommended, since user data can be retrieved from within the instance even after startup and can lead to unintentional exposure.</li><li><i>\"Grant EC2 instances an IAM role allowing them to read from a private Amazon S3 bucket where a file with RDS credentials is stored, and use your configuration management tool to fetch this file as needed.\"</i> Although this method leverages IAM roles and S3 permissions, it still requires managing static credentials within S3, and those credentials could be exposed if not managed carefully. It is better to avoid storing static database credentials and use IAM roles directly when possible.</li></ul><p><b>Tip</b>: Using IAM roles is the safest and most scalable way to provide temporary and automatically-rotated credentials to AWS resources, maintaining principle of least privilege and reducing credential management overhead.</p>",
+  "query": "<p>You are using a configuration management tool to manage Amazon EC2 instances. For these EC2 instances, you need a secure method to store credentials needed to access an Amazon RDS MySQL database. There are fewer than 500 connection requests per second. Which approach provides the most secure and recommended way of granting the EC2 instances access to the Amazon RDS database credentials?</p>",
+  "original_oid": "6793d9d061969b416038a0c2",
+  "options": [
+    {
+      "correct": false,
+      "text": "Launch an EC2 instance, use your configuration management tool to inject Amazon RDS database credentials into the instance, and then create an Amazon Machine Image (AMI) out of this configured EC2.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Add the Amazon RDS database credentials to the EC2 instance's user data and retrieve them on instance boot.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Provide your Amazon EC2 instances with an IAM role, and use this IAM role to grant the EC2 instances access to the Amazon RDS database directly.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Grant EC2 instances an IAM role allowing them to read from a private Amazon S3 bucket where a file with RDS credentials is stored, and use your configuration management tool to fetch this file as needed.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question77",
+  "originalQuery": "You are using a configuration management system to manage your Amazon EC2 instances.\nOn your Amazon EC2 Instances, you want to store credentials for connecting to an Amazon RDS MYSQL DB instance.\nHow would you securely access these credentials when the number of connections per second is lesser than 500?",
+  "originalOptions": "A. Give the Amazon EC2 instances an IAM role that allows read access to a private Amazon S3 bucket. Store a file with database credentials in the Amazon S3 bucket. Have your configuration management system pull the file from the bucket when it is needed.|B. Launch an Amazon EC2 instance and use the configuration management system to bootstrap the instance with the Amazon RDS DBcredentials. Create an AMI from this instance.|C. Store the Amazon RDS DB credentials in Amazon EC2 user data.Import the credentials into the Instance on boot.|D. Assign an IAM role to your Amazon EC2 instance, and use this IAM role to access the Amazon RDS DB from your Amazon EC2 instances.",
+  "video_url": "https://certificationation.com/videos/exam-management-system-to-manage-your-exam-120.html",
+  "url": "https://certificationation.com/questions/exam-management-system-to-manage-your-exam-120.html"
+}

@@ -1,0 +1,81 @@
+---
+title: "Your company is using a Cloud SQL database to handleExam"
+description: "Video for your company is using a Cloud SQL database to handle e-commerce transactions. You want to add a search feature that enables customers to search for"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company is using a Cloud SQL database to handle e-commerce transactions. You want to add a search feature that enables customers to search for products by keyword. This feature should not impact the performance of the transactional database. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Skylark Outfitters runs its checkout and inventory on Cloud SQL for PostgreSQL. They need to add keyword product search across about 250,000 SKUs, and the new search must not impact the performance of the transactional database. What should they implement?",
+  "options": [
+    {
+      "text": "Export transactional data to BigQuery on a schedule and run keyword searches in BigQuery",
+      "explanation": "This approach moves data into an analytics warehouse for querying but is typically batch oriented and not tuned for low latency full text search.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Integrate Cloud SQL with a managed search platform such as Elasticsearch or OpenSearch and run searches there",
+      "explanation": "A dedicated search engine provides inverted indexes and relevance ranking and it can be fed continuously from the source database using connectors or pipelines.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Enable full text search in Cloud SQL and issue all keyword queries on the transactional instance",
+      "explanation": "Running search on the same instance shares CPU and memory with OLTP workload and can contend with transactional performance.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a Cloud SQL read replica and route keyword searches to the replica",
+      "explanation": "A read replica can offload reads yet it still uses the database engine and lacks the specialized indexing and scoring used by dedicated search systems.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Integrate Cloud SQL with a managed search platform such as Elasticsearch or OpenSearch and run searches there</b>.</p><p>This approach offloads indexing and query load to a system designed for full text search. Search engines provide inverted indexes, relevance scoring, stemming, synonyms, and horizontal scalability that handle 250,000 SKUs with low latency. Cloud SQL remains focused on transactional workloads so you avoid contention on CPU, memory, and IOPS. You can synchronize data through change data capture or batch pipelines so the search index stays current without burdening the database.</p><p><i>Export transactional data to BigQuery on a schedule and run keyword searches in BigQuery</i> is not suitable for user facing search because BigQuery is optimized for analytical workloads and not for low latency interactive keyword queries. Scheduled exports introduce staleness which undermines inventory accuracy during checkout.</p><p><i>Enable full text search in Cloud SQL and issue all keyword queries on the transactional instance</i> violates the requirement to avoid performance impact. Even with GIN or GIST indexes and PostgreSQL full text features, heavy search traffic competes with OLTP workload and index maintenance increases write overhead.</p><p><i>Create a Cloud SQL read replica and route keyword searches to the replica</i> reduces pressure on the primary but it still requires maintaining full text indexes and can cause replication lag under heavy search load. It also lacks the advanced search relevance and scalability of a dedicated search engine and there is still operational coupling to the database tier.</p>",
+  "batch_id": "318",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "Your company is using a Cloud SQL database to handle e-commerce transactions. You want to add a search feature that enables customers to search for products by keyword. This feature should not impact the performance of the transactional database. What should you do?",
+  "originalOptions": "A. Use a separate Cloud Spanner instance for handling search queries. Sync the data from Cloud SQL to Cloud Spanner.<br/>B. Enable Cloud SQL full-text search capabilities and perform all search queries directly on the transactional database.<br/>C. Integrate the transactional database with a managed search service such as Elasticsearch or OpenSearch. Perform search queries on this service.<br/>D. Use BigQuery to import the transactional data and run keyword searches on BigQuery.",
+  "domain": "Manage a solution that can span multiple database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "264",
+  "tip": "<p>When a question says the new feature must <i>not impact the transactional database</i> and it involves <i>keyword search</i> or relevance ranking, prefer an external search engine that is built for that purpose and keep OLTP on Cloud SQL.</p>",
+  "references": [
+    "https://cloud.google.com/bigquery/docs/introduction#use_cases",
+    "https://cloud.google.com/sql/docs/postgres/replication",
+    "https://www.postgresql.org/docs/current/textsearch-intro.html",
+    "https://cloud.google.com/marketplace/product/elastic-public/elastic-stack",
+    "https://cloud.google.com/dataflow/docs/guides/templates/provided/pubsub-to-elasticsearch"
+  ],
+  "url": "https://certificationation.com/questions/exam-database-to-handle-e-commerce-transactions-exam-264.html",
+  "video_url": "https://certificationation.com/videos/exam-database-to-handle-e-commerce-transactions-exam-264.html"
+}

@@ -1,0 +1,67 @@
+---
+title: "A large group-buying website is deployed in AWS using aExam"
+description: "Video for a large group-buying website is deployed in AWS using a classic Load Balancer and an Auto Scaling Group. The ELB is configured with the below health"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A large group-buying website is deployed in AWS using a classic Load Balancer and an Auto Scaling Group. The ELB is configured with the below health check:"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best way to make ELB health checks less aggressive and reduce the chances of replacing actually healthy instances too rapidly is to <b>boost the Interval to 35 seconds</b>. Increasing the interval means the ELB will wait longer between health check attempts, giving instances adequate time to recover from transient issues and reducing the risk of false positives when marking an instance as unhealthy.<br><br><i>Change the Healthy threshold to 5</i> would make it require more consecutive successes to declare an instance healthy, lengthening time to add healthy servers into service, but not reducing premature unhealthy removals. <i>Increase the Timeout to 25 seconds</i> gives individual health checks more time to respond, but doesn't impact how often the checks run or how quickly removals happen. <i>Lower the Unhealthy threshold to 2</i> makes the system more aggressive, not less, by declaring instances unhealthy after fewer failures. <i>Switch the Ping protocol from HTTPS to HTTP</i> is only helpful if there are protocol mismatches, and does not relate to making health checks less aggressive.<br><br><b>Tip:</b> Increasing health check Interval is recommended to make health checks less frequent and less sensitive, which is useful if you are experiencing healthy instances being prematurely marked unhealthy due to minor or temporary issues.</p>",
+  "query": "<p>A popular group purchase site is hosted on AWS with an Auto Scaling Group and a Classic Load Balancer (CLB). The Elastic Load Balancer health check is presently configured and is resulting in instances being marked as unhealthy too soon. What adjustment to the health check settings could make the health assessments less aggressive and prevent healthy servers from being replaced too quickly?</p>",
+  "original_oid": "6793d9e261969b416038a0e2",
+  "options": [
+    {
+      "correct": false,
+      "text": "Change the Healthy threshold to 5",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Increase the Timeout to 25 seconds",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Boost the Interval to 35 seconds",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Lower the Unhealthy threshold to 2",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Switch the Ping protocol from HTTPS to HTTP",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question111",
+  "originalQuery": "A large group-buying website is deployed in AWS using a classic Load Balancer and an Auto Scaling Group.\nThe ELB is configured with the below health check:",
+  "originalOptions": "A. Increase the Timeout to 25 seconds.|B. Increase the Healthy threshold to 5.|C. Decrease the Unhealthy threshold to 2.|D. Increase the Interval to 35 seconds.|E. Modify Ping target to use HTTP instead of HTTPS.",
+  "video_url": "https://certificationation.com/videos/exam-deployed-in-aws-using-a-exam-326.html",
+  "url": "https://certificationation.com/questions/exam-deployed-in-aws-using-a-exam-326.html"
+}

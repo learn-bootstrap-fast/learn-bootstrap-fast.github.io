@@ -1,0 +1,62 @@
+---
+title: "A large finance company is utilizing OpsWorks for aExam"
+description: "Video for a large finance company is utilizing OpsWorks for a website project. The website has been live for half a year. According to statistics, the average"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A large finance company is utilizing OpsWorks for a website project. The website has been live for half a year. According to statistics, the average request volume varies throghout the day. The minimum average request volume requires five application server instances."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><b>Configure five always-on 24/7 instances to cover baseline usage. Add ten time-based instances that adjust every hour, and include two load-based instances for on-demand scaling during sudden spikes.</b> is correct because it follows OpsWorks' recommended design for handling predictable base load with 24/7 instances, managing expected daily traffic fluctuations with time-based instances (adjusted every hour for optimal responsiveness), and rapidly handling unexpected traffic increases with load-based instances that automatically respond to actual traffic levels. This configuration efficiently balances cost, performance, and scalability, leveraging the strengths of different instance scheduling strategies within OpsWorks.</p><p><i>Operate five 24/7 instances for the baseline demand. Add ten scheduled instances with changes happening every two hours, and include two spot instances to accommodate surges in site traffic.</i> is not ideal because using Spot Instances in OpsWorks is not standard for handling unpredictable spikes, as Spot Instances can be interrupted. Adjusting instances every two hours may not respond rapidly enough to fluctuating demand.</p><p><i>Maintain five 24/7 servers for base loads, then integrate an EC2 Auto Scaling group into the OpsWorks stack, ensuring a correct launch configuration to handle variable loads automatically, without involving any other instance types.</i> is incorrect since classic OpsWorks uses built-in time-based and load-based instance management, and traditional EC2 Auto Scaling groups are not directly integrated with OpsWorks stacks. This option also omits flexible assignment via time-based scheduling for known load patterns.</p><p><i>Deploy five On Demand instances to meet the base requirement, supplement with ten scheduled instances adjusted every two hours, and use two spot instances to address traffic bursts.</i> is less suitable because On Demand instances are costlier than 24/7 reserved or appropriately planned instances, and again, adjusting only every two hours may miss important peaks or valleys in traffic patterns. Spot Instances are risky for maintaining consistent service, especially in regulated finance environments where sudden termination could impact application availability.</p><p><b>Tip:</b> In AWS OpsWorks environments, use time-based scheduling for predictable changes and load-based instances for sudden, unpredictable spikes. Avoid relying on Spot Instances for core web operations requiring stability, particularly for financial applications. Adjust time-based instances frequently (every hour or less) for best results, and always ensure essential base loads are met with persistent instances.</p>",
+  "query": "<p>A leading financial enterprise is managing a website hosted using AWS OpsWorks. After six months in production, operational data shows that application request volumes fluctuate at different hours of the day, with a minimum of five application servers required to maintain steady performance. Which approach best aligns with AWS best practices for efficiency and scaling flexibility?</p>",
+  "original_oid": "6793da8061969b416038a221",
+  "options": [
+    {
+      "correct": true,
+      "text": "Configure five always-on 24/7 instances to cover baseline usage. Add ten time-based instances that adjust every hour, and include two load-based instances for on-demand scaling during sudden spikes.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Operate five 24/7 instances for the baseline demand. Add ten scheduled instances with changes happening every two hours, and include two spot instances to accommodate surges in site traffic.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Maintain five 24/7 servers for base loads, then integrate an EC2 Auto Scaling group into the OpsWorks stack, ensuring a correct launch configuration to handle variable loads automatically, without involving any other instance types.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Deploy five On Demand instances to meet the base requirement, supplement with ten scheduled instances adjusted every two hours, and use two spot instances to address traffic bursts.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question433",
+  "originalQuery": "A large finance company is utilizing OpsWorks for a website project.\nThe website has been live for half a year.\nAccording to statistics, the average request volume varies throghout the day.\nThe minimum average request volume requires five application server instances.",
+  "originalOptions": "A. The stack should have five 24/7 instances, which are always on and handle the base load. Add ten schedule instances and modify the number of schedule instances every two hours, Add 2 spot instances to handle traffic spikes.,B. The stack should have five On Demand instances, which are used to serve the base load. Add ten schedule instances and modify the number of schedule instances every two hours. Add 2 spot instances to handle traffic spikes.,C. The stack should have five 24/7 instances to handle with base load. Add an EC2 autoscaling group to OpsWorks Stack and make sure that the launch configuration is proper. The autoscaling group is able to handle with the load change automatically. No other instances types are required.,D. The stack should have five 24/7 instances, which are always on and handle the base load. Add ten time-based instances and modify the number of time-based instances every hour. Add 2 load-based instances to handle traffic spikes.",
+  "video_url": "https://certificationation.com/videos/exam-opsworks-for-a-website-project-exam-103.html",
+  "url": "https://certificationation.com/questions/exam-opsworks-for-a-website-project-exam-103.html"
+}

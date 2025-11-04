@@ -1,0 +1,62 @@
+---
+title: "You are currently using Elastic Beanstalk to host yourExam"
+description: "Video for you are currently using Elastic Beanstalk to host your production environment. You need to roll out updates to your application hosted on this"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are currently using Elastic Beanstalk to host your production environment. You need to roll out updates to your application hosted on this environment. This is a critical application which is why there is a requirement that the rollback, if required, should be carried out with the least amount of downtime. Which of the following deployment strategies would ideally help achieve this purpose?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><b>Set up a parallel Elastic Beanstalk environment and use the Swap Environment URLs feature</b> is the preferred deployment method for minimizing downtime during application rollbacks. With this approach, you duplicate your existing (production) environment and deploy the new version to the parallel environment. You can thoroughly test the new deployment, and if the upgrade passes validation, the <b>Swap Environment URLs</b> capability allows you to instantly redirect users to the updated environment with virtually zero downtime. If a rollback is needed, you just swap back to the original environment, again with minimal interruption.<br><br><i>Implement Rolling Updates within Elastic Beanstalk, which will automatically revert to the previous version if any update fails</i> is incorrect because while Rolling Updates can reduce downtime and offer basic rollback function if failures are detected, they do not guarantee a near-instant rollback for all types of potential failures—especially when issues only surface after deployment completes.<br><br><i>Develop an AWS CloudFormation template to duplicate your Beanstalk resources, and manually deploy this if needed to control rollbacks</i> is not ideal for urgent rollback needs as creating and deploying resources via CloudFormation is typically slower, more manual, and subject to greater risk of configuration drift or error.<br><br><i>Launch a duplicate Elastic Beanstalk environment and associate a separate Route 53 DNS name with it, making the new domain available to users after deployment</i> is less efficient because users must be informed or redirected manually to the new DNS name. This process introduces more potential for user confusion or downtime compared to the seamless Swap Environment URLs approach.<br><br><strong>Tip:</strong> Using parallel environments with the Swap URL feature is a best practice for AWS Beanstalk zero-downtime deployments and reliable, fast rollback with critical workloads.</p>",
+  "query": "<p>Your company hosts a mission-critical application on AWS Elastic Beanstalk in its production environment.<br>You are planning to release updates to this application and must guarantee that if a rollback is necessary, it will be performed with minimal downtime for end users.<br><br>Which of the following strategies would best ensure rapid rollback with the least service interruption?</p>",
+  "original_oid": "6793da0a61969b416038a130",
+  "options": [
+    {
+      "correct": true,
+      "text": "Set up a parallel Elastic Beanstalk environment and use the Swap Environment URLs feature to redirect traffic in case rollback is needed.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Launch a duplicate Elastic Beanstalk environment and associate a separate Route 53 DNS name with it, making the new domain available to users after deployment.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Implement Rolling Updates within Elastic Beanstalk, which will automatically revert to the previous version if any update fails.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Develop an AWS CloudFormation template to duplicate your Beanstalk resources, and manually deploy this if needed to control rollbacks.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question190",
+  "originalQuery": "You are currently using Elastic Beanstalk to host your production environment.\nYou need to roll out updates to your application hosted on this environment.\nThis is a critical application which is why there is a requirement that the rollback, if required, should be carried out with the least amount of downtime.\nWhich of the following deployment strategies would ideally help achieve this purpose?",
+  "originalOptions": "A. Create a Cloudformation template with the same resources as those in the Elastic beanstalk environment. If the deployment fails, deploy the Cloudformation template.|B. Use Rolling updates in Elastic Beanstalk so that the rolling updates feature would roll back to the last deployment if the deployment fails.|C. Create another parallel environment in the elastic Beanstalk. Use the Swap URL feature.|D. Create another parallel environment in the elastic Beanstalk. Create a new Route53 Domain name for the new environment and release that URL to the users.",
+  "video_url": "https://certificationation.com/videos/exam-beanstalk-to-host-your-production-exam-322.html",
+  "url": "https://certificationation.com/questions/exam-beanstalk-to-host-your-production-exam-322.html"
+}

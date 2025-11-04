@@ -1,0 +1,82 @@
+---
+title: "A Database Engineer has been tasked with sizing a CloudExam"
+description: "Video for a Database Engineer has been tasked with sizing a Cloud SQL instance based on the current environment workload metrics and future requirements. The"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A Database Engineer has been tasked with sizing a Cloud SQL instance based on the current environment workload metrics and future requirements. The current average workload metrics are as follows: 5000 queries per second during peak times 3 TB of data storage 10,000 concurrent connections 150 GB of backup storage The company is expecting a 50% increase in workload and a 20% increase in data storage over the next year. Which of the following instance configurations is the most appropriate to handle the anticipated growth while minimizing costs?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "At Crestline Media you must right size a new Cloud SQL instance using observed performance and planned growth. Current peaks average 4200 queries per second, 2.5 TB of data, 8000 simultaneous connections and 200 GB of backup usage. The business projects a 60% rise in traffic and a 25% increase in stored data within the next 12 months. Which instance configuration will support the forecast while keeping costs efficient?",
+  "options": [
+    {
+      "text": "db-n2-standard-32 with 6 TB of HDD storage",
+      "explanation": "This uses a standard memory machine type with 32 vCPUs and lower cost HDD persistent disks that prioritize capacity over performance",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "db-n2-highmem-32 with 4 TB of SSD storage",
+      "explanation": "This uses a high memory 32 vCPU machine with SSD persistent disks sized to cover the expected data volume and provide strong IOPS",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "db-n2-highmem-64 with 6 TB of SSD storage",
+      "explanation": "This provides a high memory 64 vCPU machine and larger SSD capacity that offers substantial headroom for compute and storage",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "db-n2-highmem-16 with 3 TB of SSD storage",
+      "explanation": "This is a high memory 16 vCPU machine with SSD storage that favors lower cost but with reduced compute and capacity",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>db-n2-highmem-32 with 4 TB of SSD storage</b> because it meets the projected workload while staying cost efficient.</p><p>Current peaks of 4200 queries per second and 2.5 TB of data are expected to grow to roughly 6700 queries per second and about 3.1 TB of data over the next year. A 4 TB SSD allocation provides enough capacity for the data growth plus room for indexes, temporary space, and maintenance operations. SSD is recommended for high throughput transactional workloads because it delivers the IOPS and latency needed for sustained query rates and predictable performance. Storage auto increase can be enabled to provide headroom without overcommitting on day one.</p><p>The n2 high-memory profile at 32 vCPUs gives a strong balance of compute and RAM so caches and buffers can serve more reads and the instance can tolerate large numbers of connections. If connection surges occur you can use connection pooling to manage client concurrency while keeping instance resources efficient. This configuration therefore aligns with the performance target and cost control goals.</p><p><i>db-n2-standard-32 with 6 TB of HDD storage</i> is not appropriate for high query rates because HDD throughput and IOPS are significantly lower than SSD which leads to latency under load. It also allocates less memory per vCPU than a high-memory profile which reduces cache effectiveness.</p><p><i>db-n2-highmem-64 with 6 TB of SSD storage</i> would handle the workload but it is overprovisioned for the forecast and increases cost unnecessarily. You can meet the targets with the smaller high-memory node and still enable storage auto increase for growth.</p><p><i>db-n2-highmem-16 with 3 TB of SSD storage</i> is likely to be constrained on CPU and memory at the forecasted query rate and the storage size leaves too little buffer over the expected 3.1 TB which risks running short once overhead is considered.</p>",
+  "batch_id": "39",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "A Database Engineer has been tasked with sizing a Cloud SQL instance based on the current environment workload metrics and future requirements. The current average workload metrics are as follows: 5000 queries per second during peak times 3 TB of data storage 10,000 concurrent connections 150 GB of backup storage The company is expecting a 50% increase in workload and a 20% increase in data storage over the next year. Which of the following instance configurations is the most appropriate to handle the anticipated growth while minimizing costs?",
+  "originalOptions": "A. db-n1-highmem-16 with 4 TB of SSD storage<br/>B. db-n1-highmem-64 with 6 TB of SSD storage<br/>C. db-n1-highmem-32 with 4 TB of SSD storage<br/>D. db-n1-standard-32 with 6 TB of HDD storage",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "262",
+  "tip": "<p>Estimate growth first and translate it into compute, memory, and storage needs. Prefer <i>SSD</i> for high QPS and leave <i>headroom</i> for indexes and temporary space. Use <i>connection pooling</i> to control concurrency before jumping to a larger machine.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/instance-settings#machine-types",
+    "https://cloud.google.com/sql/docs/mysql/instance-settings#storage-type",
+    "https://cloud.google.com/sql/docs/mysql/auto-storage-increase",
+    "https://cloud.google.com/sql/docs/quotas",
+    "https://cloud.google.com/sql/docs/mysql/performance",
+    "https://cloud.google.com/sql/docs/mysql/backup-recovery/backups#backup_storage_cost"
+  ],
+  "url": "https://certificationation.com/questions/exam-with-sizing-a-cloud-sql-exam-262.html",
+  "video_url": "https://certificationation.com/videos/exam-with-sizing-a-cloud-sql-exam-262.html"
+}

@@ -1,0 +1,81 @@
+---
+title: "A Database Engineer is responsible for planning anExam"
+description: "Video for a Database Engineer is responsible for planning an upgrade of a Cloud Bigtable database to meet new performance requirements. The engineer must ensure"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A Database Engineer is responsible for planning an upgrade of a Cloud Bigtable database to meet new performance requirements. The engineer must ensure that the upgrade results in a minimum performance improvement of 50% while maintaining data consistency and minimizing downtime. Which of the following strategies is the most appropriate to achieve these objectives?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "At a subscription analytics startup, a data platform lead must upgrade a Cloud Bigtable production instance to satisfy new throughput goals. The plan must deliver at least a 60% performance boost while preserving data consistency and keeping any cutover interruption to a minimum. Which approach should the team choose?",
+  "options": [
+    {
+      "text": "Move the workload to Cloud Spanner to gain higher performance without rebalancing",
+      "explanation": "This option proposes migrating the application to Cloud Spanner to obtain scalability and consistency features through a different managed database service.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Restore a new Cloud Bigtable instance from a managed backup and then point the application to the new endpoint",
+      "explanation": "This uses Cloud Bigtable managed backups to create and restore data into a separate instance that can later receive application traffic.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Increase the node count of the existing Cloud Bigtable cluster so it scales throughput online",
+      "explanation": "This action adds more Bigtable nodes to scale horizontally and lets the service rebalance tablets without taking the cluster offline.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Export the tables to Cloud Storage, create a new instance with a more powerful machine type, import the data, and then switch clients to it",
+      "explanation": "This workflow performs a data export and import through Cloud Storage and relies on provisioning a new instance with different capacity assumptions.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Increase the node count of the existing Cloud Bigtable cluster so it scales throughput online</b>.</p><p>This approach aligns with how Cloud Bigtable achieves higher throughput since capacity and performance scale with the number of nodes. Resizing a cluster is an online change so traffic continues to flow to the same instance and clients do not need to change endpoints. This preserves data consistency and keeps any interruption to a minimum while enabling the team to reach a 60 percent or greater performance increase simply by adding sufficient nodes.</p><p><i>Move the workload to Cloud Spanner to gain higher performance without rebalancing</i> is not appropriate because it is a cross service migration that requires schema and application changes and it introduces a complex cutover. It does not guarantee a straightforward performance improvement for this Bigtable workload and it increases risk and downtime rather than minimizing it.</p><p><i>Restore a new Cloud Bigtable instance from a managed backup and then point the application to the new endpoint</i> creates a point in time copy that can be stale at restore time and it requires an endpoint switch. This adds cutover complexity and potential data divergence during the transition, which does not meet the requirement to preserve consistency with minimal interruption.</p><p><i>Export the tables to Cloud Storage, create a new instance with a more powerful machine type, import the data, and then switch clients to it</i> introduces long data movement and a disruptive cutover. Cloud Bigtable performance is driven primarily by node count and not by a more powerful machine type, and this plan would not minimize downtime or consistency risk.</p>",
+  "batch_id": "179",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "A Database Engineer is responsible for planning an upgrade of a Cloud Bigtable database to meet new performance requirements. The engineer must ensure that the upgrade results in a minimum performance improvement of 50% while maintaining data consistency and minimizing downtime. Which of the following strategies is the most appropriate to achieve these objectives?",
+  "originalOptions": "A. Increase the number of Bigtable nodes in the existing cluster.<br/>B. Use Cloud Bigtable's managed backups to create a new instance with upgraded settings, and then switch the application to use the new instance.<br/>C. Export the data from the Bigtable instance, create a new instance with a more powerful machine type, import the data, and then switch the application to use the new instance.<br/>D. Implement horizontal partitioning in the existing Bigtable instance to distribute the data across multiple tables.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "132",
+  "tip": "<p>Map the requirement that says <i>minimal interruption</i> to operations that are <i>online</i>. For Cloud Bigtable prefer scaling nodes in place or autoscaling rather than migrations, restores, or export and import tasks that require endpoint changes.</p>",
+  "references": [
+    "https://cloud.google.com/bigtable/docs/instance-sizing",
+    "https://cloud.google.com/bigtable/docs/creating-backups",
+    "https://cloud.google.com/bigtable/docs/restore-from-backup",
+    "https://cloud.google.com/bigtable/docs/exporting-data",
+    "https://cloud.google.com/bigtable/docs/importing-data"
+  ],
+  "url": "https://certificationation.com/questions/exam-for-planning-an-upgrade-of-exam-132.html",
+  "video_url": "https://certificationation.com/videos/exam-for-planning-an-upgrade-of-exam-132.html"
+}

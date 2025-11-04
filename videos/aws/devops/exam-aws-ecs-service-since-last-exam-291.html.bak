@@ -1,0 +1,62 @@
+---
+title: "A web application is deployed in AWS ECS service. SinceExam"
+description: "Video for a web application is deployed in AWS ECS service. Since last week, new ECS tasks cannot be started. After further troubleshooting, you found that an"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A web application is deployed in AWS ECS service. Since last week, new ECS tasks cannot be started. After further troubleshooting, you found that an environment variable used by the Docker containers has been deleted in AWS Systems Manager Parameter Store. As a result, the ECS tasks failed to launch. You need to quickly find out when and how the parameter in Parameter Store was deleted. Which option would you choose?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The most direct method is to use <b>View AWS CloudTrail's Event History and search for 'DeleteParameter' and 'DeleteParameters' activities filtered to the last week. Review the event details for relevant entries.</b> CloudTrail records all API activity, including deletions in AWS Systems Manager Parameter Store. By searching for these specific delete operations, you can find out exactly who performed the action, when it happened, and the details of the deleted parameter.</p><p>Let’s address why the other options aren’t suitable:<br><i>Set up a new AWS Config rule to monitor for parameter deletion operations and configure it to report to an SNS topic.</i> – AWS Config does not directly track delete events for Parameter Store values. Config rules are generally used for configuration drift and compliance, not real-time event auditing.<br><i>Establish a CloudWatch Events rule for 'DeleteParameter' and 'DeleteParameters', triggering email notifications with the included event data.</i> – While this approach can notify administrators of future deletions, it will not surface information about deletions that have already taken place before the rule was configured.<br><i>Locate the parameter under AWS Config resources and examine the Compliance Timeline to determine when the parameter became non-compliant.</i> – AWS Config may not record Parameter Store deletions in a directly actionable or timely way, and there may not be a compliance timeline tied specifically to parameter deletions.</p><p><strong>Tip:</strong> For forensic or retrospective investigations of API activities, CloudTrail is your primary resource. You can filter by event type and quickly identify who did what and when.</p>",
+  "query": "<p>Your AWS Elastic Container Service (ECS) web application has failed to start new tasks for a week. Investigation reveals a required environment variable has gone missing from AWS Systems Manager Parameter Store, which prevents ECS tasks from launching. You need to promptly determine when and by what means the parameter was deleted from the Parameter Store. Which approach should you use to quickly identify the deletion event?</p>",
+  "original_oid": "6793da9f61969b416038a25f",
+  "options": [
+    {
+      "correct": true,
+      "text": "View AWS CloudTrail's Event History and search for 'DeleteParameter' and 'DeleteParameters' activities filtered to the last week. Review the event details for relevant entries.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up a new AWS Config rule to monitor for parameter deletion operations and configure it to report to an SNS topic.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Establish a CloudWatch Events rule for 'DeleteParameter' and 'DeleteParameters', triggering email notifications with the included event data.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Locate the parameter under AWS Config resources and examine the Compliance Timeline to determine when the parameter became non-compliant.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question495",
+  "originalQuery": "A web application is deployed in AWS ECS service.\nSince last week, new ECS tasks cannot be started.\nAfter further troubleshooting, you found that an environment variable used by the Docker containers has been deleted in AWS Systems Manager Parameter Store.\nAs a result, the ECS tasks failed to launch.\nYou need to quickly find out when and how the parameter in Parameter Store was deleted.\nWhich option would you choose?",
+  "originalOptions": "A. Configure a new AWS Config rule that can check the activities of parameter deletion and report the events to an SNS subscription.|B. Open Event History in AWS CloudTrail. Search for the events “DeleteParameter” and “DeleteParameters” for the last week and check the event details.|C. Create a CloudWatch Event rule for the events “DeleteParameter” and “DeleteParameters”. Trigger an email notification and check the event details in the notification.|D. Search for the parameter in AWS Config resources. Check its Compliance Timeline to see when the parameter resource became non-compliant.",
+  "video_url": "https://certificationation.com/videos/exam-aws-ecs-service-since-last-exam-291.html",
+  "url": "https://certificationation.com/questions/exam-aws-ecs-service-since-last-exam-291.html"
+}

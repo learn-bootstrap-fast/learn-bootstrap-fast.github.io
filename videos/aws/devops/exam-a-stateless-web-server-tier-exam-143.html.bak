@@ -1,0 +1,67 @@
+---
+title: "You have an application consisting of a stateless webExam"
+description: "Video for you have an application consisting of a stateless web server tier running on Amazon EC2 instances behind a load balancer and using Amazon RDS with"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have an application consisting of a stateless web server tier running on Amazon EC2 instances behind a load balancer and using Amazon RDS with read replicas. Which of the following methods should you use to implement a self-healing architecture? Choose 2 answers from the options given below."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><strong>Correct Answers:</strong><br>- <strong>Launch an Auto Scaling group for the web tier and define a scaling policy that leverages the EC2 instance CPU usage CloudWatch metric for scaling decisions.</strong><br>- <strong>For the database tier, implement an Auto Scaling group and use the Amazon RDS read replica lag CloudWatch metric to automatically scale out read replicas.</strong></p><p><strong>Explanation:</strong></p><ul><li>The use of EC2 Auto Scaling (second option) makes the web server layer self-healing by automatically launching new instances if the current ones fail or are terminated. By tracking EC2's CPU utilization with CloudWatch, you can maintain enough capacity to handle varying load and replace unhealthy instances, making fault recovery automated.</li><li>Auto Scaling the read replicas in the database layer (fourth option) based on RDS read replica lag ensures that additional replicas are spun up as needed to handle increased read requests or failures, allowing the system to recover seamlessly if a read replica becomes unhealthy or lags behind.</li></ul><p><strong>Incorrect Options:</strong></p><ul><li><i>Create an Auto Scaling group for the web server tier and configure scaling based on Amazon RDS DB CPU utilization metrics provided by CloudWatch</i>: This is incorrect because scaling the web tier should not be tied to the database's CPU utilization; scaling decisions for web servers should reflect their own workload metrics.</li><li><i>Resize both the EC2 instances for web servers and RDS database instances to larger instance types to prevent them from turning unhealthy</i>: Simply using bigger instances doesn't make the system self-healing. It only increases resource allocation and doesn't address automatic recovery or failover.</li><li><i>Configure the database with an Amazon RDS Multi-AZ setup</i>: While Multi-AZ allows automated failover for increased availability, it does not provide self-healing with regards to read scaling or replacing failed web/application servers. Multi-AZ applies to high availability of the primary database instance.</li></ul><p><strong>Tip:</strong> For architecting self-healing systems, focus on automated replacement/recovery (e.g., Auto Scaling groups, health checks, read replica scaling) rather than simply adding resources or availability features without automation.</p>",
+  "query": "<p>You manage an application composed of a stateless web server layer operating on Amazon EC2 instances located behind a load balancer, and the data layer utilizes Amazon RDS with read replicas.<br>Which two solutions below enable a self-healing setup for this architecture? Select <strong>two</strong> valid options.</p>",
+  "original_oid": "6793d9b961969b416038a093",
+  "options": [
+    {
+      "correct": false,
+      "text": "Create an Auto Scaling group for the web server tier and configure scaling based on Amazon RDS DB CPU utilization metrics provided by CloudWatch.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Launch an Auto Scaling group for the web tier and define a scaling policy that leverages the EC2 instance CPU usage CloudWatch metric for scaling decisions.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Resize both the EC2 instances for web servers and RDS database instances to larger instance types to prevent them from turning unhealthy.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "For the database tier, implement an Auto Scaling group and use the Amazon RDS read replica lag CloudWatch metric to automatically scale out read replicas.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Configure the database with an Amazon RDS Multi-AZ setup.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question30",
+  "originalQuery": "You have an application consisting of a stateless web server tier running on Amazon EC2 instances behind a load balancer and using Amazon RDS with read replicas.\nWhich of the following methods should you use to implement a self-healing architecture? Choose 2 answers from the options given below.",
+  "originalOptions": "[\"A. Set up an Auto Scaling group for the webserver tier along with an Auto Scaling policy that uses the Amazon RDS DB CPU utilization CloudWatch metric to scale the instances.\",\"B. Set up an Auto Scaling group for the webserver tier along with an Auto Scaling policy that uses the Amazon EC2 CPU utilization CloudWatch metric to scale the instances.\",\"C. Use a larger Amazon EC2 instance type for the webserver tier and a larger DB instance type for the data storage layer to ensure that they don\\u2019t become unhealthy.\",\"D. Set up an Auto Scaling group for the database tier along with an Auto Scaling policy that uses the Amazon RDS read replica lag CloudWatch metric to scale out the Amazon RDS read replicas.\",\"E. Use an Amazon RDS Multi-AZ deployment.\"]",
+  "video_url": "https://certificationation.com/videos/exam-a-stateless-web-server-tier-exam-143.html",
+  "url": "https://certificationation.com/questions/exam-a-stateless-web-server-tier-exam-143.html"
+}

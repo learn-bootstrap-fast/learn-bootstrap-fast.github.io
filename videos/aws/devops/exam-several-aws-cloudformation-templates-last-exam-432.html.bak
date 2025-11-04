@@ -1,0 +1,62 @@
+---
+title: "You are responsible for maintaining several AWSExam"
+description: "Video for you are responsible for maintaining several AWS CloudFormation templates. Last month, there were two incidents that resources in existing"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are responsible for maintaining several AWS CloudFormation templates. Last month, there were two incidents that resources in existing CloudFormation stacks that someone has changed without any alerts or notifications. Because of that, the potential changes may have negative impacts on the stacks, and the changes may be lost if the stacks are re-deployed. This is not compliant with company policy. Your team lead asked you to warn the team whenever a drift in the CloudFormation stack appears. What is the best way to achieve that?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><b>Implement an AWS Config rule to evaluate whether CloudFormation stack resources have drifted from their template definitions. If the rule detects NON_COMPLIANT status, notify the team using an SNS topic</b> is the most suitable solution. AWS Config offers managed rules that can monitor configuration drift within CloudFormation stacks, allowing for automatic compliance checking and integrated notification. This enables proactive and automated detection and alerting without needing custom scripts or polling logic.<br><br>Let’s review why the other alternatives are not ideal:<br><br><i>Configure a Lambda function to periodically check each CloudFormation stack for configuration drift every ten minutes, and if drift is detected, use AWS SES to notify the team by email.</i> – While this could work, it requires building and managing a custom Lambda function and scheduler, which is more complex and less reliable than native drift detection features.<br><br><i>Set up a CloudWatch Events rule to monitor all CloudFormation stack events, and use SNS to trigger an email alert for any event related to CloudFormation.</i> – CloudWatch Events do not specifically filter drift events, so this would generate unnecessary alerts for routine stack activity, making it difficult to distinguish actual drift cases.<br><br><i>Activate CloudTrail and use a Lambda function to parse CloudTrail logs, sending an email whenever stack resources are found to have been changed outside of CloudFormation.</i> – Parsing CloudTrail logs for drift detection is cumbersome, not real-time, and could miss relevant changes. It also requires considerable custom development.<br><br><b>Tip:</b> Using AWS Config managed rules makes drift detection simpler and builds in automated notification and compliance tracking.</p>",
+  "query": "<p>You are tasked with overseeing multiple AWS CloudFormation stacks. Recently, you discovered that modifications were made to resources in your stacks without any associated alerts or notifications. Since untracked modifications might jeopardize the integrity of your environments and could be lost upon stack redeployment, your company policy now requires that any drift in CloudFormation stacks be immediately reported to the team. <br><br> Which approach is the most effective for alerting your team when configuration drift is detected in your CloudFormation stacks?</p>",
+  "original_oid": "6793da1361969b416038a142",
+  "options": [
+    {
+      "correct": false,
+      "text": "Configure a Lambda function to periodically check each CloudFormation stack for configuration drift every ten minutes, and if drift is detected, use AWS SES to notify the team by email.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Implement an AWS Config rule to evaluate whether CloudFormation stack resources have drifted from their template definitions. If the rule detects NON_COMPLIANT status, notify the team using an SNS topic.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up a CloudWatch Events rule to monitor all CloudFormation stack events, and use SNS to trigger an email alert for any event related to CloudFormation.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Activate CloudTrail and use a Lambda function to parse CloudTrail logs, sending an email whenever stack resources are found to have been changed outside of CloudFormation.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question208",
+  "originalQuery": "You are responsible for maintaining several AWS CloudFormation templates.\nLast month, there were two incidents that resources in existing CloudFormation stacks that someone has changed without any alerts or notifications.\nBecause of that, the potential changes may have negative impacts on the stacks, and the changes may be lost if the stacks are re-deployed.\nThis is not compliant with company policy.\nYour team lead asked you to warn the team whenever a drift in the CloudFormation stack appears.\nWhat is the best way to achieve that?",
+  "originalOptions": "A. Use a Lambda function to check the drift status in each CloudFormation stack every 10 minutes. If there is a drift, send the team an email via AWS SES service.|B. Create a rule in AWS Config to evaluate if the stack is considered to have drifted for its resources. If the rule is NON_COMPLIANT, notify the team via an SNS notification.|C. Create a CloudWatch event rule for CloudFormation. If any event happens for CloudFormation, trigger an email notification by SNS.|D. Enable CloudTrail. Use a Lambda function to analyze the CloudTrail logs. Send an email if it is found that the resources in CloudFormation stacks are modified.",
+  "video_url": "https://certificationation.com/videos/exam-several-aws-cloudformation-templates-last-exam-432.html",
+  "url": "https://certificationation.com/questions/exam-several-aws-cloudformation-templates-last-exam-432.html"
+}

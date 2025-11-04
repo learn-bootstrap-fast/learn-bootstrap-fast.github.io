@@ -1,0 +1,81 @@
+---
+title: "You are managing multiple applications connecting to aExam"
+description: "Video for you are managing multiple applications connecting to a database on Cloud SQL for MySQL. As a Database Engineer, you need to be able to monitor"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are managing multiple applications connecting to a database on Cloud SQL for MySQL. As a Database Engineer, you need to be able to monitor database performance to easily identify applications with long-running and resource-intensive queries. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A retail analytics startup runs several microservices that connect to a single Cloud SQL for MySQL instance. You need a native way to monitor database performance and quickly determine which client submits queries that run longer than 45 seconds or consume heavy CPU and memory so that you can isolate the service during incidents. What should you use?",
+  "options": [
+    {
+      "text": "Cloud Logging for Cloud SQL",
+      "explanation": "This lets you browse and filter Cloud SQL logs such as general activity and audit entries",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Query Insights for Cloud SQL",
+      "explanation": "This provides query level performance metrics with the ability to attribute workload to specific clients and query patterns",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Enable MySQL slow query log and export to BigQuery",
+      "explanation": "This approach captures slow statements in logs and allows offline analysis through a data warehouse",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud Monitoring",
+      "explanation": "This offers instance level dashboards and alerts for metrics such as CPU usage memory and connections",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Query Insights for Cloud SQL</b> because it is the native feature for Cloud SQL for MySQL that lets you monitor per query performance and attribute long running or resource heavy queries to the database client.</p><p><b>Query Insights</b> provides deep visibility into execution time and resource usage such as CPU and memory, and you can filter to find statements that run longer than a threshold like 45 seconds. You can group or filter by database client using attributes such as client IP, database user, or query tags so you can quickly identify which microservice is responsible and isolate it during an incident.</p><p><b>Query Insights</b> is built into the Cloud SQL instance and is easy to enable. The console gives top queries by latency and resource consumption and interactive timelines so you can correlate spikes with the responsible client without building custom pipelines.</p><p><i>Cloud Logging for Cloud SQL</i> captures instance and audit logs, but it does not offer native per query performance analytics or direct client attribution. You would need to parse logs and build custom analysis which slows down incident response.</p><p><i>Enable MySQL slow query log and export to BigQuery</i> can surface slow statements, but it introduces operational overhead to route and analyze logs and still does not provide clear CPU or memory insights or straightforward client attribution. The slow query log can also add overhead on busy systems, so it is inferior to the native capability.</p><p><i>Cloud Monitoring</i> offers instance level metrics like CPU and memory utilization, but it cannot tell you which specific queries or clients caused the load. You need per query analytics to isolate a misbehaving microservice, which this option alone does not provide.</p>",
+  "batch_id": "115",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "You are managing multiple applications connecting to a database on Cloud SQL for MySQL. As a Database Engineer, you need to be able to monitor database performance to easily identify applications with long-running and resource-intensive queries. What should you do?",
+  "originalOptions": "A. Use the Google Cloud Console to monitor the overall health of your Cloud SQL instances.<br/>B. Use Cloud SQL instance monitoring in the Google Cloud Console.<br/>C. Use log messages produced by Cloud SQL.<br/>D. Use Query Insights for Cloud SQL.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "41",
+  "tip": "<p>When a question asks for a native and fast way to find slow or heavy queries <i>by client</i> on Cloud SQL, favor <i>Query Insights</i>. Prefer the feature that gives <i>per query</i> visibility without building extra pipelines.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/query-insights",
+    "https://cloud.google.com/sql/docs/mysql/slow-query-logs",
+    "https://cloud.google.com/logging/docs/export/bigquery",
+    "https://cloud.google.com/sql/docs/mysql/monitoring-metrics",
+    "https://cloud.google.com/sql/docs/mysql/logging"
+  ],
+  "url": "https://certificationation.com/questions/exam-connecting-to-a-database-on-exam-041.html",
+  "video_url": "https://certificationation.com/videos/exam-connecting-to-a-database-on-exam-041.html"
+}

@@ -1,0 +1,67 @@
+---
+title: "A CloudFormation stack has included several AWSExam"
+description: "Video for a CloudFormation stack has included several AWS resources including EC2 instances. Previously, it used a mapping table to manage AMI IDs for different"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A CloudFormation stack has included several AWS resources including EC2 instances. Previously, it used a mapping table to manage AMI IDs for different regions and instance types. During the creation of the EC2 resource, the AMI ID is received from the function of \"Fn::FindInMap\" However, you have to correct the mapping table for this approach whenever there is a new AMI ID available. You are looking at other better approaches to fetch the updated AMIs automatically. A Lambda function is already deployed by you to get the latest AMI with the region and instance type as the input. What is the best way to use the Lambda function to achieve this requirement?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best solution is to use a <b>Custom resource in your CloudFormation template and specify the Lambda function's ARN in the ServiceToken property</b>. This way, CloudFormation will invoke your Lambda function during stack operations, and the Lambda can return the up-to-date AMI ID dynamically. This approach is fully automated and ensures your stacks always deploy with the correct AMI, without manual updates or intervention.</p><p>Why other options are not ideal:</p><ul><li><i>Call the Lambda function by running a shell script before the stack creation or update, and then manually supply the returned AMI ID to CloudFormation</i>: This requires manual scripting and does not scale well—it isn't automated and increases the risk of using outdated AMI IDs.</li><li><i>Set the Lambda function's name as the value for the custom resource's RequestId property in the CloudFormation template.</i>: This misunderstands how the ServiceToken property works; the RequestId is not used to associate a Lambda function.</li><li><i>Input the AMI ID as a parameter when launching the CloudFormation stack.</i>: You still have to manually retrieve and enter the AMI ID, which doesn't solve the core issue of automation or currency.</li><li><i>Run the Lambda manually, store the result in Parameter Store, and revise your template to fetch the AMI ID from there.</i>: This approach introduces another manual process and adds complexity with possible data staleness if the Parameter Store value is not frequently updated.</li></ul><p><b>Tip:</b> Leveraging custom resources is the AWS-recommended way when you need dynamic values not natively supported by CloudFormation's intrinsic functions.</p>",
+  "query": "<p>A CloudFormation stack is being used to deploy a number of AWS services, including EC2 instances. Historically, a mapping in the template kept track of AMI IDs by region and instance type, and the EC2 AMI was selected with <code>Fn::FindInMap</code>. This mapping must be manually updated each time a new AMI is available.<br>You have set up a Lambda function that can return the latest AMI for a specific region and instance type.<br>What is the most effective way to automatically utilize this Lambda from CloudFormation so that the stack always gets the latest AMI when launching new EC2 instances?</p>",
+  "original_oid": "6793d9fa61969b416038a110",
+  "options": [
+    {
+      "correct": true,
+      "text": "Define a Custom resource in the CloudFormation template, referencing the Lambda function's ARN in the ServiceToken property so the custom resource can retrieve the latest AMI ID dynamically.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Call the Lambda function by running a shell script before the stack creation or update, and then manually supply the returned AMI ID to CloudFormation.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set the Lambda function's name as the value for the custom resource's RequestId property in the CloudFormation template.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Input the AMI ID as a parameter when launching the CloudFormation stack.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Run the Lambda manually, store the result in Parameter Store, and revise your template to fetch the AMI ID from there.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question158",
+  "originalQuery": "A CloudFormation stack has included several AWS resources including EC2 instances.\nPreviously, it used a mapping table to manage AMI IDs for different regions and instance types.\nDuring the creation of the EC2 resource, the AMI ID is received from the function of \"Fn::FindInMap\"\nHowever, you have to correct the mapping table for this approach whenever there is a new AMI ID available.\nYou are looking at other better approaches to fetch the updated AMIs automatically.\nA Lambda function is already deployed by you to get the latest AMI with the region and instance type as the input.\nWhat is the best way to use the Lambda function to achieve this requirement?",
+  "originalOptions": "[\"A. Before updating/creating the CloudFormation stack, use a shell script to run the Lambda function to get the correct AMI I.\",\"B. Use the ID as a parameter for the CloudFormation template.\",\"C. Create a Custom resource in the CloudFormation template. Associate the Lambda with the Custom resource by specifying the Amazon Resource Name (ARN) of the Lambda function for the ServiceToken property.\",\"D. Create a Custom resource in the CloudFormation template. In its RequestId property, specify the name of Lambda function to associate it with the Custom resource.\",\"E. Manually trigger the Lambda function and store its output in the Systems Manager Parameter Store. Modify the CloudFormation template to get the latest AMI ID from Parameter store.\"]",
+  "video_url": "https://certificationation.com/videos/exam-several-aws-resources-including-ec2-exam-052.html",
+  "url": "https://certificationation.com/questions/exam-several-aws-resources-including-ec2-exam-052.html"
+}

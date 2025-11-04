@@ -1,0 +1,82 @@
+---
+title: "Your team uses multiple Cloud SQL instances to supportExam"
+description: "Video for your team uses multiple Cloud SQL instances to support various internal applications. These instances experience peak load during weekdays and"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your team uses multiple Cloud SQL instances to support various internal applications. These instances experience peak load during weekdays and significantly lower usage during weekends. You want to optimize costs while ensuring availability during peak periods. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Lumen Outfitters runs five Cloud SQL instances for several internal services. Demand is high from Monday through Friday between 08:00 and 18:00 and it is much lower overnight and on most weekends. You want to reduce spend while still having enough capacity during the busy windows. What should you do?",
+  "options": [
+    {
+      "text": "Migrate to Cloud Spanner and enable autoscaling of compute capacity",
+      "explanation": "This option moves the workload to Cloud Spanner and uses node autoscaling to react to changes in traffic.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure Cloud Scheduler to invoke a Cloud Function that calls the Cloud SQL Admin API to resize instance machine types before and after peak hours",
+      "explanation": "This option programmatically adjusts vCPU and memory for Cloud SQL instances on a schedule that follows predictable demand patterns.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Enable high availability on every Cloud SQL instance and watch utilization through Cloud Monitoring",
+      "explanation": "This option provides failover resilience and uses monitoring dashboards to observe performance metrics.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use a managed instance group to automatically scale the Cloud SQL instances up and down",
+      "explanation": "This option relies on autoscaling features that are designed for virtual machine instances and not for managed database instances.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Configure Cloud Scheduler to invoke a Cloud Function that calls the Cloud SQL Admin API to resize instance machine types before and after peak hours</b>.</p><p>This works because Cloud SQL does not automatically scale compute. You can programmatically change the machine type through the Admin API which triggers a restart, so scheduling the upsizing just before 08:00 and the downsizing after 18:00 helps contain cost while preserving capacity during business hours. Using a scheduled trigger ensures predictable changes for weekdays and lets you keep smaller, cheaper instances overnight and on weekends.</p><p><i>Migrate to Cloud Spanner and enable autoscaling of compute capacity</i> is not appropriate because Spanner is a different distributed database with different semantics and pricing. Moving from Cloud SQL to Spanner would be a significant migration and is unlikely to reduce cost for typical relational workloads that already fit Cloud SQL.</p><p><i>Enable high availability on every Cloud SQL instance and watch utilization through Cloud Monitoring</i> is incorrect because HA increases instance cost and does not add scaling. Monitoring alone does not change capacity or save money.</p><p><i>Use a managed instance group to automatically scale the Cloud SQL instances up and down</i> is incorrect because managed instance groups apply to Compute Engine virtual machines and cannot manage Cloud SQL instances, which are a fully managed database service.</p>",
+  "batch_id": "108",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "Your team uses multiple Cloud SQL instances to support various internal applications. These instances experience peak load during weekdays and significantly lower usage during weekends. You want to optimize costs while ensuring availability during peak periods. What should you do?",
+  "originalOptions": "A. Migrate the databases to a Compute Engine VM with a custom cron job for scheduling.<br/>B. Configure Cloud Scheduler to trigger a Cloud Function that resizes the instances during off-peak hours.<br/>C. Enable high availability for the Cloud SQL instances and monitor their utilization using Cloud Monitoring.<br/>D. Use a managed instance group (MIG) to automatically scale Cloud SQL instances up and down.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "233",
+  "tip": "<p>When you see predictable time windows, think scheduled actions. Cloud SQL can <i>only</i> autoscale storage, so compute changes require the Admin API triggered by Cloud Scheduler and Cloud Functions or Workflows.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/instance-settings#machine-type",
+    "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances/patch",
+    "https://cloud.google.com/scheduler/docs/overview",
+    "https://cloud.google.com/functions/docs/calling/http",
+    "https://cloud.google.com/sql/docs/mysql/instance-settings#automatic-storage-increase",
+    "https://cloud.google.com/compute/docs/instance-groups"
+  ],
+  "url": "https://certificationation.com/questions/exam-sql-instances-to-support-various-exam-233.html",
+  "video_url": "https://certificationation.com/videos/exam-sql-instances-to-support-various-exam-233.html"
+}

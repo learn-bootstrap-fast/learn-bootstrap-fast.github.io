@@ -1,0 +1,62 @@
+---
+title: "The project you are working on currently uses a singleExam"
+description: "Video for the project you are working on currently uses a single AWS CloudFormation template to deploy its AWS infrastructure, which supports a multi-tier web"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "The project you are working on currently uses a single AWS CloudFormation template to deploy its AWS infrastructure, which supports a multi-tier web application. You have been tasked with organizing the AWS CloudFormation resources so that they can be maintained in the future and different departments such as Networking and Security can review the architecture before it goes to Production. How should you do this in a way that accommodates each department, using their existing workflows?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct solution is to <b>split the CloudFormation template into a nested structure, giving each team a template that controls their specific resources. The application stack then references outputs from these department-managed stacks</b>. This modular approach makes it easier for different departments (like Networking and Security) to own, update, and review their environments, improving maintainability and governance across teams. It also aligns with AWS best practices for separating concerns and using nested stacks for complex deployments.</p><p><i>Structuring the current template to group related resources together</i> still leaves one large, monolithic file, making it difficult for teams to work independently and review changes specific to their domain. <i>Arranging resources by department in a single template and continuously deploying every change to production before validation</i> is risky and doesn’t solve the issue of cross-team ownership or review, and could lead to unstable deployments. <i>Building a custom tool using the AWS SDK</i> is unnecessarily complex, introduces potential for errors, requires extra maintenance, and does not leverage CloudFormation’s native capabilities for modular and collaborative infrastructure management. </p><p><b>Tip:</b> Use nested stacks to clearly separate ownership, simplify auditing, enable parallel development, and let each team apply their standard review and deployment process to their resources.</p>",
+  "query": "<p>You have a multi-tier web application managed by a single AWS CloudFormation template. You need to reorganize the resources within the template so that various teams, like Networking and Security, can more easily manage and review their respective sections before releases. What is the best way to structure the CloudFormation resources to comply with each department’s review process using their established methods?</p>",
+  "original_oid": "6793d9bb61969b416038a096",
+  "options": [
+    {
+      "correct": true,
+      "text": "Split the main CloudFormation template into nested templates, assigning each department (like Networking or Security) its own template, and have the application template utilize outputs from the other stacks.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Structure the current CloudFormation template by grouping related resources together, such as networking components and security settings, so they are adjacent within the template file.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Arrange related resources together for each team within the same template, set up the continuous integration pipeline to automatically deploy any changes to the Production environment, and execute automated validation after each deployment.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Build a custom tool that utilizes the AWS SDK to re-create all defined resources, integrating it into the code review workflow so departments can approve modifications before deployment.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question33",
+  "originalQuery": "The project you are working on currently uses a single AWS CloudFormation template to deploy its AWS infrastructure, which supports a multi-tier web application.\nYou have been tasked with organizing the AWS CloudFormation resources so that they can be maintained in the future and different departments such as Networking and Security can review the architecture before it goes to Production.\nHow should you do this in a way that accommodates each department, using their existing workflows?",
+  "originalOptions": "A. Organize the AWS CloudFormation template so that related resources are next to each other in the template, such as VPC subnets and routing rules for Networking and security groups and IAM information for Security.\nB. Separate the AWS CloudFormation template into a nested structure with individual templates for the resources that are to be governed by different departments, and use the outputs from the networking and security stacks for the application template that you control.\nC. Organize the AWS CloudFormation template so that related resources are next to each other in the template for each department’s use, leverage your existing continuous integration tool to deploy changes from all parties to the Production environment constantly, and then run tests for validation.\nD. Use a custom application and the AWS SDK to replicate the resources defined in the current AWS CloudFormation template, and use the existing code review system to allow other departments to approve changes before altering the application for future deployments.",
+  "video_url": "https://certificationation.com/videos/exam-currently-uses-a-single-aws-exam-272.html",
+  "url": "https://certificationation.com/questions/exam-currently-uses-a-single-aws-exam-272.html"
+}

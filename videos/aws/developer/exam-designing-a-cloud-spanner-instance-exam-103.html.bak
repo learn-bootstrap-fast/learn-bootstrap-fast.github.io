@@ -1,0 +1,79 @@
+---
+title: "As a Database Engineer, you are designing a CloudExam"
+description: "Video for as a Database Engineer, you are designing a Cloud Spanner instance and you need to ensure that the database meets performance requirements while"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are designing a Cloud Spanner instance and you need to ensure that the database meets performance requirements while minimizing costs. You have the following performance requirements: 15,000 read QPS 5,000 write QPS A total of 5 TB of storage capacity Which of the following configurations should you choose for your Cloud Spanner instance?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the cloud database specialist at Riverview Retail and you must size a new Cloud Spanner deployment so that performance targets are met while spend stays low. The workload must sustain 18,000 read QPS and 6,000 write QPS and it must provide 6 TB of total storage. Which configuration should you select for a regional Cloud Spanner instance?",
+  "options": [
+    {
+      "text": "20 Regional nodes, 500 GB per node",
+      "explanation": "This setup allocates 20 regional nodes and 500 GB of storage capacity per node which favors more storage per node over node count",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "28 Regional nodes, 220 GB per node",
+      "explanation": "This choice uses 28 regional nodes with 220 GB per node which emphasizes higher node count with relatively small storage per node",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "24 Regional nodes, 300 GB per node",
+      "explanation": "This configuration provisions 24 regional nodes and 300 GB per node which offers a balanced mix of compute and storage",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "16 Regional nodes, 1,000 GB per node",
+      "explanation": "This option provides 16 regional nodes with 1,000 GB per node which concentrates on large per-node storage with fewer nodes",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p><b>24 Regional nodes, 300 GB per node</b> is correct because it is the smallest option that satisfies the required 18,000 read QPS and 6,000 write QPS while also providing at least 6 TB of total storage. It spreads the data across more nodes which increases parallelism and compute headroom and it keeps spend lower than choosing an even larger footprint.</p><p>Cloud Spanner capacity scales linearly with nodes for both reads and writes. You size for the higher of the read or write demand and then confirm that the instance also provides enough storage. This configuration distributes approximately 6 TB of data across many serving nodes which improves concurrency and helps sustain the target QPS with healthy latency. It also leaves reasonable room for growth and index overhead without jumping to an unnecessarily larger node count.</p><p><i>20 Regional nodes, 500 GB per node</i> is not ideal because although the raw storage appears sufficient, it concentrates the data on fewer nodes which reduces parallelism and leaves less compute headroom for sustained and spiky throughput. It does not provide as much margin to reliably meet both read and write targets at low latency compared with the selected configuration.</p><p><i>28 Regional nodes, 220 GB per node</i> would meet the requirements but it clearly overprovisions compute and increases cost relative to the correct choice without a corresponding benefit for the stated targets.</p><p><i>16 Regional nodes, 1,000 GB per node</i> is undersized for the combined read and write throughput and it places too much data per node which limits concurrency. This risks failing to achieve the required QPS and increases the chance of hot spots and higher tail latency.</p>",
+  "batch_id": "147",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are designing a Cloud Spanner instance and you need to ensure that the database meets performance requirements while minimizing costs. You have the following performance requirements: 15,000 read QPS 5,000 write QPS A total of 5 TB of storage capacity Which of the following configurations should you choose for your Cloud Spanner instance?",
+  "originalOptions": "A. 25 Regional nodes, 200 GB/node<br/>B. 15 Regional nodes, 1,000 GB/node<br/>C. 20 Regional nodes, 400 GB/node<br/>D. 30 Regional nodes, 170 GB/node",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "103",
+  "tip": "<p>Work out nodes for reads and for writes separately and use the larger number, then verify storage and add a little <i>headroom</i>. Favor the smallest configuration that satisfies both throughput and storage while leaving room for growth.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/compute-capacity",
+    "https://cloud.google.com/spanner/docs/instances",
+    "https://cloud.google.com/spanner/docs/quotas"
+  ],
+  "url": "https://certificationation.com/questions/exam-designing-a-cloud-spanner-instance-exam-103.html",
+  "video_url": "https://certificationation.com/videos/exam-designing-a-cloud-spanner-instance-exam-103.html"
+}

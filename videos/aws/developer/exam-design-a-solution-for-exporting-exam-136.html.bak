@@ -1,0 +1,83 @@
+---
+title: "As a Database Engineer, you need to design a solutionExam"
+description: "Video for as a Database Engineer, you need to design a solution for exporting data from a Cloud Bigtable instance to a Cloud Storage bucket in the Parquet file"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you need to design a solution for exporting data from a Cloud Bigtable instance to a Cloud Storage bucket in the Parquet file format. The export process must be fault-tolerant, efficient, and scalable for large datasets. Which of the following options best meets these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the data engineer at Riverbend Analytics and must regularly export about 30 TB of records from a Cloud Bigtable instance to a Cloud Storage bucket in Parquet format. The pipeline must be resilient to worker or job restarts and it must scale linearly as data volume grows while remaining efficient without manual partitioning. What should you implement?",
+  "options": [
+    {
+      "text": "Run a Dataproc Spark job with the Cloud Bigtable connector to read the data and write Parquet to Cloud Storage",
+      "explanation": "This option uses a managed Spark cluster on Dataproc with the Cloud Bigtable connector to process the data and store the output as Parquet files in Cloud Storage",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use the cbt command to export the Bigtable data directly to Cloud Storage as Parquet",
+      "explanation": "This approach relies on the cbt tool for exports which focuses on administrative tasks and backups and does not provide native Parquet conversion",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Build an Apache Beam pipeline that runs on Cloud Dataflow to read from Cloud Bigtable and write Parquet files to Cloud Storage",
+      "explanation": "This solution uses a Beam pipeline executed by Cloud Dataflow to provide autoscaling and fault tolerance while converting and writing data as Parquet",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Create a Cloud Function that triggers on Bigtable changes and writes Parquet files to Cloud Storage",
+      "explanation": "This option attempts to use an event driven function to capture changes and export data in Parquet format to Cloud Storage",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Build an Apache Beam pipeline that runs on Cloud Dataflow to read from Cloud Bigtable and write Parquet files to Cloud Storage</b>.</p><p>This approach uses Beam I O connectors for Bigtable and Parquet so it can read tablet key ranges in parallel and write many Parquet shards to Cloud Storage without manual partitioning. Cloud Dataflow provides autoscaling, dynamic work rebalancing and built in fault tolerance so the job continues correctly after worker or job restarts. It is a managed service that scales linearly with data growth and there are ready made templates for exporting Bigtable to Parquet which further reduces operational effort.</p><p><i>Run a Dataproc Spark job with the Cloud Bigtable connector to read the data and write Parquet to Cloud Storage</i> is less suitable because you must manage the cluster and tune partitioning and parallelism to achieve linear scaling. While Spark can write Parquet and can recover from some failures, ensuring efficient restarts and avoiding duplicate outputs typically requires additional engineering and does not meet the requirement to remain efficient without manual partitioning.</p><p><i>Use the cbt command to export the Bigtable data directly to Cloud Storage as Parquet</i> is incorrect because the cbt tool does not export to Parquet and is not designed for large scale distributed export. Google recommends Dataflow based export for large datasets and for interoperability with formats like Parquet.</p><p><i>Create a Cloud Function that triggers on Bigtable changes and writes Parquet files to Cloud Storage</i> does not fit a periodic bulk export of 30 TB and Bigtable does not natively trigger Cloud Functions. Bigtable change streams are typically consumed by Dataflow and a function based approach would create many small files and would not provide efficient batch export or linear scaling.</p>",
+  "batch_id": "326",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you need to design a solution for exporting data from a Cloud Bigtable instance to a Cloud Storage bucket in the Parquet file format. The export process must be fault-tolerant, efficient, and scalable for large datasets. Which of the following options best meets these requirements?",
+  "originalOptions": "A. Implement a Cloud Function triggered by Cloud Bigtable events to export data to Cloud Storage in Parquet format.<br/>B. Use the cbt command-line tool to export data from Cloud Bigtable to Cloud Storage in Parquet format.<br/>C. Configure a BigQuery scheduled query to copy data from Cloud Bigtable to Cloud Storage in Parquet format.<br/>D. Use an Apache Beam pipeline with Cloud Dataflow to read data from Cloud Bigtable, transform it into Parquet format, and write it to Cloud Storage.",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "136",
+  "tip": "<p>When a question stresses <i>linear scaling</i>, <i>resilience to restarts</i> and <i>no manual partitioning</i>, prefer a managed Beam pipeline on Cloud Dataflow with the appropriate I O connectors or a provided template.</p>",
+  "references": [
+    "https://cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-to-cloud-storage-parquet",
+    "https://cloud.google.com/bigtable/docs/export-import-data",
+    "https://cloud.google.com/bigtable/docs/change-streams-overview",
+    "https://cloud.google.com/dataproc/docs/concepts/connectors/cloud-bigtable",
+    "https://beam.apache.org/releases/javadoc/current/org/apache/beam/sdk/io/parquet/ParquetIO.html",
+    "https://beam.apache.org/releases/javadoc/current/org/apache/beam/sdk/io/gcp/bigtable/BigtableIO.html",
+    "https://cloud.google.com/dataflow/docs/concepts/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-design-a-solution-for-exporting-exam-136.html",
+  "video_url": "https://certificationation.com/videos/exam-design-a-solution-for-exporting-exam-136.html"
+}

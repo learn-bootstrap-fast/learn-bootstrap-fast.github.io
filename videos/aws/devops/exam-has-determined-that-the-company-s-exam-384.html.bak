@@ -1,0 +1,62 @@
+---
+title: "During metric analysis, your team has determined thatExam"
+description: "Video for during metric analysis, your team has determined that the company's website during peak hours is experiencing response times higher than anticipated."
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "During metric analysis, your team has determined that the company's website during peak hours is experiencing response times higher than anticipated. You currently rely on Auto Scaling to scale the application during peak windows. How can you improve your Auto Scaling policy to reduce this high response time?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best solution is to utilize <b>Send custom CloudWatch metrics from your servers about how many user requests your application is managing and the number of requests in the queue, then configure scaling policies based on these metrics.</b> By providing detailed, application-level information to CloudWatch—as opposed to only low-level metrics like CPU or network traffic—you enable your Auto Scaling policies to respond more intelligently to real user demand. This method ensures scaling occurs when your web application genuinely needs additional servers, particularly when response times increase due to rising numbers of requests or queue depth.</p><p>The other options are less effective: <i>Develop a monitoring script that checks your server load and triggers an Amazon SNS notification to launch additional servers and register them with the load balancer if abnormal load is detected.</i> relies on a custom solution outside the robust and native scaling automation available via Auto Scaling and CloudWatch metrics, resulting in greater operational overhead and potential reliability issues. <i>Expand the maximum instance count in your Auto Scaling group.</i> does not directly address when or why scaling should occur—it merely increases your upper limit, possibly leading to higher costs without targeting the actual cause of high response times. <i>Publish enhanced CPU and network statistics from your servers to CloudWatch to provide more precise data for your Auto Scaling group.</i> can improve scaling somewhat, but these are infrastructure-level signals and may not always correlate with the true performance problem, which is best captured by application-level metrics such as requests per second or queue depths.</p><p><b>Tips:</b> Always align your Auto Scaling policies with business or user-experience events (such as application latency or request queue depth) whenever possible. Application-level metrics will usually lead to the most effective and efficient scaling response. Avoid building custom solutions when AWS-native options (like CloudWatch metric integration) are available and fit the requirements. </p>",
+  "query": "<p>Your team has discovered that response times on your company website are unexpectedly high during traffic spikes. While Auto Scaling is already being utilized to adjust capacity throughout peak usage periods, how can you enhance your Auto Scaling approach to better decrease these elevated response times?</p>",
+  "original_oid": "6793d9b861969b416038a091",
+  "options": [
+    {
+      "correct": true,
+      "text": "Send custom CloudWatch metrics from your servers about how many user requests your application is managing and the number of requests in the queue, then configure scaling policies based on these metrics.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Develop a monitoring script that checks your server load and triggers an Amazon SNS notification to launch additional servers and register them with the load balancer if abnormal load is detected.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Expand the maximum instance count in your Auto Scaling group.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Publish enhanced CPU and network statistics from your servers to CloudWatch to provide more precise data for your Auto Scaling group.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question28",
+  "originalQuery": "During metric analysis, your team has determined that the company's website during peak hours is experiencing response times higher than anticipated.\nYou currently rely on Auto Scaling to scale the application during peak windows.\nHow can you improve your Auto Scaling policy to reduce this high response time?",
+  "originalOptions": "A. Push custom metrics to CloudWatch to monitor your CPU and network bandwidth from your servers, which will allow your Auto Scaling policy to have better fine-grain insight.\nB. Increase your Auto Scaling group’s maximum number of servers.\nC. Create a script that runs and monitors your servers. When it detects an anomaly in load, it posts to an Amazon SNS topic that adds more servers to the load balancer.\nD. Push custom metrics to CloudWatch for your application that includes more detailed information about your web application, such as how many requests it is handling and how many requests are waiting to be processed. Set up scaling policies using the metrics.",
+  "video_url": "https://certificationation.com/videos/exam-has-determined-that-the-company-s-exam-384.html",
+  "url": "https://certificationation.com/questions/exam-has-determined-that-the-company-s-exam-384.html"
+}

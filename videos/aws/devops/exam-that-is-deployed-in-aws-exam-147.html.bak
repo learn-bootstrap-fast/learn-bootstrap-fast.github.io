@@ -1,0 +1,62 @@
+---
+title: "You are developing a Java application that is deployedExam"
+description: "Video for you are developing a Java application that is deployed in AWS by an Auto Scaling Group. The EC2 instances belong to the m5.large type. Recently, due"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are developing a Java application that is deployed in AWS by an Auto Scaling Group. The EC2 instances belong to the m5.large type. Recently, due to several newly added features, the response time of the application increased because of the high CPU usage rate. You need to modify the EC2 instance type to c5.large to remedy this issue. What is the best way to implement this?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>correct approach</b> is to <b>copy your existing launch configuration, alter the instance type to c5.large in the new configuration, and then update your Auto Scaling Group to use this new configuration.</b> <br>This method (option 2) is required because launch configurations in AWS are immutable; you cannot edit instance types directly within an existing launch configuration. Making a copy allows you to select the new instance type and seamlessly assign the updated configuration to your Auto Scaling Group. This ensures all newly launched EC2 instances will use the desired c5.large type.<br><br><i>Option 1</i> suggests that the instance type can be changed directly within the Auto Scaling Group's console settings, but this is incorrect, as only the launch configuration or launch template can be specified, not edited in-place.<br><i>Option 3</i> describes stopping existing EC2 instances, changing their type, and restarting them. However, EC2 instances in an Auto Scaling Group are managed collectively, and manual changes to running instances are not maintained by the group; it may simply terminate and replace such instances to match the launch configuration.<br><i>Option 4</i> proposes a non-existent action called 'Change Instance Type' within the launch configuration. In reality, there is no way to edit an existing launch configuration—the option is not available.<br><br><b>Tip:</b> If you use launch templates instead of launch configurations, you can create a new version in a similar fashion, which provides more flexibility.<br></p>",
+  "query": "<p>You are managing a Java application deployed via an Auto Scaling Group (ASG) in AWS. The application currently uses m5.large EC2 instances. After recent enhancements, the application is experiencing high CPU utilization, resulting in slower response times. You want to upgrade the EC2 instance type to c5.large to improve performance. <br>What is the optimal method to accomplish this instance type change?</p>",
+  "original_oid": "6793d9e161969b416038a0e1",
+  "options": [
+    {
+      "correct": false,
+      "text": "Go to the Auto Scaling Group settings in the AWS Management Console and attempt to directly change the instance type from m5.large to c5.large.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Duplicate the existing launch configuration by selecting it, then use “Actions -> Copy launch configuration.” Update the copied configuration’s instance type to c5.large. Assign the new launch configuration to your Auto Scaling Group.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "In the EC2 console, stop the currently running instances, change their instance type to c5.large using the 'Change Instance Type' option, and then start them again.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Choose the launch configuration for your Auto Scaling Group and find an option labeled 'Change Instance Type.' Update the instance type to c5.large here.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question110",
+  "originalQuery": "You are developing a Java application that is deployed in AWS by an Auto Scaling Group.\nThe EC2 instances belong to the m5.large type.\nRecently, due to several newly added features, the response time of the application increased because of the high CPU usage rate.\nYou need to modify the EC2 instance type to c5.large to remedy this issue.\nWhat is the best way to implement this?",
+  "originalOptions": "A. In AWS console, edit the Auto Scaling Group by modifying the instance type from m5.large to c5.large.|B. Select the relevant launch configuration and choose “Actions -> Copy launch configuration”. Modify the instance type accordingly in the new configuration. Select the new launch configuration for the Auto Scaling Group.|C. In AWS EC2 console, stop the EC2 instances, modify the instance type to c5.large in “Instance Settings -> Change Instance Type” and then start the instances.|D. Select the Auto Scaling launch configuration and choose “Actions -> Change Instance Type”. Modify the instance type to c5.large accordingly.",
+  "video_url": "https://certificationation.com/videos/exam-that-is-deployed-in-aws-exam-147.html",
+  "url": "https://certificationation.com/questions/exam-that-is-deployed-in-aws-exam-147.html"
+}

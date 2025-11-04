@@ -1,0 +1,62 @@
+---
+title: "You need your CI to build AMIs with code pre-installedExam"
+description: "Video for you need your CI to build AMIs with code pre-installed on the images on every new code push. You need to do this as cheaply as possible. How do you do"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You need your CI to build AMIs with code pre-installed on the images on every new code push. You need to do this as cheaply as possible. How do you do this?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The most economical approach is to use <b>Spot Instances</b> for building AMIs (<b>\"Create a spot instance request with the maximum price set slightly above the current spot price whenever new commits are pushed, set up the instance, and build an AMI from it\"</b>). Spot Instances allow you to leverage unused EC2 capacity at great discounts compared to On-Demand prices, which is ideal for CI workloads that are short-lived and transient.</p><p>The option <i>\"Purchase a Light Utilization Reserved Instance for your CI server and consume credits each time you create AMIs on these instances.\"</i> is not suitable because Reserved Instances only provide savings when running instances continuously, which isn't efficient for on-demand, spike-based CI jobs.</p><p><i>\"Have the CI system launch a new On-Demand EC2 instance on each new commit, configure the instance, and then generate an AMI from that instance.\"</i> works technically but On-Demand pricing is higher than Spot, so it's not the most cost-effective strategy.</p><p>The option <i>\"On receiving a code push, attach a fresh EBS volume to your CI server, perform all configuration on that volume, then avoid spinning up new EC2 instances to create AMIs.\"</i> misses the point since you still need a running instance to create an AMI, and just swapping EBS volumes doesn't reduce costs meaningfully.</p><p><b>Tip:</b> Spot Instances are ideal when your workload is interruptible and you can handle occasional interruptions or need resources for a short duration. When cost-saving is a primary concern and your AMI builds are not time-sensitive, using Spot Instances offers significant cost reductions.</p>",
+  "query": "<p>You want your continuous integration system to generate Amazon Machine Images (AMIs), each containing the latest code, whenever new changes are pushed. What's the most cost-effective way to achieve this?</p>",
+  "original_oid": "6793d9f261969b416038a101",
+  "options": [
+    {
+      "correct": false,
+      "text": "Purchase a Light Utilization Reserved Instance for your CI server and consume credits each time you create AMIs on these instances.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Have the CI system launch a new On-Demand EC2 instance on each new commit, configure the instance, and then generate an AMI from that instance.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Create a spot instance request with the maximum price set slightly above the current spot price whenever new commits are pushed, set up the instance, and build an AMI from it.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "On receiving a code push, attach a fresh EBS volume to your CI server, perform all configuration on that volume, then avoid spinning up new EC2 instances to create AMIs.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question142",
+  "originalQuery": "You need your CI to build AMIs with code pre-installed on the images on every new code push.\nYou need to do this as cheaply as possible.\nHow do you do this?",
+  "originalOptions": "A. Create a spot instance request to include the maximum price that you are willing to pay per hour per instance just above the spot price as soon as new commits come in, perform all instance configuration and setup, then create an AMI based on the spot instance.|B. Have the CI launch a new on-demand EC2 instance when new commits come in, perform all instance configuration and setup, then create an AMI based on the on-demand instance.|C. Purchase a Light Utilization Reserved Instance to save money on the continuous integration machine.Use these credits whenever you create AMIs on instances.|D. When the CI instance receives commits, attach a new EBS volume to the CI machine. Perform all setup on this EBS volume. So you don’t need a new EC2 instance to create the AMI.",
+  "video_url": "https://certificationation.com/videos/exam-code-pre-installed-on-the-images-exam-209.html",
+  "url": "https://certificationation.com/questions/exam-code-pre-installed-on-the-images-exam-209.html"
+}

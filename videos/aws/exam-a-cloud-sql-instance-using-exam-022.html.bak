@@ -1,0 +1,81 @@
+---
+title: "Your e-commerce platform runs on a Cloud SQL instanceExam"
+description: "Video for your e-commerce platform runs on a Cloud SQL instance using PostgreSQL. Recently, you noticed a spike in transaction rollback errors during peak"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your e-commerce platform runs on a Cloud SQL instance using PostgreSQL. Recently, you noticed a spike in transaction rollback errors during peak traffic hours, leading to degraded application performance. You want to implement a proactive monitoring system to catch such issues early and mitigate the impact. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "BlueTrail Events runs its ticketing system on Cloud SQL for PostgreSQL and during the busy period between 6 PM and 8 PM you see a surge in transaction rollbacks that slows the checkout experience. You want a proactive monitoring setup that detects rollback spikes early and sends notifications so your team can respond quickly. What should you implement?",
+  "options": [
+    {
+      "text": "Export Cloud SQL logs to Cloud Storage once per day and manually review them for rollback patterns",
+      "explanation": "This approach moves logs to durable storage on a schedule and requires human analysis to identify anomalies.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable Cloud SQL Insights and rely on its dashboards to watch for unusual transaction behavior",
+      "explanation": "Insights provides performance visualizations and query analytics for Cloud SQL workloads but it does not automatically alert on specific log messages.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a log-based metric in Cloud Monitoring that matches PostgreSQL &quot;transaction rollback&quot; messages and configure an alerting policy with a threshold",
+      "explanation": "A log-based metric can count rollback events and an alerting policy can notify your team when the rate crosses a defined limit.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Schedule a Cloud Function to run every 90 seconds that queries pg_stat_database for rollback counts and sends notifications",
+      "explanation": "A polling function can read rollback counters from the database and push messages when a custom threshold is exceeded.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct answer is <b>Create a log-based metric in Cloud Monitoring that matches PostgreSQL \"transaction rollback\" messages and configure an alerting policy with a threshold</b>.</p><p>This approach uses Cloud Logging to capture PostgreSQL messages and turns the rollback entries into a countable metric. You can then configure a Cloud Monitoring alert policy with a threshold that detects spikes in near real time and routes notifications to your chosen channels so the team can act quickly. This is proactive and automated, and it leverages native GCP integrations without adding query load to the database during peak hours.</p><p><i>Export Cloud SQL logs to Cloud Storage once per day and manually review them for rollback patterns</i> is not proactive and would delay detection until after the peak window. It also relies on manual analysis which is too slow for operational response.</p><p><i>Enable Cloud SQL Insights and rely on its dashboards to watch for unusual transaction behavior</i> provides useful visualizations for performance analysis, yet dashboards require humans to watch them and do not deliver automated notifications for rollback spikes. This does not meet the requirement for early detection and alerts.</p><p><i>Schedule a Cloud Function to run every 90 seconds that queries pg_stat_database for rollback counts and sends notifications</i> is a custom polling solution that adds complexity and potential overhead on the database during busy periods. It duplicates native capabilities that Cloud Logging and Cloud Monitoring already provide more reliably.</p>",
+  "batch_id": "273",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "Your e-commerce platform runs on a Cloud SQL instance using PostgreSQL. Recently, you noticed a spike in transaction rollback errors during peak traffic hours, leading to degraded application performance. You want to implement a proactive monitoring system to catch such issues early and mitigate the impact. What should you do?",
+  "originalOptions": "A. Create a Cloud Monitoring metric based on PostgreSQL logs for \"transaction rollback,\" and set up an alerting policy.<br/>B. Schedule a Cloud Function to query the database every minute for transaction rollback statistics and send notifications.<br/>C. Export database logs to Google Cloud Storage daily, and manually review them for rollback patterns.<br/>D. Configure an email alert in the Cloud SQL settings for any failed queries.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "22",
+  "tip": "<p>When a question calls for <i>early detection</i> and team <i>notifications</i>, prefer native Cloud Monitoring with an <i>alert policy</i> and a Logging <i>log-based metric</i> rather than manual reviews or dashboards.</p>",
+  "references": [
+    "https://cloud.google.com/logging/docs/logs-based-metrics",
+    "https://cloud.google.com/monitoring/alerts/using-alerting",
+    "https://cloud.google.com/sql/docs/postgres/logs",
+    "https://cloud.google.com/sql/docs/postgres/insights/overview",
+    "https://www.postgresql.org/docs/current/monitoring-stats.html#MONITORING-PG-STAT-DATABASE"
+  ],
+  "url": "https://certificationation.com/questions/exam-a-cloud-sql-instance-using-exam-022.html",
+  "video_url": "https://certificationation.com/videos/exam-a-cloud-sql-instance-using-exam-022.html"
+}

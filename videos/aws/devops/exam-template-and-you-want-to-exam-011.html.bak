@@ -1,0 +1,62 @@
+---
+title: "You are writing an AWS CloudFormation template, and youExam"
+description: "Video for you are writing an AWS CloudFormation template, and you want to assign values to properties that will not be available until runtime. You know that"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are writing an AWS CloudFormation template, and you want to assign values to properties that will not be available until runtime. You know that you can use intrinsic functions to do this but are unsure which part of the template they can use. Which of the following is correct in describing how you can currently use intrinsic functions in an AWS CloudFormation template?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><b>Intrinsic functions are permitted only in chosen sections such as in output values, within resource properties, in the metadata area, and for update policy attributes.</b> This is because AWS CloudFormation restricts the use of intrinsic functions and does not support them for every field in a template. You should use intrinsic functions inside resource properties (for dynamically referencing values such as ARNs or resource names), outputs (to pass values to other stacks or display to users), metadata (for supplementing resource definitions), and update policy attributes (for controlling resource updates).</p><p>The option <i>\"Intrinsic functions can be placed throughout any portion of the template, with no restrictions.\"</i> is incorrect, since sections like AWSTemplateFormatVersion and Description only accept literal values, and do not interpret intrinsic functions. Similarly, <i>\"It is possible to use intrinsic functions anywhere except inside the AWSTemplateFormatVersion and Description sections.\"</i> is not accurate, because support is explicitly limited to certain template areas. <i>\"You may only insert intrinsic functions within the properties of resources.\"</i> is also incorrect, as intrinsic functions are also allowed in outputs, metadata, and update policies in addition to resource properties.</p><p><b>Tip:</b> If you attempt to use an intrinsic function outside the allowed places, CloudFormation will return a syntax or validation error. Always check the AWS documentation before planning to use them in non-standard locations.</p>",
+  "query": "<p>You are building an AWS CloudFormation template and need to set property values that become available only during stack deployment. You are aware intrinsic functions can handle such dynamic assignments, but you aren't sure where these functions are allowed in the template's structure.<br>Which statement best describes where intrinsic functions can currently be used within an AWS CloudFormation template?</p>",
+  "original_oid": "6793da1d61969b416038a157",
+  "options": [
+    {
+      "correct": false,
+      "text": "Intrinsic functions can be placed throughout any portion of the template, with no restrictions.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "It is possible to use intrinsic functions anywhere except inside the AWSTemplateFormatVersion and Description sections.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Intrinsic functions are permitted only in chosen sections such as in output values, within resource properties, in the metadata area, and for update policy attributes.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "You may only insert intrinsic functions within the properties of resources.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question230",
+  "originalQuery": "You are writing an AWS CloudFormation template, and you want to assign values to properties that will not be available until runtime.\nYou know that you can use intrinsic functions to do this but are unsure which part of the template they can use.\nWhich of the following is correct in describing how you can currently use intrinsic functions in an AWS CloudFormation template?",
+  "originalOptions": "A. You can use intrinsic functions in any part of a template.|B. You can use intrinsic functions only in specific parts of a template. Currently, you can use intrinsic functions in resource properties, outputs, metadata attributes, and update policy attributes.|C. You can use intrinsic functions only in the resource properties part of a template.|D. You can use intrinsic functions in any part of a template, except AWSTemplateFormatVersion and Description.",
+  "video_url": "https://certificationation.com/videos/exam-template-and-you-want-to-exam-011.html",
+  "url": "https://certificationation.com/questions/exam-template-and-you-want-to-exam-011.html"
+}

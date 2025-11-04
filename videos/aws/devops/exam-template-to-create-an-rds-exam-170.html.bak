@@ -1,0 +1,67 @@
+---
+title: "A DevOps engineer has used a CloudFormation template toExam"
+description: "Video for a DevOps engineer has used a CloudFormation template to create an RDS resource for a new web application. The RDS database has used the engine of"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A DevOps engineer has used a CloudFormation template to create an RDS resource for a new web application. The RDS database has used the engine of PostgreSQL, and the encryption is not enabled. However, for certain security considerations, the database needs to be updated to enable encryption. The CloudFormation template is updated accordingly (StorageEncrypted is true) To prevent data loss during the CloudFormation stack update, the data should be restored from the latest DB snapshot. Which two steps should be taken in combination to meet this requirement? (Select TWO.)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><b>Insert a DeletionPolicy set to 'Snapshot' for the RDS resource in the CloudFormation template</b> ensures that when the stack is updated and the RDS resource is replaced—such as when enabling encryption, which requires a new database instance—a snapshot of the existing (unencrypted) database is automatically taken by CloudFormation before deletion. <b>Include the DBSnapshotIdentifier property referencing the most recent DB snapshot ID</b> allows CloudFormation to restore the new (encrypted) database instance from the specified snapshot, preserving data during the resource replacement.</p><p>The other choices are either incomplete or do not satisfy the requirements for automated, stack-managed data protection: <i>Disable any applications or services accessing the current DB instance, then take a manual database snapshot</i> is good practice but not integrated into the CloudFormation stack's automation. <i>Apply a Stack Policy on the CloudFormation stack to protect the DB resource from accidental deletion</i> prevents resource deletion but does not facilitate data restoration or replacement with encryption. <i>Validate that automated snapshots are working and keep a record of the latest snapshot's ARN</i> is good for monitoring, but it does not ensure that the replacement DB is restored with the required encryption via CloudFormation automation.</p><p><b>Tip:</b> When enabling encryption for RDS using CloudFormation on an existing database, you must create a new instance from an encrypted snapshot and automate recovery within the stack to avoid manual steps and potential data loss.</p>",
+  "query": "<p>A DevOps engineer recently launched a PostgreSQL Amazon RDS database using AWS CloudFormation, but did not enable encryption initially. Due to updated security requirements, encryption must now be enabled on the RDS instance. The engineer modifies the CloudFormation template to set <code>StorageEncrypted</code> to <code>true</code>. To avoid data loss when updating the stack, the data should be recovered from the most recent DB snapshot. Which actions should be taken together to ensure data is safely restored during the CloudFormation update? (Select TWO options.)</p>",
+  "original_oid": "6793d9ed61969b416038a0f8",
+  "options": [
+    {
+      "correct": true,
+      "text": "Insert a DeletionPolicy set to 'Snapshot' for the RDS resource in the CloudFormation template.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Disable any applications or services accessing the current DB instance, then take a manual database snapshot.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Include the DBSnapshotIdentifier property referencing the most recent DB snapshot ID.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Apply a Stack Policy on the CloudFormation stack to protect the DB resource from accidental deletion.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Validate that automated snapshots are working and keep a record of the latest snapshot's ARN.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question133",
+  "originalQuery": "A DevOps engineer has used a CloudFormation template to create an RDS resource for a new web application.\nThe RDS database has used the engine of PostgreSQL, and the encryption is not enabled.\nHowever, for certain security considerations, the database needs to be updated to enable encryption.\nThe CloudFormation template is updated accordingly (StorageEncrypted is true)\nTo prevent data loss during the CloudFormation stack update, the data should be restored from the latest DB snapshot.\nWhich two steps should be taken in combination to meet this requirement? (Select TWO.)",
+  "originalOptions": "A. Make sure that automated snapshots are working properly and record the last snapshot ARN I.,B. Deactivate any applications that are using the DB instance and then create a manual snapshot.,C. Add a Stack Policy in the CloudFormation stack to prevent the DB resource from being deleted.,D. Add the DBSnapshotIdentifier property with the ID of the used DB snapshot.,E. Add a DeletionPolicy of Snapshot in the CloudFormation template.",
+  "video_url": "https://certificationation.com/videos/exam-template-to-create-an-rds-exam-170.html",
+  "url": "https://certificationation.com/questions/exam-template-to-create-an-rds-exam-170.html"
+}

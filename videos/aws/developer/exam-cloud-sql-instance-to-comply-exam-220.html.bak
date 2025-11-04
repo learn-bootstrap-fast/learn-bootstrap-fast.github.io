@@ -1,0 +1,81 @@
+---
+title: "You are tasked with setting up a Cloud SQL instance toExam"
+description: "Video for you are tasked with setting up a Cloud SQL instance to comply with your organization's security policies. The policy states that the database must"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are tasked with setting up a Cloud SQL instance to comply with your organization's security policies. The policy states that the database must only be accessible by Compute Engine instances in the same project without exposing the database to the public internet. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "BlueTrail Media needs to configure a new Cloud SQL instance to satisfy a security rule that forbids any exposure to the public internet and allows connections only from Compute Engine virtual machines within the same project and VPC network. Which configuration should you choose to meet this requirement?",
+  "options": [
+    {
+      "text": "Enable IAP TCP forwarding and connect through the Cloud SQL public address",
+      "explanation": "IAP TCP forwarding lets you tunnel database connections to a Cloud SQL instance that has a public IP.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Provision the Cloud SQL instance with only a private IP and use VPC connectivity",
+      "explanation": "A private IP attaches the instance to your VPC so clients reach it using internal addresses.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Configure authorized networks with the CIDR range of the Compute Engine subnet",
+      "explanation": "Authorized networks allow access to a Cloud SQL public IP by listing permitted IPv4 ranges.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Apply VPC Service Controls to the project that hosts the Cloud SQL instance",
+      "explanation": "VPC Service Controls helps create service perimeters for Google APIs and services to reduce data exfiltration risk.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct configuration is <b>Provision the Cloud SQL instance with only a private IP and use VPC connectivity</b>. This keeps the instance off the public internet and limits connectivity to Compute Engine virtual machines that can reach the same VPC network. With this setup the instance has no public address and all connections use internal networking paths within the project network.</p><p>Using a private IP places Cloud SQL behind VPC peering into a Google managed service network so traffic stays on Google’s private backbone and is reachable only from subnets that have routes to the service. This satisfies the requirement to prevent any public exposure while allowing connections from virtual machines in the same project and VPC. It also avoids reliance on authorized networks which only apply to public endpoints.</p><p><i>Enable IAP TCP forwarding and connect through the Cloud SQL public address</i> is incorrect because it still requires a public endpoint on the instance and the resource remains exposed to the internet even if access is gated by Identity Aware Proxy. The rule forbids any public exposure so this does not meet the requirement.</p><p><i>Configure authorized networks with the CIDR range of the Compute Engine subnet</i> is incorrect because authorized networks control access to a public IP only and do not remove internet exposure. In addition, private virtual machine addresses do not appear as the source on internet egress to a public endpoint so this configuration would not achieve the intended isolation.</p><p><i>Apply VPC Service Controls to the project that hosts the Cloud SQL instance</i> is incorrect because VPC Service Controls do not support Cloud SQL and they are designed to mitigate data exfiltration for supported APIs rather than remove public connectivity. This does not enforce the private in VPC only access that is required.</p>",
+  "batch_id": "72",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "You are tasked with setting up a Cloud SQL instance to comply with your organization's security policies. The policy states that the database must only be accessible by Compute Engine instances in the same project without exposing the database to the public internet. What should you do?",
+  "originalOptions": "A. Assign a private IP to the Cloud SQL instance.<br/>B. Use Identity-Aware Proxy (IAP) to secure access to the database.<br/>C. Create a firewall rule to allow traffic to the database port from all internal IP ranges.<br/>D. Configure authorized networks with the CIDR block of the Compute Engine subnet.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "220",
+  "tip": "<p>When you see a requirement that says <i>no public internet exposure</i> for Cloud SQL, look for <i>private IP only</i> and VPC connectivity. Options that mention IAP or authorized networks still rely on a public endpoint and usually do not satisfy this constraint.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/choose-network-options",
+    "https://cloud.google.com/sql/docs/mysql/private-ip",
+    "https://cloud.google.com/sql/docs/mysql/authorize-ip",
+    "https://cloud.google.com/iap/docs/tcp-forwarding-overview",
+    "https://cloud.google.com/vpc-service-controls/docs/supported-products"
+  ],
+  "url": "https://certificationation.com/questions/exam-cloud-sql-instance-to-comply-exam-220.html",
+  "video_url": "https://certificationation.com/videos/exam-cloud-sql-instance-to-comply-exam-220.html"
+}

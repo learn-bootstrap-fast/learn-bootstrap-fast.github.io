@@ -1,0 +1,82 @@
+---
+title: "As a Database Engineer, you are responsible forExam"
+description: "Video for as a Database Engineer, you are responsible for maintaining a high-performing Cloud SQL for PostgreSQL instance. The database has been experiencing"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are responsible for maintaining a high-performing Cloud SQL for PostgreSQL instance. The database has been experiencing performance issues, and you need to identify and resolve the problem without significantly impacting the database's availability. Which of the following strategies should you adopt?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the database engineer for Solara Outfitters which runs a transactional application on Cloud SQL for PostgreSQL and users report intermittent latency during peak traffic. You must investigate the cause and remediate performance issues while keeping service disruption to a minimum. What should you do?",
+  "options": [
+    {
+      "text": "Resize the Cloud SQL instance to a larger machine type with more vCPUs and memory",
+      "explanation": "Scaling up the instance can mask performance issues by adding resources but it does not identify the root cause of slow queries.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Disable autovacuum to remove background tasks during heavy load",
+      "explanation": "Turning off autovacuum reduces background activity but it leads to table bloat and worse query performance over time.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Cloud SQL Insights with the pg_stat_statements extension to find slow queries and add the necessary indexes",
+      "explanation": "Cloud SQL Insights together with pg_stat_statements highlights high latency and high frequency SQL so that you can add targeted indexes without downtime.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Migrate the database to Cloud Spanner to handle performance at scale",
+      "explanation": "Cloud Spanner is a different service that requires significant migration effort and is not a quick fix for diagnosing current PostgreSQL query issues.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Use Cloud SQL Insights with the pg_stat_statements extension to find slow queries and add the necessary indexes</b>.</p><p>Query Insights in Cloud SQL collects query level metrics through pg_stat_statements and surfaces the statements that are slow or wait bound during peak traffic. This lets you pinpoint inefficient SQL and missing indexes without restarting the instance so you can remediate with targeted indexing or query tuning. Addressing the root cause with indexing reduces latency with minimal disruption and in PostgreSQL you can create indexes concurrently to limit locking impact.</p><p><i>Resize the Cloud SQL instance to a larger machine type with more vCPUs and memory</i> is a blunt change that can mask inefficient queries and it also triggers a restart which introduces disruption. It increases cost and capacity but does not explain or fix the underlying latency.</p><p><i>Disable autovacuum to remove background tasks during heavy load</i> is harmful because autovacuum prevents table and index bloat and protects against transaction ID wraparound. Turning it off commonly worsens latency over time and raises operational risk.</p><p><i>Migrate the database to Cloud Spanner to handle performance at scale</i> is a major platform shift that requires significant migration effort and is not aligned with minimal disruption. Spanner targets global scale scenarios and is unnecessary for intermittent latency caused by inefficient queries in an existing Cloud SQL for PostgreSQL workload.</p>",
+  "batch_id": "275",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are responsible for maintaining a high-performing Cloud SQL for PostgreSQL instance. The database has been experiencing performance issues, and you need to identify and resolve the problem without significantly impacting the database's availability. Which of the following strategies should you adopt?",
+  "originalOptions": "A. Increase the number of vCPUs and memory allocated to the Cloud SQL instance.<br/>B. Migrate the database to a Cloud Spanner instance to improve performance.<br/>C. Disable the query planner to reduce query planning time.<br/>D. Use Cloud Monitoring to identify slow-running queries and create necessary indexes.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "290",
+  "tip": "<p>Start with <i>observability</i> before scaling. Use Cloud SQL Insights and pg_stat_statements to find the top latency contributors then add the right indexes or tune the queries. Keep <i>autovacuum</i> enabled and consider <i>CREATE INDEX CONCURRENTLY</i> to reduce lock impact when indexing in PostgreSQL.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/insights-overview",
+    "https://cloud.google.com/sql/docs/postgres/pg-stat-statements",
+    "https://cloud.google.com/sql/docs/postgres/performance",
+    "https://cloud.google.com/sql/docs/postgres/edit-instance",
+    "https://www.postgresql.org/docs/current/routine-vacuuming.html",
+    "https://cloud.google.com/spanner/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-responsible-for-maintaining-a-high-performing-exam-290.html",
+  "video_url": "https://certificationation.com/videos/exam-responsible-for-maintaining-a-high-performing-exam-290.html"
+}

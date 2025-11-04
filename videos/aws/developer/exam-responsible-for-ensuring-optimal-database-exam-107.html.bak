@@ -1,0 +1,81 @@
+---
+title: "As a Database Engineer, you are responsible for ensuringExam"
+description: "Video for as a Database Engineer, you are responsible for ensuring optimal database performance in a multi-region application hosted on Google Cloud Platform."
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are responsible for ensuring optimal database performance in a multi-region application hosted on Google Cloud Platform. You have chosen Cloud SQL as your database solution. Which of the following connection strategies should you use to minimize latency while maintaining high availability and fault tolerance?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the database engineer for WillowMart and your user-facing service runs in us-central1, europe-west1, and asia-south1 on Google Cloud. You standardized on Cloud SQL for PostgreSQL for your transactional workload. You need to keep latency low for users in each region while preserving high availability and fault tolerance for the database tier. Which connection approach should you implement?",
+  "options": [
+    {
+      "text": "Place a regional TCP load balancer in front of Cloud SQL and steer client connections to the closest database region",
+      "explanation": "This option inserts a load balancer tier that directs database traffic toward a nearby endpoint",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Put all services into one Shared VPC project and point every workload to a central Cloud SQL instance",
+      "explanation": "This consolidates networking and database endpoints into a single VPC and database location",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use private IP so that each regional application connects to a co-located Cloud SQL instance in the same region configured for high availability",
+      "explanation": "This uses internal networking and a regional Cloud SQL deployment to keep traffic local while providing an HA setup",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Run the Cloud SQL Auth Proxy for all applications and connect them to a single primary instance in us-central1",
+      "explanation": "This standardizes authentication and encryption by sending every connection through the Auth Proxy to one primary database",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Use private IP so that each regional application connects to a co-located Cloud SQL instance in the same region configured for high availability</b>. This keeps traffic local to each region for low latency and provides regional resilience with a standby instance in another zone.</p><p>This approach uses VPC internal addressing so connections do not traverse the public internet and latency stays predictable. By placing a Cloud SQL for PostgreSQL instance in us-central1, europe-west1, and asia-south1 and enabling regional high availability, each application stack talks to a nearby database and can fail over within the region if a zone becomes unavailable. This meets the goals of low latency and fault tolerance for the database tier.</p><p><i>Place a regional TCP load balancer in front of Cloud SQL and steer client connections to the closest database region</i> is incorrect because Cloud SQL is not designed to sit behind Google Cloud load balancers and clients must connect directly or through supported connectors. A load balancer would not provide proper database session handling and is not a supported pattern.</p><p><i>Put all services into one Shared VPC project and point every workload to a central Cloud SQL instance</i> is incorrect because a single central instance adds cross region latency for Europe and Asia and concentrates failure risk in one region. Shared VPC is about network administration and does not solve database latency or availability needs.</p><p><i>Run the Cloud SQL Auth Proxy for all applications and connect them to a single primary instance in us-central1</i> is incorrect because the proxy improves authentication and secure connectivity but it does not reduce geographic latency. All traffic would still traverse to us-central1 and a regional outage there would impact every user.</p>",
+  "batch_id": "165",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are responsible for ensuring optimal database performance in a multi-region application hosted on Google Cloud Platform. You have chosen Cloud SQL as your database solution. Which of the following connection strategies should you use to minimize latency while maintaining high availability and fault tolerance?",
+  "originalOptions": "A. Connect the application instances to the nearest regional Cloud SQL instance using private IP<br/>B. Use a single global VPC for all application instances and Cloud SQL instances<br/>C. Configure the application instances to use the Cloud SQL proxy for all connections<br/>D. Implement regional Cloud Load Balancers to distribute connections to the nearest Cloud SQL instance",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "107",
+  "tip": "<p>When you see requirements for <i>low latency</i> across multiple regions and high availability, co locate stateful services with the application and prefer <i>private IP</i> connectivity. Remember the Cloud SQL <i>Auth Proxy</i> secures connections but does not change where the traffic flows.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/high-availability",
+    "https://cloud.google.com/sql/docs/postgres/configure-private-ip",
+    "https://cloud.google.com/sql/docs/postgres/connect-overview",
+    "https://cloud.google.com/sql/docs/postgres/connect-auth-proxy",
+    "https://cloud.google.com/sql/docs/postgres/locations"
+  ],
+  "url": "https://certificationation.com/questions/exam-responsible-for-ensuring-optimal-database-exam-107.html",
+  "video_url": "https://certificationation.com/videos/exam-responsible-for-ensuring-optimal-database-exam-107.html"
+}

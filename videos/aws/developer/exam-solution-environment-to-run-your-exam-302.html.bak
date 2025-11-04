@@ -1,0 +1,81 @@
+---
+title: "You are deploying a Bare Metal Solution environment toExam"
+description: "Video for you are deploying a Bare Metal Solution environment to run your organization's legacy applications. To ensure smooth integration with other Google"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are deploying a Bare Metal Solution environment to run your organization's legacy applications. To ensure smooth integration with other Google Cloud services and internet connectivity for software updates, you need to configure the network. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Northwind Freight Logistics is deploying Google Bare Metal Solution to host a legacy ERP platform. The servers must reach Google Cloud services and they also need controlled access to the public internet for package updates while not using public IPs on the Bare Metal hosts. How should you configure the network to meet these requirements?",
+  "options": [
+    {
+      "text": "Create a Cloud VPN tunnel from the Bare Metal Solution environment to a VPC network",
+      "explanation": "This builds an encrypted connection between the Bare Metal Solution network and a Google Cloud VPC using a site to site tunnel.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Set up bring your own IP in the VPC and advertise those ranges to the Bare Metal Solution environment",
+      "explanation": "This allocates customer owned public IP ranges to a project so they can be routed within a VPC network.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable Cloud NAT on a Cloud Router in the connected VPC so Bare Metal Solution hosts get outbound internet without external IPs",
+      "explanation": "This uses a managed network address translation service attached to a Cloud Router to provide egress for resources that do not have public addresses.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Assign a static external IP address to each Bare Metal Solution server from the VPC",
+      "explanation": "This places public IP addresses directly on the Bare Metal hosts through the VPC network.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Enable Cloud NAT on a Cloud Router in the connected VPC so Bare Metal Solution hosts get outbound internet without external IPs</b>.</p><p>This choice allows the Bare Metal Solution servers to reach Google Cloud APIs and controlled destinations on the public internet without assigning public addresses to the hosts. <b>Cloud NAT</b> provides egress only internet access for private resources, and when the Bare Metal environment is connected to your VPC using <b>Cloud Router</b> for dynamic routing, the private server addresses are translated to ephemeral external addresses managed in the VPC. You can then use VPC firewall rules to tightly control what traffic is allowed, which aligns with the requirement for controlled access.</p><p>Because the Bare Metal Solution network is attached to your VPC using Google provisioned interconnects with <b>Cloud Router</b>, this design is the supported pattern for internet egress and for reaching Google services from on premises style environments without placing public IPs on the servers. <b>Cloud NAT</b> also supports access to Google APIs and services while keeping the servers privately addressed.</p><p><i>Create a Cloud VPN tunnel from the Bare Metal Solution environment to a VPC network</i> is not appropriate because Bare Metal Solution already connects to your VPC through dedicated interconnect and routing with Cloud Router. Adding Cloud VPN is unnecessary and does not solve the requirement for egress without public IPs on the hosts.</p><p><i>Set up bring your own IP in the VPC and advertise those ranges to the Bare Metal Solution environment</i> is incorrect because BYOIP lets you use your public IP prefixes for external addresses in Google Cloud. It does not provide NAT for privately addressed Bare Metal servers and it would still involve public addresses, which violates the requirement.</p><p><i>Assign a static external IP address to each Bare Metal Solution server from the VPC</i> is not possible and it also conflicts with the requirement to avoid public IPs on the hosts. Bare Metal Solution servers cannot be assigned VPC external IPs and the supported method for outbound access is NAT in the connected VPC.</p>",
+  "batch_id": "133",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are deploying a Bare Metal Solution environment to run your organization's legacy applications. To ensure smooth integration with other Google Cloud services and internet connectivity for software updates, you need to configure the network. What should you do?",
+  "originalOptions": "A. Set up a VPN tunnel between your on-premises network and Google Cloud.<br/>B. Set up bring your own IP (BYOIP) in your VPC for the Bare Metal Solution instance.<br/>C. Configure a static external IP address for the Bare Metal Solution instance in your VPC network.<br/>D. Deploy a Compute Engine VM in the same VPC and set up a Cloud NAT gateway on it.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "302",
+  "tip": "<p>When you see a requirement for outbound internet from private or hybrid hosts with <i>no public IPs on the hosts</i>, think <i>Cloud NAT</i> on a VPC that exchanges routes with the environment using <i>Cloud Router</i>. Confirm that the design provides egress only and that firewall rules can restrict destinations.</p>",
+  "references": [
+    "https://cloud.google.com/bare-metal/docs/networking-overview#internet_access",
+    "https://cloud.google.com/nat/docs/overview",
+    "https://cloud.google.com/nat/docs/hybrid-design",
+    "https://cloud.google.com/vpc/docs/bring-your-own-ip",
+    "https://cloud.google.com/bare-metal/docs/networking-overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-solution-environment-to-run-your-exam-302.html",
+  "video_url": "https://certificationation.com/videos/exam-solution-environment-to-run-your-exam-302.html"
+}

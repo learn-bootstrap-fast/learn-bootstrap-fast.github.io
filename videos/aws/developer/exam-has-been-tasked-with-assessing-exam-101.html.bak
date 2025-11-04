@@ -1,0 +1,82 @@
+---
+title: "You are a Database Engineer who has been tasked withExam"
+description: "Video for you are a Database Engineer who has been tasked with assessing the application and database dependencies of a complex, multi-tier application before"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are a Database Engineer who has been tasked with assessing the application and database dependencies of a complex, multi-tier application before migrating it to Google Cloud Platform (GCP). Which of the following steps should be taken to ensure that dependencies are effectively identified?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the database specialist at Aster Labs and you must catalog application and database dependencies for a three tier commerce platform with about 35 microservices before migrating to Google Cloud. You want to build an accurate map of how services interact with the underlying data stores so the migration plan avoids surprises. What should you do to identify these dependencies effectively?",
+  "options": [
+    {
+      "text": "Complete the migration to Google Cloud and then use Cloud Logging to trace and infer dependencies",
+      "explanation": "Cloud Logging collects and indexes logs from applications and systems which can help you trace runtime interactions after workloads are moved.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Examine the service codebase, review the relational schema and stored procedures, and analyze executed SQL and ORM mappings to document all application to database dependencies",
+      "explanation": "Reviewing source code, schemas, and actual queries surfaces the direct and indirect coupling between services and the data layer prior to migration.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use Cloud Data Fusion to scan application components and detect database interactions",
+      "explanation": "Cloud Data Fusion is a managed data integration platform that focuses on building and orchestrating data pipelines across diverse sources.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Deploy Migration Center discovery clients to inventory workloads and analyze network flows to map dependencies",
+      "explanation": "Migration Center discovery gathers machine inventory and network flow telemetry that can visualize connections among running systems.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Examine the service codebase, review the relational schema and stored procedures, and analyze executed SQL and ORM mappings to document all application to database dependencies</b>. This is the only approach that directly reveals which services call which databases and which tables, views, and procedures they touch, including dynamically generated queries.</p><p>Reviewing code and ORM configurations exposes how microservices construct queries and manage connections. Examining the relational schema and stored procedures shows the exact database objects in play and any embedded business logic. Capturing and analyzing executed SQL from logs or query profiling closes the gap between intended design and actual runtime behavior. Together these techniques produce a reliable dependency map that you can use to plan sequencing, cutover, and testing with confidence.</p><p><i>Complete the migration to Google Cloud and then use Cloud Logging to trace and infer dependencies</i> is incorrect because waiting until after migration defeats the goal of preventing surprises. Cloud Logging and tracing tools can help observe behavior once workloads run on Google Cloud, yet they do not replace pre-migration discovery of database objects and query patterns.</p><p><i>Use Cloud Data Fusion to scan application components and detect database interactions</i> is incorrect because Cloud Data Fusion is a managed data integration service for building pipelines. It does not scan application code or ORM layers to uncover application to database dependencies.</p><p><i>Deploy Migration Center discovery clients to inventory workloads and analyze network flows to map dependencies</i> is incorrect because Migration Center focuses on asset discovery and network dependency mapping. It can show which services communicate over the network, yet it does not resolve detailed database object usage or SQL dependency chains.</p>",
+  "batch_id": "45",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "You are a Database Engineer who has been tasked with assessing the application and database dependencies of a complex, multi-tier application before migrating it to Google Cloud Platform (GCP). Which of the following steps should be taken to ensure that dependencies are effectively identified?",
+  "originalOptions": "A. Analyze the application code, review database schema, and examine SQL queries to identify dependencies between the application and the database.<br/>B. Use Google Cloud Storage to store a copy of the application code and database schema, and then rely on Dataflow for dependency analysis.<br/>C. Migrate the application and database to GCP and then analyze the dependencies using Cloud Logging.<br/>D. Use Cloud Data Fusion to assess the dependencies between the application components and the database.",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "101",
+  "tip": "<p>When a question asks about mapping application to database dependencies before migration, look for methods that reveal actual queries and objects. Validate whether a tool can see into code, <i>ORM</i>, and <i>executed SQL</i> rather than only network flows or logs after migration.</p>",
+  "references": [
+    "https://cloud.google.com/architecture/assess-and-discover-enterprise-workloads",
+    "https://cloud.google.com/migration-center/docs/overview",
+    "https://cloud.google.com/migration-center/docs/network-dependency-mapping",
+    "https://cloud.google.com/logging/docs",
+    "https://cloud.google.com/trace/docs/overview",
+    "https://cloud.google.com/data-fusion/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-has-been-tasked-with-assessing-exam-101.html",
+  "video_url": "https://certificationation.com/videos/exam-has-been-tasked-with-assessing-exam-101.html"
+}

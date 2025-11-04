@@ -1,0 +1,84 @@
+---
+title: "An e-commerce company wants to migrate theirExam"
+description: "Video for an e-commerce company wants to migrate their multi-terabyte PostgreSQL database from their on-premises data center to Google Cloud. They need to"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "An e-commerce company wants to migrate their multi-terabyte PostgreSQL database from their on-premises data center to Google Cloud. They need to ensure that the migration process has minimal downtime and can handle schema changes during migration. They also require the ability to perform data validation and rollback in case of any issues. Which of the following Google Cloud database migration tools is most appropriate for this scenario?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A digital ticketing company plans to move an 18 TB PostgreSQL database from a private data center to Google Cloud. They require very low downtime at cutover and need the migration workflow to accept ongoing schema changes while replication runs. They also want a way to validate the data and keep the option to roll back if issues appear. Which Google Cloud service or tool should they use?",
+  "options": [
+    {
+      "text": "Cloud Data Fusion",
+      "explanation": "This managed data integration service lets you design and run ETL and ELT pipelines for batch and streaming workloads",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Database Migration Service with continuous replication for PostgreSQL",
+      "explanation": "This managed migration service moves PostgreSQL data from on premises to Cloud SQL or AlloyDB and supports ongoing replication to minimize downtime",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Cloud SQL for PostgreSQL",
+      "explanation": "This is a fully managed PostgreSQL service that serves as a destination for migrated databases and offers high availability features",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Datastream",
+      "explanation": "This serverless change data capture service streams database changes into Google Cloud destinations for integration and analytics",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Database Migration Service with continuous replication for PostgreSQL</b>. This service supports large PostgreSQL migrations by seeding the target and then continuously replicating changes so you can achieve very low downtime at cutover. <b>Database Migration Service with continuous replication for PostgreSQL</b> supports ongoing changes during replication and provides validation features that let you compare source and destination before cutover. You can keep the source as the system of record until you are satisfied with validation which preserves a clear path to roll back by continuing to use the source if issues appear.</p><p>With <b>Database Migration Service with continuous replication for PostgreSQL</b> you can run a continuous migration that keeps the destination closely synchronized while users continue to modify data. It is designed for large datasets such as 18 TB and it provides migration status and data validation to confirm row counts and checksums which reduces risk before switching traffic. Because cutover is a simple and reversible step while the source is still active you retain the option to back out if needed.</p><p><i>Cloud Data Fusion</i> is a data integration and ETL service that builds pipelines for batch or streaming use cases. It is not a managed database migration tool for low downtime lift and shift of a transactional PostgreSQL database and it does not provide a controlled cutover workflow with continuous logical replication.</p><p><i>Cloud SQL for PostgreSQL</i> is the managed database that serves as the migration target rather than the migration mechanism. It does not by itself perform replication from on premises or provide the end to end migration workflow that includes validation and cutover.</p><p><i>Datastream</i> is a change data capture service focused on moving data into analytics oriented sinks such as BigQuery or Cloud Storage. It is not designed for migrating a PostgreSQL database into a managed PostgreSQL instance with a minimal downtime cutover and rollback plan.</p>",
+  "batch_id": "298",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "An e-commerce company wants to migrate their multi-terabyte PostgreSQL database from their on-premises data center to Google Cloud. They need to ensure that the migration process has minimal downtime and can handle schema changes during migration. They also require the ability to perform data validation and rollback in case of any issues. Which of the following Google Cloud database migration tools is most appropriate for this scenario?",
+  "originalOptions": "A. Cloud Spanner<br/>B. Database Migration Service (DMS)<br/>C. Cloud Data Fusion<br/>D. Cloud SQL for PostgreSQL",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "341",
+  "tip": "<p>When you see requirements for very low downtime with continuous replication and a structured cutover, choose the managed migration service. If the option is about the destination database or a general ETL product, reconsider because those do not provide the end to end migration workflow. Focus on <i>continuous replication</i>, <i>validation</i>, and <i>cutover</i> keywords to guide your choice.</p>",
+  "references": [
+    "https://cloud.google.com/database-migration",
+    "https://cloud.google.com/database-migration/docs/postgres/overview",
+    "https://cloud.google.com/database-migration/docs/postgres/create-continuous",
+    "https://cloud.google.com/database-migration/docs/postgres/using-data-validation",
+    "https://cloud.google.com/sql/docs/postgres/",
+    "https://cloud.google.com/data-fusion/docs/overview",
+    "https://cloud.google.com/datastream/docs/overview",
+    "https://cloud.google.com/datastream/docs/sources-and-destinations"
+  ],
+  "url": "https://certificationation.com/questions/exam-migrate-their-multi-terabyte-postgresql-database-exam-341.html",
+  "video_url": "https://certificationation.com/videos/exam-migrate-their-multi-terabyte-postgresql-database-exam-341.html"
+}

@@ -1,0 +1,62 @@
+---
+title: "Your DevOps team has maintained a large number of EC2Exam"
+description: "Video for your DevOps team has maintained a large number of EC2 instances in several AWS accounts. There are some instances that were launched for testing"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your DevOps team has maintained a large number of EC2 instances in several AWS accounts. There are some instances that were launched for testing purposes and are no longer used. To save cost, you need to work out an approach to quickly identify the EC2 instances that have a low utilization rate, such as daily CPU utilization is 10% or less for several days. Which method is the best that you should choose?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The most effective and scalable approach in this scenario is to use <b>Trusted Advisor’s Cost Optimization Checks to review Low Utilization EC2 Instances</b>. Trusted Advisor provides a built-in, cross-account analysis focusing especially on cost-saving opportunities and will automatically list EC2 instances with consistently low utilization (e.g., CPU usage lower than 10% over 14 days), simplifying identification and mitigation efforts across multiple accounts.</p><p>The other options have significant limitations: <i>Establish CloudWatch Metrics alarms for each instance and configure notifications via SNS for CPU usage of less than 10%</i> would require a high level of manual overhead, as each instance would need its own alarm and the alarms must be properly configured and maintained across accounts. <i>Set up an AWS Lambda function to periodically assess each instance's average CPU utilization and alert through SNS if sustained usage is low</i> could be automated, but maintaining a custom function at scale adds complexity, requires secure cross-account access, and essentially duplicates what Trusted Advisor already delivers out-of-the-box. <i>Utilize CloudWatch Logs to implement a filter that monitors EC2 usage rates, setting up an alarm if utilization falls below the threshold</i> is not natively suitable, as CloudWatch Logs are not intended for tracking instance metrics like CPU utilization; instead, metrics should be handled with CloudWatch Metrics.</p><p><b>Tip:</b> Trusted Advisor’s Cost Optimization features are the most efficient way to manage resource usage and identify cost-saving opportunities, especially in complex, multi-account AWS environments.</p>",
+  "query": "<p>Your operations team manages a large fleet of EC2 instances distributed across various AWS accounts. A number of these instances were originally provisioned for short-term testing and may no longer serve an active purpose. To minimize unnecessary expenses, you want to swiftly pinpoint EC2 instances with persistently low activity, such as those averaging 10% or lower CPU usage over several days.</p><p>Which AWS solution is best for detecting these underutilized EC2 instances?</p>",
+  "original_oid": "6793d9f861969b416038a10d",
+  "options": [
+    {
+      "correct": false,
+      "text": "Utilize CloudWatch Logs to implement a filter that monitors EC2 usage rates, setting up an alarm if utilization falls below the threshold.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Use Trusted Advisor’s Cost Optimization Checks to review Low Utilization EC2 Instances status in your accounts.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Establish CloudWatch Metrics alarms for each instance and configure notifications via SNS for CPU usage of less than 10%.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up an AWS Lambda function to periodically assess each instance's average CPU utilization and alert through SNS if sustained usage is low.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question154",
+  "originalQuery": "Your DevOps team has maintained a large number of EC2 instances in several AWS accounts.\nThere are some instances that were launched for testing purposes and are no longer used.\nTo save cost, you need to work out an approach to quickly identify the EC2 instances that have a low utilization rate, such as daily CPU utilization is 10% or less for several days.\nWhich method is the best that you should choose?",
+  "originalOptions": "A. In CloudWatch Metrics, for each instance, create an alarm and trigger an SNS notification when CPU utilization is below 10%.\nB. Create a Lambda function that checks the CPU utilization for each instance and triggers an SNS notification if the average CPU utilization rate is low.\nC. In CloudWatch Logs, configure a Filter to check the usage rate of EC2 instances. Create an alarm if the utilization is low.\nD. In Trusted Advisor, check the status of Low Utilization Amazon EC2 Instances which is part of Cost Optimization Checks.",
+  "video_url": "https://certificationation.com/videos/exam-large-number-of-ec2-instances-exam-430.html",
+  "url": "https://certificationation.com/questions/exam-large-number-of-ec2-instances-exam-430.html"
+}

@@ -1,0 +1,67 @@
+---
+title: "Which of the following will you need to consider so youExam"
+description: "Video for which of the following will you need to consider so you can set up a solution that incorporates a single sign-on from your corporate AD or LDAP"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Which of the following will you need to consider so you can set up a solution that incorporates a single sign-on from your corporate AD or LDAP directory and restricts access for each user to a designated user folder in a bucket? Choose 3 answers from the options below."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>To provide SSO access from your corporate AD or LDAP directory to AWS resources while restricting each user’s S3 access to their own folder, you should:</p><ul><li><strong>Set up a federation proxy or identity provider for SSO</strong>: This enables authentication against your corporate identity store, such as AD or LDAP, rather than managing AWS credentials separately. It streamlines sign-in and centralizes control.</li><li><strong>Use AWS Security Token Service (STS) to issue short-lived credentials</strong>: STS allows temporary IAM credentials to be provided to users upon successful authentication via the identity provider. This improves security since credentials are automatically rotated and reduce the risk of long-lived key misuse.</li><li><strong>Assign an IAM role to map each authenticated AD/LDAP user to permissions for their folder</strong>: By dynamically granting users the appropriate IAM role, you can define S3 policies that allow access only to their respective folders, ensuring fine-grained security controls.</li></ul><p>The option <i>\"Apply specific tags to every folder within the S3 bucket for user-based access\"</i> is incorrect, as S3 folder-level access is best controlled via IAM policies and S3 prefixes, not by tagging folders (since tags are typically used for resources, not S3 prefixes/folders). <i>\"Ensure each user has a matching IAM user account in AWS for access control\"</i> is also inefficient and undermines the benefit of SSO and federated identity as it requires duplicating user management in AWS, increasing administrative overhead. The recommended method leverages federation, roles, and STS for secure, centralized, and scalable access management.</p><p><strong>Tip:</strong> When integrating SSO for temporary access, always use federation and STS with roles; avoid creating individual IAM users for each directory user.</p>",
+  "query": "<p>To enable a single sign-on (SSO) solution from your company’s Active Directory (AD) or LDAP directory and limit each user to their own folder in an S3 bucket, which of the following actions should you take? Select <strong>three</strong> options:</p>",
+  "original_oid": "6793da1561969b416038a146",
+  "options": [
+    {
+      "correct": true,
+      "text": "Use AWS Security Token Service (STS) to issue short-lived credentials.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Set up a federation proxy or identity provider for SSO.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Assign an IAM role to map each authenticated AD/LDAP user to permissions for their folder.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Ensure each user has a matching IAM user account in AWS for access control.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Apply specific tags to every folder within the S3 bucket for user-based access.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question213",
+  "originalQuery": "Which of the following will you need to consider so you can set up a solution that incorporates a single sign-on from your corporate AD or LDAP directory and restricts access for each user to a designated user folder in a bucket? Choose 3 answers from the options below.",
+  "originalOptions": "[\"A. Setting up a federation proxy or identity provider.\",\"B. Using AWS Security Token Service to generate temporary tokens.\",\"C. Tagging each folder in the bucket\",\"D. Configuring IAM role\",\"E. Setting up a matching IAM user for every user in your corporate directory that needs access to a folder in the bucket.\"]",
+  "video_url": "https://certificationation.com/videos/exam-need-to-consider-so-you-exam-173.html",
+  "url": "https://certificationation.com/questions/exam-need-to-consider-so-you-exam-173.html"
+}

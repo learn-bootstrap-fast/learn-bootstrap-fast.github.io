@@ -1,0 +1,62 @@
+---
+title: "You recently encountered a major bug in your webExam"
+description: "Video for you recently encountered a major bug in your web application during a deployment cycle. During this failed deployment, it took the team four hours to"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You recently encountered a major bug in your web application during a deployment cycle. During this failed deployment, it took the team four hours to roll back to a previously working state, which left customers with a poor user experience. During the post-mortem, you team discussed the need to provide a quicker, more robust way to roll back failed deployments. You currently run your web application on Amazon EC2 and use Elastic Load Balancing for your load balancing needs."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best choice is <b>\"Create versioned, deployable bundles of your app, store these on Amazon S3, and configure Elastic Beanstalk's automatic rollback based on CloudWatch metric alarms indicating deployment failures.\"</b> This solution leverages Elastic Beanstalk's ability to seamlessly manage application versions and automate rollbacks. Integrating with CloudWatch allows failures to be detected quickly, triggering the rollback process and minimizing downtime and customer impact.<br/><br/>Option <i>\"Utilize AWS OpsWorks to redeploy the web application and initiate rollbacks with DeploymentCommand during system failures.\"</i> is incorrect because while OpsWorks supports automating deployments and rollbacks, it generally requires more custom engineering compared to Elastic Beanstalk's built-in auto rollback features tailored for such use cases.<br/><br/>Option <i>\"Use Elastic Beanstalk to redeploy and call the FailedDeployment API to revert to a previous good version.\"</i> is not accurate since there is no specific FailedDeployment API; Elastic Beanstalk's rollback capabilities are tied to deployment health monitoring and can be automated via configuration, not API calls.<br/><br/>Option <i>\"Package versioned application bundles and store them on Amazon S3. Redeploy via AWS OpsWorks and roll back by utilizing OpsWorks application versioning in the event of failures.\"</i> is inefficient for typical web workloads, as Elastic Beanstalk provides a more streamlined approach for version management and automated rollback. The OpsWorks approach may be overkill, requiring extra operational overhead.<br/><br/><b>Tip:</b> For rapid and reliable rollbacks with minimal effort, Elastic Beanstalk's versioning and automatic rollback integration with CloudWatch is the preferred method for web applications hosted on AWS.</p>",
+  "query": "<p>Following a recent deployment, your web application suffered a significant bug that disrupted service. The rollback to a functioning version took your team four hours, resulting in a negative user impact. To improve resilience in future deployments, what is the most effective way to enable rapid, reliable rollback capabilities for your web application, which is currently hosted on Amazon EC2 with Elastic Load Balancing?</p>",
+  "original_oid": "6793da4661969b416038a1ae",
+  "options": [
+    {
+      "correct": false,
+      "text": "Utilize AWS OpsWorks to redeploy the web application and initiate rollbacks with DeploymentCommand during system failures.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Create versioned, deployable bundles of your app, store these on Amazon S3, and configure Elastic Beanstalk's automatic rollback based on CloudWatch metric alarms indicating deployment failures.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Use Elastic Beanstalk to redeploy and call the FailedDeployment API to revert to a previous good version.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Package versioned application bundles and store them on Amazon S3. Redeploy via AWS OpsWorks and roll back by utilizing OpsWorks application versioning in the event of failures.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question317",
+  "originalQuery": "You recently encountered a major bug in your web application during a deployment cycle.\nDuring this failed deployment, it took the team four hours to roll back to a previously working state, which left customers with a poor user experience.\nDuring the post-mortem, you team discussed the need to provide a quicker, more robust way to roll back failed deployments.\nYou currently run your web application on Amazon EC2 and use Elastic Load Balancing for your load balancing needs.",
+  "originalOptions": "A. Create deployable versioned bundles of your application. Store the bundle on Amazon S3. Re-deploy your web application on Elastic Beanstalk and enable the Elastic Beanstalk auto – rollback feature tied to CloudWatch metrics that define failure.\nB. Use an AWS OpsWorks stack to re-deploy your web application and use AWS OpsWorks DeploymentCommand to initiate a rollback during failures.\nC. Create deployable versioned bundles of your application. Store the bundle on Amazon S3. Use an AWS OpsWorks stack to redeploy your web application and use AWS OpsWorks application versioning to initiate a rollback during failures.\nD. Using Elastic BeanStalk redeploy your web application and use the Elastic BeanStalk API to trigger a FailedDeployment API call to initiate a rollback to the previous version.",
+  "video_url": "https://certificationation.com/videos/exam-bug-in-your-web-application-exam-035.html",
+  "url": "https://certificationation.com/questions/exam-bug-in-your-web-application-exam-035.html"
+}

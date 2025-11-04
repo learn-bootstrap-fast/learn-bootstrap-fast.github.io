@@ -1,0 +1,62 @@
+---
+title: "You need your API backed by DynamoDB to stay onlineExam"
+description: "Video for you need your API backed by DynamoDB to stay online during a total regional AWS failure. You can tolerate a couple of minutes of lag or slowness"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You need your API backed by DynamoDB to stay online during a total regional AWS failure. You can tolerate a couple of minutes of lag or slowness during a large failure event, but the system should recover with normal operation after those few minutes. What is a good approach?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct answer is <b>Implement DynamoDB Global Tables. Deploy an Auto Scaling Group behind an Elastic Load Balancer in each of the two regions hosting your application layer. Configure Route53 with latency-based DNS and failover across the ELBs in both regions.</b></p><p><b>DynamoDB Global Tables</b> are designed for active-active, multi-region replication, which means you can write and read to DynamoDB in multiple regions, providing the kind of resilience you need in case of total regional outages. With this set-up, if one region fails, your API can automatically fail over to the healthy region without data loss or a lengthy recovery process. Using Application Load Balancers and Auto Scaling Groups in both regions, combined with Route53's latency routing and failover, ensures your API is always available with minimal interruption.</p><p>The other options have the following issues:<br><i>Use a master-standby DynamoDB replication across regions, with a single standby in another region. For your application, provision Auto Scaling Groups with ELBs in both regions and configure Route53 latency DNS records pointing to the respective ELBs.</i>: DynamoDB does not natively support a 'master-standby' configuration for automatic failover. Setting it up this way leads to possible write conflicts, and the manual failover process would take longer than acceptable for your requirements.<br><i>Create a multi-region DynamoDB table and use a cross-region ELB targeting a cross-region Auto Scaling group, directing Route53 latency DNS records with failover to the cross-region ELB.</i>: There is no such feature as a 'multi-region table' or 'cross-region ELB' with AWS. Cross-region ELBs and Auto Scaling Groups do not exist, making this option invalid.<br><i>Set up master-standby DynamoDB cross-region replication with one standby in a separate region. Configure a cross-region ELB for a cross-region Auto Scaling Group, and use Route53 latency DNS failover aiming at the cross-region ELB.</i>: Similar to the previous point, this option incorrectly references AWS components that don't exist or are unsupported, and it also relies on manual failover mechanics, which violate your requirements.</p><p><b>Tip:</b> For true multi-region, highly available APIs backed by DynamoDB, always look for <b>DynamoDB Global Tables</b> and leverage AWS's native failover solutions to minimize downtime and recovery complexity.</p>",
+  "query": "<p>Your API depends on DynamoDB, and you must ensure it's highly available even in the event of a major AWS region outage. You can accept a few minutes of reduced performance during such an event, but expect the system to return to normal operation soon after. What is an effective solution to achieve this?</p>",
+  "original_oid": "6793d9e961969b416038a0f1",
+  "options": [
+    {
+      "correct": true,
+      "text": "Implement DynamoDB Global Tables. Deploy an Auto Scaling Group behind an Elastic Load Balancer in each of the two regions hosting your application layer. Configure Route53 with latency-based DNS and failover across the ELBs in both regions.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Use a master-standby DynamoDB replication across regions, with a single standby in another region. For your application, provision Auto Scaling Groups with ELBs in both regions and configure Route53 latency DNS records pointing to the respective ELBs.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Create a multi-region DynamoDB table and use a cross-region ELB targeting a cross-region Auto Scaling group, directing Route53 latency DNS records with failover to the cross-region ELB.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up master-standby DynamoDB cross-region replication with one standby in a separate region. Configure a cross-region ELB for a cross-region Auto Scaling Group, and use Route53 latency DNS failover aiming at the cross-region ELB.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question126",
+  "originalQuery": "You need your API backed by DynamoDB to stay online during a total regional AWS failure.\nYou can tolerate a couple of minutes of lag or slowness during a large failure event, but the system should recover with normal operation after those few minutes.\nWhat is a good approach?",
+  "originalOptions": "A. Set up DynamoDB cross-region replication in a master-standby configuration, with a single standby in another region. Create an Auto Scaling Group behind an ELB in each of the two regions for your application layer in which DynamoDB is running in. Add a Route53 Latency routing using the ELBs in the two regions as the resource records.|B. Set up a DynamoDB Global table. Create an Auto Scaling Group behind an ELB in each of the two regions for your application layer in which the DynamoDB is running in. Add a Route53 Latency DNS Record with DNS Failover, using the ELBs in the two regions as the resource records.|C. Set up a DynamoDB Multi-Region table. Create a cross-region ELB pointing to a cross-region Auto Scaling Group, and direct a Route53 Latency DNS Record with DNS Failover to the cross-region EL.|D. Set up DynamoDB cross-region replication in a master-standby configuration, with a single standby in another region. Create a cross-region ELB pointing to a cross-region Auto Scaling Group, and direct a Route53 Latency DNS Record with DNS Failover to the cross-region EL.",
+  "video_url": "https://certificationation.com/videos/exam-stay-online-during-a-total-exam-401.html",
+  "url": "https://certificationation.com/questions/exam-stay-online-during-a-total-exam-401.html"
+}

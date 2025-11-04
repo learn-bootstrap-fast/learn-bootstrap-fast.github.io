@@ -1,0 +1,62 @@
+---
+title: "You just joined an IT company and took over the dutiesExam"
+description: "Video for you just joined an IT company and took over the duties from another DevOps engineer to maintain AWS resources. After a while, you have found that a"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You just joined an IT company and took over the duties from another DevOps engineer to maintain AWS resources. After a while, you have found that a health check timer for an Elastic Load Balancer needs to be updated. The ELB together with Auto scaling configurations were created by a CloudFormation template one year ago. You can find the template in a CodeCommit repository. During the year, it is highly possible that someone has changed some configurations. However, there is no information to record the modification details for the CloudFormation stack. What should you do to update the ELB health check timer?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><strong>Utilize the “Detect drift” feature to analyze any divergence from the original stack configuration. Adjust the template accordingly to match actual resources, then incorporate the new health check timer change. Update the repository in CodeCommit and apply the template update to the stack.</strong> is the best approach because drift detection enables you to determine if the current resources differ from the stack's template—critical when undocumented changes may have occurred. By correcting any drift and including your health check timer modification, you ensure all resources align with both the template and actual AWS environment. Committing the revised template to CodeCommit keeps your infrastructure-as-code history accurate and traceable.</p> <p>Why the other choices are suboptimal:</p> <ul><li><i>Alter the CloudFormation template to reflect the updated ELB health check timer value. Create a Change Set with these modifications for the current stack, review and then execute the Change Set if the impact is as expected.</i> — Although Change Sets are useful for previewing changes, this option overlooks the critical first step of detecting and reconciling drift before making stack updates. If there have been out-of-band modifications, a Change Set alone may not cover them, risking further inconsistencies.</li> <li><i>Simply update the CloudFormation template with the revised health check timer for the ELB and perform a stack update using this new template. Commit your changes to the CodeCommit repository.</i> — This takes a straightforward route but ignores the potential resource drift. Not detecting or correcting drift first could mean your update is based on outdated or incorrect expectations, leading to stack update failures or resource misconfigurations.</li> <li><i>Remove the existing CloudFormation stack since modifications weren’t tracked in Git over the year. Rebuild the CloudFormation template with the health check adjustment, launch a fresh stack using the new template, and push the template to CodeCommit.</i> — Deleting and recreating the stack is disruptive and overkill for a health check timer update. This may incur downtime and possible data loss, isn’t best practice, and should only be a last resort if the stack is irrecoverably out of sync.</li></ul> <p><strong>Tip:</strong> Always use drift detection in environments where manual/undocumented changes may have occurred. This ensures your infrastructure-as-code and AWS resources remain synchronized, reducing the risk of configuration drift and troubleshooting headaches.</p>",
+  "query": "<p>You have recently assumed responsibilities as a DevOps engineer at a new company. While reviewing AWS infrastructure, you notice that the health check timer setting of an Elastic Load Balancer (ELB) needs adjustment. This ELB and its accompanying Auto Scaling configuration were originally set up using a CloudFormation template about a year ago, and the template is stored in AWS CodeCommit. Over the past year, various configuration changes may have been made, but there is no record or tracking of these modifications for the CloudFormation stack. What is the appropriate approach to update the ELB’s health check timer?</p>",
+  "original_oid": "6793d9d561969b416038a0c9",
+  "options": [
+    {
+      "correct": false,
+      "text": "Alter the CloudFormation template to reflect the updated ELB health check timer value. Create a Change Set with these modifications for the current stack, review and then execute the Change Set if the impact is as expected.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Utilize the “Detect drift” feature to analyze any divergence from the original stack configuration. Adjust the template accordingly to match actual resources, then incorporate the new health check timer change. Update the repository in CodeCommit and apply the template update to the stack.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Simply update the CloudFormation template with the revised health check timer for the ELB and perform a stack update using this new template. Commit your changes to the CodeCommit repository.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Remove the existing CloudFormation stack since modifications weren’t tracked in Git over the year. Rebuild the CloudFormation template with the health check adjustment, launch a fresh stack using the new template, and push the template to CodeCommit.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question84",
+  "originalQuery": "You just joined an IT company and took over the duties from another DevOps engineer to maintain AWS resources.\nAfter a while, you have found that a health check timer for an Elastic Load Balancer needs to be updated.\nThe ELB together with Auto scaling configurations were created by a CloudFormation template one year ago.\nYou can find the template in a CodeCommit repository.\nDuring the year, it is highly possible that someone has changed some configurations.\nHowever, there is no information to record the modification details for the CloudFormation stack.\nWhat should you do to update the ELB health check timer?",
+  "originalOptions": "A. Delete the CloudFormation stack since the changes in the stack are not tracked in git. Rewrite the CloudFormation template with the new health check timer and create a new CloudFormation stack using the new template. Commit the code changes to the CodeCommit repository.|B. Modify the template with the new Elastic Load Balancer health check timer. Update the stack using the new template. Submit the new template to the CodeCommit repository.|C. Use “Detect drift” to understand the changes since the stack was created. Update the template accordingly together with the new health check timer and submit the new code to CodeCommit. Update the stack using the new template.|D. Edit the template properly with the new ELB health check timer. Create a Change Set for the CloudFormation stack using the new template. If the Change Set is ok, execute the Change Set.",
+  "video_url": "https://certificationation.com/videos/exam-took-over-the-duties-from-exam-139.html",
+  "url": "https://certificationation.com/questions/exam-took-over-the-duties-from-exam-139.html"
+}

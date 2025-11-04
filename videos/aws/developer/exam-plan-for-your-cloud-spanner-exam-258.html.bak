@@ -1,0 +1,87 @@
+---
+title: "You are designing a disaster recovery plan for yourExam"
+description: "Video for you are designing a disaster recovery plan for your Cloud Spanner database to handle regional outages. Your strategy must ensure minimal data loss and"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are designing a disaster recovery plan for your Cloud Spanner database to handle regional outages. Your strategy must ensure minimal data loss and quick recovery times. What should you do? (Choose two)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A retail startup at mcnz.com operates its primary order processing system on Cloud Spanner in one region. You need to design disaster recovery for a potential regional outage while meeting a very small recovery point objective and a rapid recovery time objective. Which actions should you implement?",
+  "options": [
+    {
+      "text": "Maintain a cold standby Spanner instance in a separate region",
+      "explanation": "A cold standby remains inactive until a disruption occurs and would require data restoration and promotion steps before serving production traffic",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Migrate the database to a Cloud Spanner multi region configuration",
+      "explanation": "A multi region configuration replicates data across regions using synchronous replication and supports automatic failover during a regional disruption",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Consolidate the deployment into a single region to simplify operations",
+      "explanation": "A single region instance can reduce cost and management overhead but concentrates availability risk in one location",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Schedule automated backups of the Spanner database to Cloud Storage",
+      "explanation": "Automated backups create restorable point in time copies stored in Cloud Storage to recover from accidental deletion or corruption",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Enable automatic database tuning features",
+      "explanation": "Automatic tuning focuses on performance adjustments such as query plans or resource settings rather than cross region availability",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct actions are <b>Migrate the database to a Cloud Spanner multi region configuration</b> and <b>Schedule automated backups of the Spanner database to Cloud Storage</b>.</p><p>A multi region Spanner deployment provides synchronous replication across regions with automatic failover, which delivers a very small recovery point objective and a rapid recovery time objective for a regional outage. Writes commit only after achieving quorum across replicas, so data loss is minimized, and failover is handled by the service which keeps recovery fast and predictable.</p><p>Regularly scheduled backups add a second layer of protection by enabling recovery from data corruption or accidental deletion. Keeping backups in an independent storage location and automating their creation ensures you can restore to a known good state while the multi region design handles live regional outages with minimal disruption.</p><p><i>Maintain a cold standby Spanner instance in a separate region</i> is insufficient because Spanner does not support ad hoc cross instance replication, and a cold standby would require manual promotion and data synchronization which increases both RPO and RTO.</p><p><i>Consolidate the deployment into a single region to simplify operations</i> reduces resilience and directly contradicts the requirement to withstand a regional outage while maintaining very small RPO and rapid RTO.</p><p><i>Enable automatic database tuning features</i> may improve performance or efficiency, yet it does not provide the cross regional redundancy or restore capabilities needed to meet the disaster recovery objectives.</p>",
+  "batch_id": "190",
+  "answerCode": "2,4",
+  "type": "multi-select",
+  "originalQuery": "You are designing a disaster recovery plan for your Cloud Spanner database to handle regional outages. Your strategy must ensure minimal data loss and quick recovery times. What should you do? (Choose two)",
+  "originalOptions": "A. Perform regular database backups to Cloud Storage.<br/>B. Set up a cold standby in a different region.<br/>C. Configure multi-region replication.<br/>D. Use a single-region configuration to consolidate resources.<br/>E. Enable automated database tuning.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "258",
+  "tip": "<p>When a question emphasizes <i>very small RPO</i> and <i>rapid RTO</i> for a <i>regional outage</i>, prioritize multi region deployments with synchronous replication and pair them with automated backups to cover corruption scenarios.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/replication",
+    "https://cloud.google.com/spanner/docs/instances#configurations",
+    "https://cloud.google.com/spanner/docs/backup",
+    "https://cloud.google.com/spanner/docs/backup-schedule",
+    "https://cloud.google.com/spanner/docs/export-data"
+  ],
+  "url": "https://certificationation.com/questions/exam-plan-for-your-cloud-spanner-exam-258.html",
+  "video_url": "https://certificationation.com/videos/exam-plan-for-your-cloud-spanner-exam-258.html"
+}

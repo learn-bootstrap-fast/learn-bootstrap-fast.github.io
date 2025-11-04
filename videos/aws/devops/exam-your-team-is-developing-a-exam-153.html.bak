@@ -1,0 +1,62 @@
+---
+title: "You work in a startup company, and your team isExam"
+description: "Video for you work in a startup company, and your team is developing a new Android App. Whenever a user uploads a photo in the App, a notification will be sent"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You work in a startup company, and your team is developing a new Android App. Whenever a user uploads a photo in the App, a notification will be sent to his friends immediately. An AWS DynamoDB table has been created to save the photo information per user, and the DynamoDB Stream is enabled to capture the item modifications. Which service can integrate with DynamoDB Stream, process its events and send notifications?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best solution is to use <b>AWS Lambda</b>, as it can be natively triggered by DynamoDB Streams whenever there’s a new entry or modification in the table. Your Lambda function can process the stream payload (the new photo information) and send notifications to users’ friends, possibly by publishing a message to an SNS topic or through other messaging integrations.</p><p><i>Set up an S3 bucket to process DynamoDB Stream events and notify users</i> is incorrect because S3 buckets can’t directly receive or process DynamoDB Stream records. <i>Create a CloudWatch Events rule to trigger actions from the stream</i> is not viable since CloudWatch Events does not integrate directly with DynamoDB Streams. <i>Utilize SNS to directly process notifications from DynamoDB Streams</i> is wrong because SNS cannot consume DynamoDB Stream events directly; you need an intermediate processor (such as Lambda) in between.</p><p><b>Tip:</b> When you want to react to data changes in DynamoDB tables, Lambda offers a serverless and seamless way to process change events and implement business logic immediately.</p>",
+  "query": "<p>Your company is building an Android application and wants to notify a user's friends instantly after a photo is uploaded. Photo details are stored for each user in a DynamoDB table, and DynamoDB Streams is enabled to record changes. Which AWS service can natively integrate with DynamoDB Streams to process these events and dispatch notifications?</p>",
+  "original_oid": "6793da0261969b416038a121",
+  "options": [
+    {
+      "correct": false,
+      "text": "Create a CloudWatch Events rule to trigger actions from the stream.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up an S3 bucket to process DynamoDB Stream events and notify users.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Leverage an AWS Lambda function to consume DynamoDB Stream events and send messages.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Utilize SNS to directly process notifications from DynamoDB Streams.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question175",
+  "originalQuery": "You work in a startup company, and your team is developing a new Android App.\nWhenever a user uploads a photo in the App, a notification will be sent to his friends immediately.\nAn AWS DynamoDB table has been created to save the photo information per user, and the DynamoDB Stream is enabled to capture the item modifications.\nWhich service can integrate with DynamoDB Stream, process its events and send notifications?",
+  "originalOptions": "[\"A. A Lambda function.\",\"B. A SNS notification.\",\"C. A CloudWatch Events rule.\",\"D. A S3 bucket.\"]",
+  "video_url": "https://certificationation.com/videos/exam-your-team-is-developing-a-exam-153.html",
+  "url": "https://certificationation.com/questions/exam-your-team-is-developing-a-exam-153.html"
+}

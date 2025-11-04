@@ -1,0 +1,83 @@
+---
+title: "A Database Engineer is working on optimizing the costExam"
+description: "Video for a Database Engineer is working on optimizing the cost and performance of an IoT application that ingests large amounts of time-series data. The"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A Database Engineer is working on optimizing the cost and performance of an IoT application that ingests large amounts of time-series data. The application requires low-latency read and write operations, and the data is retained for 6 months. Which of the following storage solutions should the engineer recommend for the best cost and performance optimization?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A cloud database engineer at a telematics startup that monitors refrigerated delivery vehicles needs to choose storage for a high volume stream of time series readings from 120000 devices. The system ingests about 18 million events per hour and the application must provide millisecond latency for both writes and lookups. Data must be retained for 9 months and cost efficiency is important. What storage service and key design should be selected to achieve the best balance of price and performance?",
+  "options": [
+    {
+      "text": "BigQuery with daily partitioned tables",
+      "explanation": "This is an analytical data warehouse that can partition data by date to improve query performance on large datasets.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud Spanner with interleaved tables",
+      "explanation": "This is a globally distributed relational database that supports interleaved tables to model hierarchical relationships.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud Bigtable with row keys that start with device ID followed by reversed timestamp",
+      "explanation": "This is a wide column NoSQL service where row key design can combine an identifier with a time component to align access patterns.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "AlloyDB for PostgreSQL with table partitioning by month",
+      "explanation": "This is a managed PostgreSQL compatible database that can use range partitioning on a timestamp column to organize time series data.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Cloud Bigtable with row keys that start with device ID followed by reversed timestamp</b>.</p><p><b>Cloud Bigtable</b> is designed for very high write throughput and single-digit millisecond latency for both writes and key-based reads, which matches the requirement for rapid ingestion and lookups from 120000 devices producing 18 million events per hour. The proposed row key pattern groups all readings for a device together and the reversed timestamp prevents hotspotting while making the most recent readings sort first, which speeds up point lookups for the latest value and efficient range scans for recent windows. You can apply a garbage collection rule to keep data for the nine month retention target which controls storage cost. The service scales linearly with nodes for both throughput and storage so it delivers a strong balance of price and performance for time series workloads.</p><p><i>BigQuery with daily partitioned tables</i> is excellent for analytical queries and large scans, yet it does not guarantee millisecond write latency or point lookups. Streaming inserts become available with seconds level latency and incur per-row costs, and key-based millisecond lookups are not a good fit for its columnar analytics engine.</p><p><i>Cloud Spanner with interleaved tables</i> offers strong consistency and low latency at global scale, but it is a relational system with higher cost for the same write-heavy time series workload, and interleaved tables target hierarchical relational schemas rather than a wide key design optimized for time series. For this scenario it would not provide the best price to performance ratio compared to <b>Cloud Bigtable</b>.</p><p><i>AlloyDB for PostgreSQL with table partitioning by month</i> is a managed relational database that can handle transactional loads, but sustaining this ingestion rate with millisecond writes and fast per-device lookups would require heavy indexing and significant resources. Writes are funneled through a single primary which limits horizontal write scaling, and coarse monthly partitioning does not address hotspotting or the need for very fast key-based access.</p>",
+  "batch_id": "248",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "A Database Engineer is working on optimizing the cost and performance of an IoT application that ingests large amounts of time-series data. The application requires low-latency read and write operations, and the data is retained for 6 months. Which of the following storage solutions should the engineer recommend for the best cost and performance optimization?",
+  "originalOptions": "A. Cloud Spanner with interleaved tables<br/>B. Cloud Bigtable with time-based row keys<br/>C. BigQuery with partitioned tables<br/>D. Cloud SQL with partitioned tables",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "63",
+  "tip": "<p>Match the workload traits to the service. High write throughput with millisecond reads and time series access patterns point to <i>Cloud Bigtable</i> and a row key that avoids hotspotting, such as device ID plus a <i>reversed timestamp</i>.</p>",
+  "references": [
+    "https://cloud.google.com/bigtable/docs/overview",
+    "https://cloud.google.com/bigtable/docs/schema-design",
+    "https://cloud.google.com/bigtable/docs/schema-design-time-series",
+    "https://cloud.google.com/bigtable/docs/performance",
+    "https://cloud.google.com/bigquery/docs/streaming-data-into-bigquery",
+    "https://cloud.google.com/spanner/docs/performance",
+    "https://cloud.google.com/alloydb/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-optimizing-the-cost-and-performance-exam-063.html",
+  "video_url": "https://certificationation.com/videos/exam-optimizing-the-cost-and-performance-exam-063.html"
+}

@@ -1,0 +1,82 @@
+---
+title: "A financial services company is shifting its monolithicExam"
+description: "Video for a financial services company is shifting its monolithic accounting software, currently on-premises, to Google Cloud. The goal is to move towards a"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A financial services company is shifting its monolithic accounting software, currently on-premises, to Google Cloud. The goal is to move towards a microservices architecture to allow for better feature management and independent scaling. The application relies heavily on database transactions. You need to ensure that the transition to microservices includes an appropriate database strategy with minimal downtime. What approach should you take?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "An insurance consortium named Riverbend Mutual is moving its on premises policy platform from its data center to Google Cloud. The team plans to refactor into microservices so that features can be delivered independently and scaled separately. The system relies on strict ACID transactions across many requests and leadership wants total downtime during migration kept under 15 minutes. You must choose a database approach that enables the microservices model and keeps disruption to a minimum. What should you do?",
+  "options": [
+    {
+      "text": "Provision a separate Cloud SQL instance for each microservice and migrate the related tables to that instance",
+      "explanation": "This isolates data per service and lets teams manage schemas independently but introduces complex multi service transactions.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Place API Gateway in front of the services and have the microservices use a shared Cloud Spanner database to retain strong transactional consistency during the cutover",
+      "explanation": "This steers all traffic through an entry point and relies on Cloud Spanner for horizontal scale and strongly consistent transactions.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Adopt a single high availability Cloud SQL instance with one consolidated schema for all microservices and plan to split it later",
+      "explanation": "This centralizes the database for simplicity but can limit scalability and complicate future decomposition.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Partition the monolithic schema into column families stored across multiple Cloud Bigtable clusters and connect each microservice to its portion",
+      "explanation": "This favors wide column storage and large scale throughput but does not provide multi row transactional guarantees.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Place API Gateway in front of the services and have the microservices use a shared Cloud Spanner database to retain strong transactional consistency during the cutover</b>.</p><p><b>Cloud Spanner</b> provides fully relational storage with strongly consistent distributed ACID transactions across tables which is essential when the system relies on strict transactional guarantees across many requests. It scales horizontally and offers high availability with automatic replication and online schema changes so the platform can evolve while keeping downtime to a minimum. Using <b>API Gateway</b> in front of the services helps you centralize traffic control and authentication and it allows a controlled cutover so you can shift clients to the new microservices with a brief and predictable interruption that fits within the fifteen minute goal.</p><p><i>Provision a separate Cloud SQL instance for each microservice and migrate the related tables to that instance</i> is not suitable because splitting data by service breaks the ability to execute strict ACID transactions across services. Cross instance or cross database transactions are not supported in a way that would preserve the required consistency which increases complexity and risk during cutover.</p><p><i>Adopt a single high availability Cloud SQL instance with one consolidated schema for all microservices and plan to split it later</i> allows ACID in the short term but it undermines the microservices goal of independent scaling and autonomy. The later split introduces significant data migration effort and higher disruption risk and the managed failover and maintenance behavior of this choice can still introduce brief outages that work against the tight downtime target during a complex refactor.</p><p><i>Partition the monolithic schema into column families stored across multiple Cloud Bigtable clusters and connect each microservice to its portion</i> does not meet the requirement because this store is not a relational database and it does not provide multi row or multi table ACID transactions. It only guarantees atomicity within a single row which cannot satisfy strict transactional consistency across many requests and services.</p>",
+  "batch_id": "81",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "A financial services company is shifting its monolithic accounting software, currently on-premises, to Google Cloud. The goal is to move towards a microservices architecture to allow for better feature management and independent scaling. The application relies heavily on database transactions. You need to ensure that the transition to microservices includes an appropriate database strategy with minimal downtime. What approach should you take?",
+  "originalOptions": "A. Directly connect each microservice to a dedicated Cloud SQL instance to handle its database needs.<br/>B. Implement an API gateway to manage database transactions and facilitate communication between microservices and a central Cloud Spanner database.<br/>C. Introduce a read replica for the existing database and modify the microservices to use this for read operations.<br/>D. Split the monolithic database into smaller, related datasets across multiple Cloud Bigtable instances, with each microservice connecting to its dataset.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "329",
+  "tip": "<p>Map hard requirements to service guarantees. If you see strict ACID across services and the need to scale without downtime then think of <i>Cloud Spanner</i> for strong consistency and horizontal scale and place an entry point like <i>API Gateway</i> to control and stage traffic during cutover.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/overview",
+    "https://cloud.google.com/spanner/docs/transactions",
+    "https://cloud.google.com/api-gateway/docs/overview",
+    "https://cloud.google.com/sql/docs/introduction",
+    "https://cloud.google.com/bigtable/docs/overview",
+    "https://cloud.google.com/bigtable/docs/consistency"
+  ],
+  "url": "https://certificationation.com/questions/exam-shifting-its-monolithic-accounting-software-exam-329.html",
+  "video_url": "https://certificationation.com/videos/exam-shifting-its-monolithic-accounting-software-exam-329.html"
+}

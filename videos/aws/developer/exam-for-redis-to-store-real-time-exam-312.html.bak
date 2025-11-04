@@ -1,0 +1,78 @@
+---
+title: "A gaming company is using Memorystore for Redis to storeExam"
+description: "Video for a gaming company is using Memorystore for Redis to store real-time leaderboards and user session data. The company needs to ensure high availability"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A gaming company is using Memorystore for Redis to store real-time leaderboards and user session data. The company needs to ensure high availability and disaster recovery while maintaining low-latency read and write operations. Which of the following options should the company choose to best meet their requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "An online retailer that runs limited-time sales uses Memorystore for Redis to track active shopping sessions and real-time top seller rankings. The team needs strong availability and a disaster recovery posture while keeping read and write latency very low for users concentrated in one region. Which deployment approach should they implement?",
+  "options": [
+    {
+      "text": "Memorystore for Redis Basic Tier with persistence and scheduled exports to Cloud Storage",
+      "explanation": "This approach relies on data persistence for recovery but uses a single node and does not provide automatic failover",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Memorystore for Redis with a primary in one region and a replica in a distant region",
+      "explanation": "This deployment places nodes across regions which adds significant network latency due to long-distance traffic",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Memorystore for Redis Standard Tier with a primary and replica in different zones within one region",
+      "explanation": "This configuration uses zonal redundancy in a single region and supports automatic failover while keeping latency low",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Memorystore for Redis with both the primary and replica in the same zone",
+      "explanation": "This keeps traffic local but concentrates both nodes in one failure domain which reduces resilience",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Memorystore for Redis Standard Tier with a primary and replica in different zones within one region</b>.</p><p>This approach delivers high availability because the replica in a separate zone can automatically take over if the primary fails. It maintains very low latency since all traffic stays within a single region where the users are concentrated. It strengthens disaster recovery posture for zonal failures without introducing cross region latency.</p><p><i>Memorystore for Redis Basic Tier with persistence and scheduled exports to Cloud Storage</i> is not appropriate because Basic Tier is a single node and does not provide high availability. Exports improve recoverability but they are not real time and require manual restore steps so they do not meet the strong availability requirement.</p><p><i>Memorystore for Redis with a primary in one region and a replica in a distant region</i> is not supported for Memorystore for Redis and would also add significant latency for writes and failover if it were possible. This does not satisfy the need for very low latency for a regionally concentrated user base.</p><p><i>Memorystore for Redis with both the primary and replica in the same zone</i> does not protect against zonal outages and therefore fails to provide strong availability or a meaningful disaster recovery posture.</p>",
+  "batch_id": "90",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "A gaming company is using Memorystore for Redis to store real-time leaderboards and user session data. The company needs to ensure high availability and disaster recovery while maintaining low-latency read and write operations. Which of the following options should the company choose to best meet their requirements?",
+  "originalOptions": "A. Memorystore for Redis instance with a primary and replica node in different zones within the same region.<br/>B. Memorystore for Redis instance with a primary and replica node in different regions across multiple continents.<br/>C. Memorystore for Redis instance with a primary and replica node in the same zone.<br/>D. Memorystore for Redis instance with a primary node in one region and a replica node in another region.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "312",
+  "tip": "<p>When a question emphasizes <i>low latency</i> for users in one region and <i>high availability</i> for Redis, look for multi zone deployment in the same region. Be cautious of options that suggest <i>cross region replication</i> for Memorystore for Redis because it is <i>unsupported</i>.</p>",
+  "references": [
+    "https://cloud.google.com/memorystore/docs/redis/overview",
+    "https://cloud.google.com/memorystore/docs/redis/faq"
+  ],
+  "url": "https://certificationation.com/questions/exam-for-redis-to-store-real-time-exam-312.html",
+  "video_url": "https://certificationation.com/videos/exam-for-redis-to-store-real-time-exam-312.html"
+}

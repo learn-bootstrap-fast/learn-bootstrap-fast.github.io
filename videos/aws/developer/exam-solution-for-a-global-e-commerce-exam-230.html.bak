@@ -1,0 +1,82 @@
+---
+title: "You have been tasked to design a solution for a globalExam"
+description: "Video for you have been tasked to design a solution for a global e-commerce company using BigQuery. They require real-time analysis of sales transactions. The"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have been tasked to design a solution for a global e-commerce company using BigQuery. They require real-time analysis of sales transactions. The company has a strong presence in the US, Europe, and Asia. Your design should prioritize data locality and low latency querying for each region. What is the optimal approach to meet these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "scrumtuous.com operates a global streaming platform and uses BigQuery to analyze event data. They require real time insights for plays and purchases, and they have major audiences in the United States, the European Union, and Asia Pacific. Your architecture must keep data in region and deliver very low latency queries for teams in each geography. Which approach should you implement?",
+  "options": [
+    {
+      "text": "Use BigQuery multi region and partition tables by a region field",
+      "explanation": "This keeps data in a multi region location and uses logical partitioning to separate regional data.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Adopt BigQuery Omni to analyze data in each geography across multiple clouds",
+      "explanation": "This allows querying data where it resides in non GCP clouds without moving it.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Place a single BigQuery dataset in the US and schedule BigQuery Data Transfer Service runs from the EU and APAC every 45 minutes",
+      "explanation": "This centralizes analytics in the US and uses scheduled transfers to replicate other regions&apos; data.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a dedicated BigQuery dataset in each region and query across datasets when needed",
+      "explanation": "This stores each region&apos;s data in its local dataset and still permits cross dataset queries for global analysis.",
+      "correct": true,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Create a dedicated BigQuery dataset in each region and query across datasets when needed</b>.</p><p>This approach satisfies data residency by keeping each geography’s data inside its regional BigQuery location. Query execution occurs in the same location as the data which preserves in region requirements and yields very low latency for local analysts. You can enable collaboration by sharing curated results across regions using services like Analytics Hub or by copying aggregated tables on a schedule while keeping primary ingestion and interactive queries local to each region.</p><p><i>Use BigQuery multi region and partition tables by a region field</i> is not appropriate because a multi region location does not guarantee that APAC data remains in APAC and a partition column does not determine physical data location. This choice can introduce unnecessary cross ocean latency and can conflict with strict residency needs.</p><p><i>Adopt BigQuery Omni to analyze data in each geography across multiple clouds</i> is designed for analyzing data stored in other clouds such as AWS and Azure. It adds complexity and cost without solving this Google Cloud only scenario and it does not provide managed BigQuery storage and execution per GCP region for this use case.</p><p><i>Place a single BigQuery dataset in the US and schedule BigQuery Data Transfer Service runs from the EU and APAC every 45 minutes</i> breaks data residency for the EU and APAC and it does not provide real time insights. The Data Transfer Service is built for scheduled batch transfers rather than low latency streaming analytics.</p>",
+  "batch_id": "175",
+  "answerCode": "4",
+  "type": "multiple-choice",
+  "originalQuery": "You have been tasked to design a solution for a global e-commerce company using BigQuery. They require real-time analysis of sales transactions. The company has a strong presence in the US, Europe, and Asia. Your design should prioritize data locality and low latency querying for each region. What is the optimal approach to meet these requirements?",
+  "originalOptions": "A. Use BigQuery in a multi-region setup and partition data by region.<br/>B. Implement BigQuery Omni and analyze data across multiple public clouds for each region.<br/>C. Set up a single BigQuery instance in the US and use BigQuery Transfer Service for Europe and Asia.<br/>D. Deploy a separate BigQuery dataset in each region and use BigQuery’s cross-dataset querying.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "230",
+  "tip": "<p>Look for phrases like <i>in region</i> and <i>very low latency</i>. Prefer regional datasets close to users with streaming ingestion and be wary of options that rely on multi region or scheduled transfers when the requirement is <i>real time</i>.</p>",
+  "references": [
+    "https://cloud.google.com/bigquery/docs/locations",
+    "https://cloud.google.com/bigquery/docs/locations#querying_data",
+    "https://cloud.google.com/bigquery/docs/streaming-data-into-bigquery",
+    "https://cloud.google.com/analytics-hub/docs/cross-region-sharing",
+    "https://cloud.google.com/bigquery-transfer/docs/introduction",
+    "https://cloud.google.com/bigquery-omni"
+  ],
+  "url": "https://certificationation.com/questions/exam-solution-for-a-global-e-commerce-exam-230.html",
+  "video_url": "https://certificationation.com/videos/exam-solution-for-a-global-e-commerce-exam-230.html"
+}

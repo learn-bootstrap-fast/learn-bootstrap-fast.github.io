@@ -1,0 +1,81 @@
+---
+title: "Approximately 6 TB of data is stored in an on-premisesExam"
+description: "Video for approximately 6 TB of data is stored in an on-premises data center, and you need to transfer the data daily to Cloud Storage before importing it into"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Approximately 6 TB of data is stored in an on-premises data center, and you need to transfer the data daily to Cloud Storage before importing it into Cloud Spanner. You want a reliable and efficient solution. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A manufacturing firm named SilverForge Instruments keeps about 9 TB of operational data on its own servers. The team needs to move the data to Cloud Storage every night and then import it into Cloud Spanner. They want a dependable and efficient approach that can be scheduled and monitored. What should they implement?",
+  "options": [
+    {
+      "text": "Set up Cloud Scheduler to trigger a Cloud Function that runs gsutil to copy files from the data center to Cloud Storage each night",
+      "explanation": "This uses a scheduled trigger to invoke a function that executes gsutil commands for object transfers.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Storage Transfer Service with on-premises agents and define a nightly schedule to transfer the data into Cloud Storage",
+      "explanation": "This service orchestrates scheduled transfers from local file systems to Cloud Storage by using installed agents and managed jobs.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Order Transfer Appliance and ship daily batches of data for upload to Cloud Storage",
+      "explanation": "This provides a hardware device for bulk data ingestion that is physically returned to Google for upload.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Establish Cloud VPN and run a cron based gsutil script from an on premises host to push the files to Cloud Storage each night",
+      "explanation": "This sets up a private network tunnel and relies on a custom script to copy data on a fixed schedule.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Use Storage Transfer Service with on-premises agents and define a nightly schedule to transfer the data into Cloud Storage</b>. It provides a managed and dependable way to move large on premises data sets on a schedule and it includes built in monitoring and reporting for operational visibility.</p><p>With <b>Storage Transfer Service</b> you deploy lightweight agents in the data center that read from local file systems and securely stream to Cloud Storage. You can configure nightly jobs, use parallel transfers, incremental syncing, retries, and bandwidth controls, and you can monitor progress and results in the console and through logs. This cleanly meets the requirement to land data in Cloud Storage each night so that the team can then import into Cloud Spanner using their preferred process.</p><p><i>Set up Cloud Scheduler to trigger a Cloud Function that runs gsutil to copy files from the data center to Cloud Storage each night</i> is not suitable for multi terabyte transfers from on premises because this pattern lacks managed transfer agents, robust retry and resume, and comprehensive monitoring. Serverless functions are not designed for long running large volume data movement from private data centers and you would also need to manage connectivity and credentials yourself.</p><p><i>Order Transfer Appliance and ship daily batches of data for upload to Cloud Storage</i> is intended for one time or infrequent bulk migrations where shipping hardware makes sense. It does not fit a nightly transfer pattern and the logistics would be too slow and cumbersome for 9 TB per day.</p><p><i>Establish Cloud VPN and run a cron based gsutil script from an on premises host to push the files to Cloud Storage each night</i> can work but it is not a managed and monitored solution at this scale. You would need to build and operate scheduling, error handling, retries, and observability yourself which is less dependable and less efficient than using a managed transfer service.</p>",
+  "batch_id": "203",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "Approximately 6 TB of data is stored in an on-premises data center, and you need to transfer the data daily to Cloud Storage before importing it into Cloud Spanner. You want a reliable and efficient solution. What should you do?",
+  "originalOptions": "A. Utilize Cloud VPN to create a secure connection and transfer data using gsutil with a daily cron job.<br/>B. Use Cloud Data Transfer Service for on-premises transfers with a daily schedule.<br/>C. Set up a Cloud Function triggered by Cloud Scheduler to run a gsutil job daily to transfer the data.<br/>D. Download the data to a local machine, and then use the Transfer Appliance to transfer the data.",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "327",
+  "tip": "<p>When you see requirements for dependable <i>scheduling</i> and strong <i>monitoring</i> of data movement from on premises to Cloud Storage, prefer a fully <i>managed</i> transfer service over custom scripts or serverless glue.</p>",
+  "references": [
+    "https://cloud.google.com/storage-transfer/docs/on-prem-overview",
+    "https://cloud.google.com/storage-transfer/docs/overview",
+    "https://cloud.google.com/storage-transfer/docs/create-transfers",
+    "https://cloud.google.com/storage-transfer/docs/monitoring-transfer-jobs",
+    "https://cloud.google.com/transfer-appliance/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-an-on-premises-data-center-and-exam-327.html",
+  "video_url": "https://certificationation.com/videos/exam-an-on-premises-data-center-and-exam-327.html"
+}

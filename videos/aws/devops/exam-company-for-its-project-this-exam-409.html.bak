@@ -1,0 +1,67 @@
+---
+title: "CodeDeploy is being used by a small company for itsExam"
+description: "Video for codeDeploy is being used by a small company for its project. This project aims to analyze the customers' behaviors on how to choose new cars. The team"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "CodeDeploy is being used by a small company for its project. This project aims to analyze the customers' behaviors on how to choose new cars. The team decides to use a load balancer and autoscaling for its EC2 instances as the project needs a highly available and elastic environment. And at least 4 instances are supposed to work at the same time and the number may reach at 8 during the peak hour when there are some sales activities such as at Black Friday. The company's AWS engineer wants to use the in-place deployment. What below items should the AWS engineer do before creating the CodeDeploy Deployment Group in AWS console? Select 3."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><b>Assign suitable EC2 instance tags to each server in the Auto Scaling group</b>, <b>Prepare an Auto Scaling group configured with an appropriate instance range and custom AMI if needed</b>, and <b>Ensure there is a valid IAM service role in place</b> are the correct three tasks that must be completed before creating the CodeDeploy Deployment Group:</p><ul><li><b>Assign suitable EC2 instance tags…</b> CodeDeploy identifies which EC2 instances to deploy to by matching tags, so tagging is essential before deployment setup.</li><li><b>Prepare an Auto Scaling group…</b> The group with minimum and maximum instance settings ensures there are enough servers available and incorporates any custom AMI with necessary software pre-installed.</li><li><b>Ensure there is a valid IAM service role…</b> CodeDeploy requires a dedicated IAM role to interact with AWS resources; the role must have the CodeDeploy trust and permissions policies.</li></ul><p>Why the other choices are incorrect:</p><ul><li><i>Create and configure an SNS topic for notification purposes…</i> While SNS notifications are a useful feature during deployments, it is <b>not a mandatory prerequisite</b> for creating the Deployment Group in CodeDeploy.</li><li><i>Set up the Elastic Load Balancer in advance…</i> While configuring a load balancer is <b>recommended</b> for high availability, it is <b>not a strict requirement prior to creating the Deployment Group</b>. It can be added later or is only required if you want to reroute traffic during deployment; in-place deployments can proceed without attaching a load balancer.</li></ul><p><strong>Tip:</strong> Always double-check IAM role permissions and tagging before launching deployment groups to ensure targeting and access work as expected.</p>",
+  "query": "<p>A small company wants to use AWS CodeDeploy for a project analyzing customer preferences in car selection. The application environment will use a load balancer (either CLB, ALB, or NLB) and an Auto Scaling group to maintain a minimum of four and up to eight EC2 instances for high availability. The company’s AWS engineer plans to use an in-place deployment. Which THREE steps must the AWS engineer complete before setting up the CodeDeploy Deployment Group from the AWS console?</p>",
+  "original_oid": "6793da7a61969b416038a215",
+  "options": [
+    {
+      "correct": true,
+      "text": "Assign suitable EC2 instance tags to each server in the Auto Scaling group to help CodeDeploy correctly identify deployment targets.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Prepare an Auto Scaling group configured with a minimum of 4 and a maximum of 8 instances and, if needed, use a custom AMI containing required dependencies.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Ensure there is a valid IAM service role in place, granting CodeDeploy the required permissions for deployments and trusted for use with AWS CodeDeploy.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Create and configure an SNS topic for notification purposes, since subscribing an SNS topic to the CodeDeploy application is mandatory.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up the Elastic Load Balancer in advance, regardless of type, as it is mandatory for the CodeDeploy Deployment Group setup.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question421",
+  "originalQuery": "CodeDeploy is being used by a small company for its project.\nThis project aims to analyze the customers' behaviors on how to choose new cars.\nThe team decides to use a load balancer and autoscaling for its EC2 instances as the project needs a highly available and elastic environment.\nAnd at least 4 instances are supposed to work at the same time and the number may reach at 8 during the peak hour when there are some sales activities such as at Black Friday.\nThe company's AWS engineer wants to use the in-place deployment.\nWhat below items should the AWS engineer do before creating the CodeDeploy Deployment Group in AWS console? Select 3.",
+  "originalOptions": "[\"A. Make sure that you have a service role that trusts AWS CodeDeploy with correct permissions. This should be done before creating the Deployment Group in CodeDeploy. IAM should be involved for that by creating a new role and the role type is AWS Service.\",\"B. Prepare an autoscaling group with Min 4 and Max 8 instances. Make sure that the autoscaling group has the correct autoscaling launch configurations attached. You can use the prebaked AMI to install some configuration packages for the instances.\",\"C. Make sure the correct SNS topic is created because when CodeDeploy Deployment Group is being created, one SNS topic is required to subscribe to the CodeDeploy application, which is a mandatory step\",\"D. Make sure that the Elastic Load Balancer is already setup no matter it is a Classic Load Balancer, Application Load Balancer, or Network Load Balancer as the ELB will be used in the CodeDeploy Deployment Group.\",\"E. Ensure that all instances under the autoscaling group have proper tags such as env/dev because when CodeDeploy Deployment Group is being created, EC2 tags are needed for CodeDeploy to understand the targets to deploy to.\"]",
+  "video_url": "https://certificationation.com/videos/exam-company-for-its-project-this-exam-409.html",
+  "url": "https://certificationation.com/questions/exam-company-for-its-project-this-exam-409.html"
+}

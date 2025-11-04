@@ -1,0 +1,62 @@
+---
+title: "You are a site reliable engineer in a company. YourExam"
+description: "Video for you are a site reliable engineer in a company. Your company has a new application deployed in AWS that has three tiers including frontend, backend and"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are a site reliable engineer in a company. Your company has a new application deployed in AWS that has three tiers including frontend, backend and database. Various AWS services are being used such as EC2, ELB, Auto Scaling, Route53, RDS, etc. For the whole application, the RTO (recovery time objective) is set to 1 hour. Which approach can help you the most to achieve this target?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best choice is <b>Implement a standby deployment in a secondary AWS region and use Route 53 failover routing to direct users to the standby in the event the main site becomes unavailable</b>. This is known as a warm standby or active/passive DR pattern, which allows for quick failover with pre-provisioned resources, meeting a 1-hour RTO requirement for the entire multi-tier application. A warm standby allows for faster recovery compared to re-deployment or recreating from snapshots, since resources are already running and only need to be promoted or pointed to through DNS failover.<br><br>Looking at the other options:<br><br><i>Set up frequent EBS snapshots using EBS Lifecycle Manager to capture your volumes each hour</i> focuses on protecting EBS volumes but does not address recovery of the whole stack, nor does it ensure the rapid recovery of application and database layers as required in a cross-region scenario.<br><br><i>Configure your RDS instances to take automated hourly snapshots and replicate them to another region</i> increases database durability, but this technique alone does not guarantee the availability of compute and frontend resources in another region, and restoration from snapshots can take longer than desired for a strict RTO.<br><br><i>Create a Jenkins automation that generates AMIs for your EC2 servers every hour and triggers them through a scheduled pipeline</i> provides automated server image creation, but it does not solve rapid, full application recovery by itself—re-deploying everything from AMIs can be slower than failing over to a warm standby.<br><br><b>Tip:</b> For strict RTOs, a DR setup that maintains running resources in a failover region (warm standby or even active-active) is the most effective way to ensure your application can be restored within the required window.</p>",
+  "query": "<p>You are a reliability engineer at a company that has recently deployed an application on AWS. The application architecture consists of three layers: frontend, backend, and database. You're utilizing services such as EC2, ELB, Auto Scaling, Route53, and RDS. The business requires that the application be recoverable within 1 hour should a disruption occur (a 1-hour RTO). <br><br> Which strategy best ensures you can meet this recovery time objective for the entire application?</p>",
+  "original_oid": "6793da4661969b416038a1ad",
+  "options": [
+    {
+      "correct": false,
+      "text": "Set up frequent EBS snapshots using EBS Lifecycle Manager to capture your volumes each hour.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Implement a standby deployment in a secondary AWS region and use Route 53 failover routing to direct users to the standby in the event the main site becomes unavailable.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Configure your RDS instances to take automated hourly snapshots and replicate them to another region.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Create a Jenkins automation that generates AMIs for your EC2 servers every hour and triggers them through a scheduled pipeline.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question316",
+  "originalQuery": "You are a site reliable engineer in a company.\nYour company has a new application deployed in AWS that has three tiers including frontend, backend and database.\nVarious AWS services are being used such as EC2, ELB, Auto Scaling, Route53, RDS, etc.\nFor the whole application, the RTO (recovery time objective) is set to 1 hour.\nWhich approach can help you the most to achieve this target?",
+  "originalOptions": "A. In RDS, configure each database to create regular automated snapshots every hour. Copy the snapshots to another region.\nB. Create a warm standby in another region. Use Route53 failover routing policy to route to the standby if the active application has an outage.\nC. Create regular EBS snapshots every hour using EBS lifecycle manager.\nD. Create a Jenkins pipeline to automatically create AMIs for EC2 instances. Execute the pipeline every hour.",
+  "video_url": "https://certificationation.com/videos/exam-a-company-your-company-has-exam-229.html",
+  "url": "https://certificationation.com/questions/exam-a-company-your-company-has-exam-229.html"
+}

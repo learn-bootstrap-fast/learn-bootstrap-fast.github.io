@@ -1,0 +1,81 @@
+---
+title: "The finance team uses a critical application backed by aExam"
+description: "Video for the finance team uses a critical application backed by a Cloud Spanner database, and they have reported occasional errors in financial reporting. You"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "The finance team uses a critical application backed by a Cloud Spanner database, and they have reported occasional errors in financial reporting. You want to identify these errors as they occur and determine their impact on the application's operations. What proactive step should you take?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "At Verdant Insurance a claims reconciliation service runs on an application that uses Cloud Spanner as its primary database. The operations team has noticed sporadic faults in reconciliation results. You need real time detection of these issues as they happen and you want to understand how they affect overall application health. What should you implement?",
+  "options": [
+    {
+      "text": "Create a logs based metric in Cloud Logging for known error strings and send an alert when matches are found",
+      "explanation": "This relies on application log entries to create a metric and notify when specific patterns appear.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable Error Reporting and configure notifications to email the team on new exceptions",
+      "explanation": "This service groups exceptions from the application code and can send alerts when new errors are observed.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure Cloud Monitoring alerts on Cloud Spanner read and write transaction failure metrics",
+      "explanation": "This uses native Cloud Spanner metrics in Cloud Monitoring to alert when transactions fail.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Export Cloud Spanner and application logs to Cloud Storage each evening for manual analysis",
+      "explanation": "This creates a batch export of logs to a bucket so that analysts can review them later.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Configure Cloud Monitoring alerts on Cloud Spanner read and write transaction failure metrics</b>.</p><p>This solution watches native service metrics for failed read and write transactions and raises alerts immediately when failures spike. Because it relies on managed service metrics rather than application logs, it provides a more accurate view of transactional issues and lets you correlate errors with latency and throughput to understand overall application health.</p><p>It also supports alerting policies that can capture error-rate thresholds and rolling windows, which is ideal for detecting sporadic faults as they happen. You can visualize these metrics on dashboards, track SLOs, and quickly determine blast radius when reconciliation faults occur.</p><p><i>Create a logs based metric in Cloud Logging for known error strings and send an alert when matches are found</i> is brittle because string matching can miss retries or partial failures and it does not quantify transaction failure rates. It is harder to relate to SLOs and overall health compared with native service metrics.</p><p><i>Enable Error Reporting and configure notifications to email the team on new exceptions</i> focuses on application exceptions rather than database transaction failures and it relies on email which is slower and less actionable than metric based alerting. It does not provide a direct signal of read or write transaction failure rates.</p><p><i>Export Cloud Spanner and application logs to Cloud Storage each evening for manual analysis</i> is strictly batch and cannot meet the need for real time detection. It delays investigation and provides no proactive alerting tied to service health.</p>",
+  "batch_id": "88",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "The finance team uses a critical application backed by a Cloud Spanner database, and they have reported occasional errors in financial reporting. You want to identify these errors as they occur and determine their impact on the application's operations. What proactive step should you take?",
+  "originalOptions": "A. Create a Dataflow job that processes Cloud Spanner logs in real-time to identify and email a report on transaction errors.<br/>B. Periodically export the Cloud Spanner logs to a GCS bucket for manual review at the end of each business day.<br/>C. Set up Cloud Logging to parse all application logs and alert when specific error patterns are detected.<br/>D. Use the Cloud Spanner read/write transaction statistics in Cloud Monitoring to set an alert for transaction failures.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "163",
+  "tip": "<p>When you see a need for <i>real time</i> detection and visibility into application <i>health</i>, prefer managed service metrics with alerting policies. Map alerts to SLI and SLO thresholds rather than relying on log strings or batch exports.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/monitoring",
+    "https://cloud.google.com/monitoring/alerts/using-alerting",
+    "https://cloud.google.com/monitoring/api/metrics_gcp#gcp-spanner",
+    "https://cloud.google.com/logging/docs/logs-based-metrics",
+    "https://cloud.google.com/error-reporting/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-application-backed-by-a-cloud-exam-163.html",
+  "video_url": "https://certificationation.com/videos/exam-application-backed-by-a-cloud-exam-163.html"
+}

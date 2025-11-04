@@ -1,0 +1,62 @@
+---
+title: "In your company, AWS ECS is being used to manage DockerExam"
+description: "Video for in your company, AWS ECS is being used to manage Docker containers for a Java application. Recently, to meet the market need, several important"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "In your company, AWS ECS is being used to manage Docker containers for a Java application. Recently, to meet the market need, several important features are under development and the team is under pressure to deliver new releases. Your manager asks you to notify the team in both Slack channel and email whenever the ECS task enters into the Stopped status so that relevant personnel can take action immediately. What is the best way for you to implement that?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>correct answer</b> is the option where you define a CloudWatch Event rule to detect ECS task state changes to 'STOPPED', using a Lambda target for Slack and SNS for email notifications. This approach is a best practice for ECS task status monitoring because CloudWatch Events provide native integration with ECS and deliver real-time, event-driven notifications without requiring log monitoring or parsing.</p><p>Why other options are incorrect:</p><ul><li><i>Configure ECS cluster hosts to send logs from /var/log/ecs/ to CloudWatch Logs. Then, create a Metric Filter looking for 'STOPPED', and set up an Alarm to invoke a Lambda function that sends the alerts to Slack and the email group.</i> &ndash; This relies on parsing logs to detect stopped tasks, which is indirect, more complex, and less reliable since log formats can change and there could be delays in parsing.</li><li><i>Build a CloudWatch Event rule for 'ECS Container Instance State Change' where desired status is 'STOPPED', and make a Lambda function notify both Slack and the relevant email list as its single target.</i> &ndash; This option monitors the container instance lifecycle, not ECS task lifecycle, so it won't catch when an individual task is stopped. It misses the required granularity.</li><li><i>Send /var/log/docker/ logs from ECS cluster instances to CloudWatch Logs, and create a Metric Filter for 'STOPPED'. On Alarm, trigger an SNS topic and have a Lambda function subscribed to send updates to the Slack channel and email list.</i> &ndash; Like the previous log-based method, this is convoluted and can result in missed or late alerts, since it's not specifically tuned to ECS task state events.</li></ul><p><b>Tips:</b> Always consider monitoring actual events (CloudWatch Events/EventBridge) for critical state changes rather than relying on log analysis. This is more efficient, timely, and less prone to errors or format drift. Leveraging multiple targets in the event rule (such as Lambda for Slack and SNS for emails) provides separation of concerns and easier maintainability.</p>",
+  "query": "<p>Your organization relies on AWS ECS for running Docker containers that support a Java application. With recent feature developments accelerating, your manager requests immediate notifications to both the team’s Slack channel and an email group every time an ECS task transitions into the STOPPED state. How can you create an efficient and reliable solution to fulfill this requirement?</p>",
+  "original_oid": "6793d9fc61969b416038a114",
+  "options": [
+    {
+      "correct": true,
+      "text": "Set up a CloudWatch Event rule with source 'aws.ecs' and detail-type 'ECS Task State Change' triggered when the task status is 'STOPPED'. Add a Lambda function as one target that notifies Slack and another target using SNS to send an email.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Configure ECS cluster hosts to send logs from /var/log/ecs/ to CloudWatch Logs. Then, create a Metric Filter looking for 'STOPPED', and set up an Alarm to invoke a Lambda function that sends the alerts to Slack and the email group.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Build a CloudWatch Event rule for 'ECS Container Instance State Change' where desired status is 'STOPPED', and make a Lambda function notify both Slack and the relevant email list as its single target.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Send /var/log/docker/ logs from ECS cluster instances to CloudWatch Logs, and create a Metric Filter for 'STOPPED'. On Alarm, trigger an SNS topic and have a Lambda function subscribed to send updates to the Slack channel and email list.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question162",
+  "originalQuery": "In your company, AWS ECS is being used to manage Docker containers for a Java application.\nRecently, to meet the market need, several important features are under development and the team is under pressure to deliver new releases.\nYour manager asks you to notify the team in both Slack channel and email whenever the ECS task enters into the Stopped status so that relevant personnel can take action immediately.\nWhat is the best way for you to implement that?",
+  "originalOptions": "A. Create the following CloudWatch Event rule. Add a target of Lambda function to send a notification in Slack and another target of SNS to send the email. { \"source\": [ \"aws.ecs\" ], \"detail-type\": [ \"ECS Task State Change\" ], \"detail\": { \"lastStatus\": [ \"STOPPED\" ] } }\nB. Configure the ECS cluster instances to send log files in /var/log/ecs/ to CloudWatch Logs. Create a Metric Filter to search for the keyword “STOPPED”. Create an alarm to trigger a Lambda function whenever there is a match. The Lambda function sends customized notifications to the Slack channel and email list.\nC. Create a CloudWatch Event rule as below. Use a Lambda function as the target to send notifications to both the Slack channel and the relevant email list. { \"source\": [ \"aws.ecs\" ], \"detail-type\": [ \"ECS Container Instance State Change\" ], \"detail\": { \"desireStatus\": [ \"STOPPED\" ] } }\nD. Configure the ECS cluster instances to send log files in /var/log/docker/ to CloudWatch Logs. Create a Metric Filter to search for the keyword “STOPPED”. Create an alarm to trigger an SNS notification whenever there is a match. Subscribe a Lambda function to the SNS topic which sends a message to the Slack channel and email list.",
+  "video_url": "https://certificationation.com/videos/exam-used-to-manage-docker-containers-exam-254.html",
+  "url": "https://certificationation.com/questions/exam-used-to-manage-docker-containers-exam-254.html"
+}

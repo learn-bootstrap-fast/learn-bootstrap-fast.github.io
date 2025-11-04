@@ -1,0 +1,62 @@
+---
+title: "If your application performs operations or workflowsExam"
+description: "Video for if your application performs operations or workflows that take a long time to complete, what service can the Elastic Beanstalk environment do for you?"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "If your application performs operations or workflows that take a long time to complete, what service can the Elastic Beanstalk environment do for you?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct answer is <b>Handles the configuration of an Amazon SQS queue and supervises a background worker process on each deployed instance.</b></p><p>Elastic Beanstalk provides a special Worker Environment tier for handling long-running or background processing tasks. This environment automatically sets up an Amazon SQS queue, where tasks can be placed by other components (like your web application). Each instance runs a daemon process that fetches messages from the SQS queue and executes the job. This pattern is ideal for offloading time-consuming workflows as it decouples them from the main web server, allowing efficient scaling and fault tolerance.</p><p>Why the other options are incorrect:</p><ul><li><i>Coordinates Lambda functions and executes a background daemon on every instance.</i> - Elastic Beanstalk does not natively manage Lambda functions in the way described nor does it combine this with daemon processes on EC2 instances.</li><li><i>Sets up an Amazon SNS Topic and deploys a continuously running daemon on each instance.</i> - SNS is a pub/sub service not purpose-built for background job queues. Beanstalk worker environments are designed specifically to integrate with SQS rather than SNS.</li><li><i>Manages Elastic Load Balancer settings and executes a daemon service on all instances.</i> - While ELB can distribute HTTP traffic, it is unrelated to offloading background tasks with Beanstalk Worker Environments.</li></ul><p><b>Tip:</b> Remember, for background processing with Elastic Beanstalk, think of SQS and Worker Environments!</p>",
+  "query": "<p>If your application needs to handle tasks or workflows that are time-consuming, which Elastic Beanstalk feature helps facilitate this for you?</p>",
+  "original_oid": "6793d9c061969b416038a0a0",
+  "options": [
+    {
+      "correct": false,
+      "text": "Coordinates Lambda functions and executes a background daemon on every instance.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Handles the configuration of an Amazon SQS queue and supervises a background worker process on each deployed instance.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Sets up an Amazon SNS Topic and deploys a continuously running daemon on each instance.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Manages Elastic Load Balancer settings and executes a daemon service on all instances.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question43",
+  "originalQuery": "If your application performs operations or workflows that take a long time to complete, what service can the Elastic Beanstalk environment do for you?",
+  "originalOptions": "[\"A. Manages an Amazon SQS queue and running a daemon process on each instance.\",\"B. Manages an Amazon SNS Topic and running a daemon process on each instance.\",\"C. Manages Lambda functions and running a daemon process on each instance.\",\"D. Manages the ELB and running a daemon process on each instance.\"]",
+  "video_url": "https://certificationation.com/videos/exam-operations-or-workflows-that-take-exam-039.html",
+  "url": "https://certificationation.com/questions/exam-operations-or-workflows-that-take-exam-039.html"
+}

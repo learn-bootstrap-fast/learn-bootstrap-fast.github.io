@@ -1,0 +1,82 @@
+---
+title: "A Database Engineer is working on a project thatExam"
+description: "Video for a Database Engineer is working on a project that involves a financial application with high write workloads and a requirement for strong consistency."
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A Database Engineer is working on a project that involves a financial application with high write workloads and a requirement for strong consistency. The application is currently using Cloud SQL for PostgreSQL, and the engineer is tasked with optimizing cost and performance. Which of the following strategies should the engineer implement to best achieve these objectives?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "An ecommerce team at scrumtuous.com manages an order ledger that sustains about 35,000 writes per second and requires strong consistency for every transaction. The system runs on Cloud SQL for PostgreSQL, and leadership wants to optimize performance and cost as the write volume continues to grow. What approach should the database engineer choose?",
+  "options": [
+    {
+      "text": "Introduce application-level sharding across multiple Cloud SQL instances",
+      "explanation": "This spreads data across several databases and requires routing logic in the application layer to direct writes and reads to the correct shard",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Move the workload to Bigtable",
+      "explanation": "This service provides very high write throughput for wide column data models and is commonly used for time series and key value workloads",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Migrate to Cloud Spanner to gain horizontally scalable writes with strong consistency",
+      "explanation": "This service offers distributed relational storage with strong consistency and can scale compute and storage to handle increasing write traffic",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Add read replicas to the existing Cloud SQL deployment",
+      "explanation": "This reduces load on the primary for read queries while the primary remains the only writer for all transactions",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Migrate to Cloud Spanner to gain horizontally scalable writes with strong consistency</b>.</p><p>This choice fits a high volume transactional ledger that demands strict consistency. It offers true horizontal write scalability by adding capacity while maintaining strong consistency and ACID transactions. It can handle sustained write throughput well beyond 35,000 writes per second and lets you scale up or down to balance performance and cost as demand changes.</p><p><i>Introduce application-level sharding across multiple Cloud SQL instances</i> is not a good fit because it increases complexity and fragments transactions across shards. Cross shard transactions are hard to coordinate and Cloud SQL does not provide distributed transactions across instances, which risks violating strong consistency guarantees for a ledger.</p><p><i>Move the workload to Bigtable</i> is unsuitable because Bigtable is a wide column NoSQL database that does not support relational multi row ACID transactions. Although single row reads and writes are strongly consistent, a financial ledger typically needs transactional guarantees across rows and tables which Bigtable does not provide.</p><p><i>Add read replicas to the existing Cloud SQL deployment</i> will not help because replicas only serve reads while all writes continue to go to the primary instance. This leaves write throughput and commit latency unchanged and does not meet the requirement to scale sustained writes.</p>",
+  "batch_id": "173",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "A Database Engineer is working on a project that involves a financial application with high write workloads and a requirement for strong consistency. The application is currently using Cloud SQL for PostgreSQL, and the engineer is tasked with optimizing cost and performance. Which of the following strategies should the engineer implement to best achieve these objectives?",
+  "originalOptions": "A. Implement horizontal partitioning (sharding) to distribute data across multiple instances<br/>B. Use Cloud Spanner instead of Cloud SQL to take advantage of its horizontal scaling capabilities<br/>C. Enable automatic storage increase to handle growing workloads<br/>D. Migrate the application to Firestore for better write performance",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "29",
+  "tip": "<p>Map requirements to native strengths. When you see <i>strong consistency</i> with <i>horizontally scalable writes</i> for a relational workload, choose Spanner. Remember that read replicas do not increase write capacity and that sharding or NoSQL options can compromise transactional guarantees.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/overview",
+    "https://cloud.google.com/spanner/docs/transactions",
+    "https://cloud.google.com/spanner/docs/compute-capacity",
+    "https://cloud.google.com/sql/docs/postgres/replication/using-replicas",
+    "https://cloud.google.com/bigtable/docs/consistency",
+    "https://cloud.google.com/bigtable/docs/overview#when_to_use"
+  ],
+  "url": "https://certificationation.com/questions/exam-a-project-that-involves-a-exam-029.html",
+  "video_url": "https://certificationation.com/videos/exam-a-project-that-involves-a-exam-029.html"
+}

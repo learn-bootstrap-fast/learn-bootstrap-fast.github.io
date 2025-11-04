@@ -1,0 +1,82 @@
+---
+title: "You are a Cloud Database Engineer tasked with evaluatingExam"
+description: "Video for you are a Cloud Database Engineer tasked with evaluating performance and cost tradeoffs for different database configurations. An application requires"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are a Cloud Database Engineer tasked with evaluating performance and cost tradeoffs for different database configurations. An application requires a database to support a high read/write workload, strong consistency, and low latency. Which of the following database configurations would you choose?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are advising a retail analytics group at mcnz.com on choosing a managed database on Google Cloud that balances performance and cost. Their service must process very high read and write traffic with low request latency, and every operation must use strong consistency. Which database configuration should you recommend?",
+  "options": [
+    {
+      "text": "AlloyDB for PostgreSQL with a regional cluster",
+      "explanation": "AlloyDB for PostgreSQL provides a managed PostgreSQL compatible engine with a single writable primary and optional read pools for scaling reads",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud Bigtable with SSD storage",
+      "explanation": "Cloud Bigtable is a wide column database optimized for massive throughput and low latency but it does not offer cross row transactions and uses eventual consistency for some operations",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud Spanner using a regional instance",
+      "explanation": "A regional Cloud Spanner instance delivers strong consistency and horizontal scalability with low latency inside one region and supports high throughput workloads",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Cloud Firestore Native mode in a multi-region configuration",
+      "explanation": "Cloud Firestore Native mode in a multi-region configuration offers strong consistency and high availability but it generally has higher latency and cost than a regional deployment and is tuned for document workloads",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Cloud Spanner using a regional instance</b>.</p><p>A regional deployment of <b>Cloud Spanner</b> keeps data within one region which minimizes network latency while still providing synchronous replication across zones for high availability. <b>Cloud Spanner</b> delivers external strong consistency for every read and write and scales horizontally for very high throughput. Choosing a regional configuration meets the strong consistency and low latency needs while keeping cost lower than a multi region configuration.</p><p><i>AlloyDB for PostgreSQL with a regional cluster</i> is excellent for high performance PostgreSQL with a single writable primary and read pools. It can provide low latency and transactional consistency on the primary, yet its write throughput scales primarily by vertical sizing rather than horizontal scale. For very high read and write traffic at large scale it is less suitable than <b>Cloud Spanner</b>.</p><p><i>Cloud Bigtable with SSD storage</i> offers massive throughput and low latency for wide column workloads, but it does not provide full strong consistency guarantees across replicated clusters and it lacks multi row transactions. If high availability is required with replication, strong consistency for every operation is not guaranteed.</p><p><i>Cloud Firestore Native mode in a multi-region configuration</i> provides strong consistency for document operations, however multi region replication introduces extra network hops that increase request latency. It is also not optimized for the very high sustained write rates typical of large scale OLTP workloads and multi region pricing makes it a less balanced choice for cost.</p>",
+  "batch_id": "310",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are a Cloud Database Engineer tasked with evaluating performance and cost tradeoffs for different database configurations. An application requires a database to support a high read/write workload, strong consistency, and low latency. Which of the following database configurations would you choose?",
+  "originalOptions": "A. Cloud Bigtable with SSD storage<br/>B. Cloud Spanner with regional instance configuration<br/>C. Cloud Firestore in Native mode with multi-region configuration<br/>D. Cloud SQL for PostgreSQL with read replicas",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "306",
+  "tip": "<p>Map requirements to native strengths. When you need very high throughput with <i>strong consistency</i> and low latency, default to <i>Cloud Spanner</i> and prefer a regional instance when minimizing cost is important.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/overview",
+    "https://cloud.google.com/spanner/docs/instances#configurations",
+    "https://cloud.google.com/spanner/docs/reads#strong_read",
+    "https://cloud.google.com/bigtable/docs/overview",
+    "https://cloud.google.com/bigtable/docs/replication-overview#consistency",
+    "https://cloud.google.com/firestore/docs/locations"
+  ],
+  "url": "https://certificationation.com/questions/exam-tasked-with-evaluating-performance-and-exam-306.html",
+  "video_url": "https://certificationation.com/videos/exam-tasked-with-evaluating-performance-and-exam-306.html"
+}

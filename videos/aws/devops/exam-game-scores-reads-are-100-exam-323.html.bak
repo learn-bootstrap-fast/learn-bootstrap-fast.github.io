@@ -1,0 +1,62 @@
+---
+title: "You are creating a new API for video game scores. ReadsExam"
+description: "Video for you are creating a new API for video game scores. Reads are 100 times more common than writes. The top 1% of scores are read more frequently than the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are creating a new API for video game scores. Reads are 100 times more common than writes. The top 1% of scores are read more frequently than the rest of the scores. These reads come from the high scores. Which of the following options is the best to design this system using DynamoDB?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best solution is to <b>Include a Global Secondary Index (GSI) optimized for top score retrieval and implement DAX for in-memory caching</b>.<br><br>This design leverages a GSI to make querying the highest scores extremely efficient—since GSIs allow for fast, flexible queries on non-primary attributes (such as top scores). AWS DynamoDB Accelerator (DAX) is a purpose-built in-memory cache for DynamoDB, providing microsecond response times for repeated reads, and is ideal for workloads where cached high-score data is frequently accessed. DAX is fully managed by AWS and integrates seamlessly with DynamoDB APIs.<br><br><i>Structure a DynamoDB table with significantly higher read throughput compared to write throughput, using CloudFront as a caching layer</i> is not optimal because CloudFront is a CDN mainly for caching static web content (HTML, images, etc.) and is not designed for dynamic, database-driven APIs with personalized score data.<br><br><i>Deploy a DynamoDB table balanced for similar read and write throughput, leveraging CloudFront caching</i> does not align with your access pattern—your reads vastly outweigh writes, and again, CloudFront is not suited for low-latency, dynamic API responses.<br><br><i>Use a DynamoDB table provisioned for much higher read capacity, and pair it with ElastiCache for caching</i> may seem logical, but ElastiCache requires you to manage data-invalidation, synchronization, and integration with DynamoDB manually. DAX, in contrast, is a managed and purpose-built caching service for DynamoDB, simplifying both integration and performance. <br><br><b>Tips &amp; Tricks:</b><ul><li>For highly-skewed read workloads, always consider caching.</li><li>DAX is plug-and-play with DynamoDB, offering both performance improvements and operational simplicity over alternatives like ElastiCache.</li><li>Use GSIs for flexible, efficient queries on secondary attributes (such as top scores).</li></ul></p>",
+  "query": "<p>You are designing an API to store and retrieve video game scores using DynamoDB.<br>In your workload, reads outnumber writes by a factor of 100. High-frequency access occurs for the top 1% of scores, mainly because users are pulling high scores.<br>What is the most suitable approach for building this solution on DynamoDB?</p>",
+  "original_oid": "6793d9da61969b416038a0d4",
+  "options": [
+    {
+      "correct": true,
+      "text": "Include a Global Secondary Index (GSI) optimized for top score retrieval and implement DAX for in-memory caching.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Structure a DynamoDB table with significantly higher read throughput compared to write throughput, using CloudFront as a caching layer.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Deploy a DynamoDB table balanced for similar read and write throughput, leveraging CloudFront caching.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Use a DynamoDB table provisioned for much higher read capacity, and pair it with ElastiCache for caching.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question95",
+  "originalQuery": "You are creating a new API for video game scores.\nReads are 100 times more common than writes.\nThe top 1% of scores are read more frequently than the rest of the scores.\nThese reads come from the high scores.\nWhich of the following options is the best to design this system using DynamoDB?",
+  "originalOptions": "A. DynamoDB table with 100x higher read than write throughput, with CloudFront caching.|B. DynamoDB table with roughly equal read and write throughput, with CloudFront caching.|C. DynamoDB table with 100x higher read than write throughput, with ElastiCache caching.|D. Create Global Secondary Index (GSI) properly based on the top score(s). Use DAX as the caching service.",
+  "video_url": "https://certificationation.com/videos/exam-game-scores-reads-are-100-exam-323.html",
+  "url": "https://certificationation.com/questions/exam-game-scores-reads-are-100-exam-323.html"
+}

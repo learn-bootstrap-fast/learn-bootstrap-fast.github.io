@@ -1,0 +1,80 @@
+---
+title: "You have been tasked with setting up multi-regionalExam"
+description: "Video for you have been tasked with setting up multi-regional replication for a Cloud Spanner database in a Google Cloud project to ensure high availability and"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have been tasked with setting up multi-regional replication for a Cloud Spanner database in a Google Cloud project to ensure high availability and low latency for read operations. Which of the following steps should be followed to successfully achieve this?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "An online ticketing platform operated by mcnz.com plans to run its transactional workload on Cloud Spanner with automatic replication across continents in order to keep reads fast and maintain high availability during regional outages. What is the correct sequence of steps to configure Cloud Spanner for multi regional replication?",
+  "options": [
+    {
+      "text": "Enable the Data Fusion API and configure pipelines to replicate Cloud Spanner data into other regions after creating a multi regional instance",
+      "explanation": "This option proposes using an ETL service to move data across regions after the instance is created.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Provision a Cloud Spanner instance using a multi regional configuration and then create the database within that instance",
+      "explanation": "With a multi regional instance, Spanner places replicas automatically and any database created in that instance inherits the replication topology.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Create a regional Cloud Spanner instance and use Datastream to push changes to additional regions",
+      "explanation": "This option relies on change data capture to copy updates from one region to others.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create independent Cloud Spanner databases in each region and synchronize writes using Cloud Pub/Sub",
+      "explanation": "This suggests using a messaging service to fan out write events across multiple separately managed databases.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct sequence is <b>Provision a Cloud Spanner instance using a multi regional configuration and then create the database within that instance</b>.</p><p>This is correct because Cloud Spanner replication is defined at the instance level. When you choose a multi regional instance configuration, Spanner automatically replicates data across the regions in that configuration and provides low latency reads and high availability through automatic failover. You first create the instance with the desired multi regional configuration and then create the database inside that instance so the database inherits the replication and availability characteristics.</p><p><i>Enable the Data Fusion API and configure pipelines to replicate Cloud Spanner data into other regions after creating a multi regional instance</i> is incorrect because Data Fusion is an ETL service and is not used to implement Spanner replication. Spanner provides built in synchronous replication with multi regional instance configurations, so adding Data Fusion would be unnecessary and would not preserve transactional guarantees.</p><p><i>Create a regional Cloud Spanner instance and use Datastream to push changes to additional regions</i> is incorrect because Datastream performs change data capture and would only provide asynchronous propagation of changes. This would not deliver Spanner’s strong consistency or automatic failover, and you cannot convert a regional instance into a globally replicated setup with external CDC tools.</p><p><i>Create independent Cloud Spanner databases in each region and synchronize writes using Cloud Pub/Sub</i> is incorrect because separate databases coordinated by messaging would be eventually consistent and would not maintain global serializability or ACID transactions. Pub/Sub is not a replication mechanism for Spanner and cannot provide the consistency and failover guarantees required.</p>",
+  "batch_id": "197",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "You have been tasked with setting up multi-regional replication for a Cloud Spanner database in a Google Cloud project to ensure high availability and low latency for read operations. Which of the following steps should be followed to successfully achieve this?",
+  "originalOptions": "A. Create a new Cloud Spanner instance with a multi-regional configuration, enable the Data Fusion API, and set up replication to the desired regions using Cloud Data Fusion.<br/>B. Create a new Cloud Spanner instance with a multi-regional configuration, and then create a database with a schema that includes the desired regions for replication.<br/>C. Create a new Cloud Spanner instance with a regional configuration, and then use Cloud Datastore to replicate data across multiple regions.<br/>D. Create a new Cloud Spanner instance with a multi-regional configuration, and then create new databases in each region with the desired schema, and set up replication using Cloud Pub/Sub.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "215",
+  "tip": "<p>Remember that Cloud Spanner replication is configured at the <i>instance configuration</i> level. If the goal is global availability and fast reads, look for an option that creates a <i>multi regional</i> instance first and then creates the database. Eliminate choices that add ETL, CDC, or <i>Pub/Sub</i> for replication since Spanner handles this <i>natively</i>.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/instance-configurations",
+    "https://cloud.google.com/spanner/docs/instances",
+    "https://cloud.google.com/spanner/docs/replication",
+    "https://cloud.google.com/spanner/docs/create-manage-instances"
+  ],
+  "url": "https://certificationation.com/questions/exam-multi-regional-replication-for-a-cloud-exam-215.html",
+  "video_url": "https://certificationation.com/videos/exam-multi-regional-replication-for-a-cloud-exam-215.html"
+}

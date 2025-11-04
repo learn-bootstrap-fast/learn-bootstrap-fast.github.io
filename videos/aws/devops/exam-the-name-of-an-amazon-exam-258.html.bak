@@ -1,0 +1,62 @@
+---
+title: "Last week, a developer changed the name of an AmazonExam"
+description: "Video for last week, a developer changed the name of an Amazon PostgreSQL RDS database instance from “employeeDatabase” to “employee_DB” and then updated the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Last week, a developer changed the name of an Amazon PostgreSQL RDS database instance from “employeeDatabase” to “employee_DB” and then updated the CloudFormation stack."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <strong>correct approach</strong> is to <strong>first generate a Change Set</strong> in CloudFormation, allowing you to see if your resource modification (such as renaming an RDS instance) will necessitate a resource replacement. If a replacement is indicated, create a database backup prior to executing the Change Set. This step-by-step safeguard ensures that you don’t lose data if CloudFormation replaces the database resource during the update process. Use the CloudFormation console for ongoing monitoring during the update for additional assurance.</p><p>Why are the other options incorrect?</p><ul><li><i>Ensure all Amazon RDS resources in your CloudFormation template have the <code>DeletePolicy: Keep</code> attribute set to prevent deletion during stack update operations. Take a manual backup snapshot of the database before updating.</i>: While <code>DeletePolicy: Keep</code> prevents deletion on stack deletion, it <b>does not stop replacement</b> due to resource renaming or property changes, so the RDS instance may still be replaced and data lost if not backed up at the right time.</li><li><i>Utilize AWS Data Pipeline to export the RDS database contents to Amazon S3 prior to the stack update in order to maintain a backup of your data.</i>: Data Pipeline is an alternative method for backup, but it is <b>not specifically related to CloudFormation stack management</b> or RDS changes via resource renaming. It's also less direct and more operationally complex.</li><li><i>Leverage Change Sets to preview CloudFormation changes and confirm whether your modifications will succeed or fail, particularly focusing on critical resources like RDS.</i>: Although this option describes using Change Sets, it omits the critical step of <b>reviewing for possible resource replacement and backing up data in advance</b>.</li></ul><p><strong>Tip:</strong> Always use CloudFormation Change Sets to preview changes when updating critical infrastructure, and take database backups when replacements are possible. Never rely solely on DeletePolicy for RDS safety during updates that can trigger replacements.</p>",
+  "query": "<p>A developer recently renamed an Amazon RDS PostgreSQL database instance from <code>employeeDatabase</code> to <code>employee_DB</code> before performing a CloudFormation stack update. What is the recommended process to ensure your database is protected from unintentional data loss during this type of change?</p>",
+  "original_oid": "6793da8161969b416038a224",
+  "options": [
+    {
+      "correct": false,
+      "text": "Ensure all Amazon RDS resources in your CloudFormation template have the <code>DeletePolicy: Keep</code> attribute set to prevent deletion during stack update operations. Take a manual backup snapshot of the database before updating.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Utilize AWS Data Pipeline to export the RDS database contents to Amazon S3 prior to the stack update in order to maintain a backup of your data.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "First, create a CloudFormation Change Set to preview the impact of your modifications. If the changes indicate a replacement of the RDS instance, back up the database prior to executing the Change Set. Then, proceed to execute the Change Set and monitor the process using the CloudFormation console.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Leverage Change Sets to preview CloudFormation changes and confirm whether your modifications will succeed or fail, particularly focusing on critical resources like RDS.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question436",
+  "originalQuery": "Last week, a developer changed the name of an Amazon PostgreSQL RDS database instance from “employeeDatabase” to “employee_DB” and then updated the CloudFormation stack.",
+  "originalOptions": "[\"A. Use Change Sets to check how your changes might impact your running resources, especially for critical resources such as RDS. Change Sets is also able to tell if the stack update is successful or not so that it can greatly help on the CloudFormation resources management.\",\"B. Make sure that all RDSs are protected in the DeletePolicy by using the “Keep” keyword, then they are protected from deletion when stack update is happening. You could then make a snapshot of the RDS to backup data to use it in the future.\",\"C. Use a data pipeline to copy the data from RDS to S3 for backup before executing any stack update. Using this way, the RDS instance data is saved in a suitable manner.\",\"D. Generate a change set to see if the change will cause your database to be replaced. Do the necessary backup before executing the Change Set. If everything is good, execute the Change Set and use the CloudFormation console to monitor.\"]",
+  "video_url": "https://certificationation.com/videos/exam-the-name-of-an-amazon-exam-258.html",
+  "url": "https://certificationation.com/questions/exam-the-name-of-an-amazon-exam-258.html"
+}

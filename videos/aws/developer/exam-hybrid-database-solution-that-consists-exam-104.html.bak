@@ -1,0 +1,84 @@
+---
+title: "A multinational company requires a hybrid databaseExam"
+description: "Video for a multinational company requires a hybrid database solution that consists of a managed Google Cloud database service and an on-premises bare metal"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A multinational company requires a hybrid database solution that consists of a managed Google Cloud database service and an on-premises bare metal infrastructure for certain legacy workloads. As a Database Engineer, which combination of services would best fulfill the company's requirements while maintaining low latency, data consistency, and ease of management?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Skyline Air operates a hybrid platform and needs a fully managed database in Google Cloud while several legacy reservation services must continue on dedicated bare metal systems in its colocation site. The link between the legacy tier and the cloud database must stay within the same metro and deliver under 8 millisecond round trip latency, and the business requires strong transactional consistency with straightforward operations. Which combination of Google services best satisfies these needs?",
+  "options": [
+    {
+      "text": "Cloud SQL for PostgreSQL and Google Bare Metal Solution",
+      "explanation": "This pairing combines a managed PostgreSQL database with dedicated bare metal hosted adjacent to Google Cloud for legacy workloads",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud Spanner and Google Bare Metal Solution",
+      "explanation": "This option pairs a strongly consistent horizontally scalable relational database with dedicated bare metal in a Google operated facility connected with low latency",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "AlloyDB for PostgreSQL and Google Anthos Bare Metal",
+      "explanation": "This combination uses a high performance PostgreSQL compatible service alongside Kubernetes clusters running on customer owned servers",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud Bigtable and Google Distributed Cloud Hosted",
+      "explanation": "This choice mixes a wide column NoSQL database with a Google managed software stack for restricted or disconnected environments",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Cloud Spanner and Google Bare Metal Solution</b>.</p><p>Cloud Spanner provides a fully managed relational database with external strong consistency, high availability, and automatic scaling. It delivers transactional guarantees that suit reservation systems and keeps operations straightforward since Google manages maintenance, replication, backups, and failover. A regional Spanner deployment can keep commit latency low while still providing synchronous replication across zones for resilience.</p><p>Google Bare Metal Solution places dedicated servers in facilities adjacent to Google Cloud regions within the same metro and connects them to Google Cloud with high throughput and very low latency links. This lets the legacy reservation services remain on dedicated bare metal while maintaining round trip times in the single digit millisecond range to the managed database, which satisfies the under eight millisecond latency requirement.</p><p><i>Cloud SQL for PostgreSQL and Google Bare Metal Solution</i> is less suitable for a large scale reservation platform because Cloud SQL does not provide the same external consistency model and horizontal scalability as Spanner. Meeting high and variable throughput would likely require sharding and more operational work, which conflicts with the goal of straightforward operations.</p><p><i>AlloyDB for PostgreSQL and Google Anthos Bare Metal</i> does not meet the requirement for dedicated bare metal provided as a managed service in the same metro because Anthos Bare Metal is a Kubernetes platform that runs on customer supplied hardware rather than a hosted bare metal offering. AlloyDB also does not provide the same externally consistent transactions at massive scale that Spanner offers.</p><p><i>Cloud Bigtable and Google Distributed Cloud Hosted</i> is not appropriate because Bigtable is a NoSQL wide column store without full relational transactions and ACID semantics, which conflicts with the need for strong transactional consistency. Google Distributed Cloud Hosted is designed for disconnected or highly restricted environments and does not target the metro connected colocation pattern described.</p>",
+  "batch_id": "66",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "A multinational company requires a hybrid database solution that consists of a managed Google Cloud database service and an on-premises bare metal infrastructure for certain legacy workloads. As a Database Engineer, which combination of services would best fulfill the company's requirements while maintaining low latency, data consistency, and ease of management?",
+  "originalOptions": "A. Cloud SQL for MySQL and Google Bare Metal Solution<br/>B. Cloud Spanner and Google Anthos Bare Metal<br/>C. Cloud Bigtable and Google Anthos Bare Metal<br/>D. Cloud Spanner and Google Bare Metal Solution",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "104",
+  "tip": "<p>Map the requirement for <i>strong transactional consistency</i> to relational services like Cloud Spanner and verify the connectivity constraint early. When you see a need to keep legacy systems on <i>dedicated bare metal</i> with very low latency to a managed cloud database in the same metro, think of Bare Metal Solution paired with the right managed database.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/overview",
+    "https://cloud.google.com/spanner/docs/true-time-external-consistency",
+    "https://cloud.google.com/bare-metal/docs/overview",
+    "https://cloud.google.com/sql/docs/introduction",
+    "https://cloud.google.com/alloydb/docs/overview",
+    "https://cloud.google.com/bigtable/docs/overview",
+    "https://cloud.google.com/anthos/clusters/docs/bare-metal/overview",
+    "https://cloud.google.com/distributed-cloud/hosted/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-hybrid-database-solution-that-consists-exam-104.html",
+  "video_url": "https://certificationation.com/videos/exam-hybrid-database-solution-that-consists-exam-104.html"
+}

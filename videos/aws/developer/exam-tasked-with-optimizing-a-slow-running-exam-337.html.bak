@@ -1,0 +1,81 @@
+---
+title: "As a Database Engineer, you are tasked with optimizing aExam"
+description: "Video for as a Database Engineer, you are tasked with optimizing a slow-running query in a Cloud SQL for MySQL instance. Which of the following methods is the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are tasked with optimizing a slow-running query in a Cloud SQL for MySQL instance. Which of the following methods is the most suitable for identifying the root cause of the slow query?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the database engineer for a streaming startup named AlpineFlix that runs its analytics workload on Cloud SQL for MySQL 8.0. After a recent deployment, a report that aggregates seven days of events takes several minutes and causes other requests to queue. What is the most appropriate way to pinpoint why this SQL statement is slow on the database?",
+  "options": [
+    {
+      "text": "Watch CPU and memory charts in Cloud Monitoring for the instance",
+      "explanation": "This approach focuses on host level metrics to observe general resource usage and potential saturation trends",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Add a new composite index on the columns used by the query without further analysis",
+      "explanation": "This approach creates an index on referenced columns in an attempt to speed up lookups without first understanding the execution profile",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable MySQL Performance Schema and inspect the sys schema views to review wait events and statement statistics",
+      "explanation": "This approach leverages built in MySQL instrumentation and helper views to examine waits and detailed statement performance metrics",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use Cloud Trace to profile the database request end to end",
+      "explanation": "This approach applies distributed tracing to analyze latency across services and network boundaries rather than inside the database engine",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Enable MySQL Performance Schema and inspect the sys schema views to review wait events and statement statistics</b>.</p><p>This approach gives visibility inside the database engine so you can see where time is actually spent. The instrumentation exposes wait events and statement digest statistics that let you determine whether the slowness comes from locking, scans, temporary tables, input and output, sorts, or other waits. On Cloud SQL for MySQL you can enable the feature with the appropriate flag and then use the helper views that summarize slow statements and high wait contributors which allows you to find the specific query pattern and the exact bottleneck rather than guessing.</p><p><i>Watch CPU and memory charts in Cloud Monitoring for the instance</i> is insufficient for root cause analysis of a single slow SQL statement because instance level metrics only show resource pressure. They do not reveal which waits or statements inside MySQL are responsible.</p><p><i>Add a new composite index on the columns used by the query without further analysis</i> is a guess and may add write overhead and storage without solving the actual problem. You should first confirm the access path and waits using engine instrumentation and only then design indexes with evidence.</p><p><i>Use Cloud Trace to profile the database request end to end</i> is focused on distributed request latency in applications and services. It does not provide insight into internal MySQL waits or statement level statistics that are required to diagnose a slow SQL plan.</p>",
+  "batch_id": "357",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are tasked with optimizing a slow-running query in a Cloud SQL for MySQL instance. Which of the following methods is the most suitable for identifying the root cause of the slow query?",
+  "originalOptions": "A. Use the MySQL Performance Schema and the sys schema to gather query performance information.<br/>B. Add a secondary index on the queried columns without analyzing the query.<br/>C. Increase the number of nodes in the Cloud SQL for MySQL instance.<br/>D. Monitor the instance's CPU and memory usage in the Google Cloud Console.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "337",
+  "tip": "<p>When a question asks why a specific query is slow prefer <i>engine native</i> instrumentation that shows waits and statement stats before changing schemas or tuning infrastructure.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/flags",
+    "https://cloud.google.com/sql/docs/mysql/troubleshoot-performance",
+    "https://dev.mysql.com/doc/refman/8.0/en/performance-schema.html",
+    "https://dev.mysql.com/doc/refman/8.0/en/sys-schema.html",
+    "https://cloud.google.com/trace/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-tasked-with-optimizing-a-slow-running-exam-337.html",
+  "video_url": "https://certificationation.com/videos/exam-tasked-with-optimizing-a-slow-running-exam-337.html"
+}

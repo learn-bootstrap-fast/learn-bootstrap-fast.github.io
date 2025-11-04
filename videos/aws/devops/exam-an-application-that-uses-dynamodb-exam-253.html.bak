@@ -1,0 +1,62 @@
+---
+title: "You are managing the development of an application thatExam"
+description: "Video for you are managing the development of an application that uses DynamoDB to store JSON data. You have already set the Read and Write capacity of the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are managing the development of an application that uses DynamoDB to store JSON data. You have already set the Read and Write capacity of the DynamoDB table. You are unsure of the amount of the traffic that will be received by the application during the deployment time. How can you ensure that the DynamoDB is not highly throttled and does not become a bottleneck for the application? Choose 2 answers from the options below."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The recommended strategies to avoid DynamoDB throttling when demand is uncertain are to <b>Monitor the ConsumedReadCapacityUnits and ConsumedWriteCapacityUnits metrics in CloudWatch</b> and <b>Set up a CloudWatch alarm that triggers an AWS Lambda function to adjust the Read and Write throughput of your DynamoDB table</b>.</p><p>First, tracking consumption metrics allows you to recognize when your application's traffic is nearing the allotted capacity, giving you valuable early warnings. This proactive approach helps you spot potential performance issues before they impact your users.</p><p>Second, connecting a CloudWatch alarm to a Lambda function can automate scaling operations. When thresholds are breached, Lambda can increase your table's capacity, helping avoid any throttling events resulting from surges in application requests.</p><p>The other choices are not ideal: <i>Use CloudWatch to track the SystemErrors metric for DynamoDB</i> is not as effective because SystemErrors don't necessarily reflect throttling situations—they indicate internal server errors, not traffic-induced constraints. Meanwhile, <i>Configure a CloudWatch alarm that activates AWS Lambda to launch an entirely new DynamoDB table</i> is not a scalable or practical solution, as it doesn't solve throttling and introduces operational overhead. Replicating tables isn't usually an answer to fluctuating capacity needs.</p><p><strong>Tip:</strong> Always monitor actual usage versus provisioned capacity, and leverage automation with Lambda to adjust capacity in response to real-time traffic.</p>",
+  "query": "<p>An application you are developing leverages DynamoDB for JSON data storage. While you have provisioned specific Read and Write capacity for your table, it's uncertain how much load the application will see at launch. What are the best ways to proactively prevent DynamoDB from being severely throttled or turning into a performance bottleneck during this unpredictable traffic period? (Select TWO options.)</p>",
+  "original_oid": "6793da3861969b416038a190",
+  "options": [
+    {
+      "correct": true,
+      "text": "Monitor the ConsumedReadCapacityUnits and ConsumedWriteCapacityUnits metrics in CloudWatch.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Set up a CloudWatch alarm that triggers an AWS Lambda function to adjust the Read and Write throughput of your DynamoDB table.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Use CloudWatch to track the SystemErrors metric for DynamoDB.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Configure a CloudWatch alarm that activates AWS Lambda to launch an entirely new DynamoDB table.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question287",
+  "originalQuery": "You are managing the development of an application that uses DynamoDB to store JSON data.\nYou have already set the Read and Write capacity of the DynamoDB table.\nYou are unsure of the amount of the traffic that will be received by the application during the deployment time.\nHow can you ensure that the DynamoDB is not highly throttled and does not become a bottleneck for the application? Choose 2 answers from the options below.",
+  "originalOptions": "[\"A. Monitor the ConsumedReadCapacityUnits and ConsumedWriteCapacityUnits metric using Cloudwatch.\",\"B. Monitor the SystemErrors metric using Cloudwatch\",\"C. Create a Cloudwatch alarm which would then send a trigger to AWS Lambda to increase the Read and Write capacity of the DynamoDB table.\",\"D. Create a Cloudwatch alarm which would then send a trigger to AWS Lambda to create a new DynamoDB table.\"]",
+  "video_url": "https://certificationation.com/videos/exam-an-application-that-uses-dynamodb-exam-253.html",
+  "url": "https://certificationation.com/questions/exam-an-application-that-uses-dynamodb-exam-253.html"
+}

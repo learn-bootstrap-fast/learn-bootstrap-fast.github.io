@@ -1,0 +1,62 @@
+---
+title: "An RDS MySQL database is created for a new feature thatExam"
+description: "Video for an RDS MySQL database is created for a new feature that your team is currently working on. The feature has used the database to save email transaction"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "An RDS MySQL database is created for a new feature that your team is currently working on. The feature has used the database to save email transaction data for each customer. For the database, automated snapshots have been configured and are working properly. Due to business requirements, the newest snapshot needs to be shared and used in another AWS account. How can you share this automated RDS snapshot?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct approach is to <b>duplicate the automated snapshot to create a manual snapshot and then share the manual snapshot</b> with the intended AWS account. Automated snapshots themselves cannot be shared directly due to AWS restrictions. You must first convert the automated snapshot into a manual one by copying it.<br/><br/>Let's review why the options are correct or incorrect:<br/><br/><b>First, duplicate the automated snapshot to generate a manual snapshot, and then share this new manual snapshot with the target AWS account.</b> - This is correct because AWS only permits sharing of manual DB snapshots across accounts. Automated snapshots must be copied to manual ones before they become shareable.<br/><br/><i>Choose the automated backup in the AWS Console and directly share it using the 'Share Snapshot' option.</i> - This is incorrect because automated snapshots lack the 'Share Snapshot' functionality; only manual snapshots can be shared.<br/><br/><i>Produce an encrypted manual snapshot from your RDS instance, and use either AWS Console or CLI to share it with another account.</i> - This answer is partially correct, but if the manual snapshot is encrypted and the encryption key is not shared or is AWS managed, you may face further restrictions. The core requirement is to make a manual snapshot first; encryption is an extra consideration.<br/><br/><i>It's not possible to share automated RDS snapshots with other AWS accounts.</i> - This is false: while automated snapshots themselves can't be shared, you can share them by creating a manual copy first.<br/><br/><b>Tip:</b> Always remember—AWS allows sharing of manual RDS snapshots, not automated ones, and encryption brings additional requirements regarding key sharing if enabled.</p>",
+  "query": "<p>Your team is developing a feature that uses an Amazon RDS MySQL instance to store email transaction data. Automated snapshots are enabled and functioning correctly. Recently, a business need emerged that requires the most recent snapshot to be shared with a different AWS account. <br/><br/>What steps should you follow to share this automated snapshot?</p>",
+  "original_oid": "6793d9e761969b416038a0ed",
+  "options": [
+    {
+      "correct": true,
+      "text": "First, duplicate the automated snapshot to generate a manual snapshot, and then share this new manual snapshot with the target AWS account.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Choose the automated backup in the AWS Console and directly share it using the 'Share Snapshot' option.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Produce an encrypted manual snapshot from your RDS instance, and use either AWS Console or CLI to share it with another account.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "It's not possible to share automated RDS snapshots with other AWS accounts.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question122",
+  "originalQuery": "An RDS MySQL database is created for a new feature that your team is currently working on.\nThe feature has used the database to save email transaction data for each customer.\nFor the database, automated snapshots have been configured and are working properly.\nDue to business requirements, the newest snapshot needs to be shared and used in another AWS account.\nHow can you share this automated RDS snapshot?",
+  "originalOptions": "A. First, make a copy of the snapshot, which turns it into a manual version. Then you share the copy with the other account.|B. Select the automated snapshot in the AWS console. Share the snapshot by “Actions -> Share Snapshot”.|C. Create a manual snapshot for the RDS database and make sure that it is encrypted. Then share the encrypted snapshot to another account via AWS console or CLI.|D. There is no way to share snapshots to another account for automated ones.",
+  "video_url": "https://certificationation.com/videos/exam-for-a-new-feature-that-exam-300.html",
+  "url": "https://certificationation.com/questions/exam-for-a-new-feature-that-exam-300.html"
+}

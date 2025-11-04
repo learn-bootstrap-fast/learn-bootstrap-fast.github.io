@@ -1,0 +1,62 @@
+---
+title: "Your team uses an S3 bucket called artifacts-bucket toExam"
+description: "Video for your team uses an S3 bucket called artifacts-bucket to store important files generated from pipelines. An intern accidentally removed the bucket"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your team uses an S3 bucket called artifacts-bucket to store important files generated from pipelines. An intern accidentally removed the bucket policy and added the following bucket policy:"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>correct approach</b> in this scenario is to log into the AWS Management Console as the root user, delete the incorrect bucket policy, and reinstate the previously functional policy. The <b>root user</b> has unrestricted access to all AWS services and resources in the account, even if a new bucket policy denies access to IAM users. <br><br><b>Tips:</b> If an S3 bucket policy locks out all other IAM users (sometimes even administrators, due to a deny statement), the root user is the only identity guaranteed full access and can remedy policy mistakes.<br><br><i>\"Execute the AWS CLI command 'aws s3api put-bucket-policy' using an IAM user\"</i> is incorrect because if the newly applied policy denies access, even privileged IAM users may be unable to make changes.<br><br><i>\"Any IAM user from the AWS account can use the AWS Console...\"</i> is not correct: explicit deny statements in a bucket policy override permissions that an IAM user might otherwise have.<br><br><i>\"Reach out to AWS Support to help you retrieve and reinstate the lost S3 bucket policy\"</i> is not necessary in most cases, as the account root user can always recover access themselves without AWS support intervention.<br><br><b>Summary:</b> Use the root account in the AWS console to fix S3 bucket policy mistakes that have locked out all other users.</p>",
+  "query": "<p>Your DevOps team uses an S3 bucket named <strong>artifacts-bucket</strong> for storing critical files produced by your CI/CD pipelines.<br>An intern mistakenly deleted the bucket's policy and applied a new (potentially incorrect) policy. What is the most appropriate way to restore the original working bucket policy?</p>",
+  "original_oid": "6793da9d61969b416038a25b",
+  "options": [
+    {
+      "correct": true,
+      "text": "Log into the AWS Management Console as the root user for the account, remove the current bucket policy, and reapply the prior correct policy.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Reach out to AWS Support to help you retrieve and reinstate the lost S3 bucket policy, as account users cannot fix this themselves.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Any IAM user from the AWS account can use the AWS Console to edit or remove the S3 bucket policy, even if their capabilities are explicitly limited in the policy.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Execute the AWS CLI command 'aws s3api put-bucket-policy' using an IAM user belonging to the bucket's account in order to reinstate the previous bucket policy.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question491",
+  "originalQuery": "Your team uses an S3 bucket called artifacts-bucket to store important files generated from pipelines.\nAn intern accidentally removed the bucket policy and added the following bucket policy:",
+  "originalOptions": "A. Use an IAM user of the bucket’s AWS account to execute the AWS CLI “aws s3api put-bucket-policy” to restore the bucket policy to the previous one.|B. Sign in to the Amazon S3 console as the AWS account root user, delete the incorrect bucket policy and add the previous bucket policy that worked properly.|C. Any IAM user of the AWS account can use AWS console to delete the S3 bucket policy, even if the policy explicitly denies the user the ability to perform this action.|D. This bucket policy cannot be restored by any IAM user of the account. Need to contact AWS support to recover the S3 bucket policy.",
+  "video_url": "https://certificationation.com/videos/exam-artifacts-bucket-to-store-important-files-exam-119.html",
+  "url": "https://certificationation.com/questions/exam-artifacts-bucket-to-store-important-files-exam-119.html"
+}

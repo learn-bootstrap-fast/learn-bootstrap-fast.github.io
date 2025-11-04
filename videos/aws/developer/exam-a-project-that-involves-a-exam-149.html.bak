@@ -1,0 +1,80 @@
+---
+title: "A Database Engineer is working on a project thatExam"
+description: "Video for a Database Engineer is working on a project that involves a machine learning application that generates predictions based on user profiles. The"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A Database Engineer is working on a project that involves a machine learning application that generates predictions based on user profiles. The application requires frequent updates to user profile data and fast retrieval of user profiles for making predictions. The application currently uses Firestore, and the engineer is tasked with optimizing cost and performance. Which of the following strategies should the engineer implement to best achieve these objectives?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A Cloud Database Engineer at a logistics SaaS company maintains a prediction service that uses user profile documents to generate scores. Profiles are updated frequently during the day and the service must retrieve profiles with very low latency to process roughly 30 thousand predictions per minute. The data currently lives in Firestore in Native mode and leadership wants to lower read costs without sacrificing performance. Which strategy should the engineer implement to best meet these objectives?",
+  "options": [
+    {
+      "text": "Migrate the user profile store to Cloud SQL for stronger transactional guarantees",
+      "explanation": "Cloud SQL offers ACID transactions and a relational schema which can help with strict consistency and complex joins for user data.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Introduce Cloud Memorystore for Redis as a cache for hot user profiles",
+      "explanation": "Cloud Memorystore can hold frequently requested profiles in memory which reduces backend reads and lowers latency for prediction calls.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Move the user profiles to Cloud Storage to reduce storage expenses",
+      "explanation": "Cloud Storage provides low cost object storage that is better suited for large immutable files and infrequent access patterns.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Refine Firestore query patterns and add composite indexes to speed lookups",
+      "explanation": "Optimizing queries and indexes can streamline Firestore read paths and improve specific query performance for common access patterns.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Introduce Cloud Memorystore for Redis as a cache for hot user profiles</b>. This adds a fast in-memory layer that serves repeated profile lookups with very low latency and it reduces the number of reads hitting Firestore which lowers read costs while maintaining performance for roughly 30 thousand predictions per minute.</p><p>A cache-aside approach works well here. The service checks the cache first and serves hits immediately. On a miss it reads from Firestore and places the document into the cache for subsequent requests. You can use time to live settings and simple invalidation on updates so the cache stays fresh while Firestore remains the source of truth. Because Firestore bills per document read, every cache hit avoids a billable read, so the savings grow with traffic while the cache maintains submillisecond access for hot keys.</p><p><i>Migrate the user profile store to Cloud SQL for stronger transactional guarantees</i> is not a good fit. The workload is read heavy with simple document retrievals and does not require complex relational transactions. Moving to a relational database adds migration effort and ongoing instance costs and connection scaling concerns and it is unlikely to match the low latency and horizontal read throughput that an in-memory cache provides for this pattern.</p><p><i>Move the user profiles to Cloud Storage to reduce storage expenses</i> is inappropriate for profile serving. Object storage is not optimized for high QPS document lookups with very low latency or frequent small updates. It may lower storage costs but it would likely increase request latency and operational complexity and it does not meet the real-time access requirement.</p><p><i>Refine Firestore query patterns and add composite indexes to speed lookups</i> can improve certain filtered queries but it does not reduce read charges because each document read is still billed. Profile retrieval is often by document ID which is already efficient, and additional indexes can even increase write costs. This does not meet the goal of lowering read costs while maintaining performance.</p>",
+  "batch_id": "65",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "A Database Engineer is working on a project that involves a machine learning application that generates predictions based on user profiles. The application requires frequent updates to user profile data and fast retrieval of user profiles for making predictions. The application currently uses Firestore, and the engineer is tasked with optimizing cost and performance. Which of the following strategies should the engineer implement to best achieve these objectives?",
+  "originalOptions": "A. Optimize Firestore queries and indexes for efficient data retrieval<br/>B. Implement a caching layer using Cloud Memorystore for frequently accessed user profiles<br/>C. Migrate the user profiles to Cloud Storage for lower storage costs<br/>D. Migrate the user profiles to Cloud SQL for better transactional consistency",
+  "domain": "Manage a solution that can span multiple database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "149",
+  "tip": "<p>When a question asks to lower *read* costs without losing *low-latency* performance on a read-heavy workload, think about adding a cache in front of the existing database rather than migrating the primary store.</p>",
+  "references": [
+    "https://cloud.google.com/memorystore/docs/redis/overview",
+    "https://cloud.google.com/firestore/pricing",
+    "https://cloud.google.com/architecture/best-practices-caching",
+    "https://cloud.google.com/firestore/docs/best-practices"
+  ],
+  "url": "https://certificationation.com/questions/exam-a-project-that-involves-a-exam-149.html",
+  "video_url": "https://certificationation.com/videos/exam-a-project-that-involves-a-exam-149.html"
+}

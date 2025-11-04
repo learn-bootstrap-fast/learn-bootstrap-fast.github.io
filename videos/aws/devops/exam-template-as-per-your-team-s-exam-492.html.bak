@@ -1,0 +1,62 @@
+---
+title: "You've created a Cloudformation template as per yourExam"
+description: "Video for you've created a Cloudformation template as per your team's request which is required for testing an application. The requirement is that when there"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You've created a Cloudformation template as per your team's request which is required for testing an application. The requirement is that when there is a request for stack deletion, the database should still be preserved for future reference.How can you achieve this using Cloudformation?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct solution is to set the <b>DeletionPolicy attribute to \"Retain\"</b> in your CloudFormation template for the AWS::RDS::DBInstance resource. This special policy tells CloudFormation to keep the RDS instance intact and not delete it, even when you delete the stack. This makes sure your data stays safe for future reference.</p><p>Let’s look at why the other choices are not suitable:</p><ul><li><i>Configure a Read Replica in the RDS setup to ensure the replica remains available after deleting the stack.</i> – Read Replicas are useful for scaling and high availability, but they do not protect your original DB instance upon stack deletion. Also, CloudFormation will remove replicas created within the template when the stack is deleted unless explicitly told to retain them.</li><li><i>Include a WaitPolicy property with the value \"Retain\" for the AWS::RDS::DBInstance resource in your CloudFormation template.</i> – There is no WaitPolicy property in CloudFormation for RDS resources; thus, this option would not work or provide the desired behavior.</li><li><i>Change the DBInstanceClass property of the AWS::RDS::DBInstance to a read-only type in the template.</i> – The DBInstanceClass property determines the instance size/type, not its data retention policy. It doesn't affect what happens when a stack is deleted and will not preserve your database.</li></ul><p><b>Tip:</b> Use the DeletionPolicy \"Retain\" on resources you want to keep after deleting a stack, especially for databases and persistent storage!</p>",
+  "query": "<p>Your team needs to use a CloudFormation template for application testing. There’s an important requirement: if the stack is deleted, the associated database should not be removed, as it must be kept for future analysis. With CloudFormation, what’s the correct approach to meet this need?</p>",
+  "original_oid": "6793da6a61969b416038a1f7",
+  "options": [
+    {
+      "correct": false,
+      "text": "Configure a Read Replica in the RDS setup to ensure the replica remains available after deleting the stack.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "In your AWS CloudFormation template, assign the DeletionPolicy attribute with the value \"Retain\" for your AWS::RDS::DBInstance resource.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Include a WaitPolicy property with the value \"Retain\" for the AWS::RDS::DBInstance resource in your CloudFormation template.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Change the DBInstanceClass property of the AWS::RDS::DBInstance to a read-only type in the template.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question391",
+  "originalQuery": "You've created a Cloudformation template as per your team's request which is required for testing an application.\nThe requirement is that when there is a request for stack deletion, the database should still be preserved for future reference.How can you achieve this using Cloudformation?",
+  "originalOptions": "[\"A. Ensure that the RDS is created with Read Replica`s so that the Read Replica remains after the stack is torn down.\",\"B. In the AWS CloudFormation template, set the DeletionPolicy of theAWS::RDS::DBInstance’s DeletionPolicy property to “Retain.”\",\"C. In the AWS CloudFormation template, set the WaitPolicy of the AWS::RDS::DBInstance’s WaitPolicy property to “Retain.”\",\"D. In the AWS CloudFormation template, set the AWS::RDS::DBInstance’s DBlnstanceClass property to be read-only.\"]",
+  "video_url": "https://certificationation.com/videos/exam-template-as-per-your-team-s-exam-492.html",
+  "url": "https://certificationation.com/questions/exam-template-as-per-your-team-s-exam-492.html"
+}

@@ -1,0 +1,82 @@
+---
+title: "You are tasked with modernizing a legacy e-commerceExam"
+description: "Video for you are tasked with modernizing a legacy e-commerce platform that is currently running on a monolithic architecture with a single relational database."
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are tasked with modernizing a legacy e-commerce platform that is currently running on a monolithic architecture with a single relational database. The objective is to shift to a microservices architecture on Google Cloud to allow for better scalability and faster feature deployment. Which approach to database migration would align with these goals while ensuring minimal disruption?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "BlueRiver Outfitters operates a legacy online store on example.com that uses a single relational database behind a large monolithic application. The team plans to shift to microservices on Google Cloud over the next 9 months in order to support daily releases and to handle traffic that may spike by 8 times during seasonal events. Which database migration strategy best supports these goals while keeping customer impact minimal?",
+  "options": [
+    {
+      "text": "Place Apigee in front of the monolith and continue routing all reads and writes to the single database until every new service is deployed",
+      "explanation": "This puts an API management layer in front of the existing system so that external clients integrate with a single endpoint while the backend remains unchanged",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Refactor the application into independently deployable services first and then migrate each service&apos;s schema and data in stages to its own Cloud Spanner database",
+      "explanation": "This approach focuses on carving out services and then assigning each one its own Cloud Spanner database with phased data cutovers per service",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Split the monolithic schema into multiple schemas within a single Cloud SQL instance that align to services and allow services to perform cross schema joins when needed",
+      "explanation": "This keeps one database engine while using separate schemas to organize tables by service and relies on SQL joins across schemas for shared access",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Redesign the relational schema into documents and collections and move every service to Firestore",
+      "explanation": "This reworks the data model from relational to document oriented and places each service onto a NoSQL store",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Refactor the application into independently deployable services first and then migrate each service's schema and data in stages to its own Cloud Spanner database</b>.</p><p>This approach supports daily releases because each service can be deployed and tested independently once it owns its schema and data. You can migrate incrementally by carving out one service at a time and backfilling or dual writing as needed, which keeps customer impact minimal since the rest of the monolith keeps running. Cloud Spanner provides horizontal scalability, strong consistency, high availability, and online schema changes, so it can handle traffic that spikes by eight times while preserving transactional integrity.</p><p>Decoupling the data per service removes cross team and cross release contention. Each service can scale independently and you avoid a risky big bang cutover. This pattern aligns with incremental modernization strategies that safely migrate functions from a monolith while maintaining stable user experiences.</p><p><i>Place Apigee in front of the monolith and continue routing all reads and writes to the single database until every new service is deployed</i> does not address the core bottleneck because the shared database remains a single point for all writes and scaling. It delays the necessary data decomposition and leads to a large risky cutover later rather than enabling incremental migrations and independent releases.</p><p><i>Split the monolithic schema into multiple schemas within a single Cloud SQL instance that align to services and allow services to perform cross schema joins when needed</i> keeps a single primary for writes which limits scale during peak events. Cross schema joins preserve tight coupling across services and hinder independent deployments, and vertical scaling or read replicas cannot overcome primary write limits for sustained eight times spikes.</p><p><i>Redesign the relational schema into documents and collections and move every service to Firestore</i> requires a wholesale data model change that is unlikely to be low impact. Firestore is a document database without relational joins and is not an easy drop in replacement for a transactional relational monolith, so this path adds significant risk and effort without clear benefit for the stated goals.</p>",
+  "batch_id": "352",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "You are tasked with modernizing a legacy e-commerce platform that is currently running on a monolithic architecture with a single relational database. The objective is to shift to a microservices architecture on Google Cloud to allow for better scalability and faster feature deployment. Which approach to database migration would align with these goals while ensuring minimal disruption?",
+  "originalOptions": "A. Refactor the application into microservices first, then sequentially migrate each microservice's data to dedicated Cloud Spanner instances.<br/>B. Use Cloud Endpoints to manage API calls to the monolithic database until each microservice can be provided with its own database.<br/>C. Split the monolithic database into smaller databases corresponding to each microservice, and connect them using Cloud SQL federated queries.<br/>D. Convert the relational database schema into a NoSQL schema and use Firestore for each microservice.",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "114",
+  "tip": "<p>Watch for options that keep a <i>shared database</i> behind microservices because that usually prevents independent releases and scaling. Prefer incremental migrations that move <i>one service at a time</i> and choose a database that matches the required consistency and write scale, such as <i>Cloud Spanner</i> for global relational workloads.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/overview",
+    "https://cloud.google.com/architecture/strangling-a-monolith",
+    "https://cloud.google.com/architecture/microservices-architecture-on-google-cloud",
+    "https://cloud.google.com/sql/docs/introduction",
+    "https://cloud.google.com/sql/docs/features#scale",
+    "https://cloud.google.com/firestore/docs/data-model"
+  ],
+  "url": "https://certificationation.com/questions/exam-legacy-e-commerce-platform-that-is-exam-114.html",
+  "video_url": "https://certificationation.com/videos/exam-legacy-e-commerce-platform-that-is-exam-114.html"
+}

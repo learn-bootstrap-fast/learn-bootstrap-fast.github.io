@@ -1,0 +1,62 @@
+---
+title: "You have implemented a system to automate deployments ofExam"
+description: "Video for you have implemented a system to automate deployments of your configuration and application dynamically after an Amazon EC2 instance in an Auto"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have implemented a system to automate deployments of your configuration and application dynamically after an Amazon EC2 instance in an Auto Scaling group is launched. Your system uses a configuration management tool that works in a standalone configuration, where there is no master node. Due to the volatility of application load, new instances must be brought into service within three minutes of the launch of the instance operating system. The deployment stages take the following times to complete:"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <strong>second option</strong> is the most effective and efficient approach given your time constraints and requirements.<br><br>By pre-installing the configuration management agent and the application framework into your Amazon Machine Image (AMI), you eliminate the need for time-consuming installation steps after the instance launches. When you leverage the EC2 UserData script on boot, you can dynamically pull the most up-to-date configuration artifacts and application code from Amazon S3, ensuring that every instance uses the latest version on deployment. This method balances speed (by reducing initialization steps) with flexibility and maintainability (by separating rapidly changing application code from the AMI). With fewer steps for each launch, you maximize your chances of completing all setup actions within the three-minute window.<br><br>Here's why the other choices are less optimal:<br><br><em>\"Prepare a custom Amazon Machine Image that includes all required components (agent, configuration files, application code, and frameworks) pre-baked, and set up a startup script that triggers the agent at instance launch.\"</em> (Option 1): While this will guarantee fast launches, it lacks flexibility: every application or configuration change requires re-baking and redeploying the AMI, which is operationally cumbersome and can delay urgent deployments.<br><br><em>\"Configure the launch settings for your Auto Scaling group to run a UserData script on instance boot. This script installs the agent, retrieves configuration details and application code from an S3 bucket, and then executes the agent to finalize setup.\"</em> (Option 3): Installing the agent on each launch can introduce unpredictable initialization delays and increase the risk of failures, especially if dependencies or internet access are problematic, making it harder to consistently meet the three-minute constraint.<br><br><em>\"Set up an external web service that monitors the EC2 API for new Auto Scaling group instances. Once a new instance appears, the service remotely SSHes to the host, installs the agent, copies over configuration and code, and runs the agent.\"</em> (Option 4): This is an unnecessarily complex and error-prone solution that depends on direct networking and can introduce additional latency and points of failure. It also doesn't scale well and may not meet security standards.<br><br><strong>Tips:</strong> Favor including as much of the static setup as possible in your custom AMI to minimize launch-time work, and use dynamic scripts for frequently changing elements. Always leverage UserData for final configuration as part of instance bootstrapping.</p>",
+  "query": "<p>You are responsible for automating the dynamic deployment of configurations and applications every time a new EC2 instance starts within an Auto Scaling group.<br>The configuration management agent operates in a standalone fashion with no central server.<br>Given rapidly changing workloads, your solution must ensure that new instances are fully provisioned and running the correct application within three minutes of OS startup.<br>Each deployment step takes a finite, known amount of time to complete.<br>What is the <strong>best</strong> way to reliably meet the time constraint and automate configuration and deployment in this scenario?</p>",
+  "original_oid": "6793da3561969b416038a18a",
+  "options": [
+    {
+      "correct": false,
+      "text": "Prepare a custom Amazon Machine Image that includes all required components (agent, configuration files, application code, and frameworks) pre-baked, and set up a startup script that triggers the agent at instance launch.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Install only the configuration management agent and application framework in your custom AMI, then configure UserData in your Auto Scaling launch settings to pull the latest configuration and code from S3 and run the agent.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Configure the launch settings for your Auto Scaling group to run a UserData script on instance boot. This script installs the agent, retrieves configuration details and application code from an S3 bucket, and then executes the agent to finalize setup.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up an external web service that monitors the EC2 API for new Auto Scaling group instances. Once a new instance appears, the service remotely SSHes to the host, installs the agent, copies over configuration and code, and runs the agent.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question281",
+  "originalQuery": "You have implemented a system to automate deployments of your configuration and application dynamically after an Amazon EC2 instance in an Auto Scaling group is launched.\nYour system uses a configuration management tool that works in a standalone configuration, where there is no master node.\nDue to the volatility of application load, new instances must be brought into service within three minutes of the launch of the instance operating system.\nThe deployment stages take the following times to complete:",
+  "originalOptions": "[\"A. Configure your Auto Scaling launch configuration with an Amazon EC2 UserData script to install the agent, pull configuration artifacts and application code from an Amazon S3 bucket, and then execute the agent to configure the infrastructure and application.\",\"B. Build a custom Amazon Machine Image that includes all components pre-installed, including an agent, configuration artifacts, application frameworks, and code. Create a startup script that executes the agent to configure the system onstartup.\",\"C. Build a custom Amazon Machine Image that includes the configuration management agent and application framework pre-installed. Configure your Auto Scaling launch configuration with an Amazon EC2 UserData script to pull configuration artifacts and application code from an Amazon S3 bucket, and then execute the agent to configure the system.\",\"D. Create a web service that polls the Amazon EC2 API to check for new instances that are launched in an Auto Scaling group. When it recognizes a new instance, execute a remote script via SSH to install the agent, SCP the configuration artifacts and application code, and finally execute the agent to configure the system.\"]",
+  "video_url": "https://certificationation.com/videos/exam-automate-deployments-of-your-configuration-exam-394.html",
+  "url": "https://certificationation.com/questions/exam-automate-deployments-of-your-configuration-exam-394.html"
+}

@@ -1,0 +1,87 @@
+---
+title: "You are managing a Cloud SQL instance that is crucialExam"
+description: "Video for you are managing a Cloud SQL instance that is crucial for handling transactional data for your e-commerce platform. Customers have experienced"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are managing a Cloud SQL instance that is crucial for handling transactional data for your e-commerce platform. Customers have experienced performance degradation during high traffic periods due to resource contention and connection bottlenecks. You want to optimize database performance and resilience for future high-traffic scenarios. What should you do? (Choose two)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You operate a Cloud SQL for PostgreSQL instance that powers order processing for the scrumtuous.com marketplace. During evening promotions and weekend peaks customers report slow checkouts that align with high CPU usage and a surge of short lived client connections. You want to enhance throughput and improve resilience ahead of the next major sale while leaving the application mostly as it is. What should you do?",
+  "options": [
+    {
+      "text": "Increase the allocated SSD storage capacity to raise IOPS limits",
+      "explanation": "Cloud SQL SSD IOPS scales with provisioned size so enlarging storage can improve disk throughput",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create read replicas and route read only queries away from the primary instance",
+      "explanation": "Read replicas can offload read heavy workloads and reduce contention on the primary writer",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Add a connection pooling layer so clients reuse sessions instead of opening many new connections",
+      "explanation": "Connection pooling limits backend connections and reduces setup overhead which alleviates bottlenecks during spikes",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Scale the instance to a larger machine type with more vCPUs and memory",
+      "explanation": "Upgrading the instance provides more compute resources which can increase overall capacity",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Implement application level sharding to split data across several Cloud SQL instances",
+      "explanation": "Sharding distributes data across multiple instances but introduces significant application and operational complexity",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct options are <b>Add a connection pooling layer so clients reuse sessions instead of opening many new connections</b> and <b>Create read replicas and route read only queries away from the primary instance</b>.</p><p><b>Add a connection pooling layer so clients reuse sessions instead of opening many new connections</b> directly addresses the surge of short lived connections that increases backend process churn and CPU usage in PostgreSQL. A lightweight pooler such as PgBouncer keeps a small set of server connections open and lets many clients reuse them. This reduces authentication overhead and process creation, smooths spikes, and increases throughput without requiring major application changes since you generally only point the app to the pooler endpoint.</p><p><b>Create read replicas and route read only queries away from the primary instance</b> offloads read traffic so the primary can focus on writes and critical transactions. This improves overall throughput during promotions and increases resilience because you can continue serving reads from replicas if the primary becomes constrained, and replicas can be promoted in a failover scenario when appropriate.</p><p><i>Increase the allocated SSD storage capacity to raise IOPS limits</i> does not target the described bottleneck. The symptoms point to CPU pressure and connection churn rather than disk saturation, so adding storage IOPS would increase cost without fixing the root cause.</p><p><i>Scale the instance to a larger machine type with more vCPUs and memory</i> may provide temporary relief but it does not solve the inefficiency from excessive connection creation and it does not add read scalability or additional resilience. The more sustainable improvements come from pooling and read distribution.</p><p><i>Implement application level sharding to split data across several Cloud SQL instances</i> requires significant application and data model changes which conflicts with the goal to keep the application mostly unchanged. It also adds operational complexity that is unnecessary when read replicas and pooling address the current limitations.</p>",
+  "batch_id": "5",
+  "answerCode": "2,3",
+  "type": "multi-select",
+  "originalQuery": "You are managing a Cloud SQL instance that is crucial for handling transactional data for your e-commerce platform. Customers have experienced performance degradation during high traffic periods due to resource contention and connection bottlenecks. You want to optimize database performance and resilience for future high-traffic scenarios. What should you do? (Choose two)",
+  "originalOptions": "A. Migrate to a higher-tier instance with more vCPUs.<br/>B. Increase the instance’s storage to improve throughput.<br/>C. Implement connection pooling to manage client connections efficiently.<br/>D. Use database sharding to split the database across multiple instances.<br/>E. Use read replicas to distribute read queries.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "326",
+  "tip": "<p>Map symptoms to the bottleneck. When you see <i>many short lived connections</i> on Cloud SQL for PostgreSQL think <i>connection pooling</i>. When you need more throughput with minimal change think <i>read replicas for read heavy traffic</i> before vertical scaling.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/pgbouncer",
+    "https://cloud.google.com/sql/docs/postgres/manage-connections",
+    "https://cloud.google.com/sql/docs/postgres/replication/read-replicas",
+    "https://cloud.google.com/sql/docs/postgres/performance",
+    "https://cloud.google.com/compute/docs/disks/performance#ssd_persistent_disk"
+  ],
+  "url": "https://certificationation.com/questions/exam-that-is-crucial-for-handling-exam-326.html",
+  "video_url": "https://certificationation.com/videos/exam-that-is-crucial-for-handling-exam-326.html"
+}

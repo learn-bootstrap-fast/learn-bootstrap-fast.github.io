@@ -1,0 +1,80 @@
+---
+title: "A Database Engineer is tasked with sizing a Google CloudExam"
+description: "Video for a Database Engineer is tasked with sizing a Google Cloud Pub/Sub instance for a real-time analytics system. The current environment workload metrics"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A Database Engineer is tasked with sizing a Google Cloud Pub/Sub instance for a real-time analytics system. The current environment workload metrics and requirements are as follows: 100,000 messages per second during peak times 10 MB average message size 99.9% durability requirement 1 GB per second sustained throughput during peak times The company expects a 100% increase in messages per second, and a 50% increase in average message size over the next year. Which of the following instance configurations is the most appropriate to handle the anticipated growth while optimizing costs?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "BluePeak Media is planning capacity for its clickstream personalization pipeline that runs on Google Cloud Pub/Sub. The current peak load is 90,000 messages per second and the average message size is 8 MB. The team requires 99.9% durability and sustains about 750 MB per second at peak. Forecasts indicate an 80% increase in message volume and a 25% increase in average message size over the next 12 months. Which configuration should be selected to accommodate the projected growth while controlling costs?",
+  "options": [
+    {
+      "text": "Cloud Pub/Sub with a quota of 250,000 messages per second and 12 MB average message size",
+      "explanation": "This configuration provides a quota of 250,000 messages per second with an average message size of 12 MB to handle heavy peak traffic.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud Pub/Sub with a quota of 162,000 messages per second and 8 MB average message size",
+      "explanation": "This configuration sets the message rate to 162,000 per second while keeping the average message size at 8 MB for increased throughput without changing payload size.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud Pub/Sub with a quota of 162,000 messages per second and 10 MB average message size",
+      "explanation": "This configuration sets the quota to 162,000 messages per second with an average message size of 10 MB to support higher throughput and payloads.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Cloud Pub/Sub with a quota of 320,000 messages per second and 15 MB average message size",
+      "explanation": "This configuration increases the quota to 320,000 messages per second and uses a 15 MB average message size for very large spikes and payloads.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct configuration is <b>Cloud Pub/Sub with a quota of 162,000 messages per second and 10 MB average message size</b>.</p><p>This matches the projected growth. The current peak of 90,000 messages per second increased by 80 percent becomes 162,000 messages per second, and the average message size of 8 MB increased by 25 percent becomes 10 MB. Right sizing to the forecasted peak meets the requirement while controlling costs. Cloud Pub/Sub provides high durability across zones, so the durability requirement is satisfied with this choice.</p><p>Multiplying 90,000 by 1.8 gives 162,000 messages per second, and multiplying 8 MB by 1.25 gives 10 MB. Choosing a quota that aligns with the projected peak avoids unnecessary overprovisioning and reduces the risk of throttling during bursts.</p><p><i>Cloud Pub/Sub with a quota of 250,000 messages per second and 12 MB average message size</i> significantly overprovisions both rate and size compared to the forecast, which can lead to unnecessary cost without improving the outcome.</p><p><i>Cloud Pub/Sub with a quota of 162,000 messages per second and 8 MB average message size</i> keeps the correct message rate but underestimates the post growth message size, which risks backlog growth and throughput pressure at peak.</p><p><i>Cloud Pub/Sub with a quota of 320,000 messages per second and 15 MB average message size</i> greatly exceeds the projected needs on both dimensions, which is unnecessary and does not help control costs.</p>",
+  "batch_id": "312",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "A Database Engineer is tasked with sizing a Google Cloud Pub/Sub instance for a real-time analytics system. The current environment workload metrics and requirements are as follows: 100,000 messages per second during peak times 10 MB average message size 99.9% durability requirement 1 GB per second sustained throughput during peak times The company expects a 100% increase in messages per second, and a 50% increase in average message size over the next year. Which of the following instance configurations is the most appropriate to handle the anticipated growth while optimizing costs?",
+  "originalOptions": "A. Cloud Pub/Sub with a quota of 400,000 messages per second and 15 MB average message size<br/>B. Cloud Pub/Sub with a quota of 200,000 messages per second and 15 MB average message size<br/>C. Cloud Pub/Sub with a quota of 400,000 messages per second and 30 MB average message size<br/>D. Cloud Pub/Sub with a quota of 300,000 messages per second and 15 MB average message size",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "113",
+  "tip": "<p>Compute the future peak by multiplying the current peak by the <i>forecasted</i> growth factors for both rate and size, then choose the smallest configuration that meets that peak. Remember that Pub/Sub durability is built in, so focus on sizing for <i>peak</i> throughput to avoid throttling without overprovisioning.</p>",
+  "references": [
+    "https://cloud.google.com/pubsub/quotas",
+    "https://cloud.google.com/pubsub/docs/performance",
+    "https://cloud.google.com/pubsub/docs/reliability",
+    "https://cloud.google.com/pubsub/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-with-sizing-a-google-cloud-exam-113.html",
+  "video_url": "https://certificationation.com/videos/exam-with-sizing-a-google-cloud-exam-113.html"
+}

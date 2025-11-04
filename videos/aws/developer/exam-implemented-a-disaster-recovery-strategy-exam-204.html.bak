@@ -1,0 +1,80 @@
+---
+title: "As a Database Engineer, you have implemented a disasterExam"
+description: "Video for as a Database Engineer, you have implemented a disaster recovery strategy for a data analytics application with a multi-regional architecture. To"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you have implemented a disaster recovery strategy for a data analytics application with a multi-regional architecture. To validate the effectiveness of the disaster recovery plan, you must perform periodic tests. Which of the following options is the best approach for testing the disaster recovery plan while minimizing the impact on production workloads and ensuring accurate test results?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the lead database engineer at Lumina Metrics, a retail analytics provider that runs services on scrumtuous.com, and you operate a three region analytics platform on Google Cloud that serves executive dashboards and nightly models. Executives require quarterly disaster recovery drills that must not disrupt live requests and the results must closely reflect real recovery behavior. What is the best way to execute these drills so that production impact stays minimal and test fidelity remains high?",
+  "options": [
+    {
+      "text": "Create a temporary environment from a recent database snapshot and rehearse a recovery scenario",
+      "explanation": "This builds a short lived copy from backups that allows basic restore validation without changing the live system",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Run chaos experiments in the production stack by injecting random process and network failures",
+      "explanation": "This introduces unpredictable faults in the live environment to observe how services behave under stress",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Stand up a parallel environment that matches production and supply it with near real time database replication to conduct DR drills",
+      "explanation": "This uses continuously replicated data in an isolated setup so teams can practice failover and recovery steps safely",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Skip dedicated tests and use the presence of backups and configured replication as evidence of DR readiness",
+      "explanation": "This relies on backup status and replication jobs rather than performing end to end recovery exercises",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Stand up a parallel environment that matches production and supply it with near real time database replication to conduct DR drills</b>.</p><p>This approach lets you rehearse end to end recovery without touching the live stack so production traffic remains unaffected. Near real time replication keeps the dataset closely aligned with current writes which makes RPO and RTO measurements realistic and gives you high fidelity results. You can validate runbooks, networking and routing, IAM, automation, and regional failover behavior against a production-like system and you can safely practice cutover and rollback.</p><p><i>Create a temporary environment from a recent database snapshot and rehearse a recovery scenario</i> is weaker because a snapshot is a static point in time copy which makes data stale and reduces test fidelity. It does not validate continuous replication, lag behavior, or real failover and cutover steps that you would perform during an actual event.</p><p><i>Run chaos experiments in the production stack by injecting random process and network failures</i> can degrade live requests and violates the requirement to avoid disruption. Chaos testing is useful for resilience but it does not provide a realistic measure of disaster recovery objectives or full data restoration flows.</p><p><i>Skip dedicated tests and use the presence of backups and configured replication as evidence of DR readiness</i> provides false confidence and misses the requirement for quarterly drills. Backups and replication must be proven by executing recovery procedures to confirm that objectives and runbooks work as intended.</p>",
+  "batch_id": "169",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you have implemented a disaster recovery strategy for a data analytics application with a multi-regional architecture. To validate the effectiveness of the disaster recovery plan, you must perform periodic tests. Which of the following options is the best approach for testing the disaster recovery plan while minimizing the impact on production workloads and ensuring accurate test results?",
+  "originalOptions": "A. Perform a chaos engineering test by introducing random failures into the production environment.<br/>B. Use a scheduled maintenance window to perform disaster recovery tests on the production environment.<br/>C. Create a separate environment that mirrors the production environment and use real-time database replication to conduct disaster recovery tests.<br/>D. Create a temporary environment using a recent database snapshot and simulate a disaster recovery scenario.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "204",
+  "tip": "<p>When a question demands <i>non disruptive</i> and <i>high fidelity</i> DR tests, prefer an isolated production-like environment with near real time replication so you can practice full failover without touching live traffic.</p>",
+  "references": [
+    "https://cloud.google.com/architecture/disaster-recovery-planning-guide",
+    "https://cloud.google.com/architecture/dr-scenarios-regional-multi-regional",
+    "https://sre.google/sre-book/testing-for-reliability/",
+    "https://cloud.google.com/sql/docs/mysql/replication/replication-overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-implemented-a-disaster-recovery-strategy-exam-204.html",
+  "video_url": "https://certificationation.com/videos/exam-implemented-a-disaster-recovery-strategy-exam-204.html"
+}

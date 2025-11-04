@@ -1,0 +1,62 @@
+---
+title: "You are an AWS DevOps engineer in a company, and youExam"
+description: "Video for you are an AWS DevOps engineer in a company, and you created a job in Jenkins to use a script to build an Elastic Beanstalk environment. An eb config"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are an AWS DevOps engineer in a company, and you created a job in Jenkins to use a script to build an Elastic Beanstalk environment. An eb config command has been used to configure a Security Group for an Elastic Load Balancer. After some time, another colleague found that the Security Group should be changed to another one. He modified this configuration option with a config file in the .ebextensions folder. However, when the Jenkins job was rebuilt, the Security Group did not change to the new one. What is the reason and how would you fix this issue?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <strong>correct answer</strong> is: <strong>It is not possible to change a Security Group's name within a .ebextensions config file. Adjust the eb config script to utilize the desired Security Group.</strong></p><p>This is because <strong>.ebextensions</strong> is mainly intended to manage environment resources and settings not already governed by the environment's core configuration, such as through EB CLI commands or the AWS Management Console. Specifically, network-level components like Security Groups, which are implemented at the environment level, are not modifiable post-creation through <code>.ebextensions</code>. These settings must be handled by updating the configuration via the EB CLI (<code>eb config</code>) or directly through AWS.</p><p>Why the other options are incorrect:</p><ul><li><i>There is a precedence issue: the .ebextensions config was handled prior to the eb config command in the deployment process, so the eb config value overwrote it. Update the Jenkins job so that the .ebextensions config runs after executing eb config.</i> – The order of processing does not allow .ebextensions to supersede EB CLI-set values for Security Groups. The fundamental limitation is with what .ebextensions can control.</li><li><i>Conflicting values between .ebextensions and eb config cause Elastic Beanstalk to default to the built-in option. The solution is to remove the Security Group assignment from eb config to avoid ambiguity.</i> – In practice, Elastic Beanstalk does not simply fall back to a default if there is a conflict; the Security Group set through the EB CLI takes priority.</li><li><i>The .ebextensions directory settings are not able to override those configured through the EB CLI. To resolve this, eliminate the Security Group configuration from the eb config command.</i> – While this is somewhat correct, it's more accurate to update the EB CLI (or the environment configuration) to use the correct Security Group since .ebextensions cannot perform this function.</li></ul><p><strong>Tip:</strong> For network or environment-level configurations, always use the AWS Console or the EB CLI rather than .ebextensions. Reserve .ebextensions for resource and software configuration tasks within your environment.</p>",
+  "query": "<p>You are working as a DevOps engineer at a company and have set up a Jenkins job to deploy an AWS Elastic Beanstalk environment using an automated script. The deployment's Security Group for the Elastic Load Balancer was configured via an <code>eb config</code> command. Later, a teammate updated the Security Group assignment by editing a configuration file in the <code>.ebextensions</code> directory. After rerunning the Jenkins job, the Security Group did not switch to the updated value specified in <code>.ebextensions</code>. What explains this situation, and how should it be addressed?</p>",
+  "original_oid": "6793da0461969b416038a124",
+  "options": [
+    {
+      "correct": false,
+      "text": "The .ebextensions directory settings are not able to override those configured through the EB CLI. To resolve this, eliminate the Security Group configuration from the eb config command.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "There is a precedence issue: the .ebextensions config was handled prior to the eb config command in the deployment process, so the eb config value overwrote it. Update the Jenkins job so that the .ebextensions config runs after executing eb config.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Conflicting values between .ebextensions and eb config cause Elastic Beanstalk to default to the built-in option. The solution is to remove the Security Group assignment from eb config to avoid ambiguity.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "It is not possible to change a Security Group's name within a .ebextensions config file. Adjust the eb config script to utilize the desired Security Group.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question178",
+  "originalQuery": "You are an AWS DevOps engineer in a company, and you created a job in Jenkins to use a script to build an Elastic Beanstalk environment.\nAn eb config command has been used to configure a Security Group for an Elastic Load Balancer.\nAfter some time, another colleague found that the Security Group should be changed to another one.\nHe modified this configuration option with a config file in the .ebextensions folder.\nHowever, when the Jenkins job was rebuilt, the Security Group did not change to the new one.\nWhat is the reason and how would you fix this issue?",
+  "originalOptions": "A. Security Group name cannot be changed in the .ebextensions config file. The eb config in the script needs to be modified to use the correct Security Group.|B. The .ebextensions config file was processed first. And eb config ran next and overrode the .ebextensions config file. Modify the script in Jenkins so that the .ebextensions config file is processed after eb config.|C. When there is a conflict for the configurations in .ebextensions and eb config, the default value of the option is used. The Security Group settings in eb config should be removed to avoid a conflict.|D. The settings in the .ebextensions folder cannot override that in the EB CLI command. Remove the configuration settings for Security Group in eb config command.",
+  "video_url": "https://certificationation.com/videos/exam-a-company-and-you-created-exam-295.html",
+  "url": "https://certificationation.com/questions/exam-a-company-and-you-created-exam-295.html"
+}

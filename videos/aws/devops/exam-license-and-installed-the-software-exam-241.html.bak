@@ -1,0 +1,62 @@
+---
+title: "A company has purchased a software license and installedExam"
+description: "Video for a company has purchased a software license and installed the software in on-premise servers. The servers are being migrated from on premise to AWS EC2"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A company has purchased a software license and installed the software in on-premise servers. The servers are being migrated from on premise to AWS EC2 and the license requires that the software should be installed in the same EC2 physical hosts. As a DevOps engineer, you need to deploy the EC2 instances and manage the software license properly. Which combinations of services would you choose to achieve the requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct approach is to use <b>EC2 Dedicated Hosts</b> along with <b>AWS License Manager</b>. This allows you to allocate physical servers to your EC2 instances, ensuring that the software always resides on the same physical hardware to satisfy the licensing requirements. AWS License Manager lets you keep track of license usage and compliance, streamlining license administration on AWS.</p><p>The other options have shortcomings:</p><ul><li><i>Set up Reserved EC2 instances for the software installations, reserve Elastic IP addresses for attachment, and monitor license compliance with an AWS Config rule.</i> &mdash; Reserved instances only provide billing discounts, not control over physical host placement. Reserving Elastic IPs does not guarantee physical host continuity, and AWS Config can't enforce license tracking requirements with the needed granularity.</li><li><i>Initiate an EC2 Capacity Reservation for the desired instances, track software licenses within AWS Systems Manager by monitoring vCPU usage, and send notifications through SNS when limits are reached.</i> &mdash; While Capacity Reservations ensure compute availability, they don’t tie instances to fixed physical hosts. Counting vCPUs alone doesn't enforce host affinity or the specific license requirements in this case.</li><li><i>Start EC2 instances using auto-placement hosts, install the software, and manage the license with a configuration in AWS Service Catalog.</i> &mdash; Auto-placement hosts do not guarantee the use of the same physical hardware, and AWS Service Catalog primarily handles provisioning and standardization rather than advanced license tracking or host assignment.</li></ul><p><b>Tip:</b> Always use Dedicated Hosts when software licensing depends on physical server affinity after migrating from on-premises to cloud.</p>",
+  "query": "<p>A business has acquired software and installed it on their local data center servers. As part of a cloud migration initiative, these servers are being moved to AWS EC2. The licensing terms specify that the application must run on the same underlying physical EC2 hosts after migration. In your role as a DevOps engineer, which AWS service combinations will best allow you to launch EC2 instances while making sure the software runs on consistent physical hosts and the license is managed appropriately?</p>",
+  "original_oid": "6793da3661969b416038a18b",
+  "options": [
+    {
+      "correct": true,
+      "text": "Provision your applications on EC2 Dedicated Hosts and utilize AWS License Manager to handle software license tracking.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up Reserved EC2 instances for the software installations, reserve Elastic IP addresses for attachment, and monitor license compliance with an AWS Config rule.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Initiate an EC2 Capacity Reservation for the desired instances, track software licenses within AWS Systems Manager by monitoring vCPU usage, and send notifications through SNS when limits are reached.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Start EC2 instances using auto-placement hosts, install the software, and manage the license with a configuration in AWS Service Catalog.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question282",
+  "originalQuery": "A company has purchased a software license and installed the software in on-premise servers.\nThe servers are being migrated from on premise to AWS EC2 and the license requires that the software should be installed in the same EC2 physical hosts.\nAs a DevOps engineer, you need to deploy the EC2 instances and manage the software license properly.\nWhich combinations of services would you choose to achieve the requirements?",
+  "originalOptions": "A. Launch EC2 instances with auto-placement hosts to install the software. Manage the software license in AWS Service Catalog with a license configuration.|B. Create reserved EC2 instances to install the software. Reserve Elastic IPs and associate them with the instances. Manage the software license through an AWS Config rule.|C. Create an EC2 Capacity Reservation for the EC2 instances to install the software. Manage the license in AWS System Manager by counting the number of used vCPUs. Trigger an SNS notification when the license reaches its limits.|D. Host the applications in EC2 dedicated hosts and manage the software license through AWS License Manager.",
+  "video_url": "https://certificationation.com/videos/exam-license-and-installed-the-software-exam-241.html",
+  "url": "https://certificationation.com/questions/exam-license-and-installed-the-software-exam-241.html"
+}

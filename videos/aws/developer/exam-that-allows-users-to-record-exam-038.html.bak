@@ -1,0 +1,80 @@
+---
+title: "Your team is developing a web application that allowsExam"
+description: "Video for your team is developing a web application that allows users to record and analyze their fitness activities. The app requires the capability to process"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your team is developing a web application that allows users to record and analyze their fitness activities. The app requires the capability to process streaming data from fitness devices, store user profiles, and provide real-time analytics and insights. Which Google Cloud setup should you implement for efficient scaling and cost management?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Scrumtuous.com is launching a connected home energy platform where smart meters send continuous telemetry. The system must ingest streaming events, persist customer and device profiles, and power near real-time analytics and dashboards. Which Google Cloud architecture will scale smoothly while keeping costs under control?",
+  "options": [
+    {
+      "text": "Run streaming processors on Compute Engine, keep profiles in Cloud Firestore, and analyze data in BigQuery",
+      "explanation": "This approach combines virtual machine based workers for event handling with a document database for profiles and a cloud data warehouse for analytics",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Cloud IoT Core for ingest, store profiles in Cloud SQL, and run streaming analytics with Dataflow",
+      "explanation": "This design uses a managed device gateway with a relational database for profile storage and a managed pipeline for processing streams",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Set up Cloud Pub/Sub for telemetry ingestion, Cloud Firestore for customer profiles, and BigQuery for real-time analytics",
+      "explanation": "This setup uses a serverless messaging service to absorb events, a serverless NoSQL document store for profiles, and a scalable analytics engine for interactive queries",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Adopt Cloud Run for event processing, store profiles in Cloud Spanner, and visualize data with Looker",
+      "explanation": "This option runs containerized services for processing, keeps profiles in a global relational database, and presents dashboards with a business intelligence tool",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct answer is <b>Set up Cloud Pub/Sub for telemetry ingestion, Cloud Firestore for customer profiles, and BigQuery for real-time analytics</b>.</p><p>Pub/Sub gives you a fully managed and elastic ingestion layer that can handle spiky telemetry at very high throughput with durable buffering and at least once delivery. Firestore is a serverless document database that is an excellent fit for customer and device profiles because it offers flexible schemas, automatic scaling, and pay as you go pricing. BigQuery supports streaming ingestion and low latency queries which allows near real time dashboards and analytics without you managing infrastructure. Together these services form a serverless pipeline that scales smoothly and helps keep costs predictable and controlled.</p><p><i>Run streaming processors on Compute Engine, keep profiles in Cloud Firestore, and analyze data in BigQuery</i> puts the core streaming ingestion and processing on virtual machines. This increases operational burden for autoscaling, resiliency, and throughput tuning and it is typically less cost efficient than using a managed messaging layer. While Firestore and BigQuery are strong choices, relying on self managed Compute Engine for the streaming core is not the most scalable or economical path for continuous telemetry.</p><p><i>Use Cloud IoT Core for ingest, store profiles in Cloud SQL, and run streaming analytics with Dataflow</i> is not appropriate because Cloud IoT Core has been retired, which makes it unsuitable for new designs and less likely on newer exams. Cloud SQL can serve transactional profiles but it scales vertically and can become a bottleneck and costlier at large IoT scale compared to Firestore. Dataflow is a strong streaming engine, yet the ingest service choice invalidates this option.</p><p><i>Adopt Cloud Run for event processing, store profiles in Cloud Spanner, and visualize data with Looker</i> lacks a durable ingestion buffer like Pub/Sub, which is critical to decouple producers from consumers and to absorb bursts without loss. Cloud Spanner is powerful but it is often unnecessary and expensive for typical profile workloads unless you need global scale and strict external consistency. Looker provides visualization but it is not the analytics engine and this option does not anchor near real time analytics in BigQuery.</p>",
+  "batch_id": "164",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "Your team is developing a web application that allows users to record and analyze their fitness activities. The app requires the capability to process streaming data from fitness devices, store user profiles, and provide real-time analytics and insights. Which Google Cloud setup should you implement for efficient scaling and cost management?",
+  "originalOptions": "A. Deploy Cloud Functions to process device data, Bigtable for user profiles, and Looker for analytics and insights.<br/>B. Use Cloud IoT Core for device data ingestion, Cloud SQL for user profiles, and Dataflow for real-time analytics.<br/>C. Set up Cloud Pub/Sub for data ingestion, Firestore for user profiles, and BigQuery for real-time analytics.<br/>D. Utilize Compute Engine to process streaming data, Cloud Firestore for user profiles, and BigQuery for analytics.",
+  "domain": "Manage a solution that can span multiple database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "38",
+  "tip": "<p>When you see streaming telemetry at scale, look for a serverless ingest buffer with <i>Cloud Pub/Sub</i>, a managed operational store that fits the data model such as <i>Firestore</i>, and an analytics engine that supports streaming such as <i>BigQuery</i>. Be cautious of <i>retired</i> services.</p>",
+  "references": [
+    "https://cloud.google.com/pubsub/docs/overview",
+    "https://cloud.google.com/firestore/docs/overview",
+    "https://cloud.google.com/bigquery/docs/streaming-data-into-bigquery",
+    "https://cloud.google.com/iot-core/docs/release-notes"
+  ],
+  "url": "https://certificationation.com/questions/exam-that-allows-users-to-record-exam-038.html",
+  "video_url": "https://certificationation.com/videos/exam-that-allows-users-to-record-exam-038.html"
+}

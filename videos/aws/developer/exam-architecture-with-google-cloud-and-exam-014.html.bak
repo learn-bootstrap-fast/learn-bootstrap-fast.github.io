@@ -1,0 +1,81 @@
+---
+title: "You are designing a hybrid cloud architecture withExam"
+description: "Video for you are designing a hybrid cloud architecture with Google Cloud and your on-premises network. Your organization has a Dedicated Interconnect"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are designing a hybrid cloud architecture with Google Cloud and your on-premises network. Your organization has a Dedicated Interconnect connection between your on-premises network and a Google Cloud region (Region A). You also have a Bare Metal Solution for Oracle set up in Region B. You need to configure the networking so that a Compute Engine instance in Region A can connect to the Oracle database on the Bare Metal Solution machine in Region B. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Harbor Mutual runs a hybrid setup that uses Google Cloud and an on-premises data center. The company has a Dedicated Interconnect from the data center into a VPC in us-east1, and a Bare Metal Solution environment that hosts an Oracle database in europe-west2. You need a Compute Engine virtual machine in us-east1 to reach the Oracle database on the Bare Metal Solution host in europe-west2 by using private IP connectivity. Which configuration change should you make?",
+  "options": [
+    {
+      "text": "Use Cloud Router custom route advertisements to export the Bare Metal Solution subnet to us-east1",
+      "explanation": "This choice proposes controlling which IP prefixes a Cloud Router advertises to its BGP peers so you can influence route propagation behavior.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create Private Service Connect endpoints between the VPC in us-east1 and the Bare Metal Solution environment in europe-west2",
+      "explanation": "This approach uses Private Service Connect to publish and consume private service endpoints between networks without exposing public IPs.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Change the VPC dynamic routing mode to global so learned routes are available throughout the VPC",
+      "explanation": "This setting enables a global routing scope so routes learned by Cloud Router can propagate to all regions within the same VPC.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Build a high availability Cloud VPN tunnel between us-east1 and europe-west2",
+      "explanation": "This option would create redundant IPsec tunnels across the internet and use Cloud Router for dynamic route exchange between sites.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Change the VPC dynamic routing mode to global so learned routes are available throughout the VPC</b>.</p><p>Bare Metal Solution connects into your VPC in its region through Cloud Interconnect and Cloud Router. The Oracle database prefixes in europe-west2 are learned as dynamic routes in that region when the routing mode is regional, which keeps those routes local to that region. Switching to the global mode makes the learned routes available in all regions of the VPC, so a VM in us-east1 can reach the database privately without additional tunneling or service endpoints.</p><p><i>Use Cloud Router custom route advertisements to export the Bare Metal Solution subnet to us-east1</i> is incorrect because this controls what Cloud Router advertises to on premises peers and does not change how routes are distributed inside the VPC across regions.</p><p><i>Create Private Service Connect endpoints between the VPC in us-east1 and the Bare Metal Solution environment in europe-west2</i> is incorrect because this feature is for publishing and consuming services and for private access to Google APIs and it does not provide generic private IP connectivity to Bare Metal Solution hosts across regions.</p><p><i>Build a high availability Cloud VPN tunnel between us-east1 and europe-west2</i> is incorrect because this connects separate networks over IPsec while the VM and the Bare Metal Solution environment are already reachable within the same VPC. The issue is route propagation across regions rather than the need for a VPN.</p>",
+  "batch_id": "48",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are designing a hybrid cloud architecture with Google Cloud and your on-premises network. Your organization has a Dedicated Interconnect connection between your on-premises network and a Google Cloud region (Region A). You also have a Bare Metal Solution for Oracle set up in Region B. You need to configure the networking so that a Compute Engine instance in Region A can connect to the Oracle database on the Bare Metal Solution machine in Region B. What should you do?",
+  "originalOptions": "A. Configure a private service connect endpoint between the two regions.<br/>B. Set up a static route in your VPC network for traffic to the Bare Metal Solution machine.<br/>C. Add a high-availability VPN connection between Region A and Region B.<br/>D. In your VPC network, set the dynamic routing mode to global.",
+  "domain": "Manage a solution that can span multiple database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "14",
+  "tip": "<p>When a question mentions routes learned by Cloud Router that must be used in other regions, check the VPC <i>dynamic routing mode</i>. <i>Regional</i> keeps learned routes local while <i>global</i> makes them available throughout the VPC.</p>",
+  "references": [
+    "https://cloud.google.com/vpc/docs/dynamic-routing#dynamic-routing-mode",
+    "https://cloud.google.com/bare-metal/docs/networking/overview",
+    "https://cloud.google.com/network-connectivity/docs/router/how-to/custom-advertisements",
+    "https://cloud.google.com/vpc/docs/private-service-connect",
+    "https://cloud.google.com/network-connectivity/docs/vpn/concepts/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-architecture-with-google-cloud-and-exam-014.html",
+  "video_url": "https://certificationation.com/videos/exam-architecture-with-google-cloud-and-exam-014.html"
+}

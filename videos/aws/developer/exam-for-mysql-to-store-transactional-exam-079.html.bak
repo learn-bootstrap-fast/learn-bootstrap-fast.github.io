@@ -1,0 +1,80 @@
+---
+title: "You are managing a Cloud SQL instance for MySQL to storeExam"
+description: "Video for you are managing a Cloud SQL instance for MySQL to store transactional data for a retail business. To safeguard against accidental data loss or"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are managing a Cloud SQL instance for MySQL to store transactional data for a retail business. To safeguard against accidental data loss or corruption, you want the ability to recover the database to any specific point in time. Which configuration should you use?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You administer a Cloud SQL for MySQL instance that stores orders for an online marketplace operated by mcnz.com. You need protection against accidental deletes or bad writes and must be able to restore the database to an exact moment from the recent past. What configuration should you choose?",
+  "options": [
+    {
+      "text": "Configure read replicas for the instance",
+      "explanation": "Creates replica instances that serve read traffic and improve availability for MySQL workloads",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Schedule daily exports to Cloud Storage using Cloud SQL export",
+      "explanation": "Runs scheduled exports that write dumps to Cloud Storage for archival or later import",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable point in time recovery on the Cloud SQL instance",
+      "explanation": "Enables continuous log archiving with backups so the instance can be restored to a specific point within the retention window",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Enable automated backups for the instance",
+      "explanation": "Configures daily automatic full backups that allow restoration to the time of the last completed backup",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Enable point in time recovery on the Cloud SQL instance</b>. This feature allows you to restore the database to an exact moment in the recent past which directly addresses protection against accidental deletes or bad writes.</p><p>With <b>Enable point in time recovery on the Cloud SQL instance</b>, Cloud SQL retains the necessary logs alongside backups so you can choose a precise timestamp within the retention window. This gives you a much finer recovery point than periodic backups or exports and is specifically designed to recover from logical errors such as unintended updates or deletes.</p><p><i>Configure read replicas for the instance</i> is incorrect because replicas are intended for read scaling and can assist with availability, yet they replicate the same deletes and bad writes. They do not provide a way to roll the data back to a previous state.</p><p><i>Schedule daily exports to Cloud Storage using Cloud SQL export</i> is incorrect because exports only let you restore to the time of the last export. That does not satisfy the requirement to recover to an exact moment and it can leave a large gap in data.</p><p><i>Enable automated backups for the instance</i> is incorrect on its own because backups let you restore to a backup snapshot time rather than any chosen point. Without point in time recovery you cannot target an exact moment between backups.</p>",
+  "batch_id": "278",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are managing a Cloud SQL instance for MySQL to store transactional data for a retail business. To safeguard against accidental data loss or corruption, you want the ability to recover the database to any specific point in time. Which configuration should you use?",
+  "originalOptions": "A. Set up alerts to monitor data changes in the instance.<br/>B. Enable automated backups for the instance.<br/>C. Enable point-in-time recovery for the instance.<br/>D. Configure read replicas for the instance.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "79",
+  "tip": "<p>When you see a requirement to recover from accidental deletes to an exact time, look for <i>point in time recovery</i>. Remember that <i>read replicas</i> mirror changes and that <i>exports</i> and basic <i>automated backups</i> only restore to coarse points in time.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/backup-recovery/restore",
+    "https://cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+    "https://cloud.google.com/sql/docs/mysql/replication",
+    "https://cloud.google.com/sql/docs/mysql/export"
+  ],
+  "url": "https://certificationation.com/questions/exam-for-mysql-to-store-transactional-exam-079.html",
+  "video_url": "https://certificationation.com/videos/exam-for-mysql-to-store-transactional-exam-079.html"
+}

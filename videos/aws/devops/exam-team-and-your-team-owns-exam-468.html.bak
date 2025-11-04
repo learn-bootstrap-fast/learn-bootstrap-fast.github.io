@@ -1,0 +1,67 @@
+---
+title: "You are working in a Cloud Security team and your teamExam"
+description: "Video for you are working in a Cloud Security team and your team owns an AWS account A (111111111111) that uses Amazon EventBridge to collect the events"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are working in a Cloud Security team and your team owns an AWS account A (111111111111) that uses Amazon EventBridge to collect the events happening in other AWS accounts and check if there are security breaches. A new AWS account B (222222222222) has been recently configured to send events to account A. You need to create a rule in your account A to receive and match the events only from account B. How would you set up the rule in Amazon EventBridge?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>To filter and match only events originating from AWS account B, you can approach the solution in two correct ways:</p><ul><li><b>Selecting the pre-defined pattern by AWS account</b> is the quickest and most straightforward, as EventBridge lets you specify the source account directly using a dropdown. This method requires minimal configuration and reduces the chance of misconfiguration.</li><li><b>Defining a custom event pattern containing the account field</b> (for example: { \"account\": [ \"222222222222\" ] }) manually specifies that only events from account B’s AWS account ID will be matched—which is useful if you require more granular or additional event attribute matching or can't use the pre-defined selector.</li></ul><p>The other options are not optimal:</p><ul><li><i>Enable the rule on the selected event bus.</i> is necessary but does not filter events by source account, so alone it does not solve the requirement.</li><li><i>Select a custom pattern, then choose the custom event bus being used by account B.</i> is misleading because it is account B sending the events to the default event bus in account A (unless a custom bus is set up), and filtering should be done via event pattern.</li><li><i>Configure the rule to apply to all events and set a Lambda function as the destination, filtering events for account B inside the Lambda function code.</i> is operationally inefficient, as it processes all incoming events instead of filtering at the rule level. This could increase cost, latency, and reduces clarity in event handling.</li></ul><p><b>Tip:</b> Always apply specific filters in the EventBridge rule itself whenever possible. This ensures only relevant events trigger downstream actions and reduces complexity and cost.</p>",
+  "query": "<p>Your Cloud Security team manages AWS account A (111111111111), which is configured through Amazon EventBridge to monitor security-related events originating elsewhere and check for breaches. Recently, AWS account B (222222222222) was set up to forward events to account A. You are tasked with creating a rule in account A that will only capture and match events arriving from account B. How should you configure this EventBridge rule?</p>",
+  "original_oid": "6793da9461969b416038a24a",
+  "options": [
+    {
+      "correct": true,
+      "text": "Select the option for a pre-defined pattern by AWS account in the new EventBridge rule, and use the dropdown to choose AWS account B (222222222222).",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Enable the rule and make sure it is set on the desired event bus.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Pick the custom event pattern option in the rule and specify account B’s details with: { \"account\": [ \"222222222222\" ], ... }",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Select a custom pattern, then choose the custom event bus being used by account B.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Configure the rule to apply to all events and set a Lambda function as the destination, filtering events for account B inside the Lambda function code.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question474",
+  "originalQuery": "You are working in a Cloud Security team and your team owns an AWS account A (111111111111) that uses Amazon EventBridge to collect the events happening in other AWS accounts and check if there are security breaches.\nA new AWS account B (222222222222) has been recently configured to send events to account A.\nYou need to create a rule in your account A to receive and match the events only from account B.\nHow would you set up the rule in Amazon EventBridge?",
+  "originalOptions": "A. Edit the event pattern in the new rule and add the following to match the events that are sent by AWS account B: { \"account\": [ \"222222222222\" ], ... }\nB. Select the custom pattern in the new rule and choose the custom event bus that is used by AWS account\nC. Enable the rule on the selected event bus.\nD. In the new EventBridge rule, select the \"pre-defined pattern by AWS account\". In the account drop-down list, select the AWS account B (222222222222).\nE. Select “All Events” in the service provider of the rule. Configure a Lambda function as the target and filter the events based on the JSON-formatted input in the Lambda function.",
+  "video_url": "https://certificationation.com/videos/exam-team-and-your-team-owns-exam-468.html",
+  "url": "https://certificationation.com/questions/exam-team-and-your-team-owns-exam-468.html"
+}

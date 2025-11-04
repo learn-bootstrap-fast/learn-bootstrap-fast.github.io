@@ -1,0 +1,80 @@
+---
+title: "As a Database Engineer, you are responsible forExam"
+description: "Video for as a Database Engineer, you are responsible for designing a connection strategy for an application that will interact with Cloud Memorystore for"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are responsible for designing a connection strategy for an application that will interact with Cloud Memorystore for Redis. To ensure optimal performance and maintainability while minimizing latency, which of the following strategies should you use?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "At example.com you are designing connectivity for a cache tier that uses Cloud Memorystore for Redis. Each active region hosts its own Redis instance and your Compute Engine virtual machines run in the same project. You want to keep latency under 5 milliseconds at the 95th percentile and reduce operational overhead. How should applications connect to their regional Redis instance?",
+  "options": [
+    {
+      "text": "Use a regional load balancer in front of Redis to send clients to the closest endpoint",
+      "explanation": "A regional load balancer forwards client connections to regional backends and is used to distribute traffic.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure clients to reach the Redis endpoint over private IP within the same VPC and region as the instance",
+      "explanation": "Memorystore for Redis provides a private address in your VPC that clients in the same region can use directly.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Create standard VPC Network Peering and route Redis traffic across the peered networks",
+      "explanation": "VPC Network Peering connects separate VPC networks and enables private routing between them.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use the project&apos;s default VPC for all connections so clients can access Redis from any region",
+      "explanation": "The default VPC is a pre-created network in a project that can be used for resources across multiple regions.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Configure clients to reach the Redis endpoint over private IP within the same VPC and region as the instance</b>.</p><p>This choice uses the native connectivity model of Memorystore for Redis where the service exposes a private IP in your VPC and requires clients to be in the same region. Keeping traffic inside the same VPC and region minimizes network hops and jitter which helps you meet a 5 millisecond p95 target. It also reduces operational overhead because there is no need to run or maintain proxies or load balancers and you simply connect directly to the provided endpoint.</p><p><i>Use a regional load balancer in front of Redis to send clients to the closest endpoint</i> is incorrect. Memorystore for Redis provides a managed endpoint and is not a supported backend for Google Cloud load balancers. This approach would add an extra hop and configuration complexity which increases latency and management effort without solving a problem the regional design already addresses.</p><p><i>Create standard VPC Network Peering and route Redis traffic across the peered networks</i> is incorrect. Memorystore connectivity relies on private services access and is not reachable across VPC Network Peering. This approach would also risk cross network or cross region paths that work against a strict low latency requirement.</p><p><i>Use the project's default VPC for all connections so clients can access Redis from any region</i> is incorrect. Redis instances are regional and clients must connect from the same region and VPC or Shared VPC. Using the default VPC does not change these constraints and cross region access would add latency that makes the 5 millisecond target unlikely.</p>",
+  "batch_id": "184",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are responsible for designing a connection strategy for an application that will interact with Cloud Memorystore for Redis. To ensure optimal performance and maintainability while minimizing latency, which of the following strategies should you use?",
+  "originalOptions": "A. Connect the application instances to Cloud Memorystore for Redis using VPC peering<br/>B. Utilize regional load balancers with regional backends to distribute connections to the nearest Redis instance<br/>C. Use the application's default VPC network to establish connections to the Redis instance<br/>D. Configure the application instances to use private IP addresses to connect to the nearest regional Redis instance",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "183",
+  "tip": "<p>When a managed service exposes only a private endpoint, prefer connecting from the <i>same VPC</i> and <i>same region</i> to meet tight <i>latency</i> goals and be wary of answers that add extra network hops or new control planes.</p>",
+  "references": [
+    "https://cloud.google.com/memorystore/docs/redis/overview",
+    "https://cloud.google.com/memorystore/docs/redis/networking",
+    "https://cloud.google.com/memorystore/docs/redis/setup-private-services-access",
+    "https://cloud.google.com/vpc/docs/vpc-peering#restrictions"
+  ],
+  "url": "https://certificationation.com/questions/exam-responsible-for-designing-a-connection-exam-183.html",
+  "video_url": "https://certificationation.com/videos/exam-responsible-for-designing-a-connection-exam-183.html"
+}

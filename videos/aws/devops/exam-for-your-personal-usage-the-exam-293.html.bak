@@ -1,0 +1,62 @@
+---
+title: "You are working on a small project for your personalExam"
+description: "Video for you are working on a small project for your personal usage. The application is hosted in an Auto Scaling group. There is only 1 instance in the ASG"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are working on a small project for your personal usage. The application is hosted in an Auto Scaling group. There is only 1 instance in the ASG and the EC2 instance may be terminated and recreated from time to time. The EC2 DNS name and IP are changed when a new instance is launched in the ASG. You own a hosted zone in Route 53 and plan to create a record set to route the traffic to the instance. You have very limited budget. Which method is the most cost-efficient to update the record set dynamically?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The most budget-conscious and effective solution is to use a <b>Lambda function that periodically checks your Auto Scaling group and updates your Route 53 DNS record when a new instance is started</b>. This approach requires minimal resources, incurs only small compute costs (you only pay for Lambda executions), and does not rely on more expensive infrastructure.<br><br>Let’s examine the other options:</p><ul><li><i>CloudWatch Event rule triggers Lambda for CNAME updates</i>: While possible, this method assumes you can set a CNAME to an EC2 instance, which is not feasible for root domains and may not be reliable when the instance is replaced. Plus, it introduces complexity and may have additional overhead versus the straightforward polling approach.</li><li><i>Alias record in Route 53 pointing to ASG ARN</i>: Route 53 does not support alias records or direct bindings to Auto Scaling group ARNs. You must reference resources like load balancers or CloudFront distributions, making this option invalid.</li><li><i>Network load balancer in front of the Auto Scaling group</i>: This method requires launching a load balancer, which is unnecessary with a single instance. It adds extra cost and architectural overhead for your small use case.</li></ul><p><b>The Lambda automation approach is cost-effective, simple, and directly suited for a minimal, personal project with a single changing instance.</b> As a tip, trigger the Lambda via Amazon CloudWatch Events (EventBridge) on EC2 state changes or run it on a schedule with a minimal time interval. This ensures Route 53 is always up to date with your current instance details at the lowest ongoing cost.</p>",
+  "query": "<p>You are managing a small, personal project. Your application is running inside an Auto Scaling group, always with just one Amazon EC2 instance. Sometimes, that instance gets terminated and a replacement is started—each time, the instance’s public DNS name and IP address change. You own a Route 53 hosted zone and want to direct user traffic to this instance by creating a record set. You need a minimal-cost and automated solution to keep the record updated as instances change. <br><br>What is the most budget-friendly way to handle these dynamic DNS updates?</p>",
+  "original_oid": "6793d9ad61969b416038a07c",
+  "options": [
+    {
+      "correct": true,
+      "text": "Set up a Lambda function that routinely checks the Auto Scaling group and updates the Route 53 DNS record to point to any new instance’s IP whenever a replacement launches.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Launch a CloudWatch Event rule to notice scaling events, and have it trigger a Lambda function that modifies the Route 53 CNAME to direct to the DNS of the newly created EC2 instance.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Create an Alias record in Route 53 targeting the Auto Scaling group’s ARN; there is no need for dynamic change to the record set.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Deploy a network load balancer in front of the ASG, then set up an Alias record in Route 53 to forward traffic to the load balancer.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question7",
+  "originalQuery": "You are working on a small project for your personal usage.\nThe application is hosted in an Auto Scaling group.\nThere is only 1 instance in the ASG and the EC2 instance may be terminated and recreated from time to time.\nThe EC2 DNS name and IP are changed when a new instance is launched in the ASG.\nYou own a hosted zone in Route 53 and plan to create a record set to route the traffic to the instance.\nYou have very limited budget.\nWhich method is the most cost-efficient to update the record set dynamically?",
+  "originalOptions": "A. Create a network load balancer to point to the Auto Scaling group. Create an Alias record that routes the traffic to the load balancer.|B. Create an Alias record in Route 53 that has the Auto Scaling group ARN as its target. The Route 53 record set does not need to be changed dynamically.|C. Configure a CloudWatch Event rule to monitor the Auto Scaling events. The CloudWatch Event rule triggers a Lambda function to point the CNAME of the record set to the DNS of the new EC2 instance.|D. Create a Lambda function to periodically check the Auto Scaling group. If there is a new EC2 instance launched, update the Route 53 record set with the new IP address.",
+  "video_url": "https://certificationation.com/videos/exam-for-your-personal-usage-the-exam-293.html",
+  "url": "https://certificationation.com/questions/exam-for-your-personal-usage-the-exam-293.html"
+}

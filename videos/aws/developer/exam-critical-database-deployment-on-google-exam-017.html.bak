@@ -1,0 +1,82 @@
+---
+title: "You are responsible for monitoring a critical databaseExam"
+description: "Video for you are responsible for monitoring a critical database deployment on Google Cloud Platform. You need to set up alerts to monitor the database for"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are responsible for monitoring a critical database deployment on Google Cloud Platform. You need to set up alerts to monitor the database for errors and performance issues. Which of the following solutions should you use?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Brightway Insurance operates a mission critical PostgreSQL database on Compute Engine in Google Cloud, and your on call team must be notified within 3 minutes when the database writes specific error messages to its logs and when slow query entries are recorded. You want a managed Google Cloud service that works directly with the logs and requires minimal setup. What should you use?",
+  "options": [
+    {
+      "text": "Install the Ops Agent on the VM and build custom alerting on collected metrics",
+      "explanation": "The Ops Agent can collect system and application telemetry from Compute Engine instances for custom dashboards and alerts.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud Trace with latency sampling to flag slow operations",
+      "explanation": "Cloud Trace samples and visualizes request latency across services and helps analyze distributed performance issues.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure Cloud Logging with logs-based metrics and alerting policies for error patterns and slow query entries",
+      "explanation": "Cloud Logging can ingest database logs and create logs-based metrics that drive alerting policies for specific patterns or thresholds.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Error Reporting",
+      "explanation": "Error Reporting aggregates and alerts on parsed exceptions from supported application logs that are routed through Cloud Logging.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Configure Cloud Logging with logs-based metrics and alerting policies for error patterns and slow query entries</b>.</p><p><b>Cloud Logging with logs-based metrics</b> lets you match specific log patterns such as PostgreSQL error messages and slow query lines, turn those matches into metrics or use log-based alerts, and attach alerting policies that notify your on call team within a few minutes. It works directly on the logs, requires minimal configuration, and integrates with Cloud Monitoring notification channels so you can meet the three minute requirement reliably.</p><p><i>Install the Ops Agent on the VM and build custom alerting on collected metrics</i> is not the best fit because the requirement is to work directly with logs and minimize setup. Building custom metric pipelines from the agent adds operational overhead and still does not provide direct pattern matching on log entries as simply as using Cloud Logging.</p><p><i>Cloud Trace with latency sampling to flag slow operations</i> focuses on distributed tracing data from instrumented applications. It does not parse PostgreSQL log files on a VM and it is not designed to alert on specific database log messages or slow query log entries.</p><p><i>Error Reporting</i> aggregates application exceptions and stack traces from supported runtimes. It does not target database logs and it does not detect slow query log lines, so it cannot satisfy the requirement.</p>",
+  "batch_id": "302",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are responsible for monitoring a critical database deployment on Google Cloud Platform. You need to set up alerts to monitor the database for errors and performance issues. Which of the following solutions should you use?",
+  "originalOptions": "A. Use Cloud Trace to monitor database performance and set up alerts for slow queries.<br/>B. Use Cloud Logging to monitor the database logs and set up alerts for specific error messages.<br/>C. Use a third-party monitoring tool to collect and analyze database metrics and send alerts when predefined conditions are met.<br/>D. Install an agent on the database instance and use it to collect and analyze performance metrics.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "17",
+  "tip": "<p>When a question asks for alerts on specific log messages, look for <i>log-based metrics or log-based alerts</i> in Cloud Logging and tie them to Monitoring alerting policies. Prefer solutions that act directly on logs when the trigger condition is a log pattern rather than a derived metric.</p>",
+  "references": [
+    "https://cloud.google.com/logging/docs/logs-based-metrics",
+    "https://cloud.google.com/logging/docs/alerting/log-based-alerts",
+    "https://cloud.google.com/monitoring/alerts",
+    "https://cloud.google.com/trace/docs/overview",
+    "https://cloud.google.com/error-reporting/docs/overview",
+    "https://cloud.google.com/stackdriver/docs/solutions/agents/ops-agent/third-party/postgresql"
+  ],
+  "url": "https://certificationation.com/questions/exam-critical-database-deployment-on-google-exam-017.html",
+  "video_url": "https://certificationation.com/videos/exam-critical-database-deployment-on-google-exam-017.html"
+}

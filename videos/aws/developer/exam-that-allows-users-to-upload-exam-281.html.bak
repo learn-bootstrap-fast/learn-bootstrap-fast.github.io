@@ -1,0 +1,81 @@
+---
+title: "You are developing a web application that allows usersExam"
+description: "Video for you are developing a web application that allows users to upload videos. These videos need to go through a series of processing steps, including"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are developing a web application that allows users to upload videos. These videos need to go through a series of processing steps, including compressing, extracting thumbnails, and applying filters. Your web application has a feature that allows users to share their processed videos with friends. You want to create a scalable and cost-effective solution with minimal effort. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Your team at StreamVista on example.com is building a feature that lets users upload short video clips from a mobile app. Each clip must be transcoded into two bitrates, three preview frames must be created, and a branded overlay must be applied before users can share the finished clip with followers. You want a solution that scales automatically, minimizes cost, and needs very little operational management. Which services should you use to implement this workflow?",
+  "options": [
+    {
+      "text": "Bigtable and Cloud Functions",
+      "explanation": "This combines a wide column database with event driven functions that can react to changes and run small units of code",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud Spanner and Cloud Run",
+      "explanation": "This pairs a globally consistent relational database with a serverless container platform for stateless services",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Firestore and Cloud Functions",
+      "explanation": "This uses a serverless document store with event driven functions that can orchestrate lightweight processing",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Firestore and Compute Engine",
+      "explanation": "This combines a serverless NoSQL database with virtual machines that you provision and maintain for processing tasks",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Firestore and Cloud Functions</b>.</p><p>With <b>Firestore</b> you can create a lightweight job record for each uploaded clip and use document create events to kick off processing. Those events can trigger <b>Cloud Functions</b> that transcode to two bitrates extract three preview frames and apply the overlay. <b>Cloud Functions</b> scales automatically based on load and scales to zero when idle which minimizes cost. Storing job status in <b>Firestore</b> keeps coordination simple and the solution remains fully managed with very little operational work.</p><p><i>Bigtable and Cloud Functions</i> is a poor fit because the database is built for very high throughput and low latency workloads that require significant planning and management and it does not provide simple document triggers for this event driven workflow. This increases cost and operational effort without helping this use case.</p><p><i>Cloud Spanner and Cloud Run</i> adds unnecessary complexity and cost for a simple media pipeline. The database is an expensive globally consistent relational system and the container service would require you to build and operate containers and often add a separate queue to trigger work which increases management overhead compared with an event driven serverless function.</p><p><i>Firestore and Compute Engine</i> requires you to provision and manage virtual machines and autoscaling which goes against the requirement for very little operational management. It also does not scale to zero so it is typically more expensive for bursty workloads.</p>",
+  "batch_id": "148",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are developing a web application that allows users to upload videos. These videos need to go through a series of processing steps, including compressing, extracting thumbnails, and applying filters. Your web application has a feature that allows users to share their processed videos with friends. You want to create a scalable and cost-effective solution with minimal effort. What should you do?",
+  "originalOptions": "A. Use Cloud Spanner and Cloud Run.<br/>B. Use Firestore and Cloud Functions.<br/>C. Use Firestore and Compute Engine.<br/>D. Use Bigtable and Cloud Functions.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "281",
+  "tip": "<p>When a scenario asks for <i>auto scaling</i>, <i>minimal operations</i>, and <i>cost efficiency</i> prefer event driven <i>serverless</i> pairs. Look for a managed trigger source such as Firestore document changes and a function service that runs only on demand.</p>",
+  "references": [
+    "https://cloud.google.com/firestore/docs/overview",
+    "https://cloud.google.com/functions/docs/calling/cloud-firestore",
+    "https://cloud.google.com/functions/docs/concepts/exec#auto-scaling",
+    "https://cloud.google.com/run/docs/compare/functions",
+    "https://cloud.google.com/transcoder/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-that-allows-users-to-upload-exam-281.html",
+  "video_url": "https://certificationation.com/videos/exam-that-allows-users-to-upload-exam-281.html"
+}

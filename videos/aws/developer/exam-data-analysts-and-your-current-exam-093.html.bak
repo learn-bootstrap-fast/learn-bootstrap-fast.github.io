@@ -1,0 +1,80 @@
+---
+title: "Your company has hired a new team of data analysts andExam"
+description: "Video for your company has hired a new team of data analysts and your current Cloud SQL database must be repurposed to let the data analysts run queries on the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company has hired a new team of data analysts and your current Cloud SQL database must be repurposed to let the data analysts run queries on the data. The data analysts must be able to run their queries on all of the data. You need a solution that requires minimal effort and ensures that the performance of the main database is not compromised. As a Database Engineer, what should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Luma Transit has onboarded 14 data analysts who must run queries across all data stored in a single Cloud SQL instance that supports live production workloads. You want the simplest approach that allows full data access for analysis while keeping the primary database responsive for application traffic. What should you implement?",
+  "options": [
+    {
+      "text": "Create SQL views for each analyst and grant access to those views on the primary instance",
+      "explanation": "This approach defines logical projections of the same tables and grants users permissions on those views while all queries still execute on the primary database.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Datastream to replicate from Cloud SQL into BigQuery and instruct analysts to query BigQuery",
+      "explanation": "This sets up continuous change data capture from the source database into BigQuery so analysts can run analytics on a separate platform.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Provision Cloud SQL read replicas and give analysts read only access to those replicas",
+      "explanation": "This creates one or more replica instances that handle read traffic independently so analytical queries do not run on the primary instance.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Place Memorystore in front of the database and require analysts to query only cached data",
+      "explanation": "This adds an in memory cache that serves frequently requested keys but does not guarantee complete coverage of the dataset for analytical queries.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Provision Cloud SQL read replicas and give analysts read only access to those replicas</b>.</p><p>This approach provides separate read only instances that mirror the primary, which lets the analysts run their queries without competing with application writes. It keeps the primary responsive for application traffic because analytical queries are isolated to the readers while the primary focuses on transactions. It is simple to enable within Cloud SQL and you can scale by adding more readers if the team or workload grows. Any small replication lag is usually acceptable for ad hoc analysis while still providing full access to the data set.</p><p><i>Create SQL views for each analyst and grant access to those views on the primary instance</i> is incorrect because the queries still run on the primary, so analytics would contend with production traffic and the administrative burden grows without improving isolation.</p><p><i>Use Datastream to replicate from Cloud SQL into BigQuery and instruct analysts to query BigQuery</i> can work for warehouse style analytics, yet it is not the simplest path for this requirement. It adds additional services and pipelines, increases cost and governance complexity, and may not preserve the transactional behavior analysts expect from the source.</p><p><i>Place Memorystore in front of the database and require analysts to query only cached data</i> is not viable because this is a caching service for key value access and it does not support ad hoc SQL across the complete relational dataset. It also would not guarantee that analysts see comprehensive or current results.</p>",
+  "batch_id": "40",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "Your company has hired a new team of data analysts and your current Cloud SQL database must be repurposed to let the data analysts run queries on the data. The data analysts must be able to run their queries on all of the data. You need a solution that requires minimal effort and ensures that the performance of the main database is not compromised. As a Database Engineer, what should you do?",
+  "originalOptions": "A. Shard the data and write the data to different shards. Give access to different shards to different data analysts.<br/>B. Create views of the data, based on each data analyst's need. Provide access to a view to the corresponding data analyst.<br/>C. Create read replicas of the main database. Provide the data analysts with read access to the replicas.<br/>D. Use Memorystore to cache recently used data. Direct the data analysts to use only the cached data.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "93",
+  "tip": "<p>When you must keep a database for <i>production</i> responsive while enabling analysis, prioritize options that <i>offload reads</i> away from the writer. Answers that mention <i>read replicas</i> are usually favored over approaches that still hit the primary or add unnecessary pipelines.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/replication",
+    "https://cloud.google.com/sql/docs/mysql/replication",
+    "https://cloud.google.com/datastream/docs/integrate-bigquery",
+    "https://cloud.google.com/memorystore"
+  ],
+  "url": "https://certificationation.com/questions/exam-data-analysts-and-your-current-exam-093.html",
+  "video_url": "https://certificationation.com/videos/exam-data-analysts-and-your-current-exam-093.html"
+}

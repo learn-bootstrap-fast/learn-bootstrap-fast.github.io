@@ -1,0 +1,80 @@
+---
+title: "Your company has deployed a Cloud SQL instance withExam"
+description: "Video for your company has deployed a Cloud SQL instance with multiple read replicas to support global users. The application needs to ensure that write"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company has deployed a Cloud SQL instance with multiple read replicas to support global users. The application needs to ensure that write operations are directed to the primary instance while read operations are distributed among the replicas. What should you do to ensure efficient routing of traffic?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "CedarFlow, a subscription platform, runs Cloud SQL for MySQL with a primary instance in us-central1 and three read replicas in us-east1, europe-west1, and asia-south1. Users access the service from multiple continents. The team must ensure that all write requests go to the primary while read queries are served by replicas closest to each user to keep latency low. What approach should they take to route the database traffic efficiently?",
+  "options": [
+    {
+      "text": "Use Cloud SQL Auth Proxy with a read preference setting to automatically send reads to replicas",
+      "explanation": "This option proposes relying on the Cloud SQL Auth Proxy to secure connections and determine read routing based on a preference setting.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Place the primary and replicas behind a global external TCP load balancer to distribute all connections",
+      "explanation": "This option suggests using a global load balancer that accepts client TCP connections and spreads them across multiple backends.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure the application to route write operations to the primary endpoint and to choose the nearest replica endpoint for read queries",
+      "explanation": "This option directs the application to connect to the primary instance for all write activity and to select a regionally closest replica for read only workloads.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Send all connections to the primary instance and rely on Cloud SQL to distribute read traffic to replicas",
+      "explanation": "This option points the application to the primary instance and expects the platform to forward read queries to replicas.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Configure the application to route write operations to the primary endpoint and to choose the nearest replica endpoint for read queries</b>.</p><p>This works because Cloud SQL read replicas each expose their own connection endpoints and Cloud SQL does not automatically route queries based on read or write intent. The application should connect to the primary for all writes and should select the closest replica endpoint for reads based on user location or measured latency. This approach aligns with how Cloud SQL replication is designed and it gives you explicit control over where queries run.</p><p><i>Use Cloud SQL Auth Proxy with a read preference setting to automatically send reads to replicas</i> is incorrect because the proxy and connectors secure and authorize connections but they do not provide read preference or query routing features.</p><p><i>Place the primary and replicas behind a global external TCP load balancer to distribute all connections</i> is incorrect because Cloud SQL instances are not supported as load balancer backends and a TCP load balancer does not understand database roles to direct writes to a primary and reads to replicas.</p><p><i>Send all connections to the primary instance and rely on Cloud SQL to distribute read traffic to replicas</i> is incorrect because Cloud SQL does not forward client queries from the primary to replicas and replicas are only used when the client connects to them directly.</p>",
+  "batch_id": "269",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "Your company has deployed a Cloud SQL instance with multiple read replicas to support global users. The application needs to ensure that write operations are directed to the primary instance while read operations are distributed among the replicas. What should you do to ensure efficient routing of traffic?",
+  "originalOptions": "A. Configure the application to route all requests to the primary instance and let Cloud SQL automatically distribute read traffic to replicas.<br/>B. Use a global load balancer to distribute all traffic, including writes, across the replicas and the primary instance.<br/>C. Configure the application to connect directly to the primary instance for writes and to the replica closest to the user for reads.<br/>D. Configure DNS-based load balancing to randomly route read and write traffic to any instance.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "330",
+  "tip": "<p>When a question involves read replicas remember that the application <i>must</i> choose the replica endpoints for reads and Cloud SQL connectors <i>do not</i> perform automatic read routing.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/replication",
+    "https://cloud.google.com/sql/docs/mysql/connect-overview",
+    "https://cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+    "https://cloud.google.com/load-balancing/docs/proxy/external-tcp-overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-sql-instance-with-multiple-read-exam-330.html",
+  "video_url": "https://certificationation.com/videos/exam-sql-instance-with-multiple-read-exam-330.html"
+}

@@ -1,0 +1,82 @@
+---
+title: "Your company's legacy e-commerce system, currentlyExam"
+description: "Video for your company's legacy e-commerce system, currently hosted on-premises, uses a large monolithic database. The system must be migrated to Google Cloud"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company's legacy e-commerce system, currently hosted on-premises, uses a large monolithic database. The system must be migrated to Google Cloud and re-architected into a microservices-based application to improve scalability and resilience. You are responsible for planning the migration of the database with the least amount of downtime. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A mid size retailer named Blue Harbor Books runs an on premises order platform on a single 12 TB relational database and plans to move to Google Cloud and split the application into independent microservices to increase scalability and resilience while keeping downtime near zero during migration. You are tasked with defining a database migration approach that enables a low risk cutover and lets teams separate schemas for each microservice after the move while minimizing disruption. What should you do?",
+  "options": [
+    {
+      "text": "Migrate the monolithic database directly to Cloud Spanner and then incrementally reshape the data model to match each microservice",
+      "explanation": "This option proposes moving to Cloud Spanner first and completing the data model refactor over time after the initial migration",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Database Migration Service to continuously replicate the on premises database into a Cloud SQL instance and then point microservices to dedicated schemas in that Cloud SQL instance at cutover",
+      "explanation": "This option uses managed replication to keep Cloud SQL in sync and allows services to adopt their own schemas when traffic is switched",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Create separate Firestore instances for each microservice and implement custom synchronization jobs to align shared data",
+      "explanation": "This option suggests adopting Firestore per service and building bespoke sync processes to handle overlapping entities",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Build a custom connection broker that routes microservice requests to individual Cloud SQL databases and centralizes credentials",
+      "explanation": "This option introduces a bespoke intermediary layer to manage endpoints and authentication for multiple databases",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is: <b>Use Database Migration Service to continuously replicate the on premises database into a Cloud SQL instance and then point microservices to dedicated schemas in that Cloud SQL instance at cutover</b>.</p><p>This approach uses <b>Database Migration Service</b> to perform change data capture and continuous replication so the target <b>Cloud SQL</b> environment stays in sync with the source until you are ready. At cutover you switch application connections to the dedicated schemas in <b>Cloud SQL</b>, which keeps downtime near zero and provides a low risk rollback path if needed. After the move, teams can own separate schemas in <b>Cloud SQL</b> and later split into separate databases or instances as the system evolves, without disrupting service.</p><p>A single 12 TB database fits within managed capacity supported by <b>Cloud SQL</b> for common engines, and using <b>Database Migration Service</b> avoids building custom replication while giving an audited and supported migration workflow.</p><p><i>Migrate the monolithic database directly to Cloud Spanner and then incrementally reshape the data model to match each microservice</i> is risky for a near zero downtime cutover because Spanner typically requires significant schema redesign and application changes. Achieving minimal downtime during a fundamental data model transition is difficult and there is no straightforward like for like continuous replication path from typical on premises relational engines to Spanner.</p><p><i>Create separate Firestore instances for each microservice and implement custom synchronization jobs to align shared data</i> does not match a large relational workload and would require extensive rewrites and custom sync logic. Firestore uses a document model with different query and transaction characteristics, and custom synchronization increases operational risk and potential inconsistency.</p><p><i>Build a custom connection broker that routes microservice requests to individual Cloud SQL databases and centralizes credentials</i> does not address data migration or ongoing replication, so it does not help achieve near zero downtime. It adds complexity and a new failure point, while identity and connectivity are already available through managed services.</p>",
+  "batch_id": "32",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "Your company's legacy e-commerce system, currently hosted on-premises, uses a large monolithic database. The system must be migrated to Google Cloud and re-architected into a microservices-based application to improve scalability and resilience. You are responsible for planning the migration of the database with the least amount of downtime. What should you do?",
+  "originalOptions": "A. Migrate the monolithic database to Cloud Spanner, then gradually refactor the database schema to align with the microservices.<br/>B. Create a set of Cloud Datastore instances, one for each microservice, and implement data synchronization between them.<br/>C. Replicate the on-premises database to Cloud SQL and update the microservices to connect to their respective schemas within the Cloud SQL instance.<br/>D. Develop a custom database service that acts as an intermediary, managing connections between microservices and their respective Cloud SQL databases.",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "152",
+  "tip": "<p>When you see requirements for <i>near zero downtime</i> and a relational source, look for managed <i>continuous replication</i> that enables an easy <i>cutover</i> and simple <i>rollback</i>. Prefer solutions that preserve the existing data model first, then refactor after the move.</p>",
+  "references": [
+    "https://cloud.google.com/database-migration/docs/overview",
+    "https://cloud.google.com/database-migration/docs/concepts/continuous-migration",
+    "https://cloud.google.com/sql/docs/overview",
+    "https://cloud.google.com/spanner/docs/migrating",
+    "https://cloud.google.com/firestore/docs/best-practices",
+    "https://cloud.google.com/architecture/best-practices-for-building-microservices"
+  ],
+  "url": "https://certificationation.com/questions/exam-system-currently-hosted-on-premises-uses-exam-152.html",
+  "video_url": "https://certificationation.com/videos/exam-system-currently-hosted-on-premises-uses-exam-152.html"
+}

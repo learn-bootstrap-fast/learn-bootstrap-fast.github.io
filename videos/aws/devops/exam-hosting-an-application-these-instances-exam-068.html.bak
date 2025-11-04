@@ -1,0 +1,62 @@
+---
+title: "You currently have EC2 Instances hosting an applicationExam"
+description: "Video for you currently have EC2 Instances hosting an application. These instances are part of an Autoscaling Group created using Cloudformation. You now want"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You currently have EC2 Instances hosting an application. These instances are part of an Autoscaling Group created using Cloudformation. You now want to change the instance type of the EC2 Instances. How can you manage the deployment with the least amount of downtime?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>\"Modify the CloudFormation template to use the AutoScalingRollingUpdate policy on the group.\"</b> option is correct. By employing the <b>AutoScalingRollingUpdate</b> update policy, CloudFormation replaces instances in your Auto Scaling group incrementally, ensuring new EC2 instances are launched and healthy before any old ones are terminated. This automated rolling update minimizes downtime and risk during deployment by keeping the service available and gradually replacing all the instances.</p><p>Here is why the other options are not optimal:<br><i>\"Utilize the Rolling Update option for EC2 Instances within the Auto Scaling group configuration.\"</i> sounds plausible, but the 'Rolling Update' feature is part of Auto Scaling via CloudFormation deployment, not a direct EC2 feature for Auto Scaling groups outside of CloudFormation.<br><i>\"Terminate the current Auto Scaling group, define a new launch configuration with the required instance type, and then set up a new Auto Scaling group.\"</i> introduces significant downtime and disrupts service continuity since all instances are destroyed at once before new ones come online.<br><i>\"Manually remove all existing instances, launch replacement servers with the new instance type, and attach them back into the current Auto Scaling group.\"</i> is a cumbersome and error-prone process that does not scale well; it risks longer outages, manual errors, and leaves room for configuration drift.<br><br><b>Tip:</b> Always use built-in managed update strategies (like AutoScalingRollingUpdate) offered by CloudFormation for updating Auto Scaling groups to minimize human error and service disruption.</p>",
+  "query": "<p>Suppose you have application servers running as part of an Auto Scaling Group deployed via CloudFormation templates on AWS EC2. If you need to switch the EC2 instance type to a different one, what is the most efficient way to update the server type with minimal downtime?</p>",
+  "original_oid": "6793d9f661969b416038a109",
+  "options": [
+    {
+      "correct": false,
+      "text": "Utilize the Rolling Update option for EC2 Instances within the Auto Scaling group configuration.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Terminate the current Auto Scaling group, define a new launch configuration with the required instance type, and then set up a new Auto Scaling group.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Modify the CloudFormation template to use the AutoScalingRollingUpdate policy on the group.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Manually remove all existing instances, launch replacement servers with the new instance type, and attach them back into the current Auto Scaling group.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question150",
+  "originalQuery": "You currently have EC2 Instances hosting an application.\nThese instances are part of an Autoscaling Group created using Cloudformation.\nYou now want to change the instance type of the EC2 Instances.\nHow can you manage the deployment with the least amount of downtime?",
+  "originalOptions": "A. Terminate the existing Auto Scaling group. Create a new launch configuration with the new Instance type. Attach that to the new Auto-scaling Group.\nB. Use the AutoScalingRollingUpdate policy on CloudFormation Template Auto Scaling group\nC. Use the Rolling Update feature which is available for EC2 Instances.\nD. Manually terminate the instances, launch new instances with the new instance type and attach them to the Autoscaling group.",
+  "video_url": "https://certificationation.com/videos/exam-hosting-an-application-these-instances-exam-068.html",
+  "url": "https://certificationation.com/questions/exam-hosting-an-application-these-instances-exam-068.html"
+}

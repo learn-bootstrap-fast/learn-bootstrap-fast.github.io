@@ -1,0 +1,62 @@
+---
+title: "You have enabled CloudTrail in your AWS account andExam"
+description: "Video for you have enabled CloudTrail in your AWS account and stored the trail logs in CloudWatch Logs. In the CloudWatch Log Group, you plan to create a new"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have enabled CloudTrail in your AWS account and stored the trail logs in CloudWatch Logs. In the CloudWatch Log Group, you plan to create a new subscription filter to deliver the logs to an Amazon Kinesis stream for real-time processing. You have a Kinesis stream in place and the stream ARN is \"arn:aws:kinesis:us-east-1:123456789012:stream/Test\" When creating the subscription filter through AWS CLI \"aws logs put-subscription-filter\", you need an IAM role to provide the required permission. Which IAM permission policy should the IAM role have?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <strong>\"{ 'Statement': [ { 'Effect': 'Allow', 'Action': 'kinesis:PutRecord', 'Resource': 'arn:aws:kinesis:us-east-1:123456789012:stream/Test' } ] }\"</strong> permission is required because CloudWatch Logs needs explicit rights to push each log event to the Kinesis stream using the <code>PutRecord</code> action. This policy specifically allows the IAM role to send records to the designated stream and is a best practice for integrating CloudWatch Logs with Kinesis for streaming.</p><p>Option <i>\"{ 'Statement': [ { 'Effect': 'Allow', 'Action': 'kinesis:CreateStream', 'Resource': 'arn:aws:kinesis:us-east-1:123456789012:stream/Test' } ] }\"</i> is incorrect because this allows creating a new Kinesis stream, but does not grant permission to write records to an existing one.</p><p>The policy <i>\"{ 'Statement': [ { 'Effect': 'Deny', 'Action': 'kinesis:PutRecord', 'Condition': {'ArnNotEquals': {'aws:SourceArn': 'arn:aws:kinesis:us-east-1:123456789012:stream/Test'}} } ] }\"</i> only restricts <code>PutRecord</code> access based on conditions but does not grant any permissions that would let CloudWatch Logs write to the stream.</p><p>The statement <i>\"{ 'Statement': [ { 'Effect': 'Allow', 'Action': 'kinesis:PutRecord', 'Principal': 'arn:aws:kinesis:us-east-1:123456789012:stream/Test', 'Resource': 'logs.us-east-1.amazonaws.com' } ] }\"</i> is not valid IAM syntax for this purpose; it incorrectly specifies a principal and resource, which is unsuitable for granting CloudWatch Logs permission to call <code>PutRecord</code> on the stream.</p><p><strong>Tip:</strong> Always grant only the minimal necessary permissions and use resource-level restrictions where possible to ensure security best practices when integrating AWS services.</p>",
+  "query": "<p>An organization has configured AWS CloudTrail and is storing logs within Amazon CloudWatch Logs. The team wants to add a subscription filter that streams CloudWatch log events directly to an existing Kinesis stream with ARN <code>arn:aws:kinesis:us-east-1:123456789012:stream/Test</code> for real-time processing. When using the AWS CLI to run <code>aws logs put-subscription-filter</code>, which IAM policy is required on the role so that CloudWatch Logs can publish logs to this particular Kinesis stream?</p>",
+  "original_oid": "6793da9561969b416038a24c",
+  "options": [
+    {
+      "correct": false,
+      "text": "{ \"Statement\": [ { \"Effect\": \"Allow\", \"Action\": \"kinesis:CreateStream\", \"Resource\": \"arn:aws:kinesis:us-east-1:123456789012:stream/Test\" } ] }",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "{ \"Statement\": [ { \"Effect\": \"Allow\", \"Action\": \"kinesis:PutRecord\", \"Resource\": \"arn:aws:kinesis:us-east-1:123456789012:stream/Test\" } ] }",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "{ \"Statement\": [ { \"Effect\": \"Deny\", \"Action\": \"kinesis:PutRecord\", \"Condition\": {\"ArnNotEquals\": {\"aws:SourceArn\": \"arn:aws:kinesis:us-east-1:123456789012:stream/Test\"}} } ] }",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "{ \"Statement\": [ { \"Effect\": \"Allow\", \"Action\": \"kinesis:PutRecord\", \"Principal\": \"arn:aws:kinesis:us-east-1:123456789012:stream/Test\", \"Resource\": \"logs.us-east-1.amazonaws.com\" } ] }",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question476",
+  "originalQuery": "You have enabled CloudTrail in your AWS account and stored the trail logs in CloudWatch Logs.\nIn the CloudWatch Log Group, you plan to create a new subscription filter to deliver the logs to an Amazon Kinesis stream for real-time processing.\nYou have a Kinesis stream in place and the stream ARN is \"arn:aws:kinesis:us-east-1:123456789012:stream/Test\"\nWhen creating the subscription filter through AWS CLI \"aws logs put-subscription-filter\", you need an IAM role to provide the required permission.\nWhich IAM permission policy should the IAM role have?",
+  "originalOptions": "[\"A. { \\\"Statement\\\": [ { \\\"Effect\\\": \\\"Allow\\\", \\\"Action\\\": \\\"kinesis:CreateStream\\\", \\\"Resource\\\": \\\"arn:aws:kinesis:us-east-1:123456789012:stream/Test\\\" } ] }\",\"B. { \\\"Statement\\\": [ { \\\"Effect\\\": \\\"Deny\\\", \\\"Action\\\": \\\"kinesis:PutRecord\\\", \\\"Condition\\\": {\\\"ArnNotEquals\\\": {\\\"aws:SourceArn\\\": \\\"arn:aws:kinesis:us-east-1:123456789012:stream/Test\\\"}} } ] }\",\"C. { \\\"Statement\\\": [ { \\\"Effect\\\": \\\"Allow\\\", \\\"Action\\\": \\\"kinesis:PutRecord\\\", \\\"Resource\\\": \\\"arn:aws:kinesis:us-east-1:123456789012:stream/Test\\\" } ] }\",\"D. { \\\"Statement\\\": [ { \\\"Effect\\\": \\\"Allow\\\", \\\"Action\\\": \\\"kinesis:PutRecord\\\", \\\"Principal\\\": \\\"arn:aws:kinesis:us-east-1:123456789012:stream/Test\\\", \\\"Resource\\\": \\\"logs.us-east-1.amazonaws.com\\\" } ] }\"]",
+  "video_url": "https://certificationation.com/videos/exam-your-aws-account-and-stored-exam-135.html",
+  "url": "https://certificationation.com/questions/exam-your-aws-account-and-stored-exam-135.html"
+}

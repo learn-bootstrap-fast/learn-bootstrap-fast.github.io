@@ -1,0 +1,79 @@
+---
+title: "As a Database Engineer, you are tasked with migrating anExam"
+description: "Video for as a Database Engineer, you are tasked with migrating an on-premises MySQL database to Google Cloud SQL with minimal to zero downtime. Which of the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are tasked with migrating an on-premises MySQL database to Google Cloud SQL with minimal to zero downtime. Which of the following migration strategies would be the most suitable to achieve this objective while ensuring data consistency?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the Cloud Database Engineer for Oriole Outfitters and you must move a production MySQL workload from your data center to Cloud SQL for MySQL with near zero downtime. The service is used around the clock and the cutover window is planned to be less than five minutes, and you must keep transactional consistency throughout the migration. Which approach should you use to accomplish this?",
+  "options": [
+    {
+      "text": "Create a Cloud Dataflow pipeline to stream change events from the on-premises MySQL database into Cloud SQL in real time",
+      "explanation": "This uses a streaming data pipeline to push updates into Cloud SQL but it does not offer native MySQL replication semantics or consistent cutover guarantees.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Perform a one-time logical export to Cloud Storage and import the dump into Cloud SQL during the cutover window",
+      "explanation": "This relies on an export and import operation that requires application downtime while the data is restored and validated.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure Cloud SQL for MySQL as an external replica of the on-premises primary then promote it during the cutover",
+      "explanation": "This sets up asynchronous MySQL replication from the current primary to Cloud SQL so you can keep data in sync and perform a short promotion during cutover.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Add dual writes in the application so every transaction is committed to both the on-premises database and Cloud SQL",
+      "explanation": "This requires complex coordination and error handling and it increases the risk of divergence between the two databases.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Configure Cloud SQL for MySQL as an external replica of the on-premises primary then promote it during the cutover</b>.</p><p>This approach uses native MySQL replication to continuously stream changes from the source into Cloud SQL. It preserves transactional consistency because it replays changes from the binary log in order. At cutover you pause writes on the source, wait for replication to reach zero lag, then promote the Cloud SQL instance and redirect the application. The downtime is limited to the brief promotion and connection switch which fits a window of less than five minutes.</p><p>With <b>the external replica approach</b> you enable binary logging on the source, seed Cloud SQL with an initial copy, then start replication over a secure connection. Because MySQL applies binary logs in order, atomicity and referential integrity are maintained. The promotion step finalizes the move with minimal disruption while meeting the requirement for continuous service and consistent data.</p><p><i>Create a Cloud Dataflow pipeline to stream change events from the on-premises MySQL database into Cloud SQL in real time</i> is not a native or supported path for preserving transactional semantics into Cloud SQL. A custom CDC pipeline cannot easily guarantee ordering across transactions or exactly once delivery, which can lead to inconsistencies.</p><p><i>Perform a one-time logical export to Cloud Storage and import the dump into Cloud SQL during the cutover window</i> requires extended downtime while the import runs and it does not capture ongoing writes. For production databases this almost always exceeds a five minute window and risks data loss unless writes are fully halted.</p><p><i>Add dual writes in the application so every transaction is committed to both the on-premises database and Cloud SQL</i> cannot ensure atomicity across two systems and is prone to partial failures and race conditions. It risks divergence and violates the requirement to keep transactional consistency during migration.</p>",
+  "batch_id": "232",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are tasked with migrating an on-premises MySQL database to Google Cloud SQL with minimal to zero downtime. Which of the following migration strategies would be the most suitable to achieve this objective while ensuring data consistency?",
+  "originalOptions": "A. Set up Cloud SQL as a read replica of the on-premises MySQL database and promote it to primary when ready.<br/>B. Implement a custom dual-write mechanism to write data to both the on-premises MySQL database and Cloud SQL simultaneously.<br/>C. Lift and shift the entire database using a one-time export-import process.<br/>D. Utilize Cloud Dataflow to stream data from the on-premises MySQL database to Cloud SQL in real-time.",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "334",
+  "tip": "<p>When you see requirements for <i>near zero downtime</i> and <i>transactional consistency</i> favor native database replication to the managed target and a brief promotion at cutover.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/replication/replication-from-external",
+    "https://cloud.google.com/sql/docs/mysql/promote-replica",
+    "https://cloud.google.com/sql/docs/mysql/migrate"
+  ],
+  "url": "https://certificationation.com/questions/exam-tasked-with-migrating-an-on-premises-exam-334.html",
+  "video_url": "https://certificationation.com/videos/exam-tasked-with-migrating-an-on-premises-exam-334.html"
+}

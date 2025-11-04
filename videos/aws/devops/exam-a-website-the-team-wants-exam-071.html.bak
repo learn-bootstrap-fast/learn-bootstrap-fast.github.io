@@ -1,0 +1,62 @@
+---
+title: "A team has an application which is a website. The teamExam"
+description: "Video for a team has an application which is a website. The team wants to test different versions of the website to the users without redirecting or changing"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A team has an application which is a website. The team wants to test different versions of the website to the users without redirecting or changing the browser URL. In order to perform this kind of A/B testing, the team does not plan to modify any front-end or back-end code with additional logic. And it is supposed to put this logic to CDN network. What is the best place/service to implement the switching logic?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><strong>Lambda@Edge</strong> is the most suitable choice for enabling A/B testing at the CDN layer without changing the browser’s URL or adding custom code to the front or back end. Lambda@Edge allows you to run code within AWS locations worldwide that intercepts requests and responses handled by CloudFront. This enables custom logic (such as A/B test version selection) to be executed based on cookies, headers, or other request attributes before reaching your web servers or origin.<br><br><em>\"Weighted routing policy in Route 53\"</em> is incorrect because while Route 53 can distribute DNS queries to different endpoints, it operates at the DNS layer and can result in cache and redirect behaviors that change the visible URL or are inconsistent for existing users. This is not suitable for A/B tests that must preserve the original browser URL and session consistency.<br><br><em>\"Using AWS Lambda with API Gateway\"</em> does not operate at the CDN level. This approach would require you to put additional logic in your application’s HTTP endpoints (either front-end or back-end), which the scenario specifically wants to avoid.<br><br><em>\"Global Accelerator with CloudFront\"</em> is designed for routing and improving global network latency but does not provide the request transformation or customized logic necessary for fine-grained A/B testing at the HTTP request level within the CDN layer.<br><br><strong>Tip:</strong> Always leverage Lambda@Edge with CloudFront for advanced content-based or request-based actions at the CDN edge, including personalizations, redirects, or variations for A/B testing, when you do not want to modify your application's codebase.</p>",
+  "query": "<p>A project team wants to show different variants of their website to users for A/B testing purposes. They need to ensure that users see various versions seamlessly, without browser redirects or changes to the URL, and they do <strong>not</strong> want to add any custom logic to the site's front-end or back-end systems. The team prefers to manage this functionality within the CDN layer. Which AWS solution is optimal for implementing the version-switching mechanism in this scenario?</p>",
+  "original_oid": "6793da2e61969b416038a17b",
+  "options": [
+    {
+      "correct": true,
+      "text": "Lambda@Edge",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Weighted routing policy in Route 53",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Using AWS Lambda with API Gateway",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Global Accelerator with CloudFront",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question266",
+  "originalQuery": "A team has an application which is a website.\nThe team wants to test different versions of the website to the users without redirecting or changing the browser URL.\nIn order to perform this kind of A/B testing, the team does not plan to modify any front-end or back-end code with additional logic.\nAnd it is supposed to put this logic to CDN network.\nWhat is the best place/service to implement the switching logic?",
+  "originalOptions": "A. Weighted routing at Route53,B. Lambda@Edge,C. Global accelerator at CloudFront,D. Lambda and API Gateway.",
+  "video_url": "https://certificationation.com/videos/exam-a-website-the-team-wants-exam-071.html",
+  "url": "https://certificationation.com/questions/exam-a-website-the-team-wants-exam-071.html"
+}

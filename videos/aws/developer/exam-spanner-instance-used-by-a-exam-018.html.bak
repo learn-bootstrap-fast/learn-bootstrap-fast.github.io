@@ -1,0 +1,80 @@
+---
+title: "You are managing a critical Cloud Spanner instance usedExam"
+description: "Video for you are managing a critical Cloud Spanner instance used by a high-traffic web application. Your development team is deploying a major update and"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are managing a critical Cloud Spanner instance used by a high-traffic web application. Your development team is deploying a major update and requires a full database backup before proceeding. Another DBA starts an on-demand backup, and you need to verify the backup status. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You oversee a mission critical Cloud Spanner instance for a busy ticketing site at mcnz.com, and the release team plans a significant schema change in 45 minutes that requires a full backup beforehand. Another database engineer has already started an on demand backup, and you must quickly confirm whether the backup is still running or has finished. How should you verify the backup status?",
+  "options": [
+    {
+      "text": "Monitor the Cloud Logging viewer for the instance and filter for cloudspanner.googleapis.com operations log entries",
+      "explanation": "This relies on viewing log entries in Cloud Logging for the Spanner instance to look for backup related records",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Review Cloud Audit Logs for Admin Activity to see backup progress for the instance",
+      "explanation": "This uses audit logs to find administrative actions related to Spanner resources for visibility into changes",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Run gcloud spanner operations list for the instance and check the CreateBackup operation state",
+      "explanation": "This lists long running operations for the Spanner instance so you can confirm whether the backup has completed or is still in progress",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Configure a Cloud Monitoring alerting policy on a backup metric and wait for a notification",
+      "explanation": "This approach would create an alert to notify you based on metric conditions but it introduces delay and configuration overhead",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct answer is <b>Run gcloud spanner operations list for the instance and check the CreateBackup operation state</b>.</p><p>Backup creation in Cloud Spanner is a long running operation that is tracked by the operations service. Listing operations at the instance level shows the CreateBackup entry with progress metadata and a done field so you can immediately see if it is still running or has finished. This is the most direct and timely way to verify backup status without waiting for log ingestion or alerts.</p><p><i>Monitor the Cloud Logging viewer for the instance and filter for cloudspanner.googleapis.com operations log entries</i> is not correct because logs may show that an operation started or completed but they are not designed to provide real time operation state and can have ingestion delays. This is slower and less reliable than checking the operation directly.</p><p><i>Review Cloud Audit Logs for Admin Activity to see backup progress for the instance</i> is not correct because Admin Activity logs record who initiated the backup and whether an administrative call occurred. They do not provide granular progress or timely state for a running backup and can appear with delay.</p><p><i>Configure a Cloud Monitoring alerting policy on a backup metric and wait for a notification</i> is not correct because you need immediate confirmation and alerting requires setup time and evaluation intervals. Cloud Monitoring does not expose a dedicated real time backup progress metric that would notify you quickly enough for this scenario.</p>",
+  "batch_id": "33",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are managing a critical Cloud Spanner instance used by a high-traffic web application. Your development team is deploying a major update and requires a full database backup before proceeding. Another DBA starts an on-demand backup, and you need to verify the backup status. What should you do?",
+  "originalOptions": "A. Check the cloudspanner.googleapis.com/operations.log instance log.<br/>B. Monitor the Cloud Logging dashboard.<br/>C. Use Cloud Audit Logs to verify the status.<br/>D. Perform the gcloud spanner operations list command.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "18",
+  "tip": "<p>When you must confirm the <i>status</i> of a Cloud Spanner backup or restore quickly, query the operations service first. In gcloud, list instance operations and check the <i>done</i> state, then describe the operation if you need details.</p>",
+  "references": [
+    "https://cloud.google.com/sdk/gcloud/reference/spanner/operations/list",
+    "https://cloud.google.com/spanner/docs/backup",
+    "https://cloud.google.com/spanner/docs/reference/rest/v1/projects.instances.operations/list",
+    "https://cloud.google.com/spanner/docs/audit-logging"
+  ],
+  "url": "https://certificationation.com/questions/exam-spanner-instance-used-by-a-exam-018.html",
+  "video_url": "https://certificationation.com/videos/exam-spanner-instance-used-by-a-exam-018.html"
+}

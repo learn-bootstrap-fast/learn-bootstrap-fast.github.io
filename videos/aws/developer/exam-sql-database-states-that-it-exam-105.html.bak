@@ -1,0 +1,80 @@
+---
+title: "The security policy for a Cloud SQL database states thatExam"
+description: "Video for the security policy for a Cloud SQL database states that it should only be accessed from VPC networks within Google Cloud. As a Database Engineer, you"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "The security policy for a Cloud SQL database states that it should only be accessed from VPC networks within Google Cloud. As a Database Engineer, you don't want to enable a public IP address for this instance. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A fintech firm named SkyLedger mandates that its Cloud SQL instance be reachable only from VPC networks within Google Cloud. You must avoid assigning any public IP to the database yet still permit workloads in your VPC to connect. What should you do?",
+  "options": [
+    {
+      "text": "Create a firewall rule that opens the database port to your application subnet",
+      "explanation": "This permits traffic on the port within the VPC but it does not establish the necessary private connectivity to a managed Google service",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Set up private services access in the VPC and create the instance with a private IP address",
+      "explanation": "This establishes a private service connection so Cloud SQL uses an internal address that is reachable only from the VPC",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Enable Serverless VPC Access on the project to allow private connectivity",
+      "explanation": "This connects serverless runtimes to the VPC but it does not configure private routing to Cloud SQL",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Add an authorized networks entry that uses your internal subnet range",
+      "explanation": "This feature allows public IP connections by IP allow list and it expects external CIDR ranges",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Set up private services access in the VPC and create the instance with a private IP address</b>.</p><p>This approach creates a private connection between your VPC and the Google managed service network so the Cloud SQL instance gets a private address and no public IP. Your workloads in the selected VPC can reach the database over private RFC 1918 space through the service networking peering which meets the requirement to restrict access to VPC networks within Google Cloud.</p><p><i>Create a firewall rule that opens the database port to your application subnet</i> is incorrect because Cloud SQL is a managed service that does not live in your VPC and your VPC firewall rules do not make a publicly addressed instance private. If the instance had only a public IP this rule would not satisfy the requirement to avoid any public IP.</p><p><i>Enable Serverless VPC Access on the project to allow private connectivity</i> is incorrect because this only lets serverless products send traffic into your VPC. It does not assign a private address to Cloud SQL and it does not create the required private connectivity to the managed service.</p><p><i>Add an authorized networks entry that uses your internal subnet range</i> is incorrect because authorized networks apply only to public IP connectivity. Using this feature would require a public IP on the instance which violates the requirement.</p>",
+  "batch_id": "84",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "The security policy for a Cloud SQL database states that it should only be accessed from VPC networks within Google Cloud. As a Database Engineer, you don't want to enable a public IP address for this instance. What should you do?",
+  "originalOptions": "A. Configure authorized networks CIDR with an internal subnet.<br/>B. Configure your VPC with a firewall rule to allow HTTP(S).<br/>C. Configure your VPC with a firewall rule to allow the database's port.<br/>D. Configure private services access in your VPC.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "105",
+  "tip": "<p>When you see a requirement to avoid any public IP on Cloud SQL and to allow only VPC internal access, think of <i>private IP</i> for Cloud SQL which uses <i>private services access</i>. Remember that <i>authorized networks</i> only apply to public IP and that <i>Serverless VPC Access</i> affects serverless egress to your VPC rather than how Cloud SQL is addressed.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/private-ip",
+    "https://cloud.google.com/vpc/docs/private-services-access",
+    "https://cloud.google.com/sql/docs/mysql/configure-ip",
+    "https://cloud.google.com/vpc/docs/serverless-vpc-access"
+  ],
+  "url": "https://certificationation.com/questions/exam-sql-database-states-that-it-exam-105.html",
+  "video_url": "https://certificationation.com/videos/exam-sql-database-states-that-it-exam-105.html"
+}

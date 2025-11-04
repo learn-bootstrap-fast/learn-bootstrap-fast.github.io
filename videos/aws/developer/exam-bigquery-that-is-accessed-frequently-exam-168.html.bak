@@ -1,0 +1,82 @@
+---
+title: "You are managing a large dataset on BigQuery that isExam"
+description: "Video for you are managing a large dataset on BigQuery that is accessed frequently during weekly business hours but seldom accessed outside of these hours. You"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are managing a large dataset on BigQuery that is accessed frequently during weekly business hours but seldom accessed outside of these hours. You want to minimize costs associated with querying this dataset while ensuring that query performance is maintained during high-access periods. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "An analytics team at BrightCart Retail runs most BigQuery reports on weekdays from 8 a.m. to 8 p.m. while usage is light at night and on weekends. You need to keep performance steady during the busy window and reduce spend when demand drops. What should you implement?",
+  "options": [
+    {
+      "text": "Enable BigQuery Editions Enterprise and rely on autoscaling throughout the entire day",
+      "explanation": "BigQuery Editions can automatically scale slot capacity as workload increases and charges for a baseline with additional autoscaled usage",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Convert the data to date-partitioned tables and set a 45 day partition expiration",
+      "explanation": "Partitioning can limit scanned data to relevant dates and expiration can manage storage footprint for older partitions",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use BigQuery Reservations with flex slots that are assigned only during peak hours and then removed afterward",
+      "explanation": "Flex slots are short term capacity commitments that you can assign during business hours and deallocate when demand is low",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Take a daily snapshot of the dataset and restore from it before busy periods",
+      "explanation": "Snapshots preserve table state for point in time recovery and are primarily intended for backup and restore use cases",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Use BigQuery Reservations with flex slots that are assigned only during peak hours and then removed afterward</b>.</p><p>This approach lets you provision dedicated capacity during the weekday 8 a.m. to 8 p.m. window so query concurrency and performance remain steady. You can then remove that temporary capacity after hours so workloads fall back to on demand or smaller reservations which reduces spend when demand drops. The short commitment nature of <b>flex slots</b> makes them well suited for time bound capacity needs without committing to long term flat rate purchases.</p><p><i>Enable BigQuery Editions Enterprise and rely on autoscaling throughout the entire day</i> is incorrect because it does not explicitly constrain capacity to business hours and it can scale with incidental workloads at night which makes spend less predictable. While the newer editions model provides autoscaling and can be cost efficient, the scenario asks to add capacity only during peak hours and to remove it afterward which is precisely what time bound reservations achieve.</p><p><i>Convert the data to date-partitioned tables and set a 45 day partition expiration</i> is incorrect because partitioning and expiration primarily affect scan efficiency and storage cost. They do not guarantee steady performance during peak periods nor do they provide a way to scale capacity up and down based on the time of day.</p><p><i>Take a daily snapshot of the dataset and restore from it before busy periods</i> is incorrect because snapshots are for point in time recovery and do not improve query performance or lower compute cost during peak windows.</p>",
+  "batch_id": "224",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are managing a large dataset on BigQuery that is accessed frequently during weekly business hours but seldom accessed outside of these hours. You want to minimize costs associated with querying this dataset while ensuring that query performance is maintained during high-access periods. What should you do?",
+  "originalOptions": "A. Use BigQuery's automatic scaling feature to adjust resources in response to the query load.<br/>B. Convert the dataset to a partitioned table and set an expiration time for the partitions.<br/>C. Implement a BigQuery Reservation to allocate flex slots during high-access periods and release them afterward.<br/>D. Create a snapshot of the dataset and restore from it during high-access periods to expedite queries.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "168",
+  "tip": "<p>When a question describes predictable busy windows, think about <i>capacity reservations</i> and whether you can <i>schedule</i> or time bound them. Distinguish compute capacity controls from <i>storage optimizations</i> like partitioning or snapshots, which do not ensure steady performance.</p>",
+  "references": [
+    "https://cloud.google.com/bigquery/docs/reservations-intro",
+    "https://cloud.google.com/bigquery/docs/commitments#commitment-plans",
+    "https://cloud.google.com/bigquery/docs/reservations-assignments",
+    "https://cloud.google.com/bigquery/docs/editions-intro",
+    "https://cloud.google.com/bigquery/docs/partitioned-tables",
+    "https://cloud.google.com/bigquery/docs/table-snapshots-intro"
+  ],
+  "url": "https://certificationation.com/questions/exam-bigquery-that-is-accessed-frequently-exam-168.html",
+  "video_url": "https://certificationation.com/videos/exam-bigquery-that-is-accessed-frequently-exam-168.html"
+}

@@ -1,0 +1,88 @@
+---
+title: "You are managing a production Cloud SQL instance that isExam"
+description: "Video for you are managing a production Cloud SQL instance that is prone to disruptions during unplanned failovers. Customers have reported service"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are managing a production Cloud SQL instance that is prone to disruptions during unplanned failovers. Customers have reported service unavailability during these events. You want to improve the availability and resilience of your database while minimizing downtime during failovers. What should you do? (Choose two)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "SkyRoute, a travel booking startup, operates a mission-critical Cloud SQL for MySQL instance in us-central1 and customers experience brief outages during unexpected failovers. The team wants to boost availability and reduce downtime during these failover events while staying on Cloud SQL and aims for at least 99.95 percent monthly uptime. What should you implement?",
+  "options": [
+    {
+      "text": "Set a maintenance window for controlled failover testing",
+      "explanation": "This lets you choose a predictable time for scheduled maintenance and can be used to conduct failover drills",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable high availability for the instance",
+      "explanation": "This changes the instance to a regional configuration with a synchronous standby in another zone and allows automatic failover",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Enable automatic backups",
+      "explanation": "This captures regular backups and allows point in time recovery for data protection",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use read replicas",
+      "explanation": "These replicas serve read traffic and can be promoted to primary when needed for continuity",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Cloud Spanner",
+      "explanation": "This is a globally distributed relational database service on Google Cloud that provides strong availability and scalability",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct answers are <b>Enable high availability for the instance</b> and <b>Use read replicas</b>.</p><p><b>Enable high availability for the instance</b> gives the Cloud SQL instance a primary and standby in different zones with automatic failover, which significantly shortens disruption during an unexpected outage. This configuration also qualifies the instance for the Cloud SQL SLA of 99.95 percent monthly uptime, which meets the team’s target while staying on Cloud SQL.</p><p><b>Use read replicas</b> helps reduce customer impact during a failover by offloading read traffic so fewer requests depend on the primary. Replicas can continue serving reads and can be promoted if needed, which can shorten recovery time in a prolonged incident. This complements high availability rather than replacing it and together they improve resilience and reduce perceived downtime.</p><p><i>Set a maintenance window for controlled failover testing</i> only schedules when maintenance can occur and does not change behavior during unexpected failovers, so it does not improve availability during unplanned events.</p><p><i>Enable automatic backups</i> protects data for recovery but does not affect failover speed or availability, so it will not reduce downtime during transient outages.</p><p><i>Cloud Spanner</i> is a different database service and would not satisfy the requirement to stay on Cloud SQL. Although it offers strong availability, it does not align with the stated constraint.</p>",
+  "batch_id": "126",
+  "answerCode": "2,4",
+  "type": "multi-select",
+  "originalQuery": "You are managing a production Cloud SQL instance that is prone to disruptions during unplanned failovers. Customers have reported service unavailability during these events. You want to improve the availability and resilience of your database while minimizing downtime during failovers. What should you do? (Choose two)",
+  "originalOptions": "A. Enable high availability (HA) for the instance.<br/>B. Use read replicas.<br/>C. Set a maintenance window for failover testing.<br/>D. Enable automatic backups.<br/>E. Use multi-zone instances.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "305",
+  "tip": "<p>When a question mentions an uptime target and to <i>stay on the same service</i>, map the requirement to the service’s <i>SLA backed</i> feature that provides <i>automatic failover</i>. Then look for complementary features like <i>replicas</i> that further reduce user impact.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/high-availability",
+    "https://cloud.google.com/sql/docs/mysql/configure-ha",
+    "https://cloud.google.com/sql/docs/mysql/replication",
+    "https://cloud.google.com/sql/docs/mysql/maintenance",
+    "https://cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+    "https://cloud.google.com/sql/sla"
+  ],
+  "url": "https://certificationation.com/questions/exam-cloud-sql-instance-that-is-exam-305.html",
+  "video_url": "https://certificationation.com/videos/exam-cloud-sql-instance-that-is-exam-305.html"
+}

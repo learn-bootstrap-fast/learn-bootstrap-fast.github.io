@@ -1,0 +1,62 @@
+---
+title: "You need to configure a new custom AWS Config rule toExam"
+description: "Video for you need to configure a new custom AWS Config rule to check whether EC2 security groups in your AWS account are compliant with the company's security"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You need to configure a new custom AWS Config rule to check whether EC2 security groups in your AWS account are compliant with the company's security policies. One colleague has already created a Lambda function which you can use to perform the checks of security groups. For the Config rule, you would need to make sure that whenever there is a configuration change in any EC2 security group, the rule is triggered to evaluate the related security group resources. How would you specify the trigger of the Config rule?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct solution is to select the <b>'Configuration changes' trigger type with the scope limited to 'EC2: SecurityGroup'</b>. This ensures the Config rule runs evaluations whenever there is a configuration modification specifically to an EC2 security group, thus aligning evaluations directly with relevant resource changes.</p><p>The other responses are less suitable:</p><ul><li><i>'Set the trigger type to Periodic with a 1-hour frequency and limit the scope to EC2: SecurityGroup resources.'</i> - This option only evaluates the rule on a scheduled basis rather than immediately after configuration changes, which could result in delayed detection of issues.</li><li><i>'Choose Configuration changes as the trigger type and set the scope to include the tag assigned to the security groups; ensure every security group (existing and new) has this tag.'</i> - This introduces unnecessary dependency on a specific tag and management overhead, making it easy to miss security groups if they're not properly tagged. The most direct and reliable scope is targeting the resource type itself.</li><li><i>'In the Config rule trigger, pick Configuration changes and set the scope to All changes for all EC2 resource types.'</i> - Scoping to all EC2 changes is inefficient and could result in unnecessary rule evaluations for irrelevant resources, creating unnecessary noise.</li></ul><p><b>Tip:</b> Always scope your Config triggers as narrowly as possible for the resource and change type relevant to your policy. This improves performance, reduces cost, and minimizes extraneous compliance alerts.</p>",
+  "query": "<p>You are setting up a custom AWS Config rule to validate whether EC2 security groups in your organization adhere to internal security standards. A Lambda function is already available for checking the rules. You need to ensure the rule's evaluation is automatically triggered whenever any EC2 security group configuration is modified. Which approach correctly configures the Config rule's trigger settings?</p>",
+  "original_oid": "6793da9961969b416038a253",
+  "options": [
+    {
+      "correct": false,
+      "text": "Set the trigger type to 'Periodic' with a 1-hour frequency and limit the scope to 'EC2: SecurityGroup' resources.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Choose 'Configuration changes' as the trigger type and set the scope to include the tag assigned to the security groups; ensure every security group (existing and new) has this tag.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "In the Config rule trigger, pick 'Configuration changes' and set the scope to 'All changes' for all EC2 resource types.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Configure the rule trigger to use 'Configuration changes' and specify the scope as 'EC2: SecurityGroup' only.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question483",
+  "originalQuery": "You need to configure a new custom AWS Config rule to check whether EC2 security groups in your AWS account are compliant with the company's security policies.\nOne colleague has already created a Lambda function which you can use to perform the checks of security groups.\nFor the Config rule, you would need to make sure that whenever there is a configuration change in any EC2 security group, the rule is triggered to evaluate the related security group resources.\nHow would you specify the trigger of the Config rule?",
+  "originalOptions": "[\"A. In the Config rule trigger, specify the trigger type to be \\u201cConfiguration changes\\u201d and configure the scope of changes to be \\u201cAll changes\\u201d for all the EC2 resources.\",\"B. Add a trigger in the Config rule, select the \\u201cPeriodic\\u201d trigger type with a frequency of 1 hour and choose \\u201cEC2: SecurityGroup\\u201d in the trigger scope.\",\"C. Create a trigger with the configuration change type and select the security group tag in the scope of changes. Make sure all existing and new security groups have the tag that you defined.\",\"D. In the Config rule trigger, specify the trigger type to be \\u201cConfiguration changes\\u201d and the scope of changes to be \\u201cEC2: SecurityGroup\\u201d.\"]",
+  "video_url": "https://certificationation.com/videos/exam-aws-config-rule-to-check-exam-168.html",
+  "url": "https://certificationation.com/questions/exam-aws-config-rule-to-check-exam-168.html"
+}

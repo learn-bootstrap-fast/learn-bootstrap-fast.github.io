@@ -1,0 +1,67 @@
+---
+title: "You use an ECS cluster to host a web application with anExam"
+description: "Video for you use an ECS cluster to host a web application with an Application Load Balancer. You also build a pipeline to perform the rolling update of the ECS"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You use an ECS cluster to host a web application with an Application Load Balancer. You also build a pipeline to perform the rolling update of the ECS service using the AWS ECS CLI command “ecs-cli compose” Everytime when you update the ECS service with a new task, it takes 5 minutes for the old ECS task to drain the connections before the task is stopped. There is a requirement to increase the timer to 10 minutes. How would you achieve this requirement?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct way to increase the draining timer to 10 minutes for ECS tasks managed by an Application Load Balancer is by modifying the <strong>Deregistration delay value of the target group</strong> connected to the ALB. Setting this value to 600 seconds (10 minutes) ensures tasks remain active for the desired draining period before being deregistered. This approach works because the connection draining period is controlled at the target group level, not directly on the ALB itself or the ECS service config.</p><p>Option <i>'Modify the default connection draining timer from 5 minutes to 10 minutes directly in the Application Load Balancer's settings in the AWS Console.'</i> is incorrect because the ALB itself does not provide a direct option to set connection draining timeout; it is managed by target groups.</p><p>Option <i>'Edit the ECS service settings in the AWS Console by adjusting the connection draining timeout on the Deployment tab from 5 to 10 minutes.'</i> is incorrect since ECS service settings don't contain a connection draining timer option; that feature is not controlled at the ECS service level.</p><p>Option <i>'Append the parameter '--Deregistration delay=600' to the 'ecs-cli compose' command to set the connection draining timer to 10 minutes.'</i> is also incorrect—there is no such CLI parameter available for manipulating target group deregistration delay via ecs-cli and these settings must be configured in the target group itself.</p><p><strong>Tip:</strong> Always check the target group when you need to adjust connection draining behaviors for ECS tasks behind an ALB. Remember, the deregistration delay for a target group is the authoritative value for connection draining duration.</p>",
+  "query": "<p>You have a web application hosted on an ECS cluster that is fronted by an Application Load Balancer (ALB). Rolling updates to your ECS service are managed via the <strong>ecs-cli compose</strong> command. Currently, when a task is updated, the existing ECS task takes 5 minutes to complete draining connections before stopping. Your team needs to increase this draining period to 10 minutes. What is the correct AWS Console action to accomplish this?</p>",
+  "original_oid": "6793da8f61969b416038a241",
+  "options": [
+    {
+      "correct": false,
+      "text": "Modify the default connection draining timer from 5 minutes to 10 minutes directly in the Application Load Balancer's settings in the AWS Console.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Update the Deregistration delay value of the target group associated with the Application Load Balancer to 600 seconds (10 minutes).",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Edit the ECS service settings in the AWS Console by adjusting the connection draining timeout on the Deployment tab from 5 to 10 minutes.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Append the parameter '--Deregistration delay=600' to the 'ecs-cli compose' command to set the connection draining timer to 10 minutes.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question465",
+  "originalQuery": "You use an ECS cluster to host a web application with an Application Load Balancer.\nYou also build a pipeline to perform the rolling update of the ECS service using the AWS ECS CLI command “ecs-cli compose”\nEverytime when you update the ECS service with a new task, it takes 5 minutes for the old ECS task to drain the connections before the task is stopped.\nThere is a requirement to increase the timer to 10 minutes.\nHow would you achieve this requirement?",
+  "originalOptions": [
+    "A. Click the ECS service in the AWS Console and check the timeout of connection draining in the Deployment tab. Modify the timeout from 5 minutes to 10 minutes.",
+    "B. Click the Application Load Balancer used by the ECS cluster in the AWS Console and modify its default draining timer from 5 minutes to 10 minutes.",
+    "C. Find the target group of the Application Load Balancer used by the ECS cluster and check the value of Deregistration delay. Increase the value to 600 seconds (10 minutes).",
+    "D. In the ECS CLI command “ecs-cli compose”, add the option “--Deregistration delay=600” to increase the default timer of connection draining."
+  ],
+  "video_url": "https://certificationation.com/videos/exam-web-application-with-an-application-exam-286.html",
+  "url": "https://certificationation.com/questions/exam-web-application-with-an-application-exam-286.html"
+}

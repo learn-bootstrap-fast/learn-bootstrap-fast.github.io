@@ -1,0 +1,81 @@
+---
+title: "As a Database Engineer, you have been tasked withExam"
+description: "Video for as a Database Engineer, you have been tasked with designing a connection strategy for a globally distributed application hosted on Google Cloud"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you have been tasked with designing a connection strategy for a globally distributed application hosted on Google Cloud Platform that needs to access Bigtable instances. To ensure minimal latency and optimal performance, which of the following strategies should you use?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "BlueKite Analytics runs services in three regions on Google Cloud and needs a connection approach for its globally distributed microservices to reach Cloud Bigtable with the lowest latency and consistent performance. Which approach should be implemented?",
+  "options": [
+    {
+      "text": "Use a single global VPC to connect every app deployment and every Cloud Bigtable instance",
+      "explanation": "A single VPC spans regions but Cloud Bigtable remains a regional service and traffic can still traverse long distances.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Establish VPC peering and point all clients to the nearest regional Cloud Bigtable endpoint",
+      "explanation": "VPC peering links networks but it does not automatically ensure that each client uses the lowest latency path to the service.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure the applications to use private IP and connect to the closest regional Cloud Bigtable cluster",
+      "explanation": "Private IP keeps traffic on the Google Cloud private network and when clients and Bigtable are in the same region this reduces latency and improves performance.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use Direct Peering so the applications connect directly to Google and reach Cloud Bigtable",
+      "explanation": "Direct Peering is intended for connecting on premises networks to Google and it does not optimize connectivity between services inside Google Cloud.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Configure the applications to use private IP and connect to the closest regional Cloud Bigtable cluster</b>.</p><p>Using <b>private IP</b> keeps traffic on the Google backbone and within your VPC which reduces latency and improves predictability. Cloud Bigtable is a regional service and when you deploy clusters in multiple regions and enable the appropriate routing policy the client libraries connect to the <b>closest regional cluster</b> for low latency access and steady performance.</p><p>This approach also simplifies security because you rely on VPC level controls and avoid public endpoints. It aligns with recommended production connectivity patterns for managed Google services.</p><p>The option <i>Use a single global VPC to connect every app deployment and every Cloud Bigtable instance</i> is insufficient because a global VPC does not ensure clients use the nearest Bigtable cluster. Traffic can still cross regions and increase latency and you still need <b>private IP</b> with regional awareness to consistently reach the closest cluster.</p><p>The option <i>Establish VPC peering and point all clients to the nearest regional Cloud Bigtable endpoint</i> is not appropriate because Bigtable private access relies on <b>private IP</b> rather than VPC peering to the service. Client libraries select the nearest cluster when you configure routing correctly and manual endpoint steering is neither necessary nor the most reliable.</p><p>The option <i>Use Direct Peering so the applications connect directly to Google and reach Cloud Bigtable</i> targets on premises connectivity to the Google network and does not improve latency for workloads already in Google Cloud. It also does not provide regional routing to the nearest cluster whereas <b>private IP</b> with regional clusters does.</p>",
+  "batch_id": "330",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you have been tasked with designing a connection strategy for a globally distributed application hosted on Google Cloud Platform that needs to access Bigtable instances. To ensure minimal latency and optimal performance, which of the following strategies should you use?",
+  "originalOptions": "A. Connect the application instances to the nearest regional Bigtable endpoint using VPC peering<br/>B. Configure the application instances to use private IP addresses to connect to the nearest regional Bigtable instance<br/>C. Use a single global VPC for all application instances and Bigtable instances<br/>D. Utilize Direct Peering to establish a direct connection between the application instances and Bigtable",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "131",
+  "tip": "<p>When a question asks for the lowest latency path to a managed Google service, prefer <i>private IP</i> in the <i>same region</i> and features that route to the nearest replica. Be cautious of choices that rely on <i>VPC peering</i> or public endpoints because those often add latency or variability.</p>",
+  "references": [
+    "https://cloud.google.com/bigtable/docs/overview",
+    "https://cloud.google.com/bigtable/docs/routing-policy",
+    "https://cloud.google.com/vpc/docs/private-service-connect",
+    "https://cloud.google.com/vpc/docs/vpc-peering",
+    "https://cloud.google.com/interconnect/docs/concepts/direct-peering"
+  ],
+  "url": "https://certificationation.com/questions/exam-been-tasked-with-designing-a-exam-131.html",
+  "video_url": "https://certificationation.com/videos/exam-been-tasked-with-designing-a-exam-131.html"
+}

@@ -1,0 +1,80 @@
+---
+title: "A media company needs to build a scalable videoExam"
+description: "Video for a media company needs to build a scalable video processing system that allows content creators to upload videos, which are then transcoded,"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A media company needs to build a scalable video processing system that allows content creators to upload videos, which are then transcoded, watermarked, and made searchable within their platform. The system should be able to scale automatically to accommodate varying upload frequencies and sizes. What is the best approach to implement this system?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "An online learning platform at example.com needs a highly scalable workflow where instructors upload videos that are then transcoded to multiple bitrates, watermarked with the brand, and indexed so viewers can search by content. Upload volume is unpredictable with some days having only a few 300 MB files and other days receiving several hundred assets up to 8 GB each. The team wants a serverless design that scales automatically and minimizes operations. Which approach should they implement on Google Cloud?",
+  "options": [
+    {
+      "text": "Use Cloud Functions to react to new uploads in Cloud Storage, process videos with custom FFmpeg containers on Cloud Run for transcoding and watermarking, and index metadata in Elasticsearch running on Compute Engine",
+      "explanation": "This design uses event driven serverless components for processing while relying on a self managed search cluster for indexing",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Cloud Storage for uploads, Cloud Video Intelligence API for searchable metadata, and Compute Engine managed instance groups for transcoding and watermarking",
+      "explanation": "This approach stores the media and extracts labels with a managed API while scaling virtual machines to run custom encoders",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Cloud Storage for intake, Cloud Pub/Sub to fan out processing jobs, Cloud Dataflow to handle video transcoding and watermark overlay, and Video Intelligence API to extract labels for search",
+      "explanation": "This pattern connects messaging with an autoscaling pipeline for processing and uses a managed API to generate metadata for discovery",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Implement Cloud Dataprep for video processing, use Cloud Vision API for watermark tasks, and load metadata to BigQuery for search",
+      "explanation": "This proposes a data preparation service and an image analysis API with a data warehouse to support search",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Use Cloud Storage for intake, Cloud Pub/Sub to fan out processing jobs, Cloud Dataflow to handle video transcoding and watermark overlay, and Video Intelligence API to extract labels for search</b>.</p><p>This design is serverless and scales automatically from a few small files to hundreds of large assets. Cloud Storage provides durable intake and events can publish to Pub/Sub to decouple upload from processing and to fan out work. Dataflow runs managed workers that auto scale with backlog and can execute custom steps such as invoking FFmpeg for transcoding and watermark overlay while you only manage pipeline code and not servers. Video Intelligence API adds labels and other metadata so content can be indexed and searched. The result minimizes operations while handling unpredictable spikes.</p><p><i>Use Cloud Functions to react to new uploads in Cloud Storage, process videos with custom FFmpeg containers on Cloud Run for transcoding and watermarking, and index metadata in Elasticsearch running on Compute Engine</i> is not the best fit because running Elasticsearch on Compute Engine adds significant operational overhead and capacity management. Long running or heavy video jobs do not fit well in a function trigger and would need additional orchestration to reliably handle large files and bursts.</p><p><i>Use Cloud Storage for uploads, Cloud Video Intelligence API for searchable metadata, and Compute Engine managed instance groups for transcoding and watermarking</i> is not serverless because managed instance groups still require VM provisioning, scaling policies, patching, and monitoring. The question asks to minimize operations and to scale automatically without managing servers.</p><p><i>Implement Cloud Dataprep for video processing, use Cloud Vision API for watermark tasks, and load metadata to BigQuery for search</i> is incorrect because Dataprep is for data wrangling of tabular and semi structured data and is not suited for video pipelines and it has been retired from Google Cloud which makes it even less likely on newer exams. Vision API targets images and does not perform video watermarking. While BigQuery can store metadata, this does not address the core transcoding and watermark workflow.</p>",
+  "batch_id": "204",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "A media company needs to build a scalable video processing system that allows content creators to upload videos, which are then transcoded, watermarked, and made searchable within their platform. The system should be able to scale automatically to accommodate varying upload frequencies and sizes. What is the best approach to implement this system?",
+  "originalOptions": "A. Use Cloud Storage for video uploads, Cloud Video Intelligence API for searchable metadata, and Compute Engine for transcoding and watermarking.<br/>B. Utilize Cloud Storage for uploads, Cloud Pub/Sub for messaging, Cloud Dataflow for video processing, and Video Intelligence API for metadata.<br/>C. Implement Cloud Dataprep for video processing, Cloud Vision API for adding watermarks, and BigQuery for video searchability.<br/>D. Deploy Cloud Functions to trigger video processing, use Cloud Dataflow for transcoding and watermarking, and ElasticSearch on Compute Engine for searchability.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "332",
+  "tip": "<p>When you see requirements that stress <i>serverless</i> and <i>unpredictable spikes</i>, favor fully managed building blocks that decouple stages such as Cloud Storage events, Pub/Sub fan out, a scalable processing engine like Dataflow, and managed AI APIs. Be wary of answers that add VM management or reference <i>deprecated</i> tools.</p>",
+  "references": [
+    "https://cloud.google.com/storage/docs/pubsub-notifications",
+    "https://cloud.google.com/pubsub/docs/overview",
+    "https://cloud.google.com/dataflow/docs/concepts/overview",
+    "https://cloud.google.com/video-intelligence/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-scalable-video-processing-system-that-exam-332.html",
+  "video_url": "https://certificationation.com/videos/exam-scalable-video-processing-system-that-exam-332.html"
+}

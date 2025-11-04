@@ -1,0 +1,84 @@
+---
+title: "Your company is planning to migrate a mission-criticalExam"
+description: "Video for your company is planning to migrate a mission-critical application to Google Cloud Platform. This application requires a scalable and highly available"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company is planning to migrate a mission-critical application to Google Cloud Platform. This application requires a scalable and highly available database solution with a focus on strong consistency, low latency, and the ability to perform complex SQL queries. The database must also support multi-region replication for disaster recovery purposes. Which of the following database services should you choose to meet these requirements, and what replication and scaling configuration should you use?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A financial technology company at example.com is moving its core ledger application to Google Cloud. The team needs a fully managed database that scales horizontally and remains highly available, while providing strong transactional consistency, low latency for reads and writes, and support for complex relational SQL. The data must be replicated across at least three regions to support disaster recovery without manual failover. Which GCP database service should you choose and what deployment and data modeling approach should you configure?",
+  "options": [
+    {
+      "text": "AlloyDB for PostgreSQL with cross-region read replicas and autoscaling",
+      "explanation": "This option uses a PostgreSQL-compatible managed service with read replicas in other regions and automatic resource scaling",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud Spanner with a multi-region instance and interleaved parent-child tables",
+      "explanation": "This option uses a globally distributed relational service that supports synchronous replication and a table interleaving design for locality and scale",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Cloud SQL for PostgreSQL with a regional primary and read replicas in two additional regions",
+      "explanation": "This option places a managed PostgreSQL primary in one region with high availability and adds asynchronous read replicas in other regions",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud Bigtable with a multi-cluster instance and a hotspot-resistant row key strategy",
+      "explanation": "This option uses a wide-column NoSQL service configured with multiple clusters per instance and a carefully designed row key to spread load",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Cloud Spanner with a multi-region instance and interleaved parent-child tables</b>.</p><p>A multi region <b>Cloud Spanner</b> instance replicates data across at least three regions with synchronous writes and automatic failover, which delivers very high availability and disaster recovery without manual intervention. It provides horizontal scalability for both reads and writes and guarantees strong external consistency while supporting complex relational SQL and fully transactional workloads. This directly matches the needs of a core ledger that must stay consistent and fast across regions.</p><p>Using interleaved parent child tables in <b>Cloud Spanner</b> colocates related rows so most queries and transactions stay within the same split or shard. This keeps read and write latency low and reduces coordination overhead for hierarchical ledger entities such as accounts, balances, and postings.</p><p>The option <i>AlloyDB for PostgreSQL with cross-region read replicas and autoscaling</i> is regional for writes and its replicas in other regions are read only. It does not offer synchronous multi region writes or strongly consistent transactions across regions, and disaster recovery would require promotion with operational steps while write capacity remains tied to a single primary.</p><p>The choice <i>Cloud SQL for PostgreSQL with a regional primary and read replicas in two additional regions</i> cannot satisfy horizontal write scaling or strong multi region consistency. The primary is regional and replicas are read only, and regional disaster recovery needs manual promotion which does not meet the requirement for automatic failover across three regions.</p><p>The option <i>Cloud Bigtable with a multi-cluster instance and a hotspot-resistant row key strategy</i> does not support relational SQL or multi row transactional semantics. While replication can improve availability it provides eventual consistency across clusters, which is not suitable for a ledger that demands strict transactional consistency.</p>",
+  "batch_id": "17",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "Your company is planning to migrate a mission-critical application to Google Cloud Platform. This application requires a scalable and highly available database solution with a focus on strong consistency, low latency, and the ability to perform complex SQL queries. The database must also support multi-region replication for disaster recovery purposes. Which of the following database services should you choose to meet these requirements, and what replication and scaling configuration should you use?",
+  "originalOptions": "A. Cloud SQL with Regional and Read Replicas<br/>B. Cloud Firestore with Multi-Region Instances and Collection Group Queries<br/>C. Cloud Spanner with Multi-Region Instance and Interleaved Tables<br/>D. Cloud Bigtable with Instance Clustering and Hot Rowkey Sharding",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "311",
+  "tip": "<p>Map requirements to service characteristics. If you see needs for <i>strong consistency</i>, <i>relational SQL</i>, <i>horizontal write scale</i>, and <i>automatic multi region failover</i> then choose Spanner. Read replicas without multi region writes point to eventual or read only patterns and are not a fit for transactional ledgers.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/instances#choose_config",
+    "https://cloud.google.com/spanner/docs/replication",
+    "https://cloud.google.com/spanner/docs/schema-and-data-model#creating-interleaved-tables",
+    "https://cloud.google.com/spanner/docs/transactions",
+    "https://cloud.google.com/alloydb/docs/replication-overview",
+    "https://cloud.google.com/sql/docs/postgres/replication/replication-overview",
+    "https://cloud.google.com/sql/docs/postgres/high-availability",
+    "https://cloud.google.com/bigtable/docs/replication-overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-mission-critical-application-to-google-cloud-exam-311.html",
+  "video_url": "https://certificationation.com/videos/exam-mission-critical-application-to-google-cloud-exam-311.html"
+}

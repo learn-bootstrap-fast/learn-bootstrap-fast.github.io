@@ -1,0 +1,89 @@
+---
+title: "Your Cloud SQL database experiences performanceExam"
+description: "Video for your Cloud SQL database experiences performance degradation due to heavy read operations during peak business hours. You need to ensure that read"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your Cloud SQL database experiences performance degradation due to heavy read operations during peak business hours. You need to ensure that read performance is optimized without impacting the production database. What should you do? (Choose two)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "At Nimbus Retail your Cloud SQL for MySQL primary slows down when dashboards trigger heavy read traffic during the late afternoon rush. You need to raise read throughput and lower latency while keeping the production writer unchanged. What should you do?",
+  "options": [
+    {
+      "text": "Partition frequently read tables in the schema based on time or key access patterns",
+      "explanation": "Table partitioning organizes large tables into smaller partitions that can reduce scanned data and improve query efficiency.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Enable Cloud SQL high availability for the primary instance",
+      "explanation": "High availability adds a standby instance and automatic failover to increase resiliency of the primary workload.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create read replicas and route reporting traffic to them",
+      "explanation": "Read replicas accept read-only queries so they can handle analytics or reporting workloads away from the primary instance.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Increase the machine type of the primary instance",
+      "explanation": "Upsizing the instance adds more vCPU and memory to the primary database server to provide additional compute resources.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Move the primary to a larger persistent disk tier with higher IOPS",
+      "explanation": "A faster disk class can provide more IOPS and throughput to the storage layer that serves the primary database.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct options are <b>Partition frequently read tables in the schema based on time or key access patterns</b> and <b>Create read replicas and route reporting traffic to them</b>.</p><p>Using <b>read replicas</b> offloads the dashboard queries from the primary so the production writer remains unchanged. Cloud SQL for MySQL supports replicas that handle read only workloads which increases aggregate read throughput and reduces latency when you route reporting traffic to them.</p><p>Applying <b>partitioning</b> to the most heavily read tables helps queries scan less data and keep indexes smaller which improves cache efficiency and lowers latency during peak reads. This schema optimization complements replicas and does not change the writer role.</p><p><i>Enable Cloud SQL high availability for the primary instance</i> improves resilience and failover but it does not add read capacity because the standby does not serve traffic in normal operation.</p><p><i>Increase the machine type of the primary instance</i> adds CPU and memory yet all reads still hit a single node which leaves you with the same contention between reads and writes during peak dashboards.</p><p><i>Move the primary to a larger persistent disk tier with higher IOPS</i> can lower storage latency but it does not provide horizontal read scaling and all read traffic still competes on the primary.</p>",
+  "batch_id": "131",
+  "answerCode": "1,3",
+  "type": "multi-select",
+  "originalQuery": "Your Cloud SQL database experiences performance degradation due to heavy read operations during peak business hours. You need to ensure that read performance is optimized without impacting the production database. What should you do? (Choose two)",
+  "originalOptions": "A. Enable read replicas.<br/>B. Use persistent disk with higher IOPS for the database.<br/>C. Partition tables based on access patterns.<br/>D. Implement database sharding.<br/>E. Increase the machine type of the Cloud SQL instance.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "250",
+  "tip": "<p>When a scenario needs more read throughput with the writer unchanged look for <i>read replicas</i> first. Pair this with data layout improvements like <i>partitioning</i> for hot tables rather than only scaling up the primary or enabling HA.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/replication/create-replica",
+    "https://cloud.google.com/sql/docs/mysql/replication/using-replicas",
+    "https://cloud.google.com/sql/docs/mysql/performance",
+    "https://cloud.google.com/sql/docs/mysql/high-availability",
+    "https://cloud.google.com/sql/docs/mysql/instance-settings#machine-type",
+    "https://cloud.google.com/sql/docs/mysql/instance-settings#storage",
+    "https://dev.mysql.com/doc/refman/8.0/en/partitioning.html"
+  ],
+  "url": "https://certificationation.com/questions/exam-performance-degradation-due-to-heavy-exam-250.html",
+  "video_url": "https://certificationation.com/videos/exam-performance-degradation-due-to-heavy-exam-250.html"
+}

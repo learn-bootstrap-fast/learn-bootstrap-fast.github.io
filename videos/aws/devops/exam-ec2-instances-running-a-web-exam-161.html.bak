@@ -1,0 +1,62 @@
+---
+title: "Your company currently has a set of EC2 InstancesExam"
+description: "Video for your company currently has a set of EC2 Instances running a web application which sits behind an Elastic Load Balancer. You also have an Amazon RDS"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company currently has a set of EC2 Instances running a web application which sits behind an Elastic Load Balancer. You also have an Amazon RDS instance which is used by the web application. You have been asked to ensure that this architecture is self healing in nature and cost effective. Which of the following would fulfill this requirement. Choose 2 answers from the option given below."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct approaches are <b>Monitor EC2 web server performance using CloudWatch metrics, and leverage an Auto Scaling Group to dynamically adjust the number of web server instances based on demand.</b> and <b>Implement Read Replicas with Amazon RDS to help distribute database read traffic.</b></p><p>Here's why:</p><ul><li><b>Auto Scaling Group and CloudWatch for EC2:</b> AWS Auto Scaling, triggered by CloudWatch metrics, ensures your web application maintains desired performance and high availability, while automatically terminating or launching EC2 instances as required. This not only makes the web layer <b>self-healing</b> (replacing unhealthy instances), but also <b>cost effective</b> by only running what is necessary.</li><li><b>Read Replicas for RDS:</b> Introducing Read Replicas to your RDS configuration improves database scalability by distributing the read workload. This makes your system more reliable and scalable without incurring the higher costs of running multiple primary databases. While not technically self-healing for write operations, they do help the database layer handle surges efficiently.</li></ul><p>Why the other choices are not recommended:</p><ul><li><i>Set up Multi-AZ deployments for your RDS database instance to enhance database availability.</i>: Multi-AZ improves fault tolerance and availability by synchronously replicating your data to a standby. However, it does not make your database layer cost effective and does not handle scaling; it simply provides better disaster recovery capabilities.</li><li><i>Enable an Auto Scaling Group for your RDS database servers, scaling them depending on utilization metrics tracked in CloudWatch.</i>: RDS instances cannot be managed through Auto Scaling Groups. Scaling for RDS is handled differently (e.g., instance size changes, Read Replicas, and Multi-AZ), so this option isn't technically feasible.</li></ul><p><b>Tips:</b> Always pair Auto Scaling Groups with CloudWatch metrics for stateless, horizontally scalable application layers. For RDS, only use Read Replicas for scaling out reads, not writes, and remember that Multi-AZ is for availability, not direct scale or cost optimization.</p>",
+  "query": "<p>Your team manages a web application hosted on multiple EC2 instances, placed behind an Elastic Load Balancer. This application connects to an Amazon RDS database instance for its backend. You have received a requirement to make the system both self-healing and cost effective. Which two strategies should you choose to meet these needs?</p>",
+  "original_oid": "6793da5f61969b416038a1df",
+  "options": [
+    {
+      "correct": true,
+      "text": "Monitor EC2 web server performance using CloudWatch metrics, and leverage an Auto Scaling Group to dynamically adjust the number of web server instances based on demand.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up Multi-AZ deployments for your RDS database instance to enhance database availability.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Implement Read Replicas with Amazon RDS to help distribute database read traffic.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Enable an Auto Scaling Group for your RDS database servers, scaling them depending on utilization metrics tracked in CloudWatch.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question366",
+  "originalQuery": "Your company currently has a set of EC2 Instances running a web application which sits behind an Elastic Load Balancer.\nYou also have an Amazon RDS instance which is used by the web application.\nYou have been asked to ensure that this architecture is self healing in nature and cost effective.\nWhich of the following would fulfill this requirement.\nChoose 2 answers from the option given below.",
+  "originalOptions": "A. Use Cloudwatch metrics to check the utilization of the web layer. Use Autoscaling Group to scale the web instances accordingly based on the cloudwatch metrics.,B. Use Cloudwatch metrics to check the utilization of the database servers. Use Autoscaling Group to scale the database instances accordingly based on the cloudwatch metrics.,C. Utilize the Read Replica feature for the Amazon RDS layer,D. Utilize the Multi-AZ feature for the Amazon RDS layer.",
+  "video_url": "https://certificationation.com/videos/exam-ec2-instances-running-a-web-exam-161.html",
+  "url": "https://certificationation.com/questions/exam-ec2-instances-running-a-web-exam-161.html"
+}

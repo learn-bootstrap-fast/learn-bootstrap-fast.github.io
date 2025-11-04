@@ -1,0 +1,67 @@
+---
+title: "Your mobile application includes a photo-sharing serviceExam"
+description: "Video for your mobile application includes a photo-sharing service that is expecting tens of thousands of users at launch. You will leverage Amazon Simple"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your mobile application includes a photo-sharing service that is expecting tens of thousands of users at launch. You will leverage Amazon Simple Storage Service (S3) to store the user Images, and you must decide how to authenticate and authorize your users for access to these images. You need to follow security best practices and minimize the maintenance overhead when managing the storage of these images. Which two of the following approaches should you use? Choose two answers from the options below."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><strong>Option: Authenticate users within the application and then leverage AWS Security Token Service (STS) to provide users with temporary credentials for S3 access.</strong> This is a preferred AWS best practice for mobile apps. Authenticating users at the application level, then issuing temporary, limited-privilege credentials via AWS STS, reduces the risk of credential leaks and doesn’t require maintaining long-lived credentials.</p><p><strong>Option: Implement a folder structure within a single S3 bucket using user IDs as prefixes for their content, and regulate access with bucket and IAM policies so users only access their own directories.</strong> Utilizing a single bucket with user-based prefixes for objects makes managing access and scaling much easier. It avoids excessive bucket sprawl and takes advantage of fine-grained S3 and IAM policies that let users access only their own subfolders, minimizing administrative overhead.</p><p><em>'Assign IAM user accounts to each application user for authentication and rely solely on IAM for user identity management.'</em> is not scalable for tens of thousands of users, because IAM users are intended for administrators and programmatic access, not app users. Managing a unique IAM user for each individual greatly increases maintenance cost and complexity.</p><p><em>'Create an individual S3 bucket for every user and have your app generate unique S3 URIs for each person's photos.'</em> scales poorly and quickly hits account bucket limits, besides being unnecessary when one bucket with folder-based isolation will suffice.</p><p><em>'Generate a unique SMS token for each session, create an S3 bucket named after the SMS token, and relocate all relevant user's files into their respective buckets for access.'</em> is highly inefficient: constantly creating and deleting buckets increases complexity and is not a standard or recommended approach for user isolation within S3.</p><p><strong>Tip:</strong> Use federated identities and temporary credentials for access, and enforce privacy through bucket/folder policies rather than isolated buckets or accounts.</p>",
+  "query": "<p>Your organization is launching a photo-sharing mobile app, projecting tens of thousands of active users. The architecture will utilize Amazon S3 to store user-uploaded images. As part of the requirements, you are tasked with ensuring secure and scalable user authentication and authorization for image access, while also aiming to reduce long-term maintenance effort. </p><p>Which two of the following strategies below align with AWS security best practices and would be suitable for your use case? Select <strong>two</strong> correct answers.</p>",
+  "original_oid": "6793d9bd61969b416038a09b",
+  "options": [
+    {
+      "correct": false,
+      "text": "Assign IAM user accounts to each application user for authentication and rely solely on IAM for user identity management.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Authenticate users within the application and then leverage AWS Security Token Service (STS) to provide users with temporary credentials for S3 access.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Implement a folder structure within a single S3 bucket using user IDs as prefixes for their content, and regulate access with bucket and IAM policies so users only access their own directories.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Create an individual S3 bucket for every user and have your app generate unique S3 URIs for each person's photos.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Generate a unique SMS token for each session, create an S3 bucket named after the SMS token, and relocate all relevant user's files into their respective buckets for access.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question38",
+  "originalQuery": "Your mobile application includes a photo-sharing service that is expecting tens of thousands of users at launch.\nYou will leverage Amazon Simple Storage Service (S3) to store the user Images, and you must decide how to authenticate and authorize your users for access to these images.\nYou need to follow security best practices and minimize the maintenance overhead when managing the storage of these images.\nWhich two of the following approaches should you use? Choose two answers from the options below.",
+  "originalOptions": "[\"A. Create an Amazon S3 bucket per user, and use your application to generate the S3 URI for the appropriate content.\",\"B. Use AWS Identity and Access Management (IAM) user accounts as your application-level user database, and offload the burden of authentication from your application code.\",\"C. Authenticate your users at the application level, and use AWS Security Token Service (STS) to grant token-based authorization to S3 objects.\",\"D. Authenticate your users at the application level, and send an SMS token message to the user. Create an Amazon S3 bucket with the same name as the SMS message token, and move the user’s objects to that bucket.\",\"E. Use a key-based naming scheme comprised of user IDs for all user objects in a single Amazon S3 bucket. Use IAM policies and bucket policy to control permissions. Each user should only have access to its own folder.\"]",
+  "video_url": "https://certificationation.com/videos/exam-photo-sharing-service-that-is-expecting-exam-041.html",
+  "url": "https://certificationation.com/questions/exam-photo-sharing-service-that-is-expecting-exam-041.html"
+}

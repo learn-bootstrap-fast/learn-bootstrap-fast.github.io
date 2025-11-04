@@ -1,0 +1,62 @@
+---
+title: "You have a setup in AWS which consists of EC2 InstancesExam"
+description: "Video for you have a setup in AWS which consists of EC2 Instances sitting behind and ELB. The launching and termination of the Instances are controlled via an"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have a setup in AWS which consists of EC2 Instances sitting behind and ELB. The launching and termination of the Instances are controlled via an Autoscaling Group. The architecture consists of a MySQL AWS RDS database. Which of the following can be used to induce one more step towards a self-healing architecture for this design?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The recommended step to enhance self-healing in this setup is to <b>configure the RDS database with Multi-AZ deployments to enable automatic failover</b>. Multi-AZ provides automatic failover to a standby in case of a primary instance failure, ensuring higher availability and minimizing downtime, which are key aspects of a self-healing architecture.<br><br>The option <i>Set up additional read replicas for the AWS RDS database</i> improves read scalability but does not contribute to automatic failover or recovery in the event of a primary database failure. <i>Launch another Auto Scaling Group in a different region to improve fault tolerance</i> is not feasible because Auto Scaling Groups and ELBs are regional constructs, and cross-region failover for such components adds significant complexity not directly tied to self-healing. <i>Deploy a new ELB in a separate region for added redundancy</i> also does not enable self-healing, as ELBs do not span multiple regions and would further complicate architecture management.<br><br><b>Tip:</b> For database high availability in AWS, the Multi-AZ feature is recommended as it allows AWS RDS to automatically detect and recover from failures, reducing manual intervention and downtime.</p>",
+  "query": "<p>An AWS deployment includes EC2 instances that are managed by an Auto Scaling Group and are serving requests behind an Elastic Load Balancer (ELB). These instances utilize a MySQL RDS database. What is another measure you could implement to make the architecture more self-healing and resilient to failure?</p>",
+  "original_oid": "6793da7161969b416038a206",
+  "options": [
+    {
+      "correct": false,
+      "text": "Launch another Auto Scaling Group in a different region to improve fault tolerance.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up additional read replicas for the AWS RDS database.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Configure the RDS database with Multi-AZ deployments to enable automatic failover.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Deploy a new ELB in a separate region for added redundancy.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question406",
+  "originalQuery": "You have a setup in AWS which consists of EC2 Instances sitting behind and ELB.\nThe launching and termination of the Instances are controlled via an Autoscaling Group.\nThe architecture consists of a MySQL AWS RDS database.\nWhich of the following can be used to induce one more step towards a self-healing architecture for this design?",
+  "originalOptions": "A. Enable Read Replica`s for the AWS RDS database.|B. Enable Multi-AZ feature for the AWS RDS database.|C. Create one more ELB in another region for fault tolerance|D. Create one more Autoscaling Group in another region for fault tolerance.",
+  "video_url": "https://certificationation.com/videos/exam-ec2-instances-sitting-behind-and-exam-194.html",
+  "url": "https://certificationation.com/questions/exam-ec2-instances-sitting-behind-and-exam-194.html"
+}

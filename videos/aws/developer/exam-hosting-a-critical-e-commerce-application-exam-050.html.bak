@@ -1,0 +1,81 @@
+---
+title: "You manage a Cloud SQL instance hosting a criticalExam"
+description: "Video for you manage a Cloud SQL instance hosting a critical e-commerce application. Customers have experienced occasional database connection failures during"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You manage a Cloud SQL instance hosting a critical e-commerce application. Customers have experienced occasional database connection failures during times of heavy traffic. You want to reduce the impact of such issues and improve connection reliability. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are responsible for a Cloud SQL for PostgreSQL instance that supports a national ticketing site for example.com. During flash sales that last about 30 minutes your application servers open up to 3,000 short lived connections and some users intermittently see connection errors. You need to reduce the effect of connection spikes and improve connection stability without changing application logic. What should you do?",
+  "options": [
+    {
+      "text": "Enable high availability on the Cloud SQL instance",
+      "explanation": "High availability adds a standby in another zone and provides automatic failover during an outage event",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Deploy the Cloud SQL Auth Proxy on each application server and route all database connections through it",
+      "explanation": "Cloud SQL Auth Proxy manages secure authentication and connectivity from the application hosts to the database",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Introduce a connection pooler such as PgBouncer between the application and Cloud SQL",
+      "explanation": "A connection pooler maintains a small set of persistent database connections and multiplexes many client sessions over them to reduce overhead",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Turn on automated backups on the Cloud SQL instance",
+      "explanation": "Automated backups create scheduled restore points to protect data and support recovery operations",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Introduce a connection pooler such as PgBouncer between the application and Cloud SQL</b>.</p><p>Cloud SQL for PostgreSQL incurs overhead for each connection and enforces connection limits, so thousands of short lived connections during a flash sale can overwhelm the instance and lead to errors. A connection pooler keeps a small set of persistent database connections and efficiently multiplexes many client sessions onto them. This smooths traffic spikes, reduces connection churn, and improves stability. In many deployments this can be introduced with only configuration changes to the connection endpoint which meets the requirement to avoid changing application logic.</p><p><i>Enable high availability on the Cloud SQL instance</i> is focused on instance failover and maintenance resilience. It does not pool or limit client connections and it does not address connection storms or short lived connection overhead.</p><p><i>Deploy the Cloud SQL Auth Proxy on each application server and route all database connections through it</i> provides secure authentication and connectivity but it is not a connection pooler. It does not reduce the number of backend connections and therefore does not mitigate connection spikes.</p><p><i>Turn on automated backups on the Cloud SQL instance</i> protects data and supports recovery objectives. It does not influence connection management or reduce connection errors during bursts of traffic.</p>",
+  "batch_id": "136",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You manage a Cloud SQL instance hosting a critical e-commerce application. Customers have experienced occasional database connection failures during times of heavy traffic. You want to reduce the impact of such issues and improve connection reliability. What should you do?",
+  "originalOptions": "A. Use connection pooling with a library like PgBouncer.<br/>B. Configure automatic backups for the instance.<br/>C. Enable high availability for the Cloud SQL instance.<br/>D. Schedule maintenance during off-peak hours.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "50",
+  "tip": "<p>When a scenario mentions many short lived connections and intermittent connection errors, think of <i>connection pooling</i> first. Verify whether a proposed component, such as the <i>Cloud SQL Auth Proxy</i>, actually performs pooling and remember that high availability and backups do not solve connection storms.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/manage-connections",
+    "https://cloud.google.com/sql/docs/postgres/pgbouncer",
+    "https://cloud.google.com/sql/docs/postgres/connect-auth-proxy",
+    "https://cloud.google.com/sql/docs/postgres/high-availability",
+    "https://cloud.google.com/sql/docs/postgres/backup-recovery/backups"
+  ],
+  "url": "https://certificationation.com/questions/exam-hosting-a-critical-e-commerce-application-exam-050.html",
+  "video_url": "https://certificationation.com/videos/exam-hosting-a-critical-e-commerce-application-exam-050.html"
+}

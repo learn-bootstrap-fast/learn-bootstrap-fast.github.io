@@ -1,0 +1,87 @@
+---
+title: "You have a Cloud SQL instance serving productionExam"
+description: "Video for you have a Cloud SQL instance serving production workloads. During high load periods, your customers have reported slow response times and occasional"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have a Cloud SQL instance serving production workloads. During high load periods, your customers have reported slow response times and occasional connection errors. You want to minimize the impact of these performance issues in the future. What should you do? (Choose two)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A SaaS platform at mcnz.com runs its production workload on a Cloud SQL for PostgreSQL instance. During evening traffic spikes that last 3 to 5 minutes, users report slow queries and intermittent connection errors. You need to lessen the impact of these events during future peaks without changing the application&apos;s database vendor. Which actions should you take?",
+  "options": [
+    {
+      "text": "Reduce the machine type to fewer vCPUs and less memory",
+      "explanation": "This changes the compute capacity allocated to the database instance and alters how many resources are available during load",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Implement connection pooling in the application to cap and reuse database sessions",
+      "explanation": "Connection pooling manages the number of active sessions and reuses established connections to lower overhead during bursts",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Subscribe to maintenance notification emails for the instance",
+      "explanation": "Maintenance notifications inform administrators about upcoming work and scheduled windows for the service",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable storage autoscaling for the Cloud SQL instance",
+      "explanation": "Storage autoscaling automatically increases disk capacity when usage approaches configured thresholds",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use exponential backoff with jitter for retrying transient connection failures",
+      "explanation": "Exponential backoff with jitter spaces out retries to avoid synchronized retry bursts and reduces pressure during spikes",
+      "correct": true,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct options are <b>Implement connection pooling in the application to cap and reuse database sessions</b> and <b>Use exponential backoff with jitter for retrying transient connection failures</b>.</p><p><b>Implement connection pooling in the application to cap and reuse database sessions</b> addresses the short bursts by limiting the number of active connections and reusing existing sessions. This reduces connection setup overhead and helps prevent exhausting the database connection limit, which is a common cause of slow queries and connection errors during spikes. Cloud SQL for PostgreSQL recommends using a pooler to manage connections efficiently, which is especially helpful for brief traffic surges.</p><p><b>Use exponential backoff with jitter for retrying transient connection failures</b> helps smooth out retry storms when many clients experience brief connection issues at once. Backoff with jitter spaces out retries and avoids synchronized reconnect attempts, which lowers pressure on the instance and improves the chances that subsequent attempts succeed once the spike subsides.</p><p><i>Reduce the machine type to fewer vCPUs and less memory</i> would likely make the situation worse because it reduces available CPU and RAM when the instance is already strained during spikes. Downsizing increases contention and can amplify latency and errors.</p><p><i>Subscribe to maintenance notification emails for the instance</i> does not mitigate performance issues during evening traffic peaks. Notifications are useful for planned events but they do not address transient load, slow queries, or connection storms.</p><p><i>Enable storage autoscaling for the Cloud SQL instance</i> only increases disk capacity to prevent running out of space. It does not add CPU or memory and it does not alleviate connection limits or reduce query latency during short traffic bursts.</p>",
+  "batch_id": "107",
+  "answerCode": "2,5",
+  "type": "multi-select",
+  "originalQuery": "You have a Cloud SQL instance serving production workloads. During high load periods, your customers have reported slow response times and occasional connection errors. You want to minimize the impact of these performance issues in the future. What should you do? (Choose two)",
+  "originalOptions": "A. Use exponential backoff for retries.<br/>B. Decrease the number of processing units.<br/>C. Opt in to maintenance notifications.<br/>D. Implement connection pooling.<br/>E. Use autoscaling for the Cloud SQL instance.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "349",
+  "tip": "<p>When spikes are brief focus on controlling concurrency and smoothing retries. Look for <i>connection pooling</i> to cap sessions and <i>exponential backoff with jitter</i> to avoid retry storms rather than changes that only affect storage or notifications.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/manage-connections",
+    "https://cloud.google.com/sql/docs/postgres/best-practices",
+    "https://cloud.google.com/sql/docs/postgres/maintenance",
+    "https://cloud.google.com/sql/docs/postgres/instance-settings#automatic-storage-increase",
+    "https://cloud.google.com/storage/docs/exponential-backoff"
+  ],
+  "url": "https://certificationation.com/questions/exam-production-workloads-during-high-load-exam-349.html",
+  "video_url": "https://certificationation.com/videos/exam-production-workloads-during-high-load-exam-349.html"
+}

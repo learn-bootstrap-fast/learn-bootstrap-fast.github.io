@@ -1,0 +1,62 @@
+---
+title: "Your web application consists of 10% writes and 90%Exam"
+description: "Video for your web application consists of 10% writes and 90% reads. You currently service all requests through a Route53 Alias Record directed towards an AWS"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your web application consists of 10% writes and 90% reads. You currently service all requests through a Route53 Alias Record directed towards an AWS ELB, which sits in front of an EC2 Auto Scaling Group. Your system is getting very expensive when there are large read traffic spikes during certain news events, during which many more people access your web application, all at the same time. What is the simplest and cheapest way to reduce costs and scale with spikes like this?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>Configure a new CloudFront Distribution...</b> option is the best and simplest solution for a web application with high read traffic spikes. <b>CloudFront</b> is AWS's global content delivery network (CDN), designed to cache and distribute content efficiently. Directing Route53 to CloudFront minimizes direct loads on your ELB and EC2 fleet by serving cached content to users, significantly reducing traffic to your backend and cutting operational costs during traffic surges.<br><br>Here's why the others aren't optimal:<br><br><i>Deploy a Memcached cluster with ElastiCache...</i>—while ElastiCache is useful for dynamic, data-driven apps, it requires application changes to cache responses, and is not as universally effective at reducing network/compute costs as CloudFront for general content delivery.<br><br><i>Establish a fresh ELB with an added Auto Scaling Group tier...</i>—adding another ELB and EC2 tier adds complexity and cost instead of removing it. This doesn't address the root read-scaling problem and can lead to overprovisioning.<br><br><i>Asynchronously store commonly accessed responses in S3 buckets...</i>—redirecting to S3 for responses is possible, but not as seamless, integrated, or low-latency for dynamic content compared to CloudFront, and would require significant changes to your app logic.<br><br><b>Tip:</b> For read-heavy workloads, a CDN like CloudFront is usually the first recommendation for scaling delivery efficiently and reducing backend costs.</p>",
+  "query": "<p>Your web application is experiencing high expenses due to sudden increases in read-heavy traffic (90% reads, 10% writes), which are especially frequent during newsworthy events. Currently, all requests are routed via a Route53 Alias Record targeting an AWS ELB, which manages an Auto Scaling Group of EC2 instances. What is the most straightforward and cost-effective method to handle and scale for these bursts in read queries?</p>",
+  "original_oid": "6793d9e361969b416038a0e5",
+  "options": [
+    {
+      "correct": true,
+      "text": "Configure a new CloudFront Distribution, assign your ELB as its origin, and update Route53 to send traffic to CloudFront. Utilize cache behaviors to ensure frequent read requests are served from the cache.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Deploy a Memcached cluster with ElastiCache, and develop cache-oriented logic allowing deferred serving of repeat requests from the in-memory cache to boost efficiency.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Establish a fresh ELB with an added Auto Scaling Group tier above the existing infrastructure, so that the top layer responses to the majority of read requests.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Asynchronously store commonly accessed responses in S3 buckets, and redirect users to relevant S3 content for precomputed replies.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question114",
+  "originalQuery": "Your web application consists of 10% writes and 90% reads.\nYou currently service all requests through a Route53 Alias Record directed towards an AWS ELB, which sits in front of an EC2 Auto Scaling Group.\nYour system is getting very expensive when there are large read traffic spikes during certain news events, during which many more people access your web application, all at the same time.\nWhat is the simplest and cheapest way to reduce costs and scale with spikes like this?",
+  "originalOptions": "[\"A. Create an S3 bucket and asynchronously replicate common request responses into S3 objects. When a request comes in for a pre-computed response, redirect to AWS S3.\",\"B. Create another ELB and Auto Scaling Group layer mounted on top of the other system, adding a tier to the system. Serve most read requests out of the top layer.\",\"C. Create a CloudFront Distribution and direct Route53 to the Distribution. Use the ELB as an Origin and specify Cache Behaviours to proxy cache requests.\",\"D. Create a Memcached cluster in AWS ElastiCache. Create cache logic to serve requests which can be served late from the in-memory cache for increased performance.\"]",
+  "video_url": "https://certificationation.com/videos/exam-10-writes-and-90-reads-exam-486.html",
+  "url": "https://certificationation.com/questions/exam-10-writes-and-90-reads-exam-486.html"
+}

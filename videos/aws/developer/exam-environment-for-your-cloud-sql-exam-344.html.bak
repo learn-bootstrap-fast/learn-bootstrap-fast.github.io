@@ -1,0 +1,85 @@
+---
+title: "You are configuring a highly available environment forExam"
+description: "Video for you are configuring a highly available environment for your Cloud SQL database that must withstand zonal outages. Which two actions should you take to"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are configuring a highly available environment for your Cloud SQL database that must withstand zonal outages. Which two actions should you take to ensure continuous availability during such events? (select 2)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Nova Retail operates a mission critical Cloud SQL for PostgreSQL instance in us-central1 and leadership requires the service to continue operating if one zone in the region fails. What two actions should you implement to keep the database available during a zonal outage?",
+  "options": [
+    {
+      "text": "Create a manual snapshot every hour",
+      "explanation": "This captures a point in time image of the database on an hourly cadence for later restoration",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Distribute read traffic to read replicas in different zones",
+      "explanation": "This places read replicas in separate zones and routes read queries to them so read workloads can continue if one zone is impacted",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Enable automated backups",
+      "explanation": "This schedules recurring backups that you can use for point in time recovery if data needs to be restored",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud Spanner",
+      "explanation": "This is a fully managed relational database service that provides strong consistency and global distribution",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure a failover replica in a separate zone within the same region",
+      "explanation": "This creates a standby instance in another zone that can assume primary responsibilities when the original primary is unavailable",
+      "correct": true,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct options are <b>Distribute read traffic to read replicas in different zones</b> and <b>Configure a failover replica in a separate zone within the same region</b>.</p><p><b>Distribute read traffic to read replicas in different zones</b> ensures that read workloads continue even if a single zone fails. Read replicas placed in other zones remain available so your application can still serve queries that do not require writes while the primary is impacted. This improves availability and reduces pressure on the primary under normal conditions.</p><p><b>Configure a failover replica in a separate zone within the same region</b> provides automatic failover for the primary instance. If the zone hosting the primary becomes unavailable, Cloud SQL promotes the standby in the other zone to primary which preserves write availability and keeps the service operating during a zonal outage.</p><p><i>Create a manual snapshot every hour</i> does not provide availability during an outage. Snapshots are for point in time recovery and require a restore to a new instance which involves downtime.</p><p><i>Enable automated backups</i> also focuses on recovery rather than continuity. Backups protect data but they do not keep the database serving traffic during a zonal failure.</p><p><i>Cloud Spanner</i> offers high availability across zones and regions but it is a different database service and migrating is not implied by the requirement to keep a Cloud SQL for PostgreSQL instance available within the region.</p>",
+  "batch_id": "267",
+  "answerCode": "2,5",
+  "type": "multi-select",
+  "originalQuery": "You are configuring a highly available environment for your Cloud SQL database that must withstand zonal outages. Which two actions should you take to ensure continuous availability during such events? (select 2)",
+  "originalOptions": "A. Distribute reads across multiple instances.<br/>B. Enable automatic backups.<br/>C. Set up a multi-region instance.<br/>D. Configure a failover replica.<br/>E. Create a database snapshot every hour.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "344",
+  "tip": "<p>When a question asks for continuity during a zonal outage for Cloud SQL, think in pairs. Use a <i>failover setup</i> to preserve writes and place <i>read replicas</i> in other zones to keep reads available. Backups and snapshots are for recovery and not for high availability.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/high-availability",
+    "https://cloud.google.com/sql/docs/postgres/replication",
+    "https://cloud.google.com/spanner/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-environment-for-your-cloud-sql-exam-344.html",
+  "video_url": "https://certificationation.com/videos/exam-environment-for-your-cloud-sql-exam-344.html"
+}

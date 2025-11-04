@@ -1,0 +1,62 @@
+---
+title: "Your application has an Auto Scaling group of three EC2Exam"
+description: "Video for your application has an Auto Scaling group of three EC2 instances behind an Elastic Load Balancer. Your Auto Scaling group was updated with a new"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your application has an Auto Scaling group of three EC2 instances behind an Elastic Load Balancer. Your Auto Scaling group was updated with a new launch configuration that refers to an updated AMI. During the deployment, customers complained that they were receiving several errors even though all instances passed the ELB health checks. How can you prevent this from happening again?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct approach is to <b>develop a fresh launch configuration with the new AMI and associate it to the Auto Scaling group. Temporarily increase the group's capacity to six, and once the new instances are running and operational, scale back down to three</b>. This staged rollout, known as a blue/green or rolling deployment, ensures uninterrupted application availability while new instances are launched. Once the replacement instances have passed all health and application checks, the desired capacity can be reduced, and older instances will be terminated automatically by the Auto Scaling group. This prevents service disruption if any of the new instances are slow to start or fail initial health or application checks.</p><p>Why other options are incorrect:</p><ul><li><i>Update the launch configuration itself instead of altering the Auto Scaling group settings</i>: Merely updating the launch configuration or the Auto Scaling group alone does not replace existing running instances. Old EC2s will still serve traffic until they're manually replaced, so this approach does not assure a proper deployment.</li><li><i>Manually terminate the existing instances that use the previous launch configuration</i>: This process can disrupt availability and may cause downtime if the replacement instances take longer to initialize or fail to launch correctly. An orchestrated, rolling approach avoids this risk.</li><li><i>Provision a new ELB and attach the existing Auto Scaling group to it</i>: This does not address the core deployment sequencing issue. Creating a new ELB without changing the rollout procedure does not resolve the errors experienced during deployment.</li></ul><p><b>Tip:</b> Always ensure your deployment process allows enough time for new instances to fully initialize and pass not just health checks, but application-level readiness, before decommissioning old ones.</p>",
+  "query": "<p>An application runs on three EC2 instances managed by an Auto Scaling group behind an Elastic Load Balancer (ELB). After updating the Auto Scaling group with a fresh launch configuration using a new AMI, users began to experience errors during deployment, despite all instances showing as healthy in the ELB. What steps can you implement to avoid such deployment issues in the future?</p>",
+  "original_oid": "6793da3b61969b416038a196",
+  "options": [
+    {
+      "correct": false,
+      "text": "Update the launch configuration itself instead of altering the Auto Scaling group settings.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Manually terminate the existing instances that use the previous launch configuration.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Provision a new ELB and attach the existing Auto Scaling group to it.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Develop a fresh launch configuration with the new AMI and associate it to the Auto Scaling group. Temporarily increase the group's capacity to six, and once the new instances are running and operational, scale back down to three.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question293",
+  "originalQuery": "Your application has an Auto Scaling group of three EC2 instances behind an Elastic Load Balancer.\nYour Auto Scaling group was updated with a new launch configuration that refers to an updated AMI.\nDuring the deployment, customers complained that they were receiving several errors even though all instances passed the ELB health checks.\nHow can you prevent this from happening again?",
+  "originalOptions": "A. Create a new ELB and attach the Autoscaling Group to the ELB|B. Create a new launch configuration with the updated AMI and associate it with the AutoScaling group. Increase the size of the group to six and when instances become healthy revert to three.|C. Manually terminate the instances with the older launch configuration.|D. Update the launch configuration instead of updating the Autoscaling Group.",
+  "video_url": "https://certificationation.com/videos/exam-group-of-three-ec2-instances-exam-124.html",
+  "url": "https://certificationation.com/questions/exam-group-of-three-ec2-instances-exam-124.html"
+}

@@ -1,0 +1,62 @@
+---
+title: "You are using Elastic beanstalk to deploy an applicationExam"
+description: "Video for you are using Elastic beanstalk to deploy an application that consists of a web and application server. There is a requirement to run some python"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are using Elastic beanstalk to deploy an application that consists of a web and application server. There is a requirement to run some python scripts before the application version is deployed to the web server. Which of the following can be used to achieve this?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct approach for executing Python scripts before the deployment of your application version on Elastic Beanstalk servers is to use <strong>container commands</strong>, which can be defined in Elastic Beanstalk configuration files (such as <code>.ebextensions</code>). These commands ensure your scripts run <em>before</em> your application is served.</p><p>Option <strong>Leverage configuration files with container commands to execute scripts during the deployment process</strong> is correct, as container commands (defined under the <code>container_commands</code> section in a configuration file) will be executed after the application source is extracted and before that code is deployed to the web server. This is precisely when you need your custom scripts to run.</p><p>Let's look at why the other options are incorrect:</p><ul><li><em>Utilize Docker containers to handle the scripts in their setup phase</em>: While Docker containers provide a flexible environment, simply using Docker does not solve the specific requirement of running scripts before deployment unless paired with appropriate entry points or configuration, which is not described here.</li><li><em>Create multiple Elastic Beanstalk environments for this use case</em>: Setting up multiple environments is used for separation, such as dev/test/prod, not for running pre-deployment scripts. This approach unnecessarily complicates your infrastructure and does not address the requirement.</li><li><em>Implement custom resources to integrate Python script execution</em>: Custom resources typically apply to CloudFormation templates, and using them here is overkill and not the intended way to customize application deployment in Elastic Beanstalk.</li></ul><p>Tip: When needing to customize the deployment lifecycle in Elastic Beanstalk, always consider <strong>container_commands</strong> or <code>hooks</code> in <code>.ebextensions</code> or <code>.platform</code> directories first. This gives you fine-grained control over the sequence and environment in which your scripts run.</p>",
+  "query": "<p>You need to deploy an application on AWS Elastic Beanstalk that includes both web and application servers. There is a requirement to execute certain Python scripts <strong>prior</strong> to the deployment of your application code to the web server. Which of the following approaches would enable this functionality?</p>",
+  "original_oid": "6793da6561969b416038a1ec",
+  "options": [
+    {
+      "correct": false,
+      "text": "Utilize Docker containers to handle the scripts in their setup phase.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Create multiple Elastic Beanstalk environments for this use case.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Leverage configuration files with container commands to execute scripts during the deployment process.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Implement custom resources to integrate Python script execution.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question379",
+  "originalQuery": "You are using Elastic beanstalk to deploy an application that consists of a web and application server.\nThere is a requirement to run some python scripts before the application version is deployed to the web server.\nWhich of the following can be used to achieve this?",
+  "originalOptions": "A. Make use of container commands,B. Make use of Docker containers,C. Make use of custom resources,D. Make use of multiple elastic beanstalk environments.",
+  "video_url": "https://certificationation.com/videos/exam-deploy-an-application-that-consists-exam-375.html",
+  "url": "https://certificationation.com/questions/exam-deploy-an-application-that-consists-exam-375.html"
+}

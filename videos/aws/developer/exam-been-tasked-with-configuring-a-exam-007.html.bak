@@ -1,0 +1,80 @@
+---
+title: "As a Database Engineer, you have been tasked withExam"
+description: "Video for as a Database Engineer, you have been tasked with configuring a session pooler service to optimize database performance for a high-traffic application"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you have been tasked with configuring a session pooler service to optimize database performance for a high-traffic application that relies on Cloud SQL. Which of the following approaches to managing database connections will best ensure optimal performance and efficient resource usage with the session pooler service?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the Cloud Database Engineer at Riverpine Analytics and you are launching a high traffic service on Google Kubernetes Engine that uses Cloud SQL for PostgreSQL. Spikes can reach about 18,000 requests per second and the database permits roughly 3,200 backend connections. You plan to place a session pooling layer between the application and Cloud SQL to smooth connection demand. Which connection management approach should you choose to deliver strong performance and efficient use of database resources with the session pooler?",
+  "options": [
+    {
+      "text": "Configure the pool with a fixed size that matches the estimated peak number of concurrent sessions",
+      "explanation": "This sets a static pool size equal to the anticipated maximum and can keep many backend connections allocated even when demand falls.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Disable connection multiplexing and keep a constant pool size for all clients",
+      "explanation": "This maintains dedicated sessions per client and avoids reusing backend connections across multiple client sessions.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use a pooler that adjusts pool size dynamically using recent concurrency and enables multiplexing to reuse backend connections",
+      "explanation": "This approach tunes pool capacity based on observed workload and lets multiple client sessions share a smaller number of database backends over time.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Raise Cloud SQL max_connections and connect directly from the application without a pooler",
+      "explanation": "This relies on the database to accept many direct client connections and removes the intermediate pooling tier.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Use a pooler that adjusts pool size dynamically using recent concurrency and enables multiplexing to reuse backend connections</b>.</p><p>This approach lets the session pooler scale the number of backend connections up and down based on real demand and it multiplexes many client sessions onto a smaller and stable set of database connections. That keeps the connection count well below the Cloud SQL limit while still absorbing spikes such as 18,000 requests per second. It reduces connection churn, lowers per connection overhead on the database, and improves overall throughput and latency for the application.</p><p><i>Configure the pool with a fixed size that matches the estimated peak number of concurrent sessions</i> is inefficient because a fixed peak sized pool holds too many idle connections during normal periods and it does not adapt when the estimate is wrong. It can still create queuing under bursts and it wastes memory and CPU on the database.</p><p><i>Disable connection multiplexing and keep a constant pool size for all clients</i> does not scale because every session would consume a backend connection. With high request rates this quickly runs into the max connections limit and increases contention, which hurts performance.</p><p><i>Raise Cloud SQL max_connections and connect directly from the application without a pooler</i> is risky and often counterproductive because each additional backend connection consumes memory and increases context switching on the database. It does not smooth bursts and it ignores best practices for pooling. The Cloud SQL Auth Proxy and connectors do not provide pooling, so direct connections would still face connection storms under load.</p>",
+  "batch_id": "241",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you have been tasked with configuring a session pooler service to optimize database performance for a high-traffic application that relies on Cloud SQL. Which of the following approaches to managing database connections will best ensure optimal performance and efficient resource usage with the session pooler service?",
+  "originalOptions": "A. Configure the pooler with a fixed pool size equal to the maximum number of expected concurrent connections.<br/>B. Implement a pooler that disables connection multiplexing and maintains a fixed pool size.<br/>C. Utilize a pooler with an adaptive pool size based on the average number of concurrent connections.<br/>D. Configure the pooler to aggressively evict idle connections and set a high value for the connection health check frequency.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "7",
+  "tip": "<p>When you see very high request rates with a modest database connection limit, think in terms of <i>session pooling</i> with <i>multiplexing</i> and <i>dynamic</i> sizing. Estimate concurrent sessions rather than raw requests per second and remember that the Cloud SQL Auth Proxy does not pool connections.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/manage-connections",
+    "https://cloud.google.com/sql/docs/postgres/connect-kubernetes-engine",
+    "https://cloud.google.com/sql/docs/postgres/connect-auth-proxy#about_the_proxy",
+    "https://www.pgbouncer.org/features.html"
+  ],
+  "url": "https://certificationation.com/questions/exam-been-tasked-with-configuring-a-exam-007.html",
+  "video_url": "https://certificationation.com/videos/exam-been-tasked-with-configuring-a-exam-007.html"
+}

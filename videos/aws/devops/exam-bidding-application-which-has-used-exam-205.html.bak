@@ -1,0 +1,62 @@
+---
+title: "Your team is developing an online bidding applicationExam"
+description: "Video for your team is developing an online bidding application which has used DynamoDB tables to store customers' information. The application requires the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your team is developing an online bidding application which has used DynamoDB tables to store customers' information. The application requires the fastest possible response time for reads in microseconds. However, it seems that the existing DynamoDB tables cannot provide such performance. Which approach is the best to improve the read performance greatly without modifying existing application logic?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The most effective way to achieve microsecond-level read latency in DynamoDB without changing existing application logic is to integrate <b>DynamoDB Accelerator (DAX)</b>. DAX is a fully managed, in-memory cache for DynamoDB that significantly improves read times by reducing response latency from milliseconds to microseconds.<br /><br />Let's review each option:<br /><br /><i>Enable on-demand capacity mode for your DynamoDB table.</i> This setting allows DynamoDB to scale automatically according to usage patterns, but it does not decrease read latency into the microsecond range. Response times are still typically measured in milliseconds.<br /><br /><i>Add a Global Secondary Index to make querying the DynamoDB table more performant.</i> While Global Secondary Indexes enhance query flexibility and can improve some read operations, they do not inherently reduce latency to the microsecond level. Performance improvements are only realized for the queries using those indexes.<br /><br /><i>Set up a read replica in another AWS Region by making the DynamoDB table Global.</i> Global Tables are designed for high availability and providing local reads in multiple regions, but they do not offer microsecond latency, nor are they primarily intended to improve read speed within a single region.<br /><br />In contrast, <b>Add a DynamoDB Accelerator (DAX) cluster to leverage faster, in-memory reads</b> directly addresses performance by providing a managed cache that does not require application code changes, delivering the lowest possible read latency for DynamoDB workloads. <br /><br />Tip: For applications where microsecond response for reads is a requirement, always consider AWS DAX before re-architecting your application or moving to alternative data stores.</p>",
+  "query": "<p>Your team is building an online auction platform that utilizes DynamoDB for user data storage.<br>To support the business requirement, the solution must deliver extremely low-latency—specifically microsecond-level—read operations.<br>The development team has observed that the current DynamoDB performance is insufficient for these ultra-fast read requests.<br>Which solution will maximize read throughput and latency without requiring changes to your existing application code?</p>",
+  "original_oid": "6793da4e61969b416038a1be",
+  "options": [
+    {
+      "correct": false,
+      "text": "Enable on-demand capacity mode for your DynamoDB table.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Add a DynamoDB Accelerator (DAX) cluster to leverage faster, in-memory reads.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Add a Global Secondary Index to make querying the DynamoDB table more performant.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up a read replica in another AWS Region by making the DynamoDB table Global.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question333",
+  "originalQuery": "Your team is developing an online bidding application which has used DynamoDB tables to store customers' information.\nThe application requires the fastest possible response time for reads in microseconds.\nHowever, it seems that the existing DynamoDB tables cannot provide such performance.\nWhich approach is the best to improve the read performance greatly without modifying existing application logic?",
+  "originalOptions": "A. Configure an on-demand read/write capacity mode for the DynamoDB table.|B. Create a Global Secondary Index for the DynamoDB table so that queries can be more efficient.|C. Create a read replica table in another region (Global Table) to improve the read capacity.|D. Configure a DynamoDB Accelerator (DAX) cluster for the application to use which can deliver up to a 10x performance improvement.",
+  "video_url": "https://certificationation.com/videos/exam-bidding-application-which-has-used-exam-205.html",
+  "url": "https://certificationation.com/questions/exam-bidding-application-which-has-used-exam-205.html"
+}

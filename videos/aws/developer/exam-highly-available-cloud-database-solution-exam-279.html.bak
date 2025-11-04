@@ -1,0 +1,86 @@
+---
+title: "When designing a scalable and highly available cloudExam"
+description: "Video for when designing a scalable and highly available cloud database solution for a global online gaming platform with real-time data processing requirements"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "When designing a scalable and highly available cloud database solution for a global online gaming platform with real-time data processing requirements and high read/write workloads, which of the following Google Cloud services and strategies would be the most appropriate to ensure low latency and consistent performance?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A worldwide ride hailing company named Northwind Mobility captures telemetry and trip events from drivers and riders across five regions at peaks of 90 million updates per hour. The system must support extremely high read and write throughput with very low latency, and it also requires near real time stream processing for leaderboards and dispatch optimization. Which Google Cloud design will best provide consistent performance and low latency at global scale?",
+  "options": [
+    {
+      "text": "Adopt Firestore in native mode with a multi regional location and rely on real time listeners to process updates",
+      "explanation": "This proposes using Firestore multi regional storage and client listeners for event driven processing",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Deploy a multi regional Cloud Bigtable instance with clusters in several continents and run streaming pipelines with Cloud Dataflow",
+      "explanation": "This option places Cloud Bigtable clusters in multiple regions for low latency access and uses Cloud Dataflow to handle streaming ingestion",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use a regional Cloud SQL for PostgreSQL instance with read replicas and publish changes on Pub/Sub to replicate across regions",
+      "explanation": "This combines a regional Cloud SQL setup with read replicas and uses Pub/Sub to fan out changes to other regions",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Run Cloud Spanner in a single region with read only replicas and use Pub/Sub with Cloud Dataflow for stream processing",
+      "explanation": "This suggests a single region Cloud Spanner configuration with read only replicas and a Pub/Sub and Cloud Dataflow pipeline for real time streams",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Deploy a multi regional Cloud Bigtable instance with clusters in several continents and run streaming pipelines with Cloud Dataflow</b>.</p><p>This design provides massive horizontal scalability and very low latency for write heavy telemetry and time series style data. By adding clusters in multiple regions it keeps reads and writes close to users while maintaining high availability and consistent performance under heavy load. The streaming pipelines can perform stateful and windowed computations for leaderboards and dispatch optimization in near real time and they integrate well with a globally replicated key value store.</p><p>The workload demands predictable performance at global scale with tens of thousands of updates per second and rapid consumption for analytics. A replicated wide column store with multi cluster routing avoids cross region coordination on every write and scales with key distribution which is a strong fit for this pattern.</p><p><i>Adopt Firestore in native mode with a multi regional location and rely on real time listeners to process updates</i> is not suitable for sustained ultra high write throughput and global low latency writes. Real time listeners target application synchronization rather than large scale streaming analytics and the service has hot spotting and per document write constraints that make heavy aggregations and leaderboards difficult at this scale.</p><p><i>Use a regional Cloud SQL for PostgreSQL instance with read replicas and publish changes on Pub/Sub to replicate across regions</i> centralizes all writes on a single primary which becomes a bottleneck and increases latency for distant clients. Read replicas are asynchronous and do not provide multi primary writes so this approach cannot meet the required global low latency write path or the throughput target.</p><p><i>Run Cloud Spanner in a single region with read only replicas and use Pub/Sub with Cloud Dataflow for stream processing</i> puts the write leader in one region which raises write latency for users in other continents. Read only replicas do not help write latency and a single region setup does not deliver the global low latency access the scenario requires. A properly configured multi region deployment could address some needs but that is not what this option describes.</p>",
+  "batch_id": "116",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "When designing a scalable and highly available cloud database solution for a global online gaming platform with real-time data processing requirements and high read/write workloads, which of the following Google Cloud services and strategies would be the most appropriate to ensure low latency and consistent performance?",
+  "originalOptions": "A. Use a single regional Cloud SQL instance with read replicas, and implement cross-region replication using Cloud Pub/Sub.<br/>B. Deploy a multi-regional Cloud Bigtable instance with multiple clusters and use Cloud Dataflow for real-time data processing.<br/>C. Create a single regional Cloud Bigtable instance with multiple clusters and use Cloud Dataflow for real-time data processing.<br/>D. Deploy a multi-regional Firestore instance and configure real-time listeners for efficient data processing.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "279",
+  "tip": "<p>When a scenario calls for <i>global</i> scale with <i>very low latency</i> writes and high throughput plus <i>streaming</i> analytics, first map the data model to the right storage class and replication pattern, then pair it with a managed streaming engine. Confirm where the write leader resides and how replication works to ensure users write and read locally.</p>",
+  "references": [
+    "https://cloud.google.com/bigtable/docs/overview",
+    "https://cloud.google.com/bigtable/docs/replication-overview",
+    "https://cloud.google.com/bigtable/docs/performance",
+    "https://cloud.google.com/bigtable/docs/schema-design-time-series",
+    "https://cloud.google.com/dataflow/docs/concepts/streaming-pipelines",
+    "https://cloud.google.com/firestore/docs/quotas",
+    "https://cloud.google.com/firestore/docs/locations",
+    "https://cloud.google.com/sql/docs/postgres/replication",
+    "https://cloud.google.com/sql/docs/postgres/performance",
+    "https://cloud.google.com/spanner/docs/instances#regional_and_multi-regional_configurations"
+  ],
+  "url": "https://certificationation.com/questions/exam-highly-available-cloud-database-solution-exam-279.html",
+  "video_url": "https://certificationation.com/videos/exam-highly-available-cloud-database-solution-exam-279.html"
+}

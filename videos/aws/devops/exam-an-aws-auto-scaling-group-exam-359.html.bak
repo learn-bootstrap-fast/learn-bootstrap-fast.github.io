@@ -1,0 +1,62 @@
+---
+title: "You have an application hosted in an AWS Auto ScalingExam"
+description: "Video for you have an application hosted in an AWS Auto Scaling group. This application was created using a Cloudformation template. Now your application has"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have an application hosted in an AWS Auto Scaling group. This application was created using a Cloudformation template. Now your application has got a surge of users which is decreasing the performance of the application. As per your analysis, a change in the instance type to C3 would resolve the issue. Which of the below option can introduce this change while minimizing downtime for end-users?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best answer is <b>Revise your CloudFormation template to specify the new C3 instance type in the launch configuration, then add an UpdatePolicy to the Auto Scaling group for a rolling update procedure before updating your stack with the new template.</b></p><p>This approach leverages AWS CloudFormation’s support for change management and minimal disruption. By integrating the UpdatePolicy attribute (such as AutoScalingRollingUpdate), CloudFormation can orchestrate a rolling replacement of instances, ensuring only a limited number of instances are replaced at one time, thus minimizing downtime and impact to users.</p><p>Here's why the other options are less suitable:</p><ul><li><i>Copy the current launch configuration in the AWS Management Console, select the C3 instance type in your new launch configuration, and then assign it to the Auto Scaling group, which will change all running instances to the new type instantly.</i> – While you can assign a new launch configuration, Auto Scaling will only use it for new or replaced instances. Existing instances will not be automatically updated; you would need to manually trigger instance replacement. This approach does not guarantee minimal downtime and doesn't integrate with IaC best practices.</li><li><i>Modify your CloudFormation template by changing the instance type to C3 in the launch configuration, then perform a stack update, allowing Auto Scaling to replace instances one by one with the new type.</i> – This lacks the explicit use of the UpdatePolicy attribute. Without it, a stack update may cause replacement of all instances at once, leading to higher downtime for users.</li><li><i>In the AWS Console, simply alter the existing launch configuration to use the C3 instance type and perform a rolling update within the Auto Scaling group.</i> – Launch configurations in AWS cannot be edited once created; you need to create a new one. Additionally, this process bypasses CloudFormation, breaking your infrastructure-as-code consistency and potentially causing configuration drifts.</li></ul><p><b>Tip:</b> Always use the UpdatePolicy in your CloudFormation stack when you need to perform updates with minimal downtime, especially with Auto Scaling groups.</p>",
+  "query": "<p>Your application is deployed using an AWS Auto Scaling group that was provisioned with a CloudFormation template. Due to an increase in user activity, you notice performance issues. After analyzing, you find that switching to C3 instance types would likely resolve these issues. What is the most appropriate method to apply this change with minimal impact or downtime for your users?</p>",
+  "original_oid": "6793d9d161969b416038a0c3",
+  "options": [
+    {
+      "correct": true,
+      "text": "Revise your CloudFormation template to specify the new C3 instance type in the launch configuration, then add an UpdatePolicy to the Auto Scaling group for a rolling update procedure before updating your stack with the new template.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Copy the current launch configuration in the AWS Management Console, select the C3 instance type in your new launch configuration, and then assign it to the Auto Scaling group, which will change all running instances to the new type instantly.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Modify your CloudFormation template by changing the instance type to C3 in the launch configuration, then perform a stack update, allowing Auto Scaling to replace instances one by one with the new type.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "In the AWS Console, simply alter the existing launch configuration to use the C3 instance type and perform a rolling update within the Auto Scaling group.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question78",
+  "originalQuery": "You have an application hosted in an AWS Auto Scaling group.\nThis application was created using a Cloudformation template.\nNow your application has got a surge of users which is decreasing the performance of the application.\nAs per your analysis, a change in the instance type to C3 would resolve the issue.\nWhich of the below option can introduce this change while minimizing downtime for end-users?",
+  "originalOptions": "[\"A. In the AWS console, copy the old launch configuration, and create a new launch configuration with the C3 instances. Update the Auto Scaling group with the new launch configuration. Auto Scaling will then update the instance type of all running instances.\",\"B. Update the launch configuration in the AWS CloudFormation template with the new C3 instance type. Add an UpdatePolicy attribute to the Auto Scaling group that specifies an AutoScalingRollingUpdate. Run a stack update with the updated template.\",\"C. In the AWS console, update the existing launch configuration with the new C3 instance type and perform a rolling update in the Auto Scaling group.\",\"D. Update the AWS CloudFormation template that contains the launch configuration with the new C3 instance type. Run a stack update with the updated template, and Auto Scaling will then update the instances one at a time with the new instance type.\"]",
+  "video_url": "https://certificationation.com/videos/exam-an-aws-auto-scaling-group-exam-359.html",
+  "url": "https://certificationation.com/questions/exam-an-aws-auto-scaling-group-exam-359.html"
+}

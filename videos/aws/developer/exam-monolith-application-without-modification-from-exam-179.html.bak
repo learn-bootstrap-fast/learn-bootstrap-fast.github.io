@@ -1,0 +1,78 @@
+---
+title: "You previously migrated a business-critical monolithExam"
+description: "Video for you previously migrated a business-critical monolith application without modification from on-premises to Google Cloud. As a Database Engineer, you"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You previously migrated a business-critical monolith application without modification from on-premises to Google Cloud. As a Database Engineer, you want to re-architect this application to use microservices. The application has a single backend database, but in the future you want to make the database architecture more suitable to microservices. You want to minimize downtime when you make database changes. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You rehosted a mission critical order processing app for mcnz.com in Google Cloud without changing the code. As the Database Engineer you plan to break the system into microservices over the next 120 days. The application uses a single backend database today and you want the data layer to evolve to fit microservices later. You must minimize downtime while you change the database approach. What should you do?",
+  "options": [
+    {
+      "text": "Split the monolithic database into several smaller databases now while keeping the application as one frontend that connects to all of them",
+      "explanation": "This keeps a single user interface while the back end is divided into multiple databases that the app must query.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Insert a new data access service and route every database connection through it and allow only that service to talk to the new database or databases",
+      "explanation": "This adds an intermediary that abstracts the database tier so clients call a proxy instead of the database directly.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Refactor the app into microservices while keeping all services connected to the existing single database for the time being",
+      "explanation": "This keeps the data model centralized while code boundaries change and allows later extraction of service specific stores.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Refactor the frontend into microservices and at the same time create one dedicated database per service and switch all services to their new stores in a single release",
+      "explanation": "This coordinates a simultaneous code split and database cutover where each service adopts its own database at once.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Refactor the app into microservices while keeping all services connected to the existing single database for the time being</b>.</p><p>This approach keeps the data layer stable while you slice the application into independently deployable services. It minimizes downtime because you do not introduce data migrations or cross database coordination during the early refactor. You can evolve the data model later by carving out ownership boundaries per service and then moving tables or subsets of data behind each service using incremental techniques such as backfills, dual reads and writes, or change data capture. This lets you test and release in small steps while keeping the system available.</p><p><i>Split the monolithic database into several smaller databases now while keeping the application as one frontend that connects to all of them</i> is risky and does not minimize downtime. It forces a complex data split first and drives broad application changes to handle multiple data sources and cross database consistency. It increases operational complexity before you have clear service boundaries.</p><p><i>Insert a new data access service and route every database connection through it and allow only that service to talk to the new database or databases</i> adds a centralized bottleneck and a single point of failure. It preserves tight coupling at the data layer and undermines service autonomy while adding latency and operational risk without solving the migration challenge.</p><p><i>Refactor the frontend into microservices and at the same time create one dedicated database per service and switch all services to their new stores in a single release</i> is a big bang cutover that heightens risk and likely downtime. Concurrently changing both the service boundaries and the databases makes testing and rollback difficult and is not aligned with an incremental migration strategy.</p>",
+  "batch_id": "161",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You previously migrated a business-critical monolith application without modification from on-premises to Google Cloud. As a Database Engineer, you want to re-architect this application to use microservices. The application has a single backend database, but in the future you want to make the database architecture more suitable to microservices. You want to minimize downtime when you make database changes. What should you do?",
+  "originalOptions": "A. Change the frontend to a microservices approach. When the frontend is updated, simultaneously make each of the microservices connect to a new service-specific database.<br/>B. Change the backend to several databases split from the original database. Retain the frontend as a single application that connects to multiple smaller databases.<br/>C. Route database connections through a new service. Connect to the new database or databases from the new service only.<br/>D. Change the frontend to a microservices approach. Make each of the microservices continue to directly connect to the single database.",
+  "domain": "Manage a solution that can span multiple database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "179",
+  "tip": "<p>When a question stresses <i>minimize downtime</i> during a migration to microservices, prefer <i>incremental</i> changes that keep the database stable at first. Avoid a <i>big bang</i> data split and avoid adding a central broker. Look for answers that let the data model <i>evolve</i> gradually once service boundaries are clear.</p>",
+  "references": [
+    "https://cloud.google.com/architecture/monolith-to-microservices",
+    "https://cloud.google.com/architecture/microservices-architecture"
+  ],
+  "url": "https://certificationation.com/questions/exam-monolith-application-without-modification-from-exam-179.html",
+  "video_url": "https://certificationation.com/videos/exam-monolith-application-without-modification-from-exam-179.html"
+}

@@ -1,0 +1,62 @@
+---
+title: "You are required to improve the current deploymentExam"
+description: "Video for you are required to improve the current deployment process by making it easier to deploy and reduce the time it takes. You need to create a continuous"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are required to improve the current deployment process by making it easier to deploy and reduce the time it takes. You need to create a continuous integration (CI) pipeline that can build AMI's. Your development team will deploy builds less than 5 times a week. Which of the below is the best to get this done?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><b>Set up your CI workflow to launch an EC2 instance, install and configure code and dependencies, use the CreateImage API to make an AMI, and terminate the instance afterwards</b> is considered the best approach. This method allows you to automate the build pipeline using your CI tool. Each build initiates a new, clean EC2 instance where code and dependencies are installed. After everything is ready, the CI process triggers the creation of an AMI with the CreateImage API, and once the image is built, the temporary instance can be terminated, saving resources and ensuring that each AMI is isolated and reproducible.</p><p><i>Leverage a dedicated EC2 instance with EBS storage, manually configure and install all software, and create an AMI after setup</i> is less ideal because it often requires manual intervention and may produce inconsistent results over time. Maintaining a dedicated instance is also unnecessary overhead when builds are infrequent.</p><p><i>Deploy an OpsWorks EBS-backed instance and use a recipe to bootstrap it. Your CI pipeline then triggers an AMI creation using the CreateImage API</i> introduces extra complexity as OpsWorks is intended for configuration management rather than for infrequent, one-off AMI creation. For fewer than five builds a week, using OpsWorks is overly complex.</p><p><i>Upload application code with its dependencies to S3, start an instance, fetch the package from the bucket, then produce an AMI via CreateSnapshot API</i> contains a technical flaw—the correct method to create an AMI is using the CreateImage API, not CreateSnapshot, which is for EBS volumes, not complete EC2 AMIs. This option would not generate a functional, bootable AMI for deployment.</p><ul><li><b>Tip:</b> Use temporary EC2 instances for each build to guarantee a clean environment and terminate them afterward for cost efficiency.</li><li>Always use the CreateImage API for AMI creation—snapshots only preserve volumes.</li><li>Extra tools like OpsWorks are justified only if orchestration is needed at scale or high frequency.</li></ul>",
+  "query": "<p>Your team needs a streamlined way to build Amazon Machine Images (AMIs) as part of a new, simplified deployment process. The development group pushes fewer than five builds each week, and your aim is to efficiently automate AMI creation in a continuous integration (CI) pipeline. What is the optimal method to achieve this using AWS?</p>",
+  "original_oid": "6793d9ce61969b416038a0bd",
+  "options": [
+    {
+      "correct": false,
+      "text": "Deploy an OpsWorks EBS-backed instance and use a recipe to bootstrap it. Your CI pipeline then triggers an AMI creation using the CreateImage API.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Set up your CI workflow to launch an EC2 instance, install and configure code and dependencies, use the CreateImage API to make an AMI, and terminate the instance afterwards.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Upload application code with its dependencies to S3, start an instance, fetch the package from the bucket, then produce an AMI via CreateSnapshot API.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Leverage a dedicated EC2 instance with EBS storage, manually configure and install all software, and create an AMI after setup.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question72",
+  "originalQuery": "You are required to improve the current deployment process by making it easier to deploy and reduce the time it takes.\nYou need to create a continuous integration (CI) pipeline that can build AMI's.\nYour development team will deploy builds less than 5 times a week.\nWhich of the below is the best to get this done?",
+  "originalOptions": "A. Use a dedicated EC2 instance with an EBS Volume. Download and configure the code and then create an AMI.|B. Use OpsWorks to launch an EBS-backed instance, use a recipe to bootstrap the instance, and then have the CI system use the CreateImage API call to create an AMI.|C. Upload the code and dependencies to Amazon S3, launch an instance, download the package from Amazon S3, and then create the AMI with the CreateSnapshot API call.|D. Have the CI system launch a new instance, bootstrap the code and dependencies on the instance, and create an AMI using the CreateImage API call. Terminate the instance after the build.",
+  "video_url": "https://certificationation.com/videos/exam-current-deployment-process-by-making-exam-436.html",
+  "url": "https://certificationation.com/questions/exam-current-deployment-process-by-making-exam-436.html"
+}

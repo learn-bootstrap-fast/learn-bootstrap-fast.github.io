@@ -1,0 +1,82 @@
+---
+title: "As a Database Engineer, you are tasked with designing aExam"
+description: "Video for as a Database Engineer, you are tasked with designing a solution for exporting data from a Firestore collection to a BigQuery table. The export"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are tasked with designing a solution for exporting data from a Firestore collection to a BigQuery table. The export process must be fault-tolerant, efficient, and capable of handling large datasets. Which of the following options best meets these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the data engineer for a subscription media startup and you need to design a robust export from a Firestore collection into a BigQuery dataset for analytics. The first load will migrate roughly 25 million documents and the job must be efficient, fault tolerant, and able to scale for future growth, and you might need to apply simple transformations during the move. Which approach should you choose?",
+  "options": [
+    {
+      "text": "Set up a streaming transfer in BigQuery Data Transfer Service to move data from Firestore into BigQuery",
+      "explanation": "BigQuery Data Transfer Service schedules and runs managed transfers from supported sources.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a Cloud Function triggered by Firestore document changes that streams each record into BigQuery",
+      "explanation": "Cloud Functions can react to Firestore events and invoke the BigQuery API for inserts.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Build an Apache Beam pipeline on Cloud Dataflow that reads from Firestore applies any needed transforms and writes to BigQuery",
+      "explanation": "Cloud Dataflow runs Beam pipelines with autoscaling and checkpointing for resilient batch or streaming processing.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Configure a recurring BigQuery scheduled query that selects data from Firestore and populates the destination table",
+      "explanation": "Scheduled queries execute SQL inside BigQuery on a defined cadence.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Build an Apache Beam pipeline on Cloud Dataflow that reads from Firestore applies any needed transforms and writes to BigQuery</b>.</p><p>Dataflow with Apache Beam is designed for large scale extract transform and load workloads. It can read from Firestore using supported connectors and write efficiently to BigQuery. You can implement simple transformations inside the pipeline while benefiting from autoscaling, parallelism, checkpointing, and retries for strong fault tolerance. For an initial backfill of about 25 million documents, a batch Dataflow job that writes to BigQuery using file loads provides high throughput and cost efficiency, and the same pipeline pattern can scale as data volumes grow.</p><p><i>Set up a streaming transfer in BigQuery Data Transfer Service to move data from Firestore into BigQuery</i> is not feasible because the BigQuery Data Transfer Service does not support Firestore as a data source.</p><p><i>Create a Cloud Function triggered by Firestore document changes that streams each record into BigQuery</i> is not suitable for a large historical migration because triggers only fire for new changes after deployment and do not backfill existing documents. Streaming every row into BigQuery would also be inefficient and can hit quotas and increase cost.</p><p><i>Configure a recurring BigQuery scheduled query that selects data from Firestore and populates the destination table</i> is not possible because BigQuery cannot query Firestore directly and scheduled queries only execute SQL within BigQuery over supported tables or external data sources.</p>",
+  "batch_id": "256",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are tasked with designing a solution for exporting data from a Firestore collection to a BigQuery table. The export process must be fault-tolerant, efficient, and capable of handling large datasets. Which of the following options best meets these requirements?",
+  "originalOptions": "A. Implement a Cloud Function triggered by Firestore events to export data from the Firestore collection and stream it to BigQuery.<br/>B. Set up a streaming Data Transfer Service (DTS) job to export data from Firestore to BigQuery.<br/>C. Configure a BigQuery scheduled query to copy data from Firestore to the BigQuery table.<br/>D. Use an Apache Beam pipeline with Cloud Dataflow to read data from Firestore, transform it if needed, and write it to the BigQuery table.",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "195",
+  "tip": "<p>When a scenario requires moving very large volumes with optional transforms and strong reliability, think of <i>Dataflow with Apache Beam</i>. Always confirm whether a managed transfer service supports the specific source before choosing it.</p>",
+  "references": [
+    "https://cloud.google.com/dataflow/docs/concepts/overview",
+    "https://cloud.google.com/dataflow/docs/guides/templates/provided/firestore-change-streams-to-bigquery",
+    "https://beam.apache.org/documentation/io/built-in/google-bigquery/",
+    "https://cloud.google.com/bigquery-transfer/docs/supported-data-sources",
+    "https://cloud.google.com/functions/docs/calling/cloud-firestore",
+    "https://cloud.google.com/bigquery/docs/scheduling-queries"
+  ],
+  "url": "https://certificationation.com/questions/exam-tasked-with-designing-a-solution-exam-195.html",
+  "video_url": "https://certificationation.com/videos/exam-tasked-with-designing-a-solution-exam-195.html"
+}

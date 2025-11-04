@@ -1,0 +1,81 @@
+---
+title: "You are designing a Cloud Spanner database for aExam"
+description: "Video for you are designing a Cloud Spanner database for a logistics company to track deliveries. The database includes a deliveries table with columns driverId"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are designing a Cloud Spanner database for a logistics company to track deliveries. The database includes a deliveries table with columns driverId , routeId , and deliveryDate . Management wants to frequently query routes for specific drivers on specific dates. You want to optimize the query performance by parameterizing the query. What query should you use?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are building a Cloud Spanner schema for BlueRidge Express to record shipment drop-offs. The database has a table named shipments with columns courier_id, trip_id, and ship_date. The operations team needs to repeatedly look up trips for a given courier on a particular calendar day. You want to maximize performance by using a parameterized SQL statement. Which query should you run?",
+  "options": [
+    {
+      "text": "SELECT trip_id FROM shipments WHERE courier_id LIKE @courierId AND ship_date=@shipDate",
+      "explanation": "This uses a pattern match for the courier identifier along with an equality filter on the date",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "SELECT trip_id FROM shipments WHERE courier_id=@courierId OR ship_date=@shipDate",
+      "explanation": "This returns rows that satisfy either the courier filter or the date filter which increases the number of matches",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "SELECT trip_id FROM shipments WHERE courier_id=@courierId AND ship_date=@shipDate",
+      "explanation": "This applies equality filters to both the courier and the shipping date using parameters for efficient lookups",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "BigQuery",
+      "explanation": "This is a managed analytics data warehouse service in Google Cloud",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>SELECT trip_id FROM shipments WHERE courier_id=@courierId AND ship_date=@shipDate</b>.</p><p>This query uses named parameters which Cloud Spanner supports and it applies equality predicates to both the courier and the date so it precisely answers the need to find trips for a given courier on a particular calendar day. Equality filters with an AND condition are highly selective and they can efficiently use an appropriate secondary index on courier_id and ship_date which maximizes performance while also allowing plan reuse and safe parameter binding.</p><p><i>SELECT trip_id FROM shipments WHERE courier_id LIKE @courierId AND ship_date=@shipDate</i> is not ideal because LIKE is intended for pattern matching and not exact matching of identifiers. It can lead to unintended matches if wildcards are used and even without wildcards it offers no benefit over equality while potentially reducing the effectiveness of index lookups.</p><p><i>SELECT trip_id FROM shipments WHERE courier_id=@courierId OR ship_date=@shipDate</i> is incorrect because it returns trips that match either the courier or the date rather than both. This does not satisfy the requirement and it is less selective which typically yields worse performance.</p><p><i>BigQuery</i> is not a valid SQL statement and it is also the name of a different service. The scenario uses Cloud Spanner and requires a proper parameterized SQL query.</p>",
+  "batch_id": "153",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are designing a Cloud Spanner database for a logistics company to track deliveries. The database includes a deliveries table with columns driverId , routeId , and deliveryDate . Management wants to frequently query routes for specific drivers on specific dates. You want to optimize the query performance by parameterizing the query. What query should you use?",
+  "originalOptions": "A. SELECT routeId FROM deliveries WHERE driverId=@driverId OR deliveryDate=@deliveryDate<br/>B. SELECT routeId FROM deliveries WHERE driverId=@driverId AND deliveryDate=@deliveryDate<br/>C. SELECT routeId FROM deliveries WHERE driverId=@driverId AND deliveryDate LIKE @deliveryDate<br/>D. SELECT routeId FROM deliveries WHERE driverId LIKE @driverId AND deliveryDate=@deliveryDate",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "319",
+  "tip": "<p>When a requirement asks for records that match multiple conditions on specific values, prefer equality predicates joined with <i>AND</i> and parameterize them. If you see <i>LIKE</i> for exact identifiers or an <i>OR</i> that relaxes the filter, those are strong clues that the option is not optimal for performance or correctness.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/queries#parameterized-queries",
+    "https://cloud.google.com/spanner/docs/sql-best-practices#use_parameterized_queries",
+    "https://cloud.google.com/spanner/docs/secondary-indexes",
+    "https://cloud.google.com/spanner/docs/functions-and-operators#like",
+    "https://cloud.google.com/spanner/docs/functions-and-operators#logical_operators"
+  ],
+  "url": "https://certificationation.com/questions/exam-database-for-a-logistics-company-exam-319.html",
+  "video_url": "https://certificationation.com/videos/exam-database-for-a-logistics-company-exam-319.html"
+}

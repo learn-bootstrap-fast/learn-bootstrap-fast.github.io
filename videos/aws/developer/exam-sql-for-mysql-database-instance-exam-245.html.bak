@@ -1,0 +1,80 @@
+---
+title: "As you configure a brand new Cloud SQL for MySQLExam"
+description: "Video for as you configure a brand new Cloud SQL for MySQL database instance in Google Cloud, your application team has requested the deployment of one primary"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As you configure a brand new Cloud SQL for MySQL database instance in Google Cloud, your application team has requested the deployment of one primary instance and two read replica instances. It is essential to adhere to Google's recommended practices to achieve high availability and optimize read performance. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Your team at Carina Tech is provisioning Cloud SQL for MySQL to serve an order processing app. They want one primary instance and two read replicas. You must follow Google Cloud&apos;s guidance to attain high availability and efficient read scaling. How should you place the instances?",
+  "options": [
+    {
+      "text": "Create the primary in one region and place one read replica in a second region and the other read replica in a third region",
+      "explanation": "This distributes the instances across three different regions to separate them geographically",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud Spanner",
+      "explanation": "This is a fully managed relational database service that is a different product from Cloud SQL for MySQL",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create the primary in zone a and schedule both read replicas in zone b within the same region",
+      "explanation": "This keeps the primary in one zone while locating both replicas together in another zone of the same region",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create the primary in zone a and put one replica in zone b and the other in zone c within the same region",
+      "explanation": "This separates the primary and each replica across three zones in the same region to diversify placement and balance reads",
+      "correct": true,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Create the primary in zone a and put one replica in zone b and the other in zone c within the same region</b>.</p><p>This placement follows Google Cloud guidance for high availability and efficient read scaling because it spreads the instances across multiple zones in the same region. Keeping replicas in different zones protects against a single zonal failure while staying in the same region keeps replication and read latency low. This gives you resilient failover characteristics and fast reads for your regional application traffic.</p><p><i>Create the primary in one region and place one read replica in a second region and the other read replica in a third region</i> is not ideal for high availability or read performance for a regional app. Cross region replicas add significant network latency and are used primarily for disaster recovery rather than low latency read scaling.</p><p><i>Cloud Spanner</i> is a different managed database that does not satisfy the requirement to provision Cloud SQL for MySQL, so it does not answer the placement question.</p><p><i>Create the primary in zone a and schedule both read replicas in zone b within the same region</i> concentrates both replicas in a single zone, which creates a zonal single point of failure and reduces availability.</p>",
+  "batch_id": "152",
+  "answerCode": "4",
+  "type": "multiple-choice",
+  "originalQuery": "As you configure a brand new Cloud SQL for MySQL database instance in Google Cloud, your application team has requested the deployment of one primary instance and two read replica instances. It is essential to adhere to Google's recommended practices to achieve high availability and optimize read performance. What should you do?",
+  "originalOptions": "A. Configure the primary instance in one region, the first read replica in a second region, and the second read replica in a third region.<br/>B. Configure the primary instance in zone A and both read replicas in zone B, all in the same region.<br/>C. Configure the primary and both read replicas instances in zone A, all in the same region.<br/>D. Configure the primary instance in zone A, one read replica in zone B, and the second read replica in zone C, all in the same region.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "245",
+  "tip": "<p>When deciding replica placement, think in terms of <i>zones</i> for high availability within a <i>region</i> and keep read replicas close to the application to reduce <i>latency</i>. Use <i>cross region</i> replicas mainly for <i>DR</i> rather than everyday read scaling.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/high-availability",
+    "https://cloud.google.com/sql/docs/mysql/replication/replication-overview",
+    "https://cloud.google.com/sql/docs/mysql/replication/create-replicas",
+    "https://cloud.google.com/sql/docs/mysql/locations"
+  ],
+  "url": "https://certificationation.com/questions/exam-sql-for-mysql-database-instance-exam-245.html",
+  "video_url": "https://certificationation.com/videos/exam-sql-for-mysql-database-instance-exam-245.html"
+}

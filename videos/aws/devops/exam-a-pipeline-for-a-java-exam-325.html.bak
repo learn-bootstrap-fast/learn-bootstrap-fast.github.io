@@ -1,0 +1,62 @@
+---
+title: "A DevOps engineer is building up a pipeline for a JavaExam"
+description: "Video for a DevOps engineer is building up a pipeline for a Java project which is under development. AWS CodePipeline service has been chosen as the CI/CD tool."
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A DevOps engineer is building up a pipeline for a Java project which is under development. AWS CodePipeline service has been chosen as the CI/CD tool. For the service deployment phase, CloudFormation stacks are used. However, there are several situations to be considered. For example, (i) stack should be created if a stack does not exist, (ii) Change Set should be created and inspected if a stack already exists. The team lead prefers to implement a visualized state machine for the deployment and each state executes a Lambda function. What is the best way to achieve this requirement?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best approach is to use <b>AWS Lambda in combination with AWS Step Functions</b>. AWS Step Functions natively supports the creation of visual, workflow-driven state machines. Each state in a Step Functions workflow can directly invoke a Lambda function, which aligns perfectly with the requirement that each deployment stage should execute as a separate Lambda. Additionally, Step Functions integrates seamlessly with CloudFormation and provides visual monitoring and error handling, making it ideal for managing complex deployment logic such as stack creation or change set review.</p> <p>The other options are less suitable:</p><ul> <li><i>Implement a Python script on an EC2 instance to track state...</i> - While technically possible, this adds unnecessary complexity, manual state tracking, and additional resource management overhead, lacking the native visualization and orchestration features of Step Functions.</li> <li><i>Create multiple SQS queues to indicate stack deployment status...</i> - SQS is built for message queuing, not for orchestrating or visualizing workflows as a state machine. Implementing state transitions through SQS would be error-prone and hard to manage visually.</li> <li><i>Deploy a shell script on an EC2 server that uses AWS MQ...</i> - This approach introduces even more operational burden by depending on EC2 and MQ. AWS MQ is intended for message brokering, not state machine orchestration, and offers no built-in support for workflow visualization.</li></ul><p><b>Tip:</b> AWS Step Functions offers serverless state management, visual monitoring, and robust error handling, making it the preferred solution for orchestrating and visualizing multi-step workflows in AWS deployments.</p>",
+  "query": "<p>A development team is setting up a CI/CD pipeline for a Java application using AWS CodePipeline. The deployment phase leverages CloudFormation stacks, with requirements such as: (i) creating a stack if it does not exist and (ii) generating and reviewing a Change Set if the stack already exists. The team lead wishes to visualize the deployment workflow as a state machine, with each state triggering a Lambda function. <br> Which solution provides the most effective way to meet these needs?</p>",
+  "original_oid": "6793da0a61969b416038a131",
+  "options": [
+    {
+      "correct": true,
+      "text": "Utilize AWS Lambda to integrate with AWS Step Functions, designing a workflow-driven state machine where each step corresponds to a deployment action, and Lambda functions return status information to CodePipeline.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Implement a Python script on an EC2 instance to track state, invoke necessary Lambda functions depending on current execution status, and return pipeline results accordingly.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Create multiple SQS queues to indicate stack deployment status, where individual Lambda functions consume messages from each queue to handle deployment tasks, and one Lambda reports the final result to CodePipeline.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Deploy a shell script on an EC2 server that uses AWS MQ to coordinate state transitions, returning progress to CodePipeline depending on MQ messaging results.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question191",
+  "originalQuery": "A DevOps engineer is building up a pipeline for a Java project which is under development.\nAWS CodePipeline service has been chosen as the CI/CD tool.\nFor the service deployment phase, CloudFormation stacks are used.\nHowever, there are several situations to be considered.\nFor example, (i) stack should be created if a stack does not exist, (ii) Change Set should be created and inspected if a stack already exists.\nThe team lead prefers to implement a visualized state machine for the deployment and each state executes a Lambda function.\nWhat is the best way to achieve this requirement?",
+  "originalOptions": "A. Establish several SQS queues to indicate running status. The Lambda function for each state gets the message from the queue and processes the deployment task accordingly. The final result is returned to CodePipeline by a dedicated Lambda.|B. Use a Python script in EC2 to record the running status and achieve the state machine feature. It calls different Lambda functions depending on the current status. The script returns the execution status back to CodePipeline.|C. Use a Lambda Function to interface with an AWS Step Functions which implements the workflow-driven state machines for CloudFormation stack deployment. The Lambda Function returns the execution status back to CodePipeline.|D. Use a shell script in EC2 to interface with the AWS MQ service to achieve the function of the state machine. Depending on the running status of the AWS MQ service, the script returns the execution result back to CodePipeline.",
+  "video_url": "https://certificationation.com/videos/exam-a-pipeline-for-a-java-exam-325.html",
+  "url": "https://certificationation.com/questions/exam-a-pipeline-for-a-java-exam-325.html"
+}

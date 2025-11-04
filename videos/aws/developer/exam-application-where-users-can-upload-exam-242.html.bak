@@ -1,0 +1,80 @@
+---
+title: "You are designing a photo-sharing application whereExam"
+description: "Video for you are designing a photo-sharing application where users can upload, store, and retrieve photos. Photos should be resized and optimized for faster"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are designing a photo-sharing application where users can upload, store, and retrieve photos. Photos should be resized and optimized for faster loading. The application must support millions of users globally while keeping costs low. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A new social marketplace at scrumtuous.com lets users upload and view product photos. Your team needs each upload to be automatically resized into several resolutions and compressed so that pages load quickly. The service must handle about 15 million users across multiple regions while keeping operational costs low. Which GCP architecture should you choose?",
+  "options": [
+    {
+      "text": "Store images in BigQuery and run Dataflow jobs to transform images",
+      "explanation": "This choice proposes using a data warehouse to hold photo objects and pipeline processing for image manipulation.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Store images in Cloud Storage and trigger Cloud Functions to create optimized variants",
+      "explanation": "This choice stores photos in object storage and uses event driven serverless functions to produce thumbnails and web friendly versions on upload.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Store images in Cloud SQL and perform resizing with Cloud Run",
+      "explanation": "This choice relies on a relational database for binary data and a container based service to execute image processing tasks.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Store images in Filestore and run resizing on Compute Engine VMs",
+      "explanation": "This choice uses a managed network file system to hold images and virtual machines that run custom scripts for resizing.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Store images in Cloud Storage and trigger Cloud Functions to create optimized variants</b>.</p><p>This design uses object finalize events from Cloud Storage to invoke Cloud Functions for image resizing and compression. The functions can create multiple sizes and write the variants back to the bucket with minimal latency. It scales automatically with bursts of uploads from millions of users and it keeps costs low because you pay per request and compute time only when code runs. You can place the bucket in a multi region or dual region location to serve users across regions with high durability and availability while avoiding the overhead of managing servers.</p><p><i>Store images in BigQuery and run Dataflow jobs to transform images</i> is not suitable because BigQuery is an analytics data warehouse and is not intended for storing and serving image binaries. Dataflow is excellent for data pipelines but it is not the most efficient or cost effective way to perform per object image transformations on upload events.</p><p><i>Store images in Cloud SQL and perform resizing with Cloud Run</i> is a poor fit because Cloud SQL is a relational database and is not designed for large scale blob storage. Storing images there is costly and limits scalability. While Cloud Run can resize images well, the storage choice makes the architecture inefficient and expensive.</p><p><i>Store images in Filestore and run resizing on Compute Engine VMs</i> increases operational overhead and does not provide global multi region resilience out of the box. You would need to manage instance scaling, capacity planning, and failover, which raises cost and complexity compared to a serverless and event driven approach.</p>",
+  "batch_id": "313",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "You are designing a photo-sharing application where users can upload, store, and retrieve photos. Photos should be resized and optimized for faster loading. The application must support millions of users globally while keeping costs low. What should you do?",
+  "originalOptions": "A. Use Cloud Storage for storing photos and Cloud Functions to handle resizing.<br/>B. Use Cloud SQL for storing photos and Cloud Run for resizing.<br/>C. Use Firebase Realtime Database for storing photos and Compute Engine for resizing.<br/>D. Use BigQuery for storing photos and Dataflow for resizing.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "242",
+  "tip": "<p>When the workload is user uploaded media that needs transformation on upload, match it to <i>object storage</i> with <i>event driven</i> serverless compute. Prefer managed services that <i>autoscale</i> and avoid using databases or analytics warehouses for binary files.</p>",
+  "references": [
+    "https://cloud.google.com/functions/docs/calling/storage",
+    "https://cloud.google.com/functions/docs/tutorials/imagemagick",
+    "https://cloud.google.com/storage/docs/locations",
+    "https://cloud.google.com/storage/docs/best-practices"
+  ],
+  "url": "https://certificationation.com/questions/exam-application-where-users-can-upload-exam-242.html",
+  "video_url": "https://certificationation.com/videos/exam-application-where-users-can-upload-exam-242.html"
+}

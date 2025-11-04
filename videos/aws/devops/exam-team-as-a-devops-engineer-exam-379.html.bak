@@ -1,0 +1,67 @@
+---
+title: "You work in the Site Reliable Engineering team as aExam"
+description: "Video for you work in the Site Reliable Engineering team as a DevOps engineer. Your team is maintaining several pipelines in the AWS CodePipeline service."
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You work in the Site Reliable Engineering team as a DevOps engineer. Your team is maintaining several pipelines in the AWS CodePipeline service. However, you have found no notifications to your team even if a certain pipeline has failed. You want to set up a feature so that your on-call team can get an email and an SMS when the whole pipeline or certain stage inside the pipeline changes the state to “FAILED” Which combinations of services should you use to implement this? (Select TWO.)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct services to use are <b>AWS CloudWatch Events</b> (now called EventBridge) and <b>AWS Simple Notification Service (SNS)</b>.</p><p>Here's why:</p><ul><li><b>AWS CloudWatch Events</b> can be set up to detect specific state changes in CodePipeline, such as a pipeline or a stage moving into the <b>FAILED</b> state. You can create a rule to trigger whenever this happens.</li><li><b>AWS SNS</b> is a managed notification service that enables you to send notifications via multiple protocols, including email and SMS. By connecting SNS to CloudWatch Events, you can immediately alert your team members using both channels.</li></ul><p>Why the other options are less suitable:</p><ul><li><i>AWS Simple Queue Service (SQS)</i> is primarily intended for decoupling microservices or for message buffering; it doesn't directly handle notification delivery via email/SMS for alerting users upon pipeline failures.</li><li><i>AWS CloudWatch Alarms</i> are focused on metrics-based alarms. CodePipeline state changes (like FAILED) are typically reported as events, not metrics, making alarms inappropriate for this use case.</li><li><i>AWS CloudTrail</i> tracks API calls and account activity for auditing but does not offer native notification delivery mechanisms or direct event pattern matching needed for instant alerts.</li></ul><p><b>Tips:</b> Set up a CloudWatch Event rule filtering for 'FAILED' state changes in your pipelines, and configure the target as an SNS topic. Subscribe your on-call team's email and phone numbers to that topic to ensure real-time, multi-channel notifications.</p>",
+  "query": "<p>Your DevOps team supports several workflows using AWS CodePipeline. However, you notice there are no alerts going out when a pipeline or its stage fails. To ensure your on-call staff is notified via both email and SMS whenever a pipeline or its stage enters a <b>FAILED</b> state, which pair of AWS services should you employ to address this requirement? (Select TWO.)</p>",
+  "original_oid": "6793d9c661969b416038a0ab",
+  "options": [
+    {
+      "correct": true,
+      "text": "AWS CloudWatch Events",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "AWS Simple Queue Service (SQS)",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "AWS Simple Notification Service (SNS)",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "AWS CloudWatch Alarms",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "AWS CloudTrail",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question54",
+  "originalQuery": "You work in the Site Reliable Engineering team as a DevOps engineer.\nYour team is maintaining several pipelines in the AWS CodePipeline service.\nHowever, you have found no notifications to your team even if a certain pipeline has failed.\nYou want to set up a feature so that your on-call team can get an email and an SMS when the whole pipeline or certain stage inside the pipeline changes the state to “FAILED”\nWhich combinations of services should you use to implement this? (Select TWO.)",
+  "originalOptions": "A. AWS Simple Notification Service,B. AWS CloudTrail,C. AWS CloudWatch Events,D. AWS Simple Queue Service,E. AWS CloudWatch Alarms.",
+  "video_url": "https://certificationation.com/videos/exam-team-as-a-devops-engineer-exam-379.html",
+  "url": "https://certificationation.com/questions/exam-team-as-a-devops-engineer-exam-379.html"
+}

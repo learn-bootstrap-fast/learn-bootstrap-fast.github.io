@@ -1,0 +1,62 @@
+---
+title: "You are working in a start-up company as a DevOpsExam"
+description: "Video for you are working in a start-up company as a DevOps engineer. Due to limited budget, the frontend Auto Scaling group uses Spot Instances in the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are working in a start-up company as a DevOps engineer. Due to limited budget, the frontend Auto Scaling group uses Spot Instances in the development environment. Since last Monday, it has become more and more difficult to launch an instance. The ASG reports the error \"There is no Spot capacity available that matches your request\" Because of this, the frontend page cannot load. You suggested to launch On-Demand Instances however your manager told you to continue using Spot Instances. How would you resolve this problem?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best way to resolve the ASG failure to launch Spot Instances due to lack of available capacity is to <b>select several compatible instance types in the Auto Scaling group</b>. By allowing instance type flexibility, the ASG can request Spot capacity across multiple EC2 types, significantly increasing the odds of finding available capacity in at least one of the selected types.<br><br>The option <i>\"Change the instances distribution settings in the Auto Scaling group so that the On-Demand percentage is set to 0% and the Spot percentage is 100%\"</i> does not address the underlying issue: the ASG is already only using Spot capacity, so this configuration change would have no practical effect.<br><br>The choice <i>\"Set the Spot allocation strategy in the Auto Scaling group to 'Lowest price' to attempt launching instances with the least expensive Spot prices\"</i> might seem helpful, but 'Lowest price' does not resolve the fundamental shortage of Spot capacity. Using 'capacity-optimized' or expanding instance types are typically better for availability than just targeting the lowest price.<br><br>The answer <i>\"Build a new EC2 Launch Template that specifies only Spot Instances are to be launched, and point the Auto Scaling group to this updated template\"</i> essentially repeats the current setup, as the ASG is already configured for Spot-only launches, so this step wouldn’t help.<br><br><b>Tip:</b> When using Spot Instances, always include multiple instance types, preferably spanning several families, to maximize your chances of receiving capacity. The more flexible your ASG is, the more resilient it will be to Spot market fluctuations.</p>",
+  "query": "<p>Your company, operating on a tight budget, has configured its frontend Auto Scaling group (ASG) in the development environment to use Spot Instances exclusively. Recently, attempts to launch new instances have become increasingly unsuccessful, with the ASG reporting: \"There is no Spot capacity available that matches your request.\" The frontend is now failing to load. Although you proposed using On-Demand Instances, management insists on retaining Spot Instances only. What adjustment could you make to improve the likelihood of launching Spot Instances and restoring the frontend service?</p>",
+  "original_oid": "6793da9c61969b416038a259",
+  "options": [
+    {
+      "correct": true,
+      "text": "Select several compatible instance types in the Auto Scaling group to allow for greater flexibility with available Spot capacity.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Change the instances distribution settings in the Auto Scaling group so that the On-Demand percentage is set to 0% and the Spot percentage is 100%.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set the Spot allocation strategy in the Auto Scaling group to 'Lowest price' to attempt launching instances with the least expensive Spot prices.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Build a new EC2 Launch Template that specifies only Spot Instances are to be launched, and point the Auto Scaling group to this updated template.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question489",
+  "originalQuery": "You are working in a start-up company as a DevOps engineer.\nDue to limited budget, the frontend Auto Scaling group uses Spot Instances in the development environment.\nSince last Monday, it has become more and more difficult to launch an instance.\nThe ASG reports the error \"There is no Spot capacity available that matches your request\"\nBecause of this, the frontend page cannot load.\nYou suggested to launch On-Demand Instances however your manager told you to continue using Spot Instances.\nHow would you resolve this problem?",
+  "originalOptions": "[\"A. Specify several instance types in the Auto Scaling group that are appropriate for the application so that you can get more compute capacity when you have instance type flexibility.\",\"B. In the Auto Scaling group instances distribution configurations, modify the On-Demand percentage to be 0% and Spot percentage to be 100%.\",\"C. Choose \\u201cLowest price\\u201d in the Spot allocation strategy of the Auto Scaling group so that Spot Instances with the lowest price can be launched.\",\"D. Create an EC2 Launch Template with a purchased option to specify that only Spot Instances should be launched. Modify the Auto Scaling group to use the new EC2 Launch Template.\"]",
+  "video_url": "https://certificationation.com/videos/exam-a-devops-engineer-due-to-exam-236.html",
+  "url": "https://certificationation.com/questions/exam-a-devops-engineer-due-to-exam-236.html"
+}

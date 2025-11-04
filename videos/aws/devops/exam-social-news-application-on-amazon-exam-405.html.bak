@@ -1,0 +1,62 @@
+---
+title: "A web-startup runs its very successful social newsExam"
+description: "Video for a web-startup runs its very successful social news application on Amazon EC2 with an Elastic Load Balancer, an Auto-Scaling group of Java/Tomcat"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A web-startup runs its very successful social news application on Amazon EC2 with an Elastic Load Balancer, an Auto-Scaling group of Java/Tomcat application-servers, and DynamoDB as a data store. The main web application best runs on m2 x large instances since it is highly memory-bound. Each new deployment requires semi-automated creation and testing of a new AMI for the application servers which takes quite a while and is therefore only done once per week. Recently, a new chat feature has been implemented in node.js and waits to be integrated into the architecture."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><b>Set up a single AWS OpsWorks stack with two layers, one for Java/Tomcat and the other for Node.js, then design a single custom recipe for provisioning.</b> is correct because it leverages OpsWorks stacks & layers to logically organize your application's architecture: the Java/Tomcat app and the new Node.js chat module can reside in different layers within the same stack, allowing full management and automation tailored to each application stack (e.g., memory-optimized instances for Java and potentially compute-optimized for Node.js). Maintaining a single stack reduces administrative overhead, and a single custom recipe streamlines deployment workflows and feature additions while minimizing duplication.</p><p>The option <i>Build two AWS OpsWorks stacks (one per application) each with a dedicated layer, each managed by its own custom recipe.</i> adds unnecessary complexity and management burden, fragmenting the deployment of related services that should be tightly coordinated. <i>Create a single AWS OpsWorks stack, a shared layer for both applications, and manage with one custom recipe.</i> fails to isolate the different runtime and resource requirements of Java and Node.js, which are best administered via separate layers. <i>Design two AWS OpsWorks stacks. Use two layers and only one custom recipe for both.</i> also unnecessarily splits the infra while duplicating effort when a single stack would suffice.</p><p><b>Tips:</b> When integrating multi-tier or multi-platform applications, separate layers for each runtime or component within the same OpsWorks stack provide both logical separation and centralized stack management, improving maintainability and consistency.</p>",
+  "query": "<p>An innovative web startup hosts a thriving social news platform using Amazon EC2 for compute (behind an Elastic Load Balancer and managed by an Auto Scaling group of Java/Tomcat app servers), with DynamoDB as its data backend. The main website is highly memory-dependent, performing best on m2.xlarge instances. Each new code release demands the periodic (about once a week) semi-automated creation, validation, and baking of new application server AMIs—a process that is fairly time-consuming. Now, a Node.js-powered chat component has been developed and needs to be seamlessly integrated into the overall solution. As a solutions architect, which AWS OpsWorks strategy will support deploying and managing both the main Java/Tomcat app and the new chat service most effectively?</p>",
+  "original_oid": "6793da2061969b416038a15c",
+  "options": [
+    {
+      "correct": true,
+      "text": "Set up a single AWS OpsWorks stack with two layers, one for Java/Tomcat and the other for Node.js, then design a single custom recipe for provisioning.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Build two AWS OpsWorks stacks (one per application) each with a dedicated layer, each managed by its own custom recipe.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Create a single AWS OpsWorks stack, a shared layer for both applications, and manage with one custom recipe.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Design two AWS OpsWorks stacks. Use two layers and only one custom recipe for both.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question235",
+  "originalQuery": "A web-startup runs its very successful social news application on Amazon EC2 with an Elastic Load Balancer, an Auto-Scaling group of Java/Tomcat application-servers, and DynamoDB as a data store.\nThe main web application best runs on m2 x large instances since it is highly memory-bound.\nEach new deployment requires semi-automated creation and testing of a new AMI for the application servers which takes quite a while and is therefore only done once per week.\nRecently, a new chat feature has been implemented in node.js and waits to be integrated into the architecture.",
+  "originalOptions": "[\"A. Create one AWS Ops Works stack, create one AWS Ops Works layer and create one custom recipe.\",\"B. Create one AWS Ops Works stack, create two AWS Ops Works layers and create one custom recipe.\",\"C. Create two AWS Ops Works stacks, create two AWS Ops Works layers and create one custom recipe.\",\"D. Create two AWS Ops Works stacks, create two AWS Ops Works layers and create two custom recipes.\"]",
+  "video_url": "https://certificationation.com/videos/exam-social-news-application-on-amazon-exam-405.html",
+  "url": "https://certificationation.com/questions/exam-social-news-application-on-amazon-exam-405.html"
+}

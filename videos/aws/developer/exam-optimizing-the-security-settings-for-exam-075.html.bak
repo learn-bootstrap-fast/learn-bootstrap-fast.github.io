@@ -1,0 +1,80 @@
+---
+title: "A Database Engineer is working on optimizing theExam"
+description: "Video for a Database Engineer is working on optimizing the security settings for a Cloud SQL instance using the Cloud SQL Auth Proxy. Which of the following"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A Database Engineer is working on optimizing the security settings for a Cloud SQL instance using the Cloud SQL Auth Proxy. Which of the following actions should the engineer take to ensure a secure connection to the instance while minimizing the attack surface?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "At Cobalt Outfitters, a cloud database specialist is tightening access to a production Cloud SQL for MySQL instance that applications reach through the Cloud SQL Auth Proxy. The team wants to maintain a secure connection while keeping the attack surface as small as possible. What should the specialist do?",
+  "options": [
+    {
+      "text": "Start the proxy listening on 0.0.0.0 so it is reachable from any network interface",
+      "explanation": "This makes the proxy accept connections from all interfaces which can broaden exposure.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure mutual TLS by supplying client and server certificates and a private key to the proxy for all connections",
+      "explanation": "This approach manages client and server certificates directly with the proxy.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Run the Cloud SQL Auth Proxy with a dedicated service account that has only the minimal IAM permissions required to connect to the instance",
+      "explanation": "This uses a least privilege service account to constrain what the proxy can access.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Enable TLS in the proxy configuration but disable certificate verification to avoid connection issues",
+      "explanation": "This turns on encryption but skips validation of the remote certificate.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct answer is <b>Run the Cloud SQL Auth Proxy with a dedicated service account that has only the minimal IAM permissions required to connect to the instance</b>.</p><p>This approach enforces least privilege and isolates credentials to a single purpose which reduces lateral risk if the account is compromised. The Cloud SQL Auth Proxy already provides encrypted connections and authorizes access using IAM. Granting only the Cloud SQL Client role or the specific permissions needed to connect aligns with best practices and keeps the attack surface small while preserving strong transport security.</p><p><i>Start the proxy listening on 0.0.0.0 so it is reachable from any network interface</i> is incorrect because exposing the proxy on all interfaces widens the attack surface. The recommended practice is to bind to localhost or use a Unix domain socket so only local processes can reach the proxy.</p><p><i>Configure mutual TLS by supplying client and server certificates and a private key to the proxy for all connections</i> is incorrect because the Cloud SQL Auth Proxy already handles encryption and authentication for you. It uses Google managed certificates and IAM to secure the channel, so you do not supply your own TLS materials to the proxy for database connections.</p><p><i>Enable TLS in the proxy configuration but disable certificate verification to avoid connection issues</i> is incorrect because turning off certificate verification defeats the protection that TLS provides and exposes clients to man in the middle attacks. The proxy verifies certificates by default and that protection should remain enabled.</p>",
+  "batch_id": "14",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "A Database Engineer is working on optimizing the security settings for a Cloud SQL instance using the Cloud SQL Auth Proxy. Which of the following actions should the engineer take to ensure a secure connection to the instance while minimizing the attack surface?",
+  "originalOptions": "A. Use the default settings for the Cloud SQL Auth Proxy without any modifications.<br/>B. Enable SSL connections for the proxy but disable certificate validation.<br/>C. Configure the proxy to use SSL connections with a client certificate, a server certificate, and a private key.<br/>D. Configure the proxy to use a service account with the least privileges.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "75",
+  "tip": "<p>When questions mention the Cloud SQL Auth Proxy, look for options that use <i>least privilege</i> with a dedicated service account and that limit exposure to <i>localhost</i>. Be cautious of answers that open listeners on <i>0.0.0.0</i> or that disable <i>certificate verification</i>.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+    "https://cloud.google.com/sql/docs/mysql/sql-proxy",
+    "https://cloud.google.com/sql/docs/mysql/roles-and-permissions",
+    "https://cloud.google.com/sql/docs/mysql/connect-auth-proxy#howitworks"
+  ],
+  "url": "https://certificationation.com/questions/exam-optimizing-the-security-settings-for-exam-075.html",
+  "video_url": "https://certificationation.com/videos/exam-optimizing-the-security-settings-for-exam-075.html"
+}

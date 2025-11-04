@@ -1,0 +1,62 @@
+---
+title: "A team has implemented a service with AWS API GatewayExam"
+description: "Video for a team has implemented a service with AWS API Gateway and Lambda. The service endpoint can save input JSON data to the internal database and S3 After"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A team has implemented a service with AWS API Gateway and Lambda. The service endpoint can save input JSON data to the internal database and S3 After the service has run for several years, some data in the JSON body are no longer used and should not be saved anymore. The backend Lambda has been upgraded to support only the valid JSON values. The original API in API Gateway is still used for some time before all users migrate to the new API. How should the original API be configured so that the Lambda still supports the old request in the backend?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best solution is to use a mapping template on the <b>Integration Request</b> to filter out obsolete fields from the incoming JSON requests, ensuring that only valid fields are forwarded to the Lambda backend. This approach is correct because it mediates the request between the clients (who may still be sending old data) and the upgraded Lambda (which expects the new format), effectively allowing both old and new clients to coexist until migration is complete.</p><ul><li><i>Set up a canary deployment stage in the original API to monitor ongoing use of the outdated JSON fields before deprecating the service.</i>: This option does not solve the problem—it merely tracks usage and doesn't prevent outdated data from reaching the Lambda.</li><li><b>Apply a mapping template to the Integration Request to strip away deprecated fields from incoming JSON, ensuring only current values are sent to the Lambda function.</b>: This is the correct approach because the Integration Request mapping template can modify the body of the requests before they reach the backend, allowing seamless filtering of legacy fields.</li><li><i>Integrate a new Lambda function as an authorizer in the original API so only well-formatted JSON requests are permitted to reach the backend.</i>: Lambda authorizers are typically used for authentication and authorization, not for filtering request data or transforming payloads.</li><li><i>Configure a mapping template within the Integration Response to filter obsolete fields from the Lambda's output before returning a response to clients.</i>: The Integration Response mapping only affects the response that goes back to the client after Lambda has already processed the request, so this does not help filter fields out before reaching Lambda.</li></ul><p><b>Tips:</b> Use Integration Request mapping templates to modify inputs to Lambda, and Integration Response mapping templates to alter outputs to the client. Always transform data as close to the source as possible to ensure backend compatibility.</p>",
+  "query": "<p>An AWS API Gateway endpoint with a Lambda backend has been processing requests for several years. Some of the fields in the incoming JSON body are now outdated and must no longer be stored. The Lambda function has been updated to only accept the new valid JSON fields. However, since the existing API endpoint continues to serve users during the transition to a new API, how can the current API Gateway be adjusted so that the Lambda receives only the updated, accepted JSON data, even from older client requests?</p>",
+  "original_oid": "6793da1261969b416038a141",
+  "options": [
+    {
+      "correct": false,
+      "text": "Set up a canary deployment stage in the original API to monitor ongoing use of the outdated JSON fields before deprecating the service.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Apply a mapping template to the Integration Request to strip away deprecated fields from incoming JSON, ensuring only current values are sent to the Lambda function.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Integrate a new Lambda function as an authorizer in the original API so only well-formatted JSON requests are permitted to reach the backend.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Configure a mapping template within the Integration Response to filter obsolete fields from the Lambda's output before returning a response to clients.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question207",
+  "originalQuery": "A team has implemented a service with AWS API Gateway and Lambda.\nThe service endpoint can save input JSON data to the internal database and S3\nAfter the service has run for several years, some data in the JSON body are no longer used and should not be saved anymore.\nThe backend Lambda has been upgraded to support only the valid JSON values.\nThe original API in API Gateway is still used for some time before all users migrate to the new API.\nHow should the original API be configured so that the Lambda still supports the old request in the backend?",
+  "originalOptions": "[\"A. In the original API, add a stage for canary deployment to understand how many users are still using the old JSON format before the original API service is completely removed.\",\"B. Configure a mapping template in Integration Request to remove the obsolete data so that the original API requests are transformed to be supported by the new Lambda.\",\"C. In the original API, use a new Lambda as an authorizer so that only the requests with valid JSON data can proceed to hit the backend.\",\"D. In Integration Response of the API, add a mapping template to remove the obsolete data for the backend Lambda to support the old requests.\"]",
+  "video_url": "https://certificationation.com/videos/exam-with-aws-api-gateway-and-exam-013.html",
+  "url": "https://certificationation.com/questions/exam-with-aws-api-gateway-and-exam-013.html"
+}

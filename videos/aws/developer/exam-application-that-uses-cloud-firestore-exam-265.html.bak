@@ -1,0 +1,82 @@
+---
+title: "You're managing a high-throughput application that usesExam"
+description: "Video for you're managing a high-throughput application that uses Cloud Firestore in Native mode. Due to regulatory compliance, you need to archive all document"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You're managing a high-throughput application that uses Cloud Firestore in Native mode. Due to regulatory compliance, you need to archive all document changes while ensuring minimal latency in document reads and writes. Which method should you employ?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You oversee a logistics tracking platform at NorthPeak Shipping that uses Cloud Firestore in Native mode. Regulators require a complete archive of every document create update and delete for long term retention and the application must keep read and write latency as low as possible even with approximately 300000 writes per day. Which approach should you implement to satisfy these requirements?",
+  "options": [
+    {
+      "text": "Build a custom change data capture pipeline with Cloud Pub/Sub that publishes an event from the application before each write to Firestore",
+      "explanation": "This relies on application code to publish messages that represent mutations which can then be stored as an audit log.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable Firestore managed export to Cloud Storage on a recurring schedule to keep copies of collections",
+      "explanation": "This performs snapshot style exports of Firestore data to Cloud Storage on demand or via a schedule rather than capturing every individual change.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Cloud Functions for Firestore document triggers to record each create update and delete to an immutable archive",
+      "explanation": "This approach uses Firestore event driven triggers that emit a record for each document change which can be written to Cloud Storage or BigQuery.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Database Migration Service",
+      "explanation": "This service handles migrations and replication for relational databases into Cloud SQL and does not integrate with Cloud Firestore.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Use Cloud Functions for Firestore document triggers to record each create update and delete to an immutable archive</b>.</p><p>This approach listens to actual database events so it captures creates updates and deletes after they are committed which ensures a complete and reliable audit trail. It runs asynchronously from the client write path so application reads and writes remain low latency even as volume grows to hundreds of thousands of writes per day. You can write each change to an append only target with retention controls to meet long term archival requirements and you can design the handler to be idempotent for reliability and scale.</p><p><i>Build a custom change data capture pipeline with Cloud Pub/Sub that publishes an event from the application before each write to Firestore</i> is not reliable for regulatory archiving because it records intent rather than confirmed database changes and it can drift from the source of truth if a write fails or if a path bypasses the publisher. It also adds work to the application path and does not inherently provide an immutable archive.</p><p><i>Enable Firestore managed export to Cloud Storage on a recurring schedule to keep copies of collections</i> produces periodic snapshots rather than a stream of every change. This misses individual mutations between exports and cannot guarantee a complete per operation history which makes it unsuitable for strict auditing while also offering no latency benefit to the application.</p><p><i>Database Migration Service</i> is for moving data between supported databases and is not a mechanism for recording Firestore change events or building a long term audit log.</p>",
+  "batch_id": "265",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You're managing a high-throughput application that uses Cloud Firestore in Native mode. Due to regulatory compliance, you need to archive all document changes while ensuring minimal latency in document reads and writes. Which method should you employ?",
+  "originalOptions": "A. Deploy a parallel Firestore in Datastore mode and replicate changes.<br/>B. Enable Firestore's managed export to Cloud Storage.<br/>C. Implement Firestore triggers with Cloud Functions to capture changes and archive them.<br/>D. Use Cloud Pub/Sub to create a change data capture (CDC) system.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "265",
+  "tip": "<p>When you see requirements for <i>every change</i> and <i>low latency</i> think event driven triggers on the data store rather than scheduled exports or app originated events. Prefer asynchronous server side capture that fires on committed writes.</p>",
+  "references": [
+    "https://cloud.google.com/functions/docs/calling/cloud-firestore",
+    "https://cloud.google.com/firestore/docs/manage-data/transactions#functions",
+    "https://cloud.google.com/firestore/docs/manage-data/export-import",
+    "https://cloud.google.com/pubsub/docs/overview#delivery_guarantees",
+    "https://cloud.google.com/storage/docs/retention-policy",
+    "https://cloud.google.com/database-migration"
+  ],
+  "url": "https://certificationation.com/questions/exam-application-that-uses-cloud-firestore-exam-265.html",
+  "video_url": "https://certificationation.com/videos/exam-application-that-uses-cloud-firestore-exam-265.html"
+}

@@ -1,0 +1,81 @@
+---
+title: "You are re-architecting a legacy monolithic e-commerceExam"
+description: "Video for you are re-architecting a legacy monolithic e-commerce application into a microservices-based architecture. The application uses a single Cloud SQL"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are re-architecting a legacy monolithic e-commerce application into a microservices-based architecture. The application uses a single Cloud SQL instance as its backend database. You want to make the database architecture more scalable and suitable for the microservices approach. Your goal is to minimize downtime while implementing changes and ensure that the application remains functional throughout the transition. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A media streaming startup at mcnz.com is decomposing a legacy monolith into microservices and today all services share a single Cloud SQL for PostgreSQL instance. The team must evolve the data tier so it scales with the new service boundaries and they need to keep the site available during a 90 day transition with minimal downtime. What should they do?",
+  "options": [
+    {
+      "text": "Introduce services incrementally while all services continue to use the existing single Cloud SQL database",
+      "explanation": "This approach keeps the current database unchanged and lets you split application code first while deferring database changes.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Migrate the monolithic database to Cloud Spanner and keep one database for all microservices",
+      "explanation": "This provides horizontal scaling on a single shared database without separating data ownership by service.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Carve out one bounded context at a time by provisioning a separate Cloud SQL database per service and use Datastream to backfill and continuously replicate changes until you cut over each service",
+      "explanation": "This creates a database per service and uses change data capture to migrate with near zero downtime for each cutover.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Partition the monolithic database into multiple shards by tenant or feature so that each microservice queries only its assigned shard",
+      "explanation": "This spreads load across shards but retains a shared schema and cross service coupling.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Carve out one bounded context at a time by provisioning a separate Cloud SQL database per service and use Datastream to backfill and continuously replicate changes until you cut over each service</b>.</p><p>This approach aligns with the database per service pattern so each microservice owns its schema and scaling characteristics. Using Datastream for change data capture lets you perform an initial backfill from the monolithic PostgreSQL database and then keep the new per service Cloud SQL databases in near real time sync while you migrate code paths. You can then cut over one service at a time which limits blast radius and keeps the site available with minimal downtime during the 90 day transition. Dataflow templates integrate with Datastream so you can apply captured changes into Cloud SQL for PostgreSQL which provides a managed path for continuous replication and controlled switchover.</p><p><i>Introduce services incrementally while all services continue to use the existing single Cloud SQL database</i> is not sufficient because it preserves the shared database and tight coupling. It does not let the data tier scale with service boundaries and it keeps schema change risk and performance contention across services.</p><p><i>Migrate the monolithic database to Cloud Spanner and keep one database for all microservices</i> does not meet the requirement for per service autonomy and adds significant migration complexity. Spanner can scale but maintaining one shared database for all microservices keeps cross team coupling and makes achieving minimal downtime in a short window harder than a staged CDC based carve out.</p><p><i>Partition the monolithic database into multiple shards by tenant or feature so that each microservice queries only its assigned shard</i> focuses on horizontal scale but does not give each service ownership of its schema. Sharding keeps a shared data model and forces cross shard coordination which undermines independent evolution of services.</p>",
+  "batch_id": "57",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are re-architecting a legacy monolithic e-commerce application into a microservices-based architecture. The application uses a single Cloud SQL instance as its backend database. You want to make the database architecture more scalable and suitable for the microservices approach. Your goal is to minimize downtime while implementing changes and ensure that the application remains functional throughout the transition. What should you do?",
+  "originalOptions": "A. Gradually introduce microservices while retaining the monolithic database, ensuring all microservices share the same single database instance.<br/>B. Route all database requests through a middleware service. Refactor each microservice to connect to this middleware service instead of directly connecting to the database.<br/>C. Create separate databases for each microservice immediately and update the microservices to use their own database.<br/>D. Use database sharding to split the existing database into multiple shards, with each microservice accessing only its relevant shard.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "336",
+  "tip": "<p>When a question asks for minimal downtime during an incremental migration look for <i>CDC</i> based solutions and when it asks for microservice autonomy prefer a <i>database per service</i> strategy that maps to <i>bounded contexts</i>.</p>",
+  "references": [
+    "https://cloud.google.com/datastream/docs/overview",
+    "https://cloud.google.com/datastream/docs/postgresql-source",
+    "https://cloud.google.com/dataflow/docs/guides/templates/provided-streaming",
+    "https://cloud.google.com/architecture/microservices-architecture-on-google-cloud",
+    "https://cloud.google.com/architecture/strangler-fig-pattern"
+  ],
+  "url": "https://certificationation.com/questions/exam-monolithic-e-commerce-application-into-a-exam-336.html",
+  "video_url": "https://certificationation.com/videos/exam-monolithic-e-commerce-application-into-a-exam-336.html"
+}

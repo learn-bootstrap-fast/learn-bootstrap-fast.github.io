@@ -1,0 +1,62 @@
+---
+title: "Your team starts to maintain a new application in AWSExam"
+description: "Video for your team starts to maintain a new application in AWS that uses a blue/green deployment. All these AWS services are deployed in a CloudFormation"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your team starts to maintain a new application in AWS that uses a blue/green deployment. All these AWS services are deployed in a CloudFormation stack. The application has an ELB and two Auto Scaling Groups for the current release and the new release. After the new ASG is attached to the ELB, there are tests to ensure that the new code has run smoothly. However, there are possibilities that the tests have failed. You need to use a script to implement this blue/green deployment. Which of the below options would you consider to recover the system when the tests fail?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The most reliable action when tests fail after a blue/green deployment is to <b>Programmatically detach the new Auto Scaling Group from the ELB and reattach the previous ASG to restore the application’s original state.</b> This option ensures an automated rollback, quickly minimizing downtime and restoring stable service with minimal manual intervention. </p><p>Why the other options are less ideal:</p><ul><li><i>Configure CloudWatch Alarms to notify the team upon failure and build a CloudWatch dashboard with ASG metrics.</i>—While these are excellent for monitoring and notification, they do not directly address rolling back the failed deployment, which is critical in a blue/green scenario.</li><li><i>Forward relevant logs to AWS CloudWatch Logs to aid in diagnosing the deployment failure.</i>—Logging is useful for troubleshooting but is more diagnostic than corrective. It doesn't actively restore service.</li><li><i>Set up SNS to alert your team so they can manually intervene in case of deployment errors.</i>—Relying on manual intervention can increase recovery time, leading to longer outages and potential customer impact. Automation is preferred for reliability and speed.</li></ul><p><b>Tip:</b> For blue/green deployments, always design the rollback process to be automated and scriptable. This prevents human error and expedites system recovery.</p>",
+  "query": "<p>Your team has taken on maintenance of a new AWS application using a blue/green deployment model. All required AWS resources are managed via a CloudFormation stack. The application leverages an Elastic Load Balancer (ELB) and maintains two Auto Scaling Groups (ASGs) for the current and incoming releases. Once the new Auto Scaling Group is linked to the ELB, automated tests are executed to verify the deployment. There’s a chance these tests could fail. You need to script an automated recovery process for such cases. Which of the following approaches should you implement when deployment validation fails?</p>",
+  "original_oid": "6793d9d961969b416038a0d2",
+  "options": [
+    {
+      "correct": false,
+      "text": "Configure CloudWatch Alarms to notify the team upon failure and build a CloudWatch dashboard with ASG metrics.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Programmatically detach the new Auto Scaling Group from the ELB and reattach the previous ASG to restore the application’s original state.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Forward relevant logs to AWS CloudWatch Logs to aid in diagnosing the deployment failure.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up SNS to alert your team so they can manually intervene in case of deployment errors.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question93",
+  "originalQuery": "Your team starts to maintain a new application in AWS that uses a blue/green deployment.\nAll these AWS services are deployed in a CloudFormation stack.\nThe application has an ELB and two Auto Scaling Groups for the current release and the new release.\nAfter the new ASG is attached to the ELB, there are tests to ensure that the new code has run smoothly.\nHowever, there are possibilities that the tests have failed.\nYou need to use a script to implement this blue/green deployment.\nWhich of the below options would you consider to recover the system when the tests fail?",
+  "originalOptions": "A. Use SNS to send a notification to your team to react to the failure in time.\nB. Collect logs and send them to AWS CloudWatch Logs which can help in troubleshooting the failure.\nC. Raise a CloudWatch alarm to alert the team when there is a failure. Also, create a CloudWatch dashboard based on the Auto Scaling Group metrics.\nD. Roll back the system to the original state by detaching the new ASG from ELB and attaching the old ASG in EL.",
+  "video_url": "https://certificationation.com/videos/exam-new-application-in-aws-that-exam-085.html",
+  "url": "https://certificationation.com/questions/exam-new-application-in-aws-that-exam-085.html"
+}

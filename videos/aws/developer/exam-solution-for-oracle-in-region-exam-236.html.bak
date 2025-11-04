@@ -1,0 +1,82 @@
+---
+title: "You have deployed a Bare Metal Solution for Oracle inExam"
+description: "Video for you have deployed a Bare Metal Solution for Oracle in Region A and a Cloud Spanner instance in Region B. You need to configure connectivity between"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have deployed a Bare Metal Solution for Oracle in Region A and a Cloud Spanner instance in Region B. You need to configure connectivity between the two regions with optimal performance and minimal latency. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "NovaLedger Inc. runs an Oracle workload on Bare Metal Solution in us-east4 while a Cloud Spanner instance resides in europe-west3. You must establish private connectivity between these environments that uses Google&apos;s backbone to deliver the lowest latency and the best performance. What should you configure?",
+  "options": [
+    {
+      "text": "Configure a high availability Cloud VPN between us-east4 and europe-west3",
+      "explanation": "This builds redundant IPsec tunnels over the public internet to connect the two regions",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Assign a public IP to the Bare Metal Solution hosts and connect to a public endpoint for Cloud Spanner",
+      "explanation": "This exposes services to the internet and relies on public routing for connectivity",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create VPC Network Peering between the VPC attached to Bare Metal Solution and the VPC with Cloud Spanner and set the VPC dynamic routing mode to global",
+      "explanation": "This connects the VPC networks over Google&apos;s private backbone and propagates learned routes across all regions with global dynamic routing",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Set the VPC network dynamic routing mode to regional",
+      "explanation": "This keeps Cloud Router learned routes within the same region and does not optimize cross region paths",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct answer is <b>Create VPC Network Peering between the VPC attached to Bare Metal Solution and the VPC with Cloud Spanner and set the VPC dynamic routing mode to global</b>.</p><p>This configuration keeps traffic on Google\u0019s private backbone and provides private address connectivity between the Bare Metal Solution environment and the Google Cloud project where the application accesses Cloud Spanner. Bare Metal Solution connects to your VPC through Interconnect and Cloud Router so the prefixes for the Bare Metal subnets are learned in your VPC. With peering in place those learned routes can be shared to the peer network and used across regions which delivers lower latency and higher throughput than internet based options.</p><p>Setting dynamic routing to global makes the Cloud Router learned routes available to subnets in every region of the VPC. When you enable custom route export and import on the peering, the Bare Metal routes propagate to the peered network so workloads in europe-west3 can privately reach the service without using the public internet.</p><p><i>Configure a high availability Cloud VPN between us-east4 and europe-west3</i> is not correct because Cloud VPN traverses the public internet which adds latency and limits throughput and does not meet the requirement to use Google\u0019s backbone for the best performance.</p><p><i>Assign a public IP to the Bare Metal Solution hosts and connect to a public endpoint for Cloud Spanner</i> is not correct because it violates the requirement for private connectivity and would expose Bare Metal hosts to the public internet.</p><p><i>Set the VPC network dynamic routing mode to regional</i> is not correct because regional routing restricts Cloud Router learned routes to the local region and by itself does not establish connectivity between the environments across regions.</p>",
+  "batch_id": "192",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You have deployed a Bare Metal Solution for Oracle in Region A and a Cloud Spanner instance in Region B. You need to configure connectivity between the two regions with optimal performance and minimal latency. What should you do?",
+  "originalOptions": "A. Set up VPC Network Peering between the VPCs in Region A and Region B and enable global dynamic routing.<br/>B. Use a public IP for the Bare Metal Solution and configure a public endpoint for the Cloud Spanner instance.<br/>C. Configure a high-availability Cloud VPN connection between Region A and Region B.<br/>D. Set the dynamic routing mode in your VPC network to regional.",
+  "domain": "Manage a solution that can span multiple database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "236",
+  "tip": "<p>When you see a requirement for <i>private</i> connectivity with <i>lowest latency</i> across regions, choose VPC peering and set dynamic routing to <i>global</i>. Remember to enable custom route export and import if Cloud Router learned routes must traverse the peering.</p>",
+  "references": [
+    "https://cloud.google.com/vpc/docs/vpc-peering",
+    "https://cloud.google.com/vpc/docs/dynamic-routing",
+    "https://cloud.google.com/vpc/docs/vpc-peering#enable_peering_to_import_export",
+    "https://cloud.google.com/bare-metal/docs/networking",
+    "https://cloud.google.com/network-connectivity/docs/vpn/concepts/overview",
+    "https://cloud.google.com/spanner/docs/private-service-connect"
+  ],
+  "url": "https://certificationation.com/questions/exam-solution-for-oracle-in-region-exam-236.html",
+  "video_url": "https://certificationation.com/videos/exam-solution-for-oracle-in-region-exam-236.html"
+}

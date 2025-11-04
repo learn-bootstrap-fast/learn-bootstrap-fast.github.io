@@ -1,0 +1,62 @@
+---
+title: "You have an application running on an Amazon EC2Exam"
+description: "Video for you have an application running on an Amazon EC2 instance and you are using IAM roles to securely access AWS Service APIs. How can you configure your"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have an application running on an Amazon EC2 instance and you are using IAM roles to securely access AWS Service APIs. How can you configure your application running on that instance to retrieve the API keys for use with the AWS SDKs?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct approach is to allow the <b>IAM role attached to the EC2 instance to provide temporary credentials via AWS STS, which are automatically used by AWS SDKs</b>. This means that, when you use IAM roles with your EC2 instance, the SDK on the instance will directly interact with the instance metadata service to retrieve temporary API credentials behind the scenes. Application code does not need to manually fetch or manage these credentials; the entire process is handled securely by AWS infrastructure.</p><p>Here's why the other choices are not suitable:</p><ul><li><i>You should modify your application's code to send a GET request to the IAM Service API, which will provide the required credentials for the user.</i> &mdash; This is not the recommended way. Credentials are not fetched directly from IAM via GET requests; instead, roles and the metadata service manage this for you.</li><li><i>Select your used SDK in the EC2 console's “Chosen SDK” list, enabling the instance to install the right SDK on startup and configure API keys accordingly.</i> &mdash; There is no such option for selecting an SDK in the EC2 console that auto-configures the correct credentials. You must attach a role to the instance instead.</li><li><i>Configure your application code to instruct the AWS SDK to use environment variables for API keys, as assigning a role to an EC2 instance will automatically set these variables at launch.</i> &mdash; While SDKs can read credentials from environment variables, IAM roles do not automatically establish these variables. Instead, SDKs interact with the instance metadata service to retrieve credentials associated with the instance profile.</li></ul><p><b>Tip:</b> Assigning an IAM role to your EC2 instance is the most secure way to manage credentials for your application, eliminating the need to hardcode or manually fetch API keys.</p>",
+  "query": "<p>Your development team needs to securely retrieve AWS API keys for an application operating on an Amazon EC2 instance using IAM roles. What is the appropriate way to configure your application for the AWS SDKs to obtain these credentials?</p>",
+  "original_oid": "6793d9b061969b416038a082",
+  "options": [
+    {
+      "correct": false,
+      "text": "You should modify your application's code to send a GET request to the IAM Service API, which will provide the required credentials for the user.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Select your used SDK in the EC2 console's “Chosen SDK” list, enabling the instance to install the right SDK on startup and configure API keys accordingly.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "By leveraging an IAM role attached to the EC2 instance, the AWS SDKs automatically acquire temporary credentials through AWS STS, so you do not need to manually retrieve API keys.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Configure your application code to instruct the AWS SDK to use environment variables for API keys, as assigning a role to an EC2 instance will automatically set these variables at launch.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question13",
+  "originalQuery": "You have an application running on an Amazon EC2 instance and you are using IAM roles to securely access AWS Service APIs.\nHow can you configure your application running on that instance to retrieve the API keys for use with the AWS SDKs?",
+  "originalOptions": "A. When assigning an EC2 IAM role to your instance in the console, in the “Chosen SDK” drop-down list, select the SDK that you are using, and the instance will configure the correct SDK on launch with the API keys.|B. Within your application code, make a GET request to the IAM Service API to retrieve credentials for your user.|C. When using AWS SDKs in Amazon EC2 instances, you do not have to explicitly retrieve API keys. The SDKs assume the IAM roles attached in the instances and get temporary credentials by interacting with the AWS STS service.|D. Within your application code, configure the AWS SDK to get the API keys from environment variables, because assigning an Amazon EC2 role stores keys in environment variables on launch.",
+  "video_url": "https://certificationation.com/videos/exam-an-amazon-ec2-instance-and-exam-106.html",
+  "url": "https://certificationation.com/questions/exam-an-amazon-ec2-instance-and-exam-106.html"
+}

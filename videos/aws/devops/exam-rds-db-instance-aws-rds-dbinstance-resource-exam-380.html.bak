@@ -1,0 +1,62 @@
+---
+title: "A CloudFormation stack contains an RDS DB instanceExam"
+description: "Video for a CloudFormation stack contains an RDS DB instance (AWS::RDS::DBInstance) resource. You use a Jenkins job to perform the stack update when the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A CloudFormation stack contains an RDS DB instance (AWS::RDS::DBInstance) resource. You use a Jenkins job to perform the stack update when the CloudFormation template has a change. When a replacement of the DB instance resource is required during a stack update, you want to ensure that the old DB instance is retained after the new DB instance is created. Which of the following resource attributes would you use for the DB resource?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct choice is <b>UpdateReplacePolicy</b>. This resource attribute ensures that when an AWS resource is replaced during an update (for example, if the properties of an <b>AWS::RDS::DBInstance</b> require replacement), the original resource is <b>retained</b> according to the specified policy, such as <b>Retain</b>. This is particularly useful to avoid accidental deletion of critical resources like databases, as specified in the scenario.</p><p>Here's why the other answers are incorrect:</p><ul><li><i>DeletionPolicy</i>: While this attribute also controls what happens to a resource when it is deleted from the stack, <i>DeletionPolicy</i> only applies when the stack itself is deleted or the resource is explicitly removed from the template — not on <b>replacement</b> due to an update. Therefore, it does not solve the scenario described.</li><li><i>UpdatePolicy</i>: This attribute is used for update operations, but only for certain resources (like Auto Scaling groups or Elastic Beanstalk environments). It does not control what happens to a resource during a replacement update for RDS instances.</li><li><i>CreationPolicy</i>: This is used to indicate that AWS CloudFormation should wait for some condition (like a signal) before marking the resource as created. It does not affect how resources are handled during replacement.</li></ul><p><b>Tip:</b> Use <b>UpdateReplacePolicy</b> with values such as <b>Retain</b>, <b>Snapshot</b>, or <b>Delete</b> for finer control over resource lifecycle in update scenarios. Make sure to set it explicitly in your template when resource retention during replacement is required.</p>",
+  "query": "<p>You have a CloudFormation template with an <b>AWS::RDS::DBInstance</b> resource as part of a stack managed via a Jenkins pipeline. When you update the stack, sometimes the DB instance is replaced. You want to ensure the previous DB instance is retained (not deleted) even after its replacement during an update. Which resource property should you configure to achieve this?</p>",
+  "original_oid": "6793da8961969b416038a234",
+  "options": [
+    {
+      "correct": false,
+      "text": "UpdatePolicy",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "DeletionPolicy",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "UpdateReplacePolicy",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "CreationPolicy",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question452",
+  "originalQuery": "A CloudFormation stack contains an RDS DB instance (AWS::RDS::DBInstance) resource.\nYou use a Jenkins job to perform the stack update when the CloudFormation template has a change.\nWhen a replacement of the DB instance resource is required during a stack update, you want to ensure that the old DB instance is retained after the new DB instance is created.\nWhich of the following resource attributes would you use for the DB resource?",
+  "originalOptions": "A. DeletionPolicy,B. UpdateReplacePolicy,C. UpdatePolicy,D. CreationPolicy.",
+  "video_url": "https://certificationation.com/videos/exam-rds-db-instance-aws-rds-dbinstance-resource-exam-380.html",
+  "url": "https://certificationation.com/questions/exam-rds-db-instance-aws-rds-dbinstance-resource-exam-380.html"
+}

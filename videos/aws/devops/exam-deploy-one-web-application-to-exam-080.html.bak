@@ -1,0 +1,62 @@
+---
+title: "Company ABC used AWS CodeDeploy to deploy one webExam"
+description: "Video for company ABC used AWS CodeDeploy to deploy one web application to AWS services including EC2 CodeDeploy is running well however your manager wants to"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Company ABC used AWS CodeDeploy to deploy one web application to AWS services including EC2 CodeDeploy is running well however your manager wants to get in time notifications in Slack channel when a new deployment has succeeded or failed. You were told to implement this in AWS CloudWatch Events. The target of the Event rule would be a Lambda function that applies only to deployments. Which event pattern is correct for the rule?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The event pattern that will successfully notify you when a CodeDeploy deployment either fails or succeeds is <b>{ \"source\": [ \"aws.codedeploy\" ], \"detail-type\": [ \"CodeDeploy Deployment State-change Notification\" ], \"detail\": { \"state\": [ \"FAILURE\", \"SUCCESS\" ] } }</b>.<br/><br/><b>Explanation and Tips:</b><br/>This pattern is correct because it targets deployment state changes (not instance-level changes), and it filters only the <b>FAILURE</b> and <b>SUCCESS</b> states, which are relevant for complete deployment events, not per-instance transitions.<br/><br/>Why others are incorrect:<br/><ul><li><i>{ \"source\": [ \"aws.codedeploy\" ], \"detail-type\": [ \"CodeDeploy Instance State-change Notification\" ], \"detail\": { \"state\": [ \"FAILURE\", \"SUCCESS\", \"READY\", \"START\" ] } }</i>: This pattern matches individual instance changes within a deployment, producing excessive noise and not indicating full deployment outcomes.</li><li><i>{ \"source\": [ \"aws.codedeploy\" ], \"detail-type\": [ \"AWS API Call via CloudTrail\" ], \"detail\": { \"state\": [ \"FAILURE\", \"SUCCESS\" ] } }</i>: 'AWS API Call via CloudTrail' is an incorrect detail-type for CodeDeploy deployment status; CloudTrail logs API events, not deployment results.</li><li><i>{ \"source\": [ \"aws.codedeploy\" ], \"detail-type\": [ \"CodeDeploy Instance State-change Notification\" ], \"detail\": { \"state\": [ \"FAILURE\", \"START\" ] } }</i>: This option also focuses on instance-level changes and misses the <b>SUCCESS</b> state that is critical for deployment completions. It will not capture all necessary deployment outcomes.</li></ul><br/>When configuring event patterns for deployment notifications, always use detail-type <b>CodeDeploy Deployment State-change Notification</b> and select only the states relevant for full deployments (typically <b>FAILURE</b> and <b>SUCCESS</b>). Instance-level notifications lead to redundant or irrelevant alerts, and improper detail-type prevents the rule from triggering on deployment events.</p>",
+  "query": "<p>An organization is deploying a web application to Amazon EC2 instances using AWS CodeDeploy. The deployments function correctly, but management requests immediate Slack notifications each time a deployment either fails or completes successfully. You are tasked with building an Amazon CloudWatch Events rule to deliver these Slack alerts, triggering a Lambda function whenever there's a deployment result.<br/><br/>Given this scenario, which CloudWatch Event pattern will properly match only overall deployment status changes?</p>",
+  "original_oid": "6793da3a61969b416038a195",
+  "options": [
+    {
+      "correct": false,
+      "text": "{ \"source\": [ \"aws.codedeploy\" ], \"detail-type\": [ \"AWS API Call via CloudTrail\" ], \"detail\": { \"state\": [ \"FAILURE\", \"SUCCESS\" ] } }",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "{ \"source\": [ \"aws.codedeploy\" ], \"detail-type\": [ \"CodeDeploy Instance State-change Notification\" ], \"detail\": { \"state\": [ \"FAILURE\", \"SUCCESS\", \"READY\", \"START\" ] } }",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "{ \"source\": [ \"aws.codedeploy\" ], \"detail-type\": [ \"CodeDeploy Deployment State-change Notification\" ], \"detail\": { \"state\": [ \"FAILURE\", \"SUCCESS\" ] } }",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "{ \"source\": [ \"aws.codedeploy\" ], \"detail-type\": [ \"CodeDeploy Instance State-change Notification\" ], \"detail\": { \"state\": [ \"FAILURE\", \"START\" ] } }",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question292",
+  "originalQuery": "Company ABC used AWS CodeDeploy to deploy one web application to AWS services including EC2\nCodeDeploy is running well however your manager wants to get in time notifications in Slack channel when a new deployment has succeeded or failed.\nYou were told to implement this in AWS CloudWatch Events.\nThe target of the Event rule would be a Lambda function that applies only to deployments.\nWhich event pattern is correct for the rule?",
+  "originalOptions": "[\"A. { \\\"source\\\": [ \\\"aws.codedeploy\\\" ], \\\"detail-type\\\": [ \\\"CodeDeploy Deployment State-change Notification\\\" ], \\\"detail\\\": { \\\"state\\\": [ \\\"FAILURE\\\", \\\"SUCCESS\\\" ] } }\",\"B. { \\\"source\\\": [ \\\"aws.codedeploy\\\" ], \\\"detail-type\\\": [ \\\"CodeDeploy Instance State-change Notification\\\" ], \\\"detail\\\": { \\\"state\\\": [ \\\"FAILURE\\\", \\\"SUCCESS\\\", \\\"READY\\\", \\\"START\\\" ] } }\",\"C. { \\\"source\\\": [ \\\"aws.codedeploy\\\" ], \\\"detail-type\\\": [ \\\"AWS API Call via CloudTrail\\\" ], \\\"detail\\\": { \\\"state\\\": [ \\\"FAILURE\\\", \\\"SUCCESS\\\" ] } }\",\"D. { \\\"source\\\": [ \\\"aws.codedeploy\\\" ], \\\"detail-type\\\": [ \\\"CodeDeploy Instance State-change Notification\\\" ], \\\"detail\\\": { \\\"state\\\": [ \\\"FAILURE\\\", \\\"START\\\" ] } }\"]",
+  "video_url": "https://certificationation.com/videos/exam-deploy-one-web-application-to-exam-080.html",
+  "url": "https://certificationation.com/questions/exam-deploy-one-web-application-to-exam-080.html"
+}

@@ -1,0 +1,81 @@
+---
+title: "You migrated your on-premises MySQL instances to CloudExam"
+description: "Video for you migrated your on-premises MySQL instances to Cloud SQL on Google Cloud. The instances have been functioning as expected for the past six months."
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You migrated your on-premises MySQL instances to Cloud SQL on Google Cloud. The instances have been functioning as expected for the past six months. You need to optimize costs. As a Database Engineer, what should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "An online retailer named RiverCart moved its on premises MySQL databases to Cloud SQL for MySQL on Google Cloud. The instances have operated reliably for the last nine months and management now wants to cut costs without harming performance or uptime. As the database engineer, which action should you take to optimize spending?",
+  "options": [
+    {
+      "text": "Use Cloud Monitoring dashboards to size instances based on observed CPU and memory usage",
+      "explanation": "This approach uses utilization metrics from Cloud Monitoring to guide manual right sizing decisions.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Apply the Compute Engine rightsizing recommender to the Cloud SQL VMs",
+      "explanation": "This relies on insights that are designed for Compute Engine virtual machines and not for managed database instances.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Adopt the Cloud SQL overprovisioned recommender guidance to downsize the instances",
+      "explanation": "This uses the Cloud SQL overprovisioned recommender to flag databases that are larger than necessary and to propose smaller shapes.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use Query Insights to find slow statements and then choose a smaller machine tier",
+      "explanation": "This focuses on query analysis to improve efficiency and attempts to inform a reduction in instance size.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Adopt the Cloud SQL overprovisioned recommender guidance to downsize the instances</b>. This uses the service that evaluates sustained utilization and gives safe downsizing suggestions with expected savings so it aligns with the goal to cut costs without degrading performance or availability.</p><p>The <b>Cloud SQL overprovisioned recommender</b> analyzes long term CPU and memory usage and proposes a smaller machine tier when there is consistent headroom. It provides the projected impact and lets you review and apply changes per instance. You can schedule the resize during a maintenance window to avoid user impact which helps preserve uptime while realizing cost savings.</p><p><i>Use Cloud Monitoring dashboards to size instances based on observed CPU and memory usage</i> is not the best choice because dashboards only show metrics. This would be a manual exercise without automated right sizing guidance, savings estimates, or risk assessment and it can lead to inappropriate downsizing decisions.</p><p><i>Apply the Compute Engine rightsizing recommender to the Cloud SQL VMs</i> is incorrect because that recommender targets user managed Compute Engine instances. Cloud SQL runs on managed infrastructure and you cannot apply the Compute Engine rightsizing tool to Cloud SQL instances.</p><p><i>Use Query Insights to find slow statements and then choose a smaller machine tier</i> is misguided because Query Insights is for query tuning and indexing decisions. Finding slow queries does not justify choosing a smaller tier and it may mask workload issues rather than right size the instance safely.</p>",
+  "batch_id": "122",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You migrated your on-premises MySQL instances to Cloud SQL on Google Cloud. The instances have been functioning as expected for the past six months. You need to optimize costs. As a Database Engineer, what should you do?",
+  "originalOptions": "A. Review past logs in Cloud Logging to plan virtual machine (VM) resources.<br/>B. Use Query Insights to identify query performance and plan VM resources accordingly.<br/>C. Apply the recommendations from the Cloud SQL overprovisioned recommender.<br/>D. Review utilization on Cloud Monitoring dashboards to plan VM resources.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "45",
+  "tip": "<p>When the service is managed, prefer the native <i>Recommender</i> for cost optimization. Tools like metrics dashboards or query analyzers inform tuning, yet the recommender is the most direct and safe path to downsizing.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/recommendations",
+    "https://cloud.google.com/recommender/docs/recommenders",
+    "https://cloud.google.com/recommender/docs/rightsizing-overview",
+    "https://cloud.google.com/compute/docs/instances/apply-machine-type-recommendations",
+    "https://cloud.google.com/sql/docs/mysql/query-insights"
+  ],
+  "url": "https://certificationation.com/questions/exam-mysql-instances-to-cloud-sql-exam-045.html",
+  "video_url": "https://certificationation.com/videos/exam-mysql-instances-to-cloud-sql-exam-045.html"
+}

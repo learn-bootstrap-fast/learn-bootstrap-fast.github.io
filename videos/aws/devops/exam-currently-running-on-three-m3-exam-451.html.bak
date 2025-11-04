@@ -1,0 +1,67 @@
+---
+title: "You have a web application that is currently running onExam"
+description: "Video for you have a web application that is currently running on three M3 EC2 instances in three different AZs. You have an Auto Scaling group configured to"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have a web application that is currently running on three M3 EC2 instances in three different AZs. You have an Auto Scaling group configured to scale from three to thirty instances. When reviewing your CloudWatch metrics, you see that sometimes your Auto Scaling group hosts fifteen instances. The web application is reading and writing to a DynamoDB-configured backend, configured with 800 Write Capacity Units and 800 Read Capacity Units. Your DynamoDB Primary Key is the Company ID. You are hosting 25 TB of data in the database."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The most effective solution is to <b>Integrate an Amazon SQS queue between your web layer and DynamoDB to help buffer heavy bursts of requests during peak times</b>. By leveraging SQS, your application can decouple the influx of requests from direct interaction with DynamoDB, smoothing out spikes during times like the 9:00AM user rush. This helps prevent the DynamoDB table's provisioned capacity from being overwhelmed, thereby minimizing throttling and improving user experience.</p><p>The option <i>Switch your Auto Scaling group to use Amazon C3 instances to address potential compute bottlenecks at the application layer</i> is unrelated because the bottleneck resides in the database backend, not the levels of compute capacity.</p><p>While <i>Move to an ElastiCache Memcached cluster in one Availability Zone to cache frequently accessed data in front of the web tier</i> can help for cacheable data, depending solely on a single AZ risks availability, and caching alone doesn’t solve all DynamoDB throughput and partitioning issues.</p><p>Simply <i>Increase the Write Capacity Units of your DynamoDB table, as write throttling may occur when users access the site</i> may not be cost-effective, especially if the traffic spike is temporary; you could still have hot partitions, so it’s not the most efficient first step.</p><p>Lastly, <i>Migrate the data to a new DynamoDB table with a more evenly distributed partition key, and adjust your application accordingly</i> is a considerable architecture change—while it's best practice to design a good distribution up front, it's complex to execute just to solve sporadic traffic spikes.</p><ul><li><b>Tip:</b> For web applications experiencing short, predictable bursts of traffic, message queues like SQS can buffer and smooth workload to backend systems without the need for immediate and substantial scaling changes.</li></ul>",
+  "query": "<p>A cloud-based web application is deployed to three M3 EC2 instances that are spread across three different Availability Zones. The environment is set up with an Auto Scaling group that can increase from 3 up to 30 EC2 instances. At times, CloudWatch monitoring indicates as many as 15 running instances. The application stores and retrieves data using DynamoDB, which has 800 Write Capacity Units and 800 Read Capacity Units. 'Company ID' serves as the table's Primary Key, and the DynamoDB table contains approximately 25 TB of data. What is the most effective way to optimize database performance and avoid throttling during heavy burst traffic times—such as when many users log in at 9:00AM?</p>",
+  "original_oid": "6793da4a61969b416038a1b6",
+  "options": [
+    {
+      "correct": true,
+      "text": "Integrate an Amazon SQS queue between your web layer and DynamoDB to help buffer heavy bursts of requests during peak times.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Switch your Auto Scaling group to use Amazon C3 instances to address potential compute bottlenecks at the application layer.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Move to an ElastiCache Memcached cluster in one Availability Zone to cache frequently accessed data in front of the web tier.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Increase the Write Capacity Units of your DynamoDB table, as write throttling may occur when users access the site.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Migrate the data to a new DynamoDB table with a more evenly distributed partition key, and adjust your application accordingly.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question325",
+  "originalQuery": "You have a web application that is currently running on three M3 EC2 instances in three different AZs.\nYou have an Auto Scaling group configured to scale from three to thirty instances.\nWhen reviewing your CloudWatch metrics, you see that sometimes your Auto Scaling group hosts fifteen instances.\nThe web application is reading and writing to a DynamoDB-configured backend, configured with 800 Write Capacity Units and 800 Read Capacity Units.\nYour DynamoDB Primary Key is the Company ID.\nYou are hosting 25 TB of data in the database.",
+  "originalOptions": "A. Add a caching layer in front of your web application by choosing ElastiCache Memcached instances in one of the AZs.|B. Double the number of Write Capacity Units in your DynamoDB instance because the instance is probably being throttled when the customer accesses the website and your web application.|C. Change your Auto Scaling group configuration to use Amazon C3 instance types, because the web application layer is probably running out of compute capacity.|D. Implement an Amazon SQS queue between your DynamoDB database layer and the web application layer to minimize the large burst in traffic the customer generates when everyone arrives at the office at 9:00AM and begins accessing the website.|E. Use data pipelines to migrate your DynamoDB table to a new DynamoDB table with a primary key that is evenly distributed across your dataset. Update your web application to request data from the new table.",
+  "video_url": "https://certificationation.com/videos/exam-currently-running-on-three-m3-exam-451.html",
+  "url": "https://certificationation.com/questions/exam-currently-running-on-three-m3-exam-451.html"
+}

@@ -1,0 +1,62 @@
+---
+title: "If I want CloudFormation stack status updates to show upExam"
+description: "Video for if I want CloudFormation stack status updates to show up in a continuous delivery system as close to real-time as possible, how should I achieve this?"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "If I want CloudFormation stack status updates to show up in a continuous delivery system as close to real-time as possible, how should I achieve this?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best approach is to <b>set up your CloudFormation stack to push events to an SNS topic that your continuous delivery system subscribes to</b>. SNS (Simple Notification Service) can forward status updates as soon as CloudFormation emits them, which allows your continuous delivery system to receive notifications almost instantly, supporting real-time status reflection.</p><p>Option <i>Continuously send ListStacks API requests to poll for stack changes and show updates in your delivery dashboard</i> is inefficient and far from real-time, as it depends on rest polling which may introduce unwanted delays and unnecessary API usage. Option <i>Let your deployment tool monitor the Resources object within the CloudFormation stack by long polling and reflect the statuses in your UI</i> is also an inefficient method with similar issues, since polling for resource status is not event-driven and can easily miss updates. Option <i>Connect your CloudFormation stack to an SQS queue and have your continuous delivery system listen for event messages there</i> is not correct, since CloudFormation natively integrates with SNS for stack notifications, not SQS: any SQS integration would only be possible via SNS-to-SQS subscription chaining, which adds unnecessary complexity.</p><p><b>Tip:</b> Integrating your deployment system with SNS for CloudFormation updates is the industry-recommended solution for real-time event handling due to its push-based, scalable, and native nature.</p>",
+  "query": "<p>How can you ensure your continuous delivery tool receives CloudFormation stack status updates almost instantly for real-time monitoring?</p>",
+  "original_oid": "6793d9ea61969b416038a0f3",
+  "options": [
+    {
+      "correct": false,
+      "text": "Continuously send ListStacks API requests to poll for stack changes and show updates in your delivery dashboard.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Set up your CloudFormation stack to push events to an SNS topic that your continuous delivery system subscribes to.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Let your deployment tool monitor the Resources object within the CloudFormation stack by long polling and reflect the statuses in your UI.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Connect your CloudFormation stack to an SQS queue and have your continuous delivery system listen for event messages there.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question128",
+  "originalQuery": "If I want CloudFormation stack status updates to show up in a continuous delivery system as close to real-time as possible, how should I achieve this?",
+  "originalOptions": "A. Use a long poll on the Resources object in your CloudFormation stack and display those state changes in the UI for the system.|B. Use a long-poll on the ListStacksAPI call for your CloudFormation stack and display those state changes in the UI for the system.|C. Subscribe your continuous delivery system to an SNS topic that you also tell your CloudFormation stack to publish events into.|D. Subscribe your continuous delivery system to an SQS queue that you also tell your CloudFormation stack to publish events into.",
+  "video_url": "https://certificationation.com/videos/exam-status-updates-to-show-up-exam-296.html",
+  "url": "https://certificationation.com/questions/exam-status-updates-to-show-up-exam-296.html"
+}

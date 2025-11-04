@@ -1,0 +1,82 @@
+---
+title: "Your enterprise needs to develop an online collaborationExam"
+description: "Video for your enterprise needs to develop an online collaboration platform where users can share and edit large documents in real-time. The solution requires"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your enterprise needs to develop an online collaboration platform where users can share and edit large documents in real-time. The solution requires high throughput for simultaneous document updates and the ability to maintain document version history. What is the most suitable database choice?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Larkspur Systems is building a browser based workspace where teams coauthor very large documents in real time. Each document can reach 25 MB and the system must handle about 60,000 edits per minute from users spread across three regions and it must keep a complete version timeline for every file with strong consistency. Which managed database on Google Cloud best satisfies these requirements?",
+  "options": [
+    {
+      "text": "Cloud Bigtable",
+      "explanation": "This wide column database offers very high throughput and low latency for key based access patterns but it does not provide relational transactions or versioning features.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud Spanner",
+      "explanation": "This globally distributed relational service scales writes horizontally and provides strong consistency with optional multi region configurations.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Cloud SQL with read replicas",
+      "explanation": "This managed relational service supports familiar SQL engines and read replicas yet write scalability and concurrency are constrained to a single primary.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Firestore in Datastore mode",
+      "explanation": "This NoSQL service focuses on entity lookups and transactions within entity groups and it can face contention with heavy concurrent updates.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Cloud Spanner</b> because it delivers globally distributed and strongly consistent transactions with high write throughput and can maintain an authoritative version history across regions.</p><p>This database scales horizontally and provides synchronous replication across multiple regions which matches the need to sustain about 60,000 edits per minute from users in three regions while preserving strong consistency. Its relational model and transactional SQL make it straightforward to design a versioned schema where each edit or snapshot is stored as a new row with committed ordering so you can reconstruct an exact timeline for every document.</p><p><i>Cloud Bigtable</i> is optimized for massive throughput and low latency for wide column workloads, yet multi cluster replication is eventually consistent across regions which does not satisfy the strong consistency requirement for a global collaboration system. It also lacks multi row transactional semantics which complicates maintaining an authoritative version timeline.</p><p><i>Cloud SQL with read replicas</i> relies on a single primary for writes and uses asynchronous replication to replicas, so cross region reads can be stale and replicas do not increase write capacity. This does not meet strong consistency across regions and it is not ideal for sustained global write rates at this scale.</p><p><i>Firestore in Datastore mode</i> offers strong consistency for queries but enforces an entity size limit of roughly 1 MiB, which cannot accommodate 25 MB documents. While you could store references, the database by itself cannot store documents of that size and is therefore not a fit for the stated requirement.</p>",
+  "batch_id": "238",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "Your enterprise needs to develop an online collaboration platform where users can share and edit large documents in real-time. The solution requires high throughput for simultaneous document updates and the ability to maintain document version history. What is the most suitable database choice?",
+  "originalOptions": "A. Use Cloud Memorystore.<br/>B. Use Cloud Spanner.<br/>C. Use Cloud SQL with replication.<br/>D. Use Firestore in Datastore mode.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "194",
+  "tip": "<p>When a question emphasizes <i>global strong consistency</i>, multi region writes, and high sustained write rates, map it to <i>Cloud Spanner</i>. Quickly eliminate options by checking hard <i>size limits</i> and whether replication is synchronous or asynchronous.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/overview",
+    "https://cloud.google.com/spanner/docs/reads-writes#strong_consistency",
+    "https://cloud.google.com/spanner/docs/instances#configurations",
+    "https://cloud.google.com/bigtable/docs/replication-overview",
+    "https://cloud.google.com/datastore/docs/concepts/limits",
+    "https://cloud.google.com/sql/docs/mysql/replication/replication-intro"
+  ],
+  "url": "https://certificationation.com/questions/exam-online-collaboration-platform-where-users-exam-194.html",
+  "video_url": "https://certificationation.com/videos/exam-online-collaboration-platform-where-users-exam-194.html"
+}

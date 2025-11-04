@@ -1,0 +1,85 @@
+---
+title: "Your company uses Cloud Spanner for a globally availableExam"
+description: "Video for your company uses Cloud Spanner for a globally available event management system. You recently loaded venue and event data from a business acquisition"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company uses Cloud Spanner for a globally available event management system. You recently loaded venue and event data from a business acquisition and observed hotspots in the Cloud Spanner database. You want to follow Google-recommended schema design practices to avoid performance degradation. What should you do? (Choose 2)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A travel booking startup runs a multi-region ticketing platform on Cloud Spanner. After importing organizer and schedule records from a recent acquisition, you observe sustained write hotspots in several tables. You want to apply Google-recommended schema design techniques so that inserts and updates remain evenly distributed and performance does not degrade. What should you implement?",
+  "options": [
+    {
+      "text": "Use a timestamp column as the first component of the primary key",
+      "explanation": "This creates monotonically increasing keys that cluster new rows at the end of the keyspace.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use bit-reversed sequence values as the leading primary key column",
+      "explanation": "This spreads sequential numbers across the keyspace so inserts touch different splits.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Heavily denormalize the schema to reduce joins",
+      "explanation": "This can simplify reads and reduce join operations but it does not alter the distribution of primary key writes.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use a composite primary key that starts with a low-cardinality attribute such as region",
+      "explanation": "This places many rows under a small set of prefixes which can channel writes to the same splits.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use a composite primary key that begins with a high-cardinality attribute such as a hashed customer or order ID",
+      "explanation": "This increases the number of distinct prefixes so writes are spread across more splits.",
+      "correct": true,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct options are <b>Use bit-reversed sequence values as the leading primary key column</b> and <b>Use a composite primary key that begins with a high-cardinality attribute such as a hashed customer or order ID</b>.</p><p><b>Use bit-reversed sequence values as the leading primary key column</b> spreads inserts across the keyspace so new rows do not cluster at the end of the key range. Spanner sequences that are <b>bit-reversed</b> keep approximate ordering while evenly distributing writes, which prevents leader concentration and reduces contention.</p><p><b>Use a composite primary key that begins with a high-cardinality attribute such as a hashed customer or order ID</b> ensures there are many distinct key prefixes so writes land on different splits and leaders. A <b>high-cardinality leading key</b> like a hashed ID balances load and keeps inserts and updates evenly distributed even during large imports.</p><p><i>Use a timestamp column as the first component of the primary key</i> is incorrect because timestamps are monotonically increasing and cluster new inserts at the end of the key range. This pattern creates write hotspots and degrades performance.</p><p><i>Heavily denormalize the schema to reduce joins</i> is incorrect because denormalization does not address key ordering or leader distribution. It can increase write amplification and does not fix hotspotting that arises from poorly distributed primary keys.</p><p><i>Use a composite primary key that starts with a low-cardinality attribute such as region</i> is incorrect because a small set of leading key values concentrates writes on a few ranges. This increases contention and defeats even distribution.</p>",
+  "batch_id": "35",
+  "answerCode": "2,5",
+  "type": "multi-select",
+  "originalQuery": "Your company uses Cloud Spanner for a globally available event management system. You recently loaded venue and event data from a business acquisition and observed hotspots in the Cloud Spanner database. You want to follow Google-recommended schema design practices to avoid performance degradation. What should you do? (Choose 2)",
+  "originalOptions": "A. Use a timestamp-based primary key.<br/>B. Denormalize the data model.<br/>C. Use a composite key with high-cardinality attributes first.<br/>D. Use a composite key with low-cardinality attributes first.<br/>E. Use bit-reverse sequential value as the primary key.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "323",
+  "tip": "<p>When diagnosing hotspotting in Spanner, focus on the <i>leading key</i>. Prefer <i>high-cardinality</i> prefixes or <i>bit-reversed</i> sequences and avoid <i>monotonic</i> or <i>low-cardinality</i> leading values.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/schema-design",
+    "https://cloud.google.com/spanner/docs/sequences",
+    "https://cloud.google.com/spanner/docs/reads-writes"
+  ],
+  "url": "https://certificationation.com/questions/exam-for-a-globally-available-event-exam-323.html",
+  "video_url": "https://certificationation.com/videos/exam-for-a-globally-available-event-exam-323.html"
+}

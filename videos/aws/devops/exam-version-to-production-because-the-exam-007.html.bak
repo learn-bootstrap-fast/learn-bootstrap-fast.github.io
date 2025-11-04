@@ -1,0 +1,67 @@
+---
+title: "You need to deploy a new application version toExam"
+description: "Video for you need to deploy a new application version to production. Because the deployment is high-risk, you need to roll the new version out to users over a"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You need to deploy a new application version to production. Because the deployment is high-risk, you need to roll the new version out to users over a number of hours to make sure everything is working correctly. You need to control the proportion of users seeing the new version of the application down to the percentage point. You use ELB and EC2 with Auto Scaling Groups and custom AMIs with your code pre-installed assigned to Launch Configurations. There are no database-level changes during your deployment. You also need to switch back to the original version of the code quickly if something goes wrong. What is the best way to meet these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best approach among these options is the <b>secondary ELB with Route53 Weighted Round Robin traffic distribution</b>. Using this setup, you can methodically control the percentage of users routed to the updated application stack with fine precision, down to one percent increments, thanks to the weighted records. Rollback is rapid and simple—just switch the DNS weights to direct traffic back to the original environment. This meets all the listed requirements: gradual rollout, precise user percentage control, and quick recovery.</p><p><i>'Use the Blue-Green deployment pattern'</i> (Blue-Green) lets you cut over all users at once to new instances, but this approach cannot adjust traffic proportionally over time; it’s an all-or-nothing switchover, so it fails the requirement of granular traffic control.</p><p><i>'Replace your existing Launch Configuration’s AMI'</i> (AMIs in Launch Config) and scaling old/new instances allows for gradual replacement but lacks the ability to precisely control what percentage of users see which version at a given time, given that ELB load balancing is instance-based, not user-percentage or version-based.</p><p><i>'Switch to AWS Elastic Beanstalk'</i> provides convenient deployment mechanisms (like Rolling Deployments and rollbacks), but these don’t enable you to adjust user exposure to the new version at a granular, percentage-based level during a rollout.</p><p><b>Tip:</b> To control user exposure down to the percentage level in AWS, leveraging multiple ELBs with Route53 weighted DNS records is a common and reliable solution.</p>",
+  "query": "<p>You plan to roll out a new version of your application to production, but due to its high risk, you want to carefully control the release over several hours. Your setup uses EC2 instances in Auto Scaling Groups behind an Elastic Load Balancer, with custom AMIs assigned to your Launch Configurations. Crucially, you need to control exactly what percent of users receive the new version, and you want to be able to roll back rapidly if any issues arise. Also, there are no changes required at the database level during this deployment. Given these constraints, what is the optimal strategy to safely deploy and, if necessary, efficiently revert the application update?</p>",
+  "original_oid": "6793d9eb61969b416038a0f5",
+  "options": [
+    {
+      "correct": false,
+      "text": "Use the Blue-Green deployment pattern by provisioning a complete new environment with all necessary EC2 instances. Switch the DNS to direct all user traffic to the new environment when ready, and revert it back in case a rollback is needed.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Spin up a secondary ELB, create a new Launch Configuration and Auto Scaling Group using the updated AMI (with code pre-baked), and assign the instances accordingly. Manage user exposure by configuring Route53 with Weighted Round Robin DNS records to control the exact share of traffic between both ELBs. Adjust the weights to shift more users over time, and revert quickly by switching the weights if needed.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Replace your existing Launch Configuration’s AMI with the new code pre-installed image. Scale down old instances and let new ones take their place, carefully shifting the traffic balance to the latest version. For rollback, set the original AMI in the Launch Configuration and repeat the scaling action.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Switch to AWS Elastic Beanstalk and deploy your application using the built-in Rolling Deployment strategy. Upload a zip package of your new release, set the deployment batch size and pause interval, and re-deploy the previous version’s bundle to roll back if necessary.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question130",
+  "originalQuery": "You need to deploy a new application version to production.\nBecause the deployment is high-risk, you need to roll the new version out to users over a number of hours to make sure everything is working correctly.\nYou need to control the proportion of users seeing the new version of the application down to the percentage point.\nYou use ELB and EC2 with Auto Scaling Groups and custom AMIs with your code pre-installed assigned to Launch Configurations.\nThere are no database-level changes during your deployment.\nYou also need to switch back to the original version of the code quickly if something goes wrong.\nWhat is the best way to meet these requirements?",
+  "originalOptions": [
+    "A. Create a second ELB, Auto Scaling Launch Configuration, and Auto Scaling Group using the Launch Configuration. Create AMIs with all code pre-installed. Assign the new AMI to the second Auto Scaling Launch Configuration. Use Route53 Weighted Round Robin Records to adjust the proportion of traffic hitting the two ELBs.",
+    "B. Use the Blue-Green deployment method to enable the fastest possible rollback if needed. Create a full second stack of instances and cut the DNS over to the new stack of instances, and change the DNS back if a rollback is needed.",
+    "C. Create AMIs with all code pre-installed. Assign the new AMI to the Auto Scaling Launch Configuration to replace the old one. Gradually terminate instances running the old code (launched with the old Launch Configuration) and allow the new AMIs to boot to adjust the traffic balance to the new code. On rollback, reverse the process by doing the same thing, but changing the AMI on the Launch Config back to the original code.",
+    "D. Migrate to use AWS Elastic Beanstalk. Use the established and well-tested Rolling Deployment setting AWS provides on the new Application Environment, publishing a zip bundle of the new code and adjusting the waiting period to spread the deployment over time. Re-deploy the old code bundle to roll back, if needed."
+  ],
+  "video_url": "https://certificationation.com/videos/exam-version-to-production-because-the-exam-007.html",
+  "url": "https://certificationation.com/questions/exam-version-to-production-because-the-exam-007.html"
+}

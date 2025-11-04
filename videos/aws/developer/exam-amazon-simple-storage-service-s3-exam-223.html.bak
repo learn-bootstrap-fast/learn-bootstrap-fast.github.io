@@ -1,0 +1,81 @@
+---
+title: "Every day, around 5 TB of data is gathered in AmazonExam"
+description: "Video for every day, around 5 TB of data is gathered in Amazon Simple Storage Service (S3). As a Database Engineer, your objective is to transfer this data to"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Every day, around 5 TB of data is gathered in Amazon Simple Storage Service (S3). As a Database Engineer, your objective is to transfer this data to Cloud Storage on a daily basis before importing it into Cloud SQL. You require a reliable solution that requires minimal effort. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "An online ticketing company named SeatRiver stores about 6 TB of event logs each day in AWS S3. You are the Cloud Database Engineer who must land these files in a Cloud Storage bucket every day before loading them into Cloud SQL. You want a dependable approach that requires very little ongoing work. What should you do?",
+  "options": [
+    {
+      "text": "Run a scheduled Apache Beam pipeline in Dataflow that reads from S3 and writes to Cloud Storage",
+      "explanation": "This creates a custom batch pipeline that you must build, schedule, monitor, and maintain.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Set up Storage Transfer Service with a recurring schedule to pull from the S3 bucket into Cloud Storage",
+      "explanation": "This managed service automates ongoing transfers from AWS S3 into your Cloud Storage bucket with minimal operational effort.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use Cloud Scheduler to invoke gsutil each day to copy objects from S3 to Cloud Storage",
+      "explanation": "This approach relies on custom scripts and jobs that you must handle for credentials, retries, and error handling.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Download the data to a local host and then ship it using Transfer Appliance",
+      "explanation": "This device is intended for one time or occasional bulk offline migrations rather than daily transfers.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Set up Storage Transfer Service with a recurring schedule to pull from the S3 bucket into Cloud Storage</b>. This is a fully managed and dependable way to move data cross cloud on a schedule with minimal ongoing effort.</p><p>It natively connects to Amazon S3 and Cloud Storage and can run on a daily schedule. It handles incremental copies and parallelism at scale which is appropriate for about 6 TB per day. It also provides checksum verification, automatic retries, detailed logs, and IAM controlled access which together reduce operational overhead compared with building and operating custom jobs.</p><p><i>Run a scheduled Apache Beam pipeline in Dataflow that reads from S3 and writes to Cloud Storage</i> is technically possible but it requires custom pipeline code, connector configuration, job scheduling, monitoring, and on call support. This adds unnecessary complexity and cost when a managed transfer service already solves the problem.</p><p><i>Use Cloud Scheduler to invoke gsutil each day to copy objects from S3 to Cloud Storage</i> needs a runtime such as a VM or a serverless container to execute the command and it requires S3 interoperability credentials and custom retry logic. This approach lacks the built in scalability, resiliency, and reporting provided by the managed transfer service and can become brittle at multi terabyte scale.</p><p><i>Download the data to a local host and then ship it using Transfer Appliance</i> is intended for one time or infrequent bulk migrations. It involves physical shipment and long lead times and therefore does not fit a daily transfer workflow.</p>",
+  "batch_id": "181",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "Every day, around 5 TB of data is gathered in Amazon Simple Storage Service (S3). As a Database Engineer, your objective is to transfer this data to Cloud Storage on a daily basis before importing it into Cloud SQL. You require a reliable solution that requires minimal effort. What should you do?",
+  "originalOptions": "A. Configure Cloud Scheduler to run a gsutil job daily to copy the data.<br/>B. Download the data to a local machine, and then use Transfer Appliance.<br/>C. Configure Storage Transfer Service to perform recurring transfers.<br/>D. Configure Cloud Scheduler to run a Cloud Function daily to copy the data.",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "223",
+  "tip": "<p>When a question stresses <i>recurring</i> transfers, <i>managed</i> operations, <i>cross-cloud</i> movement, and <i>minimal operations</i>, prefer the native managed transfer service over custom pipelines or ad hoc scripts.</p>",
+  "references": [
+    "https://cloud.google.com/storage-transfer/docs/aws-s3-overview",
+    "https://cloud.google.com/storage-transfer/docs/overview",
+    "https://cloud.google.com/transfer-appliance/docs/overview",
+    "https://beam.apache.org/documentation/io/built-in/amazon-web-services/#s3",
+    "https://cloud.google.com/storage/docs/interoperability"
+  ],
+  "url": "https://certificationation.com/questions/exam-amazon-simple-storage-service-s3-exam-223.html",
+  "video_url": "https://certificationation.com/videos/exam-amazon-simple-storage-service-s3-exam-223.html"
+}

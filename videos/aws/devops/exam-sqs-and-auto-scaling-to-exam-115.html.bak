@@ -1,0 +1,62 @@
+---
+title: "Your application uses Amazon SQS and Auto Scaling toExam"
+description: "Video for your application uses Amazon SQS and Auto Scaling to process background jobs. The Auto Scaling policy is based on the number of messages in the queue,"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your application uses Amazon SQS and Auto Scaling to process background jobs. The Auto Scaling policy is based on the number of messages in the queue, with a maximum instance count of 100 Since the application was launched, the group has never scaled above 50 The Auto scaling group has now scaled to 100, the queue size is increasing and very few jobs are being completed. The number of messages being sent to the queue is at normal levels. What should you do to identity why the queue size is unusually high and to reduce it?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The most effective step is to <b>investigate the application logs to pinpoint factors leading to job processing failures and address these issues</b>. Since your Auto Scaling group is already operating at its imposed upper limit of 100 instances and yet only a minimal number of jobs complete, it implies that increasing compute resources alone is not the solution—rather, there is likely a problem with job execution or completion on your worker instances.</p><p>The other options are less suitable for the following reasons: <i>\"Temporarily increase the Auto Scaling group’s desired capacity to 200 and scale down to 50 once the backlog reduces\"</i> is not viable, because you have already hit the maximum capacity, and adding more instances is either not possible or won't help if existing instances are not successfully processing jobs. <i>\"Set up additional Auto Scaling groups to process the SQS queue concurrently\"</i> is also not effective, as processing with more groups won't help if the workers themselves are failing or unable to handle messages correctly. <i>\"Review CloudTrail logs for Amazon SQS to confirm if the EC2 instances' roles are authorized to receive messages from the queue\"</i> is unlikely to address the core problem, since a lack of permissions would typically prevent message processing entirely, but you mention that only a few jobs get done, not zero.</p><p><b>Tip:</b> When job backlogs grow despite maximum worker scaling, always investigate the cause of job failure or processing bottlenecks first, using detailed application logs. Once the underlying issue is fixed, the queue will naturally decrease as jobs are properly processed.</p>",
+  "query": "<p>Your system leverages Amazon SQS and utilizes an Auto Scaling group to manage background job processing. This group’s scaling is tied to the SQS queue’s message count, and the maximum instance threshold is set to 100. Historically, the group hasn’t exceeded 50 instances, yet at present, it has scaled up to 100, the highest allowed, but the queue backlog is still growing and only a small number of jobs are being completed. The message arrival rate in the queue remains typical. What actions should you take to both diagnose and remedy the root cause of the increased queue backlog?</p>",
+  "original_oid": "6793da4c61969b416038a1b9",
+  "options": [
+    {
+      "correct": true,
+      "text": "Investigate the application logs to pinpoint factors leading to job processing failures and address these issues.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Review CloudTrail logs for Amazon SQS to confirm if the EC2 instances' roles are authorized to receive messages from the queue.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up additional Auto Scaling groups to process the SQS queue concurrently.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Temporarily increase the Auto Scaling group’s desired capacity to 200 and scale down to 50 once the backlog reduces.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question328",
+  "originalQuery": "Your application uses Amazon SQS and Auto Scaling to process background jobs.\nThe Auto Scaling policy is based on the number of messages in the queue, with a maximum instance count of 100\nSince the application was launched, the group has never scaled above 50\nThe Auto scaling group has now scaled to 100, the queue size is increasing and very few jobs are being completed.\nThe number of messages being sent to the queue is at normal levels.\nWhat should you do to identity why the queue size is unusually high and to reduce it?",
+  "originalOptions": "A. Temporarily increase the AutoScaling group’s desired value to 200. When the queue size has been reduced,reduce it to 50.|B. Analyze the application logs to identify possible reasons for message processing failure and resolve the cause for failures.|C. Create additional Auto Scaling groups enabling the processing of the queue to be performed in parallel.|D. Analyze CloudTrail logs for Amazon SQS to ensure that the instances Amazon EC2 role has permission to receive messages from the queue.",
+  "video_url": "https://certificationation.com/videos/exam-sqs-and-auto-scaling-to-exam-115.html",
+  "url": "https://certificationation.com/questions/exam-sqs-and-auto-scaling-to-exam-115.html"
+}

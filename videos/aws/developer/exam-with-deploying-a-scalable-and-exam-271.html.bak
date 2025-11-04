@@ -1,0 +1,80 @@
+---
+title: "A Database Engineer has been tasked with deploying aExam"
+description: "Video for a Database Engineer has been tasked with deploying a scalable and highly available database in Google Cloud. They have decided to use Cloud Spanner."
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A Database Engineer has been tasked with deploying a scalable and highly available database in Google Cloud. They have decided to use Cloud Spanner. Which of the following configurations will meet the requirements for high availability and scalability while minimizing costs?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Lakeview Payments is moving its core transaction platform to Google Cloud and has chosen Cloud Spanner for its managed relational database. The team wants high availability and the ability to scale horizontally while keeping expenses reasonable. Which instance setup should they choose to meet these goals?",
+  "options": [
+    {
+      "text": "Provision a Cloud Spanner multi-region instance with 4 nodes in each of 5 regions",
+      "explanation": "This spreads capacity across many regions which boosts resilience and locality but significantly increases cost due to many nodes and multi-region replication",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Provision a Cloud Spanner regional instance with 4 nodes in a single region",
+      "explanation": "This uses a regional instance that replicates across zones within one region and can scale by adding nodes while avoiding the higher price of multi-region",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Provision a Cloud Spanner multi-region instance and allocate 1 node in each of 5 regions",
+      "explanation": "This attempts to distribute minimal capacity across many regions which underprovisions the database and adds replication overhead",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Provision a Cloud Spanner multi-region instance but place 1 node in a single region",
+      "explanation": "This selects a multi-region configuration yet keeps only a minimal node count in one region which limits scale and does not leverage cross region availability",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Provision a Cloud Spanner regional instance with 4 nodes in a single region</b>. This configuration delivers high availability within a region and supports horizontal scaling by adding nodes while keeping costs lower than multi-region deployments.</p><p>A <b>regional instance</b> replicates data across multiple zones within one region and provides automatic failover, which meets the high availability requirement for most workloads that do not need cross region redundancy. You can scale horizontally by increasing the number of nodes or processing units, and because all replicas are in one region the cost is significantly lower than a multi-region configuration.</p><p><i>Provision a Cloud Spanner multi-region instance with 4 nodes in each of 5 regions</i> is unnecessary for the stated goals because multi-region is designed for cross region availability and comes with higher cost. You also do not allocate nodes per region in this way, since Spanner capacity is set at the instance level and the service manages replica placement.</p><p><i>Provision a Cloud Spanner multi-region instance and allocate 1 node in each of 5 regions</i> would still incur the higher cost of multi-region and would provide limited throughput. It also misrepresents how capacity is specified because Spanner does not let you assign nodes to individual regions and minimum practical capacity for production multi-region workloads is higher than a single node per replica.</p><p><i>Provision a Cloud Spanner multi-region instance but place 1 node in a single region</i> contradicts how multi-region configurations work. In multi-region, replicas are automatically distributed across regions defined by the instance configuration and you cannot concentrate capacity in only one region.</p>",
+  "batch_id": "46",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "A Database Engineer has been tasked with deploying a scalable and highly available database in Google Cloud. They have decided to use Cloud Spanner. Which of the following configurations will meet the requirements for high availability and scalability while minimizing costs?",
+  "originalOptions": "A. Create a Cloud Spanner instance with 1 node in each of the 3 regions, using multi-region instance configuration<br/>B. Create a Cloud Spanner instance with 3 nodes in a single region, using regional instance configuration<br/>C. Create a Cloud Spanner instance with 3 nodes in each of the 3 regions, using multi-region instance configuration<br/>D. Create a Cloud Spanner instance with 1 node in a single region, using multi-region instance configuration",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "271",
+  "tip": "<p>First decide the required availability scope. If you do not need to survive a regional outage then prefer a <i>regional</i> Spanner instance for lower cost and scale out by adding nodes. Choose <i>multi-region</i> only when cross region availability or local reads in multiple continents are mandatory.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/instances#configurations",
+    "https://cloud.google.com/spanner/docs/replication",
+    "https://cloud.google.com/spanner/docs/compute-capacity",
+    "https://cloud.google.com/spanner/sla"
+  ],
+  "url": "https://certificationation.com/questions/exam-with-deploying-a-scalable-and-exam-271.html",
+  "video_url": "https://certificationation.com/videos/exam-with-deploying-a-scalable-and-exam-271.html"
+}

@@ -1,0 +1,62 @@
+---
+title: "Your team is working on a migration project in AWSExam"
+description: "Video for your team is working on a migration project in AWS platform. An Application Load Balancer is configured to route traffic to backend EC2 instances. A"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your team is working on a migration project in AWS platform. An Application Load Balancer is configured to route traffic to backend EC2 instances. A security group is attached in the load balancer which allows the ingress traffic from a custom TCP port. Recently, due to some project requirements, the Application Load Balancer needs to be replaced by a Network Load Balancer. Existing configurations of the load balancer should be kept if possible. How would you configure the security group in the new Network Load Balancer?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><strong>Change the inbound rule in the security group attached to the EC2 instances, as Network Load Balancers do not support security groups.</strong> This is the correct action because unlike Application Load Balancers, Network Load Balancers operate at the connection layer (Layer 4) and do not directly support security groups. Therefore, it's essential to update the security group settings of your EC2 targets to permit the necessary traffic from the NLB on the designated TCP port.<br/><br/>Option <i>Use a template in CloudFormation to connect the same security group to your Network Load Balancer resource</i> is incorrect as NLBs do not support security groups at all—CloudFormation or otherwise.<br/><br/>Option <i>Set the source in the security group's inbound rule to 0.0.0.0/0, otherwise the Network Load Balancer will prevent ingress traffic</i> is misleading; you should always follow least-privilege best practices and only allow traffic from necessary sources. The NLB doesn't restrict ingress traffic, but your instance's security group must permit it from wherever the NLB forwards traffic.<br/><br/>Option <i>Attach a security group directly to a Network Load Balancer listener to allow custom TCP port traffic</i> is invalid, since NLB listeners never have security groups. Security group rules only apply to ENIs (Elastic Network Interfaces), such as those attached to EC2 instances or to ALBs.<br/><br/><strong>Tip:</strong> Always remember that only ALBs (and Classic Load Balancers in certain cases) can have security groups. NLBs cannot, so instance-level security groups must be your focus for regulating ingress from NLBs.</p>",
+  "query": "<p>Your company is migrating workloads to AWS. Originally, an Application Load Balancer (ALB) was set up to direct incoming requests on a certain TCP port to EC2 instances, and a security group was attached to the ALB permitting this traffic. Due to new architectural decisions, the ALB must be swapped out for a Network Load Balancer (NLB). You are expected to keep essential access configurations unchanged where feasible. What is the correct approach to handling security group settings when switching to the NLB?</p>",
+  "original_oid": "6793d9ac61969b416038a07a",
+  "options": [
+    {
+      "correct": true,
+      "text": "Change the inbound rule in the security group attached to the EC2 instances, as Network Load Balancers do not support security groups.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Use a template in CloudFormation to connect the same security group to your Network Load Balancer resource.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set the source in the security group's inbound rule to 0.0.0.0/0, otherwise the Network Load Balancer will prevent ingress traffic.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Attach a security group directly to a Network Load Balancer listener to allow custom TCP port traffic.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question5",
+  "originalQuery": "Your team is working on a migration project in AWS platform.\nAn Application Load Balancer is configured to route traffic to backend EC2 instances.\nA security group is attached in the load balancer which allows the ingress traffic from a custom TCP port.\nRecently, due to some project requirements, the Application Load Balancer needs to be replaced by a Network Load Balancer.\nExisting configurations of the load balancer should be kept if possible.\nHow would you configure the security group in the new Network Load Balancer?",
+  "originalOptions": "A. As Network Load Balancers do not have associated security groups, update the security group in the target EC2 instances.|B. Use a CloudFormation template to associate the same security group with the Network Load Balancer.|C. In the security group, modify the source of the inbound rule to be 0.0.0.0/0 otherwise the ingress traffic will be denied by the Network Load Balancer.|D. Attach the security group to the listener of the Network Load Balancer to allow the ingress traffic from the custom TCP port.",
+  "video_url": "https://certificationation.com/videos/exam-project-in-aws-platform-an-exam-402.html",
+  "url": "https://certificationation.com/questions/exam-project-in-aws-platform-an-exam-402.html"
+}

@@ -1,0 +1,72 @@
+---
+title: "Your company's DevOps team is in charge of deploying aExam"
+description: "Video for your company's DevOps team is in charge of deploying a large number of Lambda functions with AWS CodeDeploy service. The team has already created new"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company's DevOps team is in charge of deploying a large number of Lambda functions with AWS CodeDeploy service. The team has already created new applications in CodeDeploy. Then relevant deployment groups are being set up which include configurations used during the deployment. For the deployment configurations, which ways are supported?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>Supported deployment configurations for Lambda in AWS CodeDeploy include <b>CodeDeployDefault.LambdaLinear10PercentEvery10Minutes</b>, <b>CodeDeployDefault.LambdaAllAtOnce</b>, and <b>CodeDeployDefault.LambdaCanary10Percent5Minutes</b>. These are the default strategies:</p><ul><li><b>CodeDeployDefault.LambdaAllAtOnce</b>: All incoming traffic is moved to the new Lambda version in a single step. This is the fastest method, but offers no safety net in case of issues.</li><li><b>CodeDeployDefault.LambdaLinear10PercentEvery10Minutes</b>: Gradually shifts 10% of traffic every 10 minutes until all traffic is using the new Lambda version. This reduces risk and allows rollback if issues are detected.</li><li><b>CodeDeployDefault.LambdaCanary10Percent5Minutes</b>: Sends 10% of traffic to the new version initially, and if no problems occur, shifts the remaining 90% after five minutes. This is an effective way to catch errors quickly before impacting everyone.</li></ul><p>The options <i>CodeDeployDefault.AllAtATime</i>, <i>CodeDeployDefault.LambdaHalf</i>, and <i>CodeDeployDefault.Immutable</i> are not valid Lambda deployment configurations supported by AWS CodeDeploy. <i>CodeDeployDefault.AllAtATime</i> is not an actual supported configuration for Lambda, <i>CodeDeployDefault.LambdaHalf</i> does not exist, and <i>CodeDeployDefault.Immutable</i> relates to ECS/on-premise deployments, not Lambda. When deploying Lambda functions, choose among the officially supported strategies listed above to ensure smooth rollouts and reduce risk. Tip: Always review AWS CodeDeploy documentation for the latest supported configurations specific to Lambda to avoid confusion between resource types.</p>",
+  "query": "<p>Your DevOps group is managing the deployment of multiple Lambda functions through AWS CodeDeploy. After setting up applications and relevant deployment groups in CodeDeploy, which deployment configuration strategies are actually supported for Lambda deployments?</p>",
+  "original_oid": "6793d9c161969b416038a0a3",
+  "options": [
+    {
+      "correct": true,
+      "text": "CodeDeployDefault.LambdaLinear10PercentEvery10Minutes (Moves 10% of incoming traffic every 10 minutes during deployment)",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "CodeDeployDefault.AllAtATime (Deploys the new Lambda version to all traffic in one step)",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "CodeDeployDefault.LambdaHalf (Transitions half of the traffic first, then the remaining half)",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "CodeDeployDefault.LambdaAllAtOnce (Switches 100% of traffic to the new version instantly)",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "CodeDeployDefault.Immutable (Performs an immutable update by deploying new resources for the new version)",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "CodeDeployDefault.LambdaCanary10Percent5Minutes (Allocates 10% of traffic to new version initially, remaining 90% after five minutes)",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question46",
+  "originalQuery": "Your company's DevOps team is in charge of deploying a large number of Lambda functions with AWS CodeDeploy service.\nThe team has already created new applications in CodeDeploy.\nThen relevant deployment groups are being set up which include configurations used during the deployment.\nFor the deployment configurations, which ways are supported?",
+  "originalOptions": "A. CodeDeployDefault.LambdaAllAtOnce (Shifts all traffic to the new Lambda functions at once), B. CodeDeployDefault.Immutable (Shifts the traffic to the new Lambda functions by performing an immutable update), C. CodeDeployDefault.LambdaLinear10PercentEvery10Minutes (Shifts 10 percent of traffic every 10 minutes), D. CodeDeployDefault.LambdaHalf (Shifts half traffic to the new Lambda functions and then shifts the other half), E. CodeDeployDefault.AllAtATime ( Deploys the new version to all Lambda functions at a time ), F. CodeDeployDefault.LambdaCanary10Percent5Minutes (Shifts 10 percent of traffic in the first increment. The remaining 90 percent is deployed five minutes later)",
+  "video_url": "https://certificationation.com/videos/exam-charge-of-deploying-a-large-exam-319.html",
+  "url": "https://certificationation.com/questions/exam-charge-of-deploying-a-large-exam-319.html"
+}

@@ -1,0 +1,62 @@
+---
+title: "Your team is developing an application for a governmentExam"
+description: "Video for your team is developing an application for a government project. For continuous deployment, you have built a CloudFormation stack to deploy EC2"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your team is developing an application for a government project. For continuous deployment, you have built a CloudFormation stack to deploy EC2 instances. A third party software is installed in the instances and its license requires that the software should be bound to dedicated virtual machines. Whenever the CloudFormation stack is redeployed, the software should be installed in the same physical hosts. Which method would you select to achieve this requirement?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best way to guarantee license compliance—where software must remain on specific physical servers—is to use <b>Dedicated Hosts</b>. <b>Dedicated Hosts</b> allow you to allocate distinct physical servers to your account, and let you control which EC2 instances are deployed on those servers by specifying Host IDs in your CloudFormation template. This ensures that redeployed instances always use the exact physical machines, meeting strong licensing requirements.</p><p><i>Define a custom VPC, set its instance tenancy to dedicated, and update the CloudFormation template to launch EC2s within it.</i> is incorrect because while dedicated tenancy at the VPC level provides hardware isolation from other customers, AWS controls the underlying hosts and cannot guarantee the same host is chosen during stack redeployments.</p><p><i>Configure the CloudFormation EC2 resource for 'dedicated' tenancy so EC2 instances run as dedicated instances for the customer.</i> does offer dedicated hardware, but, like the previous choice, does not ensure subsequent EC2 launches are placed on the same physical host—this also fails the license binding requirement.</p><p><i>In your CloudFormation template, define an AWS::EC2::Host resource to gain a 100% dedicated server for your application's EC2s when they launch.</i> is misleading: merely allocating a Dedicated Host is only part of the solution; you also need to ensure your launched EC2s are specifically tied to that Host by referencing its Host ID, as in the correct answer.</p><p>Tip: When third-party licensing requires strict host affinity, always prefer Dedicated Hosts with explicit Host ID affinity in your templates. Know the subtle but critical differences between dedicated instances, dedicated tenancy, and Dedicated Hosts for the exam.</p>",
+  "query": "<p>Your team is working with a government project and utilizing a CloudFormation stack for automated deployment of EC2 instances.<br>A third-party software package on these servers requires its license to be locked to specific dedicated virtual machines.<br>Furthermore, each time you redeploy the CloudFormation stack, the software must continue running on the identical physical hosts for compliance.<br>What is the best way to meet these licensing and deployment requirements?</p>",
+  "original_oid": "6793da3561969b416038a189",
+  "options": [
+    {
+      "correct": false,
+      "text": "Define a custom VPC, set its instance tenancy to dedicated, and update the CloudFormation template to launch EC2s within it.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Configure the CloudFormation EC2 resource for 'dedicated' tenancy so EC2 instances run as dedicated instances for the customer.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Use CloudFormation to create Dedicated Hosts in advance, then reference the Host IDs in your template so EC2s always start on those same physical servers.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "In your CloudFormation template, define an AWS::EC2::Host resource to gain a 100% dedicated server for your application's EC2s when they launch.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question280",
+  "originalQuery": "Your team is developing an application for a government project.\nFor continuous deployment, you have built a CloudFormation stack to deploy EC2 instances.\nA third party software is installed in the instances and its license requires that the software should be bound to dedicated virtual machines.\nWhenever the CloudFormation stack is redeployed, the software should be installed in the same physical hosts.\nWhich method would you select to achieve this requirement?",
+  "originalOptions": "A. In the CloudFormation template, configure an AWS::EC2::Host resource to allocate a fully dedicated physical server when launching EC2 instances for the application.|B. Allocate dedicated hosts for this application which allow you to reliably launch EC2 instances on the same physical servers. In the CloudFormation template, specify the allocated HostID and configure the tenancy type to be dedicated host.|C. In the CloudFormation template, configure the EC2 instances to be dedicated instances for the single customer by specifying the tenancy value to be dedicated.|D. Define a custom VPC and ensure that the instance tenancy attribute of the VPC is dedicated. Modify the CloudFormation template to launch EC2 instances from this VP.",
+  "video_url": "https://certificationation.com/videos/exam-for-a-government-project-for-exam-320.html",
+  "url": "https://certificationation.com/questions/exam-for-a-government-project-for-exam-320.html"
+}

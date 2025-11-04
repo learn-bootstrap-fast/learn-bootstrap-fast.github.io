@@ -1,0 +1,62 @@
+---
+title: "You are working in a large corporation, and your team isExam"
+description: "Video for you are working in a large corporation, and your team is in charge of the new CI/CD pipeline for a migration project from on-premises to AWS. The"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are working in a large corporation, and your team is in charge of the new CI/CD pipeline for a migration project from on-premises to AWS. The product used a license that limited the number of vCPUs, and it is decided that the same license will be used on the AWS platform. The software is baked on Amazon AMI and several teams including QA, DEV and Production frequently launch new EC2 instances using the Jenkins pipeline. Your team manager is worried that the number of servers used is getting too large and asked you to add a step in Jenkins to get the current license consumption status. What is the best way for you to implement that?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The most reliable and efficient option is to use <b>Leverage AWS License Manager by creating a License Configuration for the specific software license, and then use the AWS CLI 'list-usage-for-license-configuration' to fetch real-time consumption data.</b> AWS License Manager is designed to help organizations track, manage, and enforce software license usage across AWS resources and accounts. By creating a License Configuration, AWS License Manager will automatically monitor vCPU usage across your EC2 fleet according to the licensing rules you define, ensuring accurate and up-to-date reporting that aligns with your compliance requirements. You can easily retrieve current usage by calling the CLI as part of your Jenkins pipeline, making compliance checks seamless and scalable.</p><br><p>The other options are less ideal for several reasons:</p><ul><li><i>Integrate a Lambda function to regularly tally all running EC2 servers and compare their count with the licensed vCPU limitation.</i> — This approach does not account for the number of vCPUs on each instance type, so you may easily over- or underestimate actual usage. This method is error-prone and requires custom logic to handle instance metadata.</li><li><i>Persist vCPU allocation and usage status in a DynamoDB table, with a Jenkins pipeline step that updates and reads from this table to monitor license consumption.</i> — This method introduces unnecessary operational and development overhead. It depends on manual data integrity across teams and is not inherently aware of changes outside Jenkins, such as direct instance launches or terminations through the AWS Console or API.</li><li><i>Execute a shell script capable of listing EC2 instances across all teams and comparing the total with the licensed vCPU maximum permitted.</i> — Like the Lambda option, this tactic does not automatically consider varying vCPU counts on different instance types or span across accounts easily, making it both labor-intensive and potentially inaccurate.</li></ul><p>Tip: Always leverage native AWS services, such as License Manager, when you need accurate, real-time license compliance across distributed and dynamic environments, instead of trying to implement homemade compliance tracking systems.</p>",
+  "query": "<p>Your organization is responsible for setting up a CI/CD pipeline in AWS to facilitate migrating applications from on-premises infrastructure. The software you use has licensing restrictions based on the number of vCPUs, and this same license must be adhered to when moving to AWS. The Amazon Machine Image (AMI) is used by several teams—such as development, QA, and production—to repeatedly provision new EC2 instances via Jenkins. Your team lead is concerned that the vCPU usage might accidentally surpass what the license permits, and asks for an automated way in Jenkins to accurately check current license utilization across all running EC2 instances. What approach should you take to provide an up-to-date view of license consumption?</p>",
+  "original_oid": "6793da1961969b416038a14d",
+  "options": [
+    {
+      "correct": false,
+      "text": "Integrate a Lambda function to regularly tally all running EC2 servers and compare their count with the licensed vCPU limitation.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Leverage AWS License Manager by creating a License Configuration for the specific software license, and then use the AWS CLI 'list-usage-for-license-configuration' to fetch real-time consumption data.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Persist vCPU allocation and usage status in a DynamoDB table, with a Jenkins pipeline step that updates and reads from this table to monitor license consumption.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Execute a shell script capable of listing EC2 instances across all teams and comparing the total with the licensed vCPU maximum permitted.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question220",
+  "originalQuery": "You are working in a large corporation, and your team is in charge of the new CI/CD pipeline for a migration project from on-premises to AWS.\nThe product used a license that limited the number of vCPUs, and it is decided that the same license will be used on the AWS platform.\nThe software is baked on Amazon AMI and several teams including QA, DEV and Production frequently launch new EC2 instances using the Jenkins pipeline.\nYour team manager is worried that the number of servers used is getting too large and asked you to add a step in Jenkins to get the current license consumption status.\nWhat is the best way for you to implement that?",
+  "originalOptions": "A. Use a shell script to count the total number of EC2 instances in all teams and compare the number with the limit that the license allows.|B. Create a Lambda to keep counting the number of servers and compare with the license limit.|C. Use a DynamoDB table to record the usage status of vCPU. Add a Jenkins step to read and write the table to manage the license consumption status.|D. Create a License Configuration for this license in AWS License Manager. Call the CLI list-usage-for-license-configuration to get the license consumption status.",
+  "video_url": "https://certificationation.com/videos/exam-and-your-team-is-in-exam-162.html",
+  "url": "https://certificationation.com/questions/exam-and-your-team-is-in-exam-162.html"
+}

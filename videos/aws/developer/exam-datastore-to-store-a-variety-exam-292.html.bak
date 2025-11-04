@@ -1,0 +1,79 @@
+---
+title: "A multinational company is using Datastore to store aExam"
+description: "Video for a multinational company is using Datastore to store a variety of structured and unstructured data. The company needs to ensure high availability and"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A multinational company is using Datastore to store a variety of structured and unstructured data. The company needs to ensure high availability and disaster recovery, while also complying with strict data residency requirements that prohibit storing data outside their region. Which of the following options should the company choose to best meet their requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Riverton Retail keeps customer and order documents in Datastore for its Asia operations and must satisfy a regulatory rule that every copy of the data remains inside a single selected region. The platform team also requires high availability that can survive a zone outage and wants disaster recovery without moving data out of that region. Which Datastore deployment choice best meets these constraints?",
+  "options": [
+    {
+      "text": "Datastore configured as multi-region with replicas across multiple regions in the same continent",
+      "explanation": "This configuration places data in at least two regions within a continent to improve availability and durability",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud Spanner multi-region configuration",
+      "explanation": "This service can distribute data across regions and offers strong consistency and high availability",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Datastore configured as regional with replicas spread across multiple zones in one region",
+      "explanation": "This setup keeps data within a single region and uses zonal redundancy for resilience against zone failures",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Datastore with cross-region asynchronous replication",
+      "explanation": "This approach maintains a primary in one region and sends updates asynchronously to a different region for recovery",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Datastore configured as regional with replicas spread across multiple zones in one region</b>. This keeps all data inside the selected region while replicating across multiple zones in that region, which preserves data residency and provides high availability that can withstand a zone outage and supports disaster recovery without leaving the region.</p><p>A regional Datastore location stores data only in that region and uses multi zone replication to protect against zonal failures. This meets the strict requirement that every copy stays in one region and it delivers resilience for operational continuity. Disaster recovery can be handled within the region using regional exports and restores so you can keep backups in a regional Cloud Storage bucket in the same region.</p><p>The option <i>Datastore configured as multi-region with replicas across multiple regions in the same continent</i> breaks the data residency rule because multi region locations place copies in more than one region.</p><p>The option <i>Cloud Spanner multi-region configuration</i> replicates across multiple regions which violates single region residency and it is a different product rather than a Datastore deployment.</p><p>The option <i>Datastore with cross-region asynchronous replication</i> would place data outside the selected region and Datastore does not offer user configurable cross region replication, so it does not fit the requirements.</p>",
+  "batch_id": "4",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "A multinational company is using Datastore to store a variety of structured and unstructured data. The company needs to ensure high availability and disaster recovery, while also complying with strict data residency requirements that prohibit storing data outside their region. Which of the following options should the company choose to best meet their requirements?",
+  "originalOptions": "A. Datastore in regional mode with synchronous replication.<br/>B. Datastore in multi-region mode with replication within the same continent.<br/>C. Datastore in regional mode with replication across multiple zones within the same region.<br/>D. Datastore in regional mode with asynchronous replication.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "292",
+  "tip": "<p>When you see requirements about <i>data residency</i> in <i>one region</i> choose a <i>regional</i> deployment that uses <i>multi zone</i> replication and avoid multi region or cross region options.</p>",
+  "references": [
+    "https://cloud.google.com/firestore/docs/locations",
+    "https://cloud.google.com/spanner/docs/instances#regional_and_multi-regional_configurations",
+    "https://cloud.google.com/datastore/docs/export-import-data"
+  ],
+  "url": "https://certificationation.com/questions/exam-datastore-to-store-a-variety-exam-292.html",
+  "video_url": "https://certificationation.com/videos/exam-datastore-to-store-a-variety-exam-292.html"
+}

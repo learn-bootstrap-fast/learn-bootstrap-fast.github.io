@@ -1,0 +1,62 @@
+---
+title: "Your application stores sensitive information on an EBSExam"
+description: "Video for your application stores sensitive information on an EBS volume attached to your EC2 instance. How can you protect your information? Choose two answers"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your application stores sensitive information on an EBS volume attached to your EC2 instance. How can you protect your information? Choose two answers from the options given below."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best ways to safeguard data on an EBS volume are:<br><br><b>Copy the current, unencrypted snapshot and select the option to encrypt the replica. All volumes made from this encrypted snapshot will also be encrypted.</b> This method allows you to generate an encrypted volume from your existing unencrypted data by first creating a snapshot, then copying it while enabling encryption. When you restore an EBS volume from this encrypted snapshot, it will be fully encrypted, providing an effective way to secure previously unencrypted EBS data.<br><br><b>Provision a new, encrypted EBS volume, attach it, migrate your data onto it, and remove the unencrypted EBS volume.</b> This approach entails creating a new encrypted volume and moving all sensitive files to it. Once you verify data integrity on the encrypted volume, you can delete the original unencrypted volume. Both practices comply with AWS security standards for at-rest encryption.<br><br><i>Detach the EBS volume, create a snapshot, and enable encryption on the snapshot. Then reattach the EBS volume.</i> is incorrect because you <b>cannot</b> directly enable encryption on an existing snapshot. The proper approach is to copy the snapshot and enable encryption during the copy operation.<br><br><i>It is not feasible to encrypt an EBS volume directly. Data should be transferred to S3 using a lifecycle policy and encrypted there.</i> is incorrect because it is entirely possible to protect EBS volume data by creating encrypted copies, as described above. S3 is a separate storage service, and moving data there is not the recommended procedure for encrypting EBS volumes.<br><br><b>Tip:</b> Always use AWS Key Management Service (KMS) keys for EBS encryption, and validate data accessibility after migration or snapshot restoration.</p>",
+  "query": "<p>Your software keeps confidential data on an EBS volume linked to your EC2 instance.<br>What are the steps you can take to safeguard your information? Select <b>two</b> options below.</p>",
+  "original_oid": "6793d9b561969b416038a08c",
+  "options": [
+    {
+      "correct": false,
+      "text": "Detach the EBS volume, create a snapshot, and enable encryption on the snapshot. Then reattach the EBS volume.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "It is not feasible to encrypt an EBS volume directly. Data should be transferred to S3 using a lifecycle policy and encrypted there.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Copy the current, unencrypted snapshot and select the option to encrypt the replica. All volumes made from this encrypted snapshot will also be encrypted.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Provision a new, encrypted EBS volume, attach it, migrate your data onto it, and remove the unencrypted EBS volume.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question23",
+  "originalQuery": "Your application stores sensitive information on an EBS volume attached to your EC2 instance.\nHow can you protect your information? Choose two answers from the options given below.",
+  "originalOptions": "[\"A. Unmount the EBS volume, take a snapshot and encrypt the snapshot. Re-mount the Amazon EBS volume.\",\"B. It is not possible to encrypt an EBS volume. You must use a lifecycle policy to transfer data to S3 for encryption.\",\"C. Copy the unencrypted snapshot and check the box to encrypt the new snapshot. Volumes restored from this encrypted snapshot will also be encrypted.\",\"D. Create and mount a new, encrypted Amazon EBS volume. Move the data to the new volume. Delete the old Amazon EBS volume.\"]",
+  "video_url": "https://certificationation.com/videos/exam-information-on-an-ebs-volume-exam-079.html",
+  "url": "https://certificationation.com/questions/exam-information-on-an-ebs-volume-exam-079.html"
+}

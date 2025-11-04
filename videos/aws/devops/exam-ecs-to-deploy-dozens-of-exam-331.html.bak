@@ -1,0 +1,67 @@
+---
+title: "A large IT company has used AWS ECS to deploy dozens ofExam"
+description: "Video for a large IT company has used AWS ECS to deploy dozens of Microservices. There is a new requirement from management to report any state change of either"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A large IT company has used AWS ECS to deploy dozens of Microservices. There is a new requirement from management to report any state change of either ECS container instances or ECS tasks to a group channel in Microsoft Teams. The notification messages should be nicely readable and sent immediately whenever a status change happens. Which two methods in combinations can achieve this requirement? (Select TWO)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best solution is a combination of these two options:</p><ul><li><b>Employ a Lambda function to interpret ECS state changes and forward a formatted notification directly to Microsoft Teams.</b></li><li><b>Configure an SNS topic for ECS state changes and set the SNS topic to invoke a Lambda function to assemble readable alert messages.</b></li></ul><p><b>Why these are correct:</b> Both approaches let you respond automatically to ECS state changes with customized, nicely formatted notifications, meeting the requirement for immediate, human-friendly reporting in Teams. By using SNS and Lambda together, you can decouple the event distribution from the message logic, and leverage Lambda's flexibility to craft and send Teams messages via its webhook.</p><p><b>Tips:</b> Use <code>CloudWatch Events (now EventBridge)</code> to detect task or instance state changes in ECS, trigger an SNS topic, and set up Lambda (as an SNS subscriber or CloudWatch rule target) to process and deliver notifications.</p><p><b>Why the other options are incorrect:</b></p><ul><li><i>Spin up a T2 micro EC2 instance dedicated to custom notifications, and link it to the Teams channel using an Incoming Webhook.</i>: This introduces unnecessary management overhead and does not scale well. Lambda and managed services are more efficient and cost-effective.</li><li><i>Set up CloudWatch alarms on ECS metrics to generate alerts on any ECS instance or task status change, triggering an SNS topic.</i>: Alarms aren't as fine-grained as events and may not provide the required immediacy or detailed state change information.</li><li><i>Create a new CloudWatch Events rule for ECS status changes and designate a Lambda function as the event's target receiver.</i>: While this is close, it does not fulfill the requirement alone. It lacks the direct integration with SNS for message fan-out and may need additional coordination to ensure message formatting for Teams.</li></ul>",
+  "query": "<p>A major IT enterprise runs numerous microservices on AWS ECS. Management needs to be immediately alerted any time an ECS container instance or task alters its status, with clear and well-formatted notification messages posted to a Microsoft Teams group channel. Which two solution methods together would accomplish this requirement? <b>(Choose TWO options)</b></p>",
+  "original_oid": "6793d9fc61969b416038a115",
+  "options": [
+    {
+      "correct": true,
+      "text": "Employ a Lambda function to interpret ECS state changes and forward a formatted notification directly to Microsoft Teams.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Spin up a T2 micro EC2 instance dedicated to custom notifications, and link it to the Teams channel using an Incoming Webhook.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Configure an SNS topic for ECS state changes and set the SNS topic to invoke a Lambda function to assemble readable alert messages.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up CloudWatch alarms on ECS metrics to generate alerts on any ECS instance or task status change, triggering an SNS topic.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Create a new CloudWatch Events rule for ECS status changes and designate a Lambda function as the event's target receiver.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question163",
+  "originalQuery": "A large IT company has used AWS ECS to deploy dozens of Microservices.\nThere is a new requirement from management to report any state change of either ECS container instances or ECS tasks to a group channel in Microsoft Teams.\nThe notification messages should be nicely readable and sent immediately whenever a status change happens.\nWhich two methods in combinations can achieve this requirement? (Select TWO)",
+  "originalOptions": "A. Create a T2 micro instance to handle the customized notifications. Integrate with Microsoft Teams via its Incoming Webhook.|B. Add a new CloudWatch Events rule for status change of ECS. Add a Lambda function as the target when an event is triggered.|C. Configure a new SNS topic called ECS_Status_Change. Register the SNS as the trigger of a Lambda function to generate custom readable alarms.|D. Set up alarms in ECS CloudWatch Metrics. When the state of either ECS instance or ECS task changes, generate an alarm to trigger an SNS topic.|E. Create a Lambda function to analyze the state change event in ECS and then provide an appropriate message to the channel in Microsoft Teams.",
+  "video_url": "https://certificationation.com/videos/exam-ecs-to-deploy-dozens-of-exam-331.html",
+  "url": "https://certificationation.com/questions/exam-ecs-to-deploy-dozens-of-exam-331.html"
+}

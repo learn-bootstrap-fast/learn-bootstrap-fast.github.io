@@ -1,0 +1,62 @@
+---
+title: "Your current log analysis application takes more thanExam"
+description: "Video for your current log analysis application takes more than four hours to generate a report of the top 10 users of your web application. You have been asked"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your current log analysis application takes more than four hours to generate a report of the top 10 users of your web application. You have been asked to implement a system that can report this information in real-time, ensure that the report is always up to date, and handle increases in the number of requests to your web application. Choose the option that is cost-effective and can fulfill the requirements."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best solution is to <b>Submit log data to Amazon Kinesis Data Streams, and set your log-processing application as a consumer. Ensure your application can scale automatically to manage demand increases.</b> Kinesis allows you to ingest, buffer, and analyze streaming data in real time. By subscribing your processing application and enabling autoscaling, you ensure low-latency analytics that adapts to spikes in log data, satisfying the requirements for always up-to-date and real-time reporting while remaining cost-effective.</p> <p>Here's why the other options are less suitable:</p> <ul><li><i>Send your log files to an Amazon S3 bucket, and utilize AWS CloudFormation to deploy an Auto Scaling group for a post-processing application that downloads and analyzes the S3 logs.</i> — This setup processes logs in batches, not in real time, and there may be significant delays as the application must continually poll and download files from S3.</li> <li><i>Publish your application logs to CloudWatch Logs, and configure your application to autoscale according to the workload.</i> — While CloudWatch Logs is excellent for centralized log storage and alerting, querying log data in real time (such as generating user leaderboards) is cumbersome and may not meet strict low-latency requirements for real-time analytics.</li> <li><i>Implement a multi-AZ Amazon RDS MySQL cluster for storing logs, sending your logs directly to MySQL, and conduct map-reduce queries to pull the user metrics.</i> — RDS MySQL databases are not designed for high-frequency, real-time analytics on streaming data and map-reduce operations are not natively supported, making this option inefficient and potentially expensive at scale.</li></ul><p><b>Tips:</b> For real-time analytics on rapidly changing data, use streaming services like Kinesis over batch or polling-based architectures. Always ensure your architecture is designed for scalability to deal with unpredictable workloads.</p>",
+  "query": "<p>Your log analytics tool currently requires over four hours to compile a list of the top 10 most active users on your website. Management now needs near real-time reports that are always current, and the solution must automatically scale to accommodate surges in web traffic. Which approach is the most cost-effective and meets all these requirements?</p>",
+  "original_oid": "6793d9c261969b416038a0a5",
+  "options": [
+    {
+      "correct": true,
+      "text": "Submit log data to Amazon Kinesis Data Streams, and set your log-processing application as a consumer. Ensure your application can scale automatically to manage demand increases.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Send your log files to an Amazon S3 bucket, and utilize AWS CloudFormation to deploy an Auto Scaling group for a post-processing application that downloads and analyzes the S3 logs.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Publish your application logs to CloudWatch Logs, and configure your application to autoscale according to the workload.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Implement a multi-AZ Amazon RDS MySQL cluster for storing logs, sending your logs directly to MySQL, and conduct map-reduce queries to pull the user metrics.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question48",
+  "originalQuery": "Your current log analysis application takes more than four hours to generate a report of the top 10 users of your web application.\nYou have been asked to implement a system that can report this information in real-time, ensure that the report is always up to date, and handle increases in the number of requests to your web application.\nChoose the option that is cost-effective and can fulfill the requirements.",
+  "originalOptions": "A. Publish your data to CloudWatch Logs, and configure your application to autoscale to handle the load on demand.\nB. Publish your log data to an Amazon S3 bucket.Use AWS CloudFormation to create an Auto Scaling group to scale your post-processing application configured to pull down your log files stored in an Amazon S3.\nC. Post your log data to an Amazon Kinesis data stream, and subscribe to your log-processing application so that it is configured to process your logging data. Configure your application to autoscale to handle the load on demand.\nD. Create a multi-AZ Amazon RDS MySQL cluster, post the logging data to MySQL, and run a map reduce job to retrieve the required information on user counts.",
+  "video_url": "https://certificationation.com/videos/exam-takes-more-than-four-hours-exam-051.html",
+  "url": "https://certificationation.com/questions/exam-takes-more-than-four-hours-exam-051.html"
+}

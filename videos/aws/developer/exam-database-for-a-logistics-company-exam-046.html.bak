@@ -1,0 +1,79 @@
+---
+title: "You are managing a Cloud Spanner database for aExam"
+description: "Video for you are managing a Cloud Spanner database for a logistics company. Shipment details are stored in a table called shipments , and the table has columns"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are managing a Cloud Spanner database for a logistics company. Shipment details are stored in a table called shipments , and the table has columns shipmentId , customerId , and destination . The management frequently queries shipments with destination='New York' for different customers. To improve performance and maintain query flexibility, you decide to parameterize the query. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Your team maintains a Cloud Spanner database for a regional courier named RiverDash. Delivery data is stored in a table called parcels with columns parcel_id, client_id, and dropoff_city. Analysts frequently filter parcels where dropoff_city equals &apos;Austin&apos; for many different clients, and you want to improve performance while keeping the ability to change both values without editing SQL. How should you write the query to use parameters?",
+  "options": [
+    {
+      "text": "SELECT parcel_id FROM parcels WHERE client_id LIKE @client_id AND dropoff_city=@dropoff_city",
+      "explanation": "This statement uses a pattern comparison for the client identifier while the city is provided as a bound parameter",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "SELECT parcel_id FROM parcels WHERE client_id=@client_id OR dropoff_city=&apos;Austin&apos;",
+      "explanation": "This statement returns rows that match either the client identifier or the specified city which broadens the result set",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "SELECT parcel_id FROM parcels WHERE client_id=@client_id AND dropoff_city=&apos;Austin&apos;",
+      "explanation": "This statement binds the client identifier but still fixes the city as a literal which limits reuse across cities",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "SELECT parcel_id FROM parcels WHERE client_id=@client_id AND dropoff_city=@dropoff_city",
+      "explanation": "This statement binds both the client identifier and the dropoff city to parameters so the query can be reused with different values",
+      "correct": true,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>SELECT parcel_id FROM parcels WHERE client_id=@client_id AND dropoff_city=@dropoff_city</b>.</p><p>This query uses named parameters for both client_id and dropoff_city, which lets you change the values at execution time without editing the SQL. Parameterized queries allow Cloud Spanner to reuse query plans across different values, which improves performance for frequently executed analytics filters.</p><p>Using equality comparisons on both columns produces precise filtering and makes it easier for Spanner to use available indexes efficiently. With parameters bound at execution, analysts can request different clients and cities while benefiting from stable query plans and reduced parsing and compilation overhead.</p><p><i>SELECT parcel_id FROM parcels WHERE client_id LIKE @client_id AND dropoff_city=@dropoff_city</i> is not appropriate because LIKE changes the meaning of the predicate and can prevent efficient index use when patterns are not anchored. The requirement is to filter by exact client and city values, so equality with parameters is the correct approach.</p><p><i>SELECT parcel_id FROM parcels WHERE client_id=@client_id OR dropoff_city='Austin'</i> is incorrect because OR broadens the results and returns parcels that match either the client or the city. It also hard codes the city, which violates the requirement to change both values without editing the SQL.</p><p><i>SELECT parcel_id FROM parcels WHERE client_id=@client_id AND dropoff_city='Austin'</i> is incorrect because the city is hard coded, so you cannot change both filter values without modifying the statement. This also reduces the benefit of plan reuse across different city values.</p>",
+  "batch_id": "177",
+  "answerCode": "4",
+  "type": "multiple-choice",
+  "originalQuery": "You are managing a Cloud Spanner database for a logistics company. Shipment details are stored in a table called shipments , and the table has columns shipmentId , customerId , and destination . The management frequently queries shipments with destination='New York' for different customers. To improve performance and maintain query flexibility, you decide to parameterize the query. What should you do?",
+  "originalOptions": "A. SELECT shipmentId FROM shipments WHERE customerId=@customerId AND destination='New York'<br/>B. SELECT shipmentId FROM shipments WHERE customerId LIKE @customerId AND destination=@destination<br/>C. SELECT shipmentId FROM shipments WHERE customerId=@customerId OR destination='New York'<br/>D. SELECT shipmentId FROM shipments WHERE customerId=@customerId AND destination=@destination",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "46",
+  "tip": "<p>When a query will be reused with different values, use <i>named parameters</i> for every variable predicate and prefer equality when you need exact matches. If you need to narrow by multiple columns, use <i>AND</i> rather than OR to avoid unintentionally widening results.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/queries#parameters",
+    "https://cloud.google.com/spanner/docs/query-execution",
+    "https://cloud.google.com/spanner/docs/functions-and-operators#like"
+  ],
+  "url": "https://certificationation.com/questions/exam-database-for-a-logistics-company-exam-046.html",
+  "video_url": "https://certificationation.com/videos/exam-database-for-a-logistics-company-exam-046.html"
+}

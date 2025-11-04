@@ -1,0 +1,62 @@
+---
+title: "Your company owns an on-premises Ubuntu server in aExam"
+description: "Video for your company owns an on-premises Ubuntu server in a local data center where several legacy applications are running. You want to use AWS CodeDeploy to"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company owns an on-premises Ubuntu server in a local data center where several legacy applications are running. You want to use AWS CodeDeploy to deploy new application revisions to this particular on-premises instance but firstly you need to register the server in CodeDeploy and use an IAM user to perform the authentication. Which of the following methods is the most appropriate?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The most appropriate way to allow an on-premises Ubuntu server to communicate securely with AWS CodeDeploy is to <b>include the IAM user credentials in the CodeDeploy configuration file, install the CodeDeploy agent, and let it register the server automatically</b>. This approach follows AWS CodeDeploy's recommended best practices for registering on-premises instances. <br/><br/>The option <i>Assign an IAM role to the on-premises machine with the necessary CodeDeploy permissions and utilize the register command of the AWS CLI to associate the role with the server</i> is not feasible because IAM roles cannot be assigned directly to on-premises servers—only to AWS services and resources. <br/><br/>The option <i>Use the AWS CLI register-deploy command to create an IAM user for the server, store the user's credentials in the server’s configuration, and then register the server with CodeDeploy</i> is incorrect since there is no 'register-deploy' command, and the registration process depends on the CodeDeploy agent and proper configuration files. <br/><br/>The option <i>Run the AWS CLI tag-resource command to set up an IAM user for the on-premises server, register it with CodeDeploy, and assign a tag so that CodeDeploy can manage deployments to it based on the tag</i> is also inaccurate because tagging resources is for organizing and filtering, not for registration and authentication.<br/><br/><b>Tip:</b> Always ensure IAM credentials are managed securely, and follow AWS documentation for properly installing and registering the CodeDeploy agent for on-premises deployments.</p>",
+  "query": "<p>Your organization maintains a legacy Ubuntu server in its on-premises data center that hosts several critical applications. The business goal is to leverage AWS CodeDeploy to streamline deployment of new application updates to this particular on-premises instance. Before doing so, the server needs to be registered with CodeDeploy using IAM user credentials for secure authentication. <br/>Which approach should you take to best achieve this setup?</p>",
+  "original_oid": "6793da8661969b416038a22d",
+  "options": [
+    {
+      "correct": true,
+      "text": "Include the IAM user credentials in the CodeDeploy configuration file. After installing the CodeDeploy agent on the server and supplying this file, the instance is automatically registered with CodeDeploy.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Assign an IAM role to the on-premises machine with the necessary CodeDeploy permissions and utilize the register command of the AWS CLI to associate the role with the server.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Use the AWS CLI register-deploy command to create an IAM user for the server, store the user's credentials in the server’s configuration, and then register the server with CodeDeploy.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Run the AWS CLI tag-resource command to set up an IAM user for the on-premises server, register it with CodeDeploy, and assign a tag so that CodeDeploy can manage deployments to it based on the tag.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question445",
+  "originalQuery": "Your company owns an on-premises Ubuntu server in a local data center where several legacy applications are running.\nYou want to use AWS CodeDeploy to deploy new application revisions to this particular on-premises instance but firstly you need to register the server in CodeDeploy and use an IAM user to perform the authentication.\nWhich of the following methods is the most appropriate?",
+  "originalOptions": "[\"A. Create an IAM role for the on-premises server and assign the CodeDeploy permissions to the role. Use the register AWS CLI command to bind the IAM role with the server.\",\"B. Include the IAM user in the CodeDeploy configuration file. Install the CodeDeploy agent in the server with the configuration file and the server will be registered in CodeDeploy automatically.\",\"C. Use the AWS CLI command deploy register to create an IAM user for the on-premises server, save the IAM credentials to the configuration file in the server and register it with CodeDeploy.\",\"D. Use the AWS CLI command deploy tag-resource to create an IAM user for the on-premises server, register it with CodeDeploy, and add a tag to the server. CodeDeploy will deploy new revisions to the server based on this particular tag.\"]",
+  "video_url": "https://certificationation.com/videos/exam-ubuntu-server-in-a-local-exam-346.html",
+  "url": "https://certificationation.com/questions/exam-ubuntu-server-in-a-local-exam-346.html"
+}

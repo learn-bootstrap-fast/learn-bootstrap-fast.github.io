@@ -1,0 +1,81 @@
+---
+title: "Your company is running several Cloud SQL instances forExam"
+description: "Video for your company is running several Cloud SQL instances for PostgreSQL in Google Cloud, which experience variable workloads. You need to ensure that these"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company is running several Cloud SQL instances for PostgreSQL in Google Cloud, which experience variable workloads. You need to ensure that these instances are scaled efficiently to manage costs effectively while meeting workload demands. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Riverton Retail runs several Cloud SQL for PostgreSQL databases in Google Cloud to support checkout and inventory systems. Demand is quiet most of the day but spikes for about 2 to 3 hours on weekdays. You want to control spending while still meeting performance needs during busy periods. What should you do?",
+  "options": [
+    {
+      "text": "Enable automatic storage increase on the Cloud SQL instances",
+      "explanation": "This feature expands disk capacity automatically when utilization approaches the allocated limit",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use the Cloud SQL idle instance recommender to rightsize machine tiers",
+      "explanation": "This recommender analyzes utilization and suggests downsizing or turning off instances that are consistently underused",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Add Cloud SQL read replicas and place them behind a TCP proxy load balancer to scale connections",
+      "explanation": "This approach attempts to distribute database traffic by adding replicas and a network layer to spread client connections",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure metric based autoscaling on Compute Engine instances that run your application to handle database load",
+      "explanation": "This sets up autoscaling for application virtual machines in a managed instance group using CPU or custom metrics",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Use the Cloud SQL idle instance recommender to rightsize machine tiers</b> because it guides you to adjust CPU and memory to match real demand which helps you save money during quiet hours while maintaining the capacity you need during short weekday spikes.</p><p>The <b>Cloud SQL Recommender</b> analyzes utilization and identifies idle or overprovisioned instances. It provides rightsizing suggestions so you can select smaller machine tiers for most of the day and ensure sufficient capacity for peak windows. Cloud SQL does not automatically autoscale compute so using these insights is the most effective way to balance cost and performance for PostgreSQL instances with predictable short spikes.</p><p><i>Enable automatic storage increase on the Cloud SQL instances</i> is not addressing the problem because storage auto increase prevents running out of disk space but it does not improve CPU or memory performance during peaks. It can also lead to higher storage costs without helping the bursty load.</p><p><i>Add Cloud SQL read replicas and place them behind a TCP proxy load balancer to scale connections</i> is not appropriate because Cloud SQL does not provide load balancing across replicas and you must direct read traffic at the application or proxy layer. Read replicas are read only and they add cost and complexity and are not a simple way to handle short lived spikes in mixed read and write workloads.</p><p><i>Configure metric based autoscaling on Compute Engine instances that run your application to handle database load</i> does not increase database capacity. It only scales the application tier and can increase connection pressure on the database while leaving the Cloud SQL compute tier unchanged.</p>",
+  "batch_id": "9",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "Your company is running several Cloud SQL instances for PostgreSQL in Google Cloud, which experience variable workloads. You need to ensure that these instances are scaled efficiently to manage costs effectively while meeting workload demands. What should you do?",
+  "originalOptions": "A. Resize the instances manually based on peak usage patterns.<br/>B. Implement custom metric-based autoscaling on your Compute Engine instances.<br/>C. Enable automatic storage increase for your Cloud SQL instances.<br/>D. Use the Cloud SQL idle instance recommender to adjust instance sizes.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "228",
+  "tip": "<p>When a question focuses on Cloud SQL cost control with predictable peaks look for options that use native <i>Recommender</i> insights and <i>rightsizing</i> rather than adding replicas or load balancers that increase complexity and spend.</p>",
+  "references": [
+    "https://cloud.google.com/recommender/docs/cloud-sql-recommender",
+    "https://cloud.google.com/sql/docs/postgres/automatic-storage-increase",
+    "https://cloud.google.com/sql/docs/postgres/replication/replication-overview",
+    "https://cloud.google.com/compute/docs/autoscaler",
+    "https://cloud.google.com/sql/docs/postgres/limits"
+  ],
+  "url": "https://certificationation.com/questions/exam-cloud-sql-instances-for-postgresql-exam-228.html",
+  "video_url": "https://certificationation.com/videos/exam-cloud-sql-instances-for-postgresql-exam-228.html"
+}

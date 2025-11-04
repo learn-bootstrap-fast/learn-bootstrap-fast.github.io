@@ -1,0 +1,81 @@
+---
+title: "Your organization is facing a situation where anExam"
+description: "Video for your organization is facing a situation where an existing application has gained significant popularity. The application relies on a Cloud SQL for"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your organization is facing a situation where an existing application has gained significant popularity. The application relies on a Cloud SQL for PostgreSQL backend database, but the current performance is hindered by slow disk performance due to the use of hard disk drives (HDDs). To address this issue, your objective is to enhance performance and minimize disk I/O wait times. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "BrightSeats is a growing ticketing platform whose traffic jumped from 10 thousand to 180 thousand daily requests over the past 60 days and its Cloud SQL for PostgreSQL instance was created with HDD storage and is now limited by disk I or O wait. You must improve database throughput and reduce disk latency without changing the database engine or leaving Cloud SQL. What should you do?",
+  "options": [
+    {
+      "text": "Create a read replica that uses SSDs and plan to fail over to it during the cutover",
+      "explanation": "This proposes standing up a replica on faster storage and attempting to move production by using a failover event",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable high availability and create a standby on SSDs then trigger a failover to the standby",
+      "explanation": "This suggests adding an HA configuration with different storage for the secondary and then moving traffic to it",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Export the database and restore it into a new Cloud SQL for PostgreSQL instance configured with SSD storage",
+      "explanation": "This moves the data into a newly provisioned instance that uses solid state disks to lower I or O latency",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Edit the existing instance and switch the storage type from HDD to SSD",
+      "explanation": "This assumes the storage medium can be changed in place on the current instance",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Export the database and restore it into a new Cloud SQL for PostgreSQL instance configured with SSD storage</b>.</p><pThis approach moves the workload to SSD backed persistent disks which provide significantly lower latency and higher IOPS compared to HDD. In Cloud SQL the storage type is selected at instance creation and cannot be changed afterward, so creating a new instance with SSD and migrating your data to it is the supported way to eliminate disk I or O wait without changing the database engine or leaving Cloud SQL.</p><p><i>Create a read replica that uses SSDs and plan to fail over to it during the cutover</i> is incorrect because read replicas are read only and they are not a failover target. You could promote a replica to a standalone instance but that is not a failover operation and it introduces cutover complexity and potential data loss unless writes are quiesced.</p><p><i>Enable high availability and create a standby on SSDs then trigger a failover to the standby</i> is incorrect because HA does not let you mix storage types between primary and standby and enabling HA does not change the primary’s disk type. A failover would keep you on the same storage class and would not reduce disk latency.</p><p><i>Edit the existing instance and switch the storage type from HDD to SSD</i> is incorrect because Cloud SQL does not support changing the storage type of an existing instance. You must provision a new instance with the desired storage type and migrate.</p>",
+  "batch_id": "156",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "Your organization is facing a situation where an existing application has gained significant popularity. The application relies on a Cloud SQL for PostgreSQL backend database, but the current performance is hindered by slow disk performance due to the use of hard disk drives (HDDs). To address this issue, your objective is to enhance performance and minimize disk I/O wait times. What should you do?",
+  "originalOptions": "A. Create a read replica of the instance using SSDs and initiate a failover process to migrate to the new instance when needed.<br/>B. Export the data from the current instance and import it into a new instance equipped with SSDs for improved performance.<br/>C. Modify the storage type of the existing instance by editing its configuration, transitioning from HDD to SSD storage.<br/>D. Set up a high availability (HA) failover instance with solid-state drives (SSDs), and perform a failover to the new instance.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "128",
+  "tip": "<p>When you see performance bottlenecks tied to storage, verify which instance settings are immutable. If a setting like storage type cannot be changed, plan a migration to a new instance with the required configuration and consider <i>how</i> you will move data and minimize downtime.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/compute-storage#storage_types",
+    "https://cloud.google.com/sql/docs/postgres/import-export",
+    "https://cloud.google.com/sql/docs/postgres/high-availability",
+    "https://cloud.google.com/sql/docs/postgres/replication",
+    "https://cloud.google.com/sql/docs/postgres/promote-replica"
+  ],
+  "url": "https://certificationation.com/questions/exam-situation-where-an-existing-application-exam-128.html",
+  "video_url": "https://certificationation.com/videos/exam-situation-where-an-existing-application-exam-128.html"
+}

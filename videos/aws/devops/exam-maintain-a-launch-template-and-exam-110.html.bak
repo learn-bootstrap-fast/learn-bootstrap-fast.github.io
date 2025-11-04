@@ -1,0 +1,62 @@
+---
+title: "You use a CloudFormation stack to maintain a LaunchExam"
+description: "Video for you use a CloudFormation stack to maintain a Launch Template and an Auto Scaling group. The Auto Scaling group uses the latest version of the Launch"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You use a CloudFormation stack to maintain a Launch Template and an Auto Scaling group. The Auto Scaling group uses the latest version of the Launch Template. One day, you modified the AMI ID of the Launch Template in the CloudFormation template and updated the CloudFormation stack. However, new instances of the Auto Scaling group cannot start the web applications properly. You figured out that there was a code issue in the new AMI and the AMI configuration should be rolled back. Which of the following actions is the most appropriate?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>correct approach is to update the CloudFormation template to have the Auto Scaling group refer to the earlier Launch Template version</b>. This makes sure that your infrastructure is managed through CloudFormation and remains in the desired state. Manually deleting template versions (like in <i>\"Delete the latest Launch Template version using the AWS CLI command...\"</i>) is risky, since it may leave your stack out of sync with its template, leading to further drift or errors. Modifying resources directly in the EC2 console (as in <i>\"In the EC2 web console, set your Auto Scaling group to use the default Launch Template version...\"</i>) also results in stack drift, since CloudFormation will not recognize manual changes and may overwrite them during subsequent updates. Simply changing the AMI ID in the Launch Template resource in CloudFormation (<i>\"Update the CloudFormation template to change the Launch Template's AMI ID field back...\"</i>) creates a brand new version—so your ASG, still set to use the latest version, wouldn’t revert to the old, known-good configuration. Best practices dictate managing version references to ensure reproducibility and auditability within CloudFormation. Whenever rolling back a resource change, it's safest to explicitly specify the version or configuration known to be stable and let CloudFormation handle all changes for traceability. This approach minimizes risk and maintains a clean infrastructure-as-code workflow.</p>",
+  "query": "<p>You are managing a CloudFormation stack that provisions both a Launch Template and an Auto Scaling group, where the Auto Scaling group references the most recent version of the Launch Template. Recently, after updating the CloudFormation template to point the Launch Template to a new AMI ID, you discover new Auto Scaling group instances are failing to start web applications correctly due to a problem with the new AMI. You need to reverse these changes and ensure the group uses the previous, functioning AMI configuration. What is the best solution?</p>",
+  "original_oid": "6793da9e61969b416038a25d",
+  "options": [
+    {
+      "correct": false,
+      "text": "Delete the latest Launch Template version using the AWS CLI command, then update your CloudFormation stack.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Update the CloudFormation template so the Auto Scaling group references the earlier Launch Template version, and then apply the stack update.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "In the EC2 web console, set your Auto Scaling group to use the default Launch Template version, then update your CloudFormation stack.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Update the CloudFormation template to change the Launch Template's AMI ID field back to the previous value, then update the stack.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question493",
+  "originalQuery": "You use a CloudFormation stack to maintain a Launch Template and an Auto Scaling group.\nThe Auto Scaling group uses the latest version of the Launch Template.\nOne day, you modified the AMI ID of the Launch Template in the CloudFormation template and updated the CloudFormation stack.\nHowever, new instances of the Auto Scaling group cannot start the web applications properly.\nYou figured out that there was a code issue in the new AMI and the AMI configuration should be rolled back.\nWhich of the following actions is the most appropriate?",
+  "originalOptions": "A. Use AWS CLI \"aws ec2 delete-launch-template-versions\" to delete the latest version and update the CloudFormation stack.\nB. In the CloudFormation template, modify the Auto Scaling group to use the previous version of the Launch Template. Update the CloudFormation stack.\nC. In the AWS EC2 console, modify the ASG to use the default version of the Launch Template. Update the CloudFormation stack.\nD. Change the AMI ID of the Launch Template to the previous one in the CloudFormation template and update the CloudFormation stack.",
+  "video_url": "https://certificationation.com/videos/exam-maintain-a-launch-template-and-exam-110.html",
+  "url": "https://certificationation.com/questions/exam-maintain-a-launch-template-and-exam-110.html"
+}

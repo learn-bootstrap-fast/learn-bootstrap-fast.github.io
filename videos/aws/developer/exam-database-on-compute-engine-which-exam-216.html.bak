@@ -1,0 +1,82 @@
+---
+title: "Your company is running a PostgreSQL database on ComputeExam"
+description: "Video for your company is running a PostgreSQL database on Compute Engine, which requires a high availability setup with synchronous replication for a critical"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company is running a PostgreSQL database on Compute Engine, which requires a high availability setup with synchronous replication for a critical application. You are tasked with designing this setup on Google Cloud. Which of the following should you implement?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "NovaCart Retail runs a self managed PostgreSQL deployment on Compute Engine for its checkout service and leadership demands high availability with synchronous replication across zones in europe-west1. You need to design an architecture on Google Cloud that meets these requirements and minimizes operational burden. What should you implement?",
+  "options": [
+    {
+      "text": "Configure two Compute Engine virtual machines running PostgreSQL with synchronous replication across europe-west1-b and europe-west1-c and use a Regional Persistent Disk for storage redundancy",
+      "explanation": "This pattern uses two virtual machines with PostgreSQL streaming replication across zones and relies on a Regional Persistent Disk to provide zone level durability for the underlying storage",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Run PostgreSQL on Google Kubernetes Engine with a StatefulSet and PersistentVolumeClaims and configure synchronous replication between pods",
+      "explanation": "This approach deploys PostgreSQL inside Google Kubernetes Engine using a StatefulSet for stable identities and PersistentVolumeClaims for storage while setting up synchronous replication between pods",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Google Cloud SQL for PostgreSQL and enable high availability with a cross zone failover replica and automatic failover",
+      "explanation": "This uses the managed PostgreSQL service with high availability enabled that provisions a standby in another zone and performs automatic failover",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Migrate to Cloud Spanner with the PostgreSQL interface and deploy a multi region configuration",
+      "explanation": "This option replaces PostgreSQL with Cloud Spanner which offers a PostgreSQL dialect and can be deployed across regions for high availability",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Use Google Cloud SQL for PostgreSQL and enable high availability with a cross zone failover replica and automatic failover</b>.</p><p><b>Cloud SQL for PostgreSQL</b> provides a managed high availability configuration that keeps a standby in a different zone within the same region and performs synchronous replication. This meets the requirement for cross zone durability in europe-west1 and it delivers automatic failover that reduces recovery time. Because <b>Cloud SQL</b> is fully managed, it minimizes operational burden for patching, backups, monitoring, and failover orchestration, which aligns with the directive to reduce operational effort.</p><p><i>Configure two Compute Engine virtual machines running PostgreSQL with synchronous replication across europe-west1-b and europe-west1-c and use a Regional Persistent Disk for storage redundancy</i> is not ideal because it leaves you responsible for configuring and operating PostgreSQL replication, fencing, failover orchestration, and maintenance. A regional persistent disk protects storage across zones for a single instance but it does not simplify or replace database level replication and it does not safely provide shared block storage for two active database servers.</p><p><i>Run PostgreSQL on Google Kubernetes Engine with a StatefulSet and PersistentVolumeClaims and configure synchronous replication between pods</i> increases operational complexity since you must operate the database stack yourself and add components such as Patroni or similar for reliable leader election and failover. This approach can be made to work but it does not minimize operational burden compared to a managed database service.</p><p><i>Migrate to Cloud Spanner with the PostgreSQL interface and deploy a multi region configuration</i> changes the product and its compatibility guarantees and it introduces a different architecture that is not a drop in replacement for PostgreSQL. A multi region deployment goes beyond the requirement of cross zone availability within a single region and it would add cost and migration effort without directly addressing the stated need.</p>",
+  "batch_id": "110",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "Your company is running a PostgreSQL database on Compute Engine, which requires a high availability setup with synchronous replication for a critical application. You are tasked with designing this setup on Google Cloud. Which of the following should you implement?",
+  "originalOptions": "A. Deploy PostgreSQL on Google Kubernetes Engine (GKE) with a StatefulSet configuration and PersistentVolumeClaims to handle synchronous replication.<br/>B. Implement a PostgreSQL database using Cloud Bigtable for storage with a replication policy across multiple regions.<br/>C. Set up PostgreSQL with synchronous replication between two Compute Engine instances in different zones and use a Regional Persistent Disk.<br/>D. Use Google Cloud SQL for PostgreSQL with a failover replica in a different zone and enable automatic failover.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "216",
+  "tip": "<p>When a question asks for high availability and to minimize operational burden, prefer a managed service. If the workload is PostgreSQL and the scope is a single region with cross zone replication, consider <i>Cloud SQL HA</i> first.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/high-availability",
+    "https://cloud.google.com/sql/docs/postgres/replication",
+    "https://cloud.google.com/compute/docs/disks/regional-persistent-disk",
+    "https://cloud.google.com/compute/docs/disks/multi-writer-disks",
+    "https://cloud.google.com/kubernetes-engine/docs/how-to/stateful-apps",
+    "https://cloud.google.com/spanner/docs/postgresql-interface"
+  ],
+  "url": "https://certificationation.com/questions/exam-database-on-compute-engine-which-exam-216.html",
+  "video_url": "https://certificationation.com/videos/exam-database-on-compute-engine-which-exam-216.html"
+}

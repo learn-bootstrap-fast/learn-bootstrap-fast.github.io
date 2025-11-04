@@ -1,0 +1,80 @@
+---
+title: "You are planning a disaster recovery strategy for aExam"
+description: "Video for you are planning a disaster recovery strategy for a Cloud Spanner instance that must be able to withstand the loss of an entire region. Which option"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are planning a disaster recovery strategy for a Cloud Spanner instance that must be able to withstand the loss of an entire region. Which option should you implement to meet this requirement?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "HarborPay runs its payments ledger on Cloud Spanner and leadership requires that the application continue to handle reads and writes if an entire Google Cloud region becomes unavailable. Which Spanner setup best satisfies this requirement?",
+  "options": [
+    {
+      "text": "Configure scheduled exports of the database to Cloud Storage",
+      "explanation": "This approach creates periodic data files in object storage that you can later import into a database after a failure.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use change streams with Dataflow to replicate updates to another region",
+      "explanation": "This streams mutations from Spanner to a pipeline that can write to a target system in a different region for downstream use cases.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a multi region Cloud Spanner instance with synchronous cross region replication and automatic failover",
+      "explanation": "This uses a multi region instance configuration that synchronously replicates data across regions and can fail over automatically during a regional outage.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Turn on regional backups for the database",
+      "explanation": "This enables periodic backups stored in a single region that you can restore to recover data after an incident.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Create a multi region Cloud Spanner instance with synchronous cross region replication and automatic failover</b>.</p><p>This configuration replicates data synchronously across regions and uses quorum commits so the database can keep serving strongly consistent reads and writes even if an entire region fails. Automatic leader re election and transparent failover keep the application available with zero RPO and very low RTO which meets the requirement to continue processing payments during a regional outage.</p><p><i>Configure scheduled exports of the database to Cloud Storage</i> does not provide high availability. It creates point in time copies for recovery or analytics and it does not enable the database to keep serving traffic during an outage.</p><p><i>Use change streams with Dataflow to replicate updates to another region</i> is asynchronous and intended for downstream processing or analytics. It does not provide strongly consistent cross region writes or automatic failover for the primary workload so it cannot ensure continuous reads and writes during a regional failure.</p><p><i>Turn on regional backups for the database</i> protects data for restore but backups do not keep the service online during a failure. They are stored in a region and require a restore operation which does not meet the requirement for immediate availability.</p>",
+  "batch_id": "67",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are planning a disaster recovery strategy for a Cloud Spanner instance that must be able to withstand the loss of an entire region. Which option should you implement to meet this requirement?",
+  "originalOptions": "A. Perform manual exports to Cloud Storage on a schedule.<br/>B. Enable regional backups in the console.<br/>C. Configure a multi-region instance with cross-region replication.<br/>D. Use the gcloud spanner databases export command.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "9",
+  "tip": "<p>When a question emphasizes <i>continuous reads and writes</i> during a <i>regional outage</i> look for built in <i>multi region</i> configurations with <i>synchronous</i> replication and <i>automatic failover</i> rather than exports, backups, or asynchronous pipelines.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/high-availability",
+    "https://cloud.google.com/spanner/docs/replication",
+    "https://cloud.google.com/spanner/docs/instances#configurations",
+    "https://cloud.google.com/spanner/docs/change-streams/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-strategy-for-a-cloud-spanner-exam-009.html",
+  "video_url": "https://certificationation.com/videos/exam-strategy-for-a-cloud-spanner-exam-009.html"
+}

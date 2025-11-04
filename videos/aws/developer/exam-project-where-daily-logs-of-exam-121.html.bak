@@ -1,0 +1,82 @@
+---
+title: "You are managing a data analytics project where dailyExam"
+description: "Video for you are managing a data analytics project where daily logs of around 10 TB are generated on-premises. This data needs to be transferred securely and"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are managing a data analytics project where daily logs of around 10 TB are generated on-premises. This data needs to be transferred securely and efficiently to Google Cloud Storage for further analysis in BigQuery. Your solution must ensure the transfer is completed in a timely manner with the least amount of manual intervention. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "BlueSky Streaming runs an on premises analytics platform that generates about 18 TB of log data each day, and you need to move this data to Cloud Storage on a daily schedule so analysts can query it in BigQuery with very little operational effort while maintaining security and timely delivery. What should you implement?",
+  "options": [
+    {
+      "text": "Schedule a recurring transfer using BigQuery Data Transfer Service from on premises to Cloud Storage",
+      "explanation": "BigQuery Data Transfer Service manages scheduled data loads into BigQuery from supported sources and Cloud Storage rather than from local file systems on premises.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Storage Transfer Service with on premises agents to schedule recurring transfers from the data center to Cloud Storage",
+      "explanation": "Storage Transfer Service can run agent based transfer jobs that securely and efficiently move files from on premises file systems to Cloud Storage on a defined schedule.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Create a cron job on a local server that runs gsutil each day to upload new files to Cloud Storage",
+      "explanation": "This approach depends on custom scripts and local scheduling to push data to Cloud Storage and it requires ongoing operational maintenance.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Send daily shipments using Transfer Appliance to ingest the new logs into Cloud Storage",
+      "explanation": "Transfer Appliance is intended for bulk offline migrations by shipping hardware rather than frequent scheduled daily transfers.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Use Storage Transfer Service with on premises agents to schedule recurring transfers from the data center to Cloud Storage</b>.</p><p>This service is designed for moving data from on premises file systems into Cloud Storage on a reliable schedule with minimal operations. It uses local agents that handle high throughput transfer, encryption in transit, retries, and verification so you meet the daily 18 TB volume with predictable and timely delivery. You can configure recurring jobs, manage access with IAM, and monitor progress in Cloud Console which keeps operational effort low while maintaining security.</p><p><i>Schedule a recurring transfer using BigQuery Data Transfer Service from on premises to Cloud Storage</i> is incorrect because BigQuery Data Transfer Service loads data into BigQuery or from supported sources and it does not move data from on premises into Cloud Storage. It also does not use on premises agents for direct ingestion from a data center.</p><p><i>Create a cron job on a local server that runs gsutil each day to upload new files to Cloud Storage</i> is incorrect because this increases operational burden for scripting, retries, parallelization, monitoring, and error handling at the very high daily volume. It can work for small workloads, yet it is not the most reliable or low effort choice for 18 TB per day.</p><p><i>Send daily shipments using Transfer Appliance to ingest the new logs into Cloud Storage</i> is incorrect because Transfer Appliance is intended for bulk offline migrations and large one time or infrequent transfers. Daily shipping would add latency and logistics that conflict with timely delivery and low operational effort.</p>",
+  "batch_id": "208",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "You are managing a data analytics project where daily logs of around 10 TB are generated on-premises. This data needs to be transferred securely and efficiently to Google Cloud Storage for further analysis in BigQuery. Your solution must ensure the transfer is completed in a timely manner with the least amount of manual intervention. What should you do?",
+  "originalOptions": "A. Set up a cron job on an on-premises server to perform daily uploads to Cloud Storage using gsutil.<br/>B. Utilize Transfer Appliance to send data to Google Cloud Storage daily.<br/>C. Employ Storage Transfer Service to schedule daily data synchronization from on-premises to Cloud Storage.<br/>D. Configure a Dataflow template to extract data from on-premises and load it into Cloud Storage every day.",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "121",
+  "tip": "<p>When the requirement is recurring transfer from on premises into Cloud Storage with low operations, look for a managed service with <i>agents</i> and a built in <i>schedule</i>. Prefer Storage Transfer Service over custom scripts or offline appliances.</p>",
+  "references": [
+    "https://cloud.google.com/storage-transfer/docs/on-premises-overview",
+    "https://cloud.google.com/storage-transfer/docs/agent",
+    "https://cloud.google.com/storage-transfer/docs/create-transfer",
+    "https://cloud.google.com/bigquery-transfer/docs/introduction",
+    "https://cloud.google.com/storage/docs/gsutil",
+    "https://cloud.google.com/transfer-appliance/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-project-where-daily-logs-of-exam-121.html",
+  "video_url": "https://certificationation.com/videos/exam-project-where-daily-logs-of-exam-121.html"
+}

@@ -1,0 +1,83 @@
+---
+title: "As a Database Engineer, you are asked to design aExam"
+description: "Video for as a Database Engineer, you are asked to design a solution to export data from a Cloud SQL instance to a BigQuery dataset. The export process should"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are asked to design a solution to export data from a Cloud SQL instance to a BigQuery dataset. The export process should be fault-tolerant and efficient. Additionally, the data in the Cloud SQL instance is stored in a normalized format, but it must be transformed into a denormalized format before being imported into BigQuery. Which of the following options best meets these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "MetroCycle Gear uses Cloud SQL for PostgreSQL to store customer, order, and shipment tables in a normalized schema. Leadership asks you to create a nightly job that exports about 30 million rows across these tables, denormalizes the data by joining and aggregating, and loads the result into a BigQuery dataset. The solution must be efficient, recover automatically from worker failures, and scale without you managing servers. What should you implement?",
+  "options": [
+    {
+      "text": "Use Datastream for Cloud SQL to capture changes and drive a Cloud Dataflow template that joins tables and writes the results into BigQuery",
+      "explanation": "This approach sets up change data capture from Cloud SQL and uses a managed Dataflow job to process streams and load BigQuery",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Schedule a Dataproc Spark job that reads from Cloud SQL, performs the denormalization, and saves the output to BigQuery",
+      "explanation": "This method relies on a managed cluster to run Spark transformations that read from Cloud SQL and write to BigQuery",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Build an Apache Beam pipeline on Cloud Dataflow that reads from Cloud SQL with JDBCIO, performs the joins to denormalize, and writes to BigQuery",
+      "explanation": "This uses a serverless Beam pipeline on Dataflow to read from Cloud SQL, apply transformations, and load BigQuery with built in resiliency and autoscaling",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Run gcloud sql export to Cloud Storage and then import into BigQuery with bq load",
+      "explanation": "This exports database files to Cloud Storage and loads them into BigQuery without applying transformation during the transfer",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Build an Apache Beam pipeline on Cloud Dataflow that reads from Cloud SQL with JDBCIO, performs the joins to denormalize, and writes to BigQuery</b>. This gives you a fully managed and scalable batch pipeline that can process tens of millions of rows, recover automatically from worker failures, and requires no server management.</p><p><b>Dataflow</b> provides built in autoscaling and resilient execution for batch pipelines so failed workers are retried and the job continues without manual intervention. Using Beam <b>JdbcIO</b> you can read from Cloud SQL with partitioned queries to parallelize extraction, then perform multi table joins and aggregations in the pipeline, and finally write the results efficiently to BigQuery with the native sink. This aligns directly with a nightly denormalization workflow and keeps the entire process in one robust pipeline.</p><p><i>Use Datastream for Cloud SQL to capture changes and drive a Cloud Dataflow template that joins tables and writes the results into BigQuery</i> targets change data capture for incremental replication rather than creating a consistent nightly snapshot across multiple tables with joins and aggregations. <i>Datastream</i> adds streaming CDC complexity that is unnecessary for this batch snapshot requirement.</p><p><i>Schedule a Dataproc Spark job that reads from Cloud SQL, performs the denormalization, and saves the output to BigQuery</i> typically involves provisioning and managing clusters, which does not meet the requirement to scale without managing servers. Handling failures and capacity on <i>Dataproc</i> is more operationally involved than using <b>Dataflow</b> for this batch job.</p><p><i>Run gcloud sql export to Cloud Storage and then import into BigQuery with bq load</i> only moves raw tables and does not perform the necessary joins and aggregations. You would still need an additional transformation step after loading, and the export and import path is less efficient and resilient than a single managed pipeline for 30 million rows.</p>",
+  "batch_id": "21",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are asked to design a solution to export data from a Cloud SQL instance to a BigQuery dataset. The export process should be fault-tolerant and efficient. Additionally, the data in the Cloud SQL instance is stored in a normalized format, but it must be transformed into a denormalized format before being imported into BigQuery. Which of the following options best meets these requirements?",
+  "originalOptions": "A. Use Cloud Pub/Sub to capture Cloud SQL updates, and use a Cloud Dataflow pipeline to process the updates, transform the data, and import it into BigQuery.<br/>B. Implement an Apache Beam pipeline with Cloud Dataflow to export data from Cloud SQL, transform it, and import it into BigQuery.<br/>C. Use a Cloud Function triggered by Cloud SQL updates to export data, transform it, and import it into BigQuery.<br/>D. Use the gcloud sql export command to export data to a Cloud Storage bucket, and then use the gcloud bigquery import command to import the data from the bucket.",
+  "domain": "Manage a solution that can span multiple database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "125",
+  "tip": "<p>When you see requirements for <i>automatic recovery</i> and <i>no server management</i> together with large batch joins, prefer <i>Cloud Dataflow</i> with JDBC reads and BigQuery writes over CDC or cluster based approaches.</p>",
+  "references": [
+    "https://cloud.google.com/dataflow/docs/concepts/reliability",
+    "https://cloud.google.com/dataflow/docs/guides/deploying-a-pipeline#autoscaling",
+    "https://cloud.google.com/dataflow/docs/guides/writing-to-bigquery",
+    "https://beam.apache.org/documentation/io/built-in/jdbc/",
+    "https://cloud.google.com/datastream/docs/overview",
+    "https://cloud.google.com/dataproc/docs/overview",
+    "https://cloud.google.com/sql/docs/postgres/import-export/exporting"
+  ],
+  "url": "https://certificationation.com/questions/exam-asked-to-design-a-solution-exam-125.html",
+  "video_url": "https://certificationation.com/videos/exam-asked-to-design-a-solution-exam-125.html"
+}

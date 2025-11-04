@@ -1,0 +1,62 @@
+---
+title: "You have created an AWS CodePipeline which builds andExam"
+description: "Video for you have created an AWS CodePipeline which builds and deploys an AWS Step Function. The AWS Step Function is used to implement a state machine to"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have created an AWS CodePipeline which builds and deploys an AWS Step Function. The AWS Step Function is used to implement a state machine to query many records in DynamoDB. Now your lead asks you to add another test stage in the existing pipeline to do testing on the Step Function after a new version is deployed. In the new stage, which of the following options is the easiest to trigger the Step Function for the test?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>CloudWatch Events rule as a pipeline action</b> is the most straightforward way to initiate the Step Function in a new test stage. AWS CodePipeline supports AWS Step Functions as a native action provider, letting you trigger executions with minimal setup. This integration simplifies the setup without extra code or third-party tools.</p><ul><li><i>Trigger the Step Function from a Lambda function</i>: This approach works, but it introduces unnecessary overhead, requiring you to maintain Lambda code just to start the state machine.</li><li><i>Set up a Jenkins job to activate the Step Function for the test phase</i>: Jenkins is a powerful CI/CD solution, but integrating it with CodePipeline just to trigger a Step Function is excessive and complicates your architecture.</li><li><i>Integrate an API Gateway endpoint to call StartExecution on the Step Function directly from the pipeline stage</i>: While technically possible, you'd need to secure the endpoint and create extra resources, adding complexity with minimal benefit in this scenario.</li></ul><p><b>Tip</b>: Whenever possible, rely on native integrations within CodePipeline such as Step Functions or CloudWatch Events for cleaner, more maintainable pipelines. Additional services should only be used when absolutely necessary.</p>",
+  "query": "<p>You have an AWS CodePipeline that manages deployment for a Step Functions state machine (which queries many DynamoDB records). Your team lead wants an additional testing stage in your pipeline, to run post-deployment tests on the Step Function. In this stage, which method would be the simplest way to trigger the Step Function for testing?</p>",
+  "original_oid": "6793da1e61969b416038a159",
+  "options": [
+    {
+      "correct": false,
+      "text": "Trigger the Step Function from a Lambda function during the test stage.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up a Jenkins job to activate the Step Function for the test phase.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Integrate an API Gateway endpoint to call StartExecution on the Step Function directly from the pipeline stage.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Configure a CloudWatch Events rule as an action in the pipeline stage and point it to the Step Function as its target.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question232",
+  "originalQuery": "You have created an AWS CodePipeline which builds and deploys an AWS Step Function.\nThe AWS Step Function is used to implement a state machine to query many records in DynamoDB.\nNow your lead asks you to add another test stage in the existing pipeline to do testing on the Step Function after a new version is deployed.\nIn the new stage, which of the following options is the easiest to trigger the Step Function for the test?",
+  "originalOptions": "A. Add a CloudWatch Event rule as the action provider in the new stage. Configure the Step Function as the target of the Event rule.|B. Use a Lambda function to trigger the Step Function to do the testing.|C. Add a Jenkins job to invoke the Step Function to perform any testing needed.|D. Configure an API endpoint in API Gateway that calls StartExecution to start the state machine of the Step Function.",
+  "video_url": "https://certificationation.com/videos/exam-which-builds-and-deploys-an-exam-028.html",
+  "url": "https://certificationation.com/questions/exam-which-builds-and-deploys-an-exam-028.html"
+}

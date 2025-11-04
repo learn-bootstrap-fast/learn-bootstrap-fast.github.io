@@ -1,0 +1,62 @@
+---
+title: "You are in charge of designing Cloudformation templatesExam"
+description: "Video for you are in charge of designing Cloudformation templates for your company. One of the key requirements is to ensure that if a Cloudformation stack is"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are in charge of designing Cloudformation templates for your company. One of the key requirements is to ensure that if a Cloudformation stack is deleted, a snapshot of the relational database is created which is part of the stack. How can you achieve this in the best possible way?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best method is to configure the <b>DeletionPolicy</b> attribute with the value 'Snapshot' on the database resource within your CloudFormation template. This ensures that, if the stack is deleted, AWS CloudFormation will automatically create a snapshot of the relational database before removing the resource. This approach is both reliable and automated, fulfilling the requirement with minimal manual intervention.</p><p>The other options are not recommended or do not meet the requirement as effectively:</p><ul><li><i>Manually create a new CloudFormation template exclusively for snapshotting the database</i>: This approach adds complexity and requires extra effort, and does not directly integrate the snapshot process into the stack's lifecycle.</li><li><i>Leverage the UpdatePolicy attribute in CloudFormation to initiate a database snapshot during stack changes or deletion</i>: The UpdatePolicy is primarily used for handling updates, not deletions, and is generally applicable to resources like Auto Scaling Groups, not RDS databases.</li><li><i>Take a manual snapshot of the database before deleting the stack to ensure it is retained post-deletion</i>: This method is manual and error-prone, lacking the automation that CloudFormation's DeletionPolicy provides.</li></ul><p><strong>Tip:</strong> Always use the DeletionPolicy for resources like RDS or EBS volumes when you want to prevent accidental data loss on stack deletion.</p>",
+  "query": "<p>You are tasked with building AWS CloudFormation templates for your organization. An important requirement is that, if someone deletes a CloudFormation stack, an automatic snapshot must be taken of the relational database associated with the stack. What is the most efficient way to fulfill this requirement?</p>",
+  "original_oid": "6793da1061969b416038a13c",
+  "options": [
+    {
+      "correct": true,
+      "text": "Set the DeletionPolicy attribute for the database resource in the CloudFormation template to generate a snapshot upon stack deletion.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Manually create a new CloudFormation template exclusively for snapshotting the database.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Leverage the UpdatePolicy attribute in CloudFormation to initiate a database snapshot during stack changes or deletion.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Take a manual snapshot of the database before deleting the stack to ensure it is retained post-deletion.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question202",
+  "originalQuery": "You are in charge of designing Cloudformation templates for your company.\nOne of the key requirements is to ensure that if a Cloudformation stack is deleted, a snapshot of the relational database is created which is part of the stack.\nHow can you achieve this in the best possible way?",
+  "originalOptions": "A. Create a snapshot of the relational database beforehand so that when the cloudformation stack is deleted, the snapshot of the database will be present.|B. Use the Update policy of the cloudformation template to ensure a snapshot is created of the relational database.|C. Use the Deletion policy of the cloudformation template to ensure a snapshot is created of the relational database.|D. Create a new cloudformation template to create a snapshot of the relational database.",
+  "video_url": "https://certificationation.com/videos/exam-cloudformation-templates-for-your-company-exam-043.html",
+  "url": "https://certificationation.com/questions/exam-cloudformation-templates-for-your-company-exam-043.html"
+}

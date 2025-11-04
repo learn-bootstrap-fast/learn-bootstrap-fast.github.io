@@ -1,0 +1,79 @@
+---
+title: "A travel agency uses a Cloud Spanner database to storeExam"
+description: "Video for a travel agency uses a Cloud Spanner database to store bookings in a bookings table with columns userId , tripId , and destination . The agency wants"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A travel agency uses a Cloud Spanner database to store bookings in a bookings table with columns userId , tripId , and destination . The agency wants to frequently query trips for a specific user traveling to a specific destination. You need to write a parameterized query to optimize performance. Which query should you use?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A language learning startup stores enrollment data in Cloud Spanner in a table named enrollments with columns learner_id, course_id, and locale. The team needs to run frequent lookups for the courses that a specific learner is taking in a specific locale and they want the query to be parameterized for best performance. Which SQL should you use?",
+  "options": [
+    {
+      "text": "SELECT course_id FROM enrollments WHERE learner_id LIKE @learnerId AND locale=@locale",
+      "explanation": "This statement uses a pattern match on the learner identifier and an equality predicate on the locale.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "SELECT course_id FROM enrollments WHERE learner_id=@learnerId AND locale=@locale",
+      "explanation": "This statement applies parameterized equality filters on both the learner identifier and locale.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "SELECT course_id FROM enrollments WHERE learner_id=@learnerId AND locale=&apos;en_US&apos;",
+      "explanation": "This statement mixes a parameter for the learner identifier with a fixed literal value for the locale.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "SELECT course_id FROM enrollments WHERE learner_id=@learnerId AND locale LIKE @locale",
+      "explanation": "This statement uses an equality filter for the learner identifier and a pattern match for the locale.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>SELECT course_id FROM enrollments WHERE learner_id=@learnerId AND locale=@locale</b>.</p><p>This query meets the requirement to parameterize both the learner and the locale so it can reuse query plans and avoid recompilation. It also uses equality filters which align with exact lookups and allow the optimizer to use appropriate indexing strategies on learner_id and locale for fast retrieval.</p><p><i>SELECT course_id FROM enrollments WHERE learner_id LIKE @learnerId AND locale=@locale</i> is incorrect because LIKE is for pattern matching rather than exact equality. It can lead to less efficient execution and unexpected matches and it is unnecessary when you need an exact learner identifier.</p><p><i>SELECT course_id FROM enrollments WHERE learner_id=@learnerId AND locale='en_US'</i> is incorrect because it hardcodes the locale and does not parameterize it. This does not satisfy the requirement for a parameterized query and it reduces flexibility and plan reuse across different locales.</p><p><i>SELECT course_id FROM enrollments WHERE learner_id=@learnerId AND locale LIKE @locale</i> is incorrect for the same reason as the earlier LIKE case. You need an exact match on locale and LIKE introduces pattern matching behavior and can hinder optimal use of indexes.</p>",
+  "batch_id": "222",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "A travel agency uses a Cloud Spanner database to store bookings in a bookings table with columns userId , tripId , and destination . The agency wants to frequently query trips for a specific user traveling to a specific destination. You need to write a parameterized query to optimize performance. Which query should you use?",
+  "originalOptions": "A. SELECT tripId FROM bookings WHERE userId=@userId AND destination LIKE @destination<br/>B. SELECT tripId FROM bookings WHERE userId LIKE @userId AND destination=@destination<br/>C. SELECT tripId FROM bookings WHERE userId=@userId AND destination='Hawaii'<br/>D. SELECT tripId FROM bookings WHERE userId=@userId AND destination=@destination",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "150",
+  "tip": "<p>When the requirement is an exact lookup use <i>equality</i> predicates on the filter columns and pass values as <i>parameters</i> with @name. Avoid using <i>LIKE</i> unless pattern matching is truly needed.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/execute-sql#use_a_parameterized_query",
+    "https://cloud.google.com/spanner/docs/secondary-indexes",
+    "https://cloud.google.com/spanner/docs/reference/standard-sql/functions-and-operators"
+  ],
+  "url": "https://certificationation.com/questions/exam-database-to-store-bookings-in-exam-150.html",
+  "video_url": "https://certificationation.com/videos/exam-database-to-store-bookings-in-exam-150.html"
+}

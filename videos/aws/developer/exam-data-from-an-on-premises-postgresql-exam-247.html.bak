@@ -1,0 +1,88 @@
+---
+title: "To facilitate the migration of data from an on-premisesExam"
+description: "Video for to facilitate the migration of data from an on-premises PostgreSQL instance to Cloud SQL, your intention is to utilize the Database Migration Service."
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "To facilitate the migration of data from an on-premises PostgreSQL instance to Cloud SQL, your intention is to utilize the Database Migration Service. Your task now involves determining the necessary prerequisites for establishing and automating this process. What should you do? (select 2)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Artemis Outfitters plans to move a self hosted PostgreSQL 12 database of roughly 7 TB from its data center to Cloud SQL for PostgreSQL using Database Migration Service so that the migration is automated with a cutover under 20 minutes. Before creating the continuous migration job you want to confirm the essential prerequisites on the source system. What should you prepare?",
+  "options": [
+    {
+      "text": "Disable all foreign key constraints on the source PostgreSQL database",
+      "explanation": "This option suggests removing referential integrity enforcement to reduce potential conflicts during data movement.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Shut down the source database before you run the Database Migration Service job",
+      "explanation": "This option proposes stopping the database instance so that the data remains static while the migration is running.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Make sure every table in the source schema has a primary key",
+      "explanation": "This option requires that each table include a unique key so that row level changes can be reliably tracked.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use Datastream instead of Database Migration Service for this migration",
+      "explanation": "This option recommends selecting a different Google Cloud service to replicate data from the source to the destination.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Install and configure the pglogical extension on the source PostgreSQL instance",
+      "explanation": "This option directs you to add and set up a logical replication extension on the source so that streaming of changes is possible.",
+      "correct": true,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct options are <b>Make sure every table in the source schema has a primary key</b> and <b>Install and configure the pglogical extension on the source PostgreSQL instance</b>.</p><p>Database Migration Service performs continuous replication using logical decoding which requires a stable row identifier. Ensuring that all tables have <b>primary keys</b> allows DMS to track and apply row level changes accurately and to complete a short cutover without reprocessing large amounts of data or risking conflicts.</p><p>For a self managed PostgreSQL 12 source, DMS relies on the <b>pglogical</b> extension to stream changes to Cloud SQL for PostgreSQL. You must have this extension installed and configured on the source and you must also enable logical replication settings such as wal_level logical and appropriate values for max_replication_slots and max_wal_senders so that the migration job can create and use a replication slot.</p><p><i>Disable all foreign key constraints on the source PostgreSQL database</i> is unnecessary and would weaken referential integrity. DMS supports online replication while maintaining constraints, so disabling them does not help and can introduce inconsistencies.</p><p><i>Shut down the source database before you run the Database Migration Service job</i> is incorrect because continuous migrations are designed to be online. The source stays available for reads and writes until the brief cutover window.</p><p><i>Use Datastream instead of Database Migration Service for this migration</i> is not appropriate because Datastream is a CDC service aimed at streaming changes into services such as BigQuery or Cloud Storage, while DMS is the recommended tool for online migrations into Cloud SQL for PostgreSQL with a managed cutover.</p>",
+  "batch_id": "336",
+  "answerCode": "3,5",
+  "type": "multi-select",
+  "originalQuery": "To facilitate the migration of data from an on-premises PostgreSQL instance to Cloud SQL, your intention is to utilize the Database Migration Service. Your task now involves determining the necessary prerequisites for establishing and automating this process. What should you do? (select 2)",
+  "originalOptions": "A. Shut down the database before the Data Migration Service task is started.<br/>B. Disable all foreign key constraints on the source PostgreSQL database.<br/>C. Ensure that all PostgreSQL tables have a primary key.<br/>D. Ensure that pglogical is installed on the source PostgreSQL database.<br/>E. Drop or disable all users except database administration users.",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "247",
+  "tip": "<p>When a question targets a <i>continuous</i> migration into Cloud SQL for PostgreSQL, look for prerequisites that enable logical replication such as <i>pglogical</i> on the source and <i>primary keys</i> on every table, and eliminate options that imply downtime or weakened integrity.</p>",
+  "references": [
+    "https://cloud.google.com/database-migration/docs/postgresql/overview",
+    "https://cloud.google.com/database-migration/docs/postgresql/configure-source-postgresql",
+    "https://cloud.google.com/database-migration/docs/postgresql/limitations",
+    "https://cloud.google.com/database-migration/docs/postgresql/create-continuous",
+    "https://cloud.google.com/datastream/docs/overview",
+    "https://cloud.google.com/datastream/docs/concepts/destinations"
+  ],
+  "url": "https://certificationation.com/questions/exam-data-from-an-on-premises-postgresql-exam-247.html",
+  "video_url": "https://certificationation.com/videos/exam-data-from-an-on-premises-postgresql-exam-247.html"
+}

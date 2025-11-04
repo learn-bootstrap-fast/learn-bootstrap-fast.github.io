@@ -1,0 +1,82 @@
+---
+title: "As a Database Engineer, you are tasked with configuringExam"
+description: "Video for as a Database Engineer, you are tasked with configuring the export and import of data for a Cloud SQL instance. You want to ensure that the data is"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are tasked with configuring the export and import of data for a Cloud SQL instance. You want to ensure that the data is exported in a format that can be easily imported back into the Cloud SQL instance. Which of the following commands would you use to correctly configure the export and import processes?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "At Nimbus Retail you manage a Cloud SQL for MySQL instance called reporting-sql-01. The team needs to export a full database to Cloud Storage and later import it back into the same instance using gcloud without doing any format conversion. Which command should you run to create the export so that it can be imported back into Cloud SQL?",
+  "options": [
+    {
+      "text": "gcloud sql export csv reporting-sql-01 gs://example-bucket-42/retail_backup.sql.gz --database=analyticsdb --gzip",
+      "explanation": "This issues a CSV export to Cloud Storage and writes a compressed file at the specified path",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "gsutil cp gs://example-bucket-42/retail_backup.sql.gz | gcloud sql import sql reporting-sql-01 --database=analyticsdb --gzip",
+      "explanation": "This attempts to pipe an object from Cloud Storage into a Cloud SQL import by combining two commands in a shell",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "gcloud sql export sql reporting-sql-01 gs://example-bucket-42/retail_backup.sql.gz --database=analyticsdb --gzip",
+      "explanation": "This runs a Cloud SQL SQL export and writes a gzip compressed file to a Cloud Storage location",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "gcloud sql import csv reporting-sql-01 gs://example-bucket-42/export.csv --database=analyticsdb --gzip",
+      "explanation": "This performs an import of a CSV file into the specified Cloud SQL database with compression enabled",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>gcloud sql export sql reporting-sql-01 gs://example-bucket-42/retail_backup.sql.gz --database=analyticsdb --gzip</b>.</p><p>This command creates a SQL dump that includes schema and data which is the format that Cloud SQL for MySQL expects for a straightforward import using the SQL import command. It writes directly to Cloud Storage, targets the specified database, and compresses the dump which can later be imported back without any conversion.</p><p><i>gcloud sql export csv reporting-sql-01 gs://example-bucket-42/retail_backup.sql.gz --database=analyticsdb --gzip</i> is incorrect because CSV exports table data without schema and do not produce a SQL dump. It also mismatches the file extension which suggests SQL rather than CSV, and CSV would not allow a full database restore without additional steps.</p><p><i>gsutil cp gs://example-bucket-42/retail_backup.sql.gz | gcloud sql import sql reporting-sql-01 --database=analyticsdb --gzip</i> is incorrect because it does not perform any export and the import command expects a Cloud Storage URI argument rather than piped input. The gsutil command is also incomplete since it lacks a destination.</p><p><i>gcloud sql import csv reporting-sql-01 gs://example-bucket-42/export.csv --database=analyticsdb --gzip</i> is incorrect because it is an import command and it uses CSV which cannot reconstruct a full database with schema. It does not address the requirement to create an export that can be imported back without conversion.</p>",
+  "batch_id": "201",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are tasked with configuring the export and import of data for a Cloud SQL instance. You want to ensure that the data is exported in a format that can be easily imported back into the Cloud SQL instance. Which of the following commands would you use to correctly configure the export and import processes?",
+  "originalOptions": "A. gcloud sql import csv my - instance gs : //my-bucket/export.csv --database=my-database --gzip<br/>B. gcloud sql export csv my - instance gs : //my-bucket/export.sql.gz --database=my-database --gzip<br/>C. gcloud sql export sql my - instance gs : //my-bucket/export.sql.gz --database=my-database --gzip<br/>D. gsutil cp gs : //my-bucket/export.sql.gz | gcloud sql import sql my-instance --database=my-database --gzip",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "182",
+  "tip": "<p>When a question asks for an export that can be imported back without <i>format conversion</i> for MySQL, look for the <i>SQL dump</i> export. CSV is for table data only and lacks schema, while <i>gcloud sql export sql</i> paired with Cloud Storage is designed for round‑trip export and import.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/export-import/exporting",
+    "https://cloud.google.com/sql/docs/mysql/import-export/importing",
+    "https://cloud.google.com/sdk/gcloud/reference/sql/export/sql",
+    "https://cloud.google.com/sdk/gcloud/reference/sql/import/sql",
+    "https://cloud.google.com/sdk/gcloud/reference/sql/export/csv",
+    "https://cloud.google.com/sdk/gcloud/reference/sql/import/csv"
+  ],
+  "url": "https://certificationation.com/questions/exam-tasked-with-configuring-the-export-exam-182.html",
+  "video_url": "https://certificationation.com/videos/exam-tasked-with-configuring-the-export-exam-182.html"
+}

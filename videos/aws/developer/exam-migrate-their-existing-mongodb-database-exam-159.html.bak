@@ -1,0 +1,81 @@
+---
+title: "A global retail company is planning to migrate theirExam"
+description: "Video for a global retail company is planning to migrate their existing MongoDB database from an on-premises data center to Google Cloud. They require a fully"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A global retail company is planning to migrate their existing MongoDB database from an on-premises data center to Google Cloud. They require a fully managed database service that can support MongoDB workloads, and a migration process with minimal downtime that can handle schema changes during migration. They also want the ability to perform data validation and rollback in case of any issues. Which combination of the following Google Cloud database migration tools and managed database services is most appropriate for this scenario?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A multinational subscription media company plans to move its on-premises MongoDB cluster to Google Cloud and needs a fully managed database that supports MongoDB workloads. The team wants a migration approach that limits cutover downtime to under 15 minutes and can keep up with ongoing schema changes during the move. They also require an option to validate the migrated data and quickly roll back if problems appear after cutover. Which pairing of migration capability and managed service on Google Cloud best meets these needs?",
+  "options": [
+    {
+      "text": "Cloud Dataflow with MongoDB connector and Firestore in Native mode",
+      "explanation": "This approach uses a streaming or batch pipeline to read from MongoDB and write documents into Firestore while handling transformations and scheduling within Dataflow.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Database Migration Service and Cloud SQL for PostgreSQL with JSONB",
+      "explanation": "This combination moves relational workloads into a managed PostgreSQL instance on Google Cloud while storing document style data using the JSONB type.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "MongoDB Atlas Live Migration and MongoDB Atlas on Google Cloud",
+      "explanation": "This pairing uses the Atlas managed service running on Google Cloud and its live migration capability to sync data from a source MongoDB cluster with controlled cutover and verification steps.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Database Migration Service and Cloud Bigtable",
+      "explanation": "This uses Google Cloud&apos;s migration service together with a wide column NoSQL store designed for very large scale workloads and low latency access patterns.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct pairing is <b>MongoDB Atlas Live Migration and MongoDB Atlas on Google Cloud</b>.</p><p><b>MongoDB Atlas</b> on Google Cloud is a fully managed service that preserves MongoDB compatibility so applications do not require refactoring. <b>Live Migration</b> performs an initial sync and then continuously replicates changes from the source which allows you to schedule a brief cutover that can be kept under 15 minutes. Because <b>MongoDB Atlas</b> uses the same flexible document model as the source it can handle ongoing schema changes during the migration. <b>Live Migration</b> supports verification steps to check data consistency and since the source cluster remains intact you can quickly roll back by redirecting traffic if issues arise after cutover.</p><p><i>Cloud Dataflow with MongoDB connector and Firestore in Native mode</i> is not suitable because Firestore is a different database with a different API and query model and it does not provide a managed path for ongoing change replication with near zero downtime or an easy rollback mechanism.</p><p><i>Database Migration Service and Cloud SQL for PostgreSQL with JSONB</i> would require application changes because Cloud SQL for PostgreSQL does not support the MongoDB wire protocol and Google Cloud Database Migration Service does not migrate from MongoDB to Cloud SQL. This pairing does not meet the low downtime or validation and rollback needs.</p><p><i>Database Migration Service and Cloud Bigtable</i> is not appropriate because Bigtable is a wide column store rather than a document database and Database Migration Service does not migrate to Bigtable. This option would not preserve MongoDB compatibility or provide the requested migration capabilities.</p>",
+  "batch_id": "75",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "A global retail company is planning to migrate their existing MongoDB database from an on-premises data center to Google Cloud. They require a fully managed database service that can support MongoDB workloads, and a migration process with minimal downtime that can handle schema changes during migration. They also want the ability to perform data validation and rollback in case of any issues. Which combination of the following Google Cloud database migration tools and managed database services is most appropriate for this scenario?",
+  "originalOptions": "A. Database Migration Service (DMS) and Cloud SQL for MongoDB<br/>B. Cloud Dataflow and Firestore<br/>C. Database Migration Service (DMS) and Cloud Firestore with MongoDB Atlas<br/>D. Database Migration Service (DMS) and Cloud Bigtable",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "159",
+  "tip": "<p>Start by confirming <i>workload compatibility</i> so you choose a destination that natively supports the source and then look for migration tooling with <i>continuous replication</i> and change capture to minimize downtime and enable validation and rollback.</p>",
+  "references": [
+    "https://www.mongodb.com/docs/atlas/migrate-live/",
+    "https://www.mongodb.com/docs/atlas/tutorial/deploy-on-gcp/",
+    "https://cloud.google.com/database-migration/docs/overview",
+    "https://cloud.google.com/firestore/docs/overview",
+    "https://cloud.google.com/bigtable/docs/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-migrate-their-existing-mongodb-database-exam-159.html",
+  "video_url": "https://certificationation.com/videos/exam-migrate-their-existing-mongodb-database-exam-159.html"
+}

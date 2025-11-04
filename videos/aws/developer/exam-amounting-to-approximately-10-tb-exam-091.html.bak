@@ -1,0 +1,81 @@
+---
+title: "You have a large number of files amounting toExam"
+description: "Video for you have a large number of files amounting to approximately 10 TB in a Microsoft Azure Blob Storage container that need to be moved to Google Cloud"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have a large number of files amounting to approximately 10 TB in a Microsoft Azure Blob Storage container that need to be moved to Google Cloud Storage for processing and analysis. This transfer will occur monthly. You are looking for the most efficient and least labor-intensive method to accomplish this. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Rivertown Media stores about 25 TB of data files in an Azure Blob Storage container and needs to copy them into Google Cloud Storage for analytics and archival, and the transfer must run on a recurring schedule every 30 days with minimal operational overhead. Which approach should you choose?",
+  "options": [
+    {
+      "text": "Set up a Cloud VPN between Azure and Google Cloud and run an rsync script from a Compute Engine VM on a monthly cron schedule",
+      "explanation": "This uses a site to site tunnel and a custom VM script to push files on a schedule.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use BigQuery Data Transfer Service to load blobs into BigQuery and then export the data to Cloud Storage each cycle",
+      "explanation": "This moves data into BigQuery first and then writes results out to Cloud Storage on a recurring basis.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create a recurring Storage Transfer Service job that pulls from Azure Blob Storage into a Cloud Storage bucket every 30 days",
+      "explanation": "This managed service can schedule and run transfers from external cloud object storage to Cloud Storage.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Build a pipeline in Azure Data Factory that copies from Azure Blob Storage directly to Google Cloud Storage",
+      "explanation": "This uses an Azure managed integration tool to orchestrate movement of objects into Cloud Storage.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Create a recurring Storage Transfer Service job that pulls from Azure Blob Storage into a Cloud Storage bucket every 30 days</b>.</p><p><b>Storage Transfer Service</b> natively supports Azure Blob Storage as a source and Cloud Storage as a destination and it lets you configure a recurring schedule. It is fully managed which keeps operational overhead low. It also handles large data volumes reliably with built in retries, parallelization, integrity checks, and the ability to run incremental transfers so it suits a 25 TB dataset that must be moved every month.</p><p><i>Set up a Cloud VPN between Azure and Google Cloud and run an rsync script from a Compute Engine VM on a monthly cron schedule</i> requires you to manage networking, virtual machines, scripts, monitoring, and error handling. This increases operational burden and risk compared with a managed transfer service.</p><p><i>Use BigQuery Data Transfer Service to load blobs into BigQuery and then export the data to Cloud Storage each cycle</i> misuses a service that is designed to load data into BigQuery from supported sources. It adds unnecessary steps and cost by landing data in BigQuery only to export it back out and it is not intended for general cross cloud file transfers into Cloud Storage.</p><p><i>Build a pipeline in Azure Data Factory that copies from Azure Blob Storage directly to Google Cloud Storage</i> can work but it shifts control and monitoring to Azure and increases cross platform complexity. The question asks for minimal operational overhead on a recurring schedule which <b>Storage Transfer Service</b> provides natively within Google Cloud.</p>",
+  "batch_id": "353",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You have a large number of files amounting to approximately 10 TB in a Microsoft Azure Blob Storage container that need to be moved to Google Cloud Storage for processing and analysis. This transfer will occur monthly. You are looking for the most efficient and least labor-intensive method to accomplish this. What should you do?",
+  "originalOptions": "A. Establish a VPN between Azure and Google Cloud, and use rsync in a Compute Engine cron job to transfer data monthly.<br/>B. Use AzCopy to transfer data from Azure Blob Storage to a Compute Engine VM, then to Cloud Storage.<br/>C. Set up a Storage Transfer Service job to handle the data migration from Azure Blob Storage to Google Cloud Storage.<br/>D. Configure Azure Data Factory to orchestrate the transfer from Azure Blob Storage directly to Google Cloud Storage.",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "91",
+  "tip": "<p>When you see <i>recurring schedule</i> and <i>minimal operational overhead</i> for moving objects into Cloud Storage, favor the managed transfer service that supports the source system natively rather than building custom networks, scripts, or detours through other analytics products.</p>",
+  "references": [
+    "https://cloud.google.com/storage-transfer/docs/overview",
+    "https://cloud.google.com/storage-transfer/docs",
+    "https://cloud.google.com/bigquery-transfer/docs/introduction",
+    "https://cloud.google.com/vpn/docs/concepts/overview",
+    "https://learn.microsoft.com/azure/data-factory/connector-google-cloud-storage"
+  ],
+  "url": "https://certificationation.com/questions/exam-amounting-to-approximately-10-tb-exam-091.html",
+  "video_url": "https://certificationation.com/videos/exam-amounting-to-approximately-10-tb-exam-091.html"
+}

@@ -1,0 +1,83 @@
+---
+title: "As a Database Engineer, you are tasked with creating aExam"
+description: "Video for as a Database Engineer, you are tasked with creating a disaster recovery (DR) plan for a large e-commerce company. The company's infrastructure"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are tasked with creating a disaster recovery (DR) plan for a large e-commerce company. The company's infrastructure includes a managed database service hosted on Google Cloud Platform (GCP) and an on-premises bare metal environment for specific workloads. The DR plan must ensure data consistency, minimal data loss, and rapid recovery. Which combination of solutions would best meet these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the Cloud Database Engineer for AlpineCart, a nationwide grocery delivery startup, and you must design a disaster recovery plan for production systems. The platform uses a managed database service in Google Cloud and also runs latency sensitive services on an on-premises bare metal stack in a primary data center. The plan must deliver strong transactional consistency, an RPO that is very close to zero, and a fast failover so that order processing can resume quickly. Which combination of Google Cloud solutions should you implement to meet these goals?",
+  "options": [
+    {
+      "text": "Cloud Spanner with a multi-region configuration and Google Anthos Bare Metal for replicating the on-premises estate",
+      "explanation": "This pairs a globally distributed relational database with an on-premises Kubernetes platform that runs on customer hardware to manage containerized workloads.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "AlloyDB for PostgreSQL with cross-region read replicas and Cloud VMware Engine to mirror the bare metal apps",
+      "explanation": "This combines a high performance PostgreSQL compatible service that supports read replicas across regions with a managed VMware platform hosted in Google Cloud for running virtual machines.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud Spanner in a multi-region topology together with Google Bare Metal Solution to mirror the on-premises environment",
+      "explanation": "This uses a strongly consistent globally distributed relational database and a hosted bare metal footprint in Google Cloud that can recreate the physical environment for rapid recovery.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Cloud Bigtable with multi-cluster routing and Google Bare Metal Solution for the on-premises footprint",
+      "explanation": "This joins a wide column NoSQL service capable of multi cluster routing with a dedicated bare metal platform in Google Cloud for specialized workloads.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Cloud Spanner in a multi region topology together with Google Bare Metal Solution to mirror the on premises environment</b>. This pairing delivers strongly consistent transactions with synchronous replication and a near zero RPO for the database, and it provides a like for like bare metal landing zone in Google Cloud so failover can occur quickly and order processing can resume.</p><p>In a multi region configuration, <b>Cloud Spanner</b> replicates writes synchronously across regions using quorum based consensus which provides strict consistency and an RPO of zero for regional or zonal failures. It also performs automatic leader election and failover, so recovery is fast and operationally simple.</p><p><b>Google Bare Metal Solution</b> offers dedicated physical servers in Google data centers with low latency connectivity, which allows you to mirror the on premises stack while maintaining performance characteristics. With appropriate network and storage replication this environment can be promoted quickly during a site outage, which satisfies the fast failover requirement for latency sensitive services.</p><p><i>Cloud Spanner with a multi region configuration and Google Anthos Bare Metal for replicating the on premises estate</i> is not suitable because Anthos bare metal is a Kubernetes platform for running containerized workloads on your own hardware and it does not provide a managed disaster recovery target in Google Cloud that mirrors a non containerized bare metal estate.</p><p><i>AlloyDB for PostgreSQL with cross region read replicas and Cloud VMware Engine to mirror the bare metal apps</i> does not meet the goals because AlloyDB cross region replicas use asynchronous replication which results in an RPO greater than zero and requires promotion. The VMware service mirrors VMware based workloads rather than general bare metal services and would likely require re platforming.</p><p><i>Cloud Bigtable with multi cluster routing and Google Bare Metal Solution for the on premises footprint</i> cannot satisfy the consistency requirement because Bigtable does not provide transactional semantics and multi cluster replication is eventually consistent. This combination cannot guarantee strongly consistent writes or an RPO that is very close to zero.</p>",
+  "batch_id": "158",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are tasked with creating a disaster recovery (DR) plan for a large e-commerce company. The company's infrastructure includes a managed database service hosted on Google Cloud Platform (GCP) and an on-premises bare metal environment for specific workloads. The DR plan must ensure data consistency, minimal data loss, and rapid recovery. Which combination of solutions would best meet these requirements?",
+  "originalOptions": "A. Cloud Spanner with multi-region configuration and Google Anthos Bare Metal for on-premises environment replication.<br/>B. Cloud Spanner with multi-region configuration and Google Bare Metal Solution for on-premises environment replication.<br/>C. Cloud SQL for PostgreSQL with synchronous replication to another region and Google Anthos Bare Metal for on-premises environment replication.<br/>D. Cloud Bigtable with multi-cluster routing and Google Bare Metal Solution for on-premises environment replication.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "293",
+  "tip": "<p>When the question stresses <i>RPO near zero</i> and <i>strong transactional consistency</i> and fast failover, favor solutions that use synchronous replication and multi region configurations, and verify the application tier can run on a matching platform in Google Cloud.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/replication",
+    "https://cloud.google.com/spanner/docs/instance-configurations#regional-multi-region-configurations",
+    "https://cloud.google.com/bare-metal/docs/overview",
+    "https://cloud.google.com/alloydb/docs/high-availability/cross-region-replicas",
+    "https://cloud.google.com/bigtable/docs/replication-overview",
+    "https://cloud.google.com/anthos/clusters/docs/bare-metal/latest/overview",
+    "https://cloud.google.com/vmware-engine/docs/concepts/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-tasked-with-creating-a-disaster-exam-293.html",
+  "video_url": "https://certificationation.com/videos/exam-tasked-with-creating-a-disaster-exam-293.html"
+}

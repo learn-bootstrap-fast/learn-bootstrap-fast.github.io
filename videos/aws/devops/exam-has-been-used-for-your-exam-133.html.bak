@@ -1,0 +1,67 @@
+---
+title: "Elastic Beanstalk environment has been used for yourExam"
+description: "Video for elastic Beanstalk environment has been used for your team recently for a feature development based on Java. When the team firstly created the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Elastic Beanstalk environment has been used for your team recently for a feature development based on Java. When the team firstly created the environment, they were using a single instance as they did not consider the capacity. However, after a while you find that the application needs to consume more memory and CPU than being expected sometimes during traffic spike. As a result, the application has some performance issues. Your AWS solution architect suggests you use multiple instances rather than one. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>correct answer is option C</b>: Upgrading your environment to a load-balanced, autoscaling setup and specifying a scaling policy (average CPU utilization >85% for 5 minutes) will enable Elastic Beanstalk to add or remove EC2 instances as traffic fluctuates, preventing resource exhaustion.</p><p><u>Why other options are incorrect:</u></p><ul><li><i>Switch the environment’s configuration to a highly available mode by setting up autoscaling with multiple EC2 instances based on memory consumption</i>: While moving to a highly available environment and using autoscaling is beneficial, Elastic Beanstalk natively supports autoscaling triggers based on CPU metrics, not Memory utilization, and configuring memory-based scaling requires additional steps outside the standard console interface.</li><li><i>Terminate the current environment and create a new one configured for multiple instances, since the existing setup can't be changed to support autoscaling</i>: This is wrong because Elastic Beanstalk allows you to convert a single-instance environment to a load-balanced, autoscaling one without recreating the environment, minimizing downtime and manual effort.</li><li><i>Edit the capacity settings to a load-balanced environment and enable all availability zones. Then add a scaling event based on the median CPU utilization exceeding 85% for 1 minute</i>: Although this option correctly implements load balancing and AZ selection, using <b>median</b> CPU utilization and such a short timespan (1 minute) are not best practices. Average CPU utilization for a longer evaluation period is preferred for stable, effective scaling.</li><li><i>Change the EC2 instance type to t2.large to meet your higher CPU and memory demands</i>: Upgrading the instance type may temporarily help but doesn't address the root need for scaling out. Load balancing and autoscaling are necessary for high availability and performance under varying loads.</li></ul><p><u>Tip:</u> In Elastic Beanstalk, always look to leverage autoscaling and load balancing for workloads that may experience fluctuating or unpredictable traffic for best resilience and capacity management.</p>",
+  "query": "<p>Your team&#39;s Java application runs in an AWS Elastic Beanstalk single-instance environment, but unexpected spikes in memory and CPU are now causing performance bottlenecks. To address these issues, your AWS solutions architect recommends transitioning to a multi-instance setup. Which course of action should you take to scale your environment correctly?</p>",
+  "original_oid": "6793da7c61969b416038a21a",
+  "options": [
+    {
+      "correct": false,
+      "text": "Switch the environment’s configuration to a highly available mode by setting up autoscaling with multiple EC2 instances based on memory consumption.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Terminate the current environment and create a new one configured for multiple instances, since the existing setup can't be changed to support autoscaling.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Update the capacity configuration to set the environment as load-balanced with autoscaling, select all availability zones, and create a scaling rule that triggers if the average CPU utilization surpasses 85% for at least 5 minutes.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Edit the capacity settings to a load-balanced environment and enable all availability zones. Then add a scaling event based on the median CPU utilization exceeding 85% for 1 minute.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Change the EC2 instance type to t2.large to meet your higher CPU and memory demands.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question426",
+  "originalQuery": "Elastic Beanstalk environment has been used for your team recently for a feature development based on Java.\nWhen the team firstly created the environment, they were using a single instance as they did not consider the capacity.\nHowever, after a while you find that the application needs to consume more memory and CPU than being expected sometimes during traffic spike.\nAs a result, the application has some performance issues.\nYour AWS solution architect suggests you use multiple instances rather than one.\nWhat should you do?",
+  "originalOptions": "A. Change your environment type to a high available environment by editing your environment`s configuration. In the Elastic Beanstalk console, select the environment, add multiple instances with autoscaling based on MemoryUtilization.|B. Destroy the environment. Create a new environment type that has multiple instances as your old environment cannot be modified to a multiple instances environment.|C. Modify the environment`s capacity settings to a load balanced environment type with autoscaling. Select all availability zones. Also add a scaling trigger if average CPUUtilization is over 85% for a 5 minutes period.|D. Edit your environment`s capacity configuration to a load balanced environment type. Make sure that all availability zones are selected. Add a scaling event when median CPUUtilization is over 85% for a period of 1 minute.|E. Modify the instance type to t2.large to meet the need of high CPU and memory.",
+  "video_url": "https://certificationation.com/videos/exam-has-been-used-for-your-exam-133.html",
+  "url": "https://certificationation.com/questions/exam-has-been-used-for-your-exam-133.html"
+}

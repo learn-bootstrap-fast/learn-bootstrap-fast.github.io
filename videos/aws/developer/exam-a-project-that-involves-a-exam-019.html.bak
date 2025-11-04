@@ -1,0 +1,81 @@
+---
+title: "A Database Engineer is working on a project thatExam"
+description: "Video for a Database Engineer is working on a project that involves a content management system (CMS) with a large number of images and documents being uploaded"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A Database Engineer is working on a project that involves a content management system (CMS) with a large number of images and documents being uploaded and accessed by users. The application is currently using Cloud Storage for storing the content, and the engineer is tasked with optimizing cost and performance. Which of the following strategies should the engineer implement to best achieve these objectives?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A database engineer at a digital publishing startup called Riverbend Media manages a media library where contributors upload high resolution images and PDF documents to Cloud Storage. The bucket stores about 220 TB spread across 72 million objects. Access logs show that roughly 85 percent of downloads occur within 4 days of upload and that most objects are rarely requested after 120 days. Leadership wants to lower storage spend and speed up delivery for frequently viewed items without changing the current application architecture. What should the engineer implement?",
+  "options": [
+    {
+      "text": "Migrate the files to Cloud Spanner and store each object as bytes in a table to leverage horizontal scalability",
+      "explanation": "This option suggests moving binary content into a relational database and using tables to hold object data while emphasizing scale and consistency",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Create Object Lifecycle Management rules to move objects to Nearline after 30 days and to Archive after 120 days",
+      "explanation": "This option configures policies that transition older or less active objects into lower cost storage classes as they age",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Add Cloud Memorystore for Redis as a caching layer for hot content that is requested frequently",
+      "explanation": "This option adds a managed Redis cache in front of the application to serve repeated reads with lower latency",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Turn on Object Versioning for every bucket so that older copies of files are retained for recovery",
+      "explanation": "This option keeps multiple generations of each object to help restore previous versions after deletions or overwrites",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct options are <b>Create Object Lifecycle Management rules to move objects to Nearline after 30 days and to Archive after 120 days</b> and <b>Add Cloud Memorystore for Redis as a caching layer for hot content that is requested frequently</b>.</p><p>Lifecycle transitions fit the observed access pattern because most downloads happen early and requests drop off significantly after 120 days. Keeping new uploads in the default class preserves low access latency for the first month. Moving them to Nearline after 30 days reduces storage cost once access becomes infrequent and later transitioning to Archive after 120 days minimizes long term cost when retrieval is rare. These policy changes happen within Cloud Storage so they do not require any change to the application or its endpoints.</p><p>A managed Redis cache for frequently requested items improves user experience by serving hot content from memory and by offloading repeated reads from Cloud Storage. Only a small working set needs to be cached which is well suited to Redis. This approach can be introduced alongside the existing application tier so it preserves the current architecture while speeding delivery for popular files.</p><p><i>Migrate the files to Cloud Spanner and store each object as bytes in a table to leverage horizontal scalability</i> is not appropriate because Spanner is a relational database and it is not an object store. Large binary objects would quickly hit practical size limits and cost would be much higher. It would also require a major redesign without improving delivery of static media.</p><p><i>Turn on Object Versioning for every bucket so that older copies of files are retained for recovery</i> would increase storage usage rather than reduce it. Versioning is useful for recovery and governance but it does not speed delivery and it conflicts with the goal of lowering storage spend.</p>",
+  "batch_id": "58",
+  "answerCode": "2,3",
+  "type": "multi-select",
+  "originalQuery": "A Database Engineer is working on a project that involves a content management system (CMS) with a large number of images and documents being uploaded and accessed by users. The application is currently using Cloud Storage for storing the content, and the engineer is tasked with optimizing cost and performance. Which of the following strategies should the engineer implement to best achieve these objectives?",
+  "originalOptions": "A. Use Cloud Bigtable for its low-latency read and write capabilities<br/>B. Use Cloud Spanner instead of Cloud Storage to take advantage of its horizontal scaling capabilities<br/>C. Implement a caching layer using Cloud Memorystore for frequently accessed content<br/>D. Enable Object Lifecycle Management to automatically transition objects to lower-cost storage classes",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "19",
+  "tip": "<p>Align storage classes to measured <i>access patterns</i> for cost savings and pair that with a cache for <i>hot</i> objects to boost performance. Avoid moving large binary files into a transactional database when Cloud Storage with lifecycle rules is a better fit.</p>",
+  "references": [
+    "https://cloud.google.com/storage/docs/lifecycle",
+    "https://cloud.google.com/storage/docs/storage-classes",
+    "https://cloud.google.com/storage/docs/object-versioning",
+    "https://cloud.google.com/memorystore/docs/redis",
+    "https://cloud.google.com/spanner/quotas"
+  ],
+  "url": "https://certificationation.com/questions/exam-a-project-that-involves-a-exam-019.html",
+  "video_url": "https://certificationation.com/videos/exam-a-project-that-involves-a-exam-019.html"
+}

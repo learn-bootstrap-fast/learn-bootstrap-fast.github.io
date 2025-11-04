@@ -1,0 +1,79 @@
+---
+title: "Which of the following statements justifies the use ofExam"
+description: "Video for which of the following statements justifies the use of session pooler services in a Google Cloud Database system? Choose one correct answer."
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Which of the following statements justifies the use of session pooler services in a Google Cloud Database system? Choose one correct answer."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A travel booking startup runs a microservices API on Google Kubernetes Engine that connects to Cloud SQL for PostgreSQL. During marketing campaigns, traffic spikes to 18,000 short-lived connections per minute and the database CPU rises due to frequent connection setup and teardown. The team is evaluating a session pooling layer in front of Cloud SQL. Which statement best explains the primary benefit of adding a session pooler?",
+  "options": [
+    {
+      "text": "A session pooler enables streaming analytics over operational data so product teams can run real-time dashboards without additional services",
+      "explanation": "This states that pooling would provide analytics capabilities for dashboards on live data",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "A session pooler removes the need to horizontally scale the database by absorbing all bursts so you no longer need additional replicas",
+      "explanation": "This claims that pooling can absorb spikes so the system does not require extra database capacity",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "A session pooler reuses a small number of persistent backend sessions so clients avoid repeated connection setup cost and the database handles more requests with lower latency",
+      "explanation": "This describes how connection pooling maintains server-side sessions and hands them out to many short-lived client requests",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "A session pooler provides encryption of all data at rest in the database to strengthen security compliance",
+      "explanation": "This asserts that pooling supplies storage-level encryption to meet compliance needs",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>A session pooler reuses a small number of persistent backend sessions so clients avoid repeated connection setup cost and the database handles more requests with lower latency</b>.</p><p>Frequent creation and teardown of database connections is expensive because authentication, TLS negotiation, and backend session initialization consume CPU and time. Reusing a small set of long lived sessions avoids this overhead for each request and lets Cloud SQL spend more cycles executing queries. This improves throughput during bursts and reduces tail latency for microservices that open many short lived connections.</p><p><i>A session pooler enables streaming analytics over operational data so product teams can run real-time dashboards without additional services</i> is incorrect because pooling does not provide analytics capabilities. Streaming analytics requires dedicated services and patterns that are separate from connection management.</p><p><i>A session pooler removes the need to horizontally scale the database by absorbing all bursts so you no longer need additional replicas</i> is incorrect because pooling smooths connection churn but it does not add CPU, memory, or IOPS capacity. You may still need vertical or horizontal scaling to meet sustained load.</p><p><i>A session pooler provides encryption of all data at rest in the database to strengthen security compliance</i> is incorrect because encryption at rest is provided by Cloud SQL itself. A pooler manages connections and can help with in transit behavior but it does not change storage encryption.</p>",
+  "batch_id": "243",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "Which of the following statements justifies the use of session pooler services in a Google Cloud Database system? Choose one correct answer.",
+  "originalOptions": "A. Session pooler services optimize database performance by managing connections and reducing the overhead associated with creating and closing connections.<br/>B. Session pooler services minimize the need for horizontal scaling, reducing the number of database instances required.<br/>C. Session pooler services enable real-time data analytics, making it easier to analyze large datasets quickly.<br/>D. Session pooler services increase the security of the database by encrypting all data at rest.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "154",
+  "tip": "<p>When traffic spikes create many short lived connections, look for answers that emphasize <i>reusing persistent connections</i> and <i>reducing connection overhead</i> rather than claims about analytics, security features, or eliminating scaling needs.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/manage-connections",
+    "https://cloud.google.com/sql/docs/postgres/pgbouncer",
+    "https://cloud.google.com/sql/docs/postgres/data-encryption"
+  ],
+  "url": "https://certificationation.com/questions/exam-justifies-the-use-of-session-exam-154.html",
+  "video_url": "https://certificationation.com/videos/exam-justifies-the-use-of-session-exam-154.html"
+}

@@ -1,0 +1,79 @@
+---
+title: "You are a Database Engineer responsible for setting upExam"
+description: "Video for you are a Database Engineer responsible for setting up secure connectivity and access control for your organization's Google Cloud Memorystore for"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are a Database Engineer responsible for setting up secure connectivity and access control for your organization's Google Cloud Memorystore for Redis instances. Which of the following IAM roles should be granted to a user who needs to manage the Memorystore instances, but should not have access to the actual data stored in the instances?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Your team at scrumtuous.com is rolling out governance for Google Cloud Memorystore for Redis across several projects. A colleague must be able to create, update, and delete Redis instances and review their configuration, while having no permission to read or write any keys stored in the caches. Which IAM role should you assign to that user?",
+  "options": [
+    {
+      "text": "roles/compute.networkAdmin",
+      "explanation": "Allows administration of VPC networking resources such as routes and subnets",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "roles/redis.viewer",
+      "explanation": "Provides read-only access to view Memorystore for Redis instance metadata and settings",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "roles/redis.admin",
+      "explanation": "Grants administrative permissions to create, modify, and delete Memorystore for Redis instances and manage their configuration",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "roles/redis.user",
+      "explanation": "Allows limited actions for using Memorystore for Redis resources within predefined workflows",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>roles/redis.admin</b>. This role lets the user create, update, and delete Memorystore for Redis instances and view their configuration while not granting access to Redis data.</p><p>The Redis Admin role is a control plane role that manages Redis instances and their settings. Data access to Memorystore for Redis depends on network reachability and the Redis authentication token rather than IAM, so this role does not let the user read or write keys in the cache.</p><p><i>roles/compute.networkAdmin</i> is focused on networking resources such as VPCs, subnets, and firewalls. It does not grant permissions to manage Memorystore for Redis instances.</p><p><i>roles/redis.viewer</i> only allows viewing Redis instance metadata and configuration. It cannot create, update, or delete instances which the scenario requires.</p><p><i>roles/redis.user</i> is intended for connecting to instances and can retrieve the authentication string. That capability would allow the user to connect to the cache and read or write keys which violates the requirement to have no data access.</p>",
+  "batch_id": "285",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are a Database Engineer responsible for setting up secure connectivity and access control for your organization's Google Cloud Memorystore for Redis instances. Which of the following IAM roles should be granted to a user who needs to manage the Memorystore instances, but should not have access to the actual data stored in the instances?",
+  "originalOptions": "A. roles/redis.user<br/>B. roles/redis.dataReader<br/>C. roles/redis.admin<br/>D. roles/redis.viewer",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "169",
+  "tip": "<p>Match the verbs in the question to IAM capability. If you see create and update and delete with <i>no data access</i> then prefer the service specific Admin role. Avoid the <i>User</i> role when the scenario forbids reading or writing data because it often enables connection to the resource.</p>",
+  "references": [
+    "https://cloud.google.com/memorystore/docs/redis/iam",
+    "https://cloud.google.com/iam/docs/roles-reference",
+    "https://cloud.google.com/compute/docs/access/iam"
+  ],
+  "url": "https://certificationation.com/questions/exam-for-setting-up-secure-connectivity-exam-169.html",
+  "video_url": "https://certificationation.com/videos/exam-for-setting-up-secure-connectivity-exam-169.html"
+}

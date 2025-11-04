@@ -1,0 +1,67 @@
+---
+title: "You work in a large organization and manage hundreds ofExam"
+description: "Video for you work in a large organization and manage hundreds of EC2 instances in both non-production and production environments. To reduce cost, you want to"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You work in a large organization and manage hundreds of EC2 instances in both non-production and production environments. To reduce cost, you want to automatically stop and start some non-production EC2 instances at regular intervals. For example, these instances should be stopped at 10:00PM every night and started at 6:30AM every morning. All the selected EC2 instances already have a special tag called \"cost-saving\" Which of the following actions would you choose to achieve the requirement? (Select TWO.)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><b>Configure two CloudWatch Event rules that each execute on a schedule using cron expressions, then set your Lambda function as the target for each rule</b> and <b>Place the instances in different Auto Scaling groups and configure scheduled scaling actions to adjust desired capacity between 0 and 1 based on the time of day</b> are the correct options.</p><p><b>Explanation:</b></p><ul><li>Scheduling the start and stop of EC2 instances based on tags is a common scenario for cost savings in non-production environments. <b>The solution that uses two scheduled CloudWatch Event (now called EventBridge) rules—one for stopping and another for starting—lets you precisely control these actions. By attaching a Lambda function as the target, you ensure only instances with the specified tag are affected. This approach offers flexibility and scalability.</b></li><li><b>Another suitable method is utilizing Auto Scaling groups with scheduled scaling policies. By adjusting the desired capacity to 0 at night (which stops all instances) and setting it back to 1 in the morning (which brings them back up), you achieve the goal without manual intervention per instance, as long as your workload allows for instances to be managed this way.</b></li></ul><p><i>'Apply two separate Lambda functions: one for stopping and another for starting EC2 instances that have the 'cost-saving' tag'</i> is incorrect because while using Lambda for automation is a part of the solution, the Lambda functions need to be invoked by a scheduling mechanism, such as CloudWatch Events, otherwise the automation aspect is missing.</p><p><i>'Establish an EC2 Savings Plan to automate stopping at 10:00 PM and starting at 6:30 AM for tagged instances'</i> is incorrect as Savings Plans only optimize your billing costs for certain compute usage patterns but do not actually stop and start instances.</p><p><i>'Create a CloudWatch Event rule that triggers periodically using two cron expressions'</i> is misleading wording. Each CloudWatch Event rule supports a single cron or rate expression; two separate rules are required for two schedules (start and stop).</p><p><b>Tip:</b> Always use tags for resource targeting and automation, and ensure your automation functions (like Lambda) have the right permissions to start/stop EC2 instances.</p>",
+  "query": "<p>Your company operates hundreds of EC2 instances across production and non-production environments. To cut operating expenses, you plan to automatically stop certain non-production EC2 instances every night at 10:00 PM and restart them at 6:30 AM. All relevant instances are tagged with a <b>cost-saving</b> tag. Which TWO of the following steps should you implement to fulfill this requirement?</p>",
+  "original_oid": "6793da9361969b416038a247",
+  "options": [
+    {
+      "correct": true,
+      "text": "Configure two CloudWatch Event rules that each execute on a schedule using cron expressions, then set your Lambda function as the target for each rule.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Apply two separate Lambda functions: one for stopping and another for starting EC2 instances that have the 'cost-saving' tag.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Establish an EC2 Savings Plan to automate stopping at 10:00 PM and starting at 6:30 AM for tagged instances.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Create a CloudWatch Event rule that triggers periodically using two cron expressions.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Place the instances in different Auto Scaling groups and configure scheduled scaling actions to adjust desired capacity between 0 and 1 based on the time of day.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question471",
+  "originalQuery": "You work in a large organization and manage hundreds of EC2 instances in both non-production and production environments.\nTo reduce cost, you want to automatically stop and start some non-production EC2 instances at regular intervals.\nFor example, these instances should be stopped at 10:00PM every night and started at 6:30AM every morning.\nAll the selected EC2 instances already have a special tag called \"cost-saving\"\nWhich of the following actions would you choose to achieve the requirement? (Select TWO.)",
+  "originalOptions": "[\"A. Create a CloudWatch Event rule that is triggered periodically with two cron expressions.\",\"B. Create two Lambda functions that are used to stop and start the EC2 instances with the\\\"cost-saving\\\" tag.\",\"C. Configure an EC2 Savings Plan that stops instances at 10:00PM and starts instances at 6:30AM if the instances have the \\\"cost-saving\\\" tag.\",\"D. Configure two CloudWatch Event rules that self-trigger on an automated schedule using cron expressions. Add the Lambda function as the target.\",\"E. Add the instances under multiple Auto Scaling groups. Create a scheduled scaling policy that reduces the desired number to 0 at 10:00PM and increases the desired number to 1 at 6:30AM.\"]",
+  "video_url": "https://certificationation.com/videos/exam-and-manage-hundreds-of-ec2-exam-308.html",
+  "url": "https://certificationation.com/questions/exam-and-manage-hundreds-of-ec2-exam-308.html"
+}

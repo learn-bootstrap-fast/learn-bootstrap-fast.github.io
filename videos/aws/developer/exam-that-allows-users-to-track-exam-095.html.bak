@@ -1,0 +1,82 @@
+---
+title: "You are building an application that allows users toExam"
+description: "Video for you are building an application that allows users to track and manage their fitness goals. The application will capture user information and"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are building an application that allows users to track and manage their fitness goals. The application will capture user information and preferences. User profiles have a dynamic schema, and users can add or delete information from their profile. You need to ensure that user changes automatically trigger updates to your downstream BigQuery data warehouse. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A travel planning team at example.com is building a service where customers manage itineraries and travel preferences. Traveler profiles use a flexible schema and people can add or remove fields at any time. You must have each change propagate to your BigQuery analytics warehouse automatically within roughly two minutes so downstream reports remain fresh. What should you implement?",
+  "options": [
+    {
+      "text": "Use Cloud Spanner with Change Streams and run Dataflow to write each change into BigQuery",
+      "explanation": "This stores profile data in a scalable relational database and uses streaming pipelines to deliver row updates into BigQuery",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Firestore in Native mode to keep traveler profiles as documents and trigger a Cloud Function on document writes that streams the delta into BigQuery",
+      "explanation": "This uses a document store with flexible fields and an event driven function that pushes changes to BigQuery",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use Firestore in Datastore mode and schedule periodic exports that load entities into BigQuery",
+      "explanation": "This approach relies on entity export jobs that run on a defined cadence rather than reacting to individual writes",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Cloud SQL with separate tables for profiles and preferences and run a Cloud Scheduler job that invokes a Cloud Function to copy rows into BigQuery",
+      "explanation": "This uses a normalized schema in a managed relational database and moves data to BigQuery on a schedule",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Use Firestore in Native mode to keep traveler profiles as documents and trigger a Cloud Function on document writes that streams the delta into BigQuery</b>.</p><p>This approach matches the need for a flexible schema because Firestore documents can add or remove fields without migrations. A Cloud Function triggers on each create, update, or delete and uses BigQuery streaming inserts so changes arrive within seconds which comfortably meets the two minute freshness requirement. It is event driven and eliminates polling while scaling well with spiky write patterns.</p><p><i>Use Cloud Spanner with Change Streams and run Dataflow to write each change into BigQuery</i> is not ideal because Spanner requires a predefined relational schema and adding or removing fields requires DDL and coordinated deployments. Although change streams with Dataflow can deliver low latency, the rigid schema and higher operational overhead do not match the need for frequent ad hoc field changes in traveler profiles.</p><p><i>Use Firestore in Datastore mode and schedule periodic exports that load entities into BigQuery</i> cannot meet the near real time requirement. Exports are batch operations that write to Cloud Storage and then load into BigQuery which introduces significant delay. Datastore mode also lacks native document write triggers which makes it less suitable for automatic per change propagation.</p><p><i>Use Cloud SQL with separate tables for profiles and preferences and run a Cloud Scheduler job that invokes a Cloud Function to copy rows into BigQuery</i> relies on scheduled copying and is not event driven. It cannot guarantee propagation within two minutes and the relational schema would require ongoing migrations to handle fields being added or removed by users. A proper change data capture solution would be needed for near real time but that is not what this option proposes.</p>",
+  "batch_id": "145",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "You are building an application that allows users to track and manage their fitness goals. The application will capture user information and preferences. User profiles have a dynamic schema, and users can add or delete information from their profile. You need to ensure that user changes automatically trigger updates to your downstream BigQuery data warehouse. What should you do?",
+  "originalOptions": "A. Use Firestore in Native mode, and store user profile data as a document. Update the user profile with preferences specific to that user and use the user identifier to query. Set up a Cloud Function to automatically export data to BigQuery when documents are updated.<br/>B. Use Cloud SQL, and create different tables for user profile data and user preferences. Use SQL to join the user profile data and preferences. Set up a Cloud Function to export data to BigQuery when tables are updated.<br/>C. Use Cloud Spanner to store user profile data and user preferences. Set up a Cloud Function to automatically export data to BigQuery when data is updated.<br/>D. Use Firestore in Datastore mode, and store user profile data as a document. Update the user profile with preferences specific to that user and use the user identifier to query. Export data to BigQuery periodically.",
+  "domain": "Manage a solution that can span multiple database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "95",
+  "tip": "<p>When a question combines <i>near real time</i> freshness and <i>flexible schema</i> look for event driven NoSQL patterns where writes trigger <i>functions</i> that stream into BigQuery.</p>",
+  "references": [
+    "https://cloud.google.com/firestore/docs/overview",
+    "https://cloud.google.com/functions/docs/calling/cloud-firestore",
+    "https://cloud.google.com/bigquery/streaming-data-into-bigquery",
+    "https://cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-to-bigquery-changestreams",
+    "https://cloud.google.com/datastore/docs/export-import-entities",
+    "https://cloud.google.com/datastream/docs/bigquery"
+  ],
+  "url": "https://certificationation.com/questions/exam-that-allows-users-to-track-exam-095.html",
+  "video_url": "https://certificationation.com/videos/exam-that-allows-users-to-track-exam-095.html"
+}

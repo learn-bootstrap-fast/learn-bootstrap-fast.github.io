@@ -1,0 +1,62 @@
+---
+title: "The operation team in the company has recently initiatedExam"
+description: "Video for the operation team in the company has recently initiated an audit to ensure that all major AWS components used are properly monitored with necessary"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "The operation team in the company has recently initiated an audit to ensure that all major AWS components used are properly monitored with necessary logs, alarms and notifications. The company has also set up an on-call team to receive AWS alerts and notifications and react accordingly when necessary. The AWS service of CodePipeline has been used as well by the development team for the new feature development. Relevant CodePipeline activities should be monitored such as the time and date of actions, the source IP address for an action, etc. What should the operation team do to ensure that CodePipeline is being properly monitored with enough logging? Select 2."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><strong>AWS CloudTrail</strong> is essential for auditing and compliance. By enabling CloudTrail, you ensure that every API interaction with CodePipeline is tracked, including the <b>timestamp</b>, <b>source IP</b>, AWS user, and additional context. This is crucial for audit trails and security investigations.</p><p>Another key practice is to configure <strong>Amazon CloudWatch Events</strong> (now part of EventBridge). CloudWatch Events can be used to detect changes in pipeline states or failures, triggering alerts via <b>SNS notifications</b> to the on-call team. This ensures timely operational awareness and supports automated responses.</p><p>Why the other options are incorrect:</p><ul><li><i>By using AWS CloudWatch Metrics, you can gain insights into CodePipeline's performance and status; CodePipeline metrics are available in the AWS/CodePipeline namespace, and dashboards can be created for real-time visualization.</i> – CloudWatch Metrics help with pipeline health and trends, but they do not provide detailed forensic logs about who did what, or the originating IP address of requests, which are essential for audits.</li><li><i>Enable the CodePipeline Logging setting from the management console, which allows live logs to be stored in an S3 bucket chosen by the operations team for further analysis.</i> – There is no native 'CodePipeline logging' feature that directly exports detailed audit logs to S3. The standard method for logging such activities is using CloudTrail, not a separate CodePipeline logging setup.</li></ul><p><b>Tip:</b> Always use CloudTrail for auditing API calls, and combine CloudWatch Events with SNS for proactive notifications and automation in operational monitoring.</p>",
+  "query": "<p>The operations team at your organization wants to confirm that all primary AWS resources are being monitored effectively, with alerts, logs, and notifications appropriately configured. The company utilizes AWS CodePipeline as part of development workflows. To meet auditing requirements, the team needs to track details such as the timestamp of actions and the originating IP address for each activity in CodePipeline. What should the team do to ensure comprehensive logging and monitoring of CodePipeline? Select <strong>two</strong> options.</p>",
+  "original_oid": "6793da7a61969b416038a216",
+  "options": [
+    {
+      "correct": true,
+      "text": "AWS CloudTrail can be leveraged to log CodePipeline API actions and events on behalf of your AWS account, revealing who initiated actions, when, and from which IP address, along with other specifics.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "By using AWS CloudWatch Metrics, you can gain insights into CodePipeline's performance and status; CodePipeline metrics are available in the AWS/CodePipeline namespace, and dashboards can be created for real-time visualization.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Enable the CodePipeline Logging setting from the management console, which allows live logs to be stored in an S3 bucket chosen by the operations team for further analysis.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Set up Amazon CloudWatch Events rules based on CodePipeline metrics—such as pipeline state changes—and configure them to publish notifications to an SNS topic for the on-call team.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question422",
+  "originalQuery": "The operation team in the company has recently initiated an audit to ensure that all major AWS components used are properly monitored with necessary logs, alarms and notifications.\nThe company has also set up an on-call team to receive AWS alerts and notifications and react accordingly when necessary.\nThe AWS service of CodePipeline has been used as well by the development team for the new feature development.\nRelevant CodePipeline activities should be monitored such as the time and date of actions, the source IP address for an action, etc.\nWhat should the operation team do to ensure that CodePipeline is being properly monitored with enough logging? Select 2.",
+  "originalOptions": "A. AWS CloudTrail can be used to log AWS CodePipeline API calls and related events made by or on behalf of an AWS account. By CloudTrail, users can determine the request that was made to AWS CodePipeline, the IP address from which the request was made, who made the request, when it was made, and additional details.|B. AWS Cloudwatch Metrics can be used to determine CodePipeline activities. In Cloudwatch Metrics, there are CodePipeline events in the namespace of AWS/CodePipeline. Users can also create a dashboard to understand the CodePipeline status based on the metrics.|C. Activate the CodePipeline Logging feature in the console. During the setup of that, the logs can be saved in real time to a S3 bucket that the operation team chooses. And the operation team can use an editor or analytic tool to open the txt files in the S3 bucket to analyze and monitor|D. Amazon CloudWatch Events can be used to monitor the AWS Cloud resources including CodePipeline. The operation team can create a rule in Amazon CloudWatch Events based on CodePipeline metrics that you define such as “CodePipeline Pipeline Execution State Change”. And then use a SNS topic as the target of this Cloudwatch Event rule.",
+  "video_url": "https://certificationation.com/videos/exam-has-recently-initiated-an-audit-exam-104.html",
+  "url": "https://certificationation.com/questions/exam-has-recently-initiated-an-audit-exam-104.html"
+}

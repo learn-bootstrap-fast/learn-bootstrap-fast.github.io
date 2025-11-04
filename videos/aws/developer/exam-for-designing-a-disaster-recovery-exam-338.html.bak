@@ -1,0 +1,83 @@
+---
+title: "You are a Database Engineer responsible for designing aExam"
+description: "Video for you are a Database Engineer responsible for designing a disaster recovery plan for a global e-commerce company's database. The company requires a"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are a Database Engineer responsible for designing a disaster recovery plan for a global e-commerce company's database. The company requires a Recovery Time Objective (RTO) of 1 hour and a Recovery Point Objective (RPO) of 30 minutes. Which combination of Google Cloud services and configurations should you choose to meet these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the Cloud Database Engineer for a multinational streaming media platform that needs a robust disaster recovery plan. Leadership requires a Recovery Time Objective of 45 minutes and a Recovery Point Objective of 20 minutes across regions. Which Google Cloud design should you implement to satisfy these objectives?",
+  "options": [
+    {
+      "text": "Cloud SQL with asynchronous cross region replicas and automated exports every 20 minutes",
+      "explanation": "This uses Cloud SQL read replicas that replicate asynchronously to another region and schedules frequent logical exports.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud Spanner regional configuration with scheduled exports every 10 minutes",
+      "explanation": "This sets up a single region Spanner instance and pushes regular exports to Cloud Storage for data protection.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud Spanner multi region configuration with synchronous replication and scheduled exports every 10 minutes",
+      "explanation": "This deploys Spanner as a multi region instance so writes are synchronously replicated while periodic exports add an additional recovery option.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Bigtable with multi cluster routing in two regions and hourly backups",
+      "explanation": "This uses Bigtable clusters in multiple regions with multi cluster routing and relies on backups taken once per hour.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct design is <b>Cloud Spanner multi region configuration with synchronous replication and scheduled exports every 10 minutes</b>.</p><p>This design provides strongly consistent writes across regions using synchronous replication, which means committed transactions are already durable in multiple regions. That gives you an effective RPO of zero for committed data and easily satisfies an RPO target of 20 minutes. Automatic failover between regions is built into the service and recovery can be achieved within minutes under normal conditions, which is well inside a 45 minute RTO. Scheduled exports every 10 minutes add an additional recovery method for accidental deletion or corruption scenarios and they further ensure that point in time recovery options are always current.</p><p><i>Cloud SQL with asynchronous cross region replicas and automated exports every 20 minutes</i> is not appropriate because asynchronous replication can lag and offers no strict upper bound on data loss during a regional failure, so you cannot reliably meet a 20 minute RPO. Promotion and potential restore workflows also risk exceeding a 45 minute RTO, and exporting every 20 minutes does not change the asynchronous nature of replication or the restore time.</p><p><i>Cloud Spanner regional configuration with scheduled exports every 10 minutes</i> does not meet the cross regional requirement because a regional instance has no second region to fail over to. Meeting the RTO would require provisioning and restoring into another region from exports, which is likely to exceed 45 minutes even though the export cadence could satisfy a 20 minute RPO target on paper.</p><p><i>Bigtable with multi cluster routing in two regions and hourly backups</i> fails the RPO requirement because hourly backups allow up to one hour of data loss. Multi cluster routing provides eventual consistency across clusters rather than the strongly consistent cross regional writes that are needed to confidently meet a 20 minute RPO for transactional workloads.</p>",
+  "batch_id": "194",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are a Database Engineer responsible for designing a disaster recovery plan for a global e-commerce company's database. The company requires a Recovery Time Objective (RTO) of 1 hour and a Recovery Point Objective (RPO) of 30 minutes. Which combination of Google Cloud services and configurations should you choose to meet these requirements?",
+  "originalOptions": "A. Use Cloud Spanner with regional configuration and Cloud Storage Nearline class buckets for backups taken every 15 minutes.<br/>B. Use Cloud SQL with asynchronous replication and Multi-Regional Persistent Disks with snapshots taken every 30 minutes.<br/>C. Use Cloud Spanner with multi-region configuration and Regional Persistent Disks with snapshots taken every 15 minutes.<br/>D. Use Cloud SQL with synchronous replication and Regional Persistent Disks with snapshots taken every 30 minutes.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "338",
+  "tip": "<p>Map <i>RPO</i> to data replication guarantees and backup cadence, and map <i>RTO</i> to failover automation and restore time. When you see cross region and tight <i>RPO</i> targets, look for services with synchronous replication and built in failover rather than asynchronous replicas or export based recovery.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/replication",
+    "https://cloud.google.com/spanner/docs/instance-configurations#regional-and-multi-regional",
+    "https://cloud.google.com/spanner/docs/export",
+    "https://cloud.google.com/sql/docs/mysql/replication/cross-region-replicas",
+    "https://cloud.google.com/bigtable/docs/cluster-routing",
+    "https://cloud.google.com/bigtable/docs/backup-restore",
+    "https://cloud.google.com/architecture/dr-scenarios-planning-guide"
+  ],
+  "url": "https://certificationation.com/questions/exam-for-designing-a-disaster-recovery-exam-338.html",
+  "video_url": "https://certificationation.com/videos/exam-for-designing-a-disaster-recovery-exam-338.html"
+}

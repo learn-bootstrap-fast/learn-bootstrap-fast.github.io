@@ -1,0 +1,80 @@
+---
+title: "You are designing a mobile application for trackingExam"
+description: "Video for you are designing a mobile application for tracking fitness goals and progress. You plan to use Firestore as the primary backend database for user"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are designing a mobile application for tracking fitness goals and progress. You plan to use Firestore as the primary backend database for user data storage and authentication. You want to efficiently query the data on various parameters such as distance, time, and calories burned. During the testing phase, you discovered that costs are much higher than anticipated, but the query response times are within the SLA. You want to follow Google-recommended practices. You need the database to be performant and highly available while you keep costs low. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A startup building a corporate wellness app for employees plans to store user profiles and activity sessions in Firestore and uses Firebase Authentication for sign-in. The app must filter and sort session records by fields such as steps, sessionDuration, and energyBurned, and during a 45 day beta you see that overall costs are higher than expected while query latency is within your target. You want to follow Google guidance so the system stays fast and highly available while bringing costs down. What should you change in Firestore to meet these goals?",
+  "options": [
+    {
+      "text": "Add Cloud Memorystore as a read-through cache in front of Firestore to reduce repeated reads",
+      "explanation": "A managed Redis cache can serve hot keys to offload some reads from Firestore and may reduce read charges for frequently accessed items",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Review and trim Firestore indexes so that only the single-field and composite indexes required by your queries remain",
+      "explanation": "Reducing unnecessary indexes lowers write amplification and index storage which can decrease cost while preserving efficient lookups for supported queries",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Manually shard collections across multiple projects and route queries to different Firestore databases",
+      "explanation": "Splitting data across several Firestore databases spreads load but adds operational complexity and is not needed for a service that already scales automatically",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Denormalize the data model to duplicate values into flatter documents for faster multi-attribute queries",
+      "explanation": "Replicating fields can simplify certain queries and reduce joins although it increases storage and write overhead if not carefully controlled",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Review and trim Firestore indexes so that only the single-field and composite indexes required by your queries remain</b>. This aligns with Google guidance to keep the required indexes for your filters and sorts while removing any that are not used so latency stays within target and overall costs drop.</p><p>Firestore maintains indexes on every write which increases both write and storage costs. Your queries need indexes to filter and sort by steps, sessionDuration, and energyBurned, so you should keep the composite indexes that support those patterns and remove any others that are not exercised. You can also disable single-field indexing for fields you never query or for large map or array fields to reduce index write amplification and storage. With only the necessary indexes in place, Firestore continues to scale and remain highly available while you lower costs.</p><p><i>Add Cloud Memorystore as a read-through cache in front of Firestore to reduce repeated reads</i> is not appropriate because your latency is already within target and a cache would not reduce Firestore index write or storage costs. It also adds complexity and potential consistency issues without addressing the primary cost drivers.</p><p><i>Manually shard collections across multiple projects and route queries to different Firestore databases</i> is an anti pattern because Firestore already scales horizontally and cross project sharding would break simple querying and transactions, increase operational complexity, and is unlikely to reduce costs.</p><p><i>Denormalize the data model to duplicate values into flatter documents for faster multi-attribute queries</i> would increase write and storage costs and you would still need composite indexes for multi field filtering and sorting. Since latency is fine and costs are high, duplication works against the goal.</p>",
+  "batch_id": "113",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "You are designing a mobile application for tracking fitness goals and progress. You plan to use Firestore as the primary backend database for user data storage and authentication. You want to efficiently query the data on various parameters such as distance, time, and calories burned. During the testing phase, you discovered that costs are much higher than anticipated, but the query response times are within the SLA. You want to follow Google-recommended practices. You need the database to be performant and highly available while you keep costs low. What should you do?",
+  "originalOptions": "A. Manually shard the database to distribute data evenly across multiple Firestore instances.<br/>B. Use Firestore data model best practices to denormalize data for more efficient querying.<br/>C. Optimize Firestore indexes to improve query performance and cost-efficiency.<br/>D. Use granular instance sizing in Firestore and Autoscaler.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "191",
+  "tip": "<p>When Firestore performance is acceptable but costs are high, look first at <i>indexes</i>. Keep only the <i>composite</i> and <i>single field</i> indexes your queries need and consider disabling <i>single field indexing</i> on unused or large fields to cut write and storage costs.</p>",
+  "references": [
+    "https://cloud.google.com/firestore/docs/query-data/index-overview",
+    "https://firebase.google.com/docs/firestore/query-data/indexing",
+    "https://cloud.google.com/firestore/docs/best-practices",
+    "https://cloud.google.com/firestore/pricing"
+  ],
+  "url": "https://certificationation.com/questions/exam-for-tracking-fitness-goals-and-exam-191.html",
+  "video_url": "https://certificationation.com/videos/exam-for-tracking-fitness-goals-and-exam-191.html"
+}

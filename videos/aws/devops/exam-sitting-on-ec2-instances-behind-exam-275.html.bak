@@ -1,0 +1,62 @@
+---
+title: "Your company has an application sitting on EC2 InstancesExam"
+description: "Video for your company has an application sitting on EC2 Instances behind an Elastic Load balancer. The EC2 Instances are being launched as part of an"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company has an application sitting on EC2 Instances behind an Elastic Load balancer. The EC2 Instances are being launched as part of an Autoscaling Group. Which of the following is an example of Blue Green Deployments in AWS?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><b>With the application behind a Load Balancer utilizing an Auto Scaling group, establish a fresh Auto Scaling group and attach it to the load balancer. After verifying the new environment is operational, reduce the desired capacity of the original group to zero, and remove the old group once the instances have terminated.</b> best exemplifies the Blue-Green deployment pattern on AWS. This approach creates a parallel 'green' environment for the new version, seamlessly attaches it to the existing Load Balancer, and shifts user traffic only after full verification, minimizing downtime and deployment risk. Once everything checks out, the 'blue' (old) infrastructure is retired cleanly.<br/><br/>The other options are not fully accurate for Blue-Green deployment:<br/><i>Leverage AWS CloudFormation by maintaining two separate stacks for your resources and switch to the alternative stack as needed by redeploying</i> does not specifically describe traffic switching via a load balancer, and redeploying can lead to more downtime compared to real Blue-Green deployments.<br/><i>Use AWS Elastic Beanstalk to manage two separate environments and leverage Rolling deployments to alternate between versions</i> refers to Rolling deployments, which upgrade instances in place and don't provide completely separate environments for instant switching, as Blue-Green does.<br/><i>Utilize AWS OpsWorks to set up two layers in a stack for two distinct application versions, and perform the deployment switch by toggling between the layers</i> uses the layering concept, but OpsWorks is less commonly used for Blue-Green, and layers are not meant for environment switching in this manner.<br/><br/>Tip: A true Blue-Green deployment requires two parallel, identical environments, allowing near-instant traffic switch and easy rollback.</p>",
+  "query": "<p>Your organization runs an application hosted on EC2 instances behind an Elastic Load Balancer, with the EC2 instances managed by an Auto Scaling Group. Which scenario below best illustrates a Blue-Green deployment on AWS?</p>",
+  "original_oid": "6793da6561969b416038a1ed",
+  "options": [
+    {
+      "correct": false,
+      "text": "Use AWS Elastic Beanstalk to manage two separate environments and leverage Rolling deployments to alternate between versions.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Leverage AWS CloudFormation by maintaining two separate stacks for your resources and switch to the alternative stack as needed by redeploying.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "With the application behind a Load Balancer utilizing an Auto Scaling group, establish a fresh Auto Scaling group and attach it to the load balancer. After verifying the new environment is operational, reduce the desired capacity of the original group to zero, and remove the old group once the instances have terminated.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Utilize AWS OpsWorks to set up two layers in a stack for two distinct application versions, and perform the deployment switch by toggling between the layers.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question380",
+  "originalQuery": "Your company has an application sitting on EC2 Instances behind an Elastic Load balancer.\nThe EC2 Instances are being launched as part of an Autoscaling Group.\nWhich of the following is an example of Blue Green Deployments in AWS?",
+  "originalOptions": "A. Use a Cloudformation stack to deploy your resources. Use 2 Cloudformation stacks. Whenever you want to switch over, deploy and use the resources in the second Cloudformation stack.|B. Use the Elastic beanstalk service to deploy your resources. Use 2 Elastic beanstalk environments. Use Rolling deployments to switch between the environments.|C. Re-deploy your application behind a load balancer that uses Auto Scaling groups, create a new Auto Scaling group, and associate it to the load balancer. After the new environment is up and running, set the desired number of instances on the old Auto Scaling group to zero, and when all instances have terminated, delete the old Auto Scaling group.|D. Use the Opsworks service to deploy your resources. Use 2 Opswork layers to deploy 2 versions of your application. When the time comes for the switch, change to the alternate layer in the Opswork stack.",
+  "video_url": "https://certificationation.com/videos/exam-sitting-on-ec2-instances-behind-exam-275.html",
+  "url": "https://certificationation.com/questions/exam-sitting-on-ec2-instances-behind-exam-275.html"
+}

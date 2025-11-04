@@ -1,0 +1,80 @@
+---
+title: "You manage multiple Cloud SQL instances used for stagingExam"
+description: "Video for you manage multiple Cloud SQL instances used for staging and development environments. These instances require regular backups for disaster recovery"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You manage multiple Cloud SQL instances used for staging and development environments. These instances require regular backups for disaster recovery purposes. To reduce costs and improve efficiency, you want to schedule backups during off-peak hours automatically. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are responsible for several Cloud SQL instances that support QA and sandbox workloads for example.com. The team must retain daily backups for disaster recovery, and you want the backups to run automatically during a one hour window around 02:00 UTC to reduce impact on testers and control cost. What should you do?",
+  "options": [
+    {
+      "text": "Use Cloud Scheduler to trigger a Cloud Function that calls the Cloud SQL Admin API to start on-demand backups",
+      "explanation": "This sets up a scheduled serverless job that invokes the Cloud SQL Admin API to create backups at specific times.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable high availability for all instances and rely on replication instead of backups",
+      "explanation": "This uses a regional configuration with a standby replica to improve availability during failures.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure automated backups on each Cloud SQL instance and set a preferred backup window that falls in off-peak hours",
+      "explanation": "This uses the Cloud SQL automated backup feature and schedules it to run during low-traffic times.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Specify a maintenance window on the instances so backups run overnight",
+      "explanation": "This schedules when Cloud SQL applies maintenance activities such as updates and restarts.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct answer is <b>Configure automated backups on each Cloud SQL instance and set a preferred backup window that falls in off-peak hours</b>.</p><p>Cloud SQL provides native daily automated backups with a configurable one hour window per instance. Setting the window to begin around 02:00 UTC ensures the backups run automatically at an off-peak time which reduces impact on testers and keeps costs predictable. This uses the built-in backup service and it supports retention management and recovery.</p><p>The option <i>Use Cloud Scheduler to trigger a Cloud Function that calls the Cloud SQL Admin API to start on-demand backups</i> is unnecessary and adds complexity. The service already schedules backups within a window and a custom scheduler does not provide better control of retention or reliability for this requirement.</p><p>The option <i>Enable high availability for all instances and rely on replication instead of backups</i> is incorrect. That feature addresses instance or zone outages but it does not protect against data corruption or accidental deletion which is why you still need backups for disaster recovery.</p><p>The option <i>Specify a maintenance window on the instances so backups run overnight</i> is incorrect. That setting only governs when maintenance events can occur and it does not control backup scheduling.</p>",
+  "batch_id": "271",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You manage multiple Cloud SQL instances used for staging and development environments. These instances require regular backups for disaster recovery purposes. To reduce costs and improve efficiency, you want to schedule backups during off-peak hours automatically. What should you do?",
+  "originalOptions": "A. Set up a Pub/Sub topic to trigger backups whenever the instance receives a query.<br/>B. Configure automated backups in the Cloud SQL instance settings and set a preferred backup window during off-peak hours.<br/>C. Write a script to manually trigger backups via the Cloud SQL Admin API and schedule the script using Cloud Scheduler.<br/>D. Enable high availability for all instances and rely on replication for disaster recovery.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "318",
+  "tip": "<p>When a managed service offers a native way to meet a requirement prefer the built-in configuration. Look for phrases like <i>automated backups</i> and <i>preferred window</i> and choose those over building custom schedulers.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/configure-automated-backups",
+    "https://cloud.google.com/sql/docs/postgres/backup-recovery/backups#automated-backups",
+    "https://cloud.google.com/sql/docs/mysql/maintenance",
+    "https://cloud.google.com/sql/docs/mysql/high-availability"
+  ],
+  "url": "https://certificationation.com/questions/exam-instances-used-for-staging-and-exam-318.html",
+  "video_url": "https://certificationation.com/videos/exam-instances-used-for-staging-and-exam-318.html"
+}

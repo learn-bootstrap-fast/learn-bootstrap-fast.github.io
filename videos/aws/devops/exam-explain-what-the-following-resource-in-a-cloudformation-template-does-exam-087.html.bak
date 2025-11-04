@@ -1,0 +1,62 @@
+---
+title: "Explain what the following resource in a CloudFormationExam"
+description: "Video for explain what the following resource in a CloudFormation template does?"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Explain what the following resource in a CloudFormation template does?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The <b>Creates an SNS topic and registers a subscription ARN endpoint for the SQS resource named SQSQueue.</b> option is correct. In an AWS CloudFormation template, this pattern is used to create an SNS topic and then directly subscribe an already defined SQS queue resource (with logical name SQSQueue) to this SNS topic, so any messages published to the topic are delivered to the SQS queue.</p><p>Option <i>Creates an SNS topic where you can specify SQS endpoints as template parameters.</i> is incorrect because CloudFormation does not allow dynamic insertion of SQS endpoints via parameters in this way; subscriptions are defined as resources referencing logical resource names.</p><p>Option <i>Establishes an SNS topic and enables addition of SQS subscription endpoints.</i> is misleading, as it implies that endpoints can be added arbitrarily post-creation; whereas, the subscription is declared explicitly in the template resource section.</p><p>Option <i>Sets up an SNS topic and creates the SQS queue using the resource name SQSQueue.</i> is incorrect since the process described is about creating an SNS topic and subscribing an SQS queue, not creating both resources together within the same step.</p><p><b>Tip:</b> In CloudFormation, to connect SNS and SQS, you first declare your SQS queue resource (e.g., with logical name SQSQueue), then in the SNS <code>Subscription</code> property, use <code>!GetAtt SQSQueue.Arn</code> to subscribe the queue.</p>",
+  "query": "<p>What action is performed by a CloudFormation template resource that creates an SNS topic and defines a subscription to an SQS queue resource with the logical identifier <code>SQSQueue</code>?</p>",
+  "original_oid": "6793da2561969b416038a166",
+  "options": [
+    {
+      "correct": false,
+      "text": "Creates an SNS topic where you can specify SQS endpoints as template parameters.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Establishes an SNS topic and enables addition of SQS subscription endpoints.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Sets up an SNS topic and creates the SQS queue using the resource name SQSQueue.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Creates an SNS topic and registers a subscription ARN endpoint for the SQS resource named SQSQueue.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question245",
+  "originalQuery": "Explain what the following resource in a CloudFormation template does?",
+  "originalOptions": "[\"A. Creates an SNS topic that allows SQS subscription endpoints to be added as a parameter on the template.\",\"B. Creates an SNS topic that allows SQS subscription endpoints.\",\"C. Creates an SNS topic and then invokes the call to create an SQS queue with a logical resource name of SQSQueue.\",\"D. Creates an SNS topic and adds a subscription ARN endpoint for the SQS resource created under the logical name SQSQueue.\"]",
+  "video_url": "https://certificationation.com/videos/exam-explain-what-the-following-resource-in-a-cloudformation-template-does-exam-087.html",
+  "url": "https://certificationation.com/questions/exam-explain-what-the-following-resource-in-a-cloudformation-template-does-exam-087.html"
+}

@@ -1,0 +1,62 @@
+---
+title: "An application is deployed in AWS Elastic Beanstalk. YouExam"
+description: "Video for an application is deployed in AWS Elastic Beanstalk. You have a saved configuration from the test environment. Now you need to create pipelines for"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "An application is deployed in AWS Elastic Beanstalk. You have a saved configuration from the test environment. Now you need to create pipelines for the performance test. You plan to apply the saved configuration. However, you find that some configurations need to be modified in the new environment. You do not want to modify the saved configuration YAML file. Which of the following options would you take to address this concern?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best approach is to use the CLI tools (either the <strong>EB CLI</strong> or <strong>AWS CLI</strong>) to update your Elastic Beanstalk environment configuration, for instance through <code>aws elasticbeanstalk update-environment</code> or similar commands. This lets you apply your saved configuration as a base, and then add or modify specific settings for your performance test pipelines <strong>without altering the original YAML file</strong>.</p><p>Let's break down why the other options aren't as effective:</p><ul><li><i>\"Modify the standard settings for the performance testing environment directly through the Elastic Beanstalk console, and then apply the saved configuration for new pipelines.\"</i> – If you apply the saved configuration after console changes, your modifications might be overwritten, and this doesn't address how to apply only specific changes without editing the base config file.</li><li><i>\"Prepare a file with the updated configuration options and place it in the <code>.ebextensions</code> directory, making sure this folder resides within the application root.\"</i> – While <code>.ebextensions</code> allow you to specify environment settings, you must deploy a new version of your application to take effect, which may not suit cases where you want to adjust settings post-deployment or across multiple environments quickly.</li><li><i>\"Recreate the saved configuration and edit it with EB CLI commands, such as <code>eb config save --cfg newcfg</code>.\"</i> – This requires manual recomposition or edit of the configuration file, which the scenario specifically wants to avoid.</li></ul><p><strong>Tip:</strong> The CLI methods facilitate targeted updates and environment flexibility without manual YAML file manipulation, streamlining your deployment automation or pipeline integration.</p>",
+  "query": "<p>You have an application running on AWS Elastic Beanstalk. You previously saved a configuration from your test environment. Now, you wish to set up new pipelines for a performance testing environment using this saved configuration. However, you notice some environment settings require changes for your new performance environment. You prefer not to alter the original saved configuration YAML file. Which course of action should you take to accomplish this?</p>",
+  "original_oid": "6793d9c761969b416038a0ae",
+  "options": [
+    {
+      "correct": true,
+      "text": "Leverage the EB CLI or AWS CLI to update the Elastic Beanstalk environment with the necessary configuration changes, for example using <code>aws elasticbeanstalk update-environment</code>.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Modify the standard settings for the performance testing environment directly through the Elastic Beanstalk console, and then apply the saved configuration for new pipelines.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Prepare a file with the updated configuration options and place it in the <code>.ebextensions</code> directory, making sure this folder resides within the application root.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Recreate the saved configuration and edit it with EB CLI commands, such as <code>eb config save --cfg newcfg</code>.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question57",
+  "originalQuery": "An application is deployed in AWS Elastic Beanstalk.\nYou have a saved configuration from the test environment.\nNow you need to create pipelines for the performance test.\nYou plan to apply the saved configuration.\nHowever, you find that some configurations need to be modified in the new environment.\nYou do not want to modify the saved configuration YAML file.\nWhich of the following options would you take to address this concern?",
+  "originalOptions": "A. Recreate the saved configuration and modify the configurations using EB CLI command such as eb config save --cfg newcfg.\nB. Create a file with new configurations and put it in the .ebextentions folder. Include the .ebextentions folder under the project folder.\nC. In the AWS Elastic Beanstalk console, modify the default settings for the performance test environment. Apply the saved configuration in the new pipelines.\nD. Use EB CLI or AWS CLI to update the Elastic Beanstalk environment with new options such as aws elasticbeanstalk update-environment.",
+  "video_url": "https://certificationation.com/videos/exam-aws-elastic-beanstalk-you-have-exam-362.html",
+  "url": "https://certificationation.com/questions/exam-aws-elastic-beanstalk-you-have-exam-362.html"
+}

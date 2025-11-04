@@ -1,0 +1,62 @@
+---
+title: "You have created a DynamoDB table for an applicationExam"
+description: "Video for you have created a DynamoDB table for an application that needs to support thousands of users. You need to ensure that each user can only access their"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have created a DynamoDB table for an application that needs to support thousands of users. You need to ensure that each user can only access their own data in a particular table. Many users already have accounts with a third-party identity provider, such as Facebook, Google, or Login with Amazon. How would you implement this requirement?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best answer is <b>Leverage an IAM role with fine-grained permissions allowing access only to relevant items in the DynamoDB table</b>. This approach enables you to set up an IAM role with policies that enforce user-level access control—such as access to only items with a certain partition key value. When integrated with identity federation, you can map users from a third-party IdP to temporary credentials assumed via this IAM role, securing each user's access to their own data only, while avoiding the complexity and security risk of individual IAM users per application user.</p> <p><i>Register the app with a third-party identity provider and use web identity federation to delegate temporary AWS credentials to users</i> comes close; however, without configuring an IAM role with precise permissions targeting DynamoDB items based on user identity, access would not be sufficiently restricted per user.</p> <p><i>Have every user sign up as an IAM User to directly access the application</i> is not scalable or secure for user bases numbering in the thousands. AWS IAM Users are intended for administrators or organizational staff, not external app users.</p> <p><i>Let users authenticate with a third-party IdP and create an IAM User for each in AWS for access control</i> is unnecessarily complex and goes against best practice, as the intent of identity federation is to avoid having to create individual IAM Users for each app user.</p> <p><b>Tip:</b> AWS recommends using IAM roles with web identity federation for scalable, secure, and granular access. Use fine-grained IAM policies to restrict DynamoDB access based on user context (e.g., 'PrincipalTag' in IAM policies).</p>",
+  "query": "<p>You have built a DynamoDB table for an application expected to serve thousands of users. You must ensure that every user has access solely to their own data stored in the table. Considering that most users already have accounts with third-party identity providers like Google, Facebook, or Amazon, what is the best approach for implementing this requirement?</p>",
+  "original_oid": "6793da2c61969b416038a175",
+  "options": [
+    {
+      "correct": true,
+      "text": "Leverage an IAM role with fine-grained permissions allowing access only to relevant items in the DynamoDB table.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Register the app with a third-party identity provider and use web identity federation to delegate temporary AWS credentials to users.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Have every user sign up as an IAM User to directly access the application.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Let users authenticate with a third-party IdP and create an IAM User for each in AWS for access control.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question260",
+  "originalQuery": "You have created a DynamoDB table for an application that needs to support thousands of users.\nYou need to ensure that each user can only access their own data in a particular table.\nMany users already have accounts with a third-party identity provider, such as Facebook, Google, or Login with Amazon.\nHow would you implement this requirement?",
+  "originalOptions": "A. Create an IAM User for all users so that they can access the application.|B. Use Web identity federation and register your application with a third-party identity provider such as Google, Amazon, or Facebook.|C. Create an IAM role which has specific access to the DynamoDB table.|D. Use a third-party identity provider such as Google, Facebook or Amazon so users can become an AWS IAM User with access to the application.",
+  "video_url": "https://certificationation.com/videos/exam-for-an-application-that-needs-exam-030.html",
+  "url": "https://certificationation.com/questions/exam-for-an-application-that-needs-exam-030.html"
+}

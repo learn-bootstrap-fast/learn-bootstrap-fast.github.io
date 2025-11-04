@@ -1,0 +1,80 @@
+---
+title: "You manage a Cloud Spanner database for a healthcareExam"
+description: "Video for you manage a Cloud Spanner database for a healthcare company. The patients table stores data with columns patientId , doctorId , and hospitalId . A"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You manage a Cloud Spanner database for a healthcare company. The patients table stores data with columns patientId , doctorId , and hospitalId . A specific hospital, identified by hospitalId='9999' , requires regular queries to retrieve patients assigned to different doctors. How should you parameterize the query for performance?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are responsible for a Cloud Spanner database for a national health insurer. The members table stores member_id, clinician_id, and facility_id. Analysts routinely query one specific facility identified as facility_id=&apos;7777&apos; while they vary the clinician_id to see different assignments. You want predictable performance and query plan reuse across runs. How should you write the query parameters?",
+  "options": [
+    {
+      "text": "SELECT member_id FROM members WHERE clinician_id=@clinician_id AND facility_id LIKE &apos;777%&apos;",
+      "explanation": "This statement uses an equality for clinician_id and a prefix pattern for facility_id.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "SELECT member_id FROM members@{FORCE_INDEX=IdxFacility} WHERE clinician_id=@clinician_id AND facility_id=&apos;7777&apos;",
+      "explanation": "This statement pins a specific index and uses a literal for facility_id.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "SELECT member_id FROM members WHERE clinician_id=@clinician_id AND facility_id=@facility_id",
+      "explanation": "This statement binds both filter values as parameters which can help with plan stability and cache reuse.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "SELECT member_id FROM members WHERE clinician_id=@clinician_id OR facility_id=&apos;7777&apos;",
+      "explanation": "This statement uses an OR condition that can expand the result set beyond the intended intersection of filters.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>SELECT member_id FROM members WHERE clinician_id=@clinician_id AND facility_id=@facility_id</b>. Using bound parameters for both predicates allows Cloud Spanner to cache and reuse a stable plan while analysts vary the clinician value and keep the facility value consistent. Equality filters keep selectivity high and support consistent access paths for predictable performance.</p><p>Parameterized queries in Spanner promote plan reuse because the optimizer can compile a plan that is independent of specific literal values. Equality on both facility and clinician lets the optimizer choose the most appropriate index or primary key access, and it avoids the variability that comes from range conditions. Even if the facility value is usually 7777, keeping it as a parameter preserves reuse and flexibility without changing the query text.</p><p><i>SELECT member_id FROM members WHERE clinician_id=@clinician_id AND facility_id LIKE '777%'</i> is incorrect because it broadens the filter to a prefix range rather than matching the single facility, and the range pattern reduces selectivity and can lead to less predictable performance. It also does not parameterize the facility value.</p><p><i>SELECT member_id FROM members@{FORCE_INDEX=IdxFacility} WHERE clinician_id=@clinician_id AND facility_id='7777'</i> is incorrect because it hard codes the facility value and forces a specific index, which can lock the plan to an access path that may not be optimal across data distributions or future changes. Spanner guidance is to use parameters and let the optimizer choose the index unless you have a proven need.</p><p><i>SELECT member_id FROM members WHERE clinician_id=@clinician_id OR facility_id='7777'</i> is incorrect because it does not meet the requirement. The OR predicate returns rows from any clinician at the target facility as well as any facility for the target clinician, which increases data scanned and reduces predictability.</p>",
+  "batch_id": "212",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You manage a Cloud Spanner database for a healthcare company. The patients table stores data with columns patientId , doctorId , and hospitalId . A specific hospital, identified by hospitalId='9999' , requires regular queries to retrieve patients assigned to different doctors. How should you parameterize the query for performance?",
+  "originalOptions": "A. SELECT patientId FROM patients WHERE doctorId=@doctorId AND hospitalId=@hospitalId<br/>B. SELECT patientId FROM patients WHERE doctorId=@doctorId AND hospitalId LIKE '999%'<br/>C. SELECT patientId FROM patients WHERE doctorId=@doctorId OR hospitalId='9999'<br/>D. SELECT patientId FROM patients WHERE doctorId=@doctorId AND hospitalId='9999'a",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "12",
+  "tip": "<p>When the question asks for <i>predictable performance</i> and <i>plan reuse</i> in Cloud Spanner, choose equality filters with bound parameters on the filtering columns and avoid literals and index hints unless you have clear evidence they are required.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/best-practices/performance-and-query-optimization#use_query_parameters",
+    "https://cloud.google.com/spanner/docs/using-sql#parameterized_statements",
+    "https://cloud.google.com/spanner/docs/query-syntax#force_index_clause",
+    "https://cloud.google.com/spanner/docs/functions-and-operators#like"
+  ],
+  "url": "https://certificationation.com/questions/exam-for-a-healthcare-company-the-exam-012.html",
+  "video_url": "https://certificationation.com/videos/exam-for-a-healthcare-company-the-exam-012.html"
+}

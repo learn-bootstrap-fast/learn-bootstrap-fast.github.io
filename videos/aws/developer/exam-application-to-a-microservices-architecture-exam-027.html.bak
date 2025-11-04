@@ -1,0 +1,80 @@
+---
+title: "You are migrating a monolithic application to aExam"
+description: "Video for you are migrating a monolithic application to a microservices architecture on Google Cloud Platform (GCP). The application uses a relational database."
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are migrating a monolithic application to a microservices architecture on Google Cloud Platform (GCP). The application uses a relational database. As part of the migration process, you need to assess application and database dependencies. Which of the following methods should you use to ensure a comprehensive assessment?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Blue Harbor Media is splitting a legacy monolith into microservices on Google Cloud. The system runs on a relational PostgreSQL database with about 120 tables and many stored procedures. During planning you need to build a complete picture of how application components read and write database objects so that you can define service boundaries and data ownership with confidence. What should you do to ensure a comprehensive dependency assessment?",
+  "options": [
+    {
+      "text": "Investigate only service to service calls because the database will stay as is for the initial release",
+      "explanation": "This approach targets runtime calls between microservices while excluding database interactions.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Use Cloud SQL Insights to automatically discover and map all application to database dependencies",
+      "explanation": "Cloud SQL Insights provides query analytics and performance visibility for Cloud SQL workloads.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Study the application source code the relational schema and stored procedures and the SQL executed in production then use these findings to outline microservice boundaries and data ownership",
+      "explanation": "This approach combines code review schema analysis and examination of production SQL to understand how components interact with database objects.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Lift and shift the monolith and the database to Google Cloud first and afterwards infer dependencies by analyzing logs in Cloud Logging",
+      "explanation": "This approach moves the system first and uses operational logs to observe interactions after migration.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Study the application source code the relational schema and stored procedures and the SQL executed in production then use these findings to outline microservice boundaries and data ownership</b>.</p><p>This approach gives you both a static and a runtime view of behavior. Reviewing source code and stored procedures reveals intended data flows and call paths. Inspecting the relational schema exposes ownership candidates and coupling through foreign keys and shared tables. Observing the actual SQL executed in production verifies real usage patterns and uncovers edge cases and ad hoc queries that code review can miss. Combining these perspectives lets you map reads and writes to specific tables and procedures which is essential for defining service boundaries and data ownership with confidence.</p><p><i>Investigate only service to service calls because the database will stay as is for the initial release</i> is incorrect because it ignores the most critical dependency surface which is how code interacts with tables and stored procedures. Without understanding data access patterns you cannot safely assign ownership or minimize cross service coupling.</p><p><i>Use Cloud SQL Insights to automatically discover and map all application to database dependencies</i> is incorrect because Query Insights helps analyze query performance and workload characteristics but it does not automatically build an end to end map of application components to database objects or infer service boundaries. You still need code and schema analysis and a deliberate mapping exercise.</p><p><i>Lift and shift the monolith and the database to Google Cloud first and afterwards infer dependencies by analyzing logs in Cloud Logging</i> is incorrect because deferring discovery until after migration increases risk and may miss critical dependencies. Application logs rarely capture complete SQL activity and stored procedure behavior which results in an incomplete and potentially misleading picture.</p>",
+  "batch_id": "343",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are migrating a monolithic application to a microservices architecture on Google Cloud Platform (GCP). The application uses a relational database. As part of the migration process, you need to assess application and database dependencies. Which of the following methods should you use to ensure a comprehensive assessment?",
+  "originalOptions": "A. Assess dependencies only between the microservices, as the database will remain unchanged during the migration.<br/>B. Use Cloud Data Fusion to map dependencies between the application and database.<br/>C. Analyze the application code, database schema, and SQL queries to identify dependencies, and break down the monolithic application into microservices accordingly.<br/>D. Migrate the entire application and database to GCP, and then use Cloud Logging to analyze dependencies.",
+  "domain": "Migrate data solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "27",
+  "tip": "<p>When a question asks how to map application to database dependencies prefer answers that combine <i>static</i> code and schema review with <i>runtime</i> observation of production SQL. Look for comprehensive methods done before migration rather than tool only shortcuts.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/insights",
+    "https://cloud.google.com/logging/docs",
+    "https://cloud.google.com/architecture/framework/application-design#decomposition",
+    "https://www.postgresql.org/docs/current/pgstatstatements.html"
+  ],
+  "url": "https://certificationation.com/questions/exam-application-to-a-microservices-architecture-exam-027.html",
+  "video_url": "https://certificationation.com/videos/exam-application-to-a-microservices-architecture-exam-027.html"
+}

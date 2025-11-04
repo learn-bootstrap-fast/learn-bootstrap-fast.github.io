@@ -1,0 +1,62 @@
+---
+title: "You are responsible for creating an AWS ElasticExam"
+description: "Video for you are responsible for creating an AWS Elastic Beanstalk environment as soon as possible by using CLI commands. It is a PHP application installed on"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are responsible for creating an AWS Elastic Beanstalk environment as soon as possible by using CLI commands. It is a PHP application installed on the Linux server. Besides, in the new environment, a cron job should be set up in all instances. The file named as cron-linux is prepared for this and uploaded together with other application source code in an S3 bucket. Which kind of config file and CLI command are correct to create this Elastic Beanstalk environment?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct method is to place the <b>cron-linux.config</b> file inside the <code>.ebextensions</code> directory in your application bundle, which allows Elastic Beanstalk to automatically set up cron jobs on all instances during environment provisioning. Creating your environment with the <code>aws elasticbeanstalk create-environment</code> CLI or using the <code>eb cli</code> ensures these configuration files are processed as part of environment setup.</p><p>Option <i>\"Upload the cron-linux file to S3, then reference it using the Beanstalk environment UI without any config files.\"</i> is incorrect because merely uploading to S3 and referencing via UI doesn’t automatically associate the file with instance initialization, nor does it automate cron setup.<br>Option <i>\"Directly add the cron job after environment creation by SSH-ing to each instance manually; no config file is necessary when using the CLI.\"</i> is not scalable or maintainable, as instance replacements would require repeating manual steps.<br>Option <i>\"Place cron-linux.yaml in your application's root folder, and run eb init followed by eb create to deploy the environment.\"</i> is also incorrect, because Beanstalk expects configuration files to be in <code>.ebextensions</code> and with a <code>.config</code> extension rather than <code>.yaml</code>.</p><p><b>Tip:</b> Always use the <code>.ebextensions</code> directory with <code>.config</code> files for environment customizations. This ensures your environment remains consistent, repeatable, and fully automated.</p>",
+  "query": "<p>You have been assigned to deploy a PHP web application to AWS Elastic Beanstalk using the CLI, and need to ensure a cron job is configured on all EC2 instances. The configuration file named <code>cron-linux</code> has already been created and uploaded together with your application files in an S3 bucket. Which config file format and CLI approach should you use to properly launch this environment?</p>",
+  "original_oid": "6793d9f061969b416038a0fe",
+  "options": [
+    {
+      "correct": true,
+      "text": "Include <code>cron-linux.config</code> under a <code>.ebextensions</code> directory in your application source, then use <code>aws elasticbeanstalk create-environment</code> to launch using this packaged source.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Upload the <code>cron-linux</code> file to S3, then reference it using the Beanstalk environment UI without any config files.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Directly add the cron job after environment creation by SSH-ing to each instance manually; no config file is necessary when using the CLI.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Place <code>cron-linux.yaml</code> in your application's root folder, and run <code>eb init</code> followed by <code>eb create</code> to deploy the environment.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question139",
+  "originalQuery": "You are responsible for creating an AWS Elastic Beanstalk environment as soon as possible by using CLI commands.\nIt is a PHP application installed on the Linux server.\nBesides, in the new environment, a cron job should be set up in all instances.\nThe file named as cron-linux is prepared for this and uploaded together with other application source code in an S3 bucket.\nWhich kind of config file and CLI command are correct to create this Elastic Beanstalk environment?",
+  "originalOptions": null,
+  "video_url": "https://certificationation.com/videos/exam-aws-elastic-beanstalk-environment-as-exam-406.html",
+  "url": "https://certificationation.com/questions/exam-aws-elastic-beanstalk-environment-as-exam-406.html"
+}

@@ -1,0 +1,62 @@
+---
+title: "A financial company has used Kinesis Stream to storeExam"
+description: "Video for a financial company has used Kinesis Stream to store system logs in real time from a busy application. Then the data in Kinesis Stream is sent to a"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A financial company has used Kinesis Stream to store system logs in real time from a busy application. Then the data in Kinesis Stream is sent to a Kinesis Firehose delivery stream which delivers data to the final S3 bucket destination. The input data format is RFC3163 Syslog however it is required to convert the format to JSON in Kinesis Firehose before the data is delivered. How should you implement this?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct approach is to use <b>Set up a Lambda function within Kinesis Firehose using a relevant blueprint to parse and convert the Syslog records to JSON. Kinesis Firehose will trigger the Lambda function for on-the-fly data transformation.</b> Kinesis Data Firehose provides built-in integration with AWS Lambda, allowing delivery streams to invoke Lambda functions for processing and transforming raw records (such as RFC3163 Syslog) before they are written to the destination, like Amazon S3. This mechanism enables dynamic inline transformations, including format changes to JSON.<br><br>Why the others are incorrect:<br><i>Enable schema generation and data conversion in Kinesis Data Firehose by calling AWS Glue and defining the desired structure for the data.</i> — Kinesis Data Firehose’s Glue integration presently supports schema discovery and conversion mainly for Parquet and ORC formats. It does not provide general-purpose format conversions like Syslog-to-JSON.<br><br><i>Integrate Apache Hive JSON SerDe as a third-party JSON deserializer with Kinesis Firehose so that incoming messages are reformatted to JSON.</i> — Firehose does not support the use of Apache Hive JSON SerDe or similar third-party libraries for direct data transformation; SerDe is specific to Hive and not applicable to Firehose transformation pipelines.<br><br><i>The format transformation cannot be done within Kinesis Firehose and must instead be performed upstream in the Kinesis Data Stream component.</i> — This is incorrect since Firehose can perform custom transformations using Lambda, so pre-processing the data within the stream is unnecessary. <br><br><b>Tip:</b> Always leverage Firehose-to-Lambda transformations for custom pre-delivery changes to the data format in serverless pipelines. Review official documentation for supported data integrations and transformation capabilities in Kinesis Data Firehose.</p>",
+  "query": "<p>An investment firm records real-time system logs in Kinesis Streams from a high-traffic application. The data is subsequently pushed to an S3 bucket through a Kinesis Firehose delivery stream. The log input follows the RFC3163 Syslog format, but before reaching the S3 destination, the requirement is to reformat the logs to JSON using Kinesis Firehose. What is an appropriate solution to accomplish this transformation in Firehose?</p>",
+  "original_oid": "6793da4561969b416038a1ac",
+  "options": [
+    {
+      "correct": true,
+      "text": "Set up a Lambda function within Kinesis Firehose using a relevant blueprint to parse and convert the Syslog records to JSON. Kinesis Firehose will trigger the Lambda function for on-the-fly data transformation.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Enable schema generation and data conversion in Kinesis Data Firehose by calling AWS Glue and defining the desired structure for the data.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Integrate Apache Hive JSON SerDe as a third-party JSON deserializer with Kinesis Firehose so that incoming messages are reformatted to JSON.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "The format transformation cannot be done within Kinesis Firehose and must instead be performed upstream in the Kinesis Data Stream component.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question315",
+  "originalQuery": "A financial company has used Kinesis Stream to store system logs in real time from a busy application.\nThen the data in Kinesis Stream is sent to a Kinesis Firehose delivery stream which delivers data to the final S3 bucket destination.\nThe input data format is RFC3163 Syslog however it is required to convert the format to JSON in Kinesis Firehose before the data is delivered.\nHow should you implement this?",
+  "originalOptions": "A. Create a Lambda function for data transformation using a blueprint. Kinesis Data Firehose can invoke the Lambda function to transform incoming source data.\nB. In Kinesis Data Firehose, invoke AWS Glue to create a schema in order to modify the format of incoming source data.\nC. Configure Kinesis Data Firehose to use third party JSON deserializer tool Apache Hive JSON SerDe to convert the data to JSON format.\nD. Kinesis Firehose cannot transform the data format inside of it. Instead it has to be done in Kinesis Stream.",
+  "video_url": "https://certificationation.com/videos/exam-stream-to-store-system-logs-exam-389.html",
+  "url": "https://certificationation.com/questions/exam-stream-to-store-system-logs-exam-389.html"
+}

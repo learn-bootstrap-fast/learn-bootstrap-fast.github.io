@@ -1,0 +1,80 @@
+---
+title: "As a Database Engineer, you are responsible forExam"
+description: "Video for as a Database Engineer, you are responsible for periodically testing the disaster recovery strategy of a large-scale, multi-tier application. The goal"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are responsible for periodically testing the disaster recovery strategy of a large-scale, multi-tier application. The goal is to ensure the effectiveness of the disaster recovery plan while minimizing the impact on production workloads. Which of the following options is the most suitable approach for testing the disaster recovery plan while maintaining production performance and ensuring accurate test results?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the Cloud Database Engineer at BluePeak Commerce, which operates a high traffic three tier service on Google Cloud. Leadership mandates that you run disaster recovery drills every 90 days. You must validate the recovery runbook end to end using realistic data and system topology while avoiding any measurable impact on live customer traffic. What is the most appropriate way to conduct these tests to keep production performance stable and to obtain accurate results?",
+  "options": [
+    {
+      "text": "Use Fault Injection Simulator on the production stack to introduce controlled failures and observe system behavior during a drill",
+      "explanation": "This approach introduces deliberate faults into live services to study resilience and operational responses in production",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Build a fully mirrored environment in a separate Google Cloud project and stream changes from production in near real time, then run the disaster recovery drills there",
+      "explanation": "This creates an isolated environment that mirrors production and uses continuous replication to provide realistic data and topology",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Run the disaster recovery exercises against the production environment during a planned maintenance window",
+      "explanation": "This executes failover and recovery steps directly on production when traffic levels are expected to be lower",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Restore last night&apos;s backup into a non production instance and verify application startup and basic connectivity",
+      "explanation": "This uses a recent backup snapshot to validate restore procedures without live change replication",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Build a fully mirrored environment in a separate Google Cloud project and stream changes from production in near real time, then run the disaster recovery drills there</b>.</p><p>This approach isolates testing from production at the project boundary which keeps quotas, IAM, and networking separate and protects live traffic. You can recreate the full three tier topology so that you validate the runbook end to end. By streaming changes in near real time you exercise with current data and system state which produces accurate RTO and RPO measurements without sending any customer requests to the test environment. Because no production traffic is routed to the mirror you avoid measurable impact while still practicing realistic failover, promotion, and recovery steps.</p><p>This pattern aligns with recommended practices to separate environments by project and to use change data capture or native replication to keep a standby environment closely synchronized. You can use the same automation and deployment pipelines to provision and configure both environments which makes the drill results trustworthy and repeatable.</p><p><i>Use Fault Injection Simulator on the production stack to introduce controlled failures and observe system behavior during a drill</i> is not appropriate because chaos experiments in production can degrade performance or availability which violates the requirement to avoid measurable impact. It also focuses on resilience of running systems rather than validating a full disaster recovery runbook that includes environment rebuild or region failover. This is not a native Google Cloud managed service, which makes it less likely to be the best fit in this context.</p><p><i>Run the disaster recovery exercises against the production environment during a planned maintenance window</i> still uses production resources and risks affecting customers and it also produces results that are less representative because traffic and behavior during maintenance windows do not mirror normal operations.</p><p><i>Restore last night&apos;s backup into a non production instance and verify application startup and basic connectivity</i> only proves backup restoration and a minimal health check. It uses stale data, does not reflect live system topology, and does not validate replication, networking, access controls, or the orchestration required for a real failover, so the results are not accurate for a full disaster recovery drill.</p>",
+  "batch_id": "345",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are responsible for periodically testing the disaster recovery strategy of a large-scale, multi-tier application. The goal is to ensure the effectiveness of the disaster recovery plan while minimizing the impact on production workloads. Which of the following options is the most suitable approach for testing the disaster recovery plan while maintaining production performance and ensuring accurate test results?",
+  "originalOptions": "A. Create a separate environment mirroring the production environment and use real-time database replication to conduct disaster recovery tests.<br/>B. Use a scheduled maintenance window to conduct disaster recovery tests on the production environment.<br/>C. Introduce random faults into the production environment to test the system's resilience.<br/>D. Implement a canary deployment strategy, where a small portion of the production environment is used for testing disaster recovery scenarios.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "274",
+  "tip": "<p>When a question requires <i>no production impact</i> and <i>realistic data</i>, prefer answers that isolate the test in a separate environment and keep it synchronized with near real time change streams so you can measure RTO and RPO accurately without touching live traffic.</p>",
+  "references": [
+    "https://cloud.google.com/docs/enterprise/best-practices-for-enterprise-organizations",
+    "https://cloud.google.com/architecture/dr-scoping-and-planning",
+    "https://cloud.google.com/datastream/docs/overview",
+    "https://cloud.google.com/sql/docs/postgres/replication"
+  ],
+  "url": "https://certificationation.com/questions/exam-responsible-for-periodically-testing-the-exam-274.html",
+  "video_url": "https://certificationation.com/videos/exam-responsible-for-periodically-testing-the-exam-274.html"
+}

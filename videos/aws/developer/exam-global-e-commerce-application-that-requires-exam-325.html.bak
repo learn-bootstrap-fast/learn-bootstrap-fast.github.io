@@ -1,0 +1,82 @@
+---
+title: "A Database Engineer is designing a global e-commerceExam"
+description: "Video for a Database Engineer is designing a global e-commerce application that requires a highly available and scalable database in Google Cloud. The database"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A Database Engineer is designing a global e-commerce application that requires a highly available and scalable database in Google Cloud. The database must support strong consistency and low latency for read and write operations. Which of the following database options and configurations best meets these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A database specialist at MetroCab, a global ride-hailing startup, is building a worldwide booking platform on Google Cloud. The data layer must scale horizontally, provide strong consistency for transactions, and keep read and write latency low for users on different continents. The team also wants the system to stay available through a regional outage and targets 99.99% availability with p95 write latency under 20 ms for clients near a serving region. Which database service and deployment choice should they implement?",
+  "options": [
+    {
+      "text": "Cloud Bigtable with cross-region replication",
+      "explanation": "This option uses multi-cluster routing with asynchronous replication and is optimized for massive throughput and low-latency reads for wide-column workloads",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud Spanner configured as a multi-region instance",
+      "explanation": "This option provides synchronous replication across geographically separate regions and supports externally consistent transactions with automatic failover",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "AlloyDB for PostgreSQL with cross-region read pool replicas",
+      "explanation": "This option scales reads in additional regions while primary writes remain in a single region for a managed PostgreSQL-compatible engine",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud SQL with cross-region read replicas",
+      "explanation": "This option adds read capacity in other regions while high availability failover remains limited to the primary region for managed relational databases",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Cloud Spanner configured as a multi-region instance</b>. It uniquely combines horizontal scalability with strongly consistent distributed transactions and it is designed to keep write latency low for clients near the leader or serving region. It also stays available through a regional outage and meets the 99.99 percent availability target that the team requires.</p><p>This service provides externally consistent transactions, global schema, and automatic sharding so it can scale write and read throughput without sacrificing consistency. Multi-region configurations use synchronous quorum replication and leader placement so nearby clients can achieve low commit latency while still maintaining strong consistency across regions.</p><p>It also offers automatic failover across regions and delivers an availability SLA that meets or exceeds the stated 99.99 percent goal, which aligns with the requirement to remain operational during a regional outage.</p><p><i>Cloud Bigtable with cross-region replication</i> is not appropriate because cross-region replication is eventually consistent for reads across clusters and it does not provide multi-row ACID transactions. This choice cannot guarantee strongly consistent transactional writes across continents.</p><p><i>AlloyDB for PostgreSQL with cross-region read pool replicas</i> has a single writable primary region and read pools only serve reads. Cross-region replicas are for read scaling and disaster recovery rather than multi-region strongly consistent writes, so global write latency and availability through an instant regional failover do not meet the requirement.</p><p><i>Cloud SQL with cross-region read replicas</i> uses a single primary for writes and asynchronous replicas for reads, which means no multi-region strongly consistent writes and higher write latency for distant clients. Its failover and availability characteristics do not meet the global availability and latency targets at the stated scale.</p>",
+  "batch_id": "104",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "A Database Engineer is designing a global e-commerce application that requires a highly available and scalable database in Google Cloud. The database must support strong consistency and low latency for read and write operations. Which of the following database options and configurations best meets these requirements?",
+  "originalOptions": "A. Cloud Bigtable with replication enabled across multiple regions<br/>B. Cloud Spanner with a multi-region instance configuration<br/>C. Cloud SQL with Failover Replicas in multiple regions<br/>D. Cloud SQL with Read Replicas in multiple regions",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "325",
+  "tip": "<p>When a question combines <i>global scale</i>, <i>strong consistency</i>, and <i>multi-region availability</i> with low write latency near users, map it to Spanner multi-region. If writes are limited to one region or replicas are read only, it is usually not the right fit.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/overview",
+    "https://cloud.google.com/spanner/docs/instance-configurations",
+    "https://cloud.google.com/spanner/sla",
+    "https://cloud.google.com/bigtable/docs/consistency",
+    "https://cloud.google.com/alloydb/docs/disaster-recovery",
+    "https://cloud.google.com/sql/docs/mysql/replication"
+  ],
+  "url": "https://certificationation.com/questions/exam-global-e-commerce-application-that-requires-exam-325.html",
+  "video_url": "https://certificationation.com/videos/exam-global-e-commerce-application-that-requires-exam-325.html"
+}

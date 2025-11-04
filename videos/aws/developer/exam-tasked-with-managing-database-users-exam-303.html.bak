@@ -1,0 +1,78 @@
+---
+title: "As a Database Engineer, you are tasked with managingExam"
+description: "Video for as a Database Engineer, you are tasked with managing database users for a project. How would you grant a user read and write access to a specific"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are tasked with managing database users for a project. How would you grant a user read and write access to a specific Cloud SQL instance?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the database lead at example.com and need to let a particular developer read and modify data on a single Cloud SQL instance that powers a test workload. Which IAM role should you assign to that user for the instance so they can connect and run queries without granting broad administrative privileges?",
+  "options": [
+    {
+      "text": "Grant the roles/cloudsql.editor IAM role to the user",
+      "explanation": "This role lets users create and modify Cloud SQL instances and adjust settings but it is focused on instance management",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Grant the roles/cloudsql.client IAM role to the user",
+      "explanation": "This role enables users to connect to Cloud SQL through the Auth Proxy or connectors and issue queries when a database account exists",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Grant the roles/cloudsql.viewer IAM role to the user",
+      "explanation": "This role provides read only visibility into Cloud SQL instance metadata and monitoring information",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Grant the roles/cloudsql.admin IAM role to the user",
+      "explanation": "This role gives full administrative control over Cloud SQL resources across the project and includes the ability to create and delete instances",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Grant the roles/cloudsql.client IAM role to the user</b>.</p><p>This role allows a user to connect to a Cloud SQL instance using the Cloud SQL Auth Proxy or connectors and to access the minimal instance information required to establish the connection. It does not grant administrative capabilities over instances or settings, which keeps privileges limited to what is needed to run queries. Assign it on the specific instance to keep the scope narrow, and ensure the developer also has a database user within the instance so they can read and modify data.</p><p>The <i>Grant the roles/cloudsql.editor IAM role to the user</i> option is overly broad because it allows changing Cloud SQL resources and configurations rather than only enabling connections and query execution.</p><p>The <i>Grant the roles/cloudsql.viewer IAM role to the user</i> option only provides read access to instance metadata and does not allow connecting to the database, so the developer would be unable to run queries.</p><p>The <i>Grant the roles/cloudsql.admin IAM role to the user</i> option grants full administrative control and therefore exceeds the requirement and does not follow the principle of least privilege.</p>",
+  "batch_id": "15",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are tasked with managing database users for a project. How would you grant a user read and write access to a specific Cloud SQL instance?",
+  "originalOptions": "A. Assign the roles/cloudsql.client role to the user.<br/>B. Assign the roles/cloudsql.viewer role to the user.<br/>C. Assign the roles/cloudsql.admin role to the user.<br/>D. Assign the roles/cloudsql.editor role to the user.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "303",
+  "tip": "<p>Match the action to the narrowest role. If the user only needs to connect and run queries, choose <i>client</i>. If a role would let them change instances or settings, it is too broad.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/iam-roles",
+    "https://cloud.google.com/sql/docs/mysql/connect-auth-proxy"
+  ],
+  "url": "https://certificationation.com/questions/exam-tasked-with-managing-database-users-exam-303.html",
+  "video_url": "https://certificationation.com/videos/exam-tasked-with-managing-database-users-exam-303.html"
+}

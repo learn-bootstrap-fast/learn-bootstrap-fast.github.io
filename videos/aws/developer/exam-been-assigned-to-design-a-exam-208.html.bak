@@ -1,0 +1,80 @@
+---
+title: "As a Database Engineer, you have been assigned to designExam"
+description: "Video for as a Database Engineer, you have been assigned to design a Firestore database for a high-traffic web application. The database has the following"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you have been assigned to design a Firestore database for a high-traffic web application. The database has the following performance requirements: 500 reads per second (RPS) 1,000 writes per second (RPS) 1 TB of storage capacity Considering the above requirements, which Firestore mode and storage solution should you choose for your Firestore instance?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the Database Engineer for a streaming media startup that is building a customer-facing web app with heavy traffic. The system must handle 700 reads per second and 900 writes per second and it needs approximately 1.5 TB of total storage. Given these constraints, which Firestore mode and storage configuration should you implement to satisfy both performance and capacity requirements?",
+  "options": [
+    {
+      "text": "Firestore in Datastore mode with 1.5 TB SSD storage",
+      "explanation": "This uses the Datastore compatibility mode and relies on SSD-backed managed storage.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Firestore in Native mode with 1.5 TB HDD storage",
+      "explanation": "This selects Firestore&apos;s document model while assuming a hard disk option for the underlying storage.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Firestore in Native mode with 1.5 TB SSD storage",
+      "explanation": "This chooses Firestore&apos;s recommended document model and relies on fully managed SSD-backed storage.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Firestore in Datastore mode with 0.75 TB SSD and 0.75 TB HDD",
+      "explanation": "This places the database in Datastore mode and attempts to split data across SSD and HDD volumes.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Firestore in Native mode with 1.5 TB SSD storage</b> because it best satisfies the heavy read and write workload and the required capacity for a customer-facing web application.</p><p>This mode is designed for mobile and web apps and automatically scales to very high read and write rates while maintaining low latency. The target of 700 reads per second and 900 writes per second is well within typical scaling behavior as long as writes are distributed across many documents. Storage of 1.5 TB is supported since Firestore scales storage without manual provisioning and the SSD-backed performance characteristics align with the low latency needs of a high traffic system.</p><p><i>Firestore in Datastore mode with 1.5 TB SSD storage</i> is not the right choice for a new customer-facing app. Datastore mode is mainly for compatibility with older Datastore workloads and it is less suitable for real-time mobile and web patterns. It can also run into contention if many writes target the same entity group which makes it a weaker fit for sustained high write rates.</p><p><i>Firestore in Native mode with 1.5 TB HDD storage</i> is not valid because Firestore does not expose an HDD option and HDD characteristics would not meet the low latency expected by this workload.</p><p><i>Firestore in Datastore mode with 0.75 TB SSD and 0.75 TB HDD</i> is incorrect because Firestore does not let you mix storage types or provision storage in this manner, and Datastore mode is not recommended for new high traffic web applications.</p>",
+  "batch_id": "274",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you have been assigned to design a Firestore database for a high-traffic web application. The database has the following performance requirements: 500 reads per second (RPS) 1,000 writes per second (RPS) 1 TB of storage capacity Considering the above requirements, which Firestore mode and storage solution should you choose for your Firestore instance?",
+  "originalOptions": "A. Firestore in Native mode, 1 TB SSD storage<br/>B. Firestore in Native mode, 1 TB HDD storage<br/>C. Firestore in Datastore mode, 1 TB SSD storage<br/>D. Firestore in Native mode, 0.5 TB SSD storage, 0.5 TB HDD storage",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "208",
+  "tip": "<p>Start by matching workload patterns and client needs. Prefer <i>Native mode</i> for new mobile and web apps that need real-time features and massive scale. Treat any option that suggests choosing <i>HDD</i> or mixing storage types for Firestore as a distractor since Firestore abstracts storage. Be cautious of <i>Datastore mode</i> in new designs due to contention patterns and limited feature fit.</p>",
+  "references": [
+    "https://cloud.google.com/firestore/docs/firestore-or-datastore",
+    "https://cloud.google.com/firestore/quotas",
+    "https://cloud.google.com/firestore/docs/best-practices",
+    "https://cloud.google.com/datastore/docs/best-practices#use_entity_groups_wisely"
+  ],
+  "url": "https://certificationation.com/questions/exam-been-assigned-to-design-a-exam-208.html",
+  "video_url": "https://certificationation.com/videos/exam-been-assigned-to-design-a-exam-208.html"
+}

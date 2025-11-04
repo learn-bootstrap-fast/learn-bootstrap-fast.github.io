@@ -1,0 +1,62 @@
+---
+title: "You have a large number of web servers in an AutoExam"
+description: "Video for you have a large number of web servers in an Auto Scaling group behind a load balancer. On an hourly basis, you want to filter and process the logs to"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have a large number of web servers in an Auto Scaling group behind a load balancer. On an hourly basis, you want to filter and process the logs to collect data on unique visitors and then put that data in a durable data store to run reports. Web servers in the Auto Scaling group are constantly launching and terminating based on your scaling policies. But you do not want to lose any of the log data from these servers during a stop/termination initiated by a user or by Auto Scaling. What two approaches will meet these requirements? Choose two answers from the options given below."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><b>Option 1</b> and <b>Option 2</b> are the two solutions that best meet all requirements for durability, log collection during instance termination, and hourly reporting:</p><ul><li><b>Install the Amazon CloudWatch Logs Agent on each web server...</b> - CloudWatch Logs is designed to stream server logs in near real time. By installing the agent and using Metric Filters, you can create custom metrics, such as tracking unique visitors. Scheduling a report via a separate EC2 job allows for reliable analytics. Since CloudWatch logs are streamed off-host, data remains available even when EC2 instances terminate. This process is fully managed and efficient for dynamic environments with frequent scale-in/out activity.</li><li><b>Configure the web servers to run a routine task that rotates and uploads logs to Amazon S3...</b> - Rotating and copying logs to an S3 bucket upon schedule and during shutdown ensures no data is lost, as S3 is highly durable. Data Pipeline then reliably moves data into Amazon Redshift for fast, scalable analytics and hourly reporting. Both S3 and Redshift are well-established for durability and scalability, making this a robust choice for variable server populations.</li></ul><p>Why the others are incorrect:</p><ul><li><i>Set up a scheduled task on the servers to rotate and send logs directly to Amazon Glacier...</i> - Amazon Glacier is primarily for cold, archival storage and not meant for frequent or fast access. Processing logs every hour from Glacier would be slow, expensive, and impractical for timely analytics since Glacier retrieval can take several hours. This workflow is not suitable for hourly reporting needs.</li><li><i>Install an AWS Data Pipeline-specific Logs Agent on every server as part of the deployment...</i> - There is no AWS Data Pipeline log agent; the service is intended for data orchestration and ETL, not direct log collection from web servers. Moreover, Data Pipeline does not provide a native metric filter mechanism nor direct server-to-Redshift streaming logs, making the option technically infeasible.</li></ul><p><b>Tip:</b> For highly ephemeral infrastructure, push logs to a durable, centralized service (CloudWatch Logs or S3) immediately and at shutdown to prevent data loss on termination. Use managed solutions for analytics and reporting to maximize availability and minimize complexity.</p>",
+  "query": "<p>You manage many web servers in an Auto Scaling group that sits behind a load balancer. Every hour, you need to filter and analyze server logs to collect information about unique visitors and store it in a persistent data store for reporting. Because servers are frequently added and removed by scaling actions, you need to ensure log data is not lost when instances are terminated by the Auto Scaling group or by users. Which two solutions fulfill these needs? Select two options below.</p>",
+  "original_oid": "6793d9c961969b416038a0b2",
+  "options": [
+    {
+      "correct": true,
+      "text": "Install the Amazon CloudWatch Logs Agent on each web server during deployment. Create a dedicated CloudWatch Logs group and add Metric Filters to establish custom metrics for tracking unique site visitors from streaming server logs. Schedule a task on an EC2 instance to generate hourly reports from these CloudWatch custom metrics.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Configure the web servers to run a routine task that rotates and uploads logs to Amazon S3. Make sure the OS shutdown script sends logs when an EC2 instance is stopped or terminated. Use AWS Data Pipeline to transfer the logs from S3 to Amazon Redshift and run reports every hour.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up a scheduled task on the servers to rotate and send logs directly to Amazon Glacier. Ensure that the shutdown process also transmits logs when a server stops or terminates. Integrate Amazon Data Pipeline to process Glacier-stored data and execute hourly report jobs.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Install an AWS Data Pipeline-specific Logs Agent on every server as part of the deployment. In AWS Data Pipeline, create a log group and configure Metric Filters that transfer processed logs directly from the servers to Amazon Redshift for hourly analysis.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question61",
+  "originalQuery": "You have a large number of web servers in an Auto Scaling group behind a load balancer.\nOn an hourly basis, you want to filter and process the logs to collect data on unique visitors and then put that data in a durable data store to run reports.\nWeb servers in the Auto Scaling group are constantly launching and terminating based on your scaling policies.\nBut you do not want to lose any of the log data from these servers during a stop/termination initiated by a user or by Auto Scaling.\nWhat two approaches will meet these requirements? Choose two answers from the options given below.",
+  "originalOptions": "[\"A. Install an Amazon Cloudwatch Logs Agent on every web server during the bootstrap process.Create a CloudWatch log group and define Metric Filters to create custom metrics that track unique visitors from the streaming web server logs. Create a scheduled task on an Amazon EC2 instance that runs every hour to generate a new report based on the Cloudwatch custom metrics.\",\"B. On the web servers, create a scheduled task that executes a script to rotate and transmit the logs to Amazon Glacier. Ensure that the operating system shutdown procedure triggers a logs transmission when the Amazon EC2 instance is stopped/terminated. Use Amazon Data Pipeline to process the data in Amazon Glacier and run reports every hour.\",\"C. On the web servers, create a scheduled task that executes a script to rotate and transmit the logs to an Amazon S3 bucket. Ensure that the operating system shutdown procedure triggers a logs transmission when the Amazon EC2 instance is stopped/terminated.Use AWS Data Pipeline to move log data from the Amazon S3 bucket to Amazon Redshift to process and run reports every hour.\",\"D. Install an AWS Data Pipeline Logs Agent on every web server during the bootstrap process.Create a log group object in AWS Data Pipeline, and define Metric Filters to move processed log data directly from the web servers to Amazon Redshift and run reports every hour.\"]",
+  "video_url": "https://certificationation.com/videos/exam-an-auto-scaling-group-behind-exam-129.html",
+  "url": "https://certificationation.com/questions/exam-an-auto-scaling-group-behind-exam-129.html"
+}

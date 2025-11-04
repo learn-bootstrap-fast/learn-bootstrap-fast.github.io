@@ -1,0 +1,82 @@
+---
+title: "You are in the process of designing a disaster recoveryExam"
+description: "Video for you are in the process of designing a disaster recovery plan for a critical PostgreSQL database on Google Cloud SQL. Which strategy ensures a Recovery"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are in the process of designing a disaster recovery plan for a critical PostgreSQL database on Google Cloud SQL. Which strategy ensures a Recovery Point Objective (RPO) of zero with the least complexity?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "An online ticketing platform at scrumtuous.com runs its primary transactional system on Cloud SQL for PostgreSQL. Leadership requires an RPO of zero seconds across regions while keeping operations as simple as possible. Which approach should you adopt to meet these requirements?",
+  "options": [
+    {
+      "text": "Turn on automated backups with point in time recovery and binary logging for Cloud SQL for PostgreSQL",
+      "explanation": "This setup lets you restore the database to a chosen moment by replaying transaction logs",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Build a cross region standby on Compute Engine using PostgreSQL streaming replication",
+      "explanation": "This design uses virtual machines to run a secondary PostgreSQL instance that receives changes from the primary",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Migrate the workload to a Cloud Spanner multi region database for synchronous replication",
+      "explanation": "This service replicates data across multiple regions with strong consistency and automatic failover",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Enable the Cloud SQL high availability configuration within a single region",
+      "explanation": "This option creates a regional primary and standby pair that fails over automatically during a zonal outage",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Migrate the workload to a Cloud Spanner multi region database for synchronous replication</b>.</p><p><b>Cloud Spanner</b> provides synchronous replication across regions in a multi region configuration which delivers strong consistency and an RPO of zero in the face of regional failures. It is a fully managed service that handles replication, quorum, failover, and maintenance which keeps operations simple compared with building and operating your own cross region replication stack.</p><p><i>Turn on automated backups with point in time recovery and binary logging for Cloud SQL for PostgreSQL</i> is incorrect because backups and point in time recovery do not guarantee an RPO of zero across regions. In addition, binary logging is a MySQL feature and Cloud SQL for PostgreSQL uses write ahead logs for recovery.</p><p><i>Build a cross region standby on Compute Engine using PostgreSQL streaming replication</i> is incorrect because while you could attempt synchronous replication to target zero data loss, it introduces significant latency trade offs and operational complexity and therefore does not meet the requirement to keep operations as simple as possible.</p><p><i>Enable the Cloud SQL high availability configuration within a single region</i> is incorrect because it protects against zonal failures within one region rather than providing cross region protection. It cannot meet a cross region RPO of zero.</p>",
+  "batch_id": "221",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are in the process of designing a disaster recovery plan for a critical PostgreSQL database on Google Cloud SQL. Which strategy ensures a Recovery Point Objective (RPO) of zero with the least complexity?",
+  "originalOptions": "A. Configure binary logging and perform regular backups.<br/>B. Set up a self-managed disaster recovery site using Compute Engine.<br/>C. Deploy a Cloud Spanner instance for automatic multi-regional replication.<br/>D. Implement a multi-regional Cloud SQL instance.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "352",
+  "tip": "<p>When you see a requirement for <i>RPO of zero</i> <i>across regions</i> with operational simplicity, map that to managed <i>synchronous replication</i> which strongly suggests Cloud Spanner multi region.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/replication",
+    "https://cloud.google.com/spanner/docs/availability",
+    "https://cloud.google.com/sql/docs/postgres/high-availability",
+    "https://cloud.google.com/sql/docs/postgres/configure-pitr",
+    "https://cloud.google.com/sql/docs/postgres/replication",
+    "https://cloud.google.com/sql/docs/mysql/replication/configure-binlog"
+  ],
+  "url": "https://certificationation.com/questions/exam-disaster-recovery-plan-for-a-exam-352.html",
+  "video_url": "https://certificationation.com/videos/exam-disaster-recovery-plan-for-a-exam-352.html"
+}

@@ -1,0 +1,62 @@
+---
+title: "You plan to use a CloudWatch Event rule and a LambdaExam"
+description: "Video for you plan to use a CloudWatch Event rule and a Lambda function to provide customized notifications when the status of any check-in AWS Trusted Advisor"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You plan to use a CloudWatch Event rule and a Lambda function to provide customized notifications when the status of any check-in AWS Trusted Advisor is changed. For example, when Trusted Advisor reports an alert as the usage of EC2 On-Demand instances is over 80% of the limit, the CloudWatch Event rule is triggered and gets the team notified. However, when you try to create the Event rule in CloudWatch, you cannot find Trusted Advisor as the event source. Which of the following explanations is correct?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>In this scenario, the correct explanation is that <b>Trusted Advisor is not available as a supported event source in CloudWatch Event rules</b>. Currently, CloudWatch Events (now called EventBridge) does not support Trusted Advisor as a source. This is why you are unable to choose Trusted Advisor when configuring your Event rule.<br><br><i>'You need to upgrade your AWS Support plan to Business or Enterprise before you can select Trusted Advisor as an event source.'</i> is incorrect because the support plan only limits your access to Trusted Advisor checks themselves; it does not affect CloudWatch Event source availability.<br><br><i>'Selecting the US East (N. Virginia) region is necessary in order for Trusted Advisor to be available as an event source for CloudWatch rules.'</i> is also incorrect, as there is no region-specific requirement that will enable Trusted Advisor as an event source in CloudWatch.<br><br><i>'The IAM user lacks Trusted Advisor permissions, such as 'trustedadvisor:DescribeChecks', which prevents selecting it as an event source.'</i> is not accurate. While permissions are needed to access check data in Trusted Advisor, they do not influence Trusted Advisor's availability as a CloudWatch event source.<br><br><b>Tip:</b> To automate notifications when a Trusted Advisor check changes, you must use another approach, such as periodically invoking a Lambda function to call Trusted Advisor APIs and push findings as custom events to CloudWatch. Always check the EventBridge documentation for supported native sources.</p>",
+  "query": "<p>You intend to employ a CloudWatch Event rule together with a Lambda function to send tailored notifications whenever there is a change in the status of any AWS Trusted Advisor check.<br>For instance, if the EC2 On-Demand instance usage surpasses 80% of your limit and Trusted Advisor raises a flag, the CloudWatch Event rule should activate and alert your team.<br>However, as you attempt to set up this Event rule, you notice Trusted Advisor is not available as an event source in CloudWatch.<br>Which statement accurately explains this situation?</p>",
+  "original_oid": "6793d9cd61969b416038a0bb",
+  "options": [
+    {
+      "correct": false,
+      "text": "You need to upgrade your AWS Support plan to Business or Enterprise before you can select Trusted Advisor as an event source.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Selecting the US East (N. Virginia) region is necessary in order for Trusted Advisor to be available as an event source for CloudWatch rules.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Trusted Advisor is not available as a supported event source in CloudWatch Event rules.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "The IAM user lacks Trusted Advisor permissions, such as 'trustedadvisor:DescribeChecks', which prevents selecting it as an event source.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question70",
+  "originalQuery": "You plan to use a CloudWatch Event rule and a Lambda function to provide customized notifications when the status of any check-in AWS Trusted Advisor is changed.\nFor example, when Trusted Advisor reports an alert as the usage of EC2 On-Demand instances is over 80% of the limit, the CloudWatch Event rule is triggered and gets the team notified.\nHowever, when you try to create the Event rule in CloudWatch, you cannot find Trusted Advisor as the event source.\nWhich of the following explanations is correct?",
+  "originalOptions": "[\"A. The AWS region should be selected as US East (N. Virginia) for Trusted Advisor to be configured in the AWS CloudWatch Event rule.\",\"B. Trusted Advisor cannot be selected as the source unless the AWS support plan is upgraded to be Business or Enterprise.\",\"C. Trusted Advisor is not a supported event source for the CloudWatch Event rule.\",\"D. The IAM user does not have the Trusted Advisor read permission such as \\\"trustedadvisor:DescribeChecks\\\".\"]",
+  "video_url": "https://certificationation.com/videos/exam-rule-and-a-lambda-function-exam-444.html",
+  "url": "https://certificationation.com/questions/exam-rule-and-a-lambda-function-exam-444.html"
+}

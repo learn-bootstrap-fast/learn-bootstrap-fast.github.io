@@ -1,0 +1,62 @@
+---
+title: "You are developing a web application in AWS. You need toExam"
+description: "Video for you are developing a web application in AWS. You need to create a CloudWatch custom metric for the application and publish the metric data to AWS via"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are developing a web application in AWS. You need to create a CloudWatch custom metric for the application and publish the metric data to AWS via AWS CLI. You know that for metrics produced by AWS, the metrics data have a one-minute granularity. However, this standard resolution is not enough for your custom metric as you wish to get more immediate insight into the application's sub-minute activity. A high resolution with a granularity of one second is required for the metric. How would you implement this?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct approach is to use the <b>StorageResolution parameter set to 1</b> with the <b>put-metric-data</b> command when sending your custom metric data via the AWS CLI. This explicitly tells CloudWatch that your metric is high-resolution and should be stored at a one-second interval, instead of the default standard resolution (one minute).<br><br><b>Why the other choices are incorrect:</b><br><i>No changes are required; AWS CLI put-metric-data publishes metrics with a default 1-second resolution.</i> — This is incorrect because the default metric resolution for custom and AWS-built metrics is one minute. You must explicitly set StorageResolution to 1 to achieve a 1-second granularity.<br><i>Add the --dimensions=1 option when sending data with the AWS CLI to enable high-resolution metrics.</i> — This option has no effect on metric resolution. Dimensions are for metadata (like instance ID), not for controlling resolution.<br><i>In the CloudWatch metric graph, change the graph resolution to 1 second and zoom in to observe the metric data at the required detail.</i> — Changing the graph view does not alter how data is published or stored; the resolution is determined at metric creation and publication.<br><br><b>Tip:</b> Always use the --storage-resolution 1 flag in the AWS CLI for put-metric-data when you want sub-minute (high-resolution) metric data. Without this, your custom metric will only have standard (1-minute) granularity and you won't be able to zoom into the metric at a per-second level, regardless of how you manipulate the CloudWatch interface.</p>",
+  "query": "<p>You are developing an AWS-based web application. The application requires tracking a custom CloudWatch metric at a finer, one-second granularity, as the usual one-minute interval for AWS-generated metrics is too slow for your requirements.<br><br>What action should you take in order to publish this custom metric data from the AWS CLI at a high (one-second) resolution?</p>",
+  "original_oid": "6793da9761969b416038a24f",
+  "options": [
+    {
+      "correct": true,
+      "text": "Specify the StorageResolution parameter as 1 when using AWS CLI put-metric-data to publish the metric, so it is treated as high-resolution.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Add the --dimensions=1 option when sending data with the AWS CLI to enable high-resolution metrics.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "No changes are required; AWS CLI put-metric-data publishes metrics with a default 1-second resolution.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "In the CloudWatch metric graph, change the graph resolution to 1 second and zoom in to observe the metric data at the required detail.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question479",
+  "originalQuery": "You are developing a web application in AWS.\nYou need to create a CloudWatch custom metric for the application and publish the metric data to AWS via AWS CLI.\nYou know that for metrics produced by AWS, the metrics data have a one-minute granularity.\nHowever, this standard resolution is not enough for your custom metric as you wish to get more immediate insight into the application's sub-minute activity.\nA high resolution with a granularity of one second is required for the metric.\nHow would you implement this?",
+  "originalOptions": "A. No action is required as AWS CLI put-metric-data publishes the metric data with a resolution of 1 second by default.|B. In the CloudWatch metric graph, modify the resolution setting to 1 second interval and zoom in to see the metric in detail.|C. Add the --dimensions=1 option in the AWS CLI put-metric-data to specify the metric as a high-resolution metric.|D. When using the AWS CLI put-metric-data to publish the metric data, set the StorageResolution option to 1 second to specify the metric as a high-resolution metric.",
+  "video_url": "https://certificationation.com/videos/exam-aws-you-need-to-create-exam-304.html",
+  "url": "https://certificationation.com/questions/exam-aws-you-need-to-create-exam-304.html"
+}

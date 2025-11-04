@@ -1,0 +1,62 @@
+---
+title: "You have an application running a specific process thatExam"
+description: "Video for you have an application running a specific process that is critical to the application's functionality and has added and configured the health check"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have an application running a specific process that is critical to the application's functionality and has added and configured the health check process properly to your Auto Scaling Group. The instances are showing healthy. But the application itself is not working as it should. What could be the issue with the health check, since it is still showing the instances as healthy?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct answer is <b>The health check only evaluates instance-level status and does not monitor the critical application process.</b> In AWS, the default EC2 or Auto Scaling Group health check primarily monitors the underlying EC2 instance's status (such as system and instance reachability) and does not delve into application-specific processes. If you need the health check to validate whether a particular application process is running and functioning correctly, you must set up either an <b>ELB health check</b> targeting your application's endpoint or utilize a <b>custom health check</b> with scripts. </p><p>Option <i>The time interval configured for the health check is not appropriate</i> refers to how frequently health checks are performed, but it does not address the core issue—that the check isn't monitoring the application process. Option <i>Health checks cannot be set up to monitor application-specific processes</i> is incorrect because AWS allows custom health checks through scripts or ELB, which can target application-level metrics. Option <i>The health check has been set up in an incorrect AWS region</i> isn't relevant here, as an incorrect region would typically prevent any health check results from updating, not cause a false healthy status for the instances.</p><p><b>Tip:</b> Always ensure your health check matches the layer of health you want to monitor—use instance checks for infrastructure and custom or ELB health checks for applications.</p>",
+  "query": "<p>If an Auto Scaling Group's health checks are reporting all instances as healthy, but an application relying on a vital process is malfunctioning, what might be the underlying issue with the health check configuration?</p>",
+  "original_oid": "6793d9b461969b416038a089",
+  "options": [
+    {
+      "correct": false,
+      "text": "The time interval configured for the health check is not appropriate.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "The health check only evaluates instance-level status and does not monitor the critical application process.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Health checks cannot be set up to monitor application-specific processes.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "The health check has been set up in an incorrect AWS region.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question20",
+  "originalQuery": "You have an application running a specific process that is critical to the application's functionality and has added and configured the health check process properly to your Auto Scaling Group.\nThe instances are showing healthy.\nBut the application itself is not working as it should.\nWhat could be the issue with the health check, since it is still showing the instances as healthy?",
+  "originalOptions": "A. You do not have the time range in the health check properly configured.|B. It is not possible for a health check to monitor a process that involves the application.|C. The health check is not configured inthe correct region.|D. The health check is not checking the application process.",
+  "video_url": "https://certificationation.com/videos/exam-specific-process-that-is-critical-exam-127.html",
+  "url": "https://certificationation.com/questions/exam-specific-process-that-is-critical-exam-127.html"
+}

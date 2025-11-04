@@ -1,0 +1,83 @@
+---
+title: "As a Database Engineer, you are responsible forExam"
+description: "Video for as a Database Engineer, you are responsible for maintaining a highly available and performant Cloud SQL database. You noticed the response time for"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are responsible for maintaining a highly available and performant Cloud SQL database. You noticed the response time for queries has been increasing. Which of the following steps should you take to optimize the performance of the Cloud SQL database?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the Cloud Database Engineer for a retail analytics startup that runs a production Cloud SQL for MySQL instance supporting a product search API. Over the last 72 hours the average query latency during busy periods rose from about 90 ms to roughly 260 ms while CPU and memory metrics remain stable. You need a single step that most directly improves query execution without changing application code. What should you do?",
+  "options": [
+    {
+      "text": "Add more read replicas to the Cloud SQL instance",
+      "explanation": "This option creates additional read only replicas so read traffic can be distributed across multiple nodes",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Review the slow query log and create or refine indexes for the worst performing queries",
+      "explanation": "This option uses slow query analysis and execution plans to design or adjust indexes that help the database find rows efficiently",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Convert tables from InnoDB to MyISAM",
+      "explanation": "This option changes the storage engine to MyISAM which does not support transactions or row level locking and is not recommended for most workloads",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Scale the Cloud SQL instance to a larger machine type with more vCPU and memory",
+      "explanation": "This option increases compute and memory resources for the primary instance to provide more capacity",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct answer is <b>Review the slow query log and create or refine indexes for the worst performing queries</b>.</p><p>This approach targets the root cause of rising latency when CPU and memory are stable. The slow query log reveals statements that take the longest time so you can focus on the highest impact fixes. Adding or improving indexes gives the optimizer better access paths and can eliminate full scans and sorts which reduces latency without any application changes. You can validate improvements with EXPLAIN and by measuring new runtimes after index changes.</p><p><i>Add more read replicas to the Cloud SQL instance</i> is not the best single step to speed up individual query execution. Replicas distribute read traffic and increase aggregate throughput but they do not change the query plan or access paths of a given query. A slow query remains slow on the replica and replicas can introduce lag.</p><p><i>Convert tables from InnoDB to MyISAM</i> is inappropriate for a production workload. MyISAM lacks transactions, row level locking, and crash recovery which harms reliability and concurrency. It does not inherently improve query execution for typical OLTP patterns and it is not recommended for Cloud SQL environments that rely on high availability and backup features.</p><p><i>Scale the Cloud SQL instance to a larger machine type with more vCPU and memory</i> is unlikely to help since CPU and memory are already stable. Scaling up can add capacity but it does not fix inefficient query plans or missing indexes, so it often fails to reduce latency for poorly indexed queries and increases cost without addressing the cause.</p>",
+  "batch_id": "246",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are responsible for maintaining a highly available and performant Cloud SQL database. You noticed the response time for queries has been increasing. Which of the following steps should you take to optimize the performance of the Cloud SQL database?",
+  "originalOptions": "A. Analyze slow queries and create appropriate indexes.<br/>B. Convert the database from InnoDB to MyISAM storage engine.<br/>C. Move the Cloud SQL instance to a region closer to the users.<br/>D. Increase the number of read replicas.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "158",
+  "tip": "<p>When latency rises but CPU and memory are steady, think <i>query plan</i> and <i>indexes</i> rather than more hardware. Start with the <i>slow query log</i>, use <i>EXPLAIN</i> to confirm access paths, and design <i>selective composite indexes</i> for the filters and joins that matter most.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/diagnose-performance",
+    "https://cloud.google.com/sql/docs/mysql/flags#mysql-flags",
+    "https://cloud.google.com/sql/docs/mysql/replication",
+    "https://cloud.google.com/sql/docs/mysql/instance-settings#change-machine-type",
+    "https://dev.mysql.com/doc/refman/8.0/en/slow-query-log.html",
+    "https://dev.mysql.com/doc/refman/8.0/en/optimization-indexes.html",
+    "https://dev.mysql.com/doc/refman/8.0/en/myisam-storage-engine.html"
+  ],
+  "url": "https://certificationation.com/questions/exam-responsible-for-maintaining-a-highly-exam-158.html",
+  "video_url": "https://certificationation.com/videos/exam-responsible-for-maintaining-a-highly-exam-158.html"
+}

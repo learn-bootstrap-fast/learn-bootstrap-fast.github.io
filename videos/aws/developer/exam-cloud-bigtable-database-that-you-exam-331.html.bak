@@ -1,0 +1,80 @@
+---
+title: "Your organization has a multi-terabyte Cloud BigtableExam"
+description: "Video for your organization has a multi-terabyte Cloud Bigtable database that you need to back up regularly without affecting its performance. The backups will"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your organization has a multi-terabyte Cloud Bigtable database that you need to back up regularly without affecting its performance. The backups will be used for disaster recovery purposes. What's the most efficient way to do this without any downtime or performance degradation?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Coastline Metrics operates a 32 TB Cloud Bigtable instance that serves real time analytics, and they must create recurring backups for disaster recovery while avoiding downtime and any noticeable performance impact. What is the most efficient approach to meet this requirement?",
+  "options": [
+    {
+      "text": "Run a nightly Dataflow job that exports all Bigtable rows to Cloud Storage",
+      "explanation": "This uses the Bigtable connector in Dataflow to read the entire table and write data files to a Cloud Storage bucket for archival.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Stream Bigtable change streams to Pub/Sub and archive them to Cloud Storage",
+      "explanation": "This captures row mutations as they occur and stores the event stream for later processing or reconstruction.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure Cloud Bigtable managed backups for recurring protection",
+      "explanation": "This leverages the native Cloud Bigtable backup capability which supports scheduled backups and fast restore without exporting data.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use gsutil to copy the Cloud Bigtable instance into Cloud Storage",
+      "explanation": "This treats the database like flat files and attempts to copy data with a storage tool that is not designed for Bigtable backups.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Configure Cloud Bigtable managed backups for recurring protection</b>.</p><p><b>Managed backups</b> are a native Bigtable capability that you can schedule to run on a recurring cadence. They create point in time consistent backups without requiring downtime and they impose negligible performance impact because Bigtable copies data from its storage layer rather than scanning all rows through the serving path. <b>Managed backups</b> also support retention policies and fast restores, which make them efficient and reliable for disaster recovery at this scale.</p><p><i>Run a nightly Dataflow job that exports all Bigtable rows to Cloud Storage</i> is inefficient and risky for a 32 TB serving workload because it must scan the entire table, consumes significant read throughput, can affect latency, and does not provide a simple point in time consistent snapshot during active writes.</p><p><i>Stream Bigtable change streams to Pub/Sub and archive them to Cloud Storage</i> does not create a complete backup by itself since it captures only mutations after enablement. You would still need a baseline snapshot and a reliable replay process, which adds complexity and does not meet the requirement for straightforward recurring backups.</p><p><i>Use gsutil to copy the Cloud Bigtable instance into Cloud Storage</i> is not feasible because gsutil operates on Cloud Storage objects and cannot copy a Bigtable instance or tables. This option does not provide a usable or restorable backup of Bigtable data.</p>",
+  "batch_id": "155",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "Your organization has a multi-terabyte Cloud Bigtable database that you need to back up regularly without affecting its performance. The backups will be used for disaster recovery purposes. What's the most efficient way to do this without any downtime or performance degradation?",
+  "originalOptions": "A. Enable Cloud Bigtable's built-in backup feature.<br/>B. Use BigQuery to run a full export job of Cloud Bigtable data.<br/>C. Use the Dataflow connector to stream Cloud Bigtable data to a backup location.<br/>D. Use gsutil to copy the entire Cloud Bigtable dataset to Cloud Storage.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "331",
+  "tip": "<p>When you see a requirement for recurring backups with minimal impact, prefer the <i>native</i> backup feature of the managed service. Built in capabilities usually deliver consistency, scheduling, and fast restore without custom pipelines.</p>",
+  "references": [
+    "https://cloud.google.com/bigtable/docs/backups",
+    "https://cloud.google.com/bigtable/docs/creating-restoring-backups",
+    "https://cloud.google.com/bigtable/docs/change-streams",
+    "https://cloud.google.com/bigtable/docs/exporting-importing"
+  ],
+  "url": "https://certificationation.com/questions/exam-cloud-bigtable-database-that-you-exam-331.html",
+  "video_url": "https://certificationation.com/videos/exam-cloud-bigtable-database-that-you-exam-331.html"
+}

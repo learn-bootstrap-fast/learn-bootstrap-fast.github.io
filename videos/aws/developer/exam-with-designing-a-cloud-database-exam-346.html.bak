@@ -1,0 +1,83 @@
+---
+title: "You are a Database Engineer tasked with designing aExam"
+description: "Video for you are a Database Engineer tasked with designing a cloud database solution for a rapidly growing e-commerce company. The database must be able to"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are a Database Engineer tasked with designing a cloud database solution for a rapidly growing e-commerce company. The database must be able to handle a mix of transactional and analytical workloads, provide low-latency reads and writes, and support strong consistency with multi-region replication for disaster recovery. Additionally, the database must be easy to manage, scale, and maintain. Which of the following Google Cloud Platform services and configurations would best meet these requirements?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "scrumtuous.com is launching a new data platform for a fast growing online marketplace and asks you to choose a managed database. The system must support both transactional processing and near real time analytics, provide low latency for reads and writes, and deliver strong consistency with replication across at least three regions for disaster recovery. Operations must remain simple with straightforward scaling and minimal administrative work. Which Google Cloud service and configuration should you select?",
+  "options": [
+    {
+      "text": "Cloud Bigtable with a multi cluster routing instance and Dataflow pipelines for ETL",
+      "explanation": "This pairs a wide column NoSQL database using replicated clusters with Dataflow jobs to move and transform data.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud SQL with a regional primary and read replicas together with BigQuery for analytics",
+      "explanation": "This combines a managed MySQL or PostgreSQL service for OLTP workloads with BigQuery to run analytical queries.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud Spanner with a three region configuration and table interleaving",
+      "explanation": "This is a distributed relational database that offers multi region consistency and supports interleaved tables for hierarchical schemas.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "AlloyDB for PostgreSQL with cross region read replicas and BigQuery for analytics",
+      "explanation": "This uses a high performance PostgreSQL compatible service with replicas in other regions and leverages BigQuery for reporting.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Cloud Spanner with a three region configuration and table interleaving</b>.</p><p>This service is a fully managed relational database that provides strong consistency for reads and writes and it synchronously replicates data across multiple regions. A three region configuration delivers high availability and disaster recovery because quorum is maintained across regions, and it keeps operations simple with automatic maintenance and straightforward horizontal scaling. It supports low latency transactional workloads and can serve near real time analytical queries on the same dataset using consistent snapshots and familiar SQL.</p><p>Table interleaving in this service co locates related parent and child rows which improves locality for joins and common access patterns. This reduces latency for both transactional access and operational analytics while keeping the schema and operations simple.</p><p><i>Cloud Bigtable with a multi cluster routing instance and Dataflow pipelines for ETL</i> does not meet the transactional and consistency requirements. It lacks multi row transactions and cross cluster replication is eventually consistent, and building analytics through pipelines adds operational complexity rather than simplifying it.</p><p><i>Cloud SQL with a regional primary and read replicas together with BigQuery for analytics</i> uses asynchronous replicas across regions, so it cannot provide strong consistency for reads in multiple regions. Scaling is mostly vertical and managing data movement into BigQuery adds administrative work, and there is still only a single write region.</p><p><i>AlloyDB for PostgreSQL with cross region read replicas and BigQuery for analytics</i> offers high performance and Postgres compatibility, but cross region replicas are asynchronous and there is only one write region. This fails the requirement for strong consistency with replication across at least three regions and it also adds an extra analytics stack to operate.</p>",
+  "batch_id": "332",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are a Database Engineer tasked with designing a cloud database solution for a rapidly growing e-commerce company. The database must be able to handle a mix of transactional and analytical workloads, provide low-latency reads and writes, and support strong consistency with multi-region replication for disaster recovery. Additionally, the database must be easy to manage, scale, and maintain. Which of the following Google Cloud Platform services and configurations would best meet these requirements?",
+  "originalOptions": "A. Cloud Bigtable with instance clustering and Dataflow for ETL tasks<br/>B. Cloud Spanner with multi-region instance and interleaved tables<br/>C. Cloud SQL with regional instances and read replicas, combined with BigQuery for analytical workloads<br/>D. Cloud Datastore with multi-region instances, combined with BigQuery for analytical workloads",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "346",
+  "tip": "<p>Match the requirement for <i>strong consistency</i> and <i>multi region</i> replication first. If replicas are <i>asynchronous</i> then you cannot guarantee consistent reads across regions, so look for a service that provides synchronous replication and simple operations.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/overview",
+    "https://cloud.google.com/spanner/docs/instance-configurations",
+    "https://cloud.google.com/spanner/docs/replication",
+    "https://cloud.google.com/spanner/docs/schema-and-data-model#interleaving",
+    "https://cloud.google.com/bigtable/docs/replication-overview",
+    "https://cloud.google.com/sql/docs/postgres/replication/read-replicas",
+    "https://cloud.google.com/alloydb/docs/concepts/high-availability"
+  ],
+  "url": "https://certificationation.com/questions/exam-with-designing-a-cloud-database-exam-346.html",
+  "video_url": "https://certificationation.com/videos/exam-with-designing-a-cloud-database-exam-346.html"
+}

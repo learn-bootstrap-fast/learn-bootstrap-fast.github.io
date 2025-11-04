@@ -1,0 +1,67 @@
+---
+title: "A financial company has an application deployed in anExam"
+description: "Video for a financial company has an application deployed in an AWS Auto Scaling Group. In most cases, the application's traffic is very stable, and the ASG"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "A financial company has an application deployed in an AWS Auto Scaling Group. In most cases, the application's traffic is very stable, and the ASG does not scale in or out. However, since the latest release last week, EC2 instances may fail the health check in Elastic Load Balancer and then be terminated by ASG. The development team has created an ASG lifecycle hook to access the instance and troubleshoot the issue. After the instance goes to the state of “Terminating:Wait”, which AWS service can be configured to receive a notification automatically? (Select TWO.)"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>When an instance in an Auto Scaling Group transitions to the <strong>Terminating:Wait</strong> state because of a lifecycle hook, you want to be automatically notified so you can investigate. The suitable AWS services for this notification are <strong>AWS SNS (Simple Notification Service)</strong> and <strong>Amazon CloudWatch Events</strong> (now part of EventBridge):</p><ul><li><strong>AWS SNS</strong> is a fully managed publish/subscribe messaging service that allows you to set up notifications triggered by Auto Scaling lifecycle events. You can directly connect lifecycle hooks to SNS topics to broadcast notifications.</li><li><strong>Amazon CloudWatch Events</strong> can respond to state changes within AWS resources. You can configure a CloudWatch Event rule for the Auto Scaling event and target an SNS topic or Lambda function, ensuring real-time awareness of the lifecycle change.</li></ul><p>Why other options are not suitable:</p><ul><li><em>AWS CloudTrail</em> records API activity for audit and compliance but does not have the same real-time alerting mechanisms for state transitions like lifecycle hooks.</li><li><em>AWS Config</em> tracks configuration changes of AWS resources and compliance but does not natively trigger notifications for ASG instance lifecycle changes.</li><li><em>AWS Step Functions</em> orchestrates workflows across services but isn't directly used for lifecycle or notification of ASG events.</li></ul><p><strong>Tip:</strong> Lifecycle hooks integrate easily with both CloudWatch Events and SNS, providing flexibility in how you handle notifications and interventions during instance state transitions.</p>",
+  "query": "<p>A financial services provider is running an application within an AWS Auto Scaling Group. Typically, the workload is consistent, and there’s little need for the group to adjust instance counts. However, since last week’s new software release, EC2 instances sometimes fail the health check from the Elastic Load Balancer and are subsequently removed by the Auto Scaling Group. Developers have introduced a lifecycle hook so they can intervene and troubleshoot instances during termination. Once an affected instance enters the <strong>Terminating:Wait</strong> state, which AWS services could you set up to automatically inform a team member of the event? <em>Select TWO options.</em></p>",
+  "original_oid": "6793d9e161969b416038a0e0",
+  "options": [
+    {
+      "correct": false,
+      "text": "AWS CloudTrail",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "AWS SNS (Simple Notification Service)",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "AWS Config",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "AWS Step Functions",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Amazon CloudWatch Events",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question109",
+  "originalQuery": "A financial company has an application deployed in an AWS Auto Scaling Group.\nIn most cases, the application's traffic is very stable, and the ASG does not scale in or out.\nHowever, since the latest release last week, EC2 instances may fail the health check in Elastic Load Balancer and then be terminated by ASG.\nThe development team has created an ASG lifecycle hook to access the instance and troubleshoot the issue.\nAfter the instance goes to the state of “Terminating:Wait”, which AWS service can be configured to receive a notification automatically? (Select TWO.)",
+  "originalOptions": "A. AWS CloudTrail,B. AWS Config,C. AWS CloudWatch Event,D. AWS SNS,E. AWS Step Functions.",
+  "video_url": "https://certificationation.com/videos/exam-deployed-in-an-aws-auto-exam-181.html",
+  "url": "https://certificationation.com/questions/exam-deployed-in-an-aws-auto-exam-181.html"
+}

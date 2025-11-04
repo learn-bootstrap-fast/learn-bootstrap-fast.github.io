@@ -1,0 +1,81 @@
+---
+title: "Your company's Cloud SQL for PostgreSQL database hasExam"
+description: "Video for your company's Cloud SQL for PostgreSQL database has been experiencing intermittent slow-downs due to an unknown issue. As a database administrator,"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company's Cloud SQL for PostgreSQL database has been experiencing intermittent slow-downs due to an unknown issue. As a database administrator, you want to establish a mechanism to quickly identify the cause when it happens again. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "The analytics team at scrumtuous.com runs a Cloud SQL for PostgreSQL instance that occasionally experiences brief latency spikes without a clear root cause. You are the database engineer and you need a proactive way to capture the cause as soon as the next spike occurs. What should you implement?",
+  "options": [
+    {
+      "text": "Route Cloud SQL logs to BigQuery with the Log Router and schedule a query every 30 minutes to flag slow statements",
+      "explanation": "Log routing can export logs to BigQuery and scheduled queries can scan for patterns at regular intervals",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Configure a custom Cloud Monitoring metric that samples the pg_stat_activity view for active query counts and alert when the count spikes abnormally",
+      "explanation": "A custom metric from the system view can be evaluated by alerting policies to detect abnormal runtime activity",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Create a Cloud Monitoring alert that triggers when CPU utilization goes above 95% to signal potential resource pressure",
+      "explanation": "High CPU may reflect heavy load and an alert can notify operators",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Build a script that scans PostgreSQL logs stored in Cloud Storage for slow query patterns and execute it every 14 days",
+      "explanation": "A periodic script can analyze stored log files to identify slow statements over time",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct answer is <b>Configure a custom Cloud Monitoring metric that samples the pg_stat_activity view for active query counts and alert when the count spikes abnormally</b>.</p><p>This approach captures the signal that best correlates with sudden latency because pg_stat_activity shows active and waiting sessions in near real time. By sampling frequently and writing to a custom metric in Cloud Monitoring you can use a short alignment window and tight alerting thresholds so the next spike triggers immediately and preserves context about concurrent activity. This lets you identify blocked sessions, bursts of concurrent queries, or connection storms and you can add helpful labels such as database or user to speed root cause analysis.</p><p><i>Route Cloud SQL logs to BigQuery with the Log Router and schedule a query every 30 minutes to flag slow statements</i> is batch oriented and delayed. Brief spikes can appear and vanish within minutes so a thirty minute schedule can miss them and it only informs you after the fact when valuable transient evidence may be gone.</p><p><i>Create a Cloud Monitoring alert that triggers when CPU utilization goes above 95% to signal potential resource pressure</i> watches a coarse proxy rather than the cause of query latency. Lock contention, connection saturation, or storage stalls can drive latency while CPU remains moderate and this alert neither detects those reliably nor identifies the specific statements involved.</p><p><i>Build a script that scans PostgreSQL logs stored in Cloud Storage for slow query patterns and execute it every 14 days</i> is not proactive or timely. Waiting weeks to analyze logs will not help you capture the next spike and offline scanning cannot notify you in real time.</p>",
+  "batch_id": "27",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "Your company's Cloud SQL for PostgreSQL database has been experiencing intermittent slow-downs due to an unknown issue. As a database administrator, you want to establish a mechanism to quickly identify the cause when it happens again. What should you do?",
+  "originalOptions": "A. Configure a Cloud Monitoring alert to trigger when the CPU utilization reaches 90%, as it may indicate performance issues.<br/>B. Export logs to BigQuery in real-time using Datastream and create a scheduled query to look for performance anomalies.<br/>C. Write a script to analyze the PostgreSQL logs stored in Cloud Storage for slow query patterns and run it weekly.<br/>D. Set up a custom Cloud Monitoring metric to track the pg_stat_activity view and alert for an unusual number of active queries.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "284",
+  "tip": "<p>Choose the option that alerts on a <i>direct signal</i> of the problem in <i>near real time</i> rather than batch analysis or generic resource thresholds. For query latency prefer metrics sourced from database views or wait events with tight alert windows.</p>",
+  "references": [
+    "https://cloud.google.com/monitoring/custom-metrics",
+    "https://cloud.google.com/monitoring/alerts",
+    "https://cloud.google.com/sql/docs/postgres/monitoring",
+    "https://cloud.google.com/logging/docs/export/bigquery",
+    "https://www.postgresql.org/docs/current/monitoring-stats.html#MONITORING-STATS-VIEWS-TABLE"
+  ],
+  "url": "https://certificationation.com/questions/exam-database-has-been-experiencing-intermittent-exam-284.html",
+  "video_url": "https://certificationation.com/videos/exam-database-has-been-experiencing-intermittent-exam-284.html"
+}

@@ -1,0 +1,80 @@
+---
+title: "You provide assistance for an e-commerce applicationExam"
+description: "Video for you provide assistance for an e-commerce application utilizing a regional Cloud SQL for MySQL instance. A customer has submitted a support ticket"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You provide assistance for an e-commerce application utilizing a regional Cloud SQL for MySQL instance. A customer has submitted a support ticket regarding unsatisfactory response times. Upon reviewing Cloud Monitoring, you come across an alert about high CPU usage. Your objective is to implement Google-recommended approaches to tackle the CPU performance problem. What should you do first?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You support a subscription billing platform for example.com that runs on a regional Cloud SQL for MySQL instance. A customer reports sluggish page loads and Cloud Monitoring has triggered an alert for elevated CPU utilization during the last 15 minutes. You want to follow Google best practices to resolve the CPU contention with minimal disruption. What should you do first?",
+  "options": [
+    {
+      "text": "Create a Cloud SQL read replica and route reporting queries to it",
+      "explanation": "This moves some read traffic away from the primary instance by directing selected queries to a replica.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Increase the instance machine type to add more vCPUs",
+      "explanation": "This vertically scales the compute resources of the database server to provide more CPU capacity.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Inspect the slow query log and Performance Schema and optimize the most CPU intensive queries",
+      "explanation": "This examines query execution patterns to pinpoint inefficient statements so they can be tuned or indexed appropriately.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Shard the application database across multiple Cloud SQL instances",
+      "explanation": "This changes the data architecture by distributing tables across instances to spread load.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Inspect the slow query log and Performance Schema and optimize the most CPU intensive queries</b>.</p><p>This choice follows the principle of measure then optimize. Elevated CPU on a Cloud SQL for MySQL instance is most often driven by inefficient queries or missing indexes, so the least disruptive and most effective first step is to identify the worst offenders and tune them. This approach targets the actual source of contention and can yield immediate and lasting improvements without changing infrastructure or restarting the instance.</p><p>Starting with query analysis also minimizes user impact. You can gather evidence, add indexes, and refactor queries incrementally, and you can validate improvements with Cloud Monitoring. If CPU pressure remains after tuning, you can then consider scaling or topology changes with a clear understanding of the workload.</p><p><i>Create a Cloud SQL read replica and route reporting queries to it</i> is not the best first step because it does not reduce CPU consumed by writes on the primary and it can introduce replication lag and additional operational complexity. Creating a replica can also add load during initial synchronization and does not fix inefficient queries.</p><p><i>Increase the instance machine type to add more vCPUs</i> can mask the problem and often requires a restart which is more disruptive. It may provide only temporary relief if the underlying queries are inefficient, and some workloads will not scale linearly with additional vCPUs.</p><p><i>Shard the application database across multiple Cloud SQL instances</i> is a major architectural change and is highly disruptive. Sharding should only be considered after profiling and optimizing the workload and after exhausting simpler options such as indexing, query tuning, and right sizing.</p>",
+  "batch_id": "329",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You provide assistance for an e-commerce application utilizing a regional Cloud SQL for MySQL instance. A customer has submitted a support ticket regarding unsatisfactory response times. Upon reviewing Cloud Monitoring, you come across an alert about high CPU usage. Your objective is to implement Google-recommended approaches to tackle the CPU performance problem. What should you do first?",
+  "originalOptions": "A. Modify the database schema, and add additional indexes.<br/>B. Increase the number of processing units.<br/>C. Shard data required by the application into multiple instances.<br/>D. Analyze slow queries and optimize them.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "173",
+  "tip": "<p>When performance degrades, start with <i>measure</i> then <i>optimize</i> before you <i>scale</i>. Use native instrumentation to find the top resource consumers, fix those, and only then consider replicas or larger machines.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/diagnose-performance-issues",
+    "https://cloud.google.com/sql/docs/mysql/enable-performance-schema",
+    "https://cloud.google.com/sql/docs/mysql/flags",
+    "https://cloud.google.com/sql/docs/mysql/best-practices"
+  ],
+  "url": "https://certificationation.com/questions/exam-e-commerce-application-utilizing-a-regional-exam-173.html",
+  "video_url": "https://certificationation.com/videos/exam-e-commerce-application-utilizing-a-regional-exam-173.html"
+}

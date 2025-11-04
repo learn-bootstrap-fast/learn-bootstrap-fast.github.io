@@ -1,0 +1,67 @@
+---
+title: "You have an application running in us-west-2 thatExam"
+description: "Video for you have an application running in us-west-2 that requires 6 EC2 instances running at all times. With 3 AZ available in that region, which of the"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have an application running in us-west-2 that requires 6 EC2 instances running at all times. With 3 AZ available in that region, which of the following deployments provides 100% fault tolerance if any single AZ in us-west-2 becomes unavailable. Choose 2 answers from the options below."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p><b>Distribute 3 instances in us-west-2a, 3 in us-west-2b, and none in us-west-2c</b> and <b>Run 2 instances in each AZ: us-west-2a, us-west-2b, and us-west-2c</b> are both correct ways to ensure 100% fault tolerance in this scenario.</p><ul><li><b>Why these are correct:</b> In the event of any single Availability Zone (AZ) going down, at least 6 instances would remain running because the minimum number hosted outside any one AZ meets your application's requirements. By either splitting 3 and 3 across 2 AZs or 2, 2, and 2 across all 3 AZs, EC2's Auto Scaling can replace lost instances quickly, keeping required capacity running in healthy AZs.</li><li><i>Allocate 4 instances to us-west-2a, and 2 each to us-west-2b and us-west-2c.</i> is not correct, because if us-west-2a fails, only 4 instances are left (2 each in 2b and 2c).</li><li><i>Deploy 6 instances both in us-west-2a and us-west-2b; none in us-west-2c.</i> is wasteful and doesn't help maximize fault tolerance among all AZs. Plus, if either AZ fails, you'd still only have 6 (not more) running, and allocating 0 to the third AZ reduces redundancy.</li><li><i>Place 3 instances in each AZ: us-west-2a, us-west-2b, us-west-2c.</i> provides the appearance of redundancy, but with 9 total instances, it's more costly than needed. If any one AZ fails, there would still be 6 running, but this sacrifices cost-effectiveness.</li></ul><p><b>Tip:</b> For maximum AZ fault tolerance, make sure that the total required capacity is met even if you lose an entire AZ. Divide the instances so that the sum in the surviving AZs always meets or exceeds your minimum requirement. Avoid putting a majority of instances in a single AZ.</p>",
+  "query": "<p>You need to ensure your application, hosted in the us-west-2 region, always has 6 EC2 instances running. Three Availability Zones (AZs) are accessible. Which two configurations would deliver complete fault tolerance if any one AZ fails? Select TWO options:</p>",
+  "original_oid": "6793da6e61969b416038a200",
+  "options": [
+    {
+      "correct": true,
+      "text": "Distribute 3 instances in us-west-2a, 3 in us-west-2b, and none in us-west-2c.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Run 2 instances in each AZ: us-west-2a, us-west-2b, and us-west-2c.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Allocate 4 instances to us-west-2a, and 2 each to us-west-2b and us-west-2c.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Deploy 6 instances both in us-west-2a and us-west-2b; none in us-west-2c.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Place 3 instances in each AZ: us-west-2a, us-west-2b, us-west-2c.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question400",
+  "originalQuery": "You have an application running in us-west-2 that requires 6 EC2 instances running at all times.\nWith 3 AZ available in that region, which of the following deployments provides 100% fault tolerance if any single AZ in us-west-2 becomes unavailable.\nChoose 2 answers from the options below.",
+  "originalOptions": "A. us-west-2a with 2 instances, us-west-2b with 2 instances, us-west-2c with 2 instances,B. us-west-2a with 3 instances, us-west-2b with 3 instances, us-west-2c with 0 instances,C. us-west-2a with 4 instances, us-west-2b with 2 instances, us-west-2c with 2 instances,D. us-west-2a with 6 instances, us-west-2b with 6 instances, us-west-2c with 0 instances,E. us-west-2a with 3 instances, us-west-2b with 3 instances, us-west-2c with 3 instances.",
+  "video_url": "https://certificationation.com/videos/exam-us-west-2-that-requires-6-ec2-exam-090.html",
+  "url": "https://certificationation.com/questions/exam-us-west-2-that-requires-6-ec2-exam-090.html"
+}

@@ -1,0 +1,62 @@
+---
+title: "You are responsible for your company's largeExam"
+description: "Video for you are responsible for your company's large multi-tiered Windows-based web application running on Amazon EC2 instances situated behind a load"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are responsible for your company's large multi-tiered Windows-based web application running on Amazon EC2 instances situated behind a load balancer. While reviewing metrics, you've started noticing an upwards trend for slow customer page load time. Your manager has asked you to come up with a solution to ensure that customer load time is not affected by too many requests per second. Which technique would you use to solve this issue?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The best strategy is to <b>Redeploy your environment using AWS CloudFormation, and utilize Autoscaling policies that scale dynamically based on incoming request rates and observed customer load times</b>. This approach uses CloudFormation for consistent provisioning and management, and leverages Auto Scaling to adjust EC2 instances automatically in response to increased traffic or slow load times, ensuring customers continue to experience quick page loads.</p><p>The other options have limitations:</p><ul><li><i>Redeploy your infrastructure using AWS CloudFormation, and set up a second CloudFormation stack. Use Elastic Load Balancer's spillover features to direct any overflow traffic to the additional stack.</i> – ELB does not natively support traffic spillover to another stack based on slow connections, and this adds unnecessary complexity.</li><li><i>Rebuild your app with an Auto Scaling template, configuring it to launch a new Elastic Beanstalk environment whenever customer load times exceed a preset threshold.</i> – Launching a new Elastic Beanstalk environment is slow and not intended for handling real-time scaling based on load. Auto Scaling groups within the current infrastructure would respond much faster to load changes.</li><li><i>Redeploy your environment with a CloudFormation template. Set up Elastic Load Balancer health checks to trigger the creation of a new CloudFormation stack when failures are detected.</i> – ELB health checks are designed for instance health and do not orchestrate deploying entire new stacks when latency increases, nor does creating new CloudFormation stacks address scaling needs directly.</li></ul><p><b>Pro tip:</b> Use Auto Scaling with metrics such as request count or latency for smooth scaling. Building your environment with CloudFormation ensures easy updates and reproducibility while keeping scaling logic efficient and cost-effective.</p>",
+  "query": "<p>You manage a multi-tier Windows web app running on Amazon EC2 instances behind a load balancer. Metrics reveal increasing page load times for customers. Your manager asks you to prevent page load delays due to excessive incoming requests. Which is the most effective method to address this?</p>",
+  "original_oid": "6793d9b761969b416038a090",
+  "options": [
+    {
+      "correct": false,
+      "text": "Redeploy your infrastructure using AWS CloudFormation, and set up a second CloudFormation stack. Use Elastic Load Balancer's spillover features to direct any overflow traffic to the additional stack.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Rebuild your app with an Auto Scaling template, configuring it to launch a new Elastic Beanstalk environment whenever customer load times exceed a preset threshold.",
+      "selected": false
+    },
+    {
+      "correct": true,
+      "text": "Redeploy your environment using AWS CloudFormation, and utilize Autoscaling policies that scale dynamically based on incoming request rates and observed customer load times.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Redeploy your environment with a CloudFormation template. Set up Elastic Load Balancer health checks to trigger the creation of a new CloudFormation stack when failures are detected.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question27",
+  "originalQuery": "You are responsible for your company's large multi-tiered Windows-based web application running on Amazon EC2 instances situated behind a load balancer.\nWhile reviewing metrics, you've started noticing an upwards trend for slow customer page load time.\nYour manager has asked you to come up with a solution to ensure that customer load time is not affected by too many requests per second.\nWhich technique would you use to solve this issue?",
+  "originalOptions": "A. Re-deploy your infrastructure using an AWS CloudFormation template.Configure Elastic Load Balancing health checks to initiate a new AWS CloudFormation stack when health checks return failed.|B. Re-deploy your infrastructure using an AWS CloudFormation template. Spin up a second AWS CloudFormation stack.Configure Elastic Load Balancing SpillOver functionality to spill over any slow connections to the second AWS CloudFormation stack.|C. Re-deploy your infrastructure with CloudFormation. Set up Autoscaling group policies to scale based on the number of requests per second and customer current load time.|D. Re-deploy your application using an Auto Scaling template.Configure the Auto Scaling template to spin up a new Elastic Beanstalk application when the customer load time surpasses your threshold.",
+  "video_url": "https://certificationation.com/videos/exam-large-multi-tiered-windows-based-web-application-exam-027.html",
+  "url": "https://certificationation.com/questions/exam-large-multi-tiered-windows-based-web-application-exam-027.html"
+}

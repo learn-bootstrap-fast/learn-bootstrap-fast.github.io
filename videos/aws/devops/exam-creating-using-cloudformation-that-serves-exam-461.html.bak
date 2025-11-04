@@ -1,0 +1,62 @@
+---
+title: "You have a large multi-tier architecture creating usingExam"
+description: "Video for you have a large multi-tier architecture creating using cloudformation, that serves public facing web traffic through a load balancer and is backed by"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have a large multi-tier architecture creating using cloudformation, that serves public facing web traffic through a load balancer and is backed by a web tier that is contained within an Amazon EC2 Auto Scaling group. During a peak in traffic, you discover that your web tier is adding new instances disproportionately compared to the amount of incoming traffic and the Auto Scaling policy that was set up."
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "marked": false,
+  "answer": "<p>The correct choice is <b>Implement a custom CloudWatch metric tracking the time from instance launch until it successfully passes an Elastic Load Balancer health check, and periodically update the Auto Scaling group's PauseTime and CoolDown settings so that they exceed this observed time.</b> This approach ensures that scaling decisions are based on when instances are actually ready to serve traffic, not just when they are launched. By aligning the PauseTime and CoolDown intervals with the real warm-up time, you prevent new instances from being considered unhealthy (and thus replaced prematurely) or excessive scaling from occurring.</p><p>The option <i>Increase the PauseTime and CoolDown periods on your Auto Scaling group above the instance's BootTime metric, using standard CloudWatch monitoring.</i> does not fully solve the problem, as BootTime alone does not represent when the instance is ready to serve load balancer traffic.&nbsp;The application's readiness is a key factor; using only BootTime may still trigger premature scaling.</p><p>As for <i>Set up a third-party configuration management solution using the AWS SDK to suspend all Auto Scaling ScheduledActions during peak traffic, resuming them after the period of high demand is over.</i>—this is not a recommended or scalable approach, as it interferes with auto scaling's dynamic nature and best practices by preventing necessary scaling actions.</p><p>Lastly, <i>Create a custom CloudWatch metric for the period from instance launch to when it passes an ELB health check, then adjust the UpdatePolicy's Pause Time and reduce the Scaling Adjustment by half.</i>&nbsp;adjusts the scaling adjustment without any clear reason that it would address the underlying issue and could end up under-provisioning resources.</p><p><b>Tip:</b>&nbsp;Always base scaling pause and cooldown values on actual instance readiness for load balancing, not just on their launch time. Custom metrics can provide the required precision for optimal scaling behavior.</p>",
+  "query": "<p>Your company has a CloudFormation-based multi-tier system that uses an Auto Scaling group to power its web tier, which serves client traffic through a load balancer. During a traffic surge, you notice that new EC2 instances are being added at a much faster rate than the increased traffic would justify, given the scaling policies in place. What is the most appropriate adjustment to make sure instance scaling aligns more closely with real workload demands?</p>",
+  "original_oid": "6793da4a61969b416038a1b5",
+  "options": [
+    {
+      "correct": true,
+      "text": "Implement a custom CloudWatch metric tracking the time from instance launch until it successfully passes an Elastic Load Balancer health check, and periodically update the Auto Scaling group's PauseTime and CoolDown settings so that they exceed this observed time.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Increase the PauseTime and CoolDown periods on your Auto Scaling group above the instance's BootTime metric, using standard CloudWatch monitoring.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Set up a third-party configuration management solution using the AWS SDK to suspend all Auto Scaling ScheduledActions during peak traffic, resuming them after the period of high demand is over.",
+      "selected": false
+    },
+    {
+      "correct": false,
+      "text": "Create a custom CloudWatch metric for the period from instance launch to when it passes an ELB health check, then adjust the UpdatePolicy's Pause Time and reduce the Scaling Adjustment by half.",
+      "selected": false
+    }
+  ],
+  "source": "https://www.exam-answer.com/amazon/Dop-c01/question324",
+  "originalQuery": "You have a large multi-tier architecture creating using cloudformation, that serves public facing web traffic through a load balancer and is backed by a web tier that is contained within an Amazon EC2 Auto Scaling group.\nDuring a peak in traffic, you discover that your web tier is adding new instances disproportionately compared to the amount of incoming traffic and the Auto Scaling policy that was set up.",
+  "originalOptions": "A. Using CloudWatch and the instance BootTime metric, increase the PauseTime and CoolDown property on the Auto Scaling group to be over the value of the metric.\nB. Using a custom CloudWatch metric insert the elapsed time since the instance launch to the time the instance responds to an Elastic Load Balancing health check, and periodically adjust the Pause Time and the CoolDown property on the AutoScaling group to be over the value of the metric.\nC. Using a custom CloudWatch metric insert the elapsed time since the instance launch to the time the instance responds to an Elastic Load Balancing health check, and periodically adjust the Pause Time of the UpdatePolicy and reduce the Scaling Adjustment property by 50%\nD. Using a third-party configuration management tool and the AWS SDK suspend all ScheduledActions of the Auto Scaling group until after the traffic peak and then resume all scheduledActions.",
+  "video_url": "https://certificationation.com/videos/exam-creating-using-cloudformation-that-serves-exam-461.html",
+  "url": "https://certificationation.com/questions/exam-creating-using-cloudformation-that-serves-exam-461.html"
+}

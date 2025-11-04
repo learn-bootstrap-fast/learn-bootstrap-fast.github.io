@@ -1,0 +1,82 @@
+---
+title: "You are tasked with designing a database solution for aExam"
+description: "Video for you are tasked with designing a database solution for a global online gaming platform that requires real-time player data updates and leaderboards"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are tasked with designing a database solution for a global online gaming platform that requires real-time player data updates and leaderboards reflecting player rankings across the world. The database should scale dynamically to accommodate millions of players. What is the best database service to use in this scenario?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are building the data backend for a worldwide music streaming service that must update play counts instantly and display live top charts for regions and globally, and the database must elastically scale to support tens of millions of users with strong consistency across continents, so which Google Cloud database service should you use?",
+  "options": [
+    {
+      "text": "Cloud Bigtable with multi-cluster replication",
+      "explanation": "This option uses Cloud Bigtable with replication across clusters to provide high throughput key-value style access and wide-column storage.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud SQL with sharding and read replicas",
+      "explanation": "This option uses a managed relational instance with manual sharding and additional read replicas to try to increase throughput.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Cloud Spanner using a multi-region instance and interleaved tables",
+      "explanation": "This choice provides a globally distributed relational database with strong consistency and horizontal scaling, and interleaved tables co-locate related rows for low latency.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "BigQuery with streaming inserts enabled",
+      "explanation": "This option uses a serverless analytics warehouse with streaming ingestion that is optimized for analytical queries rather than operational workloads.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Cloud Spanner using a multi-region instance and interleaved tables</b>.</p><p>This service provides externally consistent transactions and strongly consistent reads and writes across continents using multi-region instance configurations. It scales horizontally to handle tens of millions of users while preserving strict consistency. Interleaved tables colocate related rows which helps keep parent and child data together and improves access patterns such as per region counters and global rollups for live charts.</p><p><i>Cloud Bigtable with multi-cluster replication</i> can deliver very low latency and high throughput, yet its replication across clusters is eventually consistent which means recent writes may not be visible immediately in other regions. This fails the requirement for strong global consistency and it does not offer SQL or multi row transactions that make counters and aggregations simpler.</p><p><i>Cloud SQL with sharding and read replicas</i> is regional and cross region replicas are asynchronous which breaks strong consistency and introduces replication lag. Manual sharding adds operational overhead and still does not provide elastic multi region write scalability at a global level.</p><p><i>BigQuery with streaming inserts enabled</i> is an analytical data warehouse designed for large scale analytics rather than high QPS transactional serving. Streaming inserts go into a buffer and query visibility can be delayed, so updates are not instantly and strongly consistent for live leaderboards.</p>",
+  "batch_id": "311",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are tasked with designing a database solution for a global online gaming platform that requires real-time player data updates and leaderboards reflecting player rankings across the world. The database should scale dynamically to accommodate millions of players. What is the best database service to use in this scenario?",
+  "originalOptions": "A. Use BigQuery for real-time analytics.<br/>B. Use Cloud SQL with horizontal scaling.<br/>C. Use Cloud Bigtable with replication enabled.<br/>D. Use Cloud Spanner with interleaved tables.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "353",
+  "tip": "<p>When requirements emphasize <i>global strong consistency</i>, <i>multi region writes</i>, and massive <i>OLTP</i> scale, think of a globally distributed relational service and verify that its instance configuration and schema choices align with the access pattern.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/reads#strong_reads",
+    "https://cloud.google.com/spanner/docs/instances#configurations",
+    "https://cloud.google.com/spanner/docs/schema-and-data-model#creating_interleaved_tables",
+    "https://cloud.google.com/bigtable/docs/replication-overview",
+    "https://cloud.google.com/sql/docs/mysql/replication",
+    "https://cloud.google.com/bigquery/streaming-data-into-bigquery"
+  ],
+  "url": "https://certificationation.com/questions/exam-database-solution-for-a-global-exam-353.html",
+  "video_url": "https://certificationation.com/videos/exam-database-solution-for-a-global-exam-353.html"
+}

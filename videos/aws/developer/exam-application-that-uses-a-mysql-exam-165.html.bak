@@ -1,0 +1,80 @@
+---
+title: "Your company is deploying a critical application thatExam"
+description: "Video for your company is deploying a critical application that uses a MySQL Cloud SQL instance as the backend database. The application must be highly"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "Your company is deploying a critical application that uses a MySQL Cloud SQL instance as the backend database. The application must be highly available and handle regional failures gracefully. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Your team at scrumtuous.com is launching a mission critical reporting API that uses Cloud SQL for MySQL as its primary data store. The service must stay available during a zone outage in the chosen region and failover should happen automatically with little to no manual intervention. What should you do?",
+  "options": [
+    {
+      "text": "Set up a cross region read replica and plan to promote it during an outage",
+      "explanation": "A cross region read replica provides disaster recovery in another region but promotion is manual and not automatic",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Add Memorystore as a caching layer in front of Cloud SQL to mask downtime",
+      "explanation": "A cache can serve some reads and reduce load but it cannot sustain writes or transactional guarantees when the database is down",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Enable high availability for the Cloud SQL for MySQL instance and turn on automatic failover",
+      "explanation": "The HA configuration places a standby in a different zone within the region and can automatically fail over during zonal disruptions",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use a single zone Cloud SQL instance and run nightly backups for disaster recovery",
+      "explanation": "Backups enable data restoration but they do not keep the application running during an outage",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct answer is <b>Enable high availability for the Cloud SQL for MySQL instance and turn on automatic failover</b> because this configuration keeps the database available during a zone outage within the region and performs failover automatically with little to no manual intervention.</p><p>Cloud SQL high availability deploys a primary and a standby in different zones of the same region and keeps data replicated so that if the primary zone fails the standby is automatically promoted. This design minimizes downtime and removes the need for manual promotion steps which satisfies the mission critical requirement.</p><p><i>Set up a cross region read replica and plan to promote it during an outage</i> is designed for disaster recovery across regions rather than automatic regional resilience. Replicas are asynchronous and require manual promotion which risks data loss and delays and therefore does not meet the requirement for automatic failover during a zone outage.</p><p><i>Add Memorystore as a caching layer in front of Cloud SQL to mask downtime</i> can improve performance yet it does not make the database highly available. Writes still depend on Cloud SQL and a zone outage would disrupt persistence regardless of a cache so the service would not meet the availability requirement.</p><p><i>Use a single zone Cloud SQL instance and run nightly backups for disaster recovery</i> addresses backup and restore but not availability. Restoring from backups is manual and slow and it introduces significant recovery point and recovery time gaps which does not satisfy automatic failover during a zone outage.</p>",
+  "batch_id": "253",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "Your company is deploying a critical application that uses a MySQL Cloud SQL instance as the backend database. The application must be highly available and handle regional failures gracefully. What should you do?",
+  "originalOptions": "A. Use a single-zone Cloud SQL instance and create daily backups for disaster recovery.<br/>B. Use Memorystore as a caching layer for the Cloud SQL instance to mitigate downtime during failures.<br/>C. Set up a read replica in another region to handle failover scenarios.<br/>D. Configure the Cloud SQL instance for high availability and enable automatic failover.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "165",
+  "tip": "<p>When you see a requirement for resilience to a <i>zone outage</i> with <i>automatic failover</i> choose a regional high availability configuration rather than replicas or backups that need manual promotion or restore.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/mysql/high-availability",
+    "https://cloud.google.com/sql/docs/mysql/replication",
+    "https://cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+    "https://cloud.google.com/memorystore/docs/redis/overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-application-that-uses-a-mysql-exam-165.html",
+  "video_url": "https://certificationation.com/videos/exam-application-that-uses-a-mysql-exam-165.html"
+}

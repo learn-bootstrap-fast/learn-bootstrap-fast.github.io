@@ -1,0 +1,80 @@
+---
+title: "You are designing a highly available (HA) Cloud SpannerExam"
+description: "Video for you are designing a highly available (HA) Cloud Spanner instance that will be used by 50 databases. Each database contains 100 tables that were"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are designing a highly available (HA) Cloud Spanner instance that will be used by 50 databases. Each database contains 100 tables that were migrated from your on-premises environment to Google Cloud. The applications that use these databases are located in multiple regions in Europe, and you need to ensure that read and write operations have low latency. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Your team is planning a highly available Cloud Spanner deployment that will host 60 databases. Each database contains roughly 120 tables that were migrated from your company&apos;s data center to Google Cloud. Application services run from several locations across Europe and you must keep both read and write operations responsive for users in those regions. What should you do?",
+  "options": [
+    {
+      "text": "Create two Cloud Spanner instances in one European region with high availability enabled and attach read-only replicas in every region where the applications run",
+      "explanation": "This choice sets up two instances in the same region and then adds read-only copies near client locations to serve read traffic.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Build two Cloud Spanner instances in different European regions with HA turned on and add read-only replicas in each region that hosts clients",
+      "explanation": "This option deploys two separate instances across regions and then spreads read-only replicas to multiple client regions.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Provision a single Cloud Spanner instance using a Europe multi-region configuration and add read-only replicas in the regions where clients are located",
+      "explanation": "This approach uses one multi-region instance for Europe and places read-only replicas close to users to reduce read latency while maintaining availability.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Deploy four separate Cloud Spanner instances in different regions with HA and place read-only replicas in each application region",
+      "explanation": "This configuration creates multiple independent instances across regions and then adds read-only copies in regions where applications run.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct choice is <b>Provision a single Cloud Spanner instance using a Europe multi-region configuration and add read-only replicas in the regions where clients are located</b>. This meets the requirement for responsive reads and writes across Europe while maintaining strong consistency and high availability.</p><p>A Europe multi-region instance places read write replicas in multiple European regions and uses synchronous replication with automatic failover, which keeps write latency lower for European users and preserves strong consistency. Adding <b>read-only replicas in the regions where clients are located</b> provides local read access and improves read throughput while all writes are coordinated by the leader region within the same multi-region configuration. This design gives a single logical Spanner instance that can host many databases and scales horizontally for both capacity and availability.</p><p><i>Create two Cloud Spanner instances in one European region with high availability enabled and attach read-only replicas in every region where the applications run</i> is not suitable because it concentrates writes in a single region which increases write latency for remote users and leaves you exposed to regional failure. Read only replicas do not change the write path and they cannot convert a single region deployment into a true multi-region write configuration.</p><p><i>Build two Cloud Spanner instances in different European regions with HA turned on and add read-only replicas in each region that hosts clients</i> is incorrect because separate instances do not share data transparently. You would need application level replication to keep them consistent and you would lose the single system of record that Spanner multi-region provides.</p><p><i>Deploy four separate Cloud Spanner instances in different regions with HA and place read-only replicas in each application region</i> is also incorrect because it fragments data across many instances and cannot deliver strongly consistent reads and writes from a single database. It adds operational complexity without solving the multi-region write requirement.</p>",
+  "batch_id": "101",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are designing a highly available (HA) Cloud Spanner instance that will be used by 50 databases. Each database contains 100 tables that were migrated from your on-premises environment to Google Cloud. The applications that use these databases are located in multiple regions in Europe, and you need to ensure that read and write operations have low latency. What should you do?",
+  "originalOptions": "A. Deploy a single Cloud Spanner instance with multi-region replication enabled, and configure read replicas in each region where applications are located.<br/>B. Deploy two Cloud Spanner instances in the same region with HA enabled, and create read replicas in each region where applications are located.<br/>C. Deploy two Cloud Spanner instances in different regions with HA enabled, and create read replicas in each region where applications are located.<br/>D. Deploy four Cloud Spanner instances in different regions with HA enabled, and create read replicas in each region where applications are located.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "328",
+  "tip": "<p>When a question stresses <i>strong consistency</i> with <i>low latency</i> reads and writes for users in one geography, choose a Spanner <i>multi-region</i> configuration in that geography. Use read only replicas or read pools to improve read latency, and remember that writes always go to the <i>leader region</i>.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/instance-configurations",
+    "https://cloud.google.com/spanner/docs/replication",
+    "https://cloud.google.com/spanner/docs/read-pools",
+    "https://cloud.google.com/spanner/docs/instances#regional_and_multi-regional_configurations"
+  ],
+  "url": "https://certificationation.com/questions/exam-ha-cloud-spanner-instance-that-exam-328.html",
+  "video_url": "https://certificationation.com/videos/exam-ha-cloud-spanner-instance-that-exam-328.html"
+}

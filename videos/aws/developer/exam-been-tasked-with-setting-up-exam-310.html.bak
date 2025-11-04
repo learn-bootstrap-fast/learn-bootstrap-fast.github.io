@@ -1,0 +1,80 @@
+---
+title: "As a Database Engineer, you have been tasked withExam"
+description: "Video for as a Database Engineer, you have been tasked with setting up secure connectivity and access control for your organization's Firestore databases. Which"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you have been tasked with setting up secure connectivity and access control for your organization's Firestore databases. Which of the following IAM roles should be granted to a user who needs to manage Firestore database indexes and security rules, but should not have access to the actual data stored in the databases?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "At Riverstone Retail, you need to delegate limited administration for a Firestore deployment in Native mode. A contractor must be able to create and update composite indexes and author and publish Firestore security rules, and they must not be able to read or write any document data. Which IAM grant should you assign?",
+  "options": [
+    {
+      "text": "roles/firestore.viewer",
+      "explanation": "This role allows read-only access to Firestore documents and metadata within a project.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Grant roles/datastore.indexAdmin together with roles/firebaserules.admin",
+      "explanation": "This combination targets administrative control of index definitions and Firebase security rules without granting document data access.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "roles/firestore.admin",
+      "explanation": "This role provides broad administrative control of Firestore including full read and write access to document data.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "roles/firestore.editor",
+      "explanation": "This role permits creating and modifying Firestore documents and collections within the project.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct grant is <b>Grant roles/datastore.indexAdmin together with roles/firebaserules.admin</b>. This combination lets the contractor create and update composite indexes and author and publish Firestore security rules while avoiding any permission to read or write document data.</p><p>Datastore Index Admin gives index management capabilities that Firestore uses for composite indexes. It allows creating, updating, and deleting index definitions without granting access to document reads or writes. Firebase Rules Admin allows managing and releasing Firebase security rules for Firestore and it does not include data access permissions. Used together, these roles meet the functional requirements with least privilege.</p><p><i>roles/firestore.viewer</i> is incorrect because it grants read access to Firestore documents and it does not allow creating or updating composite indexes or publishing security rules. The requirement explicitly prohibits any data reads.</p><p><i>roles/firestore.admin</i> is incorrect because it grants broad administrative access that includes reading and writing document data. This violates the constraint to avoid any data access.</p><p><i>roles/firestore.editor</i> is incorrect because it is not a valid predefined Firestore role and an editor-style permission set would allow modifying data which conflicts with the no data access requirement.</p>",
+  "batch_id": "150",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you have been tasked with setting up secure connectivity and access control for your organization's Firestore databases. Which of the following IAM roles should be granted to a user who needs to manage Firestore database indexes and security rules, but should not have access to the actual data stored in the databases?",
+  "originalOptions": "A. roles/firestore.admin<br/>B. roles/firestore.viewer<br/>C. roles/firestore.databaseUser<br/>D. roles/firestore.editor",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "310",
+  "tip": "<p>Map each task to the smallest role that provides only that capability. For Firestore index management think <i>Datastore Index Admin</i>. For authoring and releasing rules think <i>Firebase Rules Admin</i>. Verify that a role does not include unintended <i>data access</i> before selecting it.</p>",
+  "references": [
+    "https://cloud.google.com/firestore/docs/security/iam#roles",
+    "https://cloud.google.com/datastore/docs/access/iam#predefined_roles",
+    "https://cloud.google.com/iam/docs/understanding-roles#firebaserules-roles",
+    "https://cloud.google.com/firestore/docs/query-data/index-overview"
+  ],
+  "url": "https://certificationation.com/questions/exam-been-tasked-with-setting-up-exam-310.html",
+  "video_url": "https://certificationation.com/videos/exam-been-tasked-with-setting-up-exam-310.html"
+}

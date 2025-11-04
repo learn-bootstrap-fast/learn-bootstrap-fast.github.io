@@ -1,0 +1,81 @@
+---
+title: "As a Database Engineer, you are required to testExam"
+description: "Video for as a Database Engineer, you are required to test disaster recovery strategies periodically for a mission-critical application. Which of the following"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "As a Database Engineer, you are required to test disaster recovery strategies periodically for a mission-critical application. Which of the following options is the best method to conduct a disaster recovery test while minimizing the impact on production workloads and ensuring high fidelity test results?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "You are the Cloud Database Engineer for scrumtuous.com and you must execute disaster recovery drills every 90 days for a payments platform with strict availability goals. Which approach lets you validate recovery with production like data while keeping risk to the live workloads as low as possible?",
+  "options": [
+    {
+      "text": "Inject random failures into the production cluster to evaluate resilience",
+      "explanation": "This uses chaos testing in the live environment to observe how the system behaves under faults.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Stand up an isolated environment that mirrors production and run the disaster recovery drill against a live replicated copy of the database",
+      "explanation": "This uses real time or near real time replication into a separate environment so tests are realistic while the production system stays isolated.",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Shut down the production database to perform a full scale recovery exercise",
+      "explanation": "This forces a full outage to validate procedures and capacities under a direct failure.",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Restore the latest backup or a point in time snapshot into a staging project and execute recovery steps there",
+      "explanation": "This validates recovery by restoring data into a nonproduction instance that is created from backups or point in time recovery.",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Stand up an isolated environment that mirrors production and run the disaster recovery drill against a live replicated copy of the database</b>.</p><p>This approach lets you test your full recovery runbook with current and representative data while keeping all drill activity separate from the live system. By using a continuously replicated dataset in a mirrored environment you can validate failover or promotion procedures, networking and IAM, and measure RTO and RPO with minimal operational risk. Because the drill runs outside the primary environment, there is no forced downtime for users and you still gain confidence that the recovery steps work end to end.</p><p><i>Inject random failures into the production cluster to evaluate resilience</i> focuses on chaos testing in the live environment and does not validate end to end disaster recovery procedures such as restore, replica promotion, or environment rebuild. It also increases the risk to production which conflicts with the requirement to keep risk as low as possible.</p><p><i>Shut down the production database to perform a full scale recovery exercise</i> directly violates strict availability goals and introduces unnecessary downtime. It tests recovery but at an unacceptable risk to the business.</p><p><i>Restore the latest backup or a point in time snapshot into a staging project and execute recovery steps there</i> lowers risk but uses a static snapshot rather than a live replicated copy. This limits data freshness and does not fully exercise failover or replica promotion paths, so it provides less realistic validation of recovery objectives.</p>",
+  "batch_id": "37",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "As a Database Engineer, you are required to test disaster recovery strategies periodically for a mission-critical application. Which of the following options is the best method to conduct a disaster recovery test while minimizing the impact on production workloads and ensuring high fidelity test results?",
+  "originalOptions": "A. Perform a full-scale test by shutting down the production database and simulating a disaster recovery scenario.<br/>B. Introduce random failures to the production environment to test the resilience and recovery strategies in place.<br/>C. Deploy a separate environment identical to the production environment and perform a disaster recovery test using real-time database replication.<br/>D. Use scheduled maintenance windows to simulate disaster recovery scenarios on the production environment.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "140",
+  "tip": "<p>Prefer solutions that test recovery in an isolated environment using a <i>replicated</i> dataset so you can validate <i>RTO</i> and <i>RPO</i> without risking the primary system.</p>",
+  "references": [
+    "https://cloud.google.com/architecture/dr-scenarios-planning-guide",
+    "https://cloud.google.com/sql/docs/mysql/high-availability",
+    "https://cloud.google.com/sql/docs/mysql/replication/configure-replicas",
+    "https://cloud.google.com/sql/docs/mysql/replication/promote-replica",
+    "https://cloud.google.com/spanner/docs/replication#disaster_recovery"
+  ],
+  "url": "https://certificationation.com/questions/exam-required-to-test-disaster-recovery-exam-140.html",
+  "video_url": "https://certificationation.com/videos/exam-required-to-test-disaster-recovery-exam-140.html"
+}

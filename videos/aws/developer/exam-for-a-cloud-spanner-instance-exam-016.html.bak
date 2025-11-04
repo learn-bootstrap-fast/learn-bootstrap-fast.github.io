@@ -1,0 +1,81 @@
+---
+title: "You have created read replicas for a Cloud SpannerExam"
+description: "Video for you have created read replicas for a Cloud Spanner instance that serves your global e-commerce application. To ensure low latency reads for customers"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You have created read replicas for a Cloud Spanner instance that serves your global e-commerce application. To ensure low latency reads for customers across multiple continents, you need to configure the application according to Google-recommended practices. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "Your team runs a multiregional news subscription platform on Cloud Spanner. You have deployed five read-only replicas across three continents to lower read latency for users worldwide. You want to follow Google best practices so users get the fastest reads from nearby regions. How should the application be configured?",
+  "options": [
+    {
+      "text": "Configure an external HTTP(S) global load balancer to distribute read traffic across the replicas",
+      "explanation": "A global HTTP(S) load balancer routes HTTP traffic to backends across regions and is typically used for web endpoints rather than database replica selection",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Program the application to select the geographically closest read-only replica based on the user&apos;s location",
+      "explanation": "The application uses client geolocation or region awareness to pick the nearest read-only replica to help reduce round-trip time",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Use Cloud DNS geo-location policies to steer read requests to regional endpoints",
+      "explanation": "Cloud DNS can return geo-based answers so that different users receive region-specific DNS responses",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Randomly choose any available read replica for each read call to spread load evenly",
+      "explanation": "Random selection distributes requests but does not consider proximity or latency for users in different regions",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Program the application to select the geographically closest read-only replica based on the user&apos;s location</b>.</p><p>Cloud Spanner is a managed service that already exposes a single service endpoint and internally replicates data across regions. The way to achieve the lowest read latency is to have the client route read requests to the nearest read replica. You can implement this by using the Spanner client library features that select the closest replica or by adding simple application logic that chooses the nearest location based on the user. This aligns with Google guidance to take advantage of read replicas for locality and to keep reads near users.</p><p><i>Configure an external HTTP(S) global load balancer to distribute read traffic across the replicas</i> is incorrect because Spanner is not a service you place behind your own load balancer. The service manages request routing and replica selection and the client connects to the Spanner API rather than to backends you control.</p><p><i>Use Cloud DNS geo-location policies to steer read requests to regional endpoints</i> is incorrect because you do not manage per-replica DNS endpoints for Spanner. The service exposes a single endpoint and DNS geo policies cannot target individual Spanner replicas.</p><p><i>Randomly choose any available read replica for each read call to spread load evenly</i> is incorrect because random selection can send traffic to distant replicas and increase latency. Best practice is to route reads to the nearest replica for predictable low latency.</p>",
+  "batch_id": "8",
+  "answerCode": "2",
+  "type": "multiple-choice",
+  "originalQuery": "You have created read replicas for a Cloud Spanner instance that serves your global e-commerce application. To ensure low latency reads for customers across multiple continents, you need to configure the application according to Google-recommended practices. What should you do?",
+  "originalOptions": "A. Create a new VPC peering connection to route requests to any replica.<br/>B. Configure the application to use any available read replica indiscriminately.<br/>C. Configure a Global Load Balancer to distribute read requests among the replicas.<br/>D. Configure the application to use the nearest read replica based on the user's location.",
+  "domain": "Design scalable and highly available cloud database solutions",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "16",
+  "tip": "<p>When a question involves a managed database like Spanner, favor application or <i>client library</i> features for routing to the <i>nearest replica</i> over adding network components such as load balancers or DNS tricks.</p>",
+  "references": [
+    "https://cloud.google.com/spanner/docs/replication",
+    "https://cloud.google.com/spanner/docs/best-practices",
+    "https://cloud.google.com/spanner/docs/instance-configurations#read-latency",
+    "https://cloud.google.com/spanner/docs/reads",
+    "https://cloud.google.com/spanner/docs/performance-recommendations"
+  ],
+  "url": "https://certificationation.com/questions/exam-for-a-cloud-spanner-instance-exam-016.html",
+  "video_url": "https://certificationation.com/videos/exam-for-a-cloud-spanner-instance-exam-016.html"
+}

@@ -1,0 +1,79 @@
+---
+title: "You are troubleshooting a connection issue with a newlyExam"
+description: "Video for you are troubleshooting a connection issue with a newly deployed Cloud SQL instance on Google Cloud. While investigating the Cloud SQL Proxy logs, you"
+layout: video
+heading: Cloud Practitioner Exam Question Answer
+link-text: "Next Exam Question"
+link: "https://certificationexams.pro/aws/index.html"
+full-query: "You are troubleshooting a connection issue with a newly deployed Cloud SQL instance on Google Cloud. While investigating the Cloud SQL Proxy logs, you see the message Error 401: Unauthorized. What should you do?"
+video_host: "youtube"
+video_id: "ZYRYaPtL4WE"
+upload_date: "2025-10-01T11:11:11+11:11"
+duration: "PT1H46M27S"
+thumbnail_url: "https://i.ytimg.com/vi/ZYRYaPtL4WE/maxresdefault.jpg"
+content_url: "https://youtu.be/ZYRYaPtL4WE"
+embed_url: "https://www.youtube.com/embed/ZYRYaPtL4WE"
+publisher_name: "certificationation.com"
+publisher_logo: "/assets/images/logo-512.png"
+in_language: "en"
+is_accessible_for_free: true
+tags:
+  - Certification Exam
+  - Practice Exam
+  - Exam Simulator
+  - Real Exam Questions
+  - Exam Questions and Answers
+  - Practice test
+  - Real Certification Exam Questions
+  - Certification Exam Simulator
+---
+{
+  "query": "A media startup named NovaStream has provisioned a new Cloud SQL for PostgreSQL instance and a Compute Engine VM connects to it through the Cloud SQL Auth proxy. During testing you review the proxy logs and repeatedly see &quot;Error 401 Unauthorized&quot; when it attempts to establish the connection. What should you do to resolve this authentication issue?",
+  "options": [
+    {
+      "text": "Enable the Cloud SQL Admin API for the project",
+      "explanation": "This API provides control plane access so clients can retrieve instance metadata and certificates needed for connections",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Reset the database user password and update the application connection parameters",
+      "explanation": "This alters the database level credentials which are used after the secure tunnel is created by the proxy",
+      "correct": false,
+      "selected": false
+    },
+    {
+      "text": "Grant the Cloud SQL Client IAM role to the service account used by the Cloud SQL Auth proxy or verify it already has it",
+      "explanation": "This role allows the proxy&apos;s service account to authenticate and request the necessary tokens for connecting to the instance",
+      "correct": true,
+      "selected": false
+    },
+    {
+      "text": "Reconfigure the proxy to use a private IP address instead of a public endpoint",
+      "explanation": "This changes the network path by routing through a VPC connection which requires additional setup such as Private Service Connect or VPC peering",
+      "correct": false,
+      "selected": false
+    }
+  ],
+  "answer": "<p>The correct option is <b>Grant the Cloud SQL Client IAM role to the service account used by the Cloud SQL Auth proxy or verify it already has it</b>.</p><p>A 401 Unauthorized from the Cloud SQL Auth proxy indicates that the identity used by the proxy does not have the required permission to connect to the instance. The service account must have the Cloud SQL Client role so it can obtain an ephemeral certificate and call the Cloud SQL Admin API to authorize the connection. Assign the role to the service account that the proxy uses and then retry the connection.</p><p><i>Enable the Cloud SQL Admin API for the project</i> is necessary for Cloud SQL operations but a 401 Unauthorized points to missing or invalid credentials or permissions. If the API were disabled you would see an error about the API not being enabled rather than an authentication failure.</p><p><i>Reset the database user password and update the application connection parameters</i> does not address a proxy 401 error because the proxy fails before database authentication occurs. Database user credentials are evaluated only after the proxy establishes an authorized connection to the instance.</p><p><i>Reconfigure the proxy to use a private IP address instead of a public endpoint</i> does not resolve an authorization error. Whether using public or private IP the proxy still requires the correct IAM permission and a missing role will continue to produce 401 errors.</p>",
+  "batch_id": "19",
+  "answerCode": "3",
+  "type": "multiple-choice",
+  "originalQuery": "You are troubleshooting a connection issue with a newly deployed Cloud SQL instance on Google Cloud. While investigating the Cloud SQL Proxy logs, you see the message Error 401: Unauthorized. What should you do?",
+  "originalOptions": "A. Verify that the app.yaml value cloud_sql_instances contains the correct instance connection name.<br/>B. Enable the Cloud SQL Admin API.<br/>C. Ensure that you are using an external (public) IP address interface.<br/>D. Check whether your service account has the proper IAM roles assigned to connect to the Cloud SQL instance.",
+  "domain": "Deploy scalable and highly available databases in Google Cloud",
+  "hasImage": false,
+  "queryImage": "",
+  "queryImages": [],
+  "deprecatedReference": false,
+  "deprecatedMatches": {},
+  "qid": "213",
+  "tip": "<p>When you see proxy errors first decide whether the failure is at the IAM layer or the database layer. A 401 usually means the service account lacks the <i>Cloud SQL Client</i> role while authentication errors about users or passwords indicate database credential issues.</p>",
+  "references": [
+    "https://cloud.google.com/sql/docs/postgres/auth-proxy",
+    "https://cloud.google.com/sql/docs/postgres/roles-and-permissions",
+    "https://cloud.google.com/sql/docs/postgres/connect-compute-engine"
+  ],
+  "url": "https://certificationation.com/questions/exam-issue-with-a-newly-deployed-exam-213.html",
+  "video_url": "https://certificationation.com/videos/exam-issue-with-a-newly-deployed-exam-213.html"
+}
