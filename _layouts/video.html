@@ -8,7 +8,7 @@
 
     <style>
       /* Keep video and content at the same width */
-      .content-wrap { max-width: 1280px; margin: 0 auto; }
+      .content-wrap { max-width: {{ page.player_max_width | default: 1600 }}px; margin: 0 auto; }
 
       .player { position: relative; aspect-ratio: 16/9; width: 100%; }
       .player iframe, .player video { position:absolute; inset:0; width:100%; height:100%; border:0; }
@@ -25,15 +25,15 @@
     <div class="container">
       <!-- NAV -->
       <div class="content-wrap">
-	  <div class="row">
-        {% include mcnz/nav.html %}
+        <div class="row">
+          {% include mcnz/nav.html %}
+        </div>
       </div>
-	  </div>
 
       <!-- MAIN CONTENT, all locked to the same width -->
       <div class="content-wrap">
         <!-- Player -->
-        <div class="row"  style="background-color: black;">
+        <div class="row" style="background-color: black;">
           <div class="col-12">
             <div class="player" id="player">
               {%- if page.video_host == "youtube" and page.video_id -%}
@@ -55,9 +55,9 @@
         </div>
 
         <!-- Yellow title bar (same width as player) -->
-        <div class="row mt-2" style=" background-color: #FF583B;">
+        <div class="row mt-2" style="background-color: #FF583B;">
           <div class="col-12">
-            <div class="orange-divider px-3 py-2" style="height:2rem; background-color: #FF583B;" >
+            <div class="orange-divider px-3 py-2" style="height:2rem; background-color: #FF583B;">
               <h1 class="video-meta">
                 {{ page.title }} |
                 {%- if page.upload_date -%}
@@ -77,17 +77,17 @@
         </div>
 
         <!-- Card (same width as player/title) -->
-        <div class="row mt-3"  >
+        <div class="row mt-3">
           <div class="col-12">
             <div class="card">
               <div class="card-header bg-warning-subtle border-warning">
                 <h1 class="h5 ">{{ page.description }}</h1>
               </div>
               <div class="card-body">
-<script type="application/json" id="qa-json">
+                <script type="application/json" id="qa-json">
 {{ content }}
 </script>
-                <p class="card-text ">I know how you can get <a href="https://certificationexams.pro/azure/index.html">Azure Certified</a>, <a href="https://certificationexams.pro/gcp/index.html">Google Cloud Certified</a>, <a href="https://certificationexams.pro/others/github/copilot-gh-300/index.html">GitHub Copilot Certified</a> and <a href="https://certificationexams.pro/aws/index.html">AWS Certified.</a> It's a cool <a href="https://certificationexams.pro/aws/cloud-practitioner/index.html">certification exam simulator site</a> called <a href="https://certificationexams.pro/aws/ai-practitioner/index.html">certificationexams.pro.</a> Check it out. It'll help you get certified fast!</p>
+                <p class="card-text">I know how you can get <a href="https://certificationexams.pro/azure/index.html">Azure Certified</a>, <a href="https://certificationexams.pro/gcp/index.html">Google Cloud Certified</a>, <a href="https://certificationexams.pro/others/github/copilot-gh-300/index.html">GitHub Copilot Certified</a> and <a href="https://certificationexams.pro/aws/index.html">AWS Certified.</a> It's a cool <a href="https://certificationexams.pro/aws/cloud-practitioner/index.html">certification exam simulator site</a> called <a href="https://certificationexams.pro/aws/ai-practitioner/index.html">certificationexams.pro.</a> Check it out. It'll help you get certified fast!</p>
               </div>
             </div>
           </div>
@@ -96,134 +96,134 @@
         <p class="visually-hidden">This is a dedicated watch page for a single video.</p>
       </div>
       <!-- /content-wrap -->
-	  <script type="application/json" id="qa-json">
-{{ content }}
-</script>
 
-<!-- Section -->
-<section class="contrast" id="exam-overview" style="padding-top:5px; padding-bottom:35px;">
-  <div class="row">
-    <div class="col-md-12 col-12">
-      <div class="container">
+      <!-- Section -->
+      <section class="contrast" id="exam-overview" style="padding-top:5px; padding-bottom:35px;">
+        <div class="row">
+          <div class="col-md-12 col-12">
+            <div class="container">
 
-        <!-- Question card -->
-        <div class="card mt-3">
-          <div class="card-header d-flex justify-content-between align-items-center">
-            <span id="questionNumber">Question 1</span>
-            <a id="honestyToggle" class="btn btn-warning">Be Honest</a>
-          </div>
-          <div class="card-body">
-            <div class="card-body p-0">
-              <div class="card-title" id="query"></div>
-              <div id="optionsWrap" class="mt-2"></div>
-            </div>
-            <div class="card-text mt-3 d-flex justify-content-between">
-              <span>
-                <a id="previous" class="disabled btn btn-primary">&laquo; Back</a>
-                &nbsp;
-                <a id="next" href="{{page.link}}" class="enabled btn btn-primary">{{page.link-text}} &raquo;</a>
-              </span> 
+              <!-- Question card -->
+              <div class="card mt-3">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                  <span id="questionNumber">Question 1</span>
+                  <a id="honestyToggle" class="btn btn-warning">Cheat</a>
+                </div>
+                <div class="card-body">
+                  <div class="card-body p-0">
+                    <div class="card-title" id="query"></div>
+                    <div id="optionsWrap" class="mt-2"></div>
+                  </div>
+                  <div class="card-text mt-3 d-flex justify-content-between">
+                    <span>
+                      <a id="previous" class="disabled btn btn-primary">&laquo; Back</a>
+                      &nbsp;
+                      <a id="next" href="{{page.link}}" class="enabled btn btn-primary">{{page.link-text}} &raquo;</a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Answer card -->
+              <div id="answerCard" class="card mt-3">
+                <div class="card-header">Answer</div>
+                <div class="card-body">
+                  <div id="answer"></div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
+      </section>
 
-        <!-- Answer card -->
-        <div id="answerCard" class="card mt-3">
-          <div class="card-header">Answer</div>
-          <div class="card-body">
-            <div id="answer"></div>
-          </div>
-        </div>
+      <h2 class="visually-hidden">Full Certification Question</h2>
+      <p class="visually-hidden">{{ page.full-query | escape }}</p>
 
-      </div>
-    </div>
-  </div>
-</section>
+      <!-- JS -->
+      <script>
+      (function () {
+        const src = document.getElementById('qa-json');
+        if (!src) return;
+        let data = JSON.parse(src.textContent);
 
-<h2 class="visually-hidden">Full Certification Question</h2>
-<p class="visually-hidden">{{ page.full-query | escape }}</p>
-<!-- JS -->
-<script>
-(function () {
-  const src = document.getElementById('qa-json');
-  if (!src) return;
-  let data = JSON.parse(src.textContent);
+        const queryEl = document.getElementById('query');
+        const answerEl = document.getElementById('answer');
+        const optionsWrap = document.getElementById('optionsWrap');
+        const answerCard = document.getElementById('answerCard');
+        const honestyToggle = document.getElementById('honestyToggle');
 
-  const queryEl = document.getElementById('query');
-  const answerEl = document.getElementById('answer');
-  const optionsWrap = document.getElementById('optionsWrap');
-  const answerCard = document.getElementById('answerCard');
-  const honestyToggle = document.getElementById('honestyToggle');
+        if (queryEl) queryEl.innerHTML = data.query || '';
+        if (answerEl) answerEl.innerHTML = data.answer || '';
 
-  if (queryEl) queryEl.innerHTML = data.query || '';
-  if (answerEl) answerEl.innerHTML = data.answer || '';
+        // Build options
+        if (Array.isArray(data.options)) {
+          data.options.forEach((opt, i) => {
+            const outer = document.createElement('div');
+            outer.className = 'form-check my-2';
+            outer.id = 'outerOptionDiv' + i;
 
-  // Build options
-  if (Array.isArray(data.options)) {
-    data.options.forEach((opt, i) => {
-      const outer = document.createElement('div');
-      outer.className = 'form-check my-2';
-      outer.id = 'outerOptionDiv' + i;
+            const input = document.createElement('input');
+            input.className = 'form-check-input option-radio';
+            input.type = 'checkbox';
+            input.id = 'option' + i;
+            input.name = 'optionChecks';
 
-      const input = document.createElement('input');
-      input.className = 'form-check-input option-radio';
-      input.type = 'checkbox';
-      input.id = 'option' + i;
-      input.name = 'optionChecks';
+            const label = document.createElement('label');
+            label.className = 'form-check-label';
+            label.htmlFor = input.id;
+            label.textContent = opt.text;
 
-      const label = document.createElement('label');
-      label.className = 'form-check-label';
-      label.htmlFor = input.id;
-      label.textContent = opt.text;
+            // On load: mark correct answers
+            if (opt.correct) {
+              input.checked = true;
+              outer.classList.add('border', 'border-success');
+            }
 
-      // On load: mark correct answers
-      if (opt.correct) {
-        input.checked = true;
-        outer.classList.add('border', 'border-success');
-      }
-
-      outer.appendChild(input);
-      outer.appendChild(label);
-      optionsWrap.appendChild(outer);
-    });
-  }
-
-  // Toggle state
-  let honestMode = false;
-  function setHonestMode(honest) {
-    if (honest) {
-      // Hide answer, uncheck and remove green borders
-      answerCard.style.display = 'none';
-      document.querySelectorAll('#optionsWrap .form-check').forEach(div => {
-        div.classList.remove('border', 'border-success');
-        const cb = div.querySelector('input[type="checkbox"]');
-        if (cb) cb.checked = false;
-      });
-      honestyToggle.textContent = 'Cheat';
-    } else {
-      // Show answer, restore checkboxes and borders
-      answerCard.style.display = '';
-      data.options.forEach((opt, i) => {
-        const div = document.getElementById('outerOptionDiv' + i);
-        const cb = document.getElementById('option' + i);
-        if (opt.correct) {
-          div.classList.add('border', 'border-success');
-          cb.checked = true;
+            outer.appendChild(input);
+            outer.appendChild(label);
+            optionsWrap.appendChild(outer);
+          });
         }
-      });
-      honestyToggle.textContent = 'Be Honest';
-    }
-  }
 
-  // Initial state
-  setHonestMode(false);
+        // Toggle state
+        let honestMode = false;
+        function setHonestMode(honest) {
+          if (honest) {
+            // Hide answer, uncheck and remove green borders
+            if (answerCard) answerCard.style.display = 'none';
+            document.querySelectorAll('#optionsWrap .form-check').forEach(div => {
+              div.classList.remove('border', 'border-success');
+              const cb = div.querySelector('input[type="checkbox"]');
+              if (cb) cb.checked = false;
+            });
+            if (honestyToggle) honestyToggle.textContent = 'Cheat';
+          } else {
+            // Show answer, restore checkboxes and borders
+            if (answerCard) answerCard.style.display = '';
+            if (Array.isArray(data.options)) {
+              data.options.forEach((opt, i) => {
+                const div = document.getElementById('outerOptionDiv' + i);
+                const cb = document.getElementById('option' + i);
+                if (opt.correct) {
+                  if (div) div.classList.add('border', 'border-success');
+                  if (cb) cb.checked = true;
+                }
+              });
+            }
+            if (honestyToggle) honestyToggle.textContent = 'Be Honest';
+          }
+        }
 
-  honestyToggle.addEventListener('click', () => {
-    honestMode = !honestMode;
-    setHonestMode(honestMode);
-  });
-})();
-</script>
+        // Initial state: hide answer, show "Cheat"
+        setHonestMode(true);
+
+        honestyToggle?.addEventListener('click', () => {
+          honestMode = !honestMode;
+          setHonestMode(honestMode);
+        });
+      })();
+      </script>
 
       {% include mcnz/common-cookie-row.html %}
 
